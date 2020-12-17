@@ -1,0 +1,116 @@
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Author           : David McCarter
+// Created          : 09-15-2017
+//
+// Last Modified By : David McCarter
+// Last Modified On : 12-17-2020
+// ***********************************************************************
+// <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
+//     David McCarter - dotNetTips.com
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using dotNetTips.Spargine.Core;
+
+namespace dotNetTips.Spargine.Extensions
+{
+    /// <summary>
+    /// Extension methods for <see cref="Enum" />.
+    /// </summary>
+    public static class EnumExtensions
+    {
+        /// <summary>
+        /// Gets the enum description.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.String.</returns>
+        /// <exception cref="ArgumentNullException">val</exception>
+        [Information(nameof(GetDescription), UnitTestCoverage = 0, Status = Status.Available)]
+        public static string GetDescription(this Enum value)
+        {
+            if (value == null)
+            {
+                ExceptionThrower.ThrowArgumentNullException(nameof(value));
+            }
+
+            var field = value.GetType().GetField(value.ToString());
+            var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+            return attributes.Length > 0 ? attributes[0].Description : value.ToString();
+        }
+
+
+        /// <summary>
+        /// Gets the names and values of an enum type.
+        /// </summary>
+        /// <param name="enumeration">The enumeration.</param>
+        /// <returns>IEnumerable&lt;System.ValueTuple&lt;System.String, System.Int32&gt;&gt;.</returns>
+        [Information(nameof(GetItems), UnitTestCoverage = 0, Status = Status.Available)]
+        public static IList<(string Description, int Value)> GetItems(this Enum enumeration)
+        {
+            if (enumeration == null)
+            {
+                ExceptionThrower.ThrowArgumentNullException(nameof(enumeration));
+            }
+
+            var items = new List<(string Desctiption, int Value)>();
+
+            foreach (var name in Enum.GetNames(enumeration.GetType()))
+            {
+                items.Add((Desctiption: name, Value: (int)Enum.Parse(enumeration.GetType(), name)));
+            }
+
+            return items;
+        }
+
+        /// <summary>
+        /// Parses the specified enum name.
+        /// </summary>
+        /// <typeparam name="T">Generic type parameter.</typeparam>
+        /// <param name="name">The name.</param>
+        /// <returns>T.</returns>
+        /// <exception cref="ArgumentException">name</exception>
+        /// <exception cref="System.ArgumentException">The exception.</exception>
+        [Information(nameof(Parse), UnitTestCoverage = 0, Status = Status.Available)]
+        public static T Parse<T>(this string name)
+            where T : Enum
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                ExceptionThrower.ThrowArgumentNullException(nameof(name));
+            }
+
+            return (T)Enum.Parse(typeof(T), name);
+        }
+
+        /// <summary>
+        /// Gets the description of the enum value.
+        /// </summary>
+        /// <typeparam name="T">Generic type parameter.</typeparam>
+        /// <param name="val">The value.</param>
+        /// <returns>EnumItem&lt;T&gt;.</returns>
+        /// <exception cref="ArgumentNullException">val</exception>
+        /// <exception cref="System.ArgumentNullException">The exception.</exception>
+        private static EnumItem<T> GetDescriptionInternal<T>(object val)
+        {
+            if (val == null)
+            {
+                throw new ArgumentNullException(nameof(val), $"{nameof(val)} is null.");
+            }
+
+            var field = val.GetType().GetField(val.ToString());
+            var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            var enumItem = new EnumItem<T>
+            {
+                Description = attributes.Length > 0 ? attributes[0].Description : val.ToString(),
+                Value = (T)val,
+            };
+
+            return enumItem;
+        }
+    }
+}

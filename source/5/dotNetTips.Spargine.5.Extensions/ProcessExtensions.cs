@@ -23,10 +23,8 @@ namespace dotNetTips.Spargine.Extensions
     /// <summary>
     /// Process Extensions.
     /// </summary>
-    [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
     public static class ProcessExtensions
-    {
-
+    { 
         /// <summary>
         /// Ensures the high priority.
         /// </summary>

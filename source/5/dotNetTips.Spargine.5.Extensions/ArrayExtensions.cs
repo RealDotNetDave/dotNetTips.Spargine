@@ -12,6 +12,7 @@
 // <summary>Extensions methods for the Array type.</summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -27,20 +28,21 @@ namespace dotNetTips.Spargine.Extensions
     public static class ArrayExtensions
     {
         /// <summary>
-        /// Adds item to the beginning of the array.
+        /// Adds a single item to the beginning of the array.
         /// </summary>
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="array">The array.</param>
         /// <param name="item">The item.</param>
         /// <returns>T[].</returns>
-        /// <exception cref="ArgumentNullException">array or item</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        /// <exception cref="ArgumentReadOnlyException">The array is read-only.</exception>
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] AddFirst<T>(this T[] array, T item)
         {
             if (item is null)
             {
                 return array;
             }
+
             Encapsulation.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
 
             var result = new T[array.Length + 1];
@@ -59,7 +61,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="item">The item.</param>
         /// <returns>T[].</returns>
         /// <exception cref="ArgumentNullException">item - Item cannot be null.</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] AddLast<T>(this T[] array, T item)
         {
             if (item == null)
@@ -82,7 +84,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="arrayToCheck">The array to check.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        [Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         public static bool AreEqual<T>(this T[] input, T[] arrayToCheck)
         {
@@ -112,7 +114,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="bytes">The bytes.</param>
         /// <returns>A <see cref="string" /> that represents this instance.</returns>
         /// <exception cref="ArgumentNullException">Input cannot be null or be empty.</exception>
-        [Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static string BytesToString(this byte[] bytes)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(bytes.HasItems(), nameof(bytes));
@@ -134,7 +136,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <returns>T[].</returns>
         /// <exception cref="ArgumentNullException">Input cannot be null or has a length of 0.</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] Clone<T>(this T[] input)
         {
             if (input is null || input.Length == 0)
@@ -155,7 +157,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="source">The source.</param>
         /// <param name="items">The items.</param>
         /// <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool ContainsAny<T>(this T[] source, params T[] items)
         {
             if (items.DoesNotHaveItems())
@@ -168,12 +170,21 @@ namespace dotNetTips.Spargine.Extensions
             return itemsList.HasItems() && source.ToReadOnlyCollection().Any(p => itemsList.Contains(p));
 
         }
+
+        /// <summary>
+        /// Removes the duplicate values.
+        /// </summary>
+        /// <param name="values">The values.</param>
+        /// <returns>System.Int32().</returns>
+        /// <remarks>Code by: Kevin S Gallagher</remarks>
+        [Information(nameof(RemoveDuplicates), UnitTestCoverage = 0, Status = Status.Available)]
+        public static IEnumerable<int> RemoveDuplicates(this int[] values) => values.Distinct().AsEnumerable();
         /// <summary>
         /// Returns the array without duplicates.
         /// </summary>
         /// <param name="list">The list.</param>
         /// <returns>System.String[].</returns>
-        [Information(nameof(ToDistinct), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToDistinct), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static string[] ToDistinct(this string[] list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));

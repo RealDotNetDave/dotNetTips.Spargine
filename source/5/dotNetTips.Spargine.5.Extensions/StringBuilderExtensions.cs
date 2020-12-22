@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 namespace dotNetTips.Spargine.Extensions
 {
@@ -27,7 +28,6 @@ namespace dotNetTips.Spargine.Extensions
     {
 
         private const string DefaultSeparator = ", ";
-
         private static readonly char[] _specialCharacters = new[] { '"', '\\' };
 
         /// <summary>
@@ -37,18 +37,11 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="bytes">The bytes.</param>
         /// <exception cref="ArgumentNullException">sb</exception>
         /// <exception cref="ArgumentException">bytes</exception>
-        [Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "11/17/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static void AppendBytes(this StringBuilder sb, byte[] bytes)
         {
-            if (sb == null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (( bytes == null ) || ( bytes.Length == 0 ))
-            {
-                throw new ArgumentException($"{nameof(bytes)} is null or empty.", nameof(bytes));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(bytes, nameof(bytes));
 
             sb.Append("'0x");
 
@@ -75,20 +68,9 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static StringBuilder AppendJoin<T>(this StringBuilder sb, IEnumerable<T> values, Action<StringBuilder, T> joinAction, string separator = ", ")
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.DoesNotHaveItems())
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
-
-            if (joinAction is null)
-            {
-                throw new ArgumentNullException(nameof(joinAction), $"{nameof(joinAction)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             var appended = false;
 
@@ -128,25 +110,10 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static StringBuilder AppendJoin<T, TParam>(this StringBuilder sb, IEnumerable<T> values, TParam param, Action<StringBuilder, T, TParam> joinAction, string separator = ", ")
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values is null)
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
-
-            if (param is null)
-            {
-                throw new ArgumentNullException(nameof(param), $"{nameof(param)} is null.");
-            }
-
-            if (joinAction is null)
-            {
-                throw new ArgumentNullException(nameof(joinAction), $"{nameof(joinAction)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param != null, nameof(param));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             var appended = false;
 
@@ -186,30 +153,11 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static StringBuilder AppendJoin<T, TParam1, TParam2>(this StringBuilder sb, IEnumerable<T> values, TParam1 param1, TParam2 param2, Action<StringBuilder, T, TParam1, TParam2> joinAction, string separator = ", ")
         {
-            if (sb is null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(sb));
-            }
-
-            if (param1 is null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(param1));
-            }
-
-            if (param2 is null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(param2));
-            }
-
-            if (values.HasItems() == false)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(values));
-            }
-
-            if (joinAction is null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(joinAction));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param1 != null, nameof(param1));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param2 != null, nameof(param2));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             var appended = false;
 
@@ -243,20 +191,9 @@ namespace dotNetTips.Spargine.Extensions
         [Information("FROM .NET CORE SOURCE", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static void AppendKeyValue(this StringBuilder sb, string key, string value, Tristate includeQuotes = Tristate.True, Tristate includeComma = Tristate.True)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (string.IsNullOrEmpty(key))
-            {
-                throw new ArgumentException($"{nameof(key)} is null or empty.", nameof(key));
-            }
-
-            if (string.IsNullOrEmpty(value))
-            {
-                throw new ArgumentException($"{nameof(value)} is null or empty.", nameof(value));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(key, nameof(key));
+            Encapsulation.TryValidateParam(value, nameof(value));
 
             sb.Append(key);
             sb.Append('=');
@@ -308,18 +245,11 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">sb</exception>
         /// <exception cref="ArgumentNullException">values</exception>
         /// <exception cref="ArgumentNullException">sb</exception>
-        [Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static StringBuilder AppendValues(this StringBuilder sb, string separator, IEnumerable<string> values)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.HasItems() == false)
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
 
             separator = SetSeparator(separator);
 
@@ -338,15 +268,8 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static StringBuilder AppendValues(this StringBuilder sb, string separator, params string[] values)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.HasItems() == false)
-            {
-                throw new ArgumentException($"{nameof(values)} is null or empty.", nameof(values));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
 
             separator = SetSeparator(separator);
 
@@ -367,23 +290,12 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">joinAction</exception>
         /// <exception cref="ArgumentNullException">sb</exception>
         /// <exception cref="ArgumentNullException">values</exception>
-        [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static StringBuilder AppendValues<T>(this StringBuilder sb, string separator, IEnumerable<T> values, Action<T> joinAction)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.HasItems() == false)
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
-
-            if (joinAction is null)
-            {
-                throw new ArgumentNullException(nameof(joinAction), $"{nameof(joinAction)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             separator = SetSeparator(separator);
 
@@ -425,25 +337,10 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static StringBuilder AppendValues<T, TParam>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam param, Action<T, TParam> joinAction)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.HasItems() == false)
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
-
-            if (param is null)
-            {
-                throw new ArgumentNullException(nameof(param), $"{nameof(param)} is null.");
-            }
-
-            if (joinAction is null)
-            {
-                throw new ArgumentNullException(nameof(joinAction), $"{nameof(joinAction)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param != null, nameof(param));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             separator = SetSeparator(separator);
 
@@ -489,30 +386,11 @@ namespace dotNetTips.Spargine.Extensions
         [Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static StringBuilder AppendValues<T, TParam1, TParam2>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam1 param1, TParam2 param2, Action<StringBuilder, T, TParam1, TParam2> joinAction)
         {
-            if (sb is null)
-            {
-                throw new ArgumentNullException(nameof(sb), $"{nameof(sb)} is null.");
-            }
-
-            if (values.DoesNotHaveItems())
-            {
-                throw new ArgumentNullException(nameof(values), $"{nameof(values)} is null.");
-            }
-
-            if (param1 is null)
-            {
-                throw new ArgumentNullException(nameof(param1), $"{nameof(param1)} is null.");
-            }
-
-            if (param2 is null)
-            {
-                throw new ArgumentNullException(nameof(param2), $"{nameof(param2)} is null.");
-            }
-
-            if (joinAction is null)
-            {
-                throw new ArgumentNullException(nameof(joinAction), $"{nameof(joinAction)} is null.");
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(sb != null, nameof(sb));
+            Encapsulation.TryValidateParam(values, nameof(values));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param1 != null, nameof(param1));
+            Encapsulation.TryValidateParam<ArgumentNullException>(param2 != null, nameof(param2));
+            Encapsulation.TryValidateParam<ArgumentNullException>(joinAction != null, nameof(joinAction));
 
             separator = SetSeparator(separator);
 

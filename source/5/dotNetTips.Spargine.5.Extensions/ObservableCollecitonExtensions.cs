@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="source">The source.</param>
         /// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems<T>(this ObservableCollection<T> source)
         {
             return source?.Count > 0;
@@ -52,7 +52,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="source">The source.</param>
         /// <param name="count">The specific count.</param>
         /// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems<T>(this ObservableCollection<T> source, int count)
         {
             return source?.Count == count;

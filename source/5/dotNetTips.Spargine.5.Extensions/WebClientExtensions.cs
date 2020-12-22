@@ -4,22 +4,24 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-07-2020
+// Last Modified On : 12-21-2020
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
+using dotNetTips.Spargine.Core;
 
 namespace dotNetTips.Spargine.Extensions
 {
     /// <summary>
-    /// Class WebClientExtensions.
+    /// WebClient Extensions.
     /// </summary>
     public static class WebClientExtensions
     {
@@ -30,19 +32,22 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="client">The client.</param>
         /// <param name="url">The URL.</param>
         /// <returns>T.</returns>
+        /// <exception cref="ArgumentNullException">client</exception>
+        /// <exception cref="ArgumentException">URL cannot be empty or null. - url</exception>
         /// <exception cref="System.ArgumentNullException">URL cannot be empty or null.</exception>
         /// <exception cref="System.ArgumentException">URL cannot be empty or null.</exception>
+        [Information(nameof(ConvertFrom), UnitTestCoverage = 0, Status = Status.Available)]
         public static T ConvertFrom<T>(this WebClient client, string url)
             where T : class
         {
             if (client is null)
             {
-                throw new System.ArgumentNullException(nameof(client));
+                throw new ArgumentNullException(nameof(client));
             }
 
             if (string.IsNullOrEmpty(url))
             {
-                throw new System.ArgumentException("URL cannot be empty or null.", nameof(url));
+                throw new ArgumentException("URL cannot be empty or null.", nameof(url));
             }
 
             var data = client.DownloadString(url);

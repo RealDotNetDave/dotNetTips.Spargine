@@ -1,0 +1,3267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotNetTips.Spargine.5.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:dotNetTips.Spargine.Extensions.ArrayExtensions">
+            <summary>
+            Extensions methods for the Array type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.AddFirst``1(``0[],``0)">
+            <summary>
+            Adds a single item to the beginning of the array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="array">The array.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">The array is read-only.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.AddLast``1(``0[],``0)">
+            <summary>
+            Adds item to the end of the array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="array">The array.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">item - Item cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.AreEqual``1(``0[],``0[])">
+            <summary>
+            Checks if the two arrays are equal. 
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="input">The input.</param>
+            <param name="arrayToCheck">The array to check.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.BytesToString(System.Byte[])">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <param name="bytes">The bytes.</param>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null or be empty.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.Clone``1(``0[])">
+            <summary>
+            Clones the specified array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="input">The input.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null or has a length of 0.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.ContainsAny``1(``0[],``0[])">
+            <summary>
+            Determines whether the specified array has items specified.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="items">The items.</param>
+            <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.RemoveDuplicates(System.Int32[])">
+            <summary>
+            Removes the duplicate values.
+            </summary>
+            <param name="values">The values.</param>
+            <returns>System.Int32().</returns>
+            <remarks>Code by: Kevin S Gallagher</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.ToDistinct(System.String[])">
+            <summary>
+            Returns the array without duplicates.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.BooleanExtensions">
+            <summary>
+            Extensions for the boolean type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.BooleanExtensions.ToLowerCase(System.Boolean)">
+            <summary>
+            Converts to boolean value to lowercase.
+            </summary>
+            <param name="value">if set to <c>true</c> [value].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.CollectionExtensions">
+            <summary>
+            Extension methods for the <see cref="T:System.Collections.ICollection" /> Collection type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+            Adds the item to the collection if it does not exist.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">list - List cannot be null. or value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">list - List cannot be read-only.</exception>
+            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0[])">
+            <summary>
+            Adds the items to the collection if it does not exist.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="items">The values.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException">list - List cannot be read-only.</exception>
+            <exception cref="T:System.ArgumentNullException">list - List cannot be read-only.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Adds the item to the collection if it does not exist.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The item.</param>
+            <param name="comparer">The comparer.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException">List cannot be read-only. - list</exception>
+            <exception cref="T:System.ArgumentNullException">List cannot be read-only. - list</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Adds the items to the collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list">The list.</param>
+            <param name="items">The items.</param>
+            <param name="ensureUnique">The ensure unique.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentException">items</exception>
+            <exception cref="T:System.ArgumentNullException">items</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.DoesNotHaveItems(System.Collections.ICollection)">
+            <summary>
+            Determines whether the specified source does not have items or is null.
+            </summary>
+            <param name="source">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.HasItems(System.Collections.ICollection)">
+            <summary>
+            Determines whether the specified source has items.
+            </summary>
+            <param name="source">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.HasItems(System.Collections.ICollection,System.Int32)">
+            <summary>
+            Determines whether the specified count has items.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="count">The specific count.</param>
+            <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.CreateCollectionIfNull``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Creates the collection if null.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list">The list.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ColorExtensions">
+            <summary>
+            Class ColorExtensionsExtensions methods for the Color type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ColorExtensions.Average(System.Collections.Generic.IEnumerable{System.Drawing.Color})">
+            <summary>
+            Averages the specified colors in the collection.
+            </summary>
+            <param name="colors">The colors.</param>
+            <returns>Color.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">colors - colors</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">colors - colors</exception>
+            <exception cref="T:System.ArgumentNullException">colors - colors</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DataContextExtensions">
+            <summary>
+            Extension methods for the DataContext type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DataContextExtensions.GetTrackedObjects``1(LinqToDB.DataContext)">
+            <summary>
+            Gets the tracked objects.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="context">The context.</param>
+            <returns>IList&lt;Tuple&lt;T, T&gt;&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">context</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DataReaderExtensions">
+            <summary>
+            DataReaderExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DataReaderExtensions.ToCsv(System.Data.IDataReader,System.Boolean,System.Char)">
+            <summary>
+            Converts DataReader to CSV format.
+            </summary>
+            <param name="dataReader">The data reader.</param>
+            <param name="includeHeaderAsFirstRow">if set to <c>true</c> [include header as first row].</param>
+            <param name="separator">The separator.</param>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DataTableExtensions">
+            <summary>
+            Extension methods for the DataTable type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DataTableExtensions.HasRows(System.Data.DataTable)">
+            <summary>
+            Determines whether the specified table has rows.
+            </summary>
+            <param name="table">The table.</param>
+            <returns><c>true</c> if the specified table has rows; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DataTableExtensions.IsDBNull(System.Object)">
+            <summary>
+            Determines whether [is database null] [the specified value].
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if [is database null] [the specified value]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DateTimeExtensions">
+            <summary>
+            Extension methods for DateTime and DateTimeOffset.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.GetLastDayOfWeek(System.DateTimeOffset,System.DayOfWeek)">
+            <summary>
+            Gets the last day of the week.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="dayOfWeek">The day of week.</param>
+            <returns>DateTimeOffset.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.GetNextDayOfWeek(System.DateTimeOffset,System.DayOfWeek)">
+            <summary>
+            Gets the next day for the given day of the week.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="dayOfWeek">The day of week.</param>
+            <returns>DateTimeOffset.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.Intersects(System.DateTime,System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Intersects the specified start date.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="intersectingStartDate">The intersecting start date.</param>
+            <param name="intersectingEndDate">The intersecting end date.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.Intersects(System.DateTimeOffset,System.DateTimeOffset,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            Intersects the specified end date.
+            </summary>
+            <param name="startDate">The start date.</param>
+            <param name="endDate">The end date.</param>
+            <param name="intersectingStartDate">The intersecting start date.</param>
+            <param name="intersectingEndDate">The intersecting end date.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRange(System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            Determines whether value is in range of the specified beginning time and end time.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning date.</param>
+            <param name="endTime">The end date.</param>
+            <returns><c>true</c> if [is in range] [the specified beginning date]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRange(System.TimeSpan,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Determines whether value is in range of the specified beginning time and end time.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning time.</param>
+            <param name="endTime">The end time.</param>
+            <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRange(System.DateTimeOffset,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            DDetermines whether value is in range of the specified beginning time and end time.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning time.</param>
+            <param name="endTime">The end time.</param>
+            <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRangeThrowsException(System.DateTime,System.DateTime,System.DateTime,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
+            invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning time.</param>
+            <param name="endTime">The end time.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns><c>true</c> if [is in range throws exception] [the specified beginning time]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRangeThrowsException(System.TimeSpan,System.TimeSpan,System.TimeSpan,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
+            invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning time.</param>
+            <param name="endTime">The end time.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns><c>true</c> if [is in range throws exception] [the specified beginning time]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.IsInRangeThrowsException(System.DateTimeOffset,System.DateTimeOffset,System.DateTimeOffset,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
+            invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="beginningTime">The beginning time.</param>
+            <param name="endTime">The end time.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns><c>true</c> if [is in range throws exception] [the specified beginning time]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.LocalTimeFromUtc(System.DateTime,System.Int32)">
+            <summary>
+            Given a date, it returns the next (specified) day of week
+            </summary>
+            <param name="date">Date to process</param>
+            <param name="timezoneFromUtc">Hours of the timezone from UTC</param>
+            <returns>Future date</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.Max(System.DateTime,System.DateTime)">
+            <summary>
+            Determines the maximum of the two dates.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="compareTo">The date to compare.</param>
+            <returns>DateTime.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.Max(System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            Determines the maximum of the two dates.
+            </summary>
+            <param name="date">The date.</param>
+            <param name="compareTo">The date to compare.</param>
+            <returns>DateTimeOffset.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.NextDayOfWeek(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Given a date, it returns the next (specified) day of week
+            </summary>
+            <param name="date">Date to process</param>
+            <param name="day">Day of week to find on calendar</param>
+            <returns>Future date</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.NextDayOfWeek(System.DateTimeOffset,System.DayOfWeek)">
+            <summary>
+            Given a date, it returns the next (specified) day of week
+            </summary>
+            <param name="date">The date.</param>
+            <param name="day">The day.</param>
+            <returns>DateTimeOffset.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFormattedString(System.DateTime,dotNetTips.Spargine.Extensions.DateTimeFormat)">
+            <summary>
+            Converts date/ time to a formatted string.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFriendlyDateString(System.DateTime)">
+            <summary>
+            To the friendly date string.
+            </summary>
+            <param name="input">The date.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFriendlyDateString(System.DateTimeOffset)">
+            <summary>
+            Converts to friendly date string.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DateTimeFormat">
+            <summary>
+            DateTime Format.
+            Implements the <see cref="T:dotNetTips.Spargine.Core.Enumeration" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Core.Enumeration" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.FullDateLongTime">
+            <summary>
+            Custom format. Example: Monday, December 21, 2020 3:16:12 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.FullDateShortTime">
+            <summary>
+            Custom format. Example: Monday, December 21, 2020 3:16 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.FullDateTime">
+            <summary>
+            Custom format. Example: Monday, December 21, 2020 3:16 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.GeneralDateLongTime">
+            <summary>
+            Custom format. Example: 2/21/2020 3:16:12 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.GeneralDateShortTime">
+            <summary>
+            Custom format. Example: 12/21/2020 3:16 PM 
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.Jan01Comma2020">
+            <summary>
+            Custom format. Example: Dec 21, 2020
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.Janurary01Comma2020">
+            <summary>
+            Custom format. Example: December 21, 2020
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.LongDate">
+            <summary>
+            Custom format. Example: Monday, December 21, 2020
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.LongTime">
+            <summary>
+            Custom format. Example: 3:16:12 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.MonthDay">
+            <summary>
+            Custom format. Example: December 21
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.RFC1123">
+            <summary>
+            Custom format. Example: Mon, 21 Dec 2020 15:16:12 GMT
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.RoundTripDateTime">
+            <summary>
+            Custom format. Example: 2020-12-21T15:16:12.2487693-08:00
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.ShortDate">
+            <summary>
+            Custom format. Example: 12/21/2020
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.ShortTime">
+            <summary>
+            Custom format. Example: 3:16 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.SortableDateTime">
+            <summary>
+            Custom format. Example: 2020-12-21T15:16:12
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.UniversalFullDateTime">
+            <summary>
+            Custom format. Example: Monday, December 21, 2020 11:16:12 PM
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.MonthYear">
+            <summary>
+            Custom format. Example: December 2020
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeFormat.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Extensions.DateTimeFormat" /> class from being created.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeFormat.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Extensions.DateTimeFormat" /> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="displayName">The display name.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DictionaryExtensions">
+            <summary>
+            Class DictionaryExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.AddIfNotExists``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            Tries the add the item if it does not exist.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="dictionary">The dictionary.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">key or value</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.AddRange``3(System.Collections.Generic.IDictionary{``1,``2},System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2})">
+            <summary>
+            Adds the range.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TKey">Generic type of the key.</typeparam>
+            <typeparam name="TValue">Generic type of the value.</typeparam>
+            <param name="list">The list.</param>
+            <param name="items">The items.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">Dictionary cannot be null. or key - Key cannot be null.</exception>
+            <remarks>Code by: Lucas</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.DisposeCollection``2(System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            Disposes the collection.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            Gets a value or adds it to the Dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="list">The dictionary.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>TValue.</returns>
+            <exception cref="T:System.ArgumentNullException">Dictionary cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Key cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Value cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.ToDelimitedString(System.Collections.IDictionary,System.Char)">
+            <summary>
+            Converts IDictionary to delimited string.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="delimiter">The delimiter.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.ToImmutable``2(System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            To the immutable dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="list">The values.</param>
+            <returns>IImmutableDictionary&lt;TKey, TValue&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.Upsert``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            Adds the or update.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="list">The dictionary.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns>TValue.</returns>
+            <exception cref="T:System.ArgumentNullException">dictionary</exception>
+            <exception cref="T:System.ArgumentNullException">key</exception>
+            <exception cref="T:System.ArgumentNullException">value</exception>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null or have no items in the collection.</exception>
+            <exception cref="T:System.ArgumentNullException">Key cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.ProcessCollectionToDispose(System.Collections.IEnumerable)">
+            <summary>
+            Processes the collection to dispose.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.DirectoryInfoExtensions">
+            <summary>
+            DirectoryInfoExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DirectoryInfoExtensions.GetSize(System.IO.DirectoryInfo,System.String,System.IO.SearchOption)">
+            <summary>
+            Gets the total size of a directory.
+            </summary>
+            <param name="info">The information.</param>
+            <param name="searchPattern">The search pattern.</param>
+            <param name="searchOption">The search option.</param>
+            <returns>System.Int64.</returns>
+            <exception cref="T:System.ArgumentNullException">DirectoryInfo cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Search pattern cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Search option invalid.</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.EnumerableExtensions">
+            <summary>
+            Class EnumerableExtensions.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.EnumerableExtensions._globalRandom">
+            <summary>
+            The global random
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.EnumerableExtensions._random">
+            <summary>
+            The random
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.EnumerableExtensions.Random">
+            <summary>
+            Gets the random.
+            </summary>
+            <value>The random.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ContainsAny``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Determines whether the specified collection has items specified.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="items">The items.</param>
+            <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)">
+            <summary>
+            Counts the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DoesNotHaveItems(System.Collections.IEnumerable)">
+            <summary>
+            Determines whether the specified source does not have items or is null.
+            </summary>
+            <param name="source">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.FastAny``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Fasts any.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="predicate">The predicate.</param>
+            <returns>System.Boolean.</returns>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Counts the the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="predicate">The predicate.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <exception cref="T:System.Exception">predicate</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns first item in the collection or an alternate.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="alternate">The alternate.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">alternate</exception>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.FirstOrDefault``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Returns first item in the collection or an alternate using a predicate.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="predicate">The predicate.</param>
+            <param name="alternate">The alternate.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <exception cref="T:System.ArgumentNullException">alternate</exception>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <exception cref="T:System.ArgumentNullException">alternate</exception>
+            <exception cref="T:System.ArgumentNullException">predicate</exception>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.FirstOrNull``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Finds first item or returns null.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="match">The match.</param>
+            <returns>System.Nullable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Function cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.HasItems(System.Collections.IEnumerable)">
+            <summary>
+            Determines whether the specified source has items or is null.
+            </summary>
+            <param name="list">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.HasItems(System.Collections.IEnumerable,System.Int32)">
+            <summary>
+            Determines whether the specified count has items.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="count">The specific count.</param>
+            <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Shuffles the specified count.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The items.</param>
+            <param name="count">The count.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">count - Count must be greater than 0</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.StartsWith``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines if first collection starts with the second collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.StructuralSequenceEqual``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines if two collection sequences are equal.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">second</exception>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString``1(System.Collections.Generic.IEnumerable{``0},System.Char)">
+            <summary>
+            Convert a list to a delimited string.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="delimiter">The delimiter (default is comma if not supplied).</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDictionary``2(System.Collections.Generic.IEnumerable{System.Linq.IGrouping{``0,``1}})">
+            <summary>
+            Converts an enumeration of groupings into a Dictionary of those groupings.
+            </summary>
+            <typeparam name="TKey">Key type of the grouping and list.</typeparam>
+            <typeparam name="TValue">Element type of the grouping and list list.</typeparam>
+            <param name="list">The list.</param>
+            <returns>A list of groupings such that the key of the list is TKey type and the value is List of TValue type.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+            <remarks>Original code by: James Michael Hare</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDistinct``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Returns distinct collection using the specified comparer.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="comparer">The comparer.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">comparer</exception>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToImmutable``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            To the immutable.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The values.</param>
+            <returns>IImmutableList&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToLinkedList``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Converts to a LinkedList.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The values.</param>
+            <returns>LinkedList&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToList``1(System.Collections.IEnumerable)">
+            <summary>
+            Converts <see cref="T:System.Collections.IEnumerable" /> collection to a <see cref="T:System.Collections.Generic.List`1" />.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <returns>List&lt;TSource&gt;.</returns>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToListAsync``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a Generic List async.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.WhereIf``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Boolean})">
+            <summary>
+            Returns list based on function.
+            </summary>
+            <typeparam name="TSource">The type of the list.</typeparam>
+            <param name="list">The list.</param>
+            <param name="condition">if set to <c>true</c> [condition].</param>
+            <param name="predicate">The predicate.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+            <remarks>Original code by: Phil Campbell</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.WhereIf``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{``0,System.Int32,System.Boolean})">
+            <summary>
+            Returns list based on function.
+            </summary>
+            <typeparam name="TSource">The type of the list.</typeparam>
+            <param name="list">The list.</param>
+            <param name="condition">if set to <c>true</c> [condition].</param>
+            <param name="predicate">The predicate.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+            <remarks>Original code by: Phil Campbell</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DisposeCollection``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Disposes the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DisposeCollection(System.Collections.IEnumerable)">
+            <summary>
+            Tries to dispose collection items.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ProcessCollectionToDispose(System.Collections.IEnumerable)">
+            <summary>
+            Processes the collection to dispose.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1">
+            <summary>
+            Class DynamicEqualityComparer. This class cannot be inherited. Implements the <see cref="T:System.Collections.Generic.IEqualityComparer`1" />
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <seealso cref="T:System.Collections.Generic.IEqualityComparer`1" />
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1._func">
+            <summary>
+            The function
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1.#ctor(System.Func{`0,`0,System.Boolean})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1" /> class.
+            </summary>
+            <param name="func">The function.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1.Equals(`0,`0)">
+            <summary>
+            Determines whether the specified objects are equal.
+            </summary>
+            <param name="x">The first object of type T to compare.</param>
+            <param name="y">The second object of type T to compare.</param>
+            <returns>true if the specified objects are equal; otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.DynamicEqualityComparer`1.GetHashCode(`0)">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <param name="obj">The <see cref="T:System.Object"></see> for which a hash code is to be returned.</param>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash
+            table.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.EnumExtensions">
+            <summary>
+            Extension methods for <see cref="T:System.Enum" />.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            Gets the enum description.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">val</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumExtensions.GetItems(System.Enum)">
+            <summary>
+            Gets the names and values of an enum type.
+            </summary>
+            <param name="enum">The enumeration.</param>
+            <returns>IEnumerable&lt;System.ValueTuple&lt;System.String, System.Int32&gt;&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumExtensions.Parse``1(System.String)">
+            <summary>
+            Parses the specified enum name.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="name">The name.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentException">name</exception>
+            <exception cref="T:System.ArgumentException">The exception.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumExtensions.GetDescriptionInternal``1(System.Object)">
+            <summary>
+            Gets the description of the enum value.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="val">The value.</param>
+            <returns>EnumItem&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">val</exception>
+            <exception cref="T:System.ArgumentNullException">The exception.</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.EnumItem`1">
+            <summary>
+            Class EnumItem.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.EnumItem`1.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.EnumItem`1.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ExceptionExtensions">
+            <summary>
+            Class ExceptionExtension.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy``1(``0,System.Func{``0,``0})">
+            <summary>
+            Hierarchy.
+            </summary>
+            <typeparam name="TSource">The type of the t source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="nextItem">The next item.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy``1(``0,System.Func{``0,``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Hierarchy.
+            </summary>
+            <typeparam name="TSource">The type of the t source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="nextItem">The next item.</param>
+            <param name="canContinue">The can continue.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">nameof(canContinue), $"{nameof(canContinue)} is null.</exception>
+            <exception cref="T:System.ArgumentNullException">nameof(canContinue), $"{nameof(canContinue)} is null.</exception>
+            <exception cref="T:System.ArgumentNullException">canContinue or nextItem</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.GetAllMessages(System.Exception)">
+            <summary>
+            Gets all messages.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.GetAllMessages(System.Exception,System.Char)">
+            <summary>
+            Gets all Exception messages.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="separator">The separator.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">nameof(exception)</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.GetAllMessagesWithStackTrace(System.Exception)">
+            <summary>
+            Gets all messages with stack trace.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">nameof(exception)</exception>
+            <exception cref="T:System.ArgumentException">exception</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.IsCritical(System.Exception)">
+            <summary>
+            Determines whether the specified ex is critical.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns><c>true</c> if the specified ex is critical; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.IsFatal(System.Exception)">
+            <summary>
+            Determines whether the specified ex is fatal.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns><c>true</c> if the specified ex is fatal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.IsSecurityOrCritical(System.Exception)">
+            <summary>
+            Determines whether [is security or critical] [the specified ex].
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns><c>true</c> if [is security or critical] [the specified ex]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ExceptionExtensions.TraverseFor``1(System.Exception)">
+            <summary>
+            Traverses Exception.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="ex">The ex.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">nameof(ex), Resources.ExceptionCannotBeNull</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.GuidExtensions">
+            <summary>
+            Class GuidExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.GuidExtensions.ToDigits(System.Guid)">
+            <summary>
+            Returns the Guid without dashes.
+            </summary>
+            <param name="value">The Guid value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.HashSetExtensions">
+            <summary>
+            Class HashSetExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HashSetExtensions.ToImmutable``1(System.Collections.Generic.HashSet{``0})">
+            <summary>
+            Converts to ImmutableHashSet<typeparamref name="T" />&gt;.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The values.</param>
+            <returns>ImmutableHashSet<typeparamref name="T" />&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.HashType">
+            <summary>
+            Enum for HashType
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.SHA">
+            <summary>
+            SHA hash
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.SHA1">
+            <summary>
+            SHA1 hash
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.MD5">
+            <summary>
+            MD5 hash
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.SHA256">
+            <summary>
+            SHA256 hash
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.SHA384">
+            <summary>
+            SHA384 hash
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.HashType.SHA512">
+            <summary>
+            SHA512 hash
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.HttpContextExtensions">
+            <summary>
+            HttpContext Extensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpContextExtensions.GetRemoteIPAddress(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets the remote ip address.
+            </summary>
+            <param name="context">The context.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.HttpRequestExtensions">
+            <summary>
+            Class HttpRequestExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpRequestExtensions.GetRawBodyBytesAsync(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Retrieves the raw body as a byte array from the Request.Body stream.
+            </summary>
+            <param name="request">The request.</param>
+            <returns>Task&lt;System.Byte[]&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">request</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpRequestExtensions.GetRawBodyStringAsync(Microsoft.AspNetCore.Http.HttpRequest,System.Text.Encoding)">
+            <summary>
+            Retrieve the raw body as a string from the Request.Body stream.
+            </summary>
+            <param name="request">Request instance to apply to.</param>
+            <param name="encoding">Optional - Encoding, defaults to UTF8.</param>
+            <returns>Task&lt;System.String&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">request</exception>
+            <exception cref="T:System.ArgumentNullException">request</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpRequestExtensions.TryGetBody``1(Microsoft.AspNetCore.Http.HttpRequest,``0@)">
+            <summary>
+            Tries the get HttpRequest body.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="request">The HTTPRequest object.</param>
+            <param name="value">The return value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">request</exception>
+            <remarks>Original code by Jerry Nixon</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpRequestExtensions.TryGetBody(Microsoft.AspNetCore.Http.HttpRequest,System.Byte[]@)">
+            <summary>
+            Tries the get HTTPRequest body.
+            </summary>
+            <param name="request">The HTTPRequest object.</param>
+            <param name="value">The return value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">request</exception>
+            <exception cref="T:System.ArgumentException">HttpRequest has no body.</exception>
+            <exception cref="T:System.Exception">HttpRequest has no body.</exception>
+            <remarks>Original code by Jerry Nixon</remarks>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.HttpResponseHeaderExtensions">
+            <summary>
+            Class HttpResponseHeaderExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.HttpResponseHeaderExtensions.GetName(System.Net.HttpResponseHeader)">
+            <summary>
+            Gets the name.
+            </summary>
+            <param name="header">The header.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ImmutableArrayExtensions">
+            <summary>
+            Class ImmutableArrayExtensions.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.ImmutableArrayExtensions._globalRandom">
+            <summary>
+            The global random
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.ImmutableArrayExtensions._random">
+            <summary>
+            The random
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.ImmutableArrayExtensions.Random">
+            <summary>
+            Gets the random.
+            </summary>
+            <value>The random.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ImmutableArrayExtensions.Shuffle``1(System.Collections.Immutable.ImmutableArray{``0})">
+            <summary>
+            Shuffles the specified items.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The items.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.LINQExtensions">
+            <summary>
+            Class LINQExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.LINQExtensions.If``1(System.Linq.IQueryable{``0},System.Boolean,System.Func{System.Linq.IQueryable{``0},System.Linq.IQueryable{``0}}[])">
+            <summary>
+            Ifs the specified should.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="input">The query.</param>
+            <param name="should">if set to <c>true</c> [should].</param>
+            <param name="transforms">The transforms.</param>
+            <returns>IQueryable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.LINQExtensions.If``1(System.Collections.Generic.IEnumerable{``0},System.Boolean,System.Func{System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0}}[])">
+            <summary>
+            Ifs the specified should.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="input">The query.</param>
+            <param name="should">if set to <c>true</c> [should].</param>
+            <param name="transforms">The transforms.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ListExtensions">
+            <summary>
+            Extension methods for collections.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.ListExtensions._globalRandom">
+            <summary>
+            The global random
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.ListExtensions._random">
+            <summary>
+            The random
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.ListExtensions.Random">
+            <summary>
+            Gets the random.
+            </summary>
+            <value>The random.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.AddFirst``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            Adds the item as the first item in array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">list or item</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.AddIfNotExists``1(``0[],``0[])">
+            <summary>
+            Adds items to an array if they do not exists.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="items">The items.</param>
+            <returns>T[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.AddLast``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            Adds item the last item in the array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">list or item</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.AreEqual``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0})">
+            <summary>
+            Ares the equal.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The input.</param>
+            <param name="listToCheck">The list to check.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ClearNulls``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Clears the null items from the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.CopyToList``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Copies the collection to a generic List.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <returns>List&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">source</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.HasItems``1(System.Collections.Generic.List{``0},System.Predicate{``0})">
+            <summary>
+            Determines whether the specified collection has items based on the Predicate.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <param name="action">The action.</param>
+            <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+            <exception cref="T:System.ArgumentNullException">action</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns index of item in the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="item">The item.</param>
+            <returns>System.Int32.</returns>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Returns index of an item in the collection using comparer.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="item">The item.</param>
+            <param name="comparer">The comparer.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">item or comparer</exception>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.Join(System.Collections.Generic.IEnumerable{System.Object},System.String)">
+            <summary>
+            Joins a collection using the specified separator.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="separator">The separator.</param>
+            <returns>System.String.</returns>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ListHashCode``1(System.Collections.ObjectModel.ReadOnlyCollection{``0})">
+            <summary>
+            Generates hash code for the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list to use to generate hash code.</param>
+            <returns>Hash code as System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ListHashCode``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Generates hash code for the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list to use to generate hash code.</param>
+            <returns>Hash code as System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ListHashCode``1(``0[])">
+            <summary>
+            Generates hash code for the collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list to use to generate hash code.</param>
+            <returns>Hash code as System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.OrderBy``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Orders a list based on a sort expression. Useful in object binding scenarios where the ObjectDataSource
+            generates a dynamic sort expression (example: "Name desc") that specifies the property of the object sort
+            on.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="sortExpression">The sort expression.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.InvalidCastException"></exception>
+            <remarks>Original code by: C.F.Meijers</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.OrderByOrdinal``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
+            <summary>
+            Orders collection by <see cref="P:System.StringComparer.Ordinal" />
+            </summary>
+            <typeparam name="TSource">The type of the t source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="keySelector">The key selector.</param>
+            <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
+            <remarks>Original code from efcore-master on GitHub.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.Page``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Pages the specified list.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="pageSize">Size of the page. Minimum page size is 1.</param>
+            <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">pageSize</exception>
+            <exception cref="T:System.ArgumentNullException">pageSize</exception>
+            <exception cref="T:System.ArgumentNullException">pageSize</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">pageSize</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.PickRandom``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Picks a random item from a collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.Pivot``4(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Func{``0,``2},System.Func{System.Collections.Generic.IEnumerable{``0},``3})">
+            <summary>
+            Groups the elements of a sequence according to a specified firstKey selector function and rotates the unique
+            values from the secondKey selector function into multiple values in the output, and performs aggregations.
+            </summary>
+            <typeparam name="TSource">The type of the t list.</typeparam>
+            <typeparam name="TFirstKey">The type of the t first key.</typeparam>
+            <typeparam name="TSecondKey">The type of the t second key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="list">The list.</param>
+            <param name="firstKeySelector">The first key selector.</param>
+            <param name="secondKeySelector">The second key selector.</param>
+            <param name="aggregate">The aggregate.</param>
+            <returns>Dictionary&lt;TFirstKey, Dictionary&lt;TSecondKey, TValue&gt;&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value. or list - Aggregate cannot be null. or firstKeySelector -
+            First key selector cannot be null. or secondKeySelector - Second key selector cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.RemoveFirst``1(``0[])">
+            <summary>
+            Removes the first item in the array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="array">The array.</param>
+            <returns>T[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.RemoveLast``1(``0[])">
+            <summary>
+            Removes the last.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="array">The array.</param>
+            <returns>T[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Shuffles the specified items.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The items.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ToObservableCollection``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Converts List to ObservableCollection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <returns>ObservableCollection.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Creates a read only list.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <returns>ReadOnlyCollection&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.MathExtensions">
+            <summary>
+            Class MathExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.CalculatePercent(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Calculates the percent.
+            </summary>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.CalculatePercent(System.Int32,System.Int32)">
+            <summary>
+            Calculates the percent.
+            </summary>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.CalculatePercent(System.Double,System.Double)">
+            <summary>
+            Calculates the percent.
+            </summary>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.CalculatePercent(System.Int64,System.Int64)">
+            <summary>
+            Calculates the percent.
+            </summary>
+            <param name="first">The first.</param>
+            <param name="second">The second.</param>
+            <returns>System.Double.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Double)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Decimal)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Double,System.Int32)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="digits">The digits.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Double,System.MidpointRounding)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="mode">The mode.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Decimal,System.Int32)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="digits">The digits.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Decimal,System.MidpointRounding)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="mode">The mode.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Double,System.Int32,System.MidpointRounding)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="digits">The digits.</param>
+            <param name="mode">The mode.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.MathExtensions.Round(System.Decimal,System.Int32,System.MidpointRounding)">
+            <summary>
+            Rounds the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="digits">The digits.</param>
+            <param name="mode">The mode.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+            <exception cref="T:System.ArgumentNullException">value - Value is invalid.</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.NumericExtensions">
+            <summary>
+            Class IntegerExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.Decrement(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Decrement a number ensuring it never passes a given lower-bound.
+            </summary>
+            <param name="value">Number to process</param>
+            <param name="lowerBound">Lower bound</param>
+            <param name="step">Step of the decrement</param>
+            <returns>Integer</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.EnsureMinimum(System.Int32,System.Int32)">
+            <summary>
+            Ensures the minimum value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minValue">The minimum value.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.FormatSize(System.Int64)">
+            <summary>
+            Formats the number to size string.
+            </summary>
+            <param name="fileSize">Size of the file.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.Increment(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Increment a number ensuring it never passes a given upper-bound.
+            </summary>
+            <param name="value">Number to process</param>
+            <param name="upperBound">Upper bound</param>
+            <param name="step">Step of the increment</param>
+            <returns>Integer</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsEven(System.Int32)">
+            <summary>
+            Indicate whether the number is even.
+            </summary>
+            <param name="value">Number to process</param>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Indicate whether the number falls in the specified range.
+            </summary>
+            <param name="value">Number to process</param>
+            <param name="lower">Lower bound</param>
+            <param name="upper">Upper bound</param>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRange(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRange(System.Double,System.Double,System.Double)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRange(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int64,System.Int64,System.Int64,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified value].
+            Throws Exception if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns>System.Boolean.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified value].
+            Throws Exception if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns>System.Boolean.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Decimal,System.Decimal,System.Decimal,System.String)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified value].
+            Throws Exception if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns>System.Boolean.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Determines whether [is in range] [the specified lower] and will throw Exception if false.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInterval(System.Int32,System.Int32)">
+            <summary>
+            Determines if the Integer is of the specified interval. E.g. if the interval is 100 and
+            the integer is 400, it would return true. This function uses the Mod operator, for the
+            above example: (300 Mod 100 = 0)
+            </summary>
+            <param name="value">The number.</param>
+            <param name="interval">The interval.</param>
+            <returns><c>true</c> if the specified number is interval; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsIntervalThrowsException(System.Int32,System.Int32,System.String)">
+            <summary>
+            Determines whether [is interval throws exception] [the specified value] and throws Exception
+            if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="interval">The interval.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <returns>System.Boolean.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Double)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Int32)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Int64)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.SByte)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Int16)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Decimal)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Single)">
+            <summary>
+            Determines whether the specified value is negative.
+            </summary>
+            <param name="value">The value.</param>
+            <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.RoundToPowerOf2(System.Int32)">
+            <summary>
+            Returns the nearest power of 2 that is bigger than the number.
+            </summary>
+            <param name="value">Number to process</param>
+            <returns>Integer</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int32,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts number to a formatted string.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Double,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int64,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt64,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt32,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int16,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt16,dotNetTips.Spargine.Extensions.NumericFormat)">
+            <summary>
+            Converts to formattedstring.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToPositiveValue(System.Int32)">
+            <summary>
+            To the positive value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToPositiveValue(System.Int64)">
+            <summary>
+            To the positive value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Int64.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToPositiveValue(System.Decimal)">
+            <summary>
+            To the positive value.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.Decimal.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToStringOrEmpty(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Parse the number to a string or a default string if outside given range.
+            </summary>
+            <param name="value">Number to process</param>
+            <param name="lowerLimit">Lower bound</param>
+            <param name="upperLimit">Upper bound</param>
+            <param name="defaultText">Default text</param>
+            <returns>String</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToWords(System.Int32)">
+            <summary>
+            Translate the number in words (English)
+            </summary>
+            <param name="value">Number to translate</param>
+            <returns>String</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.NumericFormat">
+            <summary>
+            Class NumericFormat.
+            Implements the <see cref="T:dotNetTips.Spargine.Core.Enumeration" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Core.Enumeration" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Currency">
+            <summary>
+            Custom format. Example: $2,147,483,647.00
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Decimal">
+            <summary>
+            Custom format. Example: 2147483647
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Exponential">
+            <summary>
+            Custom format. Example: 2.147484E+009
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.FixedPoint">
+            <summary>
+            Custom format. Example: 2147483647.00
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.General">
+            <summary>
+            Custom format. Example: 2147483647
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Hexadecimal">
+            <summary>
+            Custom format. Example: 7FFFFFFF
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Number">
+            <summary>
+            Custom format. Example: 2,147,483,647.00
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.Percent">
+            <summary>
+            Custom format. Example: 214,748,364,700.00%
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip">
+            <summary>
+            Custom format. Example:
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericFormat.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Extensions.NumericFormat"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericFormat.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Extensions.NumericFormat"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="displayName">The display name.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ObjectExtensions">
+            <summary>
+            Class ObjectExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.As``1(System.Object)">
+            <summary>
+            Converts object to a different type.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="value">The value.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">value - Value cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.Clone``1(System.Object)">
+            <summary>
+            Clones the specified object.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="obj">The object.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ComputeSha256Hash(System.Object)">
+            <summary>
+            Computes the sha256 hash.
+            </summary>
+            <param name="data">The data.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.DisposeFields(System.IDisposable)">
+            <summary>
+            Disposes the fields.
+            </summary>
+            <param name="obj">The object.</param>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.FromJson``1(System.String)">
+            <summary>
+            Creates object from Json.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="json">The json.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.FromJsonFile``1(System.String)">
+            <summary>
+            Creates object from a Json file.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="fileName">Name of the file.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.HasProperty(System.Object,System.String)">
+            <summary>
+            Determines whether the specified object has the property.
+            </summary>
+            <param name="obj">The instance.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns><c>true</c> if the specified property name has property; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">propertyName - Source cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.In``1(``0,``0[])">
+            <summary>
+            Ins the specified source.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="list">The list.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">source - Source cannot be null.
+            or
+            list - List cannot be null or have a 0 length.</exception>
+            <remarks>Original code by: Rory Becker</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.InitializeFields(System.Object)">
+            <summary>
+            Initializes the fields of an object.
+            </summary>
+            <param name="obj">The object.</param>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.IsNotNull(System.Object)">
+            <summary>
+            Determines whether [is not null] [the specified object].
+            </summary>
+            <param name="obj">The obj.</param>
+            <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.IsNull(System.Object)">
+            <summary>
+            Determines whether the specified object is null.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns><count>true</count> if the specified object is null; otherwise, <count>false</count>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.PropertiesToDictionary(System.Object,System.Reflection.BindingFlags)">
+            <summary>
+            Generates a Dictionary that represents the property name (Key) and it's value.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="bindingFlags">The binding flags.</param>
+            <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.PropertiesToString(System.Object,System.Boolean,System.Char)">
+            <summary>
+            Generates a string that returns the property names and values.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
+            <param name="delimiter">The delimiter.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.StripNull(System.Object)">
+            <summary>
+            Strips the null.
+            </summary>
+            <param name="input">The field.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)">
+            <summary>
+            Serializes object to Json.
+            </summary>
+            <param name="obj">The instance.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ToJsonFile(System.Object,System.String)">
+            <summary>
+            Saves object to Json file.
+            </summary>
+            <param name="obj">The instance.</param>
+            <param name="fileName">The file.</param>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+            <exception cref="T:System.ArgumentException">message - fileName</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.TryDispose(System.IDisposable)">
+            <summary>
+            Tries the to call Dispose.
+            </summary>
+            <param name="obj">The obj.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.TryDispose(System.IDisposable,System.Boolean)">
+            <summary>
+            Tries to Dispose the object.
+            </summary>
+            <param name="obj">The obj.</param>
+            <param name="throwException">if set to <count>true</count> [throw exception].</param>
+            <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ObservableCollectionExtensions">
+            <summary>
+            Class ObservableCollecitonExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObservableCollectionExtensions.DoesNotHaveItems``1(System.Collections.ObjectModel.ObservableCollection{``0})">
+            <summary>
+            Determines whether the specified source does not have items or is null.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObservableCollectionExtensions.HasItems``1(System.Collections.ObjectModel.ObservableCollection{``0})">
+            <summary>
+            Determines whether the specified source has items.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObservableCollectionExtensions.HasItems``1(System.Collections.ObjectModel.ObservableCollection{``0},System.Int32)">
+            <summary>
+            Determines whether the specified count has items.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="source">The source.</param>
+            <param name="count">The specific count.</param>
+            <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ProcessExtensions">
+            <summary>
+            Process Extensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ProcessExtensions.EnsureHighPriority(System.Diagnostics.Process,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Ensures the high priority.
+            </summary>
+            <param name="process">The process.</param>
+            <param name="logger">The logger.</param>
+            <exception cref="T:System.ArgumentNullException">process</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ProcessExtensions.EnsureLowPriority(System.Diagnostics.Process,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Ensures the low priority.
+            </summary>
+            <param name="process">The process.</param>
+            <param name="logger">The logger.</param>
+            <exception cref="T:System.ArgumentNullException">process</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ProcessExtensions.RunProcessAndIgnoreOutput(System.String,System.String,System.TimeSpan)">
+            <summary>
+            Runs the process and ignore output.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentException">fileName</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ProcessExtensions.RunProcessAndReadOutput(System.String,System.String,System.TimeSpan)">
+            <summary>
+            Runs the process and read output.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="arguments">The arguments.</param>
+            <param name="timeout">The timeout.</param>
+            <returns>System.ValueTuple&lt;System.Int32, System.String&gt;.</returns>
+            <exception cref="T:System.ArgumentException">fileName</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ProcessExtensions.TrySetPriority(System.Diagnostics.Process,System.Diagnostics.ProcessPriorityClass,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Tries the set priority.
+            </summary>
+            <param name="process">The process.</param>
+            <param name="priority">The priority.</param>
+            <param name="logger">The logger.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">process or logger error</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">priority</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.Bytes">
+            <summary>
+              Looks up a localized string similar to Bytes.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.CannotBeOfTypeException">
+            <summary>
+              Looks up a localized string similar to {0} cannot be of type Exception. Use a more specific exception from the framework or a custom Exception inheriting type Exception (only)..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.CollectionIsNullOrHasNoItems">
+            <summary>
+              Looks up a localized string similar to Collection is null or has no items..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.CollectionSizeIsNotValid">
+            <summary>
+              Looks up a localized string similar to Collection size is not valid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.ExceptionCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Exception cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.FalseLowerCase">
+            <summary>
+              Looks up a localized string similar to false.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.FileNotFound">
+            <summary>
+              Looks up a localized string similar to File not found..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.FileSizeIsInvalid">
+            <summary>
+              Looks up a localized string similar to File size is invalid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.FolderNotFound">
+            <summary>
+              Looks up a localized string similar to Folder not found..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.GB">
+            <summary>
+              Looks up a localized string similar to GB.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.GuidIsEmpty">
+            <summary>
+              Looks up a localized string similar to Guid is Empth..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.InvalidFileName">
+            <summary>
+              Looks up a localized string similar to Invalid file name..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.InvalidType">
+            <summary>
+              Looks up a localized string similar to Invalid type..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.KB">
+            <summary>
+              Looks up a localized string similar to KB.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.LengthMustBeGreaterThan0">
+            <summary>
+              Looks up a localized string similar to Length must be greater than 0..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.MB">
+            <summary>
+              Looks up a localized string similar to MB.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.ParameterIsInvalid">
+            <summary>
+              Looks up a localized string similar to Parameter is invalid. .
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexCreditCard">
+            <summary>
+              Looks up a localized string similar to ^((4\d{3})|(5[1-5]\d{2})|(6011))-?\d{4}-?\d{4}-?\d{4}|3[4,7]\d{13}$.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexDomain">
+            <summary>
+              Looks up a localized string similar to ^[a-zA-Z0-9\-\.]+\.(com|org|net|mil|edu|COM|ORG|NET|MIL|EDU)$.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexEmail">
+            <summary>
+              Looks up a localized string similar to \w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexFirstLastName">
+            <summary>
+              Looks up a localized string similar to ^(?n:(?&lt;lastname&gt;(St\.\ )?(?-i:[A-Z]\&apos;?\w+?\-?)+)(?&lt;suffix&gt;\ (?i:([JS]R)|((X(X{1,2})?)?((I((I{1,2})|V|X)?)|(V(I{0,3})))?)))?,((?&lt;prefix&gt;Dr|Prof|M(r?|(is)?)s)\ )?(?&lt;firstname&gt;(?-i:[A-Z]\&apos;?(\w+?|\.)\ ??){1,2})?(\ (?&lt;mname&gt;(?-i:[A-Z])(\&apos;?\w+?|\.))){0,2})$.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexISBN">
+            <summary>
+              Looks up a localized string similar to ISBN(-1(?:(0)|3))?:?\x20+(?(1)(?(2)(?:(?=.{13}$)\d{1,5}([ -])\d{1,7}\3\d{1,6}\3(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\4\d{1,7}\4\d{1,6}\4\d$))|(?(.{13}$)(?:\d{1,5}([ -])\d{1,7}\5\d{1,6}\5(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\6\d{1,7}\6\d{1,6}\6\d$))).
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.REGEXP_US_ZIP_CODE">
+            <summary>
+              Looks up a localized string similar to \d{5}(-\d{4})?.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexPhoneNumberUS">
+            <summary>
+              Looks up a localized string similar to ((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexScientific">
+            <summary>
+              Looks up a localized string similar to \b-?[1-9](?:\.\d+)?[Ee][-+]?\d+\b.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexSSNUS">
+            <summary>
+              Looks up a localized string similar to \d{3}-\d{2}-\d{4}.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexString">
+            <summary>
+              Looks up a localized string similar to ^(\w|\W)+$.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexStringWebSafe">
+            <summary>
+              Looks up a localized string similar to (\&lt;|\&gt;).
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexTemp">
+            <summary>
+              Looks up a localized string similar to ^(?n:(?!-[\d\,]*K) (?!-((\d{1,3},)*((([3-9]\d\d|2[89]\d|27[4-9])\xB0C)|(((4[6-9]|[5-9]\d)\d)\xB0F)))) -?\d{1,3}(,\d{3})*(\xB0[CF]|K) )$.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexUrl">
+            <summary>
+              Looks up a localized string similar to (http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;amp;:/~\+#]*[\w\-\@?^=%&amp;amp;/~\+#])?.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.RegexWindowsFilePath">
+            <summary>
+              Looks up a localized string similar to ([A-Z]:\\[^/:\*\?&lt;&gt;\|]+\.\w{2,6})|(\\{2}[^/:\*\?&lt;&gt;\|]+\.\w{2,6}).
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.StringDoesNotMatch">
+            <summary>
+              Looks up a localized string similar to Strings do not match..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.StringDoesNotMatchMaximumLength">
+            <summary>
+              Looks up a localized string similar to String does not matach maximum length..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.StringDoesNotMatchMinimumLength">
+            <summary>
+              Looks up a localized string similar to String does not match minimum length..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.StringIsEmpty">
+            <summary>
+              Looks up a localized string similar to String is empty..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.StringIsNotValid">
+            <summary>
+              Looks up a localized string similar to String is not valid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.TheValueIsNotDefinedInTheEnumeration">
+            <summary>
+              Looks up a localized string similar to The values are not defined in the enum..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.TrueLowerCase">
+            <summary>
+              Looks up a localized string similar to true.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.ValueIsInvalid">
+            <summary>
+              Looks up a localized string similar to Value is invalid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Extensions.Properties.Resources.Yesterday">
+            <summary>
+              Looks up a localized string similar to Yesterday.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.SocketExtensions">
+            <summary>
+            Extensions for Socket.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.SocketExtensions.BindToAnonymousPort(System.Net.Sockets.Socket,System.Net.IPAddress)">
+            <summary>
+            Binds to an IP address and OS-assigned port. Returns the chosen port.
+            </summary>
+            <param name="socket">The socket.</param>
+            <param name="address">The address.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.SocketExtensions.ForceNonBlocking(System.Net.Sockets.Socket,System.Boolean)">
+            <summary>
+            On non-Windows platforms, once non-blocking is turned on (either explicitly or by performing an async
+            operation), always stay in non-blocking mode.
+            </summary>
+            <param name="socket">The socket.</param>
+            <param name="force">if set to <c>true</c> [force].</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.SocketExtensions.TryConnect(System.Net.Sockets.Socket,System.Net.EndPoint,System.Int32)">
+            <summary>
+            Tries to connect within the provided timeout interval Useful to speed up "can not connect" assertions on
+            Windows
+            </summary>
+            <param name="socket">The socket.</param>
+            <param name="remoteEndpoint">The remote endpoint.</param>
+            <param name="millisecondsTimeout">The milliseconds timeout.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.PlatformNotSupportedException"></exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.SortedDictionaryExtensions">
+            <summary>
+            Class SortedDictionaryExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.SortedDictionaryExtensions.ToImmutable``2(System.Collections.Generic.SortedDictionary{``0,``1})">
+            <summary>
+            Converts to immutable Dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="list">The values.</param>
+            <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.SortedSetExtensions">
+            <summary>
+            Class SortedSetExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.SortedSetExtensions.ToImmutable``1(System.Collections.Generic.SortedSet{``0})">
+            <summary>
+            Converts to immutable SortedSet.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The values.</param>
+            <returns>ImmutableSortedSet&lt;T&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.StreamExtensions">
+            <summary>
+            Extensions methods for Stream.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StreamExtensions.ReadAsync(System.IO.Stream,System.Memory{System.Byte},System.Threading.CancellationToken)">
+            <summary>
+            Reads from the Stream asynchronously.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="destination">The destination.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>ValueTask&lt;System.Int32&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StreamExtensions.WriteAsync(System.IO.Stream,System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)">
+            <summary>
+            Writes to the Stream asynchronously.
+            </summary>
+            <param name="stream">The stream.</param>
+            <param name="source">The source.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>ValueTask.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.StringBuilderExtensions">
+            <summary>
+            StringBuilder Extensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder,System.Byte[])">
+            <summary>
+            Appends the bytes.
+            </summary>
+            <param name="sb">The builder.</param>
+            <param name="bytes">The bytes.</param>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentException">bytes</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Action{System.Text.StringBuilder,``0},System.String)">
+            <summary>
+            Appends the join.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="values">The values.</param>
+            <param name="joinAction">The join action.</param>
+            <param name="separator">The separator.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">StringBuilder cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Values is null or does not have items.</exception>
+            <exception cref="T:System.ArgumentNullException">Action cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``2(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``1,System.Action{System.Text.StringBuilder,``0,``1},System.String)">
+            <summary>
+            Appends the join.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TParam">The type of the t parameter.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="values">The values.</param>
+            <param name="param">The parameter.</param>
+            <param name="joinAction">The join action.</param>
+            <param name="separator">The separator.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param</exception>
+            <exception cref="T:System.ArgumentNullException">joinAction</exception>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``3(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``1,``2,System.Action{System.Text.StringBuilder,``0,``1,``2},System.String)">
+            <summary>
+            Appends the values.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TParam1">The type of the t param1.</typeparam>
+            <typeparam name="TParam2">The type of the t param2.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="values">The values.</param>
+            <param name="param1">The param1.</param>
+            <param name="param2">The param2.</param>
+            <param name="joinAction">The join action.</param>
+            <param name="separator">The separator.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">StringBuilder cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Param1 cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Param2 cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Values cannot be null or does not have items.</exception>
+            <exception cref="T:System.ArgumentNullException">Action cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendKeyValue(System.Text.StringBuilder,System.String,System.String,dotNetTips.Spargine.Core.Tristate,dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Appends the key value.
+            </summary>
+            <param name="sb">The sb.</param>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <param name="includeQuotes">if set to <c>true</c> [include quotes].</param>
+            <param name="includeComma">if set to <c>true</c> [include comma].</param>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentException">key</exception>
+            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:System.ArgumentException">sb</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Appends the join.
+            </summary>
+            <param name="sb">The string builder.</param>
+            <param name="separator">The separator.</param>
+            <param name="values">The values.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder,System.String,System.String[])">
+            <summary>
+            Appends the join.
+            </summary>
+            <param name="sb">The string builder.</param>
+            <param name="separator">The separator.</param>
+            <param name="values">The values.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentException">values</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``1(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Appends the join.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="separator">The separator.</param>
+            <param name="values">The values.</param>
+            <param name="joinAction">The join action.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">joinAction</exception>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``2(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
+            <summary>
+            Appends the join.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TParam">The type of the t parameter.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="separator">The separator.</param>
+            <param name="values">The values.</param>
+            <param name="param">The parameter.</param>
+            <param name="joinAction">The join action.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param</exception>
+            <exception cref="T:System.ArgumentNullException">joinAction</exception>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``3(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},``1,``2,System.Action{System.Text.StringBuilder,``0,``1,``2})">
+            <summary>
+            Appends the join.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TParam1">The type of the t param1.</typeparam>
+            <typeparam name="TParam2">The type of the t param2.</typeparam>
+            <param name="sb">The string builder.</param>
+            <param name="separator">The separator.</param>
+            <param name="values">The values.</param>
+            <param name="param1">The param1.</param>
+            <param name="param2">The param2.</param>
+            <param name="joinAction">The join action.</param>
+            <returns>StringBuilder.</returns>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param1</exception>
+            <exception cref="T:System.ArgumentNullException">param2</exception>
+            <exception cref="T:System.ArgumentNullException">joinAction</exception>
+            <exception cref="T:System.ArgumentNullException">sb</exception>
+            <exception cref="T:System.ArgumentNullException">values</exception>
+            <exception cref="T:System.ArgumentNullException">param1</exception>
+            <exception cref="T:System.ArgumentNullException">param2</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.StringExtensions">
+            <summary>
+            Common StringExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ComputeHash(System.String,dotNetTips.Spargine.Extensions.HashType)">
+            <summary>
+            Computes a hash from the string.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="hashType">Type of the hash.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">'input' cannot be null or empty - input</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ComputeSHA256Hash(System.String)">
+            <summary>
+            Computes the sha256 hash.
+            </summary>
+            <param name="input">The data.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Concat(System.String,System.String,dotNetTips.Spargine.Core.Tristate,System.String[])">
+            <summary>
+            Concatenates the specified first message with passed in string[].
+            </summary>
+            <param name="input">The first message.</param>
+            <param name="delimiter">The delimiter.</param>
+            <param name="addLineFeed">The add line feed. If set to true, delimiter will not be used.</param>
+            <param name="args">The arguments.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">firstMessage</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ContainsAny(System.String,System.String[])">
+            <summary>
+            Determines whether the specified the string contains any.
+            </summary>
+            <param name="input">The string.</param>
+            <param name="characters">The characters.</param>
+            <returns><c>true</c> if the specified characters contains any; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">input</exception>
+            <exception cref="T:System.ArgumentNullException">input</exception>
+            <exception cref="T:System.ArgumentNullException">input</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNull(System.String)">
+            <summary>
+            Defaults if null.
+            </summary>
+            <param name="value">The s.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNull(System.String,System.String)">
+            <summary>
+            Defaults if null.
+            </summary>
+            <param name="value">The s.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Defaults if null or empty.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DelimitedStringToArray(System.String,System.Char)">
+            <summary>
+            Turns a delimited string to a string array.
+            </summary>
+            <param name="input">The delimited input.</param>
+            <param name="delimiter">The delimiter.</param>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.EqualsIgnoreCase(System.String,System.String)">
+            <summary>
+            Equals the ignore case.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="valueToCompare">The value to compare.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.EqualsOrBothNullOrEmpty(System.String,System.String)">
+            <summary>
+            Equals the or both null or empty.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="valueToCompare">The value to compare.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Extract(System.String,System.String,System.String)">
+            <summary>
+            Extracts a string from a beginning and end value.
+            </summary>
+            <param name="input">The value.</param>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.FromBase64(System.String)">
+            <summary>
+            Converts Base64 string to string.
+            </summary>
+            <param name="input">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String)">
+            <summary>
+            Determines whether the specified input has value.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.Int32)">
+            <summary>
+            Determines whether the specified length has value.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="length">Checks for specific length of the string.</param>
+            <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.String)">
+            <summary>
+            Determines whether the specified value has value.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="value">Checks for a specific value.</param>
+            <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">value</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Determines whether the specified expression has value based on a regular expression.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="expression">The expression.</param>
+            <param name="options">The options.</param>
+            <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.Int32,System.Int32)">
+            <summary>
+            Determines whether the strings is within the specified minimum and maximum length.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="minLength">The minimum length.</param>
+            <param name="maxLength">The maximum length.</param>
+            <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">minLength - Minimum length must be greater than 0.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Indent(System.String,System.Int32,System.Char)">
+            <summary>
+            Indents the specified length.
+            </summary>
+            <param name="input">The string.</param>
+            <param name="length">The length.</param>
+            <param name="indentationCharacter">The indentation character.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">input</exception>
+            <exception cref="T:System.ArgumentNullException">length</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsAsciiLetter(System.Char)">
+            <summary>
+            Determines whether [is ASCII letter] from [the specified character].
+            </summary>
+            <param name="character">The character.</param>
+            <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsAsciiLetterOrDigit(System.Char)">
+            <summary>
+            Determines whether [is ASCII letter or digit] from [the specified character].
+            </summary>
+            <param name="character">The character.</param>
+            <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsCreditCard(System.String)">
+            <summary>
+            Determines whether [is credit card] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsDomainAddress(System.String)">
+            <summary>
+            Determines whether [is domain address] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsEmailAddress(System.String)">
+            <summary>
+            Determines whether [is email address] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsEmpty(System.String)">
+            <summary>
+            Determines whether the specified input is empty.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsFirstLastName(System.String)">
+            <summary>
+            Determines whether [is first and last name] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsISBN(System.String)">
+            <summary>
+            Determines whether the specified input is an ISBN.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsNotEmpty(System.String)">
+            <summary>
+            Determines whether specified input is not empty.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsScientific(System.String)">
+            <summary>
+            Determines whether the specified input is scientific value.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsString(System.String)">
+            <summary>
+            Determines whether the specified input is a valid string value.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsUrl(System.String)">
+            <summary>
+            Determines whether the specified input is an URL.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsWebSafe(System.String)">
+            <summary>
+            Determines whether [is web safe] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is web safe] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsWhitespace(System.String)">
+            <summary>
+            Determines whether the specified input is whitespace.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is whitespace; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsWhitespace(System.Char)">
+            <summary>
+            Determines whether the specified character is whitespace.
+            </summary>
+            <param name="character">The character.</param>
+            <returns><c>true</c> if the specified character is whitespace; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ReplaceEllipsisWithPeriod(System.String)">
+            <summary>
+            Changes the trailing ellipsis in a string to a period.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">input</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.Char,System.StringSplitOptions)">
+            <summary>
+            Splits the string.
+            </summary>
+            <param name="input">The value.</param>
+            <param name="separator">The separator.</param>
+            <param name="options">The options.</param>
+            <returns>System.String[].</returns>
+            <exception cref="T:System.ArgumentException">value</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.String,System.StringSplitOptions)">
+            <summary>
+            Splits the string.
+            </summary>
+            <param name="input">The value.</param>
+            <param name="separator">The separator.</param>
+            <param name="options">The options.</param>
+            <returns>System.String[].</returns>
+            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:System.ArgumentException">separator</exception>
+            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:System.ArgumentException">separator</exception>
+            <exception cref="T:System.ArgumentException">value</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.Char,System.Int32,System.StringSplitOptions)">
+            <summary>
+            Splits the string.
+            </summary>
+            <param name="input">The value.</param>
+            <param name="separator">The separator.</param>
+            <param name="count">The count.</param>
+            <param name="options">The options.</param>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.String,System.Int32,System.StringSplitOptions)">
+            <summary>
+            Splits the string.
+            </summary>
+            <param name="input">The value.</param>
+            <param name="separator">The separator.</param>
+            <param name="count">The count.</param>
+            <param name="options">The options.</param>
+            <returns>System.String[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.SplitRemoveEmpty(System.String)">
+            <summary>
+            Splits the specified input using ',' and removes empty entries.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+            <exception cref="T:System.ArgumentException">input</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinal(System.String,System.String)">
+            <summary>
+            Starts the with ordinal.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="valueToCompare">The value to compare.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinalIgnoreCase(System.String,System.String)">
+            <summary>
+            Starts the with ordinal ignore case.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="valueToCompare">The value to compare.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.SubstringTrim(System.String,System.Int32,System.Int32)">
+            <summary>
+            Substrings the trim.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="startIndex">The start index.</param>
+            <param name="length">The length.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex - startIndex + length must be
+            less than or equal to the value.Length</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToBase64(System.String)">
+            <summary>
+            Converts string to Base64.
+            </summary>
+            <param name="value">The value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToTitleCase(System.String)">
+            <summary>
+            Converts to title case.
+            </summary>
+            <param name="input">The source.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentException">'source' cannot be null or empty - source</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)">
+            <summary>
+            Trims the beginning and end of a string.
+            </summary>
+            <param name="input">The input.</param>
+            <returns>Trimmed System.String.</returns>
+            <exception cref="T:System.ArgumentException">input</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.GetHash(System.String,dotNetTips.Spargine.Extensions.HashType)">
+            <summary>
+            Gets the hash.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="hash">The hash.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.TaskExtensions">
+            <summary>
+            Extension helper methods for <see cref="T:System.Threading.Tasks.Task"/>.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.ThreadExtensions">
+            <summary>
+            Class ThreadExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ThreadExtensions.TrySetPriority(System.Threading.Thread,System.Threading.ThreadPriority)">
+            <summary>
+            Tries the set priority.
+            </summary>
+            <param name="thread">The thread.</param>
+            <param name="priority">The priority.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">thread or logger</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">priority</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ThreadExtensions.WaitUntil(System.Threading.Thread,System.TimeSpan)">
+            <summary>
+            Waits for a certain amount of time. Does not use timer (no need to call Dispose).
+            </summary>
+            <param name="thread">The thread.</param>
+            <param name="interval">The wait interval.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ThreadExtensions.WaitUntil(System.Threading.Thread,System.TimeSpan,System.Int32)">
+            <summary>
+            Waits the until.
+            </summary>
+            <param name="thread">The thread.</param>
+            <param name="interval">The wait interval.</param>
+            <param name="waitIterations">The wait iterations.</param>
+            <exception cref="T:System.ArgumentNullException">thread</exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.TypeExtensions">
+            <summary>
+            Class TypeExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.DoesObjectImplementInterface(System.Object,System.String[])">
+            <summary>
+            Does the object implement  any of the interfaces.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="interfaceNames">The interface names.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllAbstractMethods(System.Type)">
+            <summary>
+            Gets the abstract methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllDeclaredFields(System.Type)">
+            <summary>
+            Gets the declared fields.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">type</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllDeclaredMethods(System.Type)">
+            <summary>
+            Gets declared methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllFields(System.Type)">
+            <summary>
+            Gets all fields.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllGenericMethods(System.Type)">
+            <summary>
+            Gets the generic methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllMethods(System.Type)">
+            <summary>
+            Gets all methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllProperties(System.Type)">
+            <summary>
+            Gets all properties.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllPublicMethods(System.Type)">
+            <summary>
+            Gets the public methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllStaticMethods(System.Type)">
+            <summary>
+            Gets the static methods.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Type)">
+            <summary>
+            Resolves the attribute.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="type">The type.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.MethodInfo)">
+            <summary>
+            Resolves the attribute.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="methodInfo">The method information.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.PropertyInfo)">
+            <summary>
+            Resolves the attribute.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="propertyInfo">The property information.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.FieldInfo)">
+            <summary>
+            Resolves the attribute.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="fieldInfo">The field information.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetFieldHash``1(System.Func{``0})">
+            <summary>
+            Gets the field hash.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="callback">The callback.</param>
+            <returns>Hash for the field as System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">callback</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetTypeMembersWithAttribute``1(System.Type)">
+            <summary>
+            Gets the type members with given attribute.
+            </summary>
+            <typeparam name="TAttribute">The type of the t attribute.</typeparam>
+            <param name="type">The type.</param>
+            <returns>System.ValueTuple&lt;System.String, TAttribute, System.Boolean, System.Boolean, Type&gt;[].</returns>
+            <exception cref="T:System.InvalidOperationException">Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.HasAttribute``1(System.Reflection.MethodInfo)">
+            <summary>
+            Determines whether the specified method information has attribute.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="methodInfo">The method information.</param>
+            <returns><c>true</c> if the specified method information has attribute; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.HasBaseClass(System.Type,System.Type)">
+            <summary>
+            Determines whether [has base class of] [the specified base class].
+            </summary>
+            <param name="type">The type.</param>
+            <param name="baseClass">The base class.</param>
+            <returns><c>true</c> if [has base class of] [the specified base class]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.HasParameterlessConstructor(System.Type)">
+            <summary>
+            Determines whether [has parameterless constructor] [the specified type].
+            </summary>
+            <param name="type">The type.</param>
+            <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">type</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.IsNullable(System.Type)">
+            <summary>
+            Determines whether the specified type is nullable.
+            </summary>
+            <param name="type">The type.</param>
+            <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.IsStatic(System.Reflection.PropertyInfo)">
+            <summary>
+            Determines whether the specified property is static.
+            </summary>
+            <param name="property">The property.</param>
+            <returns><c>true</c> if the specified property is static; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">property</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.Max``1(``0,``0)">
+            <summary>
+            Return maximum type. Works with value and reference types.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="obj1">The obj1.</param>
+            <param name="obj2">The obj2.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">obj2</exception>
+            <exception cref="T:System.ArgumentNullException">obj1 - Object 1 cannot be null. or obj2 - Object 1 cannot be null.</exception>
+            <remarks>Original code by: Jeremy Clark</remarks>
+        </member>
+        <member name="T:dotNetTips.Spargine.Extensions.WebClientExtensions">
+            <summary>
+            WebClient Extensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.WebClientExtensions.ConvertFrom``1(System.Net.WebClient,System.String)">
+            <summary>
+            Gets the json.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="client">The client.</param>
+            <param name="url">The URL.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">client</exception>
+            <exception cref="T:System.ArgumentException">URL cannot be empty or null. - url</exception>
+            <exception cref="T:System.ArgumentNullException">URL cannot be empty or null.</exception>
+            <exception cref="T:System.ArgumentException">URL cannot be empty or null.</exception>
+        </member>
+    </members>
+</doc>

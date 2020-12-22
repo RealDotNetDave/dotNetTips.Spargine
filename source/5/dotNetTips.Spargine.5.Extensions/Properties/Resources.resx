@@ -235,4 +235,10 @@
   <data name="InvalidFileName" xml:space="preserve">
     <value>Invalid file name.</value>
   </data>
+  <data name="TrueLowerCase" xml:space="preserve">
+    <value>true</value>
+  </data>
+  <data name="FalseLowerCase" xml:space="preserve">
+    <value>false</value>
+  </data>
 </root>

@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-07-2020
+// Last Modified On : 12-21-2020
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -32,6 +32,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="interfaceNames">The interface names.</param>
         /// <returns>IEnumerable&lt;System.String&gt;.</returns>
+        [Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 0, Status = Status.Available)]
         public static IEnumerable<string> DoesObjectImplementInterface(object input, params string[] interfaceNames)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(input != null, nameof(input));
@@ -58,8 +59,11 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+        [Information(nameof(GetAllAbstractMethods), UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<MethodInfo> GetAllAbstractMethods(this Type type)
-        { return type.GetRuntimeMethods().Where(m => m.IsAbstract); }
+        {
+            return type.GetRuntimeMethods().Where(m => m.IsAbstract);
+        }
 
         /// <summary>
         /// Gets the declared fields.
@@ -120,6 +124,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
+        [Information(nameof(GetAllFields), UnitTestCoverage = 0, Status = Status.Available)]
         public static IEnumerable<FieldInfo> GetAllFields(this Type type)
         {
             var typeInfo = type.GetTypeInfo();
@@ -140,7 +145,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<MethodInfo> GetAllGenericMethods(this Type type)
         {
             return type.GetRuntimeMethods().Where(m => m.IsGenericMethod);
@@ -151,7 +156,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<MethodInfo> GetAllMethods(this Type type)
         {
             var typeInfo = type.GetTypeInfo();
@@ -172,7 +177,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<PropertyInfo> GetAllProperties(this Type type)
         {
             var typeInfo = type.GetTypeInfo();
@@ -193,7 +198,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<MethodInfo> GetAllPublicMethods(this Type type)
         {
             return type.GetRuntimeMethods().Where(m => m.IsPublic);
@@ -216,7 +221,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="type">The type.</param>
         /// <returns>T.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static T GetAttribute<T>(this Type type)
             where T : Attribute
         {
@@ -229,7 +234,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="methodInfo">The method information.</param>
         /// <returns>T.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static T GetAttribute<T>(this MethodInfo methodInfo)
             where T : Attribute
         {
@@ -242,7 +247,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="propertyInfo">The property information.</param>
         /// <returns>T.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static T GetAttribute<T>(this PropertyInfo propertyInfo)
             where T : Attribute
         {
@@ -255,7 +260,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="fieldInfo">The field information.</param>
         /// <returns>T.</returns>
-        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static T GetAttribute<T>(this FieldInfo fieldInfo)
             where T : Attribute
         {
@@ -269,6 +274,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="callback">The callback.</param>
         /// <returns>Hash for the field as System.String.</returns>
         /// <exception cref="ArgumentNullException">callback</exception>
+        [Information(nameof(GetFieldHash), UnitTestCoverage = 0, Status = Status.Available)]
         public static string GetFieldHash<T>(this Func<T> callback)
         {
             if (callback is null)
@@ -293,8 +299,8 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="TAttribute">The type of the t attribute.</typeparam>
         /// <param name="type">The type.</param>
         /// <returns>System.ValueTuple&lt;System.String, TAttribute, System.Boolean, System.Boolean, Type&gt;[].</returns>
-        /// <exception cref="InvalidOperationException">Member must be public if it has the attribute applied to it</exception>
-        [Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        /// <exception cref="InvalidOperationException">Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it</exception>
+        [Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
         public static (string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type ParameterType)[] GetTypeMembersWithAttribute<TAttribute>(this Type type)
             where TAttribute : Attribute
         {
@@ -368,6 +374,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="type">The type.</param>
         /// <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentNullException">type</exception>
+        [Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool HasParameterlessConstructor(this Type type)
         {
             if (type is null)
@@ -410,13 +417,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="obj1">The obj1.</param>
         /// <param name="obj2">The obj2.</param>
         /// <returns>T.</returns>
-        /// <exception cref="ArgumentNullException">
-        /// obj1 - Object 1 cannot be null. or obj2 - Object 1 cannot be null.
-        /// </exception>
-        /// <exception cref="System.ArgumentNullException">
-        /// obj1 - Object 1 cannot be null. or obj2 - Object 1 cannot be null.
-        /// </exception>
+        /// <exception cref="ArgumentNullException">obj2</exception>
+        /// <exception cref="System.ArgumentNullException">obj1 - Object 1 cannot be null. or obj2 - Object 1 cannot be null.</exception>
         /// <remarks>Original code by: Jeremy Clark</remarks>
+        [Information(nameof(Max), UnitTestCoverage = 0, Status = Status.Available)]
         public static T Max<T>(this T obj1, T obj2)
             where T : IComparable
         {

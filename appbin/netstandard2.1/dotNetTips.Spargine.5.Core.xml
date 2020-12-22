@@ -1,0 +1,2766 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotNetTips.Spargine.5.Core</name>
+    </assembly>
+    <members>
+        <member name="T:dotNetTips.Spargine.Core.App">
+            <summary>
+            Application information and helper methods.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.App._tempAspFiles">
+            <summary>
+            The temporary ASP files location.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.App._appInfo">
+            <summary>
+            The application information.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.AppInfo">
+            <summary>
+            Gets the assembly information.
+            </summary>
+            <value>The assembly information.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.CurrentCulture">
+            <summary>
+            Gets the culture.
+            </summary>
+            <value>The culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.CurrentUICulture">
+            <summary>
+            Gets the UI culture.
+            </summary>
+            <value>The UI culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.FrameworkDescription">
+            <summary>
+            Gets a string that indicates the name of the .NET installation on which an app is running.
+            </summary>
+            <value>The framework description.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.InstalledUICulture">
+            <summary>
+            Gets the installed UI culture.
+            </summary>
+            <value>The installed UI culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.OSArchitecture">
+            <summary>
+            Gets the platform architecture on which the current app is running.
+            </summary>
+            <value>The operating system platform.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.OSDescription">
+            <summary>
+            Gets a string that describes the operating system on which the app is running.
+            </summary>
+            <value>The operating system description.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.ProcessArchitecture">
+            <summary>
+            Gets the process architecture of the currently running app.
+            </summary>
+            <value>The process architecture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.StackTrace">
+            <summary>
+            Gets the stack trace.
+            </summary>
+            <value>The stack trace.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.App.WorkingSet">
+            <summary>
+            Gets the working set.
+            </summary>
+            <value>The working set.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.ChangeCulture(System.String)">
+            <summary>
+            Changes the culture.
+            </summary>
+            <param name="cultureName">Name of the culture.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.ChangeUICulture(System.String)">
+            <summary>
+            Changes the UI culture.
+            </summary>
+            <param name="cultureName">Name of the culture.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.ExecutingFolder">
+            <summary>
+            Returns the folder path for the entry assembly.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.GetEnvironmentVariables">
+            <summary>
+            Gets the environment variables.
+            </summary>
+            <returns>IImmutableDictionary&lt;System.String, System.String&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.IsProcessRunning(System.String)">
+            <summary>
+            Determines whether [is application already running] [the specified process name].
+            </summary>
+            <param name="processName">Name of the process.</param>
+            <returns><c>true</c> if [is application already running] [the specified process name]; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">processName - Process name is required.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.IsRunning">
+            <summary>
+            Check to see if the current app is already running.
+            </summary>
+            <returns><c>true</c> if app is not running, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.IsRunningFromAspNet">
+            <summary>
+            Checks to see if the current application is ASP.NET.
+            </summary>
+            <returns>True if running ASP.NET.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.IsUserAdministrator">
+            <summary>
+            Determines whether user is administrator.
+            </summary>
+            <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.PlatformNotSupportedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.Kill">
+            <summary>
+            Kills the current process.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.KillProcess(System.String)">
+            <summary>
+            Kills the process.
+            </summary>
+            <param name="processName">Name of the process.</param>
+            <exception cref="T:System.ArgumentNullException">Process name is nothing or empty.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.ReferencedAssemblies">
+            <summary>
+            Loads a list of the running assembly referenced assemblies.
+            </summary>
+            <returns>IEnumerable(Of System.String).</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.RunAsAdministrator">
+            <summary>
+            Restarts an app as administrator.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.App.InitAppInfo">
+            <summary>
+            Initializes the application information.
+            </summary>
+            <returns>AppInfo.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.AppInfo">
+            <summary>
+            Class Info.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Company">
+            <summary>
+            Gets the company.
+            </summary>
+            <value>The company.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Configuration">
+            <summary>
+            Gets the configuration.
+            </summary>
+            <value>The configuration.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Copyright">
+            <summary>
+            Gets the copyright.
+            </summary>
+            <value>The copyright.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+            <value>The culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Description">
+            <summary>
+            Gets the description.
+            </summary>
+            <value>The description.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.FileVersion">
+            <summary>
+            Gets the file version.
+            </summary>
+            <value>The file version.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Product">
+            <summary>
+            Gets the assembly product.
+            </summary>
+            <value>The assembly product.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Title">
+            <summary>
+            Gets the assembly title.
+            </summary>
+            <value>The assembly title.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.AppInfo.Version">
+            <summary>
+            Gets the assembly version.
+            </summary>
+            <value>The assembly version.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.AppInfo.NameAndVersion">
+            <summary>
+            Names the application name and version.
+            </summary>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ArgumentInvalidException">
+            <summary>
+            Class ArgumentIsInvalidException.
+            </summary>
+            <seealso cref="T:System.ArgumentException" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class that accepts a message an inner exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="paramName">The name of the parameter that caused the current exception.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="paramName">The name of the parameter that caused the current exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException" /> parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentInvalidException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></see> class with serialized data.</summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">
+            <summary>
+            Class ArgumentIsReadOnlyException.
+            Implements the <see cref="T:System.ArgumentException" />
+            </summary>
+            <seealso cref="T:System.ArgumentException" />
+            <seealso cref="T:System.ArgumentException" />
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class.
+            </summary>
+            <param name="paramName">Name of the parameter.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in
+            Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="paramName">The name of the parameter that caused the current exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the <paramref name="innerException" /> parameter is not a null reference, the current exception is raised in a <see langword="catch" /> block that handles the inner exception.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ArgumentReadOnlyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException"></see> class with serialized data.</summary>
+            <param name="info">The object that holds the serialized object data.</param>
+            <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Collections.Collection`1">
+            <summary>
+            Collection with added features.
+            Implements the <see cref="T:System.Collections.Generic.List`1" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:System.Collections.Generic.List`1" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Core.Collections.Collection`1" /> class from being created.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Collections.Collection`1" /> class.
+            </summary>
+            <param name="capacity">The number of elements that the new list can initially store.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.Create">
+            <summary>
+            Creates this instance.
+            </summary>
+            <returns>Collection&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.Create(System.Int32)">
+            <summary>
+            Creates collection with the specified capacity.
+            </summary>
+            <param name="capacity">The capacity.</param>
+            <returns>Collection&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.Create(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Creates the specified items.
+            </summary>
+            <param name="items">The items.</param>
+            <returns>Collection&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.Create(System.Collections.Generic.IEnumerable{`0},dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Creates the collection with the specified items.
+            </summary>
+            <param name="items">The items.</param>
+            <param name="ensureUnique">if set to <c>true</c> [ensure unique].</param>
+            <returns>Collection&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Items is null or has no items.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.AddFirst(`0)">
+            <summary>
+            Adds the first.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.AddIfNotExists(`0)">
+            <summary>
+            Adds if not exists.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Collections.Collection`1.AddLast(`0)">
+            <summary>
+            Adds the last.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ComputerInfo">
+            <summary>
+            Computer Information.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.ComputerCulture">
+            <summary>
+            Gets the computer culture.
+            </summary>
+            <value>The computer culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.ComputerUICulture">
+            <summary>
+            Gets the computer UI culture.
+            </summary>
+            <value>The computer UI culture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.CurrentManagedTreadId">
+            <summary>
+            Gets the current managed tread identifier.
+            </summary>
+            <value>The current managed tread identifier.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.CurrentStackTrace">
+            <summary>
+            Gets the current stack trace information.
+            </summary>
+            <value>The current stack trace.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.CurrentSystemTickCount">
+            <summary>
+            Gets the current system tick count.
+            </summary>
+            <value>The current system tick count.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.CurrentWorkingDirectory">
+            <summary>
+            Gets the current working directory.
+            </summary>
+            <value>The current directory.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.FrameworkDescription">
+            <summary>
+            Gets the framework description.
+            </summary>
+            <value>The framework description.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.FrameworkVersion">
+            <summary>
+            Gets the framework version.
+            </summary>
+            <value>The framework version.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.HasShutdownStarted">
+            <summary>
+            Gets a value indicating whether this instance has shutdown started.
+            </summary>
+            <value><c>true</c> if this instance has shutdown started; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.IPAddress">
+            <summary>
+            Gets the ip addresses.
+            </summary>
+            <value>The ip address.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.Is64BitOperatingSystem">
+            <summary>
+            Gets a value indicating whether [is64 bit operating system].
+            </summary>
+            <value><c>true</c> if [is64 bit operating system]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.Is64BitProcess">
+            <summary>
+            Gets a value indicating whether [is64 bit process].
+            </summary>
+            <value><c>true</c> if [is64 bit process]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.IsUserInteractive">
+            <summary>
+            Gets a value indicating whether the user is interactive.
+            </summary>
+            <value><c>true</c> if this instance is user interactive; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.LogicalDrives">
+            <summary>
+            Gets the logical drives.
+            </summary>
+            <value>The logical drives.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.MachineName">
+            <summary>
+            Gets the name of the machine.
+            </summary>
+            <value>The name of the machine.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.OSArchitecture">
+            <summary>
+            Gets the os architecture.
+            </summary>
+            <value>The os architecture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.OSDescription">
+            <summary>
+            Gets the os version.
+            </summary>
+            <value>The os version.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.OsMemoryPageSize">
+            <summary>
+            Gets the size of the os memory page.
+            </summary>
+            <value>The size of the os memory page.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.PhysicalMemoryInUse">
+            <summary>
+            Gets the physical memory in use.
+            </summary>
+            <value>The physical memory in use.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.ProcessArchitecture">
+            <summary>
+            Gets the process architecture.
+            </summary>
+            <value>The process architecture.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.ProcessorCount">
+            <summary>
+            Gets the processor count.
+            </summary>
+            <value>The processor count.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.SystemDirectory">
+            <summary>
+            Gets the system directory.
+            </summary>
+            <value>The system directory.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.UserDomainName">
+            <summary>
+            Gets the name of the user domain.
+            </summary>
+            <value>The name of the user domain.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.ComputerInfo.UserName">
+            <summary>
+            Gets the name of the user.
+            </summary>
+            <value>The name of the user.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ControlChars">
+            <summary>
+            Class ControlChars.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.At">
+            <summary>
+            @ Symbol.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Back">
+            <summary>
+            Back Space.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Backslash">
+            <summary>
+            Back Slash.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Colon">
+            <summary>
+            Colon.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Comma">
+            <summary>
+            Comma.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.CR">
+            <summary>
+            Carriage Return.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.CRLF">
+            <summary>
+            Carriage Return &amp; Line Feed.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Dot">
+            <summary>
+            Dot (period).
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.DoubleQuote">
+            <summary>
+            Double quote.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.EndAngleBracket">
+            <summary>
+            The end angle bracket.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.EndComment">
+            <summary>
+            ).
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.EndSquareBracket">
+            <summary>
+            [.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.FormFeed">
+            <summary>
+            Form feed.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.ForwardSlash">
+            <summary>
+            Forward slash.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.LF">
+            <summary>
+            The Line Feed.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.NewLine">
+            <summary>
+            New line.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.NullChar">
+            <summary>
+            Null character.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Quote">
+            <summary>
+            Quote.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.SingleQuote">
+            <summary>
+            Single quote.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Space">
+            <summary>
+            Space.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.StartAngleBracket">
+            <summary>
+            Left angle bracket.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.StartComment">
+            <summary>
+            (.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.StartSquareBracket">
+            <summary>
+            [.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Tab">
+            <summary>
+            Tab.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.Underscore">
+            <summary>
+            Underscore.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.VerticalTab">
+            <summary>
+            Vertical tab.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Devices.Clock">
+            <summary>
+            Clock Information.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Devices.Clock.DaysInCurrentMonth">
+            <summary>
+            Gets the days in the current month (local time).
+            </summary>
+            <value>The days in month.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Devices.Clock.DaysInCurrentUtcMonth">
+            <summary>
+            Gets the days in current UTC month.
+            </summary>
+            <value>The days in current UTC month.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Devices.Clock.LocalTime">
+            <summary>
+            Gets the local time.
+            </summary>
+            <value>The local time.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Devices.Clock.TickCount">
+            <summary>
+            Gets the tick count.
+            </summary>
+            <value>The tick count.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Devices.Clock.UtcTime">
+            <summary>
+            Gets the UTC time.
+            </summary>
+            <value>The UTC time.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Diagnostics.PerformanceStopwatch">
+            <summary>
+            Performance Stopwatch.
+            </summary>
+            <seealso cref="T:System.Diagnostics.Stopwatch" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Diagnostics.PerformanceStopwatch.StartNew">
+            <summary>
+            Starts the new.
+            </summary>
+            <returns>PerformanceStopwatch.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Diagnostics.PerformanceStopwatch.StopReset">
+            <summary>
+            Stops the reset.
+            </summary>
+            <returns>TimeSpan.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Diagnostics.PerformanceStopwatch.StopRestart">
+            <summary>
+            Stops the restart.
+            </summary>
+            <returns>TimeSpan.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.DirectoryNotFoundException">
+            <summary>
+            Class DirectoryNotFoundException.
+            Implements the <see cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            Implements the <see cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            <seealso cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></see> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></see> class with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+            <param name="directory">The directory.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The inner exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></see> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="directory">The directory.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.String,System.Exception,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException" /> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The Exception.</param>
+            <param name="userMessage">The user message.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.DirectoryNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></see> class with serialized data.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.ArgumentNullException">The <paramref name="info">info</paramref> parameter is null.</exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0).</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.DirectoryNotFoundException.Directory">
+            <summary>
+            Gets the directory.
+            </summary>
+            <value>The directory.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Enumeration">
+            <summary>
+            Enumeration class.
+            Implements the <see cref="T:System.IComparable" />
+            </summary>
+            <remarks>
+            Original code by: Jimmy Bogard
+            </remarks>
+            <seealso cref="T:System.IComparable" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Enumeration._displayName">
+            <summary>
+            The display name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Enumeration._value">
+            <summary>
+            The value
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration"/> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration"/> class.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="displayName">The display name.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Enumeration.DisplayName">
+            <summary>
+            Gets the display name.
+            </summary>
+            <value>The display name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Enumeration.Value">
+            <summary>
+            Gets the value.
+            </summary>
+            <value>The value.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.AbsoluteDifference(dotNetTips.Spargine.Core.Enumeration,dotNetTips.Spargine.Core.Enumeration)">
+            <summary>
+            Absolutes the difference.
+            </summary>
+            <param name="firstValue">The first value.</param>
+            <param name="secondValue">The second value.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.FromDisplayName``1(System.String)">
+            <summary>
+            Froms the display name.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="displayName">The display name.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.FromValue``1(System.Int32)">
+            <summary>
+            Froms the value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.GetAll``1">
+            <summary>
+            Gets all.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.CompareTo(System.Object)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.parse``2(``1,System.String,System.Func{``0,System.Boolean})">
+            <summary>
+            Parses the specified value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="K"></typeparam>
+            <param name="value">The value.</param>
+            <param name="description">The description.</param>
+            <param name="predicate">The predicate.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.ApplicationException"></exception>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.EnumHelper">
+            <summary>
+            EnumHelper.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.EnumHelper.GetEnumValues``1(System.Boolean,System.Boolean)">
+            <summary>
+            Gets the enum values.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="fixNames">if set to <c>true</c> [fix names].</param>
+            <param name="useXmlNames">if set to <c>true</c> [use XML names].</param>
+            <returns>List&lt;EnumValue&gt;.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.EnumHelper.AdjustCamelCase(System.String)">
+            <summary>
+            Adjusts the camel case.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.EnumHelper.AdjustName(System.String)">
+            <summary>
+            Adjusts the name.
+            </summary>
+            <param name="name">The name.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.EnumHelper.GetEnumNames(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Gets the enum names.
+            </summary>
+            <param name="t">The t.</param>
+            <param name="fixNames">if set to <c>true</c> [fix names].</param>
+            <param name="useXml">if set to <c>true</c> [use XML].</param>
+            <returns>List&lt;System.String&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.EnumValue">
+            <summary>
+            Struct EnumValue.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.EnumValue.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.EnumValue" /> struct.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="name">The name.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.EnumValue.Name">
+            <summary>
+            Gets the enum name.
+            </summary>
+            <value>The Enum name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.EnumValue.Value">
+            <summary>
+            Gets the enum value.
+            </summary>
+            <value>The Enum value.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.EnvironmentKey">
+            <summary>
+            Enum EnvironmentKeys
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ALLUSERSPROFILE">
+            <summary>
+            The all users profile
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.APPDATA">
+            <summary>
+            The app data
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.CLIENTNAME">
+            <summary>
+            The client name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.COMPLUS_NoGuiFromShim">
+            <summary>
+            The com plus no GUI from shim for side-by-side execution
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.CommonProgramFiles">
+            <summary>
+            The common program files
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.CommonProgramW6432">
+            <summary>
+            The common program W6432
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.COMPUTERNAME">
+            <summary>
+            The computer name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ComSpec">
+            <summary>
+            The COM spec
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.DriverData">
+            <summary>
+            The driver data
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO">
+            <summary>
+            The enable xaml diagnostics source information
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.FPS_BROWSER_APP_PROFILE_STRING">
+            <summary>
+            The FPS browser application profile string
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.FPS_BROWSER_USER_PROFILE_STRING">
+            <summary>
+            The FPS browser user profile string
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.FSHARPINSTALLDIR">
+            <summary>
+            The fsharp install dir
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.HOMEDRIVE">
+            <summary>
+            The home drive
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.HOMEPATH">
+            <summary>
+            The home path
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.IIS_BIN">
+            <summary>
+            The IIS bin
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.IIS_DRIVE">
+            <summary>
+            The IIS drive
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.IIS_SITES_HOME">
+            <summary>
+            The IIS sites home
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.IIS_USER_HOME">
+            <summary>
+            The IIS user home
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.LOCALAPPDATA">
+            <summary>
+            The local appdata
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.LOGONSERVER">
+            <summary>
+            The logon server
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.MSBuildLoadMicrosoftTargetsReadOnly">
+            <summary>
+            The ms build load microsoft targets read only
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.MSMPI_BIN">
+            <summary>
+            The msmpi bin
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.NUMBER_OF_PROCESSORS">
+            <summary>
+            The number of processors
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.OneDrive">
+            <summary>
+            The path to OneDrive
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.OneDriveCommercial">
+            <summary>
+            The path to OneDrive Business
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.OneDriveConsumer">
+            <summary>
+            The path to OneDrive Consumer
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.OS">
+            <summary>
+            The operating system name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.Path">
+            <summary>
+            The path
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PATHEXT">
+            <summary>
+            The path ext
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PkgDefApplicationConfigFile">
+            <summary>
+            The PKG definition application configuration file
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PROCESSOR_ARCHITECTURE">
+            <summary>
+            The app data
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PROCESSOR_IDENTIFIER">
+            <summary>
+            The processor identifier
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PROCESSOR_LEVEL">
+            <summary>
+            The processor level
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PROCESSOR_REVISION">
+            <summary>
+            The processor revision
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ProgramData">
+            <summary>
+            The client name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ProgramFiles">
+            <summary>
+            The program files
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ProgramW6432">
+            <summary>
+            The program W6432
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PSModulePath">
+            <summary>
+            The ps module path
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.PUBLIC">
+            <summary>
+            The common program files
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ServiceHubLogSessionKey">
+            <summary>
+            The service hub log session key
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.SESSIONNAME">
+            <summary>
+            The session name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.SystemDrive">
+            <summary>
+            The system drive
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.SystemRoot">
+            <summary>
+            The system root
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.TEMP">
+            <summary>
+            The common program W6432
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.ThreadedWaitDialogDpiContext">
+            <summary>
+            The threaded wait dialog dpi context
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.TMP">
+            <summary>
+            The temporary
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.USERDOMAIN">
+            <summary>
+            The user domain
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.USERDOMAIN_ROAMINGPROFILE">
+            <summary>
+            The user domain roaming profile
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.USERNAME">
+            <summary>
+            The computer name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.USERPROFILE">
+            <summary>
+            The user profile
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VisualStudioDir">
+            <summary>
+            The visual studio dir
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VisualStudioEdition">
+            <summary>
+            The visual studio edition
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VisualStudioVersion">
+            <summary>
+            The COM spec
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VSAPPIDDIR">
+            <summary>
+            The vs app id dir
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VSAPPIDNAME">
+            <summary>
+            The vs app id name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VSLANG">
+            <summary>
+            The vs lang
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VSLOGGER_UNIQUEID">
+            <summary>
+            The driver data
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VSSKUEDITION">
+            <summary>
+            The vs sku edition
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.VTUNE_AMPLIFIER_2019_DIR">
+            <summary>
+            The vtune amplifier 2019 dir
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.EnvironmentKey.windir">
+            <summary>
+            The Windows directory
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ExceptionThrower">
+            <summary>
+            Exception Thrower.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentException(System.String,System.String)">
+            <summary>
+            Throws the ArgumentException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentException(System.String,System.Exception)">
+            <summary>
+            Throws the ArgumentException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentInvalidException(System.String,System.String)">
+            <summary>
+            Throws the ArgumentInvalidException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentInvalidException(System.String,System.Exception)">
+            <summary>
+            Throws the ArgumentInvalidException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)">
+            <summary>
+            Throws the argument null exception.
+            </summary>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String,System.String)">
+            <summary>
+            Throws the ArgumentNullException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String,System.Exception)">
+            <summary>
+            Throws the ArgumentNullException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String)">
+            <summary>
+            Throws the argument out of range exception.
+            </summary>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String,System.String)">
+            <summary>
+            Throws the argument out of range exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String,System.Exception)">
+            <summary>
+            Throws the argument out of range exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentReadOnlyCollectionException(System.String)">
+            <summary>
+            Throws the ArgumentReadOnlyException.
+            </summary>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowDirectoryNotFoundException(System.String,System.String)">
+            <summary>
+            Throws the ArgumentInvalidException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="directory">The directory.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowDirectoryNotFoundException(System.String,System.Exception)">
+            <summary>
+            Throws the ArgumentInvalidException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowFileNotFoundException(System.String,System.Exception)">
+            <summary>
+            Throws the file not found exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowFileNotFoundException(System.String,System.String)">
+            <summary>
+            Throws the file not found exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="fileName">Name of the file.</param>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowFileNotFoundException(System.String,System.String,System.Exception)">
+            <summary>
+            Throws the file not found exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="fileName">Name of the file.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidCastException(System.String,System.String)">
+            <summary>
+            Throws the invalid cast exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidCastException(System.String,System.Exception)">
+            <summary>
+            Throws the invalid cast exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidEnumTypeException(System.String)">
+            <summary>
+            Throws the invalid enum type exception.
+            </summary>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidEnumTypeException(System.String,System.Exception)">
+            <summary>
+            Throws the invalid enum type exception.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidOperationException(System.String)">
+            <summary>
+            Throws a InvalidOperationException.
+            </summary>
+            <param name="message">The message.</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidOperationException(System.String,System.Exception)">
+            <summary>
+            Throws a InvalidOperationException.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String,System.String)">
+            <summary>
+            Defaults if null.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="defaultValue">The default value.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ExecutionHelper">
+            <summary>
+            Helper class for executing methods.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ExecutionHelper.ProgressiveRetry(System.Action,System.Byte,System.Int32)">
+            <summary>
+            Progressive retry for a function call.
+            </summary>
+            <param name="operation">The operation to perform.</param>
+            <param name="retryCount">The retry count (default 3).</param>
+            <param name="retryWaitMilliseconds">The retry wait milliseconds (default 100).</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Extensions">
+            <summary>
+            Extension methods.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.AddFirst``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            Adds the item as the first item in array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">list or item</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0)">
+            <summary>
+            Adds if not exists.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The value.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.ArgumentNullException">list - List cannot be null. or value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">list - List cannot be read-only.</exception>
+            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.AddLast``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            Adds item the last item in the array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="item">The item.</param>
+            <returns>T[].</returns>
+            <exception cref="T:System.ArgumentNullException">list or item</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.As``1(System.Object)">
+            <summary>
+            As's the specified value.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="value">The value.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.Count(System.Collections.IEnumerable)">
+            <summary>
+            Counts the specified list.
+            </summary>
+            <param name="list">The list.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentNullException">list</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.FromHierarchy``1(``0,System.Func{``0,``0})">
+            <summary>
+            Hierarchy.
+            </summary>
+            <typeparam name="TSource">The type of the t source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="nextItem">The next item.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.FromHierarchy``1(``0,System.Func{``0,``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Hierarchy.
+            </summary>
+            <typeparam name="TSource">The type of the t source.</typeparam>
+            <param name="source">The source.</param>
+            <param name="nextItem">The next item.</param>
+            <param name="canContinue">The can continue.</param>
+            <returns>IEnumerable&lt;TSource&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">canContinue</exception>
+            <exception cref="T:System.ArgumentNullException">nextItem</exception>
+            <exception cref="T:System.ArgumentNullException">canContinue or nextItem</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.GetAllMessages(System.Exception)">
+            <summary>
+            Gets all messages.
+            </summary>
+            <param name="exception">The exception.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.GetAllMessages(System.Exception,System.Char)">
+            <summary>
+            Gets all Exception messages.
+            </summary>
+            <param name="exception">The exception.</param>
+            <param name="separator">The separator.</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">exception</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.GetAllProperties(System.Type)">
+            <summary>
+            Gets all properties.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.HasValue(System.String)">
+            <summary>
+            Determines whether the specified input has value.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.HasValue(System.String,System.Int32)">
+            <summary>
+            Determines whether the specified length has value.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="length">Checks for specific length of the string.</param>
+            <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.HasValue(System.String,System.String)">
+            <summary>
+            Determines whether the specified value has value.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="value">Checks for a specific value.</param>
+            <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentException">value</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.HasValue(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Determines whether the specified expression has value based on a regular expression.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="expression">The expression.</param>
+            <param name="options">The options.</param>
+            <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.HasValue(System.String,System.Int32,System.Int32)">
+            <summary>
+            Determines whether the strings is within the specified minimum and maximum length.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="minLength">The minimum length.</param>
+            <param name="maxLength">The maximum length.</param>
+            <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">minLength - Minimum length must be greater than 0.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsEmailAddress(System.String)">
+            <summary>
+            Determines whether [is email address] [the specified input].
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsInRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Indicate whether the number falls in the specified range.
+            </summary>
+            <param name="value">Number to process</param>
+            <param name="lower">Lower bound</param>
+            <param name="upper">Upper bound</param>
+            <returns>True/False</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsInRange(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsInRange(System.Double,System.Double,System.Double)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsInRange(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Determines whether [is in range] [the specified lower].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.IsUrl(System.String)">
+            <summary>
+            Determines whether the specified input is an URL.
+            </summary>
+            <param name="input">The input.</param>
+            <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.ToDelimitedString(System.Collections.IDictionary,System.Char)">
+            <summary>
+            Converts IDictionary to delimited string.
+            </summary>
+            <param name="list">The list.</param>
+            <param name="delimiter">The delimiter.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.ToDelimitedString``1(System.Collections.Generic.IEnumerable{``0},System.Char)">
+            <summary>
+            Convert a list to a delimited string.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="list">The list.</param>
+            <param name="delimiter">The delimiter (default is comma if not supplied).</param>
+            <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+            <exception cref="T:System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Extensions.ToImmutable``2(System.Collections.Generic.Dictionary{``0,``1})">
+            <summary>
+            To the immutable dictionary.
+            </summary>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <typeparam name="TValue">The type of the t value.</typeparam>
+            <param name="values">The values.</param>
+            <returns>IImmutableDictionary&lt;TKey, TValue&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ICloneable`1">
+            <summary>
+            ICloneable Interface.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ICloneable`1.Cone">
+            <summary>
+            Cones this instance.
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.IEventInformation">
+            <summary>
+            Interface IEventInformation
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.BenchMarkStatus">
+            <summary>
+            BenchMarkStatus attribute to add more meta data for types.
+            </summary>
+            <remarks>For use in InformationAttribute.</remarks>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.BenchMarkStatus.None">
+            <summary>
+            No benchmark.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.BenchMarkStatus.NotRequired">
+            <summary>
+            Benchmark is not required
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.BenchMarkStatus.WIP">
+            <summary>
+            Benchmark work is in progress.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.BenchMarkStatus.Completed">
+            <summary>
+            Benchmarks done.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Status">
+            <summary>
+            Information status.
+            </summary>
+            <remarks>For use in InformationAttribute.</remarks>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Status.NotSet">
+            <summary>
+            The not set
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Status.New">
+            <summary>
+            New method or class.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Status.Available">
+            <summary>
+            Method or class is available for use (from other assemblies).
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Status.NotUsed">
+            <summary>
+            Method or class not in use.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.InformationAttribute">
+            <summary>
+            Class InformationAttribute. This class cannot be inherited.
+            Implements the <see cref="T:System.Attribute" />
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.InformationAttribute._unitTestCoverage">
+            <summary>
+            The unit test coverage
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InformationAttribute" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InformationAttribute"/> class.
+            </summary>
+            <param name="description">The description.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InformationAttribute" /> class.
+            </summary>
+            <param name="description">The message.</param>
+            <param name="author">The author.</param>
+            <param name="createdOn">The created on.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InformationAttribute" /> class.
+            </summary>
+            <param name="description">The message.</param>
+            <param name="author">The author.</param>
+            <param name="createdOn">The created on.</param>
+            <param name="modifiedOn">The modified on.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.Author">
+            <summary>
+            Gets the author.
+            </summary>
+            <value>The author.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.BenchMarkStatus">
+            <summary>
+            Gets or sets the benchmark status.
+            </summary>
+            <value>The bench mark status.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.CreatedOn">
+            <summary>
+            Gets the created on date.
+            </summary>
+            <value>The created on.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.Description">
+            <summary>
+            Gets the description of the type, method or event.
+            </summary>
+            <value>The message.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.ModifiedBy">
+            <summary>
+            Gets or sets the modified by.
+            </summary>
+            <value>The modified by.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.ModifiedOn">
+            <summary>
+            Gets the modified on date.
+            </summary>
+            <value>The modified on.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.Status">
+            <summary>
+            Gets or sets the status.
+            </summary>
+            <value>The status.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.InformationAttribute.UnitTestCoverage">
+            <summary>
+            Gets or sets the unit test coverage.
+            </summary>
+            <value>The unit test coverage.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">value - Unit test coverage must be in the range of 0 - 100.</exception>
+            <remarks>Value must be between 0 - 100</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.IsInRange(System.Double,System.Double,System.Double)">
+            <summary>
+            Determines whether [is in range] [the specified value].
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified value]; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.InvalidEnumTypeException">
+            <summary>
+            InvalidEnumTypeException.
+            Implements the <see cref="T:System.Exception" />
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InvalidEnumTypeException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"/> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InvalidEnumTypeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InvalidEnumTypeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.InvalidEnumTypeException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.InvalidEnumTypeException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.ISingleton`1">
+            <summary>
+            Interface ISingleton
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.ISingleton`1.Instance">
+            <summary>
+            Returns instance for the object.
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.LoggableException">
+            <summary>
+            Class LoggableException.
+            </summary>
+            <seealso cref="T:System.Exception" />
+            <seealso cref="T:System.Xml.Serialization.IXmlSerializable" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.LoggableException._hasBeenLogged">
+            <summary>
+            The exception has been logged
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.LoggableException" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.LoggableException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.LoggableException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.#ctor(System.String,System.Exception,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.LoggableException" /> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="ex">The ex.</param>
+            <param name="userMessage">The user message.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.LoggableException" /> class.
+            </summary>
+            <param name="serializationInfo">The serialization information.</param>
+            <param name="streamingContext">The streaming context.</param>
+            <exception cref="T:System.NotImplementedException"></exception>
+            <exception cref="T:System.NotImplementedException">The exception.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.LoggableException.HasBeenLogged">
+            <summary>
+            Gets or sets a value indicating whether this instance has been logged.
+            </summary>
+            <value><c>true</c> if this instance has been logged; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.LoggableException.UserMessage">
+            <summary>
+            Gets or sets the user message.
+            </summary>
+            <value>The user message.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            When overridden in a derived class, sets the <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> with information about the exception.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.Messages">
+            <summary>
+            Gets Exception message, including inner Exceptions.
+            </summary>
+            <returns>System.String[].</returns>
+            <value>The messages.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.LoggableException.ReflectException(System.Exception)">
+            <summary>
+            Return's a list of properties and their value.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Logging.LoggingHelper">
+            <summary>
+            Logging Helper.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Logging.LoggingHelper.RetrieveAllExceptionMessages(System.Exception)">
+            <summary>
+            Retrieves all exception messages.
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Logging.LoggingHelper.RetrieveAllExceptions(System.Exception)">
+            <summary>
+            Retrieves all exceptions (including inner exceptions).
+            </summary>
+            <param name="ex">The ex.</param>
+            <returns>IEnumerable&lt;Exception&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.MessageNotQueuedException">
+            <summary>
+            Class MessageNotQueuedException.
+            Implements the <see cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Core.LoggableException" />
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageId">The message identifier.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The inner exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageId">The message identifier.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.MessageNotQueuedException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.MessageNotQueuedException" /> class.
+            </summary>
+            <param name="serializationInfo">The serialization information.</param>
+            <param name="streamingContext">The streaming context.</param>
+            <exception cref="T:System.NotImplementedException">The exception.</exception>
+            <exception cref="T:System.NotImplementedException">The exception.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.MessageNotQueuedException.MessageId">
+            <summary>
+            Gets the message identifier.
+            </summary>
+            <value>The message identifier.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.OOP.Encapsulation">
+            <summary>
+            Class to validate method parameters.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam``1(System.Boolean,System.String,System.String)">
+            <summary>
+            Tries the validate parameter.
+            </summary>
+            <typeparam name="TException">The type of the t exception.</typeparam>
+            <param name="condition">if set to <c>true</c> [condition].</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.InvalidCastException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Collections.IEnumerable,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="collection">The collection.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.IO.FileInfo,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="file">The file.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.IO.FileNotFoundException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.IO.DirectoryInfo,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="directory">The directory.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException">Directory not found.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Enum,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException">The parameter value cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The value is not defined in the enum type.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Guid,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Uri,System.String,System.String)">
+            <summary>
+            Tries the validate parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Security.SecureString,System.String,System.String)">
+            <summary>
+            Tries the validate parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Collections.IEnumerable,System.Int32,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="collection">The collection.</param>
+            <param name="size">The size.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Text.RegularExpressions.Regex,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="match">The match.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException">match</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.String,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="expected">The expected.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Type,System.Type,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="expectedType">The expected type.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Tries the validate an integer value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimumValue">The minimum value.</param>
+            <param name="maximumValue">The maximum value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The error message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Double,System.Double,System.Double,System.String,System.String)">
+            <summary>
+            Tries the validate a <see cref="T:System.Double" /> parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimumValue">The minimum value.</param>
+            <param name="maximumValue">The maximum value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int64,System.Int64,System.Int64,System.String,System.String)">
+            <summary>
+            Tries the validate a <see cref="T:System.Int64" /> parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimumValue">The minimum value.</param>
+            <param name="maximumValue">The maximum value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Decimal,System.Decimal,System.Decimal,System.String,System.String)">
+            <summary>
+            Tries the validate a <see cref="T:System.Decimal" /> parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimumValue">The minimum value.</param>
+            <param name="maximumValue">The maximum value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Tries to validate a method parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="minimumLength">The minimum length.</param>
+            <param name="maximumLength">The maximum length.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,dotNetTips.Spargine.Core.OOP.StringType,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Tries the validate a <see cref="T:System.String" /> parameter.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="stringType">Type of the string.</param>
+            <param name="minimumLength">The minimum length.</param>
+            <param name="maximumLength">The maximum length.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.CreateExceptionMessage(System.String,System.String)">
+            <summary>
+            Creates the exception message.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="messageFromResource">The message from resource.</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.OOP.IDataModel`2">
+            <summary>
+            Interface IDataModel
+            Implements the <see cref="T:System.IComparable`1" />
+            Implements the <see cref="T:System.IEquatable`1" />
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <seealso cref="T:System.IComparable`1" />
+            <seealso cref="T:System.IEquatable`1" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.OOP.IDataModel`2.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.OOP.StringType">
+            <summary>
+            Enum for StringType
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.OOP.StringType.NotSet">
+            <summary>
+            The not set
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.OOP.StringType.Email">
+            <summary>
+            Validates that string is a email address.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.OOP.StringType.Url">
+            <summary>
+            Validates that the string is a Url.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.AppNameAndVersion">
+            <summary>
+              Looks up a localized string similar to {0} v{1}.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.CannotBeOfTypeException">
+            <summary>
+              Looks up a localized string similar to {0} cannot be of type Exception. Use a more specific exception from the framework or a custom Exception inheriting type Exception (only)..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.CollectionIsNullOrHasNoItems">
+            <summary>
+              Looks up a localized string similar to Collection is null or has no items..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.CollectionSizeIsNotValid">
+            <summary>
+              Looks up a localized string similar to Collection size is not valid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.DirectoryCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Directory cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.DirectoryDoesNotExist">
+            <summary>
+              Looks up a localized string similar to Directory does not exist..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExArgumentOutOfRange">
+            <summary>
+              Looks up a localized string similar to Argument is out of the given range..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageArgumentNull">
+            <summary>
+              Looks up a localized string similar to Argument cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageDirectoryNotFound">
+            <summary>
+              Looks up a localized string similar to The specified directory was not found..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageInvalidArgument">
+            <summary>
+              Looks up a localized string similar to Invalid argument..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageInvalidEnumType">
+            <summary>
+              Looks up a localized string similar to Invalid enum type..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageInvalidOperation">
+            <summary>
+              Looks up a localized string similar to Invalid operation..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageNullException">
+            <summary>
+              Looks up a localized string similar to Exception cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ExMessageReadonlyCollection">
+            <summary>
+              Looks up a localized string similar to Collection cannot be read-only..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.FileCannotBeNull">
+            <summary>
+              Looks up a localized string similar to File cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.FileNotFound">
+            <summary>
+              Looks up a localized string similar to File not found..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.GoToDotNetTipsComForHelp">
+            <summary>
+              Looks up a localized string similar to Go to dotNetTips.com for help..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.GuidIsEmpty">
+            <summary>
+              Looks up a localized string similar to Guid is Empty..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidEmailAddress">
+            <summary>
+              Looks up a localized string similar to Invalid email address..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidStringType">
+            <summary>
+              Looks up a localized string similar to Invalid StringType..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidType">
+            <summary>
+              Looks up a localized string similar to Invalid type..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidUrlAddress">
+            <summary>
+              Looks up a localized string similar to Invalid url address..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.NumberNotInRange">
+            <summary>
+              Looks up a localized string similar to Number does not match minimum or maximum value..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ParameterIsInvalid">
+            <summary>
+              Looks up a localized string similar to Parameter is invalid. .
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.RegexEmail">
+            <summary>
+              Looks up a localized string similar to \w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.RegexUrl">
+            <summary>
+              Looks up a localized string similar to (http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;amp;:/~\+#]*[\w\-\@?^=%&amp;amp;/~\+#])?.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.SecureStringIsEmpty">
+            <summary>
+              Looks up a localized string similar to The SecureString is Null or does not contain text..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.StringDoesNotMatch">
+            <summary>
+              Looks up a localized string similar to Strings do not match..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.StringDoesNotMatchMaximumLength">
+            <summary>
+              Looks up a localized string similar to String does not match maximum length..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.StringDoesNotMatchMinimumLength">
+            <summary>
+              Looks up a localized string similar to String does not match minimum length..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.StringIsEmpty">
+            <summary>
+              Looks up a localized string similar to String is empty..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.StringIsNotValid">
+            <summary>
+              Looks up a localized string similar to String is not valid..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.TheValueIsNotDefinedInTheEnumeration">
+            <summary>
+              Looks up a localized string similar to The values are not defined in the enum..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.UriCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Uri cannot be null..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.UserUnkown">
+            <summary>
+              Looks up a localized string similar to UNKOWN.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Singleton`1">
+            <summary>
+            Class Singleton.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Singleton`1._instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Singleton`1.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.Singleton`1.LoadData(`0)">
+            <summary>
+            ts this instance.
+            </summary>
+            <param name="data">The data.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.Tristate">
+            <summary>
+            Enum TriState
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Tristate.False">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Tristate.True">
+            <summary>
+            True
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.Tristate.UseDefault">
+            <summary>
+            Use default
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.TypeHelper">
+            <summary>
+            Class TypeHelper.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.TypeHelper.DefaultNestedTypeDelimiter">
+            <summary>
+            The default nested type delimiter
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.TypeHelper._builtInTypeNames">
+            <summary>
+            The built in type names
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.Create``1">
+            <summary>
+            Creates type instance.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <returns>T.</returns>
+            <remarks>Original code by: Jeremy Clark</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.Create``1(System.Object[])">
+            <summary>
+            Creates the specified parameter array.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="paramArray">The parameter array.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.DoesObjectEqualInstance(System.Object,System.Object)">
+            <summary>
+            Does the object equal instance.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="instance">The instance.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.FindDerivedTypes(System.Type,dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Finds the derived types.
+            </summary>
+            <param name="baseType">Type of the base.</param>
+            <param name="classOnly">The class only.</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.FindDerivedTypes(System.AppDomain,System.Type,dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Finds the derived types.
+            </summary>
+            <param name="currentDomain">The current domain.</param>
+            <param name="baseType">Type of the base.</param>
+            <param name="classOnly">if set to <c>true</c> [class only].</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.FindDerivedTypes(System.String,System.IO.SearchOption,System.Type,dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Finds the derived types.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="fileSearchType">The search option.</param>
+            <param name="baseType">Type of the base.</param>
+            <param name="classOnly">if set to <c>true</c> [class only].</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException">Could not find path.</exception>
+            <exception cref="T:System.ArgumentNullException">Could not find path.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetDefault``1">
+            <summary>
+            Gets the default type.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetInstanceHashCode(System.Object)">
+            <summary>
+            Gets the instance hash code.
+            </summary>
+            <param name="instance">The instance.</param>
+            <returns>Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetPropertyValues``1(``0)">
+            <summary>
+            Gets the property values from a type.
+            </summary>
+            <typeparam name="T">Generic type.</typeparam>
+            <param name="input">The input.</param>
+            <returns>ImmutableDictionary&lt;System.String, System.String&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetTypeDisplayName(System.Object,System.Boolean)">
+            <summary>
+            Gets the display name of the type.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="fullName">if set to <c>true</c> [full name].</param>
+            <returns>System.String.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetTypeDisplayName(System.Type,System.Boolean,System.Boolean,System.Boolean,System.Char)">
+            <summary>
+            Pretty print a type name.
+            </summary>
+            <param name="type">The <see cref="T:System.Type" />.</param>
+            <param name="fullName"><c>true</c> to print a fully qualified name.</param>
+            <param name="includeGenericParameterNames"><c>true</c> to include generic parameter names.</param>
+            <param name="includeGenericParameters"><c>true</c> to include generic parameters.</param>
+            <param name="nestedTypeDelimiter">Character to use as a delimiter in nested type names</param>
+            <returns>The pretty printed type name.</returns>
+            <exception cref="T:System.ArgumentNullException">type</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.LoadDerivedTypes(System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo},System.Type,dotNetTips.Spargine.Core.Tristate)">
+            <summary>
+            Loads the derived types of a type.
+            </summary>
+            <param name="types">The types.</param>
+            <param name="baseType">Type of the base.</param>
+            <param name="classOnly">if set to <c>true</c> [class only].</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.ProcessGenericType(System.Text.StringBuilder,System.Type,System.Type[],System.Int32,dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions@)">
+            <summary>
+            Processes the type of the generic.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="type">The type.</param>
+            <param name="genericArguments">The generic arguments.</param>
+            <param name="length">The length.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.ProcessType(System.Text.StringBuilder,System.Type,dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions@)">
+            <summary>
+            Processes the type.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="type">The type.</param>
+            <param name="options">The options.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions">
+            <summary>
+            Struct DisplayNameOptions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Char)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions" /> struct.
+            </summary>
+            <param name="fullName">if set to <c>true</c> [full name].</param>
+            <param name="includeGenericParameterNames">if set to <c>true</c> [include generic parameter names].</param>
+            <param name="includeGenericParameters">if set to <c>true</c> [include generic parameters].</param>
+            <param name="nestedTypeDelimiter">The nested type delimiter.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions.FullName">
+            <summary>
+            Gets a value indicating whether [full name].
+            </summary>
+            <value><c>true</c> if [full name]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions.IncludeGenericParameterNames">
+            <summary>
+            Gets a value indicating whether [include generic parameter names].
+            </summary>
+            <value><c>true</c> if [include generic parameter names]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions.IncludeGenericParameters">
+            <summary>
+            Gets a value indicating whether [include generic parameters].
+            </summary>
+            <value><c>true</c> if [include generic parameters]; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions.NestedTypeDelimiter">
+            <summary>
+            Gets the nested type delimiter.
+            </summary>
+            <value>The nested type delimiter.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.UnhandledExceptionEventInformation">
+            <summary>
+            Class UnhandledExceptionEventInformation.
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Core.IEventInformation" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.UnhandledExceptionEventInformation.Exception">
+            <summary>
+            Gets the exception.
+            </summary>
+            <value>The exception.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.UnhandledExceptionEventInformation.IsTerminating">
+            <summary>
+            Gets a value indicating whether [network available].
+            </summary>
+            <value><c>true</c> if [network available]; otherwise, <c>false</c>.</value>
+        </member>
+    </members>
+</doc>

@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The value.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <exception cref="ArgumentNullException">key or value</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool AddIfNotExists<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(dictionary != null, nameof(dictionary));
@@ -118,7 +118,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">Dictionary cannot be null.</exception>
         /// <exception cref="ArgumentNullException">Key cannot be null.</exception>
         /// <exception cref="ArgumentNullException">Value cannot be null.</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> list, TKey key, TValue value)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
@@ -141,7 +141,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The list.</param>
         /// <param name="delimiter">The delimiter.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 0)]
+        [Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 99)]
         public static string ToDelimitedString(this IDictionary list, char delimiter = ControlChars.Comma)
         {
             if (delimiter.IsNull())
@@ -172,7 +172,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="TValue">The type of the t value.</typeparam>
         /// <param name="list">The values.</param>
         /// <returns>IImmutableDictionary&lt;TKey, TValue&gt;.</returns>
-        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> list)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
@@ -194,7 +194,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">value</exception>
         /// <exception cref="ArgumentNullException">Input cannot be null or have no items in the collection.</exception>
         /// <exception cref="ArgumentNullException">Key cannot be null.</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> list, TKey key, TValue value)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));

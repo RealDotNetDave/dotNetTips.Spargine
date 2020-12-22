@@ -10,7 +10,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
         [TestMethod]
         public void DirectoryInfoSizeTest01()
         {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
             var result = directory.GetSize();
 
@@ -22,9 +22,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
         [TestMethod]
         public void DirectoryInfoSizeTest02()
         {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
-            var result = directory.GetSize("*.cookie");
+            var result = directory.GetSize("*.txt");
 
             Assert.IsTrue(result > 0);
 
@@ -34,13 +34,13 @@ namespace dotNetTips.Spargine.Extensions.Tests
         [TestMethod]
         public void DirectoryInfoSizeTest03()
         {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Cookies));
+            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
-            var result = directory.GetSize(searchPattern: "*.cookie", searchOption: SearchOption.AllDirectories);
+            var result = directory.GetSize(searchPattern: "*.txt", searchOption: SearchOption.AllDirectories);
 
             Assert.IsTrue(result > 0);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.cookie", (SearchOption)100) ==
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
                 0);
         }
     }

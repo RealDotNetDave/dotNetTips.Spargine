@@ -15,7 +15,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -73,7 +72,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The source.</param>
         /// <param name="items">The items.</param>
         /// <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool ContainsAny<T>(this IEnumerable<T> list, params T[] items)
         {
             if (items.DoesNotHaveItems())
@@ -92,10 +91,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The list.</param>
         /// <returns>System.Int32.</returns>
         /// <exception cref="ArgumentNullException">list</exception>
-        [Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static int Count(this IEnumerable list)
         {
-            if (list.DoesNotHaveItems())
+            if (list == null)
             {
                 return 0;
             }
@@ -121,7 +120,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="source">The source.</param>
         /// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool DoesNotHaveItems(this IEnumerable source)
         {
             return source?.Count() <= 0;
@@ -136,7 +135,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>System.Boolean.</returns>
         /// <exception cref="ArgumentNullException">predicate</exception>
         /// <exception cref="System.ArgumentNullException">predicate</exception>
-        [Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool FastAny<T>(this IEnumerable<T> source, Func<T, bool> predicate)
         {
             Encapsulation.TryValidateParam(source, nameof(source));
@@ -155,7 +154,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">predicate</exception>
         /// <exception cref="System.ArgumentNullException">predicate</exception>
         /// <exception cref="Exception">predicate</exception>
-        [Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static int FastCount<T>(this IEnumerable<T> list, Func<T, bool> predicate)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -191,7 +190,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>T.</returns>
         /// <exception cref="ArgumentNullException">alternate</exception>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
-        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static T FirstOrDefault<T>(this IEnumerable<T> list, T alternate)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
@@ -215,7 +214,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">alternate</exception>
         /// <exception cref="ArgumentNullException">predicate</exception>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
-        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static T FirstOrDefault<T>(this IEnumerable<T> list, Func<T, bool> predicate, T alternate)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
@@ -233,7 +232,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="match">The match.</param>
         /// <returns>System.Nullable&lt;T&gt;.</returns>
         /// <exception cref="ArgumentNullException">Function cannot be null.</exception>
-        [Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static T? FirstOrNull<T>(this IEnumerable<T> list, Func<T, bool> match)
             where T : struct
         {
@@ -264,7 +263,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="list">The source.</param>
         /// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems(this IEnumerable list)
         {
             return list?.Count() > 0;
@@ -276,7 +275,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="source">The source.</param>
         /// <param name="count">The specific count.</param>
         /// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems(this IEnumerable source, int count)
         {
             return source?.Count() == count;
@@ -291,7 +290,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>IEnumerable&lt;T&gt;.</returns>
         /// <exception cref="ArgumentNullException">list</exception>
         /// <exception cref="ArgumentOutOfRangeException">count - Count must be greater than 0</exception>
-        [Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
+        [Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list, int count = 1)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -308,7 +307,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="second">The second.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
-        [Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static bool StartsWith<T>(this IEnumerable<T> first, IEnumerable<T> second)
         {
             Encapsulation.TryValidateParam(first, nameof(first));
@@ -343,7 +342,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <exception cref="ArgumentNullException">second</exception>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
-        [Information(nameof(StructuralSequenceEqual), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(StructuralSequenceEqual), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static bool StructuralSequenceEqual<T>(this IEnumerable<T> first, IEnumerable<T> second)
         {
             Encapsulation.TryValidateParam(first, nameof(first));
@@ -379,7 +378,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
         /// <exception cref="System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-        [Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
         public static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ControlChars.Comma)
         {
             if (list.HasItems() == false)
@@ -440,7 +439,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The values.</param>
         /// <returns>IImmutableList&lt;T&gt;.</returns>
-        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static ImmutableList<T> ToImmutable<T>(this IEnumerable<T> list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -454,7 +453,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The values.</param>
         /// <returns>LinkedList&lt;T&gt;.</returns>
-        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> list)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));

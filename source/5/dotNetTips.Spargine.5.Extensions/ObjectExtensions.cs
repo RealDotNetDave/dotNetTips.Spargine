@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2020
+// Last Modified On : 12-17-2020
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -18,11 +18,11 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
+using Newtonsoft.Json;
 
 namespace dotNetTips.Spargine.Extensions
 {
@@ -31,7 +31,6 @@ namespace dotNetTips.Spargine.Extensions
     /// </summary>
     public static class ObjectExtensions
     {
-
         /// <summary>
         /// Converts object to a different type.
         /// </summary>
@@ -39,6 +38,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The value.</param>
         /// <returns>T.</returns>
         /// <exception cref="ArgumentNullException">value - Value cannot be null.</exception>
+        [Information(nameof(As), UnitTestCoverage = 99, Status = Status.Available)]
         public static T As<T>(this object value)
         {
             if (value == null)
@@ -56,6 +56,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="obj">The object.</param>
         /// <returns>T.</returns>
         /// <exception cref="ArgumentNullException">obj</exception>
+        [Information(nameof(Clone), UnitTestCoverage = 99, Status = Status.Available)]
         public static T Clone<T>(this object obj)
             where T : class
         {
@@ -64,41 +65,7 @@ namespace dotNetTips.Spargine.Extensions
                 ExceptionThrower.ThrowArgumentNullException(nameof(obj));
             }
 
-            var json = obj.ToJson();
-
-            var returnObject = TypeHelper.GetDefault<T>();
-
-            using (var ms = new MemoryStream(Encoding.UTF8.GetBytes(json)))
-            {
-                var ser = new DataContractJsonSerializer(typeof(T));
-                obj = ser.ReadObject(ms) as T;
-            }
-
-            return returnObject;
-        }
-
-        /// <summary>
-        /// Computes the m d5 hash.
-        /// </summary>
-        /// <param name="data">The data.</param>
-        /// <returns>System.String.</returns>
-        [Obsolete("Use SHA256 hash instead. This method will be removed at the end of 2020.")]
-        public static string ComputeMD5Hash(this object data)
-        {
-            // Create a MD5   
-            using var md5Hash = MD5.Create();
-            // ComputeHash - returns byte array  
-            var bytes = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(data.ToJson()));
-
-            // Convert byte array to a string   
-            var builder = new StringBuilder();
-
-            for (var i = 0; i < bytes.Length; i++)
-            {
-                builder.Append(bytes[i].ToString("x2", CultureInfo.InvariantCulture));
-            }
-
-            return builder.ToString();
+            return obj.ToJson().FromJson<T>();
         }
 
         /// <summary>
@@ -106,6 +73,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="data">The data.</param>
         /// <returns>System.String.</returns>
+        [Information(nameof(ComputeSha256Hash), UnitTestCoverage = 0, Status = Status.Available)]
         public static string ComputeSha256Hash(this object data)
         {
             // Create a SHA256   
@@ -129,6 +97,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <exception cref="ArgumentNullException">obj</exception>
+        [Information(nameof(DisposeFields), UnitTestCoverage = 0, Status = Status.Available)]
         public static void DisposeFields(this IDisposable obj)
         {
             if (obj == null)
@@ -161,12 +130,13 @@ namespace dotNetTips.Spargine.Extensions
         /// Creates object from Json.
         /// </summary>
         /// <typeparam name="T">Generic type parameter.</typeparam>
-        /// <param name="input">The json.</param>
+        /// <param name="json">The json.</param>
         /// <returns>T.</returns>
-        public static T FromJson<T>(this string input)
+        [Information(nameof(FromJson), UnitTestCoverage = 99, Status = Status.Available)]
+        public static T FromJson<T>(this string json)
             where T : class
         {
-            return JsonSerializer.Deserialize<T>(input);
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
         /// <summary>
@@ -177,6 +147,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>T.</returns>
         /// <exception cref="FileNotFoundException">The exception.</exception>
         /// <exception cref="System.IO.FileNotFoundException">The exception.</exception>
+        [Information(nameof(FromJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
         public static T FromJsonFile<T>(string fileName)
             where T : class
         {
@@ -187,7 +158,7 @@ namespace dotNetTips.Spargine.Extensions
 
             var json = File.ReadAllText(fileName, Encoding.UTF8);
 
-            return JsonSerializer.Deserialize<T>(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
 
         /// <summary>
@@ -197,6 +168,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="propertyName">Name of the property.</param>
         /// <returns><c>true</c> if the specified property name has property; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentNullException">propertyName - Source cannot be null.</exception>
+        [Information(nameof(HasProperty), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool HasProperty(this object obj, string propertyName)
         {
             if (obj is null)
@@ -220,6 +192,7 @@ namespace dotNetTips.Spargine.Extensions
         /// or
         /// list - List cannot be null or have a 0 length.</exception>
         /// <remarks>Original code by: Rory Becker</remarks>
+        [Information(nameof(In), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool In<T>(this T source, params T[] list) => list.FastAny(value => value.Equals(source));
 
         /// <summary>
@@ -227,6 +200,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <exception cref="ArgumentNullException">Input cannot be null.</exception>
+        [Information(nameof(InitializeFields), UnitTestCoverage = 0, Status = Status.Available)]
         public static void InitializeFields(this object obj)
         {
             if (obj is null)
@@ -258,6 +232,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="obj">The obj.</param>
         /// <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
+        [Information(nameof(IsNotNull), UnitTestCoverage = 100, Status = Status.Available)]
         public static bool IsNotNull(this object obj) => obj != null;
 
         /// <summary>
@@ -265,6 +240,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="obj">The object.</param>
         /// <returns><count>true</count> if the specified object is null; otherwise, <count>false</count>.</returns>
+        [Information(nameof(IsNull), UnitTestCoverage = 100, Status = Status.Available)]
         public static bool IsNull(this object obj) => obj is null;
 
         /// <summary>
@@ -273,7 +249,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
-        [Information(nameof(PropertiesToDictionary), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+        [Information(nameof(PropertiesToDictionary), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
         public static IDictionary<string, object> PropertiesToDictionary(this object input, BindingFlags bindingFlags = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
         {
             return input.GetType()
@@ -288,7 +264,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
         /// <param name="delimiter">The delimiter.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 90, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+        [Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
         public static string PropertiesToString(this object input, bool ignoreNullValues, char delimiter = ControlChars.Comma)
         {
             //TODO: LOOK INTO MAKING THIS BETTER WITH TYPES LIKE COLLECTIONS AND GENERICS.
@@ -325,6 +301,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The field.</param>
         /// <returns>System.String.</returns>
+        [Information(nameof(StripNull), UnitTestCoverage = 0, Status = Status.Available)]
         public static string StripNull(this object input) => input == null ? string.Empty : input.ToString();
 
         /// <summary>
@@ -333,6 +310,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="obj">The instance.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentNullException">obj</exception>
+        [Information(nameof(ToJson), UnitTestCoverage = 99, Status = Status.Available)]
         public static string ToJson(this object obj)
         {
             if (obj is null)
@@ -340,7 +318,7 @@ namespace dotNetTips.Spargine.Extensions
                 ExceptionThrower.ThrowArgumentNullException(nameof(obj));
             }
 
-            return JsonSerializer.Serialize(obj);
+            return JsonConvert.SerializeObject(obj);
         }
 
         /// <summary>
@@ -350,6 +328,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="fileName">The file.</param>
         /// <exception cref="ArgumentNullException">obj</exception>
         /// <exception cref="ArgumentException">message - fileName</exception>
+        [Information(nameof(ToJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
         public static void ToJsonFile(this object obj, string fileName)
         {
             if (obj is null)
@@ -362,7 +341,7 @@ namespace dotNetTips.Spargine.Extensions
                 ExceptionThrower.ThrowArgumentException(Resources.InvalidFileName, nameof(fileName));
             }
 
-            var json = JsonSerializer.Serialize(obj);
+            var json = JsonConvert.SerializeObject(obj);
 
 
             File.WriteAllText(fileName, json, Encoding.UTF8);
@@ -372,6 +351,7 @@ namespace dotNetTips.Spargine.Extensions
         /// Tries the to call Dispose.
         /// </summary>
         /// <param name="obj">The obj.</param>
+        [Information(nameof(TryDispose), UnitTestCoverage = 0, Status = Status.Available)]
         public static void TryDispose(this IDisposable obj) => ObjectExtensions.TryDispose(obj, false);
 
         /// <summary>
@@ -380,6 +360,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="obj">The obj.</param>
         /// <param name="throwException">if set to <count>true</count> [throw exception].</param>
         /// <exception cref="ArgumentNullException">obj</exception>
+        [Information(nameof(TryDispose), UnitTestCoverage = 0, Status = Status.Available)]
         public static void TryDispose(this IDisposable obj, bool throwException)
         {
             if (obj is null)

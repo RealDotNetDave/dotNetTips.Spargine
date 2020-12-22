@@ -94,7 +94,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The list.</param>
         /// <param name="items">The items.</param>
         /// <returns>T[].</returns>
-        [Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] AddIfNotExists<T>(this T[] list, params T[] items)
         {
             if (items.HasItems() == false)
@@ -128,7 +128,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="item">The item.</param>
         /// <returns>T[].</returns>
         /// <exception cref="ArgumentNullException">list or item</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool AddLast<T>(this IList<T> list, T item)
         {
             if (item == null)
@@ -181,7 +181,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The source.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        [Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool ClearNulls<T>(this List<T> list)
         {
             if (list.DoesNotHaveItems())
@@ -199,7 +199,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The source.</param>
         /// <returns>List&lt;T&gt;.</returns>
         /// <exception cref="ArgumentNullException">source</exception>
-        [Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static List<T> CopyToList<T>(this List<T> list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -216,7 +216,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentNullException">action</exception>
         /// <exception cref="System.ArgumentNullException">action</exception>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems<T>(this List<T> list, Predicate<T> action)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -233,6 +233,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="item">The item.</param>
         /// <returns>System.Int32.</returns>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
+        [Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static int IndexOf<T>(this IEnumerable<T> source, T item)
         {
             return IndexOf(source, item, EqualityComparer<T>.Default);
@@ -248,6 +249,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>System.Int32.</returns>
         /// <exception cref="ArgumentNullException">item or comparer</exception>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
+        [Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static int IndexOf<T>(this IEnumerable<T> source, T item, IEqualityComparer<T> comparer)
         {
             if (item == null)
@@ -270,6 +272,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="separator">The separator.</param>
         /// <returns>System.String.</returns>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
+        [Information(nameof(Join), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static string Join(this IEnumerable<object> source, string separator = ", ")
         {
             return string.Join(separator, source);
@@ -281,7 +284,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The list to use to generate hash code.</param>
         /// <returns>Hash code as System.Int32.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static int ListHashCode<T>(this ReadOnlyCollection<T> list)
         {
             var comparer = EqualityComparer<T>.Default;
@@ -298,7 +301,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The list to use to generate hash code.</param>
         /// <returns>Hash code as System.Int32.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static int ListHashCode<T>(this IList<T> list)
         {
             var comparer = EqualityComparer<T>.Default;
@@ -315,13 +318,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The list to use to generate hash code.</param>
         /// <returns>Hash code as System.Int32.</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static int ListHashCode<T>(this T[] list)
         {
-            var hash = list.Where(t => t != null)
-                .Aggregate(6551,
-                           (accumulator, t) => accumulator ^=
-                    ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
+            var hash = list.Where(t => t != null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
 
             return hash;
         }
@@ -337,6 +337,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>IEnumerable&lt;T&gt;.</returns>
         /// <exception cref="InvalidCastException"></exception>
         /// <remarks>Original code by: C.F.Meijers</remarks>
+        [Information(nameof(OrderBy), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static IEnumerable<T> OrderBy<T>(this IEnumerable<T> list, string sortExpression)
         {
             if (sortExpression.HasValue() == false)
@@ -381,6 +382,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="keySelector">The key selector.</param>
         /// <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
         /// <remarks>Original code from efcore-master on GitHub.</remarks>
+        [Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>(this IEnumerable<TSource> source, Func<TSource, string> keySelector)
         {
             return source.OrderBy(keySelector, StringComparer.Ordinal);
@@ -397,9 +399,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">pageSize</exception>
         /// <exception cref="System.ArgumentNullException">pageSize</exception>
         /// <exception cref="System.ArgumentOutOfRangeException">pageSize</exception>
+        [Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static IEnumerable<IEnumerable<T>> Page<T>(this IEnumerable<T> list, int pageSize)
         {
-            pageSize = pageSize.EnsureMinimumValue(1);
+            pageSize = pageSize.EnsureMinimum(1);
 
             using var enumerator = list.GetEnumerator();
             while (enumerator.MoveNext())
@@ -421,7 +424,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The list.</param>
         /// <returns>T.</returns>
-        [Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
+        [Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
         public static T PickRandom<T>(this IEnumerable<T> list)
         {
             var index = new Random().Next(0, list.Count() - 1);
@@ -445,6 +448,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>Dictionary&lt;TFirstKey, Dictionary&lt;TSecondKey, TValue&gt;&gt;.</returns>
         /// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value. or list - Aggregate cannot be null. or firstKeySelector -
         /// First key selector cannot be null. or secondKeySelector - Second key selector cannot be null.</exception>
+        [Information(nameof(Pivot), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
         public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot<TSource, TFirstKey, TSecondKey, TValue>(this IEnumerable<TSource> list,
                                                                                                                           Func<TSource, TFirstKey> firstKeySelector,
                                                                                                                           Func<TSource, TSecondKey> secondKeySelector,
@@ -472,26 +476,12 @@ namespace dotNetTips.Spargine.Extensions
         }
 
         /// <summary>
-        /// Randomizes the specified list.
-        /// </summary>
-        /// <typeparam name="T">Generic type parameter.</typeparam>
-        /// <param name="list">The list.</param>
-        /// <returns>IEnumerable&lt;T&gt;.</returns>
-        /// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-        [Obsolete("Use Shuffle() instead. This method will be removed at the end of 2020.")]
-        public static IEnumerable<T> Randomize<T>(this IEnumerable<T> list)
-        {
-            var randomizer = new Random();
-            return list.OrderBy(x => randomizer.Next());
-        }
-
-        /// <summary>
         /// Removes the first item in the array.
         /// </summary>
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="array">The array.</param>
         /// <returns>T[].</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] RemoveFirst<T>(this T[] array)
         {
             var result = new T[array.Length - 1];
@@ -508,7 +498,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="array">The array.</param>
         /// <returns>T[].</returns>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static T[] RemoveLast<T>(this T[] array)
         {
             var result = new T[array.Length - 1];
@@ -524,7 +514,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The items.</param>
         /// <returns>IEnumerable&lt;T&gt;.</returns>
         /// <exception cref="ArgumentNullException">list</exception>
-        [Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
+        [Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99)]
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list)
         {
             if (list.DoesNotHaveItems())
@@ -555,7 +545,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="list">The list.</param>
         /// <returns>ObservableCollection.</returns>
-        [Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static ObservableCollection<T> ToObservableCollection<T>(this IList<T> list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));
@@ -570,7 +560,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="list">The list.</param>
         /// <returns>ReadOnlyCollection&lt;T&gt;.</returns>
         /// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-        [Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IList<T> list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));

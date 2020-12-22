@@ -106,6 +106,15 @@ namespace dotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to false.
+        /// </summary>
+        internal static string FalseLowerCase {
+            get {
+                return ResourceManager.GetString("FalseLowerCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File not found..
         /// </summary>
         internal static string FileNotFound {
@@ -381,6 +390,15 @@ namespace dotNetTips.Spargine.Extensions.Properties {
         internal static string TheValueIsNotDefinedInTheEnumeration {
             get {
                 return ResourceManager.GetString("TheValueIsNotDefinedInTheEnumeration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to true.
+        /// </summary>
+        internal static string TrueLowerCase {
+            get {
+                return ResourceManager.GetString("TrueLowerCase", resourceCulture);
             }
         }
         

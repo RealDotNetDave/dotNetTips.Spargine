@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Globalization;
+using dotNetTips.Spargine.Core;
 
 namespace dotNetTips.Spargine.Extensions
 {
@@ -26,6 +27,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="value">The Guid value.</param>
         /// <returns>System.String.</returns>
+        [Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
         public static string ToDigits(this Guid value)
         {
             return value.ToString("N", CultureInfo.InvariantCulture);

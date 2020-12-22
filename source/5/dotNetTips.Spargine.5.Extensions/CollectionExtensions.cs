@@ -36,17 +36,21 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
         /// <exception cref="System.ArgumentNullException">list - List cannot be read-only.</exception>
         /// <exception cref="System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
-        [Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool AddIfNotExists<T>(this ICollection<T> list, T item)
         {
-            if (item is null)
+            Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
+
+            if (item == null)
             {
                 return false;
             }
 
+            Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+
             if (CreateCollectionIfNull(list) == false)
             {
-                Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+
 
                 if (list.Contains(item))
                 {
@@ -68,7 +72,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <exception cref="ArgumentException">list - List cannot be read-only.</exception>
         /// <exception cref="ArgumentNullException">list - List cannot be read-only.</exception>
-        [Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool AddIfNotExists<T>(this ICollection<T> list, params T[] items)
         {
             if (items.DoesNotHaveItems())
@@ -108,7 +112,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <exception cref="ArgumentException">List cannot be read-only. - list</exception>
         /// <exception cref="ArgumentNullException">List cannot be read-only. - list</exception>
-        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool AddIfNotExists<T>(this ICollection<T> list, T item, IEqualityComparer<T> comparer)
         {
             if (item == null)
@@ -116,12 +120,11 @@ namespace dotNetTips.Spargine.Extensions
                 return false;
             }
 
+            Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
             Encapsulation.TryValidateParam<ArgumentNullException>(comparer != null, nameof(comparer));
 
             if (CreateCollectionIfNull(list) == false)
             {
-                Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-
                 if (list.Contains(item, comparer))
                 {
                     return false;
@@ -129,6 +132,7 @@ namespace dotNetTips.Spargine.Extensions
             }
 
             list.Add(item);
+
             return true;
 
         }
@@ -143,7 +147,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         /// <exception cref="ArgumentException">items</exception>
         /// <exception cref="ArgumentNullException">items</exception>
-        [Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available)]
         public static bool AddRange<T>(this ICollection<T> list, IEnumerable<T> items, Tristate ensureUnique = Tristate.False)
         {
             if (items.HasItems() == false)
@@ -184,7 +188,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="source">The source.</param>
         /// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool DoesNotHaveItems(this ICollection source)
         {
             return source?.Count <= 0;
@@ -195,7 +199,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="source">The source.</param>
         /// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems(this ICollection source)
         {
             return source?.Count > 0;
@@ -207,7 +211,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="source">The source.</param>
         /// <param name="count">The specific count.</param>
         /// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasItems(this ICollection source, int count)
         {
             return source?.Count == count;
@@ -223,6 +227,7 @@ namespace dotNetTips.Spargine.Extensions
         {
             if (list == null)
             {
+                //TODO: WRITE TEST FOR THIS
                 list = TypeHelper.Create<ICollection<T>>();
 
                 return true;

@@ -149,6 +149,114 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
             Assert.IsTrue(string.IsNullOrEmpty(result) == false);
         }
+
+        [TestMethod]
+        public void DateTimeToFormattedStringTest()
+        {
+            var now = DateTime.Now;
+
+            var result = now.ToFormattedString(DateTimeFormat.FullDateLongTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.FullDateLongTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.FullDateShortTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.FullDateShortTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.FullDateTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.FullDateTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.GeneralDateLongTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.GeneralDateLongTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.GeneralDateShortTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.GeneralDateShortTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.Jan01Comma2020);
+
+            this.PrintResult(result, nameof(DateTimeFormat.Jan01Comma2020));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.Janurary01Comma2020);
+
+            this.PrintResult(result, nameof(DateTimeFormat.Janurary01Comma2020));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.LongDate);
+
+            this.PrintResult(result, nameof(DateTimeFormat.LongDate));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.LongTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.LongTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.MonthDay);
+
+            this.PrintResult(result, nameof(DateTimeFormat.MonthDay));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.RFC1123);
+
+            this.PrintResult(result, nameof(DateTimeFormat.RFC1123));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.RoundTripDateTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.RoundTripDateTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.ShortDate);
+
+            this.PrintResult(result, nameof(DateTimeFormat.ShortDate));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.ShortTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.ShortTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.SortableDateTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.SortableDateTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.UniversalFullDateTime);
+
+            this.PrintResult(result, nameof(DateTimeFormat.UniversalFullDateTime));
+
+            Assert.IsTrue(result.Length > 5);
+
+            result = now.ToFormattedString(DateTimeFormat.MonthYear);
+
+            this.PrintResult(result, nameof(DateTimeFormat.MonthYear));
+
+            Assert.IsTrue(result.Length > 5);
+        }
         [TestMethod]
         public void DateTimeToFriendlyStringTest()
         {

@@ -85,7 +85,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
             DirectoryInfo nullDirectoryInfo = null;
             Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(nullDirectoryInfo, "none"));
 
-            Assert.ThrowsException<FileNotFoundException>(() => Encapsulation.TryValidateParam(new DirectoryInfo("fakefile"), "none"));
+            Assert.ThrowsException<Spargine.Core.DirectoryNotFoundException>(() => Encapsulation.TryValidateParam(new DirectoryInfo("fakefile"), "none"));
         }
 
         [TestMethod]
@@ -141,7 +141,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
                 Assert.Fail();
             }
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(Guid.Empty, "none"));
+            Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(Guid.Empty, "none"));
         }
 
         [TestMethod]

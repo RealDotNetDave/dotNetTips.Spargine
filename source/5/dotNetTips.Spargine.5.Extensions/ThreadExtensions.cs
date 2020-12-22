@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-15-2020
+// Last Modified On : 12-21-2020
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -29,9 +29,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="thread">The thread.</param>
         /// <param name="priority">The priority.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        /// <exception cref="ArgumentNullException">
-        /// thread or logger
-        /// </exception>
+        /// <exception cref="ArgumentNullException">thread or logger</exception>
         /// <exception cref="ArgumentOutOfRangeException">priority</exception>
         [Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
         public static bool TrySetPriority(this Thread thread, ThreadPriority priority)
@@ -61,7 +59,11 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="thread">The thread.</param>
         /// <param name="interval">The wait interval.</param>
-        public static void WaitUntil(this Thread thread, TimeSpan interval) { WaitUntil(thread, interval); }
+        [Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
+        public static void WaitUntil(this Thread thread, TimeSpan interval)
+        {
+            WaitUntil(thread, interval);
+        }
 
         /// <summary>
         /// Waits the until.
@@ -70,6 +72,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="interval">The wait interval.</param>
         /// <param name="waitIterations">The wait iterations.</param>
         /// <exception cref="ArgumentNullException">thread</exception>
+        [Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
         public static void WaitUntil(this Thread thread, TimeSpan interval, int waitIterations)
         {
             if (thread is null)

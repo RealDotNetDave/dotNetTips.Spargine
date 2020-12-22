@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 namespace dotNetTips.Spargine.Extensions
 {
@@ -29,13 +30,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The value.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentNullException">val</exception>
-        [Information(nameof(GetDescription), UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(GetDescription), UnitTestCoverage = 100, Status = Status.Available)]
         public static string GetDescription(this Enum value)
         {
-            if (value == null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(value));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
 
             var field = value.GetType().GetField(value.ToString());
             var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
@@ -46,21 +44,18 @@ namespace dotNetTips.Spargine.Extensions
         /// <summary>
         /// Gets the names and values of an enum type.
         /// </summary>
-        /// <param name="enumeration">The enumeration.</param>
+        /// <param name="enum">The enumeration.</param>
         /// <returns>IEnumerable&lt;System.ValueTuple&lt;System.String, System.Int32&gt;&gt;.</returns>
-        [Information(nameof(GetItems), UnitTestCoverage = 0, Status = Status.Available)]
-        public static IList<(string Description, int Value)> GetItems(this Enum enumeration)
+        [Information(nameof(GetItems), UnitTestCoverage = 100, Status = Status.Available)]
+        public static IList<(string Description, int Value)> GetItems(this Enum @enum)
         {
-            if (enumeration == null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(enumeration));
-            }
+            Encapsulation.TryValidateParam<ArgumentNullException>(@enum != null);
 
             var items = new List<(string Desctiption, int Value)>();
 
-            foreach (var name in Enum.GetNames(enumeration.GetType()))
+            foreach (var name in Enum.GetNames(@enum.GetType()))
             {
-                items.Add((Desctiption: name, Value: (int)Enum.Parse(enumeration.GetType(), name)));
+                items.Add((Desctiption: name, Value: (int)Enum.Parse(@enum.GetType(), name)));
             }
 
             return items;
@@ -74,14 +69,11 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>T.</returns>
         /// <exception cref="ArgumentException">name</exception>
         /// <exception cref="System.ArgumentException">The exception.</exception>
-        [Information(nameof(Parse), UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(Parse), UnitTestCoverage = 100, Status = Status.Available)]
         public static T Parse<T>(this string name)
             where T : Enum
         {
-            if (string.IsNullOrEmpty(name))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(name));
-            }
+            Encapsulation.TryValidateParam(name, nameof(name));
 
             return (T)Enum.Parse(typeof(T), name);
         }
@@ -96,11 +88,6 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="System.ArgumentNullException">The exception.</exception>
         private static EnumItem<T> GetDescriptionInternal<T>(object val)
         {
-            if (val == null)
-            {
-                throw new ArgumentNullException(nameof(val), $"{nameof(val)} is null.");
-            }
-
             var field = val.GetType().GetField(val.ToString());
             var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
 

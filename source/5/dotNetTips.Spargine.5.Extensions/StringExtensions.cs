@@ -14,11 +14,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
 namespace dotNetTips.Spargine.Extensions
@@ -36,13 +36,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="hashType">Type of the hash.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentException">'input' cannot be null or empty - input</exception>
-        [Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "10/8/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "10/8/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
         public static string ComputeHash(this string input, HashType hashType)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(input));
-            }
+            Encapsulation.TryValidateParam(input, nameof(input));
 
             var hash = GetHash(input, hashType);
             var sb = new StringBuilder();
@@ -60,13 +57,10 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The data.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(ComputeSHA256Hash), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ComputeSHA256Hash), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static string ComputeSHA256Hash(this string input)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(input));
-            }
+            Encapsulation.TryValidateParam(input, nameof(input));
 
             // Create a SHA256   
             using var sha256Hash = SHA256.Create();
@@ -87,13 +81,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="args">The arguments.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentException">firstMessage</exception>
-        [Information(nameof(Concat), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(Concat), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
         public static string Concat(this string input, string delimiter, Tristate addLineFeed, params string[] args)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(input));
-            }
+            Encapsulation.TryValidateParam(input, nameof(input));
 
             if (string.IsNullOrEmpty(delimiter))
             {
@@ -132,13 +123,10 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentException">input</exception>
         /// <exception cref="ArgumentNullException">input</exception>
         /// <exception cref="System.ArgumentNullException">input</exception>
-        [Information(nameof(ContainsAny), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ContainsAny), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static bool ContainsAny(this string input, params string[] characters)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(input));
-            }
+            Encapsulation.TryValidateParam(input, nameof(input));
 
             return characters.FastAny(character =>
             {
@@ -151,7 +139,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="value">The s.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static string DefaultIfNull(this string value) => value ?? string.Empty;
 
         /// <summary>
@@ -160,10 +148,8 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The s.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-        public static string DefaultIfNull(this string value, string defaultValue) => value ??
-            defaultValue ??
-            string.Empty;
+        [Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
+        public static string DefaultIfNull(this string value, string defaultValue) => value ?? defaultValue ?? string.Empty;
 
         /// <summary>
         /// Defaults if null or empty.
@@ -171,7 +157,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The value.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(DefaultIfNullOrEmpty), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(DefaultIfNullOrEmpty), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static string DefaultIfNullOrEmpty(this string value, string defaultValue)
         {
             return string.IsNullOrEmpty(value) ? defaultValue : value;
@@ -183,7 +169,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The delimited input.</param>
         /// <param name="delimiter">The delimiter.</param>
         /// <returns>System.String[].</returns>
-        [Information(nameof(DelimitedStringToArray), "David McCarter", "8/13/2020", "8/13/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(DelimitedStringToArray), "David McCarter", "8/13/2020", "8/13/2020", UnitTestCoverage = 99, Status = Status.Available)]
         public static string[] DelimitedStringToArray(this string input, char delimiter = ',')
         {
             if (string.IsNullOrEmpty(input))
@@ -205,9 +191,11 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="valueToCompare">The value to compare.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        [Information(nameof(EqualsIgnoreCase), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information(nameof(EqualsIgnoreCase), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool EqualsIgnoreCase(this string input, string valueToCompare)
-        { return string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase); }
+        {
+            return string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase);
+        }
 
         /// <summary>
         /// Equals the or both null or empty.
@@ -215,7 +203,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="valueToCompare">The value to compare.</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        [Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static bool EqualsOrBothNullOrEmpty(this string input, string valueToCompare)
         {
             return string.Equals(input ?? string.Empty, valueToCompare ?? string.Empty, StringComparison.Ordinal);
@@ -249,7 +237,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The value.</param>
         /// <returns>System.String.</returns>
-        [Information(nameof(FromBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+        [Information(nameof(FromBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
         public static string FromBase64(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -264,24 +252,11 @@ namespace dotNetTips.Spargine.Extensions
         }
 
         /// <summary>
-        /// Converts delimited string to list.
-        /// </summary>
-        /// <param name="delimitedInput">The string buffer.</param>
-        /// <param name="delimiter">The delimiter.</param>
-        /// <returns>IEnumerable&lt;System.String&gt;.</returns>
-        /// <exception cref="ArgumentException">delimitedInput</exception>
-        /// <remarks>Code by: Blake Pell</remarks>
-        [Obsolete("This method to be removed. Use instead DelimitedStringToArray.", true)]
-        public static IEnumerable<string> FromDelimitedString(this string delimitedInput, char delimiter = ',')
-        {
-            return delimitedInput.DelimitedStringToArray(delimiter).AsEnumerable();
-        }
-
-        /// <summary>
         /// Determines whether the specified input has value.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
+        [Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasValue(this string input)
         {
             return ( input == null ) ? false : ( input.Trim().Length > 0 );
@@ -294,6 +269,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="length">Checks for specific length of the string.</param>
         /// <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
+        [Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasValue(this string input, int length)
         {
             if (length <= 0)
@@ -311,6 +287,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">Checks for a specific value.</param>
         /// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentException">value</exception>
+        [Information(nameof(HasValue), UnitTestCoverage = 99, Status = Status.Available)]
         public static bool HasValue(this string input, string value)
         {
             if (string.IsNullOrEmpty(input))
@@ -328,6 +305,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="expression">The expression.</param>
         /// <param name="options">The options.</param>
         /// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
+        [Information(nameof(HasValue), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool HasValue(this string input, string expression, RegexOptions options)
         {
             if (input.HasValue() && expression.HasValue())
@@ -346,6 +324,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="maxLength">The maximum length.</param>
         /// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
         /// <exception cref="ArgumentOutOfRangeException">minLength - Minimum length must be greater than 0.</exception>
+        [Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
         public static bool HasValue(this string input, int minLength, int maxLength)
         {
             if (minLength.IsInRange(0, int.MaxValue) == false)
@@ -370,6 +349,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentException">input</exception>
         /// <exception cref="ArgumentNullException">length</exception>
+        [Information(nameof(Indent), UnitTestCoverage = 0, Status = Status.Available)]
         public static string Indent(this string input, int length, char indentationCharacter)
         {
             if (string.IsNullOrEmpty(input))
@@ -424,6 +404,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsCreditCard), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsCreditCard(this string input)
         {
             return input.HasValue(Resources.RegexCreditCard, RegexOptions.None);
@@ -434,6 +415,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsDomainAddress), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsDomainAddress(this string input)
         {
             return input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase);
@@ -444,8 +426,11 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsEmailAddress), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsEmailAddress(this string input)
-        { return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase); }
+        {
+            return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase);
+        }
 
         /// <summary>
         /// Determines whether the specified input is empty.
@@ -454,13 +439,16 @@ namespace dotNetTips.Spargine.Extensions
         /// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
         [Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
         public static bool IsEmpty(this string input)
-        { return ( input.IsNotNull() && ( input.Length == 0 ) ) ? true : false; }
+        {
+            return ( input.IsNotNull() && ( input.Length == 0 ) ) ? true : false;
+        }
 
         /// <summary>
         /// Determines whether [is first and last name] [the specified input].
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsFirstLastName), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsFirstLastName(this string input)
         {
             return input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase);
@@ -471,6 +459,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsISBN), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsISBN(this string input)
         {
             return input.HasValue(Resources.RegexISBN, RegexOptions.None);
@@ -492,6 +481,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsScientific), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsScientific(this string input)
         {
             return input.HasValue(Resources.RegexScientific, RegexOptions.None);
@@ -502,6 +492,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsString), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsString(this string input)
         {
             return input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase);
@@ -512,6 +503,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsUrl), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsUrl(this string input)
         {
             return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase);
@@ -522,6 +514,7 @@ namespace dotNetTips.Spargine.Extensions
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns><c>true</c> if [is web safe] [the specified input]; otherwise, <c>false</c>.</returns>
+        [Information(nameof(IsWebSafe), UnitTestCoverage = 0, Status = Status.Available)]
         public static bool IsWebSafe(this string input)
         {
             return input.HasValue(Resources.RegexStringWebSafe, RegexOptions.IgnoreCase);
@@ -569,6 +562,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <returns>System.String.</returns>
         /// <exception cref="ArgumentException">input</exception>
+        [Information(nameof(ReplaceEllipsisWithPeriod), UnitTestCoverage = 0, Status = Status.Available)]
         public static string ReplaceEllipsisWithPeriod(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -685,6 +679,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <returns>IEnumerable&lt;System.String&gt;.</returns>
         /// <exception cref="ArgumentException">input</exception>
+        [Information(nameof(SplitRemoveEmpty), UnitTestCoverage = 0, Status = Status.Available)]
         public static IEnumerable<string> SplitRemoveEmpty(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -832,6 +827,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <returns>Trimmed System.String.</returns>
         /// <exception cref="ArgumentException">input</exception>
+        [Information(nameof(ToTrimmed), UnitTestCoverage = 0, Status = Status.Available)]
         public static string ToTrimmed(this string input)
         {
             //TODO: ADD OVERLOADED METHOD TO TRIM CHARS TO RIGHT.

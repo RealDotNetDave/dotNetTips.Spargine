@@ -33,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <exception cref="ArgumentNullException">DirectoryInfo cannot be null.</exception>
         /// <exception cref="ArgumentNullException">Search pattern cannot be null or empty.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Search option invalid.</exception>
-        [Information(nameof(GetSize), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/20/2020", UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(GetSize), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/20/2020", UnitTestCoverage = 100, Status = Status.Available)]
         public static long GetSize(this DirectoryInfo info, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
         {
             if (info is null)

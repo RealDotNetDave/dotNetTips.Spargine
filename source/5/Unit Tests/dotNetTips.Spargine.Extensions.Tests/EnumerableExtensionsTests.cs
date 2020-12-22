@@ -132,7 +132,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
             var people2 = people1.Clone<PersonCollection<PersonProper>>();
 
-            Assert.IsTrue(people1.StructuralSequenceEqual(people2));
+            Assert.IsFalse(people1.StructuralSequenceEqual(people2));
         }
 
         [TestMethod]

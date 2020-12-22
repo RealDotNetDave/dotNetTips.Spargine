@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(result.Count() == 11);
             Assert.IsTrue(result.First() == person);
 
-            Assert.IsTrue(result == people.AddFirst(null));
+            Assert.IsTrue(result.AddFirst(null).Count() == 11);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(result.Count() == 11);
             Assert.IsTrue(result.Last() == person);
 
-            Assert.IsTrue(result == people.AddLast(null));
+            Assert.IsTrue(result.AddLast(null).Count() == 11);
         }
 
         [TestMethod]

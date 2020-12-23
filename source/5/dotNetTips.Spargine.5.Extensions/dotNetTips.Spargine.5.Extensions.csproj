@@ -10,8 +10,8 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2020.12.22.71</AssemblyVersion>
-    <FileVersion>2020.12.22.71</FileVersion>
+    <AssemblyVersion>2020.12.23.75</AssemblyVersion>
+    <FileVersion>2020.12.23.75</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

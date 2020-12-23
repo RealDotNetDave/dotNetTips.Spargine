@@ -1798,6 +1798,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>System.String.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Double,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1806,6 +1807,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/> or <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.Hexadecimal"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int64,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1814,6 +1816,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt64,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1822,6 +1825,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt32,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1830,6 +1834,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int16,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1838,6 +1843,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt16,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
@@ -1846,6 +1852,7 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip"/>.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToPositiveValue(System.Int32)">
             <summary>
@@ -1934,7 +1941,7 @@
         </member>
         <member name="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip">
             <summary>
-            Custom format. Example:
+            Custom format. Example:  8.988465674311579E+307
             </summary>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericFormat.#ctor">

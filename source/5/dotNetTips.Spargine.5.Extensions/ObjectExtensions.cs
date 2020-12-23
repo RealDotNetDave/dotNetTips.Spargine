@@ -132,7 +132,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="T">Generic type parameter.</typeparam>
         /// <param name="json">The json.</param>
         /// <returns>T.</returns>
-        [Information(nameof(FromJson), UnitTestCoverage = 99, Status = Status.Available)]
+        [Information(nameof(FromJson), UnitTestCoverage = 100, Status = Status.Available)]
         public static T FromJson<T>(this string json)
             where T : class
         {

@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <typeparam name="TValue">The type of the t value.</typeparam>
         /// <param name="list">The values.</param>
         /// <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
-        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+        [Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
         public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this SortedDictionary<TKey, TValue> list)
         {
             Encapsulation.TryValidateParam(list, nameof(list));

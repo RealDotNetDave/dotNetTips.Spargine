@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class DirectoryInfoExtensionsTests
     {

@@ -7,8 +7,8 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageIcon>dotNetTips Spargine Logo@0.25x.png</PackageIcon>
-    <AssemblyVersion>2020.12.23.48</AssemblyVersion>
-    <FileVersion>2020.12.23.48</FileVersion>
+    <AssemblyVersion>2020.12.23.49</AssemblyVersion>
+    <FileVersion>2020.12.23.49</FileVersion>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>

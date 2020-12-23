@@ -4,7 +4,7 @@
 // Created          : 11-25-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-26-2019
+// Last Modified On : 11-24-2020
 // ***********************************************************************
 // <copyright file="TaskExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace dotNetTips.Spargine.Extensions
 {
     /// <summary>
-    /// Extension helper methods for <see cref="Task"/>.
+    /// Extension helper methods for <see cref="Task" />.
     /// </summary>
     public static class TaskExtensions
     {

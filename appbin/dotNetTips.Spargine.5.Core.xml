@@ -799,10 +799,8 @@
             Enumeration class.
             Implements the <see cref="T:System.IComparable" />
             </summary>
-            <remarks>
-            Original code by: Jimmy Bogard
-            </remarks>
             <seealso cref="T:System.IComparable" />
+            <remarks>Original code by: Jimmy Bogard</remarks>
         </member>
         <member name="F:dotNetTips.Spargine.Core.Enumeration._displayName">
             <summary>
@@ -816,12 +814,12 @@
         </member>
         <member name="M:dotNetTips.Spargine.Core.Enumeration.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration"/> class.
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration" /> class.
             </summary>
         </member>
         <member name="M:dotNetTips.Spargine.Core.Enumeration.#ctor(System.Int32,System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration"/> class.
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.Enumeration" /> class.
             </summary>
             <param name="value">The value.</param>
             <param name="displayName">The display name.</param>

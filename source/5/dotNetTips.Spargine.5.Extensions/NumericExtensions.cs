@@ -358,7 +358,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>System.String.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this int input, NumericFormat format)
         {
@@ -376,7 +376,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/> or <see cref="NumericFormat.Hexadecimal"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" /> or <see cref="NumericFormat.Hexadecimal" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this double input, NumericFormat format)
         {
@@ -394,7 +394,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this long input, NumericFormat format)
         {
@@ -412,7 +412,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this ulong input, NumericFormat format)
         {
@@ -430,7 +430,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this uint input, NumericFormat format)
         {
@@ -448,7 +448,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this short input, NumericFormat format)
         {
@@ -466,7 +466,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="input">The input.</param>
         /// <param name="format">The format.</param>
         /// <returns>string.</returns>
-        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip"/>.</remarks>
+        /// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
         [Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
         public static string ToFormattedString(this ushort input, NumericFormat format)
         {

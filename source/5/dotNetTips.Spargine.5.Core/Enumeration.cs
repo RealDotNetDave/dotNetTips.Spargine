@@ -22,10 +22,8 @@ namespace dotNetTips.Spargine.Core
     /// Enumeration class.
     /// Implements the <see cref="System.IComparable" />
     /// </summary>
-    /// <remarks>
-    /// Original code by: Jimmy Bogard
-    /// </remarks>
     /// <seealso cref="System.IComparable" />
+    /// <remarks>Original code by: Jimmy Bogard</remarks>
     public abstract class Enumeration : IComparable
     {
         /// <summary>
@@ -38,14 +36,14 @@ namespace dotNetTips.Spargine.Core
         private readonly int _value;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Enumeration"/> class.
+        /// Initializes a new instance of the <see cref="Enumeration" /> class.
         /// </summary>
         protected Enumeration()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Enumeration"/> class.
+        /// Initializes a new instance of the <see cref="Enumeration" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="displayName">The display name.</param>

@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.Tests
+// Author           : David McCarter
+// Created          : 12-17-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 12-21-2020
+// ***********************************************************************
+// <copyright file="DateTimeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

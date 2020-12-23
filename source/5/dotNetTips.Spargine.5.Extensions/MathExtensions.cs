@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-03-2019
+// Last Modified On : 12-17-2020
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -124,7 +124,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="value">The value.</param>
         /// <param name="mode">The mode.</param>
         /// <returns>System.Int32.</returns>
-        /// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
+        /// <exception cref="ArgumentNullException">value</exception>
         /// <exception cref="System.ArgumentNullException">value - Value is invalid.</exception>
         [Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
         public static int Round(this decimal value, MidpointRounding mode)
@@ -155,7 +155,7 @@ namespace dotNetTips.Spargine.Extensions
         /// <param name="digits">The digits.</param>
         /// <param name="mode">The mode.</param>
         /// <returns>System.Int32.</returns>
-        /// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
+        /// <exception cref="ArgumentNullException">value</exception>
         /// <exception cref="System.ArgumentNullException">value - Value is invalid.</exception>
         [Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
         public static int Round(this decimal value, int digits, MidpointRounding mode)

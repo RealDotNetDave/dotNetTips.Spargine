@@ -70,13 +70,13 @@ namespace dotNetTips.Spargine.Extensions
 
 
         /// <summary>
-        /// Prevents a default instance of the <see cref="NumericFormat"/> class from being created.
+        /// Prevents a default instance of the <see cref="NumericFormat" /> class from being created.
         /// </summary>
         private NumericFormat() { }
 
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NumericFormat"/> class.
+        /// Initializes a new instance of the <see cref="NumericFormat" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="displayName">The display name.</param>

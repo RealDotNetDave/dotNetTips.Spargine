@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.Extensions
         public static readonly DateTimeFormat GeneralDateLongTime = new DateTimeFormat(3, "G");
 
         /// <summary>
-        /// Custom format. Example: 12/21/2020 3:16 PM 
+        /// Custom format. Example: 12/21/2020 3:16 PM
         /// </summary>
         public static readonly DateTimeFormat GeneralDateShortTime = new DateTimeFormat(4, "g");
         /// <summary>

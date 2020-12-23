@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Utility.Standard.Tester;
 using dotNetTips.Utility.Standard.Tester.Models;
@@ -6,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class TypeHelperTests
     {

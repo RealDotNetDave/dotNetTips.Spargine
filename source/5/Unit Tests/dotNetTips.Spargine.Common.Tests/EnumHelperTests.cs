@@ -11,12 +11,14 @@
 // </copyright>
 // <summary>EnumHelper Tests.</summary>
 // ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Cache;
 using dotNetTips.Spargine.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class EnumHelperTests
     {

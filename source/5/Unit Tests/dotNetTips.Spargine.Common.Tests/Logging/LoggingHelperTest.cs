@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests.Logging
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class LoggingHelperTest
     {

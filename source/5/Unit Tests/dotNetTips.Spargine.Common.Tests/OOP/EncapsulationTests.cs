@@ -13,6 +13,7 @@
 // ***********************************************************************
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
@@ -23,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests.OOP
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class EncapsulationTests
     {

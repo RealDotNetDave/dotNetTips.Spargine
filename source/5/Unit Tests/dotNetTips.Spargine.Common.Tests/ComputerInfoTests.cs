@@ -11,11 +11,13 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class ComputerInfoTests
     {

@@ -846,7 +846,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Core.Enumeration.FromDisplayName``1(System.String)">
             <summary>
-            Froms the display name.
+            Convert display name to Enumeration.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="displayName">The display name.</param>
@@ -854,7 +854,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Core.Enumeration.FromValue``1(System.Int32)">
             <summary>
-            Froms the value.
+            Converts number value to enumeration.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="value">The value.</param>
@@ -893,7 +893,7 @@
             </summary>
             <returns>A <see cref="T:System.String" /> that represents this instance.</returns>
         </member>
-        <member name="M:dotNetTips.Spargine.Core.Enumeration.parse``2(``1,System.String,System.Func{``0,System.Boolean})">
+        <member name="M:dotNetTips.Spargine.Core.Enumeration.Parse``2(``1,System.String,System.Func{``0,System.Boolean})">
             <summary>
             Parses the specified value.
             </summary>

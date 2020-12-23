@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class ExecutionHelperTests
     {

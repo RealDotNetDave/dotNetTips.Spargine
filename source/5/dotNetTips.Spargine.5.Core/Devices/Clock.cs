@@ -13,12 +13,14 @@
 // ***********************************************************************
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace dotNetTips.Spargine.Core.Devices
 {
     /// <summary>
     /// Clock Information.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     [Information(nameof(Clock), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
     public static class Clock
     {

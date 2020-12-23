@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using dotNetTips.Spargine.Core.Collections;
 using dotNetTips.Utility.Standard.Tester;
 using dotNetTips.Utility.Standard.Tester.Models;
@@ -6,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Core.Tests.Collections
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class CollectionTests
     {

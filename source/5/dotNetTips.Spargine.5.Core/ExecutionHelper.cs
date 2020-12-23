@@ -18,6 +18,7 @@ namespace dotNetTips.Spargine.Core
         /// <param name="retryCount">The retry count (default 3).</param>
         /// <param name="retryWaitMilliseconds">The retry wait milliseconds (default 100).</param>
         /// <returns>System.Int32.</returns>
+        [Information(nameof(ProgressiveRetry), UnitTestCoverage = 0, Status = Status.Available)]
         public static int ProgressiveRetry(Action operation, byte retryCount = 3, int retryWaitMilliseconds = 100)
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(operation != null);

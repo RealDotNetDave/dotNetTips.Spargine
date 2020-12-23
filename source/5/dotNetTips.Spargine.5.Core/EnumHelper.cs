@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Core
         /// <param name="useXmlNames">if set to <c>true</c> [use XML names].</param>
         /// <returns>List&lt;EnumValue&gt;.</returns>
         /// <exception cref="InvalidEnumTypeException"></exception>
-        [Information(nameof(GetEnumValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
+        [Information(nameof(GetEnumValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 99, Status = Status.Available)]
         public static List<EnumValue> GetEnumValues<T>(bool fixNames, bool useXmlNames)
             where T : Enum
         {
@@ -92,6 +92,7 @@ namespace dotNetTips.Spargine.Core
         /// <param name="fixNames">if set to <c>true</c> [fix names].</param>
         /// <param name="useXml">if set to <c>true</c> [use XML].</param>
         /// <returns>List&lt;System.String&gt;.</returns>
+        [Information(nameof(GetEnumNames), UnitTestCoverage = 99, Status = Status.Available)]
         private static List<string> GetEnumNames(Type t, bool fixNames, bool useXml)
         {
             // Set up result

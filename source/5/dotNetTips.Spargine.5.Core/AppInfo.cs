@@ -1,4 +1,5 @@
 ﻿
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using dotNetTips.Spargine.Core.Properties;
 
@@ -7,6 +8,7 @@ namespace dotNetTips.Spargine.Core
     /// <summary>
     /// Class Info.
     /// </summary>
+    [ExcludeFromCodeCoverage]
     public class AppInfo
     {
         /// <summary>

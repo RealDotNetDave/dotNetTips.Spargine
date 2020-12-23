@@ -14,6 +14,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 namespace dotNetTips.Spargine.Core.Diagnostics
 {
@@ -21,7 +22,7 @@ namespace dotNetTips.Spargine.Core.Diagnostics
     /// Performance Stopwatch.
     /// </summary>
     /// <seealso cref="System.Diagnostics.Stopwatch" />
-
+    [ExcludeFromCodeCoverage]
     [Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
     public class PerformanceStopwatch : Stopwatch
     {

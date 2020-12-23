@@ -28,6 +28,7 @@ namespace dotNetTips.Spargine.Core.Logging
         /// </summary>
         /// <param name="ex">The ex.</param>
         /// <returns>IEnumerable&lt;System.String&gt;.</returns>
+        [Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 99, Status = Status.Available)]
         public static string[] RetrieveAllExceptionMessages(Exception ex)
         {
             if (ex == null)
@@ -52,6 +53,7 @@ namespace dotNetTips.Spargine.Core.Logging
         /// </summary>
         /// <param name="ex">The ex.</param>
         /// <returns>IEnumerable&lt;Exception&gt;.</returns>
+        [Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 99, Status = Status.Available)]
         public static Exception[] RetrieveAllExceptions(Exception ex)
         {
             if (ex == null)

@@ -57,6 +57,11 @@ namespace dotNetTips.Spargine.Core
         public const string CRLF = "\r\n";
 
         /// <summary>
+        /// The default separator
+        /// </summary>
+        public const string DefaultSeparator = ", ";
+
+        /// <summary>
         /// Dot (period).
         /// </summary>
         public const char Dot = '.';

@@ -574,6 +574,11 @@
             Carriage Return &amp; Line Feed.
             </summary>
         </member>
+        <member name="F:dotNetTips.Spargine.Core.ControlChars.DefaultSeparator">
+            <summary>
+            The default separator
+            </summary>
+        </member>
         <member name="F:dotNetTips.Spargine.Core.ControlChars.Dot">
             <summary>
             Dot (period).

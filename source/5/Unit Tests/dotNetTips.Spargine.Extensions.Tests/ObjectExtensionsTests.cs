@@ -13,12 +13,14 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Utility.Standard.Tester;
 using dotNetTips.Utility.Standard.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class ObjectExtensionsTests
     {

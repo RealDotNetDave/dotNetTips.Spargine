@@ -2494,68 +2494,26 @@
             StringBuilder Extensions.
             </summary>
         </member>
+        <member name="F:dotNetTips.Spargine.Extensions.StringBuilderExtensions._specialCharacters">
+            <summary>
+            The special characters
+            </summary>
+        </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder,System.Byte[])">
             <summary>
             Appends the bytes.
             </summary>
             <param name="sb">The builder.</param>
             <param name="bytes">The bytes.</param>
-            <exception cref="T:System.ArgumentNullException">sb</exception>
-            <exception cref="T:System.ArgumentException">bytes</exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Action{System.Text.StringBuilder,``0},System.String)">
-            <summary>
-            Appends the join.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <param name="sb">The string builder.</param>
-            <param name="values">The values.</param>
-            <param name="joinAction">The join action.</param>
-            <param name="separator">The separator.</param>
-            <returns>StringBuilder.</returns>
             <exception cref="T:System.ArgumentNullException">StringBuilder cannot be null.</exception>
-            <exception cref="T:System.ArgumentNullException">Values is null or does not have items.</exception>
-            <exception cref="T:System.ArgumentNullException">Action cannot be null.</exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``2(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``1,System.Action{System.Text.StringBuilder,``0,``1},System.String)">
-            <summary>
-            Appends the join.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <typeparam name="TParam">The type of the t parameter.</typeparam>
-            <param name="sb">The string builder.</param>
-            <param name="values">The values.</param>
-            <param name="param">The parameter.</param>
-            <param name="joinAction">The join action.</param>
-            <param name="separator">The separator.</param>
-            <returns>StringBuilder.</returns>
-            <exception cref="T:System.ArgumentNullException">sb</exception>
-            <exception cref="T:System.ArgumentNullException">values</exception>
-            <exception cref="T:System.ArgumentNullException">param</exception>
-            <exception cref="T:System.ArgumentNullException">joinAction</exception>
-            <exception cref="T:System.ArgumentNullException">sb</exception>
-            <exception cref="T:System.ArgumentNullException">values</exception>
-            <exception cref="T:System.ArgumentNullException">param</exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendJoin``3(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``1,``2,System.Action{System.Text.StringBuilder,``0,``1,``2},System.String)">
-            <summary>
-            Appends the values.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <typeparam name="TParam1">The type of the t param1.</typeparam>
-            <typeparam name="TParam2">The type of the t param2.</typeparam>
-            <param name="sb">The string builder.</param>
-            <param name="values">The values.</param>
-            <param name="param1">The param1.</param>
-            <param name="param2">The param2.</param>
-            <param name="joinAction">The join action.</param>
-            <param name="separator">The separator.</param>
-            <returns>StringBuilder.</returns>
-            <exception cref="T:System.ArgumentNullException">StringBuilder cannot be null.</exception>
-            <exception cref="T:System.ArgumentNullException">Param1 cannot be null.</exception>
-            <exception cref="T:System.ArgumentNullException">Param2 cannot be null.</exception>
-            <exception cref="T:System.ArgumentNullException">Values cannot be null or does not have items.</exception>
-            <exception cref="T:System.ArgumentNullException">Action cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Byte collection is null or empty.</exception>
+            <example>
+            <code>
+            var sb = new StringBuilder();
+            var byteArray = RandomData.GenerateByteArray(5);
+            sb.AppendBytes(byteArray)
+            </code>
+            </example>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendKeyValue(System.Text.StringBuilder,System.String,System.String,dotNetTips.Spargine.Core.Tristate,dotNetTips.Spargine.Core.Tristate)">
             <summary>
@@ -2573,7 +2531,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{System.String})">
             <summary>
-            Appends the join.
+            Appends the values.
             </summary>
             <param name="sb">The string builder.</param>
             <param name="separator">The separator.</param>
@@ -2585,7 +2543,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder,System.String,System.String[])">
             <summary>
-            Appends the join.
+            Appends the values.
             </summary>
             <param name="sb">The string builder.</param>
             <param name="separator">The separator.</param>
@@ -2596,7 +2554,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``1(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
             <summary>
-            Appends the join.
+            Appends the values
             </summary>
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="sb">The string builder.</param>
@@ -2612,7 +2570,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``2(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
             <summary>
-            Appends the join.
+            Appends the values.
             </summary>
             <typeparam name="T">Generic type parameter.</typeparam>
             <typeparam name="TParam">The type of the t parameter.</typeparam>
@@ -2632,7 +2590,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues``3(System.Text.StringBuilder,System.String,System.Collections.Generic.IEnumerable{``0},``1,``2,System.Action{System.Text.StringBuilder,``0,``1,``2})">
             <summary>
-            Appends the join.
+            Appends the values.
             </summary>
             <typeparam name="T">Generic type parameter.</typeparam>
             <typeparam name="TParam1">The type of the t param1.</typeparam>
@@ -2653,6 +2611,13 @@
             <exception cref="T:System.ArgumentNullException">values</exception>
             <exception cref="T:System.ArgumentNullException">param1</exception>
             <exception cref="T:System.ArgumentNullException">param2</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.SetSeparator(System.String)">
+            <summary>
+            Sets the separator.
+            </summary>
+            <param name="separator">The separator.</param>
+            <returns>System.String.</returns>
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.StringExtensions">
             <summary>

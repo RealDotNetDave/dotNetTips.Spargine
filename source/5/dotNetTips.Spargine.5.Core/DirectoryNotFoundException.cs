@@ -1,5 +1,4 @@
-﻿//![](05CD5CE05AF2C0FDDE3210EB79859750_1.png;http://dotnettips.com )
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
@@ -23,13 +22,11 @@ namespace dotNetTips.Spargine.Core
     /// Implements the <see cref="LoggableException" />
     /// Implements the <see cref="dotNetTips.Spargine.Core.LoggableException" />
     /// </summary>
-    /// <seealso cref="dotNetTips.Spargine.Core.LoggableException" />
     /// <seealso cref="LoggableException" />
     /// <seealso cref="Exception" />
     [Serializable]
     public class DirectoryNotFoundException : LoggableException
     {
-
         /// <summary>
         /// Initializes a new instance of the <see cref="DirectoryNotFoundException"></see> class.
         /// </summary>

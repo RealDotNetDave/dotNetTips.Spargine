@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using dotNetTips.Utility.Standard.Extensions;
-using dotNetTips.Utility.Standard.Tester;
-using dotNetTips.Utility.Standard.Tester.Models;
+using System.Linq;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -13,7 +13,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
         [TestMethod]
         public void HasItemsTest()
         {
-            var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+            var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList();
 
             Assert.IsTrue(collection.HasItems());
 

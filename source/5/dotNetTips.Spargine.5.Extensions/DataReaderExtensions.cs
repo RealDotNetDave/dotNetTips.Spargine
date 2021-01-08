@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
-using System.Text;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
@@ -42,7 +41,7 @@ namespace dotNetTips.Spargine.Extensions
 
             if (includeHeaderAsFirstRow)
             {
-                var sb = new StringBuilder();
+                var sb = TypeHelper.CreateStringBuilder();
 
                 for (var index = 0; index <= dataReader.FieldCount - 1; index++)
                 {
@@ -62,7 +61,7 @@ namespace dotNetTips.Spargine.Extensions
 
             while (dataReader.Read())
             {
-                var sb = new StringBuilder();
+                var sb = TypeHelper.CreateStringBuilder();
 
                 for (var index = 0; index <= dataReader.FieldCount - 2; index++)
                 {

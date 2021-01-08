@@ -4,14 +4,13 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-03-2020
+// Last Modified On : 12-28-2020
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Class for collections.</summary>
 // ***********************************************************************
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +24,9 @@ namespace dotNetTips.Spargine.Core.Collections
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <seealso cref="System.Collections.Generic.List{T}" />
-    [Information("Collection class.", "David McCarter", "11/12/2020")]
+    [Information("Collection<T>.", "David McCarter", "11/12/2020")]
     public class Collection<T> : List<T>
     {
-
         /// <summary>
         /// Prevents a default instance of the <see cref="Collection{T}" /> class from being created.
         /// </summary>

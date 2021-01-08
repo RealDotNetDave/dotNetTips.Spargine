@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Utility.Standard.Tester;
+using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -285,7 +285,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
         public void ToTitleCaseTest()
         {
             var words = RandomData.GenerateWords(10, 10, 10)
-                .ToDelimitedString(Utility.Standard.Common.ControlChars.Space);
+                .ToDelimitedString(ControlChars.Space);
 
             var testValue = words.ToTitleCase();
 

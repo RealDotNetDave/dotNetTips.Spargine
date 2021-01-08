@@ -19,7 +19,6 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
 
@@ -425,8 +424,7 @@ namespace dotNetTips.Spargine.Core
                 return string.Empty;
             }
 
-
-            var sb = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             foreach (DictionaryEntry item in list)
             {
@@ -457,7 +455,7 @@ namespace dotNetTips.Spargine.Core
                 return string.Empty;
             }
 
-            var sb = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             list.ToList()
                 .ForEach(item =>

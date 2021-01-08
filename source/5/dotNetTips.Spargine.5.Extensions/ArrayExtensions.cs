@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
@@ -119,14 +118,14 @@ namespace dotNetTips.Spargine.Extensions
         {
             Encapsulation.TryValidateParam<ArgumentNullException>(bytes.HasItems(), nameof(bytes));
 
-            var builder = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             for (var byteCount = 0; byteCount < bytes.Length; byteCount++)
             {
-                builder.Append(bytes[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+                sb.Append(bytes[byteCount].ToString("x2", CultureInfo.InvariantCulture));
             }
 
-            return builder.ToString();
+            return sb.ToString();
         }
 
         /// <summary>

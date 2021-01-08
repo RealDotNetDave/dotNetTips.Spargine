@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Utility.Standard.Tester;
-using dotNetTips.Utility.Standard.Tester.Models;
+using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests

@@ -10,6 +10,7 @@
       "dotNetTips.Spargine.5.Core/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9",
+          "Microsoft.Extensions.ObjectPool": "5.0.1",
           "System.Collections.Immutable": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0"
         },
@@ -22,6 +23,14 @@
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "3.1.9.0",
             "fileVersion": "3.100.920.47302"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/5.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.120.60107"
           }
         }
       },
@@ -95,6 +104,13 @@
       "sha512": "sha512-W5fbF8qVR9SMVVJqDQLIR7meWbev6Pu/lbrm7LDNr4Sp7HOotr4k2UULTdFSXOi5aoDdkQZpWnq0ZSpjrR3tjg==",
       "path": "microsoft.extensions.logging.abstractions/3.1.9",
       "hashPath": "microsoft.extensions.logging.abstractions.3.1.9.nupkg.sha512"
+    },
+    "Microsoft.Extensions.ObjectPool/5.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-91WCMWQjnKTDFmPeTOCcRaYTen0urNNc3egfKIVDphlAYKHmYwwa/IFUWG+n+Nb/gcBUGGKywB5VI+M+HJiLeg==",
+      "path": "microsoft.extensions.objectpool/5.0.1",
+      "hashPath": "microsoft.extensions.objectpool.5.0.1.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

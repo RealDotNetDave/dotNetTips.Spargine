@@ -15,7 +15,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Security;
 using System.ServiceModel.Security;
-using dotNetTips.Utility.Standard.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -44,7 +43,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
             var ex = new SecurityAccessDeniedException("Message from SecurityAccessDeniedException", innerEx);
 
-            var messages = ex.GetAllMessagesWithStackTrace(",");
+            var messages = ex.GetAllMessagesWithStackTrace();
 
             Assert.IsTrue(messages.HasItems());
         }

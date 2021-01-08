@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using dotNetTips.Utility.Standard.Tester;
-using dotNetTips.Utility.Standard.Tester.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using dotNetTips.Spargine.Extensions;
 using System.Linq;
+using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {

@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-23-2020
+// Last Modified On : 12-25-2020
 // ***********************************************************************
 // <copyright file="NumericExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -29,31 +29,31 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = double.MaxValue / 2;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.RoundTrip);
-            this.PrintResult(result, nameof(NumericFormat.RoundTrip));
+            PrintResult(result, nameof(NumericFormat.RoundTrip));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Decimal));
@@ -66,35 +66,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = int.MaxValue;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -107,35 +107,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = long.MaxValue / 2;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -148,35 +148,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = short.MaxValue;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 3);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 4);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -188,35 +188,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = uint.MaxValue / 2;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -229,35 +229,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = ulong.MaxValue / 2;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -270,42 +270,42 @@ namespace dotNetTips.Spargine.Extensions.Tests
             var testValue = ushort.MaxValue;
 
             var result = testValue.ToFormattedString(NumericFormat.Currency);
-            this.PrintResult(result, nameof(NumericFormat.Currency));
+            PrintResult(result, nameof(NumericFormat.Currency));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Decimal);
-            this.PrintResult(result, nameof(NumericFormat.Decimal));
+            PrintResult(result, nameof(NumericFormat.Decimal));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Exponential);
-            this.PrintResult(result, nameof(NumericFormat.Exponential));
+            PrintResult(result, nameof(NumericFormat.Exponential));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-            this.PrintResult(result, nameof(NumericFormat.FixedPoint));
+            PrintResult(result, nameof(NumericFormat.FixedPoint));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.General);
-            this.PrintResult(result, nameof(NumericFormat.General));
+            PrintResult(result, nameof(NumericFormat.General));
             Assert.IsTrue(result.Length > 4);
 
             result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-            this.PrintResult(result, nameof(NumericFormat.Hexadecimal));
+            PrintResult(result, nameof(NumericFormat.Hexadecimal));
             Assert.IsTrue(result.Length > 3);
 
             result = testValue.ToFormattedString(NumericFormat.Number);
-            this.PrintResult(result, nameof(NumericFormat.Number));
+            PrintResult(result, nameof(NumericFormat.Number));
             Assert.IsTrue(result.Length > 5);
 
             result = testValue.ToFormattedString(NumericFormat.Percent);
-            this.PrintResult(result, nameof(NumericFormat.Percent));
+            PrintResult(result, nameof(NumericFormat.Percent));
             Assert.IsTrue(result.Length > 5);
 
             Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
         }
 
-        private void PrintResult<T>(T input, string methodName)
+        private static void PrintResult<T>(T input, string methodName)
         {
             var message = $"{methodName}: {input}";
 

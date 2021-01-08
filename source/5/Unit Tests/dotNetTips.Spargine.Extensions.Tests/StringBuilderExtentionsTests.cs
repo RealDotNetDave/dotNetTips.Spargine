@@ -3,9 +3,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Utility.Standard.Tester;
-using dotNetTips.Utility.Standard.Tester.Models;
-using Microsoft.Extensions.ObjectPool;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -25,12 +24,11 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(sb.Length > 50);
 
             //Test ObjectPool
-            var objectPool = new DefaultObjectPoolProvider();
-            var stringBuilderPool = objectPool.CreateStringBuilderPool().Get();
+            var sbpool = TypeHelper.CreateStringBuilder();
 
-            stringBuilderPool.AppendBytes(byteArray);
+            sbpool.AppendBytes(byteArray);
 
-            Assert.IsTrue(stringBuilderPool.Length > 50);
+            Assert.IsTrue(sbpool.Length > 50);
         }
 
         [TestMethod]
@@ -54,21 +52,20 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(sb.ToString().Length > 50 * 4);
 
             //Test ObjectPool
-            var objectPool = new DefaultObjectPoolProvider();
-            var stringBuilderPool = objectPool.CreateStringBuilderPool().Get();
+            var sbpool = TypeHelper.CreateStringBuilder();
 
             foreach (var person in people)
             {
-                stringBuilderPool.AppendKeyValue(person.Key, person.Value.Email);
-                stringBuilderPool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True);
-                stringBuilderPool.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
-                stringBuilderPool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
+                sbpool.AppendKeyValue(person.Key, person.Value.Email);
+                sbpool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True);
+                sbpool.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
+                sbpool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
 
-                Assert.ThrowsException<ArgumentNullException>(() => stringBuilderPool.AppendKeyValue(person.Key, null));
-                Assert.ThrowsException<ArgumentNullException>(() => stringBuilderPool.AppendKeyValue(null, person.Value.Email));
+                Assert.ThrowsException<ArgumentNullException>(() => sbpool.AppendKeyValue(person.Key, null));
+                Assert.ThrowsException<ArgumentNullException>(() => sbpool.AppendKeyValue(null, person.Value.Email));
             }
 
-            Assert.IsTrue(stringBuilderPool.ToString().Length > 50 * 4);
+            Assert.IsTrue(sbpool.ToString().Length > 50 * 4);
         }
 
         [TestMethod]
@@ -82,12 +79,11 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(sb.Length > 10);
 
             //Test ObjectPool
-            var objectPool = new DefaultObjectPoolProvider();
-            var stringBuilderPool = objectPool.CreateStringBuilderPool().Get();
+            var sbpool = TypeHelper.CreateStringBuilder();
 
-            stringBuilderPool.AppendValues(", ", values);
+            sbpool.AppendValues(", ", values);
 
-            Assert.IsTrue(stringBuilderPool.Length > 10);
+            Assert.IsTrue(sbpool.Length > 10);
         }
 
         [TestMethod]
@@ -100,12 +96,11 @@ namespace dotNetTips.Spargine.Extensions.Tests
             Assert.IsTrue(sb.Length > 10);
 
             //Test ObjectPool
-            var objectPool = new DefaultObjectPoolProvider();
-            var stringBuilderPool = objectPool.CreateStringBuilderPool().Get();
+            var sbpool = TypeHelper.CreateStringBuilder();
 
-            stringBuilderPool.AppendValues(", ", RandomData.GenerateWord(100), RandomData.GenerateWord(100));
+            sbpool.AppendValues(", ", RandomData.GenerateWord(100), RandomData.GenerateWord(100));
 
-            Assert.IsTrue(stringBuilderPool.Length > 10);
+            Assert.IsTrue(sbpool.Length > 10);
         }
 
 
@@ -118,24 +113,23 @@ namespace dotNetTips.Spargine.Extensions.Tests
             sb.AppendValues(", ", values, (person) =>
             {
                 sb.Append(person.X);
-                sb.Append(Utility.Standard.Common.ControlChars.Colon);
+                sb.Append(ControlChars.Colon);
                 sb.Append(person.Y);
             });
 
             Assert.IsTrue(sb.Length > 50);
 
             //Test ObjectPool
-            var objectPool = new DefaultObjectPoolProvider();
-            var stringBuilderPool = objectPool.CreateStringBuilderPool().Get();
+            var sbpool = TypeHelper.CreateStringBuilder();
 
-            stringBuilderPool.AppendValues(", ", values, (person) =>
+            sbpool.AppendValues(", ", values, (person) =>
             {
-                stringBuilderPool.Append(person.X);
-                stringBuilderPool.Append(Utility.Standard.Common.ControlChars.Colon);
-                stringBuilderPool.Append(person.Y);
+                sbpool.Append(person.X);
+                sbpool.Append(ControlChars.Colon);
+                sbpool.Append(person.Y);
             });
 
-            Assert.IsTrue(stringBuilderPool.Length > 50);
+            Assert.IsTrue(sbpool.Length > 50);
         }
 
     }

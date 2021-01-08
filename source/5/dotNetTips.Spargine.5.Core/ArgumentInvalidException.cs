@@ -1,5 +1,4 @@
-﻿//![](05CD5CE05AF2C0FDDE3210EB79859750_1.png;http://dotnettips.com )
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
@@ -19,7 +18,7 @@ using dotNetTips.Spargine.Core.Properties;
 namespace dotNetTips.Spargine.Core
 {
     /// <summary>
-    /// Class ArgumentIsInvalidException.
+    /// Class ArgumentInvalidException.
     /// </summary>
     /// <seealso cref="System.ArgumentException" />
     [Serializable]

@@ -57,9 +57,9 @@ namespace dotNetTips.Spargine.Extensions
             {
                 dynamic original = entry.Value.GetType().GetField(nameof(original), bindings).GetValue(entry.Value);
 
-                if (entry.Key is T && original is T)
+                if (entry.Key is T t && original is T)
                 {
-                    result.Add(new Tuple<T, T>(original, (T)entry.Key));
+                    result.Add(new Tuple<T, T>(original, t));
                 }
             }
 

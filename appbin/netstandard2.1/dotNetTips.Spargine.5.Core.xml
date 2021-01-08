@@ -226,7 +226,7 @@
         </member>
         <member name="T:dotNetTips.Spargine.Core.ArgumentInvalidException">
             <summary>
-            Class ArgumentIsInvalidException.
+            Class ArgumentInvalidException.
             </summary>
             <seealso cref="T:System.ArgumentException" />
         </member>
@@ -315,6 +315,96 @@
             <summary>Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException"></see> class with serialized data.</summary>
             <param name="info">The object that holds the serialized object data.</param>
             <param name="context">The contextual information about the source or destination.</param>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.CachedEnumerable">
+            <summary>
+            Class CachedEnumerable.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable.Create``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates the specified enumerable.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">The enumerable.</param>
+            <returns>CachedEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.CachedEnumerable`1">
+            <summary>
+            Class CachedEnumerable. This class cannot be inherited.
+            Implements the <see cref="T:System.Collections.Generic.IEnumerable`1" />
+            Implements the <see cref="T:System.IDisposable" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:System.Collections.Generic.IEnumerable`1" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.CachedEnumerable`1._cache">
+            <summary>
+            The cache
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.CachedEnumerable`1._enumerable">
+            <summary>
+            The enumerable
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.CachedEnumerable`1._enumerated">
+            <summary>
+            The enumerated
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.CachedEnumerable`1._enumerator">
+            <summary>
+            The enumerator
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Core.CachedEnumerable`1.disposedValue">
+            <summary>
+            The disposed value
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Core.CachedEnumerable`1"/> class.
+            </summary>
+            <param name="enumerable">The enumerable.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.System#IDisposable#Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.CheckEnumerable">
+            <summary>
+            Checks the enumerable.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.CachedEnumerable`1.TryGetItem(System.Int32,`0@)">
+            <summary>
+            Tries the get item.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="result">The result.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
         </member>
         <member name="T:dotNetTips.Spargine.Core.Collections.Collection`1">
             <summary>
@@ -739,7 +829,6 @@
             Implements the <see cref="T:dotNetTips.Spargine.Core.LoggableException" />
             Implements the <see cref="T:dotNetTips.Spargine.Core.LoggableException" />
             </summary>
-            <seealso cref="T:dotNetTips.Spargine.Core.LoggableException" />
             <seealso cref="T:dotNetTips.Spargine.Core.LoggableException" />
             <seealso cref="T:System.Exception" />
         </member>
@@ -2016,6 +2105,7 @@
             </summary>
             <param name="ex">The ex.</param>
             <returns>IEnumerable&lt;System.String&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Exception cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.Logging.LoggingHelper.RetrieveAllExceptions(System.Exception)">
             <summary>
@@ -2023,6 +2113,7 @@
             </summary>
             <param name="ex">The ex.</param>
             <returns>IEnumerable&lt;Exception&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Exception cannot be null.</exception>
         </member>
         <member name="T:dotNetTips.Spargine.Core.MessageNotQueuedException">
             <summary>
@@ -2602,6 +2693,12 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="paramArray">The parameter array.</param>
             <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.CreateStringBuilder">
+            <summary>
+            Creates StringBuilder using ObjectPool.
+            </summary>
+            <returns>StringBuilder.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Core.TypeHelper.DoesObjectEqualInstance(System.Object,System.Object)">
             <summary>

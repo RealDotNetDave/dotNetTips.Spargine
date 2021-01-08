@@ -42,7 +42,7 @@ namespace dotNetTips.Spargine.Extensions
             Encapsulation.TryValidateParam(input, nameof(input));
 
             var hash = GetHash(input, hashType);
-            var sb = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             for (var i = 0; i <= hash.Length - 1; i++)
             {
@@ -362,7 +362,7 @@ namespace dotNetTips.Spargine.Extensions
                 ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(length));
             }
 
-            var sb = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             if (length < 0)
             {

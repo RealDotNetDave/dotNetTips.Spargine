@@ -73,6 +73,11 @@ namespace dotNetTips.Spargine.Extensions
         public static readonly DateTimeFormat MonthDay = new DateTimeFormat(9, "M");
 
         /// <summary>
+        /// Custom format. Example: December 2020
+        /// </summary>
+        public static readonly DateTimeFormat MonthYear = new DateTimeFormat(16, "Y");
+
+        /// <summary>
         /// Custom format. Example: Mon, 21 Dec 2020 15:16:12 GMT
         /// </summary>
         public static readonly DateTimeFormat RFC1123 = new DateTimeFormat(10, "R");
@@ -101,11 +106,6 @@ namespace dotNetTips.Spargine.Extensions
         /// Custom format. Example: Monday, December 21, 2020 11:16:12 PM
         /// </summary>
         public static readonly DateTimeFormat UniversalFullDateTime = new DateTimeFormat(15, "U");
-
-        /// <summary>
-        /// Custom format. Example: December 2020
-        /// </summary>
-        public static readonly DateTimeFormat MonthYear = new DateTimeFormat(16, "Y");
 
         /// <summary>
         /// Prevents a default instance of the <see cref="DateTimeFormat" /> class from being created.

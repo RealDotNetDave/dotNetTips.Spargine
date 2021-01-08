@@ -22,7 +22,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security;
-using System.Text;
 using System.Xml.Serialization;
 using dotNetTips.Spargine.Core.Logging;
 
@@ -161,7 +160,7 @@ namespace dotNetTips.Spargine.Core
         /// <returns>System.String.</returns>
         private static string ReflectException(Exception ex)
         {
-            var sb = new StringBuilder();
+            var sb = TypeHelper.CreateStringBuilder();
 
             var properties = ex.GetType().GetRuntimeProperties().ToList();
 

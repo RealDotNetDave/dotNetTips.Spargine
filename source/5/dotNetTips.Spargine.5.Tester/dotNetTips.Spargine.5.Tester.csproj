@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <PublishTrimmed>true</PublishTrimmed>
+    <DebugSymbols>true</DebugSymbols>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <Version>2020.11.19.01</Version>
+    <Authors>David McCarter</Authors>
+    <Company>David McCarter - dotNetTips.com</Company>
+    <Product>dotNetTips.Utility.Standard</Product>
+    <Description>Common .NET Standard code for use in unit tests and benchmarking.</Description>
+    <Copyright>McCarter Consulting (David McCarter)</Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://dotnettips.visualstudio.com/dotNetTips.Utility.Standard.Tester</PackageProjectUrl>
+    <RepositoryUrl>https://dotnettips.visualstudio.com/dotNetTips.Utility.Standard.Tester</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>David McCarter, dotNetDave, dotNetTips.com</PackageTags>
+    <PackageReleaseNotes>
+      -- JAN 15 2021: ?.
+    </PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>2021.1.8.37391</AssemblyVersion>
+    <FileVersion>2021.1.8.37391</FileVersion>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\..\..\appbin\dotNetTips.Utility.Standard.Tester.xml</DocumentationFile>
+    <OutputPath>..\..\..\appbin\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\appbin\</OutputPath>
+    <DocumentationFile>..\..\..\appbin\dotNetTips.Utility.Standard.Tester.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Remove="Collections\PersonCollection.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="dotNetTips.Utility.Standard.Tester.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
+    <ProjectReference Include="..\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Collections\" />
+  </ItemGroup>
+
+</Project>

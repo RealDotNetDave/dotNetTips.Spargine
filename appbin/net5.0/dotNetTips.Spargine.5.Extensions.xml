@@ -79,6 +79,52 @@
             <param name="list">The list.</param>
             <returns>System.String[].</returns>
         </member>
+        <member name="T:dotNetTips.Spargine.Extensions.AssemblyExtensions">
+            <summary>
+            AssemblyExtensions.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.AssemblyExtensions.GetInstances``1(System.Reflection.Assembly)">
+            <summary>
+            Gets the instances.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="assembly">The assembly.</param>
+            <returns>IEnumerable&lt;T&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">assembly</exception>
+            <remarks>Original code from: oqtane.framework</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.AssemblyExtensions.GetInterfaces``1(System.Reflection.Assembly)">
+            <summary>
+            Gets the interfaces.
+            </summary>
+            <typeparam name="T">The type of the interface type.</typeparam>
+            <param name="assembly">The assembly.</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">assembly</exception>
+            <remarks>Original code from: oqtane.framework</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.AssemblyExtensions.GetTypes``1(System.Reflection.Assembly)">
+            <summary>
+            Gets the types.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="assembly">The assembly.</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+            <remarks>Original code from: oqtane.framework</remarks>
+            <exception cref="T:System.ArgumentNullException">assembly</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.AssemblyExtensions.GetTypes(System.Reflection.Assembly,System.Type)">
+            <summary>
+            Gets the types.
+            </summary>
+            <param name="assembly">The assembly.</param>
+            <param name="interfaceType">Type of the interface.</param>
+            <returns>IEnumerable&lt;Type&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">assembly</exception>
+            <exception cref="T:System.ArgumentNullException">interfaceType</exception>
+            <remarks>Original code from: oqtane.framework</remarks>
+        </member>
         <member name="T:dotNetTips.Spargine.Extensions.BooleanExtensions">
             <summary>
             Extensions for the boolean type.
@@ -384,6 +430,25 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>System.String.</returns>
+            <example>
+            FullDateLongTime: Thursday, January 7, 2021 3:36:39 PM
+            FullDateShortTime: Thursday, January 7, 2021 3:36 PM
+            FullDateTime: Thursday, January 7, 2021 3:36 PM
+            GeneralDateLongTime: 1/7/2021 3:36:39 PM
+            GeneralDateShortTime: 1/7/2021 3:36 PM
+            Jan01Comma2020: Jan 07, 2021
+            Janurary01Comma2020: January 07, 2021
+            LongDate: Thursday, January 7, 2021
+            LongTime: 3:36:39 PM
+            MonthDay: January 7
+            MonthYear: January 2021
+            RFC1123: Thu, 07 Jan 2021 15:36:39 GMT
+            RoundTripDateTime: 2021-01-07T15:36:39.4416894-08:00
+            ShortDate: 1/7/2021
+            ShortTime: 3:36 PM
+            SortableDateTime: 2021-01-07T15:36:39
+            UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
+            </example>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFriendlyDateString(System.DateTime)">
             <summary>
@@ -456,6 +521,11 @@
             Custom format. Example: December 21
             </summary>
         </member>
+        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.MonthYear">
+            <summary>
+            Custom format. Example: December 2020
+            </summary>
+        </member>
         <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.RFC1123">
             <summary>
             Custom format. Example: Mon, 21 Dec 2020 15:16:12 GMT
@@ -484,11 +554,6 @@
         <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.UniversalFullDateTime">
             <summary>
             Custom format. Example: Monday, December 21, 2020 11:16:12 PM
-            </summary>
-        </member>
-        <member name="F:dotNetTips.Spargine.Extensions.DateTimeFormat.MonthYear">
-            <summary>
-            Custom format. Example: December 2020
             </summary>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.DateTimeFormat.#ctor">
@@ -564,6 +629,10 @@
             <param name="list">The list.</param>
             <param name="delimiter">The delimiter.</param>
             <returns>System.String.</returns>
+            <example>Output:
+            pfCfZQFGPWYXBlUvVHNb]ZjBO_LTbQBSCYb: pfCfZQFGPWYXBlUvVHNb]ZjBO_LTbQBSCYb,
+            Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU: Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU.
+            </example>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.DictionaryExtensions.ToImmutable``2(System.Collections.Generic.Dictionary{``0,``1})">
             <summary>
@@ -732,6 +801,13 @@
             <param name="source">The source.</param>
             <param name="count">The specific count.</param>
             <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)">
+            <summary>
+            Determines whether [is null or empty] [the specified source].
+            </summary>
+            <param name="source">The source.</param>
+            <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.EnumerableExtensions.Shuffle``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
             <summary>
@@ -1672,6 +1748,38 @@
             <param name="upper">The upper.</param>
             <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
         </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Double,System.Double,System.Double)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified value].
+            Throws Exception if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns>System.Boolean.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Determines whether [is in range throws exception] [the specified value].
+            Throws Exception if invalid.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns>System.Boolean.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Determines whether [is in range] [the specified lower] and will throw Exception if false.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="lower">The lower.</param>
+            <param name="upper">The upper.</param>
+            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
+        </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int64,System.Int64,System.Int64,System.String)">
             <summary>
             Determines whether [is in range throws exception] [the specified value].
@@ -1682,38 +1790,7 @@
             <param name="upper">The upper.</param>
             <param name="paramName">Name of the parameter.</param>
             <returns>System.Boolean.</returns>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Double,System.Double,System.Double,System.String)">
-            <summary>
-            Determines whether [is in range throws exception] [the specified value].
-            Throws Exception if invalid.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="lower">The lower.</param>
-            <param name="upper">The upper.</param>
-            <param name="paramName">Name of the parameter.</param>
-            <returns>System.Boolean.</returns>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Decimal,System.Decimal,System.Decimal,System.String)">
-            <summary>
-            Determines whether [is in range throws exception] [the specified value].
-            Throws Exception if invalid.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="lower">The lower.</param>
-            <param name="upper">The upper.</param>
-            <param name="paramName">Name of the parameter.</param>
-            <returns>System.Boolean.</returns>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int32,System.Int32,System.Int32,System.String)">
-            <summary>
-            Determines whether [is in range] [the specified lower] and will throw Exception if false.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="lower">The lower.</param>
-            <param name="upper">The upper.</param>
-            <param name="paramName">Name of the parameter.</param>
-            <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInterval(System.Int32,System.Int32)">
             <summary>
@@ -1734,6 +1811,7 @@
             <param name="interval">The interval.</param>
             <param name="paramName">Name of the parameter.</param>
             <returns>System.Boolean.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Interval is out of range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsNegative(System.Double)">
             <summary>
@@ -1798,60 +1876,94 @@
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>System.String.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Invalid number format.</exception>
+            <example>Output:
+            Currency: $2,103,162,670.00, Decimal: 2103162670, Exponential: 2.103163E+009
+            FixedPoint: 2103162670.00, General: 2103162670, Hexadecimal: 7D5BB72E
+            Number: 2,103,162,670.00, Percent: 210,316,267,000.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Double,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts to a Double to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $555.55, RoundTrip: 555.555, Exponential: 5.555550E+002, FixedPoint: 555.55,
+            General: 555.555, Number: 555.55, Percent: 55,555.50%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" /> or <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.Hexadecimal" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int64,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts a Long to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $4,611,686,018,427,387.00, Decimal: 4611686018427387, Exponential: 4.611686E+015
+            FixedPoint: 4611686018427387.00, General: 4611686018427387, Hexadecimal: 10624DD2F1A9FB
+            Number: 4,611,686,018,427,387.00, Percent: 461,168,601,842,738,700.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt64,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts a ULong to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $9,223,372,036,854.00, Decimal: 9223372036854, Exponential: 9.223372E+012
+            FixedPoint: 9223372036854.00, General: 9223372036854, Hexadecimal: 8637BD05AF6
+            Number: 9,223,372,036,854.00, Percent: 922,337,203,685,400.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt32,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts a UInt to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $21,474,836.00, Decimal: 21474836, Exponential: 2.147484E+007
+            FixedPoint: 21474836.00, General: 21474836, Hexadecimal: 147AE14
+            Number: 21,474,836.00, Percent: 2,147,483,600.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int16,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts a Short to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $32,767.00, Decimal: 32767, Exponential: 3.276700E+004
+            FixedPoint: 32767.00, General: 32767, Hexadecimal: 7FFF, Number: 32,767.00
+            Percent: 3,276,700.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.UInt16,dotNetTips.Spargine.Extensions.NumericFormat)">
             <summary>
-            Converts to formattedstring.
+            Converts a UShort to a formatted string.
             </summary>
             <param name="input">The input.</param>
             <param name="format">The format.</param>
             <returns>string.</returns>
+            <example>Output:
+            Currency: $65,535.00, Decimal: 65535, Exponential: 6.553500E+004, FixedPoint: 65535.00
+            General: 65535, Hexadecimal: FFFF, Number: 65,535.00, Percent: 6,553,500.00%.
+            </example>
             <remarks>This method does not support <see cref="F:dotNetTips.Spargine.Extensions.NumericFormat.RoundTrip" />.</remarks>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.ToPositiveValue(System.Int32)">
@@ -2061,6 +2173,21 @@
             <param name="input">The input.</param>
             <param name="bindingFlags">The binding flags.</param>
             <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
+            <example>Output:
+            [Address1, `fqrZjAqTNANUNIyJWFyNjCQx]
+            [Address2, bSUnkmaIIMutgJtAKYZANpSHM]
+            [Age, 23360.00:00:00.0086580]
+            [BornOn, 1/23/1957 2:45:24 PM -08:00]
+            [CellPhone, 704-375-5873]
+            [City, fDbZYFMANE\MLxD]
+            [Country, RbPjkyMasw`gnWR]
+            [Email, thmiduaodph@djpumhmaheckkmrmwkkpxs.gov]
+            [FirstName, ugdv\bhaHgSY^Ui]
+            [HomePhone, 147-205-1085]
+            [Id, f1bcbdbdf18a4adaa89e46383b235008]
+            [LastName, H^hkKhwWggIrUCYbbxiFEJGJM]
+            [PostalCode, 86560656].
+            </example>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.PropertiesToString(System.Object,System.Boolean,System.Char)">
             <summary>
@@ -2540,6 +2667,13 @@
             <exception cref="T:System.ArgumentNullException">sb</exception>
             <exception cref="T:System.ArgumentNullException">values</exception>
             <exception cref="T:System.ArgumentNullException">sb</exception>
+            <example>
+            <code>
+            var sb = new StringBuilder();
+            var values = RandomData.GenerateWords(5, 5, 7);
+            sb.AppendValues(",", values);
+            </code>
+            </example>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder,System.String,System.String[])">
             <summary>

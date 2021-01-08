@@ -1,16 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <IsPackable>false</IsPackable>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2020.12.25.62</AssemblyVersion>
-    <FileVersion>2020.12.25.62</FileVersion>
+    <AssemblyVersion>2021.1.8.78</AssemblyVersion>
+    <FileVersion>2021.1.8.78</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dotNetTips.Utility.Standard.Tester" Version="2020.11.19.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5.Tester\dotNetTips.Spargine.5.Tester.csproj" />
   </ItemGroup>
 
 </Project>

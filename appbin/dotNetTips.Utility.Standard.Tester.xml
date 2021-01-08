@@ -1,0 +1,2034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotNetTips.Spargine.5.Tester</name>
+    </assembly>
+    <members>
+        <member name="T:dotNetTips.Spargine.Tester.Models.AddressRecord">
+            <summary>
+            Class Person with proper encapsulation and validation.
+            Implements the <see cref="T:System.Object" />
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._address1">
+            <summary>
+            The address1
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._address2">
+            <summary>
+            The address2
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._postalCode">
+            <summary>
+            The postal code
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Tester.Models.PersonRecord" /> class from being created.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Tester.Models.AddressRecord" /> class.
+            </summary>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Address1">
+            <summary>
+            Gets or sets the Address1.
+            </summary>
+            <value>The Address1.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Address2">
+            <summary>
+            Gets or sets the Address2.
+            </summary>
+            <value>The Address2.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Address2), Value for address cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Address2), Value for address cannot be null.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._city">
+            <summary>
+            The city
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city name.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.City), Value for City cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.City), Value for City cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._country">
+            <summary>
+            The country
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country name.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._id">
+            <summary>
+            The identifier
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Id">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>The unique identifier.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._countyProvince">
+            <summary>
+            The county province
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.CountyProvince">
+            <summary>
+            Gets or sets the county province.
+            </summary>
+            <value>The county province.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.CountyProvince), Value for County/ Province cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.State), Value for State cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._phone">
+            <summary>
+            The phone
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Phone">
+            <summary>
+            Gets or sets the phone.
+            </summary>
+            <value>The phone.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Phone), Value for phone number cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.GetHashCode">
+            <summary>
+            Gets the hash code.
+            </summary>
+            <returns>int.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.CompareTo(dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>int.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.Equals(dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Equalses the specified other.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>bool.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.Coordinate">
+            <summary>
+            Struct Coordinate
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.ICoordinate" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.ICoordinate" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Coordinate.X">
+            <summary>
+            Gets or sets the x coordinate.
+            </summary>
+            <value>The x.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Coordinate.Y">
+            <summary>
+            Gets or sets the y coordinate.
+            </summary>
+            <value>The y.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.op_Equality(dotNetTips.Spargine.Tester.Models.Coordinate,dotNetTips.Spargine.Tester.Models.Coordinate)">
+            <summary>
+            Implements the == operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.op_Inequality(dotNetTips.Spargine.Tester.Models.Coordinate,dotNetTips.Spargine.Tester.Models.Coordinate)">
+            <summary>
+            Implements the != operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the current instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.Equals(dotNetTips.Spargine.Tester.Models.Coordinate)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>true if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.Coordinate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> of the coordinates.
+            </summary>
+            <returns>A <see cref="T:System.String" /> of the coordinates.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.CoordinateProper">
+            <summary>
+            Struct CoordinateProper
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.ICoordinate" />
+            Implements the <see cref="T:System.IComparable" />>
+            </summary>
+            <seealso cref="T:System.IComparable" />
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.ICoordinate" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.CoordinateProper.X">
+            <summary>
+            Gets or sets the x coordinate.
+            </summary>
+            <value>The x.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.CoordinateProper.Y">
+            <summary>
+            Gets or sets the y coordinate.
+            </summary>
+            <value>The y.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the &gt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_GreaterThan(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the &gt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_Equality(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the == operator.
+            </summary>
+            <param name="cord1">The first coordinate.</param>
+            <param name="cord2">The second coordinate.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the &lt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_LessThan(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the &lt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.op_Inequality(dotNetTips.Spargine.Tester.Models.CoordinateProper,dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Implements the != operator.
+            </summary>
+            <param name="cord1">The first coordinate.</param>
+            <param name="cord2">The second coordinate.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.CompareTo(System.Object)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>System.Int32.</returns>
+            <exception cref="T:System.ArgumentException">obj</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.CompareTo(dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the this instance.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.Equals(dotNetTips.Spargine.Tester.Models.CoordinateProper)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this instance.</param>
+            <returns>True if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.GetHashCode">
+            <summary>
+            Returns a hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.CoordinateProper.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> of the coordinates.
+            </summary>
+            <returns>A <see cref="T:System.String" /> of the coordinates.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.IAddressRecord">
+            <summary>
+            Interface IAddressRecord
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.Address1">
+            <summary>
+            Gets or sets address 1.
+            </summary>
+            <value>The address1.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.Address2">
+            <summary>
+            Gets or sets address2 .
+            </summary>
+            <value>The address2.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.City">
+            <summary>
+            Gets or sets the city location.
+            </summary>
+            <value>The city location.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.Country">
+            <summary>
+            Gets or sets the country for the address.
+            </summary>
+            <value>The country.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.CountyProvince">
+            <summary>
+            Gets or sets the county province.
+            </summary>
+            <value>The county province.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.Phone">
+            <summary>
+            Gets or sets the home phone number.
+            </summary>
+            <value>The home phone number.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.PostalCode">
+            <summary>
+            Gets or sets the postal code for the address.
+            </summary>
+            <value>The postal code for the address.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IAddressRecord.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.ICoordinate">
+            <summary>
+            Interface ICoordinate used to create Coordinate.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.ICoordinate.X">
+            <summary>
+            Gets or sets the x coordinate.
+            </summary>
+            <value>The x value.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.ICoordinate.Y">
+            <summary>
+            Gets or sets the y coordinate.
+            </summary>
+            <value>The y value.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.ICoordinate.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> of the coordinates.
+            </summary>
+            <returns>A <see cref="T:System.String" /> of the coordinates.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.IPerson">
+            <summary>
+            The interface for IPerson
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.Address1">
+            <summary>
+            Gets or sets address 1.
+            </summary>
+            <value>The address1.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.Address2">
+            <summary>
+            Gets or sets address2 .
+            </summary>
+            <value>The address2.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.BornOn">
+            <summary>
+            Gets or sets the born on date, time and local.
+            </summary>
+            <value>The born on date.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.CellPhone">
+            <summary>
+            Gets or sets the cell phone number.
+            </summary>
+            <value>The cell phone number.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.City">
+            <summary>
+            Gets or sets the city location.
+            </summary>
+            <value>The city location.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.Country">
+            <summary>
+            Gets or sets the country for the address.
+            </summary>
+            <value>The country.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.Email">
+            <summary>
+            Gets or sets the email address.
+            </summary>
+            <value>The email address.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.FirstName">
+            <summary>
+            Gets or sets the person's first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.HomePhone">
+            <summary>
+            Gets or sets the home phone number.
+            </summary>
+            <value>The home phone number.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.Id">
+            <summary>
+            Gets or sets the person's identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.LastName">
+            <summary>
+            Gets or sets the person's last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.PostalCode">
+            <summary>
+            Gets or sets the postal code for the address.
+            </summary>
+            <value>The postal code for the address.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPerson.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.IPersonPlus">
+            <summary>
+            Interface IPersonPlus
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonPlus.Age">
+            <summary>
+            Gets the age.
+            </summary>
+            <value>The age.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.IPersonPlus.CalculateAge">
+            <summary>
+            Calculates the person's current age.
+            </summary>
+            <returns>TimeSpan.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.IPersonRecord">
+            <summary>
+            The interface for IPerson
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.Addresses">
+            <summary>
+            Gets or sets the addresses.
+            </summary>
+            <value>The addresses.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.BornOn">
+            <summary>
+            Gets or sets the born on date, time and local.
+            </summary>
+            <value>The born on date.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.CellPhone">
+            <summary>
+            Gets or sets the cell phone number.
+            </summary>
+            <value>The cell phone number.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.Email">
+            <summary>
+            Gets or sets the email address.
+            </summary>
+            <value>The email address.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.FirstName">
+            <summary>
+            Gets or sets the person's first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.HomePhone">
+            <summary>
+            Gets or sets the home phone number.
+            </summary>
+            <value>The home phone number.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.IPersonRecord.LastName">
+            <summary>
+            Gets or sets the person's last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.IPersonRecord.CalculateAge">
+            <summary>
+            Calculates the age.
+            </summary>
+            <returns>System.TimeSpan.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.Person">
+            <summary>
+            The Person class.
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            <seealso cref="T:System.IComparable" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+            <value>The address1.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+            <value>The address2.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.BornOn">
+            <summary>
+            Gets or sets the born on.
+            </summary>
+            <value>The born on.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.CellPhone">
+            <summary>
+            Gets or sets the cell phone.
+            </summary>
+            <value>The cell phone.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.Email">
+            <summary>
+            Gets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.HomePhone">
+            <summary>
+            Gets or sets the home phone.
+            </summary>
+            <value>The home phone.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.Person.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.PersonFixed">
+            <summary>
+            Person class that implements interfaces.
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.Person" />
+            Implements the <see cref="T:System.IComparable" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.Person" />
+            <seealso cref="T:System.IComparable" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+            <param name="id">The unique identifier.</param>
+            <param name="email">The email address.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Address1">
+            <summary>
+            Gets or sets the address1.
+            </summary>
+            <value>The address1.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Address2">
+            <summary>
+            Gets or sets the address2.
+            </summary>
+            <value>The address2.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Age">
+            <summary>
+            Gets the age.
+            </summary>
+            <value>The age.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.BornOn">
+            <summary>
+            Gets or sets the born on.
+            </summary>
+            <value>The born on.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.CellPhone">
+            <summary>
+            Gets or sets the cell phone.
+            </summary>
+            <value>The cell phone.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.City">
+            <summary>
+            Gets or sets the city.
+            </summary>
+            <value>The city.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Email">
+            <summary>
+            Gets the email.
+            </summary>
+            <value>The email.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.HomePhone">
+            <summary>
+            Gets or sets the home phone.
+            </summary>
+            <value>The home phone.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonFixed.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the &gt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_GreaterThan(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the &gt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_Equality(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the == operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the &lt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_LessThan(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the &lt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.op_Inequality(dotNetTips.Spargine.Tester.Models.PersonFixed,dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Implements the != operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.CompareTo(dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.Equals(dotNetTips.Spargine.Tester.Models.PersonFixed)">
+            <summary>
+            Determis if this instance is equal to the pased in instance.
+            </summary>
+            <param name="other">The other.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that returns the person's id.
+            </summary>
+            <returns>A <see cref="T:System.String" /> that returns the person's id.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonFixed.CalculateAge">
+            <summary>
+            Calculates the person's current age.
+            </summary>
+            <returns>TimeSpan.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.PersonPlus">
+            <summary>
+            Person class that implements interfaces and validates data.
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            Implements the <see cref="T:System.IComparable" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            <seealso cref="T:System.IComparable" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._address1">
+            <summary>
+            Address 1.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._address2">
+            <summary>
+            Address 2.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._bornOn">
+            <summary>
+            The born on date and time.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._cellPhone">
+            <summary>
+            The cell phone number.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._city">
+            <summary>
+            The city name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._country">
+            <summary>
+            The country name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._email">
+            <summary>
+            The email address.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._firstName">
+            <summary>
+            The first name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._homePhone">
+            <summary>
+            The home phone number.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._id">
+            <summary>
+            The unique identifier.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._lastName">
+            <summary>
+            The last name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._postalCode">
+            <summary>
+            The postal code.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonPlus._state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+            <param name="id">The unique identifier.</param>
+            <param name="email">The email address.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.Address1">
+            <summary>
+            Gets or sets first address.
+            </summary>
+            <value>The address1.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address1</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address1</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.Address2">
+            <summary>
+            Gets or sets second address.
+            </summary>
+            <value>The address2.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address2</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address2</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.BornOn">
+            <summary>
+            Gets or sets the born on date and time.
+            </summary>
+            <value>The born on.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">BornOn</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">BornOn</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.CellPhone">
+            <summary>
+            Gets or sets the cell phone number.
+            </summary>
+            <value>The cell phone.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">CellPhone</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">CellPhone</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.City">
+            <summary>
+            Gets or sets the city name.
+            </summary>
+            <value>The city.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">City</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">City</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Country</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Country</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.Email">
+            <summary>
+            Gets the email.
+            </summary>
+            <value>The email.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Email</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Email</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">FirstName</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">FirstName</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.HomePhone">
+            <summary>
+            Gets or sets the home phone.
+            </summary>
+            <value>The home phone.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">HomePhone</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">HomePhone</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Id</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Id</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">LastName</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">LastName</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">PostalCode</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">PostalCode</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonPlus.State">
+            <summary>
+            Gets or sets the state.
+            </summary>
+            <value>The state.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">State</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the &gt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_GreaterThan(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the &gt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_Equality(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the == operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the &lt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_LessThan(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the &lt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.op_Inequality(dotNetTips.Spargine.Tester.Models.PersonPlus,dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Implements the != operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.CompareTo(dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.Equals(dotNetTips.Spargine.Tester.Models.PersonPlus)">
+            <summary>
+            Equals the specified other.
+            </summary>
+            <param name="other">The other.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.GetHashCode">
+            <summary>
+            Returns the hash code for this instance based on id.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonPlus.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> of the users id.
+            </summary>
+            <returns>A <see cref="T:System.String" /> of the users id.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.PersonProper">
+            <summary>
+            Person class that implements interfaces and validates data.
+            Implements the <see cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            Implements the <see cref="T:System.IComparable" />
+            </summary>
+            <seealso cref="T:dotNetTips.Spargine.Tester.Models.IPerson" />
+            <seealso cref="T:System.IComparable" />
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._address1">
+            <summary>
+            Address 1.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._address2">
+            <summary>
+            Address 2.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._bornOn">
+            <summary>
+            The born on date and time.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._cellPhone">
+            <summary>
+            The cell phone number.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._city">
+            <summary>
+            The city name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._country">
+            <summary>
+            The country name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._email">
+            <summary>
+            The email address.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._firstName">
+            <summary>
+            The first name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._homePhone">
+            <summary>
+            The home phone number.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._id">
+            <summary>
+            The unique identifier.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._lastName">
+            <summary>
+            The last name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._postalCode">
+            <summary>
+            The postal code.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonProper._state">
+            <summary>
+            The state
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:dotNetTips.Spargine.Tester.Models.PersonFixed" />.
+            </summary>
+            <param name="id">The unique identifier.</param>
+            <param name="email">The email address.</param>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Address1">
+            <summary>
+            Gets or sets first address.
+            </summary>
+            <value>The address1.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address1</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address1</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Address2">
+            <summary>
+            Gets or sets second address.
+            </summary>
+            <value>The address2.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address2</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Address2</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Age">
+            <summary>
+            Gets the person's current age.
+            </summary>
+            <value>The age.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.BornOn">
+            <summary>
+            Gets or sets the born on date and time.
+            </summary>
+            <value>The born on.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">BornOn</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">BornOn</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.CellPhone">
+            <summary>
+            Gets or sets the cell phone number.
+            </summary>
+            <value>The cell phone.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">CellPhone</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">CellPhone</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.City">
+            <summary>
+            Gets or sets the city name.
+            </summary>
+            <value>The city.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">City</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">City</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Country">
+            <summary>
+            Gets or sets the country.
+            </summary>
+            <value>The country.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Country</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Country</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Email">
+            <summary>
+            Gets the email.
+            </summary>
+            <value>The email.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Email</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Email</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">FirstName</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">FirstName</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.HomePhone">
+            <summary>
+            Gets or sets the home phone.
+            </summary>
+            <value>The home phone.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">HomePhone</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">HomePhone</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.Id">
+            <summary>
+            Gets the identifier.
+            </summary>
+            <value>The identifier.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">Id</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Id</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">LastName</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">LastName</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.PostalCode">
+            <summary>
+            Gets or sets the postal code.
+            </summary>
+            <value>The postal code.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">PostalCode</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">PostalCode</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonProper.State">
+            <summary>
+            Gets or sets the State.
+            </summary>
+            <value>The State.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">State</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the &gt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_GreaterThan(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the &gt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_Equality(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the == operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the &lt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_LessThan(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the &lt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.op_Inequality(dotNetTips.Spargine.Tester.Models.PersonProper,dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Implements the != operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.CompareTo(dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+            <param name="obj">The object to compare with the current object.</param>
+            <returns><c>true</c> if the specified <see cref="T:System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.Equals(dotNetTips.Spargine.Tester.Models.PersonProper)">
+            <summary>
+            Equals the specified other.
+            </summary>
+            <param name="other">The other.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.GetHashCode">
+            <summary>
+            Returns the hash code for this instance based on id.
+            </summary>
+            <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> of the users id.
+            </summary>
+            <returns>A <see cref="T:System.String" /> of the users id.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonProper.CalculateAge">
+            <summary>
+            Calculates the person's current age.
+            </summary>
+            <returns>TimeSpan.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Models.PersonRecord">
+            <summary>
+            Class Person with proper encapsulation and validation.
+            Implements the <see cref="T:System.Object" />
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._bornOn">
+            <summary>
+            The born on
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._cellPhone">
+            <summary>
+            The cell phone number
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._email">
+            <summary>
+            The email
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._firstName">
+            <summary>
+            The first name
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._homePhone">
+            <summary>
+            The home phone number
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._id">
+            <summary>
+            The unique identifier
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._lastName">
+            <summary>
+            The last name
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Tester.Models.Person" /> class.
+            </summary>
+            <param name="email">The email.</param>
+            <param name="id">The identifier.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Tester.Models.PersonRecord" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.BornOn">
+            <summary>
+            Gets or sets the born on date.
+            </summary>
+            <value>The born on date.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.CellPhone">
+            <summary>
+            Gets or sets the cell phone number.
+            </summary>
+            <value>The cell phone number.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.Email">
+            <summary>
+            Gets or sets the email address.
+            </summary>
+            <value>The email address.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Email), Value for Email cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Email), Value for Email cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.FirstName">
+            <summary>
+            Gets or sets the first name.
+            </summary>
+            <value>The first name.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.FirstName), Value for name cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.FirstName), Value for name cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.HomePhone">
+            <summary>
+            Gets or sets the home phone number.
+            </summary>
+            <value>The home phone.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.Id">
+            <summary>
+            Gets or sets the unique identifier.
+            </summary>
+            <value>The unique identifier.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.LastName">
+            <summary>
+            Gets or sets the last name.
+            </summary>
+            <value>The last name.</value>
+            <exception cref="T:System.ArgumentNullException">nameof(this.LastName), Value for name cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.LastName), Value for name cannot be null or empty.</exception>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.Models.PersonRecord._addresses">
+            <summary>
+            The addresses
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Models.PersonRecord.Addresses">
+            <summary>
+            Gets or sets the addresses.
+            </summary>
+            <value>The addresses.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.GetHashCode">
+            <summary>
+            Gets the hash code.
+            </summary>
+            <returns>int.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.ToString">
+            <summary>
+            Converts to string.
+            </summary>
+            <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.CompareTo(dotNetTips.Spargine.Tester.Models.IPersonRecord)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>int.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.Equals(dotNetTips.Spargine.Tester.Models.IPersonRecord)">
+            <summary>
+            Equals.
+            </summary>
+            <param name="other">The other.</param>
+            <returns>bool.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonRecord,dotNetTips.Spargine.Tester.Models.PersonRecord)">
+            <summary>
+            Implements the &gt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.op_GreaterThan(dotNetTips.Spargine.Tester.Models.PersonRecord,dotNetTips.Spargine.Tester.Models.PersonRecord)">
+            <summary>
+            Implements the &gt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.PersonRecord,dotNetTips.Spargine.Tester.Models.PersonRecord)">
+            <summary>
+            Implements the &lt;= operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.op_LessThan(dotNetTips.Spargine.Tester.Models.PersonRecord,dotNetTips.Spargine.Tester.Models.PersonRecord)">
+            <summary>
+            Implements the &lt; operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.AddressLengthIsLimitedTo100Characters">
+            <summary>
+              Looks up a localized string similar to Address length is limited to 100 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.AddressLengthIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to Address length is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.CityLengthIsLimitedTo100Characters">
+            <summary>
+              Looks up a localized string similar to City length is limited to 100 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.CountryLengthIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to Country length is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.EmailLengthIsLimitedTo75Characters">
+            <summary>
+              Looks up a localized string similar to Email length is limited to 75 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.FirstNameLengthIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to First name length is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.IdLengthIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to Id length is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.LastNameLengthIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to Last name length is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.LongTestString">
+            <summary>
+              Looks up a localized string similar to Parsing and formatting are the lifeblood of any modern web app or service: take data off the wire, parse it, manipulate it, format it back out. As such, in .NET Core 2.1 along with bringing up Span&lt;T&gt;, we invested in the formatting and parsing of primitives, from Int32 to DateTime. Many of those changes can be read about in my previous blog posts, but one of the key factors in enabling those performance improvements was in moving a lot of native code to managed. That may be counter-intuitive, in that it’s “ [rest of string was truncated]&quot;;.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.MinimumLenghthCannotBeGreaterThanMaximum">
+            <summary>
+              Looks up a localized string similar to Minimum lenghth cannot be greater than maximum length..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.PersonBornOnCannotBeInTheFuture">
+            <summary>
+              Looks up a localized string similar to Person BornOn cannot be in the future..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.PhoneNumberIsLimitedTo50Characters">
+            <summary>
+              Looks up a localized string similar to Phone number is limited to 50 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.PostalCodeLengthIsLimitedTo15Characters">
+            <summary>
+              Looks up a localized string similar to Postal code length is limited to 15 characters..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.Properties.Resources.StateLengthIsLimitedTo25Characters">
+            <summary>
+              Looks up a localized string similar to State length is limited to 25 characters..
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.RandomData">
+            <summary>
+            Methods to randomly generate data for unit and benchmark testing.
+            </summary>
+            <remarks>Original code from: https://github.com/andrewseward/Any-.Net</remarks>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData.DefaultMaxCharacter">
+            <summary>
+            The default maximum character for creating words.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData.DefaultMaxCharacterRandomFile">
+            <summary>
+            The default maximum character random file name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData.DefaultMinCharacter">
+            <summary>
+            The default minimum character for creating words.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData.DefaultMinCharacterRandomFile">
+            <summary>
+            The default minimum character random file name.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData._domainExtensions">
+            <summary>
+            The domain extensions used to create random Url's.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData._lock">
+            <summary>
+            The synchronize lock
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Tester.RandomData._random">
+            <summary>
+            The object used for retrieving a random number.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Tester.RandomData.LongTestString">
+            <summary>
+            Gets the long test string.
+            </summary>
+            <value>The long test string.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateAddresses(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates the addresses.
+            </summary>
+            <param name="count">The count.</param>
+            <param name="addressLength">Length of the address.</param>
+            <param name="cityLength">Length of the city.</param>
+            <param name="countryLength">Length of the country.</param>
+            <param name="countyProvinceLength">Length of the county province.</param>
+            <param name="postalCodeLength">Length of the postal code.</param>
+            <param name="stateLength">Length of the state.</param>
+            <returns>IAddressRecord[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateByteArray(System.Double)">
+            <summary>
+            Generates the byte array.
+            </summary>
+            <param name="sizeInKb">The size in kb.</param>
+            <returns>System.Byte[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateCharacter">
+            <summary>
+            Creates a random character.
+            </summary>
+            <returns>System.Char.</returns>
+            <example>82 'R'</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateCharacter(System.Char,System.Char)">
+            <summary>
+            Creates a random character.
+            </summary>
+            <param name="minValue">The minimum character value.</param>
+            <param name="maxValue">The maximum character value.</param>
+            <returns>System.Char.</returns>
+            <example>65 'A'</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateCoordinate``1">
+            <summary>
+            Creates a Coordinate with random values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns>T.</returns>
+            <example>X: 178765551 Y: -2145952440</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateCoordinateCollection``1(System.Int32)">
+            <summary>
+            Creates collection of coordinates.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="count">The collection count.</param>
+            <returns>List&lt;T&gt;.</returns>
+            <example>[0]: {2089369587--284215139} [1]: {244137335-1577361939}</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateDecimal(System.Decimal,System.Decimal,System.Int32)">
+            <summary>
+            Creates a random decimal value.
+            </summary>
+            <param name="minValue">The minimum value.</param>
+            <param name="maxValue">The maximum value.</param>
+            <param name="decimalPlaces">The decimal places.</param>
+            <returns>System.Decimal.</returns>
+            <example>95.15</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateDomainExtension">
+            <summary>
+            Returns a random domain extension.
+            </summary>
+            <returns>System.String.</returns>
+            <example>".co.uk"</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateEmailAddress">
+            <summary>
+            Creates a random email address.
+            </summary>
+            <returns>System.String.</returns>
+            <example>fbxpfvtanqysqmuqfh@kiuvf.fr</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateFile(System.String,System.Int32)">
+            <summary>
+            Generates the a test file.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <param name="fileLength">Length of the file. Minimum length=1</param>
+            <returns>System.String.</returns>
+            <example>c:\\temp\\UnitTest.test</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateFiles(System.Int32,System.Int32)">
+            <summary>
+            Generates temporary files.
+            </summary>
+            <param name="count">The file count.</param>
+            <param name="fileLength">Length of the file.</param>
+            <returns>System.ValueTuple&lt;System.String, IEnumerable&lt;System.String&gt;&gt;.</returns>
+            <example>Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateFiles(System.Int32,System.Int32,System.String)">
+            <summary>
+            Generates random files in temporary path.
+            </summary>
+            <param name="count">The count.</param>
+            <param name="fileLength">Length of the file.</param>
+            <param name="fileExtension">The file extension.</param>
+            <returns>System.ValueTuple&lt;System.String, IEnumerable&lt;System.String&gt;&gt;.</returns>
+            <example>Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateFiles(System.String,System.Int32,System.Int32)">
+            <summary>
+            Generates random files.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="count">The count.</param>
+            <param name="fileLength">Length of the file.</param>
+            <returns>IEnumerable&lt;System.String&gt;.</returns>
+            <example>[0]: "c:\\temp\\dobybcyx.lj"  [1]: "c:\\temp\\zo2ggwub.3ro"</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateInteger(System.Int32,System.Int32)">
+            <summary>
+            Creates a random integer value.
+            </summary>
+            <param name="min">The minimum int.</param>
+            <param name="max">The maximum int.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateKey">
+            <summary>
+            Creates a random key from a GUID.
+            </summary>
+            <returns>System.String.</returns>
+            <example>f7f0af78003d4ab194b5a4024d02112a</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateNumber(System.Int32)">
+            <summary>
+            Creates a random number.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>System.String.</returns>
+            <example>"446085072052112"</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GeneratePerson``1(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates a IPerson type with random values.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="addressLength">Length of the address.</param>
+            <param name="cityLength">Length of the city.</param>
+            <param name="countryLength">Length of the country.</param>
+            <param name="firstNameLength">First length of the name.</param>
+            <param name="lastNameLength">Last length of the name.</param>
+            <param name="postalCodeLength">Length of the postal code.</param>
+            <param name="stateLength">Length of the state.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GeneratePersonCollection``1(System.Int32)">
+            <summary>
+            Generates the IPerson collection.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="count">The count.</param>
+            <returns>T[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GeneratePersonCollection(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates the person collection.
+            </summary>
+            <param name="count">The count.</param>
+            <param name="addressCount">The address count.</param>
+            <param name="firstNameLength">First length of the name.</param>
+            <param name="lastNameLength">Last length of the name.</param>
+            <param name="addressLength">Length of the address.</param>
+            <param name="cityLength">Length of the city.</param>
+            <param name="countryLength">Length of the country.</param>
+            <param name="countyProvinceLength">Length of the county province.</param>
+            <param name="postalCodeLength">Length of the postal code.</param>
+            <param name="stateLength">Length of the state.</param>
+            <returns>IPersonRecord[].</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA">
+            <summary>
+            Creates a US phone number.
+            </summary>
+            <returns>System.String.</returns>
+            <example>284-424-2216</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName">
+            <summary>
+            Generates a random file name with path (users temp folder).
+            </summary>
+            <returns>System.String.</returns>
+            <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\3nvoblq5.lz1</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.String)">
+            <summary>
+            Generates a random file name.
+            </summary>
+            <param name="path">The path.</param>
+            <returns>System.String.</returns>
+            <example>c:\\temp\\0yiv4iiu.uuv</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.Int32,System.String)">
+            <summary>
+            Generates random file name.
+            </summary>
+            <param name="fileNameLength">Length of the file name.</param>
+            <param name="extension">The extension.</param>
+            <returns>System.String.</returns>
+            <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\FOGWYNDRBM.dotnettips</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.String,System.Int32,System.String)">
+            <summary>
+            Generates a random file name.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="fileNameLength">Length of the file name.</param>
+            <param name="extension">The extension.</param>
+            <returns>System.String.</returns>
+            <example>c:\\temp\\FFDHRBMDXP.dotnettips</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl">
+            <summary>
+            Creates a random relative url.
+            </summary>
+            <returns>System.String.</returns>
+            <example>"/ljsylu/rsglcurkiylqld/wejdbuainlgjofnv/uwbrjftyt/"</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateTempFile(System.Int32)">
+            <summary>
+            Generates a random file.
+            </summary>
+            <param name="fileLength">The length.</param>
+            <returns>System.String.</returns>
+            <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\klxpckpo.24h</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateUrl">
+            <summary>
+            Creates a random Url.
+            </summary>
+            <returns>System.String.</returns>
+            <example>https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateUrlHostName">
+            <summary>
+            Creates a random url host name.
+            </summary>
+            <returns>System.String.</returns>
+            <example>https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoProtocol">
+            <summary>
+            Creates a url without a protocol.
+            </summary>
+            <returns>System.String.</returns>
+            <example>www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoSubDomain">
+            <summary>
+            Creates host name without a subdomain.
+            </summary>
+            <returns>System.String.</returns>
+            <example>elqqcw.org.uk</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateUrlPart">
+            <summary>
+            Create a random url part.
+            </summary>
+            <returns>System.String.</returns>
+            <remarks>/rregyyjxpjiats</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateWord(System.Int32)">
+            <summary>
+            Creates a random word.
+            </summary>
+            <param name="length">The length.</param>
+            <returns>System.String.</returns>
+            <example>mL_g[E_E_CsoJvjshI]CFjFKa</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateWord(System.Int32,System.Int32)">
+            <summary>
+            Creates a random word.
+            </summary>
+            <param name="minLength">The minimum length.</param>
+            <param name="maxLength">The maximum length.</param>
+            <returns>System.String.</returns>
+            <example>oMOYxlFvqclVQK</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateWord(System.Int32,System.Char,System.Char)">
+            <summary>
+            Creates a random word.
+            </summary>
+            <param name="length">The length.</param>
+            <param name="minCharacter">The minimum character.</param>
+            <param name="maxCharacter">The maximum character.</param>
+            <returns>System.String.</returns>
+            <example>LBEEUMHHHK</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateWord(System.Int32,System.Int32,System.Char,System.Char)">
+            <summary>
+            Creates a random word.
+            </summary>
+            <param name="minLength">The minimum length.</param>
+            <param name="maxLength">The maximum length.</param>
+            <param name="minCharacter">The minimum character.</param>
+            <param name="maxCharacter">The maximum character.</param>
+            <returns>System.String.</returns>
+            <example>ACRNFTPAE</example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.GenerateWords(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Generates a list of words.
+            </summary>
+            <param name="count">The word count.</param>
+            <param name="minLength">The minimum length.</param>
+            <param name="maxLength">The maximum length.</param>
+            <returns>ImmutableList&lt;System.String&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.RandomData.Of(System.String[])">
+            <summary>
+            Picks a random string from an array.
+            </summary>
+            <param name="words">The words.</param>
+            <returns>System.String.</returns>
+        </member>
+    </members>
+</doc>

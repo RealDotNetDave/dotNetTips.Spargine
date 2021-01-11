@@ -11,37 +11,37 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
-    /// <summary>
-    /// Class Singleton.
-    /// </summary>
-    /// <typeparam name="T">Generic type parameter.</typeparam>
-    public abstract class Singleton<T>
-        where T : Singleton<T>, new()
-    {
-        /// <summary>
-        /// The instance
-        /// </summary>
-        private static T _instance = new T();
+	/// <summary>
+	/// Class Singleton.
+	/// </summary>
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	public abstract class Singleton<T>
+		where T : Singleton<T>, new()
+	{
+		/// <summary>
+		/// The instance
+		/// </summary>
+		private static T _instance = new T();
 
-        /// <summary>
-        /// Gets the instance.
-        /// </summary>
-        /// <value>The instance.</value>
-        public static T Instance => _instance;
+		/// <summary>
+		/// Gets the instance.
+		/// </summary>
+		/// <value>The instance.</value>
+		public static T Instance => _instance;
 
-        /// <summary>
-        /// ts this instance.
-        /// </summary>
-        /// <param name="data">The data.</param>
-        protected static void LoadData(T data)
-        {
-            if (data != null)
-            {
-                _instance = data;
-            }
-        }
-    }
+		/// <summary>
+		/// ts this instance.
+		/// </summary>
+		/// <param name="data">The data.</param>
+		protected static void LoadData(T data)
+		{
+			if (data != null)
+			{
+				_instance = data;
+			}
+		}
+	}
 }

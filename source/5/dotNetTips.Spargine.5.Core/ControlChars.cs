@@ -11,14 +11,14 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Class ControlChars.
 	/// </summary>
 	public static class ControlChars
-    {
+	{
 
 		/// <summary>
 		/// @ Symbol.
@@ -154,5 +154,5 @@ namespace dotNetTips.Spargine.Core
 		/// Vertical tab.
 		/// </summary>
 		public const char VerticalTab = '\v';
-    }
+	}
 }

@@ -15,22 +15,23 @@ using System;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
 
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
-    /// <summary>
-    /// Class GuidExtensions.
-    /// </summary>
-    public static class GuidExtensions
-    {
-        /// <summary>
-        /// Returns the Guid without dashes.
-        /// </summary>
-        /// <param name="value">The Guid value.</param>
-        /// <returns>System.String.</returns>
-        [Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
-        public static string ToDigits(this Guid value)
-        {
-            return value.ToString("N", CultureInfo.InvariantCulture);
-        }
-    }
+	/// <summary>
+	/// Class GuidExtensions.
+	/// </summary>
+	public static class GuidExtensions
+	{
+		/// <summary>
+		/// Returns the Guid without dashes.
+		/// </summary>
+		/// <param name="value">The Guid value.</param>
+		/// <returns>System.String.</returns>
+		[Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
+		public static string ToDigits(this Guid value)
+		{
+			return value.ToString("N", CultureInfo.InvariantCulture);
+		}
+	}
 }

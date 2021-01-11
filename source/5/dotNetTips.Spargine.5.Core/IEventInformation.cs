@@ -11,13 +11,13 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
-    /// <summary>
-    /// Interface IEventInformation
-    /// </summary>
-    public interface IEventInformation
-    {
-    }
+	/// <summary>
+	/// Interface IEventInformation
+	/// </summary>
+	public interface IEventInformation
+	{
+	}
 }

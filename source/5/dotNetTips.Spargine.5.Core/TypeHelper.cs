@@ -11,7 +11,6 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +22,7 @@ using System.Text;
 using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.ObjectPool;
 
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>

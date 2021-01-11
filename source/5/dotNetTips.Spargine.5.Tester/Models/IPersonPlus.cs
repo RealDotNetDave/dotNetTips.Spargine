@@ -15,25 +15,26 @@ using System;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Interface IPersonPlus
 	/// </summary>
 	[XmlRoot(ElementName = "IPersonPlus", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-    public interface IPersonPlus : IPerson
-    {
+	public interface IPersonPlus : IPerson
+	{
 		/// <summary>
 		/// Gets the age.
 		/// </summary>
 		/// <value>The age.</value>
 		[IgnoreDataMember]
-        public TimeSpan Age => this.CalculateAge();
+		public TimeSpan Age => this.CalculateAge();
 
 		/// <summary>
 		/// Calculates the person's current age.
 		/// </summary>
 		/// <returns>TimeSpan.</returns>
 		private TimeSpan CalculateAge() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
-    }
+	}
 }

@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DBED4A62-7F85-4664-99DD-C8BA9B3A4407}"
 	ProjectSection(SolutionItems) = preProject
 		5\.editorconfig = 5\.editorconfig
+		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Extensions", "5\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj", "{3CBD20C3-6D00-47E3-8553-BB9DA9367E58}"
@@ -22,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Teste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.Tester.Tests", "5\Unit Tests\dotNetTips.Spargine.Tester.Tests\dotNetTips.Spargine.Tester.Tests.csproj", "{3C1D7996-8D25-4935-875A-00E5ED43BD12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetTips.Spargine.5", "dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj", "{B9959466-B49D-4D36-AEC0-1D53274B2F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5", "dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj", "{B9959466-B49D-4D36-AEC0-1D53274B2F30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,28 +1,41 @@
-﻿
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Tester
+// Author           : David McCarter
+// Created          : 12-29-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 01-03-2021
+// ***********************************************************************
+// <copyright file="ICoordinate.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
-    /// <summary>
-    /// Interface ICoordinate used to create Coordinate.
-    /// </summary>
-    public interface ICoordinate
-    {
-        /// <summary>
-        /// Gets or sets the x coordinate.
-        /// </summary>
-        /// <value>The x value.</value>
-        int X { get; set; }
+	/// <summary>
+	/// Interface ICoordinate used to create Coordinate.
+	/// </summary>
+	public interface ICoordinate
+	{
+		/// <summary>
+		/// Gets or sets the x coordinate.
+		/// </summary>
+		/// <value>The x value.</value>
+		int X { get; set; }
 
-        /// <summary>
-        /// Gets or sets the y coordinate.
-        /// </summary>
-        /// <value>The y value.</value>
-        int Y { get; set; }
+		/// <summary>
+		/// Gets or sets the y coordinate.
+		/// </summary>
+		/// <value>The y value.</value>
+		int Y { get; set; }
 
-        /// <summary>
-        /// Returns a <see cref="System.String" /> of the coordinates.
-        /// </summary>
-        /// <returns>A <see cref="System.String" /> of the coordinates.</returns>
-        string ToString();
+		/// <summary>
+		/// Returns a <see cref="System.String" /> of the coordinates.
+		/// </summary>
+		/// <returns>A <see cref="System.String" /> of the coordinates.</returns>
+		string ToString();
 
-    }
+	}
 }

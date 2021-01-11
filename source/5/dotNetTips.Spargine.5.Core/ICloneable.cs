@@ -11,19 +11,19 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
-    /// <summary>
-    /// ICloneable Interface.
-    /// </summary>
-    /// <typeparam name="T">Generic type parameter.</typeparam>
-    public interface ICloneable<T>
-    {
-        /// <summary>
-        /// Cones this instance.
-        /// </summary>
-        /// <returns>T.</returns>
-        T Cone();
-    }
+	/// <summary>
+	/// ICloneable Interface.
+	/// </summary>
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	public interface ICloneable<T>
+	{
+		/// <summary>
+		/// Cones this instance.
+		/// </summary>
+		/// <returns>T.</returns>
+		T Cone();
+	}
 }

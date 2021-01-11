@@ -11,31 +11,31 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
-    /// <summary>
-    /// Class EnumItem.
-    /// </summary>
-    /// <typeparam name="T">Generic type parameter.</typeparam>
-    public class EnumItem<T>
-    {
-        /// <summary>
-        /// Gets or sets the description.
-        /// </summary>
-        /// <value>The description.</value>
-        public string Description
-        {
-            get; set;
-        }
+	/// <summary>
+	/// Class EnumItem.
+	/// </summary>
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	public class EnumItem<T>
+	{
+		/// <summary>
+		/// Gets or sets the description.
+		/// </summary>
+		/// <value>The description.</value>
+		public string Description
+		{
+			get; set;
+		}
 
-        /// <summary>
-        /// Gets or sets the value.
-        /// </summary>
-        /// <value>The value.</value>
-        public T Value
-        {
-            get; set;
-        }
-    }
+		/// <summary>
+		/// Gets or sets the value.
+		/// </summary>
+		/// <value>The value.</value>
+		public T Value
+		{
+			get; set;
+		}
+	}
 }

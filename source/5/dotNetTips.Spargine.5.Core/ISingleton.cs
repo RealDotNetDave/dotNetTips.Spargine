@@ -11,20 +11,20 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
-    /// <summary>
-    /// Interface ISingleton
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public interface ISingleton<T>
-        where T : class
-    {
-        /// <summary>
-        /// Returns instance for the object.
-        /// </summary>
-        /// <returns>T.</returns>
-        T Instance();
-    }
+	/// <summary>
+	/// Interface ISingleton
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	public interface ISingleton<T>
+		where T : class
+	{
+		/// <summary>
+		/// Returns instance for the object.
+		/// </summary>
+		/// <returns>T.</returns>
+		T Instance();
+	}
 }

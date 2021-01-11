@@ -16,55 +16,56 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core.Diagnostics
 {
-    /// <summary>
-    /// Performance Stopwatch.
-    /// </summary>
-    /// <seealso cref="System.Diagnostics.Stopwatch" />
-    [ExcludeFromCodeCoverage]
-    [Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
-    public class PerformanceStopwatch : Stopwatch
-    {
-        /// <summary>
-        /// Starts the new.
-        /// </summary>
-        /// <returns>PerformanceStopwatch.</returns>
-        [Information(nameof(StartNew), "David McCarter", "11/11/2020", Status = Status.Available)]
-        public static new PerformanceStopwatch StartNew()
-        {
-            var sw = TypeHelper.Create<PerformanceStopwatch>();
-            sw.Start();
+	/// <summary>
+	/// Performance Stopwatch.
+	/// </summary>
+	/// <seealso cref="System.Diagnostics.Stopwatch" />
+	[ExcludeFromCodeCoverage]
+	[Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
+	public class PerformanceStopwatch : Stopwatch
+	{
+		/// <summary>
+		/// Starts the new.
+		/// </summary>
+		/// <returns>PerformanceStopwatch.</returns>
+		[Information(nameof(StartNew), "David McCarter", "11/11/2020", Status = Status.Available)]
+		public static new PerformanceStopwatch StartNew()
+		{
+			var sw = TypeHelper.Create<PerformanceStopwatch>();
+			sw.Start();
 
-            return sw;
-        }
+			return sw;
+		}
 
-        /// <summary>
-        /// Stops the reset.
-        /// </summary>
-        /// <returns>TimeSpan.</returns>
-        [Information(nameof(StopReset), "David McCarter", "11/11/2020", Status = Status.Available)]
-        public TimeSpan StopReset()
-        {
-            this.Stop();
-            var result = this.Elapsed;
-            base.Reset();
+		/// <summary>
+		/// Stops the reset.
+		/// </summary>
+		/// <returns>TimeSpan.</returns>
+		[Information(nameof(StopReset), "David McCarter", "11/11/2020", Status = Status.Available)]
+		public TimeSpan StopReset()
+		{
+			this.Stop();
+			var result = this.Elapsed;
+			base.Reset();
 
-            return result;
-        }
+			return result;
+		}
 
-        /// <summary>
-        /// Stops the restart.
-        /// </summary>
-        /// <returns>TimeSpan.</returns>
-        [Information(nameof(StopRestart), "David McCarter", "11/11/2020", Status = Status.Available)]
-        public TimeSpan StopRestart()
-        {
-            var result = this.Elapsed;
+		/// <summary>
+		/// Stops the restart.
+		/// </summary>
+		/// <returns>TimeSpan.</returns>
+		[Information(nameof(StopRestart), "David McCarter", "11/11/2020", Status = Status.Available)]
+		public TimeSpan StopRestart()
+		{
+			var result = this.Elapsed;
 
-            base.Restart();
+			base.Restart();
 
-            return result;
-        }
-    }
+			return result;
+		}
+	}
 }

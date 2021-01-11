@@ -11,44 +11,44 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
-    /// <summary>
-    /// Enum for HashType
-    /// </summary>
-    public enum HashType
-    {
+	/// <summary>
+	/// Enum for HashType
+	/// </summary>
+	public enum HashType
+	{
 
-        /// <summary>
-        /// SHA hash
-        /// </summary>
-        SHA,
+		/// <summary>
+		/// SHA hash
+		/// </summary>
+		SHA,
 
-        /// <summary>
-        /// SHA1 hash
-        /// </summary>
-        SHA1,
+		/// <summary>
+		/// SHA1 hash
+		/// </summary>
+		SHA1,
 
-        /// <summary>
-        /// MD5 hash
-        /// </summary>
-        MD5,
+		/// <summary>
+		/// MD5 hash
+		/// </summary>
+		MD5,
 
-        /// <summary>
-        /// SHA256 hash
-        /// </summary>
-        SHA256,
+		/// <summary>
+		/// SHA256 hash
+		/// </summary>
+		SHA256,
 
-        /// <summary>
-        /// SHA384 hash
-        /// </summary>
-        SHA384,
+		/// <summary>
+		/// SHA384 hash
+		/// </summary>
+		SHA384,
 
-        /// <summary>
-        /// SHA512 hash
-        /// </summary>
-        SHA512
+		/// <summary>
+		/// SHA512 hash
+		/// </summary>
+		SHA512
 
-    }
+	}
 }

@@ -14,22 +14,23 @@
 using dotNetTips.Spargine.Core;
 using Microsoft.AspNetCore.Http;
 
+//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
-    /// <summary>
-    /// HttpContext Extensions.
-    /// </summary>
-    public static class HttpContextExtensions
-    {
-        /// <summary>
-        /// Gets the remote ip address.
-        /// </summary>
-        /// <param name="context">The context.</param>
-        /// <returns>System.String.</returns>
-        [Information("Original code from: https://edi.wang/post/2017/10/16/get-client-ip-aspnet-20", "David McCarter", "9/04/2017", "9/04/2020", UnitTestCoverage = 0, Status = Status.Available)]
-        public static string GetRemoteIPAddress(this HttpContext context)
-        {
-            return context.Connection.RemoteIpAddress.ToString();
-        }
-    }
+	/// <summary>
+	/// HttpContext Extensions.
+	/// </summary>
+	public static class HttpContextExtensions
+	{
+		/// <summary>
+		/// Gets the remote ip address.
+		/// </summary>
+		/// <param name="context">The context.</param>
+		/// <returns>System.String.</returns>
+		[Information("Original code from: https://edi.wang/post/2017/10/16/get-client-ip-aspnet-20", "David McCarter", "9/04/2017", "9/04/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		public static string GetRemoteIPAddress(this HttpContext context)
+		{
+			return context.Connection.RemoteIpAddress.ToString();
+		}
+	}
 }

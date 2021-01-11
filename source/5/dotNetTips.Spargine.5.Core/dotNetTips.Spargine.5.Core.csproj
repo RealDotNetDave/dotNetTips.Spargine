@@ -17,8 +17,8 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <NeutralLanguage>en-US</NeutralLanguage>
     <PackageIcon></PackageIcon>
-    <AssemblyVersion>2021.1.11.97</AssemblyVersion>
-    <FileVersion>2021.1.11.97</FileVersion>
+    <AssemblyVersion>2021.1.11.98</AssemblyVersion>
+    <FileVersion>2021.1.11.98</FileVersion>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
     <AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>

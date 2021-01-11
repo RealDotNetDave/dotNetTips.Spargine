@@ -41,10 +41,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(dictionary != null, nameof(dictionary));
+			Encapsulation.TryValidateNullParam(dictionary, nameof(dictionary));
 			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
-			Encapsulation.TryValidateParam<ArgumentNullException>(key != null, nameof(key));
-			Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
+			Encapsulation.TryValidateNullParam(key, nameof(key));
+			Encapsulation.TryValidateNullParam(value, nameof(value));
 
 			if (dictionary.ContainsKey(key) == false)
 			{
@@ -76,10 +76,10 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
+			Encapsulation.TryValidateNullParam(list, nameof(list));
 			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(key != null, nameof(key));
-			Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
+			Encapsulation.TryValidateNullParam(key, nameof(key));
+			Encapsulation.TryValidateNullParam(value, nameof(value));
 
 			var returnValue = false;
 
@@ -120,10 +120,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> list, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
+			Encapsulation.TryValidateNullParam(list, nameof(list));
 			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(key != null, nameof(key));
-			Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
+			Encapsulation.TryValidateNullParam(key, nameof(key));
+			Encapsulation.TryValidateNullParam(value, nameof(value));
 
 			if (list.TryGetValue(key, out var item) == false)
 			{
@@ -147,10 +147,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 99)]
 		public static string ToDelimitedString(this IDictionary list, char delimiter = ControlChars.Comma)
 		{
-			if (delimiter.IsNull())
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(delimiter));
-			}
+			Encapsulation.TryValidateNullParam(delimiter, nameof(delimiter));
 
 			if (list.HasItems() == false)
 			{
@@ -178,7 +175,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> list)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
+			Encapsulation.TryValidateNullParam(list, nameof(list));
 
 			return ImmutableDictionary.CreateRange<TKey, TValue>(list);
 		}
@@ -200,9 +197,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> list, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list != null, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(key != null, nameof(key));
-			Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
+			Encapsulation.TryValidateNullParam(list, nameof(list));
+			Encapsulation.TryValidateNullParam(key, nameof(key));
+			Encapsulation.TryValidateNullParam(value, nameof(value));
 
 
 			if (list.TryGetValue(key, out var item) == false)

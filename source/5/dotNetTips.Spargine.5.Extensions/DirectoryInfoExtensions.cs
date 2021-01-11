@@ -15,45 +15,35 @@ using System;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 namespace dotNetTips.Spargine.Extensions
 {
-    /// <summary>
-    /// DirectoryInfoExtensions.
-    /// </summary>
-    public static class DirectoryInfoExtensions
-    {
-        /// <summary>
-        /// Gets the total size of a directory.
-        /// </summary>
-        /// <param name="info">The information.</param>
-        /// <param name="searchPattern">The search pattern.</param>
-        /// <param name="searchOption">The search option.</param>
-        /// <returns>System.Int64.</returns>
-        /// <exception cref="ArgumentNullException">DirectoryInfo cannot be null.</exception>
-        /// <exception cref="ArgumentNullException">Search pattern cannot be null or empty.</exception>
-        /// <exception cref="ArgumentOutOfRangeException">Search option invalid.</exception>
-        [Information(nameof(GetSize), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/20/2020", UnitTestCoverage = 100, Status = Status.Available)]
-        public static long GetSize(this DirectoryInfo info, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
-        {
-            if (info is null)
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(info));
-            }
+	/// <summary>
+	/// DirectoryInfoExtensions.
+	/// </summary>
+	public static class DirectoryInfoExtensions
+	{
+		/// <summary>
+		/// Gets the total size of a directory.
+		/// </summary>
+		/// <param name="info">The information.</param>
+		/// <param name="searchPattern">The search pattern.</param>
+		/// <param name="searchOption">The search option.</param>
+		/// <returns>System.Int64.</returns>
+		/// <exception cref="ArgumentNullException">DirectoryInfo cannot be null.</exception>
+		/// <exception cref="ArgumentNullException">Search pattern cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Search option invalid.</exception>
+		[Information(nameof(GetSize), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/20/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		public static long GetSize(this DirectoryInfo info, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+		{
+			Encapsulation.TryValidateNullParam(info, nameof(info));
+			Encapsulation.TryValidateParam(searchPattern, nameof(searchPattern));
+			Encapsulation.TryValidateParam(searchOption, nameof(searchOption));
 
-            if (string.IsNullOrEmpty(searchPattern))
-            {
-                ExceptionThrower.ThrowArgumentNullException(nameof(searchPattern));
-            }
+			var size = info.GetFiles(searchPattern, searchOption).Sum(p => p.Length);
 
-            if (Enum.IsDefined(typeof(SearchOption), searchOption) == false)
-            {
-                ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(searchOption));
-            }
-
-            var size = info.GetFiles(searchPattern, searchOption).Sum(p => p.Length);
-
-            return size;
-        }
-    }
+			return size;
+		}
+	}
 }

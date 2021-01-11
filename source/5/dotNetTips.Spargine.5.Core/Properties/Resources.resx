@@ -222,4 +222,7 @@
   <data name="ExMessageInvalidEnumType" xml:space="preserve">
     <value>Invalid enum type.</value>
   </data>
+  <data name="ParameterCannotBeNull" xml:space="preserve">
+    <value>Parameter cannot be null.</value>
+  </data>
 </root>

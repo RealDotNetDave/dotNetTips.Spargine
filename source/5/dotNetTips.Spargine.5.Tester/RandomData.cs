@@ -9,7 +9,7 @@
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Methods to randomly generate data for unit and benchmark testing.</summary>
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <summary>
 		/// The domain extensions used to create random Url's.
 		/// </summary>
-		private static readonly string[] _domainExtensions = new string[] { ".com", ".co.uk", ".org", ".org.uk", ".net", ".us", ".com.au", ".es", ".fr", ".de", ".ly", ".gov", ".gov.uk", ".ac.uk", ".website", ".store", ".health", ".band" };
+		private static readonly string[] _domainExtensions = new string[] { ".com", ".co.uk", ".org", ".org.uk", ".net", ".us", ".com.au", ".es", ".fr", ".de", ".ly", ".gov", ".gov.uk", ".ac.uk", ".website", ".store", ".health", ".band", ".dotNetTips.com" };
 
 		/// <summary>
 		/// The synchronize lock
@@ -106,6 +106,8 @@ namespace dotNetTips.Spargine.Tester
 
 				addresses.Add(address);
 			}
+
+			addresses.TrimExcess();
 
 			return addresses;
 		}
@@ -180,6 +182,8 @@ namespace dotNetTips.Spargine.Tester
 			{
 				coordinates.Add(GenerateCoordinate<T>());
 			}
+
+			coordinates.TrimExcess();
 
 			return coordinates;
 		}
@@ -257,6 +261,8 @@ namespace dotNetTips.Spargine.Tester
 				files.Add(GenerateTempFile(fileLength));
 			}
 
+			files.TrimExcess();
+
 
 			return (Path.GetTempPath(), files.AsEnumerable());
 		}
@@ -283,6 +289,7 @@ namespace dotNetTips.Spargine.Tester
 				files.Add(GenerateFile(fileName, fileLength));
 			}
 
+			files.TrimExcess();
 
 			return (Path.GetTempPath(), files.AsEnumerable());
 		}
@@ -310,6 +317,8 @@ namespace dotNetTips.Spargine.Tester
 				var fileName = GenerateRandomFileName(path);
 				files.Add(GenerateFile(fileName, fileLength));
 			}
+
+			files.TrimExcess();
 
 			return files.AsEnumerable();
 		}
@@ -421,6 +430,8 @@ namespace dotNetTips.Spargine.Tester
 				ExceptionThrower.ThrowInvalidOperationException("Unable to create collection.");
 			}
 
+			people.TrimExcess();
+
 			return people;
 		}
 
@@ -456,6 +467,8 @@ namespace dotNetTips.Spargine.Tester
 
 				records.Add(person);
 			}
+
+			records.TrimExcess();
 
 			return records;
 		}
@@ -694,12 +707,14 @@ namespace dotNetTips.Spargine.Tester
 		{
 			Encapsulation.TryValidateParam(count, minimumValue: 1, paramName: nameof(count));
 
-			var strings = new List<string>();
+			var strings = new List<string>(count);
 
 			for (var wordCount = 0; wordCount < count; wordCount++)
 			{
 				strings.Add(GenerateWord(minLength, maxLength));
 			}
+
+			strings.TrimExcess();
 
 			return strings.ToImmutableList();
 		}

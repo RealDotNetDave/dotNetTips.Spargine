@@ -2223,6 +2223,14 @@
             Class to validate method parameters.
             </summary>
         </member>
+        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateNullParam(System.Object,System.String,System.String)">
+            <summary>
+            Tries the validate if the object is null.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="paramName">Name of the parameter.</param>
+            <param name="message">The message.</param>
+        </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam``1(System.Boolean,System.String,System.String)">
             <summary>
             Tries the validate parameter.
@@ -2622,6 +2630,11 @@
         <member name="P:dotNetTips.Spargine.Core.Properties.Resources.NumberNotInRange">
             <summary>
               Looks up a localized string similar to Number does not match minimum or maximum value..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ParameterCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Parameter cannot be null..
             </summary>
         </member>
         <member name="P:dotNetTips.Spargine.Core.Properties.Resources.ParameterIsInvalid">

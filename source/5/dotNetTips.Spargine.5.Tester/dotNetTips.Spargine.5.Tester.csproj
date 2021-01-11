@@ -27,8 +27,8 @@
       -- JAN 15 2021: ?.
     </PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2021.1.8.37391</AssemblyVersion>
-    <FileVersion>2021.1.8.37391</FileVersion>
+    <AssemblyVersion>2021.1.11.37395</AssemblyVersion>
+    <FileVersion>2021.1.11.37395</FileVersion>
     <DebugType>pdbonly</DebugType>
     <DebugSymbols>true</DebugSymbols>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

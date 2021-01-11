@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
 		public static IEnumerable<T> GetInstances<T>(this Assembly assembly) where T : class
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(assembly != null, nameof(assembly));
+			Encapsulation.TryValidateNullParam(assembly, nameof(assembly));
 
 			var list = assembly.GetTypes()
 				.Where(x => !x.IsInterface
@@ -63,7 +63,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
 		public static IEnumerable<Type> GetInterfaces<T>(this Assembly assembly)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(assembly != null, nameof(assembly));
+			Encapsulation.TryValidateNullParam(assembly, nameof(assembly));
 
 			return assembly.GetTypes(typeof(T));
 		}
@@ -79,7 +79,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
 		public static IEnumerable<Type> GetTypes<T>(this Assembly assembly)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(assembly != null, nameof(assembly));
+			Encapsulation.TryValidateNullParam(assembly, nameof(assembly));
 
 			return assembly.GetTypes(typeof(T));
 		}
@@ -96,8 +96,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
 		public static IEnumerable<Type> GetTypes(this Assembly assembly, Type interfaceType)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(assembly != null, nameof(assembly));
-			Encapsulation.TryValidateParam<ArgumentNullException>(interfaceType != null, nameof(assembly));
+			Encapsulation.TryValidateNullParam(assembly, nameof(assembly));
+			Encapsulation.TryValidateNullParam(interfaceType, nameof(assembly));
 
 			return assembly.GetTypes()
 				.Where(x => !x.IsInterface && !x.IsAbstract && interfaceType.IsAssignableFrom(x));

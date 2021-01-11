@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dotNetTips.Spargine.Core.Properties
-{
-
-
+namespace dotNetTips.Spargine.Core.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -264,6 +264,15 @@ namespace dotNetTips.Spargine.Core.Properties
         internal static string NumberNotInRange {
             get {
                 return ResourceManager.GetString("NumberNotInRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parameter cannot be null..
+        /// </summary>
+        internal static string ParameterCannotBeNull {
+            get {
+                return ResourceManager.GetString("ParameterCannotBeNull", resourceCulture);
             }
         }
         

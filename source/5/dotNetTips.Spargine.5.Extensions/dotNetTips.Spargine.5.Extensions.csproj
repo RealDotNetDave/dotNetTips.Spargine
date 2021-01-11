@@ -20,8 +20,8 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2021.1.8.114</AssemblyVersion>
-    <FileVersion>2021.1.8.114</FileVersion>
+    <AssemblyVersion>2021.1.11.118</AssemblyVersion>
+    <FileVersion>2021.1.11.118</FileVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

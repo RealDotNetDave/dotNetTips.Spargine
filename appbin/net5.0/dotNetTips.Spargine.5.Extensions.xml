@@ -27,7 +27,7 @@
             <param name="array">The array.</param>
             <param name="item">The item.</param>
             <returns>T[].</returns>
-            <exception cref="T:System.ArgumentNullException">item - Item cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">item - Item cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ArrayExtensions.AreEqual``1(``0[],``0[])">
             <summary>
@@ -150,10 +150,8 @@
             <param name="list">The list.</param>
             <param name="item">The value.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentNullException">list - List cannot be null. or value - Value cannot be null.</exception>
-            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
-            <exception cref="T:System.ArgumentNullException">list - List cannot be read-only.</exception>
-            <exception cref="T:System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">List cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">List cannot be read-only.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0[])">
             <summary>
@@ -163,8 +161,7 @@
             <param name="list">The list.</param>
             <param name="items">The values.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentException">list - List cannot be read-only.</exception>
-            <exception cref="T:System.ArgumentNullException">list - List cannot be read-only.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">list - List cannot be read-only.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddIfNotExists``1(System.Collections.Generic.ICollection{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
@@ -175,8 +172,8 @@
             <param name="item">The item.</param>
             <param name="comparer">The comparer.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentException">List cannot be read-only. - list</exception>
-            <exception cref="T:System.ArgumentNullException">List cannot be read-only. - list</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">List cannot be read-only.</exception>
+            <exception cref="T:System.ArgumentNullException">List cannot be <see langword="null"/>.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0},dotNetTips.Spargine.Core.Tristate)">
             <summary>
@@ -187,26 +184,25 @@
             <param name="items">The items.</param>
             <param name="ensureUnique">The ensure unique.</param>
             <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentException">items</exception>
-            <exception cref="T:System.ArgumentNullException">items</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentReadOnlyException">List cannot be read-only.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.DoesNotHaveItems(System.Collections.ICollection)">
             <summary>
-            Determines whether the specified source does not have items or is null.
+            Determines whether the specified collection does not have items or is null.
             </summary>
             <param name="source">The source.</param>
             <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.HasItems(System.Collections.ICollection)">
             <summary>
-            Determines whether the specified source has items.
+            Determines whether the specified collection has items.
             </summary>
             <param name="source">The source.</param>
             <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.CollectionExtensions.HasItems(System.Collections.ICollection,System.Int32)">
             <summary>
-            Determines whether the specified count has items.
+            Determines whether the specified collection has items.
             </summary>
             <param name="source">The source.</param>
             <param name="count">The specific count.</param>
@@ -232,8 +228,6 @@
             <param name="colors">The colors.</param>
             <returns>Color.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">colors - colors</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">colors - colors</exception>
-            <exception cref="T:System.ArgumentNullException">colors - colors</exception>
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.DataContextExtensions">
             <summary>
@@ -424,6 +418,33 @@
             <returns>DateTimeOffset.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFormattedString(System.DateTime,dotNetTips.Spargine.Extensions.DateTimeFormat)">
+            <summary>
+            Converts date/ time to a formatted string.
+            </summary>
+            <param name="input">The input.</param>
+            <param name="format">The format.</param>
+            <returns>System.String.</returns>
+            <example>
+            FullDateLongTime: Thursday, January 7, 2021 3:36:39 PM
+            FullDateShortTime: Thursday, January 7, 2021 3:36 PM
+            FullDateTime: Thursday, January 7, 2021 3:36 PM
+            GeneralDateLongTime: 1/7/2021 3:36:39 PM
+            GeneralDateShortTime: 1/7/2021 3:36 PM
+            Jan01Comma2020: Jan 07, 2021
+            Janurary01Comma2020: January 07, 2021
+            LongDate: Thursday, January 7, 2021
+            LongTime: 3:36:39 PM
+            MonthDay: January 7
+            MonthYear: January 2021
+            RFC1123: Thu, 07 Jan 2021 15:36:39 GMT
+            RoundTripDateTime: 2021-01-07T15:36:39.4416894-08:00
+            ShortDate: 1/7/2021
+            ShortTime: 3:36 PM
+            SortableDateTime: 2021-01-07T15:36:39
+            UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
+            </example>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFormattedString(System.DateTimeOffset,dotNetTips.Spargine.Extensions.DateTimeFormat)">
             <summary>
             Converts date/ time to a formatted string.
             </summary>
@@ -2755,7 +2776,7 @@
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.StringExtensions">
             <summary>
-            Common StringExtensions.
+            Common String Extensions.
             </summary>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ComputeHash(System.String,dotNetTips.Spargine.Extensions.HashType)">
@@ -2765,14 +2786,15 @@
             <param name="input">The input.</param>
             <param name="hashType">Type of the hash.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentException">'input' cannot be null or empty - input</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ComputeSHA256Hash(System.String)">
             <summary>
-            Computes the sha256 hash.
+            Computes the SHA256Hash.
             </summary>
             <param name="input">The data.</param>
             <returns>System.String.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Concat(System.String,System.String,dotNetTips.Spargine.Core.Tristate,System.String[])">
             <summary>
@@ -2783,7 +2805,7 @@
             <param name="addLineFeed">The add line feed. If set to true, delimiter will not be used.</param>
             <param name="args">The arguments.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentException">firstMessage</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ContainsAny(System.String,System.String[])">
             <summary>
@@ -2792,20 +2814,18 @@
             <param name="input">The string.</param>
             <param name="characters">The characters.</param>
             <returns><c>true</c> if the specified characters contains any; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentException">input</exception>
-            <exception cref="T:System.ArgumentNullException">input</exception>
-            <exception cref="T:System.ArgumentNullException">input</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNull(System.String)">
             <summary>
-            Defaults if null.
+            Defaults if the string is null.
             </summary>
             <param name="value">The s.</param>
             <returns>System.String.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNull(System.String,System.String)">
             <summary>
-            Defaults if null.
+            Defaults to value if string is null.
             </summary>
             <param name="value">The s.</param>
             <param name="defaultValue">The default value.</param>
@@ -2813,7 +2833,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNullOrEmpty(System.String,System.String)">
             <summary>
-            Defaults if null or empty.
+            Defaults to value if string is null or empty.
             </summary>
             <param name="value">The value.</param>
             <param name="defaultValue">The default value.</param>
@@ -2821,15 +2841,16 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.DelimitedStringToArray(System.String,System.Char)">
             <summary>
-            Turns a delimited string to a string array.
+            Turns a delimited string to a array of strings.
             </summary>
             <param name="input">The delimited input.</param>
             <param name="delimiter">The delimiter.</param>
             <returns>System.String[].</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.EqualsIgnoreCase(System.String,System.String)">
             <summary>
-            Equals the ignore case.
+            Determines if the two strings are equal while ignoring case.
             </summary>
             <param name="input">The input.</param>
             <param name="valueToCompare">The value to compare.</param>
@@ -2837,7 +2858,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.EqualsOrBothNullOrEmpty(System.String,System.String)">
             <summary>
-            Equals the or both null or empty.
+            Determines if the two strings are null or empty.
             </summary>
             <param name="input">The input.</param>
             <param name="valueToCompare">The value to compare.</param>
@@ -2854,35 +2875,35 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.FromBase64(System.String)">
             <summary>
-            Converts Base64 string to string.
+            Converts Base64 string, to string.
             </summary>
             <param name="input">The value.</param>
             <returns>System.String.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String)">
             <summary>
-            Determines whether the specified input has value.
+            Determines whether the specified input has a value.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.Int32)">
             <summary>
-            Determines whether the specified length has value.
+            Determines whether the specified string length has value.
             </summary>
             <param name="input">The input.</param>
             <param name="length">Checks for specific length of the string.</param>
             <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.String)">
             <summary>
-            Determines whether the specified value has value.
+            Determines whether the specified string has the given value.
             </summary>
             <param name="input">The input.</param>
             <param name="value">Checks for a specific value.</param>
             <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
             <summary>
@@ -2901,64 +2922,65 @@
             <param name="minLength">The minimum length.</param>
             <param name="maxLength">The maximum length.</param>
             <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">minLength - Minimum length must be greater than 0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Maximum length must be greater than Minimum length.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Indent(System.String,System.Int32,System.Char)">
             <summary>
-            Indents the specified length.
+            Indents the string by the specified length.
             </summary>
             <param name="input">The string.</param>
             <param name="length">The length.</param>
             <param name="indentationCharacter">The indentation character.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentException">input</exception>
-            <exception cref="T:System.ArgumentNullException">length</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Input cannot be null or empty.</exception>
+            <exception cref="T:System.InvalidCastException">Length must be greater a positive value.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsAsciiLetter(System.Char)">
             <summary>
-            Determines whether [is ASCII letter] from [the specified character].
+            Determines whether the input is ASCII letter.
             </summary>
             <param name="character">The character.</param>
             <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsAsciiLetterOrDigit(System.Char)">
             <summary>
-            Determines whether [is ASCII letter or digit] from [the specified character].
+            Determines whether the input is ASCII letter or digit.
             </summary>
             <param name="character">The character.</param>
             <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsCreditCard(System.String)">
             <summary>
-            Determines whether [is credit card] [the specified input].
+            Determines whether the input is credit card number.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsDomainAddress(System.String)">
             <summary>
-            Determines whether [is domain address] [the specified input].
+            Determines whether the input is a domain address.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsEmailAddress(System.String)">
             <summary>
-            Determines whether [is email address] [the specified input].
+            Determines whether the input is and email address.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsEmpty(System.String)">
             <summary>
-            Determines whether the specified input is empty.
+            Determines whether the specified input is null or empty.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsFirstLastName(System.String)">
             <summary>
-            Determines whether [is first and last name] [the specified input].
+            Determines whetherthe input is first and last name.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
@@ -3000,7 +3022,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.IsWebSafe(System.String)">
             <summary>
-            Determines whether [is web safe] [the specified input].
+            Determines whether the input is web safe.
             </summary>
             <param name="input">The input.</param>
             <returns><c>true</c> if [is web safe] [the specified input]; otherwise, <c>false</c>.</returns>
@@ -3025,51 +3047,49 @@
             </summary>
             <param name="input">The input.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentException">input</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.Char,System.StringSplitOptions)">
             <summary>
-            Splits the string.
+            Splits the string based on the separator with options.
             </summary>
             <param name="input">The value.</param>
             <param name="separator">The separator.</param>
             <param name="options">The options.</param>
             <returns>System.String[].</returns>
-            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.String,System.StringSplitOptions)">
             <summary>
-            Splits the string.
+            Splits the string based on the separator with options.
             </summary>
             <param name="input">The value.</param>
             <param name="separator">The separator.</param>
             <param name="options">The options.</param>
             <returns>System.String[].</returns>
-            <exception cref="T:System.ArgumentException">value</exception>
-            <exception cref="T:System.ArgumentException">separator</exception>
-            <exception cref="T:System.ArgumentException">value</exception>
-            <exception cref="T:System.ArgumentException">separator</exception>
-            <exception cref="T:System.ArgumentException">value</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">separator cannot be <see langword="null" />.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.Char,System.Int32,System.StringSplitOptions)">
             <summary>
-            Splits the string.
+            Splits the string based on the separator with options.
             </summary>
             <param name="input">The value.</param>
             <param name="separator">The separator.</param>
             <param name="count">The count.</param>
             <param name="options">The options.</param>
             <returns>System.String[].</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.Split(System.String,System.String,System.Int32,System.StringSplitOptions)">
             <summary>
-            Splits the string.
+            Splits the string based on the separator.
             </summary>
             <param name="input">The value.</param>
             <param name="separator">The separator.</param>
             <param name="count">The count.</param>
             <param name="options">The options.</param>
             <returns>System.String[].</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.SplitRemoveEmpty(System.String)">
             <summary>
@@ -3077,11 +3097,11 @@
             </summary>
             <param name="input">The input.</param>
             <returns>IEnumerable&lt;System.String&gt;.</returns>
-            <exception cref="T:System.ArgumentException">input</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">input string cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinal(System.String,System.String)">
             <summary>
-            Starts the with ordinal.
+            Determins if the input starts with ordinal.
             </summary>
             <param name="input">The input.</param>
             <param name="valueToCompare">The value to compare.</param>
@@ -3089,7 +3109,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinalIgnoreCase(System.String,System.String)">
             <summary>
-            Starts the with ordinal ignore case.
+            Determins if the input starts the with ordinal while ignoring case.
             </summary>
             <param name="input">The input.</param>
             <param name="valueToCompare">The value to compare.</param>
@@ -3103,23 +3123,25 @@
             <param name="startIndex">The start index.</param>
             <param name="length">The length.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentOutOfRangeException">startIndex - startIndex + length must be
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex - startIndex + length must be less than or equal to  value.Length</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex length must be less than or
+            equal to value.Length</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">startIndex length must be
             less than or equal to the value.Length</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToBase64(System.String)">
             <summary>
-            Converts string to Base64.
+            Converts string to Base64 string.
             </summary>
-            <param name="value">The value.</param>
+            <param name="input">The value.</param>
             <returns>System.String.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToTitleCase(System.String)">
             <summary>
-            Converts to title case.
+            Converts to a string to title case.
             </summary>
             <param name="input">The source.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentException">'source' cannot be null or empty - source</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)">
             <summary>
@@ -3127,11 +3149,10 @@
             </summary>
             <param name="input">The input.</param>
             <returns>Trimmed System.String.</returns>
-            <exception cref="T:System.ArgumentException">input</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.StringExtensions.GetHash(System.String,dotNetTips.Spargine.Extensions.HashType)">
             <summary>
-            Gets the hash.
+            Creates a hash of the input string.
             </summary>
             <param name="input">The input.</param>
             <param name="hash">The hash.</param>
@@ -3175,7 +3196,7 @@
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.TypeExtensions">
             <summary>
-            Class TypeExtensions.
+            Type Extensions.
             </summary>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.DoesObjectImplementInterface(System.Object,System.String[])">
@@ -3185,6 +3206,7 @@
             <param name="input">The input.</param>
             <param name="interfaceNames">The interface names.</param>
             <returns>IEnumerable&lt;System.String&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllAbstractMethods(System.Type)">
             <summary>
@@ -3192,6 +3214,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllDeclaredFields(System.Type)">
             <summary>
@@ -3199,7 +3222,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
-            <exception cref="T:System.ArgumentNullException">type</exception>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllDeclaredMethods(System.Type)">
             <summary>
@@ -3207,6 +3230,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllFields(System.Type)">
             <summary>
@@ -3214,6 +3238,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllGenericMethods(System.Type)">
             <summary>
@@ -3221,6 +3246,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllMethods(System.Type)">
             <summary>
@@ -3228,6 +3254,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllProperties(System.Type)">
             <summary>
@@ -3235,6 +3262,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllPublicMethods(System.Type)">
             <summary>
@@ -3242,6 +3270,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAllStaticMethods(System.Type)">
             <summary>
@@ -3249,6 +3278,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Type)">
             <summary>
@@ -3257,6 +3287,7 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="type">The type.</param>
             <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.MethodInfo)">
             <summary>
@@ -3265,6 +3296,7 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="methodInfo">The method information.</param>
             <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">MethodInfo cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.PropertyInfo)">
             <summary>
@@ -3273,6 +3305,7 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="propertyInfo">The property information.</param>
             <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">PropertyInfo cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetAttribute``1(System.Reflection.FieldInfo)">
             <summary>
@@ -3281,6 +3314,7 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="fieldInfo">The field information.</param>
             <returns>T.</returns>
+            <exception cref="T:System.ArgumentNullException">FieldInfo cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetFieldHash``1(System.Func{``0})">
             <summary>
@@ -3289,7 +3323,7 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="callback">The callback.</param>
             <returns>Hash for the field as System.String.</returns>
-            <exception cref="T:System.ArgumentNullException">callback</exception>
+            <exception cref="T:System.ArgumentNullException">Callback cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.GetTypeMembersWithAttribute``1(System.Type)">
             <summary>
@@ -3299,6 +3333,7 @@
             <param name="type">The type.</param>
             <returns>System.ValueTuple&lt;System.String, TAttribute, System.Boolean, System.Boolean, Type&gt;[].</returns>
             <exception cref="T:System.InvalidOperationException">Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it</exception>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.HasAttribute``1(System.Reflection.MethodInfo)">
             <summary>
@@ -3307,10 +3342,11 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="methodInfo">The method information.</param>
             <returns><c>true</c> if the specified method information has attribute; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.ArgumentNullException">MethodInfo cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.HasBaseClass(System.Type,System.Type)">
             <summary>
-            Determines whether [has base class of] [the specified base class].
+            Determines whether the type inherits the base class].
             </summary>
             <param name="type">The type.</param>
             <param name="baseClass">The base class.</param>
@@ -3322,7 +3358,7 @@
             </summary>
             <param name="type">The type.</param>
             <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentNullException">type</exception>
+            <exception cref="T:System.ArgumentNullException">Type cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.IsNullable(System.Type)">
             <summary>
@@ -3337,7 +3373,7 @@
             </summary>
             <param name="property">The property.</param>
             <returns><c>true</c> if the specified property is static; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentNullException">property</exception>
+            <exception cref="T:System.ArgumentNullException">PropertyInfo cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.TypeExtensions.Max``1(``0,``0)">
             <summary>
@@ -3347,8 +3383,7 @@
             <param name="obj1">The obj1.</param>
             <param name="obj2">The obj2.</param>
             <returns>T.</returns>
-            <exception cref="T:System.ArgumentNullException">obj2</exception>
-            <exception cref="T:System.ArgumentNullException">obj1 - Object 1 cannot be null. or obj2 - Object 1 cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Object 2 cannot be null.</exception>
             <remarks>Original code by: Jeremy Clark</remarks>
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.WebClientExtensions">

@@ -282,7 +282,40 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
+
+			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
+		}
+
+		/// <summary>
+		/// Converts date/ time to a formatted string.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="format">The format.</param>
+		/// <returns>System.String.</returns>
+		/// <example>
+		/// FullDateLongTime: Thursday, January 7, 2021 3:36:39 PM
+		/// FullDateShortTime: Thursday, January 7, 2021 3:36 PM
+		/// FullDateTime: Thursday, January 7, 2021 3:36 PM
+		/// GeneralDateLongTime: 1/7/2021 3:36:39 PM
+		/// GeneralDateShortTime: 1/7/2021 3:36 PM
+		/// Jan01Comma2020: Jan 07, 2021
+		/// Janurary01Comma2020: January 07, 2021
+		/// LongDate: Thursday, January 7, 2021
+		/// LongTime: 3:36:39 PM
+		/// MonthDay: January 7
+		/// MonthYear: January 2021
+		/// RFC1123: Thu, 07 Jan 2021 15:36:39 GMT
+		/// RoundTripDateTime: 2021-01-07T15:36:39.4416894-08:00
+		/// ShortDate: 1/7/2021
+		/// ShortTime: 3:36 PM
+		/// SortableDateTime: 2021-01-07T15:36:39
+		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
+		/// </example>
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		public static string ToFormattedString(this DateTimeOffset input, DateTimeFormat format)
+		{
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
 		}

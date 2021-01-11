@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading;
@@ -34,6 +35,39 @@ namespace dotNetTips.Spargine.Net.Http
                 var response = await _client.GetAsync(url, cts.Token);
 
                 response.EnsureSuccessStatusCode();
+
+                return response;
+            }
+            catch (TaskCanceledException ex) when (cts.IsCancellationRequested)
+            {
+                // If the token has been canceled, it is not a timeout.
+                // Handle cancellation.
+                ExceptionThrower.ThrowInvalidOperationException("The operation has been canceled.", ex);
+            }
+            catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
+            {
+                // Handle timeout.
+                ExceptionThrower.ThrowInvalidOperationException("The operation has timed out.", ex);
+            }
+            catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+            {
+                // Handle 404
+                ExceptionThrower.ThrowInvalidOperationException($"Resource {url} was not found.", ex);
+            }
+
+            return null;
+        }
+
+        public static async Task<Stream> GetStreamAsync(string url)
+        {
+            Encapsulation.TryValidateParam(url, nameof(url));
+
+            var cts = new CancellationTokenSource();
+
+            try
+            {
+                // Pass in the token.
+                var response = await _client.GetStreamAsync(url, cts.Token);
 
                 return response;
             }

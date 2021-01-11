@@ -35,7 +35,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null.</exception>
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
-		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> list, T item)
 		{
 			Encapsulation.TryValidateParam(list, nameof(list));
@@ -110,7 +110,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
 		/// <exception cref="ArgumentNullException">List cannot be <see langword="null"/>.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> list, T item, IEqualityComparer<T> comparer)
 		{
 			if (item is null)
@@ -144,7 +144,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="ensureUnique">The ensure unique.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
-		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool AddRange<T>(this ICollection<T> list, IEnumerable<T> items, Tristate ensureUnique = Tristate.False)
 		{
 			if (items.HasItems() == false)

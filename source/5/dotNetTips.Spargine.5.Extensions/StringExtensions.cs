@@ -90,6 +90,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (string.IsNullOrEmpty(delimiter))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				delimiter = string.Empty;
 			}
 
@@ -104,6 +105,7 @@ namespace dotNetTips.Spargine.Extensions
 					//TODO: ADD EXTENSION METHOD TO TEST FOR ENUM VALUES
 					if (addLineFeed == Tristate.True || addLineFeed == Tristate.UseDefault)
 					{
+						//TODO: THIS CONDITION NOT BEING TESTED
 						sb.AppendLine(value);
 					}
 					else
@@ -180,6 +182,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (delimiter.IsNull())
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				delimiter = ControlChars.Comma;
 			}
 
@@ -245,6 +248,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 			else
@@ -288,7 +292,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Checks for a specific value.</param>
 		/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be null.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input, string value)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
@@ -323,7 +327,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Maximum length must be greater than Minimum length.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool HasValue(this string input, int minLength, int maxLength)
 		{
 			Encapsulation.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
@@ -341,7 +345,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be null or empty.</exception>
 		/// <exception cref="InvalidCastException">Length must be greater a positive value.</exception>
-		[Information(nameof(Indent), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(Indent), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string Indent(this string input, int length, char indentationCharacter)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
@@ -351,6 +355,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (length < 0)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				sb.Append(input);
 			}
 
@@ -426,7 +431,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
+		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
 		public static bool IsEmpty(this string input)
 		{
 			return ( input.IsNotNull() && ( input.Length == 0 ) ) ? true : false;
@@ -460,7 +465,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
+		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
 		public static bool IsNotEmpty(this string input)
 		{
 			return input.IsNotNull() && ( input.Length > 0 );
@@ -515,11 +520,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is whitespace; otherwise, <c>false</c>.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool IsWhitespace(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return false;
 			}
 
@@ -540,7 +546,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if the specified character is whitespace; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool IsWhitespace(this char character)
 		{
 			return ( character <= ' ' ) && ( ( character == ' ' ) || ( character == '\t' ) || ( character == '\r' ) || ( character == '\n' ) );
@@ -551,11 +557,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(ReplaceEllipsisWithPeriod), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ReplaceEllipsisWithPeriod), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string ReplaceEllipsisWithPeriod(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 
@@ -662,11 +669,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="valueToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool StartsWithOrdinal(this string input, string valueToCompare)
 		{
 			if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(valueToCompare))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return false;
 			}
 
@@ -680,11 +688,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="valueToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool StartsWithOrdinalIgnoreCase(this string input, string valueToCompare)
 		{
 			if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(valueToCompare))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return false;
 			}
 
@@ -760,11 +769,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(ToBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(ToBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string ToBase64(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 			else
@@ -779,11 +789,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The source.</param>
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(Extract), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(Extract), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string ToTitleCase(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 
@@ -796,11 +807,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns>Trimmed System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(ToTrimmed), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToTrimmed), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string ToTrimmed(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 

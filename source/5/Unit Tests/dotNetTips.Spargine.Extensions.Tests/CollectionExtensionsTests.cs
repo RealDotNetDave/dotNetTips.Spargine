@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -91,13 +92,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
 			var newPeople = RandomData.GeneratePersonCollection<PersonProper>(2);
 
-			people.AddRange(newPeople);
+			people.AddRange<PersonProper>(newPeople);
 
 			Assert.IsTrue(people.Count() == 12);
 
-			_ = people.AddRange(newPeople, Tristate.UseDefault);
+			_ = people.AddRange<PersonProper>(newPeople, Tristate.UseDefault);
 
 			Assert.IsTrue(people.Count() == 12);
+
+			var nullCollection = new List<PersonProper>();
+
+			Assert.IsFalse(people.AddRange<PersonProper>(nullCollection));
 		}
 
 		[TestMethod]

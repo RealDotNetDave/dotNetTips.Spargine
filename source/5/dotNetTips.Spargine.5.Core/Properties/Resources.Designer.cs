@@ -232,6 +232,15 @@ namespace dotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid string length. Acceptable range is between {0} and {1}..
+        /// </summary>
+        internal static string InvalidStringLengthAcceptableRange {
+            get {
+                return ResourceManager.GetString("InvalidStringLengthAcceptableRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid StringType..
         /// </summary>
         internal static string InvalidStringType {

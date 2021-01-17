@@ -23,7 +23,7 @@ using System.Security;
 using System.Xml.Serialization;
 using dotNetTips.Spargine.Core.Logging;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>

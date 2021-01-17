@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Teste
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.Tester.Tests", "5\Unit Tests\dotNetTips.Spargine.Tester.Tests\dotNetTips.Spargine.Tester.Tests.csproj", "{3C1D7996-8D25-4935-875A-00E5ED43BD12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5", "dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj", "{B9959466-B49D-4D36-AEC0-1D53274B2F30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5", "5\dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj", "{0F3911E0-E23E-4FA6-9DCB-1219361EC60A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,10 +55,10 @@ Global
 		{3C1D7996-8D25-4935-875A-00E5ED43BD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1D7996-8D25-4935-875A-00E5ED43BD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1D7996-8D25-4935-875A-00E5ED43BD12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9959466-B49D-4D36-AEC0-1D53274B2F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9959466-B49D-4D36-AEC0-1D53274B2F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9959466-B49D-4D36-AEC0-1D53274B2F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9959466-B49D-4D36-AEC0-1D53274B2F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3911E0-E23E-4FA6-9DCB-1219361EC60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3911E0-E23E-4FA6-9DCB-1219361EC60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3911E0-E23E-4FA6-9DCB-1219361EC60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3911E0-E23E-4FA6-9DCB-1219361EC60A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

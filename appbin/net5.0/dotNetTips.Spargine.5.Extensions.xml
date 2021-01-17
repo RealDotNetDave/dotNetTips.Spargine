@@ -1801,7 +1801,7 @@
             <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
         </member>
-        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int64,System.Int64,System.Int64,System.String)">
+        <member name="M:dotNetTips.Spargine.Extensions.NumericExtensions.IsInRangeThrowsException(System.Int64,System.Int64,System.Int64)">
             <summary>
             Determines whether [is in range throws exception] [the specified value].
             Throws Exception if invalid.
@@ -1809,7 +1809,6 @@
             <param name="value">The value.</param>
             <param name="lower">The lower.</param>
             <param name="upper">The upper.</param>
-            <param name="paramName">Name of the parameter.</param>
             <returns>System.Boolean.</returns>
             <exception cref="T:System.ArgumentOutOfRangeException">Value is out of range.</exception>
         </member>
@@ -2213,11 +2212,15 @@
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.PropertiesToString(System.Object,System.Boolean,System.Char)">
             <summary>
             Generates a string that returns the property names and values.
+            The input cannot be a collection type.
+            Supports nested types.
             </summary>
             <param name="input">The input.</param>
             <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
             <param name="delimiter">The delimiter.</param>
             <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">Input cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Input cannot be a collection type.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.StripNull(System.Object)">
             <summary>

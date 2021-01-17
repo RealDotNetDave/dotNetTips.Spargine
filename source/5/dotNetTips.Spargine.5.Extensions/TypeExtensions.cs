@@ -18,7 +18,7 @@ using System.Reflection;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -331,20 +331,15 @@ namespace dotNetTips.Spargine.Extensions
 			Encapsulation.TryValidateNullParam(type, nameof(type));
 
 			var allFields = type.GetFields()
-				.Select(f => (
-								Name: f.Name,
-								Attribute: f.GetAttribute<TAttribute>(),
-								IsPrivate: f.IsPrivate,
-								IsStatic: f.IsStatic,
+				.Select(f => (f.Name,
+								Attribute: f.GetAttribute<TAttribute>(), f.IsPrivate, f.IsStatic,
 								ParameterType: f.FieldType));
 
 			var allProperties = type.GetProperties()
-				.Select(p => (
-								Name: p.Name,
+				.Select(p => (p.Name,
 								Attribute: p.GetAttribute<TAttribute>(),
 								IsPrivate: p.GetSetMethod() == null,
-								IsStatic: p.GetSetMethod() != null && p.GetSetMethod().IsStatic,
-								PropertyType: p.PropertyType));
+								IsStatic: p.GetSetMethod() != null && p.GetSetMethod().IsStatic, p.PropertyType));
 
 			var joined = allFields.Concat(allProperties).Where(member => member.Attribute != null).ToArray();
 

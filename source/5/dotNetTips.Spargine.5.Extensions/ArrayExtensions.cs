@@ -19,7 +19,7 @@ using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -95,6 +95,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (input is null || arrayToCheck is null || input.Length != arrayToCheck.Length)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return false;
 			}
 
@@ -141,6 +142,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (input is null || input.Length == 0)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				ExceptionThrower.ThrowArgumentNullException("Input cannot be null or has a length of 0.", nameof(input));
 			}
 
@@ -162,6 +164,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (items.DoesNotHaveItems())
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return false;
 			}
 

@@ -21,7 +21,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -262,7 +262,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 		internal static bool HasValue(this string input)
 		{
-			return ( input == null ) ? false : ( input.Trim().Length > 0 );
+			return input != null && ( input.Trim().Length > 0 );
 		}
 
 		/// <summary>
@@ -279,7 +279,7 @@ namespace dotNetTips.Spargine.Core
 				throw new ArgumentOutOfRangeException(nameof(length), "Minimum length must be greater than 0.");
 			}
 
-			return ( input == null ) ? false : ( input.Trim().Length == length );
+			return input != null && ( input.Trim().Length == length );
 		}
 
 		/// <summary>
@@ -296,7 +296,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentNullException(nameof(input));
 			}
 
-			return ( input == null ) ? false : ( input.Trim() == value.Trim() );
+			return input != null && ( input.Trim() == value.Trim() );
 		}
 
 		/// <summary>
@@ -336,7 +336,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(maxLength));
 			}
 
-			return ( input == null ) ? false : input.Length.IsInRange(minLength, maxLength);
+			return input != null && input.Length.IsInRange(minLength, maxLength);
 		}
 
 		/// <summary>

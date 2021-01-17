@@ -17,7 +17,7 @@ using System.Diagnostics;
 using System.Globalization;
 using dotNetTips.Spargine.Tester.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
@@ -270,6 +270,23 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// </summary>
 		/// <returns>string.</returns>
 		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
+
+
+		/// <summary>
+		/// Compares to.
+		/// </summary>
+		/// <param name="obj">The object.</param>
+		/// <returns>int.</returns>
+		/// <exception cref="ArgumentException">nameof(obj) + " is not a " + nameof(IPersonRecord)</exception>
+		public int CompareTo(object obj)
+		{
+			if (obj is not IPersonRecord)
+			{
+				throw new ArgumentException(nameof(obj) + " is not a " + nameof(IPersonRecord));
+			}
+
+			return this.CompareTo((IPersonRecord)obj);
+		}
 
 		/// <summary>
 		/// Compares to.

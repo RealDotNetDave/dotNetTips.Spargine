@@ -1,0 +1,974 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotNetTips.Spargine.5</name>
+    </assembly>
+    <members>
+        <member name="T:dotNetTips.Spargine.Cache.InMemoryCache">
+            <summary>
+            InMemoryCache.
+            </summary>
+            <remarks>Expiration is set to 20 minutes.</remarks>
+        </member>
+        <member name="F:dotNetTips.Spargine.Cache.InMemoryCache._instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Cache.InMemoryCache.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Spargine.Cache.InMemoryCache" /> class from being created.
+            Default timeout is 20 minutes.
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Cache.InMemoryCache.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Cache.InMemoryCache.Cache">
+            <summary>
+            Gets or sets (private) the cache.
+            </summary>
+            <value>The cache.</value>
+        </member>
+        <member name="P:dotNetTips.Spargine.Cache.InMemoryCache.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="M:dotNetTips.Spargine.Cache.InMemoryCache.AddCacheItem``1(System.String,``0)">
+            <summary>
+            Adds item to the cache.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="key">The key.</param>
+            <param name="item">The item.</param>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Key cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentNullException">Item cannot be null.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Cache.InMemoryCache.GetCacheItem``1(System.String)">
+            <summary>
+            Gets the cache item.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="key">The key.</param>
+            <returns>TValue.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Key cannot be null or empty.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Cache.InMemoryCache.CreateCache(System.TimeSpan)">
+            <summary>
+            Creates the cache using 20 minute expiration.
+            </summary>
+            <param name="expiration">The expiration.</param>
+            <returns>MemoryCache.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1">
+            <summary>
+            DistinctBlockingCollection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <seealso cref="T:System.Collections.Concurrent.BlockingCollection`1" />
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1" /> class.
+            </summary>
+            <param name="collection">The collection.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.Add(`0)">
+            <summary>
+            Adds the item to the <see cref="T:System.Collections.Concurrent.BlockingCollection" />.
+            </summary>
+            <param name="item">The item to be added to the collection. The value can be a null reference.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.Add(`0,System.Threading.CancellationToken)">
+            <summary>
+            Adds the item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+            </summary>
+            <param name="item">The item to be added to the collection. The value can be a null reference.</param>
+            <param name="cancellationToken">A cancellation token to observe.</param>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.Cone">
+            <summary>
+            Cones this instance.
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.RemoveAll(System.Predicate{`0})">
+            <summary>
+            Removes all.
+            </summary>
+            <param name="match">The match.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.TryAdd(`0)">
+            <summary>
+            Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+            </summary>
+            <param name="item">The item to be added to the collection.</param>
+            <returns>true if <paramref name="item" /> could be added; otherwise false. If the item is a duplicate, and the
+            underlying collection does not accept duplicate items, then an <see cref="T:System.InvalidOperationException" /> is thrown.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.TryAdd(`0,System.Int32)">
+            <summary>
+            Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />
+            within the specified time period.
+            </summary>
+            <param name="item">The item to be added to the collection.</param>
+            <param name="millisecondsTimeout">The number of milliseconds to wait, or <see cref="F:System.Threading.Timeout.Infinite" /> (-1) to wait
+            indefinitely.</param>
+            <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
+            false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
+            <see cref="T:System.InvalidOperationException" /> is thrown.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.TryAdd(`0,System.TimeSpan)">
+            <summary>
+            Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+            </summary>
+            <param name="item">The item to be added to the collection.</param>
+            <param name="timeout">A <see cref="T:System.TimeSpan" /> that represents the number of milliseconds to wait, or a <see cref="T:System.TimeSpan" /> that represents -1 milliseconds to wait indefinitely.</param>
+            <returns>true if the <paramref name="item" /> could be added to the collection within the specified time span;
+            otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.TryAdd(`0,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection" />
+            within the specified time period, while observing a cancellation token.
+            </summary>
+            <param name="item">The item to be added to the collection.</param>
+            <param name="millisecondsTimeout">The number of milliseconds to wait, or <see cref="F:System.Threading.Timeout.Infinite" /> (-1) to wait
+            indefinitely.</param>
+            <param name="cancellationToken">A cancellation token to observe.</param>
+            <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
+            false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
+            <see cref="T:System.InvalidOperationException" /> is thrown.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Collections.DistinctBlockingCollection`1.ItemNotInCollection(`0)">
+            <summary>
+            Item the not in collection.
+            </summary>
+            <param name="item">The item.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Net.Http.HttpClientHelper">
+            <summary>
+            HttpClient Helper Methods.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Spargine.Net.Http.HttpClientHelper._client">
+            <summary>
+            The http client
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Net.Http.HttpClientHelper.GetAsync(System.String)">
+            <summary>
+            Calls GetAsync for HttpClient
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>HttpResponseMessage.</returns>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Url cannot be null or empty.</exception>
+            <remarks>Original code by: Máňa Píchová.</remarks>
+        </member>
+        <member name="M:dotNetTips.Spargine.Net.Http.HttpClientHelper.GetStreamAsync(System.String)">
+            <summary>
+            Calls GetStreamAsync for HttpClient
+            </summary>
+            <param name="url">The URL.</param>
+            <returns>Stream.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Net.Sockets.SocketsHelper">
+            <summary>
+            Socket helper methods.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Net.Sockets.SocketsHelper.ConnectTcpAsync(System.Net.Http.SocketsHttpConnectionContext,System.Threading.CancellationToken)">
+            <summary>
+            connect TCP as an asynchronous operation.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+            <returns>Stream.</returns>
+            <remarks>Original code by: Máňa Píchová.</remarks>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1">
+            <summary>
+            Class CollectionRandomizer.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <remarks>The CollectionRandomizer is designed to shuffle a collection and allow retrieving items by using GetNext().</remarks>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1._repeat">
+            <summary>
+            The repeat
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1._threadLock">
+            <summary>
+            The thread lock
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1._collection">
+            <summary>
+            The collection
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1._collectionEnumerator">
+            <summary>
+            The collection enumerator
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1._initialized">
+            <summary>
+            The initialized
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1" /> class.
+            </summary>
+            <param name="collection">The collection.</param>
+            <param name="repeat">If set to <c>true</c> and when using GetNext() the collection will repeat over and over and each time re-
+            shuffled. Be careful of getting into an endless loop, it could cause your app to crash.</param>
+            <remarks>The collection cannot be changed after initialization.</remarks>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1.HasRemainingItems">
+            <summary>
+            Gets a value indicating whether this instance has remaining items.
+            </summary>
+            <value><c>true</c> if this instance has remaining items; otherwise, <c>false</c>. This value will be <c>false</c>
+            until the first time GetNext() is called and the shuffle is initialized.</value>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1.GetNext">
+            <summary>
+            Gets the next item in the collection.
+            </summary>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.CollectionRandomizer`1.Init">
+            <summary>
+            Initializes this instance.
+            </summary>
+            <exception cref="T:System.NullReferenceException">Underlying collection is null.</exception>
+            <exception cref="T:System.NullReferenceException">Underlying collection is null.</exception>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1">
+            <summary>
+            Represents a thread-safe hash-based unique collection.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.DefaultCapacity">
+            <summary>
+            The default capacity..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.MaxLockNumber">
+            <summary>
+            The maximum lock number..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1._comparer">
+            <summary>
+            The comparer..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1._growLockArray">
+            <summary>
+            The grow lock array..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1._budget">
+            <summary>
+            The budget..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1._tables">
+            <summary>
+            The tables..
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="collection">The collection<see cref="T:System.Collections.Generic.IEnumerable`1" />.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="comparer">The comparer<see cref="T:System.Collections.Generic.IEqualityComparer`1" />.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="concurrencyLevel">The concurrency level.</param>
+            <param name="capacity">The initial capacity for the collection.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="collection">The collection to pre load items.</param>
+            <param name="comparer">The comparer.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Int32,System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="concurrencyLevel">The concurrencyLevel<see cref="T:System.Int32" />.</param>
+            <param name="collection">The collection<see cref="T:System.Collections.Generic.IEnumerable`1" />.</param>
+            <param name="comparer">The comparer<see cref="T:System.Collections.Generic.IEqualityComparer`1" />.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Int32,System.Int32,System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class.
+            </summary>
+            <param name="concurrencyLevel">The concurrencyLevel<see cref="T:System.Int32" />.</param>
+            <param name="capacity">The capacity<see cref="T:System.Int32" />.</param>
+            <param name="comparer">The comparer<see cref="T:System.Collections.Generic.IEqualityComparer`1" />.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.#ctor(System.Int32,System.Int32,System.Boolean,System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Prevents a default instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> class from being created.
+            </summary>
+            <param name="concurrencyLevel">The concurrency level. Must be a value of 1 or greater.</param>
+            <param name="capacity">The capacity. Must be a value of 0 or greater.</param>
+            <param name="growLockArray">if set to <c>true</c> [grow lock array].</param>
+            <param name="comparer">The comparer.</param>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.System#Collections#Generic#ICollection{T}#IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:ICollection"></see> is read-only.
+            </summary>
+            <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Count">
+            <summary>
+            Gets the number of items contained in the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />...
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.IsEmpty">
+            <summary>
+            Gets a value indicating whether this instance is empty...
+            </summary>
+            <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.DefaultConcurrencyLevel">
+            <summary>
+            Gets the default concurrency level...
+            </summary>
+            <value>The default concurrency level.</value>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.System#Collections#Generic#ICollection{T}#Add(`0)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection">.</see>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection"></see>.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.System#Collections#Generic#ICollection{T}#CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"></see> to an <see cref="T:System.Array"></see>, starting at a particular <see cref="T:System.Array"></see> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"></see> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"></see>. The <see cref="T:System.Array"></see> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <exception cref="T:System.ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
+            <exception cref="T:System.ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.System#Collections#Generic#ICollection{T}#Remove(`0)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"></see>.
+            </summary>
+            <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"></see>.</param>
+            <returns>true if <paramref name="item">item</paramref> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"></see>; otherwise, false. This method also returns false if <paramref name="item">item</paramref> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"></see>.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>An <see cref="T:System.Collections.IEnumerator"></see> object that can be used to iterate through the collection.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Add(`0)">
+            <summary>
+            Adds the specified item to the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.
+            </summary>
+            <param name="item">The item to add.</param>
+            <returns>The <see cref="T:System.Boolean" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Clear">
+            <summary>
+            Removes all items from the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Contains(`0)">
+            <summary>
+            Determines whether the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> contains the specified
+            item.
+            </summary>
+            <param name="item">The item to locate in the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.</param>
+            <returns>true if the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" /> contains the item; otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.
+            </summary>
+            <returns>An enumerator for the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.TryRemove(`0)">
+            <summary>
+            Attempts to remove the item from the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1" />.
+            </summary>
+            <param name="item">The item to remove.</param>
+            <returns>true if an item was removed successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.GetBucket(System.Int32,System.Int32)">
+            <summary>
+            Gets the bucket.
+            </summary>
+            <param name="hashCode">The hash code.</param>
+            <param name="bucketCount">The bucket count.</param>
+            <returns>System.Int32.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.GetBucketAndLockNo(System.Int32,System.Int32@,System.Int32@,System.Int32,System.Int32)">
+            <summary>
+            Gets the bucket and lock no.
+            </summary>
+            <param name="hashCode">The hash code.</param>
+            <param name="bucketNo">The bucket no.</param>
+            <param name="lockNo">The lock no.</param>
+            <param name="bucketCount">The bucket count.</param>
+            <param name="lockCount">The lock count.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.AcquireAllLocks(System.Int32@)">
+            <summary>
+            Acquires all locks.
+            </summary>
+            <param name="locksAcquired">The locks acquired.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.AcquireLocks(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Acquires the locks.
+            </summary>
+            <param name="fromInclusive">From inclusive.</param>
+            <param name="toExclusive">To exclusive.</param>
+            <param name="locksAcquired">The locks acquired.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.AddInternal(`0,System.Int32,System.Boolean)">
+            <summary>
+            Adds item to the collection.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="hashCode">The hash code.</param>
+            <param name="acquireLock">if set to <c>true</c> [acquire lock].</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.CopyToItems(`0[],System.Int32)">
+            <summary>
+            Copies items.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="index">The index.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.GrowTable(dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet{`0}.Tables)">
+            <summary>
+            Grows the table.
+            </summary>
+            <param name="tables">The tables.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.InitializeFromCollection(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes ConcurrentHashSet from a collection.
+            </summary>
+            <param name="collection">The collection.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.ReleaseLocks(System.Int32,System.Int32)">
+            <summary>
+            Releases the locks.
+            </summary>
+            <param name="fromInclusive">From inclusive.</param>
+            <param name="toExclusive">To exclusive.</param>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node">
+            <summary>
+            Class Node.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node._hashCode">
+            <summary>
+            The Hash Code...
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node._item">
+            <summary>
+            The item...
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node._next">
+            <summary>
+            The next...
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node.#ctor(`0,System.Int32,dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet{`0}.Node)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Node" /> class.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="hashCode">The hash code.</param>
+            <param name="next">The next.</param>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables">
+            <summary>
+            Class Tables.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables._buckets">
+            <summary>
+            The buckets..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables._locks">
+            <summary>
+            The locks..
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables._countPerLock">
+            <summary>
+            The count per lock..
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables.#ctor(dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet{`0}.Node[],System.Object[],System.Int32[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.ConcurrentHashSet`1.Tables" /> class.
+            </summary>
+            <param name="buckets">The buckets.</param>
+            <param name="locks">The locks.</param>
+            <param name="countPerLock">The count per lock.</param>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1">
+            <summary>
+            Class DistinctConcurrentBag.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <seealso cref="T:System.Collections.Concurrent.ConcurrentBag`1" />
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1._hashCodes">
+            <summary>
+            The hash codes
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1._lock">
+            <summary>
+            The lock
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1" /> class.
+            </summary>
+            <param name="collection">The collection whose elements are copied to the new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1.Add(`0)">
+            <summary>
+            Adds an object to the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.
+            </summary>
+            <param name="item">The object to be added to the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.Concurrent.DistinctConcurrentBag`1.TryTake(`0@)">
+            <summary>
+            Attempts to remove and return an object from the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>.
+            </summary>
+            <param name="result">When this method returns, result contains the object removed from the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see> or the default value of T if the bag is empty.</param>
+            <returns>true if an object was removed successfully; otherwise, false.</returns>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1">
+            <summary>
+            Class SortedList.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <seealso cref="T:System.Collections.Generic.List`1" />
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1._sorted">
+            <summary>
+            True or False if the list has been sorted.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Collections.Generic.SortedList`2" /> class.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1" /> class.
+            </summary>
+            <param name="collection">Creates class and copies in items from collection.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.Add(`0)">
+            <summary>
+            Adds an object to the end of <see cref="T:System.Collections.Generic.List">.</see>.
+            </summary>
+            <param name="item">The object to be added to the end of the <see cref="T:System.Collections.Generic.List"></see>. The value can be null for reference types.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Adds the items to the end of the list.
+            </summary>
+            <param name="items">The items.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the <see cref="T:System.Collections.Generic.List`1"></see>.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.List`1.Enumerator"></see> for the <see cref="T:System.Collections.Generic.List`1"></see>.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.ToArray">
+            <summary>
+            Copies the elements of the list to a new array.
+            </summary>
+            <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.List`1"></see>.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.ToImmutableList">
+            <summary>
+            To the immutable list.
+            </summary>
+            <returns>System.Collections.Immutable.IImmutableList&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.ToList">
+            <summary>
+            Returns a new collection based on the current collection.
+            </summary>
+            <returns>List&lt;T&gt;.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.FastSortedList`1.SortCollection">
+            <summary>
+            Sorts the items in the collection.
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1">
+            <summary>
+            Class ObservableList.
+            Implements the <see cref="T:System.Collections.Generic.ISet`1" />
+            Implements the <see cref="T:System.Collections.Generic.IReadOnlyCollection`1" />
+            Implements the <see cref="T:System.Collections.Specialized.INotifyCollectionChanged" />
+            Implements the <see cref="T:System.ComponentModel.INotifyPropertyChanged" />
+            Implements the <see cref="T:System.ComponentModel.INotifyPropertyChanging" />
+            </summary>
+            <typeparam name="T"></typeparam>
+            <seealso cref="T:System.Collections.Generic.ISet`1" />
+            <seealso cref="T:System.Collections.Generic.IReadOnlyCollection`1" />
+            <seealso cref="T:System.Collections.Specialized.INotifyCollectionChanged" />
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanged" />
+            <seealso cref="T:System.ComponentModel.INotifyPropertyChanging" />
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1._set">
+            <summary>
+            The set
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1" /> class
+            that is empty and uses the default equality comparer for the set type.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.#ctor(System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1" /> class
+            that is empty and uses the specified equality comparer for the set type.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> implementation to use when
+            comparing values in the set, or null to use the default <see cref="T:System.Collections.Generic.IEqualityComparer`1" />
+            implementation for the set type.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1" /> class
+            that uses the default equality comparer for the set type, contains elements copied
+            from the specified collection, and has sufficient capacity to accommodate the
+            number of elements copied.
+            </summary>
+            <param name="collection">The collection whose elements are copied to the new set.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Collections.Generic.IEqualityComparer{`0})">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1" /> class
+            that uses the specified equality comparer for the set type, contains elements
+            copied from the specified collection, and has sufficient capacity to accommodate
+            the number of elements copied.
+            </summary>
+            <param name="collection">The collection whose elements are copied to the new set.</param>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> implementation to use when
+            comparing values in the set, or null to use the default <see cref="T:System.Collections.Generic.IEqualityComparer`1" />
+            implementation for the set type.</param>
+        </member>
+        <member name="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.CollectionChanged">
+            <summary>
+            Occurs when the contents of the hash set changes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.PropertyChanged">
+            <summary>
+            Occurs when a property of this hash set (such as <see cref="P:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Count" />) changes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.PropertyChanging">
+            <summary>
+            Occurs when a property of this hash set (such as <see cref="P:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Count" />) is changing.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Comparer">
+            <summary>
+            Gets the <see cref="T:System.Collections.Generic.IEqualityComparer`1" /> object that is used to determine equality for the values in the set.
+            </summary>
+            <value>The comparer.</value>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Count">
+            <summary>
+            Gets the number of elements that are contained in the hash set.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the hash set is read-only.
+            </summary>
+            <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.System#Collections#Generic#ICollection{T}#Add(`0)">
+            <summary>
+            Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"></see>.
+            </summary>
+            <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"></see>.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Add(`0)">
+            <summary>
+            Adds the specified element to the hash set.
+            </summary>
+            <param name="item">The element to add to the set.</param>
+            <returns><see langword="true" /> if the element is added to the hash set; <see langword="false" /> if the element is already present.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Clear">
+            <summary>
+            Removes all elements from the hash set.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Contains(`0)">
+            <summary>
+            Determines whether the hash set object contains the
+            specified element.
+            </summary>
+            <param name="item">The element to locate in the hash set.</param>
+            <returns><see langword="true" /> if the hash set contains the specified element; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.CopyTo(`0[])">
+            <summary>
+            Copies the elements of the hash set to an array.
+            </summary>
+            <param name="array">The one-dimensional array that is the destination of the elements copied from
+            the hash set. The array must have zero-based indexing.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.CopyTo(`0[],System.Int32)">
+            <summary>
+            Copies the elements of the hash set to an array, starting at the specified array index.
+            </summary>
+            <param name="array">The one-dimensional array that is the destination of the elements copied from
+            the hash set. The array must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.CopyTo(`0[],System.Int32,System.Int32)">
+            <summary>
+            Copies the specified number of elements of the hash set to an array, starting at the specified array index.
+            </summary>
+            <param name="array">The one-dimensional array that is the destination of the elements copied from
+            the hash set. The array must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
+            <param name="count">The number of elements to copy to array.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.ExceptWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Removes all elements in the specified collection from the hash set.
+            </summary>
+            <param name="other">The collection of items to remove from the current hash set.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the hash set.
+            </summary>
+            <returns>An enumerator for the hash set.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IntersectWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Modifies the current hash set to contain only
+            elements that are present in that object and in the specified collection.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IsProperSubsetOf(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the hash set is a proper subset of the specified collection.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set is a proper subset of other; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IsProperSupersetOf(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the hash set is a proper superset of the specified collection.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set is a proper superset of other; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IsSubsetOf(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the hash set is a subset of the specified collection.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set is a subset of other; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.IsSupersetOf(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the hash set is a superset of the specified collection.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set is a superset of other; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Overlaps(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the current object and a specified collection share common elements.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set and other share at least one common element; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.Remove(`0)">
+            <summary>
+            Removes the specified element from the hash set.
+            </summary>
+            <param name="item">The element to remove.</param>
+            <returns><see langword="true" /> if the element is successfully found and removed; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.RemoveWhere(System.Predicate{`0})">
+            <summary>
+            Removes all elements that match the conditions defined by the specified predicate
+            from the hash set.
+            </summary>
+            <param name="match">The <see cref="T:System.Predicate`1" /> delegate that defines the conditions of the elements to remove.</param>
+            <returns>The number of elements that were removed from the hash set.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.SetEquals(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Determines whether the hash set and the specified collection contain the same elements.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+            <returns><see langword="true" /> if the hash set is equal to other; otherwise, <see langword="false" />.</returns>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.SymmetricExceptWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Modifies the current hash set to contain only elements that are present either in that
+            object or in the specified collection, but not both.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.TrimExcess">
+            <summary>
+            Sets the capacity of the hash set to the actual number of elements it contains, rounded up to a nearby,
+            implementation-specific value.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.UnionWith(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Modifies the hash set to contain all elements that are present in itself, the specified collection, or both.
+            </summary>
+            <param name="other">The collection to compare to the current hash set.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.CollectionChanged" /> event.
+            </summary>
+            <param name="e">Details of the change.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Raises the <see cref="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.PropertyChanged" /> event.
+            </summary>
+            <param name="e">Details of the property that changed.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnPropertyChanging(System.ComponentModel.PropertyChangingEventArgs)">
+            <summary>
+            Raises the <see cref="E:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.PropertyChanging" /> event.
+            </summary>
+            <param name="e">Details of the property that is changing.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedAction,System.Object)">
+            <summary>
+            Called when [collection changed].
+            </summary>
+            <param name="action">The action.</param>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnCollectionChanged(System.Collections.IList,System.Collections.IList)">
+            <summary>
+            Called when [collection changed].
+            </summary>
+            <param name="newItems">The new items.</param>
+            <param name="oldItems">The old items.</param>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnCountPropertyChanged">
+            <summary>
+            Called when [count property changed].
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Utility.Standard.Collections.Generic.ObservableList`1.OnCountPropertyChanging">
+            <summary>
+            Called when [count property changing].
+            </summary>
+        </member>
+        <member name="T:dotNetTips.Utility.Standard.Collections.Generic.ObservableHashSetSingletons">
+            <summary>
+            ObservableHashSetSingletons.
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.ObservableHashSetSingletons._countPropertyChanged">
+            <summary>
+            The count property changed
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.ObservableHashSetSingletons._countPropertyChanging">
+            <summary>
+            The count property changing
+            </summary>
+        </member>
+        <member name="F:dotNetTips.Utility.Standard.Collections.Generic.ObservableHashSetSingletons._noItems">
+            <summary>
+            The no items.
+            </summary>
+        </member>
+    </members>
+</doc>

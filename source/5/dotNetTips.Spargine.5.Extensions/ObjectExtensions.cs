@@ -25,7 +25,7 @@ using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 using Newtonsoft.Json;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -45,6 +45,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (value == null)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				ExceptionThrower.ThrowArgumentNullException(nameof(value));
 			}
 
@@ -64,6 +65,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (obj is null)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
 			}
 
@@ -234,8 +236,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="obj">The obj.</param>
 		/// <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
-		[Information(nameof(IsNotNull), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsNotNull(this object obj) => obj != null;
+		[Information(nameof(IsNotNull), UnitTestCoverage = 0, Status = Status.Available)]
+		public static bool IsNotNull(this object obj) => obj != null; //TODO: THIS CONDITION NOT BEING TESTED
 
 		/// <summary>
 		/// Determines whether the specified object is null.
@@ -273,45 +275,62 @@ namespace dotNetTips.Spargine.Extensions
 
 			return input.GetType()
 				 .GetProperties(bindingFlags | BindingFlags.GetProperty)
-				 .ToDictionary(prop => prop.Name, prop => prop.GetValue(input, null));
+				 .ToDictionary(prop => prop.Name, prop => prop.GetValue(input));
 		}
 
 		/// <summary>
 		/// Generates a string that returns the property names and values.
+		/// The input cannot be a collection type.
+		/// Supports nested types.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
+		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
+		/// <exception cref="ArgumentInvalidException">Input cannot be a collection type.</exception>
 		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static string PropertiesToString(this object input, bool ignoreNullValues, char delimiter = ControlChars.Comma)
+		public static string PropertiesToString(this object input, bool ignoreNullValues = true, char delimiter = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateParam<ArgumentException>(input != null, nameof(input));
+			Encapsulation.TryValidateNullParam(input, nameof(input));
+			Encapsulation.TryValidateParam<ArgumentInvalidException>(input.GetType().Name != typeof(List<>).Name, nameof(input));
 
-			//TODO: LOOK INTO MAKING THIS BETTER WITH TYPES LIKE COLLECTIONS AND GENERICS.
 			var properties = input.PropertiesToDictionary();
 
 			if (properties.Count == 0)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				return string.Empty;
 			}
 			else
 			{
-				var sb = TypeHelper.CreateStringBuilder();
+				var propertiesSb = TypeHelper.CreateStringBuilder();
 
-				foreach (var property in properties)
+				foreach (var property in properties.OrderBy(p => p.Key))
 				{
-					if (ignoreNullValues && property.Value.IsNull())
+					if (property.Value.IsNull() && ignoreNullValues)
 					{
 						// Ignore
 					}
+					else if (property.Value.GetType().UnderlyingSystemType.Name == typeof(List<>).Name)
+					{
+						var collectionSb = TypeHelper.CreateStringBuilder();
+
+						foreach (var item in (IEnumerable)property.Value)
+						{
+							collectionSb.Append(item.PropertiesToString(true));
+						}
+
+						//Process collection
+						propertiesSb.Append($"{property.Key}: {collectionSb}{ControlChars.Space}");
+					}
 					else
 					{
-						sb.Append($"{property.Key}: {property.Value}{delimiter} ");
+						propertiesSb.Append($"{property.Key}: {property.Value}{delimiter}{ControlChars.Space}");
 					}
 				}
 
-				var returnValue = sb.ToString(0, sb.Length - 1);
+				var returnValue = propertiesSb.ToString(0, propertiesSb.Length - 1);
 
 				return returnValue;
 			}
@@ -323,7 +342,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The field.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(StripNull), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string StripNull(this object input) => input == null ? string.Empty : input.ToString();
+		public static string StripNull(this object input) => input == null ? string.Empty : input.ToString(); //TODO: THIS CONDITION NOT BEING TESTED
 
 		/// <summary>
 		/// Serializes object to Json.
@@ -336,6 +355,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (obj is null)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
 			}
 
@@ -394,7 +414,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				if (obj is IAsyncDisposable asyncDisposable)
 				{
-					asyncDisposable.DisposeAsync();
+					_ = asyncDisposable.DisposeAsync();
 				}
 				else
 				{

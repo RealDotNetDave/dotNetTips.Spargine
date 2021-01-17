@@ -17,7 +17,7 @@ using System.ComponentModel;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -50,7 +50,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetItems), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IList<(string Description, int Value)> GetItems(this Enum @enum)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(@enum != null);
+			Encapsulation.TryValidateParam<ArgumentNullException>(@enum != null, nameof(@enum));
 
 			var items = new List<(string Desctiption, int Value)>();
 

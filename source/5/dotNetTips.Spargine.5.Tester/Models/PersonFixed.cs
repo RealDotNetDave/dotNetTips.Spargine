@@ -17,7 +17,7 @@ using System.Diagnostics;
 using System.Globalization;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
@@ -280,10 +280,10 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="System.Object" /> is equal to this instance.
+		/// Determines whether the specified <see cref="object" /> is equal to this instance.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current object.</param>
-		/// <returns><c>true</c> if the specified <see cref="System.Object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
+		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
 		/// <exception cref="NotImplementedException"></exception>
 		public override bool Equals(object obj)
 		{
@@ -321,9 +321,9 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Returns a <see cref="System.String" /> that returns the person's id.
+		/// Returns a <see cref="string" /> that returns the person's id.
 		/// </summary>
-		/// <returns>A <see cref="System.String" /> that returns the person's id.</returns>
+		/// <returns>A <see cref="string" /> that returns the person's id.</returns>
 		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
 
 		/// <summary>

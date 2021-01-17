@@ -12,15 +12,15 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]
-	public class DateTimeExtensionsTests
+	public class DateTimeExtensionsTests : TestClass
 	{
 
 		[TestMethod]
@@ -346,13 +346,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
 
 			Assert.IsTrue(result);
-		}
-
-		private static void PrintResult<T>(T input, string methodName)
-		{
-			var message = $"{methodName}: {input}";
-
-			Debug.WriteLine(message);
 		}
 	}
 }

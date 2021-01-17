@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core.Collections
 {
 	/// <summary>
@@ -63,7 +63,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static Collection<T> Create(int capacity)
 		{
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0);
+			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0, nameof(capacity));
 
 			return new Collection<T>(capacity);
 		}

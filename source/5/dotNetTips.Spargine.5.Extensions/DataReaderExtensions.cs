@@ -18,7 +18,7 @@ using System.Globalization;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -72,13 +72,13 @@ namespace dotNetTips.Spargine.Extensions
 						if (dataReader.GetFieldType(index) == typeof(string))
 						{
 							// If double quotes are used in value, ensure each are replaced but 2.
-							if (value.IndexOf(ControlChars.Backslash, StringComparison.Ordinal) >= 0)
+							if (value.Contains(ControlChars.Backslash))
 							{
 								value = value.Replace("\"", "\"\"");
 							}
 
 							// If separator are is in value, ensure it is put in double quotes.
-							if (value.IndexOf(separator, StringComparison.Ordinal) >= 0)
+							if (value.Contains(separator))
 							{
 								value = Convert.ToString(ControlChars.Backslash, CultureInfo.InvariantCulture) + value + ControlChars.Backslash;
 							}

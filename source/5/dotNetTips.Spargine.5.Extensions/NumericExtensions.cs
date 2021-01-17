@@ -18,7 +18,7 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -211,11 +211,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
-		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsInRangeThrowsException(this long value, long lower, long upper, string paramName)
+		public static bool IsInRangeThrowsException(this long value, long lower, long upper)
 		{
 			if (value.IsInRange(lower, upper) == false)
 			{

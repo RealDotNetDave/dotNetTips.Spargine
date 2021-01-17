@@ -20,7 +20,7 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -28,7 +28,6 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ExceptionExtensions
 	{
-
 		/// <summary>
 		/// Hierarchy.
 		/// </summary>
@@ -62,6 +61,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (source is null)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				yield return null;
 			}
 
@@ -114,7 +114,7 @@ namespace dotNetTips.Spargine.Extensions
 			var messages = exception.FromHierarchy(ex => ex.InnerException)
 				.Select(ex => new
 				{
-					Message = ex.Message,
+					ex.Message,
 					StackTrace = ex.StackTrace.IsNotEmpty() ? ex.StackTrace : "NONE"
 				})
 				.AsEnumerable()

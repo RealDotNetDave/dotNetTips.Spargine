@@ -19,7 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				return new ValueTask<int>(FinishReadAsync(stream.ReadAsync(buffer, 0, destination.Length, cancellationToken), buffer, destination));
 
-				async Task<int> FinishReadAsync(Task<int> readTask, byte[] localBuffer, Memory<byte> localDestination)
+				static async Task<int> FinishReadAsync(Task<int> readTask, byte[] localBuffer, Memory<byte> localDestination)
 				{
 					try
 					{
@@ -75,7 +75,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static ValueTask WriteAsync(this Stream stream, ReadOnlyMemory<byte> source, CancellationToken cancellationToken = default)
 		{
-			if (MemoryMarshal.TryGetArray(source, out ArraySegment<byte> array))
+			if (MemoryMarshal.TryGetArray(source, out var array))
 			{
 				return new ValueTask(stream.WriteAsync(array.Array, array.Offset, array.Count, cancellationToken));
 			}
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				return new ValueTask(FinishWriteAsync(stream.WriteAsync(buffer, 0, source.Length, cancellationToken), buffer));
 
-				async Task FinishWriteAsync(Task writeTask, byte[] localBuffer)
+				static async Task FinishWriteAsync(Task writeTask, byte[] localBuffer)
 				{
 					try
 					{

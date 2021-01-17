@@ -11,7 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
@@ -32,9 +32,9 @@ namespace dotNetTips.Spargine.Tester.Models
 		int Y { get; set; }
 
 		/// <summary>
-		/// Returns a <see cref="System.String" /> of the coordinates.
+		/// Returns a <see cref="string" /> of the coordinates.
 		/// </summary>
-		/// <returns>A <see cref="System.String" /> of the coordinates.</returns>
+		/// <returns>A <see cref="string" /> of the coordinates.</returns>
 		string ToString();
 
 	}

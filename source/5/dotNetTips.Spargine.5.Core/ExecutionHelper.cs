@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -34,9 +34,9 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(ProgressiveRetry), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int ProgressiveRetry(Action operation, byte retryCount = 3, int retryWaitMilliseconds = 100)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(operation != null);
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryCount > 0);
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryWaitMilliseconds > 0);
+			Encapsulation.TryValidateParam<ArgumentNullException>(operation != null, nameof(operation));
+			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryCount > 0, nameof(retryCount));
+			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryWaitMilliseconds > 0, nameof(retryWaitMilliseconds));
 
 			var attempts = 0;
 

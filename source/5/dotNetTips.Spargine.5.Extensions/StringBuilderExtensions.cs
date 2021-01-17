@@ -18,7 +18,7 @@ using System.Text;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -96,6 +96,7 @@ namespace dotNetTips.Spargine.Extensions
 
 					if (specialIndex >= 0)
 					{
+						//TODO: THIS CONDITION NOT BEING TESTED FOR APPEND
 						sb.Append(value, lastSpecialIndex, specialIndex - lastSpecialIndex);
 						sb.Append('\\');
 						sb.Append(value[specialIndex]);
@@ -111,6 +112,7 @@ namespace dotNetTips.Spargine.Extensions
 			}
 			else
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				sb.Append(value);
 			}
 
@@ -307,6 +309,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (separator.HasValue() == false)
 			{
+				//TODO: THIS CONDITION NOT BEING TESTED
 				separator = ControlChars.DefaultSeparator;
 			}
 

@@ -1,66 +1,82 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <PublishTrimmed>true</PublishTrimmed>
-    <DebugSymbols>true</DebugSymbols>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <SelfContained>true</SelfContained>
-    <PublishSingleFile>true</PublishSingleFile>
-    <RootNamespace>dotNetTips.Spargine.Extensions</RootNamespace>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <PackageIcon></PackageIcon>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
-    <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2021.1.11.121</AssemblyVersion>
-    <FileVersion>2021.1.11.121</FileVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+	<PropertyGroup>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<AssemblyVersion>2021.1.17.169</AssemblyVersion>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+		<DebugSymbols>true</DebugSymbols>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<FileVersion>2021.1.17.169</FileVersion>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PublishSingleFile>true</PublishSingleFile>
+		<PublishTrimmed>true</PublishTrimmed>
+		<RootNamespace>dotNetTips.Spargine.Extensions</RootNamespace>
+		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+		<SelfContained>true</SelfContained>
+		<TargetFramework>net5.0</TargetFramework>
+		<Version>2021.2.1.0</Version>
+		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
+		<PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
+		<Company>David McCarter - dotNetTips.com</Company>
+		<Authors>David McCarter</Authors>
+		<Copyright>McCarter Consulting (David McCarter)</Copyright>
+		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
+		<Description>Extensions for Spargine.</Description>
+		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <OutputPath>..\..\..\appbin\</OutputPath>
-    <DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<OutputPath>..\..\..\appbin\</OutputPath>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
+	</PropertyGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
-  </Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
+	</Target>
 
-  <ItemGroup>
-    <PackageReference Include="linq2db" Version="3.1.6" />
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="linq2db" Version="3.1.6" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	  </None>
+	</ItemGroup>
 
 </Project>

@@ -12,14 +12,15 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Interface IAddressRecord
 	/// </summary>
-	public interface IAddressRecord : IDataRecord<IAddressRecord, string>, IComparable<IAddressRecord>, IEquatable<IAddressRecord>
+	public interface IAddressRecord : IDataRecord<IAddressRecord, string>, IComparable, IComparable<IAddressRecord>, IEquatable<IAddressRecord>
 	{
 		/// <summary>
 		/// Gets or sets address 1.

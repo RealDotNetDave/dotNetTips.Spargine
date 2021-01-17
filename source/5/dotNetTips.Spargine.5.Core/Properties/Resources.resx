@@ -225,4 +225,7 @@
   <data name="ParameterCannotBeNull" xml:space="preserve">
     <value>Parameter cannot be null.</value>
   </data>
+  <data name="InvalidStringLengthAcceptableRange" xml:space="preserve">
+    <value>Invalid string length. Acceptable range is between {0} and {1}.</value>
+  </data>
 </root>

@@ -24,7 +24,7 @@ using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester.Models;
 using dotNetTips.Spargine.Tester.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester
 {
 	/// <summary>
@@ -85,6 +85,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="postalCodeLength">Length of the postal code.</param>
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IAddressRecord[].</returns>
+		[Information(nameof(GenerateAddresses), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static List<IAddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
@@ -119,6 +120,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="sizeInKb">The size in kb.</param>
 		/// <returns>System.Byte[].</returns>
+		[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static byte[] GenerateByteArray(double sizeInKb)
 		{
 			var size = Convert.ToInt32(sizeInKb * 1024);
@@ -138,6 +140,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.Char.</returns>
 		/// <example>82 'R'</example>
+		[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static char GenerateCharacter() => GenerateCharacter(DefaultMinCharacter, DefaultMaxCharacter);
 
 		/// <summary>
@@ -147,6 +150,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="maxValue">The maximum character value.</param>
 		/// <returns>System.Char.</returns>
 		/// <example>65 'A'</example>
+		[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static char GenerateCharacter(char minValue, char maxValue) => (char)GenerateInteger(minValue, maxValue);
 
 		/// <summary>
@@ -155,6 +159,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <typeparam name="T"></typeparam>
 		/// <returns>T.</returns>
 		/// <example>X: 178765551 Y: -2145952440</example>
+		[Information(nameof(GenerateCoordinate), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static T GenerateCoordinate<T>() where T : ICoordinate, new()
 		{
 			var coordinate = new T
@@ -173,6 +178,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="count">The collection count.</param>
 		/// <returns>List&lt;T&gt;.</returns>
 		/// <example>[0]: {2089369587--284215139} [1]: {244137335-1577361939}</example>
+		[Information(nameof(GenerateCoordinateCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<T> GenerateCoordinateCollection<T>(int count) where T : ICoordinate, new()
 		{
 			Encapsulation.TryValidateParam(count, 0, int.MaxValue, nameof(count));
@@ -197,6 +203,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="decimalPlaces">The decimal places.</param>
 		/// <returns>System.Decimal.</returns>
 		/// <example>95.15</example>
+		[Information(nameof(GenerateDecimal), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static decimal GenerateDecimal(decimal minValue, decimal maxValue, int decimalPlaces)
 		{
 			Encapsulation.TryValidateParam(decimalPlaces, 0, int.MaxValue, nameof(decimalPlaces));
@@ -213,6 +220,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>".co.uk"</example>
+		[Information(nameof(GenerateDomainExtension), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateDomainExtension() => Of(_domainExtensions);
 
 		/// <summary>
@@ -220,6 +228,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>fbxpfvtanqysqmuqfh@kiuvf.fr</example>
+		[Information(nameof(GenerateEmailAddress), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateEmailAddress()
 		{
 			return $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 25, 'a', 'z')}{GenerateDomainExtension()}";
@@ -232,6 +241,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="fileLength">Length of the file. Minimum length=1</param>
 		/// <returns>System.String.</returns>
 		/// <example>c:\\temp\\UnitTest.test</example>
+		[Information(nameof(GenerateFile), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateFile(string fileName, int fileLength = 1000)
 		{
 			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
@@ -250,6 +260,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="fileLength">Length of the file.</param>
 		/// <returns>System.ValueTuple&lt;System.String, IEnumerable&lt;System.String&gt;&gt;.</returns>
 		/// <example>Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
+		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Path, IEnumerable<string> Files) GenerateFiles(int count = 100, int fileLength = 1000)
 		{
 			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
@@ -276,6 +287,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="fileExtension">The file extension.</param>
 		/// <returns>System.ValueTuple&lt;System.String, IEnumerable&lt;System.String&gt;&gt;.</returns>
 		/// <example>Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
+		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Path, IEnumerable<string> Files) GenerateFiles(int count = 100, int fileLength = 1000, string fileExtension = "temp")
 		{
 			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
@@ -303,6 +315,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="fileLength">Length of the file.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		/// <example>[0]: "c:\\temp\\dobybcyx.lj"  [1]: "c:\\temp\\zo2ggwub.3ro"</example>
+		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<string> GenerateFiles(string path, int count = 100, int fileLength = 1000)
 		{
 			Encapsulation.TryValidateParam(path, nameof(path));
@@ -330,6 +343,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="min">The minimum int.</param>
 		/// <param name="max">The maximum int.</param>
 		/// <returns>System.Int32.</returns>
+		[Information(nameof(GenerateInteger), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static int GenerateInteger(int min = int.MinValue, int max = int.MaxValue)
 		{
 			lock (_lock)
@@ -343,6 +357,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
+		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateKey()
 		{
 			return Guid.NewGuid().ToDigits();
@@ -354,6 +369,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="length">The length.</param>
 		/// <returns>System.String.</returns>
 		/// <example>"446085072052112"</example>
+		[Information(nameof(GenerateNumber), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateNumber(int length)
 		{
 			Encapsulation.TryValidateParam(value: length, minimumValue: 1, maximumValue: int.MaxValue, paramName: nameof(length));
@@ -383,6 +399,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="postalCodeLength">Length of the postal code.</param>
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>T.</returns>
+		[Information(nameof(GeneratePerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static T GeneratePerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15) where T : IPerson, new()
 		{
 			var person = new T
@@ -411,6 +428,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <typeparam name="T"></typeparam>
 		/// <param name="count">The count.</param>
 		/// <returns>T[].</returns>
+		[Information(nameof(GeneratePersonCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<T> GeneratePersonCollection<T>(int count) where T : IPerson, new()
 		{
 			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
@@ -450,6 +468,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="postalCodeLength">Length of the postal code.</param>
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IPersonRecord[].</returns>
+		[Information(nameof(GeneratePersonCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<IPersonRecord> GeneratePersonCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			var records = new List<IPersonRecord>(count);
@@ -479,6 +498,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>284-424-2216</example>
+		[Information(nameof(GeneratePhoneNumberUSA), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GeneratePhoneNumberUSA()
 		{
 			return $"{RandomData.GenerateNumber(3)}-{RandomData.GenerateNumber(3)}-{RandomData.GenerateNumber(4)}";
@@ -489,6 +509,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\3nvoblq5.lz1</example>
+		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName()
 		{
 			return Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -500,6 +521,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="path">The path.</param>
 		/// <returns>System.String.</returns>
 		/// <example>c:\\temp\\0yiv4iiu.uuv</example>
+		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(string path)
 		{
 			Encapsulation.TryValidateParam(path, nameof(path));
@@ -514,6 +536,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="extension">The extension.</param>
 		/// <returns>System.String.</returns>
 		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\FOGWYNDRBM.dotnettips</example>
+		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(int fileNameLength = 10, string extension = "tester.temp")
 		{
 			Encapsulation.TryValidateParam(fileNameLength, 1, 256, nameof(fileNameLength));
@@ -534,6 +557,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="extension">The extension.</param>
 		/// <returns>System.String.</returns>
 		/// <example>c:\\temp\\FFDHRBMDXP.dotnettips</example>
+		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(string path, int fileNameLength = 10, string extension = "tester.temp")
 		{
 			Encapsulation.TryValidateParam(path, nameof(path));
@@ -551,6 +575,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>"/ljsylu/rsglcurkiylqld/wejdbuainlgjofnv/uwbrjftyt/"</example>
+		[Information(nameof(GenerateRelativeUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRelativeUrl()
 		{
 			var url = new StringBuilder();
@@ -571,6 +596,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="fileLength">The length.</param>
 		/// <returns>System.String.</returns>
 		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\klxpckpo.24h</example>
+		[Information(nameof(GenerateTempFile), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateTempFile(int fileLength = 1000)
 		{
 			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
@@ -588,6 +614,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
+		[Information(nameof(GenerateUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrl()
 		{
 			return $"{GenerateUrlHostName()}{GenerateRelativeUrl()}";
@@ -598,6 +625,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
+		[Information(nameof(GenerateUrlHostName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrlHostName()
 		{
 			return $"https://{GenerateUrlHostNameNoProtocol()}";
@@ -608,6 +636,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
+		[Information(nameof(GenerateUrlHostNameNoProtocol), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrlHostNameNoProtocol()
 		{
 			return $"www.{GenerateWord(1, 25, 'a', 'z')}.{GenerateUrlHostNameNoSubDomain()}";
@@ -618,6 +647,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>elqqcw.org.uk</example>
+		[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrlHostNameNoSubDomain()
 		{
 			return $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
@@ -628,6 +658,7 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <remarks>/rregyyjxpjiats</remarks>
+		[Information(nameof(GenerateUrlPart), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrlPart()
 		{
 			return $"/{GenerateWord(1, 25, 'a', 'z')}";
@@ -639,6 +670,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="length">The length.</param>
 		/// <returns>System.String.</returns>
 		/// <example>mL_g[E_E_CsoJvjshI]CFjFKa</example>
+		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int length)
 		{
 			Encapsulation.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
@@ -655,11 +687,12 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="maxLength">The maximum length.</param>
 		/// <returns>System.String.</returns>
 		/// <example>oMOYxlFvqclVQK</example>
+		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength)
 		{
 			Encapsulation.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(minLength));
 			Encapsulation.TryValidateParam(maxLength, minimumValue: 1, paramName: nameof(maxLength));
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, message: Resources.MinimumLenghthCannotBeGreaterThanMaximum);
+			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, nameof(maxLength), Resources.MinimumLenghthCannotBeGreaterThanMaximum);
 
 			return GenerateWord(minLength, maxLength, DefaultMinCharacter, DefaultMaxCharacter);
 		}
@@ -672,6 +705,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="maxCharacter">The maximum character.</param>
 		/// <returns>System.String.</returns>
 		/// <example>LBEEUMHHHK</example>
+		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int length, char minCharacter, char maxCharacter)
 		{
 			Encapsulation.TryValidateParam(length, 1, int.MaxValue, nameof(length));
@@ -695,6 +729,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="maxCharacter">The maximum character.</param>
 		/// <returns>System.String.</returns>
 		/// <example>ACRNFTPAE</example>
+		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength, char minCharacter, char maxCharacter) => GenerateWord(GenerateInteger(minLength, maxLength), minCharacter, maxCharacter);
 
 		/// <summary>
@@ -704,6 +739,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="minLength">The minimum length.</param>
 		/// <param name="maxLength">The maximum length.</param>
 		/// <returns>ImmutableList&lt;System.String&gt;.</returns>
+		[Information(nameof(GenerateWords), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static ImmutableList<string> GenerateWords(int count, int minLength, int maxLength)
 		{
 			Encapsulation.TryValidateParam(count, minimumValue: 1, paramName: nameof(count));

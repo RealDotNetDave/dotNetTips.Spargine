@@ -15,13 +15,13 @@ using System;
 using System.Collections.Generic;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// The interface for IPerson
 	/// </summary>
-	public interface IPersonRecord : IDataRecord<IPersonRecord, string>, IComparable<IPersonRecord>, IEquatable<IPersonRecord>
+	public interface IPersonRecord : IDataRecord<IPersonRecord, string>, IComparable, IComparable<IPersonRecord>, IEquatable<IPersonRecord>
 	{
 		/// <summary>
 		/// Gets or sets the addresses.
@@ -69,6 +69,6 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Calculates the age.
 		/// </summary>
 		/// <returns>System.TimeSpan.</returns>
-		private TimeSpan CalculateAge() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
+		public TimeSpan Age() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
 	}
 }

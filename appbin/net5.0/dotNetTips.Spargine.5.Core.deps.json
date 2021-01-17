@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "dotNetTips.Spargine.5.Core/1.0.0": {
+      "dotNetTips.Spargine.5.Core/2021.2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9",
           "Microsoft.Extensions.ObjectPool": "5.0.1",
@@ -38,7 +38,7 @@
     }
   },
   "libraries": {
-    "dotNetTips.Spargine.5.Core/1.0.0": {
+    "dotNetTips.Spargine.5.Core/2021.2.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

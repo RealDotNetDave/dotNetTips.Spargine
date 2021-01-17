@@ -25,7 +25,7 @@ using System.Runtime.InteropServices;
 using System.Security.Principal;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Core
 		/// Gets the assembly information.
 		/// </summary>
 		/// <value>The assembly information.</value>
-		[Information(UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(AppInfo), UnitTestCoverage = 100, Status = Status.Available)]
 		public static AppInfo AppInfo => _appInfo.Value;
 
 		/// <summary>

@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-04-2021
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -22,7 +22,7 @@ using System.Text;
 using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.ObjectPool;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -88,7 +88,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Creates StringBuilder using ObjectPool.
+		/// Creates StringBuilder using ObjectPool (DefaultObjectPoolProvider).
 		/// </summary>
 		/// <returns>StringBuilder.</returns>
 		[Information(nameof(CreateStringBuilder), "David McCarter", "12/28/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
@@ -123,7 +123,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(Type baseType, Tristate classOnly)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(baseType != null, nameof(baseType));
+			Encapsulation.TryValidateNullParam(baseType, nameof(baseType));
 
 			var path = Path.GetDirectoryName(AppContext.BaseDirectory);
 
@@ -141,8 +141,8 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(AppDomain currentDomain, Type baseType, Tristate classOnly)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(currentDomain != null, nameof(currentDomain));
-			Encapsulation.TryValidateParam<ArgumentNullException>(baseType != null, nameof(baseType));
+			Encapsulation.TryValidateNullParam(currentDomain, nameof(currentDomain));
+			Encapsulation.TryValidateNullParam(baseType, nameof(baseType));
 
 			List<Type> types = null;
 
@@ -183,9 +183,7 @@ namespace dotNetTips.Spargine.Core
 		public static IEnumerable<Type> FindDerivedTypes(string path, SearchOption fileSearchType, Type baseType, Tristate classOnly)
 		{
 			Encapsulation.TryValidateParam(path, nameof(path), "Must pass in path and file name to the assembly.");
-			Encapsulation.TryValidateParam<ArgumentNullException>(baseType != null, nameof(baseType), "Parent Type must be defined");
-
-			var foundTypes = new List<Type>();
+			Encapsulation.TryValidateNullParam(baseType, nameof(baseType), "Parent Type must be defined");
 
 			if (Directory.Exists(path) == false)
 			{
@@ -195,6 +193,7 @@ namespace dotNetTips.Spargine.Core
 			var files = Directory.EnumerateFiles(path, "*.dll", fileSearchType);
 
 			var list = files.ToList();
+			var foundTypes = new List<Type>();
 
 			for (var i = 0; i < list.Count; i++)
 			{
@@ -234,7 +233,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static int GetInstanceHashCode(object instance)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(instance != null, nameof(instance));
+			Encapsulation.TryValidateNullParam(instance, nameof(instance));
 
 			var hash = instance.GetType().GetRuntimeProperties().Where(p => p != null).Select(prop => prop.GetValue(instance)).Where(value => value != null).Aggregate(-1, (accumulator, value) => accumulator ^ value.GetHashCode());
 
@@ -267,7 +266,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "11/03/2020", UnitTestCoverage = 90, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(input != null, nameof(input));
+			Encapsulation.TryValidateNullParam(input, nameof(input));
 
 			var returnValue = new Dictionary<string, string>();
 
@@ -310,7 +309,7 @@ namespace dotNetTips.Spargine.Core
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string GetTypeDisplayName(object item, bool fullName = true)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Encapsulation.TryValidateNullParam(item, nameof(item));
 
 			return item == null ? null : GetTypeDisplayName(item.GetType(), fullName);
 		}
@@ -328,13 +327,54 @@ namespace dotNetTips.Spargine.Core
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 90, Status = Status.Available)]
 		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = DefaultNestedTypeDelimiter)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(type != null, nameof(type));
+			Encapsulation.TryValidateNullParam(type, nameof(type));
 
 			var sb = TypeHelper.CreateStringBuilder();
 
 			ProcessType(sb, type, new DisplayNameOptions(fullName, includeGenericParameterNames, includeGenericParameters, nestedTypeDelimiter));
 
 			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Processes the type.
+		/// </summary>
+		/// <param name="builder">The builder.</param>
+		/// <param name="type">The type.</param>
+		/// <param name="options">The options.</param>
+		[Information(UnitTestCoverage = 80, Status = Status.Available)]
+		internal static void ProcessType(StringBuilder builder, Type type, in DisplayNameOptions options)
+		{
+			if (type.IsGenericType)
+			{
+				var genericArguments = type.GetGenericArguments();
+				ProcessGenericType(builder, type, genericArguments, genericArguments.Length, options);
+			}
+			else if (type.IsArray)
+			{
+				ProcessType(builder, type, options);
+			}
+			else if (_builtInTypeNames.TryGetValue(type, out var builtInName))
+			{
+				builder.Append(builtInName);
+			}
+			else if (type.IsGenericParameter)
+			{
+				if (options.IncludeGenericParameterNames)
+				{
+					builder.Append(type.Name);
+				}
+			}
+			else
+			{
+				var name = options.FullName ? type.FullName : type.Name;
+				builder.Append(name);
+
+				if (options.NestedTypeDelimiter != DefaultNestedTypeDelimiter)
+				{
+					builder.Replace(DefaultNestedTypeDelimiter, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
+				}
+			}
 		}
 
 		/// <summary>
@@ -443,52 +483,10 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Processes the type.
-		/// </summary>
-		/// <param name="builder">The builder.</param>
-		/// <param name="type">The type.</param>
-		/// <param name="options">The options.</param>
-		[Information(UnitTestCoverage = 80, Status = Status.Available)]
-		private static void ProcessType(StringBuilder builder, Type type, in DisplayNameOptions options)
-		{
-			if (type.IsGenericType)
-			{
-				var genericArguments = type.GetGenericArguments();
-				ProcessGenericType(builder, type, genericArguments, genericArguments.Length, options);
-			}
-			else if (type.IsArray)
-			{
-				ProcessType(builder, type, options);
-			}
-			else if (_builtInTypeNames.TryGetValue(type, out var builtInName))
-			{
-				builder.Append(builtInName);
-			}
-			else if (type.IsGenericParameter)
-			{
-				if (options.IncludeGenericParameterNames)
-				{
-					builder.Append(type.Name);
-				}
-			}
-			else
-			{
-				var name = options.FullName ? type.FullName : type.Name;
-				builder.Append(name);
-
-				if (options.NestedTypeDelimiter != DefaultNestedTypeDelimiter)
-				{
-					builder.Replace(DefaultNestedTypeDelimiter, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
-				}
-			}
-		}
-
-		/// <summary>
 		/// Struct DisplayNameOptions.
 		/// </summary>
-		private readonly struct DisplayNameOptions
+		internal struct DisplayNameOptions
 		{
-
 			/// <summary>
 			/// Initializes a new instance of the <see cref="DisplayNameOptions" /> struct.
 			/// </summary>

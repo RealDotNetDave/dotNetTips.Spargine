@@ -19,7 +19,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -100,7 +100,7 @@ namespace dotNetTips.Spargine.Core
 			var result = new List<string>();
 
 			// Enum names (text) are defined as fields for the type
-			foreach (FieldInfo enumValue in t.GetFields(BindingFlags.Public | BindingFlags.Static))
+			foreach (var enumValue in t.GetFields(BindingFlags.Public | BindingFlags.Static))
 			{
 				// If XML is specified and found, use this name
 				if (useXml)

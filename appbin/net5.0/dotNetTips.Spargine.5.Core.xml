@@ -1961,15 +1961,6 @@
             <exception cref="T:System.ArgumentOutOfRangeException">value - Unit test coverage must be in the range of 0 - 100.</exception>
             <remarks>Value must be between 0 - 100</remarks>
         </member>
-        <member name="M:dotNetTips.Spargine.Core.InformationAttribute.IsInRange(System.Double,System.Double,System.Double)">
-            <summary>
-            Determines whether [is in range] [the specified value].
-            </summary>
-            <param name="value">The value.</param>
-            <param name="lower">The lower.</param>
-            <param name="upper">The upper.</param>
-            <returns><c>true</c> if [is in range] [the specified value]; otherwise, <c>false</c>.</returns>
-        </member>
         <member name="T:dotNetTips.Spargine.Core.InvalidEnumTypeException">
             <summary>
             InvalidEnumTypeException.
@@ -2230,6 +2221,7 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentNullException">Value cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam``1(System.Boolean,System.String,System.String)">
             <summary>
@@ -2239,7 +2231,6 @@
             <param name="condition">if set to <c>true</c> [condition].</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.InvalidCastException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Collections.IEnumerable,System.String,System.String)">
             <summary>
@@ -2248,7 +2239,7 @@
             <param name="collection">The collection.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentNullException">Collection is null or has no items.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.IO.FileInfo,System.String,System.String)">
             <summary>
@@ -2257,8 +2248,8 @@
             <param name="file">The file.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException"></exception>
-            <exception cref="T:System.IO.FileNotFoundException"></exception>
+            <exception cref="T:System.ArgumentNullException">File cannot be null.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">File not not found.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.IO.DirectoryInfo,System.String,System.String)">
             <summary>
@@ -2267,7 +2258,7 @@
             <param name="directory">The directory.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentNullException">Directory cannot be null.</exception>
             <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException">Directory not found.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Enum,System.String,System.String)">
@@ -2277,7 +2268,6 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException">The parameter value cannot be null.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">The value is not defined in the enum type.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Guid,System.String,System.String)">
@@ -2287,9 +2277,7 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Guid cannot be empty.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Uri,System.String,System.String)">
             <summary>
@@ -2298,7 +2286,7 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Uri cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.String,System.String)">
             <summary>
@@ -2307,16 +2295,7 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Security.SecureString,System.String,System.String)">
-            <summary>
-            Tries the validate parameter.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="paramName">Name of the parameter.</param>
-            <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentNullException">Value cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Collections.IEnumerable,System.Int32,System.String,System.String)">
             <summary>
@@ -2326,9 +2305,8 @@
             <param name="size">The size.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Collection does not match size.</exception>
+            <exception cref="T:System.ArgumentNullException">Collection cannot be null or have no items.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Text.RegularExpressions.Regex,System.String,System.String)">
             <summary>
@@ -2338,19 +2316,8 @@
             <param name="match">The match.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException">match</exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.String,System.String,System.String)">
-            <summary>
-            Tries to validate a method parameter.
-            </summary>
-            <param name="value">The value.</param>
-            <param name="expected">The expected.</param>
-            <param name="paramName">Name of the parameter.</param>
-            <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException">Match cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Value does not match expression.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Type,System.Type,System.String,System.String)">
             <summary>
@@ -2360,8 +2327,7 @@
             <param name="expectedType">The expected type.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Type does not match expected type.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int32,System.Int32,System.Int32,System.String,System.String)">
             <summary>
@@ -2372,7 +2338,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The error message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Double,System.Double,System.Double,System.String,System.String)">
             <summary>
@@ -2383,7 +2349,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int64,System.Int64,System.Int64,System.String,System.String)">
             <summary>
@@ -2394,7 +2360,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Decimal,System.Decimal,System.Decimal,System.String,System.String)">
             <summary>
@@ -2405,7 +2371,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Int32,System.Int32,System.String,System.String)">
             <summary>
@@ -2416,10 +2382,10 @@
             <param name="maximumLength">The maximum length.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Minimum length is not valid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Maximum length is not valid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,dotNetTips.Spargine.Core.OOP.StringType,System.Int32,System.Int32,System.String,System.String)">
             <summary>
@@ -2431,13 +2397,10 @@
             <param name="maximumLength">The maximum length.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:System.ArgumentNullException">Value cannot be null or empty.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">StringType is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within minimum and maximum length.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Value is not the correct type of <see cref="T:dotNetTips.Spargine.Core.OOP.StringType"/>.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.CreateExceptionMessage(System.String,System.String)">
             <summary>
@@ -2446,23 +2409,6 @@
             <param name="message">The message.</param>
             <param name="messageFromResource">The message from resource.</param>
             <returns>System.String.</returns>
-        </member>
-        <member name="T:dotNetTips.Spargine.Core.OOP.IDataRecord`2">
-            <summary>
-            Interface IDataModel
-            Implements the <see cref="T:System.IComparable`1" />
-            Implements the <see cref="T:System.IEquatable`1" />
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <typeparam name="TKey">The type of the t key.</typeparam>
-            <seealso cref="T:System.IComparable`1" />
-            <seealso cref="T:System.IEquatable`1" />
-        </member>
-        <member name="P:dotNetTips.Spargine.Core.OOP.IDataRecord`2.Id">
-            <summary>
-            Gets or sets the identifier.
-            </summary>
-            <value>The identifier.</value>
         </member>
         <member name="T:dotNetTips.Spargine.Core.OOP.IDataModel`2">
             <summary>
@@ -2476,6 +2422,23 @@
             <seealso cref="T:System.IEquatable`1" />
         </member>
         <member name="P:dotNetTips.Spargine.Core.OOP.IDataModel`2.Id">
+            <summary>
+            Gets or sets the identifier.
+            </summary>
+            <value>The identifier.</value>
+        </member>
+        <member name="T:dotNetTips.Spargine.Core.OOP.IDataRecord`2">
+            <summary>
+            Interface IDataModel
+            Implements the <see cref="T:System.IComparable`1" />
+            Implements the <see cref="T:System.IEquatable`1" />
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <typeparam name="TKey">The type of the t key.</typeparam>
+            <seealso cref="T:System.IComparable`1" />
+            <seealso cref="T:System.IEquatable`1" />
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.OOP.IDataRecord`2.Id">
             <summary>
             Gets or sets the identifier.
             </summary>
@@ -2610,6 +2573,11 @@
         <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidEmailAddress">
             <summary>
               Looks up a localized string similar to Invalid email address..
+            </summary>
+        </member>
+        <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidStringLengthAcceptableRange">
+            <summary>
+              Looks up a localized string similar to Invalid string length. Acceptable range is between {0} and {1}..
             </summary>
         </member>
         <member name="P:dotNetTips.Spargine.Core.Properties.Resources.InvalidStringType">
@@ -2773,7 +2741,7 @@
         </member>
         <member name="M:dotNetTips.Spargine.Core.TypeHelper.CreateStringBuilder">
             <summary>
-            Creates StringBuilder using ObjectPool.
+            Creates StringBuilder using ObjectPool (DefaultObjectPoolProvider).
             </summary>
             <returns>StringBuilder.</returns>
         </member>
@@ -2871,6 +2839,14 @@
             <returns>The pretty printed type name.</returns>
             <exception cref="T:System.ArgumentNullException">type</exception>
         </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.ProcessType(System.Text.StringBuilder,System.Type,dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions@)">
+            <summary>
+            Processes the type.
+            </summary>
+            <param name="builder">The builder.</param>
+            <param name="type">The type.</param>
+            <param name="options">The options.</param>
+        </member>
         <member name="M:dotNetTips.Spargine.Core.TypeHelper.LoadDerivedTypes(System.Collections.Generic.IEnumerable{System.Reflection.TypeInfo},System.Type,dotNetTips.Spargine.Core.Tristate)">
             <summary>
             Loads the derived types of a type.
@@ -2888,14 +2864,6 @@
             <param name="type">The type.</param>
             <param name="genericArguments">The generic arguments.</param>
             <param name="length">The length.</param>
-            <param name="options">The options.</param>
-        </member>
-        <member name="M:dotNetTips.Spargine.Core.TypeHelper.ProcessType(System.Text.StringBuilder,System.Type,dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions@)">
-            <summary>
-            Processes the type.
-            </summary>
-            <param name="builder">The builder.</param>
-            <param name="type">The type.</param>
             <param name="options">The options.</param>
         </member>
         <member name="T:dotNetTips.Spargine.Core.TypeHelper.DisplayNameOptions">

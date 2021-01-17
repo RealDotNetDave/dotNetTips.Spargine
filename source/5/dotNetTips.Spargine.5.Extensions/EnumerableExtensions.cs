@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -403,7 +403,7 @@ namespace dotNetTips.Spargine.Extensions
 			list.ToList()
 				.ForEach(item =>
 				{
-					sb.Append($"{item.ToString()}{delimiter.ToString(CultureInfo.CurrentCulture)}");
+					sb.Append($"{item}{delimiter.ToString(CultureInfo.CurrentCulture)}");
 				});
 
 			return sb.ToString(0, sb.ToString().Length - 1);

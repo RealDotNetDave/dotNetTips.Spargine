@@ -15,7 +15,7 @@
 using System;
 using dotNetTips.Spargine.Core.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The unit test coverage
 		/// </summary>
-		private double _unitTestCoverage;
+		private int _unitTestCoverage;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InformationAttribute" /> class.
@@ -128,11 +128,11 @@ namespace dotNetTips.Spargine.Core
 
 			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnkown : author;
 
-			if (string.IsNullOrEmpty(createdOn) == false && DateTimeOffset.TryParse(createdOn, out DateTimeOffset createdDate))
+			if (string.IsNullOrEmpty(createdOn) == false && DateTimeOffset.TryParse(createdOn, out var createdDate))
 			{
 				this.CreatedOn = createdDate;
 
-				if (string.IsNullOrEmpty(modifiedOn) == DateTimeOffset.TryParse(modifiedOn, out DateTimeOffset modifiedDate))
+				if (string.IsNullOrEmpty(modifiedOn) == DateTimeOffset.TryParse(modifiedOn, out var modifiedDate))
 				{
 					this.ModifiedOn = modifiedDate;
 				}
@@ -192,7 +192,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The unit test coverage.</value>
 		/// <exception cref="ArgumentOutOfRangeException">value - Unit test coverage must be in the range of 0 - 100.</exception>
 		/// <remarks>Value must be between 0 - 100</remarks>
-		public double UnitTestCoverage
+		public int UnitTestCoverage
 		{
 			get => this._unitTestCoverage;
 			set
@@ -202,7 +202,7 @@ namespace dotNetTips.Spargine.Core
 					return;
 				}
 
-				if (IsInRange(value, 0, 100))
+				if (value.IsInRange(0, 100))
 				{
 					this._unitTestCoverage = value;
 				}
@@ -212,18 +212,5 @@ namespace dotNetTips.Spargine.Core
 				}
 			}
 		}
-
-		/// <summary>
-		/// Determines whether [is in range] [the specified value].
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="lower">The lower.</param>
-		/// <param name="upper">The upper.</param>
-		/// <returns><c>true</c> if [is in range] [the specified value]; otherwise, <c>false</c>.</returns>
-		private static bool IsInRange(double value, double lower, double upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
 	}
 }

@@ -36,13 +36,26 @@
             </summary>
             <param name="id">The identifier.</param>
         </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:dotNetTips.Spargine.Tester.Models.AddressRecord" /> class.
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="address1">The address1.</param>
+            <param name="address2">The address2.</param>
+            <param name="city">The city.</param>
+            <param name="state">The state.</param>
+            <param name="countyProvince">The county province.</param>
+            <param name="country">The country.</param>
+            <param name="postalCode">The postal code.</param>
+            <param name="phone">The phone.</param>
+        </member>
         <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Address1">
             <summary>
             Gets or sets the Address1.
             </summary>
             <value>The Address1.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
         </member>
         <member name="P:dotNetTips.Spargine.Tester.Models.AddressRecord.Address2">
             <summary>
@@ -50,7 +63,6 @@
             </summary>
             <value>The Address2.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.Address2), Value for address cannot be null.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Address2), Value for address cannot be null.</exception>
         </member>
         <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._city">
             <summary>
@@ -63,7 +75,6 @@
             </summary>
             <value>The city name.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.City), Value for City cannot be null or empty.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.City), Value for City cannot be null or empty.</exception>
         </member>
         <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._country">
             <summary>
@@ -76,7 +87,6 @@
             </summary>
             <value>The country name.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
         </member>
         <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._id">
             <summary>
@@ -89,7 +99,6 @@
             </summary>
             <value>The unique identifier.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
         </member>
         <member name="F:dotNetTips.Spargine.Tester.Models.AddressRecord._countyProvince">
             <summary>
@@ -133,7 +142,6 @@
             </summary>
             <value>The postal code.</value>
             <exception cref="T:System.ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.GetHashCode">
             <summary>
@@ -146,6 +154,14 @@
             Converts to string.
             </summary>
             <returns>string.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.CompareTo(System.Object)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>int.</returns>
+            <exception cref="T:System.ArgumentException">nameof(obj) + " is not a " + nameof(AddressRecord)</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.CompareTo(dotNetTips.Spargine.Tester.Models.IAddressRecord)">
             <summary>
@@ -160,6 +176,38 @@
             </summary>
             <param name="other">The other.</param>
             <returns>bool.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.op_LessThan(dotNetTips.Spargine.Tester.Models.AddressRecord,dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Implements the op_LessThan operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.op_LessThanOrEqual(dotNetTips.Spargine.Tester.Models.AddressRecord,dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Implements the op_LessThanOrEqual operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.op_GreaterThan(dotNetTips.Spargine.Tester.Models.AddressRecord,dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Implements the op_GreaterThan operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.AddressRecord.op_GreaterThanOrEqual(dotNetTips.Spargine.Tester.Models.AddressRecord,dotNetTips.Spargine.Tester.Models.IAddressRecord)">
+            <summary>
+            Implements the op_GreaterThanOrEqual operator.
+            </summary>
+            <param name="left">The left.</param>
+            <param name="right">The right.</param>
+            <returns>The result of the operator.</returns>
         </member>
         <member name="T:dotNetTips.Spargine.Tester.Models.Coordinate">
             <summary>
@@ -556,7 +604,7 @@
             </summary>
             <value>The last name.</value>
         </member>
-        <member name="M:dotNetTips.Spargine.Tester.Models.IPersonRecord.CalculateAge">
+        <member name="M:dotNetTips.Spargine.Tester.Models.IPersonRecord.Age">
             <summary>
             Calculates the age.
             </summary>
@@ -1530,6 +1578,14 @@
             </summary>
             <returns>string.</returns>
         </member>
+        <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.CompareTo(System.Object)">
+            <summary>
+            Compares to.
+            </summary>
+            <param name="obj">The object.</param>
+            <returns>int.</returns>
+            <exception cref="T:System.ArgumentException">nameof(obj) + " is not a " + nameof(IPersonRecord)</exception>
+        </member>
         <member name="M:dotNetTips.Spargine.Tester.Models.PersonRecord.CompareTo(dotNetTips.Spargine.Tester.Models.IPersonRecord)">
             <summary>
             Compares to.
@@ -2029,6 +2085,19 @@
             </summary>
             <param name="words">The words.</param>
             <returns>System.String.</returns>
+        </member>
+        <member name="T:dotNetTips.Spargine.Tester.TestClass">
+            <summary>
+            Class TestClass.
+            </summary>
+        </member>
+        <member name="M:dotNetTips.Spargine.Tester.TestClass.PrintResult``1(``0,System.String)">
+            <summary>
+            Prints the result.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="input">The input.</param>
+            <param name="methodName">Name of the method.</param>
         </member>
     </members>
 </doc>

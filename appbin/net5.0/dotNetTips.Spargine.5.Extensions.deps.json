@@ -6,14 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "dotNetTips.Spargine.5.Extensions/1.0.0": {
+      "dotNetTips.Spargine.5.Extensions/2021.2.1.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
           "Microsoft.Extensions.Configuration.Abstractions": "5.0.0",
           "Microsoft.Extensions.ObjectPool": "5.0.1",
           "Newtonsoft.Json": "12.0.3",
           "System.Collections.Immutable": "5.0.0",
-          "dotNetTips.Spargine.5.Core": "1.0.0",
+          "dotNetTips.Spargine.5.Core": "2021.2.1",
           "linq2db": "3.1.6"
         },
         "runtime": {
@@ -101,7 +101,7 @@
       "System.ComponentModel.Annotations/4.7.0": {},
       "System.Security.Principal.Windows/5.0.0": {},
       "System.Text.Encodings.Web/4.5.0": {},
-      "dotNetTips.Spargine.5.Core/1.0.0": {
+      "dotNetTips.Spargine.5.Core/2021.2.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9",
           "Microsoft.Extensions.ObjectPool": "5.0.1",
@@ -115,7 +115,7 @@
     }
   },
   "libraries": {
-    "dotNetTips.Spargine.5.Extensions/1.0.0": {
+    "dotNetTips.Spargine.5.Extensions/2021.2.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -204,7 +204,7 @@
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     },
-    "dotNetTips.Spargine.5.Core/1.0.0": {
+    "dotNetTips.Spargine.5.Core/2021.2.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

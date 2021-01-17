@@ -22,7 +22,7 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
-//![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -235,7 +235,7 @@ namespace dotNetTips.Spargine.Extensions
 				var i = input.IndexOf(start, StringComparison.Ordinal);
 				var j = input.IndexOf(end, StringComparison.Ordinal);
 
-				return input.Substring(i, j - i);
+				return input[i..j];
 			}
 		}
 
@@ -268,7 +268,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input)
 		{
-			return ( input == null ) ? false : ( input.Trim().Length > 0 );
+			return input != null && ( input.Trim().Length > 0 );
 		}
 
 		/// <summary>
@@ -283,7 +283,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Encapsulation.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
 
-			return ( input == null ) ? false : ( input.Trim().Length == length );
+			return input != null && ( input.Trim().Length == length );
 		}
 
 		/// <summary>
@@ -298,7 +298,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 
-			return ( input == null ) ? false : ( input.Trim() == value.Trim() );
+			return input != null && ( input.Trim() == value.Trim() );
 		}
 
 		/// <summary>
@@ -334,7 +334,7 @@ namespace dotNetTips.Spargine.Extensions
 			Encapsulation.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
 			Encapsulation.TryValidateParam(maxLength, minimumValue: minLength, maximumValue: int.MaxValue, nameof(maxLength));
 
-			return ( input == null ) ? false : input.Length.IsInRange(minLength, maxLength);
+			return input != null && input.Length.IsInRange(minLength, maxLength);
 		}
 
 		/// <summary>
@@ -435,7 +435,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
 		public static bool IsEmpty(this string input)
 		{
-			return ( input.IsNotNull() && ( input.Length == 0 ) ) ? true : false;
+			return input.IsNotNull() && ( input.Length == 0 );
 		}
 
 		/// <summary>
@@ -571,7 +571,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (input.EndsWith("...", StringComparison.OrdinalIgnoreCase))
 			{
-				input = input.Substring(0, input.Length - 2);
+				input = input[0..^2];
 			}
 
 			return input;

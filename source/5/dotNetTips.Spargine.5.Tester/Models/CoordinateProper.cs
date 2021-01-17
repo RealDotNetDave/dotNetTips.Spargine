@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
@@ -114,7 +115,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		{
 			if (!( obj is CoordinateProper ))
 			{
-				throw new ArgumentException(nameof(obj) + " is not a " + nameof(CoordinateProper));
+				ExceptionThrower.ThrowArgumentInvalidException(nameof(obj), nameof(obj) + " is not a " + nameof(CoordinateProper));
 			}
 
 			return this.CompareTo((CoordinateProper)obj);

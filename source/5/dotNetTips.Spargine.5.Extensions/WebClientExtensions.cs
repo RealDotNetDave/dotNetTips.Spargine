@@ -43,12 +43,12 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (client is null)
 			{
-				throw new ArgumentNullException(nameof(client));
+				ExceptionThrower.ThrowArgumentNullException(nameof(client));
 			}
 
 			if (string.IsNullOrEmpty(url))
 			{
-				throw new ArgumentException("URL cannot be empty or null.", nameof(url));
+				ExceptionThrower.ThrowArgumentException("URL cannot be empty or null.", nameof(url));
 			}
 
 			var data = client.DownloadString(url);

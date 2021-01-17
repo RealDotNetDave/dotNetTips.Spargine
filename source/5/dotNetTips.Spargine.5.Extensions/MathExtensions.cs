@@ -132,7 +132,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (value <= decimal.MinValue || value >= decimal.MaxValue)
 			{
-				throw new ArgumentNullException(nameof(value), Resources.ValueIsInvalid);
+				ExceptionThrower.ThrowArgumentNullException(nameof(value), Resources.ValueIsInvalid);
 			}
 
 			return Convert.ToInt32(Math.Round(value, mode));
@@ -163,7 +163,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (value <= decimal.MinValue || value >= decimal.MaxValue)
 			{
-				throw new ArgumentNullException(nameof(value), Resources.ValueIsInvalid);
+				ExceptionThrower.ThrowArgumentNullException(nameof(value), Resources.ValueIsInvalid);
 			}
 
 			return Convert.ToInt32(Math.Round(value, digits, mode));

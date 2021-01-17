@@ -19,6 +19,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Core.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -196,12 +197,12 @@ namespace dotNetTips.Spargine.Core
 
 			if (canContinue == null)
 			{
-				throw new ArgumentNullException(nameof(canContinue), $"{nameof(canContinue)} is null.");
+				ExceptionThrower.ThrowArgumentNullException(nameof(canContinue), $"{nameof(canContinue)} is null.");
 			}
 
 			if (nextItem == null)
 			{
-				throw new ArgumentNullException(nameof(nextItem), $"{nameof(nextItem)} is null.");
+				ExceptionThrower.ThrowArgumentNullException(nameof(nextItem), $"{nameof(nextItem)} is null.");
 			}
 
 			for (var current = source; canContinue(current); current = nextItem(current))
@@ -226,10 +227,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">exception</exception>
 		internal static string GetAllMessages(this Exception exception, char separator = ControlChars.Comma)
 		{
-			if (exception is null)
-			{
-				throw new ArgumentNullException(nameof(exception));
-			}
+			Encapsulation.TryValidateNullParam(exception, nameof(exception));
 
 			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
@@ -274,6 +272,8 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
 		internal static bool HasValue(this string input, int length)
 		{
+			Encapsulation.TryValidateParam(input, 0, int.MaxValue, nameof(input));
+
 			if (length <= 0)
 			{
 				throw new ArgumentOutOfRangeException(nameof(length), "Minimum length must be greater than 0.");

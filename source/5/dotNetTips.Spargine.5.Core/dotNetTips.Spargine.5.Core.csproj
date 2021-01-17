@@ -3,13 +3,13 @@
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2021.1.17.135</AssemblyVersion>
+		<AssemblyVersion>2021.1.17.136</AssemblyVersion>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<DebugSymbols>true</DebugSymbols>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.1.17.135</FileVersion>
+		<FileVersion>2021.1.17.136</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

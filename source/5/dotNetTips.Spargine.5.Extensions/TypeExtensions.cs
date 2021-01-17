@@ -345,7 +345,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			foreach (var member in joined.Where(m => m.IsPrivate))
 			{
-				throw new InvalidOperationException($"Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it");
+				ExceptionThrower.ThrowArgumentOutOfRangeException($"Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it", "Member");
 			}
 
 			return joined;

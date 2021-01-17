@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-03-2020
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="Encapsulation.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -171,7 +171,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="value">The value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentInvalidException">Uri cannot be null.</exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(Uri value, string paramName, string message = "")
 		{
@@ -179,7 +179,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.UriCannotBeNull);
 
-				throw new ArgumentInvalidException(message, paramName);
+				ExceptionThrower.ThrowArgumentInvalidException(message, paramName);
 			}
 		}
 
@@ -208,8 +208,8 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="size">The size.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Collection does not match size.</exception>
-		/// <exception cref="ArgumentNullException">Collection cannot be null or have no items.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentNullException">Collection does not match size.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(IEnumerable collection, int size, string paramName, string message = "")
 		{
@@ -219,7 +219,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.CollectionSizeIsNotValid);
 
-				throw new ArgumentOutOfRangeException(paramName, message);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -230,14 +230,14 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="match">The match.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentNullException">Match cannot be null.</exception>
-		/// <exception cref="ArgumentInvalidException">Value does not match expression.</exception>
+		/// <exception cref="ArgumentNullException">match</exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(string value, Regex match, string paramName, string message = "")
 		{
 			if (match is null)
 			{
-				throw new ArgumentNullException(nameof(match));
+				ExceptionThrower.ThrowArgumentNullException(nameof(match));
 			}
 
 			TryValidateParam(value, paramName, message);
@@ -246,7 +246,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.StringIsNotValid);
 
-				throw new ArgumentInvalidException(message, paramName);
+				ExceptionThrower.ThrowArgumentInvalidException(message, paramName);
 			}
 		}
 
@@ -257,7 +257,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="expectedType">The expected type.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentInvalidException">Type does not match expected type.</exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(Type value, Type expectedType, string paramName, string message = "")
 		{
@@ -265,7 +265,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.InvalidType);
 
-				throw new ArgumentInvalidException(message, paramName);
+				ExceptionThrower.ThrowArgumentInvalidException(message, paramName);
 			}
 		}
 
@@ -277,7 +277,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="maximumValue">The maximum value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The error message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(int value, int minimumValue = int.MinValue, int maximumValue = int.MaxValue, string paramName = "", string message = "")
 		{
@@ -285,7 +285,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				throw new ArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 		}
 
@@ -297,7 +297,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="maximumValue">The maximum value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(double value, double minimumValue = double.MinValue, double maximumValue = double.MaxValue, string paramName = "", string message = "")
 		{
@@ -305,7 +305,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				throw new ArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 		}
 
@@ -317,7 +317,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="maximumValue">The maximum value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(long value, long minimumValue = long.MinValue, long maximumValue = long.MaxValue, string paramName = "", string message = "")
 		{
@@ -325,7 +325,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				throw new ArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 		}
 
@@ -337,7 +337,7 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="maximumValue">The maximum value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(decimal value, decimal minimumValue, decimal maximumValue, string paramName, string message = "")
 		{
@@ -345,10 +345,9 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				throw new ArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 		}
-
 
 		/// <summary>
 		/// Tries to validate a method parameter.
@@ -386,10 +385,11 @@ namespace dotNetTips.Spargine.Core.OOP
 		/// <param name="maximumLength">The maximum length.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentNullException">Value cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">StringType is invalid.</exception>
-		/// <exception cref="ArgumentOutOfRangeException">Value is not within minimum and maximum length.</exception>
-		/// <exception cref="ArgumentInvalidException">Value is not the correct type of <see cref="StringType"/>.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(string value, StringType stringType, int minimumLength, int maximumLength, string paramName, string message = "")
 		{
@@ -400,7 +400,7 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, string.Format(Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
 
-				throw new ArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 
 
@@ -412,7 +412,7 @@ namespace dotNetTips.Spargine.Core.OOP
 					{
 						message = CreateExceptionMessage(message, Resources.InvalidEmailAddress);
 
-						throw new ArgumentInvalidException(message, paramName);
+						ExceptionThrower.ThrowArgumentInvalidException(message, paramName);
 					}
 
 					break;
@@ -421,7 +421,7 @@ namespace dotNetTips.Spargine.Core.OOP
 					{
 						message = CreateExceptionMessage(message, Resources.InvalidUrlAddress);
 
-						throw new ArgumentInvalidException(message, paramName);
+						ExceptionThrower.ThrowArgumentInvalidException(message, paramName);
 					}
 
 					break;

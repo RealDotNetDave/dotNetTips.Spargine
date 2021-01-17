@@ -733,7 +733,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (startIndex >= input.Length - length)
 			{
-				throw new ArgumentOutOfRangeException(nameof(startIndex), "startIndex + length must be <= value.Length");
+				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(startIndex), "startIndex + length must be <= value.Length");
 			}
 
 			if (length == 0)

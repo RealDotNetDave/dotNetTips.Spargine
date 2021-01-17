@@ -364,7 +364,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				if (prop is null)
 				{
-					throw new InvalidCastException($"{string.Format(CultureInfo.InvariantCulture, "{0}{1}", Convert.ToString("No property '", CultureInfo.InvariantCulture), property)}' in + {typeof(T).Name}'");
+					ExceptionThrower.ThrowInvalidCastException($"{string.Format(CultureInfo.InvariantCulture, "{0}{1}", Convert.ToString("No property '", CultureInfo.InvariantCulture), property)}' in + {typeof(T).Name}'", "Property");
 				}
 
 				return @descending

@@ -5,8 +5,8 @@
     <IsPackable>false</IsPackable>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2021.1.17.126</AssemblyVersion>
-    <FileVersion>2021.1.17.126</FileVersion>
+    <AssemblyVersion>2021.1.17.127</AssemblyVersion>
+    <FileVersion>2021.1.17.127</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

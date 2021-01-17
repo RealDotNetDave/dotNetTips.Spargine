@@ -208,7 +208,7 @@ namespace dotNetTips.Spargine.Core
 				}
 				else
 				{
-					throw new ArgumentOutOfRangeException(nameof(value), "Unit test coverage must be in the range of 0 - 100.");
+					ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(value), "Unit test coverage must be in the range of 0 - 100.");
 				}
 			}
 		}

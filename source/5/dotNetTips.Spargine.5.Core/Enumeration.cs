@@ -203,7 +203,8 @@ namespace dotNetTips.Spargine.Core
 			if (matchingItem == null)
 			{
 				var message = string.Format("'{0}' is not a valid {1} in {2}", value, description, typeof(T));
-				throw new ApplicationException(message);
+
+				ExceptionThrower.ThrowArgumentNullException(message, nameof(predicate));
 			}
 
 			return matchingItem;

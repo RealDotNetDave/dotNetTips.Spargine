@@ -2286,7 +2286,7 @@
             <param name="value">The value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Uri cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.String,System.String)">
             <summary>
@@ -2305,8 +2305,8 @@
             <param name="size">The size.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">Collection does not match size.</exception>
-            <exception cref="T:System.ArgumentNullException">Collection cannot be null or have no items.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:System.ArgumentNullException">Collection does not match size.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Text.RegularExpressions.Regex,System.String,System.String)">
             <summary>
@@ -2316,8 +2316,8 @@
             <param name="match">The match.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentNullException">Match cannot be null.</exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Value does not match expression.</exception>
+            <exception cref="T:System.ArgumentNullException">match</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Type,System.Type,System.String,System.String)">
             <summary>
@@ -2327,7 +2327,7 @@
             <param name="expectedType">The expected type.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Type does not match expected type.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int32,System.Int32,System.Int32,System.String,System.String)">
             <summary>
@@ -2338,7 +2338,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The error message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Double,System.Double,System.Double,System.String,System.String)">
             <summary>
@@ -2349,7 +2349,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Int64,System.Int64,System.Int64,System.String,System.String)">
             <summary>
@@ -2360,7 +2360,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.Decimal,System.Decimal,System.Decimal,System.String,System.String)">
             <summary>
@@ -2371,7 +2371,7 @@
             <param name="maximumValue">The maximum value.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within range.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.TryValidateParam(System.String,System.Int32,System.Int32,System.String,System.String)">
             <summary>
@@ -2397,10 +2397,11 @@
             <param name="maximumLength">The maximum length.</param>
             <param name="paramName">Name of the parameter.</param>
             <param name="message">The message.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
             <exception cref="T:System.ArgumentNullException">Value cannot be null or empty.</exception>
             <exception cref="T:System.ArgumentOutOfRangeException">StringType is invalid.</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">Value is not within minimum and maximum length.</exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Value is not the correct type of <see cref="T:dotNetTips.Spargine.Core.OOP.StringType"/>.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.OOP.Encapsulation.CreateExceptionMessage(System.String,System.String)">
             <summary>

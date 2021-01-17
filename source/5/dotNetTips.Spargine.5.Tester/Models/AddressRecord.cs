@@ -13,7 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics;
-using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
@@ -95,7 +95,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			{
 				if (string.IsNullOrEmpty(value))
 				{
-					throw new ArgumentNullException(nameof(this.Address1), "Value for address cannot be null or empty.");
+					ExceptionThrower.ThrowArgumentNullException(nameof(this.Address1), "Value for address cannot be null or empty.");
 				}
 
 				this._address1 = ( value.Length < 10 || value.Length > 256 ) ? throw new ArgumentOutOfRangeException(nameof(this.Address1), "Address must be between 10 - 256 characters.") : value;

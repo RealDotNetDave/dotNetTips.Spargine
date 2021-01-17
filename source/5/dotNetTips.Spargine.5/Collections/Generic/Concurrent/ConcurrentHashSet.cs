@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions;
 
@@ -279,7 +280,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 				// "count" itself or "count + arrayIndex" can overflow
 				if (array.Length - count < arrayIndex || count < 0)
 				{
-					throw new ArgumentException("The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.");
+					ExceptionThrower.ThrowArgumentInvalidException(nameof(array), "The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.");
 				}
 
 				this.CopyToItems(array, arrayIndex);

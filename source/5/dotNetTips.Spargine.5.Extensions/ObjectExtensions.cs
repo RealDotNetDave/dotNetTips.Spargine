@@ -22,7 +22,6 @@ using System.Security.Cryptography;
 using System.Text;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
-using dotNetTips.Spargine.Extensions.Properties;
 using Newtonsoft.Json;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -37,19 +36,15 @@ namespace dotNetTips.Spargine.Extensions
 		/// Converts object to a different type.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="value">The value.</param>
+		/// <param name="obj">The value.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">value - Value cannot be null.</exception>
-		[Information(nameof(As), UnitTestCoverage = 99, Status = Status.Available)]
-		public static T As<T>(this object value)
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
+		[Information(nameof(As), UnitTestCoverage = 100, Status = Status.Available)]
+		public static T As<T>(this object obj)
 		{
-			if (value == null)
-			{
-				//TODO: THIS CONDITION NOT BEING TESTED
-				ExceptionThrower.ThrowArgumentNullException(nameof(value));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
-			return (T)value;
+			return (T)obj;
 		}
 
 		/// <summary>
@@ -58,32 +53,31 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="obj">The object.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">obj</exception>
-		[Information(nameof(Clone), UnitTestCoverage = 99, Status = Status.Available)]
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
+		[Information(nameof(Clone), UnitTestCoverage = 100, Status = Status.Available)]
 		public static T Clone<T>(this object obj)
 			where T : class
 		{
-			if (obj is null)
-			{
-				//TODO: THIS CONDITION NOT BEING TESTED
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
-			return obj.ToJson().FromJson<T>();
+			return FromJson<T>(obj.ToJson());
 		}
 
 		/// <summary>
 		/// Computes the sha256 hash.
 		/// </summary>
-		/// <param name="data">The data.</param>
+		/// <param name="obj">The data.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(ComputeSha256Hash), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ComputeSha256Hash(this object data)
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
+		[Information(nameof(ComputeSha256Hash), UnitTestCoverage = 100, Status = Status.Available)]
+		public static string ComputeSha256Hash(this object obj)
 		{
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+
 			// Create a SHA256   
 			using var sha256Hash = SHA256.Create();
 			// ComputeHash - returns byte array  
-			var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(data.ToJson()));
+			var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obj.ToJson()));
 
 			// Convert byte array to a string   
 			var sb = TypeHelper.CreateStringBuilder();
@@ -101,12 +95,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="obj">The object.</param>
 		/// <exception cref="ArgumentNullException">obj</exception>
-		[Information(nameof(DisposeFields), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(DisposeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void DisposeFields(this IDisposable obj)
 		{
 			if (obj == null)
 			{
-
 				return;
 			}
 
@@ -131,54 +124,16 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Creates object from Json.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="json">The json.</param>
-		/// <returns>T.</returns>
-		[Information(nameof(FromJson), UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FromJson<T>(this string json)
-			where T : class
-		{
-			return JsonConvert.DeserializeObject<T>(json);
-		}
-
-		/// <summary>
-		/// Creates object from a Json file.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="fileName">Name of the file.</param>
-		/// <returns>T.</returns>
-		/// <exception cref="FileNotFoundException">The exception.</exception>
-		/// <exception cref="System.IO.FileNotFoundException">The exception.</exception>
-		[Information(nameof(FromJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
-		public static T FromJsonFile<T>(string fileName)
-			where T : class
-		{
-			if (File.Exists(fileName) == false)
-			{
-				ExceptionThrower.ThrowFileNotFoundException(Resources.FileNotFound, fileName);
-			}
-
-			var json = File.ReadAllText(fileName, Encoding.UTF8);
-
-			return JsonConvert.DeserializeObject<T>(json);
-		}
-
-		/// <summary>
 		/// Determines whether the specified object has the property.
 		/// </summary>
 		/// <param name="obj">The instance.</param>
 		/// <param name="propertyName">Name of the property.</param>
 		/// <returns><c>true</c> if the specified property name has property; otherwise, <c>false</c>.</returns>
-		/// <exception cref="ArgumentNullException">propertyName - Source cannot be null.</exception>
-		[Information(nameof(HasProperty), UnitTestCoverage = 0, Status = Status.Available)]
+		/// <exception cref="ArgumentNullException">Object name cannot be null.</exception>
+		[Information(nameof(HasProperty), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasProperty(this object obj, string propertyName)
 		{
-			if (obj is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
 			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => p.Name == propertyName);
 
@@ -186,31 +141,14 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Ins the specified source.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="source">The source.</param>
-		/// <param name="list">The list.</param>
-		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="ArgumentNullException">source - Source cannot be null.
-		/// or
-		/// list - List cannot be null or have a 0 length.</exception>
-		/// <remarks>Original code by: Rory Becker</remarks>
-		[Information(nameof(In), UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool In<T>(this T source, params T[] list) => list.FastAny(value => value.Equals(source));
-
-		/// <summary>
 		/// Initializes the fields of an object.
 		/// </summary>
 		/// <param name="obj">The object.</param>
 		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
-		[Information(nameof(InitializeFields), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(InitializeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void InitializeFields(this object obj)
 		{
-			if (obj is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
 			var fieldInfos = obj.GetType().GetRuntimeFields().ToList();
 
@@ -236,7 +174,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="obj">The obj.</param>
 		/// <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
-		[Information(nameof(IsNotNull), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(IsNotNull), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsNotNull(this object obj) => obj != null; //TODO: THIS CONDITION NOT BEING TESTED
 
 		/// <summary>
@@ -250,7 +188,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Generates a Dictionary that represents the property name (Key) and it's value.
 		/// </summary>
-		/// <param name="input">The input.</param>
+		/// <param name="obj">The input.</param>
 		/// <param name="bindingFlags">The binding flags.</param>
 		/// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
 		/// <example>Output:
@@ -269,13 +207,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// [PostalCode, 86560656].
 		/// </example>
 		[Information(nameof(PropertiesToDictionary), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static IDictionary<string, object> PropertiesToDictionary(this object input, BindingFlags bindingFlags = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+		public static IDictionary<string, object> PropertiesToDictionary(this object obj, BindingFlags bindingFlags = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
 		{
-			Encapsulation.TryValidateParam<ArgumentException>(input != null, nameof(input));
+			Encapsulation.TryValidateParam<ArgumentException>(obj != null, nameof(obj));
 
-			return input.GetType()
+			return obj.GetType()
 				 .GetProperties(bindingFlags | BindingFlags.GetProperty)
-				 .ToDictionary(prop => prop.Name, prop => prop.GetValue(input));
+				 .ToDictionary(prop => prop.Name, prop => prop.GetValue(obj));
 		}
 
 		/// <summary>
@@ -283,23 +221,22 @@ namespace dotNetTips.Spargine.Extensions
 		/// The input cannot be a collection type.
 		/// Supports nested types.
 		/// </summary>
-		/// <param name="input">The input.</param>
+		/// <param name="obj">The input.</param>
 		/// <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
-		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
-		/// <exception cref="ArgumentInvalidException">Input cannot be a collection type.</exception>
-		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static string PropertiesToString(this object input, bool ignoreNullValues = true, char delimiter = ControlChars.Comma)
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
+		/// <exception cref="ArgumentInvalidException">Object cannot be a collection type.</exception>
+		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static string PropertiesToString(this object obj, bool ignoreNullValues = true, char delimiter = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateNullParam(input, nameof(input));
-			Encapsulation.TryValidateParam<ArgumentInvalidException>(input.GetType().Name != typeof(List<>).Name, nameof(input));
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Encapsulation.TryValidateParam<ArgumentInvalidException>(obj.GetType().Name != typeof(List<>).Name, nameof(obj));
 
-			var properties = input.PropertiesToDictionary();
+			var properties = obj.PropertiesToDictionary();
 
 			if (properties.Count == 0)
 			{
-				//TODO: THIS CONDITION NOT BEING TESTED
 				return string.Empty;
 			}
 			else
@@ -337,26 +274,24 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Strips the null.
+		/// Returns ToString() value if not null.
 		/// </summary>
-		/// <param name="input">The field.</param>
+		/// <param name="obj">The field.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(StripNull), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string StripNull(this object input) => input == null ? string.Empty : input.ToString(); //TODO: THIS CONDITION NOT BEING TESTED
+		[Information(nameof(StripNull), UnitTestCoverage = 100, Status = Status.Available)]
+		public static string StripNull(this object obj) => obj == null ? string.Empty : obj.ToString();
 
 		/// <summary>
 		/// Serializes object to Json.
 		/// </summary>
 		/// <param name="obj">The instance.</param>
 		/// <returns>System.String.</returns>
-		/// <exception cref="ArgumentNullException">obj</exception>
-		[Information(nameof(ToJson), UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ToJson(this object obj)
 		{
 			if (obj is null)
 			{
-				//TODO: THIS CONDITION NOT BEING TESTED
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
+				return string.Empty;
 			}
 
 			return JsonConvert.SerializeObject(obj);
@@ -369,21 +304,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="fileName">The file.</param>
 		/// <exception cref="ArgumentNullException">obj</exception>
 		/// <exception cref="ArgumentException">message - fileName</exception>
-		[Information(nameof(ToJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToJsonFile), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void ToJsonFile(this object obj, string fileName)
 		{
-			if (obj is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
-			}
-
-			if (string.IsNullOrEmpty(fileName))
-			{
-				ExceptionThrower.ThrowArgumentException(Resources.InvalidFileName, nameof(fileName));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Encapsulation.TryValidateParam(fileName, nameof(fileName));
 
 			var json = JsonConvert.SerializeObject(obj);
-
 
 			File.WriteAllText(fileName, json, Encoding.UTF8);
 		}
@@ -392,7 +319,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Tries the to call Dispose.
 		/// </summary>
 		/// <param name="obj">The obj.</param>
-		[Information(nameof(TryDispose), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void TryDispose(this IDisposable obj) => ObjectExtensions.TryDispose(obj, false);
 
 		/// <summary>
@@ -401,15 +328,14 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="obj">The obj.</param>
 		/// <param name="throwException">if set to <count>true</count> [throw exception].</param>
 		/// <exception cref="ArgumentNullException">obj</exception>
-		[Information(nameof(TryDispose), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void TryDispose(this IDisposable obj, bool throwException)
 		{
 			if (obj is null)
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(obj));
+				return;
 			}
 
-			// Swallow exception on purpose.
 			try
 			{
 				if (obj is IAsyncDisposable asyncDisposable)
@@ -430,6 +356,18 @@ namespace dotNetTips.Spargine.Extensions
 					throw;
 				}
 			}
+		}
+
+		/// <summary>
+		/// Converts JSON to Type.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="json">The json.</param>
+		/// <returns>T.</returns>
+		private static T FromJson<T>(string json)
+	where T : class
+		{
+			return JsonConvert.DeserializeObject<T>(json);
 		}
 
 	}

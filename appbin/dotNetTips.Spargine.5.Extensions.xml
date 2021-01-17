@@ -2098,9 +2098,9 @@
             Converts object to a different type.
             </summary>
             <typeparam name="T">Generic type parameter.</typeparam>
-            <param name="value">The value.</param>
+            <param name="obj">The value.</param>
             <returns>T.</returns>
-            <exception cref="T:System.ArgumentNullException">value - Value cannot be null.</exception>
+            <exception cref="T:System.ArgumentNullException">Object cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.Clone``1(System.Object)">
             <summary>
@@ -2109,14 +2109,15 @@
             <typeparam name="T">Generic type parameter.</typeparam>
             <param name="obj">The object.</param>
             <returns>T.</returns>
-            <exception cref="T:System.ArgumentNullException">obj</exception>
+            <exception cref="T:System.ArgumentNullException">Object cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ComputeSha256Hash(System.Object)">
             <summary>
             Computes the sha256 hash.
             </summary>
-            <param name="data">The data.</param>
+            <param name="obj">The data.</param>
             <returns>System.String.</returns>
+            <exception cref="T:System.ArgumentNullException">Object cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.DisposeFields(System.IDisposable)">
             <summary>
@@ -2125,24 +2126,6 @@
             <param name="obj">The object.</param>
             <exception cref="T:System.ArgumentNullException">obj</exception>
         </member>
-        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.FromJson``1(System.String)">
-            <summary>
-            Creates object from Json.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <param name="json">The json.</param>
-            <returns>T.</returns>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.FromJsonFile``1(System.String)">
-            <summary>
-            Creates object from a Json file.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <param name="fileName">Name of the file.</param>
-            <returns>T.</returns>
-            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
-            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
-        </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.HasProperty(System.Object,System.String)">
             <summary>
             Determines whether the specified object has the property.
@@ -2150,20 +2133,7 @@
             <param name="obj">The instance.</param>
             <param name="propertyName">Name of the property.</param>
             <returns><c>true</c> if the specified property name has property; otherwise, <c>false</c>.</returns>
-            <exception cref="T:System.ArgumentNullException">propertyName - Source cannot be null.</exception>
-        </member>
-        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.In``1(``0,``0[])">
-            <summary>
-            Ins the specified source.
-            </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
-            <param name="source">The source.</param>
-            <param name="list">The list.</param>
-            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-            <exception cref="T:System.ArgumentNullException">source - Source cannot be null.
-            or
-            list - List cannot be null or have a 0 length.</exception>
-            <remarks>Original code by: Rory Becker</remarks>
+            <exception cref="T:System.ArgumentNullException">Object name cannot be null.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.InitializeFields(System.Object)">
             <summary>
@@ -2190,7 +2160,7 @@
             <summary>
             Generates a Dictionary that represents the property name (Key) and it's value.
             </summary>
-            <param name="input">The input.</param>
+            <param name="obj">The input.</param>
             <param name="bindingFlags">The binding flags.</param>
             <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
             <example>Output:
@@ -2215,18 +2185,18 @@
             The input cannot be a collection type.
             Supports nested types.
             </summary>
-            <param name="input">The input.</param>
+            <param name="obj">The input.</param>
             <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
             <param name="delimiter">The delimiter.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentNullException">Input cannot be null.</exception>
-            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Input cannot be a collection type.</exception>
+            <exception cref="T:System.ArgumentNullException">Object cannot be null.</exception>
+            <exception cref="T:dotNetTips.Spargine.Core.ArgumentInvalidException">Object cannot be a collection type.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.StripNull(System.Object)">
             <summary>
-            Strips the null.
+            Returns ToString() value if not null.
             </summary>
-            <param name="input">The field.</param>
+            <param name="obj">The field.</param>
             <returns>System.String.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)">
@@ -2235,7 +2205,6 @@
             </summary>
             <param name="obj">The instance.</param>
             <returns>System.String.</returns>
-            <exception cref="T:System.ArgumentNullException">obj</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.ToJsonFile(System.Object,System.String)">
             <summary>
@@ -2259,6 +2228,14 @@
             <param name="obj">The obj.</param>
             <param name="throwException">if set to <count>true</count> [throw exception].</param>
             <exception cref="T:System.ArgumentNullException">obj</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Extensions.ObjectExtensions.FromJson``1(System.String)">
+            <summary>
+            Converts JSON to Type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json">The json.</param>
+            <returns>T.</returns>
         </member>
         <member name="T:dotNetTips.Spargine.Extensions.ObservableCollectionExtensions">
             <summary>

@@ -127,16 +127,13 @@ namespace dotNetTips.Spargine.Core
 		/// As's the specified value.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="value">The value.</param>
+		/// <param name="obj">The value.</param>
 		/// <returns>T.</returns>
-		internal static T As<T>(this object value)
+		internal static T As<T>(this object obj)
 		{
-			if (value == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(value));
-			}
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
-			return (T)value;
+			return (T)obj;
 		}
 
 		/// <summary>

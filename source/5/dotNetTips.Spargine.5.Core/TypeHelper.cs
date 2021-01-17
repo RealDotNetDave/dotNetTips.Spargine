@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Text;
 using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.ObjectPool;
+using Newtonsoft.Json;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
@@ -210,6 +211,41 @@ namespace dotNetTips.Spargine.Core
 			}
 
 			return foundTypes;
+		}
+
+		/// <summary>
+		/// Creates object from Json.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="json">The json.</param>
+		/// <returns>T.</returns>
+		[Information(nameof(FromJson), UnitTestCoverage = 0, Status = Status.Available)]
+		public static T FromJson<T>(string json)
+			where T : class
+		{
+			return JsonConvert.DeserializeObject<T>(json);
+		}
+
+		/// <summary>
+		/// Creates object from a Json file.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="fileName">Name of the file.</param>
+		/// <returns>T.</returns>
+		/// <exception cref="FileNotFoundException">The exception.</exception>
+		/// <exception cref="System.IO.FileNotFoundException">The exception.</exception>
+		[Information(nameof(FromJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
+		public static T FromJsonFile<T>(string fileName)
+			where T : class
+		{
+			if (File.Exists(fileName) == false)
+			{
+				ExceptionThrower.ThrowFileNotFoundException("File not found.", fileName);
+			}
+
+			var json = File.ReadAllText(fileName, Encoding.UTF8);
+
+			return JsonConvert.DeserializeObject<T>(json);
 		}
 
 		/// <summary>

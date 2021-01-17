@@ -3,7 +3,7 @@
 Open-source .NET assemblies from dotNetTips.com and David McCarter
 This repository is for the dotNetTips.Spargine code for .NET 5 (formerly in a different repository).
 
-Much of this code is documented on <a href="https://dotnettips.wordpress.com/tag/spargine/" target="_blank">dotNetTips.com</a>.
+Much of this code is documented on <a href="https://dotnettips.wordpress.com/category/open-source/spargine/" target="_blank">dotNetTips.com</a>.
 
 ## Projects
 ![](docs/graphics/Spargine%20Assembly%20Layout.png)

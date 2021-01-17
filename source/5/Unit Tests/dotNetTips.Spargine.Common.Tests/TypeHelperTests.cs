@@ -1,56 +1,55 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class TypeHelperTests
-    {
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class TypeHelperTests
+	{
 
-        [TestMethod]
-        public void CreateTypeTest()
-        {
+		[TestMethod]
+		public void CreateTypeTest()
+		{
 
-        }
+		}
 
-        [TestMethod]
-        public void GetPropertyValuesTest()
-        {
-            var person = RandomData.GeneratePerson<PersonProper>();
+		[TestMethod]
+		public void GetPropertyValuesTest()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-            var result = TypeHelper.GetPropertyValues(person);
+			var result = TypeHelper.GetPropertyValues(person);
 
-            Assert.IsTrue(result.Count > 5);
+			Assert.IsTrue(result.Count > 5);
 
-            var exTest = new ArgumentOutOfRangeException("TESTPARAM", "TESTMESSAGE");
+			var exTest = new ArgumentOutOfRangeException("TESTPARAM", "TESTMESSAGE");
 
-            result = TypeHelper.GetPropertyValues(exTest);
+			result = TypeHelper.GetPropertyValues(exTest);
 
-            Assert.IsTrue(result.Count > 1);
-        }
+			Assert.IsTrue(result.Count > 1);
+		}
 
-        [TestMethod]
-        public void GetTypeDisplayNameTest()
-        {
-            var person = RandomData.GeneratePerson<PersonProper>();
+		[TestMethod]
+		public void GetTypeDisplayNameTest()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-            var result = TypeHelper.GetTypeDisplayName(person);
+			var result = TypeHelper.GetTypeDisplayName(person);
 
-            Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
+			Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
 
-            result = TypeHelper.GetTypeDisplayName(person, true);
+			result = TypeHelper.GetTypeDisplayName(person, true);
 
-            Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
+			Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
 
-            result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
+			result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
 
-            Assert.IsTrue(result == "int");
-        }
-    }
+			Assert.IsTrue(result == "int");
+		}
+	}
 }

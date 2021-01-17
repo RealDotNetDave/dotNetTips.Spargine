@@ -1624,7 +1624,7 @@
             As's the specified value.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="value">The value.</param>
+            <param name="obj">The value.</param>
             <returns>T.</returns>
         </member>
         <member name="M:dotNetTips.Spargine.Core.Extensions.Count(System.Collections.IEnumerable)">
@@ -2782,6 +2782,24 @@
             <returns>IEnumerable&lt;Type&gt;.</returns>
             <exception cref="T:dotNetTips.Spargine.Core.DirectoryNotFoundException">Could not find path.</exception>
             <exception cref="T:System.ArgumentNullException">Could not find path.</exception>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.FromJson``1(System.String)">
+            <summary>
+            Creates object from Json.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="json">The json.</param>
+            <returns>T.</returns>
+        </member>
+        <member name="M:dotNetTips.Spargine.Core.TypeHelper.FromJsonFile``1(System.String)">
+            <summary>
+            Creates object from a Json file.
+            </summary>
+            <typeparam name="T">Generic type parameter.</typeparam>
+            <param name="fileName">Name of the file.</param>
+            <returns>T.</returns>
+            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
+            <exception cref="T:System.IO.FileNotFoundException">The exception.</exception>
         </member>
         <member name="M:dotNetTips.Spargine.Core.TypeHelper.GetDefault``1">
             <summary>

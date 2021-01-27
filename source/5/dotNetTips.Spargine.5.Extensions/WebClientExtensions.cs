@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-21-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -17,6 +17,7 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -41,15 +42,8 @@ namespace dotNetTips.Spargine.Extensions
 		public static T ConvertFrom<T>(this WebClient client, string url)
 			where T : class
 		{
-			if (client is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(client));
-			}
-
-			if (string.IsNullOrEmpty(url))
-			{
-				ExceptionThrower.ThrowArgumentException("URL cannot be empty or null.", nameof(url));
-			}
+			Encapsulation.TryValidateNullParam(client, nameof(client));
+			Encapsulation.TryValidateParam(url, nameof(url));
 
 			var data = client.DownloadString(url);
 
@@ -62,8 +56,7 @@ namespace dotNetTips.Spargine.Extensions
 			var serializer = new DataContractJsonSerializer(typeof(T));
 			var obj = (T)serializer.ReadObject(stream);
 
-			stream.Flush();
-			stream.Close();
+			stream.FlushClose();
 
 			return obj;
 		}

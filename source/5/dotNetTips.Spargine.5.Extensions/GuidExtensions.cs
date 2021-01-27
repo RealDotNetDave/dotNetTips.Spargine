@@ -4,7 +4,7 @@
 // Created          : 07-30-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-03-2019
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="GuidExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

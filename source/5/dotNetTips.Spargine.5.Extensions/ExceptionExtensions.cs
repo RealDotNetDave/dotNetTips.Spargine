@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="ExceptionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -18,7 +18,6 @@ using System.Security;
 using System.Threading;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
-using dotNetTips.Spargine.Extensions.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -38,8 +37,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FromHierarchy), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<TSource> FromHierarchy<TSource>(this TSource source, Func<TSource, TSource> nextItem) where TSource : Exception
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(source != null, nameof(source));
-			Encapsulation.TryValidateParam<ArgumentNullException>(nextItem != null, nameof(nextItem));
+			Encapsulation.TryValidateNullParam(source, nameof(source));
+			Encapsulation.TryValidateNullParam(nextItem, nameof(nextItem));
 
 			return FromHierarchy(source, nextItem, s => s != null);
 		}
@@ -65,8 +64,8 @@ namespace dotNetTips.Spargine.Extensions
 				yield return null;
 			}
 
-			Encapsulation.TryValidateParam<ArgumentNullException>(canContinue != null, nameof(canContinue));
-			Encapsulation.TryValidateParam<ArgumentNullException>(nextItem != null, nameof(nextItem));
+			Encapsulation.TryValidateNullParam(canContinue, nameof(canContinue));
+			Encapsulation.TryValidateNullParam(nextItem, nameof(nextItem));
 
 			for (var current = source; canContinue(current); current = nextItem(current))
 			{
@@ -92,7 +91,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetAllMessages), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetAllMessages(this Exception exception, char separator = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(exception != null, nameof(exception));
+			Encapsulation.TryValidateNullParam(exception, nameof(exception));
 
 			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
@@ -109,7 +108,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetAllMessagesWithStackTrace), author: "David McCarter", createdOn: "10/12/2020", modifiedOn: "10/12/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<(string message, string StackTrace)> GetAllMessagesWithStackTrace(this Exception exception)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(exception != null, nameof(exception));
+			Encapsulation.TryValidateNullParam(exception, nameof(exception));
 
 			var messages = exception.FromHierarchy(ex => ex.InnerException)
 				.Select(ex => new
@@ -133,6 +132,11 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsCritical(this Exception ex)
 		{
+			if (ex is null)
+			{
+				return false;
+			}
+
 			return ex is NullReferenceException ||
 				ex is StackOverflowException ||
 				ex is OutOfMemoryException ||
@@ -149,6 +153,11 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsFatal(this Exception ex)
 		{
+			if (ex is null)
+			{
+				return false;
+			}
+
 			return ex is OutOfMemoryException;
 		}
 
@@ -160,6 +169,11 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsSecurityOrCritical(this Exception ex)
 		{
+			if (ex is null)
+			{
+				return false;
+			}
+
 			return ( ex is SecurityException ) || ex.IsCritical();
 		}
 
@@ -174,10 +188,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T TraverseFor<T>(this Exception ex)
 			where T : class
 		{
-			if (ex is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(Resources.ExceptionCannotBeNull, nameof(ex));
-			}
+			Encapsulation.TryValidateNullParam(ex, nameof(ex));
 
 			if (ReferenceEquals(ex.GetType(), typeof(T)))
 			{

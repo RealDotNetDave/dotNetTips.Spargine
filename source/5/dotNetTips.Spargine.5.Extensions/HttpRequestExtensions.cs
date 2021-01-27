@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-13-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -14,11 +14,11 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
 using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -37,13 +37,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">request</exception>
 		public static async Task<byte[]> GetRawBodyBytesAsync(this HttpRequest request)
 		{
-			if (request is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(request));
-			}
+			Encapsulation.TryValidateNullParam(request, nameof(request));
 
 			using var ms = new MemoryStream(2048);
 			await request.Body.CopyToAsync(ms).ConfigureAwait(true);
+
 			return ms.ToArray();
 		}
 
@@ -57,17 +55,15 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="System.ArgumentNullException">request</exception>
 		public static async Task<string> GetRawBodyStringAsync(this HttpRequest request, Encoding encoding)
 		{
-			if (request == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(request));
-			}
+			Encapsulation.TryValidateNullParam(request, nameof(request));
 
-			if (encoding == null)
+			if (encoding is null)
 			{
 				encoding = Encoding.UTF8;
 			}
 
 			using var reader = new StreamReader(request.Body, encoding);
+
 			return await reader.ReadToEndAsync().ConfigureAwait(true);
 		}
 
@@ -82,7 +78,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>Original code by Jerry Nixon</remarks>
 		public static bool TryGetBody<T>(this HttpRequest request, out T value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(request.IsNotNull(), nameof(request));
+			Encapsulation.TryValidateNullParam(request, nameof(request));
 
 			if (!request.TryGetBody(out var bytes))
 			{
@@ -92,7 +88,8 @@ namespace dotNetTips.Spargine.Extensions
 
 			try
 			{
-				value = JsonConvert.DeserializeObject<T>(BitConverter.ToString(bytes));
+
+				value = JsonSerializer.Deserialize<T>(BitConverter.ToString(bytes));
 
 				return true;
 			}
@@ -115,7 +112,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>Original code by Jerry Nixon</remarks>
 		public static bool TryGetBody(this HttpRequest request, out byte[] value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(request.IsNotNull(), nameof(request));
+			Encapsulation.TryValidateNullParam(request, nameof(request));
 
 			try
 			{

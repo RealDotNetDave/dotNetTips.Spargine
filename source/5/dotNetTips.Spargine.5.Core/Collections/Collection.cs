@@ -4,12 +4,12 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-28-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Class for collections.</summary>
+// <summary>Common class for collections.</summary>
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
@@ -116,7 +116,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddFirst(T item)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Encapsulation.TryValidateNullParam(item, nameof(item));
 
 			return Extensions.AddFirst(this, item);
 		}

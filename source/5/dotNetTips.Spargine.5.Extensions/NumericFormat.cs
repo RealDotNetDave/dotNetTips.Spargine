@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-21-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="NumericFormat.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -69,12 +69,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		public static readonly NumericFormat RoundTrip = new NumericFormat(8, "R");
 
-
 		/// <summary>
 		/// Prevents a default instance of the <see cref="NumericFormat" /> class from being created.
 		/// </summary>
 		private NumericFormat() { }
-
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NumericFormat" /> class.

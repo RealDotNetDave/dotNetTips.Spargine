@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-17-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetDescription), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetDescription(this Enum value)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(value != null, nameof(value));
+			Encapsulation.TryValidateParam(value, nameof(value));
 
 			var field = value.GetType().GetField(value.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
@@ -50,7 +50,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetItems), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IList<(string Description, int Value)> GetItems(this Enum @enum)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(@enum != null, nameof(@enum));
+			Encapsulation.TryValidateParam(@enum, nameof(@enum));
 
 			var items = new List<(string Desctiption, int Value)>();
 
@@ -83,19 +83,19 @@ namespace dotNetTips.Spargine.Extensions
 		/// Gets the description of the enum value.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="val">The value.</param>
+		/// <param name="obj">The value.</param>
 		/// <returns>EnumItem&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">val</exception>
 		/// <exception cref="System.ArgumentNullException">The exception.</exception>
-		private static EnumItem<T> GetDescriptionInternal<T>(object val)
+		private static EnumItem<T> GetDescriptionInternal<T>(object obj)
 		{
-			var field = val.GetType().GetField(val.ToString());
+			var field = obj.GetType().GetField(obj.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
 			var enumItem = new EnumItem<T>
 			{
-				Description = attributes.Length > 0 ? attributes[0].Description : val.ToString(),
-				Value = (T)val,
+				Description = attributes.Length > 0 ? attributes[0].Description : obj.ToString(),
+				Value = (T)obj,
 			};
 
 			return enumItem;

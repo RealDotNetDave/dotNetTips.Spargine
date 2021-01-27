@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-17-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -71,6 +71,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			return ( second - first ) / Math.Abs(first) * 100;
 		}
+
 		/// <summary>
 		/// Rounds the specified value.
 		/// </summary>

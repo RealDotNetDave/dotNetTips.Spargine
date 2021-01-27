@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-09-2021
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -38,9 +38,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "1/9/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ComputeHash(this string input, HashType hashType)
+		public static string ComputeHash(this string input, HashType hashType = HashType.SHA256)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
+			Encapsulation.TryValidateParam(hashType, nameof(hashType));
 
 			var hash = GetHash(input, hashType);
 
@@ -89,11 +90,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 
-			if (string.IsNullOrEmpty(delimiter))
-			{
-				//TODO: THIS CONDITION NOT BEING TESTED
-				delimiter = string.Empty;
-			}
+			delimiter = delimiter.DefaultIfNull();
 
 			var sb = new StringBuilder(input);
 
@@ -130,6 +127,11 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool ContainsAny(this string input, params string[] characters)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
+
+			if (characters.Length == 0)
+			{
+				return false;
+			}
 
 			return characters.FastAny(character =>
 			{
@@ -177,7 +179,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String[].</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(DelimitedStringToArray), "David McCarter", "8/13/2020", "8/13/2020", UnitTestCoverage = 99, Status = Status.Available)]
-		public static string[] DelimitedStringToArray(this string input, char delimiter = ',')
+		public static string[] DelimitedStringToArray(this string input, char delimiter = ControlChars.Comma)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 
@@ -247,7 +249,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FromBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string FromBase64(this string input)
 		{
-			if (string.IsNullOrEmpty(input))
+			if (input.HasValue() == false)
 			{
 				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
@@ -587,7 +589,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, char separator, StringSplitOptions options = StringSplitOptions.None)
+		public static string[] Split(this string input, char separator = ControlChars.Comma, StringSplitOptions options = StringSplitOptions.None)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 
@@ -604,7 +606,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
 		/// <exception cref="ArgumentInvalidException">separator cannot be <see langword="null" />.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string[] Split(this string input, string separator, StringSplitOptions options = StringSplitOptions.None)
+		public static string[] Split(this string input, string separator = ControlChars.DefaultSeparator, StringSplitOptions options = StringSplitOptions.None)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 			Encapsulation.TryValidateParam(separator, nameof(separator));
@@ -616,16 +618,17 @@ namespace dotNetTips.Spargine.Extensions
 		/// Splits the string based on the separator with options.
 		/// </summary>
 		/// <param name="input">The value.</param>
-		/// <param name="separator">The separator.</param>
 		/// <param name="count">The count.</param>
+		/// <param name="separator">The separator.</param>
 		/// <param name="options">The options.</param>
 		/// <returns>System.String[].</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, char separator, int count, StringSplitOptions options = StringSplitOptions.None)
+		public static string[] Split(this string input, int count, char separator = ControlChars.Comma, StringSplitOptions options = StringSplitOptions.None)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
+			Encapsulation.TryValidateParam(count, count = 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -634,16 +637,17 @@ namespace dotNetTips.Spargine.Extensions
 		/// Splits the string based on the separator.
 		/// </summary>
 		/// <param name="input">The value.</param>
-		/// <param name="separator">The separator.</param>
 		/// <param name="count">The count.</param>
+		/// <param name="separator">The separator.</param>
 		/// <param name="options">The options.</param>
 		/// <returns>System.String[].</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, string separator, int count, StringSplitOptions options = StringSplitOptions.None)
+		public static string[] Split(this string input, int count, string separator = ControlChars.DefaultSeparator, StringSplitOptions options = StringSplitOptions.None)
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
+			Encapsulation.TryValidateParam(count, count = 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -660,7 +664,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Encapsulation.TryValidateParam(input, nameof(input));
 
-			return input.Trim().Split(new char[] { ',' }, options: StringSplitOptions.RemoveEmptyEntries);
+			return input.Trim().Split(new char[] { ControlChars.Comma }, options: StringSplitOptions.RemoveEmptyEntries);
 		}
 
 		/// <summary>
@@ -708,11 +712,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="startIndex">The start index.</param>
 		/// <param name="length">The length.</param>
 		/// <returns>System.String.</returns>
+		/// <exception cref="ArgumentOutOfRangeException">startIndex - startIndex + length must be less than or equal value.Length</exception>
 		/// <exception cref="ArgumentOutOfRangeException">startIndex - startIndex + length must be less than or equal to  value.Length</exception>
 		/// <exception cref="ArgumentOutOfRangeException">startIndex length must be less than or
 		/// equal to value.Length</exception>
-		/// <exception cref="ArgumentOutOfRangeException">startIndex length must be
-		/// less than or equal to the value.Length</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string SubstringTrim(this string input, int startIndex, int length)
 		{
@@ -733,7 +736,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (startIndex >= input.Length - length)
 			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(startIndex), "startIndex + length must be <= value.Length");
+				throw new ArgumentOutOfRangeException(nameof(startIndex), "startIndex + length must be <= value.Length");
 			}
 
 			if (length == 0)

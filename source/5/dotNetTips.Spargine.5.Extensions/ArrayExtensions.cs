@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-21-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,6 +27,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ArrayExtensions
 	{
+
 		/// <summary>
 		/// Adds a single item to the beginning of the array.
 		/// </summary>
@@ -51,6 +52,38 @@ namespace dotNetTips.Spargine.Extensions
 			array.CopyTo(result, index: 1);
 
 			return result;
+		}
+		/// <summary>
+		/// Adds items to an array if they do not exists.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="items">The items.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static T[] AddIfNotExists<T>(this T[] list, params T[] items)
+		{
+			if (items.HasItems() == false)
+			{
+				return list;
+			}
+
+			Encapsulation.TryValidateParam(list, nameof(list));
+			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+
+			var returnCollection = list.ToList();
+
+			for (var itemCount = 0; itemCount < items.Count(); itemCount++)
+			{
+				var item = items[itemCount];
+
+				if (list.Contains(item) == false)
+				{
+					returnCollection.Add(item);
+				}
+			}
+
+			return returnCollection.ToArray();
 		}
 
 		/// <summary>
@@ -78,7 +111,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Checks if the two arrays are equal. 
+		/// Checks if the two arrays are equal.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="input">The input.</param>
@@ -114,7 +147,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="bytes">The bytes.</param>
 		/// <returns>A <see cref="string" /> that represents this instance.</returns>
-		/// <exception cref="ArgumentNullException">Input cannot be null or be empty.</exception>
+		/// <exception cref="ArgumentNullException">Bytes cannot be null or be empty.</exception>
 		[Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static string BytesToString(this byte[] bytes)
 		{
@@ -173,6 +206,21 @@ namespace dotNetTips.Spargine.Extensions
 			return itemsList.HasItems() && source.ToReadOnlyCollection().Any(p => itemsList.Contains(p));
 
 		}
+		/// <summary>
+		/// Generates hash code for the collection.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The list to use to generate hash code.</param>
+		/// <returns>Hash code as System.Int32.</returns>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static int ListHashCode<T>(this T[] list)
+		{
+			Encapsulation.TryValidateParam(list, nameof(list));
+
+			var hash = list.Where(t => t != null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
+
+			return hash;
+		}
 
 		/// <summary>
 		/// Removes the duplicate values.
@@ -182,6 +230,41 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>Code by: Kevin S Gallagher</remarks>
 		[Information(nameof(RemoveDuplicates), UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<int> RemoveDuplicates(this int[] values) => values.Distinct().AsEnumerable();
+		/// <summary>
+		/// Removes the first item in the array.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The array.</param>
+		/// <returns>T[].</returns>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static T[] RemoveFirst<T>(this T[] list)
+		{
+			Encapsulation.TryValidateParam(list, nameof(list));
+
+			var result = new T[list.Length - 1];
+
+			Array.Copy(list, 1, result, 0, result.Length);
+
+			return result;
+		}
+
+		/// <summary>
+		/// Removes the last.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The array.</param>
+		/// <returns>T[].</returns>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static T[] RemoveLast<T>(this T[] list)
+		{
+			Encapsulation.TryValidateParam(list, nameof(list));
+
+			var result = new T[list.Length - 1];
+			Array.Copy(list, result, result.Length);
+
+			return result;
+		}
+
 		/// <summary>
 		/// Returns the array without duplicates.
 		/// </summary>

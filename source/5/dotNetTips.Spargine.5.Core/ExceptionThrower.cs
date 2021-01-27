@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-24-2020
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="ExceptionThrower.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -174,6 +174,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the ArgumentReadOnlyException.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
+		/// <exception cref="dotNetTips.Spargine.Core.ArgumentReadOnlyException"></exception>
 		/// <exception cref="ArgumentReadOnlyException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -188,8 +189,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="directory">The directory.</param>
-		/// <exception cref="DirectoryNotFoundException"></exception>
 		/// <exception cref="dotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
+		/// <exception cref="DirectoryNotFoundException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowDirectoryNotFoundException), author: "David McCarter", createdOn: "8/13/2020", modifiedOn: "8/13/2020", Status = Status.Available)]
@@ -291,6 +292,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the invalid enum type exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
+		/// <exception cref="InvalidEnumTypeException"></exception>
 		/// <exception cref="dotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]

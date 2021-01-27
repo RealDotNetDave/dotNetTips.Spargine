@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-12-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,7 +51,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item == null)
+			if (item is null)
 			{
 				return false;
 			}
@@ -83,7 +83,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item == null || list.Contains(item))
+			if (item is null || list.Contains(item))
 			{
 				return false;
 			}
@@ -113,7 +113,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item == null)
+			if (item is null)
 			{
 				return false;
 			}
@@ -124,7 +124,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// As's the specified value.
+		/// As the specified value.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="obj">The value.</param>
@@ -192,15 +192,8 @@ namespace dotNetTips.Spargine.Core
 				yield return null;
 			}
 
-			if (canContinue == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(canContinue), $"{nameof(canContinue)} is null.");
-			}
-
-			if (nextItem == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(nextItem), $"{nameof(nextItem)} is null.");
-			}
+			Encapsulation.TryValidateNullParam(canContinue, nameof(canContinue));
+			Encapsulation.TryValidateNullParam(nextItem, nameof(nextItem));
 
 			for (var current = source; canContinue(current); current = nextItem(current))
 			{
@@ -250,6 +243,7 @@ namespace dotNetTips.Spargine.Core
 				typeInfo = typeInfo.BaseType?.GetTypeInfo();
 			}
 		}
+
 		/// <summary>
 		/// Determines whether the specified input has value.
 		/// </summary>
@@ -270,11 +264,7 @@ namespace dotNetTips.Spargine.Core
 		internal static bool HasValue(this string input, int length)
 		{
 			Encapsulation.TryValidateParam(input, 0, int.MaxValue, nameof(input));
-
-			if (length <= 0)
-			{
-				throw new ArgumentOutOfRangeException(nameof(length), "Minimum length must be greater than 0.");
-			}
+			Encapsulation.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
 
 			return input != null && ( input.Trim().Length == length );
 		}
@@ -288,10 +278,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentException">value</exception>
 		internal static bool HasValue(this string input, string value)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(input));
-			}
+			Encapsulation.TryValidateNullParam(input, nameof(input));
 
 			return input != null && ( input.Trim() == value.Trim() );
 		}
@@ -320,18 +307,11 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="minLength">The minimum length.</param>
 		/// <param name="maxLength">The maximum length.</param>
 		/// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
-		/// <exception cref="ArgumentOutOfRangeException">minLength - Minimum length must be greater than 0.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Min Length  or Max Length must be greater than 0.</exception>
 		internal static bool HasValue(this string input, int minLength, int maxLength)
 		{
-			if (minLength.IsInRange(0, int.MaxValue) == false)
-			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(minLength));
-			}
-
-			if (maxLength.IsInRange(0, int.MaxValue) == false)
-			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(maxLength));
-			}
+			Encapsulation.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(maxLength));
+			Encapsulation.TryValidateParam(maxLength, minimumValue: minLength, paramName: nameof(maxLength));
 
 			return input != null && input.Length.IsInRange(minLength, maxLength);
 		}

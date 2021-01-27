@@ -4,13 +4,14 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-28-2020
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="ControlChars.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
@@ -19,7 +20,6 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class ControlChars
 	{
-
 		/// <summary>
 		/// @ Symbol.
 		/// </summary>
@@ -34,6 +34,11 @@ namespace dotNetTips.Spargine.Core
 		/// Back Slash.
 		/// </summary>
 		public const char Backslash = '\\';
+
+		/// <summary>
+		/// The back tick.
+		/// </summary>
+		public const char BackTick = '`';
 
 		/// <summary>
 		/// Colon.
@@ -71,6 +76,11 @@ namespace dotNetTips.Spargine.Core
 		public const string DoubleQuote = "''";
 
 		/// <summary>
+		/// Empty String
+		/// </summary>
+		public const string EmptyString = "";
+
+		/// <summary>
 		/// The end angle bracket.
 		/// </summary>
 		public const char EndAngleBracket = '>';
@@ -84,6 +94,11 @@ namespace dotNetTips.Spargine.Core
 		/// [.
 		/// </summary>
 		public const char EndSquareBracket = ']';
+
+		/// <summary>
+		/// The equal symbol.
+		/// </summary>
+		public const char Equal = '=';
 
 		/// <summary>
 		/// Form feed.
@@ -109,6 +124,11 @@ namespace dotNetTips.Spargine.Core
 		/// Null character.
 		/// </summary>
 		public const char NullChar = '\0';
+
+		/// <summary>
+		/// The plus character
+		/// </summary>
+		public const char Plus = '+';
 
 		/// <summary>
 		/// Quote.

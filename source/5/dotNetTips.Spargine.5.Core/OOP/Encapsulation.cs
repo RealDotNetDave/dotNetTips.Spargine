@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="Encapsulation.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -59,23 +59,6 @@ namespace dotNetTips.Spargine.Core.OOP
 				message = CreateExceptionMessage(message, Resources.ParameterIsInvalid);
 				var ex = Activator.CreateInstance(typeof(TException), paramName, message).As<TException>();
 				throw ex;
-			}
-		}
-
-		/// <summary>
-		/// Tries to validate a method parameter.
-		/// </summary>
-		/// <param name="collection">The collection.</param>
-		/// <param name="paramName">Name of the parameter.</param>
-		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
-		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(IEnumerable collection, string paramName, string message = "")
-		{
-			if (collection is null || collection.Count() == 0)
-			{
-				message = CreateExceptionMessage(message, Resources.CollectionIsNullOrHasNoItems);
-				ExceptionThrower.ThrowArgumentNullException(message, paramName);
 			}
 		}
 
@@ -197,6 +180,23 @@ namespace dotNetTips.Spargine.Core.OOP
 			{
 				message = CreateExceptionMessage(message, Resources.StringIsEmpty);
 
+				ExceptionThrower.ThrowArgumentNullException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Tries to validate a method parameter.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="paramName">Name of the parameter.</param>
+		/// <param name="message">The message.</param>
+		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
+		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		public static void TryValidateParam(IEnumerable collection, string paramName, string message = "")
+		{
+			if (collection is null || collection.Count() == 0)
+			{
+				message = CreateExceptionMessage(message, Resources.CollectionIsNullOrHasNoItems);
 				ExceptionThrower.ThrowArgumentNullException(message, paramName);
 			}
 		}

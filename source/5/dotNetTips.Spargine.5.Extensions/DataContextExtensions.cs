@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-24-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="DataContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -46,9 +46,7 @@ namespace dotNetTips.Spargine.Extensions
 			const BindingFlags bindings = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.GetField;
 
 			var services = dcType.GetField("services", bindings).GetValue(context);
-
 			var tracker = services.GetType().GetField("tracker", bindings).GetValue(services);
-
 			var trackerItems = (IDictionary)tracker.GetType().GetField("items", bindings).GetValue(tracker);
 
 			// iterate through each update in context, adding only those that are of type T to the method's result variable

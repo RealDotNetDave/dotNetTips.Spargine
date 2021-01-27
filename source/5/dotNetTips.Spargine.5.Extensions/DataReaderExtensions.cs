@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-24-2020
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

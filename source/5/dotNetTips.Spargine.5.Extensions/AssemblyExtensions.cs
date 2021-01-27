@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-07-2021
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -75,8 +75,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="assembly">The assembly.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		/// <remarks>Original code from: oqtane.framework</remarks>
 		/// <exception cref="ArgumentNullException">assembly</exception>
+		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
 		public static IEnumerable<Type> GetTypes<T>(this Assembly assembly)
 		{

@@ -4,13 +4,14 @@
 // Created          : 10-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-23-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="HashType.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
 {

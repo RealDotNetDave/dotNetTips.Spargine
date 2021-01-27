@@ -4,7 +4,7 @@
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="ProcessExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,6 +16,8 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Extensions.Properties;
 using Microsoft.Extensions.Logging;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -35,10 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void EnsureHighPriority(this Process process, ILogger logger)
 		{
-			if (process is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(process));
-			}
+			Encapsulation.TryValidateNullParam(process, nameof(process));
 
 			try
 			{
@@ -46,7 +45,7 @@ namespace dotNetTips.Spargine.Extensions
 			}
 			catch (Exception ex)
 			{
-				logger?.LogError(ex, "Failed to set up high priority. Make sure you have the right permissions.");
+				logger?.LogError(ex, Resources.FailedToSetUpHighPriority);
 			}
 		}
 
@@ -59,10 +58,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void EnsureLowPriority(this Process process, ILogger logger)
 		{
-			if (process == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(process));
-			}
+			Encapsulation.TryValidateNullParam(process, nameof(process));
 
 			try
 			{
@@ -70,7 +66,7 @@ namespace dotNetTips.Spargine.Extensions
 			}
 			catch (Exception ex)
 			{
-				logger?.LogError(ex, "Failed to set up high priority. Make sure you have the right permissions.");
+				logger?.LogError(ex, Resources.FailedToSetUpLowPriority);
 			}
 		}
 
@@ -87,7 +83,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) == false)
 			{
-				ExceptionThrower.ThrowArgumentException($"{nameof(fileName)} is null, empty or the file does not exist.", nameof(fileName));
+				ExceptionThrower.ThrowArgumentException(string.Format(Resources.FileIsNullEmptyOrDoesNotExist, nameof(fileName)), nameof(fileName));
 			}
 
 			var startInfo = new ProcessStartInfo
@@ -123,7 +119,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) == false)
 			{
-				ExceptionThrower.ThrowArgumentException($"{nameof(fileName)} is null, empty or the file does not exist.", nameof(fileName));
+				ExceptionThrower.ThrowArgumentException(string.Format(Resources.FileIsNullEmptyOrDoesNotExist, nameof(fileName)), nameof(fileName));
 			}
 
 			var startInfo = new ProcessStartInfo
@@ -159,15 +155,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TrySetPriority(this Process process, ProcessPriorityClass priority, ILogger logger)
 		{
-			if (process == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(process));
-			}
-
-			if (Enum.IsDefined(typeof(ProcessPriorityClass), priority) == false)
-			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(priority));
-			}
+			Encapsulation.TryValidateNullParam(process, nameof(process));
+			Encapsulation.TryValidateParam(priority, nameof(priority));
 
 			try
 			{

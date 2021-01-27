@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-05-2021
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -283,6 +283,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
 		{
+			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
 			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);

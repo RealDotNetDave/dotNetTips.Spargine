@@ -1,11 +1,10 @@
-﻿//![](05CD5CE05AF2C0FDDE3210EB79859750_1.png;http://dotnettips.com )
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="InformationAttribute.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -71,7 +70,12 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Method or class not in use.
 		/// </summary>
-		NotUsed
+		NotUsed,
+
+		/// <summary>
+		/// Method or class has been updated.
+		/// </summary>
+		Updated,
 	}
 
 	/// <summary>
@@ -96,7 +100,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InformationAttribute"/> class.
+		/// Initializes a new instance of the <see cref="InformationAttribute" /> class.
 		/// </summary>
 		/// <param name="description">The description.</param>
 		public InformationAttribute(string description)

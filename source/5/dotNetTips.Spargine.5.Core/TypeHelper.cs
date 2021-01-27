@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,9 +19,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.ObjectPool;
-using Newtonsoft.Json;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
@@ -31,11 +31,6 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class TypeHelper
 	{
-		/// <summary>
-		/// The default nested type delimiter
-		/// </summary>
-		private const char DefaultNestedTypeDelimiter = '+';
-
 		/// <summary>
 		/// The built in type names
 		/// </summary>
@@ -57,7 +52,15 @@ namespace dotNetTips.Spargine.Core
 			{ typeof(uint), "uint" },
 			{ typeof(ulong), "ulong" },
 			{ typeof(ushort), "ushort" },
+			{ typeof(DateTime), "datetime" },
+			{ typeof(DateTimeOffset), "datetimeoffset" },
 		};
+
+		/// <summary>
+		/// Gets the built in type names.
+		/// </summary>
+		/// <value>The built in type names.</value>
+		public static Dictionary<Type, string> BuiltInTypeNames => _builtInTypeNames;
 
 		/// <summary>
 		/// Creates type instance.
@@ -223,7 +226,9 @@ namespace dotNetTips.Spargine.Core
 		public static T FromJson<T>(string json)
 			where T : class
 		{
-			return JsonConvert.DeserializeObject<T>(json);
+			Encapsulation.TryValidateParam(json, nameof(json));
+
+			return JsonSerializer.Deserialize<T>(json);
 		}
 
 		/// <summary>
@@ -245,7 +250,7 @@ namespace dotNetTips.Spargine.Core
 
 			var json = File.ReadAllText(fileName, Encoding.UTF8);
 
-			return JsonConvert.DeserializeObject<T>(json);
+			return JsonSerializer.Deserialize<T>(json);
 		}
 
 		/// <summary>
@@ -302,6 +307,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "11/03/2020", UnitTestCoverage = 90, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			Encapsulation.TryValidateNullParam(input, nameof(input));
 
 			var returnValue = new Dictionary<string, string>();
@@ -361,7 +367,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>The pretty printed type name.</returns>
 		/// <exception cref="ArgumentNullException">type</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 90, Status = Status.Available)]
-		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = DefaultNestedTypeDelimiter)
+		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = ControlChars.Plus)
 		{
 			Encapsulation.TryValidateNullParam(type, nameof(type));
 
@@ -390,7 +396,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				ProcessType(builder, type, options);
 			}
-			else if (_builtInTypeNames.TryGetValue(type, out var builtInName))
+			else if (BuiltInTypeNames.TryGetValue(type, out var builtInName))
 			{
 				builder.Append(builtInName);
 			}
@@ -406,9 +412,9 @@ namespace dotNetTips.Spargine.Core
 				var name = options.FullName ? type.FullName : type.Name;
 				builder.Append(name);
 
-				if (options.NestedTypeDelimiter != DefaultNestedTypeDelimiter)
+				if (options.NestedTypeDelimiter != ControlChars.Plus)
 				{
-					builder.Replace(DefaultNestedTypeDelimiter, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
+					builder.Replace(ControlChars.Plus, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
 				}
 			}
 		}

@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-21-2020
+// Last Modified On : 01-26-2021
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -12,6 +12,7 @@
 // <summary>Extension methods for general types.</summary>
 // ***********************************************************************
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -26,7 +27,6 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class TypeExtensions
 	{
-
 		/// <summary>
 		/// Does the object implement  any of the interfaces.
 		/// </summary>
@@ -38,6 +38,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static IEnumerable<string> DoesObjectImplementInterface(object input, params string[] interfaceNames)
 		{
 			Encapsulation.TryValidateNullParam(input, nameof(input));
+			Encapsulation.TryValidateParam(interfaceNames, nameof(interfaceNames));
 
 			//TODO: CHANGE TO ALL LINQ? typeof(IMyInterface).IsAssignableFrom(typeof(MyType))
 			var interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
@@ -409,6 +410,18 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Determines whether the specified type implements <see cref="IEnumerable" />.
+		/// </summary>
+		/// <param name="type">The type.</param>
+		/// <returns><c>true</c> if the specified type is <see cref="IEnumerable" />; otherwise, <c>false</c>.</returns>
+		public static bool IsEnumerable(this Type type)
+		{
+			Encapsulation.TryValidateNullParam(type, nameof(type));
+
+			return type.GetInterfaces().Any(t => t == typeof(IEnumerable));
+		}
+
+		/// <summary>
 		/// Determines whether the specified type is nullable.
 		/// </summary>
 		/// <param name="type">The type.</param>
@@ -443,8 +456,6 @@ namespace dotNetTips.Spargine.Extensions
 		public static T Max<T>(this T obj1, T obj2)
 			where T : IComparable
 		{
-			Encapsulation.TryValidateNullParam(obj2, nameof(obj2));
-
 			return obj1.CompareTo(obj2) >= 0 ? obj1 : obj2;
 		}
 	}

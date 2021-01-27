@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-04-2021
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,10 +27,13 @@ namespace dotNetTips.Spargine.Core
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
 	public abstract class Enumeration : IComparable
 	{
+		// TODO: ADD URL FOR ARTICLE FOR THIS CLASS
+
 		/// <summary>
 		/// The display name
 		/// </summary>
 		private readonly string _displayName;
+
 		/// <summary>
 		/// The value
 		/// </summary>

@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			List<PersonProper> nullList = null;
 
 			// Test Parameters
-			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => people.AddIfNotExists(person));
+			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => people.AsReadOnly().AddIfNotExists(person));
 			_ = Assert.ThrowsException<ArgumentNullException>(() => people.AddIfNotExists(person, nullComparer));
 			_ = Assert.ThrowsException<ArgumentNullException>(() => nullList.AddIfNotExists(RandomData.GeneratePerson<PersonProper>()));
 

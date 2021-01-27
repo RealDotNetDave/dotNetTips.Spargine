@@ -4,7 +4,7 @@
 // Created          : 07-29-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-13-2020
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="ColorExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

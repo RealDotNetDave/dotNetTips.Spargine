@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-28-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -18,6 +18,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -30,6 +31,17 @@ namespace dotNetTips.Spargine.Extensions
 	{
 
 		/// <summary>
+		/// Flushes and closes the Stream.
+		/// </summary>
+		/// <param name="stream">The stream.</param>
+		public static void FlushClose(this Stream stream)
+		{
+			Encapsulation.TryValidateNullParam(stream, nameof(stream));
+
+			stream.Flush();
+			stream.Close();
+		}
+		/// <summary>
 		/// Reads from the Stream asynchronously.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
@@ -39,6 +51,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static ValueTask<int> ReadAsync(this Stream stream, Memory<byte> destination, CancellationToken cancellationToken = default)
 		{
+			Encapsulation.TryValidateNullParam(stream, nameof(stream));
+			Encapsulation.TryValidateNullParam(destination, nameof(destination));
+
 			if (MemoryMarshal.TryGetArray(destination, out ArraySegment<byte> array))
 			{
 				return new ValueTask<int>(stream.ReadAsync(array.Array, array.Offset, array.Count, cancellationToken));
@@ -75,6 +90,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static ValueTask WriteAsync(this Stream stream, ReadOnlyMemory<byte> source, CancellationToken cancellationToken = default)
 		{
+			Encapsulation.TryValidateNullParam(stream, nameof(stream));
+			Encapsulation.TryValidateNullParam(source, nameof(source));
+
 			if (MemoryMarshal.TryGetArray(source, out var array))
 			{
 				return new ValueTask(stream.WriteAsync(array.Array, array.Offset, array.Count, cancellationToken));

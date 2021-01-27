@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-07-2021
+// Last Modified On : 01-19-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -20,9 +20,9 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.OOP;
-using Newtonsoft.Json;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -32,6 +32,8 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ObjectExtensions
 	{
+		private const string NullString = "[null]";
+
 		/// <summary>
 		/// Converts object to a different type.
 		/// </summary>
@@ -76,6 +78,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			// Create a SHA256   
 			using var sha256Hash = SHA256.Create();
+
 			// ComputeHash - returns byte array  
 			var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obj.ToJson()));
 
@@ -94,16 +97,20 @@ namespace dotNetTips.Spargine.Extensions
 		/// Disposes the fields.
 		/// </summary>
 		/// <param name="obj">The object.</param>
-		/// <exception cref="ArgumentNullException">obj</exception>
 		[Information(nameof(DisposeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void DisposeFields(this IDisposable obj)
 		{
-			if (obj == null)
+			if (obj is null)
 			{
 				return;
 			}
 
 			var list = obj.GetType().GetRuntimeFields().Where(p => p.IsStatic == false).ToList();
+
+			if (list.DoesNotHaveItems())
+			{
+				return;
+			}
 
 			for (var fieldCount = 0; fieldCount < list.Count; fieldCount++)
 			{
@@ -144,13 +151,18 @@ namespace dotNetTips.Spargine.Extensions
 		/// Initializes the fields of an object.
 		/// </summary>
 		/// <param name="obj">The object.</param>
-		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		[Information(nameof(InitializeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void InitializeFields(this object obj)
 		{
 			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 
 			var fieldInfos = obj.GetType().GetRuntimeFields().ToList();
+
+			if (fieldInfos.DoesNotHaveItems())
+			{
+				return;
+			}
 
 			for (var fieldCount = 0; fieldCount < fieldInfos.Count; fieldCount++)
 			{
@@ -175,7 +187,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="obj">The obj.</param>
 		/// <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
 		[Information(nameof(IsNotNull), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsNotNull(this object obj) => obj != null; //TODO: THIS CONDITION NOT BEING TESTED
+		public static bool IsNotNull(this object obj) => obj is not null;
 
 		/// <summary>
 		/// Determines whether the specified object is null.
@@ -189,31 +201,110 @@ namespace dotNetTips.Spargine.Extensions
 		/// Generates a Dictionary that represents the property name (Key) and it's value.
 		/// </summary>
 		/// <param name="obj">The input.</param>
-		/// <param name="bindingFlags">The binding flags.</param>
+		/// <param name="memberName">Name of the member used to identify the object.</param>
+		/// <param name="ignoreNulls">if set to <c>true</c> [ignore <see langword="null"/> property values].</param>
 		/// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
+		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <example>Output:
-		/// [Address1, `fqrZjAqTNANUNIyJWFyNjCQx]
-		/// [Address2, bSUnkmaIIMutgJtAKYZANpSHM]
-		/// [Age, 23360.00:00:00.0086580]
-		/// [BornOn, 1/23/1957 2:45:24 PM -08:00]
-		/// [CellPhone, 704-375-5873]
-		/// [City, fDbZYFMANE\MLxD]
-		/// [Country, RbPjkyMasw`gnWR]
-		/// [Email, thmiduaodph@djpumhmaheckkmrmwkkpxs.gov]
-		/// [FirstName, ugdv\bhaHgSY^Ui]
-		/// [HomePhone, 147-205-1085]
-		/// [Id, f1bcbdbdf18a4adaa89e46383b235008]
-		/// [LastName, H^hkKhwWggIrUCYbbxiFEJGJM]
-		/// [PostalCode, 86560656].
+		/// [0]: {[PersonRecord.BornOn, 1/29/2007 11:52:12 AM -08:00]}
+		/// [1]: {[PersonRecord.CellPhone, 747-388-4458]}
+		/// [2]: {[PersonRecord.Email, elfhlsoepfmuiyr@uomrrywscvaapwjcu.org.uk]}
+		/// [3]: {[PersonRecord.FirstName, ZyeMgwQRFABsisq]}
+		/// [4]: {[PersonRecord.HomePhone, 255 - 871 - 4415]}
+		/// [5]: {[PersonRecord.Id, 58dc933fe6004719a37e7a35373ad645]}
+		/// [6]: {[PersonRecord.LastName, j_`iqWAGoOeKTpjWhojFyRHld]}
+		/// [7]: {[PersonRecord.Addresses[0].Address1, XkbOcAlseMEMnPY ^ jkEcYWnFD]}
+		/// [8]: {[PersonRecord.Addresses[0].Address2, tJkpTHikrRfFaGENX]`_agaw[]}
+		/// [9]: {[PersonRecord.Addresses[0].City, KlWA ^ Aw]KhqADREV\uwmXJeAU]}
+		/// [10]: {[PersonRecord.Addresses[0].Country, AtN`\NbnUIVSjUQicVXNMUL[J]}
+		/// [11]: {[PersonRecord.Addresses[0].Id, 9330f3a225b14d96b67779f2c932302a]}
+		/// [12]: {[PersonRecord.Addresses[0].CountyProvince, EkdKDBGWf ^ Givi[OMhIh]}
+		/// [13]: {[PersonRecord.Addresses[0].State, RGOuDpJyfgwxyfC]}
+		/// [14]: {[PersonRecord.Addresses[0].Phone, 065 - 507 - 7161]}
+		/// [15]: {[PersonRecord.Addresses[0].PostalCode, 56633485]}
+		/// [16]: {[PersonRecord.Addresses[1].Address1, lGSJwGNOtd ^ rXv`RxPcVCZHhk]}
+		/// [17]: {[PersonRecord.Addresses[1].Address2, \EJGOmHyfAPERA ^ DrTR`xlDFU]}
+		/// [18]: {[PersonRecord.Addresses[1].City, xiWPASydY[BEHfpVrluPNgOFS]}
+		/// [19]: {[PersonRecord.Addresses[1].Country, JFpIljBDlQEkiehQ[r`\xjh[J]}
+		/// [20]: {[PersonRecord.Addresses[1].Id, 8c95fd0cbbcf4beb993081bdd9c96ceb]}
+		/// [21]: {[PersonRecord.Addresses[1].CountyProvince, FyHoHRZQwpMJ[gjABVUk]}
+		/// [22]: {[PersonRecord.Addresses[1].State, dxeZkn[HyLo\wUS]}
+		/// [23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
+		/// [24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
 		/// </example>
-		[Information(nameof(PropertiesToDictionary), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static IDictionary<string, object> PropertiesToDictionary(this object obj, BindingFlags bindingFlags = BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance)
+		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
-			Encapsulation.TryValidateParam<ArgumentException>(obj != null, nameof(obj));
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
+			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Encapsulation.TryValidateNullParam(memberName, nameof(memberName));
 
-			return obj.GetType()
-				 .GetProperties(bindingFlags | BindingFlags.GetProperty)
-				 .ToDictionary(prop => prop.Name, prop => prop.GetValue(obj));
+			var result = new Dictionary<string, string>();
+
+			if (obj is null)
+			{
+				result.Add(memberName, NullString);
+				return result;
+			}
+
+			var objectType = obj.GetType();
+
+			// Reserve a special treatment for specific types by design (like string -that's a list of chars and you don't want to iterate on its items)
+			if (TypeHelper.BuiltInTypeNames.ContainsKey(objectType))
+			{
+				result.Add(memberName, obj.ToString());
+				return result;
+			}
+
+			// If the type implements the IEnumerable interface.
+			if (objectType.IsEnumerable())
+			{
+				var itemCount = 0;
+
+				// Loop through the collection using the enumerator strategy and collect all items in the result bag
+				// Note: if the collection is empty it will not return anything about its existence,
+				// because the method is supposed to catch value items not the list itself                
+				foreach (var item in (IEnumerable)obj)
+				{
+					var itemId = itemCount++;
+
+					// TODO: CHANGE TO USE ID PROPERTY AS INDEX
+					//if (objectType == typeof(IDataModel<,>))
+					//{
+
+					//}
+
+					var itemInnerMember = string.Format(CultureInfo.CurrentCulture, "{0}[{1}]", memberName, itemId);
+					result = result.Concat(item.PropertiesToDictionary(itemInnerMember)).ToDictionary(e => e.Key, e => e.Value);
+				}
+				return result;
+			}
+
+			// Otherwise go deeper in the object tree.           
+			// And foreach object public property collect each value
+			var propertyCollection = objectType.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+
+			var newMemberName = string.Empty;
+
+			if (memberName.Length > 0)
+			{
+				newMemberName = memberName + ControlChars.Dot;
+			}
+
+			foreach (var property in propertyCollection)
+			{
+				var innerObject = property.GetValue(obj, null);
+
+				if (ignoreNulls && innerObject == null)
+				{
+					continue;
+				}
+
+				var innerMember = string.Format(CultureInfo.CurrentCulture, "{0}{1}", newMemberName, property.Name);
+				result = result.Concat(innerObject.PropertiesToDictionary(innerMember)).ToDictionary(e => e.Key, e => e.Value);
+			}
+
+			return result;
 		}
 
 		/// <summary>
@@ -222,55 +313,53 @@ namespace dotNetTips.Spargine.Extensions
 		/// Supports nested types.
 		/// </summary>
 		/// <param name="obj">The input.</param>
-		/// <param name="ignoreNullValues">if set to <c>true</c> [ignore null values].</param>
-		/// <param name="delimiter">The delimiter.</param>
+		/// <param name="header">The header.</param>
+		/// <param name="keyValueSeparator">The key value separator.</param>
+		/// <param name="sequenceSeparator">The delimiter.</param>
+		/// <param name="ignoreNulls">if set to <c>true</c> [ignore null values].</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <exception cref="ArgumentInvalidException">Object cannot be a collection type.</exception>
-		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "11/19/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static string PropertiesToString(this object obj, bool ignoreNullValues = true, char delimiter = ControlChars.Comma)
+		/// <example>Output:
+		/// PersonRecord, PersonRecord.BornOn:1/29/2007 11:52:12 AM -08:00, PersonRecord.CellPhone:747-388-4458,
+		/// PersonRecord.Email:elfhlsoepfmuiyr @uomrrywscvaapwjcu.org.uk, PersonRecord.FirstName:ZyeMgwQRFABsisq,
+		/// PersonRecord.HomePhone:255-871-4415, PersonRecord.Id:58dc933fe6004719a37e7a35373ad645,
+		/// PersonRecord.LastName:j_`iqWAGoOeKTpjWhojFyRHld, PersonRecord.Addresses[0].Address1:XkbOcAlseMEMnPY^jkEcYWnFD,
+		/// PersonRecord.Addresses[0].Address2:tJkpTHikrRfFaGENX]`_agaw[,
+		/// PersonRecord.Addresses[0].City:KlWA ^ Aw] KhqADREV\\uwmXJeAU,
+		/// PersonRecord.Addresses[0].Country:AtN`\\NbnUIVSjUQicVXNMUL[J,
+		/// PersonRecord.Addresses[0].Id:9330f3a225b14d96b67779f2c932302a,
+		/// PersonRecord.Addresses[0].CountyProvince:EkdKDBGWf ^ Givi[OMhIh,
+		/// PersonRecord.Addresses[0].State:RGOuDpJyfgwxyfC, PersonRecord.Addresses[0].Phone:065 - 507 - 7161,
+		/// PersonRecord.Addresses[0].PostalCode:56633485, PersonRecord.Addresses[1].Address1:lGSJwGNOtd ^ rXv`RxPcVCZHhk,
+		/// PersonRecord.Addresses[1].Address2:\\EJGOmHyfAPERA ^ DrTR`xlDFU,
+		/// PersonRecord.Addresses[1].City:xiWPASydY[BEHfpVrluPNgOFS,
+		/// PersonRecord.Addresses[1].Country:JFpIljBDlQEkiehQ[r`\\xjh[J,
+		/// PersonRecord.Addresses[1].Id:8c95fd0cbbcf4beb993081bdd9c96ceb,
+		/// PersonRecord.Addresses[1].CountyProvince:FyHoHRZQwpMJ[gjABVUk,
+		/// PersonRecord.Addresses[1].State:dxeZkn[HyLo\\wUS, PersonRecord.Addresses[1].Phone:511 - 286 - 7653,
+		/// PersonRecord.Addresses[1].PostalCode:33385672
+		/// </example>
+		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true)
 		{
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			Encapsulation.TryValidateNullParam(obj, nameof(obj));
-			Encapsulation.TryValidateParam<ArgumentInvalidException>(obj.GetType().Name != typeof(List<>).Name, nameof(obj));
+			Encapsulation.TryValidateNullParam(header, nameof(header));
+			Encapsulation.TryValidateNullParam(sequenceSeparator, nameof(sequenceSeparator));
 
-			var properties = obj.PropertiesToDictionary();
+			var typeName = obj.GetType().Name;
 
-			if (properties.Count == 0)
+			if (typeName == typeof(List<>).Name)
 			{
-				return string.Empty;
+				typeName = "Item";
 			}
-			else
-			{
-				var propertiesSb = TypeHelper.CreateStringBuilder();
 
-				foreach (var property in properties.OrderBy(p => p.Key))
-				{
-					if (property.Value.IsNull() && ignoreNullValues)
-					{
-						// Ignore
-					}
-					else if (property.Value.GetType().UnderlyingSystemType.Name == typeof(List<>).Name)
-					{
-						var collectionSb = TypeHelper.CreateStringBuilder();
+			var properties = obj.PropertiesToDictionary(memberName: typeName, ignoreNulls: ignoreNulls);
 
-						foreach (var item in (IEnumerable)property.Value)
-						{
-							collectionSb.Append(item.PropertiesToString(true));
-						}
+			var result = properties.Aggregate(header, (acc, pair) => string.Format(CultureInfo.CurrentCulture, "{0}{1}{2}{3}{4}", acc, sequenceSeparator, pair.Key, keyValueSeparator, pair.Value));
 
-						//Process collection
-						propertiesSb.Append($"{property.Key}: {collectionSb}{ControlChars.Space}");
-					}
-					else
-					{
-						propertiesSb.Append($"{property.Key}: {property.Value}{delimiter}{ControlChars.Space}");
-					}
-				}
-
-				var returnValue = propertiesSb.ToString(0, propertiesSb.Length - 1);
-
-				return returnValue;
-			}
+			return result.StartsWith(sequenceSeparator, StringComparison.CurrentCulture) ? result.Remove(0, sequenceSeparator.Length) : result;
 		}
 
 		/// <summary>
@@ -294,7 +383,7 @@ namespace dotNetTips.Spargine.Extensions
 				return string.Empty;
 			}
 
-			return JsonConvert.SerializeObject(obj);
+			return JsonSerializer.Serialize(obj);
 		}
 
 		/// <summary>
@@ -310,7 +399,7 @@ namespace dotNetTips.Spargine.Extensions
 			Encapsulation.TryValidateNullParam(obj, nameof(obj));
 			Encapsulation.TryValidateParam(fileName, nameof(fileName));
 
-			var json = JsonConvert.SerializeObject(obj);
+			var json = JsonSerializer.Serialize(obj);
 
 			File.WriteAllText(fileName, json, Encoding.UTF8);
 		}
@@ -367,7 +456,7 @@ namespace dotNetTips.Spargine.Extensions
 		private static T FromJson<T>(string json)
 	where T : class
 		{
-			return JsonConvert.DeserializeObject<T>(json);
+			return JsonSerializer.Deserialize<T>(json);
 		}
 
 	}

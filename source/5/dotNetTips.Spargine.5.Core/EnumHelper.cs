@@ -4,7 +4,7 @@
 // Created          : 10-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-01-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -35,8 +35,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="useXmlNames">if set to <c>true</c> [use XML names].</param>
 		/// <returns>List&lt;EnumValue&gt;.</returns>
 		/// <exception cref="InvalidEnumTypeException"></exception>
-		[Information(nameof(GetEnumValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 99, Status = Status.Available)]
-		public static List<EnumValue> GetEnumValues<T>(bool fixNames, bool useXmlNames)
+		[Information(nameof(GetValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 99, Status = Status.Available)]
+		public static List<EnumValue> GetValues<T>(bool fixNames, bool useXmlNames)
 			where T : Enum
 		{
 			var enumType = typeof(T);
@@ -54,7 +54,7 @@ namespace dotNetTips.Spargine.Core
 			var result = new List<EnumValue>();
 
 			// TODO: This does not work if enums are not defined 0,1,2, etc
-			var enumNames = GetEnumNames(enumType, fixNames, useXmlNames);
+			var enumNames = GetNames(enumType, fixNames, useXmlNames);
 
 			for (var i = 0; i < allValues.Length; i++)
 			{
@@ -93,8 +93,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="fixNames">if set to <c>true</c> [fix names].</param>
 		/// <param name="useXml">if set to <c>true</c> [use XML].</param>
 		/// <returns>List&lt;System.String&gt;.</returns>
-		[Information(nameof(GetEnumNames), UnitTestCoverage = 99, Status = Status.Available)]
-		private static List<string> GetEnumNames(Type t, bool fixNames, bool useXml)
+		[Information(nameof(GetNames), UnitTestCoverage = 99, Status = Status.Available)]
+		private static List<string> GetNames(Type t, bool fixNames, bool useXml)
 		{
 			// Set up result
 			var result = new List<string>();

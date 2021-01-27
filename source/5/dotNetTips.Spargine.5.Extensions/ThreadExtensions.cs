@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-21-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -14,6 +14,7 @@
 using System;
 using System.Threading;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -23,7 +24,6 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ThreadExtensions
 	{
-
 		/// <summary>
 		/// Tries the set priority.
 		/// </summary>
@@ -35,15 +35,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TrySetPriority(this Thread thread, ThreadPriority priority)
 		{
-			if (thread == null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(thread));
-			}
-
-			if (Enum.IsDefined(typeof(ThreadPriority), priority) == false)
-			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(priority));
-			}
+			Encapsulation.TryValidateNullParam(thread, nameof(thread));
+			Encapsulation.TryValidateParam(priority, nameof(priority));
 
 			try
 			{
@@ -63,6 +56,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
 		public static void WaitUntil(this Thread thread, TimeSpan interval)
 		{
+			Encapsulation.TryValidateNullParam(thread, nameof(thread));
+
 			WaitUntil(thread, interval);
 		}
 
@@ -76,10 +71,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
 		public static void WaitUntil(this Thread thread, TimeSpan interval, int waitIterations)
 		{
-			if (thread is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(thread));
-			}
+			Encapsulation.TryValidateNullParam(thread, nameof(thread));
+			Encapsulation.TryValidateParam(waitIterations, minimumValue: 0, paramName: nameof(waitIterations));
 
 			var stopAt = DateTime.Now.Add(interval);
 

@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2020
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="ArgumentReadOnlyException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -73,7 +73,9 @@ namespace dotNetTips.Spargine.Core
 		{
 		}
 
-		/// <summary>Initializes a new instance of the <see cref="ArgumentReadOnlyException"></see> class with serialized data.</summary>
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ArgumentReadOnlyException"></see> class with serialized data.
+		/// </summary>
 		/// <param name="info">The object that holds the serialized object data.</param>
 		/// <param name="context">The contextual information about the source or destination.</param>
 		private ArgumentReadOnlyException(SerializationInfo info, StreamingContext context) : base(info, context)

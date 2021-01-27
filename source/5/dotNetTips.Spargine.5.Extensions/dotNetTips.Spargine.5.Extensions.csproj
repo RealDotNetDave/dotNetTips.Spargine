@@ -2,36 +2,37 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AssemblyVersion>2021.1.17.184</AssemblyVersion>
+		<AssemblyName>dotNetTips.Spargine.5.Extensions</AssemblyName>
+		<AssemblyVersion>2021.1.27.239</AssemblyVersion>
+		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+		<Company>David McCarter - dotNetTips.com</Company>
+		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<DebugSymbols>true</DebugSymbols>
+		<Description>Extensions for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.1.17.184</FileVersion>
+		<FileVersion>2021.1.27.239</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
+		<PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishSingleFile>true</PublishSingleFile>
 		<PublishTrimmed>true</PublishTrimmed>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
 		<RootNamespace>dotNetTips.Spargine.Extensions</RootNamespace>
 		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
 		<Version>2021.2.1.0</Version>
-		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
-		<PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
-		<Company>David McCarter - dotNetTips.com</Company>
-		<Authors>David McCarter</Authors>
-		<Copyright>McCarter Consulting (David McCarter)</Copyright>
-		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
-		<Description>Extensions for Spargine.</Description>
-		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -49,7 +50,6 @@
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.1" />
-		<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
 		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
 	</ItemGroup>
 

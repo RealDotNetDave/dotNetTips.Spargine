@@ -1,17 +1,17 @@
-﻿//![](05CD5CE05AF2C0FDDE3210EB79859750_1.png;http://dotnettips.com )
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.5.Core
 // Author           : David McCarter
 // Created          : 10-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-28-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="EnvironmentKey.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
@@ -20,6 +20,11 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public enum EnvironmentKey
 	{
+		/// <summary>
+		/// The ASP.NET Core Environment
+		/// </summary>
+		ASPNETCORE_ENVIRONMENT,
+
 		/// <summary>
 		/// The all users profile
 		/// </summary>

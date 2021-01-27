@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-28-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="ExecutionHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(ProgressiveRetry), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int ProgressiveRetry(Action operation, byte retryCount = 3, int retryWaitMilliseconds = 100)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(operation != null, nameof(operation));
+			Encapsulation.TryValidateNullParam(operation, nameof(operation));
 			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryCount > 0, nameof(retryCount));
 			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(retryWaitMilliseconds > 0, nameof(retryWaitMilliseconds));
 

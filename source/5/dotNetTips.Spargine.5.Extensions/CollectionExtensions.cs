@@ -4,12 +4,12 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-24-2020
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Extension methods for the Collection type.</summary>
+// <summary>Extension methods for the ICollection types.</summary>
 // ***********************************************************************
 using System;
 using System.Collections;
@@ -110,7 +110,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="comparer">The comparer.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
-		/// <exception cref="ArgumentNullException">List cannot be <see langword="null"/>.</exception>
+		/// <exception cref="ArgumentNullException">List cannot be <see langword="null" />.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> list, T item, IEqualityComparer<T> comparer)
 		{

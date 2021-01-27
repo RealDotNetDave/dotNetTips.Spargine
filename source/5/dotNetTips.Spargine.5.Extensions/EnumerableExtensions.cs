@@ -5,12 +5,12 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-07-2021
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Extension methods for IEnumerable types.</summary>
 // ***********************************************************************
 using System;
 using System.Collections;
@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new Random();
+		private static readonly Random _globalRandom = new Random((int)DateTime.Now.Ticks);
 
 		/// <summary>
 		/// The random
@@ -159,7 +159,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static int FastCount<T>(this IEnumerable<T> list, Func<T, bool> predicate)
 		{
 			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(predicate.IsNotNull(), nameof(predicate));
+			Encapsulation.TryValidateNullParam(predicate, nameof(predicate));
 
 			if (list is List<T>)
 			{
@@ -194,8 +194,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FirstOrDefault<T>(this IEnumerable<T> list, T alternate)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(alternate.IsNotNull(), nameof(alternate));
+			Encapsulation.TryValidateParam(list, nameof(list));
+			Encapsulation.TryValidateNullParam(alternate, nameof(alternate));
 
 			return list.DefaultIfEmpty(alternate).First();
 		}
@@ -218,9 +218,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FirstOrDefault<T>(this IEnumerable<T> list, Func<T, bool> predicate, T alternate)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(alternate.IsNotNull(), nameof(alternate));
-			Encapsulation.TryValidateParam<ArgumentNullException>(predicate.IsNotNull(), nameof(predicate));
+			Encapsulation.TryValidateParam(list, nameof(list));
+			Encapsulation.TryValidateNullParam(alternate, nameof(alternate));
+			Encapsulation.TryValidateNullParam(predicate, nameof(predicate));
 
 			return list.Where(predicate).FirstOrDefault(alternate);
 		}
@@ -242,7 +242,7 @@ namespace dotNetTips.Spargine.Extensions
 				return null;
 			}
 
-			Encapsulation.TryValidateParam<ArgumentNullException>(match.IsNotNull(), nameof(match));
+			Encapsulation.TryValidateNullParam(match, nameof(match));
 
 			var listToProcess = list.ToList();
 
@@ -440,7 +440,7 @@ namespace dotNetTips.Spargine.Extensions
 			where T : class
 		{
 			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentNullException>(comparer.IsNotNull(), nameof(comparer));
+			Encapsulation.TryValidateNullParam(comparer, nameof(comparer));
 
 			return list.Distinct(new DynamicEqualityComparer<T>(comparer));
 		}
@@ -468,7 +468,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> list)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
+			Encapsulation.TryValidateParam(list, nameof(list));
 
 			return new LinkedList<T>(list);
 		}
@@ -483,7 +483,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<T> ToList<T>(this IEnumerable list)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(list.IsNotNull(), nameof(list));
+			Encapsulation.TryValidateParam(list, nameof(list));
 
 			return list.OfType<T>().ToList();
 		}

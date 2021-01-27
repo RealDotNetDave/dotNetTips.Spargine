@@ -241,4 +241,13 @@
   <data name="FalseLowerCase" xml:space="preserve">
     <value>false</value>
   </data>
+  <data name="FailedToSetUpHighPriority" xml:space="preserve">
+    <value>Failed to set up high priority. Make sure you have the right permissions.</value>
+  </data>
+  <data name="FailedToSetUpLowPriority" xml:space="preserve">
+    <value>Failed to set up low priority. Make sure you have the right permissions.</value>
+  </data>
+  <data name="FileIsNullEmptyOrDoesNotExist" xml:space="preserve">
+    <value>{0} is null, empty or the file does not exist.</value>
+  </data>
 </root>

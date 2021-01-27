@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace dotNetTips.Spargine.Extensions.Properties
-{
-
-
+namespace dotNetTips.Spargine.Extensions.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -106,11 +106,38 @@ namespace dotNetTips.Spargine.Extensions.Properties
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed to set up high priority. Make sure you have the right permissions..
+        /// </summary>
+        internal static string FailedToSetUpHighPriority {
+            get {
+                return ResourceManager.GetString("FailedToSetUpHighPriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to set up low priority. Make sure you have the right permissions..
+        /// </summary>
+        internal static string FailedToSetUpLowPriority {
+            get {
+                return ResourceManager.GetString("FailedToSetUpLowPriority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to false.
         /// </summary>
         internal static string FalseLowerCase {
             get {
                 return ResourceManager.GetString("FalseLowerCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is null, empty or the file does not exist..
+        /// </summary>
+        internal static string FileIsNullEmptyOrDoesNotExist {
+            get {
+                return ResourceManager.GetString("FileIsNullEmptyOrDoesNotExist", resourceCulture);
             }
         }
         

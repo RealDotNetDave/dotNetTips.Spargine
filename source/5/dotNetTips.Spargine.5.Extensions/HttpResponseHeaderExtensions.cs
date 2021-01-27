@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 07-17-2020
 //
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Net;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -65,6 +66,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GetName(this HttpResponseHeader header)
 		{
+			Encapsulation.TryValidateNullParam(header, nameof(header));
+
 			return _headerNames[(int)header];
 		}
 

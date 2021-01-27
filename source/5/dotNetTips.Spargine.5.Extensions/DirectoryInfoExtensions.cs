@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-20-2020
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="DirectoryInfoExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

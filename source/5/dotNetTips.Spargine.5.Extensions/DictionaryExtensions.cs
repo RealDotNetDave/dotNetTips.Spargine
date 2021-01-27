@@ -4,12 +4,12 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-05-2021
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Extension methods for IDictionary types.</summary>
 // ***********************************************************************
 using System;
 using System.Collections;
@@ -148,13 +148,11 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 99)]
 		public static string ToDelimitedString(this IDictionary list, char delimiter = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateNullParam(delimiter, nameof(delimiter));
-
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			if (list.HasItems() == false)
 			{
 				return string.Empty;
 			}
-
 
 			var sb = TypeHelper.CreateStringBuilder();
 

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-03-2020
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="ImmutableArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,11 +24,10 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ImmutableArrayExtensions
 	{
-
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new Random();
+		private static readonly Random _globalRandom = new Random((int)DateTime.Now.Ticks);
 
 		/// <summary>
 		/// The random

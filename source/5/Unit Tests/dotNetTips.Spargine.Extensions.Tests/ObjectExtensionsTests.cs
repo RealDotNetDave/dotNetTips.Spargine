@@ -64,7 +64,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 	[ExcludeFromCodeCoverage]
 	[TestClass]
-	public class ObjectExtensionsTests
+	public class ObjectExtensionsTests : TestClass
 	{
 		[TestMethod]
 		public void AsTest()
@@ -115,6 +115,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PersonProper nullPerson = null;
 
 			var result = person.ComputeSha256Hash();
+
+			PrintResult(result, nameof(this.ComputeSha256HashTest));
 
 			Assert.IsFalse(string.IsNullOrEmpty(result));
 
@@ -181,7 +183,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var personProper = RandomData.GeneratePersonCollection(1).First();
 
-			var result = personProper.PropertiesToDictionary();
+			var propertiesTest = new PropertiesTest
+			{
+				Id = RandomData.GenerateKey(),
+				PersonProper = RandomData.GeneratePerson<PersonProper>(),
+				PersonRecord = RandomData.GeneratePersonCollection(1).First(),
+				Today = DateTime.Now
+			};
+
+			var result = personProper.PropertiesToDictionary(memberName: $"Person-{personProper.Id}", ignoreNulls: true);
+
+			Assert.IsTrue(result.Count() > 1);
+
+			result = propertiesTest.PropertiesToDictionary(memberName: $"TestPerson-{personProper.Id}", ignoreNulls: true);
 
 			Assert.IsTrue(result.Count() > 1);
 		}
@@ -189,30 +203,42 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void PropertiesToStringTest()
 		{
-			var personProper = RandomData.GeneratePersonCollection(1).First();
+			var personRecord = RandomData.GeneratePersonCollection(1).First();
+			var propertiesTest = new PropertiesTest
+			{
+				Id = RandomData.GenerateKey(),
+				PersonProper = RandomData.GeneratePerson<PersonProper>(),
+				PersonRecord = RandomData.GeneratePersonCollection(1).First(),
+				Today = DateTime.Now
+			};
 
-			var result = personProper.PropertiesToString();
+			var result = personRecord.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true);
 
-			Assert.IsTrue(result.Length > 700);
+			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
+			PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			result = person.PropertiesToString();
+			result = person.PropertiesToString(header: person.Id);
 
-			Assert.IsTrue(result.Length > 400);
+			Assert.IsTrue(result.Length > 900);
 			Assert.IsTrue(result.Contains("Address1"));
+			PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var coordinate = RandomData.GenerateCoordinate<CoordinateProper>();
 
 			result = coordinate.PropertiesToString();
 
-			Assert.IsTrue(result.Length > 25);
+			Assert.IsTrue(result.Length > 50);
 			Assert.IsTrue(result.Contains("X"));
+			PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var personCollection = RandomData.GeneratePersonCollection(5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => personCollection.PropertiesToString());
+			result = personCollection.PropertiesToString();
+			Assert.IsTrue(result.Contains("Item"));
+			Assert.IsTrue(result.Length > 6000);
 		}
 
 		[TestMethod]
@@ -276,5 +302,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Assert.Fail();
 			}
 		}
+	}
+
+	[ExcludeFromCodeCoverage]
+	public class PropertiesTest
+	{
+		public string Id { get; set; }
+
+		public PersonProper PersonProper { get; set; }
+
+		public IPersonRecord PersonRecord { get; set; }
+
+		public DateTimeOffset Today { get; set; }
 	}
 }

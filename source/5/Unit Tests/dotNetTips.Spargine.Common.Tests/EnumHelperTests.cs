@@ -18,26 +18,26 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class EnumHelperTests
-    {
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class EnumHelperTests
+	{
 
-        [TestMethod]
-        public void AddToPersonCollectionTest()
-        {
-            var result = EnumHelper.GetEnumValues<RequestCacheLevel>(false, false);
-            Assert.IsTrue(result.Count > 0);
+		[TestMethod]
+		public void AddToPersonCollectionTest()
+		{
+			var result = EnumHelper.GetValues<RequestCacheLevel>(false, false);
+			Assert.IsTrue(result.Count > 0);
 
-            result = EnumHelper.GetEnumValues<HttpCacheAgeControl>(true, false);
-            Assert.IsTrue(result.Count > 0);
+			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, false);
+			Assert.IsTrue(result.Count > 0);
 
-            result = EnumHelper.GetEnumValues<HttpCacheAgeControl>(false, true);
-            Assert.IsTrue(result.Count > 0);
+			result = EnumHelper.GetValues<HttpCacheAgeControl>(false, true);
+			Assert.IsTrue(result.Count > 0);
 
-            result = EnumHelper.GetEnumValues<HttpCacheAgeControl>(true, true);
-            Assert.IsTrue(result.Count > 0);
-        }
+			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
+			Assert.IsTrue(result.Count > 0);
+		}
 
-    }
+	}
 }

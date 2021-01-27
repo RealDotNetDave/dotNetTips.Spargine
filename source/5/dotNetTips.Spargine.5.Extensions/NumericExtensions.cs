@@ -4,14 +4,13 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-07-2021
+// Last Modified On : 01-21-2021
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
@@ -60,6 +59,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FormatSize), UnitTestCoverage = 0, Status = Status.Available)]
 		public static string FormatSize(this long fileSize)
 		{
+			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
 			long size = 0;
 
 			while (fileSize > 1024 && size < 4)
@@ -371,7 +371,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this int input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -395,7 +395,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this double input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.Decimal || format == NumericFormat.Hexadecimal)
 			{
@@ -420,7 +420,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this long input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -445,7 +445,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this ulong input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -470,7 +470,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this uint input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -495,7 +495,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this short input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -519,7 +519,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this ushort input, NumericFormat format)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(format != null, nameof(format));
+			Encapsulation.TryValidateNullParam(format, nameof(format));
 
 			if (format == NumericFormat.RoundTrip)
 			{
@@ -571,7 +571,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="defaultText">Default text</param>
 		/// <returns>String</returns>
 		[Information(nameof(ToStringOrEmpty), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ToStringOrEmpty(this int value, int lowerLimit = 0, int upperLimit = 9000, string defaultText = "")
+		public static string ToStringOrEmpty(this int value, int lowerLimit = 0, int upperLimit = 9000, string defaultText = ControlChars.DoubleQuote)
 		{
 			if (value <= lowerLimit || value > upperLimit)
 			{

@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-06-2021
+// Last Modified On : 01-15-2021
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -25,7 +25,6 @@ namespace dotNetTips.Spargine.Core.Logging
 	/// </summary>
 	public static class LoggingHelper
 	{
-
 		/// <summary>
 		/// Logs application information.
 		/// </summary>
@@ -42,6 +41,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static void LogApplicationInformation(ILogger logger)
 		{
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			Encapsulation.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
 
 			var appInfo = App.AppInfo;
@@ -90,6 +90,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static void LogComputerInformation(ILogger logger)
 		{
+			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			Encapsulation.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
 
 			var computerInfo = new ComputerInfo();

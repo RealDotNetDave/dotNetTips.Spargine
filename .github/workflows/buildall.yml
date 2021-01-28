@@ -1,0 +1,19 @@
+name: Build All
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.102
+    - name: Restore Main dependencies
+      run: dotnet restore "./source/dotNetTips.Spargine.5.sln"
+    - name: Build Main Solution
+      run: dotnet build "./source/dotNetTips.Spargine.5.sln" --configuration Release

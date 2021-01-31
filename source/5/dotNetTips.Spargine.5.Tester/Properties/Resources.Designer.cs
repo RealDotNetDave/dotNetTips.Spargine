@@ -140,13 +140,14 @@ namespace dotNetTips.Spargine.Tester.Properties {
                 return ResourceManager.GetString("LongTestString", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Minimum lenghth cannot be greater than maximum length..
-        /// </summary>
-        internal static string MinimumLenghthCannotBeGreaterThanMaximum {
+
+		/// <summary>
+		///   Looks up a localized string similar to Minimum length cannot be greater than maximum length..
+		/// </summary>
+		internal static string MinimumLengthCannotBeGreaterThanMaximum
+		{
             get {
-                return ResourceManager.GetString("MinimumLenghthCannotBeGreaterThanMaximum", resourceCulture);
+                return ResourceManager.GetString("MinimumLengthCannotBeGreaterThanMaximum", resourceCulture);
             }
         }
         

@@ -36,15 +36,39 @@ namespace dotNetTips.Spargine.Tester.Models
 		private string _address2;
 
 		/// <summary>
+		/// The city
+		/// </summary>
+		private string _city;
+
+		/// <summary>
+		/// The country
+		/// </summary>
+		private string _country = "United States";
+
+		/// <summary>
+		/// The county province
+		/// </summary>
+		private string _countyProvince;
+
+		/// <summary>
+		/// The identifier
+		/// </summary>
+		private string _id;
+
+		/// <summary>
+		/// The phone
+		/// </summary>
+		private string _phone;
+
+		/// <summary>
 		/// The postal code
 		/// </summary>
 		private string _postalCode;
 
 		/// <summary>
-		/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
+		/// The state
 		/// </summary>
-		private AddressRecord()
-		{ }
+		private string _state;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddressRecord" /> class.
@@ -79,6 +103,12 @@ namespace dotNetTips.Spargine.Tester.Models
 			this.PostalCode = postalCode;
 			this.State = state;
 		}
+
+		/// <summary>
+		/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
+		/// </summary>
+		private AddressRecord()
+		{ }
 
 		/// <summary>
 		/// Gets or sets the Address1.
@@ -125,11 +155,6 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// The city
-		/// </summary>
-		private string _city;
-
-		/// <summary>
 		/// Gets or sets the city.
 		/// </summary>
 		/// <value>The city name.</value>
@@ -150,11 +175,6 @@ namespace dotNetTips.Spargine.Tester.Models
 				this._city = value.Length > 100 ? throw new ArgumentOutOfRangeException(nameof(this.City), "City length is limited to 100 characters.") : value;
 			}
 		}
-
-		/// <summary>
-		/// The country
-		/// </summary>
-		private string _country = "United States";
 
 		/// <summary>
 		/// Gets or sets the country.
@@ -179,38 +199,6 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// The identifier
-		/// </summary>
-		private string _id;
-
-		/// <summary>
-		/// Gets or sets the unique identifier.
-		/// </summary>
-		/// <value>The unique identifier.</value>
-		/// <exception cref="ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
-		public string Id
-		{
-			get
-			{
-				return this._id;
-			}
-			init
-			{
-				if (string.IsNullOrEmpty(value))
-				{
-					throw new ArgumentNullException(nameof(this.Id), "Value for Id cannot be null or empty.");
-				}
-
-				this._id = value.Length > 256 ? throw new ArgumentOutOfRangeException(nameof(this.Id), "Id length is limited to 256 characters.") : value;
-			}
-		}
-
-		/// <summary>
-		/// The county province
-		/// </summary>
-		private string _countyProvince;
-
-		/// <summary>
 		/// Gets or sets the county province.
 		/// </summary>
 		/// <value>The county province.</value>
@@ -233,36 +221,26 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// The state
+		/// Gets or sets the unique identifier.
 		/// </summary>
-		private string _state;
-
-		/// <summary>
-		/// Gets or sets the state.
-		/// </summary>
-		/// <value>The state.</value>
-		/// <exception cref="ArgumentNullException">nameof(this.State), Value for State cannot be null or empty.</exception>
-		public string State
+		/// <value>The unique identifier.</value>
+		/// <exception cref="ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
+		public string Id
 		{
 			get
 			{
-				return this._state;
+				return this._id;
 			}
 			init
 			{
 				if (string.IsNullOrEmpty(value))
 				{
-					throw new ArgumentNullException(nameof(this.State), "Value for State cannot be null or empty.");
+					throw new ArgumentNullException(nameof(this.Id), "Value for Id cannot be null or empty.");
 				}
 
-				this._state = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.State), "State  length is limited to 50 characters.") : value;
+				this._id = value.Length > 256 ? throw new ArgumentOutOfRangeException(nameof(this.Id), "Id length is limited to 256 characters.") : value;
 			}
 		}
-
-		/// <summary>
-		/// The phone
-		/// </summary>
-		private string _phone;
 
 		/// <summary>
 		/// Gets or sets the phone.
@@ -310,19 +288,70 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Gets the hash code.
+		/// Gets or sets the state.
 		/// </summary>
-		/// <returns>int.</returns>
-		public override int GetHashCode()
+		/// <value>The state.</value>
+		/// <exception cref="ArgumentNullException">nameof(this.State), Value for State cannot be null or empty.</exception>
+		public string State
 		{
-			return HashCode.Combine(this.Id, this.Address1, this.Address2, this.City, this.Phone, this.PostalCode, this.Country, this.Phone);
+			get
+			{
+				return this._state;
+			}
+			init
+			{
+				if (string.IsNullOrEmpty(value))
+				{
+					throw new ArgumentNullException(nameof(this.State), "Value for State cannot be null or empty.");
+				}
+
+				this._state = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.State), "State  length is limited to 50 characters.") : value;
+			}
 		}
 
 		/// <summary>
-		/// Converts to string.
+		/// Implements the op_GreaterThanOrEqual operator.
 		/// </summary>
-		/// <returns>string.</returns>
-		public override string ToString() => $"{this.Address1} {this.Address2}, {this.City} {this.State}, {this.PostalCode}";
+		/// <param name="left">The left.</param>
+		/// <param name="right">The right.</param>
+		/// <returns>The result of the operator.</returns>
+		public static bool operator >=(AddressRecord left, IAddressRecord right)
+		{
+			return left.CompareTo(right) >= 0;
+		}
+
+		/// <summary>
+		/// Implements the op_GreaterThan operator.
+		/// </summary>
+		/// <param name="left">The left.</param>
+		/// <param name="right">The right.</param>
+		/// <returns>The result of the operator.</returns>
+		public static bool operator >(AddressRecord left, IAddressRecord right)
+		{
+			return left.CompareTo(right) > 0;
+		}
+
+		/// <summary>
+		/// Implements the op_LessThanOrEqual operator.
+		/// </summary>
+		/// <param name="left">The left.</param>
+		/// <param name="right">The right.</param>
+		/// <returns>The result of the operator.</returns>
+		public static bool operator <=(AddressRecord left, IAddressRecord right)
+		{
+			return left.CompareTo(right) <= 0;
+		}
+
+		/// <summary>
+		/// Implements the op_LessThan operator.
+		/// </summary>
+		/// <param name="left">The left.</param>
+		/// <param name="right">The right.</param>
+		/// <returns>The result of the operator.</returns>
+		public static bool operator <(AddressRecord left, IAddressRecord right)
+		{
+			return left.CompareTo(right) < 0;
+		}
 
 		/// <summary>
 		/// Compares to.
@@ -406,7 +435,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Equalses the specified other.
+		/// Equals the specified other.
 		/// </summary>
 		/// <param name="other">The other.</param>
 		/// <returns>bool.</returns>
@@ -421,47 +450,18 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Implements the op_LessThan operator.
+		/// Gets the hash code.
 		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <(AddressRecord left, IAddressRecord right)
+		/// <returns>int.</returns>
+		public override int GetHashCode()
 		{
-			return left.CompareTo(right) < 0;
+			return HashCode.Combine(this.Id, this.Address1, this.Address2, this.City, this.Phone, this.PostalCode, this.Country, this.Phone);
 		}
 
 		/// <summary>
-		/// Implements the op_LessThanOrEqual operator.
+		/// Converts to string.
 		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <=(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) <= 0;
-		}
-
-		/// <summary>
-		/// Implements the op_GreaterThan operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) > 0;
-		}
-
-		/// <summary>
-		/// Implements the op_GreaterThanOrEqual operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >=(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) >= 0;
-		}
+		/// <returns>string.</returns>
+		public override string ToString() => $"{this.Address1} {this.Address2}, {this.City} {this.State}, {this.PostalCode}";
 	}
 }

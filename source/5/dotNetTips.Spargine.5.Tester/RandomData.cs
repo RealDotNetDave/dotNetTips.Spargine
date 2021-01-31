@@ -643,7 +643,7 @@ namespace dotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Creates host name without a subdomain.
+		/// Creates host name without a sub domain.
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>elqqcw.org.uk</example>
@@ -692,7 +692,7 @@ namespace dotNetTips.Spargine.Tester
 		{
 			Encapsulation.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(minLength));
 			Encapsulation.TryValidateParam(maxLength, minimumValue: 1, paramName: nameof(maxLength));
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, nameof(maxLength), Resources.MinimumLenghthCannotBeGreaterThanMaximum);
+			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, nameof(maxLength), Resources.MinimumLengthCannotBeGreaterThanMaximum);
 
 			return GenerateWord(minLength, maxLength, DefaultMinCharacter, DefaultMaxCharacter);
 		}

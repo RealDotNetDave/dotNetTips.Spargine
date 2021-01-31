@@ -441,7 +441,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determines whetherthe input is first and last name.
+		/// Determines whether the input is first and last name.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
@@ -668,7 +668,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determins if the input starts with ordinal.
+		/// Determines if the input starts with ordinal.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="valueToCompare">The value to compare.</param>
@@ -687,7 +687,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determins if the input starts the with ordinal while ignoring case.
+		/// Determines if the input starts the with ordinal while ignoring case.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="valueToCompare">The value to compare.</param>

@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -217,7 +217,7 @@
     <value>Uri cannot be null.</value>
   </data>
   <data name="UserUnkown" xml:space="preserve">
-    <value>UNKOWN</value>
+    <value>UNKNOWN</value>
   </data>
   <data name="ExMessageInvalidEnumType" xml:space="preserve">
     <value>Invalid enum type.</value>

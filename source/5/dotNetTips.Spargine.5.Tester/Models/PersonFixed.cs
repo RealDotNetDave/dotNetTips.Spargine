@@ -296,7 +296,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Determis if this instance is equal to the pased in instance.
+		/// Determines if this instance is equal to the passed in instance.
 		/// </summary>
 		/// <param name="other">The other.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>

@@ -202,14 +202,14 @@ namespace dotNetTips.Spargine.Core
 			for (var i = 0; i < list.Count; i++)
 			{
 				var file = list[i];
-				var assy = Assembly.LoadFile(file);
+				var assembly = Assembly.LoadFile(file);
 
-				var containsBaseType = assy.ExportedTypes.ToList().TrueForAll(p => p.BaseType != null &&
+				var containsBaseType = assembly.ExportedTypes.ToList().TrueForAll(p => p.BaseType != null &&
 					p.BaseType.FullName == baseType.FullName);
 
 				if (containsBaseType)
 				{
-					foundTypes.AddRange(LoadDerivedTypes(assy.DefinedTypes, baseType, classOnly));
+					foundTypes.AddRange(LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly));
 				}
 			}
 

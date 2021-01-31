@@ -6,7 +6,7 @@
 // Last Modified By : David McCarter
 // Last Modified On : 01-15-2021
 // ***********************************************************************
-// <copyright file="ObservableCollecitonExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="ObservableCollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -18,7 +18,7 @@ using dotNetTips.Spargine.Core;
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
-	/// Class ObservableCollecitonExtensions.
+	/// Class ObservableCollectionExtensions.
 	/// </summary>
 	public static class ObservableCollectionExtensions
 	{

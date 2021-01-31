@@ -176,11 +176,11 @@ namespace dotNetTips.Spargine.Extensions.Properties {
                 return ResourceManager.GetString("GB", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Guid is Empth..
-        /// </summary>
-        internal static string GuidIsEmpty {
+
+		/// <summary>
+		///   Looks up a localized string similar to Guid is Empty..
+		/// </summary>
+		internal static string GuidIsEmpty {
             get {
                 return ResourceManager.GetString("GuidIsEmpty", resourceCulture);
             }
@@ -374,11 +374,11 @@ namespace dotNetTips.Spargine.Extensions.Properties {
                 return ResourceManager.GetString("StringDoesNotMatch", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to String does not matach maximum length..
-        /// </summary>
-        internal static string StringDoesNotMatchMaximumLength {
+
+		/// <summary>
+		///   Looks up a localized string similar to String does not match maximum length..
+		/// </summary>
+		internal static string StringDoesNotMatchMaximumLength {
             get {
                 return ResourceManager.GetString("StringDoesNotMatchMaximumLength", resourceCulture);
             }

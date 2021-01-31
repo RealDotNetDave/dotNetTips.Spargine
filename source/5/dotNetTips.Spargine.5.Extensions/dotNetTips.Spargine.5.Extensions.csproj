@@ -3,17 +3,18 @@
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Extensions</AssemblyName>
-		<AssemblyVersion>2021.1.27.239</AssemblyVersion>
+		<AssemblyVersion>2021.1.31.246</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
+		<Configurations>Debug;Release</Configurations>
 		<DebugSymbols>true</DebugSymbols>
 		<Description>Extensions for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.1.27.239</FileVersion>
+		<FileVersion>2021.1.31.246</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -39,6 +40,11 @@
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <OutputPath>..\appbin\</OutputPath>
+	  <DocumentationFile>..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -69,14 +75,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
 	    <Pack>True</Pack>
 	    <PackagePath></PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -41,11 +41,11 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			var result = TypeHelper.GetTypeDisplayName(person);
 
-			Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
+			Assert.IsTrue(result == "dotNetTips.Spargine.Tester.Models.PersonProper");
 
 			result = TypeHelper.GetTypeDisplayName(person, true);
 
-			Assert.IsTrue(result == "dotNetTips.Utility.Standard.Tester.Models.PersonProper");
+			Assert.IsTrue(result == "dotNetTips.Spargine.Tester.Models.PersonProper");
 
 			result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
 

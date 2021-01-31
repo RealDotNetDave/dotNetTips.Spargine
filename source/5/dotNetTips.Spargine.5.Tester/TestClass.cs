@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Tester
 
 			if (input is string || input.GetType().IsValueType)
 			{
-				message = $"{methodName}: {input:C}";
+				message = $"{methodName}: {input.ToString():C}";
 			}
 			else
 			{

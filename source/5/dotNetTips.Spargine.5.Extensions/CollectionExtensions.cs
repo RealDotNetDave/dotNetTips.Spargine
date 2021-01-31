@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> list, T item)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Encapsulation.TryValidateNullParam(list, nameof(list));
 
 			if (item == null)
 			{

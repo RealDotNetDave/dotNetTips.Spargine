@@ -6,9 +6,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyVersion>2021.1.27.44</AssemblyVersion>
+    <AssemblyVersion>2021.1.31.51</AssemblyVersion>
 
-    <FileVersion>2021.1.27.44</FileVersion>
+    <FileVersion>2021.1.31.51</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Tester\dotNetTips.Spargine.5.Tester.csproj" />
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj" />
   </ItemGroup>
 
 </Project>

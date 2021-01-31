@@ -73,9 +73,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
 			PersonProper nullPerson = null;
 
-			// Test Parameters
-			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => people.AddIfNotExists(RandomData.GeneratePerson<PersonProper>()));
-
 			// TEST
 			Assert.IsFalse(people.AddIfNotExists(nullPerson));
 

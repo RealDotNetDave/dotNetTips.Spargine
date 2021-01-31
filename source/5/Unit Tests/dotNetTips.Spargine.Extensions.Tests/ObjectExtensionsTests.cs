@@ -204,6 +204,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void PropertiesToStringTest()
 		{
 			var personRecord = RandomData.GeneratePersonCollection(1).First();
+
 			var propertiesTest = new PropertiesTest
 			{
 				Id = RandomData.GenerateKey(),

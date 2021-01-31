@@ -3,17 +3,18 @@
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2021.1.27.160</AssemblyVersion>
+		<AssemblyVersion>2021.1.31.170</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<Company>David McCarter - dotNetTips.com</Company>
+		<Configurations>Debug;Release</Configurations>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<DebugSymbols>true</DebugSymbols>
 		<Description>Core types for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.1.27.160</FileVersion>
+		<FileVersion>2021.1.31.170</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -40,6 +41,11 @@
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Core.xml</DocumentationFile>
 		<WarningLevel>5</WarningLevel>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <OutputPath>..\appbin\</OutputPath>
+	  <DocumentationFile>..\appbin\dotNetTips.Spargine.5.Core.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>

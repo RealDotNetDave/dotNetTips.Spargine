@@ -5,8 +5,8 @@
     <IsPackable>false</IsPackable>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2021.1.27.139</AssemblyVersion>
-    <FileVersion>2021.1.27.139</FileVersion>
+    <AssemblyVersion>2021.1.31.148</AssemblyVersion>
+    <FileVersion>2021.1.31.148</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +21,7 @@
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
     <ProjectReference Include="..\..\dotNetTips.Spargine.5.Tester\dotNetTips.Spargine.5.Tester.csproj" />
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5\dotNetTips.Spargine.5.csproj" />
   </ItemGroup>
 
 </Project>

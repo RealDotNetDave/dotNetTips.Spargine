@@ -4,7 +4,7 @@
 // Created          : 12-29-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-05-2021
+// Last Modified On : 01-31-2021
 // ***********************************************************************
 // <copyright file="Coordinate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -61,7 +61,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="NotImplementedException"></exception>
 		public override bool Equals(object obj)
 		{
-			return ReferenceEquals(this, obj);
+			var thisObj = this;
+			return ReferenceEquals(objA: thisObj, objB: obj);
 		}
 
 		/// <summary>

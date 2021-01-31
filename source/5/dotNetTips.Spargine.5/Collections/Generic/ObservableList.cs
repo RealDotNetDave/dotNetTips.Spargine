@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-12-2021
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -29,14 +29,12 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 	/// Implements the <see cref="System.Collections.Generic.IReadOnlyCollection{T}" />
 	/// Implements the <see cref="System.Collections.Specialized.INotifyCollectionChanged" />
 	/// Implements the <see cref="System.ComponentModel.INotifyPropertyChanged" />
-	/// Implements the <see cref="System.ComponentModel.INotifyPropertyChanging" />
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <seealso cref="System.Collections.Generic.ISet{T}" />
 	/// <seealso cref="System.Collections.Generic.IReadOnlyCollection{T}" />
 	/// <seealso cref="System.Collections.Specialized.INotifyCollectionChanged" />
 	/// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
-	/// <seealso cref="System.ComponentModel.INotifyPropertyChanging" />
 	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 0, Status = Status.Available)]
 	public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollectionChanged, INotifyPropertyChanged, INotifyPropertyChanging
 	{

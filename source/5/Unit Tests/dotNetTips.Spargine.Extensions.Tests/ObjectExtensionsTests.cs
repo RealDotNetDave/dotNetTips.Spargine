@@ -29,7 +29,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	{
 		private readonly DataSet _dataSet = new DataSet("TEST");
 		private readonly DataSet[] _disposableObjArray = new DataSet[] { new DataSet(), new DataSet() };
-		private readonly string _testString;
 		private bool disposedValue;
 
 		// // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources

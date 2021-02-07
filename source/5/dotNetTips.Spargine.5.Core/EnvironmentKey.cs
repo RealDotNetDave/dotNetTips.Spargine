@@ -4,7 +4,7 @@
 // Created          : 10-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="EnvironmentKey.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core
 		FPS_BROWSER_USER_PROFILE_STRING,
 
 		/// <summary>
-		/// The fsharp install dir
+		/// The F# install dir
 		/// </summary>
 		FSHARPINSTALLDIR,
 
@@ -136,7 +136,7 @@ namespace dotNetTips.Spargine.Core
 		MSBuildLoadMicrosoftTargetsReadOnly,
 
 		/// <summary>
-		/// The msmpi bin
+		/// The MSMPI bin
 		/// </summary>
 		MSMPI_BIN,
 

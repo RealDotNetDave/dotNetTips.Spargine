@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-13-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="AddressRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using dotNetTips.Spargine.Core;
 
@@ -125,7 +126,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			{
 				if (string.IsNullOrEmpty(value))
 				{
-					ExceptionThrower.ThrowArgumentNullException(nameof(this.Address1), "Value for address cannot be null or empty.");
+					ExceptionThrower.ThrowArgumentNullException("Value for address cannot be null or empty.", nameof(this.Address1));
 				}
 
 				this._address1 = ( value.Length < 10 || value.Length > 256 ) ? throw new ArgumentOutOfRangeException(nameof(this.Address1), "Address must be between 10 - 256 characters.") : value;
@@ -269,7 +270,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the postal code.
 		/// </summary>
 		/// <value>The postal code.</value>
-		/// <exception cref="ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
+		/// <exception cref="ArgumentNullException">PostalCode cannot be null or empty.</exception>
 		public string PostalCode
 		{
 			get
@@ -308,160 +309,5 @@ namespace dotNetTips.Spargine.Tester.Models
 				this._state = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.State), "State  length is limited to 50 characters.") : value;
 			}
 		}
-
-		/// <summary>
-		/// Implements the op_GreaterThanOrEqual operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >=(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) >= 0;
-		}
-
-		/// <summary>
-		/// Implements the op_GreaterThan operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) > 0;
-		}
-
-		/// <summary>
-		/// Implements the op_LessThanOrEqual operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <=(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) <= 0;
-		}
-
-		/// <summary>
-		/// Implements the op_LessThan operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <(AddressRecord left, IAddressRecord right)
-		{
-			return left.CompareTo(right) < 0;
-		}
-
-		/// <summary>
-		/// Compares to.
-		/// </summary>
-		/// <param name="obj">The object.</param>
-		/// <returns>int.</returns>
-		/// <exception cref="ArgumentException">nameof(obj) + " is not a " + nameof(AddressRecord)</exception>
-		public int CompareTo(object obj)
-		{
-			if (obj is not AddressRecord)
-			{
-				throw new ArgumentException(nameof(obj) + " is not a " + nameof(AddressRecord));
-			}
-
-			return this.CompareTo((AddressRecord)obj);
-		}
-
-		/// <summary>
-		/// Compares to.
-		/// </summary>
-		/// <param name="other">The other.</param>
-		/// <returns>int.</returns>
-		public int CompareTo(IAddressRecord other)
-		{
-			if (other == null)
-			{
-				return 1;
-			}
-
-			var result = string.Compare(this._address1, other.Address1, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._address2, other.Address2, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-
-			result = string.Compare(this._city, other.City, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._state, other.State, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._country, other.Country, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._countyProvince, other.CountyProvince, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-
-			result = string.Compare(this._postalCode, other.PostalCode, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._phone, other.Phone, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			return result;
-		}
-
-		/// <summary>
-		/// Equals the specified other.
-		/// </summary>
-		/// <param name="other">The other.</param>
-		/// <returns>bool.</returns>
-		public bool Equals(IAddressRecord other)
-		{
-			if (other == null)
-			{
-				return false;
-			}
-
-			return ReferenceEquals(this, other);
-		}
-
-		/// <summary>
-		/// Gets the hash code.
-		/// </summary>
-		/// <returns>int.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.Id, this.Address1, this.Address2, this.City, this.Phone, this.PostalCode, this.Country, this.Phone);
-		}
-
-		/// <summary>
-		/// Converts to string.
-		/// </summary>
-		/// <returns>string.</returns>
-		public override string ToString() => $"{this.Address1} {this.Address2}, {this.City} {this.State}, {this.PostalCode}";
 	}
 }

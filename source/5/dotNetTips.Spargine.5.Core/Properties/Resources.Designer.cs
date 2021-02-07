@@ -277,6 +277,15 @@ namespace dotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Object validation failed..
+        /// </summary>
+        internal static string ObjectValidationFailed {
+            get {
+                return ResourceManager.GetString("ObjectValidationFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Parameter cannot be null..
         /// </summary>
         internal static string ParameterCannotBeNull {
@@ -387,10 +396,9 @@ namespace dotNetTips.Spargine.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to UNKNOWN.
         /// </summary>
-        internal static string UserUnknown
-		{
+        internal static string UserUnkown {
             get {
-                return ResourceManager.GetString("UserUnknown", resourceCulture);
+                return ResourceManager.GetString("UserUnkown", resourceCulture);
             }
         }
     }

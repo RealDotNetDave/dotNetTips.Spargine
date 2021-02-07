@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="DirectoryNotFoundException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -100,6 +100,5 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The directory.</value>
 		public string Directory { get; private set; }
-
 	}
 }

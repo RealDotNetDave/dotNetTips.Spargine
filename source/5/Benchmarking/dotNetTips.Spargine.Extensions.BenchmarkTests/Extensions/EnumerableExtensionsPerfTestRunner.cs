@@ -6,7 +6,7 @@ using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
-namespace dotNetTips.Spargine.BenchmarkTests.Extensions
+namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(nameof(EnumerableExtensions))]
 	public class EnumerableExtensionsPerfTestRunner : CollectionPerfTestRunner

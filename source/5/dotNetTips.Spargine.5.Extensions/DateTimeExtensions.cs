@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -14,7 +14,6 @@
 using System;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -284,7 +283,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
 		{
 			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
-			Encapsulation.TryValidateNullParam(format, nameof(format));
+			Validate.TryValidateNullParam(format, nameof(format));
 
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
 		}
@@ -317,7 +316,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
 		public static string ToFormattedString(this DateTimeOffset input, DateTimeFormat format)
 		{
-			Encapsulation.TryValidateNullParam(format, nameof(format));
+			Validate.TryValidateNullParam(format, nameof(format));
 
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
 		}

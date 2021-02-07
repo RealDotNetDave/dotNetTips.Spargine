@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -133,7 +133,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (value <= decimal.MinValue || value >= decimal.MaxValue)
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(value), Resources.ValueIsInvalid);
+				ExceptionThrower.ThrowArgumentNullException(Resources.ValueIsInvalid, nameof(value));
 			}
 
 			return Convert.ToInt32(Math.Round(value, mode));
@@ -164,7 +164,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (value <= decimal.MinValue || value >= decimal.MaxValue)
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(value), Resources.ValueIsInvalid);
+				ExceptionThrower.ThrowArgumentNullException(Resources.ValueIsInvalid, nameof(value));
 			}
 
 			return Convert.ToInt32(Math.Round(value, digits, mode));

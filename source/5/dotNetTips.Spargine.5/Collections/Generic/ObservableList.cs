@@ -4,14 +4,13 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -176,7 +175,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 
 			this._set.Clear();
 
-			this.OnCollectionChanged(ObservableHashSetSingletons._noItems, removed);
+			this.OnCollectionChanged(ObservableHashSetSingletons.NoItems, removed);
 
 			this.OnCountPropertyChanged();
 		}
@@ -234,7 +233,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 
 			this._set = copy;
 
-			this.OnCollectionChanged(ObservableHashSetSingletons._noItems, removed);
+			this.OnCollectionChanged(ObservableHashSetSingletons.NoItems, removed);
 
 			this.OnCountPropertyChanged();
 		}
@@ -267,7 +266,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 
 			this._set = copy;
 
-			this.OnCollectionChanged(ObservableHashSetSingletons._noItems, removed);
+			this.OnCollectionChanged(ObservableHashSetSingletons.NoItems, removed);
 
 			this.OnCountPropertyChanged();
 		}
@@ -356,7 +355,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 
 			this._set = copy;
 
-			this.OnCollectionChanged(ObservableHashSetSingletons._noItems, removed);
+			this.OnCollectionChanged(ObservableHashSetSingletons.NoItems, removed);
 
 			this.OnCountPropertyChanged();
 
@@ -425,7 +424,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 
 			this._set = copy;
 
-			this.OnCollectionChanged(added, ObservableHashSetSingletons._noItems);
+			this.OnCollectionChanged(added, ObservableHashSetSingletons.NoItems);
 
 			this.OnCountPropertyChanged();
 		}
@@ -470,12 +469,12 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 		/// <summary>
 		/// Called when [count property changed].
 		/// </summary>
-		private void OnCountPropertyChanged() => this.OnPropertyChanged(ObservableHashSetSingletons._countPropertyChanged);
+		private void OnCountPropertyChanged() => this.OnPropertyChanged(ObservableHashSetSingletons.CountPropertyChanged);
 
 		/// <summary>
 		/// Called when [count property changing].
 		/// </summary>
-		private void OnCountPropertyChanging() => this.OnPropertyChanging(ObservableHashSetSingletons._countPropertyChanging);
+		private void OnCountPropertyChanging() => this.OnPropertyChanging(ObservableHashSetSingletons.CountPropertyChanging);
 	}
 
 	/// <summary>
@@ -486,19 +485,36 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 		/// <summary>
 		/// The count property changed
 		/// </summary>
-		internal static readonly PropertyChangedEventArgs _countPropertyChanged
-			= new PropertyChangedEventArgs("Count");
+		private static readonly PropertyChangedEventArgs _countPropertyChanged
+			= new PropertyChangedEventArgs(propertyName: "Count");
 
 		/// <summary>
 		/// The count property changing
 		/// </summary>
-		internal static readonly PropertyChangingEventArgs _countPropertyChanging
-			= new PropertyChangingEventArgs("Count");
+		private static readonly PropertyChangingEventArgs _countPropertyChanging
+			= new PropertyChangingEventArgs(propertyName: "Count");
 
 		/// <summary>
 		/// The no items.
 		/// </summary>
-		internal static readonly object[] _noItems = Array.Empty<object>();
+		private static readonly object[] _noItems = Array.Empty<object>();
 
+		/// <summary>
+		/// Gets the count property changed.
+		/// </summary>
+		/// <value>The count property changed.</value>
+		internal static PropertyChangedEventArgs CountPropertyChanged => _countPropertyChanged;
+
+		/// <summary>
+		/// Gets the count property changing.
+		/// </summary>
+		/// <value>The count property changing.</value>
+		internal static PropertyChangingEventArgs CountPropertyChanging => _countPropertyChanging;
+
+		/// <summary>
+		/// Gets the no items.
+		/// </summary>
+		/// <value>The no items.</value>
+		internal static object[] NoItems => _noItems;
 	}
 }

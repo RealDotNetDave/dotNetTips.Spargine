@@ -4,9 +4,9 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
-// <copyright file="Encapsulation.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="Validate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Methods to validate parameters.</summary>
@@ -18,12 +18,12 @@ using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
-namespace dotNetTips.Spargine.Core.OOP
+namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Class to validate method parameters.
 	/// </summary>
-	public static class Encapsulation
+	public static class Validate
 	{
 		/// <summary>
 		/// Tries the validate if the object is null.
@@ -44,6 +44,31 @@ namespace dotNetTips.Spargine.Core.OOP
 		}
 
 		/// <summary>
+		/// Tries the validate an object.
+		/// </summary>
+		/// <typeparam name="TException">The type of the TException.</typeparam>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <param name="message">The message.</param>
+		[Information(nameof(TryValidateObject), "David McCarter", "2/1/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static void TryValidateObject<TException>(bool condition, string message = "")
+			where TException : Exception, new()
+		{
+			if (typeof(TException).Name == typeof(Exception).Name)
+			{
+				ExceptionThrower.ThrowArgumentInvalidException("Exception is not allowed to be used for this method. Please choose a more detailed Exception type.", nameof(TException));
+			}
+
+			if (condition is false)
+			{
+				message = CreateExceptionMessage(message, Resources.ObjectValidationFailed);
+
+				var ex = Activator.CreateInstance(typeof(TException), message).As<TException>();
+
+				throw ex;
+			}
+		}
+
+		/// <summary>
 		/// Tries the validate parameter.
 		/// </summary>
 		/// <typeparam name="TException">The type of the t exception.</typeparam>
@@ -57,7 +82,9 @@ namespace dotNetTips.Spargine.Core.OOP
 			if (condition is false)
 			{
 				message = CreateExceptionMessage(message, Resources.ParameterIsInvalid);
+
 				var ex = Activator.CreateInstance(typeof(TException), paramName, message).As<TException>();
+
 				throw ex;
 			}
 		}

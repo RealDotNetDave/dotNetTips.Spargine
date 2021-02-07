@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="ControlChars.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -118,7 +118,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// New line.
 		/// </summary>
-		public const string NewLine = "\r\n";
+		public const char NewLine = '\n';
 
 		/// <summary>
 		/// Null character.

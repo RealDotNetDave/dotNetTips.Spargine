@@ -4,7 +4,7 @@
 // Created          : 10-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -41,9 +41,9 @@ namespace dotNetTips.Spargine.Core
 		{
 			var enumType = typeof(T);
 
-			if (enumType == null)
+			if (enumType is null)
 			{
-				ExceptionThrower.ThrowInvalidEnumTypeException(string.Format(CultureInfo.CurrentCulture, "Failed to find type {0}", enumType.Name));
+				ExceptionThrower.ThrowInvalidEnumTypeException(string.Format(CultureInfo.CurrentCulture, format: "Failed to find type {0}", arg0: enumType.Name));
 			}
 
 			// Get the enum values
@@ -52,6 +52,8 @@ namespace dotNetTips.Spargine.Core
 			// Get list of names
 			// Add values to result
 			var result = new List<EnumValue>();
+
+
 
 			// TODO: This does not work if enums are not defined 0,1,2, etc
 			var enumNames = GetNames(enumType, fixNames, useXmlNames);
@@ -72,7 +74,7 @@ namespace dotNetTips.Spargine.Core
 		private static string AdjustCamelCase(string name)
 		{
 			const string ToTitleCase = @"(\B[A-Z])";
-			return Regex.Replace(name, ToTitleCase, " $1");
+			return Regex.Replace(name, ToTitleCase, replacement: " $1");
 		}
 
 		/// <summary>
@@ -100,8 +102,10 @@ namespace dotNetTips.Spargine.Core
 			var result = new List<string>();
 
 			// Enum names (text) are defined as fields for the type
-			foreach (var enumValue in t.GetFields(BindingFlags.Public | BindingFlags.Static))
+			for (var i = 0; i < t.GetFields(BindingFlags.Public | BindingFlags.Static).Length; i++)
 			{
+				var enumValue = t.GetFields(BindingFlags.Public | BindingFlags.Static)[i];
+
 				// If XML is specified and found, use this name
 				if (useXml)
 				{

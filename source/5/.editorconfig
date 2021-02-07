@@ -195,7 +195,8 @@ dotnet_diagnostic.AsyncifyVariable.severity                                 = er
 # MA0022: Return Task.FromResult instead of returning null
 dotnet_diagnostic.MA0022.severity                                           = error
 
-# RCS1210: Return Task.FromResult instead of returning null.
+# RCS1210:
+.FromResult instead of returning null.
 dotnet_diagnostic.RCS1210.severity                                          = error
 
 # VSTHRD114: Avoid returning a null Task

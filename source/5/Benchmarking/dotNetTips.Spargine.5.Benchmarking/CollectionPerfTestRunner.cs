@@ -10,7 +10,7 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Benchmarking
 {
-	[ConcurrencyVisualizerProfiler()]
+	//[ConcurrencyVisualizerProfiler()]
 	public abstract class CollectionPerfTestRunner : PerfTestRunner
 	{
 		protected byte[] byteArray;

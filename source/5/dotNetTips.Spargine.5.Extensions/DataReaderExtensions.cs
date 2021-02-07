@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -36,7 +35,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToCsv), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<string> ToCsv(this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateNullParam(dataReader, nameof(dataReader));
+			Validate.TryValidateNullParam(dataReader, nameof(dataReader));
 
 			var convertedRows = new List<string>();
 

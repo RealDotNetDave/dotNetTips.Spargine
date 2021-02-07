@@ -1,8 +1,23 @@
-﻿using System.Data;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.BenchmarkTests
+// Author           : David McCarter
+// Created          : 01-09-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-02-2021
+// ***********************************************************************
+// <copyright file="ObjectExtensionsPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Data;
 using BenchmarkDotNet.Attributes;
+using dotNetTips.Spargine.Benchmarking;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 
-
-namespace dotNetTips.Spargine.BenchmarkTests.Extensions
+namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(nameof(ObjectExtensions))]
 	public class ObjectExtensionsPerfTestRunner : PerfTestRunner
@@ -27,13 +42,13 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ObjectExtensions.ComputeMD5Hash))]
-		public void ComputeMD5Hash()
-		{
-			var result = this._person.ComputeMD5Hash();
+		//[Benchmark(Description = nameof(ObjectExtensions.ComputeMD5Hash))]
+		//public void ComputeMD5Hash()
+		//{
+		//	var result = this._person.ComputeMD5Hash();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ComputeSha256Hash))]
 		public void ComputeSha256Hash()
@@ -46,18 +61,18 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 		[Benchmark(Description = nameof(ObjectExtensions.DisposeFields))]
 		public void DisposeFields()
 		{
-			DataTable disposableType = new DataTable("TEST");
+			var disposableType = new DataTable("TEST");
 
 			disposableType.DisposeFields();
 		}
 
-		[Benchmark(Description = nameof(ObjectExtensions.FromJson))]
-		public void FromJson()
-		{
-			var result = this._peopleJson.FromJson<PersonProper>();
+		//[Benchmark(Description = nameof(ObjectExtensions.FromJson))]
+		//public void FromJson()
+		//{
+		//	var result = this._peopleJson.FromJson<PersonProper>();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
 		[Benchmark(Description = nameof(ObjectExtensions.HasProperty))]
 		public void HasProperty()
@@ -110,7 +125,7 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 		[Benchmark(Description = nameof(ObjectExtensions.TryDispose))]
 		public void TryDispose()
 		{
-			DataTable disposableType = new DataTable("TEST");
+			var disposableType = new DataTable("TEST");
 
 			disposableType.TryDispose();
 		}

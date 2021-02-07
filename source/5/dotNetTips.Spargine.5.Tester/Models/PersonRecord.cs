@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-05-2021
+// Last Modified On : 01-31-2021
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,11 @@ namespace dotNetTips.Spargine.Tester.Models
 	[DebuggerDisplay("{Email}")]
 	public record PersonRecord : IPersonRecord
 	{
+
+		/// <summary>
+		/// The addresses
+		/// </summary>
+		private List<IAddressRecord> _addresses;
 		/// <summary>
 		/// The born on
 		/// </summary>
@@ -79,6 +84,22 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// </summary>
 		private PersonRecord()
 		{ }
+
+		/// <summary>
+		/// Gets or sets the addresses.
+		/// </summary>
+		/// <value>The addresses.</value>
+		public List<IAddressRecord> Addresses
+		{
+			get
+			{
+				return this._addresses;
+			}
+			init
+			{
+				this._addresses = value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the born on date.
@@ -234,166 +255,5 @@ namespace dotNetTips.Spargine.Tester.Models
 				this._lastName = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.LastName), "Last name length is limited to 50 characters.") : value;
 			}
 		}
-
-		/// <summary>
-		/// The addresses
-		/// </summary>
-		private List<IAddressRecord> _addresses;
-
-		/// <summary>
-		/// Gets or sets the addresses.
-		/// </summary>
-		/// <value>The addresses.</value>
-		public List<IAddressRecord> Addresses
-		{
-			get
-			{
-				return this._addresses;
-			}
-			init
-			{
-				this._addresses = value;
-			}
-		}
-
-		/// <summary>
-		/// Gets the hash code.
-		/// </summary>
-		/// <returns>int.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.Email, this.Id);
-		}
-
-		/// <summary>
-		/// Converts to string.
-		/// </summary>
-		/// <returns>string.</returns>
-		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
-
-
-		/// <summary>
-		/// Compares to.
-		/// </summary>
-		/// <param name="obj">The object.</param>
-		/// <returns>int.</returns>
-		/// <exception cref="ArgumentException">nameof(obj) + " is not a " + nameof(IPersonRecord)</exception>
-		public int CompareTo(object obj)
-		{
-			if (obj is not IPersonRecord)
-			{
-				throw new ArgumentException(nameof(obj) + " is not a " + nameof(IPersonRecord));
-			}
-
-			return this.CompareTo((IPersonRecord)obj);
-		}
-
-		/// <summary>
-		/// Compares to.
-		/// </summary>
-		/// <param name="other">The other.</param>
-		/// <returns>int.</returns>
-		public int CompareTo(IPersonRecord other)
-		{
-			if (other is null)
-			{
-				return 1;
-			}
-
-			var result = 0;
-
-
-			result = this._bornOn.CompareTo(other.BornOn);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._cellPhone, other.CellPhone, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._email, other.Email, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._firstName, other.FirstName, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._homePhone, other.HomePhone, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._id, other.Id, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this._lastName, other.LastName, StringComparison.OrdinalIgnoreCase);
-			if (result != 0)
-			{
-				return result;
-			}
-
-			return result;
-		}
-
-		/// <summary>
-		/// Equals.
-		/// </summary>
-		/// <param name="other">The other.</param>
-		/// <returns>bool.</returns>
-		public bool Equals(IPersonRecord other)
-		{
-			if (other == null)
-			{
-				return false;
-			}
-
-			return ReferenceEquals(this, other);
-		}
-
-		/// <summary>
-		/// Implements the &gt;= operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >=(PersonRecord left, PersonRecord right) => left is null ? right is null : left.CompareTo(right) >= 0;
-
-		/// <summary>
-		/// Implements the &gt; operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator >(PersonRecord left, PersonRecord right) => left is object && left.CompareTo(right) > 0;
-
-
-		/// <summary>
-		/// Implements the &lt;= operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <=(PersonRecord left, PersonRecord right) => left is null || left.CompareTo(right) <= 0;
-
-		/// <summary>
-		/// Implements the &lt; operator.
-		/// </summary>
-		/// <param name="left">The left.</param>
-		/// <param name="right">The right.</param>
-		/// <returns>The result of the operator.</returns>
-		public static bool operator <(PersonRecord left, PersonRecord right) => left is null ? right is object : left.CompareTo(right) < 0;
 	}
 }

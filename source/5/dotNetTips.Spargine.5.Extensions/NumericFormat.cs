@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// Implements the <see cref="dotNetTips.Spargine.Core.Enumeration" />
 	/// </summary>
 	/// <seealso cref="dotNetTips.Spargine.Core.Enumeration" />
-	public class NumericFormat : Enumeration
+	public record NumericFormat : Enumeration
 	{
 
 		/// <summary>
@@ -68,11 +68,6 @@ namespace dotNetTips.Spargine.Extensions
 		/// Custom format. Example:  8.988465674311579E+307
 		/// </summary>
 		public static readonly NumericFormat RoundTrip = new NumericFormat(8, "R");
-
-		/// <summary>
-		/// Prevents a default instance of the <see cref="NumericFormat" /> class from being created.
-		/// </summary>
-		private NumericFormat() { }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NumericFormat" /> class.

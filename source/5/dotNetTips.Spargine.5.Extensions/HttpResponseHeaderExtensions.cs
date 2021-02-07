@@ -4,7 +4,7 @@
 // Created          : 07-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-22-2020
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="HttpResponseHeaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System.Net;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -25,6 +24,9 @@ namespace dotNetTips.Spargine.Extensions
 	public static class HttpResponseHeaderExtensions
 	{
 
+		/// <summary>
+		/// The header names
+		/// </summary>
 		private static readonly string[] _headerNames = {
 			"Cache-Control",
 			"Connection",
@@ -66,7 +68,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GetName(this HttpResponseHeader header)
 		{
-			Encapsulation.TryValidateNullParam(header, nameof(header));
+			Validate.TryValidateNullParam(header, nameof(header));
 
 			return _headerNames[(int)header];
 		}

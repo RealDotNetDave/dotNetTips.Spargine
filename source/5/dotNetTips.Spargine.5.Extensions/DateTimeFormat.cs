@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// Implements the <see cref="dotNetTips.Spargine.Core.Enumeration" />
 	/// </summary>
 	/// <seealso cref="dotNetTips.Spargine.Core.Enumeration" />
-	public class DateTimeFormat : Enumeration
+	public record DateTimeFormat : Enumeration
 	{
 
 		/// <summary>
@@ -107,11 +107,6 @@ namespace dotNetTips.Spargine.Extensions
 		/// Custom format. Example: Monday, December 21, 2020 11:16:12 PM
 		/// </summary>
 		public static readonly DateTimeFormat UniversalFullDateTime = new DateTimeFormat(15, "U");
-
-		/// <summary>
-		/// Prevents a default instance of the <see cref="DateTimeFormat" /> class from being created.
-		/// </summary>
-		private DateTimeFormat() { }
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DateTimeFormat" /> class.

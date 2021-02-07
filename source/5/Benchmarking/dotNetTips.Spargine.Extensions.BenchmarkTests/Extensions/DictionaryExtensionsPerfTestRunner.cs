@@ -1,11 +1,23 @@
-﻿using System.Linq;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.BenchmarkTests
+// Author           : David McCarter
+// Created          : 01-09-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-02-2021
+// ***********************************************************************
+// <copyright file="DictionaryExtensionsPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
-using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
-namespace dotNetTips.Spargine.BenchmarkTests.Extensions
+namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(nameof(DictionaryExtensions))]
 	public class DictionaryExtensionsPerfTestRunner : CollectionPerfTestRunner

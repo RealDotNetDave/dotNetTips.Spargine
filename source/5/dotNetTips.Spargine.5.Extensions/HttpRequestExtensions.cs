@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -17,7 +17,6 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using Microsoft.AspNetCore.Http;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -37,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">request</exception>
 		public static async Task<byte[]> GetRawBodyBytesAsync(this HttpRequest request)
 		{
-			Encapsulation.TryValidateNullParam(request, nameof(request));
+			Validate.TryValidateNullParam(request, nameof(request));
 
 			using var ms = new MemoryStream(2048);
 			await request.Body.CopyToAsync(ms).ConfigureAwait(true);
@@ -55,7 +54,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="System.ArgumentNullException">request</exception>
 		public static async Task<string> GetRawBodyStringAsync(this HttpRequest request, Encoding encoding)
 		{
-			Encapsulation.TryValidateNullParam(request, nameof(request));
+			Validate.TryValidateNullParam(request, nameof(request));
 
 			if (encoding is null)
 			{
@@ -78,7 +77,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>Original code by Jerry Nixon</remarks>
 		public static bool TryGetBody<T>(this HttpRequest request, out T value)
 		{
-			Encapsulation.TryValidateNullParam(request, nameof(request));
+			Validate.TryValidateNullParam(request, nameof(request));
 
 			if (!request.TryGetBody(out var bytes))
 			{
@@ -112,7 +111,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>Original code by Jerry Nixon</remarks>
 		public static bool TryGetBody(this HttpRequest request, out byte[] value)
 		{
-			Encapsulation.TryValidateNullParam(request, nameof(request));
+			Validate.TryValidateNullParam(request, nameof(request));
 
 			try
 			{

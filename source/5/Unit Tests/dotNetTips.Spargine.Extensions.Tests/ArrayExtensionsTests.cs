@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Tester;
@@ -19,91 +20,112 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class ArrayExtensionsTests
-    {
-        [TestMethod]
-        public void AddFirstTest()
-        {
-            var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-            var person = RandomData.GeneratePerson<PersonProper>();
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class ArrayExtensionsTests
+	{
+		[TestMethod]
+		public void AddFirstTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-            var result = people.AddFirst(person);
+			var result = people.AddFirst(person);
 
-            Assert.IsTrue(result.Count() == 11);
-            Assert.IsTrue(result.First() == person);
+			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.First() == person);
 
-            Assert.IsTrue(result.AddFirst(null).Count() == 11);
-        }
+			Assert.IsTrue(result.AddFirst(null).Count() == 11);
+		}
 
-        [TestMethod]
-        public void AddLastTest()
-        {
-            var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-            var person = RandomData.GeneratePerson<PersonProper>();
+		[TestMethod]
+		public void AddLastTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-            var result = people.AddLast(person);
+			var result = people.AddLast(person);
 
-            Assert.IsTrue(result.Count() == 11);
-            Assert.IsTrue(result.Last() == person);
+			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.Last() == person);
 
-            Assert.IsTrue(result.AddLast(null).Count() == 11);
-        }
+			Assert.IsTrue(result.AddLast(null).Count() == 11);
+		}
 
-        [TestMethod]
-        public void AreEqualTest()
-        {
-            var people1 = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-            var people2 = people1;
-            var people3 = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+		[TestMethod]
+		public void AreEqualTest()
+		{
+			var people1 = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var people2 = people1;
+			var people3 = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 
 
-            Assert.IsFalse(people1.AreEqual(people3));
+			Assert.IsFalse(people1.AreEqual(people3));
 
-            Assert.IsTrue(people1.AreEqual(people2));
-        }
+			Assert.IsTrue(people1.AreEqual(people2));
 
-        [TestMethod]
-        public void BytesToStringTest()
-        {
-            var bytes = RandomData.GenerateByteArray(100);
+			Assert.IsFalse(people1.AreEqual(arrayToCheck: null));
+		}
 
-            var result = bytes.BytesToString();
+		[TestMethod]
+		public void BytesToStringTest()
+		{
+			var bytes = RandomData.GenerateByteArray(100);
 
-            Assert.IsTrue(result.Length > 20000);
-        }
+			var result = bytes.BytesToString();
 
-        [TestMethod]
-        public void CloneTest()
-        {
-            var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			Assert.IsTrue(result.Length > 20000);
 
-            var result = people.Clone<PersonProper>();
+			byte[] nullBytes = null;
 
-            Assert.IsTrue(people.AreEqual(result));
-        }
+			Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+		}
 
-        [TestMethod]
-        public void ContainsAnyTest()
-        {
-            var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-            var person = RandomData.GeneratePerson<PersonProper>();
+		[TestMethod]
+		public void CloneTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 
-            Assert.IsFalse(people.ContainsAny(person));
+			var result = people.Clone<PersonProper>();
 
-            Assert.IsTrue(people.ContainsAny(people.Last())); ;
+			Assert.IsTrue(people.AreEqual(result));
+		}
 
-        }
+		[TestMethod]
+		public void ContainsAnyTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-        [TestMethod]
-        public void ToDistinctTest()
-        {
-            var people = RandomData.GenerateWords(10, 10, 100).ToArray();
+			Assert.IsFalse(people.ContainsAny(person));
 
-            people = people.AddLast(people.First());
+			Assert.IsTrue(people.ContainsAny(people.Last()));
 
-            Assert.IsTrue(people.ToDistinct().Count() == 10);
-        }
-    }
+			PersonProper[] nullPerson = null;
+
+			Assert.IsFalse(people.ContainsAny(nullPerson));
+
+		}
+
+		[TestMethod]
+		public void RemoveDuplicatesTest()
+		{
+			var numbers = new int[] { 1, 2, 3, 4, 5, 10, 5 };
+
+			var result = numbers.RemoveDuplicates();
+
+			Assert.IsTrue(result.Count() == numbers.Length - 1);
+
+		}
+
+		[TestMethod]
+		public void ToDistinctTest()
+		{
+			var people = RandomData.GenerateWords(10, 10, 100).ToArray();
+
+			people = people.AddLast(people.First());
+
+			Assert.IsTrue(people.ToDistinct().Count() == 10);
+		}
+	}
 }

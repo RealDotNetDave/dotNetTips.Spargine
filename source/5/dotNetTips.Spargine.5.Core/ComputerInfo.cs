@@ -4,7 +4,7 @@
 // Created          : 10-15-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="ComputerInfo.cs" company="dotNetTips.com - McCarter Consulting">
 //     dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The computer culture.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string ComputerCulture { get; internal set; } = CultureInfo.CurrentCulture.ThreeLetterISOLanguageName;
+		public string ComputerCulture { get; private set; } = CultureInfo.CurrentCulture.ThreeLetterISOLanguageName;
 
 		/// <summary>
 		/// Gets the computer UI culture.
@@ -45,7 +45,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The computer UI culture.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string ComputerUICulture { get; internal set; } = CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName;
+		public string ComputerUICulture { get; private set; } = CultureInfo.CurrentUICulture.ThreeLetterISOLanguageName;
 
 		/// <summary>
 		/// Gets the current managed tread identifier.
@@ -53,7 +53,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The current managed tread identifier.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public int CurrentManagedTreadId { get; internal set; } = Environment.CurrentManagedThreadId;
+		public int CurrentManagedTreadId { get; private set; } = Environment.CurrentManagedThreadId;
 
 		/// <summary>
 		/// Gets the current stack trace information.
@@ -61,7 +61,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The current stack trace.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string CurrentStackTrace { get; internal set; } = Environment.StackTrace;
+		public string CurrentStackTrace { get; private set; } = Environment.StackTrace;
 
 		/// <summary>
 		/// Gets the current system tick count.
@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The current system tick count.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public int CurrentSystemTickCount { get; internal set; } = Environment.TickCount;
+		public int CurrentSystemTickCount { get; private set; } = Environment.TickCount;
 
 		/// <summary>
 		/// Gets the current working directory.
@@ -77,7 +77,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The current directory.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string CurrentWorkingDirectory { get; internal set; } = Environment.CurrentDirectory;
+		public string CurrentWorkingDirectory { get; private set; } = Environment.CurrentDirectory;
 
 		/// <summary>
 		/// Gets the framework description.
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The framework description.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string FrameworkDescription { get; internal set; } = RuntimeInformation.FrameworkDescription;
+		public string FrameworkDescription { get; private set; } = RuntimeInformation.FrameworkDescription;
 
 		/// <summary>
 		/// Gets the framework version.
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The framework version.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public Version FrameworkVersion { get; internal set; } = Environment.Version;
+		public Version FrameworkVersion { get; private set; } = Environment.Version;
 
 		/// <summary>
 		/// Gets a value indicating whether this instance has shutdown started.
@@ -101,7 +101,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value><c>true</c> if this instance has shutdown started; otherwise, <c>false</c>.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public bool HasShutdownStarted { get; internal set; } = Environment.HasShutdownStarted;
+		public bool HasShutdownStarted { get; private set; } = Environment.HasShutdownStarted;
 
 		/// <summary>
 		/// Gets the ip addresses.
@@ -109,7 +109,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The ip address.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string IPAddress { get; internal set; } = Dns.GetHostAddresses(Dns.GetHostName()).Where(p => p.AddressFamily == AddressFamily.InterNetwork).ToList().ToDelimitedString(char.Parse(","));
+		public string IPAddress { get; private set; } = Dns.GetHostAddresses(Dns.GetHostName()).Where(p => p.AddressFamily == AddressFamily.InterNetwork).ToList().ToDelimitedString(char.Parse(","));
 
 		/// <summary>
 		/// Gets a value indicating whether [is64 bit operating system].
@@ -117,7 +117,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value><c>true</c> if [is64 bit operating system]; otherwise, <c>false</c>.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public bool Is64BitOperatingSystem { get; internal set; } = Environment.Is64BitOperatingSystem;
+		public bool Is64BitOperatingSystem { get; private set; } = Environment.Is64BitOperatingSystem;
 
 		/// <summary>
 		/// Gets a value indicating whether [is64 bit process].
@@ -125,7 +125,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value><c>true</c> if [is64 bit process]; otherwise, <c>false</c>.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public bool Is64BitProcess { get; internal set; } = Environment.Is64BitProcess;
+		public bool Is64BitProcess { get; private set; } = Environment.Is64BitProcess;
 
 		/// <summary>
 		/// Gets a value indicating whether the user is interactive.
@@ -133,7 +133,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value><c>true</c> if this instance is user interactive; otherwise, <c>false</c>.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public bool IsUserInteractive { get; internal set; } = Environment.UserInteractive;
+		public bool IsUserInteractive { get; private set; } = Environment.UserInteractive;
 
 		/// <summary>
 		/// Gets the logical drives.
@@ -141,7 +141,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The logical drives.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public IEnumerable<string> LogicalDrives { get; internal set; } = Environment.GetLogicalDrives().AsEnumerable();
+		public IEnumerable<string> LogicalDrives { get; private set; } = Environment.GetLogicalDrives().AsEnumerable();
 
 		/// <summary>
 		/// Gets the name of the machine.
@@ -149,7 +149,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The name of the machine.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string MachineName { get; internal set; } = Environment.MachineName;
+		public string MachineName { get; private set; } = Environment.MachineName;
 
 		/// <summary>
 		/// Gets the os architecture.
@@ -157,7 +157,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The os architecture.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public Architecture OSArchitecture { get; internal set; } = RuntimeInformation.OSArchitecture;
+		public Architecture OSArchitecture { get; private set; } = RuntimeInformation.OSArchitecture;
 
 		/// <summary>
 		/// Gets the os version.
@@ -165,8 +165,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The os version.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string OSDescription { get; internal set; } = RuntimeInformation.OSDescription;
-
+		public string OSDescription { get; private set; } = RuntimeInformation.OSDescription;
 
 		/// <summary>
 		/// Gets the size of the os memory page.
@@ -174,7 +173,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The size of the os memory page.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public int OsMemoryPageSize { get; internal set; } = Environment.SystemPageSize;
+		public int OsMemoryPageSize { get; private set; } = Environment.SystemPageSize;
 
 		/// <summary>
 		/// Gets the physical memory in use.
@@ -182,7 +181,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The physical memory in use.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public long PhysicalMemoryInUse { get; internal set; } = Environment.WorkingSet;
+		public long PhysicalMemoryInUse { get; private set; } = Environment.WorkingSet;
 
 		/// <summary>
 		/// Gets the process architecture.
@@ -190,7 +189,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The process architecture.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public Architecture ProcessArchitecture { get; internal set; } = RuntimeInformation.ProcessArchitecture;
+		public Architecture ProcessArchitecture { get; private set; } = RuntimeInformation.ProcessArchitecture;
 
 		/// <summary>
 		/// Gets the processor count.
@@ -198,7 +197,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The processor count.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public int ProcessorCount { get; internal set; } = Environment.ProcessorCount;
+		public int ProcessorCount { get; private set; } = Environment.ProcessorCount;
 
 		/// <summary>
 		/// Gets the system directory.
@@ -206,7 +205,31 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The system directory.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string SystemDirectory { get; internal set; } = Environment.SystemDirectory;
+		public string SystemDirectory { get; private set; } = Environment.SystemDirectory;
+
+		/// <summary>
+		/// Gets the size of the system page.
+		/// </summary>
+		/// <value>The size of the system page.</value>
+		[DataMember]
+		[Information(UnitTestCoverage = 0, Status = Status.New)]
+		public int SystemPageSize { get; private set; } = Environment.SystemPageSize;
+
+		/// <summary>
+		/// Gets the tick count.
+		/// </summary>
+		/// <value>The tick count.</value>
+		[DataMember]
+		[Information(UnitTestCoverage = 0, Status = Status.New)]
+		public int TickCount { get; private set; } = Environment.TickCount;
+
+		/// <summary>
+		/// Gets the tick count as long.
+		/// </summary>
+		/// <value>The tick count as long.</value>
+		[DataMember]
+		[Information(UnitTestCoverage = 0, Status = Status.New)]
+		public long TickCount64 { get; private set; } = Environment.TickCount64;
 
 		/// <summary>
 		/// Gets the name of the user domain.
@@ -214,7 +237,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The name of the user domain.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string UserDomainName { get; internal set; } = Environment.UserDomainName;
+		public string UserDomainName { get; private set; } = Environment.UserDomainName;
 
 		/// <summary>
 		/// Gets the name of the user.
@@ -222,6 +245,6 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The name of the user.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string UserName { get; internal set; } = Environment.UserName;
+		public string UserName { get; private set; } = Environment.UserName;
 	}
 }

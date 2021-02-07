@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="ProcessExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 using Microsoft.Extensions.Logging;
 
@@ -37,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void EnsureHighPriority(this Process process, ILogger logger)
 		{
-			Encapsulation.TryValidateNullParam(process, nameof(process));
+			Validate.TryValidateNullParam(process, nameof(process));
 
 			try
 			{
@@ -58,7 +57,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void EnsureLowPriority(this Process process, ILogger logger)
 		{
-			Encapsulation.TryValidateNullParam(process, nameof(process));
+			Validate.TryValidateNullParam(process, nameof(process));
 
 			try
 			{
@@ -155,8 +154,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TrySetPriority(this Process process, ProcessPriorityClass priority, ILogger logger)
 		{
-			Encapsulation.TryValidateNullParam(process, nameof(process));
-			Encapsulation.TryValidateParam(priority, nameof(priority));
+			Validate.TryValidateNullParam(process, nameof(process));
+			Validate.TryValidateParam(priority, nameof(priority));
 
 			try
 			{

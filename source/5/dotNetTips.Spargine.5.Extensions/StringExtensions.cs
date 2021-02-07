@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -19,7 +19,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -40,8 +39,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "1/9/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ComputeHash(this string input, HashType hashType = HashType.SHA256)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
-			Encapsulation.TryValidateParam(hashType, nameof(hashType));
+			Validate.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(hashType, nameof(hashType));
 
 			var hash = GetHash(input, hashType);
 
@@ -64,7 +63,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ComputeSHA256Hash), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ComputeSHA256Hash(this string input)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			// Create a SHA256
 			using var sha256Hash = SHA256.Create();
@@ -88,7 +87,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Concat), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
 		public static string Concat(this string input, string delimiter, Tristate addLineFeed, params string[] args)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			delimiter = delimiter.DefaultIfNull();
 
@@ -126,7 +125,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ContainsAny), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool ContainsAny(this string input, params string[] characters)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			if (characters.Length == 0)
 			{
@@ -181,7 +180,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(DelimitedStringToArray), "David McCarter", "8/13/2020", "8/13/2020", UnitTestCoverage = 99, Status = Status.Available)]
 		public static string[] DelimitedStringToArray(this string input, char delimiter = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			if (delimiter.IsNull())
 			{
@@ -283,7 +282,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input, int length)
 		{
-			Encapsulation.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
+			Validate.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
 
 			return input != null && ( input.Trim().Length == length );
 		}
@@ -298,7 +297,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input, string value)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			return input != null && ( input.Trim() == value.Trim() );
 		}
@@ -333,8 +332,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool HasValue(this string input, int minLength, int maxLength)
 		{
-			Encapsulation.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
-			Encapsulation.TryValidateParam(maxLength, minimumValue: minLength, maximumValue: int.MaxValue, nameof(maxLength));
+			Validate.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
+			Validate.TryValidateParam(maxLength, minimumValue: minLength, maximumValue: int.MaxValue, nameof(maxLength));
 
 			return input != null && input.Length.IsInRange(minLength, maxLength);
 		}
@@ -351,8 +350,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Indent), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string Indent(this string input, int length, char indentationCharacter)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() == false, nameof(length));
+			Validate.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() == false, nameof(length));
 
 			var sb = TypeHelper.CreateStringBuilder();
 
@@ -556,6 +555,23 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Removes the CR/LF from the end of a <see cref="string" />.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="replacement">The replacement.</param>
+		/// <returns>System.String.</returns>
+		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 0, Status = Status.New)]
+		public static string RemoveCRLF(this string input, string replacement = "")
+		{
+			if (input.IsNullOrEmpty())
+			{
+				return input;
+			}
+
+			return Regex.Replace(input, @"[\r\n]+", replacement, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+		}
+
+		/// <summary>
 		/// Changes the trailing ellipsis in a string to a period.
 		/// </summary>
 		/// <param name="input">The input.</param>
@@ -591,7 +607,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, char separator = ControlChars.Comma, StringSplitOptions options = StringSplitOptions.None)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			return input.Split(new[] { separator }, options);
 		}
@@ -608,8 +624,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string[] Split(this string input, string separator = ControlChars.DefaultSeparator, StringSplitOptions options = StringSplitOptions.None)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
-			Encapsulation.TryValidateParam(separator, nameof(separator));
+			Validate.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(separator, nameof(separator));
 
 			return input.Split(new[] { separator }, options);
 		}
@@ -627,8 +643,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, int count, char separator = ControlChars.Comma, StringSplitOptions options = StringSplitOptions.None)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
-			Encapsulation.TryValidateParam(count, count = 1, paramName: nameof(count));
+			Validate.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -646,8 +662,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, int count, string separator = ControlChars.DefaultSeparator, StringSplitOptions options = StringSplitOptions.None)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
-			Encapsulation.TryValidateParam(count, count = 1, paramName: nameof(count));
+			Validate.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -662,7 +678,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(SplitRemoveEmpty), UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<string> SplitRemoveEmpty(this string input)
 		{
-			Encapsulation.TryValidateParam(input, nameof(input));
+			Validate.TryValidateParam(input, nameof(input));
 
 			return input.Trim().Split(new char[] { ControlChars.Comma }, options: StringSplitOptions.RemoveEmptyEntries);
 		}

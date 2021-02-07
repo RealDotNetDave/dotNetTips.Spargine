@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,7 +14,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core.Collections
@@ -63,7 +62,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static Collection<T> Create(int capacity)
 		{
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0, nameof(capacity));
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0, nameof(capacity));
 
 			return new Collection<T>(capacity);
 		}
@@ -89,7 +88,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)
 		{
-			Encapsulation.TryValidateParam(items, nameof(items));
+			Validate.TryValidateParam(items, nameof(items));
 
 			var newItems = new Collection<T>();
 
@@ -116,7 +115,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddFirst(T item)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			return Extensions.AddFirst(this, item);
 		}
@@ -129,7 +128,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddIfNotExists(T item)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
 
 			return Extensions.AddIfNotExists(this, item);
 		}
@@ -142,7 +141,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddLast(T item)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
 
 			return Extensions.AddLast(this, item);
 		}

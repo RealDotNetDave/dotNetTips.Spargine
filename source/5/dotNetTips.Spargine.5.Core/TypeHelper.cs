@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,9 +18,9 @@ using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
-using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.ObjectPool;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -127,7 +127,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(Type baseType, Tristate classOnly)
 		{
-			Encapsulation.TryValidateNullParam(baseType, nameof(baseType));
+			Validate.TryValidateNullParam(baseType, nameof(baseType));
 
 			var path = Path.GetDirectoryName(AppContext.BaseDirectory);
 
@@ -145,8 +145,8 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(AppDomain currentDomain, Type baseType, Tristate classOnly)
 		{
-			Encapsulation.TryValidateNullParam(currentDomain, nameof(currentDomain));
-			Encapsulation.TryValidateNullParam(baseType, nameof(baseType));
+			Validate.TryValidateNullParam(currentDomain, nameof(currentDomain));
+			Validate.TryValidateNullParam(baseType, nameof(baseType));
 
 			List<Type> types = null;
 
@@ -186,8 +186,8 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(string path, SearchOption fileSearchType, Type baseType, Tristate classOnly)
 		{
-			Encapsulation.TryValidateParam(path, nameof(path), "Must pass in path and file name to the assembly.");
-			Encapsulation.TryValidateNullParam(baseType, nameof(baseType), "Parent Type must be defined");
+			Validate.TryValidateParam(path, nameof(path), message: "Must pass in path and file name to the assembly.");
+			Validate.TryValidateNullParam(baseType, nameof(baseType), "Parent Type must be defined");
 
 			if (Directory.Exists(path) == false)
 			{
@@ -226,7 +226,7 @@ namespace dotNetTips.Spargine.Core
 		public static T FromJson<T>(string json)
 			where T : class
 		{
-			Encapsulation.TryValidateParam(json, nameof(json));
+			Validate.TryValidateParam(json, nameof(json));
 
 			return JsonSerializer.Deserialize<T>(json);
 		}
@@ -274,7 +274,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static int GetInstanceHashCode(object instance)
 		{
-			Encapsulation.TryValidateNullParam(instance, nameof(instance));
+			Validate.TryValidateNullParam(instance, nameof(instance));
 
 			var hash = instance.GetType().GetRuntimeProperties().Where(p => p != null).Select(prop => prop.GetValue(instance)).Where(value => value != null).Aggregate(-1, (accumulator, value) => accumulator ^ value.GetHashCode());
 
@@ -308,7 +308,7 @@ namespace dotNetTips.Spargine.Core
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Encapsulation.TryValidateNullParam(input, nameof(input));
+			Validate.TryValidateNullParam(input, nameof(input));
 
 			var returnValue = new Dictionary<string, string>();
 
@@ -351,7 +351,7 @@ namespace dotNetTips.Spargine.Core
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string GetTypeDisplayName(object item, bool fullName = true)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			return item == null ? null : GetTypeDisplayName(item.GetType(), fullName);
 		}
@@ -369,7 +369,7 @@ namespace dotNetTips.Spargine.Core
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 90, Status = Status.Available)]
 		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = ControlChars.Plus)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			var sb = TypeHelper.CreateStringBuilder();
 

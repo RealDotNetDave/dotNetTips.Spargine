@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,7 +19,6 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Core.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -56,10 +55,11 @@ namespace dotNetTips.Spargine.Core
 				return false;
 			}
 
-			list.Insert(0, item);
+			list.Insert(index: 0, item);
 
 			return true;
 		}
+
 		/// <summary>
 		/// Adds if not exists.
 		/// </summary>
@@ -131,7 +131,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>T.</returns>
 		internal static T As<T>(this object obj)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			return (T)obj;
 		}
@@ -192,8 +192,8 @@ namespace dotNetTips.Spargine.Core
 				yield return null;
 			}
 
-			Encapsulation.TryValidateNullParam(canContinue, nameof(canContinue));
-			Encapsulation.TryValidateNullParam(nextItem, nameof(nextItem));
+			Validate.TryValidateNullParam(canContinue, nameof(canContinue));
+			Validate.TryValidateNullParam(nextItem, nameof(nextItem));
 
 			for (var current = source; canContinue(current); current = nextItem(current))
 			{
@@ -217,12 +217,13 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">exception</exception>
 		internal static string GetAllMessages(this Exception exception, char separator = ControlChars.Comma)
 		{
-			Encapsulation.TryValidateNullParam(exception, nameof(exception));
+			Validate.TryValidateNullParam(exception, nameof(exception));
 
 			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
 			return string.Join(separator, messages);
 		}
+
 		/// <summary>
 		/// Gets all properties.
 		/// </summary>
@@ -263,8 +264,8 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
 		internal static bool HasValue(this string input, int length)
 		{
-			Encapsulation.TryValidateParam(input, 0, int.MaxValue, nameof(input));
-			Encapsulation.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
+			Validate.TryValidateParam(input, minimumLength: 0, maximumLength: int.MaxValue, paramName: nameof(input));
+			Validate.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
 
 			return input != null && ( input.Trim().Length == length );
 		}
@@ -278,7 +279,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentException">value</exception>
 		internal static bool HasValue(this string input, string value)
 		{
-			Encapsulation.TryValidateNullParam(input, nameof(input));
+			Validate.TryValidateNullParam(input, nameof(input));
 
 			return input != null && ( input.Trim() == value.Trim() );
 		}
@@ -310,8 +311,8 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentOutOfRangeException">Min Length  or Max Length must be greater than 0.</exception>
 		internal static bool HasValue(this string input, int minLength, int maxLength)
 		{
-			Encapsulation.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(maxLength));
-			Encapsulation.TryValidateParam(maxLength, minimumValue: minLength, paramName: nameof(maxLength));
+			Validate.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(maxLength));
+			Validate.TryValidateParam(maxLength, minimumValue: minLength, paramName: nameof(maxLength));
 
 			return input != null && input.Length.IsInRange(minLength, maxLength);
 		}
@@ -388,7 +389,6 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="list">The list.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/05/2020")]
 		internal static string ToDelimitedString(this IDictionary list, char delimiter = ',')
 		{
 			if (string.IsNullOrEmpty(delimiter.ToString()))
@@ -425,7 +425,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		/// <exception cref="System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		internal static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ',')
+		internal static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
 			if (list?.Count() == 0)
 			{
@@ -447,6 +447,7 @@ namespace dotNetTips.Spargine.Core
 
 			return sb.ToString();
 		}
+
 		/// <summary>
 		/// To the immutable dictionary.
 		/// </summary>

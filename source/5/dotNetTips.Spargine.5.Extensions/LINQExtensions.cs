@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 08-18-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="LINQExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -39,8 +38,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
 		public static IQueryable<T> If<T>(this IQueryable<T> input, bool should, params Func<IQueryable<T>, IQueryable<T>>[] transforms)
 		{
-			Encapsulation.TryValidateNullParam(input, nameof(input));
-			Encapsulation.TryValidateNullParam(transforms, nameof(transforms));
+			Validate.TryValidateNullParam(input, nameof(input));
+			Validate.TryValidateNullParam(transforms, nameof(transforms));
 
 			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
 		}
@@ -56,8 +55,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
 		public static IEnumerable<T> If<T>(this IEnumerable<T> input, bool should, params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
 		{
-			Encapsulation.TryValidateNullParam(input, nameof(input));
-			Encapsulation.TryValidateNullParam(transforms, nameof(transforms));
+			Validate.TryValidateNullParam(input, nameof(input));
+			Validate.TryValidateNullParam(transforms, nameof(transforms));
 
 			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
 		}

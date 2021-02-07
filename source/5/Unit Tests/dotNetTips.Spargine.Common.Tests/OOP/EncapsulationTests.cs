@@ -19,7 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
+
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -40,12 +40,12 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 		{
 			PersonProper personProper = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateNullParam(personProper, nameof(personProper)));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateNullParam(personProper, nameof(personProper)));
 
 			try
 			{
 				personProper = RandomData.GeneratePerson<PersonProper>();
-				Encapsulation.TryValidateNullParam(personProper, nameof(personProper));
+				Validate.TryValidateNullParam(personProper, nameof(personProper));
 			}
 			catch
 			{
@@ -59,7 +59,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			try
 			{
 				var people = RandomData.GeneratePersonCollection<PersonProper>(10);
-				Encapsulation.TryValidateParam(people, nameof(people));
+				Validate.TryValidateParam(people, nameof(people));
 			}
 			catch
 			{
@@ -68,7 +68,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			// Test null collection
 			List<PersonProper> nullPeople = null;
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(nullPeople, "none"));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullPeople, "none"));
 
 		}
 
@@ -80,7 +80,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			try
 			{
 
-				Encapsulation.TryValidateParam(people, 10, nameof(people));
+				Validate.TryValidateParam(people, 10, nameof(people));
 			}
 			catch
 			{
@@ -89,10 +89,10 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			// Test null collection
 			List<PersonProper> nullPeople = null;
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(nullPeople, nameof(nullPeople)));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullPeople, nameof(nullPeople)));
 
 			// Test invalid Count
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(people, 5, nameof(people)));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(people, 5, nameof(people)));
 
 		}
 
@@ -103,14 +103,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(people.Count == 10, "None");
+				Validate.TryValidateParam<ArgumentOutOfRangeException>(people.Count == 10, "None");
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(people.Count == 100, "none"));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam<ArgumentOutOfRangeException>(people.Count == 100, "none"));
 		}
 
 		[TestMethod]
@@ -120,7 +120,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(testValue, 0, decimal.MaxValue, nameof(testValue));
+				Validate.TryValidateParam(testValue, 0, decimal.MaxValue, nameof(testValue));
 			}
 			catch
 			{
@@ -128,7 +128,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			// Test Exception
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testValue, 0, 100, nameof(testValue)));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testValue, 0, 100, nameof(testValue)));
 		}
 
 		[TestMethod]
@@ -139,7 +139,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(directoryInfo, "None");
+				Validate.TryValidateParam(directoryInfo, "None");
 			}
 			catch
 			{
@@ -147,9 +147,9 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			DirectoryInfo nullDirectoryInfo = null;
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(nullDirectoryInfo, "none"));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullDirectoryInfo, "none"));
 
-			Assert.ThrowsException<Spargine.Core.DirectoryNotFoundException>(() => Encapsulation.TryValidateParam(new DirectoryInfo("fakefile"), "none"));
+			Assert.ThrowsException<Spargine.Core.DirectoryNotFoundException>(() => Validate.TryValidateParam(new DirectoryInfo("fakefile"), "none"));
 		}
 
 		[TestMethod]
@@ -159,7 +159,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(testValue, 0, double.MaxValue, nameof(testValue));
+				Validate.TryValidateParam(testValue, 0, double.MaxValue, nameof(testValue));
 			}
 			catch
 			{
@@ -167,7 +167,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			// Test Exception
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testValue, 0, 100));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testValue, 0, 100));
 		}
 
 		[TestMethod]
@@ -177,14 +177,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(value, "none");
+				Validate.TryValidateParam(value, "none");
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam((BenchMarkStatus)100, "none"));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam((BenchMarkStatus)100, "none"));
 		}
 
 		[TestMethod]
@@ -196,7 +196,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(fileInfo, "None");
+				Validate.TryValidateParam(fileInfo, "None");
 			}
 			catch
 			{
@@ -204,9 +204,9 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			FileInfo nullFileInfo = null;
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(nullFileInfo, "none"));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullFileInfo, "none"));
 
-			Assert.ThrowsException<FileNotFoundException>(() => Encapsulation.TryValidateParam(new FileInfo("fakefile"), "none"));
+			Assert.ThrowsException<FileNotFoundException>(() => Validate.TryValidateParam(new FileInfo("fakefile"), "none"));
 		}
 
 		[TestMethod]
@@ -216,14 +216,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(value, "none");
+				Validate.TryValidateParam(value, "none");
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(Guid.Empty, "none"));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(Guid.Empty, "none"));
 		}
 
 		[TestMethod]
@@ -233,7 +233,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(testValue, 0, int.MaxValue, nameof(testValue));
+				Validate.TryValidateParam(testValue, 0, int.MaxValue, nameof(testValue));
 			}
 			catch
 			{
@@ -241,7 +241,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			// Test Exception
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testValue, 0, 100));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testValue, 0, 100));
 		}
 
 		[TestMethod]
@@ -251,7 +251,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(testValue, 0, long.MaxValue, nameof(testValue));
+				Validate.TryValidateParam(testValue, 0, long.MaxValue, nameof(testValue));
 			}
 			catch
 			{
@@ -259,7 +259,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			// Test Exception
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testValue, 0, 100));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testValue, 0, 100));
 		}
 
 		[TestMethod]
@@ -267,16 +267,16 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 		{
 			try
 			{
-				Encapsulation.TryValidateParam(_goodEmail, StringType.Email, 1, 100, nameof(_goodEmail));
+				Validate.TryValidateParam(_goodEmail, StringType.Email, 1, 100, nameof(_goodEmail));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(_goodEmail, StringType.Email, 100, 200, nameof(_goodEmail)));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(_goodEmail, StringType.Email, 100, 200, nameof(_goodEmail)));
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(_badEmail, StringType.Email, 1, 100, nameof(_badEmail)));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badEmail, StringType.Email, 1, 100, nameof(_badEmail)));
 
 		}
 
@@ -286,14 +286,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			var testString = RandomData.GenerateWord(100);
 			try
 			{
-				Encapsulation.TryValidateParam(testString, 1, 110, nameof(testString));
+				Validate.TryValidateParam(testString, 1, 110, nameof(testString));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testString, 1, 5, nameof(testString)));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testString, 1, 5, nameof(testString)));
 		}
 
 		[TestMethod]
@@ -303,7 +303,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(testString, StringType.NotSet, 0, 100, nameof(testString));
+				Validate.TryValidateParam(testString, StringType.NotSet, 0, 100, nameof(testString));
 			}
 			catch
 			{
@@ -311,7 +311,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(testString, StringType.NotSet, 0, 5, "none"));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(testString, StringType.NotSet, 0, 5, "none"));
 
 		}
 
@@ -322,14 +322,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(_goodEmail, expression, nameof(_goodEmail));
+				Validate.TryValidateParam(_goodEmail, expression, nameof(_goodEmail));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(_badEmail, expression, nameof(_badEmail)));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badEmail, expression, nameof(_badEmail)));
 
 		}
 
@@ -339,14 +339,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			var testString = RandomData.GenerateWord(100);
 			try
 			{
-				Encapsulation.TryValidateParam(testString, "none");
+				Validate.TryValidateParam(testString, "none");
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentNullException>(() => Encapsulation.TryValidateParam(string.Empty, "none"));
+			Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(string.Empty, "none"));
 		}
 
 		[TestMethod]
@@ -354,7 +354,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 		{
 			try
 			{
-				Encapsulation.TryValidateParam(_goodUrl, StringType.Url, 0, 100, nameof(_goodUrl));
+				Validate.TryValidateParam(_goodUrl, StringType.Url, 0, 100, nameof(_goodUrl));
 			}
 			catch
 			{
@@ -362,9 +362,9 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Encapsulation.TryValidateParam(_goodUrl, StringType.Url, 50, 100, "none"));
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(_goodUrl, StringType.Url, 50, 100, "none"));
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(_badUrl, StringType.Url, 0, 100, "none"));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badUrl, StringType.Url, 0, 100, "none"));
 		}
 
 
@@ -376,14 +376,14 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(personProper.GetType(), personProper.GetType(), nameof(personProper));
+				Validate.TryValidateParam(personProper.GetType(), personProper.GetType(), nameof(personProper));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(personProper.GetType(), personRecord.GetType(), nameof(personProper)));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(personProper.GetType(), personRecord.GetType(), nameof(personProper)));
 		}
 
 		[TestMethod]
@@ -394,7 +394,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 
 			try
 			{
-				Encapsulation.TryValidateParam(uri, "None");
+				Validate.TryValidateParam(uri, "None");
 			}
 			catch
 			{
@@ -402,7 +402,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 			}
 
 			Uri nullUri = null;
-			Assert.ThrowsException<ArgumentInvalidException>(() => Encapsulation.TryValidateParam(nullUri, "none"));
+			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(nullUri, "none"));
 		}
 
 	}

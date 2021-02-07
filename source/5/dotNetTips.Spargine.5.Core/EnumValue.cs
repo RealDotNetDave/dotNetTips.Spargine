@@ -4,7 +4,7 @@
 // Created          : 10-27-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="EnumValue.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,9 +16,9 @@
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
-	/// Struct EnumValue.
+	/// Holds Enum name and value.
 	/// </summary>
-	public struct EnumValue
+	public record EnumValue
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="EnumValue" /> struct.
@@ -35,12 +35,12 @@ namespace dotNetTips.Spargine.Core
 		/// Gets the enum name.
 		/// </summary>
 		/// <value>The Enum name.</value>
-		public string Name { get; private set; }
+		public string Name { get; init; }
 
 		/// <summary>
 		/// Gets the enum value.
 		/// </summary>
 		/// <value>The Enum value.</value>
-		public int Value { get; private set; }
+		public int Value { get; init; }
 	}
 }

@@ -4,14 +4,13 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-12-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +19,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
+
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -261,8 +260,8 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
 		void ICollection<T>.CopyTo(T[] array, int arrayIndex)
 		{
-			Encapsulation.TryValidateParam(array, nameof(array));
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(arrayIndex < 0, nameof(arrayIndex));
+			Validate.TryValidateParam(array, nameof(array));
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(arrayIndex < 0, nameof(arrayIndex));
 
 			var locksAcquired = 0;
 
@@ -324,7 +323,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 				return false;
 			}
 
-			return this.AddInternal(item, this._comparer.GetHashCode(item), true);
+			return this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
 		}
 
 		/// <summary>
@@ -545,7 +544,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		private bool AddInternal(T item, int hashCode, bool acquireLock)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
 
 			while (true)
 			{
@@ -629,6 +628,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		private void CopyToItems(T[] array, int index)
 		{
 			var buckets = this._tables._buckets;
+
 			for (var i = 0; i < buckets.Length; i++)
 			{
 				for (var current = buckets[i]; current != null; current = current._next)
@@ -650,7 +650,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 			try
 			{
 				// The thread that first obtains _locks[0] will be the one doing the resize operation
-				this.AcquireLocks(0, 1, ref locksAcquired);
+				this.AcquireLocks(fromInclusive: 0, toExclusive: 1, locksAcquired: ref locksAcquired);
 
 				// Make sure nobody resized the table while we were waiting for lock 0:
 				if (tables != this._tables)

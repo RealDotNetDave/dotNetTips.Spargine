@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="InformationAttribute.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -130,7 +130,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			this.Description = description;
 
-			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnknown : author;
+			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnkown : author;
 
 			if (string.IsNullOrEmpty(createdOn) == false && DateTimeOffset.TryParse(createdOn, out var createdDate))
 			{
@@ -171,6 +171,12 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The message.</value>
 		public string Description { get; }
+
+		/// <summary>
+		/// Gets or sets the Uri for external documentation.
+		/// </summary>
+		/// <value>The documentation Uri.</value>
+		public string Documentation { get; set; }
 
 		/// <summary>
 		/// Gets or sets the modified by.

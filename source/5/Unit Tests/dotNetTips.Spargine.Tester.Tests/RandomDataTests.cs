@@ -1,10 +1,24 @@
-﻿
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Tester.Tests
+// Author           : David McCarter
+// Created          : 01-05-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-01-2021
+// ***********************************************************************
+// <copyright file="RandomDataTests.cs" company="dotNetTips.Spargine.Tester.Tests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -540,7 +554,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 				}
 				catch (Exception ex) when (ex is ArgumentException ||
 				  ex is ArgumentNullException ||
-				  ex is DirectoryNotFoundException ||
+				  ex is System.IO.DirectoryNotFoundException ||
 				  ex is IOException ||
 				  ex is NotSupportedException ||
 				  ex is PathTooLongException ||

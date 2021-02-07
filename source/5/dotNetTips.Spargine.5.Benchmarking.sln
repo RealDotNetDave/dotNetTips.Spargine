@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Benchmarking", "Benchmarking\dotNetTips.Spargine.5.Benchmarking\dotNetTips.Spargine.5.Benchmarking.csproj", "{0BE1B140-1DB4-489F-9FBC-40E96C2EEF74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.Extensions.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.Extensions.BenchmarkTests\dotNetTips.Spargine.Extensions.BenchmarkTests.csproj", "{E4D16A18-FE1D-4450-B467-B099D6B2409B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Core", "dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj", "{8D6A99E8-A19B-4F3F-82FE-641DF5E88680}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Extensions", "dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj", "{E40F198D-0612-4068-9180-780F0ABC4228}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Tester", "dotNetTips.Spargine.5.Tester\dotNetTips.Spargine.5.Tester.csproj", "{E18761D5-846F-4EC4-AD9E-0CF7DC329E2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE1B140-1DB4-489F-9FBC-40E96C2EEF74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE1B140-1DB4-489F-9FBC-40E96C2EEF74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE1B140-1DB4-489F-9FBC-40E96C2EEF74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE1B140-1DB4-489F-9FBC-40E96C2EEF74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6A99E8-A19B-4F3F-82FE-641DF5E88680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6A99E8-A19B-4F3F-82FE-641DF5E88680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6A99E8-A19B-4F3F-82FE-641DF5E88680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6A99E8-A19B-4F3F-82FE-641DF5E88680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40F198D-0612-4068-9180-780F0ABC4228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40F198D-0612-4068-9180-780F0ABC4228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40F198D-0612-4068-9180-780F0ABC4228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40F198D-0612-4068-9180-780F0ABC4228}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18761D5-846F-4EC4-AD9E-0CF7DC329E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18761D5-846F-4EC4-AD9E-0CF7DC329E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18761D5-846F-4EC4-AD9E-0CF7DC329E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18761D5-846F-4EC4-AD9E-0CF7DC329E2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9DA0ACA5-4924-4C47-93C0-140A0CFD5E49}
+	EndGlobalSection
+EndGlobal

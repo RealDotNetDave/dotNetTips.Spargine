@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-12-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="InMemoryCache.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.Caching.Memory;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -26,6 +25,11 @@ namespace dotNetTips.Spargine.Cache
 	public sealed class InMemoryCache
 	{
 		/// <summary>
+		/// The timeout amount.
+		/// </summary>
+		private const int Timeout = 20;
+
+		/// <summary>
 		/// The instance
 		/// </summary>
 		private static readonly InMemoryCache _instance = new InMemoryCache();
@@ -36,7 +40,7 @@ namespace dotNetTips.Spargine.Cache
 		/// </summary>
 		private InMemoryCache()
 		{
-			this.Cache = CreateCache(new TimeSpan(0, 20, 0));
+			this.Cache = CreateCache(new TimeSpan(0, Timeout, 0));
 		}
 
 		/// <summary>
@@ -73,8 +77,8 @@ namespace dotNetTips.Spargine.Cache
 		/// <exception cref="ArgumentNullException">Item cannot be null.</exception>
 		public void AddCacheItem<T>(string key, T item)
 		{
-			Encapsulation.TryValidateParam(key, nameof(key));
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateParam(key, nameof(key));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			this.Cache.Set(key, item);
 		}
@@ -88,7 +92,7 @@ namespace dotNetTips.Spargine.Cache
 		/// <exception cref="ArgumentInvalidException">Key cannot be null or empty.</exception>
 		public T GetCacheItem<T>(string key)
 		{
-			Encapsulation.TryValidateParam(key, nameof(key));
+			Validate.TryValidateParam(key, nameof(key));
 
 			this.Cache.TryGetValue<T>(key, out var item);
 

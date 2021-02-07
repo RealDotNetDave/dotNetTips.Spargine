@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="SocketExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -17,7 +17,6 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Threading;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -38,7 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static int BindToAnonymousPort(this Socket socket, IPAddress address)
 		{
-			Encapsulation.TryValidateNullParam(socket, nameof(socket));
+			Validate.TryValidateNullParam(socket, nameof(socket));
 
 			socket.Bind(new IPEndPoint(address, 0));
 
@@ -55,7 +54,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void ForceNonBlocking(this Socket socket, bool force)
 		{
-			Encapsulation.TryValidateNullParam(socket, nameof(socket));
+			Validate.TryValidateNullParam(socket, nameof(socket));
 
 			if (force)
 			{
@@ -76,8 +75,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TryConnect(this Socket socket, EndPoint remoteEndpoint, int millisecondsTimeout)
 		{
-			Encapsulation.TryValidateNullParam(socket, nameof(socket));
-			Encapsulation.TryValidateNullParam(remoteEndpoint, nameof(remoteEndpoint));
+			Validate.TryValidateNullParam(socket, nameof(socket));
+			Validate.TryValidateNullParam(remoteEndpoint, nameof(remoteEndpoint));
 
 			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 			{

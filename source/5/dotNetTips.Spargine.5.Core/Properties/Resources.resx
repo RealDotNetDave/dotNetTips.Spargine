@@ -228,4 +228,7 @@
   <data name="InvalidStringLengthAcceptableRange" xml:space="preserve">
     <value>Invalid string length. Acceptable range is between {0} and {1}.</value>
   </data>
+  <data name="ObjectValidationFailed" xml:space="preserve">
+    <value>Object validation failed.</value>
+  </data>
 </root>

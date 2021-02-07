@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-04-2020
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -58,7 +57,7 @@ namespace dotNetTips.Spargine.Collections
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
 		public new void Add(T item)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item), "Item is required.");
+			Validate.TryValidateNullParam(item, nameof(item), "Item is required.");
 
 			if (this.ItemNotInCollection(item))
 			{
@@ -73,7 +72,7 @@ namespace dotNetTips.Spargine.Collections
 		/// <param name="cancellationToken">A cancellation token to observe.</param>
 		public new void Add(T item, CancellationToken cancellationToken)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item), "Item is required.");
+			Validate.TryValidateNullParam(item, nameof(item), "Item is required.");
 
 			if (this.ItemNotInCollection(item))
 			{
@@ -94,7 +93,7 @@ namespace dotNetTips.Spargine.Collections
 		/// <returns>System.Int32.</returns>
 		public int RemoveAll(Predicate<T> match)
 		{
-			Encapsulation.TryValidateNullParam(match, nameof(match), "Match is required.");
+			Validate.TryValidateNullParam(match, nameof(match), message: "Match is required.");
 
 			return this.RemoveAll(match);
 		}

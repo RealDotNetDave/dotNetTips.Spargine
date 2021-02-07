@@ -14,15 +14,15 @@ namespace dotNetTips.Spargine.Benchmarking
 	/// <seealso cref="object" />
 	[CategoriesColumn]
 	[CsvExporter]
-	[EvaluateOverhead]
+	//[EvaluateOverhead]
 	[GcServer(true)]
 	[GitHub]
 	[HtmlExporter]
 	[JsonExporter(indentJson: true)]
 	[MarkdownExporter]
-	[MemoryDiagnoser]
+	//[MemoryDiagnoser]
 	[Orderer(SummaryOrderPolicy.Method)]
-	[StopOnFirstError]
+	[StopOnFirstError(true)]
 	public abstract class PerfTestRunner
 	{
 		/// <summary>
@@ -39,11 +39,6 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The failed text
 		/// </summary>
 		protected const string FailedText = "failed";
-
-		/// <summary>
-		/// The long test string
-		/// </summary>
-		protected const string LongTestString = "Parsing and formatting are the lifeblood of any modern web app or service: take data off the wire, parse it, manipulate it, format it back out. As such, in .NET Core 2.1 along with bringing up Span<T>, we invested in the formatting and parsing of primitives, from Int32 to DateTime. Many of those changes can be read about in my previous blog posts, but one of the key factors in enabling those performance improvements was in moving a lot of native code to managed. That may be counter-intuitive, in that it’s “common knowledge” that C code is faster than C# code. However, in addition to the gap between them narrowing, having (mostly) safe C# code has made the code base easier to experiment in, so whereas we may have been skittish about tweaking the native implementations, the community-at-large has dived head first into optimizing these implementations wherever possible. That effort continues in full force in .NET Core 3.0, with some very nice rewards reaped.";
 
 		/// <summary>
 		/// The lower case string
@@ -79,6 +74,11 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The test date time offset
 		/// </summary>
 		protected readonly DateTimeOffset TestDateTimeOffset = DateTimeOffset.Now;
+
+		/// <summary>
+		/// The long test string
+		/// </summary>
+		protected string LongTestString = "Parsing and formatting are the lifeblood of any modern web app or service: take data off the wire, parse it, manipulate it, format it back out. As such, in .NET Core 2.1 along with bringing up Span<T>, we invested in the formatting and parsing of primitives, from Int32 to DateTime. Many of those changes can be read about in my previous blog posts, but one of the key factors in enabling those performance improvements was in moving a lot of native code to managed. That may be counter-intuitive, in that it’s “common knowledge” that C code is faster than C# code. However, in addition to the gap between them narrowing, having (mostly) safe C# code has made the code base easier to experiment in, so whereas we may have been skittish about tweaking the native implementations, the community-at-large has dived head first into optimizing these implementations wherever possible. That effort continues in full force in .NET Core 3.0, with some very nice rewards reaped.";
 
 		private readonly Consumer _consumer = new Consumer();
 

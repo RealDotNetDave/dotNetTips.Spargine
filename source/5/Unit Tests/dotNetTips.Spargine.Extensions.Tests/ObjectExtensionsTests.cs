@@ -24,7 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-
+	[ExcludeFromCodeCoverage]
 	public class DisposableFields : IDisposable
 	{
 		private readonly DataSet _dataSet = new DataSet("TEST");
@@ -209,10 +209,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Id = RandomData.GenerateKey(),
 				PersonProper = RandomData.GeneratePerson<PersonProper>(),
 				PersonRecord = RandomData.GeneratePersonCollection(1).First(),
-				Today = DateTime.Now
+				Today = DateTimeOffset.Now,
+				ClosedOn = DateTimeOffset.Now,
 			};
 
 			var result = personRecord.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true);
+
+			Assert.IsTrue(result.Length > 1300);
+			Assert.IsTrue(result.Contains("Addresses"));
+			PrintResult(result, nameof(this.PropertiesToStringTest));
+
+			result = propertiesTest.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true, includeMemeberName: false);
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
@@ -307,6 +314,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	[ExcludeFromCodeCoverage]
 	public class PropertiesTest
 	{
+
+		public DateTimeOffset? ClosedOn { get; set; }
 		public string Id { get; set; }
 
 		public PersonProper PersonProper { get; set; }

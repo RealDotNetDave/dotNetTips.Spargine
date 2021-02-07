@@ -2,11 +2,10 @@
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
-using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester.Models;
-using CollectionExtensions = dotNetTips.Spargine.Extensions.CollectionExtensions;
 
-namespace dotNetTips.Spargine.BenchmarkTests.Extensions
+namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(nameof(CollectionExtensions))]
 	public class CollectionExtensionsPerfTestRunner : CollectionPerfTestRunner
@@ -16,7 +15,7 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 		{
 			var people = new List<PersonProper>();
 
-			CollectionExtensions.AddRange(people, base.personProperCollection.Take(base.CollectionCount / 10), true);
+			CollectionExtensions.AddRange(people, base.personProperCollection.Take(base.CollectionCount / 10), Tristate.True);
 
 			base.Consumer.Consume(people);
 		}

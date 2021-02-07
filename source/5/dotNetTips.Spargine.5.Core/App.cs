@@ -4,14 +4,13 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="App.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Application information and helper methods.</summary>
 // ***********************************************************************
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,7 +22,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
@@ -120,7 +118,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static void ChangeCulture(string cultureName)
 		{
-			Encapsulation.TryValidateParam(cultureName, nameof(cultureName));
+			Validate.TryValidateParam(cultureName, nameof(cultureName));
 
 			CultureInfo.CurrentCulture = new CultureInfo(cultureName);
 		}
@@ -132,7 +130,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static void ChangeUICulture(string cultureName)
 		{
-			Encapsulation.TryValidateParam(cultureName, nameof(cultureName));
+			Validate.TryValidateParam(cultureName, nameof(cultureName));
 
 			CultureInfo.CurrentUICulture = new CultureInfo(cultureName);
 		}
@@ -175,7 +173,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsProcessRunning(string processName)
 		{
-			Encapsulation.TryValidateParam(processName, "Process name is required.");
+			Validate.TryValidateParam(processName, nameof(processName));
 
 			return Process.GetProcessesByName(processName).Count() > 0;
 		}
@@ -237,14 +235,14 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static void KillProcess(string processName)
 		{
-			Encapsulation.TryValidateParam(processName, "Process name is required.");
+			Validate.TryValidateParam(processName, nameof(processName));
 
 			var app = Process.GetProcessesByName(processName).FirstOrDefault();
 
 			if (app != null)
 			{
 				app.Kill();
-				_ = app.WaitForExit(6000);
+				_ = app.WaitForExit(milliseconds: 6000);
 			}
 		}
 
@@ -279,7 +277,7 @@ namespace dotNetTips.Spargine.Core
 			var processInfo = new ProcessStartInfo(Assembly.GetEntryAssembly().CodeBase)
 			{
 				UseShellExecute = true,
-				Verb = "runas"
+				Verb = "runas",
 			};
 
 			_ = Process.Start(processInfo);

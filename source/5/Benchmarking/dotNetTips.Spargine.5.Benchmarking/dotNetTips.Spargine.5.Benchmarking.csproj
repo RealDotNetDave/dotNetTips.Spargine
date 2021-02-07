@@ -3,16 +3,42 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
-    <AssemblyVersion>2021.1.10.1</AssemblyVersion>
-    <FileVersion>2021.1.10.1</FileVersion>
+    <AssemblyVersion>2021.2.3.19</AssemblyVersion>
+    <FileVersion>2021.2.3.19</FileVersion>
+    <Version>2021.2.1.0</Version>
+    <Authors>David McCarter</Authors>
+    <Company>David McCarter - dotNetTips.com</Company>
+    <Description>Common classes that can be used with BenchmarkDotNet.</Description>
+    <PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
+    <Copyright>McCarter Consulting (David McCarter)</Copyright>
+    <PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+    <RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
+    <PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
     <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="1.0.0" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="1.0.0" />
-    <PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2020.11.19.1" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
+    <ProjectReference Include="..\..\dotNetTips.Spargine.5.Tester\dotNetTips.Spargine.5.Tester.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
+  </Target>
 
 </Project>

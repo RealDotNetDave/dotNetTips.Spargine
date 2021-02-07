@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -49,8 +48,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "11/17/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static void AppendBytes(this StringBuilder sb, byte[] bytes)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(bytes, nameof(bytes));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(bytes, nameof(bytes));
 
 			sb.Append("'0x");
 
@@ -77,9 +76,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("FROM .NET CORE SOURCE", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
 		public static void AppendKeyValue(this StringBuilder sb, string key, string value, Tristate includeQuotes = Tristate.True, Tristate includeComma = Tristate.True)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(key, nameof(key));
-			Encapsulation.TryValidateParam(value, nameof(value));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(key, nameof(key));
+			Validate.TryValidateParam(value, nameof(value));
 
 			sb.Append(key);
 			sb.Append(ControlChars.Equal);
@@ -142,8 +141,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static void AppendValues(this StringBuilder sb, string separator, IEnumerable<string> values)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(values, nameof(values));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(values, nameof(values));
 
 			separator = SetSeparator(separator);
 
@@ -162,8 +161,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void AppendValues(this StringBuilder sb, string separator, params string[] values)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(values, nameof(values));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(values, nameof(values));
 
 			separator = SetSeparator(separator);
 
@@ -187,9 +186,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static void AppendValues<T>(this StringBuilder sb, string separator, IEnumerable<T> values, Action<T> joinAction)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(values, nameof(values));
-			Encapsulation.TryValidateNullParam(joinAction, nameof(joinAction));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(values, nameof(values));
+			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
 
 			separator = SetSeparator(separator);
 
@@ -229,10 +228,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.NotUsed)]
 		public static void AppendValues<T, TParam>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam param, Action<T, TParam> joinAction)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(values, nameof(values));
-			Encapsulation.TryValidateNullParam(param, nameof(param));
-			Encapsulation.TryValidateNullParam(joinAction, nameof(joinAction));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(values, nameof(values));
+			Validate.TryValidateNullParam(param, nameof(param));
+			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
 
 			separator = SetSeparator(separator);
 
@@ -276,11 +275,11 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.NotUsed)]
 		public static void AppendValues<T, TParam1, TParam2>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam1 param1, TParam2 param2, Action<StringBuilder, T, TParam1, TParam2> joinAction)
 		{
-			Encapsulation.TryValidateNullParam(sb, nameof(sb));
-			Encapsulation.TryValidateParam(values, nameof(values));
-			Encapsulation.TryValidateNullParam(param1, nameof(param1));
-			Encapsulation.TryValidateNullParam(param2, nameof(param2));
-			Encapsulation.TryValidateNullParam(joinAction, nameof(joinAction));
+			Validate.TryValidateNullParam(sb, nameof(sb));
+			Validate.TryValidateParam(values, nameof(values));
+			Validate.TryValidateNullParam(param1, nameof(param1));
+			Validate.TryValidateNullParam(param2, nameof(param2));
+			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
 
 			separator = SetSeparator(separator);
 

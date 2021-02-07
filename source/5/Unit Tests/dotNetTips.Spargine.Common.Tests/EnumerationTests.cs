@@ -33,7 +33,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			var dateTimeFormat = DateTimeFormat.FullDateLongTime;
 
-			Assert.IsTrue(dateTimeFormat.CompareTo(DateTimeFormat.FullDateLongTime) == 0);
+			Assert.IsTrue(dateTimeFormat.Equals(DateTimeFormat.FullDateLongTime));
 		}
 		[TestMethod]
 		public void DisplayNameTest()

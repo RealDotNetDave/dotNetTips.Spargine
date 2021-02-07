@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -34,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetDescription), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetDescription(this Enum value)
 		{
-			Encapsulation.TryValidateParam(value, nameof(value));
+			Validate.TryValidateParam(value, nameof(value));
 
 			var field = value.GetType().GetField(value.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
@@ -50,7 +49,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetItems), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IList<(string Description, int Value)> GetItems(this Enum @enum)
 		{
-			Encapsulation.TryValidateParam(@enum, nameof(@enum));
+			Validate.TryValidateParam(@enum, nameof(@enum));
 
 			var items = new List<(string Desctiption, int Value)>();
 
@@ -74,7 +73,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T Parse<T>(this string name)
 			where T : Enum
 		{
-			Encapsulation.TryValidateParam(name, nameof(name));
+			Validate.TryValidateParam(name, nameof(name));
 
 			return (T)Enum.Parse(typeof(T), name);
 		}

@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-19-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -22,7 +22,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -32,6 +31,9 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ObjectExtensions
 	{
+		/// <summary>
+		/// The null string
+		/// </summary>
 		private const string NullString = "[null]";
 
 		/// <summary>
@@ -44,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(As), UnitTestCoverage = 100, Status = Status.Available)]
 		public static T As<T>(this object obj)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			return (T)obj;
 		}
@@ -60,7 +62,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T Clone<T>(this object obj)
 			where T : class
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			return FromJson<T>(obj.ToJson());
 		}
@@ -74,7 +76,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ComputeSha256Hash), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ComputeSha256Hash(this object obj)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			// Create a SHA256   
 			using var sha256Hash = SHA256.Create();
@@ -140,7 +142,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasProperty), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasProperty(this object obj, string propertyName)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => p.Name == propertyName);
 
@@ -155,7 +157,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(InitializeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void InitializeFields(this object obj)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(obj, nameof(obj));
 
 			var fieldInfos = obj.GetType().GetRuntimeFields().ToList();
 
@@ -202,7 +204,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="obj">The input.</param>
 		/// <param name="memberName">Name of the member used to identify the object.</param>
-		/// <param name="ignoreNulls">if set to <c>true</c> [ignore <see langword="null"/> property values].</param>
+		/// <param name="ignoreNulls">if set to <c>true</c> [ignore <see langword="null" /> property values].</param>
 		/// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <example>Output:
@@ -236,8 +238,8 @@ namespace dotNetTips.Spargine.Extensions
 		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
-			Encapsulation.TryValidateNullParam(memberName, nameof(memberName));
+			Validate.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(memberName, nameof(memberName));
 
 			var result = new Dictionary<string, string>();
 
@@ -282,7 +284,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			// Otherwise go deeper in the object tree.           
 			// And foreach object public property collect each value
-			var propertyCollection = objectType.GetProperties(BindingFlags.DeclaredOnly | BindingFlags.Public | BindingFlags.Instance);
+			var propertyCollection = objectType.GetProperties();
 
 			var newMemberName = string.Empty;
 
@@ -317,6 +319,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="keyValueSeparator">The key value separator.</param>
 		/// <param name="sequenceSeparator">The delimiter.</param>
 		/// <param name="ignoreNulls">if set to <c>true</c> [ignore null values].</param>
+		/// <param name="includeMemeberName">Name of the include memeber.</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <exception cref="ArgumentInvalidException">Object cannot be a collection type.</exception>
@@ -341,18 +344,22 @@ namespace dotNetTips.Spargine.Extensions
 		/// PersonRecord.Addresses[1].PostalCode:33385672
 		/// </example>
 		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true)
+		public static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemeberName = true)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
-			Encapsulation.TryValidateNullParam(header, nameof(header));
-			Encapsulation.TryValidateNullParam(sequenceSeparator, nameof(sequenceSeparator));
+			Validate.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateNullParam(header, nameof(header));
+			Validate.TryValidateNullParam(sequenceSeparator, nameof(sequenceSeparator));
 
 			var typeName = obj.GetType().Name;
 
 			if (typeName == typeof(List<>).Name)
 			{
 				typeName = "Item";
+			}
+			else if (includeMemeberName == false)
+			{
+				typeName = string.Empty;
 			}
 
 			var properties = obj.PropertiesToDictionary(memberName: typeName, ignoreNulls: ignoreNulls);
@@ -396,8 +403,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToJsonFile), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void ToJsonFile(this object obj, string fileName)
 		{
-			Encapsulation.TryValidateNullParam(obj, nameof(obj));
-			Encapsulation.TryValidateParam(fileName, nameof(fileName));
+			Validate.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateParam(fileName, nameof(fileName));
 
 			var json = JsonSerializer.Serialize(obj);
 

@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-12-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="DistinctConcurrentBag.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,9 +14,8 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -69,7 +68,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <param name="item">The object to be added to the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
 		public new void Add(T item)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			var hashCode = item.GetHashCode();
 

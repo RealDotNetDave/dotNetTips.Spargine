@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="DataContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using LinqToDB;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -37,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetTrackedObjects), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static IList<Tuple<T, T>> GetTrackedObjects<T>(this DataContext context)
 		{
-			Encapsulation.TryValidateNullParam(context, nameof(context));
+			Validate.TryValidateNullParam(context, nameof(context));
 
 			var result = new List<Tuple<T, T>>();
 			var dcType = typeof(DataContext);

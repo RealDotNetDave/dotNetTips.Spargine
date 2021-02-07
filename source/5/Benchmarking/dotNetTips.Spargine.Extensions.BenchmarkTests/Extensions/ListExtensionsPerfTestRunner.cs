@@ -1,4 +1,17 @@
-﻿
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.BenchmarkTests
+// Author           : David McCarter
+// Created          : 01-09-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-02-2021
+// ***********************************************************************
+// <copyright file="ListExtensionsPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -8,95 +21,62 @@ using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
-namespace dotNetTips.Spargine.BenchmarkTests.Extensions
+namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(nameof(ListExtensions))]
 	public class ListExtensionsPerfTestRunner : CollectionPerfTestRunner
 	{
 
-		[Benchmark(Description = nameof(ListExtensions.AddFirst) + ":Array")]
-		public void AddFirstToArray()
-		{
-			var people = base.personProperArrayFull.Clone<PersonProper>();
 
-			var result = people.AddFirst(RandomData.GeneratePerson<PersonProper>());
+		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Comparer")]
+		//public void AddIfNotExistsComparer()
+		//{
+		//	var people = new List<PersonProper>(base.CollectionCount);
+		//	var comparer = new PersonProperComparer();
 
-			base.Consumer.Consume(result);
-		}
+		//	foreach (var person in base.personProperCollection)
+		//	{
+		//		people.AddIfNotExists(person, comparer);
+		//	}
 
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Parm Array")]
-		public void AddIfNotExistsCollection01()
-		{
-			var people = new List<PersonProper>(base.personProperCollection);
-			var newPeople = new List<PersonProper>(base.personProperCollection).Take(10).ToArray();
+		//	base.Consumer.Consume(people);
+		//}
 
+		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Dictionary")]
+		//public void AddIfNotExistsDictionary()
+		//{
+		//	var people = new Dictionary<string, PersonProper>(base.CollectionCount);
 
-			var result = people.AddIfNotExists(newPeople);
+		//	foreach (var person in base.personProperDictionary)
+		//	{
+		//		people.AddIfNotExists(person.Key, person.Value);
+		//	}
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(people);
+		//}
 
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Dup Parm Array")]
-		public void AddIfNotExistsCollection02()
-		{
-			var people = new List<PersonProper>(base.personProperCollection);
-			var newPeople = people.Shuffle(10).ToArray();
+		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Param Array")]
+		//public void AddIfNotExistsParamArray()
+		//{
+		//	var people = new List<PersonProper>(this.CollectionCount / 2);
 
+		//	people.AddIfNotExists(base.personProperArrayHalf);
 
-			var result = people.AddIfNotExists(newPeople);
+		//	base.Consumer.Consume(people);
+		//}
 
-			base.Consumer.Consume(result);
-		}
+		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Single")]
+		//public void AddIfNotExistsSingle()
+		//{
+		//	var people = new List<PersonProper>(base.CollectionCount);
 
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Comparer")]
-		public void AddIfNotExistsComparer()
-		{
-			var people = new List<PersonProper>(base.CollectionCount);
-			var comparer = new PersonProperComparer();
+		//	foreach (var person in base.personProperCollection)
+		//	{
+		//		people.AddIfNotExists(person);
+		//	}
 
-			foreach (var person in base.personProperCollection)
-			{
-				people.AddIfNotExists(person, comparer);
-			}
-
-			base.Consumer.Consume(people);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Dictionary")]
-		public void AddIfNotExistsDictionary()
-		{
-			var people = new Dictionary<string, PersonProper>(base.CollectionCount);
-
-			foreach (var person in base.personProperDictionary)
-			{
-				people.AddIfNotExists(person.Key, person.Value);
-			}
-
-			base.Consumer.Consume(people);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Param Array")]
-		public void AddIfNotExistsParamArray()
-		{
-			var people = new List<PersonProper>(this.CollectionCount / 2);
-
-			people.AddIfNotExists(base.personProperArrayHalf);
-
-			base.Consumer.Consume(people);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Single")]
-		public void AddIfNotExistsSingle()
-		{
-			var people = new List<PersonProper>(base.CollectionCount);
-
-			foreach (var person in base.personProperCollection)
-			{
-				people.AddIfNotExists(person);
-			}
-
-			base.Consumer.Consume(people);
-		}
+		//	base.Consumer.Consume(people);
+		//}
 
 
 		[Benchmark(Description = nameof(ListExtensions.AddLast) + ":Array")]
@@ -176,7 +156,7 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":Array")]
 		public void ListHashCodeArray()
 		{
-			var result = base.personProperArrayFull.ListHashCode();
+			var result = base.personProperArrayFull.ArrayHashCode();
 
 			base.Consumer.Consume(result);
 		}
@@ -229,26 +209,6 @@ namespace dotNetTips.Spargine.BenchmarkTests.Extensions
 		public void PickRandom()
 		{
 			var result = base.personProperCollection.Take(base.CollectionCount / 10);
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.RemoveFirst))]
-		public void RemoveFirst()
-		{
-			var people = base.personProperArrayFull.Clone<PersonProper>();
-
-			var result = people.RemoveFirst();
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.RemoveLast))]
-		public void RemoveLast()
-		{
-			var people = base.personProperArrayFull.Clone<PersonProper>();
-
-			var result = people.RemoveLast();
 
 			base.Consumer.Consume(result);
 		}

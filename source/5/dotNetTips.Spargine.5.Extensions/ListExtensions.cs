@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -21,7 +21,6 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -82,8 +81,8 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			list.Insert(0, item);
 
@@ -106,8 +105,8 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			list.Insert(list.Count, item);
 
@@ -172,7 +171,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<T> CopyToList<T>(this List<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			return new List<T>(list);
 		}
@@ -189,8 +188,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>(this List<T> list, Predicate<T> action)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(action, nameof(action));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateNullParam(action, nameof(action));
 
 			return list.TrueForAll(action);
 		}
@@ -206,8 +205,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static int IndexOf<T>(this IEnumerable<T> list, T item)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			return IndexOf(list, item, EqualityComparer<T>.Default);
 		}
@@ -225,9 +224,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static int IndexOf<T>(this IEnumerable<T> list, T item, IEqualityComparer<T> comparer)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(item, nameof(item));
-			Encapsulation.TryValidateNullParam(comparer, nameof(comparer));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateNullParam(comparer, nameof(comparer));
 
 			return list.Select((x, index) => comparer.Equals(item, x) ? index : -1).FirstOrDefault(x => x != -1, -1);
 		}
@@ -242,7 +241,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Join), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static string Join(this IEnumerable<object> list, string separator = ControlChars.DefaultSeparator)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			return string.Join(separator, list);
 		}
@@ -256,7 +255,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static int ListHashCode<T>(this ReadOnlyCollection<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			var comparer = EqualityComparer<T>.Default;
 			var hash = list.Where(t => t != null)
@@ -274,7 +273,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static int ListHashCode<T>(this IList<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			var comparer = EqualityComparer<T>.Default;
 
@@ -298,7 +297,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(OrderBy), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<T> OrderBy<T>(this IEnumerable<T> list, string sortExpression)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			if (sortExpression.HasValue() == false)
 			{
@@ -345,8 +344,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>(this IEnumerable<TSource> list, Func<TSource, string> keySelector)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(keySelector, nameof(keySelector));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateNullParam(keySelector, nameof(keySelector));
 
 			return list.OrderBy(keySelector, StringComparer.Ordinal);
 		}
@@ -365,7 +364,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<IEnumerable<T>> Page<T>(this IEnumerable<T> list, int pageSize)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			pageSize = pageSize.EnsureMinimum(1);
 
@@ -393,7 +392,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
 		public static T PickRandom<T>(this IEnumerable<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			var index = new Random().Next(0, list.Count() - 1);
 
@@ -419,9 +418,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Pivot), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot<TSource, TFirstKey, TSecondKey, TValue>(this IEnumerable<TSource> list, Func<TSource, TFirstKey> firstKeySelector, Func<TSource, TSecondKey> secondKeySelector, Func<IEnumerable<TSource>, TValue> aggregate)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(firstKeySelector, nameof(firstKeySelector));
-			Encapsulation.TryValidateNullParam(secondKeySelector, nameof(secondKeySelector));
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateNullParam(firstKeySelector, nameof(firstKeySelector));
+			Validate.TryValidateNullParam(secondKeySelector, nameof(secondKeySelector));
 
 			var returnValue = new Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>>();
 
@@ -454,7 +453,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99)]
 		public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			return list.OrderBy(i => Random.Next());
 		}
@@ -494,7 +493,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ObservableCollection<T> ToObservableCollection<T>(this IList<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			return new ObservableCollection<T>(list);
 		}
@@ -509,7 +508,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IList<T> list)
 		{
-			Encapsulation.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam(list, nameof(list));
 
 			return new ReadOnlyCollection<T>(list);
 		}

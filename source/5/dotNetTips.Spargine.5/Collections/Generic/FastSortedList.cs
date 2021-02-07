@@ -4,19 +4,18 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-12-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
-using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -57,7 +56,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 		/// <param name="item">The object to be added to the end of the <see cref="T:System.Collections.Generic.List"></see>. The value can be null for reference types.</param>
 		public new void Add(T item)
 		{
-			Encapsulation.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			base.Add(item);
 
@@ -70,7 +69,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 		/// <param name="items">The items.</param>
 		public new void AddRange(IEnumerable<T> items)
 		{
-			Encapsulation.TryValidateParam(items, nameof(items));
+			Validate.TryValidateParam(items, nameof(items));
 
 			base.AddRange(items);
 

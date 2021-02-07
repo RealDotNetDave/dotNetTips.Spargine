@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-31-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -19,7 +19,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester.Models;
 using dotNetTips.Spargine.Tester.Properties;
@@ -88,13 +87,13 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateAddresses), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static List<IAddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
-			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
 
 			var addresses = new List<IAddressRecord>(count);
 
 			for (var i = 0; i < count; i++)
 			{
-				var address = new AddressRecord(RandomData.GenerateKey())
+				AddressRecord address = new(RandomData.GenerateKey())
 				{
 					Address1 = GenerateWord(addressLength),
 					Address2 = GenerateWord(addressLength),
@@ -181,7 +180,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateCoordinateCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<T> GenerateCoordinateCollection<T>(int count) where T : ICoordinate, new()
 		{
-			Encapsulation.TryValidateParam(count, 0, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(count, 0, int.MaxValue, nameof(count));
 
 			var coordinates = new List<T>(count);
 
@@ -206,7 +205,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateDecimal), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static decimal GenerateDecimal(decimal minValue, decimal maxValue, int decimalPlaces)
 		{
-			Encapsulation.TryValidateParam(decimalPlaces, 0, int.MaxValue, nameof(decimalPlaces));
+			Validate.TryValidateParam(decimalPlaces, 0, int.MaxValue, nameof(decimalPlaces));
 
 			var multiplier = ( (decimal)decimalPlaces ) * 10;
 
@@ -244,7 +243,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateFile), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateFile(string fileName, int fileLength = 1000)
 		{
-			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
+			Validate.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
 
 			var fakeText = GenerateWord(fileLength);
 
@@ -263,8 +262,8 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Path, IEnumerable<string> Files) GenerateFiles(int count = 100, int fileLength = 1000)
 		{
-			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
-			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
+			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
 
 			var files = new List<string>(count);
 
@@ -290,9 +289,9 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Path, IEnumerable<string> Files) GenerateFiles(int count = 100, int fileLength = 1000, string fileExtension = "temp")
 		{
-			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
-			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
-			Encapsulation.TryValidateParam(fileExtension, nameof(fileExtension));
+			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
+			Validate.TryValidateParam(fileExtension, nameof(fileExtension));
 
 			var files = new List<string>(count);
 
@@ -318,9 +317,9 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<string> GenerateFiles(string path, int count = 100, int fileLength = 1000)
 		{
-			Encapsulation.TryValidateParam(path, nameof(path));
-			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
-			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
+			Validate.TryValidateParam(path, nameof(path));
+			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
 
 			var files = new List<string>(count);
 
@@ -372,7 +371,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateNumber), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateNumber(int length)
 		{
-			Encapsulation.TryValidateParam(value: length, minimumValue: 1, maximumValue: int.MaxValue, paramName: nameof(length));
+			Validate.TryValidateParam(value: length, minimumValue: 1, maximumValue: int.MaxValue, paramName: nameof(length));
 
 			var sb = TypeHelper.CreateStringBuilder();
 
@@ -431,7 +430,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GeneratePersonCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static List<T> GeneratePersonCollection<T>(int count) where T : IPerson, new()
 		{
-			Encapsulation.TryValidateParam(count, 1, int.MaxValue, nameof(count));
+			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
 
 			var people = new List<T>(count);
 
@@ -475,7 +474,7 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < count; i++)
 			{
-				var person = new PersonRecord(RandomData.GenerateEmailAddress(), RandomData.GenerateKey())
+				PersonRecord person = new(RandomData.GenerateEmailAddress(), RandomData.GenerateKey())
 				{
 					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
 					FirstName = RandomData.GenerateWord(firstNameLength),
@@ -524,7 +523,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(string path)
 		{
-			Encapsulation.TryValidateParam(path, nameof(path));
+			Validate.TryValidateParam(path, nameof(path));
 
 			return Path.Combine(path, Path.GetRandomFileName());
 		}
@@ -539,8 +538,8 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(int fileNameLength = 10, string extension = "tester.temp")
 		{
-			Encapsulation.TryValidateParam(fileNameLength, 1, 256, nameof(fileNameLength));
-			Encapsulation.TryValidateParam(extension, nameof(extension));
+			Validate.TryValidateParam(fileNameLength, 1, 256, nameof(fileNameLength));
+			Validate.TryValidateParam(extension, nameof(extension));
 
 			var fileName = $"{ GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile) }{ControlChars.Dot}{extension}";
 
@@ -560,9 +559,9 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(string path, int fileNameLength = 10, string extension = "tester.temp")
 		{
-			Encapsulation.TryValidateParam(path, nameof(path));
-			Encapsulation.TryValidateParam(fileNameLength, 1, 256, nameof(fileNameLength));
-			Encapsulation.TryValidateParam(extension, nameof(extension));
+			Validate.TryValidateParam(path, nameof(path));
+			Validate.TryValidateParam(fileNameLength, 1, 256, nameof(fileNameLength));
+			Validate.TryValidateParam(extension, nameof(extension));
 
 			var fileName = $"{ GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile) }{ControlChars.Dot}{extension}";
 			var fullName = Path.Combine(path, fileName);
@@ -599,7 +598,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateTempFile), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateTempFile(int fileLength = 1000)
 		{
-			Encapsulation.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
+			Validate.TryValidateParam(fileLength, 1, int.MaxValue, nameof(fileLength));
 
 			var fileName = GenerateRandomFileName();
 			var fakeText = GenerateWord(fileLength);
@@ -673,7 +672,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int length)
 		{
-			Encapsulation.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
+			Validate.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
 
 			var returnValue = GenerateWord(length, DefaultMinCharacter, DefaultMaxCharacter);
 
@@ -690,9 +689,9 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength)
 		{
-			Encapsulation.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(minLength));
-			Encapsulation.TryValidateParam(maxLength, minimumValue: 1, paramName: nameof(maxLength));
-			Encapsulation.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, nameof(maxLength), Resources.MinimumLengthCannotBeGreaterThanMaximum);
+			Validate.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(minLength));
+			Validate.TryValidateParam(maxLength, minimumValue: 1, paramName: nameof(maxLength));
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(maxLength >= minLength, nameof(maxLength), Resources.MinimumLengthCannotBeGreaterThanMaximum);
 
 			return GenerateWord(minLength, maxLength, DefaultMinCharacter, DefaultMaxCharacter);
 		}
@@ -708,7 +707,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateWord(int length, char minCharacter, char maxCharacter)
 		{
-			Encapsulation.TryValidateParam(length, 1, int.MaxValue, nameof(length));
+			Validate.TryValidateParam(length, 1, int.MaxValue, nameof(length));
 
 			var word = new StringBuilder(length);
 
@@ -742,7 +741,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWords), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static ImmutableList<string> GenerateWords(int count, int minLength, int maxLength)
 		{
-			Encapsulation.TryValidateParam(count, minimumValue: 1, paramName: nameof(count));
+			Validate.TryValidateParam(count, minimumValue: 1, paramName: nameof(count));
 
 			var strings = new List<string>(count);
 

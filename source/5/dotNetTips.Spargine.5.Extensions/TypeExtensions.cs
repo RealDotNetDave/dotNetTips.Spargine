@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -37,8 +36,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<string> DoesObjectImplementInterface(object input, params string[] interfaceNames)
 		{
-			Encapsulation.TryValidateNullParam(input, nameof(input));
-			Encapsulation.TryValidateParam(interfaceNames, nameof(interfaceNames));
+			Validate.TryValidateNullParam(input, nameof(input));
+			Validate.TryValidateParam(interfaceNames, nameof(interfaceNames));
 
 			//TODO: CHANGE TO ALL LINQ? typeof(IMyInterface).IsAssignableFrom(typeof(MyType))
 			var interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
@@ -57,7 +56,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetAllAbstractMethods), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllAbstractMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetRuntimeMethods().Where(m => m.IsAbstract);
 		}
@@ -71,7 +70,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<FieldInfo> GetAllDeclaredFields(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			for (var i = 0; i <
 				type.GetFields(BindingFlags.Instance |
@@ -98,7 +97,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllDeclaredMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			for (var i = 0; i <
 				type.GetMethods(BindingFlags.Instance |
@@ -125,7 +124,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetAllFields), UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<FieldInfo> GetAllFields(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			var typeInfo = type.GetTypeInfo();
 
@@ -149,7 +148,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllGenericMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetRuntimeMethods().Where(m => m.IsGenericMethod);
 		}
@@ -163,7 +162,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			var typeInfo = type.GetTypeInfo();
 
@@ -187,7 +186,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<PropertyInfo> GetAllProperties(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			var typeInfo = type.GetTypeInfo();
 
@@ -211,7 +210,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllPublicMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetRuntimeMethods().Where(m => m.IsPublic);
 		}
@@ -225,7 +224,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllStaticMethods(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetRuntimeMethods().Where(m => m.IsStatic);
 		}
@@ -241,7 +240,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T GetAttribute<T>(this Type type)
 			where T : Attribute
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetTypeInfo().GetCustomAttributes(typeof(T), false).OfType<T>().FirstOrDefault();
 		}
@@ -257,7 +256,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T GetAttribute<T>(this MethodInfo methodInfo)
 			where T : Attribute
 		{
-			Encapsulation.TryValidateNullParam(methodInfo, nameof(methodInfo));
+			Validate.TryValidateNullParam(methodInfo, nameof(methodInfo));
 
 			return methodInfo.GetCustomAttributes(typeof(T), false).FirstOrDefault() as T;
 		}
@@ -273,7 +272,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T GetAttribute<T>(this PropertyInfo propertyInfo)
 			where T : Attribute
 		{
-			Encapsulation.TryValidateNullParam(propertyInfo, nameof(propertyInfo));
+			Validate.TryValidateNullParam(propertyInfo, nameof(propertyInfo));
 
 			return propertyInfo.GetCustomAttributes(typeof(T), false).FirstOrDefault() as T;
 		}
@@ -289,7 +288,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T GetAttribute<T>(this FieldInfo fieldInfo)
 			where T : Attribute
 		{
-			Encapsulation.TryValidateNullParam(fieldInfo, nameof(fieldInfo));
+			Validate.TryValidateNullParam(fieldInfo, nameof(fieldInfo));
 
 			return fieldInfo?.GetCustomAttributes(typeof(T), false).FirstOrDefault() as T;
 		}
@@ -304,7 +303,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(GetFieldHash), UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GetFieldHash<T>(this Func<T> callback)
 		{
-			Encapsulation.TryValidateNullParam(callback, nameof(callback));
+			Validate.TryValidateNullParam(callback, nameof(callback));
 
 			return new string(callback.Target
 				.GetType()
@@ -329,7 +328,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static (string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type ParameterType)[] GetTypeMembersWithAttribute<TAttribute>(this Type type)
 			where TAttribute : Attribute
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			var allFields = type.GetFields()
 				.Select(f => (f.Name,
@@ -362,7 +361,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool HasAttribute<T>(this MethodInfo methodInfo) where T : Attribute
 		{
-			Encapsulation.TryValidateNullParam(methodInfo, nameof(methodInfo));
+			Validate.TryValidateNullParam(methodInfo, nameof(methodInfo));
 
 			return methodInfo.GetAttribute<T>() != null;
 		}
@@ -404,7 +403,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool HasParameterlessConstructor(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null) != null;
 		}
@@ -417,7 +416,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.New)]
 		public static bool IsEnumerable(this Type type)
 		{
-			Encapsulation.TryValidateNullParam(type, nameof(type));
+			Validate.TryValidateNullParam(type, nameof(type));
 
 			return type.GetInterfaces().Any(t => t == typeof(IEnumerable));
 		}
@@ -439,7 +438,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsStatic(this PropertyInfo property)
 		{
-			Encapsulation.TryValidateNullParam(property, nameof(property));
+			Validate.TryValidateNullParam(property, nameof(property));
 
 			return ( property.GetMethod ?? property.SetMethod ).IsStatic;
 		}

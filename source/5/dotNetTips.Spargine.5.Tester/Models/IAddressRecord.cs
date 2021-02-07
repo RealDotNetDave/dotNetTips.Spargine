@@ -4,7 +4,7 @@
 // Created          : 07-10-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-04-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="IAddressRecord.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-using dotNetTips.Spargine.Core.OOP;
+using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Tester.Models
@@ -20,7 +20,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// <summary>
 	/// Interface IAddressRecord
 	/// </summary>
-	public interface IAddressRecord : IDataRecord<IAddressRecord, string>, IComparable, IComparable<IAddressRecord>, IEquatable<IAddressRecord>
+	public interface IAddressRecord : IDataRecord<IAddressRecord, string>
 	{
 		/// <summary>
 		/// Gets or sets address 1.

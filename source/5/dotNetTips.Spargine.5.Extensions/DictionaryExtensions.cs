@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,7 +18,6 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -42,10 +41,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateNullParam(dictionary, nameof(dictionary));
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
-			Encapsulation.TryValidateNullParam(key, nameof(key));
-			Encapsulation.TryValidateNullParam(value, nameof(value));
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
+			Validate.TryValidateNullParam(key, nameof(key));
+			Validate.TryValidateNullParam(value, nameof(value));
 
 			if (dictionary.ContainsKey(key) == false)
 			{
@@ -77,10 +76,10 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Encapsulation.TryValidateNullParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Encapsulation.TryValidateNullParam(key, nameof(key));
-			Encapsulation.TryValidateNullParam(value, nameof(value));
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateNullParam(key, nameof(key));
+			Validate.TryValidateNullParam(value, nameof(value));
 
 			var returnValue = false;
 
@@ -121,10 +120,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> list, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateNullParam(list, nameof(list));
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Encapsulation.TryValidateNullParam(key, nameof(key));
-			Encapsulation.TryValidateNullParam(value, nameof(value));
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateNullParam(key, nameof(key));
+			Validate.TryValidateNullParam(value, nameof(value));
 
 			if (list.TryGetValue(key, out var item) == false)
 			{
@@ -174,7 +173,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> list)
 		{
-			Encapsulation.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(list, nameof(list));
 
 			return ImmutableDictionary.CreateRange<TKey, TValue>(list);
 		}
@@ -196,9 +195,9 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> list, TKey key, TValue value)
 		{
-			Encapsulation.TryValidateNullParam(list, nameof(list));
-			Encapsulation.TryValidateNullParam(key, nameof(key));
-			Encapsulation.TryValidateNullParam(value, nameof(value));
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(key, nameof(key));
+			Validate.TryValidateNullParam(value, nameof(value));
 
 
 			if (list.TryGetValue(key, out var item) == false)

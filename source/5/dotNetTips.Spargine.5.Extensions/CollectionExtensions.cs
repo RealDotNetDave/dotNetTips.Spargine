@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -39,14 +38,14 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> list, T item)
 		{
-			Encapsulation.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(list, nameof(list));
 
 			if (item == null)
 			{
 				return false;
 			}
 
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			if (CreateCollectionIfNull(list) == false)
 			{
@@ -81,7 +80,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (CreateCollectionIfNull(list) == false)
 			{
-				Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+				Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 			}
 
 			var returnValue = false;
@@ -119,8 +118,8 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Encapsulation.TryValidateNullParam(comparer, nameof(comparer));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateNullParam(comparer, nameof(comparer));
 
 			if (CreateCollectionIfNull(list) == false)
 			{
@@ -155,7 +154,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (CreateCollectionIfNull(list) == false)
 			{
-				Encapsulation.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+				Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 			}
 
 			var returnValue = false;

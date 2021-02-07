@@ -4,18 +4,19 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Original code by: Gérald Barré:https:www.meziantou.net/caching-an-ienumerable-t-instance.htm.</summary>
+// <summary>
+// Original code by: Gérald Barré
+// </summary>
 // ***********************************************************************
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
@@ -23,7 +24,7 @@ namespace dotNetTips.Spargine.Core
 	/// <summary>
 	/// Class CachedEnumerable.
 	/// </summary>
-	[Information(nameof(CachedEnumerable), BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(CachedEnumerable), BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.New, Documentation = "https:www.meziantou.net/caching-an-ienumerable-t-instance.htm")]
 	public static class CachedEnumerable
 	{
 		/// <summary>
@@ -130,7 +131,7 @@ namespace dotNetTips.Spargine.Core
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void CheckEnumerable()
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(this._enumerable != null, "enumerable");
+			Validate.TryValidateParam<ArgumentNullException>(this._enumerable != null, paramName: "enumerable");
 		}
 
 		/// <summary>

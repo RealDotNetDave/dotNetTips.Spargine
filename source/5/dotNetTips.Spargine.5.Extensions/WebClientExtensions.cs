@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -17,7 +17,6 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -42,8 +41,8 @@ namespace dotNetTips.Spargine.Extensions
 		public static T ConvertFrom<T>(this WebClient client, string url)
 			where T : class
 		{
-			Encapsulation.TryValidateNullParam(client, nameof(client));
-			Encapsulation.TryValidateParam(url, nameof(url));
+			Validate.TryValidateNullParam(client, nameof(client));
+			Validate.TryValidateParam(url, nameof(url));
 
 			var data = client.DownloadString(url);
 

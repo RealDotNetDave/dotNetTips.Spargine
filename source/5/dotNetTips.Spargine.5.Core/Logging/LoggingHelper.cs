@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -14,7 +14,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using dotNetTips.Spargine.Core.OOP;
 using Microsoft.Extensions.Logging;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -38,11 +37,10 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:FileVersion - 15.0.0
 		/// AppInfo:Title - dotNetTips.Spargine
 		/// </example>
-		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static void LogApplicationInformation(ILogger logger)
 		{
-			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Encapsulation.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
+			Validate.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
 
 			var appInfo = App.AppInfo;
 
@@ -87,11 +85,10 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:SystemDirectory - C:\\WINDOWS\\system32
 		/// AppInfo:HasShutdownStarted - False
 		/// </example>
-		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static void LogComputerInformation(ILogger logger)
 		{
-			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Encapsulation.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
+			Validate.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
 
 			var computerInfo = new ComputerInfo();
 
@@ -115,7 +112,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string[] RetrieveAllExceptionMessages(Exception ex)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
+			Validate.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
 
 			var exceptions = RetrieveAllExceptions(ex);
 
@@ -138,7 +135,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 99, Status = Status.Available)]
 		public static Exception[] RetrieveAllExceptions(Exception ex)
 		{
-			Encapsulation.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
+			Validate.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
 
 			var collection = new List<Exception>();
 

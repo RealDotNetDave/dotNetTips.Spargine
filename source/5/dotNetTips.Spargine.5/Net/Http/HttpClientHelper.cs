@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-11-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,7 +18,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Core.OOP;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Net.Http
@@ -33,7 +32,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		private static readonly HttpClient _client = new HttpClient()
 		{
-			Timeout = TimeSpan.FromSeconds(10),
+			Timeout = TimeSpan.FromSeconds(value: 10),
 		};
 
 		/// <summary>
@@ -43,16 +42,17 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <returns>HttpResponseMessage.</returns>
 		/// <exception cref="ArgumentInvalidException">Url cannot be null or empty.</exception>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
+		[Information(nameof(GetAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
 		public static async Task<HttpResponseMessage> GetAsync(string url)
 		{
-			Encapsulation.TryValidateParam(url, nameof(url));
+			Validate.TryValidateParam(url, nameof(url));
 
 			var cts = new CancellationTokenSource();
 
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetAsync(url, cts.Token).ConfigureAwait(false);
+				var response = await _client.GetAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				response.EnsureSuccessStatusCode();
 
@@ -62,17 +62,17 @@ namespace dotNetTips.Spargine.Net.Http
 			{
 				// If the token has been canceled, it is not a timeout.
 				// Handle cancellation.
-				ExceptionThrower.ThrowInvalidOperationException("The operation has been canceled.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
 			}
 			catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
 			{
 				// Handle timeout.
-				ExceptionThrower.ThrowInvalidOperationException("The operation has timed out.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
 			}
 			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 			{
 				// Handle 404
-				ExceptionThrower.ThrowInvalidOperationException($"Resource {url} was not found.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
 			}
 
 			return null;
@@ -83,16 +83,17 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <returns>Stream.</returns>
+		[Information(nameof(GetAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
 		public static async Task<Stream> GetStreamAsync(string url)
 		{
-			Encapsulation.TryValidateParam(url, nameof(url));
+			Validate.TryValidateParam(url, nameof(url));
 
 			var cts = new CancellationTokenSource();
 
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(false);
+				var response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				return response;
 			}
@@ -100,17 +101,17 @@ namespace dotNetTips.Spargine.Net.Http
 			{
 				// If the token has been canceled, it is not a timeout.
 				// Handle cancellation.
-				ExceptionThrower.ThrowInvalidOperationException("The operation has been canceled.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
 			}
 			catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
 			{
 				// Handle timeout.
-				ExceptionThrower.ThrowInvalidOperationException("The operation has timed out.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
 			}
 			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 			{
 				// Handle 404
-				ExceptionThrower.ThrowInvalidOperationException($"Resource {url} was not found.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
 			}
 
 			return null;

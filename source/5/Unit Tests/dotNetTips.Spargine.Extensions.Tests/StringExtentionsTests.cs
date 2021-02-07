@@ -169,6 +169,27 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void RemoveCRLFTest()
+		{
+			var testValue1 = RandomData.GenerateWord(10) + ControlChars.NewLine + RandomData.GenerateWord(15) + ControlChars.CRLF + RandomData.GenerateWord(15);
+
+			var testValue2 = RandomData.GenerateWord(15) + RandomData.GenerateWord(25);
+
+			var result1 = testValue1.RemoveCRLF(".");
+			var result2 = testValue2.RemoveCRLF();
+
+			Assert.IsTrue(result1.Contains(ControlChars.NewLine) == false);
+			Assert.IsTrue(result1.Contains(ControlChars.CRLF) == false);
+			Assert.IsTrue(result1.Contains(ControlChars.CR) == false);
+
+			Assert.IsTrue(result2.Contains(ControlChars.NewLine) == false);
+			Assert.IsTrue(result2.Contains(ControlChars.CRLF) == false);
+			Assert.IsTrue(result2.Contains(ControlChars.CR) == false);
+
+			Assert.IsTrue(string.IsNullOrEmpty(string.Empty.RemoveCRLF()));
+		}
+
+		[TestMethod]
 		public void ReplaceEllipsisWithPeriodTest()
 		{
 			var testValue = RandomData.GenerateWord(25) + "...";

@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 02-02-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,19 +25,13 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	/// <seealso cref="System.IComparable" />
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
-	public abstract class Enumeration : IComparable
+	[Information(nameof(Enumeration), Status = Status.New, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+	public abstract record Enumeration
 	{
-		// TODO: ADD URL FOR ARTICLE FOR THIS CLASS
-
 		/// <summary>
 		/// The display name
 		/// </summary>
 		private readonly string _displayName;
-
-		/// <summary>
-		/// The value
-		/// </summary>
-		private readonly int _value;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Enumeration" /> class.
@@ -54,8 +48,8 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(Enumeration), UnitTestCoverage = 100, Status = Status.New)]
 		protected Enumeration(int value, string displayName)
 		{
-			this._value = value;
-			this._displayName = displayName;
+			this.Value = value;
+			this.DisplayName = displayName;
 		}
 
 		/// <summary>
@@ -65,7 +59,13 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(DisplayName), UnitTestCoverage = 100, Status = Status.New)]
 		public string DisplayName
 		{
-			get { return this._displayName; }
+			get => this._displayName;
+			init
+			{
+				Validate.TryValidateParam(value, nameof(this.DisplayName));
+
+				this._displayName = value;
+			}
 		}
 
 		/// <summary>
@@ -73,10 +73,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The value.</value>
 		[Information(nameof(Value), UnitTestCoverage = 0, Status = Status.New)]
-		public int Value
-		{
-			get { return this._value; }
-		}
+		public int Value { get; init; }
 
 		/// <summary>
 		/// Absolutes the difference.
@@ -87,6 +84,9 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(AbsoluteDifference), UnitTestCoverage = 0, Status = Status.New)]
 		public static int AbsoluteDifference(Enumeration firstValue, Enumeration secondValue)
 		{
+			Validate.TryValidateNullParam(firstValue, nameof(firstValue));
+			Validate.TryValidateNullParam(secondValue, nameof(secondValue));
+
 			var absoluteDifference = Math.Abs(firstValue.Value - secondValue.Value);
 			return absoluteDifference;
 		}
@@ -100,7 +100,9 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(FromDisplayName), UnitTestCoverage = 0, Status = Status.New)]
 		public static T FromDisplayName<T>(string displayName) where T : Enumeration, new()
 		{
-			var matchingItem = Parse<T, string>(displayName, "display name", item => item.DisplayName == displayName);
+			Validate.TryValidateParam(displayName, nameof(displayName));
+
+			var matchingItem = Parse<T, string>(displayName, description: "display name", predicate: item => item.DisplayName == displayName);
 			return matchingItem;
 		}
 
@@ -128,65 +130,15 @@ namespace dotNetTips.Spargine.Core
 			var type = typeof(T);
 			var fields = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
 
-			foreach (var info in fields)
+			for (var i = 0; i < fields.Length; i++)
 			{
 				var instance = new T();
 
-				if (info.GetValue(instance) is T locatedValue)
+				if (fields[i].GetValue(instance) is T locatedValue)
 				{
 					yield return locatedValue;
 				}
 			}
-		}
-
-		/// <summary>
-		/// Compares to.
-		/// </summary>
-		/// <param name="other">The other.</param>
-		/// <returns>System.Int32.</returns>
-		[Information(nameof(CompareTo), UnitTestCoverage = 0, Status = Status.New)]
-		public int CompareTo(object other)
-		{
-			return this.Value.CompareTo(( (Enumeration)other ).Value);
-		}
-
-		/// <summary>
-		/// Determines whether the specified <see cref="object" /> is equal to this instance.
-		/// </summary>
-		/// <param name="obj">The object to compare with the current object.</param>
-		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-		[Information(nameof(Equals), UnitTestCoverage = 0, Status = Status.New)]
-		public override bool Equals(object obj)
-		{
-			if (obj is not Enumeration otherValue)
-			{
-				return false;
-			}
-
-			var typeMatches = this.GetType().Equals(obj.GetType());
-			var valueMatches = this._value.Equals(otherValue.Value);
-
-			return typeMatches && valueMatches;
-		}
-
-		/// <summary>
-		/// Returns a hash code for this instance.
-		/// </summary>
-		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		[Information(nameof(GetHashCode), UnitTestCoverage = 0, Status = Status.New)]
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.Value, this.DisplayName);
-		}
-
-		/// <summary>
-		/// Returns a <see cref="string" /> that represents this instance.
-		/// </summary>
-		/// <returns>A <see cref="string" /> that represents this instance.</returns>
-		[Information(nameof(ToString), UnitTestCoverage = 100, Status = Status.New)]
-		public override string ToString()
-		{
-			return this.DisplayName;
 		}
 
 		/// <summary>
@@ -205,7 +157,7 @@ namespace dotNetTips.Spargine.Core
 
 			if (matchingItem == null)
 			{
-				var message = string.Format("'{0}' is not a valid {1} in {2}", value, description, typeof(T));
+				var message = $"'{value}' is not a valid {description} in {typeof(T)}.";
 
 				ExceptionThrower.ThrowArgumentNullException(message, nameof(predicate));
 			}

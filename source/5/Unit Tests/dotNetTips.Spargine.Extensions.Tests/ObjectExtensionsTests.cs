@@ -320,7 +320,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 		public PersonProper PersonProper { get; set; }
 
-		public IPersonRecord PersonRecord { get; set; }
+		public PersonRecord PersonRecord { get; set; }
 
 		public DateTimeOffset Today { get; set; }
 	}

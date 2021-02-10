@@ -24,7 +24,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// Implements the <see cref="object" />
 	/// </summary>
 	[DebuggerDisplay("{Id}")]
-	public record AddressRecord : IAddressRecord
+	public record AddressRecord : IDataRecord<AddressRecord, string>
 	{
 		/// <summary>
 		/// The address1

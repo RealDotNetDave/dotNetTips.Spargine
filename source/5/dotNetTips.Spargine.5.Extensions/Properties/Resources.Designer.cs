@@ -176,11 +176,11 @@ namespace dotNetTips.Spargine.Extensions.Properties {
                 return ResourceManager.GetString("GB", resourceCulture);
             }
         }
-
-		/// <summary>
-		///   Looks up a localized string similar to Guid is Empty..
-		/// </summary>
-		internal static string GuidIsEmpty {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Guid is Empth..
+        /// </summary>
+        internal static string GuidIsEmpty {
             get {
                 return ResourceManager.GetString("GuidIsEmpty", resourceCulture);
             }
@@ -268,7 +268,7 @@ namespace dotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ^(?n:(?&lt;lastname&gt;(St\.\ )?(?-i:[A-Z]\&apos;?\w+?\-?)+)(?&lt;suffix&gt;\ (?i:([JS]R)|((X(X{1,2})?)?((I((I{1,2})|V|X)?)|(V(I{0,3})))?)))?,((?&lt;prefix&gt;Dr|Prof|M(r?|(is)?)s)\ )?(?&lt;firstname&gt;(?-i:[A-Z]\&apos;?(\w+?|\.)\ ??){1,2})?(\ (?&lt;mname&gt;(?-i:[A-Z])(\&apos;?\w+?|\.))){0,2})$.
+        ///   Looks up a localized string similar to ^[\p{Lu}\p{M}][\p{L}\p{M},.&apos;-]+(?: [\p{L}\p{M},.&apos;-]+)*$.
         /// </summary>
         internal static string RegexFirstLastName {
             get {
@@ -277,7 +277,7 @@ namespace dotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ISBN(-1(?:(0)|3))?:?\x20+(?(1)(?(2)(?:(?=.{13}$)\d{1,5}([ -])\d{1,7}\3\d{1,6}\3(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\4\d{1,7}\4\d{1,6}\4\d$))|(?(.{13}$)(?:\d{1,5}([ -])\d{1,7}\5\d{1,6}\5(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\6\d{1,7}\6\d{1,6}\6\d$))).
+        ///   Looks up a localized string similar to ^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$.
         /// </summary>
         internal static string RegexISBN {
             get {
@@ -331,15 +331,6 @@ namespace dotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (\&lt;|\&gt;).
-        /// </summary>
-        internal static string RegexStringWebSafe {
-            get {
-                return ResourceManager.GetString("RegexStringWebSafe", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to ^(?n:(?!-[\d\,]*K) (?!-((\d{1,3},)*((([3-9]\d\d|2[89]\d|27[4-9])\xB0C)|(((4[6-9]|[5-9]\d)\d)\xB0F)))) -?\d{1,3}(,\d{3})*(\xB0[CF]|K) )$.
         /// </summary>
         internal static string RegexTemp {
@@ -374,11 +365,11 @@ namespace dotNetTips.Spargine.Extensions.Properties {
                 return ResourceManager.GetString("StringDoesNotMatch", resourceCulture);
             }
         }
-
-		/// <summary>
-		///   Looks up a localized string similar to String does not match maximum length..
-		/// </summary>
-		internal static string StringDoesNotMatchMaximumLength {
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String does not matach maximum length..
+        /// </summary>
+        internal static string StringDoesNotMatchMaximumLength {
             get {
                 return ResourceManager.GetString("StringDoesNotMatchMaximumLength", resourceCulture);
             }

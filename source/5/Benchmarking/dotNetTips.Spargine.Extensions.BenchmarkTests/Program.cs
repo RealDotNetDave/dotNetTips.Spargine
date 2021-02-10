@@ -3,7 +3,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
-using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Extensions.BenchmarkTests;
 
 namespace dotNetTips.Spargine.BenchmarkTests
 {
@@ -14,9 +14,12 @@ namespace dotNetTips.Spargine.BenchmarkTests
 			try
 			{
 				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp50));
-				config.WithOptions(ConfigOptions.DisableOptimizationsValidator);
+				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
+					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+
+				BenchmarkRunner.Run<ObjectExtensionsPerfTestRunner>(config);
 
 				Console.Beep();
 				Console.Beep(frequency: 50000, duration: 5000);

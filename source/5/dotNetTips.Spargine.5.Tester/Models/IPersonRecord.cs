@@ -22,13 +22,13 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// <summary>
 	/// The interface for IPerson
 	/// </summary>
-	public interface IPersonRecord : IDataRecord<IPersonRecord, string>
+	public interface IPersonRecord : IDataRecord<PersonRecord, string>
 	{
 		/// <summary>
 		/// Gets or sets the addresses.
 		/// </summary>
 		/// <value>The addresses.</value>
-		List<IAddressRecord> Addresses { get; init; }
+		List<AddressRecord> Addresses { get; init; }
 
 		/// <summary>
 		/// Gets or sets the born on date, time and local.

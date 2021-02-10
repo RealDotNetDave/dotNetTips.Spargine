@@ -26,8 +26,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary")]
 		public void GetOrAddDictionary()
 		{
-			var people = base.personProperDictionary;
-			var person = base.personProperDictionary.Last();
+			var people = base.PersonProperDictionary;
+			var person = base.PersonProperDictionary.Last();
 
 			var result = people.GetOrAdd(person.Key, person.Value);
 
@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary-New")]
 		public void GetOrAddDictionaryNew()
 		{
-			var people = base.personProperDictionary;
+			var people = base.PersonProperDictionary;
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = people.GetOrAdd(person.Id, person);
@@ -52,8 +52,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert))]
 		public void UpsertDictionary()
 		{
-			var people = base.personProperDictionary;
-			var person = base.personProperDictionary.Last();
+			var people = base.PersonProperDictionary;
+			var person = base.PersonProperDictionary.Last();
 
 			var result = people.Upsert(person.Key, person.Value);
 
@@ -63,7 +63,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert) + ":New Person")]
 		public void UpsertDictionaryNew()
 		{
-			var people = base.personProperDictionary;
+			var people = base.PersonProperDictionary;
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = people.Upsert(person.Id, person);

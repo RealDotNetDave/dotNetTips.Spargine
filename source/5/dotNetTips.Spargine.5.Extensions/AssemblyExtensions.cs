@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-09-2021
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using dotNetTips.Spargine.Core;
-
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions
@@ -34,17 +33,17 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
 		public static IEnumerable<T> GetInstances<T>(this Assembly assembly) where T : class
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
 
-			var list = assembly.GetTypes()
+			var types = assembly.GetTypes()
 				.Where(x => !x.IsInterface
 				&& !x.IsAbstract && !x.IsGenericType
 				&& typeof(T).IsAssignableFrom(x));
 
-			foreach (var type in list)
+			foreach (var type in types)
 			{
 				if (Activator.CreateInstance(type) is T instance)
 				{
@@ -61,28 +60,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(GetInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
 		public static IEnumerable<Type> GetInterfaces<T>(this Assembly assembly)
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
 
-			return assembly.GetTypes(typeof(T));
-		}
-
-		/// <summary>
-		/// Gets the types.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="assembly">The assembly.</param>
-		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		/// <exception cref="ArgumentNullException">assembly</exception>
-		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static IEnumerable<Type> GetTypes<T>(this Assembly assembly)
-		{
-			Validate.TryValidateNullParam(assembly, nameof(assembly));
-
-			return assembly.GetTypes(typeof(T));
+			return assembly.GetTypes().Where(x => x.IsInterface).AsEnumerable();
 		}
 
 		/// <summary>
@@ -94,14 +77,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <exception cref="ArgumentNullException">interfaceType</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
 		public static IEnumerable<Type> GetTypes(this Assembly assembly, Type interfaceType)
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
 			Validate.TryValidateNullParam(interfaceType, nameof(assembly));
 
-			return assembly.GetTypes()
-				.Where(x => !x.IsInterface && !x.IsAbstract && interfaceType.IsAssignableFrom(x));
+			return assembly.GetTypes().Where(x => !x.IsAbstract && interfaceType.IsAssignableFrom(x)).AsEnumerable();
 		}
 	}
 }

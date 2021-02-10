@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -25,13 +26,13 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// Implements the <see cref="object" />
 	/// </summary>
 	[DebuggerDisplay("{Email}")]
-	public record PersonRecord : IPersonRecord
+	public record PersonRecord : IDataRecord<PersonRecord, string>
 	{
 
 		/// <summary>
 		/// The addresses
 		/// </summary>
-		private List<IAddressRecord> _addresses;
+		private List<AddressRecord> _addresses;
 		/// <summary>
 		/// The born on
 		/// </summary>
@@ -89,7 +90,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the addresses.
 		/// </summary>
 		/// <value>The addresses.</value>
-		public List<IAddressRecord> Addresses
+		public List<AddressRecord> Addresses
 		{
 			get
 			{

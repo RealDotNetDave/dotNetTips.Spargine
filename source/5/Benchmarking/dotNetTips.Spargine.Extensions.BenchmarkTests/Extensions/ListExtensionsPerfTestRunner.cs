@@ -82,7 +82,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AddLast) + ":Array")]
 		public void AddLastToArray()
 		{
-			var people = base.personProperArrayFull.Clone<PersonProper>();
+			var people = base.PersonProperArrayFull.Clone<PersonProper>();
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = people.AddLast(person);
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AddLast) + ":List")]
 		public void AddLastToList()
 		{
-			var people = base.personProperCollection.CopyToList();
+			var people = base.PersonProperCollection.CopyToList();
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = people.AddLast(person);
@@ -104,7 +104,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AreEqual) + ":Array")]
 		public void AreEqualArray()
 		{
-			var result = base.personProperArrayFull.AreEqual(base.personProperArrayHalf);
+			var result = base.PersonProperArrayFull.AreEqual(base.PersonProperArrayHalf);
 
 			base.Consumer.Consume(result);
 		}
@@ -112,7 +112,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AreEqual) + ":List")]
 		public void AreEqualList()
 		{
-			var result = base.personProperCollection.AreEqual(base.personProperListHalf);
+			var result = base.PersonProperCollection.AreEqual(base.PersonProperListHalf);
 
 			base.Consumer.Consume(result);
 		}
@@ -120,7 +120,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ClearNulls))]
 		public void ClearNulls()
 		{
-			var people = base.personProperCollection;
+			var people = base.PersonProperCollection;
 			people.Add(null);
 
 			var result = people.ClearNulls();
@@ -131,7 +131,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.CopyToList))]
 		public void CopyToList()
 		{
-			var result = base.personProperCollection.CopyToList();
+			var result = base.PersonProperCollection.CopyToList();
 
 			base.Consumer.Consume(result);
 		}
@@ -139,7 +139,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.IndexOf))]
 		public void IndexOf()
 		{
-			var result = base.personProperCollection.IndexOf(base.personProperCollection.Last());
+			var result = base.PersonProperCollection.IndexOf(base.PersonProperCollection.Last());
 
 			base.Consumer.Consume(result);
 		}
@@ -148,7 +148,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		public void IndexOfComparer()
 		{
 			var comparer = new PersonProperComparer();
-			var result = base.personProperCollection.IndexOf(base.personProperCollection.Last(), comparer);
+			var result = base.PersonProperCollection.IndexOf(base.PersonProperCollection.Last(), comparer);
 
 			base.Consumer.Consume(result);
 		}
@@ -156,7 +156,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":Array")]
 		public void ListHashCodeArray()
 		{
-			var result = base.personProperArrayFull.ArrayHashCode();
+			var result = base.PersonProperArrayFull.ArrayHashCode();
 
 			base.Consumer.Consume(result);
 		}
@@ -164,7 +164,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":List")]
 		public void ListHashCodeList()
 		{
-			var result = base.personProperCollection.ListHashCode();
+			var result = base.PersonProperCollection.ListHashCode();
 
 			base.Consumer.Consume(result);
 		}
@@ -172,7 +172,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":List-Read Only")]
 		public void ListHashCodeReadOnlyList()
 		{
-			var result = base.personProperCollection.ToReadOnlyCollection().ListHashCode();
+			var result = base.PersonProperCollection.ToReadOnlyCollection().ListHashCode();
 
 			base.Consumer.Consume(result);
 		}
@@ -180,7 +180,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.OrderBy))]
 		public void OrderBy()
 		{
-			var result = base.personProperCollection.OrderBy(p => p.City);
+			var result = base.PersonProperCollection.OrderBy(p => p.City);
 
 			base.Consumer.Consume(result);
 		}
@@ -188,7 +188,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.OrderByOrdinal))]
 		public void OrderByOrdinal()
 		{
-			var result = base.personProperCollection.OrderByOrdinal(p => p.City);
+			var result = base.PersonProperCollection.OrderByOrdinal(p => p.City);
 
 			base.Consumer.Consume(result);
 		}
@@ -196,7 +196,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.Page))]
 		public void Page()
 		{
-			foreach (var people in base.personProperCollection.Page(10))
+			foreach (var people in base.PersonProperCollection.Page(10))
 			{
 				foreach (var person in people)
 				{
@@ -208,7 +208,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.PickRandom))]
 		public void PickRandom()
 		{
-			var result = base.personProperCollection.Take(base.CollectionCount / 10);
+			var result = base.PersonProperCollection.Take(base.CollectionCount / 10);
 
 			base.Consumer.Consume(result);
 		}
@@ -220,14 +220,14 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.Shuffle))]
 		public void Shuffle()
 		{
-			var result = base.personProperCollection.Shuffle();
+			var result = base.PersonProperCollection.Shuffle();
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.Shuffle) + ": With Count")]
 		public void ShuffleWithCount()
 		{
-			var result = base.personProperCollection.Shuffle(base.CollectionCount / 10);
+			var result = base.PersonProperCollection.Shuffle(base.CollectionCount / 10);
 
 			base.Consumer.Consume(result);
 		}
@@ -235,7 +235,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ToObservableCollection))]
 		public void ToObservableCollection()
 		{
-			var result = base.personProperCollection.ToObservableCollection();
+			var result = base.PersonProperCollection.ToObservableCollection();
 
 			base.Consumer.Consume(result);
 		}
@@ -243,7 +243,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ToReadOnlyCollection))]
 		public void ToReadOnlyCollection()
 		{
-			var result = base.personProperCollection.ToReadOnlyCollection();
+			var result = base.PersonProperCollection.ToReadOnlyCollection();
 
 			base.Consumer.Consume(result);
 		}

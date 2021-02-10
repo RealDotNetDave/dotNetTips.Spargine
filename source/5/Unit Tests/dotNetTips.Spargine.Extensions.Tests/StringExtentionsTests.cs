@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -41,6 +42,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue2 = RandomData.GenerateWord(15);
 
 			Assert.IsTrue(string.IsNullOrEmpty(testValue1.Concat("-", Tristate.False, testValue2)) == false);
+
+			Assert.IsTrue(string.IsNullOrEmpty(testValue1.Concat("-", Tristate.True, testValue2)) == false);
+
 			Assert.IsTrue(testValue1.Concat("-", Tristate.False, testValue2).Length == 26);
 		}
 
@@ -51,7 +55,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.ContainsAny("d", "T"));
 
-			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.ContainsAny("M", "D"));
+			Assert.IsFalse(testValue.ContainsAny());
+
+			Assert.IsFalse(string.Empty.ContainsAny("M", "D"));
 		}
 
 		[TestMethod]
@@ -81,6 +87,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Count() == 3);
 
+			Assert.IsTrue(result.Count() == 3);
+
 			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.DelimitedStringToArray());
 		}
 
@@ -103,11 +111,27 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void ExtractTest()
+		{
+			var inputString = "Microsoft .NET, Visual Studio, Azure";
+
+			var result = inputString.Extract("Micro", "V");
+
+			Assert.IsTrue(result.HasValue());
+
+			result = string.Empty.Extract("M", "V");
+
+			Assert.IsTrue(string.IsNullOrEmpty(result));
+		}
+
+		[TestMethod]
 		public void FromBase64Test()
 		{
 			var testValue = RandomData.GenerateWord(25);
 
 			Assert.IsTrue(testValue.ToBase64().FromBase64().IsNotEmpty());
+
+			Assert.IsTrue(string.Empty.ToBase64().FromBase64().IsEmpty());
 		}
 
 		[TestMethod]
@@ -128,6 +152,12 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(12, -10));
 
 			Assert.IsFalse(testValue.HasValue("XXXXX"));
+
+			//Test Regex
+			var email = "dotnetdave@live.com";
+			Assert.IsTrue(email.HasValue(@"([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)", RegexOptions.IgnoreCase));
+
+			Assert.IsFalse("David".HasValue(string.Empty, RegexOptions.IgnoreCase));
 		}
 
 		[TestMethod]
@@ -149,7 +179,44 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			var result = testValue.Indent(2, '>');
 
-			Assert.IsTrue(result.Length > 100);
+			Assert.IsTrue(result.Length > 90);
+
+			result = testValue.Indent(0, '>');
+
+			Assert.IsTrue(result.Length > 90);
+		}
+
+		[TestMethod]
+		public void IsAsciiLetterOrDigitTest()
+		{
+			Assert.IsTrue('A'.IsAsciiLetterOrDigit());
+
+			Assert.IsTrue('1'.IsAsciiLetterOrDigit());
+		}
+
+		[TestMethod]
+		public void IsAsciiLetterTest()
+		{
+			Assert.IsTrue('A'.IsAsciiLetter());
+		}
+
+
+		[TestMethod]
+		public void IsCreditCardTest()
+		{
+			Assert.IsFalse("123".IsCreditCard());
+		}
+
+		[TestMethod]
+		public void IsDomainAddressTest()
+		{
+			Assert.IsTrue("dotnettips.com".IsDomainAddress());
+		}
+
+		[TestMethod]
+		public void IsEmailAddressTest()
+		{
+			Assert.IsTrue("dotnetdave@live.com".IsEmailAddress());
 		}
 
 		[TestMethod]
@@ -161,11 +228,55 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void IsFirstLastNameTest()
+		{
+			Assert.IsTrue("David McCarter".IsFirstLastName());
+		}
+
+		[TestMethod]
+		public void IsISBNTest()
+		{
+			Assert.IsTrue("1257561035".IsISBN());
+		}
+
+		[TestMethod]
 		public void IsNotEmptyTest()
 		{
 			Assert.IsTrue(RandomData.GenerateWord(10).IsNotEmpty());
 
 			Assert.IsFalse(string.Empty.IsNotEmpty());
+		}
+
+		[TestMethod]
+		public void IsScientificTest()
+		{
+			Assert.IsFalse("6.5 ✕ 10^8".IsScientific());
+		}
+
+		[TestMethod]
+		public void IsStringTest()
+		{
+			Assert.IsTrue("979-8589711707".IsString());
+		}
+
+		[TestMethod]
+		public void IsUrlTest()
+		{
+			Assert.IsTrue("http://dotnettips.com".IsUrl());
+		}
+
+		[TestMethod]
+		public void IsWhiteSpaceTest()
+		{
+			Assert.IsTrue("      ".IsWhitespace());
+
+			Assert.IsTrue(ControlChars.Space.IsWhitespace());
+
+			string testString = null;
+
+			Assert.IsFalse(testString.IsWhitespace());
+
+			Assert.IsFalse("David".IsWhitespace());
 		}
 
 		[TestMethod]
@@ -197,6 +308,20 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = testValue.ReplaceEllipsisWithPeriod();
 
 			Assert.IsTrue(result.EndsWith("...") == false);
+
+			Assert.IsTrue(string.IsNullOrEmpty(string.Empty.ReplaceEllipsisWithPeriod()));
+		}
+
+		[TestMethod]
+		public void SplitRemoveEmptyTest()
+		{
+			var testValue = RandomData.GenerateWord(25) + ',' + RandomData.GenerateWord(25);
+
+			Assert.IsTrue(testValue.SplitRemoveEmpty().Count() > 1);
+
+			string testString = null;
+
+			Assert.ThrowsException<ArgumentNullException>(() => testString.SplitRemoveEmpty());
 		}
 
 		[TestMethod]
@@ -204,7 +329,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var testValue = RandomData.GenerateWord(25) + ',' + RandomData.GenerateWord(25);
 
-			Assert.IsTrue(testValue.Split(',').Count() == 2);
+			Assert.IsTrue(testValue.Split(',', options: StringSplitOptions.RemoveEmptyEntries).Count() == 2);
+
+			Assert.IsTrue(testValue.Split(',', count: 2, options: StringSplitOptions.RemoveEmptyEntries).Count() == 2);
 		}
 
 		[TestMethod]
@@ -269,6 +396,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(10);
 
 			Assert.IsTrue(testValue.StartsWithOrdinalIgnoreCase(testValue));
+
+			Assert.IsFalse(string.Empty.StartsWithOrdinalIgnoreCase("David"));
 		}
 
 		[TestMethod]
@@ -277,6 +406,12 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(10);
 
 			Assert.IsTrue(testValue.StartsWithOrdinal(testValue));
+
+			Assert.IsFalse(testValue.StartsWithOrdinal(null));
+
+			string testString = null;
+
+			Assert.IsFalse(testString.StartsWithOrdinal("DAVID"));
 		}
 
 		[TestMethod]
@@ -285,7 +420,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(50);
 
 			//Test parameters
-			Assert.IsTrue(string.IsNullOrEmpty(string.Empty.SubstringTrim(1, 10)));
+			Assert.IsTrue(string.Empty.SubstringTrim(1, 10).HasValue());
+			Assert.IsFalse(string.Empty.SubstringTrim(0, 0).HasValue());
+
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(-100, 10));
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(1, -10));
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(1, 100));
@@ -311,6 +448,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = words.ToTitleCase();
 
 			Assert.IsTrue(testValue.IsNotEmpty());
+
+			string testString = null;
+
+			Assert.IsFalse(testString.ToTitleCase().HasValue());
 		}
 
 		[TestMethod]
@@ -319,6 +460,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(25) + "   ";
 
 			Assert.IsTrue(testValue.ToTrimmed().Length == 25);
+
+			string testString = null;
+
+			Assert.IsFalse(testString.ToTrimmed().HasValue());
 		}
 
 	}

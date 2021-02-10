@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -38,6 +39,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			people1.AddRange(people2);
 
 			Assert.IsTrue(people1.ContainsAny(people2.ToArray()));
+
+			Assert.IsFalse(people1.ContainsAny());
 		}
 
 		[TestMethod]
@@ -92,6 +95,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			//Test Finding item in collection
 			Assert.IsNotNull(people.FirstOrDefault(person1) == person1);
 			Assert.IsNotNull(people.FirstOrDefault(p => p.Age.TotalDays > 100, person1).Equals(person1));
+			Assert.IsNotNull(people.FirstOrDefault(p => p.Age.TotalDays > 50000, person1).Equals(person1));
 		}
 
 		[TestMethod]
@@ -106,6 +110,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			//Test Finding Days of over 100
 			Assert.IsNotNull(coordinates.FirstOrNull(p => p.X == searchValue));
 			Assert.IsNull(coordinates.FirstOrNull(p => p.X == int.MinValue));
+			Assert.IsNull(coordinates.Take(0).FirstOrNull(p => p.X == int.MinValue));
+
 		}
 
 		[TestMethod]
@@ -116,6 +122,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			//Test
 			Assert.IsTrue(testValue.ToDelimitedString(',').HasItems());
 			Assert.IsTrue(testValue.ToDelimitedString().HasItems());
+			Assert.IsTrue(string.Empty.ToDelimitedString().DoesNotHaveItems());
 		}
 
 		[TestMethod]
@@ -133,8 +140,12 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void StartsWithTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(50);
+			var people1 = people.Take(5);
+			var people2 = people1;
 
 			Assert.IsTrue(people.StartsWith(people.Take(5)));
+
+			Assert.IsTrue(people1.StartsWith(people2));
 		}
 
 		[TestMethod]
@@ -145,6 +156,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people2 = people1.Clone<List<PersonProper>>();
 
 			Assert.IsFalse(people1.StructuralSequenceEqual(people2));
+
+			Assert.IsTrue(people1.StructuralSequenceEqual(people1));
 		}
 
 		[TestMethod]
@@ -161,6 +174,16 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(50);
 
 			Assert.IsTrue(people.ToLinkedList().HasItems());
+		}
+
+		[TestMethod]
+		public async Task ToListAsyncTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(50).AsEnumerable();
+
+			var result = await people.ToListAsync();
+
+			Assert.IsNotNull(result);
 		}
 	}
 }

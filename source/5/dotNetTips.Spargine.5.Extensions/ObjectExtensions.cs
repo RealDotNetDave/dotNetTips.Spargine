@@ -455,6 +455,22 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Disposes the collection.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="items">The items.</param>
+		private static void DisposeCollection<T>(this IEnumerable<T> items)
+		{
+			ProcessCollectionToDispose(items);
+		}
+
+		/// <summary>
+		/// Tries to dispose collection items.
+		/// </summary>
+		/// <param name="items">The items.</param>
+		private static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
+
+		/// <summary>
 		/// Converts JSON to Type.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
@@ -464,6 +480,24 @@ namespace dotNetTips.Spargine.Extensions
 	where T : class
 		{
 			return JsonSerializer.Deserialize<T>(json);
+		}
+
+		/// <summary>
+		/// Processes the collection to dispose.
+		/// </summary>
+		/// <param name="items">The items.</param>
+		private static void ProcessCollectionToDispose(IEnumerable items)
+		{
+			if (items.HasItems())
+			{
+				foreach (var item in items)
+				{
+					if (item != null && item is IDisposable disposeItem)
+					{
+						disposeItem.TryDispose();
+					}
+				}
+			}
 		}
 
 	}

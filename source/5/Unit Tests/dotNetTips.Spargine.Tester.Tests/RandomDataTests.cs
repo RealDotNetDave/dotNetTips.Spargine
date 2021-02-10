@@ -539,6 +539,23 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsTrue(stringValue.Length == 25);
 		}
 
+		[TestMethod]
+		public void UpdatePersonRecordTest()
+		{
+			var person1 = RandomData.GeneratePersonCollection(count: 1, addressCount: 2).First();
+
+			Assert.IsNotNull(person1);
+
+			// Update Postal code
+			var person2 = person1 with { CellPhone = "(858) 123-1234" };
+
+			Assert.IsNotNull(person2);
+
+			Debug.WriteLine(person2.ToString());
+
+			Debug.WriteLine(person2.PropertiesToString());
+		}
+
 		private void DeleteFiles(IEnumerable<string> files)
 		{
 			if (files.HasItems() == false)

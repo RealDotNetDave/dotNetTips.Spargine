@@ -1,4 +1,4 @@
-
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -176,10 +176,11 @@
     <value>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</value>
   </data>
   <data name="RegexFirstLastName" xml:space="preserve">
-    <value>^(?n:(?&lt;lastname&gt;(St\.\ )?(?-i:[A-Z]\'?\w+?\-?)+)(?&lt;suffix&gt;\ (?i:([JS]R)|((X(X{1,2})?)?((I((I{1,2})|V|X)?)|(V(I{0,3})))?)))?,((?&lt;prefix&gt;Dr|Prof|M(r?|(is)?)s)\ )?(?&lt;firstname&gt;(?-i:[A-Z]\'?(\w+?|\.)\ ??){1,2})?(\ (?&lt;mname&gt;(?-i:[A-Z])(\'?\w+?|\.))){0,2})$</value>
+    <value>^[\p{Lu}\p{M}][\p{L}\p{M},.'-]+(?: [\p{L}\p{M},.'-]+)*$</value>
   </data>
   <data name="RegexISBN" xml:space="preserve">
-    <value>ISBN(-1(?:(0)|3))?:?\x20+(?(1)(?(2)(?:(?=.{13}$)\d{1,5}([ -])\d{1,7}\3\d{1,6}\3(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\4\d{1,7}\4\d{1,6}\4\d$))|(?(.{13}$)(?:\d{1,5}([ -])\d{1,7}\5\d{1,6}\5(?:\d|x)$)|(?:(?=.{17}$)97(?:8|9)([ -])\d{1,5}\6\d{1,7}\6\d{1,6}\6\d$)))</value>
+    <value>^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$</value>
+    <comment>ISBN Regex</comment>
   </data>
   <data name="RegexPhoneNumberUS" xml:space="preserve">
     <value>((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}</value>
@@ -195,9 +196,6 @@
   </data>
   <data name="RegexString" xml:space="preserve">
     <value>^(\w|\W)+$</value>
-  </data>
-  <data name="RegexStringWebSafe" xml:space="preserve">
-    <value>(\&lt;|\&gt;)</value>
   </data>
   <data name="RegexTemp" xml:space="preserve">
     <value>^(?n:(?!-[\d\,]*K) (?!-((\d{1,3},)*((([3-9]\d\d|2[89]\d|27[4-9])\xB0C)|(((4[6-9]|[5-9]\d)\d)\xB0F)))) -?\d{1,3}(,\d{3})*(\xB0[CF]|K) )$</value>

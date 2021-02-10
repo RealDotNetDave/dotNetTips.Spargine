@@ -14,13 +14,13 @@ namespace dotNetTips.Spargine.Benchmarking
 	/// <seealso cref="object" />
 	[CategoriesColumn]
 	[CsvExporter]
-	//[EvaluateOverhead]
+	[EvaluateOverhead]
 	[GcServer(true)]
 	[GitHub]
 	[HtmlExporter]
 	[JsonExporter(indentJson: true)]
 	[MarkdownExporter]
-	//[MemoryDiagnoser]
+	[MemoryDiagnoser]
 	[Orderer(SummaryOrderPolicy.Method)]
 	[StopOnFirstError(true)]
 	public abstract class PerfTestRunner
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The test time span
 		/// </summary>
-		private TimeSpan _testTimeSpan = new TimeSpan(300, 13, 33, 34, 9876);
+		private TimeSpan _testTimeSpan = new TimeSpan(days: 300, hours: 13, minutes: 33, seconds: 34, milliseconds: 9876);
 
 		/// <summary>
 		/// Gets the consumer.

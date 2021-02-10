@@ -85,11 +85,11 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IAddressRecord[].</returns>
 		[Information(nameof(GenerateAddresses), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static List<IAddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+		public static List<AddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
 
-			var addresses = new List<IAddressRecord>(count);
+			var addresses = new List<AddressRecord>(count);
 
 			for (var i = 0; i < count; i++)
 			{
@@ -468,9 +468,9 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IPersonRecord[].</returns>
 		[Information(nameof(GeneratePersonCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static List<IPersonRecord> GeneratePersonCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+		public static List<PersonRecord> GeneratePersonCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
-			var records = new List<IPersonRecord>(count);
+			var records = new List<PersonRecord>(count);
 
 			for (var i = 0; i < count; i++)
 			{

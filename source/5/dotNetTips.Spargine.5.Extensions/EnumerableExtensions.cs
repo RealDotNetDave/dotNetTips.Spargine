@@ -29,42 +29,6 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class EnumerableExtensions
 	{
-
-		/// <summary>
-		/// The global random
-		/// </summary>
-		private static readonly Random _globalRandom = new Random((int)DateTime.Now.Ticks);
-
-		/// <summary>
-		/// The random
-		/// </summary>
-		[ThreadStatic]
-		private static Random _threadRandom;
-
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <value>The random.</value>
-		private static Random Random
-		{
-			get
-			{
-				if (_threadRandom == null)
-				{
-					int seed;
-
-					lock (_globalRandom)
-					{
-						seed = _globalRandom.Next();
-					}
-
-					_threadRandom = new Random(seed);
-				}
-
-				return _threadRandom;
-			}
-		}
-
 		/// <summary>
 		/// Determines whether the specified collection has items specified.
 		/// </summary>
@@ -72,9 +36,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <param name="items">The items.</param>
 		/// <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		/// <exception cref="ArgumentNullException">List is null or empty.</exception>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "2/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool ContainsAny<T>(this IEnumerable<T> list, params T[] items)
 		{
+			Validate.TryValidateParam(list, nameof(list));
+
 			if (items.DoesNotHaveItems())
 			{
 				return false;
@@ -91,10 +58,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
-		[Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static int Count(this IEnumerable list)
 		{
-			if (list == null)
+			if (list is null)
 			{
 				return 0;
 			}
@@ -115,33 +82,34 @@ namespace dotNetTips.Spargine.Extensions
 
 			return count;
 		}
+
 		/// <summary>
 		/// Determines whether the specified source does not have items or is null.
 		/// </summary>
-		/// <param name="source">The source.</param>
+		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool DoesNotHaveItems(this IEnumerable source)
+		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool DoesNotHaveItems(this IEnumerable list)
 		{
-			return source?.Count() <= 0;
+			return list?.Count() <= 0;
 		}
 
 		/// <summary>
 		/// Fasts any.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="source">The source.</param>
+		/// <param name="list">The source.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Boolean.</returns>
-		/// <exception cref="ArgumentNullException">predicate</exception>
-		/// <exception cref="System.ArgumentNullException">predicate</exception>
+		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
+		/// <exception cref="System.ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool FastAny<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+		public static bool FastAny<T>(this IEnumerable<T> list, Func<T, bool> predicate)
 		{
-			Validate.TryValidateParam(source, nameof(source));
+			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateParam<ArgumentNullException>(predicate.IsNotNull(), nameof(predicate));
 
-			return source.FirstOrDefault(predicate) != null;
+			return list.FirstOrDefault(predicate) != null;
 		}
 
 		/// <summary>
@@ -151,14 +119,16 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Int32.</returns>
-		/// <exception cref="ArgumentNullException">predicate</exception>
-		/// <exception cref="System.ArgumentNullException">predicate</exception>
-		/// <exception cref="Exception">predicate</exception>
-		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		/// <exception cref="System.ArgumentNullException">Predicate cannot be null.</exception>
+		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static int FastCount<T>(this IEnumerable<T> list, Func<T, bool> predicate)
 		{
-			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateNullParam(predicate, nameof(predicate));
+
+			if (list is null)
+			{
+				return 0;
+			}
 
 			if (list is List<T>)
 			{
@@ -188,13 +158,17 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <param name="alternate">The alternate.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">alternate</exception>
+		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FirstOrDefault<T>(this IEnumerable<T> list, T alternate)
 		{
-			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateNullParam(alternate, nameof(alternate));
+
+			if (list is null)
+			{
+				return alternate;
+			}
 
 			return list.DefaultIfEmpty(alternate).First();
 		}
@@ -208,20 +182,30 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="predicate">The predicate.</param>
 		/// <param name="alternate">The alternate.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">predicate</exception>
-		/// <exception cref="ArgumentNullException">alternate</exception>
-		/// <exception cref="ArgumentNullException">predicate</exception>
-		/// <exception cref="ArgumentNullException">alternate</exception>
-		/// <exception cref="ArgumentNullException">predicate</exception>
+		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
+		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FirstOrDefault<T>(this IEnumerable<T> list, Func<T, bool> predicate, T alternate)
 		{
-			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateNullParam(alternate, nameof(alternate));
 			Validate.TryValidateNullParam(predicate, nameof(predicate));
 
-			return list.Where(predicate).FirstOrDefault(alternate);
+			if (list is null)
+			{
+				return alternate;
+			}
+
+			var filteredList = list.Where(predicate).AsEnumerable();
+
+			if (filteredList.HasItems())
+			{
+				return filteredList.FirstOrDefault(alternate);
+			}
+			else
+			{
+				return alternate;
+			}
 		}
 
 		/// <summary>
@@ -231,12 +215,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="match">The match.</param>
 		/// <returns>System.Nullable&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">Function cannot be null.</exception>
-		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		/// <exception cref="ArgumentNullException">Match cannot be null.</exception>
+		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T? FirstOrNull<T>(this IEnumerable<T> list, Func<T, bool> match)
 			where T : struct
 		{
-			if (list.DoesNotHaveItems())
+			if (list is null)
 			{
 				return null;
 			}
@@ -272,24 +256,24 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Determines whether the specified count has items.
 		/// </summary>
-		/// <param name="source">The source.</param>
+		/// <param name="list">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this IEnumerable source, int count)
+		public static bool HasItems(this IEnumerable list, int count)
 		{
-			return source?.Count() == count;
+			return list?.Count() == count;
 		}
 
 		/// <summary>
 		/// Determines whether [is null or empty] [the specified source].
 		/// </summary>
-		/// <param name="source">The source.</param>
+		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static bool IsNullOrEmpty(this IEnumerable source)
+		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		public static bool IsNullOrEmpty(this IEnumerable list)
 		{
-			return source == null || source.GetEnumerator().MoveNext() == false;
+			return list == null || list.GetEnumerator().MoveNext() == false;
 		}
 
 		/// <summary>
@@ -299,8 +283,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The items.</param>
 		/// <param name="count">The count.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list</exception>
-		/// <exception cref="ArgumentOutOfRangeException">count - Count must be greater than 0</exception>
+		/// <exception cref="ArgumentNullException">List cannot be null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 0</exception>
 		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
 		public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list, int count = 1)
 		{
@@ -318,11 +302,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="second">The second.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool StartsWith<T>(this IEnumerable<T> first, IEnumerable<T> second)
 		{
-			Validate.TryValidateParam(first, nameof(first));
-			Validate.TryValidateParam(second, nameof(second));
+			if (first is null || second is null)
+			{
+				return false;
+			}
 
 			if (ReferenceEquals(first, second))
 			{
@@ -353,11 +339,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentNullException">second</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(StructuralSequenceEqual), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(StructuralSequenceEqual), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool StructuralSequenceEqual<T>(this IEnumerable<T> first, IEnumerable<T> second)
 		{
-			Validate.TryValidateParam(first, nameof(first));
-			Validate.TryValidateParam(second, nameof(second));
+			if (first is null || second is null)
+			{
+				return false;
+			}
 
 			if (ReferenceEquals(first, second))
 			{
@@ -387,12 +375,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="delimiter">The delimiter (default is comma if not supplied).</param>
 		/// <returns>System.String.</returns>
-		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		/// <exception cref="System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		[Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
-			if (list.HasItems() == false)
+			if (list?.Count() == 0)
 			{
 				return string.Empty;
 			}
@@ -417,6 +403,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>A list of groupings such that the key of the list is TKey type and the value is List of TValue type.</returns>
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		/// <remarks>Original code by: James Michael Hare</remarks>
+		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>(this IEnumerable<IGrouping<TKey, TValue>> list)
 		{
@@ -426,30 +413,12 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Returns distinct collection using the specified comparer.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
-		/// <param name="comparer">The comparer.</param>
-		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">comparer</exception>
-		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(ToDistinct), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<T> ToDistinct<T>(this IEnumerable<T> list, Func<T, T, bool> comparer)
-			where T : class
-		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(comparer, nameof(comparer));
-
-			return list.Distinct(new DynamicEqualityComparer<T>(comparer));
-		}
-
-		/// <summary>
 		/// To the immutable.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The values.</param>
 		/// <returns>IImmutableList&lt;T&gt;.</returns>
+		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ImmutableList<T> ToImmutable<T>(this IEnumerable<T> list)
 		{
@@ -464,6 +433,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The values.</param>
 		/// <returns>LinkedList&lt;T&gt;.</returns>
+		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> list)
 		{
@@ -473,139 +443,18 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Converts <see cref="IEnumerable" /> collection to a <see cref="List{T}" />.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
-		/// <returns>List&lt;TSource&gt;.</returns>
-		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static List<T> ToList<T>(this IEnumerable list)
-		{
-			Validate.TryValidateParam(list, nameof(list));
-
-			return list.OfType<T>().ToList();
-		}
-
-		/// <summary>
 		/// Creates a Generic List async.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static async Task<List<T>> ToListAsync<T>(this IEnumerable<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));
 
 			return await Task.Run(() => list.ToList()).ConfigureAwait(false);
-		}
-
-		/// <summary>
-		/// Returns list based on function.
-		/// </summary>
-		/// <typeparam name="TSource">The type of the list.</typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="condition">if set to <c>true</c> [condition].</param>
-		/// <param name="predicate">The predicate.</param>
-		/// <returns>IEnumerable&lt;TSource&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		/// <remarks>Original code by: Phil Campbell</remarks>
-		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> list, bool condition, Func<TSource, bool> predicate)
-		{
-			return condition ? list.Where(predicate) : list;
-		}
-
-		/// <summary>
-		/// Returns list based on function.
-		/// </summary>
-		/// <typeparam name="TSource">The type of the list.</typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="condition">if set to <c>true</c> [condition].</param>
-		/// <param name="predicate">The predicate.</param>
-		/// <returns>IEnumerable&lt;TSource&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		/// <remarks>Original code by: Phil Campbell</remarks>
-		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<TSource> WhereIf<TSource>(this IEnumerable<TSource> list, bool condition, Func<TSource, int, bool> predicate)
-		{
-			return condition ? list.Where(predicate) : list;
-		}
-
-		/// <summary>
-		/// Disposes the collection.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="items">The items.</param>
-		internal static void DisposeCollection<T>(this IEnumerable<T> items)
-		{
-			ProcessCollectionToDispose(items);
-		}
-
-		/// <summary>
-		/// Tries to dispose collection items.
-		/// </summary>
-		/// <param name="items">The items.</param>
-		internal static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
-
-		/// <summary>
-		/// Processes the collection to dispose.
-		/// </summary>
-		/// <param name="items">The items.</param>
-		internal static void ProcessCollectionToDispose(IEnumerable items)
-		{
-			if (items.HasItems())
-			{
-				foreach (var item in items)
-				{
-					if (item != null && item is IDisposable disposeItem)
-					{
-						disposeItem.TryDispose();
-					}
-				}
-			}
-		}
-
-		/// <summary>
-		/// Class DynamicEqualityComparer. This class cannot be inherited. Implements the <see cref="System.Collections.Generic.IEqualityComparer{T}" />
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <seealso cref="System.Collections.Generic.IEqualityComparer{T}" />
-		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		private sealed class DynamicEqualityComparer<T> : IEqualityComparer<T>
-			where T : class
-		{
-			/// <summary>
-			/// The function
-			/// </summary>
-			private readonly Func<T, T, bool> _func;
-
-			/// <summary>
-			/// Initializes a new instance of the <see cref="DynamicEqualityComparer{T}" /> class.
-			/// </summary>
-			/// <param name="func">The function.</param>
-			public DynamicEqualityComparer(Func<T, T, bool> func)
-			{
-				this._func = func;
-			}
-
-			/// <summary>
-			/// Determines whether the specified objects are equal.
-			/// </summary>
-			/// <param name="x">The first object of type T to compare.</param>
-			/// <param name="y">The second object of type T to compare.</param>
-			/// <returns>true if the specified objects are equal; otherwise, false.</returns>
-			public bool Equals(T x, T y) => this._func(x, y);
-
-			/// <summary>
-			/// Returns a hash code for this instance.
-			/// </summary>
-			/// <param name="obj">The <see cref="T:System.Object"></see> for which a hash code is to be returned.</param>
-			/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash
-			/// table.</returns>
-			public int GetHashCode(T obj) => 0;
 		}
 	}
 }

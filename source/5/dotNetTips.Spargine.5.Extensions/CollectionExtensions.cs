@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> collection, T item)
 		{
-			if (item is null)
+			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}
@@ -109,7 +109,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<T>(this ICollection<T> collection, T item, IEqualityComparer<T> comparer)
 		{
-			if (item is null)
+			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}

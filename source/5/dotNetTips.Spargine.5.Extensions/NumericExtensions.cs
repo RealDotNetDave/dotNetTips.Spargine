@@ -367,7 +367,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Number: 2,103,162,670.00, Percent: 210,316,267,000.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this int input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -391,7 +391,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// General: 555.555, Number: 555.55, Percent: 55,555.50%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" /> or <see cref="NumericFormat.Hexadecimal" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this double input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -416,7 +416,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Number: 4,611,686,018,427,387.00, Percent: 461,168,601,842,738,700.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this long input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -441,7 +441,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Number: 9,223,372,036,854.00, Percent: 922,337,203,685,400.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this ulong input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -466,7 +466,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Number: 21,474,836.00, Percent: 2,147,483,600.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this uint input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -491,7 +491,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Percent: 3,276,700.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this short input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));
@@ -515,7 +515,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// General: 65535, Hexadecimal: FFFF, Number: 65,535.00, Percent: 6,553,500.00%.
 		/// </example>
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this ushort input, NumericFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));

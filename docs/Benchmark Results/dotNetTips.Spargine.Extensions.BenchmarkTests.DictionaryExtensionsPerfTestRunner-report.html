@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.DictionaryExtensionsPerfTestRunner-20210210-171534</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+Unknown processor
+.NET Core SDK=5.0.200-preview.21079.7
+  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-NPULEA : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+Categories=DictionaryExtensions  
+</code></pre>
+
+<table>
+<thead><tr><th>           Method</th><th>CollectionCount</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;Upsert:New Person&#39;</td><td>25</td><td>9,022.9 ns</td><td>219.55 ns</td><td>626.40 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>&#39;Upsert:New Person&#39;</td><td>50</td><td>8,959.1 ns</td><td>224.45 ns</td><td>643.98 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>&#39;Upsert:New Person&#39;</td><td>100</td><td>9,003.4 ns</td><td>199.01 ns</td><td>567.79 ns</td><td>0.0153</td><td>-</td><td>-</td><td>11666 B</td>
+</tr><tr><td>&#39;Upsert:New Person&#39;</td><td>250</td><td>8,951.9 ns</td><td>206.17 ns</td><td>588.22 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>&#39;Upsert:New Person&#39;</td><td>500</td><td>8,863.4 ns</td><td>194.71 ns</td><td>558.66 ns</td><td>0.0153</td><td>-</td><td>-</td><td>11667 B</td>
+</tr><tr><td>&#39;Upsert:New Person&#39;</td><td>1000</td><td>8,965.4 ns</td><td>205.53 ns</td><td>589.69 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>25</td><td>417.2 ns</td><td>0.71 ns</td><td>0.59 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>50</td><td>780.2 ns</td><td>2.33 ns</td><td>2.06 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>100</td><td>1,438.1 ns</td><td>26.70 ns</td><td>24.98 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>250</td><td>3,268.4 ns</td><td>17.34 ns</td><td>15.37 ns</td><td>0.0038</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>500</td><td>6,803.7 ns</td><td>35.25 ns</td><td>32.98 ns</td><td>-</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary</td><td>1000</td><td>13,436.0 ns</td><td>36.45 ns</td><td>34.09 ns</td><td>-</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>25</td><td>9,042.2 ns</td><td>219.25 ns</td><td>636.08 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>50</td><td>8,982.7 ns</td><td>202.38 ns</td><td>574.13 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>100</td><td>9,018.2 ns</td><td>189.41 ns</td><td>540.40 ns</td><td>0.0153</td><td>-</td><td>-</td><td>11666 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>250</td><td>9,047.5 ns</td><td>222.05 ns</td><td>633.51 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>500</td><td>8,883.9 ns</td><td>203.26 ns</td><td>573.31 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>GetOrAdd:Dictionary-New</td><td>1000</td><td>8,970.4 ns</td><td>221.68 ns</td><td>636.05 ns</td><td>0.0153</td><td>-</td><td>-</td><td>5515 B</td>
+</tr><tr><td>Upsert</td><td>25</td><td>418.8 ns</td><td>1.50 ns</td><td>1.47 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>Upsert</td><td>50</td><td>745.2 ns</td><td>2.63 ns</td><td>2.46 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>Upsert</td><td>100</td><td>1,395.2 ns</td><td>6.09 ns</td><td>5.70 ns</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>Upsert</td><td>250</td><td>3,443.3 ns</td><td>14.81 ns</td><td>13.86 ns</td><td>0.0038</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>Upsert</td><td>500</td><td>6,575.6 ns</td><td>31.39 ns</td><td>27.83 ns</td><td>-</td><td>-</td><td>-</td><td>56 B</td>
+</tr><tr><td>Upsert</td><td>1000</td><td>12,814.7 ns</td><td>35.21 ns</td><td>31.21 ns</td><td>-</td><td>-</td><td>-</td><td>56 B</td>
+</tr></tbody></table>
+</body>
+</html>

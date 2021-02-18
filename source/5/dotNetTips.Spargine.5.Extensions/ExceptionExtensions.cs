@@ -57,7 +57,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static IEnumerable<TSource> FromHierarchy<TSource>(this TSource source, Func<TSource, TSource> nextItem, Func<TSource, bool> canContinue)
 			where TSource : Exception
 		{
-			if (source is null)
+			if (Validate.TryValidateNull(source))
 			{
 				//TODO: THIS CONDITION NOT BEING TESTED
 				yield return null;
@@ -131,7 +131,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsCritical(this Exception ex)
 		{
-			if (ex is null)
+			if (Validate.TryValidateNull(ex))
 			{
 				return false;
 			}
@@ -152,7 +152,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsFatal(this Exception ex)
 		{
-			if (ex is null)
+			if (Validate.TryValidateNull(ex))
 			{
 				return false;
 			}
@@ -168,7 +168,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool IsSecurityOrCritical(this Exception ex)
 		{
-			if (ex is null)
+			if (Validate.TryValidateNull(ex))
 			{
 				return false;
 			}

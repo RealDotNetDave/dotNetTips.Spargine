@@ -61,7 +61,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static int Count(this IEnumerable list)
 		{
-			if (list is null)
+			if (Validate.TryValidateNull(list))
 			{
 				return 0;
 			}
@@ -125,7 +125,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(predicate, nameof(predicate));
 
-			if (list is null)
+			if (Validate.TryValidateNull(list))
 			{
 				return 0;
 			}
@@ -270,7 +270,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsNullOrEmpty(this IEnumerable list)
 		{
 			return list == null || list.GetEnumerator().MoveNext() == false;

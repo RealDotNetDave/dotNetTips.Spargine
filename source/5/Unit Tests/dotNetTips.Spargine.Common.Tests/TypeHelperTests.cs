@@ -9,7 +9,7 @@ namespace dotNetTips.Spartine.Core.Tests
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]
-	public class TypeHelperTests
+	public class TypeHelperTests : TestClass
 	{
 
 		[TestMethod]
@@ -24,6 +24,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = TypeHelper.GetPropertyValues(person);
+
+			PrintResult(result, nameof(this.GetPropertyValuesTest));
 
 			Assert.IsTrue(result.Count > 5);
 

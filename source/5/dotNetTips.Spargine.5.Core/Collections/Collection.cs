@@ -84,8 +84,9 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <param name="items">The items.</param>
 		/// <param name="ensureUnique">if set to <c>true</c> [ensure unique].</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">Items is null or has no items.</exception>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		/// <exception cref="ArgumentNullException">Items 
+		/// or has no items.</exception>
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD LINK")]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)
 		{
 			Validate.TryValidateParam(items, nameof(items));

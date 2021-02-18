@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-10-2021
 // ***********************************************************************
 // <copyright file="ExceptionThrower.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -59,8 +59,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -76,8 +76,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -204,8 +204,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
@@ -341,6 +341,37 @@ namespace dotNetTips.Spargine.Core
 		public static void ThrowInvalidOperationException(string message, Exception innerException)
 		{
 			throw new InvalidOperationException(message.DefaultIfNull(Resources.ExMessageInvalidOperation), innerException);
+		}
+
+		/// <summary>
+		/// Throws the invalid value exception.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="message">The message.</param>
+		/// <param name="value">The value.</param>
+		/// <exception cref="InvalidValueException{TValue}"></exception>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[ExcludeFromCodeCoverage]
+		[Information(nameof(ThrowInvalidValueException), author: "David McCarter", createdOn: "2/10/2021", Status = Status.Available)]
+		public static void ThrowInvalidValueException<TValue>(string message, TValue value)
+		{
+			throw new InvalidValueException<TValue>(message: message, value: value);
+		}
+
+		/// <summary>
+		/// Throws the invalid value exception.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="message">The message.</param>
+		/// <param name="value">The value.</param>
+		/// <param name="innerException">The inner exception.</param>
+		/// <exception cref="InvalidValueException{TValue}"></exception>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[ExcludeFromCodeCoverage]
+		[Information(nameof(ThrowInvalidValueException), author: "David McCarter", createdOn: "2/10/2021", Status = Status.Available)]
+		public static void ThrowInvalidValueException<TValue>(string message, TValue value, Exception innerException)
+		{
+			throw new InvalidValueException<TValue>(message: message, value: value, innerException: innerException);
 		}
 
 		/// <summary>

@@ -19,7 +19,6 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
-
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -229,7 +228,7 @@ namespace dotNetTips.Spartine.Core.Tests.OOP
 		[TestMethod]
 		public void TryValidateParamIntTest()
 		{
-			int testValue = 1000;
+			var testValue = 1000;
 
 			try
 			{

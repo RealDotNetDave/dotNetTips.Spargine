@@ -111,27 +111,27 @@ namespace dotNetTips.Spargine.Core
 		IIS_DRIVE,
 
 		/// <summary>
-		/// The IIS sites home
+		/// The IIS sites home.
 		/// </summary>
 		IIS_SITES_HOME,
 
 		/// <summary>
-		/// The IIS user home
+		/// The IIS user home.
 		/// </summary>
 		IIS_USER_HOME,
 
 		/// <summary>
-		/// The local appdata
+		/// The local application data.
 		/// </summary>
 		LOCALAPPDATA,
 
 		/// <summary>
-		/// The logon server
+		/// The logon server.
 		/// </summary>
 		LOGONSERVER,
 
 		/// <summary>
-		/// The ms build load microsoft targets read only
+		/// The ms build load microsoft targets read only.
 		/// </summary>
 		MSBuildLoadMicrosoftTargetsReadOnly,
 
@@ -322,7 +322,7 @@ namespace dotNetTips.Spargine.Core
 		VSSKUEDITION,
 
 		/// <summary>
-		/// The vtune amplifier 2019 dir
+		/// The VTune amplifier 2019 dir
 		/// </summary>
 		VTUNE_AMPLIFIER_2019_DIR,
 

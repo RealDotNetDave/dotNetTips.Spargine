@@ -102,7 +102,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(DisposeFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void DisposeFields(this IDisposable obj)
 		{
-			if (obj is null)
+			if (Validate.TryValidateNull(obj))
 			{
 				return;
 			}
@@ -234,7 +234,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// [23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
 		/// [24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
 		/// </example>
-		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
@@ -243,7 +243,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var result = new Dictionary<string, string>();
 
-			if (obj is null)
+			if (Validate.TryValidateNull(obj))
 			{
 				result.Add(memberName, NullString);
 				return result;
@@ -319,7 +319,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="keyValueSeparator">The key value separator.</param>
 		/// <param name="sequenceSeparator">The delimiter.</param>
 		/// <param name="ignoreNulls">if set to <c>true</c> [ignore null values].</param>
-		/// <param name="includeMemeberName">Name of the include memeber.</param>
+		/// <param name="includeMemeberName">Name of the include member.</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <exception cref="ArgumentInvalidException">Object cannot be a collection type.</exception>
@@ -343,7 +343,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// PersonRecord.Addresses[1].State:dxeZkn[HyLo\\wUS, PersonRecord.Addresses[1].Phone:511 - 286 - 7653,
 		/// PersonRecord.Addresses[1].PostalCode:33385672
 		/// </example>
-		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemeberName = true)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
@@ -385,7 +385,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ToJson(this object obj)
 		{
-			if (obj is null)
+			if (Validate.TryValidateNull(obj))
 			{
 				return string.Empty;
 			}
@@ -427,7 +427,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
 		public static void TryDispose(this IDisposable obj, bool throwException)
 		{
-			if (obj is null)
+			if (Validate.TryValidateNull(obj))
 			{
 				return;
 			}

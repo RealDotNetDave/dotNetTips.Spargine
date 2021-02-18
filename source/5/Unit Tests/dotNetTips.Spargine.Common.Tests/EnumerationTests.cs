@@ -54,7 +54,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			var dateTimeFormat = DateTimeFormat.FullDateLongTime;
 
-			Assert.IsTrue(dateTimeFormat.GetHashCode().IsNegative());
+			Assert.IsFalse(dateTimeFormat.GetHashCode().IsNegative());
 		}
 
 		[TestMethod]

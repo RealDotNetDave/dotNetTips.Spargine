@@ -19,7 +19,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 
 				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				BenchmarkRunner.Run<ObjectExtensionsPerfTestRunner>(config);
+				BenchmarkRunner.Run<TypeHelperPerfTestRunner>(config);
 
 				Console.Beep();
 				Console.Beep(frequency: 50000, duration: 5000);

@@ -24,7 +24,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var assembly = AppDomain.CurrentDomain.GetAssemblies().Where(p => p.FullName.Contains("dotNetTips.Spargine.Extensions.Tests")).First();
 
-			var result = assembly.GetInterfaces<AssemblyExtensionsTests>().ToList();
+			var result = assembly.GetInterfaces().ToList();
 
 			Assert.IsTrue(result.Count >= 0);
 		}

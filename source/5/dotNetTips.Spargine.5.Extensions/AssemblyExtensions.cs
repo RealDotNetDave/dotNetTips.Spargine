@@ -33,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD LINK")]
 		public static IEnumerable<T> GetInstances<T>(this Assembly assembly) where T : class
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
@@ -55,17 +55,23 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Gets the interfaces.
 		/// </summary>
-		/// <typeparam name="T">The type of the interface type.</typeparam>
 		/// <param name="assembly">The assembly.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
-		public static IEnumerable<Type> GetInterfaces<T>(this Assembly assembly)
+		public static IEnumerable<Type> GetInterfaces(this Assembly assembly)
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
 
-			return assembly.GetTypes().Where(x => x.IsInterface).AsEnumerable();
+			var interfaces = new List<Type>();
+
+			foreach (var type in assembly.GetTypes())
+			{
+				interfaces.AddRange(type.GetInterfaces());
+			}
+
+			return interfaces.AsEnumerable();
 		}
 
 		/// <summary>

@@ -126,6 +126,27 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void IsNullOrEmptyTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			var result = people.IsNullOrEmpty();
+
+			Assert.IsFalse(result);
+
+			result = people.Take(0).IsNullOrEmpty();
+
+			Assert.IsTrue(result);
+
+			IEnumerable<PersonProper> nullList = null;
+
+			result = nullList.IsNullOrEmpty();
+
+			Assert.IsTrue(result);
+
+		}
+
+		[TestMethod]
 		public void ShuffleWithCountTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);

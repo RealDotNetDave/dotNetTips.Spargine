@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsPerfTestRunner-20210210-192747</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+Unknown processor
+.NET Core SDK=5.0.200-preview.21079.7
+  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-NPULEA : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+Categories=ExceptionExtensions  
+</code></pre>
+
+<table>
+<thead><tr><th>  Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>GetAllMessages</td><td>263.8 ns</td><td>0.51 ns</td><td>0.47 ns</td><td>0.0920</td><td>-</td><td>-</td><td>832 B</td>
+</tr></tbody></table>
+</body>
+</html>

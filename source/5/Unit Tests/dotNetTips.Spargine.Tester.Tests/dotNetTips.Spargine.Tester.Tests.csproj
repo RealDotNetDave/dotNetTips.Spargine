@@ -6,13 +6,15 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyVersion>2021.2.10.88</AssemblyVersion>
+    <AssemblyVersion>2021.2.11.93</AssemblyVersion>
 
-    <FileVersion>2021.2.10.88</FileVersion>
+    <FileVersion>2021.2.11.93</FileVersion>
 
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
+
+    <AnalysisLevel>none</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>

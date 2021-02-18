@@ -19,8 +19,11 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The collection count.</value>
 		[Params(25, 50, 100, 250, 500, 1000)]
 		public virtual int CollectionCount { get; set; }
+
 		protected byte[] ByteArray { get; set; }
+
 		protected CoordinateProper[] CoordinateArray { get; set; }
+
 		protected string DelimitedString { get; set; }
 
 		/// <summary>

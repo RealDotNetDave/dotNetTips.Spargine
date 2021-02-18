@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static T[] AddFirst<T>(this T[] array, T item)
 		{
-			if (item is null)
+			if (Validate.TryValidateNull(item))
 			{
 				return array;
 			}
@@ -122,12 +122,12 @@ namespace dotNetTips.Spargine.Extensions
 		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 		public static bool AreEqual<T>(this T[] array, T[] arrayToCheck)
 		{
-			if (array is null && arrayToCheck is null)
+			if (Validate.TryValidateNull(array) && Validate.TryValidateNull(arrayToCheck))
 			{
 				return true;
 			}
 
-			if (array is null || arrayToCheck is null || array.Length != arrayToCheck.Length)
+			if (( Validate.TryValidateNull(array) && Validate.TryValidateNull(arrayToCheck) ) || array?.Length != arrayToCheck?.Length)
 			{
 				return false;
 			}
@@ -208,7 +208,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool ContainsAny<T>(this T[] array, params T[] items)
 		{
-			if (items is null || items.DoesNotHaveItems())
+			if (Validate.TryValidateNull(array) || items.Count() == 0)
 			{
 				return false;
 			}

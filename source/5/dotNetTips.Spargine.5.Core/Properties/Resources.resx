@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -230,5 +230,8 @@
   </data>
   <data name="ObjectValidationFailed" xml:space="preserve">
     <value>Object validation failed.</value>
+  </data>
+  <data name="InvalidValue" xml:space="preserve">
+    <value>Invalid Value.</value>
   </data>
 </root>

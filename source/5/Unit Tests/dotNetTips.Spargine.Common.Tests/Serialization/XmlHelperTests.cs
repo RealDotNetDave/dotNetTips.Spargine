@@ -44,15 +44,15 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		public void SerializeDeserializeToFileTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			const string fileName = @"C:\temp\testxml.xml";
+			const string FileName = @"C:\temp\testxml.xml";
 
 			try
 			{
 				//Serialize
-				XmlHelper.SerializeToXmlFile(person, fileName);
+				XmlHelper.SerializeToXmlFile(person, FileName);
 
 				//Deserialize
-				XmlHelper.DeserializeFromXmlFile<PersonProper>(fileName);
+				XmlHelper.DeserializeFromXmlFile<PersonProper>(FileName);
 			}
 			catch (Exception ex)
 			{

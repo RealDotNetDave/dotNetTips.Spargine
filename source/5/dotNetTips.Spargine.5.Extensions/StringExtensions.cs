@@ -537,7 +537,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="replacement">The replacement.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static string RemoveCRLF(this string input, string replacement = "")
 		{
 			if (input.IsNullOrEmpty())

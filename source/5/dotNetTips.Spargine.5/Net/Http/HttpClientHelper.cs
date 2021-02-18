@@ -42,8 +42,8 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <returns>HttpResponseMessage.</returns>
 		/// <exception cref="ArgumentInvalidException">Url cannot be null or empty.</exception>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
-		[Information(nameof(GetAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
-		public static async Task<HttpResponseMessage> GetAsync(string url)
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
 		{
 			Validate.TryValidateParam(url, nameof(url));
 
@@ -83,7 +83,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <returns>Stream.</returns>
-		[Information(nameof(GetAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
 		public static async Task<Stream> GetStreamAsync(string url)
 		{
 			Validate.TryValidateParam(url, nameof(url));

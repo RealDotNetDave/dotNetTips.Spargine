@@ -17,7 +17,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests
 {
-    [ExcludeFromCodeCoverage]
+	[ExcludeFromCodeCoverage]
     [TestClass]
     public class ComputerInfoTests
     {

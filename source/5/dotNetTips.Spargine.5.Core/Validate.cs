@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-10-2021
 // ***********************************************************************
 // <copyright file="Validate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,46 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class Validate
 	{
+
+		/// <summary>
+		/// Tries the validate null.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static bool TryValidateNull(object value, bool throwException = false)
+		{
+			var result = value is null;
+
+			if (result is false && throwException)
+			{
+				ExceptionThrower.ThrowInvalidValueException<object>(Resources.ObjectValidationFailed, value);
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// Tries the validate null.
+		/// </summary>
+		/// <param name="message">The message.</param>
+		/// <param name="value">The value.</param>
+		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static bool TryValidateNull(string message, object value, bool throwException = false)
+		{
+			var result = value is null;
+
+			if (result is false && throwException)
+			{
+				ExceptionThrower.ThrowInvalidValueException<object>(message, value);
+			}
+
+			return result;
+		}
+
 		/// <summary>
 		/// Tries the validate if the object is null.
 		/// </summary>
@@ -35,7 +75,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static void TryValidateNullParam(object value, string paramName, string message = "")
 		{
-			if (value is null)
+			if (Validate.TryValidateNull(value))
 			{
 				message = CreateExceptionMessage(message, Resources.ParameterCannotBeNull);
 
@@ -100,7 +140,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(FileInfo file, string paramName, string message = "")
 		{
-			if (file is null)
+			if (Validate.TryValidateNull(file))
 			{
 				message = CreateExceptionMessage(message, Resources.FileCannotBeNull);
 
@@ -125,7 +165,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(DirectoryInfo directory, string paramName, string message = "")
 		{
-			if (directory is null)
+			if (Validate.TryValidateNull(directory))
 			{
 				message = CreateExceptionMessage(message, Resources.DirectoryCannotBeNull);
 
@@ -185,7 +225,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(Uri value, string paramName, string message = "")
 		{
-			if (value is null)
+			if (Validate.TryValidateNull(value))
 			{
 				message = CreateExceptionMessage(message, Resources.UriCannotBeNull);
 
@@ -221,7 +261,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(IEnumerable collection, string paramName, string message = "")
 		{
-			if (collection is null || collection.Count() == 0)
+			if (Validate.TryValidateNull(collection) || collection.Count() == 0)
 			{
 				message = CreateExceptionMessage(message, Resources.CollectionIsNullOrHasNoItems);
 				ExceptionThrower.ThrowArgumentNullException(message, paramName);
@@ -262,7 +302,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateParam(string value, Regex match, string paramName, string message = "")
 		{
-			if (match is null)
+			if (Validate.TryValidateNull(match))
 			{
 				ExceptionThrower.ThrowArgumentNullException(nameof(match));
 			}
@@ -453,6 +493,47 @@ namespace dotNetTips.Spargine.Core
 
 					break;
 			}
+		}
+
+		/// <summary>
+		/// Tries the validate a string value.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		/// <exception cref="InvalidValueException{String}">String cannot be null or empty.</exception>
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static bool TryValidateValue(string input, bool throwException = false)
+		{
+			var result = string.IsNullOrEmpty(input);
+
+			if (result is true && throwException)
+			{
+				ExceptionThrower.ThrowInvalidValueException<string>(Resources.StringIsNotValid, input);
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// Tries the validate value.
+		/// </summary>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="input">The value.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <param name="message">The message.</param>
+		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static bool TryValidateValue<TValue>(TValue input, bool condition, string message = "", bool throwException = false)
+		{
+			if (condition is false && throwException)
+			{
+				message = CreateExceptionMessage(message, Resources.InvalidValue);
+				ExceptionThrower.ThrowInvalidValueException<object>(message, input);
+			}
+
+			return condition;
 		}
 
 		/// <summary>

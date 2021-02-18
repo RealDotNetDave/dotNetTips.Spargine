@@ -413,7 +413,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is <see cref="IEnumerable" />; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
 		public static bool IsEnumerable(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));

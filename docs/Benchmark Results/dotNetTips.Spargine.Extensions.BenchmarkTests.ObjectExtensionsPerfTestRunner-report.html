@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.ObjectExtensionsPerfTestRunner-20210210-200835</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+Unknown processor
+.NET Core SDK=5.0.200-preview.21079.7
+  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-NPULEA : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+Categories=ObjectExtensions  
+</code></pre>
+
+<table>
+<thead><tr><th>                                       Method</th><th>    Mean</th><th>Error</th><th> StdDev</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;As: IPerson&#39;</td><td>6.2474 ns</td><td>0.0098 ns</td><td>0.0092 ns</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>&#39;Clone: PersonProper&#39;</td><td>7,888.0011 ns</td><td>12.1092 ns</td><td>10.1117 ns</td><td>0.3052</td><td>-</td><td>-</td><td>2893 B</td>
+</tr><tr><td>&#39;ComputeSha256Hash: PersonProper&#39;</td><td>9,213.9564 ns</td><td>17.6453 ns</td><td>16.5054 ns</td><td>0.4883</td><td>-</td><td>-</td><td>4581 B</td>
+</tr><tr><td>&#39;ComputeSha256Hash: PersonRecord&#39;</td><td>6,602.2631 ns</td><td>5.9614 ns</td><td>4.6543 ns</td><td>0.4425</td><td>-</td><td>-</td><td>4136 B</td>
+</tr><tr><td>&#39;DisposeFields: DataTable&#39;</td><td>5,849.0168 ns</td><td>10.6019 ns</td><td>9.3983 ns</td><td>0.7172</td><td>-</td><td>-</td><td>6560 B</td>
+</tr><tr><td>&#39;HasProperty: PersonProper&#39;</td><td>251.9337 ns</td><td>0.3047 ns</td><td>0.2850 ns</td><td>0.0277</td><td>-</td><td>-</td><td>256 B</td>
+</tr><tr><td>&#39;IsNotNull: PersonProper&#39;</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>&#39;IsNull: PersonProper&#39;</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>&#39;PersonRecord: Duplication with new ID&#39;</td><td>26.4361 ns</td><td>0.0529 ns</td><td>0.0469 ns</td><td>0.0096</td><td>-</td><td>-</td><td>88 B</td>
+</tr><tr><td>&#39;PersonRecord: ToString()&#39;</td><td>1,021.2854 ns</td><td>1.7547 ns</td><td>1.6414 ns</td><td>0.2289</td><td>-</td><td>-</td><td>2096 B</td>
+</tr><tr><td>&#39;PropertiesToDictionary: PersonProper-Ignore Nulls&#39;</td><td>33,220.2148 ns</td><td>69.2532 ns</td><td>61.3911 ns</td><td>4.2114</td><td>-</td><td>-</td><td>38608 B</td>
+</tr><tr><td>&#39;PropertiesToDictionary: PersonProper-With Nulls&#39;</td><td>32,457.1035 ns</td><td>56.0143 ns</td><td>52.3959 ns</td><td>4.2114</td><td>-</td><td>-</td><td>38612 B</td>
+</tr><tr><td>&#39;PropertiesToDictionary: PersonRecord-Ignore Nulls&#39;</td><td>18,227.0280 ns</td><td>45.3909 ns</td><td>42.4587 ns</td><td>2.4109</td><td>-</td><td>-</td><td>22138 B</td>
+</tr><tr><td>&#39;PropertiesToDictionary: PersonRecord-With Nulls&#39;</td><td>18,460.5994 ns</td><td>28.4700 ns</td><td>25.2379 ns</td><td>2.4109</td><td>-</td><td>-</td><td>22139 B</td>
+</tr><tr><td>&#39;PropertiesToString: PersonProper-Ignore Nulls&#39;</td><td>42,956.3944 ns</td><td>53.2120 ns</td><td>41.5444 ns</td><td>7.5684</td><td>-</td><td>-</td><td>69264 B</td>
+</tr><tr><td>&#39;PropertiesToString: PersonProper-With Nulls&#39;</td><td>45,246.0614 ns</td><td>302.3609 ns</td><td>282.8286 ns</td><td>7.5073</td><td>-</td><td>-</td><td>69296 B</td>
+</tr><tr><td>&#39;PropertiesToString: PersonRecord-Ignore Nulls&#39;</td><td>28,274.5428 ns</td><td>551.9183 ns</td><td>1,510.8675 ns</td><td>4.5776</td><td>-</td><td>-</td><td>41678 B</td>
+</tr><tr><td>&#39;PropertiesToString: PersonRecord-With Nulls&#39;</td><td>26,196.8197 ns</td><td>63.1233 ns</td><td>59.0456 ns</td><td>4.6387</td><td>-</td><td>-</td><td>41774 B</td>
+</tr><tr><td>&#39;StripNull: PersonProper&#39;</td><td>9.9461 ns</td><td>0.0171 ns</td><td>0.0160 ns</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>&#39;ToJson: PersonProper&#39;</td><td>3,506.5042 ns</td><td>3.7970 ns</td><td>3.5517 ns</td><td>0.2098</td><td>-</td><td>-</td><td>1925 B</td>
+</tr><tr><td>&#39;ToJson: PersonRecord&#39;</td><td>2,294.5198 ns</td><td>3.0321 ns</td><td>2.8363 ns</td><td>0.1831</td><td>-</td><td>-</td><td>1696 B</td>
+</tr><tr><td>&#39;TryDispose: PersonProper&#39;</td><td>428.6303 ns</td><td>0.4492 ns</td><td>0.4201 ns</td><td>0.3181</td><td>0.0005</td><td>-</td><td>2920 B</td>
+</tr></tbody></table>
+</body>
+</html>

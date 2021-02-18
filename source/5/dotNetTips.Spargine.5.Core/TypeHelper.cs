@@ -18,7 +18,6 @@ using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.ObjectPool;
@@ -95,7 +94,7 @@ namespace dotNetTips.Spargine.Core
 		/// Creates StringBuilder using ObjectPool (DefaultObjectPoolProvider).
 		/// </summary>
 		/// <returns>StringBuilder.</returns>
-		[Information(nameof(CreateStringBuilder), "David McCarter", "12/28/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(CreateStringBuilder), "David McCarter", "12/28/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
 		public static StringBuilder CreateStringBuilder()
 		{
 			var objectPool = new DefaultObjectPoolProvider();

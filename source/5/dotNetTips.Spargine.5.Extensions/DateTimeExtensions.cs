@@ -279,7 +279,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// SortableDateTime: 2021-01-07T15:36:39
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
 		{
 			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
@@ -313,7 +313,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// SortableDateTime: 2021-01-07T15:36:39
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static string ToFormattedString(this DateTimeOffset input, DateTimeFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));

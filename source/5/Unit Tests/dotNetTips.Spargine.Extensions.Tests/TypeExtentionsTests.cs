@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Xml.Serialization;
+using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -158,6 +159,16 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = typeof(TestType).GetTypeMembersWithAttribute<XmlIgnoreAttribute>();
 
 			Assert.IsTrue(result.Count() == 1);
+		}
+
+		[TestMethod]
+		public void IsNumericTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			Assert.IsTrue(people.GetType().IsEnumerable());
+			Assert.IsFalse(person.GetType().IsEnumerable());
 		}
 
 	}

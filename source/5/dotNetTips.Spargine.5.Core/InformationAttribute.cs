@@ -130,7 +130,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			this.Description = description;
 
-			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnkown : author;
+			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnknown : author;
 
 			if (string.IsNullOrEmpty(createdOn) == false && DateTimeOffset.TryParse(createdOn, out var createdDate))
 			{

@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(request, nameof(request));
 
-			if (encoding is null)
+			if (Validate.TryValidateNull(encoding))
 			{
 				encoding = Encoding.UTF8;
 			}

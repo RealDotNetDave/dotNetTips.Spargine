@@ -286,7 +286,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			var testValue2 = RandomData.GenerateWord(15) + RandomData.GenerateWord(25);
 
-			var result1 = testValue1.RemoveCRLF(".");
+			var result1 = testValue1.RemoveCRLF(replacement: ".");
 			var result2 = testValue2.RemoveCRLF();
 
 			Assert.IsTrue(result1.Contains(ControlChars.NewLine) == false);
@@ -420,7 +420,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(50);
 
 			//Test parameters
-			Assert.IsTrue(string.Empty.SubstringTrim(1, 10).HasValue());
+			Assert.IsFalse(string.Empty.SubstringTrim(1, 10).HasValue());
 			Assert.IsFalse(string.Empty.SubstringTrim(0, 0).HasValue());
 
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(-100, 10));

@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
-    <AssemblyVersion>2021.2.10.35</AssemblyVersion>
-    <FileVersion>2021.2.10.35</FileVersion>
+    <AssemblyVersion>2021.2.15.38</AssemblyVersion>
+    <FileVersion>2021.2.15.38</FileVersion>
     <Version>2021.2.1.0</Version>
     <Authors>David McCarter</Authors>
     <Company>David McCarter - dotNetTips.com</Company>

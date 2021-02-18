@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddFirst<T>(this IList<T> list, T item)
 		{
-			if (item is null)
+			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}
@@ -124,12 +124,12 @@ namespace dotNetTips.Spargine.Extensions
 		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 		public static bool AreEqual<T>(this IList<T> list, IList<T> listToCheck)
 		{
-			if (list is null && listToCheck is null)
+			if (Validate.TryValidateNull(list) && Validate.TryValidateNull(listToCheck))
 			{
 				return true;
 			}
 
-			if (list is null || listToCheck is null || list.Count != listToCheck.Count)
+			if (( Validate.TryValidateNull(list) && Validate.TryValidateNull(listToCheck) ) || list.Count != listToCheck.Count)
 			{
 				return false;
 			}
@@ -320,7 +320,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				var prop = typeof(T).GetRuntimeProperty(property);
 
-				if (prop is null)
+				if (Validate.TryValidateNull(prop))
 				{
 					ExceptionThrower.ThrowInvalidCastException($"{string.Format(CultureInfo.InvariantCulture, "{0}{1}", Convert.ToString("No property '", CultureInfo.InvariantCulture), property)}' in + {typeof(T).Name}'", "Property");
 				}
@@ -468,7 +468,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static async Task<List<TSource>> ToListAsync<TSource>(
 			this IAsyncEnumerable<TSource> list, CancellationToken cancellationToken = default)
 		{
-			if (list is null)
+			if (Validate.TryValidateNull(list))
 			{
 				ExceptionThrower.ThrowArgumentNullException(nameof(list));
 			}

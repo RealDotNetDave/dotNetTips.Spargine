@@ -50,7 +50,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DistinctConcurrentBag{T}" /> class.
 		/// </summary>
-		/// <param name="collection">The collection whose elements are copied to the new <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>.</param>
+		/// <param name="collection">The collection whose elements are copied to the new <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.</param>
 		public DistinctConcurrentBag(IEnumerable<T> collection)
 		{
 			if (collection.HasItems())
@@ -65,7 +65,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <summary>
 		/// Adds an object to the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.
 		/// </summary>
-		/// <param name="item">The object to be added to the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
+		/// <param name="item">The object to be added to the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
 		public new void Add(T item)
 		{
 			Validate.TryValidateNullParam(item, nameof(item));
@@ -83,9 +83,9 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Attempts to remove and return an object from the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see>.
+		/// Attempts to remove and return an object from the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.
 		/// </summary>
-		/// <param name="result">When this method returns, result contains the object removed from the <see cref="T:System.Collections.Concurrent.ConcurrentBag`1"></see> or the default value of T if the bag is empty.</param>
+		/// <param name="result">When this method returns, result contains the object removed from the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see> or the default value of T if the bag is empty.</param>
 		/// <returns>true if an object was removed successfully; otherwise, false.</returns>
 		public new bool TryTake(out T result)
 		{

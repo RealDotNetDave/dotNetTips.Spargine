@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-11-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -84,7 +84,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <param name="items">The items.</param>
 		/// <param name="ensureUnique">if set to <c>true</c> [ensure unique].</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">Items 
+		/// <exception cref="ArgumentNullException">Items
 		/// or has no items.</exception>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD LINK")]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)

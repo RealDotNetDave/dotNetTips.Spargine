@@ -18,6 +18,7 @@ using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
 
@@ -346,6 +347,18 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+		internal static bool IsInRange(this byte value, byte lower, byte upper)
+		{
+			return value >= lower && value <= upper;
+		}
+
+		/// <summary>
+		/// Determines whether [is in range] [the specified lower].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="lower">The lower.</param>
+		/// <param name="upper">The upper.</param>
+		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		internal static bool IsInRange(this long value, long lower, long upper)
 		{
 			return value >= lower && value <= upper;
@@ -401,7 +414,7 @@ namespace dotNetTips.Spargine.Core
 				return string.Empty;
 			}
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			foreach (DictionaryEntry item in list)
 			{
@@ -432,7 +445,7 @@ namespace dotNetTips.Spargine.Core
 				return string.Empty;
 			}
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			list.ToList()
 				.ForEach(item =>

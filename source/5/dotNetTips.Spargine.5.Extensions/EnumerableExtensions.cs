@@ -5,7 +5,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-21-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
@@ -120,7 +121,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="System.ArgumentNullException">Predicate cannot be null.</exception>
-		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static int FastCount<T>(this IEnumerable<T> list, Func<T, bool> predicate)
 		{
 			Validate.TryValidateNullParam(predicate, nameof(predicate));
@@ -132,19 +133,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (list is List<T>)
 			{
-				var count = 0;
-
-				var listToCount = list as List<T>;
-
-				for (var listCount = 0; listCount < listToCount.Count; listCount++)
-				{
-					if (predicate(listToCount[listCount]))
-					{
-						count++;
-					}
-				}
-
-				return count;
+				return ( list as List<T> ).Count(predicate);
 			}
 
 			return list.Count(predicate);
@@ -383,7 +372,7 @@ namespace dotNetTips.Spargine.Extensions
 				return string.Empty;
 			}
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder(list.Count() * 10);
 
 			list.ToList()
 				.ForEach(item =>
@@ -391,7 +380,7 @@ namespace dotNetTips.Spargine.Extensions
 					sb.Append($"{item}{delimiter.ToString(CultureInfo.CurrentCulture)}");
 				});
 
-			return sb.ToString(0, sb.ToString().Length - 1);
+			return sb.ToString(0, sb.ToString().ToTrimmed().Length - 1);
 		}
 
 		/// <summary>
@@ -402,8 +391,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>A list of groupings such that the key of the list is TKey type and the value is List of TValue type.</returns>
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		/// <remarks>Original code by: James Michael Hare</remarks>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
+		/// <remarks>Original code by: James Michael Hare</remarks>
 		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>(this IEnumerable<IGrouping<TKey, TValue>> list)
 		{

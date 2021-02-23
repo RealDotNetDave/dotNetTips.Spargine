@@ -15,41 +15,42 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class EnumExtensionsTests
-    {
-        [TestMethod]
-        public void GetDescriptionTest()
-        {
-            var enumValue = TaskStatus.Canceled;
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class EnumExtensionsTests
+	{
+		[TestMethod]
+		public void GetDescriptionTest()
+		{
+			var enumValue = TaskStatus.Canceled;
 
-            var result = enumValue.GetDescription();
+			var result = enumValue.GetDescription();
 
-            Assert.IsTrue(string.IsNullOrEmpty(result) == false);
-        }
+			Assert.IsTrue(string.IsNullOrEmpty(result) == false);
+		}
 
-        [TestMethod]
-        public void GetItemsTest()
-        {
-            var enumValue = TaskStatus.Canceled;
+		[TestMethod]
+		public void GetItemsTest()
+		{
+			var enumValue = TaskStatus.Canceled;
 
-            var result = enumValue.GetItems();
+			var result = enumValue.GetItems();
 
-            Assert.IsTrue(result.Count() > 0);
-        }
+			Assert.IsTrue(result.Count() > 0);
+		}
 
-        [TestMethod]
-        public void ParseTest()
-        {
-            const string EnumName = "Canceled";
+		[TestMethod]
+		public void ParseTest()
+		{
+			const string EnumName = "Canceled";
 
-            var result = EnumName.Parse<TaskStatus>();
+			var result = EnumName.Parse<TaskStatus>();
 
-            Assert.IsTrue(result.ToString() == EnumName);
+			Assert.IsTrue(result.ToString() == EnumName);
 
-        }
-    }
+		}
+	}
 }

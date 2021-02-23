@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 01-20-2021
 // ***********************************************************************
 // <copyright file="LoggableException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -20,6 +20,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security;
+using System.Text;
 using System.Xml.Serialization;
 using dotNetTips.Spargine.Core.Logging;
 
@@ -82,6 +83,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="serializationInfo">The serialization information.</param>
 		/// <param name="streamingContext">The streaming context.</param>
+		/// <exception cref="System.NotImplementedException"></exception>
 		/// <exception cref="NotImplementedException"></exception>
 		/// <exception cref="NotImplementedException"></exception>
 		protected LoggableException(SerializationInfo serializationInfo, StreamingContext streamingContext)
@@ -159,7 +161,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		private static string ReflectException(Exception ex)
 		{
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			var properties = ex.GetType().GetRuntimeProperties().ToList();
 

@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,6 +34,11 @@ namespace dotNetTips.Spargine.Core
 		private readonly string _displayName;
 
 		/// <summary>
+		/// The value
+		/// </summary>
+		private int _value;
+
+		/// <summary>
 		/// Initializes a new instance of the <see cref="Enumeration" /> class.
 		/// </summary>
 		public Enumeration()
@@ -48,7 +53,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(Enumeration), UnitTestCoverage = 100, Status = Status.Available)]
 		protected Enumeration(int value, string displayName)
 		{
-			this.Value = value;
+			this._value = value;
 			this.DisplayName = displayName;
 		}
 
@@ -73,7 +78,16 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The value.</value>
 		[Information(nameof(Value), UnitTestCoverage = 0, Status = Status.Available)]
-		public int Value { get; init; }
+		public int Value
+		{
+			get => this._value;
+			init
+			{
+				Validate.TryValidateParam(this.Value, minimumValue: 0, paramName: nameof(this.Value));
+
+				this._value = value;
+			}
+		}
 
 		/// <summary>
 		/// Absolutes the difference.

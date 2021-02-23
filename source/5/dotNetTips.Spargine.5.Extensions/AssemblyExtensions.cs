@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-09-2021
+// Last Modified On : 02-21-2021
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,6 +25,19 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class AssemblyExtensions
 	{
+		/// <summary>
+		/// Gets all types in an assembly.
+		/// </summary>
+		/// <param name="assembly">The assembly.</param>
+		/// <returns>IEnumerable&lt;Type&gt;.</returns>
+		[Information(nameof(GetAllTypes), "David McCarter", "221/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static IEnumerable<Type> GetAllTypes(this Assembly assembly)
+		{
+			Validate.TryValidateNullParam(assembly, nameof(assembly));
+
+			return assembly.GetTypes().Where(p => !p.IsAbstract).AsEnumerable();
+		}
+
 		/// <summary>
 		/// Gets the instances.
 		/// </summary>
@@ -75,21 +88,22 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Gets the types.
+		/// Gets the types included in the assembly that are not abstract
+		/// and is assignable.
 		/// </summary>
 		/// <param name="assembly">The assembly.</param>
-		/// <param name="interfaceType">Type of the interface.</param>
+		/// <param name="type">Type of the interface.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <exception cref="ArgumentNullException">interfaceType</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
-		public static IEnumerable<Type> GetTypes(this Assembly assembly, Type interfaceType)
+		public static IEnumerable<Type> GetTypes(this Assembly assembly, Type type)
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));
-			Validate.TryValidateNullParam(interfaceType, nameof(assembly));
+			Validate.TryValidateNullParam(type, nameof(assembly));
 
-			return assembly.GetTypes().Where(x => !x.IsAbstract && interfaceType.IsAssignableFrom(x)).AsEnumerable();
+			return assembly.GetTypes().Where(p => !p.IsAbstract && type.IsAssignableFrom(p)).AsEnumerable();
 		}
 	}
 }

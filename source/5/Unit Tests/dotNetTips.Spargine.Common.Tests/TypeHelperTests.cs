@@ -1,10 +1,24 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Core.Tests
+// Author           : David McCarter
+// Created          : 12-17-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-13-2021
+// ***********************************************************************
+// <copyright file="TypeHelperTests.cs" company="dotNetTips.Spargine.Core.Tests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spartine.Core.Tests
 {
 	[ExcludeFromCodeCoverage]

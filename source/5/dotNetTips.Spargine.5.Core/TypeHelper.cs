@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-19-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,7 +20,6 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
-using Microsoft.Extensions.ObjectPool;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
@@ -88,19 +87,6 @@ namespace dotNetTips.Spargine.Core
 			var instance = (T)Activator.CreateInstance(typeof(T), args: paramArray);
 
 			return instance;
-		}
-
-		/// <summary>
-		/// Creates StringBuilder using ObjectPool (DefaultObjectPoolProvider).
-		/// </summary>
-		/// <returns>StringBuilder.</returns>
-		[Information(nameof(CreateStringBuilder), "David McCarter", "12/28/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
-		public static StringBuilder CreateStringBuilder()
-		{
-			var objectPool = new DefaultObjectPoolProvider();
-			var builder = objectPool.CreateStringBuilderPool().Get();
-
-			return builder;
 		}
 
 		/// <summary>
@@ -370,7 +356,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			ProcessType(sb, type, new DisplayNameOptions(fullName, includeGenericParameterNames, includeGenericParameters, nestedTypeDelimiter));
 

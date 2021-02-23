@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-13-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Extensions
 			var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obj.ToJson()));
 
 			// Convert byte array to a string   
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			for (var i = 0; i < bytes.Length; i++)
 			{
@@ -234,10 +234,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// [23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
 		/// [24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
 		/// </example>
-		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
 		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
-			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			Validate.TryValidateNullParam(obj, nameof(obj));
 			Validate.TryValidateNullParam(memberName, nameof(memberName));
 

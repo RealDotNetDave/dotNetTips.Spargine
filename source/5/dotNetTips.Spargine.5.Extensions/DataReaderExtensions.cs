@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using System.Text;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -41,7 +42,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (includeHeaderAsFirstRow)
 			{
-				var sb = TypeHelper.CreateStringBuilder();
+				var sb = new StringBuilder();
 
 				for (var index = 0; index <= dataReader.FieldCount - 1; index++)
 				{
@@ -61,7 +62,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			while (dataReader.Read())
 			{
-				var sb = TypeHelper.CreateStringBuilder();
+				var sb = new StringBuilder();
 
 				for (var index = 0; index <= dataReader.FieldCount - 2; index++)
 				{

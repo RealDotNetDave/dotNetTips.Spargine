@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.5.Bench
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.Extensions.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.Extensions.BenchmarkTests\dotNetTips.Spargine.Extensions.BenchmarkTests.csproj", "{E4D16A18-FE1D-4450-B467-B099D6B2409B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetTips.Spargine.Core.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.Core.BenchmarkTests\dotNetTips.Spargine.Core.BenchmarkTests.csproj", "{E54742AC-1BD9-43E0-ABA0-5FE9A5071F24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4D16A18-FE1D-4450-B467-B099D6B2409B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54742AC-1BD9-43E0-ABA0-5FE9A5071F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54742AC-1BD9-43E0-ABA0-5FE9A5071F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54742AC-1BD9-43E0-ABA0-5FE9A5071F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54742AC-1BD9-43E0-ABA0-5FE9A5071F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

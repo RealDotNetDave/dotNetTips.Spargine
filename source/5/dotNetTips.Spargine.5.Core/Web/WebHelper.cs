@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-07-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,6 +16,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core.Web
 {
 	/// <summary>
@@ -24,7 +25,6 @@ namespace dotNetTips.Spargine.Core.Web
 	[Information("From dotNetTips.Utility", Status = Status.Available)]
 	public static class WebHelper
 	{
-
 		/// <summary>
 		/// Gets the HTTP header names.
 		/// </summary>
@@ -44,16 +44,15 @@ namespace dotNetTips.Spargine.Core.Web
 			Validate.TryValidateParam(address, nameof(address));
 
 			// TODO: CHANGE TO HTTPCLIENT
-			using (var client = new WebClient())
-			{
-				if (clientId.HasValue())
-				{
-					client.Headers.Add("CLIENTID", clientId);
-				}
+			using var client = new WebClient();
 
-				// Download the data
-				return client.DownloadString(address);
+			if (clientId.HasValue())
+			{
+				client.Headers.Add("CLIENTID", clientId);
 			}
+
+			// Download the data
+			return client.DownloadString(address);
 		}
 
 		/// <summary>
@@ -68,16 +67,15 @@ namespace dotNetTips.Spargine.Core.Web
 			Validate.TryValidateParam(address, nameof(address));
 
 			// TODO: CHANGE TO HTTPCLIENT
-			using (var client = new WebClient())
-			{
-				if (clientId.HasValue())
-				{
-					client.Headers.Add("CLIENTID", clientId);
-				}
+			using var client = new WebClient();
 
-				// Download the data
-				return await client.DownloadStringTaskAsync(address).ConfigureAwait(false);
+			if (clientId.HasValue())
+			{
+				client.Headers.Add("CLIENTID", clientId);
 			}
+
+			// Download the data
+			return await client.DownloadStringTaskAsync(address).ConfigureAwait(false);
 		}
 
 		// public static async Task<TResult> PostAsync<TResult>(Uri address, HttpContent content)
@@ -114,9 +112,7 @@ namespace dotNetTips.Spargine.Core.Web
 
 			if (Uri.TryCreate(url, UriKind.Absolute, out var absoluteUri))
 			{
-				var validHostName = string.Equals(request.Host.ToUriComponent(),
-												   absoluteUri.Host,
-												   StringComparison.OrdinalIgnoreCase);
+				var validHostName = string.Equals(request.Host.ToUriComponent(), absoluteUri.Host, StringComparison.OrdinalIgnoreCase);
 
 				return validHostName;
 			}

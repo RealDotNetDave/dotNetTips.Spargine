@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AssemblyVersion>2021.2.14.37643</AssemblyVersion>
+		<AssemblyVersion>2021.2.23.37674</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Common .NET Standard code for use in unit tests and benchmarking.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.2.14.37643</FileVersion>
+		<FileVersion>2021.2.23.37674</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -31,7 +31,7 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.2.1.4</Version>
+		<Version>2021.3.1.14</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>

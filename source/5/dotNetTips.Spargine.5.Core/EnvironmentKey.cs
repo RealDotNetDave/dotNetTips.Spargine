@@ -4,7 +4,7 @@
 // Created          : 10-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 02-13-2021
 // ***********************************************************************
 // <copyright file="EnvironmentKey.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -159,7 +159,6 @@ namespace dotNetTips.Spargine.Core
 		/// The path to OneDrive Consumer
 		/// </summary>
 		OneDriveConsumer,
-
 
 		/// <summary>
 		/// The operating system name

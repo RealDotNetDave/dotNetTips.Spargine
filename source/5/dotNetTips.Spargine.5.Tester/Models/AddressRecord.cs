@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-13-2021
 // ***********************************************************************
 // <copyright file="AddressRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -269,7 +269,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the postal code.
 		/// </summary>
 		/// <value>The postal code.</value>
-		/// <exception cref="ArgumentNullException">PostalCode cannot be null or empty.</exception>
+		/// <exception cref="ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
 		public string PostalCode
 		{
 			get

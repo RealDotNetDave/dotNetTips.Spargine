@@ -1,10 +1,10 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
+// Assembly         : dotNetTips.Spargine.5.Extensions
 // Author           : David McCarter
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="EnumItem.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -19,15 +19,26 @@ namespace dotNetTips.Spargine.Extensions
 	/// Class EnumItem.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
-	public class EnumItem<T>
+	public record EnumItem<T>
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="EnumItem{T}"/> class.
+		/// </summary>
+		/// <param name="description">The description.</param>
+		/// <param name="value">The value.</param>
+		public EnumItem(string description, T value)
+		{
+			this.Description = description;
+			this.Value = value;
+		}
+
 		/// <summary>
 		/// Gets or sets the description.
 		/// </summary>
 		/// <value>The description.</value>
 		public string Description
 		{
-			get; set;
+			get; init;
 		}
 
 		/// <summary>
@@ -36,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <value>The value.</value>
 		public T Value
 		{
-			get; set;
+			get; init;
 		}
 	}
 }

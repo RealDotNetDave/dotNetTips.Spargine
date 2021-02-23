@@ -1,0 +1,16 @@
+``` ini
+
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+Unknown processor
+.NET Core SDK=5.0.200-preview.21079.7
+  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-MOYFHY : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+
+EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=TypeHelper  
+
+```
+|                                     Method |     Mean |    Error |   StdDev |   StdErr |      Min |       Q1 |   Median |        Q3 |      Max |     Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size |   Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------------------------------- |---------:|---------:|---------:|---------:|---------:|---------:|---------:|----------:|---------:|---------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|--------:|------:|------:|----------:|
+|  **&#39;Looping Collection: CreateStringBuilder&#39;** | **84.07 μs** | **4.519 μs** | **13.11 μs** | **1.331 μs** | **60.20 μs** | **74.39 μs** | **83.26 μs** |  **93.58 μs** | **122.8 μs** | **11,894.6** |       **4.519 μs** |      **97.00** |    **2.566** |  **3.231** |   **0.2678** |    **1** |            ***** |       **No** |   **2.98 KB** | **11.2305** |     **-** |     **-** | **100.61 KB** |
+| **&#39;Looping Collection: Normal StringBuilder&#39;** | **91.01 μs** | **5.701 μs** | **16.81 μs** | **1.681 μs** | **57.70 μs** | **79.99 μs** | **91.37 μs** | **103.47 μs** | **137.2 μs** | **10,987.7** |       **5.701 μs** |     **100.00** |    **2.557** |  **3.214** |   **0.1531** |    **2** |            ***** |       **No** |   **2.97 KB** | **11.1084** |     **-** |     **-** |  **93.05 KB** |

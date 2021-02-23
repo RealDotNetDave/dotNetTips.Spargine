@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-21-2021
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -297,6 +297,8 @@ namespace dotNetTips.Spargine.Extensions
 				sb.Length -= separator.Length;
 			}
 		}
+
+
 
 		/// <summary>
 		/// Sets the separator.

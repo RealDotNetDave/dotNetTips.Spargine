@@ -18,26 +18,27 @@ using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class SortedSetExtensionsTest
-    {
-        [TestMethod]
-        public void ToImmutableTest()
-        {
-            var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class SortedSetExtensionsTest
+	{
+		[TestMethod]
+		public void ToImmutableTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
 
-            var peopleSortedSet = new SortedSet<PersonProper>(people);
+			var peopleSortedSet = new SortedSet<PersonProper>(people);
 
-            var result = peopleSortedSet.ToImmutable();
+			var result = peopleSortedSet.ToImmutable();
 
-            Assert.IsNotNull(result);
+			Assert.IsNotNull(result);
 
-            SortedSet<PersonProper> nullSet = null;
+			SortedSet<PersonProper> nullSet = null;
 
-            Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
-        }
-    }
+			Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
+		}
+	}
 }

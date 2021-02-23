@@ -15,19 +15,20 @@ using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spartine.Core.Tests
 {
 	[ExcludeFromCodeCoverage]
-    [TestClass]
-    public class ComputerInfoTests
-    {
+	[TestClass]
+	public class ComputerInfoTests
+	{
 
-        [TestMethod]
-        public void ComputerInfoTest()
-        {
-            var ci = new ComputerInfo();
+		[TestMethod]
+		public void ComputerInfoTest()
+		{
+			var ci = new ComputerInfo();
 
-            Assert.IsNotNull(ci);
-        }
-    }
+			Assert.IsNotNull(ci);
+		}
+	}
 }

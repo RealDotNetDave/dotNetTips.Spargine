@@ -4,7 +4,7 @@
 // Created          : 10-15-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 02-14-2021
 // ***********************************************************************
 // <copyright file="ComputerInfo.cs" company="dotNetTips.com - McCarter Consulting">
 //     dotNetTips.com - McCarter Consulting. All rights reserved.

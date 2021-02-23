@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20210221-183030</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+Unknown processor
+.NET Core SDK=5.0.200-preview.21079.7
+  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-JTTEDA : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests  Categories=EnumExtensions  
+</code></pre>
+
+<table>
+<thead><tr><th>  Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th> Min</th><th>  Q1</th><th>Median</th><th>  Q3</th><th> Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th><th>Code Size</th>
+</tr>
+</thead><tbody><tr><td>GetDescription</td><td>422.9 ns</td><td>4.17 ns</td><td>3.48 ns</td><td>0.97 ns</td><td>419.7 ns</td><td>421.0 ns</td><td>421.6 ns</td><td>422.9 ns</td><td>431.0 ns</td><td>2,364,864.6</td><td>4.168 ns</td><td>13.00</td><td>3.520</td><td>2.000</td><td>1.4017</td><td>1</td><td>*</td><td>No</td><td>0.0024</td><td>-</td><td>-</td><td>24 B</td><td>269 B</td>
+</tr><tr><td>GetItems</td><td>1,068.8 ns</td><td>3.77 ns</td><td>3.53 ns</td><td>0.91 ns</td><td>1,063.0 ns</td><td>1,066.6 ns</td><td>1,068.3 ns</td><td>1,072.1 ns</td><td>1,073.3 ns</td><td>935,622.3</td><td>3.770 ns</td><td>15.00</td><td>1.603</td><td>2.000</td><td>-0.1243</td><td>2</td><td>*</td><td>No</td><td>0.0572</td><td>-</td><td>-</td><td>512 B</td><td>422 B</td>
+</tr></tbody></table>
+</body>
+</html>

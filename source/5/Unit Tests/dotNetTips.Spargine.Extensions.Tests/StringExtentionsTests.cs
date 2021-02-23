@@ -1,10 +1,24 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.Tests
+// Author           : David McCarter
+// Created          : 12-17-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 02-14-2021
+// ***********************************************************************
+// <copyright file="StringExtentionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]

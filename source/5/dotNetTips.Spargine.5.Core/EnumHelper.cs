@@ -14,7 +14,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Globalization;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
@@ -41,19 +40,12 @@ namespace dotNetTips.Spargine.Core
 		{
 			var enumType = typeof(T);
 
-			if (enumType is null)
-			{
-				ExceptionThrower.ThrowInvalidEnumTypeException(string.Format(CultureInfo.CurrentCulture, format: "Failed to find type {0}", arg0: enumType.Name));
-			}
-
 			// Get the enum values
 			var allValues = (int[])Enum.GetValues(enumType);
 
 			// Get list of names
 			// Add values to result
 			var result = new List<EnumValue>();
-
-
 
 			// TODO: This does not work if enums are not defined 0,1,2, etc
 			var enumNames = GetNames(enumType, fixNames, useXmlNames);

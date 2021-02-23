@@ -4,7 +4,7 @@
 // Created          : 12-29-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 02-01-2021
 // ***********************************************************************
 // <copyright file="ICoordinate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -44,14 +44,14 @@ namespace dotNetTips.Spargine.Extensions
 
 			var hash = GetHash(input, hashType);
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder(input.Count());
 
 			for (var i = 0; i < hash.Length; i++)
 			{
 				sb.Append(hash[i].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
-			return sb.ToString();
+			return sb.ToString().ToTrimmed();
 		}
 
 		/// <summary>
@@ -343,7 +343,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(input, nameof(input));
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() == false, nameof(length));
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder(input.Count());
 
 			if (length == 0)
 			{

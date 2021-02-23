@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-13-2021
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -76,13 +76,13 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddFirst<T>(this IList<T> list, T item)
 		{
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+
 			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}
-
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			list.Insert(0, item);
 
@@ -100,13 +100,13 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddLast<T>(this IList<T> list, T item)
 		{
+			Validate.TryValidateParam(list, nameof(list));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+
 			if (item == null)
 			{
 				return false;
 			}
-
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			list.Insert(list.Count, item);
 

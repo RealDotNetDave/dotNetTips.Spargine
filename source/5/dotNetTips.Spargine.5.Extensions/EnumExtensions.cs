@@ -37,6 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var field = value.GetType().GetField(value.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
 			return attributes.Length > 0 ? attributes[0].Description : value.ToString();
 		}
 
@@ -91,11 +92,7 @@ namespace dotNetTips.Spargine.Extensions
 			var field = obj.GetType().GetField(obj.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
-			var enumItem = new EnumItem<T>
-			{
-				Description = attributes.Length > 0 ? attributes[0].Description : obj.ToString(),
-				Value = (T)obj,
-			};
+			var enumItem = new EnumItem<T>(description: attributes.Length > 0 ? attributes[0].Description : obj.ToString(), value: (T)obj);
 
 			return enumItem;
 		}

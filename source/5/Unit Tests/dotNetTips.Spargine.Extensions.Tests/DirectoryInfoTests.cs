@@ -16,47 +16,48 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class DirectoryInfoExtensionsTests
-    {
-        [TestMethod]
-        public void DirectoryInfoSizeTest01()
-        {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class DirectoryInfoExtensionsTests
+	{
+		[TestMethod]
+		public void DirectoryInfoSizeTest01()
+		{
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
-            var result = directory.GetSize();
+			var result = directory.GetSize();
 
-            Assert.IsTrue(result > 0);
+			Assert.IsTrue(result > 0);
 
-            Assert.ThrowsException<ArgumentNullException>(() => DirectoryInfoExtensions.GetSize(null));
-        }
+			Assert.ThrowsException<ArgumentNullException>(() => DirectoryInfoExtensions.GetSize(null));
+		}
 
-        [TestMethod]
-        public void DirectoryInfoSizeTest02()
-        {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+		[TestMethod]
+		public void DirectoryInfoSizeTest02()
+		{
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
-            var result = directory.GetSize("*.txt");
+			var result = directory.GetSize("*.txt");
 
-            Assert.IsTrue(result > 0);
+			Assert.IsTrue(result > 0);
 
-            Assert.ThrowsException<ArgumentNullException>(() => directory.GetSize(null) == 0);
-        }
+			Assert.ThrowsException<ArgumentNullException>(() => directory.GetSize(null) == 0);
+		}
 
-        [TestMethod]
-        public void DirectoryInfoSizeTest03()
-        {
-            var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+		[TestMethod]
+		public void DirectoryInfoSizeTest03()
+		{
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
 
-            var result = directory.GetSize(searchPattern: "*.txt", searchOption: SearchOption.AllDirectories);
+			var result = directory.GetSize(searchPattern: "*.txt", searchOption: SearchOption.AllDirectories);
 
-            Assert.IsTrue(result > 0);
+			Assert.IsTrue(result > 0);
 
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
-                0);
-        }
-    }
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
+				0);
+		}
+	}
 }

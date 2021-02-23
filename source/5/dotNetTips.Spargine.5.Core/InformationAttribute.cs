@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="InformationAttribute.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Core
 	/// BenchMarkStatus attribute to add more meta data for types.
 	/// </summary>
 	/// <remarks>For use in InformationAttribute.</remarks>
-	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", modifiedOn: "8/4/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public enum BenchMarkStatus
 	{
 		/// <summary>
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Core
 	/// Information status.
 	/// </summary>
 	/// <remarks>For use in InformationAttribute.</remarks>
-	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", modifiedOn: "8/4/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public enum Status
 	{
 		/// <summary>
@@ -86,7 +86,6 @@ namespace dotNetTips.Spargine.Core
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Delegate, Inherited = false)]
 	public sealed class InformationAttribute : Attribute
 	{
-
 		/// <summary>
 		/// The unit test coverage
 		/// </summary>

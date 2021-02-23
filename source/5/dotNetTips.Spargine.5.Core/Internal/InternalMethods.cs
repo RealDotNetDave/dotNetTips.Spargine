@@ -79,7 +79,7 @@ namespace dotNetTips.Spargine.Core.Internal
 			return result;
 		}
 
-		internal static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemeberName = true)
+		internal static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemberName = true)
 		{
 			var typeName = obj.GetType().Name;
 
@@ -87,7 +87,7 @@ namespace dotNetTips.Spargine.Core.Internal
 			{
 				typeName = "Item";
 			}
-			else if (includeMemeberName == false)
+			else if (includeMemberName == false)
 			{
 				typeName = string.Empty;
 			}

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-07-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -97,7 +98,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static T[] AddLast<T>(this T[] array, T item)
 		{
-			if (item == null)
+			if (item is null)
 			{
 				return array;
 			}
@@ -170,7 +171,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(array, nameof(array));
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
 			for (var byteCount = 0; byteCount < array.Length; byteCount++)
 			{

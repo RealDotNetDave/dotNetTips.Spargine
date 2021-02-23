@@ -4,19 +4,19 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-07-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="Config.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 using System;
 using System.IO;
 using System.Xml.Serialization;
-using dotNetTips.Spargine.Core.Xml;
+using dotNetTips.Spargine.Core.Serialization;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -66,7 +66,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			if (File.Exists(this.ConfigFileName))
 			{
-				_instance = XmlHelper.DeserializeFromXmlFile<T>(this.ConfigFileName);
+				_instance = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
 
 				return true;
 			}
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Core
 				File.Delete(this.ConfigFileName);
 			}
 
-			XmlHelper.SerializeToXmlFile(this.Instance, this.ConfigFileName);
+			XmlSerialization.SerializeToFile(this.Instance, this.ConfigFileName);
 
 			return true;
 		}

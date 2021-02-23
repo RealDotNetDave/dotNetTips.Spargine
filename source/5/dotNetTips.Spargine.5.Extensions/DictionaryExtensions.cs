@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-22-2021
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
@@ -43,8 +44,11 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
-			Validate.TryValidateNullParam(key, nameof(key));
-			Validate.TryValidateNullParam(value, nameof(value));
+
+			if (Validate.TryValidateNull(key) && Validate.TryValidateNull(value))
+			{
+				return false;
+			}
 
 			if (dictionary.ContainsKey(key) == false)
 			{
@@ -61,7 +65,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <typeparam name="TKey">Generic type of the key.</typeparam>
 		/// <typeparam name="TValue">Generic type of the value.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="dictionary">The list.</param>
 		/// <param name="items">The items.</param>
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
@@ -69,24 +73,22 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Dictionary cannot be null. or key - Key cannot be null.</exception>
 		/// <remarks>Code by: Lucas</remarks>
 		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool AddRange<T, TKey, TValue>(this IDictionary<TKey, TValue> list, IEnumerable<T> items, Func<T, TKey> key, Func<T, TValue> value)
+		public static bool AddRange<T, TKey, TValue>(this IDictionary<TKey, TValue> dictionary, IEnumerable<T> items, Func<T, TKey> key, Func<T, TValue> value)
 		{
-			if (items.DoesNotHaveItems())
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
+
+			if (items.DoesNotHaveItems() || ( Validate.TryValidateNull(key) && Validate.TryValidateNull(value) ))
 			{
 				return false;
 			}
-
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-			Validate.TryValidateNullParam(key, nameof(key));
-			Validate.TryValidateNullParam(value, nameof(value));
 
 			var returnValue = false;
 
 			items.ToList()
 				.ForEach(item =>
 				{
-					list.Add(key(item), value(item));
+					dictionary.Add(key(item), value(item));
 					returnValue = true;
 				});
 
@@ -98,11 +100,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="items">The items.</param>
+		/// <param name="dictionary">The items.</param>
 		[Information(nameof(DisposeCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static void DisposeCollection<TKey, TValue>(this IDictionary<TKey, TValue> items)
+		public static void DisposeCollection<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
 		{
-			ProcessCollectionToDispose(items.Select(p => p.Value));
+			ProcessCollectionToDispose(dictionary.Select(p => p.Value));
 		}
 
 		/// <summary>
@@ -110,7 +112,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="list">The dictionary.</param>
+		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
@@ -118,16 +120,16 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Key cannot be null.</exception>
 		/// <exception cref="ArgumentNullException">Value cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> list, TKey key, TValue value)
+		public static TValue GetOrAdd<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(dictionary.IsReadOnly == false, nameof(dictionary));
 			Validate.TryValidateNullParam(key, nameof(key));
 			Validate.TryValidateNullParam(value, nameof(value));
 
-			if (list.TryGetValue(key, out var item) == false)
+			if (dictionary.TryGetValue(key, out var item) == false)
 			{
-				list.Add(key, value);
+				dictionary.Add(key, value);
 				item = value;
 			}
 
@@ -137,7 +139,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Converts IDictionary to delimited string.
 		/// </summary>
-		/// <param name="list">The list.</param>
+		/// <param name="dictionary">The list.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
 		/// <example>Output:
@@ -145,17 +147,17 @@ namespace dotNetTips.Spargine.Extensions
 		/// Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU: Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU.
 		/// </example>
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
-		public static string ToDelimitedString(this IDictionary list, char delimiter = ControlChars.Comma)
+		public static string ToDelimitedString(this IDictionary dictionary, char delimiter = ControlChars.Comma)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			if (list.HasItems() == false)
+			if (dictionary.DoesNotHaveItems())
 			{
 				return string.Empty;
 			}
 
-			var sb = TypeHelper.CreateStringBuilder();
+			var sb = new StringBuilder();
 
-			foreach (DictionaryEntry item in list)
+			foreach (DictionaryEntry item in dictionary)
 			{
 				sb.Append($"{item.Key}:{item.Value}{delimiter.ToString(CultureInfo.CurrentCulture)}");
 			}
@@ -168,14 +170,14 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="list">The values.</param>
+		/// <param name="dictionary">The values.</param>
 		/// <returns>IImmutableDictionary&lt;TKey, TValue&gt;.</returns>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> list)
+		public static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> dictionary)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
 
-			return ImmutableDictionary.CreateRange<TKey, TValue>(list);
+			return ImmutableDictionary.CreateRange<TKey, TValue>(dictionary);
 		}
 
 		/// <summary>
@@ -183,7 +185,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="list">The dictionary.</param>
+		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
@@ -193,16 +195,16 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Input cannot be null or have no items in the collection.</exception>
 		/// <exception cref="ArgumentNullException">Key cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> list, TKey key, TValue value)
+		public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
 			Validate.TryValidateNullParam(key, nameof(key));
 			Validate.TryValidateNullParam(value, nameof(value));
 
 
-			if (list.TryGetValue(key, out var item) == false)
+			if (dictionary.TryGetValue(key, out var item) == false)
 			{
-				list.Add(key, value);
+				dictionary.Add(key, value);
 				item = value;
 			}
 

@@ -20,12 +20,6 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public enum HashType
 	{
-
-		/// <summary>
-		/// SHA hash
-		/// </summary>
-		SHA,
-
 		/// <summary>
 		/// SHA1 hash
 		/// </summary>

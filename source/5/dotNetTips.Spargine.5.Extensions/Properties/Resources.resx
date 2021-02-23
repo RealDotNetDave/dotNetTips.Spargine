@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -147,7 +147,7 @@
     <comment>For StringExtensions</comment>
   </data>
   <data name="GuidIsEmpty" xml:space="preserve">
-    <value>Guid is Empth.</value>
+    <value>Guid is Empty.</value>
   </data>
   <data name="InvalidType" xml:space="preserve">
     <value>Invalid type.</value>
@@ -210,7 +210,7 @@
     <value>Strings do not match.</value>
   </data>
   <data name="StringDoesNotMatchMaximumLength" xml:space="preserve">
-    <value>String does not matach maximum length.</value>
+    <value>String does not match maximum length.</value>
   </data>
   <data name="StringDoesNotMatchMinimumLength" xml:space="preserve">
     <value>String does not match minimum length.</value>
@@ -247,5 +247,104 @@
   </data>
   <data name="FileIsNullEmptyOrDoesNotExist" xml:space="preserve">
     <value>{0} is null, empty or the file does not exist.</value>
+  </data>
+  <data name="Zero" xml:space="preserve">
+    <value>Zero</value>
+  </data>
+  <data name="Minus" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="Million" xml:space="preserve">
+    <value>Million</value>
+  </data>
+  <data name="Thousand" xml:space="preserve">
+    <value>Thousand</value>
+  </data>
+  <data name="Hundred" xml:space="preserve">
+    <value>Hundred</value>
+  </data>
+  <data name="AndLowerCase" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="One" xml:space="preserve">
+    <value>One</value>
+  </data>
+  <data name="Two" xml:space="preserve">
+    <value>Two</value>
+  </data>
+  <data name="Three" xml:space="preserve">
+    <value>Three</value>
+  </data>
+  <data name="Four" xml:space="preserve">
+    <value>Four</value>
+  </data>
+  <data name="Five" xml:space="preserve">
+    <value>Five</value>
+  </data>
+  <data name="Six" xml:space="preserve">
+    <value>Six</value>
+  </data>
+  <data name="Seven" xml:space="preserve">
+    <value>Seven</value>
+  </data>
+  <data name="Eight" xml:space="preserve">
+    <value>Eight</value>
+  </data>
+  <data name="Nine" xml:space="preserve">
+    <value>Nine</value>
+  </data>
+  <data name="Ten" xml:space="preserve">
+    <value>Ten</value>
+  </data>
+  <data name="Eleven" xml:space="preserve">
+    <value>Eleven</value>
+  </data>
+  <data name="Twelve" xml:space="preserve">
+    <value>Twelve</value>
+  </data>
+  <data name="Thirteen" xml:space="preserve">
+    <value>Thirteen</value>
+  </data>
+  <data name="Fourteen" xml:space="preserve">
+    <value>Fourteen</value>
+  </data>
+  <data name="Fifteen" xml:space="preserve">
+    <value>Fifteen</value>
+  </data>
+  <data name="Sixteen" xml:space="preserve">
+    <value>Sixteen</value>
+  </data>
+  <data name="Seventeen" xml:space="preserve">
+    <value>Seventeen</value>
+  </data>
+  <data name="Eighteen" xml:space="preserve">
+    <value>Eighteen</value>
+  </data>
+  <data name="Nineteen" xml:space="preserve">
+    <value>Nineteen</value>
+  </data>
+  <data name="Twenty" xml:space="preserve">
+    <value>Twenty</value>
+  </data>
+  <data name="Thirty" xml:space="preserve">
+    <value>Thirty</value>
+  </data>
+  <data name="Forty" xml:space="preserve">
+    <value>Forty</value>
+  </data>
+  <data name="Fifty" xml:space="preserve">
+    <value>Fifty</value>
+  </data>
+  <data name="Sixty" xml:space="preserve">
+    <value>Sixty</value>
+  </data>
+  <data name="Seventy" xml:space="preserve">
+    <value>Seventy</value>
+  </data>
+  <data name="Eighty" xml:space="preserve">
+    <value>Eighty</value>
+  </data>
+  <data name="Ninety" xml:space="preserve">
+    <value>Ninety</value>
   </data>
 </root>

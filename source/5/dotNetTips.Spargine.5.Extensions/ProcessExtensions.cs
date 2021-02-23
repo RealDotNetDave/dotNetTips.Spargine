@@ -164,8 +164,7 @@ namespace dotNetTips.Spargine.Extensions
 			}
 			catch (Exception ex)
 			{
-				logger?.LogError(ex,
-					$"// ! Failed to set up priority {priority} for process {process}. Make sure you have the right permissions.");
+				logger?.LogError(ex, $"Failed to set up priority {priority} for process {process}. Make sure you have the right permissions.");
 			}
 
 			return false;

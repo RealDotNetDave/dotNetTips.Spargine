@@ -4,7 +4,7 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-10-2020
+// Last Modified On : 01-16-2021
 // ***********************************************************************
 // <copyright file="CoordinateProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -20,7 +20,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// <summary>
 	/// Struct CoordinateProper
 	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />
-	/// Implements the <see cref="System.IComparable" />>
+	/// Implements the <see cref="System.IComparable" />&gt;
 	/// </summary>
 	/// <seealso cref="System.IComparable" />
 	/// <seealso cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />

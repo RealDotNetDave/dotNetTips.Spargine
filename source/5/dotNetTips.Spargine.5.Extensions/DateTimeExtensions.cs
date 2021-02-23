@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-14-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -169,7 +169,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns><c>true</c> if [is in range throws exception] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRangeThrowsException(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime, string paramName)
+		public static bool IsInRangeThrowsException(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime, string paramName = "")
 		{
 			if (value.IsInRange(beginningTime, endTime) == false)
 			{

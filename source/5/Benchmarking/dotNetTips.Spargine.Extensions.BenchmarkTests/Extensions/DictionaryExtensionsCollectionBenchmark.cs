@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 		public override void Setup() { base.Setup(); }
 
-		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ":*")]
+		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ":*POOL")]
 		public void ToDelimitedString01()
 		{
 			var people = base.PersonProperDictionary;

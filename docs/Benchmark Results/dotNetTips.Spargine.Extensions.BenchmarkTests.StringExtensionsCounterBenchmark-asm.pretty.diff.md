@@ -1,4 +1,4 @@
-## dotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsCounterBenchmark-20210221-195624
+## dotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsCounterBenchmark-20210222-205752
 **Diff for SplitCharSeparatorRemoveEmptyEntriesCount method between:**
 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT

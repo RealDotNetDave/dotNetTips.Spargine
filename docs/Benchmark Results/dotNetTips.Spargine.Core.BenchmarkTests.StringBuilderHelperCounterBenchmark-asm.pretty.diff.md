@@ -1,4 +1,4 @@
-## dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark-20210221-164418
+## dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark-20210222-225750
 **Diff for AppendBytes03 method between:**
 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT

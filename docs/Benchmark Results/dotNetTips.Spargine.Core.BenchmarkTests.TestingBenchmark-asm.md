@@ -5,8 +5,8 @@
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       rdx,[rsi+70]
+       mov       rcx,[rsi+70]
+       mov       rdx,[rsi+78]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercent(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -32,10 +32,10 @@
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB36ECB9F0]
+       vmovsd    xmm1,qword ptr [7FFB170FED70]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB36ECBA00]
+       vmulsd    xmm0,xmm0,qword ptr [7FFB170FED80]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -50,9 +50,9 @@
        vzeroupper
        vmovaps   [rsp+30],xmm6
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       [rsp+20],rcx
        mov       rcx,[rsi+70]
+       mov       [rsp+20],rcx
+       mov       rcx,[rsi+78]
        mov       [rsp+28],rcx
        lea       rcx,[rsp+28]
        call      System.TimeSpan.get_TotalMilliseconds()
@@ -62,10 +62,10 @@
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+20]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB36E9B9C0]
+       vmovsd    xmm1,qword ptr [7FFB170DED30]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB36E9B9D0]
+       vmulsd    xmm0,xmm0,qword ptr [7FFB170DED40]
        mov       rax,[rsi+10]
        cmp       [rax],eax
        add       rax,18
@@ -81,16 +81,16 @@
        vzeroupper
        vxorps    xmm0,xmm0,xmm0
        vcvtsi2sd xmm0,xmm0,qword ptr [rcx]
-       vdivsd    xmm0,xmm0,[7FFB36E9B8D0]
-       vucomisd  xmm0,qword ptr [7FFB36E9B8E0]
+       vdivsd    xmm0,xmm0,[7FFB170DEC40]
+       vucomisd  xmm0,qword ptr [7FFB170DEC50]
        jbe       short M01_L00
-       vmovsd    xmm0,qword ptr [7FFB36E9B8F0]
+       vmovsd    xmm0,qword ptr [7FFB170DEC60]
        ret
 M01_L00:
-       vmovsd    xmm1,qword ptr [7FFB36E9B900]
+       vmovsd    xmm1,qword ptr [7FFB170DEC70]
        vucomisd  xmm1,xmm0
        jbe       short M01_L01
-       vmovsd    xmm0,qword ptr [7FFB36E9B910]
+       vmovsd    xmm0,qword ptr [7FFB170DEC80]
        ret
 M01_L01:
        ret
@@ -104,8 +104,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       rdx,[rsi+70]
+       mov       rcx,[rsi+70]
+       mov       rdx,[rsi+78]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoInline(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -131,10 +131,10 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB36EBB9F0]
+       vmovsd    xmm1,qword ptr [7FFB170EED60]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB36EBBA00]
+       vmulsd    xmm0,xmm0,qword ptr [7FFB170EED70]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -148,8 +148,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       rdx,[rsi+70]
+       mov       rcx,[rsi+70]
+       mov       rdx,[rsi+78]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoOptimization(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -183,7 +183,7 @@ M01_L01:
        call      System.Math.Abs(Double)
        vmovsd    xmm1,qword ptr [rbp+0FFF0]
        vdivsd    xmm0,xmm1,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB36EA8D40]
+       vmulsd    xmm0,xmm0,qword ptr [7FFB170DC1C0]
        lea       rsp,[rbp]
        pop       rbp
        ret
@@ -197,8 +197,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       rdx,[rsi+70]
+       mov       rcx,[rsi+70]
+       mov       rdx,[rsi+78]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentPreserveSig(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -224,10 +224,10 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB36EBB8F0]
+       vmovsd    xmm1,qword ptr [7FFB170EED70]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB36EBB900]
+       vmulsd    xmm0,xmm0,qword ptr [7FFB170EED80]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -241,8 +241,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+68]
-       mov       rdx,[rsi+70]
+       mov       rcx,[rsi+70]
+       mov       rdx,[rsi+78]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentSynchronized(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -266,7 +266,7 @@ M01_L01:
        xor       edx,edx
        mov       [rbp+0FFE8],edx
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1A2CCE10878
+       mov       rcx,1D4B5DADC18
        call      CORINFO_HELP_MON_ENTER_STATIC
        lea       rcx,[rbp+18]
        call      System.TimeSpan.get_TotalMilliseconds()
@@ -276,12 +276,12 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rbp+10]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB36E9B9E8]
+       vmovsd    xmm1,qword ptr [7FFB170EEE68]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm6,xmm0,qword ptr [7FFB36E9B9F8]
+       vmulsd    xmm6,xmm0,qword ptr [7FFB170EEE78]
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1A2CCE10878
+       mov       rcx,1D4B5DADC18
        call      CORINFO_HELP_MON_EXIT_STATIC
        vmovaps   xmm0,xmm6
        vmovaps   xmm6,[rsp+30]
@@ -296,7 +296,7 @@ M01_L01:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+40]
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1A2CCE10878
+       mov       rcx,1D4B5DADC18
        call      CORINFO_HELP_MON_EXIT_STATIC
        nop
        vmovaps   xmm6,[rsp+30]

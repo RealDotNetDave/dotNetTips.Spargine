@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = new List<PersonProper>();
 
-			CollectionExtensions.AddRange(people, base.PersonProperCollection.Take(base.Count / 10), Tristate.True);
+			CollectionExtensions.AddRange(people, base.PersonProperCollection.Take(base.Count / 2), Tristate.True);
 
 			base.Consumer.Consume(people);
 		}

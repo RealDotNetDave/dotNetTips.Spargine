@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Extensions</AssemblyName>
-		<AssemblyVersion>2021.2.23.402</AssemblyVersion>
+		<AssemblyVersion>2021.2.25.403</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -14,7 +14,7 @@
 		<Description>Extensions for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.2.23.402</FileVersion>
+		<FileVersion>2021.2.25.403</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

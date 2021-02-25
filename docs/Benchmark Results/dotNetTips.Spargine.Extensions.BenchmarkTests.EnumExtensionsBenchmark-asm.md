@@ -10,7 +10,7 @@
        mov       rsi,rcx
        mov       rcx,offset MT_System.StringComparison
        call      CORINFO_HELP_NEWSFAST
-       mov       ecx,[rsi+68]
+       mov       ecx,[rsi+70]
        mov       [rax+8],ecx
        mov       rcx,rax
        call      dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)
@@ -31,14 +31,14 @@
        push      rsi
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,29E42E61048
+       mov       r8,2A131C13060
        mov       r8,[r8]
-       mov       rdx,29E22E63780
+       mov       rdx,2A141C11780
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,rsi
-       call      00007FFB967623C0
+       call      00007FFB769A23C0
        mov       rdi,rax
        mov       rcx,rsi
        mov       rax,[rsi]
@@ -48,7 +48,7 @@
        mov       rcx,rdi
        mov       r8d,1C
        cmp       [rcx],ecx
-       call      qword ptr [7FFB36F149A0]
+       call      qword ptr [7FFB171349A0]
        mov       rdi,rax
        mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
@@ -101,7 +101,7 @@ M01_L01:
        mov       rsi,rcx
        mov       rcx,offset MT_System.StringComparison
        call      CORINFO_HELP_NEWSFAST
-       mov       ecx,[rsi+68]
+       mov       ecx,[rsi+70]
        mov       [rax+8],ecx
        mov       rcx,rax
        call      dotNetTips.Spargine.Extensions.EnumExtensions.GetItems(System.Enum)
@@ -131,24 +131,24 @@ M01_L01:
        xor       eax,eax
        mov       [rsp+38],rax
        mov       rsi,rcx
-       mov       r8,24CDFDB3060
+       mov       r8,22769753060
        mov       r8,[r8]
-       mov       rdx,24CEFDB10C8
+       mov       rdx,22769753530
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FFB36C00020
-       mov       edx,21
+       mov       rcx,7FFB16E50020
+       mov       edx,23
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,24CDFDB2D50
+       mov       rdx,22769752D50
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
-       call      00007FFB967623C0
+       call      00007FFB769A23C0
        mov       rsi,rax
        mov       rcx,rsi
        call      System.Enum.GetNames(System.Type)

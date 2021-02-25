@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AssemblyVersion>2021.2.23.37674</AssemblyVersion>
+		<AssemblyVersion>2021.2.25.37675</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Common .NET Standard code for use in unit tests and benchmarking.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.2.23.37674</FileVersion>
+		<FileVersion>2021.2.25.37675</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>

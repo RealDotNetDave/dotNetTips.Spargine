@@ -203,7 +203,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.PickRandom))]
 		public void PickRandom()
 		{
-			var result = base.PersonProperCollection.Take(base.Count / 10);
+			var result = base.PersonProperCollection.Take(base.Count / 2);
 
 			base.Consumer.Consume(result);
 		}

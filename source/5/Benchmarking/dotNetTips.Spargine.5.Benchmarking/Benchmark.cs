@@ -46,6 +46,7 @@ namespace dotNetTips.Spargine.Benchmarking
 	[GcServer(true)]
 	[GitHub]
 	[HtmlExporter]
+	[InProcessAttribute]
 	[IterationsColumn]
 	[JsonExporter(indentJson: true)]
 	[KurtosisColumn]

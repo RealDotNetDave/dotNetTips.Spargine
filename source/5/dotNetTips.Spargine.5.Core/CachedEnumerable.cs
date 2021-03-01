@@ -61,7 +61,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The enumerated
 		/// </summary>
-		private bool _enumerated = false;
+		private bool _enumerated;
 
 		/// <summary>
 		/// The enumerator

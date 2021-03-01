@@ -25,68 +25,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(nameof(ListExtensions))]
 	public class ListExtensionsCollectionBenchmark : CollectionBenchmark
 	{
-		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Comparer")]
-		//public void AddIfNotExistsComparer()
-		//{
-		//	var people = new List<PersonProper>(base.CollectionCount);
-		//	var comparer = new PersonProperComparer();
-
-		//	foreach (var person in base.personProperCollection)
-		//	{
-		//		people.AddIfNotExists(person, comparer);
-		//	}
-
-		//	base.Consumer.Consume(people);
-		//}
-
-		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Dictionary")]
-		//public void AddIfNotExistsDictionary()
-		//{
-		//	var people = new Dictionary<string, PersonProper>(base.CollectionCount);
-
-		//	foreach (var person in base.personProperDictionary)
-		//	{
-		//		people.AddIfNotExists(person.Key, person.Value);
-		//	}
-
-		//	base.Consumer.Consume(people);
-		//}
-
-		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Param Array")]
-		//public void AddIfNotExistsParamArray()
-		//{
-		//	var people = new List<PersonProper>(this.CollectionCount / 2);
-
-		//	people.AddIfNotExists(base.personProperArrayHalf);
-
-		//	base.Consumer.Consume(people);
-		//}
-
-		//[Benchmark(Description = nameof(ListExtensions.AddIfNotExists) + ":Single")]
-		//public void AddIfNotExistsSingle()
-		//{
-		//	var people = new List<PersonProper>(base.CollectionCount);
-
-		//	foreach (var person in base.personProperCollection)
-		//	{
-		//		people.AddIfNotExists(person);
-		//	}
-
-		//	base.Consumer.Consume(people);
-		//}
-
-
-		[Benchmark(Description = nameof(ListExtensions.AddLast) + ":Array")]
-		public void AddLastToArray()
-		{
-			var people = base.PersonProperArrayFull.Clone<PersonProper>();
-
-			var result = people.AddLast(this.PersonProper);
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.AddLast) + ":List")]
+		[Benchmark(Description = nameof(ListExtensions.AddLast))]
 		public void AddLastToList()
 		{
 			var people = base.PersonProperCollection.CopyToList();
@@ -96,15 +35,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.AreEqual) + ":Array")]
-		public void AreEqualArray()
-		{
-			var result = base.PersonProperArrayFull.AreEqual(base.PersonProperArrayHalf);
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.AreEqual) + ":List")]
+		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
 		public void AreEqualList()
 		{
 			var result = base.PersonProperCollection.AreEqual(base.PersonProperListHalf);
@@ -116,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		public void ClearNulls()
 		{
 			var people = base.PersonProperCollection;
-			people.Add(null);
+			people.AddLast(null);
 
 			var result = people.ClearNulls();
 
@@ -148,15 +79,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":Array")]
-		public void ListHashCodeArray()
-		{
-			var result = base.PersonProperArrayFull.ArrayHashCode();
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":List")]
+		[Benchmark(Description = nameof(ListExtensions.ListHashCode))]
 		public void ListHashCodeList()
 		{
 			var result = base.PersonProperCollection.ListHashCode();
@@ -164,7 +87,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":List-Read Only")]
+		[Benchmark(Description = nameof(ListExtensions.ListHashCode) + ":Read Only")]
 		public void ListHashCodeReadOnlyList()
 		{
 			var result = base.PersonProperCollection.ToReadOnlyCollection().ListHashCode();
@@ -191,7 +114,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.Page))]
 		public void Page()
 		{
-			foreach (var people in base.PersonProperCollection.Page(10))
+			foreach (var people in base.PersonProperCollection.Page(2))
 			{
 				foreach (var person in people)
 				{

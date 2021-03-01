@@ -4,7 +4,7 @@
 // Created          : 12-29-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 02-25-2021
 // ***********************************************************************
 // <copyright file="Coordinate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -24,6 +24,18 @@ namespace dotNetTips.Spargine.Tester.Models
 	[Serializable]
 	public struct Coordinate : ICoordinate, IEquatable<Coordinate>
 	{
+
+		/// <summary>
+		/// Gets or sets the i coordinate.
+		/// </summary>
+		/// <value>The i coordinate.</value>
+		public ICoordinate ICoordinate
+		{
+			get => default;
+			set
+			{
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the x coordinate.

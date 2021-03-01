@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AnalysisLevel>latest</AnalysisLevel>
+		<AnalysisLevel>5.0</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2021.2.25.273</AssemblyVersion>
+		<AssemblyVersion>2021.3.1.284</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -11,11 +11,11 @@
 		<Configurations>Debug;Release</Configurations>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<DebugSymbols>true</DebugSymbols>
-		<Description>Core types for Spargine.</Description>
+		<Description>Core types and helper methods for Spargine.</Description>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.2.25.273</FileVersion>
+		<FileVersion>2021.3.1.284</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -23,7 +23,7 @@
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
-		<PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
+		<PackageReleaseNotes>MAR 2021: Initial release.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -37,7 +37,7 @@
 		<SelfContained>true</SelfContained>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.3.1.14</Version>
+		<Version>2021.3.1.20</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -53,13 +53,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Remove="CachedEnumerable`1.cs" />
 		<Compile Remove="Date.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.2" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.3" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

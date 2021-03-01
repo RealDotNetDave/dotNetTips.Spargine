@@ -137,9 +137,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		{
 			Validate.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
 
-			var collection = new List<Exception>();
-
-			collection = new List<Exception> { ex };
+			var collection = new List<Exception> { ex };
 
 			if (( ex.InnerException is null ) == false)
 			{

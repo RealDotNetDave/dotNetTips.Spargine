@@ -4,9 +4,9 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-03-2020
+// Last Modified On : 02-27-2021
 // ***********************************************************************
-// <copyright file="XmlHelperTests.cs" company="dotNetTips.Spargine.Core.Tests">
+// <copyright file="JsonSerializationTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -15,6 +15,7 @@ using System;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core.Serialization;
+using dotNetTips.Spargine.Core.Tests.Properties;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -35,12 +36,12 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			var json = JsonSerialization.Serialize(person);
 
 			//For debugging
-			JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonProper.json");
+			//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonProper.json");
 
 			Assert.IsTrue(string.IsNullOrEmpty(json) == false);
 
 			//Deserialize
-			var serializedPerson = JsonSerialization.Deserialize<PersonProper>(json);
+			var serializedPerson = JsonSerialization.Deserialize<PersonProper>(Resources.JsonPersonProper);
 
 			Assert.IsNotNull(serializedPerson);
 		}
@@ -54,12 +55,12 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			var json = JsonSerialization.Serialize(person);
 
 			//For debugging
-			JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonRecord.json");
+			//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonRecord.json");
 
 			Assert.IsTrue(string.IsNullOrEmpty(json) == false);
 
 			//Deserialize
-			var serializedPerson = JsonSerialization.Deserialize<PersonRecord>(json);
+			var serializedPerson = JsonSerialization.Deserialize<PersonRecord>(Resources.JsonPersonRecord);
 
 			Assert.IsNotNull(serializedPerson);
 		}

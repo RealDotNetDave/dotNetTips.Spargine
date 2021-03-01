@@ -4,11 +4,11 @@ BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
 Unknown processor
 .NET Core SDK=5.0.200-preview.21079.7
   [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
-  Job-XTFHVN : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+  Job-HSBDIC : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
 Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests  Categories=ExceptionExtensions  
 
 {noformat}
 ||        Method ||    Mean ||  Error || StdDev || StdErr ||     Min ||      Q1 ||  Median ||      Q3 ||     Max ||       Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline ||Code Size || Gen 0 ||Gen 1 ||Gen 2 ||Allocated ||
-| GetAllMessages | 204.7 ns | 1.26 ns | 1.18 ns | 0.30 ns | 201.2 ns | 204.8 ns | 205.1 ns | 205.3 ns | 205.7 ns | 4,884,465.3 |       1.260 ns |      15.00 |    5.447 |  2.000 |   -1.832 |    1 |            * |       No |     381 B | 0.0305 |     - |     - |     280 B |
+| GetAllMessages | 203.0 ns | 1.48 ns | 1.38 ns | 0.36 ns | 198.3 ns | 203.0 ns | 203.5 ns | 203.6 ns | 203.9 ns | 4,926,426.1 |       1.479 ns |      15.00 |    8.949 |  2.000 |   -2.568 |    1 |            * |       No |     381 B | 0.0305 |     - |     - |     280 B |

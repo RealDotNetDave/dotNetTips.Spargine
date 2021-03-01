@@ -16,6 +16,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
+using dotNetTips.Spargine.Core.BenchmarkTests.Serialization;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
@@ -28,7 +29,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		/// Defines the entry point of the application.
 		/// </summary>
 		/// <param name="args">The arguments.</param>
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
 			try
 			{
@@ -38,16 +39,17 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<TestingBenchmark>(config);
+				//BenchmarkRunner.Run<SerializationBenchmark>(config);
 
 				Console.Beep();
-				Console.Beep(frequency: 50000, duration: 5000);
 				Console.ReadLine();
 			}
 			catch (Exception ex)
 			{
+				Console.Beep();
+				Console.Beep();
+				Console.Beep();
 				Console.WriteLine(ex.Message);
-				Console.Beep(frequency: 500, duration: 2000);
 				Console.ReadLine();
 			}
 		}

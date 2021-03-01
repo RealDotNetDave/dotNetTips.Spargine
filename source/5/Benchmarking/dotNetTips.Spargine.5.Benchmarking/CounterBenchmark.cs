@@ -4,9 +4,9 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-19-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
-// <copyright file="CounterPerfTestRunner.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="CounterBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
@@ -20,6 +20,7 @@ using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine)
 namespace dotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
@@ -33,7 +34,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// Gets or sets the collection count.
 		/// </summary>
 		/// <value>The collection count.</value>
-		[Params(2, 5, 10, 25, 50, 100, 250, 500, 1000)]
+		[Params(10, 25, 50, 100, 250, 500, 1000)]
 		public int Count { get; set; }
 
 		/// <summary>
@@ -90,6 +91,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The person proper list half.</value>
 		protected List<PersonProper> PersonProperListHalf { get; private set; }
 
+		/// <summary>
+		/// Gets the person record array.
+		/// </summary>
+		/// <value>The person record array.</value>
 		protected PersonRecord[] PersonRecordArray { get; private set; }
 
 		/// <summary>

@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
-    <AssemblyVersion>2021.2.25.5</AssemblyVersion>
-    <FileVersion>2021.2.25.5</FileVersion>
+    <AssemblyVersion>2021.3.1.12</AssemblyVersion>
+    <FileVersion>2021.3.1.12</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

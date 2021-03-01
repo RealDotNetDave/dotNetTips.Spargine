@@ -33,16 +33,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(people);
 		}
 
-		//[Benchmark(Description = nameof(CollectionExtensions.Crea))]
-		//public void Create01()
-		//{
-		//	var result = base.PersonProperCollection;
-
-		//	base.Consumer.Consume(Collection<PersonProper>.Create(result, ensureUnique: Tristate.True));
-		//}
-
-		[Benchmark(Description = nameof(CollectionExtensions.HasItems))]
-		public void HasItems()
+		[Benchmark(Description = nameof(CollectionExtensions.HasItems) + ": Predicate")]
+		public void HasItems01()
 		{
 			var result = base.PersonProperCollection.HasItems(p => p.City.Contains("SAN"));
 

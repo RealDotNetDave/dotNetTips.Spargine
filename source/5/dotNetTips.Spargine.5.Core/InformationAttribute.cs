@@ -17,66 +17,6 @@ using dotNetTips.Spargine.Core.Properties;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
 namespace dotNetTips.Spargine.Core
 {
-	/// <summary>
-	/// BenchMarkStatus attribute to add more meta data for types.
-	/// </summary>
-	/// <remarks>For use in InformationAttribute.</remarks>
-	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-	public enum BenchMarkStatus
-	{
-		/// <summary>
-		/// No benchmark.
-		/// </summary>
-		None,
-
-		/// <summary>
-		/// Benchmark is not required
-		/// </summary>
-		NotRequired,
-
-		/// <summary>
-		/// Benchmark work is in progress.
-		/// </summary>
-		WIP,
-
-		/// <summary>
-		/// Benchmarks done.
-		/// </summary>
-		Completed
-	}
-
-	/// <summary>
-	/// Information status.
-	/// </summary>
-	/// <remarks>For use in InformationAttribute.</remarks>
-	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-	public enum Status
-	{
-		/// <summary>
-		/// The not set
-		/// </summary>
-		NotSet,
-
-		/// <summary>
-		/// New method or class.
-		/// </summary>
-		New,
-
-		/// <summary>
-		/// Method or class is available for use (from other assemblies).
-		/// </summary>
-		Available,
-
-		/// <summary>
-		/// Method or class not in use.
-		/// </summary>
-		NotUsed,
-
-		/// <summary>
-		/// Method or class has been updated.
-		/// </summary>
-		Updated,
-	}
 
 	/// <summary>
 	/// Class InformationAttribute. This class cannot be inherited.

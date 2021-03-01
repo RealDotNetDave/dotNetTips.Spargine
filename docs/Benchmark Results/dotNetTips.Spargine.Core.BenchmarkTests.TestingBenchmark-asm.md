@@ -5,8 +5,8 @@
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       rdx,[rsi+78]
+       mov       rcx,[rsi+78]
+       mov       rdx,[rsi+80]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercent(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -15,7 +15,7 @@
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 44
+; Total bytes of code 47
 ```
 ```assembly
 ; dotNetTips.Spargine.Core.WIPTests.CalculatePercent(System.TimeSpan, System.TimeSpan)
@@ -32,10 +32,10 @@
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB170FED70]
+       vmovsd    xmm1,qword ptr [7FFE4052EF60]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB170FED80]
+       vmulsd    xmm0,xmm0,qword ptr [7FFE4052EF70]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -50,9 +50,9 @@
        vzeroupper
        vmovaps   [rsp+30],xmm6
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       [rsp+20],rcx
        mov       rcx,[rsi+78]
+       mov       [rsp+20],rcx
+       mov       rcx,[rsi+80]
        mov       [rsp+28],rcx
        lea       rcx,[rsp+28]
        call      System.TimeSpan.get_TotalMilliseconds()
@@ -62,10 +62,10 @@
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+20]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB170DED30]
+       vmovsd    xmm1,qword ptr [7FFE4054EF30]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB170DED40]
+       vmulsd    xmm0,xmm0,qword ptr [7FFE4054EF40]
        mov       rax,[rsi+10]
        cmp       [rax],eax
        add       rax,18
@@ -74,23 +74,23 @@
        add       rsp,40
        pop       rsi
        ret
-; Total bytes of code 123
+; Total bytes of code 126
 ```
 ```assembly
 ; System.TimeSpan.get_TotalMilliseconds()
        vzeroupper
        vxorps    xmm0,xmm0,xmm0
        vcvtsi2sd xmm0,xmm0,qword ptr [rcx]
-       vdivsd    xmm0,xmm0,[7FFB170DEC40]
-       vucomisd  xmm0,qword ptr [7FFB170DEC50]
+       vdivsd    xmm0,xmm0,[7FFE4054EE40]
+       vucomisd  xmm0,qword ptr [7FFE4054EE50]
        jbe       short M01_L00
-       vmovsd    xmm0,qword ptr [7FFB170DEC60]
+       vmovsd    xmm0,qword ptr [7FFE4054EE60]
        ret
 M01_L00:
-       vmovsd    xmm1,qword ptr [7FFB170DEC70]
+       vmovsd    xmm1,qword ptr [7FFE4054EE70]
        vucomisd  xmm1,xmm0
        jbe       short M01_L01
-       vmovsd    xmm0,qword ptr [7FFB170DEC80]
+       vmovsd    xmm0,qword ptr [7FFE4054EE80]
        ret
 M01_L01:
        ret
@@ -104,8 +104,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       rdx,[rsi+78]
+       mov       rcx,[rsi+78]
+       mov       rdx,[rsi+80]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoInline(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -114,7 +114,7 @@ M01_L01:
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 44
+; Total bytes of code 47
 ```
 ```assembly
 ; dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoInline(System.TimeSpan, System.TimeSpan)
@@ -131,10 +131,10 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB170EED60]
+       vmovsd    xmm1,qword ptr [7FFE4054F060]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB170EED70]
+       vmulsd    xmm0,xmm0,qword ptr [7FFE4054F070]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -148,8 +148,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       rdx,[rsi+78]
+       mov       rcx,[rsi+78]
+       mov       rdx,[rsi+80]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoOptimization(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -158,7 +158,7 @@ M01_L01:
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 44
+; Total bytes of code 47
 ```
 ```assembly
 ; dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoOptimization(System.TimeSpan, System.TimeSpan)
@@ -183,7 +183,7 @@ M01_L01:
        call      System.Math.Abs(Double)
        vmovsd    xmm1,qword ptr [rbp+0FFF0]
        vdivsd    xmm0,xmm1,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB170DC1C0]
+       vmulsd    xmm0,xmm0,qword ptr [7FFE4054C3B0]
        lea       rsp,[rbp]
        pop       rbp
        ret
@@ -197,8 +197,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       rdx,[rsi+78]
+       mov       rcx,[rsi+78]
+       mov       rdx,[rsi+80]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentPreserveSig(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -207,7 +207,7 @@ M01_L01:
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 44
+; Total bytes of code 47
 ```
 ```assembly
 ; dotNetTips.Spargine.Core.WIPTests.CalculatePercentPreserveSig(System.TimeSpan, System.TimeSpan)
@@ -224,10 +224,10 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rsp+40]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB170EED70]
+       vmovsd    xmm1,qword ptr [7FFE4053EF60]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFB170EED80]
+       vmulsd    xmm0,xmm0,qword ptr [7FFE4053EF70]
        vmovaps   xmm6,[rsp+20]
        add       rsp,38
        ret
@@ -241,8 +241,8 @@ M01_L01:
        sub       rsp,20
        vzeroupper
        mov       rsi,rcx
-       mov       rcx,[rsi+70]
-       mov       rdx,[rsi+78]
+       mov       rcx,[rsi+78]
+       mov       rdx,[rsi+80]
        call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentSynchronized(System.TimeSpan, System.TimeSpan)
        mov       rax,[rsi+10]
        cmp       [rax],eax
@@ -251,7 +251,7 @@ M01_L01:
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 44
+; Total bytes of code 47
 ```
 ```assembly
 ; dotNetTips.Spargine.Core.WIPTests.CalculatePercentSynchronized(System.TimeSpan, System.TimeSpan)
@@ -266,7 +266,7 @@ M01_L01:
        xor       edx,edx
        mov       [rbp+0FFE8],edx
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1D4B5DADC18
+       mov       rcx,1B63AFFDC18
        call      CORINFO_HELP_MON_ENTER_STATIC
        lea       rcx,[rbp+18]
        call      System.TimeSpan.get_TotalMilliseconds()
@@ -276,12 +276,12 @@ M01_L01:
        vsubsd    xmm6,xmm6,xmm0
        lea       rcx,[rbp+10]
        call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFB170EEE68]
+       vmovsd    xmm1,qword ptr [7FFE4052F158]
        vandps    xmm0,xmm0,xmm1
        vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm6,xmm0,qword ptr [7FFB170EEE78]
+       vmulsd    xmm6,xmm0,qword ptr [7FFE4052F168]
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1D4B5DADC18
+       mov       rcx,1B63AFFDC18
        call      CORINFO_HELP_MON_EXIT_STATIC
        vmovaps   xmm0,xmm6
        vmovaps   xmm6,[rsp+30]
@@ -296,7 +296,7 @@ M01_L01:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+40]
        lea       rdx,[rbp+0FFE8]
-       mov       rcx,1D4B5DADC18
+       mov       rcx,1B63AFFDC18
        call      CORINFO_HELP_MON_EXIT_STATIC
        nop
        vmovaps   xmm6,[rsp+30]

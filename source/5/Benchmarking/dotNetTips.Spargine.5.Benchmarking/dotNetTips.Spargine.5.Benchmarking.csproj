@@ -1,56 +1,58 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
-    <AssemblyVersion>2021.2.23.81</AssemblyVersion>
-    <FileVersion>2021.2.23.81</FileVersion>
-    <Version>2021.2.1.0</Version>
-    <Authors>David McCarter</Authors>
-    <Company>David McCarter - dotNetTips.com</Company>
-    <Description>Common classes that can be used with BenchmarkDotNet.</Description>
-    <PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
-    <Copyright>McCarter Consulting (David McCarter)</Copyright>
-    <PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
-    <RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
-    <PackageReleaseNotes>FEB 2021: Initial release.</PackageReleaseNotes>
-    <NeutralLanguage>en-US</NeutralLanguage>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
+		<AssemblyVersion>2021.3.1.92</AssemblyVersion>
+		<FileVersion>2021.3.1.92</FileVersion>
+		<Version>2021.3.1.20</Version>
+		<Authors>David McCarter</Authors>
+		<Company>David McCarter - dotNetTips.com</Company>
+		<Description>Common classes that can be used with BenchmarkDotNet.</Description>
+		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
+		<Copyright>McCarter Consulting (David McCarter)</Copyright>
+		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
+		<PackageReleaseNotes>MAR 2021: Initial release.</PackageReleaseNotes>
+		<NeutralLanguage>en-UM</NeutralLanguage>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<AnalysisLevel>5.0</AnalysisLevel>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.3.1.12" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.3.1.12" />
-    <PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.3.1.12" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.3.1.20" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.3.1.20" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.3.1.20" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
-  </Target>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
+	</Target>
 
 </Project>

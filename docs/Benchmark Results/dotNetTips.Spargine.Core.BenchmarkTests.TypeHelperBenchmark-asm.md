@@ -21,7 +21,7 @@
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,[rsi+70]
+       mov       rcx,[rsi+78]
        mov       edx,[rcx+14]
        mov       [rsp+40],rcx
        xor       ecx,ecx
@@ -38,9 +38,9 @@ M00_L00:
        mov       r9,[rcx+30]
        mov       rcx,[rcx+58]
        xor       r8d,r8d
-       mov       rdx,1C4336D1360
+       mov       rdx,2A456491360
        mov       rdx,[rdx]
-       mov       rax,1C4336D3D80
+       mov       rax,2A466491930
        mov       rax,[rax]
        lea       r10,[rsp+20]
        mov       [r10],r9
@@ -60,7 +60,7 @@ M00_L00:
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFB170E31E8]
+       call      qword ptr [7FFE405331E8]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -146,8 +146,8 @@ M01_L01:
        mov       rdx,rax
        mov       [rsp+0F8],rbx
        mov       rcx,rbx
-       mov       r11,7FFB16D304D0
-       call      qword ptr [7FFB170F04D0]
+       mov       r11,7FFE401804D0
+       call      qword ptr [7FFE405404D0]
        mov       rdx,rax
        mov       rcx,offset MT_System.ICustomFormatter
        call      CORINFO_HELP_CHKCASTINTERFACE
@@ -438,8 +438,8 @@ M02_L29:
        mov       rdx,rbx
        mov       [rsp+50],r10
        mov       r8,r10
-       mov       r11,7FFB16D304C8
-       call      qword ptr [7FFB170F04C8]
+       mov       r11,7FFE401804C8
+       call      qword ptr [7FFE405404C8]
        mov       r9,rax
        mov       eax,[rsp+64]
        mov       rcx,[rsp+28]
@@ -497,8 +497,8 @@ M02_L31:
        lea       rdx,[rsp+68]
        mov       r8,r11
        lea       r9,[rsp+78]
-       mov       r11,7FFB16D304C0
-       call      qword ptr [7FFB170F04C0]
+       mov       r11,7FFE401804C0
+       call      qword ptr [7FFE405404C0]
        test      eax,eax
        je        near ptr M02_L34
        mov       ecx,[rsp+88]
@@ -555,8 +555,8 @@ M02_L35:
        mov       rcx,rax
        mov       r8,[rsp+0F8]
        mov       rdx,rbx
-       mov       r11,7FFB16D304B8
-       call      qword ptr [7FFB170F04B8]
+       mov       r11,7FFE401804B8
+       call      qword ptr [7FFE405404B8]
        mov       rbx,rax
        mov       [rsp+48],rbx
        mov       eax,[rsp+64]
@@ -580,7 +580,7 @@ M02_L37:
        mov       r9,[rsp+48]
        test      r9,r9
        jne       short M02_L38
-       mov       r9,1C4336D3060
+       mov       r9,2A456493060
        mov       r9,[r9]
        mov       rbx,r9
        mov       r9,rbx
@@ -650,7 +650,7 @@ M02_L44:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,31D
-       mov       rdx,7FFB16D24020
+       mov       rdx,7FFE40174020
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -662,7 +662,7 @@ M02_L45:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,0C23B
-       mov       rdx,7FFB16D24020
+       mov       rdx,7FFE40174020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -704,7 +704,7 @@ M02_L49:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M03_L00
-       mov       rax,1C4336D3060
+       mov       rax,2A456493060
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -761,7 +761,7 @@ M03_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFB16D24020
+       mov       rdx,7FFE40174020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -773,7 +773,7 @@ M03_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFB16D24020
+       mov       rdx,7FFE40174020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax

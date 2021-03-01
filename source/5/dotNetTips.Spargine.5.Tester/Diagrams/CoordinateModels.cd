@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Struct Name="dotNetTips.Spargine.Tester.Models.Coordinate">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <AssociationLine Name="ICoordinate" Type="dotNetTips.Spargine.Tester.Models.ICoordinate" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.188" Y="3.767" />
+        <Point X="1.188" Y="4.978" />
+        <Point X="5.75" Y="4.978" />
+        <Point X="5.75" Y="2.997" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAgAAAAAAAIAAAAAAAAAAYiA=</HashCode>
+      <FileName>Models\Coordinate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ICoordinate" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="dotNetTips.Spargine.Tester.Models.CoordinateProper">
+    <Position X="2.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEgACAAgAAAAAAAIAAAAAAAAAAZyA=</HashCode>
+      <FileName>Models\CoordinateProper.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ICoordinate" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Interface Name="dotNetTips.Spargine.Tester.Models.ICoordinate">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>Models\ICoordinate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

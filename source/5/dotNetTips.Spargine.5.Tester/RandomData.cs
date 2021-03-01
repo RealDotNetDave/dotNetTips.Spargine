@@ -53,9 +53,9 @@ namespace dotNetTips.Spargine.Tester
 		public const char DefaultMinCharacterRandomFile = 'A';
 
 		/// <summary>
-		/// The domain extensions used to create random Url's.
+		/// The domain extensions used to create random Urls.
 		/// </summary>
-		private static readonly string[] _domainExtensions = new string[] { ".com", ".co.uk", ".org", ".org.uk", ".net", ".us", ".com.au", ".es", ".fr", ".de", ".ly", ".gov", ".gov.uk", ".ac.uk", ".website", ".store", ".health", ".band", ".dotNetTips.com" };
+		private static readonly string[] _domainExtensions = new string[] { ".com", ".co.uk", ".org", ".org.uk", ".net", ".us", ".com.au", ".es", ".fr", ".de", ".ly", ".gov", ".gov.uk", ".ac.uk", ".website", ".store", ".health", ".band", ".spargine.com" };
 
 		/// <summary>
 		/// The synchronize lock

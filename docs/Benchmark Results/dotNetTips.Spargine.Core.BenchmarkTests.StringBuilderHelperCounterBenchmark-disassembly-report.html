@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark-20210222-225750</title>
+<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark-20210228-081829</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,10 +14,8 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="9">StringBuilderHelperCounterBenchmark.BytesToString</th></tr>
+<tr><th colspan="7">StringBuilderHelperCounterBenchmark.BytesToString</th></tr>
 <tr>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
@@ -59,22 +57,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,18CB0F61048
+mov       r8,26B75A81048
 mov       r8,[r8]
-mov       rdx,18CB0F613E0
+mov       rdx,26B75A813E0
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB1709E788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,18C90F65DA8
+mov       rcx,26B85A87C28
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,18C90F671C8
+mov       rdx,26B75A815F0
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -82,32 +80,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB170D6D2E
+jle       short 00007FFE405373CE
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,18C90F61528
+mov       rax,26B85A81528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,18C90F671D0
+mov       rax,26B75A815F8
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB170D6D17
+jne       short 00007FFE405373B7
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB170D6D1C
+jmp       short 00007FFE405373BC
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB170D6CE6
+jg        short 00007FFE40537386
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB170E31E8]
+call      qword ptr [7FFE405431E8]
 mov       rdi,rax
-mov       rcx,18C90F65DA8
+mov       rcx,26B85A87C28
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -128,10 +126,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB1709E788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,18C90F65DA8
+mov       rcx,26B85A87C28
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -176,22 +174,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,1ABDE763060
+mov       r8,185772D1048
 mov       r8,[r8]
-mov       rdx,1ABDE7633F8
+mov       rdx,185772D13E0
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1ABFE765DA8
+mov       rcx,185772D6048
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,1ABEE7611B8
+mov       rdx,185872D11B8
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -199,32 +197,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB170F6C1E
+jle       short 00007FFE4053745E
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,1ABDE761528
+mov       rax,185572D1528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,1ABEE7611C0
+mov       rax,185872D11C0
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB170F6C07
+jne       short 00007FFE40537447
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB170F6C0C
+jmp       short 00007FFE4053744C
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB170F6BD6
+jg        short 00007FFE40537416
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405431E8]
 mov       rdi,rax
-mov       rcx,1ABFE765DA8
+mov       rcx,185772D6048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -245,10 +243,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1ABFE765DA8
+mov       rcx,185772D6048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -293,22 +291,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,19A8C6B3060
+mov       r8,27216223060
 mov       r8,[r8]
-mov       rdx,19A8C6B33F8
+mov       rdx,272162233F8
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,19A8C6B61E0
+mov       rcx,27226225C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,19A8C6B7600
+mov       rdx,272362211B8
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -316,32 +314,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB17116D2E
+jle       short 00007FFE4055756E
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,19A8C6B1528
+mov       rax,27216221528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,19A8C6B7608
+mov       rax,272362211C0
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB17116D17
+jne       short 00007FFE40557557
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB17116D1C
+jmp       short 00007FFE4055755C
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB17116CE6
+jg        short 00007FFE40557526
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405631E8]
 mov       rdi,rax
-mov       rcx,19A8C6B61E0
+mov       rcx,27226225C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -362,10 +360,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,19A8C6B61E0
+mov       rcx,27226225C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -410,22 +408,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,21E26243060
+mov       r8,1C9F32B3060
 mov       r8,[r8]
-mov       rdx,21E262433F8
+mov       rdx,1C9F32B33F8
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,21E16243D90
+mov       rcx,1CA132B5C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,21E26245E58
+mov       rdx,1CA032B11B8
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -433,32 +431,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB170F6D2E
+jle       short 00007FFE405375EE
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,21E26241528
+mov       rax,1C9F32B1528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,21E26245E60
+mov       rax,1CA032B11C0
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB170F6D17
+jne       short 00007FFE405375D7
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB170F6D1C
+jmp       short 00007FFE405375DC
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB170F6CE6
+jg        short 00007FFE405375A6
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405431E8]
 mov       rdi,rax
-mov       rcx,21E16243D90
+mov       rcx,1CA132B5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -479,10 +477,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,21E16243D90
+mov       rcx,1CA132B5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -527,22 +525,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,1F45D6B3060
+mov       r8,1DA8F853060
 mov       r8,[r8]
-mov       rdx,1F45D6B33F8
+mov       rdx,1DA8F8533F8
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1F46D6B5DA8
+mov       rcx,1DA8F858060
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,1F46D6B71C8
+mov       rdx,1DA7F8511B8
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -550,32 +548,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB17116D5E
+jle       short 00007FFE4053760E
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,1F45D6B1528
+mov       rax,1DA8F851528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,1F46D6B71D0
+mov       rax,1DA7F8511C0
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB17116D47
+jne       short 00007FFE405375F7
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB17116D4C
+jmp       short 00007FFE405375FC
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB17116D16
+jg        short 00007FFE405375C6
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405431E8]
 mov       rdi,rax
-mov       rcx,1F46D6B5DA8
+mov       rcx,1DA8F858060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -596,10 +594,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1F46D6B5DA8
+mov       rcx,1DA8F858060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -644,22 +642,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,15002333060
+mov       r8,2E1F2241048
 mov       r8,[r8]
-mov       rdx,150023333F8
+mov       rdx,2E1F22413E0
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15022333D90
+mov       rcx,2E1F2246048
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,15002333608
+mov       rdx,2E1E22431D0
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -667,32 +665,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB17116D5E
+jle       short 00007FFE4054756E
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,15002331528
+mov       rax,2E1E2241528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,15002333610
+mov       rax,2E1E22431D8
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB17116D47
+jne       short 00007FFE40547557
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB17116D4C
+jmp       short 00007FFE4054755C
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB17116D16
+jg        short 00007FFE40547526
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405531E8]
 mov       rdi,rax
-mov       rcx,15022333D90
+mov       rcx,2E1F2246048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -713,10 +711,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15022333D90
+mov       rcx,2E1F2246048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -761,22 +759,22 @@ sub       rsp,38
 lea       rbp,[rsp+50]
 mov       [rbp+0FFD0],rsp
 mov       rsi,rcx
-mov       r8,204F8D73060
+mov       r8,23FEB583060
 mov       r8,[r8]
-mov       rdx,204F8D733F8
+mov       rdx,23FEB5833F8
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,204F8D781F8
+mov       rcx,2400B585C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
 call      qword ptr [rax+20]
 mov       [rbp+0FFE0],rax
-mov       rdx,20508D711B8
+mov       rdx,23FFB5FEA28
 mov       rdx,[rdx]
 mov       rcx,[rbp+0FFE0]
 cmp       [rcx],ecx
@@ -784,32 +782,32 @@ call      System.Text.StringBuilder.Append(System.String)
 xor       edi,edi
 mov       ebx,[rsi+8]
 test      ebx,ebx
-jle       short 00007FFB170F6F8E
+jle       short 00007FFE4055738E
 movsxd    rcx,edi
 lea       rcx,[rsi+rcx+10]
-mov       rax,204F8D71528
+mov       rax,23FEB581528
 mov       r8,[rax]
 movzx     ecx,byte ptr [rcx]
-mov       rax,20508D711C0
+mov       rax,23FFB5FEA30
 mov       rdx,[rax]
 test      rdx,rdx
-jne       short 00007FFB170F6F77
+jne       short 00007FFE40557377
 call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB170F6F7C
+jmp       short 00007FFE4055737C
 call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
 mov       rcx,[rbp+0FFE0]
 mov       rdx,rax
 call      System.Text.StringBuilder.Append(System.String)
 inc       edi
 cmp       ebx,edi
-jg        short 00007FFB170F6F46
+jg        short 00007FFE40557346
 mov       rcx,[rbp+0FFE0]
 mov       edx,27
 call      System.Text.StringBuilder.Append(Char)
 mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405631E8]
 mov       rdi,rax
-mov       rcx,204F8D781F8
+mov       rcx,2400B585C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -830,244 +828,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+50]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,204F8D781F8
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFE0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.AppendBytes03()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+8]
-mov       rcx,rax
-call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,38
-lea       rbp,[rsp+50]
-mov       [rbp+0FFD0],rsp
-mov       rsi,rcx
-mov       r8,1E243193060
-mov       r8,[r8]
-mov       rdx,1E2431933F8
-mov       rdx,[rdx]
-mov       rcx,rsi
-call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1E233193D90
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FFE0],rax
-mov       rdx,1E2531D0228
-mov       rdx,[rdx]
-mov       rcx,[rbp+0FFE0]
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-xor       edi,edi
-mov       ebx,[rsi+8]
-test      ebx,ebx
-jle       short 00007FFB170E6D5E
-movsxd    rcx,edi
-lea       rcx,[rsi+rcx+10]
-mov       rax,1E243191528
-mov       r8,[rax]
-movzx     ecx,byte ptr [rcx]
-mov       rax,1E2531D0230
-mov       rdx,[rax]
-test      rdx,rdx
-jne       short 00007FFB170E6D47
-call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB170E6D4C
-call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
-mov       rcx,[rbp+0FFE0]
-mov       rdx,rax
-call      System.Text.StringBuilder.Append(System.String)
-inc       edi
-cmp       ebx,edi
-jg        short 00007FFB170E6D16
-mov       rcx,[rbp+0FFE0]
-mov       edx,27
-call      System.Text.StringBuilder.Append(Char)
-mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB170F31E8]
-mov       rdi,rax
-mov       rcx,1E233193D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFE0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rdi
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+50]
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1E233193D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFE0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.AppendBytes03()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+8]
-mov       rcx,rax
-call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,38
-lea       rbp,[rsp+50]
-mov       [rbp+0FFD0],rsp
-mov       rsi,rcx
-mov       r8,2C5D99A3060
-mov       r8,[r8]
-mov       rdx,2C5D99A33F8
-mov       rdx,[rdx]
-mov       rcx,rsi
-call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-mov       rcx,7FFB170CE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,2C5D99A81F8
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FFE0],rax
-mov       rdx,2C5C9A1EA28
-mov       rdx,[rdx]
-mov       rcx,[rbp+0FFE0]
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-xor       edi,edi
-mov       ebx,[rsi+8]
-test      ebx,ebx
-jle       short 00007FFB17106E9E
-movsxd    rcx,edi
-lea       rcx,[rsi+rcx+10]
-mov       rax,2C5D99A1528
-mov       r8,[rax]
-movzx     ecx,byte ptr [rcx]
-mov       rax,2C5C9A1EA30
-mov       rdx,[rax]
-test      rdx,rdx
-jne       short 00007FFB17106E87
-call      System.Number.UInt32ToDecStr(UInt32)
-jmp       short 00007FFB17106E8C
-call      System.Number.<FormatUInt32>g__FormatUInt32Slow|40_0(UInt32, System.String, System.IFormatProvider)
-mov       rcx,[rbp+0FFE0]
-mov       rdx,rax
-call      System.Text.StringBuilder.Append(System.String)
-inc       edi
-cmp       ebx,edi
-jg        short 00007FFB17106E56
-mov       rcx,[rbp+0FFE0]
-mov       edx,27
-call      System.Text.StringBuilder.Append(Char)
-mov       rcx,[rbp+0FFE0]
-call      qword ptr [7FFB171131E8]
-mov       rdi,rax
-mov       rcx,2C5D99A81F8
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFE0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rdi
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+50]
-mov       rcx,7FFB170CE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,2C5D99A81F8
+mov       rcx,2400B585C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFE0]
 mov       rax,[rcx]
@@ -1087,10 +851,8 @@ ret
 </table>
 <table>
 <thead>
-<tr><th colspan="9">StringBuilderHelperCounterBenchmark.ConcatToString</th></tr>
+<tr><th colspan="7">StringBuilderHelperCounterBenchmark.ConcatToString</th></tr>
 <tr>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
@@ -1114,7 +876,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,29178111180
+mov       rcx,2057AF03198
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1150,15 +912,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,29178111048
+mov       r8,2057AF03060
 mov       r8,[r8]
-mov       rdx,291581131D0
+mov       rdx,2058AF011B8
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,291781161E0
+mov       rcx,2059AF05C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1166,16 +928,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB170F6CA2
+je        short 00007FFE40547252
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB170F6CA2
+jle       short 00007FFE40547252
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB170F6C5F
+je        short 00007FFE4054720F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB170F6C81
+jne       short 00007FFE40547231
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1184,7 +946,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170F6C9A
+jmp       short 00007FFE4054724A
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1194,12 +956,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB170F6C4D
+jg        short 00007FFE405471FD
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405531E8]
 mov       rsi,rax
-mov       rcx,291781161E0
+mov       rcx,2059AF05C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1224,10 +986,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,291781161E0
+mov       rcx,2059AF05C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1256,7 +1018,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,15B06A13198
+mov       rcx,14FF99A3198
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1292,15 +1054,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,15B06A13060
+mov       r8,14FF99A3060
 mov       r8,[r8]
-mov       rdx,15B06A13608
+mov       rdx,150099A11B8
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15B26A15DA8
+mov       rcx,14FF99A8060
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1308,16 +1070,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB17116DB2
+je        short 00007FFE405575F2
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB17116DB2
+jle       short 00007FFE405575F2
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB17116D6F
+je        short 00007FFE405575AF
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB17116D91
+jne       short 00007FFE405575D1
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1326,7 +1088,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB17116DAA
+jmp       short 00007FFE405575EA
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1336,12 +1098,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB17116D5D
+jg        short 00007FFE4055759D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405631E8]
 mov       rsi,rax
-mov       rcx,15B26A15DA8
+mov       rcx,14FF99A8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1366,10 +1128,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15B26A15DA8
+mov       rcx,14FF99A8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1398,7 +1160,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,20196E13198
+mov       rcx,18305CA1180
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1434,15 +1196,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,20196E13060
+mov       r8,18305CA1048
 mov       r8,[r8]
-mov       rdx,20176E151B0
+mov       rdx,18305CA3608
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,20176E13D90
+mov       rcx,182F5CA5C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1450,16 +1212,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB170F6CA2
+je        short 00007FFE405474E2
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB170F6CA2
+jle       short 00007FFE405474E2
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB170F6C5F
+je        short 00007FFE4054749F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB170F6C81
+jne       short 00007FFE405474C1
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1468,7 +1230,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170F6C9A
+jmp       short 00007FFE405474DA
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1478,12 +1240,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB170F6C4D
+jg        short 00007FFE4054748D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405531E8]
 mov       rsi,rax
-mov       rcx,20176E13D90
+mov       rcx,182F5CA5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1508,10 +1270,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,20176E13D90
+mov       rcx,182F5CA5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1540,7 +1302,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,282A2D03198
+mov       rcx,1B507CB3198
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1576,15 +1338,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,282A2D03060
+mov       r8,1B507CB3060
 mov       r8,[r8]
-mov       rdx,28292D011B8
+mov       rdx,1B4E7CB11B8
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,282A2D061E0
+mov       rcx,1B507CB8060
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1592,16 +1354,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB170E7032
+je        short 00007FFE40537692
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB170E7032
+jle       short 00007FFE40537692
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB170E6FEF
+je        short 00007FFE4053764F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB170E7011
+jne       short 00007FFE40537671
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1610,7 +1372,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170E702A
+jmp       short 00007FFE4053768A
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1620,12 +1382,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB170E6FDD
+jg        short 00007FFE4053763D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB170F31E8]
+call      qword ptr [7FFE405431E8]
 mov       rsi,rax
-mov       rcx,282A2D061E0
+mov       rcx,1B507CB8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1650,10 +1412,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404FE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,282A2D061E0
+mov       rcx,1B507CB8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1682,7 +1444,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,249BF833198
+mov       rcx,2477DB53198
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1718,15 +1480,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,249BF833060
+mov       r8,2477DB53060
 mov       r8,[r8]
-mov       rdx,249EF8311B8
+mov       rdx,2475DB511B8
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404EE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,249DF835DA8
+mov       rcx,2477DB58060
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1734,16 +1496,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB170E6E02
+je        short 00007FFE40527672
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB170E6E02
+jle       short 00007FFE40527672
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB170E6DBF
+je        short 00007FFE4052762F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB170E6DE1
+jne       short 00007FFE40527651
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1752,7 +1514,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170E6DFA
+jmp       short 00007FFE4052766A
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1762,12 +1524,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB170E6DAD
+jg        short 00007FFE4052761D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB170F31E8]
+call      qword ptr [7FFE405331E8]
 mov       rsi,rax
-mov       rcx,249DF835DA8
+mov       rcx,2477DB58060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1792,10 +1554,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404EE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,249DF835DA8
+mov       rcx,2477DB58060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1824,7 +1586,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,1FA71193198
+mov       rcx,29672533198
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -1860,15 +1622,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,1FA71193060
+mov       r8,29672533060
 mov       r8,[r8]
-mov       rdx,1FA811971C8
+mov       rdx,296825331D0
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1FA81195DA8
+mov       rcx,29672536048
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -1876,16 +1638,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB170F6F22
+je        short 00007FFE40557672
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB170F6F22
+jle       short 00007FFE40557672
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB170F6EDF
+je        short 00007FFE4055762F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB170F6F01
+jne       short 00007FFE40557651
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -1894,7 +1656,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170F6F1A
+jmp       short 00007FFE4055766A
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -1904,12 +1666,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB170F6ECD
+jg        short 00007FFE4055761D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405631E8]
 mov       rsi,rax
-mov       rcx,1FA81195DA8
+mov       rcx,29672536048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1934,10 +1696,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170BE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1FA81195DA8
+mov       rcx,29672536048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -1966,7 +1728,7 @@ mov       rax,[rsi]
 mov       rax,[rax+48]
 call      qword ptr [rax+10]
 mov       rdi,rax
-mov       rcx,22D1F6E1180
+mov       rcx,1C1BECA1180
 mov       rbx,[rcx]
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -2002,15 +1764,15 @@ mov       [rbp+0FFC0],rsp
 mov       rbx,rdx
 mov       esi,r8d
 mov       rdi,r9
-mov       r8,22D1F6E1048
+mov       r8,1C1BECA1048
 mov       r8,[r8]
-mov       rdx,22CEF6E11B8
+mov       rdx,1C19ECA31D0
 mov       rdx,[rdx]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,22D1F6E61E0
+mov       rcx,1C1BECA6048
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -2018,16 +1780,16 @@ call      qword ptr [rax+20]
 mov       [rbp+0FFD0],rax
 mov       r14d,[rdi+8]
 test      r14d,r14d
-je        short 00007FFB17117012
+je        short 00007FFE405574E2
 xor       r15d,r15d
 test      r14d,r14d
-jle       short 00007FFB17117012
+jle       short 00007FFE405574E2
 movsxd    rcx,r15d
 mov       rdx,[rdi+rcx*8+10]
 cmp       esi,0FFFFFFFF
-je        short 00007FFB17116FCF
+je        short 00007FFE4055749F
 cmp       esi,0FFFFFFFE
-jne       short 00007FFB17116FF1
+jne       short 00007FFE405574C1
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
 mov       rcx,[rbp+0FFD0]
@@ -2036,7 +1798,7 @@ call      System.Environment.get_NewLine()
 mov       rdx,rax
 mov       rcx,[rbp+0FFD0]
 call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB1711700A
+jmp       short 00007FFE405574DA
 mov       rcx,rdx
 mov       rdx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -2046,12 +1808,12 @@ cmp       [rcx],ecx
 call      System.Text.StringBuilder.Append(System.String)
 inc       r15d
 cmp       r14d,r15d
-jg        short 00007FFB17116FBD
+jg        short 00007FFE4055748D
 mov       rcx,[rbp+0FFD0]
 cmp       [rcx],ecx
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405631E8]
 mov       rsi,rax
-mov       rcx,22D1F6E61E0
+mov       rcx,1C1BECA6048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -2076,294 +1838,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+60]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,22D1F6E61E0
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFD0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       r14
-pop       r15
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.SplitCharSeparator01()
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,20
-mov       rsi,rcx
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+10]
-mov       rdi,rax
-mov       rcx,1CE36403198
-mov       rbx,[rcx]
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+20]
-mov       r9,rax
-mov       rdx,rbx
-mov       rcx,rdi
-mov       r8d,0FFFFFFFF
-call      dotNetTips.Spargine.Core.StringBuilderHelper.ConcatToString(System.String, System.String, dotNetTips.Spargine.Core.Tristate, System.String[])
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rbx
-pop       rsi
-pop       rdi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.ConcatToString(System.String, System.String, dotNetTips.Spargine.Core.Tristate, System.String[])
-push      rbp
-push      r15
-push      r14
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,38
-lea       rbp,[rsp+60]
-mov       [rbp+0FFC0],rsp
-mov       rbx,rdx
-mov       esi,r8d
-mov       rdi,r9
-mov       r8,1CE36403060
-mov       r8,[r8]
-mov       rdx,1CE464011B8
-mov       rdx,[rdx]
-call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1CE26403D90
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FFD0],rax
-mov       r14d,[rdi+8]
-test      r14d,r14d
-je        short 00007FFB170E6F22
-xor       r15d,r15d
-test      r14d,r14d
-jle       short 00007FFB170E6F22
-movsxd    rcx,r15d
-mov       rdx,[rdi+rcx*8+10]
-cmp       esi,0FFFFFFFF
-je        short 00007FFB170E6EDF
-cmp       esi,0FFFFFFFE
-jne       short 00007FFB170E6F01
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-mov       rcx,[rbp+0FFD0]
-call      System.Text.StringBuilder.Append(System.String)
-call      System.Environment.get_NewLine()
-mov       rdx,rax
-mov       rcx,[rbp+0FFD0]
-call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB170E6F1A
-mov       rcx,rdx
-mov       rdx,rbx
-call      System.String.Concat(System.String, System.String)
-mov       rdx,rax
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-inc       r15d
-cmp       r14d,r15d
-jg        short 00007FFB170E6ECD
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-call      qword ptr [7FFB170F31E8]
-mov       rsi,rax
-mov       rcx,1CE26403D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFD0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rsi
-lea       rsp,[rbp+0FFD8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       r14
-pop       r15
-pop       rbp
-ret
-push      rbp
-push      r15
-push      r14
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+60]
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1CE26403D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFD0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       r14
-pop       r15
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.SplitCharSeparator01()
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,20
-mov       rsi,rcx
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+10]
-mov       rdi,rax
-mov       rcx,26612393198
-mov       rbx,[rcx]
-mov       rcx,rsi
-mov       rax,[rsi]
-mov       rax,[rax+48]
-call      qword ptr [rax+20]
-mov       r9,rax
-mov       rdx,rbx
-mov       rcx,rdi
-mov       r8d,0FFFFFFFF
-call      dotNetTips.Spargine.Core.StringBuilderHelper.ConcatToString(System.String, System.String, dotNetTips.Spargine.Core.Tristate, System.String[])
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rbx
-pop       rsi
-pop       rdi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.ConcatToString(System.String, System.String, dotNetTips.Spargine.Core.Tristate, System.String[])
-push      rbp
-push      r15
-push      r14
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,38
-lea       rbp,[rsp+60]
-mov       [rbp+0FFC0],rsp
-mov       rbx,rdx
-mov       esi,r8d
-mov       rdi,r9
-mov       r8,26612393060
-mov       r8,[r8]
-mov       rdx,265F23911B8
-mov       rdx,[rdx]
-call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       rcx,7FFB170DE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,26602393D90
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FFD0],rax
-mov       r14d,[rdi+8]
-test      r14d,r14d
-je        short 00007FFB17116F22
-xor       r15d,r15d
-test      r14d,r14d
-jle       short 00007FFB17116F22
-movsxd    rcx,r15d
-mov       rdx,[rdi+rcx*8+10]
-cmp       esi,0FFFFFFFF
-je        short 00007FFB17116EDF
-cmp       esi,0FFFFFFFE
-jne       short 00007FFB17116F01
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-mov       rcx,[rbp+0FFD0]
-call      System.Text.StringBuilder.Append(System.String)
-call      System.Environment.get_NewLine()
-mov       rdx,rax
-mov       rcx,[rbp+0FFD0]
-call      System.Text.StringBuilder.Append(System.String)
-jmp       short 00007FFB17116F1A
-mov       rcx,rdx
-mov       rdx,rbx
-call      System.String.Concat(System.String, System.String)
-mov       rdx,rax
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-inc       r15d
-cmp       r14d,r15d
-jg        short 00007FFB17116ECD
-mov       rcx,[rbp+0FFD0]
-cmp       [rcx],ecx
-call      qword ptr [7FFB171231E8]
-mov       rsi,rax
-mov       rcx,26602393D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FFD0]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rsi
-lea       rsp,[rbp+0FFD8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       r14
-pop       r15
-pop       rbp
-ret
-push      rbp
-push      r15
-push      r14
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+60]
-mov       rcx,7FFB170DE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,26602393D90
+mov       rcx,1C1BECA6048
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FFD0]
 mov       rax,[rcx]
@@ -2385,10 +1863,8 @@ ret
 </table>
 <table>
 <thead>
-<tr><th colspan="9">StringBuilderHelperCounterBenchmark.StringExtensions.ToDelimitedString:01*</th></tr>
+<tr><th colspan="7">StringBuilderHelperCounterBenchmark.StringExtensions.ToDelimitedString:01*</th></tr>
 <tr>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
@@ -2405,7 +1881,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -2432,23 +1908,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB1711E919
+je        short 00007FFE4053EDD9
 mov       rcx,[rbp+10]
-jmp       short 00007FFB1711E92E
+jmp       short 00007FFE4053EDEE
 mov       rcx,rsi
-mov       rdx,7FFB171EE280
+mov       rdx,7FFE4060E280
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB1711E964
+je        short 00007FFE4053EE24
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB1711E964
-mov       rax,1C179E53060
+jne       short 00007FFE4053EE24
+mov       rax,255FE113060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -2472,10 +1948,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB1711E9A8
-jmp       short 00007FFB1711E9BD
+je        short 00007FFE4053EE68
+jmp       short 00007FFE4053EE7D
 mov       rcx,rsi
-mov       rdx,7FFB171EE868
+mov       rdx,7FFE4060E868
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -2483,10 +1959,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB1711E9D3
-jmp       short 00007FFB1711E9E8
+je        short 00007FFE4053EE93
+jmp       short 00007FFE4053EEA8
 mov       rcx,rsi
-mov       rdx,7FFB171EE9E0
+mov       rdx,7FFE4060E9E0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -2503,7 +1979,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171231E8]
+call      qword ptr [7FFE405431E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -2524,7 +2000,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -2551,23 +2027,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB170EE959
+je        short 00007FFE4054F159
 mov       rcx,[rbp+10]
-jmp       short 00007FFB170EE96E
+jmp       short 00007FFE4054F16E
 mov       rcx,rsi
-mov       rdx,7FFB171BE280
+mov       rdx,7FFE4061E338
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB170EE9A4
+je        short 00007FFE4054F1A4
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB170EE9A4
-mov       rax,22B8E991048
+jne       short 00007FFE4054F1A4
+mov       rax,2E9EAD43060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -2591,10 +2067,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB170EE9E8
-jmp       short 00007FFB170EE9FD
+je        short 00007FFE4054F1E8
+jmp       short 00007FFE4054F1FD
 mov       rcx,rsi
-mov       rdx,7FFB171BE868
+mov       rdx,7FFE4061E920
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -2602,10 +2078,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB170EEA13
-jmp       short 00007FFB170EEA28
+je        short 00007FFE4054F213
+jmp       short 00007FFE4054F228
 mov       rcx,rsi
-mov       rdx,7FFB171BE9E0
+mov       rdx,7FFE4061EA98
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -2622,7 +2098,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB170F31E8]
+call      qword ptr [7FFE405531E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -2643,7 +2119,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -2670,23 +2146,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB170FE939
+je        short 00007FFE4053F619
 mov       rcx,[rbp+10]
-jmp       short 00007FFB170FE94E
+jmp       short 00007FFE4053F62E
 mov       rcx,rsi
-mov       rdx,7FFB171CE280
+mov       rdx,7FFE4060E408
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB170FE984
+je        short 00007FFE4053F664
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB170FE984
-mov       rax,1EDA9C13060
+jne       short 00007FFE4053F664
+mov       rax,1F9B91F3060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -2710,10 +2186,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB170FE9C8
-jmp       short 00007FFB170FE9DD
+je        short 00007FFE4053F6A8
+jmp       short 00007FFE4053F6BD
 mov       rcx,rsi
-mov       rdx,7FFB171CE868
+mov       rdx,7FFE4060E9F0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -2721,10 +2197,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB170FE9F3
-jmp       short 00007FFB170FEA08
+je        short 00007FFE4053F6D3
+jmp       short 00007FFE4053F6E8
 mov       rcx,rsi
-mov       rdx,7FFB171CE9E0
+mov       rdx,7FFE4060EB68
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -2741,7 +2217,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405431E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -2762,7 +2238,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -2789,23 +2265,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB170FE919
+je        short 00007FFE4053F2F9
 mov       rcx,[rbp+10]
-jmp       short 00007FFB170FE92E
+jmp       short 00007FFE4053F30E
 mov       rcx,rsi
-mov       rdx,7FFB171CE280
+mov       rdx,7FFE4060E5C8
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB170FE964
+je        short 00007FFE4053F344
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB170FE964
-mov       rax,24096823060
+jne       short 00007FFE4053F344
+mov       rax,180708D1048
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -2829,10 +2305,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB170FE9A8
-jmp       short 00007FFB170FE9BD
+je        short 00007FFE4053F388
+jmp       short 00007FFE4053F39D
 mov       rcx,rsi
-mov       rdx,7FFB171CE868
+mov       rdx,7FFE4060EBB0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -2840,10 +2316,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB170FE9D3
-jmp       short 00007FFB170FE9E8
+je        short 00007FFE4053F3B3
+jmp       short 00007FFE4053F3C8
 mov       rcx,rsi
-mov       rdx,7FFB171CE9E0
+mov       rdx,7FFE4060ED28
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -2860,7 +2336,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405431E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -2881,7 +2357,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -2908,23 +2384,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB170FEA39
+je        short 00007FFE4052F2F9
 mov       rcx,[rbp+10]
-jmp       short 00007FFB170FEA4E
+jmp       short 00007FFE4052F30E
 mov       rcx,rsi
-mov       rdx,7FFB171CE280
+mov       rdx,7FFE405FE5C8
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB170FEA84
+je        short 00007FFE4052F344
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB170FEA84
-mov       rax,15865513060
+jne       short 00007FFE4052F344
+mov       rax,18DE0E83060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -2948,10 +2424,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB170FEAC8
-jmp       short 00007FFB170FEADD
+je        short 00007FFE4052F388
+jmp       short 00007FFE4052F39D
 mov       rcx,rsi
-mov       rdx,7FFB171CE868
+mov       rdx,7FFE405FEBB0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -2959,10 +2435,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB170FEAF3
-jmp       short 00007FFB170FEB08
+je        short 00007FFE4052F3B3
+jmp       short 00007FFE4052F3C8
 mov       rcx,rsi
-mov       rdx,7FFB171CE9E0
+mov       rdx,7FFE405FED28
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -2979,7 +2455,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405331E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -3000,7 +2476,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -3027,23 +2503,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB170FEF99
+je        short 00007FFE4055EBA9
 mov       rcx,[rbp+10]
-jmp       short 00007FFB170FEFAE
+jmp       short 00007FFE4055EBBE
 mov       rcx,rsi
-mov       rdx,7FFB171CE408
+mov       rdx,7FFE4062E5C8
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB170FEFE4
+je        short 00007FFE4055EBF4
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB170FEFE4
-mov       rax,1778C7D3060
+jne       short 00007FFE4055EBF4
+mov       rax,29A2C273060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -3067,10 +2543,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB170FF028
-jmp       short 00007FFB170FF03D
+je        short 00007FFE4055EC38
+jmp       short 00007FFE4055EC4D
 mov       rcx,rsi
-mov       rdx,7FFB171CE9F0
+mov       rdx,7FFE4062EBB0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -3078,10 +2554,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB170FF053
-jmp       short 00007FFB170FF068
+je        short 00007FFE4055EC63
+jmp       short 00007FFE4055EC78
 mov       rcx,rsi
-mov       rdx,7FFB171CEB68
+mov       rdx,7FFE4062ED28
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -3098,7 +2574,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171031E8]
+call      qword ptr [7FFE405631E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -3119,7 +2595,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
@@ -3146,23 +2622,23 @@ mov       rdi,rdx
 mov       ebx,r8d
 mov       rbp,[rsi+10]
 cmp       qword ptr [rbp+10],0
-je        short 00007FFB1711EC79
+je        short 00007FFE4053F0B9
 mov       rcx,[rbp+10]
-jmp       short 00007FFB1711EC8E
+jmp       short 00007FFE4053F0CE
 mov       rcx,rsi
-mov       rdx,7FFB171EE5C8
+mov       rdx,7FFE4060E408
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       [r14+10],bx
 test      rdi,rdi
-je        short 00007FFB1711ECC4
+je        short 00007FFE4053F104
 mov       rcx,rdi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
-jne       short 00007FFB1711ECC4
-mov       rax,15679F63060
+jne       short 00007FFE4053F104
+mov       rax,2836F9A3060
 mov       rax,[rax]
 add       rsp,30
 pop       rbx
@@ -3186,10 +2662,10 @@ mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[rbp+18]
 test      rcx,rcx
-je        short 00007FFB1711ED08
-jmp       short 00007FFB1711ED1D
+je        short 00007FFE4053F148
+jmp       short 00007FFE4053F15D
 mov       rcx,rsi
-mov       rdx,7FFB171EEBB0
+mov       rdx,7FFE4060E9F0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -3197,10 +2673,10 @@ call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair
 mov       rdi,rax
 mov       rcx,[rbp+20]
 test      rcx,rcx
-je        short 00007FFB1711ED33
-jmp       short 00007FFB1711ED48
+je        short 00007FFE4053F173
+jmp       short 00007FFE4053F188
 mov       rcx,rsi
-mov       rdx,7FFB171EED28
+mov       rdx,7FFE4060EB68
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 call      CORINFO_HELP_NEWSFAST
@@ -3217,245 +2693,7 @@ call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValue
 mov       rcx,[r14+8]
 mov       rsi,rcx
 cmp       [rcx],ecx
-call      qword ptr [7FFB171231E8]
-mov       rcx,rax
-call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
-mov       r8d,[rax+8]
-dec       r8d
-mov       rcx,rsi
-xor       edx,edx
-add       rsp,30
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r14
-jmp       near ptr System.Text.StringBuilder.ToString(Int32, Int32)
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDelimitedString01()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rdx,[rsi+0A8]
-mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
-mov       r8d,2C
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
-push      r14
-push      rdi
-push      rsi
-push      rbp
-push      rbx
-sub       rsp,30
-mov       [rsp+28],rcx
-mov       rsi,rcx
-mov       rdi,rdx
-mov       ebx,r8d
-mov       rbp,[rsi+10]
-cmp       qword ptr [rbp+10],0
-je        short 00007FFB1710EC79
-mov       rcx,[rbp+10]
-jmp       short 00007FFB1710EC8E
-mov       rcx,rsi
-mov       rdx,7FFB171DE5C8
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-call      CORINFO_HELP_NEWSFAST
-mov       r14,rax
-mov       [r14+10],bx
-test      rdi,rdi
-je        short 00007FFB1710ECC4
-mov       rcx,rdi
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-test      eax,eax
-jne       short 00007FFB1710ECC4
-mov       rax,16C04243060
-mov       rax,[rax]
-add       rsp,30
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r14
-ret
-mov       rcx,offset MT_System.Text.StringBuilder
-call      CORINFO_HELP_NEWSFAST
-mov       rbx,rax
-mov       rcx,rdi
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-lea       edx,[rax+rax*4]
-add       edx,edx
-mov       rcx,rbx
-mov       r8d,7FFFFFFF
-call      System.Text.StringBuilder..ctor(Int32, Int32)
-lea       rcx,[r14+8]
-mov       rdx,rbx
-call      CORINFO_HELP_ASSIGN_REF
-mov       rcx,[rbp+18]
-test      rcx,rcx
-je        short 00007FFB1710ED08
-jmp       short 00007FFB1710ED1D
-mov       rcx,rsi
-mov       rdx,7FFB171DEBB0
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-mov       rdx,rdi
-call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>)
-mov       rdi,rax
-mov       rcx,[rbp+20]
-test      rcx,rcx
-je        short 00007FFB1710ED33
-jmp       short 00007FFB1710ED48
-mov       rcx,rsi
-mov       rdx,7FFB171DED28
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-call      CORINFO_HELP_NEWSFAST
-mov       rsi,rax
-lea       rcx,[rsi+8]
-mov       rdx,r14
-call      CORINFO_HELP_ASSIGN_REF
-mov       rcx,offset dotNetTips.Spargine.Extensions.EnumerableExtensions+<>c__DisplayClass14_0`1[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]].<ToDelimitedString>b__0(System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>)
-mov       [rsi+18],rcx
-mov       rcx,rdi
-mov       rdx,rsi
-cmp       [rcx],ecx
-call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]].ForEach(System.Action`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>)
-mov       rcx,[r14+8]
-mov       rsi,rcx
-cmp       [rcx],ecx
-call      qword ptr [7FFB171131E8]
-mov       rcx,rax
-call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
-mov       r8d,[rax+8]
-dec       r8d
-mov       rcx,rsi
-xor       edx,edx
-add       rsp,30
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r14
-jmp       near ptr System.Text.StringBuilder.ToString(Int32, Int32)
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDelimitedString01()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rdx,[rsi+0A8]
-mov       rcx,offset MD_dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString(System.Collections.Generic.IEnumerable`1<!!0>, Char)
-mov       r8d,2C
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Extensions.EnumerableExtensions.ToDelimitedString[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, Char)
-push      r14
-push      rdi
-push      rsi
-push      rbp
-push      rbx
-sub       rsp,30
-mov       [rsp+28],rcx
-mov       rsi,rcx
-mov       rdi,rdx
-mov       ebx,r8d
-mov       rbp,[rsi+10]
-cmp       qword ptr [rbp+10],0
-je        short 00007FFB170EEC79
-mov       rcx,[rbp+10]
-jmp       short 00007FFB170EEC8E
-mov       rcx,rsi
-mov       rdx,7FFB171BE5C8
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-call      CORINFO_HELP_NEWSFAST
-mov       r14,rax
-mov       [r14+10],bx
-test      rdi,rdi
-je        short 00007FFB170EECC4
-mov       rcx,rdi
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-test      eax,eax
-jne       short 00007FFB170EECC4
-mov       rax,114F6793060
-mov       rax,[rax]
-add       rsp,30
-pop       rbx
-pop       rbp
-pop       rsi
-pop       rdi
-pop       r14
-ret
-mov       rcx,offset MT_System.Text.StringBuilder
-call      CORINFO_HELP_NEWSFAST
-mov       rbx,rax
-mov       rcx,rdi
-call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-lea       edx,[rax+rax*4]
-add       edx,edx
-mov       rcx,rbx
-mov       r8d,7FFFFFFF
-call      System.Text.StringBuilder..ctor(Int32, Int32)
-lea       rcx,[r14+8]
-mov       rdx,rbx
-call      CORINFO_HELP_ASSIGN_REF
-mov       rcx,[rbp+18]
-test      rcx,rcx
-je        short 00007FFB170EED08
-jmp       short 00007FFB170EED1D
-mov       rcx,rsi
-mov       rdx,7FFB171BEBB0
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-mov       rdx,rdi
-call      System.Linq.Enumerable.ToList[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>)
-mov       rdi,rax
-mov       rcx,[rbp+20]
-test      rcx,rcx
-je        short 00007FFB170EED33
-jmp       short 00007FFB170EED48
-mov       rcx,rsi
-mov       rdx,7FFB171BED28
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rcx,rax
-call      CORINFO_HELP_NEWSFAST
-mov       rsi,rax
-lea       rcx,[rsi+8]
-mov       rdx,r14
-call      CORINFO_HELP_ASSIGN_REF
-mov       rcx,offset dotNetTips.Spargine.Extensions.EnumerableExtensions+<>c__DisplayClass14_0`1[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]].<ToDelimitedString>b__0(System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>)
-mov       [rsi+18],rcx
-mov       rcx,rdi
-mov       rdx,rsi
-cmp       [rcx],ecx
-call      System.Collections.Generic.List`1[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]].ForEach(System.Action`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>)
-mov       rcx,[r14+8]
-mov       rsi,rcx
-cmp       [rcx],ecx
-call      qword ptr [7FFB170F31E8]
+call      qword ptr [7FFE405431E8]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.StringExtensions.ToTrimmed(System.String)
 mov       r8d,[rax+8]
@@ -3476,10 +2714,8 @@ jmp       near ptr System.Text.StringBuilder.ToString(Int32, Int32)
 </table>
 <table>
 <thead>
-<tr><th colspan="9">StringBuilderHelperCounterBenchmark.ToDelimitedString:01**</th></tr>
+<tr><th colspan="7">StringBuilderHelperCounterBenchmark.ToDelimitedString:01**</th></tr>
 <tr>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
-<th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>.NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
@@ -3496,7 +2732,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -3530,8 +2766,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB170D7341
-mov       rax,239C5C13060
+jne       short 00007FFE40547581
+mov       rax,1C3AC363060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -3539,10 +2775,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB1709E788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,239D5C13D90
+mov       rcx,1C3BC363BF8
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -3552,7 +2788,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB170D73EA
+jmp       short 00007FFE4054762A
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -3561,10 +2797,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,239C5C11368
+mov       r8,1C3AC361368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,239D5C151B0
+mov       rdx,1C3AC363608
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -3582,22 +2818,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB170D73FD
-jmp       short 00007FFB170D7413
+je        short 00007FFE4054763D
+jmp       short 00007FFE40547653
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171C29A0
+mov       rdx,7FFE406329A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB170D737F
+jne       near ptr 00007FFE405475BF
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB170D742F
-jmp       short 00007FFB170D7442
+je        short 00007FFE4054766F
+jmp       short 00007FFE40547682
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171C2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -3610,7 +2846,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,239D5C13D90
+mov       rcx,1C3BC363BF8
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -3634,11 +2870,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB170D74BE
+je        short 00007FFE405476FE
 mov       rax,[rsi+28]
-jmp       short 00007FFB170D74D1
+jmp       short 00007FFE40547711
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171C2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -3657,10 +2893,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB1709E788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,239D5C13D90
+mov       rcx,1C3BC363BF8
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -3680,7 +2916,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -3714,8 +2950,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB170E70E1
-mov       rax,16A29373060
+jne       short 00007FFE40547921
+mov       rax,12BA8423060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -3723,10 +2959,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,16A293781F8
+mov       rcx,12BC8425C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -3736,7 +2972,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB170E718A
+jmp       short 00007FFE405479CA
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -3745,10 +2981,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,16A29371368
+mov       r8,12BA8421368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,16A393711B8
+mov       rdx,12BB84211B8
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -3766,22 +3002,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB170E719D
-jmp       short 00007FFB170E71B3
+je        short 00007FFE405479DD
+jmp       short 00007FFE405479F3
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D29A0
+mov       rdx,7FFE406329A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB170E711F
+jne       near ptr 00007FFE4054795F
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB170E71CF
-jmp       short 00007FFB170E71E2
+je        short 00007FFE40547A0F
+jmp       short 00007FFE40547A22
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -3794,7 +3030,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,16A293781F8
+mov       rcx,12BC8425C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -3818,11 +3054,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB170E725E
+je        short 00007FFE40547A9E
 mov       rax,[rsi+28]
-jmp       short 00007FFB170E7271
+jmp       short 00007FFE40547AB1
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -3841,10 +3077,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,16A293781F8
+mov       rcx,12BC8425C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -3864,7 +3100,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -3898,8 +3134,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB170E70E1
-mov       rax,23982E73060
+jne       short 00007FFE40547821
+mov       rax,219C6F43060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -3907,10 +3143,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,239A2E75DA8
+mov       rcx,219E6F45C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -3920,7 +3156,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB170E718A
+jmp       short 00007FFE405478CA
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -3929,10 +3165,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,23982E71368
+mov       r8,219C6F41368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,23992E711B8
+mov       rdx,219F6F419F0
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -3950,22 +3186,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB170E719D
-jmp       short 00007FFB170E71B3
+je        short 00007FFE405478DD
+jmp       short 00007FFE405478F3
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D29A0
+mov       rdx,7FFE406329A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB170E711F
+jne       near ptr 00007FFE4054785F
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB170E71CF
-jmp       short 00007FFB170E71E2
+je        short 00007FFE4054790F
+jmp       short 00007FFE40547922
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -3978,7 +3214,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,239A2E75DA8
+mov       rcx,219E6F45C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4002,11 +3238,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB170E725E
+je        short 00007FFE4054799E
 mov       rax,[rsi+28]
-jmp       short 00007FFB170E7271
+jmp       short 00007FFE405479B1
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40632A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4025,10 +3261,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4050E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,239A2E75DA8
+mov       rcx,219E6F45C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4048,7 +3284,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -4082,8 +3318,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB170E71B1
-mov       rax,21F9BBA3060
+jne       short 00007FFE40527961
+mov       rax,1C423C13060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -4091,10 +3327,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404EE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,21F8BBA3D90
+mov       rcx,1C433C15C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -4104,7 +3340,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB170E725A
+jmp       short 00007FFE40527A0A
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -4113,10 +3349,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,21F9BBA1368
+mov       r8,1C423C11368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,21FABBA11B8
+mov       rdx,1C423C13608
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -4134,22 +3370,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB170E726D
-jmp       short 00007FFB170E7283
+je        short 00007FFE40527A1D
+jmp       short 00007FFE40527A33
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D29A0
+mov       rdx,7FFE406129A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB170E71EF
+jne       near ptr 00007FFE4052799F
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB170E729F
-jmp       short 00007FFB170E72B2
+je        short 00007FFE40527A4F
+jmp       short 00007FFE40527A62
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40612A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4162,7 +3398,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,21F8BBA3D90
+mov       rcx,1C433C15C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4186,11 +3422,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB170E732E
+je        short 00007FFE40527ADE
 mov       rax,[rsi+28]
-jmp       short 00007FFB170E7341
+jmp       short 00007FFE40527AF1
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40612A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4209,10 +3445,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE404EE788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,21F8BBA3D90
+mov       rcx,1C433C15C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4232,7 +3468,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -4266,8 +3502,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB170E7301
-mov       rax,22521F81048
+jne       short 00007FFE40557811
+mov       rax,1E961E53060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -4275,10 +3511,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,22521F861E0
+mov       rcx,1E971E55C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -4288,7 +3524,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB170E73AA
+jmp       short 00007FFE405578BA
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -4297,10 +3533,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,22501F81368
+mov       r8,1E961E51368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,22521F87600
+mov       rdx,1E971E57A00
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -4318,22 +3554,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB170E73BD
-jmp       short 00007FFB170E73D3
+je        short 00007FFE405578CD
+jmp       short 00007FFE405578E3
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D29A0
+mov       rdx,7FFE406429A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB170E733F
+jne       near ptr 00007FFE4055784F
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB170E73EF
-jmp       short 00007FFB170E7402
+je        short 00007FFE405578FF
+jmp       short 00007FFE40557912
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4346,7 +3582,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,22521F861E0
+mov       rcx,1E971E55C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4370,11 +3606,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB170E747E
+je        short 00007FFE4055798E
 mov       rax,[rsi+28]
-jmp       short 00007FFB170E7491
+jmp       short 00007FFE405579A1
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4393,10 +3629,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170AE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,22521F861E0
+mov       rcx,1E971E55C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4416,7 +3652,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -4450,8 +3686,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB17107361
-mov       rax,21689083060
+jne       short 00007FFE405579A1
+mov       rax,1BDDCFF3060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -4459,10 +3695,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170CE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,216A9085DA8
+mov       rcx,1BDDCFF8060
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -4472,7 +3708,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB1710740A
+jmp       short 00007FFE40557A4A
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -4481,10 +3717,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,21689081368
+mov       r8,1BDDCFF1368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,216B90811B8
+mov       rdx,1BDBCFF11B8
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -4502,22 +3738,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB1710741D
-jmp       short 00007FFB17107433
+je        short 00007FFE40557A5D
+jmp       short 00007FFE40557A73
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171F29A0
+mov       rdx,7FFE406429A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB1710739F
+jne       near ptr 00007FFE405579DF
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB1710744F
-jmp       short 00007FFB17107462
+je        short 00007FFE40557A8F
+jmp       short 00007FFE40557AA2
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171F2A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4530,7 +3766,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,216A9085DA8
+mov       rcx,1BDDCFF8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4554,11 +3790,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB171074DE
+je        short 00007FFE40557B1E
 mov       rax,[rsi+28]
-jmp       short 00007FFB171074F1
+jmp       short 00007FFE40557B31
 mov       rcx,[rbp+10]
-mov       rdx,7FFB171F2A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4577,10 +3813,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170CE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,216A9085DA8
+mov       rcx,1BDDCFF8060
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4600,7 +3836,7 @@ dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDe
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
-mov       rdx,[rsi+0A8]
+mov       rdx,[rsi+0B0]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
 mov       r8d,2C
 call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
@@ -4634,8 +3870,8 @@ mov       [rbp+20],r8d
 mov       rsi,rdx
 mov       eax,[rsi+38]
 sub       eax,[rsi+40]
-jne       short 00007FFB17117341
-mov       rax,267EE823060
+jne       short 00007FFE40557821
+mov       rax,1FA0D8C3060
 mov       rax,[rax]
 lea       rsp,[rbp+0FFE8]
 pop       rbx
@@ -4643,10 +3879,10 @@ pop       rsi
 pop       rdi
 pop       rbp
 ret
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,267FE825DA8
+mov       rcx,1FA1D8C5C10
 mov       rcx,[rcx]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -4656,7 +3892,7 @@ lea       rdx,[rbp+0FFB8]
 mov       rcx,rsi
 call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
 nop
-jmp       short 00007FFB171173EA
+jmp       short 00007FFE405578CA
 lea       rax,[rbp+0FFD0]
 mov       rsi,[rax]
 mov       rdi,[rax+8]
@@ -4665,10 +3901,10 @@ movzx     ebx,word ptr [rbp+20]
 mov       ecx,1
 call      System.String.FastAllocateString(Int32)
 mov       [rax+0C],bx
-mov       r8,267EE821368
+mov       r8,1FA0D8C1368
 mov       r8,[r8]
 mov       rbx,[rbp+0FF90]
-mov       rdx,2680E8219F0
+mov       rdx,1FA2D8C11B8
 mov       rdx,[rdx]
 lea       rcx,[rbp+0FF98]
 mov       [rcx],rsi
@@ -4686,22 +3922,22 @@ mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 mov       rdx,[rsi+18]
 test      rdx,rdx
-je        short 00007FFB171173FD
-jmp       short 00007FFB17117413
+je        short 00007FFE405578DD
+jmp       short 00007FFE405578F3
 mov       rcx,[rbp+10]
-mov       rdx,7FFB172029A0
+mov       rdx,7FFE406429A0
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rdx,rax
 lea       rcx,[rbp+0FFB8]
 call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
 test      eax,eax
-jne       near ptr 00007FFB1711737F
+jne       near ptr 00007FFE4055785F
 mov       rax,[rsi+28]
 test      rax,rax
-je        short 00007FFB1711742F
-jmp       short 00007FFB17117442
+je        short 00007FFE4055790F
+jmp       short 00007FFE40557922
 mov       rcx,[rbp+10]
-mov       rdx,7FFB17202A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4714,7 +3950,7 @@ mov       rcx,[rbp+0FF90]
 xor       edx,edx
 call      System.Text.StringBuilder.ToString(Int32, Int32)
 mov       rsi,rax
-mov       rcx,267FE825DA8
+mov       rcx,1FA1D8C5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]
@@ -4738,11 +3974,11 @@ lea       rbp,[rbp+0A0]
 mov       rcx,[rbp+10]
 mov       rsi,[rcx+10]
 cmp       qword ptr [rsi+28],0
-je        short 00007FFB171174BE
+je        short 00007FFE4055799E
 mov       rax,[rsi+28]
-jmp       short 00007FFB171174D1
+jmp       short 00007FFE405579B1
 mov       rcx,[rbp+10]
-mov       rdx,7FFB17202A90
+mov       rdx,7FFE40642A90
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 lea       rcx,[rbp+0FFB8]
 call      rax
@@ -4761,378 +3997,10 @@ sub       rsp,28
 mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170DE788
+mov       rcx,7FFE4051E788
 mov       edx,23
 call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,267FE825DA8
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FF90]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDelimitedString02()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rdx,[rsi+0A8]
-mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
-mov       r8d,2C
-call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,88
-lea       rbp,[rsp+0A0]
-vxorps    xmm4,xmm4,xmm4
-vmovdqa   xmmword ptr [rbp+0FF90],xmm4
-vmovdqa   xmmword ptr [rbp+0FFA0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
-mov       [rbp+0FF80],rsp
-mov       [rbp+0FFE0],rcx
-mov       [rbp+10],rcx
-mov       [rbp+20],r8d
-mov       rsi,rdx
-mov       eax,[rsi+38]
-sub       eax,[rsi+40]
-jne       short 00007FFB17107421
-mov       rax,15A5CDD3060
-mov       rax,[rax]
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-mov       rcx,7FFB170CE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15A6CDD3D90
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FF90],rax
-lea       rdx,[rbp+0FFB8]
-mov       rcx,rsi
-call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
-nop
-jmp       short 00007FFB171074CA
-lea       rax,[rbp+0FFD0]
-mov       rsi,[rax]
-mov       rdi,[rax+8]
-call      System.Globalization.CultureInfo.get_CurrentCulture()
-movzx     ebx,word ptr [rbp+20]
-mov       ecx,1
-call      System.String.FastAllocateString(Int32)
-mov       [rax+0C],bx
-mov       r8,15A5CDD1368
-mov       r8,[r8]
-mov       rbx,[rbp+0FF90]
-mov       rdx,15A7CDD31D0
-mov       rdx,[rdx]
-lea       rcx,[rbp+0FF98]
-mov       [rcx],rsi
-mov       [rcx+8],rdi
-mov       [rcx+10],rax
-mov       [rcx+18],r8
-lea       r8,[rbp+0FF98]
-xor       ecx,ecx
-call      System.String.FormatHelper(System.IFormatProvider, System.String, System.ParamsArray)
-mov       rdx,rax
-mov       rcx,rbx
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-mov       rcx,[rbp+10]
-mov       rsi,[rcx+10]
-mov       rdx,[rsi+18]
-test      rdx,rdx
-je        short 00007FFB171074DD
-jmp       short 00007FFB171074F3
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171F29A0
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rdx,rax
-lea       rcx,[rbp+0FFB8]
-call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
-test      eax,eax
-jne       near ptr 00007FFB1710745F
-mov       rax,[rsi+28]
-test      rax,rax
-je        short 00007FFB1710750F
-jmp       short 00007FFB17107522
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171F2A90
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-lea       rcx,[rbp+0FFB8]
-call      rax
-mov       r8,[rbp+0FF90]
-mov       r8d,[r8+1C]
-mov       rcx,[rbp+0FF90]
-mov       ecx,[rcx+18]
-lea       r8d,[r8+rcx+0FFFF]
-mov       rcx,[rbp+0FF90]
-xor       edx,edx
-call      System.Text.StringBuilder.ToString(Int32, Int32)
-mov       rsi,rax
-mov       rcx,15A6CDD3D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FF90]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rsi
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+0A0]
-mov       rcx,[rbp+10]
-mov       rsi,[rcx+10]
-cmp       qword ptr [rsi+28],0
-je        short 00007FFB1710759E
-mov       rax,[rsi+28]
-jmp       short 00007FFB171075B1
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171F2A90
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-lea       rcx,[rbp+0FFB8]
-call      rax
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170CE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,15A6CDD3D90
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FF90]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-dotNetTips.Spargine.Core.BenchmarkTests.StringBuilderHelperCounterBenchmark.ToDelimitedString02()
-push      rsi
-sub       rsp,20
-mov       rsi,rcx
-mov       rdx,[rsi+0A8]
-mov       rcx,offset MD_dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString(System.Collections.Generic.Dictionary`2<!!0,!!1>, Char)
-mov       r8d,2C
-call      dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
-mov       rcx,[rsi+10]
-cmp       [rcx],ecx
-add       rcx,8
-mov       rdx,rax
-call      CORINFO_HELP_CHECKED_ASSIGN_REF
-nop
-add       rsp,20
-pop       rsi
-ret
-
-dotNetTips.Spargine.Core.StringBuilderHelper.ToDelimitedString[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.Dictionary`2<System.__Canon,System.__Canon>, Char)
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,88
-lea       rbp,[rsp+0A0]
-vxorps    xmm4,xmm4,xmm4
-vmovdqa   xmmword ptr [rbp+0FF90],xmm4
-vmovdqa   xmmword ptr [rbp+0FFA0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
-vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
-mov       [rbp+0FF80],rsp
-mov       [rbp+0FFE0],rcx
-mov       [rbp+10],rcx
-mov       [rbp+20],r8d
-mov       rsi,rdx
-mov       eax,[rsi+38]
-sub       eax,[rsi+40]
-jne       short 00007FFB170E72C1
-mov       rax,1E9260F3060
-mov       rax,[rax]
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1E9460F5DA8
-mov       rcx,[rcx]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+20]
-mov       [rbp+0FF90],rax
-lea       rdx,[rbp+0FFB8]
-mov       rcx,rsi
-call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].GetEnumerator()
-nop
-jmp       short 00007FFB170E736A
-lea       rax,[rbp+0FFD0]
-mov       rsi,[rax]
-mov       rdi,[rax+8]
-call      System.Globalization.CultureInfo.get_CurrentCulture()
-movzx     ebx,word ptr [rbp+20]
-mov       ecx,1
-call      System.String.FastAllocateString(Int32)
-mov       [rax+0C],bx
-mov       r8,1E9260F1368
-mov       r8,[r8]
-mov       rbx,[rbp+0FF90]
-mov       rdx,1E9460F71C8
-mov       rdx,[rdx]
-lea       rcx,[rbp+0FF98]
-mov       [rcx],rsi
-mov       [rcx+8],rdi
-mov       [rcx+10],rax
-mov       [rcx+18],r8
-lea       r8,[rbp+0FF98]
-xor       ecx,ecx
-call      System.String.FormatHelper(System.IFormatProvider, System.String, System.ParamsArray)
-mov       rdx,rax
-mov       rcx,rbx
-cmp       [rcx],ecx
-call      System.Text.StringBuilder.Append(System.String)
-mov       rcx,[rbp+10]
-mov       rsi,[rcx+10]
-mov       rdx,[rsi+18]
-test      rdx,rdx
-je        short 00007FFB170E737D
-jmp       short 00007FFB170E7393
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171D29A0
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-mov       rdx,rax
-lea       rcx,[rbp+0FFB8]
-call      System.Collections.Generic.Dictionary`2+Enumerator[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].MoveNext()
-test      eax,eax
-jne       near ptr 00007FFB170E72FF
-mov       rax,[rsi+28]
-test      rax,rax
-je        short 00007FFB170E73AF
-jmp       short 00007FFB170E73C2
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-lea       rcx,[rbp+0FFB8]
-call      rax
-mov       r8,[rbp+0FF90]
-mov       r8d,[r8+1C]
-mov       rcx,[rbp+0FF90]
-mov       ecx,[rcx+18]
-lea       r8d,[r8+rcx+0FFFF]
-mov       rcx,[rbp+0FF90]
-xor       edx,edx
-call      System.Text.StringBuilder.ToString(Int32, Int32)
-mov       rsi,rax
-mov       rcx,1E9460F5DA8
-mov       rcx,[rcx]
-mov       rdx,[rbp+0FF90]
-mov       rax,[rcx]
-mov       rax,[rax+40]
-call      qword ptr [rax+28]
-mov       rax,rsi
-lea       rsp,[rbp+0FFE8]
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+0A0]
-mov       rcx,[rbp+10]
-mov       rsi,[rcx+10]
-cmp       qword ptr [rsi+28],0
-je        short 00007FFB170E743E
-mov       rax,[rsi+28]
-jmp       short 00007FFB170E7451
-mov       rcx,[rbp+10]
-mov       rdx,7FFB171D2A90
-call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
-lea       rcx,[rbp+0FFB8]
-call      rax
-nop
-add       rsp,28
-pop       rbx
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-push      rbp
-push      rdi
-push      rsi
-push      rbx
-sub       rsp,28
-mov       rbp,[rcx+20]
-mov       [rsp+20],rbp
-lea       rbp,[rbp+0A0]
-mov       rcx,7FFB170AE788
-mov       edx,23
-call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-mov       rcx,1E9460F5DA8
+mov       rcx,1FA1D8C5C10
 mov       rcx,[rcx]
 mov       rdx,[rbp+0FF90]
 mov       rax,[rcx]

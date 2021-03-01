@@ -48,16 +48,16 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			base.Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Deserialize this instance.
-		/// </summary>
-		[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonRecord")]
-		public void Deserialize03()
-		{
-			var result = JsonSerialization.Deserialize<PersonRecord>(this.JsonTestDataPersonRecord);
+		///// <summary>
+		///// Deserialize this instance.
+		///// </summary>
+		//[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonRecord")]
+		//public void Deserialize03()
+		//{
+		//	var result = JsonSerialization.Deserialize<PersonRecord>(this.JsonTestDataPersonRecord);
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
 		/// <summary>
 		/// Serialize this instance.

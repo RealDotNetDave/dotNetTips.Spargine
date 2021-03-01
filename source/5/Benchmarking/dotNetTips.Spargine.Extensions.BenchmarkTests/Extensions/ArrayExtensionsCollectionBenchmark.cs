@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using System.Collections.Generic;
-using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Tester.Models;
@@ -34,26 +33,22 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ":Parm Array")]
+		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
 		public void AddIfNotExists01()
 		{
 			var people = new List<PersonProper>(base.PersonProperCollection);
-			var newPeople = new List<PersonProper>(base.PersonProperCollection).Take(10).ToArray();
 
-
-			var result = people.AddIfNotExists(newPeople);
+			var result = people.AddIfNotExists(this.PeopleToInsert);
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ":Dup Parm Array")]
+		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params with dups")]
 		public void AddIfNotExists02()
 		{
 			var people = new List<PersonProper>(base.PersonProperCollection);
-			var newPeople = people.Shuffle(10).ToArray();
 
-
-			var result = people.AddIfNotExists(newPeople);
+			var result = people.AddIfNotExists(this.PeopleToInsert);
 
 			base.Consumer.Consume(result);
 		}
@@ -132,18 +127,16 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny))]
 		public void ContainsAny01()
 		{
-			var people = base.PersonProperArrayFull.Clone<PersonProper>().AddLast(this.PersonProper);
-
-			var result = base.PersonProperArrayFull.ContainsAny(people.ToArray());
+			var result = base.PersonProperArrayFull.ContainsAny(this.PeopleToInsert);
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.RemoveDuplicates))]
-		public void RemoveDuplicates01()
-		{
+		//[Benchmark(Description = nameof(ArrayExtensions.RemoveDuplicates))]
+		//public void RemoveDuplicates01()
+		//{
 
-		}
+		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
 		public void RemoveFirst()

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210222-224324</title>
+<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210228-121708</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,7 +14,7 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="3">dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210222-224324</th></tr>
+<tr><th colspan="3">dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210228-121708</th></tr>
 <tr>
 <th>GetAllTypes01 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
 <th>GetInstances01 .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT</th>
@@ -59,9 +59,9 @@ push      rdi
 push      rsi
 sub       rsp,28
 mov       rsi,rcx
-mov       r8,21300491048
+mov       r8,1EE95F23060
 mov       r8,[r8]
-mov       rdx,21300491518
+mov       rdx,1EEB5F2F8E0
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
@@ -70,22 +70,22 @@ mov       rax,[rsi]
 mov       rax,[rax+40]
 call      qword ptr [rax+28]
 mov       rsi,rax
-mov       rcx,2131049C2F8
+mov       rcx,1EEB5F296B8
 mov       r8,[rcx]
 test      r8,r8
-jne       short 00007FFB1713F8ED
+jne       short 00007FFE5950F92D
 mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rdi,rax
-mov       rdx,2131049C2F0
+mov       rdx,1EEB5F296B0
 mov       rdx,[rdx]
 test      rdx,rdx
-je        short 00007FFB1713F907
+je        short 00007FFE5950F947
 lea       rcx,[rdi+8]
 call      CORINFO_HELP_ASSIGN_REF
 mov       rdx,offset dotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__0_0(System.Type)
 mov       [rdi+18],rdx
-mov       rcx,2131049C2F8
+mov       rcx,1EEB5F296B8
 mov       rdx,rdi
 call      CORINFO_HELP_CHECKED_ASSIGN_REF
 mov       r8,rdi
@@ -118,16 +118,16 @@ mov       rcx,offset MT_dotNetTips.Spargine.Extensions.AssemblyExtensions+<GetIn
 call      CORINFO_HELP_NEWSFAST
 mov       rbx,rax
 mov       dword ptr [rbx+28],0FFFFFFFE
-mov       rcx,7FFB16E50020
+mov       rcx,7FFE59230020
 mov       edx,26C
 call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
 mov       rcx,[rax+18]
 test      rcx,rcx
-jne       short 00007FFB1716EC60
+jne       short 00007FFE5952ECA0
 call      System.Threading.Thread.InitializeCurrentThread()
 mov       rcx,rax
 cmp       [rcx],ecx
-call      00007FFB769A2F50
+call      00007FFEB8D92F50
 mov       [rbx+2C],eax
 lea       rcx,[rbx+18]
 mov       rdx,rdi
@@ -156,12 +156,12 @@ ret
 System.Threading.Thread.InitializeCurrentThread()
 push      rsi
 sub       rsp,20
-call      qword ptr [7FFB764B1AC8]
+call      qword ptr [7FFEB7EB1AC8]
 mov       rsi,rax
-call      qword ptr [7FFB764B1748]
+call      qword ptr [7FFEB7EB1748]
 lea       rcx,[rax+18]
 mov       rdx,rsi
-call      qword ptr [7FFB764B1020]
+call      qword ptr [7FFEB7EB1020]
 mov       rax,rsi
 add       rsp,20
 pop       rsi
@@ -206,19 +206,19 @@ push      rbp
 push      rbx
 sub       rsp,28
 mov       rsi,rcx
-mov       r8,26C53D21048
+mov       r8,28A6B303060
 mov       r8,[r8]
-mov       rdx,26C43D230F8
+mov       rdx,28A7B301918
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
 mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rdi,rax
-mov       rcx,7FFB16E20020
+mov       rcx,7FFE59240020
 mov       edx,23
 call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-mov       rdx,26C43D22D50
+mov       rdx,28A5B304A20
 mov       rdx,[rdx]
 lea       rcx,[rdi+8]
 call      CORINFO_HELP_ASSIGN_REF
@@ -230,7 +230,7 @@ mov       rsi,rax
 xor       ebx,ebx
 mov       ebp,[rsi+8]
 test      ebp,ebp
-jle       short 00007FFB1713C0BA
+jle       short 00007FFE5953C0FA
 movsxd    rcx,ebx
 mov       rcx,[rsi+rcx*8+10]
 mov       rax,[rcx]
@@ -242,7 +242,7 @@ mov       rcx,rdi
 call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].InsertRange(Int32, System.Collections.Generic.IEnumerable`1<System.__Canon>)
 inc       ebx
 cmp       ebp,ebx
-jg        short 00007FFB1713C092
+jg        short 00007FFE5953C0D2
 mov       rax,rdi
 add       rsp,28
 pop       rbx

@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
@@ -21,9 +22,11 @@ using dotNetTips.Spargine.Benchmarking.Properties;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
+using Perfolizer.Mathematics.SignificanceTesting;
 using static BenchmarkDotNet.Attributes.MarkdownExporterAttribute;
 using static BenchmarkDotNet.Attributes.XmlExporterAttribute;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine)
 namespace dotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
@@ -46,7 +49,6 @@ namespace dotNetTips.Spargine.Benchmarking
 	[GcServer(true)]
 	[GitHub]
 	[HtmlExporter]
-	[InProcessAttribute]
 	[IterationsColumn]
 	[JsonExporter(indentJson: true)]
 	[KurtosisColumn]
@@ -63,7 +65,7 @@ namespace dotNetTips.Spargine.Benchmarking
 	[RPlotExporter]
 	[SkewnessColumn]
 	[StackOverflow]
-	[StatisticalTestColumn(showPValues: true)]
+	[StatisticalTestColumn(StatisticalTestKind.Welch, showPValues: true)]
 	public abstract class Benchmark
 	{
 		/// <summary>
@@ -125,6 +127,12 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The consumer
 		/// </summary>
 		private readonly Consumer _consumer = new Consumer();
+
+		/// <summary>
+		/// Gets or sets a value indicating whether to [launch the debugger].
+		/// </summary>
+		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
+		public bool LaunchDebugger { get; set; }
 
 		/// <summary>
 		/// Gets the base64 string.
@@ -235,6 +243,11 @@ namespace dotNetTips.Spargine.Benchmarking
 		[GlobalSetup]
 		public void GlobalSetup()
 		{
+			if (this.LaunchDebugger)
+			{
+				Debugger.Launch();
+			}
+
 			this.Setup();
 		}
 

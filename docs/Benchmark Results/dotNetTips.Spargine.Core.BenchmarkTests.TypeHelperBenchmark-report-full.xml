@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Summary>
-  <Title>dotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20210222-231436</Title>
+  <Title>dotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20210228-083243</Title>
   <HostEnvironmentInfo>
     <BenchmarkDotNetCaption>BenchmarkDotNet</BenchmarkDotNetCaption>
     <BenchmarkDotNetVersion>0.12.1</BenchmarkDotNetVersion>
@@ -19,71 +19,71 @@
   </HostEnvironmentInfo>
   <Benchmarks>
     <BenchmarkCase>
-      <DisplayInfo>TypeHelperBenchmark.'Looping Collection: Normal StringBuilder': Job-FKHTBO(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</DisplayInfo>
+      <DisplayInfo>TypeHelperBenchmark.'Looping Collection: Normal StringBuilder': Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</DisplayInfo>
       <Namespace>dotNetTips.Spargine.Core.BenchmarkTests</Namespace>
       <Type>TypeHelperBenchmark</Type>
       <Method>CreateStringBuilder02</Method>
       <MethodTitle>'Looping Collection: Normal StringBuilder'</MethodTitle>
       <Statistics>
         <OriginalValues>
-          <Item>43518.084716796875</Item>
-          <Item>43439.715576171875</Item>
-          <Item>43307.28759765625</Item>
-          <Item>43469.71435546875</Item>
-          <Item>43261.5234375</Item>
-          <Item>43276.806640625</Item>
-          <Item>43292.413330078125</Item>
-          <Item>43411.444091796875</Item>
-          <Item>43425.738525390625</Item>
-          <Item>43330.45654296875</Item>
-          <Item>43324.23095703125</Item>
-          <Item>43198.394775390625</Item>
-          <Item>43396.98486328125</Item>
-          <Item>43315.789794921875</Item>
-          <Item>43385.614013671875</Item>
+          <Item>42885.09521484375</Item>
+          <Item>42921.697998046875</Item>
+          <Item>42838.6962890625</Item>
+          <Item>42811.62109375</Item>
+          <Item>42867.071533203125</Item>
+          <Item>42785.980224609375</Item>
+          <Item>42765.0390625</Item>
+          <Item>42908.38623046875</Item>
+          <Item>42782.470703125</Item>
+          <Item>42794.647216796875</Item>
+          <Item>42866.656494140625</Item>
+          <Item>42967.98095703125</Item>
+          <Item>43048.79150390625</Item>
+          <Item>43053.96728515625</Item>
+          <Item>42976.46484375</Item>
         </OriginalValues>
         <N>15</N>
-        <Min>43198.394775390625</Min>
-        <LowerFence>43121.739196777344</LowerFence>
-        <Q1>43299.85046386719</Q1>
-        <Median>43330.45654296875</Median>
-        <Mean>43356.946614583336</Mean>
-        <Q3>43418.59130859375</Q3>
-        <UpperFence>43596.702575683594</UpperFence>
-        <Max>43518.084716796875</Max>
-        <InterquartileRange>118.7408447265625</InterquartileRange>
-        <StandardError>22.51170109472657</StandardError>
-        <Variance>7601.6502926747</Variance>
-        <StandardDeviation>87.18744343467527</StandardDeviation>
-        <Skewness>0.08814803567492994</Skewness>
-        <Kurtosis>1.9628536096071183</Kurtosis>
+        <Min>42765.0390625</Min>
+        <LowerFence>42590.576171875</LowerFence>
+        <Q1>42803.13415527344</Q1>
+        <Median>42867.071533203125</Median>
+        <Mean>42884.97111002604</Mean>
+        <Q3>42944.83947753906</Q3>
+        <UpperFence>43157.3974609375</UpperFence>
+        <Max>43053.96728515625</Max>
+        <InterquartileRange>141.705322265625</InterquartileRange>
+        <StandardError>24.258601686237782</StandardError>
+        <Variance>8827.196336573079</Variance>
+        <StandardDeviation>93.95316033307809</StandardDeviation>
+        <Skewness>0.4508558583340755</Skewness>
+        <Kurtosis>1.8559086408504935</Kurtosis>
         <ConfidenceInterval>
           <N>15</N>
-          <Mean>43356.946614583336</Mean>
-          <StandardError>22.51170109472657</StandardError>
+          <Mean>42884.97111002604</Mean>
+          <StandardError>24.258601686237782</StandardError>
           <Level>L999</Level>
-          <Margin>93.20866538795013</Margin>
-          <Lower>43263.73794919538</Lower>
-          <Upper>43450.15527997129</Upper>
+          <Margin>100.4416271270487</Margin>
+          <Lower>42784.52948289899</Lower>
+          <Upper>42985.412737153085</Upper>
         </ConfidenceInterval>
         <Percentiles>
-          <P0>43198.394775390625</P0>
-          <P25>43299.85046386719</P25>
-          <P50>43330.45654296875</P50>
-          <P67>43402.47937011719</P67>
-          <P80>43428.533935546875</P80>
-          <P85>43438.31787109375</P85>
-          <P90>43457.71484375</P90>
-          <P95>43484.22546386719</P95>
-          <P100>43518.084716796875</P100>
+          <P0>42765.0390625</P0>
+          <P25>42803.13415527344</P25>
+          <P50>42867.071533203125</P50>
+          <P67>42913.44470214844</P67>
+          <P80>42969.677734375</P80>
+          <P85>42975.616455078125</P85>
+          <P90>43019.86083984375</P90>
+          <P95>43050.34423828125</P95>
+          <P100>43053.96728515625</P100>
         </Percentiles>
       </Statistics>
       <Memory>
-        <Gen0Collections>176</Gen0Collections>
-        <Gen1Collections>27</Gen1Collections>
+        <Gen0Collections>177</Gen0Collections>
+        <Gen1Collections>22</Gen1Collections>
         <Gen2Collections>0</Gen2Collections>
         <TotalOperations>16384</TotalOperations>
-        <BytesAllocatedPerOperation>94472</BytesAllocatedPerOperation>
+        <BytesAllocatedPerOperation>93456</BytesAllocatedPerOperation>
       </Memory>
       <Measurements>
         <Measurement>
@@ -92,7 +92,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>1</Operations>
-          <Nanoseconds>169200</Nanoseconds>
+          <Nanoseconds>168400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -100,7 +100,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>1</Operations>
-          <Nanoseconds>855500</Nanoseconds>
+          <Nanoseconds>901900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -108,7 +108,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16</Operations>
-          <Nanoseconds>222700</Nanoseconds>
+          <Nanoseconds>179700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -116,7 +116,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16</Operations>
-          <Nanoseconds>1401700</Nanoseconds>
+          <Nanoseconds>1127500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -124,7 +124,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16</Operations>
-          <Nanoseconds>978900</Nanoseconds>
+          <Nanoseconds>821300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -132,7 +132,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>32</Operations>
-          <Nanoseconds>1509600</Nanoseconds>
+          <Nanoseconds>1676600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -140,7 +140,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>3</IterationIndex>
           <Operations>64</Operations>
-          <Nanoseconds>3396100</Nanoseconds>
+          <Nanoseconds>3965800</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -148,7 +148,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>4</IterationIndex>
           <Operations>128</Operations>
-          <Nanoseconds>7061200</Nanoseconds>
+          <Nanoseconds>6754600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -156,7 +156,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>5</IterationIndex>
           <Operations>256</Operations>
-          <Nanoseconds>12279400</Nanoseconds>
+          <Nanoseconds>12531300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -164,7 +164,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>512</Operations>
-          <Nanoseconds>24560000</Nanoseconds>
+          <Nanoseconds>24902700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -172,7 +172,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>7</IterationIndex>
           <Operations>1024</Operations>
-          <Nanoseconds>47642400</Nanoseconds>
+          <Nanoseconds>47018900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -180,7 +180,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>8</IterationIndex>
           <Operations>2048</Operations>
-          <Nanoseconds>97249300</Nanoseconds>
+          <Nanoseconds>93629500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -188,7 +188,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>9</IterationIndex>
           <Operations>4096</Operations>
-          <Nanoseconds>179524200</Nanoseconds>
+          <Nanoseconds>180503700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -196,7 +196,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>10</IterationIndex>
           <Operations>8192</Operations>
-          <Nanoseconds>356127800</Nanoseconds>
+          <Nanoseconds>356782200</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -204,7 +204,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>11</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709544100</Nanoseconds>
+          <Nanoseconds>703700900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -212,37 +212,13 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>36500</Nanoseconds>
+          <Nanoseconds>32900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Warmup</IterationStage>
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>31400</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Warmup</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>3</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>35200</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Warmup</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>4</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>34900</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Warmup</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>5</IterationIndex>
           <Operations>16384</Operations>
           <Nanoseconds>32500</Nanoseconds>
         </Measurement>
@@ -250,25 +226,33 @@
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Warmup</IterationStage>
           <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>3</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>33700</Nanoseconds>
+        </Measurement>
+        <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Warmup</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>4</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>32200</Nanoseconds>
+        </Measurement>
+        <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Warmup</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>5</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>34600</Nanoseconds>
+        </Measurement>
+        <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Warmup</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>34500</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Warmup</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>7</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>34800</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Warmup</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>8</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>34700</Nanoseconds>
+          <Nanoseconds>32300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -276,7 +260,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>45600</Nanoseconds>
+          <Nanoseconds>32300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -284,29 +268,13 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>33800</Nanoseconds>
+          <Nanoseconds>34300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Actual</IterationStage>
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>3</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>31900</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Actual</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>4</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>31500</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Actual</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>5</IterationIndex>
           <Operations>16384</Operations>
           <Nanoseconds>32800</Nanoseconds>
         </Measurement>
@@ -314,9 +282,25 @@
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Actual</IterationStage>
           <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>4</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>32200</Nanoseconds>
+        </Measurement>
+        <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Actual</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>5</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>32500</Nanoseconds>
+        </Measurement>
+        <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Actual</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>35200</Nanoseconds>
+          <Nanoseconds>32300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -324,7 +308,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>7</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>34300</Nanoseconds>
+          <Nanoseconds>46400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -332,7 +316,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>8</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>33800</Nanoseconds>
+          <Nanoseconds>33700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -340,7 +324,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>9</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>39200</Nanoseconds>
+          <Nanoseconds>37800</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -348,7 +332,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>10</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>32900</Nanoseconds>
+          <Nanoseconds>32000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -356,7 +340,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>11</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>32100</Nanoseconds>
+          <Nanoseconds>32500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
@@ -364,21 +348,13 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>12</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>34300</Nanoseconds>
+          <Nanoseconds>35100</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Actual</IterationStage>
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>13</IterationIndex>
-          <Operations>16384</Operations>
-          <Nanoseconds>33600</Nanoseconds>
-        </Measurement>
-        <Measurement>
-          <IterationMode>Overhead</IterationMode>
-          <IterationStage>Actual</IterationStage>
-          <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>14</IterationIndex>
           <Operations>16384</Operations>
           <Nanoseconds>32400</Nanoseconds>
         </Measurement>
@@ -386,17 +362,25 @@
           <IterationMode>Overhead</IterationMode>
           <IterationStage>Actual</IterationStage>
           <LaunchIndex>1</LaunchIndex>
-          <IterationIndex>15</IterationIndex>
+          <IterationIndex>14</IterationIndex>
           <Operations>16384</Operations>
           <Nanoseconds>32200</Nanoseconds>
         </Measurement>
         <Measurement>
+          <IterationMode>Overhead</IterationMode>
+          <IterationStage>Actual</IterationStage>
+          <LaunchIndex>1</LaunchIndex>
+          <IterationIndex>15</IterationIndex>
+          <Operations>16384</Operations>
+          <Nanoseconds>32600</Nanoseconds>
+        </Measurement>
+        <Measurement>
           <IterationMode>Workload</IterationMode>
           <IterationStage>Warmup</IterationStage>
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>712661000</Nanoseconds>
+          <Nanoseconds>709617200</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -404,7 +388,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>708887500</Nanoseconds>
+          <Nanoseconds>704313000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -412,7 +396,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>3</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>706376500</Nanoseconds>
+          <Nanoseconds>704605600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -420,7 +404,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>4</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>716999000</Nanoseconds>
+          <Nanoseconds>704978300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -428,7 +412,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>5</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>710722400</Nanoseconds>
+          <Nanoseconds>705033100</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -436,7 +420,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709004600</Nanoseconds>
+          <Nanoseconds>707153300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -444,7 +428,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>7</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>706690600</Nanoseconds>
+          <Nanoseconds>705483400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -452,7 +436,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>8</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>708101200</Nanoseconds>
+          <Nanoseconds>704923200</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -460,7 +444,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>9</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709132300</Nanoseconds>
+          <Nanoseconds>705103000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -468,7 +452,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>10</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>706182200</Nanoseconds>
+          <Nanoseconds>701873800</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -476,7 +460,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>713033900</Nanoseconds>
+          <Nanoseconds>702661900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -484,7 +468,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711749900</Nanoseconds>
+          <Nanoseconds>703261600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -492,7 +476,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>3</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709580200</Nanoseconds>
+          <Nanoseconds>701901700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -500,7 +484,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>4</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>712241400</Nanoseconds>
+          <Nanoseconds>701458100</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -508,7 +492,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>5</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>708830400</Nanoseconds>
+          <Nanoseconds>702366600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -516,7 +500,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709080800</Nanoseconds>
+          <Nanoseconds>701038000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -524,7 +508,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>7</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709336500</Nanoseconds>
+          <Nanoseconds>700694900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -532,7 +516,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>8</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711286700</Nanoseconds>
+          <Nanoseconds>703043500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -540,7 +524,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>9</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711520900</Nanoseconds>
+          <Nanoseconds>700980500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -548,7 +532,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>10</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709959800</Nanoseconds>
+          <Nanoseconds>701180000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -556,7 +540,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>11</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709857800</Nanoseconds>
+          <Nanoseconds>702359800</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -564,7 +548,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>12</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>707796100</Nanoseconds>
+          <Nanoseconds>704019900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -572,7 +556,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>13</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711049800</Nanoseconds>
+          <Nanoseconds>705343900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -580,7 +564,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>14</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709719500</Nanoseconds>
+          <Nanoseconds>705428700</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -588,7 +572,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>15</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>710863500</Nanoseconds>
+          <Nanoseconds>704158900</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -596,7 +580,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>1</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>713000300</Nanoseconds>
+          <Nanoseconds>702629400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -604,7 +588,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>2</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711716300</Nanoseconds>
+          <Nanoseconds>703229100</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -612,7 +596,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>3</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709546600</Nanoseconds>
+          <Nanoseconds>701869200</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -620,7 +604,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>4</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>712207800</Nanoseconds>
+          <Nanoseconds>701425600</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -628,7 +612,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>5</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>708796800</Nanoseconds>
+          <Nanoseconds>702334100</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -636,7 +620,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>6</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709047200</Nanoseconds>
+          <Nanoseconds>701005500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -644,7 +628,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>7</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709302900</Nanoseconds>
+          <Nanoseconds>700662400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -652,7 +636,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>8</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711253100</Nanoseconds>
+          <Nanoseconds>703011000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -660,7 +644,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>9</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711487300</Nanoseconds>
+          <Nanoseconds>700948000</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -668,7 +652,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>10</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709926200</Nanoseconds>
+          <Nanoseconds>701147500</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -676,7 +660,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>11</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709824200</Nanoseconds>
+          <Nanoseconds>702327300</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -684,7 +668,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>12</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>707762500</Nanoseconds>
+          <Nanoseconds>703987400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -692,7 +676,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>13</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>711016200</Nanoseconds>
+          <Nanoseconds>705311400</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -700,7 +684,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>14</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>709685900</Nanoseconds>
+          <Nanoseconds>705396200</Nanoseconds>
         </Measurement>
         <Measurement>
           <IterationMode>Workload</IterationMode>
@@ -708,7 +692,7 @@
           <LaunchIndex>1</LaunchIndex>
           <IterationIndex>15</IterationIndex>
           <Operations>16384</Operations>
-          <Nanoseconds>710829900</Nanoseconds>
+          <Nanoseconds>704126400</Nanoseconds>
         </Measurement>
       </Measurements>
     </BenchmarkCase>

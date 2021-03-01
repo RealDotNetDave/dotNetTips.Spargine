@@ -60,7 +60,7 @@ namespace dotNetTips.Spargine.Core.Internal
 
 			if (memberName.Length > 0)
 			{
-				newMemberName = memberName + ControlChars.Dot;
+				newMemberName = $"{memberName}{ControlChars.Dot}";
 			}
 
 			foreach (var property in propertyCollection)

@@ -16,7 +16,7 @@ using System.Globalization;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -58,6 +58,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FormatSize), UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 		public static string FormatSize(this long fileSize)
 		{
+			//TODO: ADD EXAMPLE TO SUMMARY
 			long size = 0;
 
 			while (fileSize > 1024 && size < 4)

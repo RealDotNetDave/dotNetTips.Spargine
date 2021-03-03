@@ -18,7 +18,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -26,6 +26,8 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class EnumHelper
 	{
+		private static readonly Regex _titleCaseRegex = new Regex(@"(\B[A-Z])", RegexOptions.Multiline | RegexOptions.Compiled);
+
 		/// <summary>
 		/// Gets the enum values.
 		/// </summary>
@@ -65,8 +67,8 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		private static string AdjustCamelCase(string name)
 		{
-			const string ToTitleCase = @"(\B[A-Z])";
-			return Regex.Replace(name, ToTitleCase, replacement: " $1");
+			//TODO: BEFORE NEXT RLEASE, SEE IF COMPILING THIS REGEX HELPED PERFORMANCE.
+			return _titleCaseRegex.Replace(name, replacement: " $1");
 		}
 
 		/// <summary>

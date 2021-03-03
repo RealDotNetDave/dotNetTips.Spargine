@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.3.1.184</AssemblyVersion>
+		<AssemblyVersion>2021.3.2.186</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Main helper methods/ code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.3.1.184</FileVersion>
+		<FileVersion>2021.3.2.186</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -31,7 +31,7 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.3.1.20</Version>
+		<Version>2021.3.1.21</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
@@ -62,6 +62,8 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+		<PackageReference Include="System.Management" Version="5.0.0" />
 		<PackageReference Include="System.Runtime.Caching" Version="5.0.0" />
 	</ItemGroup>
 

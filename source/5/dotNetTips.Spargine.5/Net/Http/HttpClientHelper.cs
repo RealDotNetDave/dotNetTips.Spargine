@@ -19,7 +19,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Net.Http
 {
 	/// <summary>

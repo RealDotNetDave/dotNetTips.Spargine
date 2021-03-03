@@ -16,7 +16,6 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
-using dotNetTips.Spargine.Core.BenchmarkTests.Serialization;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {

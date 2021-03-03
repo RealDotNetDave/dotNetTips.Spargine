@@ -9,6 +9,8 @@
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<DebugType>pdbonly</DebugType>
 		<DebugSymbols>true</DebugSymbols>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

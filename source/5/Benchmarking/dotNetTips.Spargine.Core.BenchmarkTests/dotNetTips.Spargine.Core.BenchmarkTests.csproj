@@ -1,45 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-	  <AssemblyVersion>2021.3.1.106</AssemblyVersion>
-	  <FileVersion>2021.3.1.106</FileVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<AssemblyVersion>2021.3.1.106</AssemblyVersion>
+		<FileVersion>2021.3.1.106</FileVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<DebugType>pdbonly</DebugType>
+		<DebugSymbols>true</DebugSymbols>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\OutputBin\</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\OutputBin\</OutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\OutputBin\</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\OutputBin\</OutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.3.1.20" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.3.1.20" />
-    <PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.3.1.20" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.3.1.20" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.3.1.20" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.3.1.20" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\dotNetTips.Spargine.5.Benchmarking\dotNetTips.Spargine.5.Benchmarking.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\dotNetTips.Spargine.5.Benchmarking\dotNetTips.Spargine.5.Benchmarking.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
 
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 
 </Project>

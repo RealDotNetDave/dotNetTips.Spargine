@@ -5,7 +5,7 @@
 		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
 		<AssemblyVersion>2021.3.1.92</AssemblyVersion>
 		<FileVersion>2021.3.1.92</FileVersion>
-		<Version>2021.3.1.20</Version>
+		<Version>2021.3.1.21</Version>
 		<Authors>David McCarter</Authors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Description>Common classes that can be used with BenchmarkDotNet.</Description>
@@ -16,7 +16,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PackageReleaseNotes>MAR 2021: Initial release.</PackageReleaseNotes>
-		<NeutralLanguage>en-UM</NeutralLanguage>
+		<NeutralLanguage>en-US</NeutralLanguage>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<AnalysisLevel>5.0</AnalysisLevel>
 	</PropertyGroup>

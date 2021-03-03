@@ -52,9 +52,9 @@ namespace dotNetTips.Spargine.IO
 				destinationFolder.Create();
 			}
 
-			var list = files.ToList();
+			var list = files.ToArray();
 
-			for (var i = 0; i < list.Count; i++)
+			for (var i = 0; i < list.Length; i++)
 			{
 				var tempFile = list[i];
 
@@ -125,11 +125,12 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(files, nameof(files));
 
 			var successCount = 0;
-			var list = files.ToList();
+			var list = files.ToArray();
 
-			for (var i = 0; i < list.Count; i++)
+			for (var i = 0; i < list.Length; i++)
 			{
 				var tempFile = list[i];
+
 				if (tempFile.Exists)
 				{
 					try
@@ -188,9 +189,9 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(folders, nameof(folders));
 
 			var successCount = 0;
-			var list = folders.ToList();
+			var list = folders.ToArray();
 
-			for (var i = 0; i < list.Count; i++)
+			for (var i = 0; i < list.Length; i++)
 			{
 				var tempFolder = list[i];
 

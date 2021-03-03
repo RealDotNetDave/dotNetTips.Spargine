@@ -9,7 +9,7 @@
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Helper methods for files.</summary>
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ using dotNetTips.Spargine.Properties;
 namespace dotNetTips.Spargine.IO
 {
 	/// <summary>
-	/// Class FileHelper.
+	/// Helper methods for files.
 	/// </summary>
 	[Information(nameof(FileHelper), "David McCarter", "2/11/2017", Status = Status.Available)]
 	public static class FileHelper
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="file">The file.</param>
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>File length as System.Int64.</returns>
-		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static long CopyFile(FileInfo file, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(file, nameof(file));
@@ -87,7 +87,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="file">The file.</param>
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>Task&lt;System.Int32&gt;.</returns>
-		[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static async Task<long> CopyFileAsync(FileInfo file, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(file, nameof(file));
@@ -116,7 +116,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="files">The files.</param>
 		/// <returns>IEnumerable&lt;KeyValuePair&lt;System.String, System.String&gt;&gt;.</returns>
-		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<(string FileName, string ErrorMessage)> DeleteFiles(this IEnumerable<string> files)
 		{
 			if (files.HasItems() == false)
@@ -153,7 +153,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <param name="clientId">The client identifier.</param>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static void DownloadFileFromWeb(Uri remoteFileUrl, string localFilePath, string clientId = "NONE")
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -201,7 +201,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <returns>Task.</returns>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static async Task DownloadFileFromWebAsync(Uri remoteFileUrl, string localFilePath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -224,7 +224,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="fileName">The path.</param>
 		/// <returns><c>true</c> if [has invalid path chars] [the specified file name]; otherwise, <c>false</c>.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool FileHasInvalidChars(string fileName)
 		{
 			Validate.TryValidateParam(fileName, nameof(fileName));

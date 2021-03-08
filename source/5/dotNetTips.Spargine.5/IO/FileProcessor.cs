@@ -11,6 +11,8 @@
 // </copyright>
 // <summary>Processes files and fires events.</summary>
 // ***********************************************************************
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using System.Collections.Generic;
 using System.IO;

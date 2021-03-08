@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2021.3.3.289</AssemblyVersion>
+		<AssemblyVersion>2021.3.4.292</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -15,7 +15,7 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.3.3.289</FileVersion>
+		<FileVersion>2021.3.4.292</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -37,7 +37,7 @@
 		<SelfContained>true</SelfContained>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.3.1.21</Version>
+		<Version>2021.3.1.25</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

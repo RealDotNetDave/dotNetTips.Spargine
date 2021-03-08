@@ -1,10 +1,28 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5
+// Author           : David McCarter
+// Created          : 03-01-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 03-01-2021
+// ***********************************************************************
+// <copyright file="RegistryExtensions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+using System;
 using System.Runtime.InteropServices;
 using dotNetTips.Spargine.Core;
 using Microsoft.Win32;
 
 namespace dotNetTips.Spargine.Extensions
 {
+	/// <summary>
+	/// Class RegistryExtensions.
+	/// </summary>
 	public static class RegistryExtensions
 	{
 		/// <summary>
@@ -13,7 +31,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="key">The key.</param>
 		/// <param name="name">The name.</param>
 		/// <returns>RegistryKey.</returns>
-		/// <exception cref="PlatformNotSupportedException">The exception.</exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(nameof(GetSubKey), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 0, Status = Status.New)]
 		public static RegistryKey GetSubKey(this RegistryKey key, string name)
 		{
@@ -37,7 +55,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="key">The key.</param>
 		/// <param name="name">The name.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="PlatformNotSupportedException">The exception.</exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(nameof(GetValue), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 0, Status = Status.New)]
 		public static T GetValue<T>(this RegistryKey key, string name)
 		{

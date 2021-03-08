@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-15-2021
+// Last Modified On : 03-06-2021
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,6 +24,7 @@ namespace dotNetTips.Spargine.Net.Http
 {
 	/// <summary>
 	/// HttpClient Helper Methods.
+	/// Features 20 second timeout.
 	/// </summary>
 	public static class HttpClientHelper
 	{
@@ -32,33 +33,44 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		private static readonly HttpClient _client = new HttpClient()
 		{
-			Timeout = TimeSpan.FromSeconds(value: 10),
+			Timeout = TimeSpan.FromSeconds(value: 20),
 		};
+
+		/// <summary>
+		/// get HTTP response as an asynchronous operation.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <returns>HttpResponseMessage.</returns>
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
+		{
+			var cts = new CancellationTokenSource();
+			return await GetHttpResponseAsync(url, cts).ConfigureAwait(continueOnCapturedContext: false);
+		}
 
 		/// <summary>
 		/// Calls GetAsync for HttpClient
 		/// </summary>
 		/// <param name="url">The URL.</param>
+		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns>HttpResponseMessage.</returns>
 		/// <exception cref="ArgumentInvalidException">Url cannot be null or empty.</exception>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
-		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url, CancellationTokenSource cancellationToken)
 		{
 			Validate.TryValidateParam(url, nameof(url));
-
-			var cts = new CancellationTokenSource();
 
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
+				var response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				response.EnsureSuccessStatusCode();
 
 				return response;
 			}
-			catch (TaskCanceledException ex) when (cts.IsCancellationRequested)
+			catch (TaskCanceledException ex) when (cancellationToken.IsCancellationRequested)
 			{
 				// If the token has been canceled, it is not a timeout.
 				// Handle cancellation.

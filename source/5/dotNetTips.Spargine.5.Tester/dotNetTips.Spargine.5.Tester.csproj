@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.3.3.37688</AssemblyVersion>
+		<AssemblyVersion>2021.3.4.37690</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.3.3.37688</FileVersion>
+		<FileVersion>2021.3.4.37690</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -31,7 +31,7 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.3.1.21</Version>
+		<Version>2021.3.1.25</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -75,7 +75,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.1" />
 	</ItemGroup>
 
 	<ItemGroup>

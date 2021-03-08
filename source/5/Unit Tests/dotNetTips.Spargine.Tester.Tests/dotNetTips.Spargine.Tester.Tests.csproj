@@ -6,9 +6,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyVersion>2021.3.3.136</AssemblyVersion>
+    <AssemblyVersion>2021.3.4.138</AssemblyVersion>
 
-    <FileVersion>2021.3.3.136</FileVersion>
+    <FileVersion>2021.3.4.138</FileVersion>
 
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 
@@ -19,8 +19,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.1.2" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.1.2" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.1" />
     <PackageReference Include="coverlet.collector" Version="3.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

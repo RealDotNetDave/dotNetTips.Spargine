@@ -1,10 +1,28 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5
+// Author           : David McCarter
+// Created          : 03-01-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 03-01-2021
+// ***********************************************************************
+// <copyright file="RetistryHelper.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+using System;
 using System.Runtime.InteropServices;
 using dotNetTips.Spargine.Core;
 using Microsoft.Win32;
 
 namespace dotNetTips.Spargine.Win32
 {
+	/// <summary>
+	/// Class RegistryHelper.
+	/// </summary>
 	public static class RegistryHelper
 	{
 		/// <summary>

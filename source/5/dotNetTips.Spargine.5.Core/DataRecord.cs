@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The identifier.</value>
 		[Required]
-		private TKey Id { get; init; }
+		public TKey Id { get; init; }
 
 		/// <summary>
 		/// Alls the properties to string.

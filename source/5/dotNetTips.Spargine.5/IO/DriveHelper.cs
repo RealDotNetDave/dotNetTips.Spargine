@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="drive">The drive.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetDriveSerialNumber(string drive)
 		{
 			Validate.TryValidateParam(drive, nameof(drive));
@@ -61,6 +61,8 @@ namespace dotNetTips.Spargine.IO
 		/// Gets the fixed drives, that are ready, for a computer.
 		/// </summary>
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
+		/// <returns>System.String.</returns>
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IImmutableList<DriveInfo> GetFixedDrives()
 		{
 			return DriveInfo.GetDrives()
@@ -73,6 +75,8 @@ namespace dotNetTips.Spargine.IO
 		/// Gets the removable drives, that are ready, for a computer.
 		/// </summary>
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
+		/// <returns>System.String.</returns>
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IImmutableList<DriveInfo> GetRemovableDrives()
 		{
 			return DriveInfo.GetDrives()

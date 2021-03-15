@@ -123,6 +123,9 @@
   <data name="FolderNotFound" xml:space="preserve">
     <value>Folder not found.</value>
   </data>
+  <data name="ServiceNotFound" xml:space="preserve">
+    <value>Service not found.</value>
+  </data>
   <data name="ZipFileNotFound" xml:space="preserve">
     <value>Zip file not found.</value>
   </data>

@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>System.Object.</returns>
 		/// <remarks>Use the Processed event to find out if file copied succeeded or failed.</remarks>
-		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public int CopyFiles(IEnumerable<FileInfo> files, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(files, nameof(files));

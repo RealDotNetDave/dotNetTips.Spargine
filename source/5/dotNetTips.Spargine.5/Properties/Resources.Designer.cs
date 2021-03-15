@@ -79,6 +79,15 @@ namespace dotNetTips.Spargine.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service not found..
+        /// </summary>
+        internal static string ServiceNotFound {
+            get {
+                return ResourceManager.GetString("ServiceNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zip file not found..
         /// </summary>
         internal static string ZipFileNotFound {

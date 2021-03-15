@@ -6,3 +6,8 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.IO.DriveHelper.GetDriveSerialNumber(System.String)~System.String")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Services.AllServices~System.Collections.Generic.IEnumerable{System.String}")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Services.StopService(System.String)~dotNetTips.Spargine.ServiceActionResult")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Services.StartService(System.String)~dotNetTips.Spargine.ServiceActionResult")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Services.LoadService(System.String)~System.ServiceProcess.ServiceController")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Services.ServiceStatus(System.String)~System.ServiceProcess.ServiceControllerStatus")]

@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 04-07-2021
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester.Properties;
 
@@ -24,10 +23,8 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// Class Person with proper encapsulation and validation.
 	/// Implements the <see cref="object" />
 	/// </summary>
-	[DebuggerDisplay("{Email}")]
-	public record PersonRecord : DataRecord<PersonRecord, string>
+	public record PersonRecord : IDataRecord
 	{
-
 		/// <summary>
 		/// The addresses
 		/// </summary>
@@ -41,7 +38,6 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// The cell phone number
 		/// </summary>
 		private string _cellPhone;
-
 
 		/// <summary>
 		/// The email
@@ -57,11 +53,6 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// The home phone number
 		/// </summary>
 		private string _homePhone;
-
-		/// <summary>
-		/// The unique identifier
-		/// </summary>
-		private string _id;
 
 		/// <summary>
 		/// The last name
@@ -132,7 +123,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			init
 			{
-				if (value == null)
+				if (value is null)
 				{
 					throw new ArgumentNullException(nameof(this.CellPhone), "Value for phone number cannot be null.");
 				}
@@ -211,27 +202,10 @@ namespace dotNetTips.Spargine.Tester.Models
 		}
 
 		/// <summary>
-		/// Gets or sets the unique identifier.
+		/// Gets or sets the identifier.
 		/// </summary>
-		/// <value>The unique identifier.</value>
-		/// <exception cref="ArgumentNullException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
-		/// <exception cref="ArgumentOutOfRangeException">nameof(this.Id), Value for Id cannot be null or empty.</exception>
-		public string Id
-		{
-			get
-			{
-				return this._id;
-			}
-			init
-			{
-				if (string.IsNullOrEmpty(value))
-				{
-					throw new ArgumentNullException(nameof(this.Id), "Value for Id cannot be null or empty.");
-				}
-
-				this._id = value.Length > 256 ? throw new ArgumentOutOfRangeException(nameof(this.Id), "Id length is limited to 256 characters.") : value;
-			}
-		}
+		/// <value>The identifier.</value>
+		public string Id { get; init; }
 
 		/// <summary>
 		/// Gets or sets the last name.

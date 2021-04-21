@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 04-14-2021
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static void LogApplicationInformation(ILogger logger)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
+			Validate.TryValidateParam<ArgumentNullException>(logger is not null, nameof(logger));
 
 			var appInfo = App.AppInfo;
 
@@ -63,7 +63,8 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// <example>OUTPUT:
 		/// AppInfo:Is64BitProcess - True
 		/// AppInfo:ProcessArchitecture - X64
-		/// AppInfo:CurrentStackTrace - at System.Environment.get_StackTrace()\r\n at dotNetTips.Utility.Standard.ComputerInfo..ctor() in...
+		/// AppInfo:CurrentStackTrace - at System.Environment.get_StackTrace()\r\n at
+		/// .Standard.ComputerInfo..ctor() in...
 		/// AppInfo:ComputerCulture - eng
 		/// AppInfo:UserName - david
 		/// AppInfo:IsUserInteractive - True
@@ -88,7 +89,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
 		public static void LogComputerInformation(ILogger logger)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(logger != null, nameof(logger));
+			Validate.TryValidateParam<ArgumentNullException>(logger is not null, nameof(logger));
 
 			var computerInfo = new ComputerInfo();
 
@@ -112,7 +113,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 99, Status = Status.Available)]
 		public static string[] RetrieveAllExceptionMessages(Exception ex)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
+			Validate.TryValidateParam<ArgumentNullException>(ex is not null, nameof(ex));
 
 			var exceptions = RetrieveAllExceptions(ex);
 
@@ -135,7 +136,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 99, Status = Status.Available)]
 		public static Exception[] RetrieveAllExceptions(Exception ex)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(ex != null, nameof(ex));
+			Validate.TryValidateParam<ArgumentNullException>(ex is not null, nameof(ex));
 
 			var collection = new List<Exception> { ex };
 

@@ -4,13 +4,15 @@
 // Created          : 02-22-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 04-18-2021
 // ***********************************************************************
 // <copyright file="ActionResultThrower.cs" company="dotNetTips.Spargine.5.AspNet">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
@@ -27,7 +29,7 @@ namespace dotNetTips.Spargine._5.AspNet
         /// <summary>
         /// The controller
         /// </summary>
-        private static ResultController _controller = new ResultController();
+        static readonly ResultController _controller = new();
 
         /// <summary>
         /// Logs the error create bad request.
@@ -51,15 +53,5 @@ namespace dotNetTips.Spargine._5.AspNet
 
             return _controller.BadRequest(new ProblemDetails { Title = errorMessage, Detail = ex.GetAllMessages() });
         }
-    }
-
-    /// <summary>
-    /// Class ResultController.
-    /// Implements the <see cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
-    /// </summary>
-    /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
-    internal class ResultController : ControllerBase
-    {
-
     }
 }

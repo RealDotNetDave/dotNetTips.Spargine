@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.3.15.37698</AssemblyVersion>
+		<AssemblyVersion>2021.4.21.37780</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.3.15.37698</FileVersion>
+		<FileVersion>2021.4.21.37780</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -30,7 +30,7 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.3.1.29</Version>
+		<Version>2021.5.1.48</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -39,13 +39,13 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<DocumentationFile>..\..\..\appbin\dotNetTips.Utility.Standard.Tester.xml</DocumentationFile>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
 		<OutputPath>..\..\..\appbin\</OutputPath>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
-		<DocumentationFile>..\..\..\appbin\dotNetTips.Utility.Standard.Tester.xml</DocumentationFile>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -57,7 +57,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Remove="dotNetTips.Utility.Standard.Tester.xml" />
+		<None Remove="dotNetTips.Spargine.Tester.xml" />
 		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
 		  <Pack>True</Pack>
 		  <PackagePath></PackagePath>

@@ -134,6 +134,8 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
 		public bool LaunchDebugger { get; set; }
 
+		public Guid TestGuid { get; internal set; }
+
 		/// <summary>
 		/// Gets the base64 string.
 		/// </summary>
@@ -146,11 +148,16 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The consumer.</value>
 		protected Consumer Consumer => this._consumer;
 
+		protected Coordinate Coordinate01 { get; private set; }
+
+		protected Coordinate Coordinate02 { get; private set; }
+
 		/// <summary>
 		/// Gets the coordinate.
 		/// </summary>
 		/// <value>The coordinate.</value>
-		protected CoordinateProper Coordinate { get; private set; }
+		protected CoordinateProper CoordinateProper01 { get; private set; }
+		protected CoordinateProper CoordinateProper02 { get; private set; }
 
 		/// <summary>
 		/// Gets the json test data person proper.
@@ -164,31 +171,34 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The json test data person record.</value>
 		protected string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
 
-		/// <summary>
-		/// Gets the person.
-		/// </summary>
-		/// <value>The person.</value>
-		protected virtual PersonProper PersonProper { get; private set; }
+		protected PersonFixed PersonFixed01 { get; private set; }
 
-		/// <summary>
-		/// Gets the person record.
-		/// </summary>
-		/// <value>The person record.</value>
-		protected virtual PersonRecord PersonRecord { get; private set; }
+		protected PersonFixed PersonFixed02 { get; private set; }
 
+
+		protected PersonProper PersonProper01 { get; private set; }
+
+		protected PersonProper PersonProper02 { get; private set; }
+
+		protected PersonRecord PersonRecord01 { get; private set; }
+
+		protected PersonRecord PersonRecord02 { get; private set; }
 
 		/// <summary>
 		/// Gets the string10 characters.
 		/// </summary>
 		/// <value>The string10 characters.</value>
-		protected string String10Characters { get; private set; }
+		protected string String10Characters01 { get; private set; }
 
+		protected string String10Characters02 { get; private set; }
 
 		/// <summary>
 		/// Gets the string15 characters.
 		/// </summary>
 		/// <value>The string15 characters.</value>
-		protected string String15Characters { get; private set; }
+		protected string String15Characters01 { get; private set; }
+
+		protected string String15Characters02 { get; private set; }
 
 		/// <summary>
 		/// Gets the string1 empty.
@@ -260,16 +270,37 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			this.Base64String = this.StringToTrim.ToBase64();
 
-			this.PersonProper = RandomData.GeneratePerson<PersonProper>();
+			this.PersonProper01 = RandomData.GeneratePerson<PersonProper>();
 
-			this.PersonRecord = RandomData.GeneratePersonCollection(1).First();
+			this.PersonProper02 = RandomData.GeneratePerson<PersonProper>();
+
+			this.PersonFixed01 = RandomData.GeneratePerson<PersonFixed>();
+
+			this.PersonFixed02 = RandomData.GeneratePerson<PersonFixed>();
+
+			this.PersonRecord01 = RandomData.GeneratePersonCollection(1).First();
+
+			this.PersonRecord02 = RandomData.GeneratePersonCollection(1).First();
 
 			this.StringToTrim = "         " + this.LongTestString + "                   ";
 
-			this.String10Characters = RandomData.GenerateWord(10);
-			this.String10Characters = RandomData.GenerateWord(15);
+			this.String10Characters01 = RandomData.GenerateWord(10);
+			this.String15Characters01 = RandomData.GenerateWord(15);
 
-			this.Coordinate = RandomData.GenerateCoordinate<CoordinateProper>();
+			this.String10Characters02 = RandomData.GenerateWord(10);
+			this.String15Characters02 = RandomData.GenerateWord(15);
+
+
+			this.CoordinateProper01 = RandomData.GenerateCoordinate<CoordinateProper>();
+
+			this.CoordinateProper02 = RandomData.GenerateCoordinate<CoordinateProper>();
+
+
+			this.Coordinate01 = RandomData.GenerateCoordinate<Coordinate>();
+
+			this.Coordinate02 = RandomData.GenerateCoordinate<Coordinate>();
+
+			this.TestGuid = Guid.NewGuid();
 		}
 	}
 }

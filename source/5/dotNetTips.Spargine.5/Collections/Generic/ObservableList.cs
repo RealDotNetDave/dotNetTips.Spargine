@@ -20,7 +20,7 @@ using System.Linq;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Utility.Standard.Collections.Generic
+namespace dotNetTips.Spargine.Collections.Generic
 {
 	/// <summary>
 	/// Class ObservableList.
@@ -486,13 +486,13 @@ namespace dotNetTips.Utility.Standard.Collections.Generic
 		/// The count property changed
 		/// </summary>
 		private static readonly PropertyChangedEventArgs _countPropertyChanged
-			= new PropertyChangedEventArgs(propertyName: "Count");
+			= new(propertyName: "Count");
 
 		/// <summary>
 		/// The count property changing
 		/// </summary>
 		private static readonly PropertyChangingEventArgs _countPropertyChanging
-			= new PropertyChangingEventArgs(propertyName: "Count");
+			= new(propertyName: "Count");
 
 		/// <summary>
 		/// The no items.

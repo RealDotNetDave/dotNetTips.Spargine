@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = this.PersonProperArrayFull.Clone<List<PersonProper>>();
 
-			var result = people.ToArray().AddFirst(this.PersonProper);
+			var result = people.ToArray().AddFirst(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
 		public void AddIfNotExists01()
 		{
-			var people = new List<PersonProper>(base.PersonProperCollection);
+			var people = new List<PersonProper>(base.PersonProperList);
 
 			var result = people.AddIfNotExists(this.PeopleToInsert);
 
@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params with dups")]
 		public void AddIfNotExists02()
 		{
-			var people = new List<PersonProper>(base.PersonProperCollection);
+			var people = new List<PersonProper>(base.PersonProperList);
 
 			var result = people.AddIfNotExists(this.PeopleToInsert);
 
@@ -58,7 +58,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.PersonProperArrayFull.Clone<PersonProper>();
 
-			var result = people.AddLast(this.PersonProper);
+			var result = people.AddLast(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -82,12 +82,13 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result.ArrayHashCode());
 		}
 
-		//[Benchmark(Description = "As")]
+		//TODO:FIGURE OUT WHY THIS DOES NOT WORK
+		//[Benchmark(Description = "As<>()")]
 		//public void As01()
 		//{
 		//	var people1 = base.PersonProperArrayFull.Clone<PersonProper>();
 
-		//	var result = people1.As<List<Person>>();
+		//	var result = people1.As<List<IPerson>>();
 
 		//	base.Consumer.Consume(result);
 		//}

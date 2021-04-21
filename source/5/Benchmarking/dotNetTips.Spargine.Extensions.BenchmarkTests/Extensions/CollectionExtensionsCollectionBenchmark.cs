@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = new List<PersonProper>();
 
-			CollectionExtensions.AddRange(people, base.PersonProperCollection.Take(base.Count / 2), Tristate.True);
+			CollectionExtensions.AddRange(people, base.PersonProperList.Take(base.Count / 2), Tristate.True);
 
 			base.Consumer.Consume(people);
 		}
@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(CollectionExtensions.HasItems) + ": Predicate")]
 		public void HasItems01()
 		{
-			var result = base.PersonProperCollection.HasItems(p => p.City.Contains("SAN"));
+			var result = base.PersonProperList.HasItems(p => p.City.Contains("SAN"));
 
 			base.Consumer.Consume(result);
 		}

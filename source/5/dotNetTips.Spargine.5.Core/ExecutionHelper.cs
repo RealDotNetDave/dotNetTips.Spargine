@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Core
 
 					return attempts;
 				}
-				catch (Exception ex)
+				catch (Exception ex) // Catching Exception since the type of Exception is unknown.
 				{
 					if (attempts == retryCount)
 					{

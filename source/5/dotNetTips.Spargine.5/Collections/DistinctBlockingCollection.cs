@@ -177,6 +177,6 @@ namespace dotNetTips.Spargine.Collections
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		private bool ItemNotInCollection(T item) { return item == null && this.Contains(item) == false; }
+		private bool ItemNotInCollection(T item) { return item is null && this.Contains(item) == false; }
 	}
 }

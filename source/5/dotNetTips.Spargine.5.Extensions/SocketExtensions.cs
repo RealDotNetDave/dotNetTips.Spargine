@@ -57,11 +57,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(socket, nameof(socket));
 
-			if (force)
-			{
-				socket.Blocking = false;
-				socket.Blocking = true;
-			}
+			socket.Blocking = force;
 		}
 
 		/// <summary>

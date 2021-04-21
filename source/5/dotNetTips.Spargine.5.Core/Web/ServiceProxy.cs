@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Core.Web
 		/// <summary>
 		/// The lock.
 		/// </summary>
-		private readonly object _lock = new object();
+		private readonly object _lock = new();
 
 		/// <summary>
 		/// The service endpoint.
@@ -91,7 +91,7 @@ namespace dotNetTips.Spargine.Core.Web
 		/// </summary>
 		protected void CloseChannel()
 		{
-			if (this.Channel != null)
+			if (this.Channel is not null)
 			{
 				this.Channel.Close();
 			}
@@ -114,7 +114,7 @@ namespace dotNetTips.Spargine.Core.Web
 				lock (this._lock)
 				{
 					// Release disposable objects used by this instance here.
-					if (this.Channel != null)
+					if (this.Channel is not null)
 					{
 						this.Channel.Dispose();
 					}
@@ -134,7 +134,7 @@ namespace dotNetTips.Spargine.Core.Web
 		{
 			lock (this._lock)
 			{
-				if (this.Channel != null)
+				if (this.Channel is not null)
 				{
 					return;
 				}

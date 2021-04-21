@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The instance.
 		/// </summary>
-		private static T _instance = new T();
+		private static T _instance = new();
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="Config{T}" /> class from being created.

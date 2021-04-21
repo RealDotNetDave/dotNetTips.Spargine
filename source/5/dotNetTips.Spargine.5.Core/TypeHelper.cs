@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-19-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The built in type names
 		/// </summary>
-		private static readonly Dictionary<Type, string> _builtInTypeNames = new Dictionary<Type, string>
+		private static readonly Dictionary<Type, string> _builtInTypeNames = new()
 		{
 			{ typeof(void), "void" },
 			{ typeof(bool), "bool" },
@@ -144,7 +144,7 @@ namespace dotNetTips.Spargine.Core
 
 				if (tempTypes?.Count() > 0)
 				{
-					if (types == null)
+					if (types is null)
 					{
 						types = tempTypes;
 					}
@@ -189,8 +189,7 @@ namespace dotNetTips.Spargine.Core
 				var file = list[i];
 				var assembly = Assembly.LoadFile(file);
 
-				var containsBaseType = assembly.ExportedTypes.ToList().TrueForAll(p => p.BaseType != null &&
-					p.BaseType.FullName == baseType.FullName);
+				var containsBaseType = assembly.ExportedTypes.ToList().TrueForAll(p => p.BaseType is not null && string.Compare(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal) == 0);
 
 				if (containsBaseType)
 				{
@@ -261,7 +260,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateNullParam(instance, nameof(instance));
 
-			var hash = instance.GetType().GetRuntimeProperties().Where(p => p != null).Select(prop => prop.GetValue(instance)).Where(value => value != null).Aggregate(-1, (accumulator, value) => accumulator ^ value.GetHashCode());
+			var hash = instance.GetType().GetRuntimeProperties().Where(p => p is not null).Select(prop => prop.GetValue(instance)).Where(value => value is not null).Aggregate(-1, (accumulator, value) => accumulator ^ value.GetHashCode());
 
 			return hash;
 		}
@@ -289,7 +288,7 @@ namespace dotNetTips.Spargine.Core
 		/// [LastName, H^hkKhwWggIrUCYbbxiFEJGJM]
 		/// [PostalCode, 86560656].
 		/// </example>
-		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "11/03/2020", UnitTestCoverage = 90, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
@@ -303,7 +302,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				var propertyInfo = properties[i];
 
-				if (propertyInfo.PropertyType.Name == "IDictionary")
+				if (string.Compare(propertyInfo.PropertyType.Name, "IDictionary", StringComparison.Ordinal) == 0)
 				{
 					var propertyValue = propertyInfo.GetValue(input) as IDictionary;
 
@@ -317,7 +316,7 @@ namespace dotNetTips.Spargine.Core
 					// Get property value
 					var propertyValue = propertyInfo.GetValue(input);
 
-					if (propertyValue != null)
+					if (propertyValue is not null)
 					{
 						returnValue.AddIfNotExists(new KeyValuePair<string, string>(propertyInfo.Name, propertyValue.ToString()));
 					}
@@ -338,7 +337,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateNullParam(item, nameof(item));
 
-			return item == null ? null : GetTypeDisplayName(item.GetType(), fullName);
+			return item is null ? null : GetTypeDisplayName(item.GetType(), fullName);
 		}
 
 		/// <summary>
@@ -430,7 +429,7 @@ namespace dotNetTips.Spargine.Core
 
 				if (baseType.IsInterface)
 				{
-					if (type.GetInterface(baseType.FullName) != null)
+					if (type.GetInterface(baseType.FullName) is not null)
 					{
 						// add it to result list
 						yield return type;

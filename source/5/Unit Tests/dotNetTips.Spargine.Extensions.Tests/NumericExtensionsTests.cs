@@ -61,6 +61,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Hexadecimal));
 
 		}
+
+
+		[TestMethod]
+		public void FormatSizeTest()
+		{
+			long testValue = 256234;
+
+			var result = testValue.FormatSize();
+
+			Assert.IsNotNull(result);
+
+			PrintResult(result, nameof(this.FormatSizeTest));
+		}
 		[TestMethod]
 		public void IntToFormattedStringTest()
 		{
@@ -99,7 +112,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 5);
 
 			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
-
 		}
 
 		[TestMethod]

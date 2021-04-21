@@ -29,7 +29,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		[Benchmark(Description = "CachedEnumerable.Create: From List")]
 		public void CollectionCreate01()
 		{
-			var result = CachedEnumerable.Create<PersonProper>(this.PersonProperCollection);
+			var result = CachedEnumerable.Create<PersonProper>(this.PersonProperList);
 
 			this.Consumer.Consume(result);
 		}

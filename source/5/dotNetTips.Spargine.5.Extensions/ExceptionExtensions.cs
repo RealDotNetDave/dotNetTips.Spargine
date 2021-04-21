@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateNullParam(source, nameof(source));
 			Validate.TryValidateNullParam(nextItem, nameof(nextItem));
 
-			return FromHierarchy(source, nextItem, s => s != null);
+			return FromHierarchy(source, nextItem, s => s is not null);
 		}
 
 		/// <summary>

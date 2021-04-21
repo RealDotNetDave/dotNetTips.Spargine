@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The instance
 		/// </summary>
-		private static T _instance = new T();
+		private static T _instance = new();
 
 		/// <summary>
 		/// Gets the instance.
@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="data">The data.</param>
 		protected static void LoadData(T data)
 		{
-			if (data != null)
+			if (data is not null)
 			{
 				_instance = data;
 			}

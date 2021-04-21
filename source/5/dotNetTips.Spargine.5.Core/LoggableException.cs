@@ -145,7 +145,7 @@ namespace dotNetTips.Spargine.Core
 				errorMessages.Add(current.GetType().FullName);
 				errorMessages.Add(ReflectException(current));
 
-				if (current.StackTrace != null)
+				if (current.StackTrace is not null)
 				{
 					errorMessages.Add(current.StackTrace);
 				}
@@ -178,7 +178,7 @@ namespace dotNetTips.Spargine.Core
 					Trace.WriteLine(securityEx);
 				}
 
-				if (( objectValue != null ) && ( objectValue.ToString() != objectValue.GetType().FullName ))
+				if (( objectValue is not null ) && ( string.Compare(objectValue.ToString(), objectValue.GetType().FullName, StringComparison.Ordinal) != 0 ))
 				{
 					sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }));
 				}

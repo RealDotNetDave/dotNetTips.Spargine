@@ -27,47 +27,47 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Custom format. Example: $2,147,483,647.00
 		/// </summary>
-		public static readonly NumericFormat Currency = new NumericFormat(0, "C");
+		public static readonly NumericFormat Currency = new(0, "C");
 
 		/// <summary>
 		/// Custom format. Example: 2147483647
 		/// </summary>
-		public static readonly NumericFormat Decimal = new NumericFormat(1, "D");
+		public static readonly NumericFormat Decimal = new(1, "D");
 
 		/// <summary>
 		/// Custom format. Example: 2.147484E+009
 		/// </summary>
-		public static readonly NumericFormat Exponential = new NumericFormat(2, "E");
+		public static readonly NumericFormat Exponential = new(2, "E");
 
 		/// <summary>
 		/// Custom format. Example: 2147483647.00
 		/// </summary>
-		public static readonly NumericFormat FixedPoint = new NumericFormat(3, "F");
+		public static readonly NumericFormat FixedPoint = new(3, "F");
 
 		/// <summary>
 		/// Custom format. Example: 2147483647
 		/// </summary>
-		public static readonly NumericFormat General = new NumericFormat(4, "G");
+		public static readonly NumericFormat General = new(4, "G");
 
 		/// <summary>
 		/// Custom format. Example: 7FFFFFFF
 		/// </summary>
-		public static readonly NumericFormat Hexadecimal = new NumericFormat(5, "X");
+		public static readonly NumericFormat Hexadecimal = new(5, "X");
 
 		/// <summary>
 		/// Custom format. Example: 2,147,483,647.00
 		/// </summary>
-		public static readonly NumericFormat Number = new NumericFormat(6, "N");
+		public static readonly NumericFormat Number = new(6, "N");
 
 		/// <summary>
 		/// Custom format. Example: 214,748,364,700.00%
 		/// </summary>
-		public static readonly NumericFormat Percent = new NumericFormat(7, "P");
+		public static readonly NumericFormat Percent = new(7, "P");
 
 		/// <summary>
 		/// Custom format. Example:  8.988465674311579E+307
 		/// </summary>
-		public static readonly NumericFormat RoundTrip = new NumericFormat(8, "R");
+		public static readonly NumericFormat RoundTrip = new(8, "R");
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="NumericFormat" /> class.

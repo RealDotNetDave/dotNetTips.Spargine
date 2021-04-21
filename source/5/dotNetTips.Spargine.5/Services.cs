@@ -18,6 +18,7 @@ using System.ServiceProcess;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Properties;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine
 {
 	/// <summary>
@@ -45,7 +46,7 @@ namespace dotNetTips.Spargine
 		{
 			var service = LoadService(serviceName);
 
-			return service != null ? true : false;
+			return service is not null;
 		}
 
 		/// <summary>
@@ -59,7 +60,7 @@ namespace dotNetTips.Spargine
 		{
 			var service = LoadService(serviceName);
 
-			return service != null ? service.Status : throw new InvalidOperationException(Resources.ServiceNotFound);
+			return service is not null ? service.Status : throw new InvalidOperationException(Resources.ServiceNotFound);
 		}
 
 		/// <summary>
@@ -79,7 +80,7 @@ namespace dotNetTips.Spargine
 
 			var service = LoadService(serviceName);
 
-			if (service != null && service.Status == ServiceControllerStatus.Stopped)
+			if (service is not null && service.Status == ServiceControllerStatus.Stopped)
 			{
 				service.Start();
 				statusResult = ServiceActionResult.Running;
@@ -143,7 +144,7 @@ namespace dotNetTips.Spargine
 
 			var service = LoadService(serviceName);
 
-			if (service != null && service.Status == ServiceControllerStatus.Running)
+			if (service is not null && service.Status == ServiceControllerStatus.Running)
 			{
 				service.Stop();
 				statusResult = ServiceActionResult.Stopped;
@@ -173,7 +174,7 @@ namespace dotNetTips.Spargine
 		/// <returns>ServiceController.</returns>
 		private static ServiceController LoadService(string serviceName)
 		{
-			return ServiceController.GetServices().FirstOrDefault(p => p.ServiceName == serviceName);
+			return ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
 		}
 	}
 }

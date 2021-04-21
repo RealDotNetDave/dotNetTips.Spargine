@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Cache
 		/// <summary>
 		/// The instance
 		/// </summary>
-		private static readonly InMemoryCache _instance = new InMemoryCache();
+		private static readonly InMemoryCache _instance = new();
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="InMemoryCache" /> class from being created.

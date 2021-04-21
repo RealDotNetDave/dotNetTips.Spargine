@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-02-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,7 @@ using dotNetTips.Spargine.Properties;
 
 namespace dotNetTips.Spargine.IO
 {
+
 	/// <summary>
 	/// Helper methods for files.
 	/// </summary>
@@ -106,8 +107,8 @@ namespace dotNetTips.Spargine.IO
 
 				using var destinationStream = File.Create(newFileName);
 
-				await sourceStream.CopyToAsync(destinationStream).ConfigureAwait(true);
-				await destinationStream.FlushAsync().ConfigureAwait(true);
+				await sourceStream.CopyToAsync(destinationStream).ConfigureAwait(false);
+				await destinationStream.FlushAsync().ConfigureAwait(false);
 			}
 
 			return file.Length;
@@ -128,7 +129,7 @@ namespace dotNetTips.Spargine.IO
 
 			var errors = new List<(string FileName, string ErrorMessage)>();
 
-			var result = Parallel.ForEach(source: files, body: (fileName) =>
+			_ = Parallel.ForEach(source: files, body: (fileName) =>
 			{
 				try
 				{
@@ -190,11 +191,11 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(remoteFileUrl, nameof(localExpandedDirPath));
 
 			var tempFileNameBase = Guid.NewGuid().ToString();
-			var tempDownloadPath = Path.Combine(Path.GetTempPath(), tempFileNameBase + Path.GetExtension(remoteFileUrl.ToString()));
+			var tempDownloadPath = Path.Combine(Path.GetTempPath(), $"{tempFileNameBase}{Path.GetExtension(remoteFileUrl.ToString())}");
 
 			DownloadFileFromWeb(remoteFileUrl, tempDownloadPath);
 
-			await UnZipAsync(tempDownloadPath, localExpandedDirPath, true).ConfigureAwait(true);
+			await UnZipAsync(tempDownloadPath, localExpandedDirPath, true).ConfigureAwait(false);
 		}
 
 		/// <summary>
@@ -213,9 +214,9 @@ namespace dotNetTips.Spargine.IO
 
 			using var client = new HttpClient();
 			using var localStream = File.Create(localFilePath);
-			using (var stream = await client.GetStreamAsync(remoteFileUrl).ConfigureAwait(true))
+			using (var stream = await client.GetStreamAsync(remoteFileUrl).ConfigureAwait(false))
 			{
-				await stream.CopyToAsync(localStream).ConfigureAwait(true);
+				await stream.CopyToAsync(localStream).ConfigureAwait(false);
 			}
 
 			await localStream.FlushAsync().ConfigureAwait(false);
@@ -239,18 +240,60 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static void MoveFile(string sourceFileName, string destinationFileName)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
 			Validate.TryValidateParam(destinationFileName, nameof(destinationFileName));
 			Validate.TryValidateParam<ArgumentInvalidException>(File.Exists(sourceFileName), nameof(sourceFileName), $"File {sourceFileName} does not exist.");
 
+			// Create destination directory if missing
+			var dir = Path.GetDirectoryName(destinationFileName);
+
+			if (Directory.Exists(dir) == false)
+			{
+				Directory.CreateDirectory(dir);
+			}
+
 			for (var retryCount = 0; retryCount < Retries; retryCount++)
 			{
 				try
 				{
 					File.Move(sourceFileName, destinationFileName);
+					return;
+				}
+				catch (IOException) when (retryCount < Retries - 1)
+				{
+				}
+				catch (UnauthorizedAccessException) when (retryCount < Retries - 1)
+				{
+				}
+
+				// If something has a transient lock on the file waiting may resolve the issue
+				Thread.Sleep(( retryCount + 1 ) * 10);
+			}
+		}
+
+		/// <summary>
+		/// Moves the file with options.
+		/// </summary>
+		/// <param name="sourceFileName">Name of the source file.</param>
+		/// <param name="destinationFileName">Name of the destination file.</param>
+		/// <param name="fileMoveOptions">The file move options.</param>
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.New)]
+		public static void MoveFile(string sourceFileName, string destinationFileName, FileMoveOptions fileMoveOptions)
+		{
+			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
+			Validate.TryValidateParam(destinationFileName, nameof(destinationFileName));
+			Validate.TryValidateParam(fileMoveOptions, nameof(fileMoveOptions));
+			Validate.TryValidateParam<ArgumentInvalidException>(File.Exists(sourceFileName), nameof(sourceFileName), $"File {sourceFileName} does not exist.");
+
+
+			for (var retryCount = 0; retryCount < Retries; retryCount++)
+			{
+				try
+				{
+					NativeMethods.MoveFileEx(sourceFileName, destinationFileName, (int)fileMoveOptions);
 					return;
 				}
 				catch (IOException) when (retryCount < Retries - 1)
@@ -281,7 +324,7 @@ namespace dotNetTips.Spargine.IO
 			using var expandedStream = new GZipStream(gzipStream, CompressionMode.Decompress);
 			using var targetFileStream = File.OpenWrite(expandedFilePath);
 
-			await expandedStream.CopyToAsync(targetFileStream).ConfigureAwait(true);
+			await expandedStream.CopyToAsync(targetFileStream).ConfigureAwait(false);
 		}
 
 		/// <summary>
@@ -298,7 +341,7 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(expandedFilePath, nameof(expandedFilePath));
 			Validate.TryValidateParam<ArgumentInvalidException>(File.Exists(gzipPath), nameof(gzipPath), "GZip file not found.");
 
-			await UnGZipAsync(gzipPath, expandedFilePath).ConfigureAwait(true);
+			await UnGZipAsync(gzipPath, expandedFilePath).ConfigureAwait(false);
 
 			if (deleteGZipFile)
 			{
@@ -319,7 +362,7 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(expandToDirectory, nameof(expandToDirectory));
 			Validate.TryValidateParam<ArgumentInvalidException>(File.Exists(zipPath), nameof(zipPath), Resources.ZipFileNotFound);
 
-			await UnWinZipAsync(zipPath, expandToDirectory).ConfigureAwait(true);
+			await UnWinZipAsync(zipPath, expandToDirectory).ConfigureAwait(false);
 		}
 
 		/// <summary>
@@ -335,7 +378,7 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(zipPath, nameof(zipPath));
 			Validate.TryValidateParam(expandToDirectory, nameof(expandToDirectory));
 
-			await UnZipAsync(zipPath, expandToDirectory).ConfigureAwait(true);
+			await UnZipAsync(zipPath, expandToDirectory).ConfigureAwait(false);
 
 			if (deleteZipFile)
 			{
@@ -371,7 +414,7 @@ namespace dotNetTips.Spargine.IO
 				using var zipStream = zipArchiveEntry.Open();
 				using var extractedFileStream = File.OpenWrite(extractedFilePath);
 
-				await zipStream.CopyToAsync(extractedFileStream).ConfigureAwait(true);
+				await zipStream.CopyToAsync(extractedFileStream).ConfigureAwait(false);
 			}
 		}
 

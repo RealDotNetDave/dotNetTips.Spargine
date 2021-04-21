@@ -73,7 +73,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		[Information(nameof(Serialize), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string Serialize(object obj)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(obj != null, nameof(obj));
+			Validate.TryValidateParam<ArgumentNullException>(obj is not null, nameof(obj));
 
 			using var writer = new StringWriter();
 			using var xmlWriter = XmlWriter.Create(writer);
@@ -92,7 +92,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		[Information(nameof(SerializeToFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static void SerializeToFile(object obj, string fileName)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(obj != null, nameof(obj));
+			Validate.TryValidateParam<ArgumentNullException>(obj is not null, nameof(obj));
 			Validate.TryValidateParam(fileName, nameof(fileName));
 
 			if (File.Exists(fileName))

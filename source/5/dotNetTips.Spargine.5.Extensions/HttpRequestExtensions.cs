@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateNullParam(request, nameof(request));
 
 			using var ms = new MemoryStream(2048);
-			await request.Body.CopyToAsync(ms).ConfigureAwait(true);
+			await request.Body.CopyToAsync(ms).ConfigureAwait(false);
 
 			return ms.ToArray();
 		}
@@ -63,7 +63,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			using var reader = new StreamReader(request.Body, encoding);
 
-			return await reader.ReadToEndAsync().ConfigureAwait(true);
+			return await reader.ReadToEndAsync().ConfigureAwait(false);
 		}
 
 		/// <summary>

@@ -22,13 +22,14 @@ using dotNetTips.Spargine.IO;
 using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
     [ExcludeFromCodeCoverage]
     [TestClass]
     public class FileProcessorTests
     {
-        private readonly DirectoryInfo _tempFolder = new DirectoryInfo(Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.TMP.ToString()), "_dotNetTipsUnitTest"));
+        private readonly DirectoryInfo _tempFolder = new(Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.TMP.ToString()), "_dotNetTipsUnitTest"));
 
         [TestMethod]
         public void CopyFilesWithEventTest()

@@ -296,9 +296,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void RemoveCRLFTest()
 		{
-			var testValue1 = RandomData.GenerateWord(10) + ControlChars.NewLine + RandomData.GenerateWord(15) + ControlChars.CRLF + RandomData.GenerateWord(15);
+			var testValue1 = $"{RandomData.GenerateWord(10)}{ControlChars.NewLine}{RandomData.GenerateWord(15)}{ControlChars.CRLF}{RandomData.GenerateWord(15)}";
 
-			var testValue2 = RandomData.GenerateWord(15) + RandomData.GenerateWord(25);
+			var testValue2 = $"{RandomData.GenerateWord(15)}{RandomData.GenerateWord(25)}";
 
 			var result1 = testValue1.RemoveCRLF(replacement: ".");
 			var result2 = testValue2.RemoveCRLF();
@@ -317,7 +317,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ReplaceEllipsisWithPeriodTest()
 		{
-			var testValue = RandomData.GenerateWord(25) + "...";
+			var testValue = $"{RandomData.GenerateWord(25)}...";
 
 			var result = testValue.ReplaceEllipsisWithPeriod();
 
@@ -329,7 +329,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void SplitRemoveEmptyTest()
 		{
-			var testValue = RandomData.GenerateWord(25) + ',' + RandomData.GenerateWord(25);
+			var testValue = $"{RandomData.GenerateWord(25)},{RandomData.GenerateWord(25)}";
 
 			Assert.IsTrue(testValue.SplitRemoveEmpty().Count() > 1);
 
@@ -341,7 +341,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void SplitTest()
 		{
-			var testValue = RandomData.GenerateWord(25) + ',' + RandomData.GenerateWord(25);
+			var testValue = $"{RandomData.GenerateWord(25)},{RandomData.GenerateWord(25)}";
 
 			Assert.IsTrue(testValue.Split(',', options: StringSplitOptions.RemoveEmptyEntries).Count() == 2);
 
@@ -471,7 +471,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void TrimTest()
 		{
-			var testValue = RandomData.GenerateWord(25) + "   ";
+			var testValue = $"{RandomData.GenerateWord(25)}   ";
 
 			Assert.IsTrue(testValue.ToTrimmed().Length == 25);
 

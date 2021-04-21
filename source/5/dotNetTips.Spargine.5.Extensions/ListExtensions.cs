@@ -33,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new Random((int)DateTime.Now.Ticks);
+		private static readonly Random _globalRandom = new((int)DateTime.Now.Ticks);
 
 		/// <summary>
 		/// The random
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			get
 			{
-				if (_random == null)
+				if (_random is null)
 				{
 					int seed;
 
@@ -103,7 +103,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
-			if (item == null)
+			if (item is null)
 			{
 				return false;
 			}
@@ -258,7 +258,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(list, nameof(list));
 
 			var comparer = EqualityComparer<T>.Default;
-			var hash = list.Where(t => t != null)
+			var hash = list.Where(t => t is not null)
 				.Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
 
 			return hash;
@@ -277,7 +277,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var comparer = EqualityComparer<T>.Default;
 
-			var hash = list.Where(t => t != null)
+			var hash = list.Where(t => t is not null)
 				.Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
 
 			return hash;

@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,6 +20,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class AssemblyExtensionsTests
 	{
@@ -44,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var assembly = Assembly.GetExecutingAssembly();
 
-			var result = assembly.GetInterfaces().ToList();
+			var result = assembly.GetAllInterfaces().ToList();
 
 			Assert.IsTrue(result.Count >= 0);
 		}

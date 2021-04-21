@@ -1,7 +1,7 @@
-# dotNetTips.Utility.Standard.Tester
+﻿# dotNetTips.Spargine.Tester
 
 ![dotNetTips.com](https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png)
-This repository is for the dotNetTips.Utility.Standard.Tester code for .NET Standard.
+This repository is for the dotNetTips.Spargine.Tester code for .NET 5+.
 
 Much of this code is documented on <a href="https://dotnettips.wordpress.com/tag/dotnettips-utility/" target="_blank">dotNetTips.com</a>.
 
@@ -35,7 +35,7 @@ Using random data is very important if you are testing processing in your assemb
 ## Usage Examples
 To install the NuGet package, run the following from the Package Manager Console in Visual Studio:
 
-`Install-Package dotNetTips.Utility.Standard.Tester`
+`Install-Package dotNetTips.Spargine.Tester`
 
 ## Your Support Is Needed
 Do you have code you would like to submit to these repositories? Submit a pull request or submit an issue. I promise to take a look and include it if I like it!

@@ -3,12 +3,14 @@
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
 		<TargetFramework>net5.0</TargetFramework>
-		<AssemblyVersion>2021.3.1.106</AssemblyVersion>
-		<FileVersion>2021.3.1.106</FileVersion>
+		<AssemblyVersion>2021.4.20.148</AssemblyVersion>
+		<FileVersion>2021.4.20.148</FileVersion>
+		    <NullableContextOptions>enable</NullableContextOptions>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ServerGarbageCollection>true</ServerGarbageCollection>
 		<DebugType>pdbonly</DebugType>
 		<DebugSymbols>true</DebugSymbols>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -22,9 +24,9 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.3.1.20" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.3.1.20" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.3.1.20" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.5.1.46" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.5.1.46" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.5.1.46" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,6 +20,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spartine.Core.Tests.Web
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class WebHelperTests
 	{

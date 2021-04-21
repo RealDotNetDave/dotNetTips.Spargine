@@ -219,7 +219,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		private static bool CreateCollectionIfNull<T>(ref ICollection<T> collection)
 		{
-			if (collection == null)
+			if (collection is null)
 			{
 				//TODO: WRITE TEST FOR THIS
 				collection = TypeHelper.Create<Collection<T>>();

@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		{
 			base.Setup();
 
-			this.PeopleToInsert = new List<PersonProper>(base.PersonProperCollection).Shuffle(10).ToArray();
+			this.PeopleToInsert = new List<PersonProper>(base.PersonProperList).Shuffle(10).ToArray();
 
 			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Collection Count={this.Count}.");
 		}

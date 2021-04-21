@@ -4,7 +4,7 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 04-18-2021
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,7 +51,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The cache
 		/// </summary>
-		private readonly List<T> _cache = new List<T>();
+		private readonly List<T> _cache = new();
 
 		/// <summary>
 		/// The enumerable
@@ -129,7 +129,7 @@ namespace dotNetTips.Spargine.Core
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void CheckEnumerable()
 		{
-			Validate.TryValidateParam<ArgumentNullException>(this._enumerable != null, paramName: "enumerable");
+			Validate.TryValidateParam<ArgumentNullException>(this._enumerable is not null, paramName: "enumerable");
 		}
 
 		/// <summary>
@@ -142,15 +142,13 @@ namespace dotNetTips.Spargine.Core
 			{
 				if (disposing)
 				{
-					if (this._enumerator != null)
+					if (this._enumerator is not null)
 					{
 						this._enumerator.Dispose();
 						this._enumerator = null;
 					}
 				}
 
-				// TODO: free unmanaged resources (unmanaged objects) and override finalizer
-				// TODO: set large fields to null
 				this.disposedValue = true;
 			}
 		}
@@ -174,7 +172,7 @@ namespace dotNetTips.Spargine.Core
 
 			lock (this._cache)
 			{
-				if (this._enumerator == null && !this._enumerated)
+				if (this._enumerator is null && !this._enumerated)
 				{
 					this._enumerator = this._enumerable.GetEnumerator();
 				}

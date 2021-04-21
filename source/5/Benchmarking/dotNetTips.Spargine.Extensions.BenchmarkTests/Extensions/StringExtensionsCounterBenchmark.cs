@@ -30,6 +30,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 		private readonly char _testCharacter = RandomData.GenerateCharacter();
 
+		private string _crlfString;
+
 		[Benchmark(Description = nameof(StringExtensions.ComputeSHA256Hash))]
 		public void ComputeMD5Hash()
 		{
@@ -81,7 +83,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.EqualsIgnoreCase))]
 		public void EqualsIgnoreCase()
 		{
-			var result = this.String10Characters.EqualsIgnoreCase(this.String15Characters);
+			var result = this.String10Characters01.EqualsIgnoreCase(this.String15Characters01);
 
 			base.Consumer.Consume(result);
 		}
@@ -89,7 +91,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.EqualsOrBothNullOrEmpty))]
 		public void EqualsOrBothNullOrEmpty()
 		{
-			var result = this.String10Characters.EqualsOrBothNullOrEmpty(this.String15Characters);
+			var result = this.String10Characters01.EqualsOrBothNullOrEmpty(this.String15Characters01);
 
 			base.Consumer.Consume(result);
 		}
@@ -134,6 +136,24 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(StringExtensions.IsGuid))]
+		public void IsGuid01()
+		{
+			var guid = Guid.NewGuid().ToString();
+			var result = guid.IsGuid();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.IsMacAddress))]
+		public void IsMacAddress()
+		{
+			var macAddress = "00:1A:C2:7B:00:47";
+			var result = macAddress.IsGuid();
+
+			base.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(StringExtensions.IsWhitespace) + ":Char")]
 		public void IsWhitespaceChar()
 		{
@@ -150,8 +170,18 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(StringExtensions.RemoveCRLF))]
+		public void RemoveCRLF01()
+		{
+			var result = this._crlfString.RemoveCRLF();
+
+			base.Consumer.Consume(result);
+		}
+
 		public override void Setup()
 		{
+			this._crlfString = RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF;
+
 			base.Setup();
 		}
 
@@ -231,7 +261,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.StartsWithOrdinal))]
 		public void StartsWithOrdinal()
 		{
-			var result = this.String10Characters.StartsWithOrdinal(this.String15Characters);
+			var result = this.String10Characters01.StartsWithOrdinal(this.String15Characters01);
 
 			base.Consumer.Consume(result);
 		}
@@ -239,7 +269,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.StartsWithOrdinalIgnoreCase))]
 		public void StartsWithOrdinalIgnoreCase()
 		{
-			var result = this.String10Characters.StartsWithOrdinalIgnoreCase(this.String15Characters);
+			var result = this.String10Characters01.StartsWithOrdinalIgnoreCase(this.String15Characters01);
 
 			base.Consumer.Consume(result);
 		}

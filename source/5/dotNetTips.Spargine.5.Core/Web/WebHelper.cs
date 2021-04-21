@@ -81,15 +81,15 @@ namespace dotNetTips.Spargine.Core.Web
 		// public static async Task<TResult> PostAsync<TResult>(Uri address, HttpContent content)
 		// {
 		//    Encapsulation.TryValidateParam(address, nameof(address));
-		//    Encapsulation.TryValidateParam<ArgumentNullException>(content!= null, nameof(content));
+		//    Encapsulation.TryValidateParam<ArgumentNullException>(contentis not null, nameof(content));
 
 		// using (var client = new HttpClient())
 		//    {
-		//        var result = await client.PostAsync(address, content).ConfigureAwait(true);
+		//        var result = await client.PostAsync(address, content).ConfigureAwait(false);
 
 		// if (result.IsSuccessStatusCode)
 		//        {
-		//            var resultResponse = await result.Content.ReadAsStringAsync().ConfigureAwait(true);
+		//            var resultResponse = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
 
 		// return JsonSerializer.Deserialize<TResult>(resultResponse);
 		//        }

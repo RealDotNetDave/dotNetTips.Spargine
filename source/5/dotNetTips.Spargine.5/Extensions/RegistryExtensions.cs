@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="RegistryExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="name">The name.</param>
 		/// <returns>RegistryKey.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		[Information(nameof(GetSubKey), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(GetSubKey), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.New)]
 		public static RegistryKey GetSubKey(this RegistryKey key, string name)
 		{
 			Validate.TryValidateNullParam(key, nameof(key));
@@ -56,11 +56,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="name">The name.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		[Information(nameof(GetValue), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(GetValue), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.New)]
 		public static T GetValue<T>(this RegistryKey key, string name)
 		{
 			Validate.TryValidateNullParam(key, nameof(key));
-			Validate.TryValidateParam(name, nameof(name));
 
 			var returnValue = default(T);
 
@@ -68,7 +67,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				var keyValue = key.GetValue(name);
 
-				if (keyValue != null)
+				if (keyValue is not null)
 				{
 					returnValue = (T)keyValue;
 				}

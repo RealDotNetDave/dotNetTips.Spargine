@@ -116,7 +116,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateParam(displayName, nameof(displayName));
 
-			var matchingItem = Parse<T, string>(displayName, description: "display name", predicate: item => item.DisplayName == displayName);
+			var matchingItem = Parse<T, string>(displayName, description: "display name", predicate: item => string.Compare(item.DisplayName, displayName, StringComparison.Ordinal) == 0);
 			return matchingItem;
 		}
 
@@ -169,7 +169,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			var matchingItem = GetAll<T>().FirstOrDefault(predicate);
 
-			if (matchingItem == null)
+			if (matchingItem is null)
 			{
 				var message = $"'{value}' is not a valid {description} in {typeof(T)}.";
 

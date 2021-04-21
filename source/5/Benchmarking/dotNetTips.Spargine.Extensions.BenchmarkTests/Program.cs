@@ -16,6 +16,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
+using dotNetTips.Spargine.Extensions.BenchmarkTests;
 
 namespace dotNetTips.Spargine.BenchmarkTests
 {
@@ -38,14 +39,14 @@ namespace dotNetTips.Spargine.BenchmarkTests
 
 				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<ArrayExtensionsPerfTestRunner>(config);
+				// BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<DictionaryExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<ExceptionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<ListExtensionsPerfTestRunner>(config);
-				//BenchmarkRunner.Run<ObjectExtensionsPerfTestRunner>(config);
+				//BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<StringBuilderExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<StringExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);

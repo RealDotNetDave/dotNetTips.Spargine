@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -259,7 +259,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input)
 		{
-			return input != null && ( input.Trim().Length > 0 );
+			return input is not null && ( input.Trim().Length > 0 );
 		}
 
 		/// <summary>
@@ -274,7 +274,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
 
-			return input != null && ( input.Trim().Length == length );
+			return input is not null && ( input.Trim().Length == length );
 		}
 
 		/// <summary>
@@ -289,7 +289,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(input, nameof(input));
 
-			return input != null && ( input.Trim() == value.Trim() );
+			return input is not null && ( string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0 );
 		}
 
 		/// <summary>
@@ -325,7 +325,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
 			Validate.TryValidateParam(maxLength, minimumValue: minLength, maximumValue: int.MaxValue, nameof(maxLength));
 
-			return input != null && input.Length.IsInRange(minLength, maxLength);
+			return input is not null && input.Length.IsInRange(minLength, maxLength);
 		}
 
 		/// <summary>
@@ -390,7 +390,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsCreditCard(this string input)
 		{
-			return input.HasValue(Resources.RegexCreditCard, RegexOptions.None);
+			return input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -402,7 +402,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsDomainAddress(this string input)
 		{
-			return input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase);
+			return input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -413,7 +413,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsEmailAddress(this string input)
 		{
-			return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase);
+			return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -436,7 +436,27 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsFirstLastName(this string input)
 		{
-			return input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase);
+			return input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Compiled);
+		}
+
+		/// <summary>
+		/// Determines whether the specified value is unique identifier.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
+		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		public static bool IsGuid(this string value)
+		{
+			var returnValue = false;
+
+			if (value is not null)
+			{
+				var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
+
+				returnValue = reg.IsMatch(value);
+			}
+
+			return returnValue;
 		}
 
 		/// <summary>
@@ -447,7 +467,27 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsISBN(this string input)
 		{
-			return input.HasValue(Resources.RegexISBN, RegexOptions.None);
+			return input.HasValue(Resources.RegexISBN, RegexOptions.Compiled);
+		}
+
+		/// <summary>
+		/// Determines whether [is mac address] [the specified value].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
+		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		public static bool IsMacAddress(this string value)
+		{
+			var returnValue = false;
+
+			if (value is not null)
+			{
+				var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
+
+				returnValue = reg.IsMatch(value);
+			}
+
+			return returnValue;
 		}
 
 		/// <summary>
@@ -470,7 +510,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsScientific(this string input)
 		{
-			return input.HasValue(Resources.RegexScientific, RegexOptions.None);
+			return input.HasValue(Resources.RegexScientific, RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -481,7 +521,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsString(this string input)
 		{
-			return input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase);
+			return input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -492,7 +532,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsUrl(this string input)
 		{
-			return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase);
+			return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
 		/// <summary>
@@ -537,7 +577,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="replacement">The replacement.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static string RemoveCRLF(this string input, string replacement = "")
 		{
 			if (input.IsNullOrEmpty())

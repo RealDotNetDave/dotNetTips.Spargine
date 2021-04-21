@@ -43,6 +43,14 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Clone: PersonRecord*")]
+		public void Clone03()
+		{
+			var result = this._personRecord with { };
+
+			base.Consumer.Consume(result);
+		}
+
 		//[Benchmark(Description = nameof(ObjectExtensions.ComputeMD5Hash))]
 		//public void ComputeMD5Hash()
 		//{

@@ -152,7 +152,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._address1 == value)
+				if (string.Compare(this._address1, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -178,7 +178,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._address2 == value)
+				if (string.Compare(this._address2, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -230,7 +230,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._cellPhone == value)
+				if (string.Compare(this._cellPhone, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -256,7 +256,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._city == value)
+				if (string.Compare(this._city, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -282,7 +282,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._country == value)
+				if (string.Compare(this._country, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -308,7 +308,7 @@ namespace dotNetTips.Spargine.Tester.Models
 
 			set
 			{
-				if (this._email == value)
+				if (string.Compare(this._email, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -333,7 +333,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._firstName == value)
+				if (string.Compare(this._firstName, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -358,7 +358,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._homePhone == value)
+				if (string.Compare(this._homePhone, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -383,7 +383,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._id == value)
+				if (string.Compare(this._id, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -408,7 +408,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._lastName == value)
+				if (string.Compare(this._lastName, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -433,7 +433,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._postalCode == value)
+				if (string.Compare(this._postalCode, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -458,7 +458,7 @@ namespace dotNetTips.Spargine.Tester.Models
 			}
 			set
 			{
-				if (this._state == value)
+				if (string.Compare(this._state, value, StringComparison.Ordinal) == 0)
 				{
 					return;
 				}
@@ -530,7 +530,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <returns>System.Int32.</returns>
 		public int CompareTo(PersonPlus other)
 		{
-			if (other == null)
+			if (other is null)
 			{
 				return 1;
 			}
@@ -641,7 +641,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="NotImplementedException"></exception>
 		public bool Equals(PersonPlus other)
 		{
-			if (other == null)
+			if (other is null)
 			{
 				return false;
 			}

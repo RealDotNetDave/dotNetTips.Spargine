@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 03-30-2021
 // ***********************************************************************
 // <copyright file="ValidationTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,6 +20,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -46,6 +47,38 @@ namespace dotNetTips.Spartine.Core.Tests
 			{
 				personProper = RandomData.GeneratePerson<PersonProper>();
 				Validate.TryValidateNullParam(personProper, nameof(personProper));
+			}
+			catch
+			{
+				Assert.Fail();
+			}
+		}
+
+		[TestMethod]
+		public void TryValidateNullTest()
+		{
+			PersonProper personProper = null;
+
+			Assert.ThrowsException<InvalidValueException<object>>(() => Validate.TryValidateNull(value: personProper, throwException: true));
+
+			try
+			{
+				personProper = RandomData.GeneratePerson<PersonProper>();
+				Validate.TryValidateNull(personProper, throwException: true);
+			}
+			catch
+			{
+				Assert.Fail();
+			}
+		}
+
+		[TestMethod]
+		public void TryValidateObjectTest()
+		{
+			try
+			{
+				var personProper = RandomData.GeneratePerson<PersonProper>();
+				Validate.TryValidateObject<NullReferenceException>(condition: personProper.Id.IsNotEmpty(), "Person is missing Id");
 			}
 			catch
 			{
@@ -191,7 +224,6 @@ namespace dotNetTips.Spartine.Core.Tests
 		public void TryValidateParamFileInfoTest()
 		{
 			var fileName = @"c:\temp\tempfileinfotest.dat";
-			var file = RandomData.GenerateFile(fileName, 100);
 			var fileInfo = new FileInfo(fileName);
 
 			try

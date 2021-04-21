@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -60,12 +60,12 @@ namespace dotNetTips.Spargine.Tester
 		/// <summary>
 		/// The synchronize lock
 		/// </summary>
-		private static readonly object _lock = new object();
+		private static readonly object _lock = new();
 
 		/// <summary>
 		/// The object used for retrieving a random number.
 		/// </summary>
-		private static readonly Random _random = new Random(Seed: (int)DateTime.Now.Ticks);
+		private static readonly Random _random = new(Seed: (int)DateTime.Now.Ticks);
 
 		/// <summary>
 		/// Gets the long test string.
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < count; i++)
 			{
-				AddressRecord address = new(RandomData.GenerateKey())
+				AddressRecord address = new(GenerateKey())
 				{
 					Address1 = GenerateWord(addressLength),
 					Address2 = GenerateWord(addressLength),
@@ -474,7 +474,7 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < count; i++)
 			{
-				PersonRecord person = new(RandomData.GenerateEmailAddress(), RandomData.GenerateKey())
+				PersonRecord person = new(RandomData.GenerateEmailAddress(), GenerateKey())
 				{
 					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
 					FirstName = RandomData.GenerateWord(firstNameLength),

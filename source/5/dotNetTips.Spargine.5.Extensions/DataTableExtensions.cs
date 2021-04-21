@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasRows), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool HasRows(this DataTable table)
 		{
-			return ( table != null ) && ( table.Rows != null ) && ( table.Rows.Count > 0 );
+			return ( table is not null ) && ( table.Rows is not null ) && ( table.Rows.Count > 0 );
 		}
 
 		/// <summary>

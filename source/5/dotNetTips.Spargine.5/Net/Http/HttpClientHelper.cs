@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-06-2021
+// Last Modified On : 04-16-2021
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <summary>
 		/// The http client
 		/// </summary>
-		private static readonly HttpClient _client = new HttpClient()
+		private static readonly HttpClient _client = new()
 		{
 			Timeout = TimeSpan.FromSeconds(value: 20),
 		};

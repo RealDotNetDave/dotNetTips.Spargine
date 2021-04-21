@@ -135,11 +135,4 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(collection.ToList().HasItems(10));
 		}
 	}
-
-	public class PersonProperComparer : IEqualityComparer<PersonProper>
-	{
-		public bool Equals([AllowNull] PersonProper x, [AllowNull] PersonProper y) { return x.Id == y.Id; }
-
-		public int GetHashCode([DisallowNull] PersonProper obj) { return obj.Id.GetHashCode(); }
-	}
 }

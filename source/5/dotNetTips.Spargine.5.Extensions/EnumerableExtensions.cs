@@ -5,7 +5,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-21-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 // ***********************************************************************
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Globalization;
@@ -21,6 +22,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.Collections;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
@@ -110,7 +112,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateParam<ArgumentNullException>(predicate.IsNotNull(), nameof(predicate));
 
-			return list.FirstOrDefault(predicate) != null;
+			return list.FirstOrDefault(predicate) is not null;
 		}
 
 		/// <summary>
@@ -262,7 +264,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsNullOrEmpty(this IEnumerable list)
 		{
-			return list == null || list.GetEnumerator().MoveNext() == false;
+			return list is null || list.GetEnumerator().MoveNext() == false;
 		}
 
 		/// <summary>
@@ -355,6 +357,49 @@ namespace dotNetTips.Spargine.Extensions
 			}
 
 			return !secondEnumerator.MoveNext();
+		}
+
+		/// <summary>
+		/// Converts to blockingcollection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>BlockingCollection&lt;T&gt;.</returns>
+		/// <remarks>The resulting colleciton supports IDisposable. Make sure to properly dispose!</remarks>
+		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL MAR")]
+		public static BlockingCollection<T> ToBlockingCollection<T>(this IEnumerable<T> list)
+		{
+			Validate.TryValidateParam(list, nameof(list));
+
+			var collection = new BlockingCollection<T>(list.Count());
+
+			var taskResult = Task.Factory.StartNew(() =>
+			  {
+				  foreach (var item in list)
+				  {
+					  collection.TryAdd(item);
+				  }
+
+				  collection.CompleteAdding();
+			  });
+
+			taskResult.Wait();
+
+			return collection;
+		}
+
+		/// <summary>
+		/// Converts to Collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>Collection&lt;T&gt;.</returns>
+		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.New)]
+		public static Collection<T> ToCollection<T>(this IEnumerable<T> list)
+		{
+			Validate.TryValidateParam(list, nameof(list));
+
+			return Collection<T>.Create(list);
 		}
 
 		/// <summary>

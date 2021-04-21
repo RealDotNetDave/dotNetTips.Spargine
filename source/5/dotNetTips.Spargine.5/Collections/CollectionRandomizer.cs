@@ -18,7 +18,7 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Utility.Standard.Collections
+namespace dotNetTips.Spargine.Collections
 {
 	/// <summary>
 	/// Class CollectionRandomizer.
@@ -36,7 +36,7 @@ namespace dotNetTips.Utility.Standard.Collections
 		/// <summary>
 		/// The thread lock
 		/// </summary>
-		private readonly object _threadLock = new object();
+		private readonly object _threadLock = new();
 
 		/// <summary>
 		/// The collection

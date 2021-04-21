@@ -18,6 +18,7 @@ using System.Linq;
 using dotNetTips.Spargine.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
     [ExcludeFromCodeCoverage]
@@ -30,7 +31,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var basePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-            string[] paths = new string[] { basePath, "Test1", "Test2", "Test3" };
+            var paths = new string[] { basePath, "Test1", "Test2", "Test3" };
 
             var tempPath = PathHelper.CombinePaths(createIfNotExists: true, paths);
 
@@ -92,7 +93,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var result = PathHelper.InvalidFilterChars;
 
-            Assert.IsTrue(result.Count() > 0);
+            Assert.IsTrue(result.Length > 0);
         }
 
         [TestMethod]
@@ -100,7 +101,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var result = PathHelper.InvalidPathNameChars;
 
-            Assert.IsTrue(result.Count() > 0);
+            Assert.IsTrue(result.Length > 0);
         }
 
         [TestMethod()]
@@ -135,7 +136,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var result = PathHelper.PathSeparators;
 
-            Assert.IsTrue(result.Count() > 0);
+            Assert.IsTrue(result.Length > 0);
         }
     }
 }

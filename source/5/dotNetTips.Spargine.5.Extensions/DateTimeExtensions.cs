@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-14-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -24,6 +24,31 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class DateTimeExtensions
 	{
+		/// <summary>
+		/// Froms the milli epoch time.
+		/// </summary>
+		/// <param name="epochTime">The milli.</param>
+		/// <returns>DateTime.</returns>
+		[Information(nameof(FromMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static DateTime FromMilliEpochTime(this long epochTime)
+		{
+			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+			return epoch.AddMilliseconds(epochTime);
+		}
+
+		/// <summary>
+		/// Froms the unix time.
+		/// </summary>
+		/// <param name="unixTime">The unix time.</param>
+		/// <returns>DateTime.</returns>
+		[Information(nameof(FromUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static DateTime FromUnixTime(this int unixTime)
+		{
+			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+			return epoch.AddSeconds(unixTime);
+		}
 		/// <summary>
 		/// Gets the last day of the week.
 		/// </summary>
@@ -377,6 +402,33 @@ namespace dotNetTips.Spargine.Extensions
 			formattedDate += $" @ { input.ToString(CultureInfo.CurrentCulture.DateTimeFormat.LongTimePattern, CultureInfo.CurrentCulture).ToLower(CultureInfo.CurrentCulture) }";
 
 			return formattedDate;
+		}
+
+		/// <summary>
+		/// Converts to milliepochtime.
+		/// </summary>
+		/// <param name="date">The date.</param>
+		/// <returns>System.Int64.</returns>
+		/// <remarks>In computing, an epoch is a date and time from which a computer measures system time.
+		/// For instance, Unix and POSIX measure time as the number of seconds that have passed
+		/// since 1 January 1970 00:00:00 UT, a point in time known as the Unix epoch.</remarks>
+		[Information(nameof(ToMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static long ToMilliEpochTime(this DateTime date)
+		{
+			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+			return Convert.ToInt64(( date - epoch ).TotalMilliseconds);
+		}
+
+		/// <summary>
+		/// Converts to unixtime.
+		/// </summary>
+		/// <param name="date">The date.</param>
+		/// <returns>System.Int32.</returns>
+		[Information(nameof(ToUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static int ToUnixTime(this DateTime date)
+		{
+			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+			return Convert.ToInt32(( date - epoch ).TotalSeconds);
 		}
 	}
 }

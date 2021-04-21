@@ -90,7 +90,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
 			var person1 = RandomData.GeneratePerson<PersonProper>();
-			var person2 = RandomData.GeneratePerson<PersonProper>();
+
 			people.Add(person1);
 
 			//Test Finding item in collection
@@ -182,6 +182,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people1.StructuralSequenceEqual(people1));
 		}
 
+
+
+		[TestMethod]
+		public void ToBlockingTest()
+		{
+			const int Count = 10;
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Count).AsEnumerable();
+
+			var result = people.ToBlockingCollection();
+
+			Assert.IsTrue(result.Count() == Count);
+		}
+
 		[TestMethod]
 		public void ToDelimitedStringTest()
 		{
@@ -203,7 +216,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(50).AsEnumerable();
 
-			var result = await people.ToListAsync();
+			var result = await people.ToListAsync().ConfigureAwait(false);
 
 			Assert.IsNotNull(result);
 		}

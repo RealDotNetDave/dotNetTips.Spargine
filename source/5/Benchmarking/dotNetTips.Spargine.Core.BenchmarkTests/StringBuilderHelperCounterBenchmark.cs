@@ -12,7 +12,9 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Globalization;
 using System.Linq;
+using System.Text;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Extensions;
@@ -27,8 +29,9 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 	[BenchmarkCategory(nameof(StringBuilderHelper))]
 	public class StringBuilderHelperCounterBenchmark : CounterBenchmark
 	{
+
 		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString))]
-		public void AppendBytes03()
+		public void BytesToString01()
 		{
 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
 
@@ -36,14 +39,14 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(StringBuilderHelper.ConcatToString))]
-		public void SplitCharSeparator01()
+		public void ConcatToString01()
 		{
 			var result = StringBuilderHelper.ConcatToString(this.CommaDelimitedString, ",", Tristate.True, this.StringArray);
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "StringExtensions.ToDelimitedString:01*")]
+		[Benchmark(Description = "StringExtensions.ToDelimitedString: 01*")]
 		public void ToDelimitedString01()
 		{
 			var people = base.PersonProperDictionary.AsEnumerable();
@@ -53,7 +56,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ":01**")]
+		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ": 01**")]
 		public void ToDelimitedString02()
 		{
 			var people = base.PersonProperDictionary;
@@ -61,6 +64,24 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 			var result = StringBuilderHelper.ToDelimitedString(people);
 
 			base.Consumer.Consume(result);
+		}
+
+		private static string BytesToStringLocal(byte[] bytes)
+		{
+			Validate.TryValidateParam(bytes, nameof(bytes));
+
+			var sb = new StringBuilder();
+
+			sb.Append("'0x");
+
+			for (var i = 0; i < bytes.Length; i++)
+			{
+				sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
+			}
+
+			sb.Append('\'');
+
+			return sb.ToString();
 		}
 
 	}

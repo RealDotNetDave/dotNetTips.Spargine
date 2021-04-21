@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The application information.
 		/// </summary>
-		private static readonly Lazy<AppInfo> _appInfo = new Lazy<AppInfo>(() => InitAppInfo());
+		private static readonly Lazy<AppInfo> _appInfo = new(() => InitAppInfo());
 
 		/// <summary>
 		/// Gets the assembly information.
@@ -240,7 +240,7 @@ namespace dotNetTips.Spargine.Core
 
 			var app = Process.GetProcessesByName(processName).FirstOrDefault();
 
-			if (app != null)
+			if (app is not null)
 			{
 				app.Kill();
 				_ = app.WaitForExit(milliseconds: 6000);
@@ -297,18 +297,21 @@ namespace dotNetTips.Spargine.Core
 			var appInfo = new AppInfo
 			{
 				Company = assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company,
-				Configuration =
-				assembly.GetCustomAttributes<AssemblyConfigurationAttribute>().FirstOrDefault()?.Configuration,
+				Configuration = assembly.GetCustomAttributes<AssemblyConfigurationAttribute>().FirstOrDefault()?.Configuration,
 				Copyright = assembly.GetCustomAttributes<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright,
 				Description = assembly.GetCustomAttributes<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description,
 				FileVersion = assembly.GetCustomAttributes<AssemblyFileVersionAttribute>().FirstOrDefault()?.Version,
-				Version =
-				assembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
+				MemoryAllocated = GC.GetTotalMemory(forceFullCollection: false),
+				MemoryInfo = GC.GetGCMemoryInfo(),
 				Product = assembly.GetCustomAttributes<AssemblyProductAttribute>().FirstOrDefault()?.Product,
+				ThreadAllocatedBytes = GC.GetAllocatedBytesForCurrentThread(),
 				Title = assembly.GetCustomAttributes<AssemblyTitleAttribute>().FirstOrDefault()?.Title,
+				TotalAllocatedBytes = GC.GetTotalAllocatedBytes(precise: false),
+				Version = assembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
 			};
 
-			return appInfo;
+			return
+appInfo;
 		}
 	}
 }

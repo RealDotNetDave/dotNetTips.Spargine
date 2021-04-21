@@ -171,7 +171,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>IEnumerable&lt;TSource&gt;.</returns>
 		internal static IEnumerable<TSource> FromHierarchy<TSource>(this TSource source, Func<TSource, TSource> nextItem) where TSource : Exception
 		{
-			return FromHierarchy(source, nextItem, s => s != null);
+			return FromHierarchy(source, nextItem, s => s is not null);
 		}
 
 		/// <summary>
@@ -235,7 +235,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			var typeInfo = type.GetTypeInfo();
 
-			while (typeInfo != null)
+			while (typeInfo is not null)
 			{
 				foreach (var propertyInfo in typeInfo.DeclaredProperties)
 				{
@@ -253,7 +253,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 		internal static bool HasValue(this string input)
 		{
-			return input != null && ( input.Trim().Length > 0 );
+			return input is not null && ( input.Trim().Length > 0 );
 		}
 
 		/// <summary>
@@ -268,7 +268,7 @@ namespace dotNetTips.Spargine.Core
 			Validate.TryValidateParam(input, minimumLength: 0, maximumLength: int.MaxValue, paramName: nameof(input));
 			Validate.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
 
-			return input != null && ( input.Trim().Length == length );
+			return input is not null && ( input.Trim().Length == length );
 		}
 
 		/// <summary>
@@ -282,7 +282,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateNullParam(input, nameof(input));
 
-			return input != null && ( input.Trim() == value.Trim() );
+			return input is not null && ( string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0 );
 		}
 
 		/// <summary>
@@ -315,7 +315,7 @@ namespace dotNetTips.Spargine.Core
 			Validate.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(maxLength));
 			Validate.TryValidateParam(maxLength, minimumValue: minLength, paramName: nameof(maxLength));
 
-			return input != null && input.Length.IsInRange(minLength, maxLength);
+			return input is not null && input.Length.IsInRange(minLength, maxLength);
 		}
 
 		/// <summary>

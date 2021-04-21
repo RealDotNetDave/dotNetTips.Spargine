@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-11-2021
+// Last Modified On : 04-14-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Core.Collections
 
 			var newItems = new Collection<T>();
 
-			foreach (var item in items.Where(p => p != null))
+			foreach (var item in items.Where(p => p is not null))
 			{
 				if (ensureUnique == Tristate.True || ensureUnique == Tristate.UseDefault)
 				{
@@ -129,7 +129,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddIfNotExists(T item)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
 
 			return Extensions.AddIfNotExists(this, item);
 		}
@@ -142,7 +142,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public bool AddLast(T item)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
 
 			return Extensions.AddLast(this, item);
 		}

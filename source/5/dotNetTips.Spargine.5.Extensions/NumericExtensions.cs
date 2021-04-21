@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 04-18-2021
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -55,10 +55,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="fileSize">Size of the file.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(FormatSize), UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+		/// <example>Return Example: 250 KB</example>
+		[Information(nameof(FormatSize), UnitTestCoverage = 10, Status = Status.Available, Documentation = "ADD URL")]
 		public static string FormatSize(this long fileSize)
 		{
-			//TODO: ADD EXAMPLE TO SUMMARY
 			long size = 0;
 
 			while (fileSize > 1024 && size < 4)
@@ -597,26 +597,26 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (value < 0)
 			{
-				return Resources.Minus + ControlChars.Space + ToWords(Math.Abs(value));
+				return $"{Resources.Minus}{ControlChars.Space}{ToWords(Math.Abs(value))}";
 			}
 
 			var words = string.Empty;
 
 			if (( value / 1000000 ) > 0)
 			{
-				words += ToWords(value / 1000000) + ControlChars.Space + Resources.Million + ControlChars.Space;
+				words += $"{ToWords(value / 1000000)}{ControlChars.Space}{Resources.Million}{ControlChars.Space}";
 				value %= 1000000;
 			}
 
 			if (( value / 1000 ) > 0)
 			{
-				words += ToWords(value / 1000) + ControlChars.Space + Resources.Thousand + ControlChars.Space;
+				words += $"{ToWords(value / 1000)}{ControlChars.Space}{Resources.Thousand}{ControlChars.Space}";
 				value %= 1000;
 			}
 
 			if (( value / 100 ) > 0)
 			{
-				words += ToWords(value / 100) + ControlChars.Space + Resources.Hundred + ControlChars.Space;
+				words += $"{ToWords(value / 100)}{ControlChars.Space}{Resources.Hundred}{ControlChars.Space}";
 				value %= 100;
 			}
 
@@ -624,7 +624,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				if (string.IsNullOrEmpty(words) == false)
 				{
-					words += Resources.AndLowerCase + ControlChars.Space;
+					words += $"{Resources.AndLowerCase}{ControlChars.Space}";
 				}
 
 				var units = new[]
@@ -665,7 +665,7 @@ namespace dotNetTips.Spargine.Extensions
 
 					if (( value % 10 ) > 0)
 					{
-						words += "-" + units[value % 10];
+						words += $"{ControlChars.Dash}{units[value % 10]}";
 					}
 				}
 			}

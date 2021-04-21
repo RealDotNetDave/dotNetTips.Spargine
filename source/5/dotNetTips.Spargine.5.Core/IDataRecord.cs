@@ -4,12 +4,12 @@
 // Created          : 02-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-04-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
-// <copyright file="DataRecord.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="IDataRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Base type for data record classes.</summary>
+// <summary></summary>
 // ***********************************************************************
 
 using System.ComponentModel.DataAnnotations;
@@ -19,28 +19,28 @@ using dotNetTips.Spargine.Core.Internal;
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
-	/// Base type for data record classes.
+	/// Interface for data record classes.
 	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <typeparam name="TKey"></typeparam>
-	[Information(nameof(DataRecord<T, TKey>), author: "David McCarter", createdOn: "3/4/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-	public record DataRecord<T, TKey>
+	[Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD URL MAR")]
+	public interface IDataRecord
 	{
 		/// <summary>
 		/// Gets or sets the identifier.
 		/// </summary>
 		/// <value>The identifier.</value>
 		[Required]
-		public TKey Id { get; init; }
+		[MaxLength(length: 50, ErrorMessage = "Id must be 10 characters to a max of 50.")]
+		[MinLength(length: 10, ErrorMessage = "Id must be 10 characters to a max of 50.")]
+		public string Id { get; init; }
 
 		/// <summary>
 		/// Alls the properties to string.
 		/// </summary>
 		/// <returns>string.</returns>
-		public string AllPropertiesToString()
+		/// <remarks>This method uses reflection.</remarks>
+		public sealed string AllPropertiesToString()
 		{
 			return this.PropertiesToString();
 		}
-
 	}
 }

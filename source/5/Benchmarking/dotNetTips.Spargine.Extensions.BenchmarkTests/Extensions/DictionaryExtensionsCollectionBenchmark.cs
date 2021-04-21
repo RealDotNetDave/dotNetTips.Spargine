@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.PersonProperDictionary;
 
-			var result = people.GetOrAdd(this.PersonProper.Id, this.PersonProper);
+			var result = people.GetOrAdd(this.PersonProper01.Id, this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -74,7 +74,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.PersonProperDictionary;
 
-			var result = people.Upsert(this.PersonProper.Id, this.PersonProper);
+			var result = people.Upsert(this.PersonProper01.Id, this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}

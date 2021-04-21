@@ -221,7 +221,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				foreach (var item in items)
 				{
-					if (item != null && item is IDisposable disposeItem)
+					if (item is not null && item is IDisposable disposeItem)
 					{
 						disposeItem.TryDispose();
 					}

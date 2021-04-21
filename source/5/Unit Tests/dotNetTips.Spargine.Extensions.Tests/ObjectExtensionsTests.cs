@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-17-2020
+// Last Modified On : 03-01-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,41 +25,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-	[ExcludeFromCodeCoverage]
-	public class DisposableFields : IDisposable
-	{
-		private readonly DataSet _dataSet = new DataSet("TEST");
-		private bool disposedValue;
-
-		// // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
-		// ~DisposableFields()
-		// {
-		//     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-		//     Dispose(disposing: false);
-		// }
-
-		public void Dispose()
-		{
-			// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
-			this.Dispose(disposing: true);
-			GC.SuppressFinalize(this);
-		}
-
-		protected virtual void Dispose(bool disposing)
-		{
-			if (!this.disposedValue)
-			{
-				if (disposing)
-				{
-					this._dataSet.Dispose();
-				}
-
-				// TODO: free unmanaged resources (unmanaged objects) and override finalizer
-				// TODO: set large fields to null
-				this.disposedValue = true;
-			}
-		}
-	}
 
 	[ExcludeFromCodeCoverage]
 	[TestClass]
@@ -309,19 +274,5 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Assert.Fail();
 			}
 		}
-	}
-
-	[ExcludeFromCodeCoverage]
-	public class PropertiesTest
-	{
-
-		public DateTimeOffset? ClosedOn { get; set; }
-		public string Id { get; set; }
-
-		public PersonProper PersonProper { get; set; }
-
-		public PersonRecord PersonRecord { get; set; }
-
-		public DateTimeOffset Today { get; set; }
 	}
 }

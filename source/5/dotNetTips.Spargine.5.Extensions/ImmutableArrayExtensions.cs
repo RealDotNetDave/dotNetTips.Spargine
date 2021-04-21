@@ -27,7 +27,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new Random((int)DateTime.Now.Ticks);
+		private static readonly Random _globalRandom = new((int)DateTime.Now.Ticks);
 
 		/// <summary>
 		/// The random
@@ -43,7 +43,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			get
 			{
-				if (_random == null)
+				if (_random is null)
 				{
 					int seed;
 
@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Shuffle), "David McCarter", "8/27/2020", "1/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
 		public static ImmutableArray<T> Shuffle<T>(this ImmutableArray<T> list)
 		{
-			if (list == null)
+			if (list.DoesNotHaveItems())
 			{
 				return list;
 			}

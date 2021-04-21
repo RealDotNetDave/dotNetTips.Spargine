@@ -4,9 +4,9 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-10-2020
+// Last Modified On : 04-04-2021
 // ***********************************************************************
-// <copyright file="EnumHelperTests.cs" company="dotNetTips.Spargine.Core.Tests">
+// <copyright file="EnumerationTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>EnumHelper Tests.</summary>

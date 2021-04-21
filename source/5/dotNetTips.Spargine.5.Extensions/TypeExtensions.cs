@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-14-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -128,7 +128,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var typeInfo = type.GetTypeInfo();
 
-			while (typeInfo != null)
+			while (typeInfo is not null)
 			{
 				foreach (var fieldInfo in typeInfo.DeclaredFields)
 				{
@@ -166,7 +166,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var typeInfo = type.GetTypeInfo();
 
-			while (typeInfo != null)
+			while (typeInfo is not null)
 			{
 				foreach (var methodInfo in typeInfo.DeclaredMethods)
 				{
@@ -190,7 +190,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var typeInfo = type.GetTypeInfo();
 
-			while (typeInfo != null)
+			while (typeInfo is not null)
 			{
 				foreach (var propertyInfo in typeInfo.DeclaredProperties)
 				{
@@ -310,7 +310,7 @@ namespace dotNetTips.Spargine.Extensions
 				.GetFields()
 				.Where(x => x.MemberType == MemberTypes.Field)
 				.Select(x => x.GetValue(callback.Target))
-				.Where(x => x != null)
+				.Where(x => x is not null)
 				.SelectMany(x => x.ToString())
 				.ToArray());
 		}
@@ -338,10 +338,10 @@ namespace dotNetTips.Spargine.Extensions
 			var allProperties = type.GetProperties()
 				.Select(p => (p.Name,
 								Attribute: p.GetAttribute<TAttribute>(),
-								IsPrivate: p.GetSetMethod() == null,
-								IsStatic: p.GetSetMethod() != null && p.GetSetMethod().IsStatic, p.PropertyType));
+								IsPrivate: p.GetSetMethod() is null,
+								IsStatic: p.GetSetMethod() is not null && p.GetSetMethod().IsStatic, p.PropertyType));
 
-			var joined = allFields.Concat(allProperties).Where(member => member.Attribute != null).ToArray();
+			var joined = allFields.Concat(allProperties).Where(member => member.Attribute is not null).ToArray();
 
 			foreach (var member in joined.Where(m => m.IsPrivate))
 			{
@@ -363,7 +363,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(methodInfo, nameof(methodInfo));
 
-			return methodInfo.GetAttribute<T>() != null;
+			return methodInfo.GetAttribute<T>() is not null;
 		}
 
 
@@ -381,7 +381,7 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			while (type != null)
+			while (type is not null)
 			{
 				if (type == baseClass)
 				{
@@ -405,7 +405,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
 
-			return type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null) != null;
+			return type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null) is not null;
 		}
 
 		/// <summary>
@@ -413,7 +413,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is <see cref="IEnumerable" />; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static bool IsEnumerable(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -427,7 +427,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsNullable(this Type type) => Nullable.GetUnderlyingType(type) != null;
+		public static bool IsNullable(this Type type) => Nullable.GetUnderlyingType(type) is not null;
 
 		/// <summary>
 		/// Determines whether the specified property is static.

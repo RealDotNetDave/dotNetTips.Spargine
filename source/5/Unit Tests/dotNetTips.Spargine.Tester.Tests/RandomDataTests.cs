@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Tester.Tests
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class RandomDataTests
 	{
@@ -563,7 +565,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 				return;
 			}
 
-			var result = Parallel.ForEach(source: files, body: (fileName) =>
+			_ = Parallel.ForEach(source: files, body: (fileName) =>
 			{
 				try
 				{

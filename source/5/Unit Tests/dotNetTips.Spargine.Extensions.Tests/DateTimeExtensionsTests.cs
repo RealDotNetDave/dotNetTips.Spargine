@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var now = DateTime.Now;
 
-			var result = now.IsInRange(beginningTime: now.Subtract(new TimeSpan(1, 0, 0, 0)), endTime: now.AddDays(10));
+			var result = now.IsInRange(beginningTime: new DateTime(1970), endTime: now.AddDays(10));
 
 			PrintResult(result, nameof(this.DateTimeIsInRangeTest));
 
@@ -347,6 +347,43 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
 
 			Assert.IsTrue(result);
+		}
+
+		[TestMethod]
+		public void ToFromMilliEpochTimeTest()
+		{
+			var currentTime = DateTime.Now;
+			var epochTime = currentTime.ToMilliEpochTime();
+
+			PrintResult(epochTime, nameof(this.ToFromMilliEpochTimeTest));
+
+			Assert.IsTrue(epochTime > 0);
+
+			// Test reverse
+			var convertedTime = epochTime.FromMilliEpochTime();
+
+			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
+
+			PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
+		}
+
+		[TestMethod]
+		public void ToFromUnixTimeTest()
+		{
+			var currentTime = DateTime.Now;
+
+			var epochTime = currentTime.ToUnixTime();
+
+			PrintResult(epochTime, nameof(this.ToFromUnixTimeTest));
+
+			Assert.IsTrue(epochTime > 0);
+
+			// Test reverse
+			var convertedTime = epochTime.FromUnixTime();
+
+			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
+
+			PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
 		}
 	}
 }

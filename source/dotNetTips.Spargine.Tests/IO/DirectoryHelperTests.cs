@@ -4,7 +4,7 @@
 // Created          : 03-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-07-2021
+// Last Modified On : 03-30-2021
 // ***********************************************************************
 // <copyright file="DirectoryHelperTests.cs" company="dotNetTips.Spargine.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -22,6 +22,7 @@ using dotNetTips.Spargine.IO;
 using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
     [ExcludeFromCodeCoverage]
@@ -43,9 +44,9 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var destinationPath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndDeleteDirectoryTest));
 
-            var sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "dotNetTips.com-" + DateTime.Now.Ticks);
+            var sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"dotNetTips.com-{DateTime.Now.Ticks}");
 
-            var generatedFiles = RandomData.GenerateFiles(sourcePath, 500, 5000);
+            _ = RandomData.GenerateFiles(sourcePath, 500, 5000);
 
             try
             {
@@ -68,7 +69,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             var destinationPath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndMoveDirectoryTest));
             var folderToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories()
-                .Where(p => p.GetFiles().Count() > 0)
+                .Where(p => p.GetFiles().Length > 0)
                 .Shuffle()
                 .FirstOrDefault();
 
@@ -109,38 +110,13 @@ namespace dotNetTips.Spargine.Tests.IO
             }
         }
 
-        [TestMethod]
-        public void LoadFilesTest()
-        {
-            var searchFolders = new List<DirectoryInfo>();
-
-            try
-            {
-                searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFiles)));
-                searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFilesX86)));
-                searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop)));
-
-                var returnCount = 0;
-
-                foreach (var file in DirectoryHelper.LoadFiles(searchFolders, "*.*", SearchOption.AllDirectories))
-                {
-                    returnCount++;
-                }
-
-                Assert.IsTrue(returnCount > 0);
-            }
-            catch (Exception ex)
-            {
-                Assert.Fail(ex.Message);
-            }
-        }
 
         [TestMethod]
         public void LoadOneDriveFoldersTest()
         {
             var folders = DirectoryHelper.LoadOneDriveFolders();
 
-            Assert.IsTrue(folders != null && folders.Count() > 0);
+            Assert.IsTrue(folders != null && folders.Length > 0);
         }
 
         [TestMethod]

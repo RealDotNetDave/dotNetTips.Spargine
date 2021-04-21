@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -24,64 +25,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-	/// <summary>
-	/// Class AbstractTestType.
-	/// </summary>
-	public abstract class AbstractTestType
-	{
-
-		/// <summary>
-		/// Names this instance.
-		/// </summary>
-		/// <returns>System.String.</returns>
-		public abstract string Name();
-
-	}
-
-	/// <summary>
-	/// Class TestType.
-	/// </summary>
-	[XmlRoot]
-	public class TestType
-	{
-		/// <summary>
-		/// Gets or sets the name of the user.
-		/// </summary>
-		/// <value>The name of the user.</value>
-		[XmlIgnore]
-		[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-		public string UserName { get; set; }
-
-
-		/// <summary>
-		/// Gets the name.
-		/// </summary>
-		/// <returns>System.String.</returns>
-		public static string GetName()
-		{
-			return "GetName";
-		}
-
-		/// <summary>
-		/// Invokes the specified input.
-		/// </summary>
-		/// <param name="input">The input.</param>
-		/// <returns>System.String.</returns>
-		public string Invoke(string input)
-		{
-			return input;
-		}
-
-		/// <summary>
-		/// Runs this instance.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		public void Run<T>() where T : class
-		{
-			//Do Nothing
-		}
-
-	}
 
 	/// <summary>
 	/// Defines test class TypeExtensionsTests.
@@ -151,7 +94,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void GetAttributeMethodTest()
 		{
-			var method = typeof(TestType).GetAllMethods().Where(p => p.Name == "get_UserName").FirstOrDefault();
+			var method = typeof(TestType).GetAllMethods().Where(p => string.Compare(p.Name, "get_UserName", StringComparison.Ordinal) == 0).FirstOrDefault();
 
 			var result = method.GetAttribute<CompilerGeneratedAttribute>();
 

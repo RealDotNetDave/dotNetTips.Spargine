@@ -29,7 +29,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		/// <summary>
 		/// Deserialize this instance.
 		/// </summary>
-		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML-PersonProper")]
+		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonProper")]
 		public void Deserialize01()
 		{
 			var result = XmlSerialization.Deserialize<PersonProper>(this.XmlTestDataPersonProper);
@@ -40,10 +40,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		/// <summary>
 		/// Deserialize this instance.
 		/// </summary>
-		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML-PersonRecord")]
+		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonRecord")]
 		public void Deserialize02()
 		{
-			var result = XmlSerialization.Deserialize<PersonProper>(this.XmlTestDataPersonProper);
+			var result = XmlSerialization.Deserialize<PersonRecord>(this.XmlTestDataPersonRecord);
 
 			base.Consumer.Consume(result);
 		}
@@ -62,10 +62,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		/// <summary>
 		/// Serialize this instance.
 		/// </summary>
-		[Benchmark(Description = nameof(XmlSerialization.Serialize) + ": XML-PersonProper")]
+		[Benchmark(Description = nameof(XmlSerialization.Serialize) + ": XML=PersonProper")]
 		public void Serialize01()
 		{
-			var result = XmlSerialization.Serialize(this.PersonProper);
+			var result = XmlSerialization.Serialize(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -73,10 +73,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		/// <summary>
 		/// Serialize this instance.
 		/// </summary>
-		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON-PersonProper")]
+		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonProper")]
 		public void Serialize02()
 		{
-			var result = JsonSerialization.Serialize(this.PersonProper);
+			var result = JsonSerialization.Serialize(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -84,10 +84,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		/// <summary>
 		/// Serialize this instance.
 		/// </summary>
-		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON-PersonRecord")]
+		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonRecord")]
 		public void Serialize03()
 		{
-			var result = JsonSerialization.Serialize(this.PersonRecord);
+			var result = JsonSerialization.Serialize(this.PersonRecord02);
 
 			base.Consumer.Consume(result);
 		}

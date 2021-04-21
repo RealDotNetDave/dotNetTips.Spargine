@@ -19,7 +19,7 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
+namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 {
 	/// <summary>
 	/// Class DistinctConcurrentBag.
@@ -33,12 +33,12 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <summary>
 		/// The hash codes
 		/// </summary>
-		private readonly HashSet<int> _hashCodes = new HashSet<int>();
+		private readonly HashSet<int> _hashCodes = new();
 
 		/// <summary>
 		/// The lock
 		/// </summary>
-		private readonly object _lock = new object();
+		private readonly object _lock = new();
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DistinctConcurrentBag{T}" /> class.

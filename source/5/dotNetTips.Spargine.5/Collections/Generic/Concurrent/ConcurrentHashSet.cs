@@ -15,22 +15,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
+namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 {
 	/// <summary>
 	/// Represents a thread-safe hash-based unique collection.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	[DebuggerDisplay("Count = {Count}")]
-	[SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>")]
-	public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
+	public class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
 	{
 		/// <summary>
 		/// The default capacity..
@@ -106,7 +104,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		public ConcurrentHashSet(IEnumerable<T> collection, IEqualityComparer<T> comparer)
 			: this(comparer)
 		{
-			if (collection != null)
+			if (collection is not null)
 			{
 				this.InitializeFromCollection(collection);
 			}
@@ -121,7 +119,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		public ConcurrentHashSet(int concurrencyLevel, IEnumerable<T> collection, IEqualityComparer<T> comparer)
 			: this(concurrencyLevel, DefaultCapacity, false, comparer)
 		{
-			if (collection != null)
+			if (collection is not null)
 			{
 				this.InitializeFromCollection(collection);
 			}
@@ -369,7 +367,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 			// The Volatile.Read ensures that the load of the fields of 'n' doesn't move before the load from buckets[i].
 			var current = Volatile.Read(ref tables._buckets[bucketNo]);
 
-			while (current != null)
+			while (current is not null)
 			{
 				if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
 				{
@@ -395,7 +393,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 				// The Volatile.Read ensures that the load of the fields of 'current' doesn't move before the load from buckets[i].
 				var current = Volatile.Read(ref buckets[i]);
 
-				while (current != null)
+				while (current is not null)
 				{
 					yield return current._item;
 					current = current._next;
@@ -433,13 +431,13 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 					}
 
 					Node previous = null;
-					for (var current = tables._buckets[bucketNo]; current != null; current = current._next)
+					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
-						Debug.Assert(( previous == null && current == tables._buckets[bucketNo] ) || previous._next == current);
+						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
 
 						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
 						{
-							if (previous == null)
+							if (previous is null)
 							{
 								Volatile.Write(ref tables._buckets[bucketNo], current._next);
 							}
@@ -543,7 +541,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		private bool AddInternal(T item, int hashCode, bool acquireLock)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(item != null, nameof(item));
+			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
 
 			while (true)
 			{
@@ -570,9 +568,9 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 
 					// Try to find this item in the bucket
 					Node previous = null;
-					for (var current = tables._buckets[bucketNo]; current != null; current = current._next)
+					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
-						Debug.Assert(( previous == null && current == tables._buckets[bucketNo] ) || previous._next == current);
+						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
 						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
 						{
 							return false;
@@ -630,7 +628,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 
 			for (var i = 0; i < buckets.Length; i++)
 			{
-				for (var current = buckets[i]; current != null; current = current._next)
+				for (var current = buckets[i]; current is not null; current = current._next)
 				{
 					array[index] = current._item;
 					index++; // this should never flow, CopyToItems is only called when there's no overflow risk
@@ -718,7 +716,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 					// We want to make sure that GrowTable will not be called again, since table is at the maximum size.
 					// To achieve that, we set the budget to int.MaxValue.
 					//
-					// (There is one special case that would allow GrowTable() to be called in the future: 
+					// (There is one special case that would allow GrowTable() to be called in the future:
 					// calling Clear() on the ConcurrentHashSet will shrink the table and lower the budget.)
 					this._budget = int.MaxValue;
 				}
@@ -746,7 +744,7 @@ namespace dotNetTips.Utility.Standard.Collections.Generic.Concurrent
 				for (var i = 0; i < tables._buckets.Length; i++)
 				{
 					var current = tables._buckets[i];
-					while (current != null)
+					while (current is not null)
 					{
 						var next = current._next;
 						GetBucketAndLockNo(current._hashCode, out var newBucketNo, out var newLockNo, newBuckets.Length, newLocks.Length);

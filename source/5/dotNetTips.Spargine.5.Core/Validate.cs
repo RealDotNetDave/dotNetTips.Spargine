@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="Validate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,12 +32,12 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="value">The value.</param>
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static bool TryValidateNull(object value, bool throwException = false)
 		{
 			var result = value is null;
 
-			if (result is false && throwException)
+			if (result && throwException)
 			{
 				ExceptionThrower.ThrowInvalidValueException<object>(Resources.ObjectValidationFailed, value);
 			}
@@ -57,7 +57,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			var result = value is null;
 
-			if (result is false && throwException)
+			if (result && throwException)
 			{
 				ExceptionThrower.ThrowInvalidValueException<object>(message, value);
 			}
@@ -72,7 +72,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentNullException">Value cannot be null.</exception>
-		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static void TryValidateNullParam(object value, string paramName, string message = "")
 		{
 			if (Validate.TryValidateNull(value))
@@ -89,7 +89,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="TException">The type of the TException.</typeparam>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <param name="message">The message.</param>
-		[Information(nameof(TryValidateObject), "David McCarter", "2/1/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateObject), "David McCarter", "2/1/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static void TryValidateObject<TException>(bool condition, string message = "")
 			where TException : Exception, new()
 		{
@@ -502,7 +502,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="InvalidValueException{String}">String cannot be null or empty.</exception>
-		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateValue), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static bool TryValidateValue(string input, bool throwException = false)
 		{
 			var result = string.IsNullOrEmpty(input);
@@ -524,7 +524,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateValue), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static bool TryValidateValue<TValue>(TValue input, bool condition, string message = "", bool throwException = false)
 		{
 			if (condition is false && throwException)

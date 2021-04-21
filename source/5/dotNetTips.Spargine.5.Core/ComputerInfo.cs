@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Utility.Standard
+// Assembly         : dotNetTips.Spargine.5.Core
 // Author           : David McCarter
-// Created          : 10-15-2018
+// Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-14-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
-// <copyright file="ComputerInfo.cs" company="dotNetTips.com - McCarter Consulting">
-//     dotNetTips.com - McCarter Consulting. All rights reserved.
+// <copyright file="ComputerInfo.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Common computer information.</summary>
+// <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -30,7 +31,6 @@ namespace dotNetTips.Spargine.Core
 	[DataContract(Namespace = "dotNetTips.com/Info")]
 	public class ComputerInfo
 	{
-
 		/// <summary>
 		/// Gets the computer culture.
 		/// </summary>

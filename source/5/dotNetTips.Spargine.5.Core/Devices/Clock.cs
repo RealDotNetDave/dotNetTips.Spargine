@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 04-02-2021
 // ***********************************************************************
 // <copyright file="Clock.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,6 +20,7 @@ namespace dotNetTips.Spargine.Core.Devices
 	/// <summary>
 	/// Clock Information.
 	/// </summary>
+	/// <remarks>Some of this code is from the Microsoft.VisualBasic.dll</remarks>
 	[ExcludeFromCodeCoverage]
 	[Information(nameof(Clock), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
 	public static class Clock

@@ -4,7 +4,7 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-03-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
 // <copyright file="FileHelperTests.cs" company="dotNetTips.Spargine.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,15 +19,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.IO;
+using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
     [ExcludeFromCodeCoverage]
     [TestClass]
     public class FileHelperTests
     {
-
         private DirectoryInfo _tempPath;
 
         [TestMethod]
@@ -35,11 +36,9 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             try
             {
-                var directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Length > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
 
-                var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Count() > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
-
-                var result = await FileHelper.CopyFileAsync(file: fileToCopy, destinationFolder: this._tempPath).ConfigureAwait(true);
+                var result = await FileHelper.CopyFileAsync(file: fileToCopy, destinationFolder: this._tempPath).ConfigureAwait(false);
 
                 Assert.IsTrue(result > 0);
             }
@@ -54,9 +53,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             try
             {
-                var directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-                var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Count() > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
+                var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Length > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
 
                 var result = FileHelper.CopyFile(fileToCopy, this._tempPath);
 
@@ -73,6 +70,7 @@ namespace dotNetTips.Spargine.Tests.IO
         {
             try
             {
+                //TOD: FIX
                 var filesToCopy = new DirectoryInfo(Environment.CurrentDirectory).GetFiles("*.*", SearchOption.AllDirectories).Shuffle().Take(5);
 
                 var filesCopied = new List<FileInfo>(filesToCopy.Count());
@@ -84,7 +82,7 @@ namespace dotNetTips.Spargine.Tests.IO
 
                 var result = FileHelper.DeleteFiles(filesCopied.Select(p => p.FullName));
 
-                Assert.IsTrue(result.Count() == 0);
+                Assert.IsTrue(result.Any());
 
                 Assert.IsNull(FileHelper.DeleteFiles(null));
             }
@@ -101,7 +99,7 @@ namespace dotNetTips.Spargine.Tests.IO
             {
                 const string fileToDownload = @"https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png";
 
-                await FileHelper.DownloadFileFromWebAsync(new Uri(fileToDownload), Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png"));
+                await FileHelper.DownloadFileFromWebAsync(new Uri(fileToDownload), Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png")).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -146,7 +144,7 @@ namespace dotNetTips.Spargine.Tests.IO
         [TestInitialize]
         public void Initialize()
         {
-            this._tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-FILEHELPER-TEST"));
+            this._tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-FILEHELPER-TEMP"));
 
             if (this._tempPath.Exists == false)
             {
@@ -166,12 +164,24 @@ namespace dotNetTips.Spargine.Tests.IO
                     FileHelper.DeleteFiles(filesToDelete);
                 }
             }
+
         }
 
         [TestMethod]
         public void InvalidFileNameCharsTest()
         {
             Assert.IsTrue(FileHelper.InvalidFileNameChars.HasItems());
+        }
+
+        [TestMethod]
+        public void MoveFileTest01()
+        {
+            //TOD): FIX
+            var options = new EnumerationOptions { IgnoreInaccessible = true, RecurseSubdirectories = true };
+            var file = Directory.EnumerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "*.*", options).Shuffle().First();
+            var newFile = Path.Combine(Path.Combine(this._tempPath.ToString(), $"{RandomData.GenerateKey()}.test"));
+
+            FileHelper.MoveFile(file, newFile, FileMoveOptions.ReplaceExisting | FileMoveOptions.WriteThrough);
         }
 
     }

@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-27-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
 // <copyright file="JsonSerializationTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core.Serialization;
@@ -23,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spartine.Core.Tests.Serialization
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class JsonSerializationTests
 	{
@@ -51,16 +53,15 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		{
 			var person = RandomData.GeneratePersonCollection(1).First();
 
-			//Serialize
-			var json = JsonSerialization.Serialize(person);
+			var fileName = @"C:\dotNetTips.com\DebugOutput\PersonRecord.json";
 
 			//For debugging
-			//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonRecord.json");
+			JsonSerialization.SerializeToFile(person, fileName);
 
-			Assert.IsTrue(string.IsNullOrEmpty(json) == false);
+			Assert.IsTrue(string.IsNullOrEmpty(File.ReadAllText(fileName)) == false);
 
 			//Deserialize
-			var serializedPerson = JsonSerialization.Deserialize<PersonRecord>(Resources.JsonPersonRecord);
+			var serializedPerson = JsonSerialization.DeserializeFromFile<PersonRecord>(fileName);
 
 			Assert.IsNotNull(serializedPerson);
 		}
@@ -84,7 +85,7 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 				Assert.Fail(ex.Message);
 			}
 
-			Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>(FileName));
+			Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{FileName}.bogus"));
 		}
 	}
 }

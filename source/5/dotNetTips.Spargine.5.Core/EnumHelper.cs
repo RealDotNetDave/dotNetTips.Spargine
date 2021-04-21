@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
-// Assembly         : dotNetTips.Utility.Standard.Common
+// Assembly         : dotNetTips.Spargine.5.Core
 // Author           : David McCarter
-// Created          : 10-23-2020
+// Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 04-18-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,10 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class EnumHelper
 	{
-		private static readonly Regex _titleCaseRegex = new Regex(@"(\B[A-Z])", RegexOptions.Multiline | RegexOptions.Compiled);
+		/// <summary>
+		/// The title case regex
+		/// </summary>
+		private static readonly Regex _titleCaseRegex = new(@"(\B[A-Z])", RegexOptions.Multiline | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Gets the enum values.
@@ -105,7 +109,7 @@ namespace dotNetTips.Spargine.Core
 				{
 					var attribute = (XmlEnumAttribute)Attribute.GetCustomAttribute(enumValue, typeof(XmlEnumAttribute));
 
-					if (attribute != null)
+					if (attribute is not null)
 					{
 						result.Add(attribute.Name);
 						continue;
@@ -115,7 +119,7 @@ namespace dotNetTips.Spargine.Core
 				// Attempt to use the Description attribute (if present)
 				var description = (DescriptionAttribute)Attribute.GetCustomAttribute(enumValue, typeof(DescriptionAttribute));
 
-				if (description != null)
+				if (description is not null)
 				{
 					// use this value
 					result.Add(description.Description);

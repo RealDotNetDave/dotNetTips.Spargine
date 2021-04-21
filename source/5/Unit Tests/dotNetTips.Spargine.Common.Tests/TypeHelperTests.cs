@@ -57,15 +57,15 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			var result = TypeHelper.GetTypeDisplayName(person);
 
-			Assert.IsTrue(result == "dotNetTips.Spargine.Tester.Models.PersonProper");
+			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.PersonProper", StringComparison.Ordinal) == 0);
 
 			result = TypeHelper.GetTypeDisplayName(person, true);
 
-			Assert.IsTrue(result == "dotNetTips.Spargine.Tester.Models.PersonProper");
+			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.PersonProper", StringComparison.Ordinal) == 0);
 
 			result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
 
-			Assert.IsTrue(result == "int");
+			Assert.IsTrue(string.Compare(result, "int", StringComparison.Ordinal) == 0);
 		}
 	}
 }

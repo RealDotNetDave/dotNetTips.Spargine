@@ -67,7 +67,7 @@ namespace dotNetTips.Spargine.Core.Internal
 			{
 				var innerObject = property.GetValue(obj, null);
 
-				if (ignoreNulls && innerObject == null)
+				if (ignoreNulls && innerObject is null)
 				{
 					continue;
 				}
@@ -83,7 +83,7 @@ namespace dotNetTips.Spargine.Core.Internal
 		{
 			var typeName = obj.GetType().Name;
 
-			if (typeName == typeof(List<>).Name)
+			if (string.Compare(typeName, typeof(List<>).Name, StringComparison.Ordinal) == 0)
 			{
 				typeName = "Item";
 			}

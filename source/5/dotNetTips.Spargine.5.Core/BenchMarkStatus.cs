@@ -4,7 +4,7 @@
 // Created          : 02-27-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-27-2021
+// Last Modified On : 04-04-2021
 // ***********************************************************************
 // <copyright file="BenchMarkStatus.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,39 +25,26 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// No benchmark.
 		/// </summary>
-		/// <summary>
-		/// The none
-		/// </summary>
 		None,
 
 		/// <summary>
 		/// Benchmark is not required
 		/// </summary>
-		/// <summary>
-		/// The not required
-		/// </summary>
 		NotRequired,
-		/// <summary>
-		/// Enum BenchMarkStatus
-		/// </summary>
 
 		/// <summary>
 		/// Benchmark work is in progress.
 		/// </summary>
-		/// <summary>
-		/// The wip
-		/// </summary>
 		WIP,
 
 		/// <summary>
-		/// The none
+		/// Benchmarks test done.
 		/// </summary>
+		Completed,
+
 		/// <summary>
-		/// Benchmarks done.
+		/// Benchmark needs to be updated
 		/// </summary>
-		/// <summary>
-		/// The completed
-		/// </summary>
-		Completed
+		NeedsUpdate,
 	}
 }

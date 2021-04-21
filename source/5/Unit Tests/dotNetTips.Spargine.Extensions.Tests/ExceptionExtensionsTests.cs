@@ -22,7 +22,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]
-	public class ExceptionExtensionsTest
+	public class ExceptionExtensionsTests
 	{
 
 		[TestMethod]

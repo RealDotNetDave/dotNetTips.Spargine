@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -49,7 +50,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			var result = EnumName.Parse<TaskStatus>();
 
-			Assert.IsTrue(result.ToString() == EnumName);
+			Assert.IsTrue(string.Compare(result.ToString(), EnumName, StringComparison.Ordinal) == 0);
 
 		}
 	}

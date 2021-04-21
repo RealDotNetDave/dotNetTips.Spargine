@@ -26,6 +26,14 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 	public class AssemblyExtensionsBenchmark : Benchmark
 	{
 
+		[Benchmark(Description = nameof(AssemblyExtensions.GetAllInterfaces))]
+		public void GetAllInterfaces01()
+		{
+			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
+
+			this.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(AssemblyExtensions.GetAllTypes))]
 		public void GetAllTypes01()
 		{
@@ -38,14 +46,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		public void GetInstances01()
 		{
 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
-
-			this.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(AssemblyExtensions.GetInterfaces))]
-		public void GetInterfaces01()
-		{
-			var result = Assembly.GetExecutingAssembly().GetInterfaces();
 
 			this.Consumer.Consume(result);
 		}

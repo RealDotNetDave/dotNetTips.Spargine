@@ -12,10 +12,14 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Collections.ObjectModel;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Loggers;
+using dotNetTips.Spargine.Collections.Generic.Concurrent;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
@@ -23,13 +27,9 @@ using dotNetTips.Spargine.Tester.Models;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine)
 namespace dotNetTips.Spargine.Benchmarking
 {
-	/// <summary>
-	/// Class CounterPerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.PerfTestRunner" />
-	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.PerfTestRunner" />
 	public abstract class CounterBenchmark : Benchmark
 	{
+
 		/// <summary>
 		/// Gets or sets the collection count.
 		/// </summary>
@@ -55,11 +55,15 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The coordinate array.</value>
 		protected virtual CoordinateProper[] CoordinateProperArray { get; private set; }
 
+		protected virtual List<CoordinateProper> CoordinateProperList { get; private set; }
+
+		protected List<Person> PersonList { get; private set; }
+
 		/// <summary>
 		/// The person fixed collection
 		/// </summary>
 		/// <value>The person fixed collection.</value>
-		protected List<PersonFixed> PersonFixedCollection { get; private set; }
+		protected List<PersonFixed> PersonFixedList { get; private set; }
 
 		/// <summary>
 		/// The person proper array full
@@ -73,17 +77,32 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The person proper array half.</value>
 		protected PersonProper[] PersonProperArrayHalf { get; private set; }
 
+		protected BlockingCollection<PersonProper> PersonProperBlockingCollection { get; private set; }
+
 		/// <summary>
 		/// The person proper collection
 		/// </summary>
 		/// <value>The person proper collection.</value>
-		protected List<PersonProper> PersonProperCollection { get; private set; }
+		protected List<PersonProper> PersonProperList { get; private set; }
 
+		protected ConcurrentBag<PersonProper> PersonProperConcurrentBag { get; private set; }
+
+		protected ConcurrentDictionary<string, PersonProper> PersonProperConcurrentDictionary { get; private set; }
+
+		protected ConcurrentHashSet<PersonProper> PersonProperConcurrentHashSet { get; private set; }
 		/// <summary>
 		/// The person proper dictionary
 		/// </summary>
 		/// <value>The person proper dictionary.</value>
 		protected Dictionary<string, PersonProper> PersonProperDictionary { get; private set; }
+
+		protected DistinctConcurrentBag<PersonProper> PersonProperDistinctConcurrentBag { get; private set; }
+
+		protected ImmutableDictionary<string, PersonProper> PersonProperImmutableDictionary { get; private set; }
+
+		protected ImmutableList<PersonProper> PersonProperImmutableList { get; private set; }
+
+		protected LinkedList<PersonProper> PersonProperLinkedList { get; private set; }
 
 		/// <summary>
 		/// The person proper collection half count
@@ -91,17 +110,21 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The person proper list half.</value>
 		protected List<PersonProper> PersonProperListHalf { get; private set; }
 
-		/// <summary>
-		/// Gets the person record array.
-		/// </summary>
-		/// <value>The person record array.</value>
-		protected PersonRecord[] PersonRecordArray { get; private set; }
+		protected ObservableCollection<PersonProper> PersonProperObservableCollection { get; private set; }
+
+		protected ReadOnlyCollection<PersonProper> PersonProperReadOnlyCollection { get; private set; }
 
 		/// <summary>
 		/// The sortable person proper collection
 		/// </summary>
 		/// <value>The sortable person proper collection.</value>
-		protected List<PersonProper> SortablePersonProperCollection { get; private set; }
+		protected List<PersonProper> PersonProperSortableList { get; private set; }
+
+		/// <summary>
+		/// Gets the person record array.
+		/// </summary>
+		/// <value>The person record array.</value>
+		protected PersonRecord[] PersonRecordArray { get; private set; }
 
 		/// <summary>
 		/// Gets the string array.
@@ -118,20 +141,20 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Collection Count={this.Count}.");
 
-			this.PersonFixedCollection = new List<PersonFixed>();
-			this.PersonFixedCollection.AddRange(RandomData.GeneratePersonCollection<PersonFixed>(this.Count));
+			this.PersonFixedList = new List<PersonFixed>();
+			this.PersonFixedList.AddRange(RandomData.GeneratePersonCollection<PersonFixed>(this.Count));
 
-			this.PersonProperCollection = new List<PersonProper>();
-			this.PersonProperCollection.AddRange(RandomData.GeneratePersonCollection<PersonProper>(this.Count));
+			this.PersonProperList = new List<PersonProper>();
+			this.PersonProperList.AddRange(RandomData.GeneratePersonCollection<PersonProper>(this.Count));
 
-			this.PersonProperDictionary = this.PersonProperCollection.ToDictionary(p => p.Id);
+			this.PersonProperDictionary = this.PersonProperList.ToDictionary(p => p.Id);
 
-			this.SortablePersonProperCollection = new List<PersonProper>(this.PersonProperCollection);
+			this.PersonProperSortableList = new List<PersonProper>(this.PersonProperList);
 
-			this.PersonProperArrayFull = this.PersonProperCollection.ToArray();
-			this.PersonProperArrayHalf = this.PersonProperCollection.Take(this.Count / 2).ToArray();
+			this.PersonProperArrayFull = this.PersonProperList.ToArray();
+			this.PersonProperArrayHalf = this.PersonProperList.Take(this.Count / 2).ToArray();
 
-			this.PersonProperListHalf = this.PersonProperCollection.Take(this.Count / 2).ToList();
+			this.PersonProperListHalf = this.PersonProperList.Take(this.Count / 2).ToList();
 
 			this.ByteArray = RandomData.GenerateByteArray(this.Count / 2);
 
@@ -143,6 +166,29 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			this.PersonRecordArray = RandomData.GeneratePersonCollection(this.Count).ToArray();
 
+			this.PersonProperImmutableList = this.PersonProperList.ToImmutable();
+
+			this.PersonProperObservableCollection = this.PersonProperList.ToObservableCollection();
+
+			this.PersonProperReadOnlyCollection = this.PersonProperList.ToReadOnlyCollection();
+
+			this.PersonProperImmutableDictionary = this.PersonProperDictionary.ToImmutable();
+
+			this.PersonProperLinkedList = this.PersonProperList.ToLinkedList();
+
+			this.PersonProperConcurrentBag = new ConcurrentBag<PersonProper>(this.PersonProperList);
+
+			this.CoordinateProperList = this.CoordinateProperArray.ToList();
+
+			this.PersonProperConcurrentDictionary = new ConcurrentDictionary<string, PersonProper>(this.PersonProperDictionary);
+
+			this.PersonProperBlockingCollection = this.PersonProperList.ToBlockingCollection();
+
+			this.PersonProperConcurrentHashSet = new ConcurrentHashSet<PersonProper>(this.PersonProperList);
+
+			this.PersonProperDistinctConcurrentBag = new DistinctConcurrentBag<PersonProper>(this.PersonProperList);
+
+			this.PersonList = RandomData.GeneratePersonCollection<Person>(this.Count);
 		}
 
 	}

@@ -61,6 +61,11 @@ namespace dotNetTips.Spargine.Core
 		public const string CRLF = "\r\n";
 
 		/// <summary>
+		/// The dash character.
+		/// </summary>
+		public const char Dash = '-';
+
+		/// <summary>
 		/// The default separator
 		/// </summary>
 		public const string DefaultSeparator = ", ";

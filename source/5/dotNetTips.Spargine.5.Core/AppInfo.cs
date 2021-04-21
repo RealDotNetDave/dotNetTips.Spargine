@@ -4,13 +4,14 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 04-15-2021
 // ***********************************************************************
 // <copyright file="AppInfo.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using dotNetTips.Spargine.Core.Properties;
@@ -79,6 +80,18 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
+		/// Gets the memory allocated.
+		/// </summary>
+		/// <value>The memory allocated.</value>
+		public long MemoryAllocated { get; internal set; }
+
+		/// <summary>
+		/// Gets the memory information.
+		/// </summary>
+		/// <value>The memory information.</value>
+		public GCMemoryInfo MemoryInfo { get; internal set; }
+
+		/// <summary>
 		/// Gets the assembly product.
 		/// </summary>
 		/// <value>The assembly product.</value>
@@ -89,6 +102,12 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
+		/// Gets the thread allocated bytes.
+		/// </summary>
+		/// <value>The thread allocated bytes.</value>
+		public long ThreadAllocatedBytes { get; internal set; }
+
+		/// <summary>
 		/// Gets the assembly title.
 		/// </summary>
 		/// <value>The assembly title.</value>
@@ -96,6 +115,12 @@ namespace dotNetTips.Spargine.Core
 		{
 			get; init;
 		}
+
+		/// <summary>
+		/// Gets the total allocated bytes.
+		/// </summary>
+		/// <value>The total allocated bytes.</value>
+		public long TotalAllocatedBytes { get; internal set; }
 
 		/// <summary>
 		/// Gets the assembly version.

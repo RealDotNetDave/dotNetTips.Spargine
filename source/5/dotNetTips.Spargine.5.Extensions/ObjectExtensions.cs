@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 04-17-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -78,13 +78,13 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(obj, nameof(obj));
 
-			// Create a SHA256   
+			// Create a SHA256
 			using var sha256Hash = SHA256.Create();
 
-			// ComputeHash - returns byte array  
+			// ComputeHash - returns byte array
 			var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obj.ToJson()));
 
-			// Convert byte array to a string   
+			// Convert byte array to a string
 			var sb = new StringBuilder();
 
 			for (var i = 0; i < bytes.Length; i++)
@@ -118,7 +118,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				var value = list[fieldCount].GetValue(obj);
 
-				if (value != null)
+				if (value is not null)
 				{
 					if (value is IDisposable disposableItem)
 					{
@@ -144,9 +144,9 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(obj, nameof(obj));
 
-			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => p.Name == propertyName);
+			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Compare(p.Name, propertyName, StringComparison.Ordinal) == 0);
 
-			return propertyInfo != null;
+			return propertyInfo is not null;
 		}
 
 		/// <summary>
@@ -172,13 +172,13 @@ namespace dotNetTips.Spargine.Extensions
 				var objectValue = fieldInfo.GetValue(obj);
 				var runtimeField = obj.GetType().GetRuntimeField(fieldInfo.Name);
 
-				if (runtimeField != null)
+				if (runtimeField is not null)
 				{
 					var t = Nullable.GetUnderlyingType(runtimeField.FieldType) ?? runtimeField.FieldType;
-					var safeValue = ( objectValue == null )
+					var safeValue = ( objectValue is null )
 						? null
 						: Convert.ChangeType(objectValue, t, CultureInfo.InvariantCulture);
-					runtimeField.SetValue(obj, safeValue);
+					runtimeField?.SetValue(obj, safeValue);
 				}
 			}
 		}
@@ -264,7 +264,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				// Loop through the collection using the enumerator strategy and collect all items in the result bag
 				// Note: if the collection is empty it will not return anything about its existence,
-				// because the method is supposed to catch value items not the list itself                
+				// because the method is supposed to catch value items not the list itself
 				foreach (var item in (IEnumerable)obj)
 				{
 					var itemId = itemCount++;
@@ -281,7 +281,7 @@ namespace dotNetTips.Spargine.Extensions
 				return result;
 			}
 
-			// Otherwise go deeper in the object tree.           
+			// Otherwise go deeper in the object tree.
 			// And foreach object public property collect each value
 			var propertyCollection = objectType.GetProperties();
 
@@ -289,14 +289,14 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (memberName.Length > 0)
 			{
-				newMemberName = memberName + ControlChars.Dot;
+				newMemberName = $"{memberName}{ControlChars.Dot}";
 			}
 
 			foreach (var property in propertyCollection)
 			{
 				var innerObject = property.GetValue(obj, null);
 
-				if (ignoreNulls && innerObject == null)
+				if (ignoreNulls && innerObject is null)
 				{
 					continue;
 				}
@@ -352,7 +352,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var typeName = obj.GetType().Name;
 
-			if (typeName == typeof(List<>).Name)
+			if (string.Compare(typeName, typeof(List<>).Name, StringComparison.Ordinal) == 0)
 			{
 				typeName = "Item";
 			}
@@ -374,7 +374,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="obj">The field.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(StripNull), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string StripNull(this object obj) => obj == null ? string.Empty : obj.ToString();
+		public static string StripNull(this object obj) => obj is null ? string.Empty : obj.ToString();
 
 		/// <summary>
 		/// Serializes object to Json.
@@ -491,7 +491,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				foreach (var item in items)
 				{
-					if (item != null && item is IDisposable disposeItem)
+					if (item is not null && item is IDisposable disposeItem)
 					{
 						disposeItem.TryDispose();
 					}

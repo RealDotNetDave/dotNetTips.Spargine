@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions
 
 				for (var index = 0; index <= dataReader.FieldCount - 1; index++)
 				{
-					if (dataReader.GetName(index) != null)
+					if (dataReader.GetName(index) is not null)
 					{
 						sb.Append(dataReader.GetName(index));
 					}
@@ -80,7 +80,7 @@ namespace dotNetTips.Spargine.Extensions
 							// If separator are is in value, ensure it is put in double quotes.
 							if (value.Contains(separator))
 							{
-								value = Convert.ToString(ControlChars.Backslash, CultureInfo.InvariantCulture) + value + ControlChars.Backslash;
+								value = $"{Convert.ToString(ControlChars.Backslash, CultureInfo.InvariantCulture)}{value}{ControlChars.Backslash}";
 							}
 						}
 

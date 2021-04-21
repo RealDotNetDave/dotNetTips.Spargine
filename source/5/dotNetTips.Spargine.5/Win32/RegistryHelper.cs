@@ -4,9 +4,9 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 04-18-2021
 // ***********************************************************************
-// <copyright file="RetistryHelper.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="RegistryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
@@ -43,23 +43,6 @@ namespace dotNetTips.Spargine.Win32
 		/// <summary>
 		/// Gets the registry key.
 		/// </summary>
-		/// <param name="name">The name.</param>
-		/// <returns>RegistryKey.</returns>
-		/// <exception cref="PlatformNotSupportedException"></exception>
-		public static RegistryKey GetCurrentUserRegistryKey(string name)
-		{
-			// TODO: Causes bug. Add back when fixed [Obsolete("This method will be removed at the end of 2020. Use GetRegistryKey instead.", false)]
-
-			Validate.TryValidateParam(name, nameof(name));
-
-			return RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
-				? Registry.CurrentUser.OpenSubKey(name)
-				: throw new PlatformNotSupportedException();
-		}
-
-		/// <summary>
-		/// Gets the registry key.
-		/// </summary>
 		/// <param name="keyName">The name.</param>
 		/// <param name="registryKeyType">Type of the registry key.</param>
 		/// <returns>RegistryKey.</returns>
@@ -74,23 +57,16 @@ namespace dotNetTips.Spargine.Win32
 
 			Validate.TryValidateParam(keyName, nameof(keyName));
 
-			switch (registryKeyType)
+			return registryKeyType switch
 			{
-				case RegistryHive.ClassesRoot:
-					return Registry.ClassesRoot.OpenSubKey(keyName);
-				case RegistryHive.CurrentConfig:
-					return Registry.CurrentConfig.OpenSubKey(keyName);
-				case RegistryHive.CurrentUser:
-					return Registry.CurrentUser.OpenSubKey(keyName);
-				case RegistryHive.LocalMachine:
-					return Registry.LocalMachine.OpenSubKey(keyName);
-				case RegistryHive.PerformanceData:
-					return Registry.PerformanceData.OpenSubKey(keyName);
-				case RegistryHive.Users:
-					return Registry.CurrentUser.OpenSubKey(keyName);
-			}
-
-			return null;
+				RegistryHive.ClassesRoot => Registry.ClassesRoot.OpenSubKey(keyName),
+				RegistryHive.CurrentConfig => Registry.CurrentConfig.OpenSubKey(keyName),
+				RegistryHive.CurrentUser => Registry.CurrentUser.OpenSubKey(keyName),
+				RegistryHive.LocalMachine => Registry.LocalMachine.OpenSubKey(keyName),
+				RegistryHive.PerformanceData => Registry.PerformanceData.OpenSubKey(keyName),
+				RegistryHive.Users => Registry.CurrentUser.OpenSubKey(keyName),
+				_ => null,
+			};
 		}
 	}
 }

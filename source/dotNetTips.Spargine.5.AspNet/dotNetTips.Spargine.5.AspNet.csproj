@@ -1,10 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
-    <AssemblyVersion>2021.3.15.26</AssemblyVersion>
-    <FileVersion>2021.3.15.26</FileVersion>
+    <AssemblyVersion>2021.4.21.70</AssemblyVersion>
+    <FileVersion>2021.4.21.70</FileVersion>
+    <Version>2021.5.1.48</Version>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>5.0</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>

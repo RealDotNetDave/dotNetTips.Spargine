@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -31,6 +32,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			var info = App.AppInfo;
 
 			Assert.IsTrue(info is not null);
+
+			Debug.WriteLine(info.PropertiesToString());
 		}
 
 		[TestMethod]
@@ -89,7 +92,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			foreach (var info in result)
 			{
-				Debug.WriteLine("{0}:{1}", info.Key, info.Value);
+				Debug.WriteLine($"{info.Key}:{info.Value}");
 			}
 		}
 
@@ -158,6 +161,5 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			Assert.IsTrue(result.Count > 0);
 		}
-
 	}
 }

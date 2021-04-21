@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core.Serialization;
@@ -22,6 +23,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spartine.Core.Tests.Serialization
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class XmlSerializationTests
 	{

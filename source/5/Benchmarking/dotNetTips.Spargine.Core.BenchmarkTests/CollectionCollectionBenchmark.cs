@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		[Benchmark(Description = "Collection.Create: From List")]
 		public void CollectionCreate02()
 		{
-			var result = Collection<PersonProper>.Create(this.PersonProperCollection);
+			var result = Collection<PersonProper>.Create(this.PersonProperList);
 
 			this.Consumer.Consume(result);
 		}
@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		[Benchmark(Description = "Collection.Create: From List-Ensure Unique")]
 		public void CollectionCreate03()
 		{
-			var result = Collection<PersonProper>.Create(this.PersonProperCollection, ensureUnique: Tristate.True);
+			var result = Collection<PersonProper>.Create(this.PersonProperList, ensureUnique: Tristate.True);
 
 			this.Consumer.Consume(result);
 		}

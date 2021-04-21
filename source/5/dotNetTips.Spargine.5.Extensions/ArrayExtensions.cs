@@ -155,7 +155,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(array, nameof(array));
 
-			var hash = array.Where(t => t != null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
+			var hash = array.Where(t => t is not null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
 
 			return hash;
 		}

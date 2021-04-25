@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Extensions
 	public static class DateTimeExtensions
 	{
 		/// <summary>
-		/// Froms the milli epoch time.
+		/// Converts MilliEpochTime to DateTime.
 		/// </summary>
 		/// <param name="epochTime">The milli.</param>
 		/// <returns>DateTime.</returns>
@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Froms the unix time.
+		/// Converts UnixTime to DateTime.
 		/// </summary>
 		/// <param name="unixTime">The unix time.</param>
 		/// <returns>DateTime.</returns>
@@ -405,7 +405,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Converts to milliepochtime.
+		/// Converts DateTime to MilliEpochTime.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>System.Int64.</returns>
@@ -420,7 +420,7 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Converts to unixtime.
+		/// Converts DateTime to UnixTime.
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>System.Int32.</returns>

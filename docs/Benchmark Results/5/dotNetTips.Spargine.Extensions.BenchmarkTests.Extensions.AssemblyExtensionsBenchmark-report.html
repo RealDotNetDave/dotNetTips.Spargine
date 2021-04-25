@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210228-121708</title>
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20210420-215721</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -15,20 +15,20 @@
 <pre><code>
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
 Unknown processor
-.NET Core SDK=5.0.200-preview.21079.7
-  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
-  Job-HSBDIC : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+.NET Core SDK=5.0.300-preview.21180.15
+  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+  Job-CJSTKQ : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
 Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  Categories=AssemblyExtensions  
 </code></pre>
 
 <table>
-<thead><tr><th> Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th> Min</th><th>  Q1</th><th>Median</th><th>  Q3</th><th> Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+<thead><tr><th>    Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th> Min</th><th>  Q1</th><th>Median</th><th>  Q3</th><th> Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>GetAllTypes</td><td>1,159.7 ns</td><td>3.97 ns</td><td>3.52 ns</td><td>0.94 ns</td><td>1,154.5 ns</td><td>1,157.4 ns</td><td>1,159.0 ns</td><td>1,161.7 ns</td><td>1,165.7 ns</td><td>862,312.9</td><td>3.975 ns</td><td>14.00</td><td>1.682</td><td>2.000</td><td>0.2242</td><td>2</td><td>*</td><td>No</td><td>263 B</td><td>0.0248</td><td>-</td><td>-</td><td>240 B</td>
-</tr><tr><td>GetInstances</td><td>647.1 ns</td><td>4.08 ns</td><td>3.82 ns</td><td>0.99 ns</td><td>643.8 ns</td><td>644.4 ns</td><td>645.4 ns</td><td>649.5 ns</td><td>654.2 ns</td><td>1,545,272.6</td><td>4.083 ns</td><td>15.00</td><td>1.880</td><td>2.000</td><td>0.8402</td><td>1</td><td>*</td><td>No</td><td>199 B</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
-</tr><tr><td>GetInterfaces</td><td>1,747.1 ns</td><td>17.77 ns</td><td>16.62 ns</td><td>4.29 ns</td><td>1,712.3 ns</td><td>1,746.9 ns</td><td>1,752.3 ns</td><td>1,756.6 ns</td><td>1,765.6 ns</td><td>572,365.4</td><td>17.767 ns</td><td>15.00</td><td>2.590</td><td>2.000</td><td>-1.0559</td><td>3</td><td>*</td><td>No</td><td>256 B</td><td>0.0343</td><td>-</td><td>-</td><td>312 B</td>
+</thead><tbody><tr><td>GetAllInterfaces</td><td>1,852.6 ns</td><td>20.20 ns</td><td>18.90 ns</td><td>4.88 ns</td><td>1,806.3 ns</td><td>1,841.6 ns</td><td>1,858.7 ns</td><td>1,865.5 ns</td><td>1,881.9 ns</td><td>539,791.4</td><td>20.202 ns</td><td>15.00</td><td>2.990</td><td>2.000</td><td>-0.6725</td><td>3</td><td>*</td><td>No</td><td>256 B</td><td>0.0305</td><td>-</td><td>-</td><td>312 B</td>
+</tr><tr><td>GetAllTypes</td><td>1,270.0 ns</td><td>9.25 ns</td><td>8.66 ns</td><td>2.24 ns</td><td>1,248.2 ns</td><td>1,265.8 ns</td><td>1,270.9 ns</td><td>1,275.7 ns</td><td>1,283.5 ns</td><td>787,423.9</td><td>9.255 ns</td><td>15.00</td><td>3.352</td><td>2.000</td><td>-0.8814</td><td>2</td><td>*</td><td>No</td><td>263 B</td><td>0.0248</td><td>-</td><td>-</td><td>240 B</td>
+</tr><tr><td>GetInstances</td><td>706.4 ns</td><td>6.53 ns</td><td>6.11 ns</td><td>1.58 ns</td><td>695.8 ns</td><td>701.9 ns</td><td>707.0 ns</td><td>710.6 ns</td><td>715.9 ns</td><td>1,415,685.0</td><td>6.528 ns</td><td>15.00</td><td>1.758</td><td>2.000</td><td>-0.1483</td><td>1</td><td>*</td><td>No</td><td>199 B</td><td>0.0057</td><td>-</td><td>-</td><td>56 B</td>
 </tr></tbody></table>
 </body>
 </html>

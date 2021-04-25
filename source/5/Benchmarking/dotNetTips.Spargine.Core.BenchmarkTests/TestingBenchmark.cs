@@ -25,8 +25,8 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 	[BenchmarkCategory("TESTS")]
 	public class TestingBenchmark : Benchmark
 	{
-		private readonly TimeSpan _testTimeSpan1 = new TimeSpan(500, 9, 24, 10, 450);
-		private readonly TimeSpan _testTimeSpan2 = new TimeSpan(100, 10, 24, 10, 9);
+		private readonly TimeSpan _testTimeSpan1 = new(500, 9, 24, 10, 450);
+		private readonly TimeSpan _testTimeSpan2 = new(100, 10, 24, 10, 9);
 
 		[Benchmark(Description = "CalculatePercent", Baseline = true)]
 		public void CalculatePercent01()

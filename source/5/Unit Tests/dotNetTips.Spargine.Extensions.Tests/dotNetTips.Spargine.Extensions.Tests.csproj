@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyVersion>2021.4.21.534</AssemblyVersion>
+    <AssemblyVersion>2021.4.24.538</AssemblyVersion>
 
-    <FileVersion>2021.4.21.534</FileVersion>
+    <FileVersion>2021.4.24.538</FileVersion>
 
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
 

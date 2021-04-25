@@ -121,7 +121,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information(nameof(GetAllFields), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(GetAllFields), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<FieldInfo> GetAllFields(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));

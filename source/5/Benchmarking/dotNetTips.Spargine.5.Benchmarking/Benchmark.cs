@@ -126,7 +126,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The consumer
 		/// </summary>
-		private readonly Consumer _consumer = new Consumer();
+		private readonly Consumer _consumer = new();
 
 		/// <summary>
 		/// Gets or sets a value indicating whether to [launch the debugger].

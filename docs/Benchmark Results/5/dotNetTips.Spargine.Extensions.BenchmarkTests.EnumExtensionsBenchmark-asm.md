@@ -1,16 +1,12 @@
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetDescription01()
-; 			var result = this._testEnum.GetDescription();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,offset MT_System.StringComparison
        call      CORINFO_HELP_NEWSFAST
-       mov       ecx,[rsi+78]
+       mov       ecx,[rsi+0D0]
        mov       [rax+8],ecx
        mov       rcx,rax
        call      dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)
@@ -23,7 +19,7 @@
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 62
+; Total bytes of code 65
 ```
 ```assembly
 ; dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)
@@ -31,14 +27,14 @@
        push      rsi
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,18568F43060
+       mov       r8,1C602263020
        mov       r8,[r8]
-       mov       rdx,18588F4F748
+       mov       rdx,1C602263B70
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,rsi
-       call      00007FFEB8D923C0
+       call      00007FFB9BD3B350
        mov       rdi,rax
        mov       rcx,rsi
        mov       rax,[rsi]
@@ -48,7 +44,7 @@
        mov       rcx,rdi
        mov       r8d,1C
        cmp       [rcx],ecx
-       call      qword ptr [7FFE595349A0]
+       call      qword ptr [7FFB3C4C49A0]
        mov       rdi,rax
        mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
@@ -89,19 +85,15 @@ M01_L01:
 ; Total bytes of code 207
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetItems01()
-; 			var result = this._testEnum.GetItems();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,offset MT_System.StringComparison
        call      CORINFO_HELP_NEWSFAST
-       mov       ecx,[rsi+78]
+       mov       ecx,[rsi+0D0]
        mov       [rax+8],ecx
        mov       rcx,rax
        call      dotNetTips.Spargine.Extensions.EnumExtensions.GetItems(System.Enum)
@@ -114,7 +106,7 @@ M01_L01:
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 62
+; Total bytes of code 65
 ```
 ```assembly
 ; dotNetTips.Spargine.Extensions.EnumExtensions.GetItems(System.Enum)
@@ -131,24 +123,24 @@ M01_L01:
        xor       eax,eax
        mov       [rsp+38],rax
        mov       rsi,rcx
-       mov       r8,14CB25D3060
+       mov       r8,29B92FB3020
        mov       r8,[r8]
-       mov       rdx,14CE25D10E0
+       mov       rdx,29B92FB34D0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FFE59210020
+       mov       rcx,7FFB3C1C0020
        mov       edx,23
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,14CD25D6A38
+       mov       rdx,29BB2FB6CB0
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
-       call      00007FFEB8D923C0
+       call      00007FFB9BD3B350
        mov       rsi,rax
        mov       rcx,rsi
        call      System.Enum.GetNames(System.Type)

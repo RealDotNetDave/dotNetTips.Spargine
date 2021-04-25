@@ -1,12 +1,6 @@
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -23,14 +17,14 @@
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -51,19 +45,19 @@
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,2047E353060
+       mov       r8,25410A23020
        mov       r8,[r8]
-       mov       rdx,204AE3519F0
+       mov       rdx,25410A235F0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,2047E353060
+       mov       r8,25410A23020
        mov       r8,[r8]
-       mov       rdx,2047E3533F8
+       mov       rdx,25410A233B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,204AE3519F8
+       mov       rdx,25410A235F8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -75,10 +69,10 @@
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,2047E351528
+       mov       rax,25410A21508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,204AE351A00
+       mov       rax,25410A23600
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -119,7 +113,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,2047E353060
+       mov       rax,25410A23020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -176,7 +170,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59114020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -188,7 +182,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59114020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -204,15 +198,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -229,14 +217,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59558548]
+       call      qword ptr [7FFB3C4C8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -257,19 +245,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,1FE1BEB3060
+       mov       r8,2A692973020
        mov       r8,[r8]
-       mov       rdx,1FE2BEB11B8
+       mov       rdx,2A6C29711E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1FE1BEB3060
+       mov       r8,2A692973020
        mov       r8,[r8]
-       mov       rdx,1FE1BEB33F8
+       mov       rdx,2A6929733B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,1FE2BEB11C0
+       mov       rdx,2A6C29711E8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -281,10 +269,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,1FE1BEB1528
+       mov       rax,2A692971508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1FE2BEB11C8
+       mov       rax,2A6C29711F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -325,7 +313,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1FE1BEB3060
+       mov       rax,2A692973020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -382,7 +370,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0B4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -394,7 +382,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0B4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -410,15 +398,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -435,14 +417,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59558548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -463,19 +445,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,1C8E65B3060
+       mov       r8,1F2C60B3020
        mov       r8,[r8]
-       mov       rdx,1C8E65C15D0
+       mov       rdx,1F2D60B11E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1C8E65B3060
+       mov       r8,1F2C60B3020
        mov       r8,[r8]
-       mov       rdx,1C8E65B33F8
+       mov       rdx,1F2C60B33B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,1C8E65C15D8
+       mov       rdx,1F2D60B11E8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -487,10 +469,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,1C8E65B1528
+       mov       rax,1F2C60B1508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1C8E65C15E0
+       mov       rax,1F2D60B11F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -531,7 +513,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1C8E65B3060
+       mov       rax,1F2C60B3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -588,7 +570,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -600,7 +582,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -616,15 +598,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -641,14 +617,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C4D8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -669,19 +645,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,231AE913060
+       mov       r8,29564043020
        mov       r8,[r8]
-       mov       rdx,231BE9111B8
+       mov       rdx,295440411E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,231AE913060
+       mov       r8,29564043020
        mov       r8,[r8]
-       mov       rdx,231AE9133F8
+       mov       rdx,295640433B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,231BE9111C0
+       mov       rdx,295440411E8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -693,10 +669,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,231AE911528
+       mov       rax,29564041508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,231BE9111C8
+       mov       rax,295440411F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -737,7 +713,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,231AE913060
+       mov       rax,29564043020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -794,7 +770,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -806,7 +782,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -822,15 +798,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -847,14 +817,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59558548]
+       call      qword ptr [7FFB3C4F8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -875,19 +845,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,2D4D57C3060
+       mov       r8,1E60BE53020
        mov       r8,[r8]
-       mov       rdx,2D4C57C11B8
+       mov       rdx,1E5EBE519F8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,2D4D57C3060
+       mov       r8,1E60BE53020
        mov       r8,[r8]
-       mov       rdx,2D4D57C33F8
+       mov       rdx,1E60BE533B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,2D4C57C11C0
+       mov       rdx,1E5EBE51A00
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -899,10 +869,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,2D4D57C1528
+       mov       rax,1E60BE51508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,2D4C57C11C8
+       mov       rax,1E5EBE51A08
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -943,7 +913,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,2D4D57C3060
+       mov       rax,1E60BE53020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -1000,7 +970,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -1012,7 +982,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -1028,15 +998,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1053,14 +1017,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -1081,19 +1045,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,216289E3060
+       mov       r8,28A0A073020
        mov       r8,[r8]
-       mov       rdx,21628A23E58
+       mov       rdx,28A1A0711E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,216289E3060
+       mov       r8,28A0A073020
        mov       r8,[r8]
-       mov       rdx,216289E33F8
+       mov       rdx,28A0A0733B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,21628A23E60
+       mov       rdx,28A1A0711E8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -1105,10 +1069,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,216289E1528
+       mov       rax,28A0A071508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,21628A23E68
+       mov       rax,28A1A0711F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -1149,7 +1113,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,216289E3060
+       mov       rax,28A0A073020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -1206,7 +1170,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -1218,7 +1182,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -1234,15 +1198,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendBytes(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1259,14 +1217,14 @@ M02_L05:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rdx,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendBytes(System.Text.StringBuilder, Byte[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -1287,19 +1245,19 @@ M02_L05:
        sub       rsp,28
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,1872D0E3060
+       mov       r8,1D17D5C3020
        mov       r8,[r8]
-       mov       rdx,1872D16A610
+       mov       rdx,1D16D5C11E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1872D0E3060
+       mov       r8,1D17D5C3020
        mov       r8,[r8]
-       mov       rdx,1872D0E33F8
+       mov       rdx,1D17D5C33B8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rdx,1872D16A618
+       mov       rdx,1D16D5C11E8
        mov       rdx,[rdx]
        mov       rcx,rsi
        cmp       [rcx],ecx
@@ -1311,10 +1269,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,ebx
        lea       rcx,[rdi+rcx+10]
-       mov       rax,1872D0E1528
+       mov       rax,1D17D5C1508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1872D16A620
+       mov       rax,1D16D5C11F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -1355,7 +1313,7 @@ M01_L03:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1872D0E3060
+       mov       rax,1D17D5C3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -1412,7 +1370,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -1424,7 +1382,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -1440,7 +1398,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -1448,8 +1406,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -1460,28 +1416,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -1491,13 +1441,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4F8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -1527,21 +1477,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,1BAEA903060
+       mov       r8,1CD9BAD3020
        mov       r8,[r8]
-       mov       rdx,1BADA9011B8
+       mov       rdx,1CD9BAD35F0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1BAEA903060
+       mov       r8,1CD9BAD3020
        mov       r8,[r8]
-       mov       rdx,1BAFA9033D0
+       mov       rdx,1CDBBADF300
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,1BAEA903060
+       mov       r8,1CD9BAD3020
        mov       r8,[r8]
-       mov       rdx,1BADA901058
+       mov       rdx,1CD9BAD3490
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -1561,12 +1511,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE595A7600
+       mov       rcx,7FFB3C547E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,1BAEA909B98
+       mov       r9,1CDBBAD9708
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -1614,7 +1564,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,1BAFA9032E0
+       mov       rdx,1CDBBADF210
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -1646,7 +1596,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1BAEA903060
+       mov       rax,1CD9BAD3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -1703,7 +1653,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -1715,7 +1665,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -1731,7 +1681,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -1739,8 +1689,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -1751,28 +1699,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -1782,13 +1724,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C508548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -1818,21 +1760,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,27256A63060
+       mov       r8,12F9E701028
        mov       r8,[r8]
-       mov       rdx,27266A611B8
+       mov       rdx,12F9E70F560
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,27256A63060
+       mov       r8,12F9E701028
        mov       r8,[r8]
-       mov       rdx,27256A717D0
+       mov       rdx,12F7E703390
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,27256A63060
+       mov       r8,12F9E701028
        mov       r8,[r8]
-       mov       rdx,27266A61058
+       mov       rdx,12F9E70F400
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -1852,12 +1794,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE595A7600
+       mov       rcx,7FFB3C557E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,27256A6BBB0
+       mov       r9,12F9E709B20
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -1905,7 +1847,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,27256A716E0
+       mov       rdx,12F7E7032A0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -1937,7 +1879,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,27256A63060
+       mov       rax,12F9E701028
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -1994,7 +1936,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -2006,7 +1948,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -2022,7 +1964,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -2030,8 +1972,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -2042,28 +1982,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -2073,13 +2007,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C4D8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -2109,21 +2043,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,2827B913060
+       mov       r8,2395C1F3020
        mov       r8,[r8]
-       mov       rdx,2825B9111B8
+       mov       rdx,2394C1F11E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,2827B913060
+       mov       r8,2395C1F3020
        mov       r8,[r8]
-       mov       rdx,2827B9217D0
+       mov       rdx,2395C1F57A0
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,2827B913060
+       mov       r8,2395C1F3020
        mov       r8,[r8]
-       mov       rdx,2825B911058
+       mov       rdx,2394C1F1080
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -2143,12 +2077,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE59597600
+       mov       rcx,7FFB3C527E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,2827B91BBB0
+       mov       r9,2393C1F7710
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -2196,7 +2130,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,2827B9216E0
+       mov       rdx,2395C1F56B0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -2228,7 +2162,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,2827B913060
+       mov       rax,2395C1F3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -2285,7 +2219,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -2297,7 +2231,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -2313,7 +2247,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -2321,8 +2255,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -2333,28 +2265,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -2364,13 +2290,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C508548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -2400,21 +2326,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,1D0035B3060
+       mov       r8,1C081EF3020
        mov       r8,[r8]
-       mov       rdx,1D0035C15D0
+       mov       rdx,1C081F01558
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1D0035B3060
+       mov       r8,1C081EF3020
        mov       r8,[r8]
-       mov       rdx,1CFF35B13B8
+       mov       rdx,1C061EF1398
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,1D0035B3060
+       mov       r8,1C081EF3020
        mov       r8,[r8]
-       mov       rdx,1D0035C1470
+       mov       rdx,1C081F013F8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -2434,12 +2360,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE59587600
+       mov       rcx,7FFB3C557E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,1D0035BBBB0
+       mov       r9,1C081EFBB18
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -2487,7 +2413,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,1CFF35B12C8
+       mov       rdx,1C061EF12A8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -2519,7 +2445,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1D0035B3060
+       mov       rax,1C081EF3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -2576,7 +2502,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -2588,7 +2514,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -2604,7 +2530,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -2612,8 +2538,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -2624,28 +2548,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -2655,13 +2573,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C508548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -2691,21 +2609,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,20188FA3060
+       mov       r8,24671073020
        mov       r8,[r8]
-       mov       rdx,20178FA11B8
+       mov       rdx,246810711E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,20188FA3060
+       mov       r8,24671073020
        mov       r8,[r8]
-       mov       rdx,20188FB17D0
+       mov       rdx,246A1071398
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,20188FA3060
+       mov       r8,24671073020
        mov       r8,[r8]
-       mov       rdx,20178FA1058
+       mov       rdx,24681071080
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -2725,12 +2643,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE59597600
+       mov       rcx,7FFB3C557E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,20188FABBB0
+       mov       r9,24671075B48
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -2778,7 +2696,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,20188FB16E0
+       mov       rdx,246A10712A8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -2810,7 +2728,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,20188FA3060
+       mov       rax,24671073020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -2867,7 +2785,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -2879,7 +2797,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0F4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -2895,7 +2813,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -2903,8 +2821,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -2915,28 +2831,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -2946,13 +2856,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4D8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -2982,21 +2892,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,1D71A1D1048
+       mov       r8,1B5CE1B3020
        mov       r8,[r8]
-       mov       rdx,1D71A1DFDF0
+       mov       rdx,1B5CE1B35F0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1D71A1D1048
+       mov       r8,1B5CE1B3020
        mov       r8,[r8]
-       mov       rdx,1D71A1DF7B8
+       mov       rdx,1B5BE1B1398
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,1D71A1D1048
+       mov       r8,1B5CE1B3020
        mov       r8,[r8]
-       mov       rdx,1D71A1DFC90
+       mov       rdx,1B5CE1B3490
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -3016,12 +2926,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE59587600
+       mov       rcx,7FFB3C527E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,1D71A1D9B98
+       mov       r9,1B5DE1B9708
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -3069,7 +2979,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,1D71A1DF6C8
+       mov       rdx,1B5BE1B12A8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -3101,7 +3011,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1D71A1D1048
+       mov       rax,1B5CE1B3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -3158,7 +3068,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -3170,7 +3080,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -3186,7 +3096,7 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendKeyValue0()
        push      rdi
@@ -3194,8 +3104,6 @@ M02_L05:
        push      rbx
        sub       rsp,30
        mov       rsi,rcx
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_System.Text.StringBuilder
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -3206,28 +3114,22 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-; 			for (var i = 0; i < this.StringArray.Length; i++)
-; 			     ^^^^^^^^^
        xor       ebx,ebx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       dword ptr [rax+8],0
        jle       short M00_L01
-; 				var testString = this.StringArray[i];
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       ebx,[rax+8]
        jae       short M00_L02
        movsxd    rcx,ebx
        mov       r8,[rax+rcx*8+10]
-; 				sb.AppendKeyValue(testString, testString);
-; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       dword ptr [rsp+20],0FFFFFFFF
        mov       rcx,rdi
        mov       rdx,r8
@@ -3237,13 +3139,13 @@ M00_L00:
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        cmp       [rax+8],ebx
        jg        short M00_L00
 M00_L01:
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -3273,21 +3175,21 @@ M00_L02:
        mov       rdi,r8
        mov       ebp,r9d
        mov       r14d,[rsp+80]
-       mov       r8,1F971BF1048
+       mov       r8,1D0A2203020
        mov       r8,[r8]
-       mov       rdx,1F961C70A40
+       mov       rdx,1D0B22011E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1F971BF1048
+       mov       r8,1D0A2203020
        mov       r8,[r8]
-       mov       rdx,1F961BF33D0
+       mov       rdx,1D0A22057A0
        mov       rdx,[rdx]
        mov       rcx,rbx
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,1F971BF1048
+       mov       r8,1D0A2203020
        mov       r8,[r8]
-       mov       rdx,1F961C708E0
+       mov       rdx,1D0B2201080
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -3307,12 +3209,12 @@ M01_L00:
        mov       edx,22
        call      System.Text.StringBuilder.Append(Char)
        xor       ebx,ebx
-       mov       rcx,7FFE59587600
+       mov       rcx,7FFB3C537E18
        mov       edx,28
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
        mov       ebp,[rdi+8]
 M01_L01:
-       mov       r9,1F971BF9B98
+       mov       r9,1D082207710
        mov       rdx,[r9]
        mov       r9d,ebp
        sub       r9d,ebx
@@ -3360,7 +3262,7 @@ M01_L04:
        cmp       r14d,0FFFFFFFE
        jne       short M01_L06
 M01_L05:
-       mov       rdx,1F961BF32E0
+       mov       rdx,1D0A22056B0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      System.Text.StringBuilder.Append(System.String)
@@ -3392,7 +3294,7 @@ M01_L07:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1F971BF1048
+       mov       rax,1D0A2203020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -3449,7 +3351,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -3461,7 +3363,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -3477,15 +3379,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -3501,19 +3397,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,11C64F2F6C8
+       mov       rcx,287677AD218
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -3544,14 +3440,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,11C54F211B8
+       mov       rdx,287677AD968
        mov       rdx,[rdx]
-       mov       r8,11C64F21048
+       mov       r8,287877A3020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,11C64F21048
+       mov       r8,287877A3020
        mov       r8,[r8]
-       mov       rdx,11C54F211C0
+       mov       rdx,287677AD970
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -3596,7 +3492,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,11C64F21048
+       mov       rax,287877A3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -3653,7 +3549,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -3665,7 +3561,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -3681,15 +3577,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -3705,19 +3595,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,1D30E4EF290
+       mov       rcx,269FABEF210
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -3748,14 +3638,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,1D2EE4E3608
+       mov       rdx,269EABE11E0
        mov       rdx,[rdx]
-       mov       r8,1D2EE4E3060
+       mov       r8,269DABE3020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1D2EE4E3060
+       mov       r8,269DABE3020
        mov       r8,[r8]
-       mov       rdx,1D2EE4E3610
+       mov       rdx,269EABE11E8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -3800,7 +3690,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1D2EE4E3060
+       mov       rax,269DABE3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -3857,7 +3747,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -3869,7 +3759,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -3885,15 +3775,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -3909,19 +3793,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,1A9C0743718
+       mov       rcx,215CD2A36B8
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59558548]
+       call      qword ptr [7FFB3C4D8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -3952,14 +3836,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,1A9F07411B8
+       mov       rdx,215CD2A3E08
        mov       rdx,[rdx]
-       mov       r8,1A9C0743060
+       mov       r8,215CD2A3020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1A9C0743060
+       mov       r8,215CD2A3020
        mov       r8,[r8]
-       mov       rdx,1A9F07411C0
+       mov       rdx,215CD2A3E10
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -4004,7 +3888,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1A9C0743060
+       mov       rax,215CD2A3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -4061,7 +3945,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -4073,7 +3957,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59144020
+       mov       rdx,7FFB3C0C4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -4089,15 +3973,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -4113,19 +3991,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,257687712C8
+       mov       rcx,26CBC967278
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -4156,14 +4034,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,2577877D168
+       mov       rdx,26C9C969178
        mov       rdx,[rdx]
-       mov       r8,25788773060
+       mov       r8,26CAC963020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,25788773060
+       mov       r8,26CAC963020
        mov       r8,[r8]
-       mov       rdx,2577877D170
+       mov       rdx,26C9C969180
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -4208,7 +4086,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,25788773060
+       mov       rax,26CAC963020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -4265,7 +4143,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -4277,7 +4155,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -4293,15 +4171,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -4317,19 +4189,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,21E5C503718
+       mov       rcx,18E5EB212A8
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4F8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -4360,14 +4232,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,21E5C503E40
+       mov       rdx,18E5EB219F8
        mov       rdx,[rdx]
-       mov       r8,21E5C503060
+       mov       r8,18E6EB23020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,21E5C503060
+       mov       r8,18E6EB23020
        mov       r8,[r8]
-       mov       rdx,21E5C503E48
+       mov       rdx,18E5EB21A00
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -4412,7 +4284,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,21E5C503060
+       mov       rax,18E6EB23020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -4469,7 +4341,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59114020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -4481,7 +4353,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59114020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -4497,15 +4369,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -4521,19 +4387,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,218CD97F290
+       mov       rcx,2AD3DE112A8
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C4F8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -4564,14 +4430,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,218BD973608
+       mov       rdx,2AD3DE119F8
        mov       rdx,[rdx]
-       mov       r8,218BD973060
+       mov       r8,2AD4DE13020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,218BD973060
+       mov       r8,2AD4DE13020
        mov       r8,[r8]
-       mov       rdx,218BD973610
+       mov       rdx,2AD3DE11A00
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -4616,7 +4482,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,218BD973060
+       mov       rax,2AD4DE13020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -4673,7 +4539,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -4685,7 +4551,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59124020
+       mov       rdx,7FFB3C0E4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -4701,15 +4567,9 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendValues01()
-; 			var sb = new StringBuilder();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			sb.AppendValues(ControlChars.DefaultSeparator, this.StringArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(sb.ToString());
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -4725,19 +4585,19 @@ M02_L05:
        lea       rcx,[rdi+8]
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,1B2442EF290
+       mov       rcx,1EFDACDF210
        mov       rbx,[rcx]
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+48]
-       call      qword ptr [rax+20]
+       call      qword ptr [rax+18]
        mov       r8,rax
        mov       rdx,rbx
        mov       rcx,rdi
        call      dotNetTips.Spargine.Extensions.StringBuilderExtensions.AppendValues(System.Text.StringBuilder, System.String, System.String[])
        mov       rsi,[rsi+10]
        mov       rcx,rdi
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4E8548]
        cmp       [rsi],esi
        lea       rcx,[rsi+8]
        mov       rdx,rax
@@ -4768,14 +4628,14 @@ M02_L05:
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,[rbp+8]
-       mov       rdx,1B24436C9F0
+       mov       rdx,1EFDACDF960
        mov       rdx,[rdx]
-       mov       r8,1B2242E3060
+       mov       r8,1EFBACD3020
        mov       r8,[r8]
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       r8,1B2242E3060
+       mov       r8,1EFBACD3020
        mov       r8,[r8]
-       mov       rdx,1B24436C9F8
+       mov       rdx,1EFDACDF968
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
@@ -4820,7 +4680,7 @@ M02_L05:
        mov       ecx,[rsi+1C]
        add       ecx,[rsi+18]
        jne       short M02_L00
-       mov       rax,1B2242E3060
+       mov       rax,1EFBACD3020
        mov       rax,[rax]
        add       rsp,30
        pop       rbx
@@ -4877,7 +4737,7 @@ M02_L04:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,9B41
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
@@ -4889,7 +4749,7 @@ M02_L04:
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rsi+74],80131501
        mov       ecx,1A2D3
-       mov       rdx,7FFE59134020
+       mov       rdx,7FFB3C0D4020
        call      CORINFO_HELP_STRCNS
        lea       rcx,[rsi+78]
        mov       rdx,rax
@@ -4905,20 +4765,16 @@ M02_L05:
 ; Total bytes of code 325
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -4942,22 +4798,22 @@ M02_L05:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,27E3ACC1048
+       mov       r8,2266B213020
        mov       r8,[r8]
-       mov       rdx,27E3ACC13E0
+       mov       rdx,2266B2133B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE59583CA8
+       mov       rcx,7FFB3C5344B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,27E3ACC99F0
+       mov       rcx,2266B21B970
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,27E4ACC31D0
+       mov       rdx,2267B2111E0
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -4969,10 +4825,10 @@ M02_L05:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,27E4ACC1528
+       mov       rax,2266B211508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,27E4ACC31D8
+       mov       rax,2267B2111E8
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -4992,9 +4848,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4E8548]
        mov       rdi,rax
-       mov       rcx,27E3ACC99F0
+       mov       rcx,2266B21B970
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5015,10 +4871,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE59583CA8
+       mov       rcx,7FFB3C5344B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,27E3ACC99F0
+       mov       rcx,2266B21B970
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5034,20 +4890,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5071,22 +4923,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,1BA185C3060
+       mov       r8,2BF49303020
        mov       r8,[r8]
-       mov       rdx,1BA185C33F8
+       mov       rdx,2BF493033B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE59583CA8
+       mov       rcx,7FFB3C5244B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1BA185C99F0
+       mov       rcx,2BF29307568
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,1BA185CF5B8
+       mov       rdx,2BF493055E8
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5098,10 +4950,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,1BA185C1528
+       mov       rax,2BF49301508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1BA185CF5C0
+       mov       rax,2BF493055F0
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5121,9 +4973,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59528548]
+       call      qword ptr [7FFB3C4D8548]
        mov       rdi,rax
-       mov       rcx,1BA185C99F0
+       mov       rcx,2BF29307568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5144,10 +4996,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE59583CA8
+       mov       rcx,7FFB3C5244B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1BA185C99F0
+       mov       rcx,2BF29307568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5163,20 +5015,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5200,22 +5048,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,1F5E96B3060
+       mov       r8,23D26543020
        mov       r8,[r8]
-       mov       rdx,1F5E96B33F8
+       mov       rdx,23D265433B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE59593CA8
+       mov       rcx,7FFB3C5544B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F5E96BBA08
+       mov       rcx,23D16547568
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,1F5F96B11B8
+       mov       rdx,23D1654D150
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5227,10 +5075,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,1F5E96B1528
+       mov       rax,23D26541508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1F5F96B11C0
+       mov       rax,23D1654D158
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5250,9 +5098,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C508548]
        mov       rdi,rax
-       mov       rcx,1F5E96BBA08
+       mov       rcx,23D16547568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5273,10 +5121,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE59593CA8
+       mov       rcx,7FFB3C5544B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F5E96BBA08
+       mov       rcx,23D16547568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5292,20 +5140,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5329,22 +5173,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,1B165CF3060
+       mov       r8,2F07B013020
        mov       r8,[r8]
-       mov       rdx,1B165CF33F8
+       mov       rdx,2F07B0133B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE595A3CA8
+       mov       rcx,7FFB3C5444B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B175CF75A0
+       mov       rcx,2F05B017568
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,1B195CF11B8
+       mov       rdx,2F06B0111E0
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5356,10 +5200,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,1B165CF1528
+       mov       rax,2F07B011508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1B195CF11C0
+       mov       rax,2F06B0111E8
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5379,9 +5223,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4F8548]
        mov       rdi,rax
-       mov       rcx,1B175CF75A0
+       mov       rcx,2F05B017568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5402,10 +5246,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE595A3CA8
+       mov       rcx,7FFB3C5444B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B175CF75A0
+       mov       rcx,2F05B017568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5421,20 +5265,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5458,22 +5298,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,1F649CE3060
+       mov       r8,293DCFC3020
        mov       r8,[r8]
-       mov       rdx,1F649CE33F8
+       mov       rdx,293DCFC33B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE59593CA8
+       mov       rcx,7FFB3C5544B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F659CE75A0
+       mov       rcx,293FCFC9560
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,1F659D0C5A0
+       mov       rdx,293FCFCF148
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5485,10 +5325,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,1F649CE1528
+       mov       rax,293DCFC1508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,1F659D0C5A8
+       mov       rax,293FCFCF150
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5508,9 +5348,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59538548]
+       call      qword ptr [7FFB3C508548]
        mov       rdi,rax
-       mov       rcx,1F659CE75A0
+       mov       rcx,293FCFC9560
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5531,10 +5371,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE59593CA8
+       mov       rcx,7FFB3C5544B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F659CE75A0
+       mov       rcx,293FCFC9560
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5550,20 +5390,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5587,22 +5423,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,167D0E03060
+       mov       r8,2F2B8A93020
        mov       r8,[r8]
-       mov       rdx,167D0E033F8
+       mov       rdx,2F2B8A933B8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE595A3CA8
+       mov       rcx,7FFB3C5244B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,167F0E095B8
+       mov       rcx,2F298A97568
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,167D0E03E40
+       mov       rdx,2F298A9D150
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5614,10 +5450,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,167D0E01528
+       mov       rax,2F2B8A91508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,167D0E03E48
+       mov       rax,2F298A9D158
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5637,9 +5473,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59548548]
+       call      qword ptr [7FFB3C4D8548]
        mov       rdi,rax
-       mov       rcx,167F0E095B8
+       mov       rcx,2F298A97568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5660,10 +5496,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE595A3CA8
+       mov       rcx,7FFB3C5244B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,167F0E095B8
+       mov       rcx,2F298A97568
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5679,20 +5515,16 @@ M01_L03:
 ; Total bytes of code 350
 ```
 
-## .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+## .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.StringBuilderExtensionsCounterBenchmark.AppendBytes03()
-; 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
        mov       rcx,rsi
        mov       rax,[rsi]
-       mov       rax,[rax+48]
-       call      qword ptr [rax+8]
+       mov       rax,[rax+40]
+       call      qword ptr [rax+38]
        mov       rcx,rax
        call      dotNetTips.Spargine.Core.StringBuilderHelper.BytesToString(Byte[])
        mov       rcx,[rsi+10]
@@ -5716,22 +5548,22 @@ M01_L03:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       mov       r8,13C3E203060
+       mov       r8,2B7AF2D1028
        mov       r8,[r8]
-       mov       rdx,13C3E2033F8
+       mov       rdx,2B7AF2D13C0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Collections.IEnumerable, System.String, System.String)
-       mov       rcx,7FFE59563CA8
+       mov       rcx,7FFB3C5344B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,13C3E2099F0
+       mov       rcx,2B7AF2D9978
        mov       rcx,[rcx]
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+20]
        mov       [rbp+0FFE0],rax
-       mov       rdx,13C2E2011B8
+       mov       rdx,2B79F2D11E0
        mov       rdx,[rdx]
        mov       rcx,[rbp+0FFE0]
        cmp       [rcx],ecx
@@ -5743,10 +5575,10 @@ M01_L03:
 M01_L00:
        movsxd    rcx,edi
        lea       rcx,[rsi+rcx+10]
-       mov       rax,13C3E201528
+       mov       rax,2B78F2D1508
        mov       r8,[rax]
        movzx     ecx,byte ptr [rcx]
-       mov       rax,13C2E2011C0
+       mov       rax,2B79F2D11E8
        mov       rdx,[rax]
        test      rdx,rdx
        jne       short M01_L01
@@ -5766,9 +5598,9 @@ M01_L03:
        mov       edx,27
        call      System.Text.StringBuilder.Append(Char)
        mov       rcx,[rbp+0FFE0]
-       call      qword ptr [7FFE59508548]
+       call      qword ptr [7FFB3C4E8548]
        mov       rdi,rax
-       mov       rcx,13C3E2099F0
+       mov       rcx,2B7AF2D9978
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]
@@ -5789,10 +5621,10 @@ M01_L03:
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
-       mov       rcx,7FFE59563CA8
+       mov       rcx,7FFB3C5344B0
        mov       edx,23
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,13C3E2099F0
+       mov       rcx,2B7AF2D9978
        mov       rcx,[rcx]
        mov       rdx,[rbp+0FFE0]
        mov       rax,[rcx]

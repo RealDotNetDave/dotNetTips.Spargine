@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.Extensions.BenchmarkTests.Tester.RandomDataBenchmark-20210228-121809</title>
+<title>dotNetTips.Spargine.Extensions.BenchmarkTests.Tester.RandomDataBenchmark-20210420-215811</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -15,9 +15,9 @@
 <pre><code>
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
 Unknown processor
-.NET Core SDK=5.0.200-preview.21079.7
-  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
-  Job-HSBDIC : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+.NET Core SDK=5.0.300-preview.21180.15
+  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+  Job-CJSTKQ : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
 Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Tester  Categories=RandomData  
@@ -26,13 +26,13 @@ Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Tester  Categories=Rando
 <table>
 <thead><tr><th>                        Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Creating: Person&#39;</td><td>6.458 &mu;s</td><td>0.0051 &mu;s</td><td>0.0045 &mu;s</td><td>0.0012 &mu;s</td><td>6.449 &mu;s</td><td>6.455 &mu;s</td><td>6.458 &mu;s</td><td>6.460 &mu;s</td><td>6.466 &mu;s</td><td>154,852.1</td><td>0.0051 &mu;s</td><td>14.00</td><td>2.335</td><td>2.000</td><td>-0.1355</td><td>1</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
-</tr><tr><td>&#39;Creating: PersonFixed&#39;</td><td>6.431 &mu;s</td><td>0.0076 &mu;s</td><td>0.0068 &mu;s</td><td>0.0018 &mu;s</td><td>6.422 &mu;s</td><td>6.427 &mu;s</td><td>6.431 &mu;s</td><td>6.436 &mu;s</td><td>6.446 &mu;s</td><td>155,488.8</td><td>0.0076 &mu;s</td><td>14.00</td><td>2.255</td><td>2.000</td><td>0.4336</td><td>1</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
-</tr><tr><td>&#39;Creating: PersonPlus&#39;</td><td>6.750 &mu;s</td><td>0.0855 &mu;s</td><td>0.0800 &mu;s</td><td>0.0207 &mu;s</td><td>6.650 &mu;s</td><td>6.686 &mu;s</td><td>6.726 &mu;s</td><td>6.802 &mu;s</td><td>6.895 &mu;s</td><td>148,155.4</td><td>0.0855 &mu;s</td><td>15.00</td><td>1.746</td><td>2.000</td><td>0.4670</td><td>3</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
-</tr><tr><td>&#39;Creating: PersonProper&#39;</td><td>6.578 &mu;s</td><td>0.0548 &mu;s</td><td>0.0512 &mu;s</td><td>0.0132 &mu;s</td><td>6.493 &mu;s</td><td>6.530 &mu;s</td><td>6.600 &mu;s</td><td>6.612 &mu;s</td><td>6.659 &mu;s</td><td>152,025.8</td><td>0.0548 &mu;s</td><td>15.00</td><td>1.485</td><td>2.000</td><td>-0.1663</td><td>2</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
-</tr><tr><td>&#39;Creating: PersonRecord&#39;</td><td>9.419 &mu;s</td><td>0.1826 &mu;s</td><td>0.2789 &mu;s</td><td>0.0501 &mu;s</td><td>8.359 &mu;s</td><td>9.323 &mu;s</td><td>9.509 &mu;s</td><td>9.514 &mu;s</td><td>9.789 &mu;s</td><td>106,173.3</td><td>0.1826 &mu;s</td><td>31.00</td><td>8.127</td><td>2.000</td><td>-2.0330</td><td>4</td><td>*</td><td>No</td><td>1.15 KB</td><td>0.4425</td><td>-</td><td>-</td><td>4.08 KB</td>
-</tr><tr><td>&#39;PropertiesToString(): PersonProper&#39;</td><td>56.467 &mu;s</td><td>0.7828 &mu;s</td><td>0.7323 &mu;s</td><td>0.1891 &mu;s</td><td>55.881 &mu;s</td><td>55.931 &mu;s</td><td>55.962 &mu;s</td><td>57.328 &mu;s</td><td>57.758 &mu;s</td><td>17,709.6</td><td>0.7828 &mu;s</td><td>15.00</td><td>1.450</td><td>2.000</td><td>0.6473</td><td>6</td><td>*</td><td>No</td><td>1.18 KB</td><td>7.8735</td><td>-</td><td>-</td><td>70.55 KB</td>
-</tr><tr><td>&#39;PropertiesToString(): PersonRecord&#39;</td><td>36.219 &mu;s</td><td>0.3713 &mu;s</td><td>0.3291 &mu;s</td><td>0.0880 &mu;s</td><td>35.922 &mu;s</td><td>36.042 &mu;s</td><td>36.082 &mu;s</td><td>36.125 &mu;s</td><td>36.882 &mu;s</td><td>27,609.8</td><td>0.3713 &mu;s</td><td>14.00</td><td>2.586</td><td>2.000</td><td>1.1916</td><td>5</td><td>*</td><td>No</td><td>1.6 KB</td><td>5.0049</td><td>-</td><td>-</td><td>44.89 KB</td>
+</thead><tbody><tr><td>&#39;Creating: Person&#39;</td><td>6.632 &mu;s</td><td>0.0438 &mu;s</td><td>0.0388 &mu;s</td><td>0.0104 &mu;s</td><td>6.587 &mu;s</td><td>6.597 &mu;s</td><td>6.625 &mu;s</td><td>6.658 &mu;s</td><td>6.718 &mu;s</td><td>150,792.1</td><td>0.0438 &mu;s</td><td>14.00</td><td>2.353</td><td>2.000</td><td>0.6919</td><td>1</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
+</tr><tr><td>&#39;Creating: PersonFixed&#39;</td><td>6.877 &mu;s</td><td>0.1157 &mu;s</td><td>0.0966 &mu;s</td><td>0.0268 &mu;s</td><td>6.711 &mu;s</td><td>6.810 &mu;s</td><td>6.907 &mu;s</td><td>6.959 &mu;s</td><td>7.011 &mu;s</td><td>145,409.4</td><td>0.1157 &mu;s</td><td>13.00</td><td>1.490</td><td>2.000</td><td>-0.2044</td><td>2</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
+</tr><tr><td>&#39;Creating: PersonPlus&#39;</td><td>6.777 &mu;s</td><td>0.0511 &mu;s</td><td>0.0453 &mu;s</td><td>0.0121 &mu;s</td><td>6.713 &mu;s</td><td>6.752 &mu;s</td><td>6.764 &mu;s</td><td>6.821 &mu;s</td><td>6.844 &mu;s</td><td>147,550.3</td><td>0.0511 &mu;s</td><td>14.00</td><td>1.532</td><td>2.000</td><td>0.2900</td><td>2</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
+</tr><tr><td>&#39;Creating: PersonProper&#39;</td><td>7.139 &mu;s</td><td>0.0376 &mu;s</td><td>0.0333 &mu;s</td><td>0.0089 &mu;s</td><td>7.090 &mu;s</td><td>7.117 &mu;s</td><td>7.134 &mu;s</td><td>7.157 &mu;s</td><td>7.199 &mu;s</td><td>140,076.0</td><td>0.0376 &mu;s</td><td>14.00</td><td>1.829</td><td>2.000</td><td>0.3376</td><td>3</td><td>*</td><td>No</td><td>0.72 KB</td><td>0.3357</td><td>-</td><td>-</td><td>3.04 KB</td>
+</tr><tr><td>&#39;Creating: PersonRecord&#39;</td><td>8.439 &mu;s</td><td>0.0982 &mu;s</td><td>0.0919 &mu;s</td><td>0.0237 &mu;s</td><td>8.307 &mu;s</td><td>8.367 &mu;s</td><td>8.427 &mu;s</td><td>8.508 &mu;s</td><td>8.580 &mu;s</td><td>118,493.6</td><td>0.0982 &mu;s</td><td>15.00</td><td>1.494</td><td>2.000</td><td>0.0440</td><td>4</td><td>*</td><td>No</td><td>1.15 KB</td><td>0.4425</td><td>-</td><td>-</td><td>4.08 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonProper&#39;</td><td>56.265 &mu;s</td><td>0.1087 &mu;s</td><td>0.0964 &mu;s</td><td>0.0258 &mu;s</td><td>56.069 &mu;s</td><td>56.209 &mu;s</td><td>56.286 &mu;s</td><td>56.330 &mu;s</td><td>56.380 &mu;s</td><td>17,772.9</td><td>0.1087 &mu;s</td><td>14.00</td><td>2.009</td><td>2.000</td><td>-0.6290</td><td>6</td><td>*</td><td>No</td><td>1.18 KB</td><td>7.9956</td><td>-</td><td>-</td><td>70.64 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonRecord&#39;</td><td>38.360 &mu;s</td><td>0.1318 &mu;s</td><td>0.1169 &mu;s</td><td>0.0312 &mu;s</td><td>38.089 &mu;s</td><td>38.298 &mu;s</td><td>38.370 &mu;s</td><td>38.402 &mu;s</td><td>38.544 &mu;s</td><td>26,068.6</td><td>0.1318 &mu;s</td><td>14.00</td><td>2.992</td><td>2.000</td><td>-0.4129</td><td>5</td><td>*</td><td>No</td><td>1.61 KB</td><td>5.0659</td><td>-</td><td>-</td><td>44.99 KB</td>
 </tr></tbody></table>
 </body>
 </html>

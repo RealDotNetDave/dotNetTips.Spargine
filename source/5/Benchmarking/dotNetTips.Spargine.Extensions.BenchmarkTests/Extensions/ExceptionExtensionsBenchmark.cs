@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(nameof(ExceptionExtensions))]
 	public class ExceptionExtensionsBenchmark : Benchmark
 	{
-		private readonly SecurityException _testException = new SecurityException("Messsage from SecurityException", new DataServiceClientException("Cannot access service!"));
+		private readonly SecurityException _testException = new SecurityException("Message from SecurityException", new DataServiceClientException("Cannot access service!"));
 
 		[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
 		public void GetAllMessages01()

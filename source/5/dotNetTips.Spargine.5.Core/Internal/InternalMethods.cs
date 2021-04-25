@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Core.Internal
 
 				// Loop through the collection using the enumerator strategy and collect all items in the result bag
 				// Note: if the collection is empty it will not return anything about its existence,
-				// because the method is supposed to catch value items not the list itself                
+				// because the method is supposed to catch value items not the list itself
 				foreach (var item in (IEnumerable)obj)
 				{
 					var itemId = itemCount++;
@@ -52,7 +52,7 @@ namespace dotNetTips.Spargine.Core.Internal
 				return result;
 			}
 
-			// Otherwise go deeper in the object tree.           
+			// Otherwise go deeper in the object tree.
 			// And foreach object public property collect each value
 			var propertyCollection = objectType.GetProperties();
 

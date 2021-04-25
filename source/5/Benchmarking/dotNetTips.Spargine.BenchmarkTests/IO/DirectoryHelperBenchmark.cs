@@ -17,7 +17,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 
 		private readonly string _sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey());
 
-		private readonly DirectoryInfo _tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey()));
+		private readonly DirectoryInfo _tempPath = new(Path.Combine(Path.GetTempPath(), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey()));
 
 		[Benchmark(Description = nameof(DirectoryHelper.AppDataFolder))]
 		public void AppDataFolder01()

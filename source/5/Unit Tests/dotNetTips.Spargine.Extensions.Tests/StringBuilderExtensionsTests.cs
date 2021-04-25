@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(sb.Length > 50);
 
-			//Test ObjectPool
+
 			var pool = new StringBuilder();
 
 			pool.AppendBytes(byteArray);
@@ -66,7 +66,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(sb.ToString().Length > 50 * 4);
 
-			//Test ObjectPool
 			var pool = new StringBuilder();
 
 			foreach (var person in people)
@@ -93,7 +92,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(sb.Length > 10);
 
-			//Test ObjectPool
 			var pool = new StringBuilder();
 
 			pool.AppendValues(", ", values);
@@ -110,7 +108,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(sb.Length > 10);
 
-			//Test ObjectPool
 			var pool = new StringBuilder();
 
 			pool.AppendValues(", ", RandomData.GenerateWord(100), RandomData.GenerateWord(100));
@@ -134,7 +131,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(sb.Length > 50);
 
-			//Test ObjectPool
 			var pool = new StringBuilder();
 
 			pool.AppendValues(", ", values, (person) =>

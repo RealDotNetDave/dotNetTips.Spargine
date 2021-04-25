@@ -1,9 +1,9 @@
 ....
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
 Unknown processor
-.NET Core SDK=5.0.200-preview.21079.7
-  [Host]     : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
-  Job-MFTHIM : .NET Core 5.0.3 (CoreCLR 5.0.321.7212, CoreFX 5.0.321.7212), X64 RyuJIT
+.NET Core SDK=5.0.300-preview.21180.15
+  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+  Job-PDALPH : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=TESTS  
@@ -11,10 +11,10 @@ Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=TESTS
 [options="header"]
 |===
 |                            Method|       Mean|      Error|     StdDev|     StdErr|        Min|         Q1|     Median|         Q3|        Max|           Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Ratio|    Welch(10%)/p-values|  Rank|                                                             LogicalGroup|  Baseline|  Gen 0|  Gen 1|  Gen 2|  Allocated|  Code Size
-|                  CalculatePercent|   7.943 ns|  0.0136 ns|  0.0127 ns|  0.0033 ns|   7.920 ns|   7.934 ns|   7.946 ns|   7.949 ns|   7.970 ns|  125,897,891.7|       0.0136 ns|       15.00|     2.522|   2.000|    0.0976|   1.00|              Base: ?|?|     2|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|       Yes|      -|      -|      -|          -|      143 B
-|  CalculatePercentAggressiveInline|   6.586 ns|  0.0175 ns|  0.0164 ns|  0.0042 ns|   6.553 ns|   6.578 ns|   6.584 ns|   6.600 ns|   6.614 ns|  151,844,249.9|       0.0175 ns|       15.00|     2.065|   2.000|   -0.1303|   0.83|  Faster: 1.0000|0.0000|     1|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      189 B
-|          CalculatePercentNoInline|   8.003 ns|  0.0331 ns|  0.0310 ns|  0.0080 ns|   7.928 ns|   7.994 ns|   8.000 ns|   8.023 ns|   8.059 ns|  124,950,759.9|       0.0331 ns|       15.00|     3.308|   2.000|   -0.5390|   1.01|    Same: 1.0000|1.0000|     2|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      143 B
-|    CalculatePercentNoOptimization|   9.385 ns|  0.0228 ns|  0.0202 ns|  0.0054 ns|   9.359 ns|   9.371 ns|   9.383 ns|   9.391 ns|   9.432 ns|  106,557,946.1|       0.0228 ns|       14.00|     2.752|   2.000|    0.7735|   1.18|  Slower: 0.0000|1.0000|     3|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      152 B
-|       CalculatePercentPreserveSig|   7.974 ns|  0.0340 ns|  0.0318 ns|  0.0082 ns|   7.924 ns|   7.951 ns|   7.974 ns|   7.998 ns|   8.036 ns|  125,402,753.8|       0.0340 ns|       15.00|     1.847|   2.000|    0.0576|   1.00|    Same: 1.0000|1.0000|     2|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      143 B
-|      CalculatePercentSynchronized|  19.179 ns|  0.0398 ns|  0.0373 ns|  0.0096 ns|  19.121 ns|  19.151 ns|  19.176 ns|  19.208 ns|  19.244 ns|   52,139,816.7|       0.0398 ns|       15.00|     1.784|   2.000|    0.1603|   2.41|  Slower: 0.0000|1.0000|     4|  Job-MFTHIM(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      255 B
+|                  CalculatePercent|   8.047 ns|  0.0258 ns|  0.0229 ns|  0.0061 ns|   8.004 ns|   8.036 ns|   8.043 ns|   8.060 ns|   8.092 ns|  124,264,321.0|       0.0258 ns|       14.00|     2.419|   2.000|    0.2490|   1.00|              Base: ?|?|     2|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|       Yes|      -|      -|      -|          -|      146 B
+|  CalculatePercentAggressiveInline|   7.649 ns|  0.0283 ns|  0.0264 ns|  0.0068 ns|   7.614 ns|   7.631 ns|   7.636 ns|   7.678 ns|   7.688 ns|  130,741,815.6|       0.0283 ns|       15.00|     1.403|   2.000|    0.4212|   0.95|    Same: 1.0000|1.0000|     1|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      192 B
+|          CalculatePercentNoInline|   8.057 ns|  0.0518 ns|  0.0485 ns|  0.0125 ns|   7.992 ns|   8.023 ns|   8.039 ns|   8.093 ns|   8.140 ns|  124,116,657.7|       0.0518 ns|       15.00|     1.668|   2.000|    0.4180|   1.00|    Same: 1.0000|1.0000|     2|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      146 B
+|    CalculatePercentNoOptimization|   9.862 ns|  0.0286 ns|  0.0267 ns|  0.0069 ns|   9.826 ns|   9.845 ns|   9.854 ns|   9.879 ns|   9.917 ns|  101,401,201.7|       0.0286 ns|       15.00|     2.053|   2.000|    0.4228|   1.23|  Slower: 0.0000|1.0000|     4|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      155 B
+|       CalculatePercentPreserveSig|   8.422 ns|  0.0884 ns|  0.0738 ns|  0.0205 ns|   8.296 ns|   8.381 ns|   8.423 ns|   8.490 ns|   8.542 ns|  118,734,520.1|       0.0884 ns|       13.00|     1.888|   2.000|   -0.0875|   1.05|    Same: 1.0000|1.0000|     3|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      146 B
+|      CalculatePercentSynchronized|  19.224 ns|  0.0685 ns|  0.0641 ns|  0.0165 ns|  19.160 ns|  19.179 ns|  19.189 ns|  19.260 ns|  19.366 ns|   52,017,241.2|       0.0685 ns|       15.00|     2.697|   2.000|    1.0429|   2.39|  Slower: 0.0000|1.0000|     5|  Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)|        No|      -|      -|      -|          -|      258 B
 |===

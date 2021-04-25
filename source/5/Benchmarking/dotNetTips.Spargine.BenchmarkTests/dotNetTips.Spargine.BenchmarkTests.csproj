@@ -3,8 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>2021.4.20.43</AssemblyVersion>
-    <FileVersion>2021.4.20.43</FileVersion>
+    <AssemblyVersion>2021.4.24.47</AssemblyVersion>
+    <FileVersion>2021.4.24.47</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -16,9 +16,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dotNetTips.Spargine.5" Version="2021.5.1.46" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.5.1.46" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.5.1.46" />
+    <PackageReference Include="dotNetTips.Spargine.5" Version="2021.5.1.50" />
+    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.5.1.50" />
+    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.5.1.50" />
   </ItemGroup>
 
   <ItemGroup>

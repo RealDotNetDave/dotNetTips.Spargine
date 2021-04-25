@@ -360,12 +360,12 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Converts to blockingcollection.
+		/// Converts a collection to a BlockingCollection.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>BlockingCollection&lt;T&gt;.</returns>
-		/// <remarks>The resulting colleciton supports IDisposable. Make sure to properly dispose!</remarks>
+		/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
 		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL MAR")]
 		public static BlockingCollection<T> ToBlockingCollection<T>(this IEnumerable<T> list)
 		{

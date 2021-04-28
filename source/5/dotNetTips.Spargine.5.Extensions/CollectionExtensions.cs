@@ -60,6 +60,59 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Adds item to the collection if the condition is meet.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <param name="item">The item.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void AddIf<T>(this ICollection<T> collection, T item, bool condition)
+		{
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
+
+			if (condition)
+			{
+				collection.Add(item);
+			}
+		}
+
+		/// <summary>
+		/// Upserts (add or insert) the specified item.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <param name="item">The item.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Upsert<T>(this ICollection<T> collection, T item, bool condition)
+		{
+			Validate.TryValidateNullParam(collection, nameof(collection));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
+
+			if (collection.Contains(item))
+			{
+				var indexItem = collection.ElementAt(collection.IndexOf(item));
+
+				indexItem = item;
+			}
+			else
+			{
+				collection.Add(item);
+			}
+		}
+
+		/// <summary>
 		/// Adds the items to the collection if it does not exist.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>

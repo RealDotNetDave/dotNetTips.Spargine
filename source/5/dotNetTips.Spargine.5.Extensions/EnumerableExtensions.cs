@@ -56,6 +56,65 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Adds the specified item to the list.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Add<T>(this IEnumerable<T> list, T item)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			list.Append(item);
+		}
+
+		/// <summary>
+		/// Adds item to the list if the condition is met.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void AddIf<T>(this IEnumerable<T> list, T item, bool condition)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			if (condition)
+			{
+				list.Append(item);
+			}
+		}
+
+		/// <summary>
+		/// Upserts (update or insert) the specified item.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Upsert<T>(this IEnumerable<T> list, T item)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			if (list.Contains(item))
+			{
+				var indexItem = list.ElementAt(list.IndexOf(item));
+
+				indexItem = item;
+			}
+			else
+			{
+				list.Append(item);
+			}
+		}
+
+		/// <summary>
 		/// Counts the specified list.
 		/// </summary>
 		/// <param name="list">The list.</param>

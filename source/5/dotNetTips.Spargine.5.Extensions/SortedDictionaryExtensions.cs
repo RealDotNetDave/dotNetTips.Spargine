@@ -37,5 +37,31 @@ namespace dotNetTips.Spargine.Extensions
 
 			return ImmutableSortedDictionary.CreateRange<TKey, TValue>(list);
 		}
+
+		/// <summary>
+		/// Upserts the by the specified key.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="key">The key.</param>
+		/// <param name="value">The value.</param>
+		/// <returns>TValue.</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static TValue Upsert<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+		{
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+			Validate.TryValidateNullParam(key, nameof(key));
+			Validate.TryValidateNullParam(value, nameof(value));
+
+
+			if (dictionary.TryGetValue(key, out var item) == false)
+			{
+				dictionary.Add(key, value);
+				item = value;
+			}
+
+			return item;
+		}
 	}
 }

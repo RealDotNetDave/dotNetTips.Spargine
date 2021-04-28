@@ -52,6 +52,89 @@ namespace dotNetTips.Spargine.Extensions
 
 			return result;
 		}
+
+		/// <summary>
+		/// Adds the specified item to the array, to the last position.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] Add<T>(this T[] array, T item)
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			var result = new T[array.Length + 1];
+			result[result.Count() - 1] = item;
+
+			array.CopyTo(result, index: 1);
+
+			return result;
+		}
+
+		/// <summary>
+		/// Adds item to the array if the condition is meet.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] AddIf<T>(this T[] array, T item, bool condition)
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			if (condition)
+			{
+				return array.Add(item);
+			}
+			else
+			{
+				return array;
+			}
+		}
+
+		/// <summary>
+		/// Upserts (add or insert) the specified item.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] Upsert<T>(this T[] array, T item)
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			if (array.Contains(item))
+			{
+				array[array.IndexOf(item)] = item;
+
+				return array;
+			}
+			else
+			{
+				return array.Add(item);
+			}
+		}
+
 		/// <summary>
 		/// Adds items to an array if they do not exists.
 		/// </summary>

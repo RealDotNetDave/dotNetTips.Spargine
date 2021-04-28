@@ -444,7 +444,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static bool IsGuid(this string value)
 		{
 			var returnValue = false;
@@ -475,7 +475,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static bool IsMacAddress(this string value)
 		{
 			var returnValue = false;
@@ -577,7 +577,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="replacement">The replacement.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL MAR")]
+		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL MAR")]
 		public static string RemoveCRLF(this string input, string replacement = "")
 		{
 			if (input.IsNullOrEmpty())

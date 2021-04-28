@@ -366,7 +366,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>BlockingCollection&lt;T&gt;.</returns>
 		/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
-		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL MAR")]
+		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL MAR")]
 		public static BlockingCollection<T> ToBlockingCollection<T>(this IEnumerable<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));
@@ -394,7 +394,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Collection<T> ToCollection<T>(this IEnumerable<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));

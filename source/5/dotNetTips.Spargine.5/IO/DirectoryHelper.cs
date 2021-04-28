@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.IO
 		/// Applications the application data folder for Windows or Mac.
 		/// </summary>
 		/// <returns>Application data folder.</returns>
-		[Information(nameof(AppDataFolder), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
+		[Information(nameof(AppDataFolder), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static string AppDataFolder()
 		{
 			var userPath = Environment.GetEnvironmentVariable(RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "LOCALAPPDATA" : "Home");
@@ -57,7 +57,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="sourceDirectory">The source directory.</param>
 		/// <param name="destinationDirectory">The destination directory.</param>
 		/// <param name="overwrite">if set to <c>true</c> [overwrite].</param>
-		[Information(nameof(CopyDirectory), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
+		[Information(nameof(CopyDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static void CopyDirectory(string sourceDirectory, string destinationDirectory, bool overwrite = true)
 		{
 			Validate.TryValidateParam(sourceDirectory, nameof(sourceDirectory));
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.IO
 		/// Deletes the directory.
 		/// </summary>
 		/// <param name="path">The path.</param>
-		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
+		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static void DeleteDirectory(string path)
 		{
 			DeleteDirectory(path, 1);
@@ -103,7 +103,7 @@ namespace dotNetTips.Spargine.IO
 		/// Deletes the directory.
 		/// </summary>
 		/// <param name="path">The path.</param>
-		[Information(nameof(DeleteDirectory), "David McCarter", "4/2/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
+		[Information(nameof(DeleteDirectory), "David McCarter", "4/2/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
 		public static void DeleteDirectory(DirectoryInfo path)
 		{
 			DeleteDirectory(path.ToString(), 1);
@@ -115,7 +115,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <param name="retries">Number of retries.</param>
 		/// <remarks>Checks for the <see cref="IOException" /> and <see cref="UnauthorizedAccessException" />.</remarks>
-		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99)]
+		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99)]
 		public static void DeleteDirectory(string path, int retries = 10)
 		{
 			Validate.TryValidateParam(path, nameof(path));
@@ -165,7 +165,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="directory">The directory to delete.</param>
 		/// <returns>Task&lt;System.Boolean&gt;.</returns>
 		/// <exception cref="ArgumentNullException">directory.</exception>
-		[Information(nameof(DeleteDirectoryAsync), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
+		[Information(nameof(DeleteDirectoryAsync), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
 		public static async Task<bool> DeleteDirectoryAsync(DirectoryInfo directory)
 		{
 			Validate.TryValidateParam(directory, nameof(directory));
@@ -189,7 +189,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPattern">The search pattern.</param>
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IAsyncEnumerable&lt;IEnumerable&lt;FileInfo&gt;&gt;.</returns>
-		[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync(IEnumerable<DirectoryInfo> directories, string searchPattern, SearchOption searchOption)
 		{
 			Validate.TryValidateParam(directories, nameof(directories));
@@ -217,7 +217,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
+		[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 		{
 			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) == false)
@@ -289,7 +289,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="sourceDirectoryName">Name of the source directory.</param>
 		/// <param name="destinationDirectoryName">Name of the destination directory.</param>
-		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
+		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
 		public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName)
 		{
 			MoveDirectory(sourceDirectoryName, destinationDirectoryName, 1);
@@ -302,7 +302,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="destinationDirectoryName">Name of the destination dir.</param>
 		/// <param name="retries">Number of retries.</param>
 		/// <remarks>Checks for the <see cref="IOException" /> and <see cref="UnauthorizedAccessException" />.</remarks>
-		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 99)]
+		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 99)]
 		public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName, int retries = 10)
 		{
 			Validate.TryValidateParam(sourceDirectoryName, nameof(sourceDirectoryName));
@@ -346,7 +346,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPattern">The search pattern.</param>
 		/// <param name="searchOption">All or Top Directory Only.</param>
 		/// <returns>IEnumerable&lt;DirectoryInfo&gt;.</returns>
-		[Information(nameof(SafeDirectorySearch), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
+		[Information(nameof(SafeDirectorySearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static IEnumerable<DirectoryInfo> SafeDirectorySearch(DirectoryInfo rootDirectory, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
 			Validate.TryValidateParam(rootDirectory, nameof(rootDirectory));
@@ -384,7 +384,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPattern">The search pattern.</param>
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
-		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "ADD URL MAR")]
+		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "ADD URL MAR")]
 		public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo directory, string searchPattern, SearchOption searchOption)
 		{
 			return SafeFileSearch(new List<DirectoryInfo> { directory }, searchPattern, searchOption);
@@ -397,7 +397,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPattern">The search pattern.</param>
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
-		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
+		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
 		public static IEnumerable<FileInfo> SafeFileSearch(IEnumerable<DirectoryInfo> directories, string searchPattern, SearchOption searchOption)
 		{
 			Validate.TryValidateParam(directories, nameof(directories));
@@ -433,7 +433,7 @@ namespace dotNetTips.Spargine.IO
 		/// Sets the file attributes to normal for a path.
 		/// </summary>
 		/// <param name="path">The path.</param>
-		[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
+		[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
 		public static void SetFileAttributesToNormal(string path)
 		{
 			Validate.TryValidateParam(path, nameof(path));

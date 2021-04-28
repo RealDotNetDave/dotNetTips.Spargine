@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <summary>
 		/// Prevents a default instance of the <see cref="Collection{T}" /> class from being created.
 		/// </summary>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		private Collection()
 		{
 		}
@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// Initializes a new instance of the <see cref="Collection{T}" /> class.
 		/// </summary>
 		/// <param name="capacity">The number of elements that the new list can initially store.</param>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		private Collection(int capacity) : base(capacity)
 		{
 		}
@@ -48,7 +48,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// Creates this instance.
 		/// </summary>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create()
 		{
 			return new Collection<T>();
@@ -59,7 +59,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// </summary>
 		/// <param name="capacity">The capacity.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create(int capacity)
 		{
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0, nameof(capacity));
@@ -72,7 +72,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// </summary>
 		/// <param name="items">The items.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create(IEnumerable<T> items)
 		{
 			return Create(items, Tristate.False);
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <returns>Collection&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Items
 		/// or has no items.</exception>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD LINK")]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD LINK")]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)
 		{
 			Validate.TryValidateParam(items, nameof(items));
@@ -113,7 +113,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public bool AddFirst(T item)
 		{
 			Validate.TryValidateNullParam(item, nameof(item));
@@ -126,7 +126,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public bool AddIfNotExists(T item)
 		{
 			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
@@ -139,7 +139,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public bool AddLast(T item)
 		{
 			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));

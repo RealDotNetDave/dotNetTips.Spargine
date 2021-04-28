@@ -240,7 +240,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL MAR")]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL MAR")]
 		public static void MoveFile(string sourceFileName, string destinationFileName)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
@@ -280,7 +280,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
 		/// <param name="fileMoveOptions">The file move options.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.New)]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available)]
 		public static void MoveFile(string sourceFileName, string destinationFileName, FileMoveOptions fileMoveOptions)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));

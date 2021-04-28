@@ -29,7 +29,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="epochTime">The milli.</param>
 		/// <returns>DateTime.</returns>
-		[Information(nameof(FromMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(FromMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static DateTime FromMilliEpochTime(this long epochTime)
 		{
 			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -42,7 +42,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="unixTime">The unix time.</param>
 		/// <returns>DateTime.</returns>
-		[Information(nameof(FromUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(FromUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static DateTime FromUnixTime(this int unixTime)
 		{
 			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -412,7 +412,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <remarks>In computing, an epoch is a date and time from which a computer measures system time.
 		/// For instance, Unix and POSIX measure time as the number of seconds that have passed
 		/// since 1 January 1970 00:00:00 UT, a point in time known as the Unix epoch.</remarks>
-		[Information(nameof(ToMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(ToMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static long ToMilliEpochTime(this DateTime date)
 		{
 			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
@@ -424,7 +424,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="date">The date.</param>
 		/// <returns>System.Int32.</returns>
-		[Information(nameof(ToUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(ToUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static int ToUnixTime(this DateTime date)
 		{
 			var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);

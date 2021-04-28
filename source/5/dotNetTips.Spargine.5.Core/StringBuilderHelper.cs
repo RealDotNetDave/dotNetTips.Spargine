@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="bytes">The bytes.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(BytesToString), author: "David McCarter", createdOn: "2/18/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		[Information(nameof(BytesToString), author: "David McCarter", createdOn: "2/18/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static string BytesToString(byte[] bytes)
 		{
 			Validate.TryValidateParam(bytes, nameof(bytes));
@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="args">The arguments.</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
-		[Information(nameof(ConcatToString), "David McCarter", "2/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		[Information(nameof(ConcatToString), "David McCarter", "2/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static string ConcatToString(string input, string delimiter, Tristate addLineFeed, params string[] args)
 		{
 			Validate.TryValidateParam(input, nameof(input));

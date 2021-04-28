@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="name">The name.</param>
 		/// <returns>RegistryKey.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		[Information(nameof(GetSubKey), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(GetSubKey), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.Available)]
 		public static RegistryKey GetSubKey(this RegistryKey key, string name)
 		{
 			Validate.TryValidateNullParam(key, nameof(key));
@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="name">The name.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		[Information(nameof(GetValue), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(GetValue), author: "David McCarter", createdOn: "3/1/2021", UnitTestCoverage = 100, Status = Status.Available)]
 		public static T GetValue<T>(this RegistryKey key, string name)
 		{
 			Validate.TryValidateNullParam(key, nameof(key));

@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <returns>HttpResponseMessage.</returns>
-		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
 		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
 		{
 			var cts = new CancellationTokenSource();
@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <returns>HttpResponseMessage.</returns>
 		/// <exception cref="ArgumentInvalidException">Url cannot be null or empty.</exception>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
-		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
 		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url, CancellationTokenSource cancellationToken)
 		{
 			Validate.TryValidateParam(url, nameof(url));
@@ -95,7 +95,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <returns>Stream.</returns>
-		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
 		public static async Task<Stream> GetStreamAsync(string url)
 		{
 			Validate.TryValidateParam(url, nameof(url));

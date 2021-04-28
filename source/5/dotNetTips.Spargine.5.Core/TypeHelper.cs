@@ -288,7 +288,7 @@ namespace dotNetTips.Spargine.Core
 		/// [LastName, H^hkKhwWggIrUCYbbxiFEJGJM]
 		/// [PostalCode, 86560656].
 		/// </example>
-		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL MAR")]
+		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL MAR")]
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.

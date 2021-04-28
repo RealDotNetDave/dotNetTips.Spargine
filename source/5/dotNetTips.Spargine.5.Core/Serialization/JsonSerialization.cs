@@ -48,7 +48,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <returns>TResult.</returns>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		/// <exception cref="System.IO.FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
-		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
 		{
 			Validate.TryValidateParam(fileName, nameof(fileName));
@@ -96,7 +96,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// </summary>
 		/// <param name="obj">The object.</param>
 		/// <param name="fileName">Name of the file.</param>
-		[Information(nameof(SerializeToFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(SerializeToFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static void SerializeToFile(object obj, string fileName)
 		{
 			Validate.TryValidateNullParam(obj, nameof(obj));

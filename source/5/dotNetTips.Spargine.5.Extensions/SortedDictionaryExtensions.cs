@@ -54,7 +54,6 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateNullParam(key, nameof(key));
 			Validate.TryValidateNullParam(value, nameof(value));
 
-
 			if (dictionary.TryGetValue(key, out var item) == false)
 			{
 				dictionary.Add(key, value);

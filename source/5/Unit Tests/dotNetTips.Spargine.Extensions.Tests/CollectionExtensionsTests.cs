@@ -92,6 +92,35 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void AddIfTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			// TEST
+			people.AddIf(person, people.Count() == 10);
+
+			Assert.IsTrue(people.Count() == 11);
+		}
+
+		[TestMethod]
+		public void UpsertTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
+			var personFromCollection = people.Shuffle().First();
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			// TEST
+			people.Upsert(person);
+
+			Assert.IsTrue(people.Count() == 11);
+
+			people.Upsert(personFromCollection);
+
+			Assert.IsTrue(people.Count() == 11);
+		}
+
+		[TestMethod]
 		public void AddRangeListTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);

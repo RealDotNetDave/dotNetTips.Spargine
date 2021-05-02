@@ -29,6 +29,34 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	{
 
 		[TestMethod]
+		public void AdIfTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var result = people.AddIf(person, true);
+
+			Assert.IsTrue(result.Count() == 11);
+
+			result = people.AddIf(person, false);
+
+			Assert.IsTrue(result.Count() == 10);
+		}
+
+		[TestMethod]
+		public void AdTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var result = people.Add(person);
+
+			Assert.IsTrue(result.Count() == 11);
+		}
+
+		[TestMethod]
 		public void ContainsAnyTest()
 		{
 			var people1 = RandomData.GeneratePersonCollection<PersonProper>(10);
@@ -219,6 +247,25 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = await people.ToListAsync().ConfigureAwait(false);
 
 			Assert.IsNotNull(result);
+		}
+
+
+		[TestMethod]
+		public void UpsertTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			var personFromCollection = people.Shuffle().First();
+
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var result = people.Upsert(person);
+
+			Assert.IsTrue(result.Count() == 11);
+
+			result = people.Upsert(personFromCollection);
+
+			Assert.IsTrue(result.Count() == 10);
 		}
 	}
 }

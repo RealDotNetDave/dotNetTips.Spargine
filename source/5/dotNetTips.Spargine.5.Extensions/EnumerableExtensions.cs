@@ -63,12 +63,15 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static void Add<T>(this IEnumerable<T> list, T item)
+		public static IEnumerable<T> Add<T>(this IEnumerable<T> list, T item)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));
 			Validate.TryValidateNullParam(item, nameof(item));
 
-			list.Append(item);
+			var result = list.ToList();
+			result.Add(item);
+
+			return result.AsEnumerable();
 		}
 
 		/// <summary>
@@ -78,15 +81,20 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static void AddIf<T>(this IEnumerable<T> list, T item, bool condition)
+		public static IEnumerable<T> AddIf<T>(this IEnumerable<T> list, T item, bool condition)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));
 			Validate.TryValidateNullParam(item, nameof(item));
 
 			if (condition)
 			{
-				list.Append(item);
+				return list.Add(item);
+			}
+			else
+			{
+				return list;
 			}
 		}
 
@@ -97,7 +105,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static void Upsert<T>(this IEnumerable<T> list, T item)
+		public static IEnumerable<T> Upsert<T>(this IEnumerable<T> list, T item)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));
 			Validate.TryValidateNullParam(item, nameof(item));
@@ -107,10 +115,12 @@ namespace dotNetTips.Spargine.Extensions
 				var indexItem = list.ElementAt(list.IndexOf(item));
 
 				indexItem = item;
+
+				return list;
 			}
 			else
 			{
-				list.Append(item);
+				return list.Add(item);
 			}
 		}
 

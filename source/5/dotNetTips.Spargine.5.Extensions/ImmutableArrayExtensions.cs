@@ -73,7 +73,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				return list;
 			}
-
+			
 			return list.OrderBy(i => _random.Next()).ToImmutableArray();
 		}
 	}

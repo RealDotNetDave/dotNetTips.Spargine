@@ -26,6 +26,7 @@ using dotNetTips.Spargine.Tester.Properties;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tester
 {
+
 	/// <summary>
 	/// Methods to randomly generate data for unit and benchmark testing.
 	/// </summary>

@@ -83,7 +83,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				return false;
 			}
-
+		
 			list.Insert(0, item);
 
 			return true;

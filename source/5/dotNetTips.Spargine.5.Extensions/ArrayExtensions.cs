@@ -63,11 +63,8 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
 		public static T[] Add<T>(this T[] array, T item)
 		{
-			if (Validate.TryValidateNull(item))
-			{
-				return array;
-			}
-
+			Validate.TryValidateNullParam(array, nameof(array));
+			Validate.TryValidateNullParam(item, nameof(item));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
 
 			var result = new T[array.Length + 1];

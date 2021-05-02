@@ -42,5 +42,24 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
 		}
+
+		[TestMethod]
+		public void UpsertTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToDictionary(p => p.Id);
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>(people);
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var personFromCollection = peopleSortedSet.Shuffle().First();
+
+			peopleSortedSet.Upsert(new KeyValuePair<string, PersonProper>(person.Id, person));
+
+			Assert.IsTrue(peopleSortedSet.Count() == 11);
+
+			peopleSortedSet.Upsert(personFromCollection);
+
+			Assert.IsTrue(peopleSortedSet.Count() == 11);
+
+		}
 	}
 }

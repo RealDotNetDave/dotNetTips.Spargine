@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -68,17 +67,9 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateNullParam(list, nameof(list));
 			Validate.TryValidateNullParam(item, nameof(item));
 
-			var currentItem = list.Where(p => p.Equals(item)).FirstOrDefault();
+			_ = list.Remove(item);
 
-			if (currentItem is not null)
-			{
-				currentItem = item;
-			}
-			else
-			{
-				list.Add(item);
-			}
-
+			list.Add(item);
 		}
 	}
 }

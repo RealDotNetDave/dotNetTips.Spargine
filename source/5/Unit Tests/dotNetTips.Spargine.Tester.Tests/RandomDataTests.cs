@@ -261,7 +261,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(people);
 
 			Assert.IsTrue(people.Count == Count);
-
 		}
 
 		[TestMethod]

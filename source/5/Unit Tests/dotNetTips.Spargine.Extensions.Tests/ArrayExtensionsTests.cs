@@ -30,24 +30,13 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 			var person = RandomData.GeneratePerson<PersonProper>();
+			PersonProper nullPerson = null;
 
 			var result = people.AddFirst(person);
 
 			Assert.IsTrue(result.Count() == 11);
-			Assert.IsTrue(result.First() == person);
 
-			Assert.IsTrue(result.AddFirst(null).Count() == 11);
-		}
-
-		[TestMethod]
-		public void AddTest()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-			var person = RandomData.GeneratePerson<PersonProper>();
-
-			var result = people.Add(person);
-
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.AddFirst(nullPerson).Count() == 11);
 		}
 
 		[TestMethod]
@@ -57,22 +46,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = people.AddIf(person, people.Length == 10);
-
-			Assert.IsTrue(result.Count() == 11);
-		}
-
-		[TestMethod]
-		public void UpsertTest()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-			var personFromCollection = people.Shuffle().First();
-			var person = RandomData.GeneratePerson<PersonProper>();
-
-			var result = people.Upsert(person);
-
-			Assert.IsTrue(result.Count() == 11);
-
-			result = result.Upsert(personFromCollection);
 
 			Assert.IsTrue(result.Count() == 11);
 		}
@@ -89,6 +62,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Last() == person);
 
 			Assert.IsTrue(result.AddLast(null).Count() == 11);
+		}
+
+		[TestMethod]
+		public void AddTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var result = people.Add(person);
+
+			Assert.IsTrue(result.Count() == 11);
 		}
 
 		[TestMethod]
@@ -165,6 +149,22 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			people = people.AddLast(people.First());
 
 			Assert.IsTrue(people.ToDistinct().Count() == 10);
+		}
+
+		[TestMethod]
+		public void UpsertTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+			var personFromCollection = people.Shuffle().First();
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			var result = people.Upsert(person);
+
+			Assert.IsTrue(result.Count() == 11);
+
+			result = result.Upsert(personFromCollection);
+
+			Assert.IsTrue(result.Count() == 11);
 		}
 	}
 }

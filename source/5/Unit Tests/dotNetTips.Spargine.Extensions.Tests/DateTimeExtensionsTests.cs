@@ -227,7 +227,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			PrintResult(result, nameof(DateTimeFormat.MonthDay));
 
-			Assert.IsTrue(result.Length > 5);
+			Assert.IsTrue(result.Length > 4);
 
 			result = now.ToFormattedString(DateTimeFormat.RFC1123);
 

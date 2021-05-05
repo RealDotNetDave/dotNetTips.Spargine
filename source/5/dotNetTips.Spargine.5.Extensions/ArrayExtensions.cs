@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 05-02-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,6 +27,28 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ArrayExtensions
 	{
+
+		/// <summary>
+		/// Adds the specified item to the array, to the last position.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] Add<T>(this T[] array, T item)
+		{
+			Validate.TryValidateNullParam(array, nameof(array));
+			Validate.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			var result = new T[array.Length + 1];
+			result[result.Count() - 1] = item;
+
+			array.CopyTo(result, index: 1);
+
+			return result;
+		}
 		/// <summary>
 		/// Adds a single item to the beginning of the array.
 		/// </summary>
@@ -47,28 +69,6 @@ namespace dotNetTips.Spargine.Extensions
 
 			var result = new T[array.Length + 1];
 			result[0] = item;
-
-			array.CopyTo(result, index: 1);
-
-			return result;
-		}
-
-		/// <summary>
-		/// Adds the specified item to the array, to the last position.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="array">The array.</param>
-		/// <param name="item">The item.</param>
-		/// <returns>T[].</returns>
-		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static T[] Add<T>(this T[] array, T item)
-		{
-			Validate.TryValidateNullParam(array, nameof(array));
-			Validate.TryValidateNullParam(item, nameof(item));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
-
-			var result = new T[array.Length + 1];
-			result[result.Count() - 1] = item;
 
 			array.CopyTo(result, index: 1);
 
@@ -100,35 +100,6 @@ namespace dotNetTips.Spargine.Extensions
 			else
 			{
 				return array;
-			}
-		}
-
-		/// <summary>
-		/// Upserts (add or insert) the specified item.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="array">The array.</param>
-		/// <param name="item">The item.</param>
-		/// <returns>T[].</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static T[] Upsert<T>(this T[] array, T item)
-		{
-			if (Validate.TryValidateNull(item))
-			{
-				return array;
-			}
-
-			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
-
-			if (array.Contains(item))
-			{
-				array[array.IndexOf(item)] = item;
-
-				return array;
-			}
-			else
-			{
-				return array.Add(item);
 			}
 		}
 
@@ -358,6 +329,97 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(array, nameof(array));
 
 			return array.Distinct().ToArray();
+		}
+
+		/// <summary>
+		/// Upserts (add or insert) the specified item.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] Upsert<T>(this T[] array, T item)
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			if (array.Contains(item))
+			{
+				array[array.IndexOf(item)] = item;
+
+				return array;
+			}
+			else
+			{
+				return array.Add(item);
+			}
+		}
+
+		/// <summary>
+		/// Upserts the specified array.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>T[].</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static T[] Upsert<T, TKey>(this T[] array, T item) where T : IDataModel<T, TKey>
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			var currentItem = array.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+
+			if (currentItem is not null)
+			{
+				currentItem = item;
+
+				return array;
+			}
+			else
+			{
+				return array.Add(item);
+			}
+		}
+
+		/// <summary>
+		/// Upserts the specified array.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>dotNetTips.Spargine.Core.IDataRecord[].</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static IDataRecord[] Upsert(this IDataRecord[] array, IDataRecord item)
+		{
+			if (Validate.TryValidateNull(item))
+			{
+				return array;
+			}
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+
+			var currentItem = array.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+
+			if (currentItem is not null)
+			{
+				currentItem = item;
+
+				return array;
+			}
+			else
+			{
+				return array.Add(item);
+			}
 		}
 	}
 }

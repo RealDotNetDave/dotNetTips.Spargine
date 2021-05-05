@@ -13,6 +13,8 @@
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -53,9 +55,9 @@ namespace dotNetTips.Spartine.Core.Tests
 		[TestMethod]
 		public void GetHashCodeTest()
 		{
-			var dateTimeFormat = DateTimeFormat.FullDateLongTime;
+			var person = RandomData.GeneratePerson<PersonProper>();
 
-			Assert.IsFalse(dateTimeFormat.GetHashCode().IsNegative());
+			Assert.IsTrue(person.GetHashCode().IsInRange(int.MinValue, int.MaxValue));
 		}
 
 		[TestMethod]

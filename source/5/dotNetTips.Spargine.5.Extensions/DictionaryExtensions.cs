@@ -180,6 +180,48 @@ namespace dotNetTips.Spargine.Extensions
 			return ImmutableDictionary.CreateRange<TKey, TValue>(dictionary);
 		}
 
+
+		/// <summary>
+		/// Upserts the specified item.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="item">The item.</param>
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TValue item) where TValue : IDataModel<TValue, TKey>
+		{
+			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			_ = dictionary.Remove(item.Id);
+
+			dictionary.Add(item.Id, item);
+
+		}
+
+		//[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		//public static void Upsert<TKey, IDataRecord>(this IDictionary<TKey, IDataRecord> dictionary, IDataRecord item)
+		//{
+
+		//	Validate.TryValidateNullParam(dictionary, nameof(dictionary));
+		//	Validate.TryValidateNullParam(item, nameof(item));
+
+		//	var currentItem = dictionary.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+
+		//	if (currentItem is not null)
+		//	{
+		//		currentItem = item;
+		//	}
+		//	else
+		//	{
+		//		collection.Add(item);
+		//	}
+
+		//}
+
+
+
 		/// <summary>
 		/// Adds the or update.
 		/// </summary>
@@ -195,20 +237,15 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Input cannot be null or have no items in the collection.</exception>
 		/// <exception cref="ArgumentNullException">Key cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static TValue Upsert<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
+		public static void Upsert<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
 			Validate.TryValidateNullParam(key, nameof(key));
 			Validate.TryValidateNullParam(value, nameof(value));
 
+			_ = dictionary.Remove(key);
 
-			if (dictionary.TryGetValue(key, out var item) == false)
-			{
-				dictionary.Add(key, value);
-				item = value;
-			}
-
-			return item;
+			dictionary.Add(key, value);
 		}
 
 		/// <summary>

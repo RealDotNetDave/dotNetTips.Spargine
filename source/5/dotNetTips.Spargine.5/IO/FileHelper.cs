@@ -285,7 +285,6 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
 			Validate.TryValidateParam(destinationFileName, nameof(destinationFileName));
-			Validate.TryValidateParam(fileMoveOptions, nameof(fileMoveOptions));
 			Validate.TryValidateParam<ArgumentInvalidException>(File.Exists(sourceFileName), nameof(sourceFileName), $"File {sourceFileName} does not exist.");
 
 

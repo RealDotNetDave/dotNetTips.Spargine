@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 05-02-2021
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -249,11 +249,48 @@ namespace dotNetTips.Spargine.Extensions
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
-			if (collection.Contains(item))
-			{
-				var indexItem = collection.ElementAt(collection.IndexOf(item));
+			_ = collection.Remove(item);
 
-				indexItem = item;
+			collection.Add(item);
+		}
+
+		/// <summary>
+		/// Upserts the specified collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <param name="item">The item.</param>
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Upsert<T, TKey>(this ICollection<T> collection, T item) where T : IDataModel<T, TKey>
+		{
+			Validate.TryValidateNullParam(collection, nameof(collection));
+			Validate.TryValidateNullParam(item, nameof(item));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
+
+			_ = collection.Remove(item);
+
+			collection.Add(item);
+		}
+
+		/// <summary>
+		/// Upserts the specified collection.
+		/// </summary>
+		/// <param name="collection">The collection.</param>
+		/// <param name="item">The item.</param>
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static void Upsert(this ICollection<IDataRecord> collection, IDataRecord item)
+		{
+			Validate.TryValidateNullParam(collection, nameof(collection));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
+
+			var currentItem = collection.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+
+			if (currentItem is not null)
+			{
+				currentItem = item;
 			}
 			else
 			{

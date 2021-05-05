@@ -26,7 +26,7 @@ namespace dotNetTips.Spargine.IO
 		/// <summary>
 		/// If the destination file exists, the function replaces its contents
 		/// with the contents of the existing file, if security requirements
-		/// regarding access control lists (ACLs) are met. 
+		/// regarding access control lists (ACLs) are met.
 		/// </summary>
 		ReplaceExisting = 1,
 
@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.IO
 		/// of a user who belongs to the administrator’s group or the LocalSystem
 		/// account. This value cannot be used with CopyAllowed.
 		/// </summary>
-		DelayUnitlReboot = 4,
+		DelayUntilReboot = 4,
 
 		/// <summary>
 		/// The function fails if the source file is a link source, but the file

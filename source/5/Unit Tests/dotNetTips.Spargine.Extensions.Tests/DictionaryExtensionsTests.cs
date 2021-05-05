@@ -117,11 +117,13 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.HasItems());
 		}
+
 		[TestMethod]
 		public void UpsertDictionaryTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPerson = RandomData.GeneratePerson<PersonProper>();
+			var personFromCollection = people.Shuffle().First();
 			PersonProper nullPerson = null;
 
 			// Test Parameters
@@ -129,12 +131,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			_ = Assert.ThrowsException<ArgumentNullException>(() => people.Upsert(newPerson.Id, nullPerson));
 
 			// Test
-			var item = people.Upsert(newPerson.Id, newPerson);
-			Assert.IsNotNull(item);
+			people.Upsert(newPerson.Id, newPerson);
 			Assert.IsTrue(people.Count == 11);
 
-			item = people.Upsert(newPerson.Id, newPerson);
-			Assert.IsNotNull(item);
+			people.Upsert(personFromCollection.Value.Id, personFromCollection.Value);
 			Assert.IsTrue(people.Count == 11);
 		}
 	}

@@ -223,7 +223,10 @@ namespace dotNetTips.Spartine.Core.Tests
 		[TestMethod]
 		public void TryValidateParamFileInfoTest()
 		{
-			var fileName = @"c:\temp\tempfileinfotest.dat";
+			var fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), "tempfileinfotest.dat");
+
+			RandomData.GenerateFile(fileName, 500);
+
 			var fileInfo = new FileInfo(fileName);
 
 			try

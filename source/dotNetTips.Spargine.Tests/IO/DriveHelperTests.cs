@@ -12,6 +12,8 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -25,7 +27,8 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestMethod]
 		public void GetDriveSerialNumberTest()
 		{
-			Assert.IsNotNull(DriveHelper.GetDriveSerialNumber(@"c:\"));
+			var drive = DriveHelper.GetFixedDrives().First();
+			Assert.IsNotNull(DriveHelper.GetDriveSerialNumber(drive.Name));
 		}
 
 		[TestMethod]

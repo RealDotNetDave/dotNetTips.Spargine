@@ -130,7 +130,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries to validate a method parameter.
+		/// Tries to validate a method parameter. Also validates that the file exists.
 		/// </summary>
 		/// <param name="file">The file.</param>
 		/// <param name="paramName">Name of the parameter.</param>

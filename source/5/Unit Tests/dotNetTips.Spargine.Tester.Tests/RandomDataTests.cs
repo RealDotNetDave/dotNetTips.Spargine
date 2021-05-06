@@ -193,7 +193,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateFilesWithPathTest()
 		{
-			var files = RandomData.GenerateFiles(@"c:\temp", Count, FileLength);
+			var files = RandomData.GenerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), Count, FileLength);
 
 			Assert.IsNotNull(files);
 
@@ -205,7 +205,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateFileTest()
 		{
-			var fileName = RandomData.GenerateFile(@"c:\temp\UnitTest.test", fileLength: FileLength);
+			var fileName = RandomData.GenerateFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), "UnitTest.test"), fileLength: FileLength);
 
 			Assert.IsNotNull(fileName);
 
@@ -393,7 +393,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateRandomFileNameAllParamsTest()
 		{
-			var stringValue = RandomData.GenerateRandomFileName(@"c:\temp", fileNameLength: 10, extension: FileExtension);
+			var stringValue = RandomData.GenerateRandomFileName(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), fileNameLength: 10, extension: FileExtension);
 
 			Assert.IsNotNull(stringValue);
 
@@ -425,7 +425,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateRandomFileNameWithPathTest()
 		{
-			var stringValue = RandomData.GenerateRandomFileName(@"c:\temp");
+			var stringValue = RandomData.GenerateRandomFileName(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify));
 
 			Assert.IsNotNull(stringValue);
 		}

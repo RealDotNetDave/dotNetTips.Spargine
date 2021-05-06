@@ -18,30 +18,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class DriveHelperTests
-    {
-        [TestMethod]
-        public void GetDriveSerialNumberTest()
-        {
-            Assert.IsNotNull(DriveHelper.GetDriveSerialNumber(@"c:\"));
-        }
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class DriveHelperTests
+	{
+		[TestMethod]
+		public void GetDriveSerialNumberTest()
+		{
+			Assert.IsNotNull(DriveHelper.GetDriveSerialNumber(@"c:\"));
+		}
 
-        [TestMethod]
-        public void GetFixedDrivesTest()
-        {
-            var result = DriveHelper.GetFixedDrives();
+		[TestMethod]
+		public void GetFixedDrivesTest()
+		{
+			var result = DriveHelper.GetFixedDrives();
 
-            Assert.IsTrue(result.Count > 0);
-        }
+			Assert.IsTrue(result.Count > 0);
+		}
 
-        [TestMethod]
-        public void GetRemovableDrivesTest()
-        {
-            var result = DriveHelper.GetRemovableDrives();
+		[TestMethod]
+		public void GetRemovableDrivesTest()
+		{
+			var result = DriveHelper.GetRemovableDrives();
 
-            Assert.IsTrue(result.Count > 0);
-        }
-    }
+			Assert.IsNotNull(result);
+		}
+	}
 }

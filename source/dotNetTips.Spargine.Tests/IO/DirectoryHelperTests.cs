@@ -117,7 +117,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			var folders = DirectoryHelper.LoadOneDriveFolders();
 
-			Assert.IsTrue(folders != null && folders.Length > 0);
+			Assert.IsNotNull(folders);
 		}
 
 		[TestMethod]

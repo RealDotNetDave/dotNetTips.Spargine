@@ -26,7 +26,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DirectoryInfoSizeTest01()
 		{
-			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
 			var result = directory.GetSize();
 
@@ -38,9 +38,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DirectoryInfoSizeTest02()
 		{
-			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
-			var result = directory.GetSize("*.txt");
+			var result = directory.GetSize("*.*");
 
 			Assert.IsTrue(result > 0);
 
@@ -50,9 +50,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DirectoryInfoSizeTest03()
 		{
-			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.Desktop));
+			var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
 
-			var result = directory.GetSize(searchPattern: "*.txt", searchOption: SearchOption.AllDirectories);
+			var result = directory.GetSize(searchPattern: "*.*", searchOption: SearchOption.AllDirectories);
 
 			Assert.IsTrue(result > 0);
 

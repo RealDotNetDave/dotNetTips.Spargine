@@ -15,6 +15,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Serialization;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
@@ -36,8 +37,10 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			//Serialize
 			var xml = XmlSerialization.Serialize(person);
 
+			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonProper.xml");
+
 			//For debugging
-			File.WriteAllText(@"C:\dotNetTips.com\DebugOutput\PersonProper.xml", xml);
+			File.WriteAllText(fileName, xml);
 
 			Assert.IsTrue(string.IsNullOrEmpty(xml) == false);
 
@@ -55,8 +58,10 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			//Serialize
 			var xml = XmlSerialization.Serialize(person);
 
+			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonRecord.xml");
+
 			//For debugging
-			File.WriteAllText(@"C:\dotNetTips.com\DebugOutput\PersonRecord.xml", xml);
+			File.WriteAllText(fileName, xml);
 
 			Assert.IsTrue(string.IsNullOrEmpty(xml) == false);
 
@@ -70,15 +75,16 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		public void SerializeDeserializeToFileTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			const string FileName = @"C:\temp\testxml.xml";
+
+			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "TestXml.xml");
 
 			try
 			{
 				//Serialize
-				XmlSerialization.SerializeToFile(person, FileName);
+				XmlSerialization.SerializeToFile(person, fileName);
 
 				//Deserialize
-				XmlSerialization.DeserializeFromFile<PersonProper>(FileName);
+				XmlSerialization.DeserializeFromFile<PersonProper>(fileName);
 			}
 			catch (Exception ex)
 			{

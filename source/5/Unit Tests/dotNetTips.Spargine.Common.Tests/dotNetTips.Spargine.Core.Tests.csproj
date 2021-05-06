@@ -5,8 +5,8 @@
     <IsPackable>false</IsPackable>
     <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
     <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-    <AssemblyVersion>2021.5.5.348</AssemblyVersion>
-    <FileVersion>2021.5.5.348</FileVersion>
+    <AssemblyVersion>2021.5.6.350</AssemblyVersion>
+    <FileVersion>2021.5.6.350</FileVersion>
     <EnableNETAnalyzers>false</EnableNETAnalyzers>
     <AnalysisLevel>none</AnalysisLevel>
   </PropertyGroup>

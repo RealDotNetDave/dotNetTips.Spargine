@@ -15,6 +15,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Serialization;
 using dotNetTips.Spargine.Core.Tests.Properties;
 using dotNetTips.Spargine.Tester;
@@ -53,7 +54,7 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		{
 			var person = RandomData.GeneratePersonCollection(1).First();
 
-			var fileName = @"C:\dotNetTips.com\DebugOutput\PersonRecord.json";
+			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonRecord.json");
 
 			//For debugging
 			JsonSerialization.SerializeToFile(person, fileName);
@@ -70,22 +71,22 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		public void SerializeDeserializeToFileTestPersonProper()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			const string FileName = @"C:\temp\testdata.json";
+			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "TestData.json");
 
 			try
 			{
 				//Serialize
-				JsonSerialization.SerializeToFile(person, FileName);
+				JsonSerialization.SerializeToFile(person, fileName);
 
 				//Deserialize
-				JsonSerialization.DeserializeFromFile<PersonProper>(FileName);
+				JsonSerialization.DeserializeFromFile<PersonProper>(fileName);
 			}
 			catch (Exception ex)
 			{
 				Assert.Fail(ex.Message);
 			}
 
-			Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{FileName}.bogus"));
+			Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{fileName}.bogus"));
 		}
 	}
 }

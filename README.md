@@ -5,6 +5,7 @@ This repository is for the dotNetTips.Spargine code for .NET 5 (formerly in a di
 Much of this code is documented on <a href="https://dotnettips.wordpress.com/category/open-source/spargine/" target="_blank">dotNetTips.com</a>.
 ## GitHub
 All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/packages?q=spargine+dotnettips" target="_blank">clicking here</a>.
+
 [![Build All](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml/badge.svg)](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml)
 ## Projects
 ![](docs/graphics/Spargine%20Assembly%20Layout.png)

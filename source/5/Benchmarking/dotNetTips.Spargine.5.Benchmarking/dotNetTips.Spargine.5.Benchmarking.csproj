@@ -3,9 +3,9 @@
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
-		<AssemblyVersion>2021.4.24.129</AssemblyVersion>
-		<FileVersion>2021.4.24.129</FileVersion>
-		<Version>2021.5.1.50</Version>
+		<AssemblyVersion>2021.5.24.130</AssemblyVersion>
+		<FileVersion>2021.5.24.130</FileVersion>
+		<Version>2021.5.24.1</Version>
 		<Authors>David McCarter</Authors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Description>Common classes that can be used with BenchmarkDotNet.</Description>

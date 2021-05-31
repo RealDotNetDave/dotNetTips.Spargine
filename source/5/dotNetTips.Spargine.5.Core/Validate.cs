@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="value">The value.</param>
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static bool TryValidateNull(object value, bool throwException = false)
 		{
 			var result = value is null;
@@ -72,7 +72,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentNullException">Value cannot be null.</exception>
-		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static void TryValidateNullParam(object value, string paramName, string message = "")
 		{
 			if (Validate.TryValidateNull(value))

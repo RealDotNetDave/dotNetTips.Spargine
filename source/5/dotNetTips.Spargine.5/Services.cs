@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine
 		/// Alls the services.
 		/// </summary>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
-		[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static IEnumerable<string> AllServices()
 		{
 			return ServiceController.GetServices().Select(p => p.ServiceName).AsEnumerable();
@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(ServiceExists), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ServiceExists), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static bool ServiceExists(string serviceName)
 		{
 			var service = LoadService(serviceName);
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
 		/// <exception cref="InvalidOperationException"></exception>
-		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static ServiceControllerStatus ServiceStatus(string serviceName)
 		{
 			var service = LoadService(serviceName);
@@ -68,7 +68,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceActionResult.</returns>
-		[Information(nameof(StartService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(StartService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static ServiceActionResult StartService(string serviceName)
 		{
 			var statusResult = ServiceActionResult.Error;
@@ -94,7 +94,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="requests">The requests.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
-		[Information(nameof(StartServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(StartServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void StartServices(IEnumerable<ServiceAction> requests)
 		{
 			Validate.TryValidateParam(requests, nameof(requests));
@@ -106,9 +106,10 @@ namespace dotNetTips.Spargine
 		}
 
 		/// <summary>
-		/// Starts the stop services.
+		/// Starts or stops services.
 		/// </summary>
 		/// <param name="requests">The requests.</param>
+		[Information(nameof(StartStopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void StartStopServices(IEnumerable<ServiceAction> requests)
 		{
 			Validate.TryValidateParam(requests, nameof(requests));
@@ -131,6 +132,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceActionResult.</returns>
+		[Information(nameof(StopService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static ServiceActionResult StopService(string serviceName)
 		{
 			Validate.TryValidateParam(serviceName, nameof(serviceName));
@@ -157,6 +159,7 @@ namespace dotNetTips.Spargine
 		/// Stops the services.
 		/// </summary>
 		/// <param name="requests">The requests.</param>
+		[Information(nameof(StopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void StopServices(IEnumerable<ServiceAction> requests)
 		{
 			Validate.TryValidateParam(requests, nameof(requests));
@@ -172,6 +175,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceController.</returns>
+		[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		private static ServiceController LoadService(string serviceName)
 		{
 			return ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);

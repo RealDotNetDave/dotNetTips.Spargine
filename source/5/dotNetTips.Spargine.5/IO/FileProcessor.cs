@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>System.Object.</returns>
 		/// <remarks>Use the Processed event to find out if file copied succeeded or failed.</remarks>
-		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public int CopyFiles(IEnumerable<FileInfo> files, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(files, nameof(files));
@@ -121,7 +121,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="files">The file list to delete.</param>
 		/// <returns>System.Int32 with the number of files that were successfully deleted.</returns>
 		/// <remarks>Use the <seealso cref="Processed">Processed</seealso> event to find out if file deletion succeeded or failed.</remarks>
-		[Information(nameof(DeleteFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(DeleteFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public int DeleteFiles(IEnumerable<FileInfo> files)
 		{
 			Validate.TryValidateParam(files, nameof(files));
@@ -185,7 +185,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="folders">The folders.</param>
 		/// <returns>System.Int32.</returns>
-		[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public int DeleteFolders(IEnumerable<DirectoryInfo> folders)
 		{
 			Validate.TryValidateParam(folders, nameof(folders));

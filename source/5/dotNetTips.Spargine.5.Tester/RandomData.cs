@@ -357,10 +357,10 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static string GenerateKey()
 		{
-			return Guid.NewGuid().ToDigits();
+			return KeyGenerator.GenerateKey();
 		}
 
 		/// <summary>

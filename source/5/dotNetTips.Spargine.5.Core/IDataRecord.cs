@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Core
 	/// <summary>
 	/// Interface for data record classes.
 	/// </summary>
-	[Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD URL MAR")]
+	[Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public interface IDataRecord
 	{
 		/// <summary>

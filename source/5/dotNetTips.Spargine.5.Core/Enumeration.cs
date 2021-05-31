@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	/// <seealso cref="System.IComparable" />
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
-	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 	public abstract record Enumeration
 	{
 		/// <summary>

@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <returns>Collection&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Items
 		/// or has no items.</exception>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD LINK")]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)
 		{
 			Validate.TryValidateParam(items, nameof(items));

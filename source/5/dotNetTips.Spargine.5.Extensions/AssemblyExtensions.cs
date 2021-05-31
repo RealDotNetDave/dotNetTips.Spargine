@@ -68,7 +68,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
-		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD LINK")]
+		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<T> GetInstances<T>(this Assembly assembly) where T : class
 		{
 			Validate.TryValidateNullParam(assembly, nameof(assembly));

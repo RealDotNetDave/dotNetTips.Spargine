@@ -52,11 +52,11 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			var personFromCollection = peopleSortedSet.Shuffle().First();
 
-			peopleSortedSet.Upsert(new KeyValuePair<string, PersonProper>(person.Id, person));
+			peopleSortedSet.Upsert(person.Id, person);
 
 			Assert.IsTrue(peopleSortedSet.Count() == 11);
 
-			peopleSortedSet.Upsert(personFromCollection);
+			peopleSortedSet.Upsert(personFromCollection.Key, personFromCollection.Value);
 
 			Assert.IsTrue(peopleSortedSet.Count() == 11);
 

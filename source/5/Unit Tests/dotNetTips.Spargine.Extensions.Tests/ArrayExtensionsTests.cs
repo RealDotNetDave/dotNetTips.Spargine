@@ -158,13 +158,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var personFromCollection = people.Shuffle().First();
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			var result = people.Upsert(person);
+			var result = people.UpsertDataModel<PersonProper, string>(personFromCollection);
+
+			Assert.IsTrue(result.Count() == 10);
+
+			result = people.Upsert(person);
 
 			Assert.IsTrue(result.Count() == 11);
 
-			result = result.Upsert(personFromCollection);
+			result = people.Upsert(personFromCollection);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.Count() == 10);
 		}
 	}
 }

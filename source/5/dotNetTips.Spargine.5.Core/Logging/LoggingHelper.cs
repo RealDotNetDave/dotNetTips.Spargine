@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:FileVersion - 15.0.0
 		/// AppInfo:Title - dotNetTips.Spargine
 		/// </example>
-		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static void LogApplicationInformation(ILogger logger)
 		{
 			Validate.TryValidateParam<ArgumentNullException>(logger is not null, nameof(logger));
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:SystemDirectory - C:\\WINDOWS\\system32
 		/// AppInfo:HasShutdownStarted - False
 		/// </example>
-		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static void LogComputerInformation(ILogger logger)
 		{
 			Validate.TryValidateParam<ArgumentNullException>(logger is not null, nameof(logger));

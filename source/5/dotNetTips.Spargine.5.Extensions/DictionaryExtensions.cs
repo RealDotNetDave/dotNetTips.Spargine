@@ -146,7 +146,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// pfCfZQFGPWYXBlUvVHNb]ZjBO_LTbQBSCYb: pfCfZQFGPWYXBlUvVHNb]ZjBO_LTbQBSCYb,
 		/// Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU: Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU.
 		/// </example>
-		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static string ToDelimitedString(this IDictionary dictionary, char delimiter = ControlChars.Comma)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
@@ -188,7 +188,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TValue item) where TValue : IDataModel<TValue, TKey>
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
@@ -199,28 +199,6 @@ namespace dotNetTips.Spargine.Extensions
 			dictionary.Add(item.Id, item);
 
 		}
-
-		//[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		//public static void Upsert<TKey, IDataRecord>(this IDictionary<TKey, IDataRecord> dictionary, IDataRecord item)
-		//{
-
-		//	Validate.TryValidateNullParam(dictionary, nameof(dictionary));
-		//	Validate.TryValidateNullParam(item, nameof(item));
-
-		//	var currentItem = dictionary.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
-
-		//	if (currentItem is not null)
-		//	{
-		//		currentItem = item;
-		//	}
-		//	else
-		//	{
-		//		collection.Add(item);
-		//	}
-
-		//}
-
-
 
 		/// <summary>
 		/// Adds the or update.

@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void AddIf<T>(this ICollection<T> collection, T item, bool condition)
 		{
 			Validate.TryValidateNullParam(item, nameof(item));
@@ -241,7 +241,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void Upsert<T>(this ICollection<T> collection, T item)
 		{
 			Validate.TryValidateNullParam(collection, nameof(collection));
@@ -261,7 +261,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void Upsert<T, TKey>(this ICollection<T> collection, T item) where T : IDataModel<T, TKey>
 		{
 			Validate.TryValidateNullParam(collection, nameof(collection));
@@ -278,7 +278,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
 		public static void Upsert(this ICollection<IDataRecord> collection, IDataRecord item)
 		{
 			Validate.TryValidateNullParam(collection, nameof(collection));

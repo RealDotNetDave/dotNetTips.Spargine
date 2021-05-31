@@ -234,7 +234,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// [23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
 		/// [24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
 		/// </example>
-		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
+		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
 			Validate.TryValidateNullParam(obj, nameof(obj));

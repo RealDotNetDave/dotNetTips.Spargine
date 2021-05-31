@@ -384,7 +384,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPattern">The search pattern.</param>
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
-		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "ADD URL MAR")]
+		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo directory, string searchPattern, SearchOption searchOption)
 		{
 			return SafeFileSearch(new List<DirectoryInfo> { directory }, searchPattern, searchOption);

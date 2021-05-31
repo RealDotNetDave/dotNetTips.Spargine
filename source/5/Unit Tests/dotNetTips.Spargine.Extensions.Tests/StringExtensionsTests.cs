@@ -268,6 +268,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void IsStringSHA1Hash()
+		{
+			var hash = RandomData.GenerateWord(100).ComputeHash(HashType.SHA1);
+
+			Assert.IsFalse(string.Empty.IsStringSHA1Hash());
+
+			Assert.IsTrue(hash.IsStringSHA1Hash());
+
+		}
+
+		[TestMethod]
 		public void IsStringTest()
 		{
 			Assert.IsTrue("979-8589711707".IsString());

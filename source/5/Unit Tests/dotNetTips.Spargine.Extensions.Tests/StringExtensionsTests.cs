@@ -4,13 +4,14 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-14-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
-// <copyright file="StringExtentionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
+// <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Text.RegularExpressions;

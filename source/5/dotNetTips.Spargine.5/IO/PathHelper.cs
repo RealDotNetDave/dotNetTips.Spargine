@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-15-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="PathHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.IO
 		public static char[] PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
 
 		/// <summary>
-		/// Combines the paths.
+		/// Combines the paths collection.
 		/// </summary>
 		/// <param name="createIfNotExists">if set to <c>true</c> [create path if it does not exists].</param>
 		/// <param name="paths">The paths.</param>
@@ -140,7 +140,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(path, nameof(path));
 
-			return path[path.Length - 1] != Path.DirectorySeparatorChar ? path + Path.DirectorySeparatorChar : path;
+			return path[^1] != Path.DirectorySeparatorChar ? path + Path.DirectorySeparatorChar : path;
 		}
 
 		/// <summary>

@@ -14,6 +14,7 @@
 using System;
 using System.Globalization;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>

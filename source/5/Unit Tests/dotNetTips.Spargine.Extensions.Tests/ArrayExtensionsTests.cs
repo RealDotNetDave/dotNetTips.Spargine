@@ -70,7 +70,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			var result = people.Add(person);
+			PersonProper[] result = people.Add(person);
 
 			Assert.IsTrue(result.Count() == 11);
 		}

@@ -184,7 +184,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Contains("Addresses"));
 			PrintResult(result, nameof(this.PropertiesToStringTest));
 
-			result = propertiesTest.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true, includeMemeberName: false);
+			result = propertiesTest.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true, includeMemberName: false);
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));

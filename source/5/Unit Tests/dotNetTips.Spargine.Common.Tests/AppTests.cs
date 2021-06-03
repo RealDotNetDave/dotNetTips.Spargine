@@ -120,14 +120,6 @@ namespace dotNetTips.Spartine.Core.Tests
 		}
 
 		[TestMethod]
-		public void IsProcessRunningTest()
-		{
-			var result = App.IsProcessRunning("devenv");
-
-			Assert.IsTrue(result);
-		}
-
-		[TestMethod]
 		public void IsRunningFromAspNet()
 		{
 			var result = App.IsRunningFromAspNet();

@@ -13,13 +13,5 @@ namespace dotNetTips.Spargine.Tests
 
 			Assert.IsTrue(result.HasItems());
 		}
-
-		[TestMethod]
-		public void LoadService01()
-		{
-			var result = Services.Load;
-
-			Assert.IsTrue(result.HasItems());
-		}
 	}
 }

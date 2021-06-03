@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 using dotNetTips.Spargine.Core;
@@ -34,6 +35,39 @@ namespace dotNetTips.Spargine
 		public static IEnumerable<string> AllServices()
 		{
 			return ServiceController.GetServices().Select(p => p.ServiceName).AsEnumerable();
+		}
+
+		/// <summary>
+		/// Determines whether [is application already running] [the specified process name].
+		/// </summary>
+		/// <param name="processName">Name of the process.</param>
+		/// <returns><c>true</c> if [is application already running] [the specified process name]; otherwise, <c>false</c>.</returns>
+		/// <exception cref="ArgumentNullException">processName - Process name is required.</exception>
+		[Information(Status = Status.Available)]
+		public static bool IsProcessRunning(string processName)
+		{
+			Validate.TryValidateParam(processName, nameof(processName));
+
+			return Process.GetProcessesByName(processName).Count() > 0;
+		}
+
+		/// <summary>
+		/// Kills the process.
+		/// </summary>
+		/// <param name="processName">Name of the process.</param>
+		/// <exception cref="ArgumentNullException">Process name is nothing or empty.</exception>
+		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		public static void KillProcess(string processName)
+		{
+			Validate.TryValidateParam(processName, nameof(processName));
+
+			var app = Process.GetProcessesByName(processName).FirstOrDefault();
+
+			if (app is not null)
+			{
+				app.Kill();
+				_ = app.WaitForExit(milliseconds: 6000);
+			}
 		}
 
 		/// <summary>

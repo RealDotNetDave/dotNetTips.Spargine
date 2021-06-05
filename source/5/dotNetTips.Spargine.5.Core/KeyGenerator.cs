@@ -27,7 +27,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static string GenerateKey()
 		{
 			return Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="prefix">The prefix.</param>
 		/// <returns>System.String.</returns>
 		/// <example>DataRecordf7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static string GenerateKey(string prefix)
 		{
 			Validate.TryValidateParam(prefix, nameof(prefix));

@@ -1,20 +1,20 @@
 ....
-BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.985 (20H2/October2020Update)
 Unknown processor
-.NET Core SDK=5.0.300-preview.21180.15
-  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
-  Job-PDALPH : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+.NET SDK=5.0.300
+  [Host]     : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+  Job-IWICPT : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
 
-EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests.Serialization  Categories=Serialization  
 ....
 [options="header"]
 |===
-|                           Method|       Mean|      Error|     StdDev|     StdErr|        Min|         Q1|     Median|         Q3|        Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|   Gen 0|   Gen 1|  Gen 2|  Allocated|  Code Size
-|  'Deserialize: XML=PersonProper'|  19.251 μs|  0.0452 μs|  0.0423 μs|  0.0109 μs|  19.185 μs|  19.223 μs|  19.254 μs|  19.279 μs|  19.323 μs|   51,946.5|       0.0452 μs|       15.00|     1.770|   2.000|   -0.1674|     6|             *|        No|  2.0142|       -|      -|   18.34 KB|    0.38 KB
-|  'Deserialize: XML=PersonRecord'|  18.812 μs|  0.3122 μs|  0.2767 μs|  0.0740 μs|  18.435 μs|  18.662 μs|  18.696 μs|  18.856 μs|  19.546 μs|   53,157.4|       0.3122 μs|       14.00|     4.017|   2.000|    1.2551|     5|             *|        No|  1.9836|       -|      -|   18.12 KB|    0.38 KB
-|   'Serialize: JSON=PersonProper'|   3.876 μs|  0.0513 μs|  0.0480 μs|  0.0124 μs|   3.775 μs|   3.892 μs|   3.895 μs|   3.900 μs|   3.912 μs|  258,011.0|       0.0513 μs|       15.00|     2.840|   2.000|   -1.3239|     2|             *|        No|  0.2136|       -|      -|    1.91 KB|    0.11 KB
-|   'Serialize: JSON=PersonRecord'|   3.364 μs|  0.0107 μs|  0.0090 μs|  0.0025 μs|   3.346 μs|   3.361 μs|   3.367 μs|   3.369 μs|   3.375 μs|  297,285.8|       0.0107 μs|       13.00|     2.426|   2.000|   -0.8063|     1|             *|        No|  0.2556|       -|      -|    2.27 KB|    0.11 KB
-|    'Serialize: XML=PersonProper'|  12.274 μs|  0.1240 μs|  0.1160 μs|  0.0300 μs|  12.132 μs|  12.197 μs|  12.233 μs|  12.326 μs|  12.497 μs|   81,474.7|       0.1240 μs|       15.00|     2.224|   2.000|    0.7932|     4|             *|        No|  2.2736|  0.0610|      -|   19.74 KB|     0.4 KB
-|                StringToXDocument|   9.911 μs|  0.0617 μs|  0.0515 μs|  0.0143 μs|   9.794 μs|   9.921 μs|   9.929 μs|   9.935 μs|   9.971 μs|  100,897.9|       0.0617 μs|       13.00|     2.955|   2.000|   -1.1539|     3|             *|        No|  1.7090|  0.0458|      -|   15.52 KB|    0.37 KB
+|                           Method|       Mean|      Error|     StdDev|     StdErr|        Min|         Q1|     Median|         Q3|        Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|   Gen 0|   Gen 1|  Gen 2|  Allocated
+|  'Deserialize: XML=PersonProper'|  19.557 μs|  0.0674 μs|  0.0597 μs|  0.0160 μs|  19.450 μs|  19.513 μs|  19.552 μs|  19.612 μs|  19.648 μs|   51,133.0|       0.0674 μs|       14.00|     1.646|   2.000|   -0.0519|     6|             *|        No|       0 KB|  2.0142|  0.0305|      -|      18 KB
+|  'Deserialize: XML=PersonRecord'|  18.881 μs|  0.1694 μs|  0.1501 μs|  0.0401 μs|  18.656 μs|  18.803 μs|  18.849 μs|  18.927 μs|  19.154 μs|   52,964.1|       0.1694 μs|       14.00|     2.180|   2.000|    0.5023|     5|             *|        No|       0 KB|  2.0142|  0.0305|      -|      18 KB
+|   'Serialize: JSON=PersonProper'|   4.020 μs|  0.0227 μs|  0.0212 μs|  0.0055 μs|   3.954 μs|   4.017 μs|   4.022 μs|   4.029 μs|   4.047 μs|  248,739.9|       0.0227 μs|       15.00|     6.545|   2.000|   -1.7697|     2|             *|        No|       0 KB|  0.2060|       -|      -|       2 KB
+|   'Serialize: JSON=PersonRecord'|   3.620 μs|  0.0452 μs|  0.0353 μs|  0.0102 μs|   3.559 μs|   3.604 μs|   3.629 μs|   3.631 μs|   3.691 μs|  276,248.3|       0.0452 μs|       12.00|     2.688|   2.000|   -0.0779|     1|             *|        No|       0 KB|  0.2594|       -|      -|       2 KB
+|    'Serialize: XML=PersonProper'|  12.990 μs|  0.0268 μs|  0.0238 μs|  0.0064 μs|  12.941 μs|  12.978 μs|  12.994 μs|  13.004 μs|  13.024 μs|   76,983.8|       0.0268 μs|       14.00|     2.116|   2.000|   -0.5019|     4|             *|        No|       0 KB|  2.2736|  0.0458|      -|      20 KB
+|                StringToXDocument|   9.610 μs|  0.0733 μs|  0.0650 μs|  0.0174 μs|   9.447 μs|   9.588 μs|   9.639 μs|   9.646 μs|   9.675 μs|  104,061.2|       0.0733 μs|       14.00|     3.413|   2.000|   -1.2556|     3|             *|        No|       0 KB|  1.7090|  0.0305|      -|      16 KB
 |===

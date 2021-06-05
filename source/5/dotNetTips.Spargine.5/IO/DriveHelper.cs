@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="drive">The drive.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
 		public static string GetDriveSerialNumber(string drive)
 		{
 			Validate.TryValidateParam(drive, nameof(drive));
@@ -62,7 +62,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
 		/// <example>Result Example - [0]: {C:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static IImmutableList<DriveInfo> GetFixedDrives()
 		{
 			return DriveInfo.GetDrives()
@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
 		/// <example>Result example - [0]: {E:\} [1]: {F:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static IImmutableList<DriveInfo> GetRemovableDrives()
 		{
 			return DriveInfo.GetDrives()

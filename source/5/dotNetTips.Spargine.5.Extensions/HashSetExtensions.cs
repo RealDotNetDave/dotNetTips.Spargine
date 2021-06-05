@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <param name="condition">The condition.</param>
-		[Information(nameof(AddIf), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(AddIf), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static void AddIf<T>(this HashSet<T> list, T item, bool condition)
 		{
 			Validate.TryValidateParam(list, nameof(list));
@@ -61,7 +61,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static void Upsert<T>(this HashSet<T> list, T item)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));

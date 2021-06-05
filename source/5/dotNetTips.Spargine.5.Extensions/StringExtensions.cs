@@ -530,7 +530,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">Input hash to check</param>
 		/// <returns>Boolean representing if the input is valid or not</returns>
 		/// <remarks>Original Code By: Troy Hunt</remarks>
-		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsStringSHA1Hash(this string input)
 		{
 			if (string.IsNullOrWhiteSpace(input))

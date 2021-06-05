@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.6.2.391</AssemblyVersion>
+		<AssemblyVersion>2021.6.5.401</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,15 +13,18 @@
 		<Description>Main helper methods/ code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.2.391</FileVersion>
+		<FileVersion>2021.6.5.401</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
-		<PackageReleaseNotes>--MAR 2021: Initial release.
---MAY 2021: Second release: 2021.5.1.50</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			--MAR 2021: Initial release.
+			--MAY 2021: Second release: 2021.5.1.50
+			--JUN 2021: Third release: 2021.6.3.5
+		</PackageReleaseNotes>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishSingleFile>true</PublishSingleFile>
 		<RepositoryType>git</RepositoryType>
@@ -31,7 +34,7 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.6.3.1</Version>
+		<Version>2021.8.4.1</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>

@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Tester
 	/// <summary>
 	/// Methods to randomly generate data for unit and benchmark testing.
 	/// </summary>
-	/// <remarks>Original code from: https://github.com/andrewseward/Any-.Net</remarks>
+	[Information(Status = Status.Available, Documentation = "http://bit.ly/UnitTestRandomData")]
 	public static class RandomData
 	{
 		/// <summary>

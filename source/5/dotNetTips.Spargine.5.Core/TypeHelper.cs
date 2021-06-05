@@ -140,19 +140,26 @@ namespace dotNetTips.Spargine.Core
 
 			for (var assemblyCount = 0; assemblyCount < array.Length; assemblyCount++)
 			{
-				var assembly = array[assemblyCount];
-				var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
-
-				if (tempTypes?.Count() > 0)
+				try
 				{
-					if (types is null)
+					var assembly = array[assemblyCount];
+					var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
+
+					if (tempTypes?.Count() > 0)
 					{
-						types = tempTypes;
+						if (types is null)
+						{
+							types = tempTypes;
+						}
+						else
+						{
+							types.AddRange(tempTypes);
+						}
 					}
-					else
-					{
-						types.AddRange(tempTypes);
-					}
+				}
+				catch (ReflectionTypeLoadException reflectionEx)
+				{
+					Trace.WriteLine(reflectionEx.GetAllMessages());
 				}
 			}
 

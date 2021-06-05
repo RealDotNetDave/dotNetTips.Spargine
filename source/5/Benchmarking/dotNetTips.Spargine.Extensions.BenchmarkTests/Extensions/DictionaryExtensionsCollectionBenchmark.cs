@@ -63,9 +63,9 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var people = base.PersonProperDictionary;
 			var person = base.PersonProperDictionary.Last();
 
-			var result = people.Upsert(person.Key, person.Value);
+			people.Upsert(person.Key, person.Value);
 
-			base.Consumer.Consume(result);
+			base.Consumer.Consume(people);
 		}
 
 
@@ -74,9 +74,9 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.PersonProperDictionary;
 
-			var result = people.Upsert(this.PersonProper01.Id, this.PersonProper01);
+			people.Upsert(this.PersonProper01.Id, this.PersonProper01);
 
-			base.Consumer.Consume(result);
+			base.Consumer.Consume(people);
 		}
 	}
 }

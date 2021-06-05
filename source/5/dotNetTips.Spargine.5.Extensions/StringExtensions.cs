@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -525,6 +525,25 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Check that the string is a valid SHA-1 hash with regex
+		/// </summary>
+		/// <param name="input">Input hash to check</param>
+		/// <returns>Boolean representing if the input is valid or not</returns>
+		/// <remarks>Original Code By: Troy Hunt</remarks>
+		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool IsStringSHA1Hash(this string input)
+		{
+			if (string.IsNullOrWhiteSpace(input))
+			{
+				return false;
+			}
+
+			var match = Regex.Match(input, pattern: @"\b([a-fA-F0-9]{40})\b");
+
+			return match.Length > 0;
+		}
+
+		/// <summary>
 		/// Determines whether the specified input is an URL.
 		/// </summary>
 		/// <param name="input">The input.</param>
@@ -577,7 +596,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="replacement">The replacement.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static string RemoveCRLF(this string input, string replacement = "")
 		{
 			if (input.IsNullOrEmpty())
@@ -798,7 +817,6 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (string.IsNullOrEmpty(input))
 			{
-				//TODO: THIS CONDITION NOT BEING TESTED
 				return input;
 			}
 			else

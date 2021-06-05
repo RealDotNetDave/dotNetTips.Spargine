@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="SortedDictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static TValue Upsert<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));

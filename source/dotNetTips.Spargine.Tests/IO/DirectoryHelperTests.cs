@@ -67,7 +67,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestMethod]
 		public void CopyAndMoveDirectoryTest()
 		{
-			var sourcePath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndMoveDirectoryTest) + RandomData.GenerateKey());
+			var sourcePath = Path.Combine(this._tempPath.FullName, $"{nameof(this.CopyAndMoveDirectoryTest)}{RandomData.GenerateKey()}");
 			var destinationPath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndMoveDirectoryTest));
 
 			RandomData.GenerateFiles(sourcePath, 100, 100);

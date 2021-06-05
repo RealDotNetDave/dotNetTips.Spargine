@@ -36,6 +36,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The collection count.</value>
 		[Params(10, 25, 50, 100, 250, 500, 1000)]
 		public int Count { get; set; }
+		public IEnumerable<PersonProper> PersonProperEnumerable { get; private set; }
 
 		/// <summary>
 		/// Gets the byte array.
@@ -57,13 +58,13 @@ namespace dotNetTips.Spargine.Benchmarking
 
 		protected virtual List<CoordinateProper> CoordinateProperList { get; private set; }
 
-		protected List<Person> PersonList { get; private set; }
-
 		/// <summary>
 		/// The person fixed collection
 		/// </summary>
 		/// <value>The person fixed collection.</value>
 		protected List<PersonFixed> PersonFixedList { get; private set; }
+
+		protected List<Person> PersonList { get; private set; }
 
 		/// <summary>
 		/// The person proper array full
@@ -78,12 +79,6 @@ namespace dotNetTips.Spargine.Benchmarking
 		protected PersonProper[] PersonProperArrayHalf { get; private set; }
 
 		protected BlockingCollection<PersonProper> PersonProperBlockingCollection { get; private set; }
-
-		/// <summary>
-		/// The person proper collection
-		/// </summary>
-		/// <value>The person proper collection.</value>
-		protected List<PersonProper> PersonProperList { get; private set; }
 
 		protected ConcurrentBag<PersonProper> PersonProperConcurrentBag { get; private set; }
 
@@ -103,6 +98,12 @@ namespace dotNetTips.Spargine.Benchmarking
 		protected ImmutableList<PersonProper> PersonProperImmutableList { get; private set; }
 
 		protected LinkedList<PersonProper> PersonProperLinkedList { get; private set; }
+
+		/// <summary>
+		/// The person proper collection
+		/// </summary>
+		/// <value>The person proper collection.</value>
+		protected List<PersonProper> PersonProperList { get; private set; }
 
 		/// <summary>
 		/// The person proper collection half count
@@ -189,7 +190,8 @@ namespace dotNetTips.Spargine.Benchmarking
 			this.PersonProperDistinctConcurrentBag = new DistinctConcurrentBag<PersonProper>(this.PersonProperList);
 
 			this.PersonList = RandomData.GeneratePersonCollection<Person>(this.Count);
-		}
 
+			this.PersonProperEnumerable = this.PersonProperList.AsEnumerable();
+		}
 	}
 }

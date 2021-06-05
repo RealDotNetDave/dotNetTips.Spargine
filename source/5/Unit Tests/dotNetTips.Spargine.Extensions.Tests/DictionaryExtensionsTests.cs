@@ -134,6 +134,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			people.Upsert(newPerson.Id, newPerson);
 			Assert.IsTrue(people.Count == 11);
 
+			people.Upsert(newPerson);
+			Assert.IsTrue(people.Count == 11);
+
 			people.Upsert(personFromCollection.Value.Id, personFromCollection.Value);
 			Assert.IsTrue(people.Count == 11);
 		}

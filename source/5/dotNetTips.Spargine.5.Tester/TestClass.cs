@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Tester
 			}
 			else
 			{
-				message = $"{methodName}: {input.PropertiesToString(includeMemeberName: false)}";
+				message = $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
 			}
 
 			Debug.WriteLine(message);

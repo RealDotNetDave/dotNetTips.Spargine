@@ -13,7 +13,10 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
+using System.Security.AccessControl;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -27,19 +30,122 @@ namespace dotNetTips.Spartine.Core.Tests
 	{
 
 		[TestMethod]
-		public void CreateTypeTest()
+		public void BuiltInTypeNames01()
 		{
+			var result = TypeHelper.BuiltInTypeNames;
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void CreateTypeTest01()
+		{
+			var result = TypeHelper.Create<PersonProper>();
+
+			Assert.IsNotNull(result);
 
 		}
 
 		[TestMethod]
-		public void GetPropertyValuesTest()
+		public void CreateTypeTest02()
+		{
+			var result = TypeHelper.Create<PersonProper>("TESTID", "DOTNETDAVE@LIVE.COM");
+
+			Assert.IsNotNull(result);
+
+		}
+
+		[TestMethod]
+		public void DoesObjectEqualInstance01()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
+			var testPerson = person;
+
+			Assert.IsTrue(TypeHelper.DoesObjectEqualInstance(person, testPerson));
+
+		}
+
+		[TestMethod]
+		public void DoesObjectEqualInstance02()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
+			var testPerson = RandomData.GeneratePerson<PersonProper>();
+
+			Assert.IsFalse(TypeHelper.DoesObjectEqualInstance(person, testPerson));
+
+		}
+
+		[TestMethod]
+		public void FindDerivedTypes01()
+		{
+			var result = TypeHelper.FindDerivedTypes(typeof(MulticastDelegate), Tristate.True);
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void FindDerivedTypes02()
+		{
+			var result = TypeHelper.FindDerivedTypes(AppDomain.CurrentDomain, typeof(MulticastDelegate), Tristate.True);
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void FindDerivedTypes03()
+		{
+			var result = TypeHelper.FindDerivedTypes(App.ExecutingFolder(), SearchOption.AllDirectories, typeof(MulticastDelegate), Tristate.True);
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void FromJson01()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
+			var json = person.ToJson();
+
+			Assert.IsNotNull(TypeHelper.FromJson<PersonProper>(json));
+
+		}
+
+		[TestMethod]
+		public void FromJsonFile01()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
+			var fileName = Path.Combine(App.ExecutingFolder(), "testjson");
+			person.ToJsonFile(fileName);
+
+			Assert.IsNotNull(TypeHelper.FromJsonFile<PersonProper>(fileName));
+
+		}
+
+		[TestMethod]
+		public void GetDefault01()
+		{
+			var result = TypeHelper.GetDefault<AccessControlType>();
+
+			Assert.IsNotNull(result);
+
+		}
+
+		[TestMethod]
+		public void GetInstanceHashCode01()
+		{
+			var person = RandomData.GeneratePerson<PersonProper>();
+
+			Assert.IsTrue(TypeHelper.GetInstanceHashCode(person).IsNegative());
+
+		}
+
+		[TestMethod]
+		public void GetPropertyValues()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
 
 			var result = TypeHelper.GetPropertyValues(person);
 
-			PrintResult(result, nameof(this.GetPropertyValuesTest));
+			PrintResult(result, nameof(this.GetPropertyValues));
 
 			Assert.IsTrue(result.Count > 5);
 
@@ -49,6 +155,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			Assert.IsTrue(result.Count > 1);
 		}
+
 
 		[TestMethod]
 		public void GetTypeDisplayNameTest()
@@ -66,6 +173,16 @@ namespace dotNetTips.Spartine.Core.Tests
 			result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
 
 			Assert.IsTrue(string.Compare(result, "int", StringComparison.Ordinal) == 0);
+
+			var people = RandomData.GeneratePersonCollection<PersonProper>(5);
+
+			result = TypeHelper.GetTypeDisplayName(people);
+
+			Assert.IsTrue(result.Length > 0);
+
+			result = TypeHelper.GetTypeDisplayName(RandomData.GeneratePerson<Person>());
+
+			Assert.IsTrue(result.Length > 0);
 		}
 	}
 }

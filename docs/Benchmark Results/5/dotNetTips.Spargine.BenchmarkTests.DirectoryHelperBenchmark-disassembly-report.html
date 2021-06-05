@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210420-170156</title>
+<title>DisassemblyDiagnoser Output dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210603-222652</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,16 +14,16 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="8">dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210420-170156</th></tr>
+<tr><th colspan="8">dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210603-222652</th></tr>
 <tr>
-<th>CopyDeleteDirectory01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>CopyMoveDirectory01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>AppDataFolder01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>DeleteDirectory01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>LoadOneDriveFolders01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>SafeDirectorySearch01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>SafeFileSearch01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
-<th>SetFileAttributesToNormal01 .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT</th>
+<th>CopyDeleteDirectory01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>CopyMoveDirectory01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>AppDataFolder01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>DeleteDirectory01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>LoadOneDriveFolders01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>SafeDirectorySearch01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>SafeFileSearch01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
+<th>SetFileAttributesToNormal01 .NET 5.0.6 (5.0.621.22011), X64 RyuJIT</th>
 </tr>
 </thead>
 <tbody>
@@ -38,7 +38,7 @@ mov       [rbp+0FFE0],rsp
 mov       rsi,rcx
 mov       rcx,[rsi+0D8]
 mov       rcx,[rcx+8]
-mov       rdx,2010DD512A0
+mov       rdx,27ACA841B08
 mov       rdx,[rdx]
 call      System.IO.Path.Combine(System.String, System.String)
 mov       [rbp+0FFF0],rax
@@ -75,19 +75,19 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-je        short 00007FFB3C77412B
+je        short 00007FFA7EC6989B
 test      rdx,rdx
-je        short 00007FFB3C77412B
+je        short 00007FFA7EC6989B
 add       rsp,28
 pop       rsi
 pop       rdi
 jmp       near ptr System.IO.Path.CombineInternal(System.String, System.String)
 test      rcx,rcx
-je        short 00007FFB3C77413F
-mov       rcx,2012DD51230
+je        short 00007FFA7EC698AF
+mov       rcx,27ACA841230
 mov       rsi,[rcx]
-jmp       short 00007FFB3C77414C
-mov       rcx,2012DD51238
+jmp       short 00007FFA7EC698BC
+mov       rcx,27ACA841238
 mov       rsi,[rcx]
 mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
@@ -112,15 +112,15 @@ sub       rsp,28
 mov       rdi,rcx
 mov       rsi,rdx
 mov       ebx,r8d
-mov       r8,2011DD53020
+mov       r8,27AEA843020
 mov       r8,[r8]
-mov       rdx,2010DD512A8
+mov       rdx,27ACA841B10
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       r8,2011DD53020
+mov       r8,27AEA843020
 mov       r8,[r8]
-mov       rdx,2010DD512B0
+mov       rdx,27ACA841B18
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -142,7 +142,7 @@ mov       rdi,rax
 mov       rcx,rsi
 call      System.IO.Directory.Exists(System.String)
 test      eax,eax
-jne       short 00007FFB3C76EEF6
+jne       short 00007FFA7EC5F016
 mov       rcx,rsi
 call      System.IO.Directory.CreateDirectory(System.String)
 mov       rcx,rbp
@@ -151,7 +151,7 @@ mov       rbp,rax
 xor       r14d,r14d
 mov       r15d,[rbp+8]
 test      r15d,r15d
-jle       short 00007FFB3C76EF3C
+jle       short 00007FFA7EC5F05C
 movzx     r13d,bl
 movsxd    rdx,r14d
 mov       r12,[rbp+rdx*8+10]
@@ -164,11 +164,11 @@ mov       rcx,r12
 call      System.IO.FileInfo.CopyTo(System.String, Boolean)
 inc       r14d
 cmp       r15d,r14d
-jg        short 00007FFB3C76EF11
+jg        short 00007FFA7EC5F031
 xor       r12d,r12d
 mov       r13d,[rdi+8]
 test      r13d,r13d
-jle       short 00007FFB3C76EF7B
+jle       short 00007FFA7EC5F09B
 movzx     edx,bl
 mov       ebx,edx
 movsxd    rdx,r12d
@@ -183,7 +183,7 @@ mov       rcx,rbp
 call      dotNetTips.Spargine.IO.DirectoryHelper.CopyDirectory(System.String, System.String, Boolean)
 inc       r12d
 cmp       r13d,r12d
-jg        short 00007FFB3C76EF4D
+jg        short 00007FFA7EC5F06D
 add       rsp,28
 pop       rbx
 pop       rbp
@@ -203,24 +203,24 @@ lea       rbp,[rsp+30]
 mov       [rbp+0FFF0],rsp
 mov       [rbp+18],edx
 mov       rsi,rcx
-mov       r8,2011DD53020
+mov       r8,27AEA843020
 mov       r8,[r8]
-mov       rdx,2012DD51740
+mov       rdx,27ACA841798
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
 mov       rcx,rsi
 call      System.IO.Directory.Exists(System.String)
 test      eax,eax
-jne       short 00007FFB3C77C18A
+jne       short 00007FFA7EC6C82A
 lea       rsp,[rbp+0FFF8]
 pop       rsi
 pop       rbp
 ret
 cmp       dword ptr [rbp+18],1
-jle       short 00007FFB3C77C195
+jle       short 00007FFA7EC6C835
 mov       ecx,[rbp+18]
-jmp       short 00007FFB3C77C19A
+jmp       short 00007FFA7EC6C83A
 mov       ecx,1
 mov       [rbp+18],ecx
 mov       rcx,rsi
@@ -244,9 +244,9 @@ lea       rbp,[rbp+30]
 mov       rcx,offset MT_System.IO.IOException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77C1ED
+jne       short 00007FFA7EC6C88D
 xor       eax,eax
-jmp       short 00007FFB3C77C1F7
+jmp       short 00007FFA7EC6C897
 cmp       dword ptr [rbp+18],1
 setle     al
 movzx     eax,al
@@ -271,9 +271,9 @@ lea       rbp,[rbp+30]
 mov       rcx,offset MT_System.UnauthorizedAccessException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77C242
+jne       short 00007FFA7EC6C8E2
 xor       eax,eax
-jmp       short 00007FFB3C77C24C
+jmp       short 00007FFA7EC6C8EC
 cmp       dword ptr [rbp+18],1
 setle     al
 movzx     eax,al
@@ -296,17 +296,12 @@ dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.CopyMoveDirectory01(
 push      rdi
 push      rsi
 push      rbx
-sub       rsp,50
+sub       rsp,20
 mov       rsi,rcx
 mov       rdi,[rsi+0D0]
-lea       rcx,[rsp+40]
-call      System.Guid.NewGuid()
-mov       rcx,25FDC705A90
-mov       rbx,[rcx]
-vmovupd   xmm0,[rsp+40]
-vmovupd   [rsp+20],xmm0
-lea       rcx,[rsp+20]
-call      dotNetTips.Spargine.Extensions.GuidExtensions.ToDigits(System.Guid)
+mov       rax,2362B8612F0
+mov       rbx,[rax]
+call      dotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
 mov       rdx,rax
 mov       rcx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -318,20 +313,15 @@ mov       rcx,[rsi+0D0]
 mov       rdx,rdi
 mov       r8d,1
 call      dotNetTips.Spargine.IO.DirectoryHelper.CopyDirectory(System.String, System.String, Boolean)
-mov       rcx,[rsi+0D8]
-mov       rsi,[rcx+10]
+mov       rax,[rsi+0D8]
+mov       rsi,[rax+10]
 test      rsi,rsi
-jne       short 00007FFB3C79C0F9
-mov       rcx,25FEC703020
-mov       rsi,[rcx]
-lea       rcx,[rsp+30]
-call      System.Guid.NewGuid()
-mov       rcx,25FDC705A90
-mov       rbx,[rcx]
-vmovupd   xmm0,[rsp+30]
-vmovupd   [rsp+20],xmm0
-lea       rcx,[rsp+20]
-call      dotNetTips.Spargine.Extensions.GuidExtensions.ToDigits(System.Guid)
+jne       short 00007FFA7EC7C41E
+mov       rax,2361B863020
+mov       rsi,[rax]
+mov       rax,2362B8612F0
+mov       rbx,[rax]
+call      dotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
 mov       rdx,rax
 mov       rcx,rbx
 call      System.String.Concat(System.String, System.String)
@@ -341,51 +331,28 @@ call      System.IO.Path.Combine(System.String, System.String)
 mov       rdx,rax
 mov       rcx,rdi
 mov       r8d,5
-call      dotNetTips.Spargine.IO.DirectoryHelper.MoveDirectory(System.String, System.String, Int32)
-nop
-add       rsp,50
+add       rsp,20
 pop       rbx
 pop       rsi
 pop       rdi
-ret
+jmp       near ptr dotNetTips.Spargine.IO.DirectoryHelper.MoveDirectory(System.String, System.String, Int32)
 
-System.Guid.NewGuid()
-push      rbp
-push      rdi
-push      rsi
-sub       rsp,30
-vzeroupper
-lea       rbp,[rsp+40]
-mov       rsi,rcx
-lea       rcx,[rbp+0FFE0]
-call      Interop+Ole32.CoCreateGuid(System.Guid ByRef)
-mov       edi,eax
-test      edi,edi
-jne       short 00007FFB3C798665
-vmovdqu   xmm0,xmmword ptr [rbp+0FFE0]
-vmovdqu   xmmword ptr [rsi],xmm0
-mov       rax,rsi
-lea       rsp,[rbp+0FFF0]
-pop       rsi
-pop       rdi
-pop       rbp
-ret
-mov       rcx,offset MT_System.Exception
-call      CORINFO_HELP_NEWSFAST
-mov       rsi,rax
-mov       rcx,rsi
-call      System.Exception..ctor()
-mov       [rsi+74],edi
-mov       rcx,rsi
-call      CORINFO_HELP_THROW
-int       3
-
-dotNetTips.Spargine.Extensions.GuidExtensions.ToDigits(System.Guid)
-mov       r8,25FEC701508
-mov       r8,[r8]
-mov       rdx,25FDC7051F8
+dotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
+sub       rsp,38
+xor       eax,eax
+mov       [rsp+28],rax
+mov       [rsp+30],rax
+lea       rcx,[rsp+28]
+call      System.Guid.NewGuid()
+mov       rdx,2363B861220
 mov       rdx,[rdx]
-jmp       near ptr System.Guid.ToString(System.String, System.IFormatProvider)
+mov       r8,2361B861508
+mov       r8,[r8]
+lea       rcx,[rsp+28]
+call      System.Guid.ToString(System.String, System.IFormatProvider)
+nop
+add       rsp,38
+ret
 
 System.String.Concat(System.String, System.String)
 push      rdi
@@ -396,14 +363,14 @@ sub       rsp,28
 mov       rdi,rcx
 mov       rsi,rdx
 test      rdi,rdi
-je        short 00007FFB3C797779
+je        short 00007FFA7EC779F9
 cmp       dword ptr [rdi+8],0
-ja        short 00007FFB3C7977A6
+ja        short 00007FFA7EC77A26
 test      rsi,rsi
-je        short 00007FFB3C797784
+je        short 00007FFA7EC77A04
 cmp       dword ptr [rsi+8],0
-ja        short 00007FFB3C79779A
-mov       rax,25FEC703020
+ja        short 00007FFA7EC77A1A
+mov       rax,2361B863020
 mov       rax,[rax]
 add       rsp,28
 pop       rbx
@@ -419,9 +386,9 @@ pop       rsi
 pop       rdi
 ret
 test      rsi,rsi
-je        short 00007FFB3C7977B1
+je        short 00007FFA7EC77A31
 cmp       dword ptr [rsi+8],0
-ja        short 00007FFB3C7977BD
+ja        short 00007FFA7EC77A3D
 mov       rax,rdi
 add       rsp,28
 pop       rbx
@@ -455,19 +422,19 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-je        short 00007FFB3C79400B
+je        short 00007FFA7EC73FAB
 test      rdx,rdx
-je        short 00007FFB3C79400B
+je        short 00007FFA7EC73FAB
 add       rsp,28
 pop       rsi
 pop       rdi
 jmp       near ptr System.IO.Path.CombineInternal(System.String, System.String)
 test      rcx,rcx
-je        short 00007FFB3C79401F
-mov       rcx,25FDC705208
+je        short 00007FFA7EC73FBF
+mov       rcx,2363B861230
 mov       rsi,[rcx]
-jmp       short 00007FFB3C79402C
-mov       rcx,25FDC705210
+jmp       short 00007FFA7EC73FCC
+mov       rcx,2363B861238
 mov       rsi,[rcx]
 mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
@@ -492,15 +459,15 @@ sub       rsp,28
 mov       rdi,rcx
 mov       rsi,rdx
 mov       ebx,r8d
-mov       r8,25FEC703020
+mov       r8,2361B863020
 mov       r8,[r8]
-mov       rdx,25FDC705A98
+mov       rdx,2362B8612F8
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       r8,25FEC703020
+mov       r8,2361B863020
 mov       r8,[r8]
-mov       rdx,25FDC705AA0
+mov       rdx,2362B861300
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -522,7 +489,7 @@ mov       rdi,rax
 mov       rcx,rsi
 call      System.IO.Directory.Exists(System.String)
 test      eax,eax
-jne       short 00007FFB3C78EF56
+jne       short 00007FFA7EC6F076
 mov       rcx,rsi
 call      System.IO.Directory.CreateDirectory(System.String)
 mov       rcx,rbp
@@ -531,7 +498,7 @@ mov       rbp,rax
 xor       r14d,r14d
 mov       r15d,[rbp+8]
 test      r15d,r15d
-jle       short 00007FFB3C78EF9C
+jle       short 00007FFA7EC6F0BC
 movzx     r13d,bl
 movsxd    rdx,r14d
 mov       r12,[rbp+rdx*8+10]
@@ -544,11 +511,11 @@ mov       rcx,r12
 call      System.IO.FileInfo.CopyTo(System.String, Boolean)
 inc       r14d
 cmp       r15d,r14d
-jg        short 00007FFB3C78EF71
+jg        short 00007FFA7EC6F091
 xor       r12d,r12d
 mov       r13d,[rdi+8]
 test      r13d,r13d
-jle       short 00007FFB3C78EFDB
+jle       short 00007FFA7EC6F0FB
 movzx     edx,bl
 mov       ebx,edx
 movsxd    rdx,r12d
@@ -563,7 +530,7 @@ mov       rcx,rbp
 call      dotNetTips.Spargine.IO.DirectoryHelper.CopyDirectory(System.String, System.String, Boolean)
 inc       r12d
 cmp       r13d,r12d
-jg        short 00007FFB3C78EFAD
+jg        short 00007FFA7EC6F0CD
 add       rsp,28
 pop       rbx
 pop       rbp
@@ -585,31 +552,31 @@ mov       [rbp+0FFE0],rsp
 mov       [rbp+20],r8d
 mov       rsi,rcx
 mov       rdi,rdx
-mov       r8,25FEC703020
+mov       r8,2361B863020
 mov       r8,[r8]
-mov       rdx,25FDC705AE8
+mov       rdx,2362B861348
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-mov       r8,25FEC703020
+mov       r8,2361B863020
 mov       r8,[r8]
-mov       rdx,25FDC705AF0
+mov       rdx,2362B861350
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
 mov       rcx,rsi
 call      System.IO.Directory.Exists(System.String)
 mov       edx,eax
-mov       r9,25FEC703020
+mov       r9,2361B863020
 mov       r9,[r9]
-mov       r8,25FDC705AE8
+mov       r8,2362B861348
 mov       r8,[r8]
 mov       rcx,offset MD_dotNetTips.Spargine.Core.Validate.TryValidateParam(Boolean, System.String, System.String)
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam[[System.__Canon, System.Private.CoreLib]](Boolean, System.String, System.String)
 cmp       dword ptr [rbp+20],1
-jle       short 00007FFB3C79B52C
+jle       short 00007FFA7EC7B86C
 mov       ecx,[rbp+20]
-jmp       short 00007FFB3C79B531
+jmp       short 00007FFA7EC7B871
 mov       ecx,1
 mov       [rbp+20],ecx
 mov       rcx,rsi
@@ -631,9 +598,9 @@ lea       rbp,[rbp+40]
 mov       rcx,offset MT_System.IO.IOException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C79B574
+jne       short 00007FFA7EC7B8B4
 xor       eax,eax
-jmp       short 00007FFB3C79B57E
+jmp       short 00007FFA7EC7B8BE
 cmp       dword ptr [rbp+20],1
 setle     al
 movzx     eax,al
@@ -661,9 +628,9 @@ lea       rbp,[rbp+40]
 mov       rcx,offset MT_System.UnauthorizedAccessException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C79B5CC
+jne       short 00007FFA7EC7B90C
 xor       eax,eax
-jmp       short 00007FFB3C79B5D6
+jmp       short 00007FFA7EC7B916
 cmp       dword ptr [rbp+20],1
 setle     al
 movzx     eax,al
@@ -693,11 +660,11 @@ mov       [rbp+10],rcx
             ^^^^^^^^^^^^^^^^^^^^
 mov       rcx,[rbp+10]
 cmp       dword ptr [rcx+110],0B
-jne       short 00007FFB3C7BDA04
+jne       short 00007FFA7EC8DA84
                 AppDataFolder01();
                 ^^^^^^^^^^^^^^^^^^
 mov       rcx,[rbp+10]
-call      00007FFB3C5230F8
+call      00007FFA7E9F3158
 nop
 lea       rsp,[rbp]
 pop       rbp
@@ -709,7 +676,7 @@ dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.DeleteDirectory01()
 sub       rsp,28
 mov       rcx,[rcx+0D8]
 mov       rcx,[rcx+8]
-mov       rdx,13DE66912A0
+mov       rdx,29CDB5F5AE0
 mov       rdx,[rdx]
 call      System.IO.Path.Combine(System.String, System.String)
 mov       rcx,rax
@@ -722,19 +689,19 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-je        short 00007FFB3C771CDB
+je        short 00007FFA7EC91DDB
 test      rdx,rdx
-je        short 00007FFB3C771CDB
+je        short 00007FFA7EC91DDB
 add       rsp,28
 pop       rsi
 pop       rdi
 jmp       near ptr System.IO.Path.CombineInternal(System.String, System.String)
 test      rcx,rcx
-je        short 00007FFB3C771CEF
-mov       rcx,13E06691230
+je        short 00007FFA7EC91DEF
+mov       rcx,29CDB5F5208
 mov       rsi,[rcx]
-jmp       short 00007FFB3C771CFC
-mov       rcx,13E06691238
+jmp       short 00007FFA7EC91DFC
+mov       rcx,29CDB5F5210
 mov       rsi,[rcx]
 mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
@@ -754,24 +721,24 @@ lea       rbp,[rsp+30]
 mov       [rbp+0FFF0],rsp
 mov       [rbp+18],edx
 mov       rsi,rcx
-mov       r8,13DD6693020
+mov       r8,29CEB5F3020
 mov       r8,[r8]
-mov       rdx,13E06691740
+mov       rdx,29CDB5F5770
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
 mov       rcx,rsi
 call      System.IO.Directory.Exists(System.String)
 test      eax,eax
-jne       short 00007FFB3C77319A
+jne       short 00007FFA7EC936AA
 lea       rsp,[rbp+0FFF8]
 pop       rsi
 pop       rbp
 ret
 cmp       dword ptr [rbp+18],1
-jle       short 00007FFB3C7731A5
+jle       short 00007FFA7EC936B5
 mov       ecx,[rbp+18]
-jmp       short 00007FFB3C7731AA
+jmp       short 00007FFA7EC936BA
 mov       ecx,1
 mov       [rbp+18],ecx
 mov       rcx,rsi
@@ -795,9 +762,9 @@ lea       rbp,[rbp+30]
 mov       rcx,offset MT_System.IO.IOException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C7731FD
+jne       short 00007FFA7EC9370D
 xor       eax,eax
-jmp       short 00007FFB3C773207
+jmp       short 00007FFA7EC93717
 cmp       dword ptr [rbp+18],1
 setle     al
 movzx     eax,al
@@ -822,9 +789,9 @@ lea       rbp,[rbp+30]
 mov       rcx,offset MT_System.UnauthorizedAccessException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C773252
+jne       short 00007FFA7EC93762
 xor       eax,eax
-jmp       short 00007FFB3C77325C
+jmp       short 00007FFA7EC9376C
 cmp       dword ptr [rbp+18],1
 setle     al
 movzx     eax,al
@@ -874,45 +841,45 @@ call      System.Runtime.InteropServices.OSPlatform.get_Windows()
 mov       rcx,rax
 call      System.OperatingSystem.IsOSPlatform(System.String)
 test      al,al
-je        near ptr 00007FFB3C770188
+je        near ptr 00007FFA7EC80428
 mov       rcx,offset MT_System.Collections.Generic.List`1[[dotNetTips.Spargine.IO.OneDriveFolder, dotNetTips.Spargine.5]]
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
-mov       rcx,7FFB3C4B0020
-mov       edx,23
+mov       rcx,7FFA7E9C0020
+mov       edx,22
 call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-mov       rdx,2A118742E00
+mov       rdx,29003FA2DF8
 mov       rdx,[rdx]
 lea       rcx,[rsi+8]
 call      CORINFO_HELP_ASSIGN_REF
-mov       rcx,2A1487436B0
+mov       rcx,29013FA72C0
 mov       rcx,[rcx]
 mov       edx,80000001
 call      dotNetTips.Spargine.Win32.RegistryHelper.GetRegistryKey(System.String, Microsoft.Win32.RegistryHive)
 test      rax,rax
-je        near ptr 00007FFB3C770166
-mov       rdx,2A1487436B8
+je        near ptr 00007FFA7EC80406
+mov       rdx,29013FA72C8
 mov       rdx,[rdx]
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.RegistryExtensions.GetSubKey(Microsoft.Win32.RegistryKey, System.String)
 mov       rdi,rax
 test      rdi,rdi
-je        near ptr 00007FFB3C770166
+je        near ptr 00007FFA7EC80406
 mov       rcx,rdi
 call      Microsoft.Win32.RegistryKey.EnsureNotDisposed()
 mov       rcx,rdi
 call      Microsoft.Win32.RegistryKey.InternalSubKeyCountCore()
 test      eax,eax
-jle       near ptr 00007FFB3C770166
+jle       near ptr 00007FFA7EC80406
 xor       ebx,ebx
 mov       rcx,rdi
 call      Microsoft.Win32.RegistryKey.GetSubKeyNames()
 cmp       dword ptr [rax+8],0
-jle       near ptr 00007FFB3C770166
+jle       near ptr 00007FFA7EC80406
 mov       rcx,rdi
 call      Microsoft.Win32.RegistryKey.GetSubKeyNames()
 cmp       ebx,[rax+8]
-jae       near ptr 00007FFB3C7701AB
+jae       near ptr 00007FFA7EC8044B
 movsxd    rcx,ebx
 mov       rbp,[rax+rcx*8+10]
 mov       rcx,rbp
@@ -931,7 +898,7 @@ call      CORINFO_HELP_NEWSFAST
 mov       r14,rax
 mov       rcx,r14
 call      dotNetTips.Spargine.Extensions.ObjectExtensions.InitializeFields(System.Object)
-mov       r8,2A1487436C0
+mov       r8,29013FA72D0
 mov       r8,[r8]
 mov       rdx,rbp
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -940,7 +907,7 @@ mov       r15,rax
 mov       rcx,r15
 call      dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String)
 test      eax,eax
-je        near ptr 00007FFB3C770153
+je        near ptr 00007FFA7EC803F3
 mov       rcx,offset MT_System.IO.DirectoryInfo
 call      CORINFO_HELP_NEWSFAST
 mov       r12,rax
@@ -956,17 +923,17 @@ call      System.IO.DirectoryInfo.Init(System.String, System.String, System.Stri
 lea       rcx,[r14+10]
 mov       rdx,r12
 call      CORINFO_HELP_ASSIGN_REF
-mov       r8,2A1487436C8
+mov       r8,29013FA72D8
 mov       r8,[r8]
 mov       rdx,rbp
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
 call      dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue[[System.__Canon, System.Private.CoreLib]](Microsoft.Win32.RegistryKey, System.String)
 test      rax,rax
-je        short 00007FFB3C7700A2
+je        short 00007FFA7EC80342
 lea       rcx,[r14+18]
 mov       rdx,rax
 call      CORINFO_HELP_ASSIGN_REF
-mov       r8,2A1487436D0
+mov       r8,29013FA72E0
 mov       r8,[r8]
 mov       rdx,rbp
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -975,13 +942,13 @@ mov       r15,rax
 mov       rcx,r15
 call      dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String)
 test      eax,eax
-je        short 00007FFB3C7700E6
+je        short 00007FFA7EC80386
 mov       dword ptr [r14+20],1
 lea       rcx,[r14+8]
 mov       rdx,r15
 call      CORINFO_HELP_ASSIGN_REF
-jmp       short 00007FFB3C770111
-mov       r8,2A148741028
+jmp       short 00007FFA7EC803B1
+mov       r8,29023FA1028
 mov       r8,[r8]
 mov       rdx,rbp
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -992,20 +959,20 @@ call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,[r14+8]
 call      dotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String)
 test      eax,eax
-je        short 00007FFB3C770153
+je        short 00007FFA7EC803F3
 mov       rcx,[r14+10]
 test      rcx,rcx
-je        short 00007FFB3C770153
+je        short 00007FFA7EC803F3
 inc       dword ptr [rsi+14]
 mov       rcx,[rsi+8]
 mov       edx,[rsi+10]
 cmp       [rcx+8],edx
-jbe       short 00007FFB3C770148
+jbe       short 00007FFA7EC803E8
 lea       r8d,[rdx+1]
 mov       [rsi+10],r8d
 mov       r8,r14
 call      CORINFO_HELP_ARRADDR_ST
-jmp       short 00007FFB3C770153
+jmp       short 00007FFA7EC803F3
 mov       rcx,rsi
 mov       rdx,r14
 call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -1013,7 +980,7 @@ inc       ebx
 mov       rcx,rdi
 call      Microsoft.Win32.RegistryKey.GetSubKeyNames()
 cmp       [rax+8],ebx
-jg        near ptr 00007FFB3C76FF9C
+jg        near ptr 00007FFA7EC8023C
 mov       rdx,rsi
 mov       rcx,offset MD_System.Collections.Immutable.ImmutableArray.ToImmutableArray(System.Collections.Generic.IEnumerable`1<!!0>)
 call      System.Collections.Immutable.ImmutableArray.ToImmutableArray[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
@@ -1062,7 +1029,7 @@ mov       rdx,rbx
 mov       rcx,rdi
 xor       r9d,r9d
 call      System.IO.DirectoryInfo.Init(System.String, System.String, System.String, Boolean)
-mov       rdx,20B9B6336B0
+mov       rdx,2052FAF76D8
 mov       rdx,[rdx]
 mov       rcx,rdi
 xor       r8d,r8d
@@ -1087,7 +1054,7 @@ xor       eax,eax
 mov       [rsp+28],rax
 mov       rsi,rcx
 test      rsi,rsi
-je        short 00007FFB3C7842AA
+je        short 00007FFA7EC64B0A
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 lea       rdx,[rsp+28]
@@ -1096,13 +1063,13 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+28]
 call      System.IO.PathInternal.IsEffectivelyEmpty(System.ReadOnlySpan`1<Char>)
 test      eax,eax
-jne       near ptr 00007FFB3C7842E3
+jne       near ptr 00007FFA7EC64B43
 lea       rcx,[rsi+0C]
 mov       r8d,[rsi+8]
 xor       edx,edx
 call      System.SpanHelpers.Contains(Char ByRef, Char, Int32)
 test      eax,eax
-jne       near ptr 00007FFB3C784340
+jne       near ptr 00007FFA7EC64BA0
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 lea       rdx,[rsp+28]
@@ -1111,7 +1078,7 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+28]
 call      System.IO.PathInternal.IsExtended(System.ReadOnlySpan`1<Char>)
 test      eax,eax
-je        short 00007FFB3C78429A
+je        short 00007FFA7EC64AFA
 mov       rax,rsi
 add       rsp,38
 pop       rsi
@@ -1128,7 +1095,7 @@ mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3C4020
+mov       rdx,7FFA7E8A4020
 call      CORINFO_HELP_STRCNS
 mov       rdx,rax
 mov       rcx,rsi
@@ -1139,14 +1106,14 @@ mov       rcx,offset MT_System.ArgumentException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,50EF
-mov       rdx,7FFB3C3C4020
+mov       rdx,7FFA7E8A4020
 call      CORINFO_HELP_STRCNS
 mov       rcx,rax
 xor       edx,edx
 call      System.SR.GetResourceString(System.String, System.String)
 mov       rdi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3C4020
+mov       rdx,7FFA7E8A4020
 call      CORINFO_HELP_STRCNS
 mov       r8,rax
 mov       rdx,rdi
@@ -1158,14 +1125,14 @@ mov       rcx,offset MT_System.ArgumentException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,78A7
-mov       rdx,7FFB3C3C4020
+mov       rdx,7FFA7E8A4020
 call      CORINFO_HELP_STRCNS
 mov       rcx,rax
 xor       edx,edx
 call      System.SR.GetResourceString(System.String, System.String)
 mov       rdi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3C4020
+mov       rdx,7FFA7E8A4020
 call      CORINFO_HELP_STRCNS
 mov       r8,rax
 mov       rdx,rdi
@@ -1194,28 +1161,28 @@ mov       rbp,r9
 mov       r14d,[rsp+0B0]
 mov       rdx,rbx
 test      rdx,rdx
-je        near ptr 00007FFB3C78516B
+je        near ptr 00007FFA7EC655AB
 lea       rcx,[rdi+10]
 mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 test      rsi,rsi
-jne       short 00007FFB3C78506A
+jne       short 00007FFA7EC654AA
 mov       rsi,rbx
 test      r14b,r14b
-jne       short 00007FFB3C785079
+jne       short 00007FFA7EC654B9
 mov       rcx,rsi
 call      System.IO.Path.GetFullPath(System.String)
-jmp       short 00007FFB3C78507C
+jmp       short 00007FFA7EC654BC
 mov       rax,rsi
 mov       rsi,rax
 mov       rdx,rbp
 test      rdx,rdx
-jne       near ptr 00007FFB3C785147
+jne       near ptr 00007FFA7EC65587
 test      rsi,rsi
-jne       short 00007FFB3C785096
+jne       short 00007FFA7EC654D6
 xor       ecx,ecx
 xor       ebx,ebx
-jmp       short 00007FFB3C78509D
+jmp       short 00007FFA7EC654DD
 lea       rcx,[rsi+0C]
 mov       ebx,[rsi+8]
 mov       eax,ebx
@@ -1225,12 +1192,12 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+20]
 call      System.IO.PathInternal.GetRootLength(System.ReadOnlySpan`1<Char>)
 cmp       eax,ebx
-je        short 00007FFB3C78510D
+je        short 00007FFA7EC6554D
 test      rsi,rsi
-jne       short 00007FFB3C7850C3
+jne       short 00007FFA7EC65503
 xor       ecx,ecx
 xor       edx,edx
-jmp       short 00007FFB3C7850CA
+jmp       short 00007FFA7EC6550A
 lea       rcx,[rsi+0C]
 mov       edx,[rsi+8]
 lea       rax,[rsp+30]
@@ -1248,12 +1215,12 @@ mov       eax,[rsp+38]
 mov       [rdx+8],eax
 lea       rdx,[rsp+20]
 call      System.IO.Path.GetFileName(System.ReadOnlySpan`1<Char>)
-jmp       short 00007FFB3C785128
+jmp       short 00007FFA7EC65568
 test      rsi,rsi
-jne       short 00007FFB3C785118
+jne       short 00007FFA7EC65558
 xor       ecx,ecx
 xor       eax,eax
-jmp       short 00007FFB3C78511F
+jmp       short 00007FFA7EC6555F
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 mov       [rsp+40],rcx
@@ -1282,7 +1249,7 @@ mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,6DB
-mov       rdx,7FFB3C6BBB28
+mov       rdx,7FFA7EB9BC98
 call      CORINFO_HELP_STRCNS
 mov       rdx,rax
 mov       rcx,rsi
@@ -1302,25 +1269,25 @@ mov       [rbp+0FFD8],rsp
 mov       [rbp+10],rcx
 mov       [rbp+18],rdx
 mov       [rbp+20],r8d
-mov       r8,20B9B633020
+mov       r8,2052FAF1028
 mov       r8,[r8]
-mov       rdx,20B9B6336B8
+mov       rdx,2052FAF76E0
 mov       rdx,[rdx]
 mov       rcx,[rbp+10]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.IO.DirectoryInfo, System.String, System.String)
-mov       r8,20B9B633020
+mov       r8,2052FAF1028
 mov       r8,[r8]
-mov       rdx,20B9B6336C0
+mov       rdx,2052FAF76E8
 mov       rdx,[rdx]
 mov       rcx,[rbp+18]
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
 mov       rcx,offset MT_System.Collections.Generic.List`1[[System.IO.DirectoryInfo, System.IO.FileSystem]]
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
-mov       rcx,7FFB3C4C0020
-mov       edx,23
+mov       rcx,7FFA7E9A0020
+mov       edx,22
 call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-mov       rdx,20B9B632E00
+mov       rdx,2050FAF2DF8
 mov       rdx,[rdx]
 lea       rcx,[rsi+8]
 call      CORINFO_HELP_ASSIGN_REF
@@ -1328,19 +1295,19 @@ inc       dword ptr [rsi+14]
 mov       rcx,[rsi+8]
 mov       edx,[rsi+10]
 cmp       [rcx+8],edx
-jbe       short 00007FFB3C77F035
+jbe       short 00007FFA7EC5EFF5
 lea       r8d,[rdx+1]
 mov       [rsi+10],r8d
 mov       r8,[rbp+10]
 call      CORINFO_HELP_ARRADDR_ST
-jmp       short 00007FFB3C77F041
+jmp       short 00007FFA7EC5F001
 mov       rcx,rsi
 mov       rdx,[rbp+10]
 call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 mov       [rbp+0FFE8],rsi
 xor       ecx,ecx
 mov       [rbp+0FFF4],ecx
-jmp       near ptr 00007FFB3C77F105
+jmp       near ptr 00007FFA7EC5F0C5
 mov       ecx,[rbp+20]
 call      System.IO.EnumerationOptions.FromSearchOption(System.IO.SearchOption)
 mov       [rsp+20],rax
@@ -1358,7 +1325,7 @@ mov       rcx,offset MD_System.Linq.Enumerable.ToArray(System.Collections.Generi
 call      System.Linq.Enumerable.ToArray[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
 mov       ecx,[rax+8]
 cmp       [rbp+0FFF4],ecx
-jae       short 00007FFB3C77F0C4
+jae       short 00007FFA7EC5F084
 mov       ecx,[rbp+0FFF4]
 movsxd    rcx,ecx
 mov       rcx,[rax+rcx*8+10]
@@ -1367,8 +1334,8 @@ xor       r8d,r8d
 call      dotNetTips.Spargine.IO.DirectoryHelper.SafeDirectorySearch(System.IO.DirectoryInfo, System.String, System.IO.SearchOption)
 mov       rsi,rax
 test      rsi,rsi
-jne       short 00007FFB3C77F0C9
-jmp       short 00007FFB3C77F0FD
+jne       short 00007FFA7EC5F089
+jmp       short 00007FFA7EC5F0BD
 call      CORINFO_HELP_RNGCHKFAIL
 mov       rcx,rsi
 call      dotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
@@ -1376,7 +1343,7 @@ test      eax,eax
 setg      r8b
 movzx     r8d,r8b
 test      r8d,r8d
-je        short 00007FFB3C77F0FD
+je        short 00007FFA7EC5F0BD
 mov       r8,rsi
 mov       rdx,[rbp+0FFE8]
 mov       rcx,offset MD_dotNetTips.Spargine.Extensions.CollectionExtensions.AddRange(System.Collections.Generic.ICollection`1<!!0>, System.Collections.Generic.IEnumerable`1<!!0>, dotNetTips.Spargine.Core.Tristate)
@@ -1405,7 +1372,7 @@ mov       rcx,offset MD_System.Linq.Enumerable.ToArray(System.Collections.Generi
 call      System.Linq.Enumerable.ToArray[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
 mov       ecx,[rax+8]
 cmp       ecx,[rbp+0FFF4]
-jg        near ptr 00007FFB3C77F04F
+jg        near ptr 00007FFA7EC5F00F
 mov       rax,[rbp+0FFE8]
 lea       rsp,[rbp+0FFF8]
 pop       rsi
@@ -1421,36 +1388,36 @@ mov       rcx,offset MT_System.Exception
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 mov       rdx,rax
 test      rdx,rdx
-jne       short 00007FFB3C77F19F
+jne       short 00007FFA7EC5F15F
 xor       eax,eax
-jmp       near ptr 00007FFB3C77F22A
+jmp       near ptr 00007FFA7EC5F1EA
 mov       [rbp+0FFE0],rdx
 mov       rcx,offset MT_System.ArgumentException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77F21D
+jne       short 00007FFA7EC5F1DD
 mov       rdx,[rbp+0FFE0]
 mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77F21D
+jne       short 00007FFA7EC5F1DD
 mov       rdx,[rbp+0FFE0]
 mov       rcx,offset MT_System.ArgumentOutOfRangeException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77F21D
+jne       short 00007FFA7EC5F1DD
 mov       rdx,[rbp+0FFE0]
 mov       rcx,offset MT_System.IO.DirectoryNotFoundException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
-jne       short 00007FFB3C77F21D
+jne       short 00007FFA7EC5F1DD
 mov       rdx,[rbp+0FFE0]
 mov       rcx,offset MT_System.UnauthorizedAccessException
 call      CORINFO_HELP_ISINSTANCEOFCLASS
 test      rax,rax
 setne     al
 movzx     eax,al
-jmp       short 00007FFB3C77F222
+jmp       short 00007FFA7EC5F1E2
 mov       eax,1
 test      eax,eax
 setne     al
@@ -1472,7 +1439,7 @@ mov       rax,[rax+40]
 call      qword ptr [rax+28]
 mov       rcx,rax
 call      System.Diagnostics.Trace.WriteLine(System.String)
-lea       rax,[7FFB3C78F0FD]
+lea       rax,[7FFA7EC6F0BD]
 add       rsp,38
 pop       rsi
 pop       rbp
@@ -1499,7 +1466,7 @@ mov       rdx,rbx
 mov       rcx,rdi
 xor       r9d,r9d
 call      System.IO.DirectoryInfo.Init(System.String, System.String, System.String, Boolean)
-mov       rdx,27DA04F12A0
+mov       rdx,1F55A2232E8
 mov       rdx,[rdx]
 mov       rcx,rdi
 xor       r8d,r8d
@@ -1524,7 +1491,7 @@ xor       eax,eax
 mov       [rsp+28],rax
 mov       rsi,rcx
 test      rsi,rsi
-je        short 00007FFB3C77AE9A
+je        short 00007FFA7EC8AFBA
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 lea       rdx,[rsp+28]
@@ -1533,13 +1500,13 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+28]
 call      System.IO.PathInternal.IsEffectivelyEmpty(System.ReadOnlySpan`1<Char>)
 test      eax,eax
-jne       near ptr 00007FFB3C77AED3
+jne       near ptr 00007FFA7EC8AFF3
 lea       rcx,[rsi+0C]
 mov       r8d,[rsi+8]
 xor       edx,edx
 call      System.SpanHelpers.Contains(Char ByRef, Char, Int32)
 test      eax,eax
-jne       near ptr 00007FFB3C77AF30
+jne       near ptr 00007FFA7EC8B050
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 lea       rdx,[rsp+28]
@@ -1548,7 +1515,7 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+28]
 call      System.IO.PathInternal.IsExtended(System.ReadOnlySpan`1<Char>)
 test      eax,eax
-je        short 00007FFB3C77AE8A
+je        short 00007FFA7EC8AFAA
 mov       rax,rsi
 add       rsp,38
 pop       rsi
@@ -1565,7 +1532,7 @@ mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3B4020
+mov       rdx,7FFA7E8C4020
 call      CORINFO_HELP_STRCNS
 mov       rdx,rax
 mov       rcx,rsi
@@ -1576,14 +1543,14 @@ mov       rcx,offset MT_System.ArgumentException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,50EF
-mov       rdx,7FFB3C3B4020
+mov       rdx,7FFA7E8C4020
 call      CORINFO_HELP_STRCNS
 mov       rcx,rax
 xor       edx,edx
 call      System.SR.GetResourceString(System.String, System.String)
 mov       rdi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3B4020
+mov       rdx,7FFA7E8C4020
 call      CORINFO_HELP_STRCNS
 mov       r8,rax
 mov       rdx,rdi
@@ -1595,14 +1562,14 @@ mov       rcx,offset MT_System.ArgumentException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,78A7
-mov       rdx,7FFB3C3B4020
+mov       rdx,7FFA7E8C4020
 call      CORINFO_HELP_STRCNS
 mov       rcx,rax
 xor       edx,edx
 call      System.SR.GetResourceString(System.String, System.String)
 mov       rdi,rax
 mov       ecx,1BA97
-mov       rdx,7FFB3C3B4020
+mov       rdx,7FFA7E8C4020
 call      CORINFO_HELP_STRCNS
 mov       r8,rax
 mov       rdx,rdi
@@ -1631,28 +1598,28 @@ mov       rbp,r9
 mov       r14d,[rsp+0B0]
 mov       rdx,rbx
 test      rdx,rdx
-je        near ptr 00007FFB3C77B94B
+je        near ptr 00007FFA7EC8BFDB
 lea       rcx,[rdi+10]
 mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
 test      rsi,rsi
-jne       short 00007FFB3C77B84A
+jne       short 00007FFA7EC8BEDA
 mov       rsi,rbx
 test      r14b,r14b
-jne       short 00007FFB3C77B859
+jne       short 00007FFA7EC8BEE9
 mov       rcx,rsi
 call      System.IO.Path.GetFullPath(System.String)
-jmp       short 00007FFB3C77B85C
+jmp       short 00007FFA7EC8BEEC
 mov       rax,rsi
 mov       rsi,rax
 mov       rdx,rbp
 test      rdx,rdx
-jne       near ptr 00007FFB3C77B927
+jne       near ptr 00007FFA7EC8BFB7
 test      rsi,rsi
-jne       short 00007FFB3C77B876
+jne       short 00007FFA7EC8BF06
 xor       ecx,ecx
 xor       ebx,ebx
-jmp       short 00007FFB3C77B87D
+jmp       short 00007FFA7EC8BF0D
 lea       rcx,[rsi+0C]
 mov       ebx,[rsi+8]
 mov       eax,ebx
@@ -1662,12 +1629,12 @@ mov       [rdx+8],eax
 lea       rcx,[rsp+20]
 call      System.IO.PathInternal.GetRootLength(System.ReadOnlySpan`1<Char>)
 cmp       eax,ebx
-je        short 00007FFB3C77B8ED
+je        short 00007FFA7EC8BF7D
 test      rsi,rsi
-jne       short 00007FFB3C77B8A3
+jne       short 00007FFA7EC8BF33
 xor       ecx,ecx
 xor       edx,edx
-jmp       short 00007FFB3C77B8AA
+jmp       short 00007FFA7EC8BF3A
 lea       rcx,[rsi+0C]
 mov       edx,[rsi+8]
 lea       rax,[rsp+30]
@@ -1685,12 +1652,12 @@ mov       eax,[rsp+38]
 mov       [rdx+8],eax
 lea       rdx,[rsp+20]
 call      System.IO.Path.GetFileName(System.ReadOnlySpan`1<Char>)
-jmp       short 00007FFB3C77B908
+jmp       short 00007FFA7EC8BF98
 test      rsi,rsi
-jne       short 00007FFB3C77B8F8
+jne       short 00007FFA7EC8BF88
 xor       ecx,ecx
 xor       eax,eax
-jmp       short 00007FFB3C77B8FF
+jmp       short 00007FFA7EC8BF8F
 lea       rcx,[rsi+0C]
 mov       eax,[rsi+8]
 mov       [rsp+40],rcx
@@ -1719,7 +1686,7 @@ mov       rcx,offset MT_System.ArgumentNullException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
 mov       ecx,6DB
-mov       rdx,7FFB3C6ABB28
+mov       rdx,7FFA7EBBBC98
 call      CORINFO_HELP_STRCNS
 mov       rdx,rax
 mov       rcx,rsi
@@ -1740,7 +1707,7 @@ mov       ebx,r8d
 mov       rcx,offset MT_System.Collections.Generic.List`1[[System.IO.DirectoryInfo, System.IO.FileSystem]]
 call      CORINFO_HELP_NEWSFAST
 mov       rbp,rax
-mov       rdx,27D804F2E00
+mov       rdx,1F55A222DF8
 mov       rdx,[rdx]
 lea       rcx,[rbp+8]
 call      CORINFO_HELP_ASSIGN_REF
@@ -1748,12 +1715,12 @@ inc       dword ptr [rbp+14]
 mov       rcx,[rbp+8]
 mov       edx,[rbp+10]
 cmp       [rcx+8],edx
-jbe       short 00007FFB3C77C02A
+jbe       short 00007FFA7EC8C6AA
 lea       r8d,[rdx+1]
 mov       [rbp+10],r8d
 mov       r8,rsi
 call      CORINFO_HELP_ARRADDR_ST
-jmp       short 00007FFB3C77C035
+jmp       short 00007FFA7EC8C6B5
 mov       rcx,rbp
 mov       rdx,rsi
 call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -1778,9 +1745,9 @@ push      rdi
 push      rsi
 sub       rsp,28
 mov       rsi,rcx
-mov       r8,1BE5F8C3020
+mov       r8,1C82E553020
 mov       r8,[r8]
-mov       rdx,1BE5F8C3B50
+mov       rdx,1C83E551798
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -1788,11 +1755,11 @@ xor       edi,edi
 mov       rcx,rsi
 call      System.IO.Directory.GetDirectories(System.String)
 cmp       dword ptr [rax+8],0
-jle       short 00007FFB3C77EA04
+jle       short 00007FFA7EC5EF24
 mov       rcx,rsi
 call      System.IO.Directory.GetDirectories(System.String)
 cmp       edi,[rax+8]
-jae       short 00007FFB3C77EA51
+jae       short 00007FFA7EC5EF71
 movsxd    rcx,edi
 mov       rcx,[rax+rcx*8+10]
 call      dotNetTips.Spargine.IO.DirectoryHelper.SetFileAttributesToNormal(System.String)
@@ -1800,16 +1767,16 @@ inc       edi
 mov       rcx,rsi
 call      System.IO.Directory.GetDirectories(System.String)
 cmp       [rax+8],edi
-jg        short 00007FFB3C77E9DB
+jg        short 00007FFA7EC5EEFB
 xor       edi,edi
 mov       rcx,rsi
 call      System.IO.Directory.GetFiles(System.String)
 cmp       dword ptr [rax+8],0
-jle       short 00007FFB3C77EA4A
+jle       short 00007FFA7EC5EF6A
 mov       rcx,rsi
 call      System.IO.Directory.GetFiles(System.String)
 cmp       edi,[rax+8]
-jae       short 00007FFB3C77EA51
+jae       short 00007FFA7EC5EF71
 movsxd    rcx,edi
 mov       rcx,[rax+rcx*8+10]
 call      System.IO.Path.GetFullPath(System.String)
@@ -1820,7 +1787,7 @@ inc       edi
 mov       rcx,rsi
 call      System.IO.Directory.GetFiles(System.String)
 cmp       [rax+8],edi
-jg        short 00007FFB3C77EA14
+jg        short 00007FFA7EC5EF34
 add       rsp,28
 pop       rsi
 pop       rdi

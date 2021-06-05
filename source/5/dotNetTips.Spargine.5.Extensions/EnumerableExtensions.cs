@@ -5,7 +5,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,6 +32,49 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class EnumerableExtensions
 	{
+
+		/// <summary>
+		/// Adds the specified item to the list.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		public static IEnumerable<T> Add<T>(this IEnumerable<T> list, T item)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			var result = list.ToList();
+			result.Add(item);
+
+			return result.AsEnumerable();
+		}
+
+		/// <summary>
+		/// Adds item to the list if the condition is met.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		/// <param name="condition">if set to <c>true</c> [condition].</param>
+		/// <returns>IEnumerable&lt;T&gt;.</returns>
+		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		public static IEnumerable<T> AddIf<T>(this IEnumerable<T> list, T item, bool condition)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			if (condition)
+			{
+				return list.Add(item);
+			}
+			else
+			{
+				return list;
+			}
+		}
 		/// <summary>
 		/// Determines whether the specified collection has items specified.
 		/// </summary>
@@ -53,75 +96,6 @@ namespace dotNetTips.Spargine.Extensions
 			var itemsList = items.ToReadOnlyCollection();
 
 			return itemsList.HasItems() && list.ToList().Any(p => itemsList.Contains(p));
-		}
-
-		/// <summary>
-		/// Adds the specified item to the list.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="item">The item.</param>
-		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static IEnumerable<T> Add<T>(this IEnumerable<T> list, T item)
-		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			var result = list.ToList();
-			result.Add(item);
-
-			return result.AsEnumerable();
-		}
-
-		/// <summary>
-		/// Adds item to the list if the condition is met.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="item">The item.</param>
-		/// <param name="condition">if set to <c>true</c> [condition].</param>
-		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static IEnumerable<T> AddIf<T>(this IEnumerable<T> list, T item, bool condition)
-		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			if (condition)
-			{
-				return list.Add(item);
-			}
-			else
-			{
-				return list;
-			}
-		}
-
-		/// <summary>
-		/// Upserts (update or insert) the specified item.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
-		public static IEnumerable<T> Upsert<T>(this IEnumerable<T> list, T item)
-		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			if (list.Contains(item))
-			{
-				var indexItem = list.ElementAt(list.IndexOf(item));
-
-				indexItem = item;
-
-				return list;
-			}
-			else
-			{
-				return list.Add(item);
-			}
 		}
 
 		/// <summary>
@@ -435,7 +409,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>BlockingCollection&lt;T&gt;.</returns>
 		/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
-		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static BlockingCollection<T> ToBlockingCollection<T>(this IEnumerable<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));
@@ -558,6 +532,33 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(list, nameof(list));
 
 			return await Task.Run(() => list.ToList()).ConfigureAwait(false);
+		}
+
+		/// <summary>
+		/// Upserts (update or insert) the specified item.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="item">The item.</param>
+		/// <returns>System.Collections.Generic.IEnumerable&lt;T&gt;.</returns>
+		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		public static IEnumerable<T> Upsert<T>(this IEnumerable<T> list, T item)
+		{
+			Validate.TryValidateNullParam(list, nameof(list));
+			Validate.TryValidateNullParam(item, nameof(item));
+
+			if (list.Contains(item))
+			{
+				var indexItem = list.ElementAt(list.IndexOf(item));
+
+				indexItem = item;
+
+				return list;
+			}
+			else
+			{
+				return list.Add(item);
+			}
 		}
 	}
 }

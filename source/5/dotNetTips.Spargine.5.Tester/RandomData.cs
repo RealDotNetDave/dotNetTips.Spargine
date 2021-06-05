@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Tester
 	/// <summary>
 	/// Methods to randomly generate data for unit and benchmark testing.
 	/// </summary>
-	/// <remarks>Original code from: https://github.com/andrewseward/Any-.Net</remarks>
+	[Information(Status = Status.Available, Documentation = "http://bit.ly/UnitTestRandomData")]
 	public static class RandomData
 	{
 		/// <summary>
@@ -357,10 +357,10 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static string GenerateKey()
 		{
-			return Guid.NewGuid().ToDigits();
+			return KeyGenerator.GenerateKey();
 		}
 
 		/// <summary>

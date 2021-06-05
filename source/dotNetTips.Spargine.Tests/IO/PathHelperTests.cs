@@ -21,122 +21,122 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class PathHelperTests
-    {
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class PathHelperTests
+	{
 
-        [TestMethod]
-        public void CombinePathsParamsTest()
-        {
-            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+		[TestMethod]
+		public void CombinePathsParamsTest()
+		{
+			var basePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-            var paths = new string[] { basePath, "Test1", "Test2", "Test3" };
+			var paths = new string[] { basePath, "Test1", "Test2", "Test3" };
 
-            var tempPath = PathHelper.CombinePaths(createIfNotExists: true, paths);
+			var tempPath = PathHelper.CombinePaths(createIfNotExists: true, paths: paths);
 
-            Assert.IsNotNull(tempPath);
-            Assert.IsTrue(tempPath.Exists);
+			Assert.IsNotNull(tempPath);
+			Assert.IsTrue(tempPath.Exists);
 
-            Directory.Delete(tempPath.FullName);
-        }
+			Directory.Delete(tempPath.FullName);
+		}
 
-        [TestMethod]
-        public void CombinePathsTest()
-        {
-            var basePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+		[TestMethod]
+		public void CombinePathsTest()
+		{
+			var basePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-            Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST1"));
-            Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST2"));
-            Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST3", "TEST3"));
-            Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST4", "TEST4", "TEST4"));
+			Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST1"));
+			Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST2"));
+			Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST3", "TEST3"));
+			Assert.IsNotNull(PathHelper.CombinePaths(false, basePath, "TEST4", "TEST4", "TEST4"));
 
-            var tempPath1 = PathHelper.CombinePaths(true, basePath, "TESTPath1");
+			var tempPath1 = PathHelper.CombinePaths(true, basePath, "TESTPath1");
 
-            Directory.Delete(tempPath1.FullName);
-        }
+			Directory.Delete(tempPath1.FullName);
+		}
 
-        [TestMethod()]
-        public void EnsureTrailingSlashTest()
-        {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+		[TestMethod()]
+		public void EnsureTrailingSlashTest()
+		{
+			var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            var result = PathHelper.EnsureTrailingSlash(path);
+			var result = PathHelper.EnsureTrailingSlash(path);
 
-            Assert.IsTrue(result.EndsWith(Path.DirectorySeparatorChar));
+			Assert.IsTrue(result.EndsWith(Path.DirectorySeparatorChar));
 
-            result = PathHelper.EnsureTrailingSlash(@"C:\Windows\");
+			result = PathHelper.EnsureTrailingSlash(@"C:\Windows\");
 
-            Assert.IsTrue(result.EndsWith(Path.DirectorySeparatorChar));
-        }
+			Assert.IsTrue(result.EndsWith(Path.DirectorySeparatorChar));
+		}
 
 
-        [TestMethod()]
-        public void HasInvalidFilterCharsTest()
-        {
-            var filter = "*.*";
+		[TestMethod()]
+		public void HasInvalidFilterCharsTest()
+		{
+			var filter = "*.*";
 
-            var result = PathHelper.HasInvalidFilterChars(filter);
+			var result = PathHelper.HasInvalidFilterChars(filter);
 
-            Assert.IsFalse(result);
+			Assert.IsFalse(result);
 
-            //Test invalid filter
-            filter = $":";
+			//Test invalid filter
+			filter = $":";
 
-            result = PathHelper.HasInvalidFilterChars(filter);
+			result = PathHelper.HasInvalidFilterChars(filter);
 
-            Assert.IsTrue(result);
-        }
+			Assert.IsTrue(result);
+		}
 
-        [TestMethod]
-        public void InvalidFilterCharsTest()
-        {
-            var result = PathHelper.InvalidFilterChars;
+		[TestMethod]
+		public void InvalidFilterCharsTest()
+		{
+			var result = PathHelper.InvalidFilterChars;
 
-            Assert.IsTrue(result.Length > 0);
-        }
+			Assert.IsTrue(result.Length > 0);
+		}
 
-        [TestMethod]
-        public void InvalidPathNameCharsTest()
-        {
-            var result = PathHelper.InvalidPathNameChars;
+		[TestMethod]
+		public void InvalidPathNameCharsTest()
+		{
+			var result = PathHelper.InvalidPathNameChars;
 
-            Assert.IsTrue(result.Length > 0);
-        }
+			Assert.IsTrue(result.Length > 0);
+		}
 
-        [TestMethod()]
-        public void PathContainsWildcardTest()
-        {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+		[TestMethod()]
+		public void PathContainsWildcardTest()
+		{
+			var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            var result = PathHelper.PathContainsWildcard(path);
+			var result = PathHelper.PathContainsWildcard(path);
 
-            Assert.IsFalse(result);
-        }
+			Assert.IsFalse(result);
+		}
 
-        [TestMethod()]
-        public void PathHasInvalidCharsTest()
-        {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+		[TestMethod()]
+		public void PathHasInvalidCharsTest()
+		{
+			var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            var result = PathHelper.PathHasInvalidChars(path);
+			var result = PathHelper.PathHasInvalidChars(path);
 
-            Assert.IsFalse(result);
+			Assert.IsFalse(result);
 
-            //Test invalid path name
-            path = $"{path}|";
+			//Test invalid path name
+			path = $"{path}|";
 
-            result = PathHelper.PathHasInvalidChars(path);
+			result = PathHelper.PathHasInvalidChars(path);
 
-            Assert.IsTrue(result);
-        }
+			Assert.IsTrue(result);
+		}
 
-        [TestMethod]
-        public void PathSeparatorsTest()
-        {
-            var result = PathHelper.PathSeparators;
+		[TestMethod]
+		public void PathSeparatorsTest()
+		{
+			var result = PathHelper.PathSeparators;
 
-            Assert.IsTrue(result.Length > 0);
-        }
-    }
+			Assert.IsTrue(result.Length > 0);
+		}
+	}
 }

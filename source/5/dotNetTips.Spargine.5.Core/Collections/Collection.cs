@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-14-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -86,7 +86,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// <returns>Collection&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Items
 		/// or has no items.</exception>
-		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD LINK")]
+		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create(IEnumerable<T> items, Tristate ensureUnique)
 		{
 			Validate.TryValidateParam(items, nameof(items));

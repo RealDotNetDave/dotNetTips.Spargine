@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -304,7 +304,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// SortableDateTime: 2021-01-07T15:36:39
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
 		{
 			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
@@ -338,7 +338,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// SortableDateTime: 2021-01-07T15:36:39
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
-		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static string ToFormattedString(this DateTimeOffset input, DateTimeFormat format)
 		{
 			Validate.TryValidateNullParam(format, nameof(format));

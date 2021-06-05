@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	/// <seealso cref="System.IComparable" />
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
-	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 	public abstract record Enumeration
 	{
 		/// <summary>

@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Length > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
 
-				var result = FileHelper.CopyFile(fileToCopy, this._tempPath);
+				var result = FileHelper.CopyFile(file: fileToCopy, destinationFolder: this._tempPath);
 
 				Assert.IsTrue(result > 0);
 			}
@@ -70,7 +70,6 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			try
 			{
-				//TODO: FIX
 				var filesToDelete = RandomData.GenerateFiles(this._tempPath.FullName, 100, 500);
 
 				var result = FileHelper.DeleteFiles(filesToDelete);
@@ -92,7 +91,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				const string fileToDownload = @"https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png";
 
-				await FileHelper.DownloadFileFromWebAsync(new Uri(fileToDownload), Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png")).ConfigureAwait(false);
+				await FileHelper.DownloadFileFromWebAsync(remoteFileUrl: new Uri(fileToDownload), localFilePath: Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png")).ConfigureAwait(false);
 			}
 			catch (Exception ex)
 			{

@@ -43,12 +43,12 @@ namespace dotNetTips.Spargine.Tester.Tests
 
 				var newPeople = new List<PersonProper>();
 
-				foreach (var person in people)
+				for (var personCount = 0; personCount < people.Count; personCount++)
 				{
-					newPeople.AddIfNotExists(person);
+					newPeople.AddIfNotExists(people[personCount]);
 				}
 
-				Assert.IsTrue(newPeople.Count == Count);
+				Assert.IsTrue(newPeople.Count() == Count);
 			}
 			catch (Exception ex)
 			{

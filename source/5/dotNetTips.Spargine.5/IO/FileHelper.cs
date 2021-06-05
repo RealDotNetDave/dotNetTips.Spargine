@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -58,7 +58,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="file">The file.</param>
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>File length as System.Int64.</returns>
-		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static long CopyFile(FileInfo file, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(file, nameof(file));
@@ -90,7 +90,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="file">The file.</param>
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>Task&lt;System.Int32&gt;.</returns>
-		[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2020/11/17/coding-faster-with-the-dotnettips-utility-november-2020-update")]
 		public static async Task<long> CopyFileAsync(FileInfo file, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(file, nameof(file));
@@ -115,11 +115,12 @@ namespace dotNetTips.Spargine.IO
 		}
 
 		/// <summary>
-		/// Deletes files.
+		/// Attempts to delete files and will return the file name and error message for files that
+		/// could not be deleted.
 		/// </summary>
 		/// <param name="files">The files.</param>
 		/// <returns>IEnumerable&lt;KeyValuePair&lt;System.String, System.String&gt;&gt;.</returns>
-		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static IEnumerable<(string FileName, string ErrorMessage)> DeleteFiles(this IEnumerable<string> files)
 		{
 			if (files.HasItems() == false)
@@ -151,12 +152,12 @@ namespace dotNetTips.Spargine.IO
 		}
 
 		/// <summary>
-		/// Downloads the file from the web.
+		/// Downloads the file from the web and stores it in the given local file path.
 		/// </summary>
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <param name="clientId">The client identifier.</param>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static void DownloadFileFromWeb(Uri remoteFileUrl, string localFilePath, string clientId = "NONE")
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -184,7 +185,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localExpandedDirPath">The local expanded dir path.</param>
 		/// <returns>Task.</returns>
-		[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static async Task DownloadFileFromWebAndUnzipAsync(Uri remoteFileUrl, string localExpandedDirPath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -204,7 +205,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <returns>Task.</returns>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static async Task DownloadFileFromWebAsync(Uri remoteFileUrl, string localFilePath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -240,7 +241,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static void MoveFile(string sourceFileName, string destinationFileName)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
@@ -280,7 +281,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
 		/// <param name="fileMoveOptions">The file move options.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static void MoveFile(string sourceFileName, string destinationFileName, FileMoveOptions fileMoveOptions)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));
@@ -308,7 +309,7 @@ namespace dotNetTips.Spargine.IO
 		}
 
 		/// <summary>
-		/// UnGZip as an asynchronous operation.
+		/// Un-GZip's a file as an asynchronous operation.
 		/// </summary>
 		/// <param name="gzipPath">The gzip path.</param>
 		/// <param name="expandedFilePath">The expanded file path.</param>

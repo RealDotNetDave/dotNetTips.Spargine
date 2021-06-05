@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-02-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="DriveHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -28,11 +28,11 @@ namespace dotNetTips.Spargine.IO
 	public static class DriveHelper
 	{
 		/// <summary>
-		/// Gets the serial number of a drive.
+		/// Gets the serial number of the drive.
 		/// </summary>
 		/// <param name="drive">The drive.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
 		public static string GetDriveSerialNumber(string drive)
 		{
 			Validate.TryValidateParam(drive, nameof(drive));
@@ -61,8 +61,8 @@ namespace dotNetTips.Spargine.IO
 		/// Gets the fixed drives, that are ready, for a computer.
 		/// </summary>
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
-		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		/// <example>Result Example - [0]: {C:\}</example>
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static IImmutableList<DriveInfo> GetFixedDrives()
 		{
 			return DriveInfo.GetDrives()
@@ -75,8 +75,8 @@ namespace dotNetTips.Spargine.IO
 		/// Gets the removable drives, that are ready, for a computer.
 		/// </summary>
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
-		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		/// <example>Result example - [0]: {E:\} [1]: {F:\}</example>
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
 		public static IImmutableList<DriveInfo> GetRemovableDrives()
 		{
 			return DriveInfo.GetDrives()

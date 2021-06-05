@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2021
+// Last Modified On : 05-31-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,6 +15,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -66,7 +67,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <returns>T.</returns>
 		/// <remarks>Original code by: Jeremy Clark</remarks>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static T Create<T>()
 			where T : class
 		{
@@ -81,7 +82,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="paramArray">The parameter array.</param>
 		/// <returns>T.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static T Create<T>(params object[] paramArray)
 		{
 			var instance = (T)Activator.CreateInstance(typeof(T), args: paramArray);
@@ -95,7 +96,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="value">The value.</param>
 		/// <param name="instance">The instance.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool DoesObjectEqualInstance(object value, object instance)
 		{
 			var result = object.ReferenceEquals(value, instance);
@@ -104,19 +105,19 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Finds the derived types for the current app.
+		/// Finds the derived types in the app folder.
 		/// </summary>
 		/// <param name="baseType">Type of the base.</param>
 		/// <param name="classOnly">The class only.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(Type baseType, Tristate classOnly)
 		{
 			Validate.TryValidateNullParam(baseType, nameof(baseType));
 
 			var path = Path.GetDirectoryName(AppContext.BaseDirectory);
 
-			return FindDerivedTypes(path, SearchOption.TopDirectoryOnly, baseType, classOnly);
+			return FindDerivedTypes(path, SearchOption.AllDirectories, baseType, classOnly);
 		}
 
 
@@ -127,7 +128,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="baseType">Type of the base.</param>
 		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(AppDomain currentDomain, Type baseType, Tristate classOnly)
 		{
 			Validate.TryValidateNullParam(currentDomain, nameof(currentDomain));
@@ -139,19 +140,26 @@ namespace dotNetTips.Spargine.Core
 
 			for (var assemblyCount = 0; assemblyCount < array.Length; assemblyCount++)
 			{
-				var assembly = array[assemblyCount];
-				var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
-
-				if (tempTypes?.Count() > 0)
+				try
 				{
-					if (types is null)
+					var assembly = array[assemblyCount];
+					var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
+
+					if (tempTypes?.Count() > 0)
 					{
-						types = tempTypes;
+						if (types is null)
+						{
+							types = tempTypes;
+						}
+						else
+						{
+							types.AddRange(tempTypes);
+						}
 					}
-					else
-					{
-						types.AddRange(tempTypes);
-					}
+				}
+				catch (ReflectionTypeLoadException reflectionEx)
+				{
+					Trace.WriteLine(reflectionEx.GetAllMessages());
 				}
 			}
 
@@ -159,7 +167,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Finds the derived types.
+		/// Finds the derived types using the path.
 		/// </summary>
 		/// <param name="path">The path.</param>
 		/// <param name="fileSearchType">The search option.</param>
@@ -168,7 +176,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		/// <exception cref="DirectoryNotFoundException">Could not find path.</exception>
 		/// <exception cref="ArgumentNullException">Could not find path.</exception>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<Type> FindDerivedTypes(string path, SearchOption fileSearchType, Type baseType, Tristate classOnly)
 		{
 			Validate.TryValidateParam(path, nameof(path), message: "Must pass in path and file name to the assembly.");
@@ -179,21 +187,31 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowDirectoryNotFoundException("Could not find path.", path);
 			}
 
-			var files = Directory.EnumerateFiles(path, "*.dll", fileSearchType);
+			var files = Directory.EnumerateFiles(path, "*.dll", fileSearchType).ToList();
 
 			var list = files.ToList();
 			var foundTypes = new List<Type>();
 
-			for (var i = 0; i < list.Count; i++)
+			for (var fileCount = 0; fileCount < list.Count; fileCount++)
 			{
-				var file = list[i];
-				var assembly = Assembly.LoadFile(file);
-
-				var containsBaseType = assembly.ExportedTypes.ToList().TrueForAll(p => p.BaseType is not null && string.Compare(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal) == 0);
-
-				if (containsBaseType)
+				try
 				{
-					foundTypes.AddRange(LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly));
+					var assembly = Assembly.LoadFile(list[fileCount]);
+					var exportedTypes = assembly.ExportedTypes.ToList().Where(p => p.BaseType != null).ToList();
+
+					if (exportedTypes?.Count() > 0)
+					{
+						var containsBaseType = exportedTypes.Any(p => p.BaseType.FullName == baseType.FullName);
+
+						if (containsBaseType)
+						{
+							foundTypes.AddRange(LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly));
+						}
+					}
+				}
+				catch (BadImageFormatException ex)
+				{
+					Trace.WriteLine(ex.Message);
 				}
 			}
 
@@ -255,7 +273,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="instance">The instance.</param>
 		/// <returns>Int32.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static int GetInstanceHashCode(object instance)
 		{
 			Validate.TryValidateNullParam(instance, nameof(instance));
@@ -288,7 +306,7 @@ namespace dotNetTips.Spargine.Core
 		/// [LastName, H^hkKhwWggIrUCYbbxiFEJGJM]
 		/// [PostalCode, 86560656].
 		/// </example>
-		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL MAR")]
+		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
@@ -350,7 +368,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="nestedTypeDelimiter">Character to use as a delimiter in nested type names</param>
 		/// <returns>The pretty printed type name.</returns>
 		/// <exception cref="ArgumentNullException">type</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 90, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = ControlChars.Plus)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -368,7 +386,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="builder">The builder.</param>
 		/// <param name="type">The type.</param>
 		/// <param name="options">The options.</param>
-		[Information(UnitTestCoverage = 80, Status = Status.Available)]
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
 		internal static void ProcessType(StringBuilder builder, Type type, in DisplayNameOptions options)
 		{
 			if (type.IsGenericType)
@@ -410,7 +428,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="baseType">Type of the base.</param>
 		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
 		private static IEnumerable<Type> LoadDerivedTypes(IEnumerable<TypeInfo> types, Type baseType, Tristate classOnly)
 		{
 			// works out the derived types
@@ -451,7 +469,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="genericArguments">The generic arguments.</param>
 		/// <param name="length">The length.</param>
 		/// <param name="options">The options.</param>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
 		private static void ProcessGenericType(StringBuilder builder, Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
 		{
 			var offset = 0;

@@ -36,6 +36,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		private const string _goodEmail = "fakeemail@google.com";
 		private const string _goodUrl = "http://www.amazon.com";
 
+
 		[TestMethod]
 		public void TryValidateNullParamTest()
 		{
@@ -439,6 +440,5 @@ namespace dotNetTips.Spartine.Core.Tests
 			Uri nullUri = null;
 			Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(nullUri, "none"));
 		}
-
 	}
 }

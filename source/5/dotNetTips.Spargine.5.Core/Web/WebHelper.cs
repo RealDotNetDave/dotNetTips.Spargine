@@ -81,7 +81,7 @@ namespace dotNetTips.Spargine.Core.Web
 		// public static async Task<TResult> PostAsync<TResult>(Uri address, HttpContent content)
 		// {
 		//    Encapsulation.TryValidateParam(address, nameof(address));
-		//    Encapsulation.TryValidateParam<ArgumentNullException>(contentis not null, nameof(content));
+		//    Encapsulation.TryValidateParam<ArgumentNullException>(content is not null, nameof(content));
 
 		// using (var client = new HttpClient())
 		//    {

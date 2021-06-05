@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -104,23 +103,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void UpsertTest()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
-			var personFromCollection = people.Shuffle().First();
-			var person = RandomData.GeneratePerson<PersonProper>();
-
-			// TEST
-			people.Upsert(person);
-
-			Assert.IsTrue(people.Count() == 11);
-
-			people.Upsert(personFromCollection);
-
-			Assert.IsTrue(people.Count() == 11);
-		}
-
-		[TestMethod]
 		public void AddRangeListTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
@@ -162,6 +144,29 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(collection.ToList().HasItems());
 
 			Assert.IsTrue(collection.ToList().HasItems(10));
+		}
+
+		[TestMethod]
+		public void UpsertTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
+			var personFromCollection = people.Shuffle().First();
+			var person = RandomData.GeneratePerson<PersonProper>();
+			var personRecords = RandomData.GeneratePersonCollection(10);
+			var personRecord = RandomData.GeneratePersonCollection(1).First();
+
+			// TEST
+			people.Upsert(person);
+
+			Assert.IsTrue(people.Count() == 11);
+
+			people.Upsert<PersonProper, string>(personFromCollection);
+
+			Assert.IsTrue(people.Count() == 11);
+
+			personRecords.Upsert(personRecord);
+
+			Assert.IsTrue(personRecords.Count() == 11);
 		}
 	}
 }

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark-20210420-173402</title>
+<title>dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark-20210603-173206</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,25 +13,25 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19042
+BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.985 (20H2/October2020Update)
 Unknown processor
-.NET Core SDK=5.0.300-preview.21180.15
-  [Host]     : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
-  Job-PDALPH : .NET Core 5.0.5 (CoreCLR 5.0.521.16609, CoreFX 5.0.521.16609), X64 RyuJIT
+.NET SDK=5.0.300
+  [Host]     : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+  Job-IWICPT : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
 </code></pre>
-<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET Core 5.0  
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=TESTS  
 </code></pre>
 
 <table>
-<thead><tr><th>                    Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>   Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Ratio</th><th>Welch(10%)/p-values</th><th>Rank</th><th>                                                     LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th><th>Code Size</th>
+<thead><tr><th>                    Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>   Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Ratio</th><th>Welch(10%)/p-values</th><th>Rank</th><th>                                                LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>CalculatePercent</td><td>8.047 ns</td><td>0.0258 ns</td><td>0.0229 ns</td><td>0.0061 ns</td><td>8.004 ns</td><td>8.036 ns</td><td>8.043 ns</td><td>8.060 ns</td><td>8.092 ns</td><td>124,264,321.0</td><td>0.0258 ns</td><td>14.00</td><td>2.419</td><td>2.000</td><td>0.2490</td><td>1.00</td><td>Base: ?|?</td><td>2</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>Yes</td><td>-</td><td>-</td><td>-</td><td>-</td><td>146 B</td>
-</tr><tr><td>CalculatePercentAggressiveInline</td><td>7.649 ns</td><td>0.0283 ns</td><td>0.0264 ns</td><td>0.0068 ns</td><td>7.614 ns</td><td>7.631 ns</td><td>7.636 ns</td><td>7.678 ns</td><td>7.688 ns</td><td>130,741,815.6</td><td>0.0283 ns</td><td>15.00</td><td>1.403</td><td>2.000</td><td>0.4212</td><td>0.95</td><td>Same: 1.0000|1.0000</td><td>1</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>No</td><td>-</td><td>-</td><td>-</td><td>-</td><td>192 B</td>
-</tr><tr><td>CalculatePercentNoInline</td><td>8.057 ns</td><td>0.0518 ns</td><td>0.0485 ns</td><td>0.0125 ns</td><td>7.992 ns</td><td>8.023 ns</td><td>8.039 ns</td><td>8.093 ns</td><td>8.140 ns</td><td>124,116,657.7</td><td>0.0518 ns</td><td>15.00</td><td>1.668</td><td>2.000</td><td>0.4180</td><td>1.00</td><td>Same: 1.0000|1.0000</td><td>2</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>No</td><td>-</td><td>-</td><td>-</td><td>-</td><td>146 B</td>
-</tr><tr><td>CalculatePercentNoOptimization</td><td>9.862 ns</td><td>0.0286 ns</td><td>0.0267 ns</td><td>0.0069 ns</td><td>9.826 ns</td><td>9.845 ns</td><td>9.854 ns</td><td>9.879 ns</td><td>9.917 ns</td><td>101,401,201.7</td><td>0.0286 ns</td><td>15.00</td><td>2.053</td><td>2.000</td><td>0.4228</td><td>1.23</td><td>Slower: 0.0000|1.0000</td><td>4</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>No</td><td>-</td><td>-</td><td>-</td><td>-</td><td>155 B</td>
-</tr><tr><td>CalculatePercentPreserveSig</td><td>8.422 ns</td><td>0.0884 ns</td><td>0.0738 ns</td><td>0.0205 ns</td><td>8.296 ns</td><td>8.381 ns</td><td>8.423 ns</td><td>8.490 ns</td><td>8.542 ns</td><td>118,734,520.1</td><td>0.0884 ns</td><td>13.00</td><td>1.888</td><td>2.000</td><td>-0.0875</td><td>1.05</td><td>Same: 1.0000|1.0000</td><td>3</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>No</td><td>-</td><td>-</td><td>-</td><td>-</td><td>146 B</td>
-</tr><tr><td>CalculatePercentSynchronized</td><td>19.224 ns</td><td>0.0685 ns</td><td>0.0641 ns</td><td>0.0165 ns</td><td>19.160 ns</td><td>19.179 ns</td><td>19.189 ns</td><td>19.260 ns</td><td>19.366 ns</td><td>52,017,241.2</td><td>0.0685 ns</td><td>15.00</td><td>2.697</td><td>2.000</td><td>1.0429</td><td>2.39</td><td>Slower: 0.0000|1.0000</td><td>5</td><td>Job-PDALPH(EvaluateOverhead=True, Server=True, Toolchain=.NET Core 5.0)</td><td>No</td><td>-</td><td>-</td><td>-</td><td>-</td><td>258 B</td>
+</thead><tbody><tr><td>CalculatePercent</td><td>7.969 ns</td><td>0.0231 ns</td><td>0.0216 ns</td><td>0.0056 ns</td><td>7.943 ns</td><td>7.951 ns</td><td>7.963 ns</td><td>7.983 ns</td><td>8.009 ns</td><td>125,482,679.6</td><td>0.0231 ns</td><td>15.00</td><td>1.759</td><td>2.000</td><td>0.4998</td><td>1.00</td><td>Base: ?|?</td><td>2</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>Yes</td><td>146 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>CalculatePercentAggressiveInline</td><td>6.206 ns</td><td>0.0509 ns</td><td>0.0476 ns</td><td>0.0123 ns</td><td>6.142 ns</td><td>6.165 ns</td><td>6.208 ns</td><td>6.242 ns</td><td>6.276 ns</td><td>161,129,566.8</td><td>0.0509 ns</td><td>15.00</td><td>1.288</td><td>2.000</td><td>0.0370</td><td>0.78</td><td>Faster: 1.0000|0.0000</td><td>1</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>No</td><td>192 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>CalculatePercentNoInline</td><td>7.979 ns</td><td>0.0478 ns</td><td>0.0448 ns</td><td>0.0116 ns</td><td>7.924 ns</td><td>7.940 ns</td><td>7.986 ns</td><td>8.015 ns</td><td>8.055 ns</td><td>125,336,258.7</td><td>0.0478 ns</td><td>15.00</td><td>1.407</td><td>2.000</td><td>0.2023</td><td>1.00</td><td>Same: 1.0000|1.0000</td><td>2</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>No</td><td>146 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>CalculatePercentNoOptimization</td><td>9.306 ns</td><td>0.0322 ns</td><td>0.0285 ns</td><td>0.0076 ns</td><td>9.253 ns</td><td>9.288 ns</td><td>9.308 ns</td><td>9.332 ns</td><td>9.345 ns</td><td>107,452,960.8</td><td>0.0322 ns</td><td>14.00</td><td>1.824</td><td>2.000</td><td>-0.2205</td><td>1.17</td><td>Slower: 0.0000|1.0000</td><td>3</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>No</td><td>155 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>CalculatePercentPreserveSig</td><td>8.018 ns</td><td>0.0428 ns</td><td>0.0400 ns</td><td>0.0103 ns</td><td>7.963 ns</td><td>7.984 ns</td><td>8.025 ns</td><td>8.048 ns</td><td>8.085 ns</td><td>124,718,409.0</td><td>0.0428 ns</td><td>15.00</td><td>1.498</td><td>2.000</td><td>0.1818</td><td>1.01</td><td>Same: 1.0000|1.0000</td><td>2</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>No</td><td>146 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
+</tr><tr><td>CalculatePercentSynchronized</td><td>19.266 ns</td><td>0.0880 ns</td><td>0.0823 ns</td><td>0.0213 ns</td><td>19.174 ns</td><td>19.203 ns</td><td>19.245 ns</td><td>19.318 ns</td><td>19.422 ns</td><td>51,904,945.6</td><td>0.0880 ns</td><td>15.00</td><td>1.966</td><td>2.000</td><td>0.5942</td><td>2.42</td><td>Slower: 0.0000|1.0000</td><td>4</td><td>Job-IWICPT(EvaluateOverhead=True, Server=True, Toolchain=.NET 5.0)</td><td>No</td><td>258 B</td><td>-</td><td>-</td><td>-</td><td>-</td>
 </tr></tbody></table>
 </body>
 </html>

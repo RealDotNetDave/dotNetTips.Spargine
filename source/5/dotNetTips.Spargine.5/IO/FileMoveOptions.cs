@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.IO
 		ReplaceExisting = 1,
 
 		/// <summary>
-		/// If the file is to be moved to a different volumeIf the file is
+		/// If the file is to be moved to a different volume if the file is
 		/// successfully copied to a different volume and the original file
 		/// is unable to be deleted, the function succeeds leaving the source
 		/// file intact. This value cannot be used with DelayUntilReboot.

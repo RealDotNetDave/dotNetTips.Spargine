@@ -25,42 +25,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tests.IO
 {
-    [ExcludeFromCodeCoverage]
-    [TestClass]
-    public class FileProcessorTests
-    {
-        private readonly DirectoryInfo _tempFolder = new(Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.TMP.ToString()), "_dotNetTipsUnitTest"));
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class FileProcessorTests
+	{
+		private readonly DirectoryInfo _tempFolder = new(Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.TMP.ToString()), "_dotNetTipsUnitTest"));
 
-        [TestMethod]
-        public void CopyFilesWithEventTest()
-        {
-            var processor = new FileProcessor();
+		[TestMethod]
+		public void CopyFilesWithEventTest()
+		{
+			var processor = new FileProcessor();
 
-            processor.Processed += this.Processor_Processed;
+			processor.Processed += this.Processor_Processed;
 
-            var files = this.GenerateTempFiles(fileCount: 100, fileLength: 5000);
+			var files = this.GenerateTempFiles(fileCount: 100, fileLength: 5000);
 
-            processor.CopyFiles(files, destinationFolder: new DirectoryInfo(Path.GetTempPath()));
+			processor.CopyFiles(files: files, destinationFolder: new DirectoryInfo(Path.GetTempPath()));
 
-            processor.Processed -= this.Processor_Processed;
-        }
+			processor.Processed -= this.Processor_Processed;
+		}
 
-        private IEnumerable<FileInfo> GenerateTempFiles(int fileCount, int fileLength)
-        {
-            var result = RandomData.GenerateFiles(this._tempFolder.FullName, fileCount, fileLength);
+		private IEnumerable<FileInfo> GenerateTempFiles(int fileCount, int fileLength)
+		{
+			var result = RandomData.GenerateFiles(this._tempFolder.FullName, fileCount, fileLength);
 
-            var tempFiles = new List<FileInfo>(fileCount);
+			var tempFiles = new List<FileInfo>(fileCount);
 
-            tempFiles.AddRange(result.Select(file => new FileInfo(file)));
+			tempFiles.AddRange(result.Select(file => new FileInfo(file)));
 
-            return tempFiles;
-        }
+			return tempFiles;
+		}
 
-        private void Processor_Processed(object sender, FileProgressEventArgs e)
-        {
-            Debug.WriteLine(e.Message);
+		private void Processor_Processed(object sender, FileProgressEventArgs e)
+		{
+			Debug.WriteLine(e.Message);
 
-            File.Delete(e.Name);
-        }
-    }
+			File.Delete(e.Name);
+		}
+	}
 }

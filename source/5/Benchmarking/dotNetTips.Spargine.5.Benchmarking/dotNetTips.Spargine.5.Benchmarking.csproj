@@ -3,9 +3,9 @@
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
-		<AssemblyVersion>2021.4.24.129</AssemblyVersion>
-		<FileVersion>2021.4.24.129</FileVersion>
-		<Version>2021.5.1.50</Version>
+		<AssemblyVersion>2021.6.5.135</AssemblyVersion>
+		<FileVersion>2021.6.5.135</FileVersion>
+		<Version>2021.8.4.1</Version>
 		<Authors>David McCarter</Authors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Description>Common classes that can be used with BenchmarkDotNet.</Description>
@@ -15,20 +15,23 @@
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
-		<PackageReleaseNotes>--MAR 2021: Initial release.
---MAY 2021: Second release: 2021.5.1.50</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			--MAR 2021: Initial release.
+			--MAY 2021: Second release: 2021.5.1.50
+			--JUN 2021: Third release: 2021.6.3.5
+		</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<AnalysisLevel>5.0</AnalysisLevel>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1" />
-		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.5.1.50" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.5.1.50" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.5.1.50" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.5.1.50" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.0" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.0" />
+		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.6.3.5" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.6.3.5" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.6.3.5" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.6.3.5" />
 	</ItemGroup>
 
 	<ItemGroup>

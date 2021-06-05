@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(EnumerableExtensions.FastAny))]
 		public void FastAny01()
 		{
-			var result = base.PersonProperList.FastAny(p => p.City.Contains("SAN"));
+			var result = base.PersonProperList.FastAny(p => p.City.Contains("A"));
 
 			base.Consumer.Consume(result);
 		}
@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(EnumerableExtensions.FastCount))]
 		public void FastCount01()
 		{
-			var result = base.PersonProperList.FastCount(p => p.City.Contains("SAN"));
+			var result = base.PersonProperList.FastCount(p => p.City.Contains("A"));
 
 			base.Consumer.Consume(result);
 		}

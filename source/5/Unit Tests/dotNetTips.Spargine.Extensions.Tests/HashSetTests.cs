@@ -8,6 +8,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class HashSetTests
 	{
+		[TestMethod]
 		public void AddIfTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToHashSet();

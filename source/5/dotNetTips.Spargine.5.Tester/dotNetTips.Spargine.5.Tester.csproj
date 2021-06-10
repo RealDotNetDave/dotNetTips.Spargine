@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.6.5.37896</AssemblyVersion>
+		<AssemblyVersion>2021.6.10.37920</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.5.37896</FileVersion>
+		<FileVersion>2021.6.10.37920</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -45,11 +45,13 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
 		<OutputPath>..\..\..\appbin\</OutputPath>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

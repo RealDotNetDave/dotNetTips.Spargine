@@ -181,10 +181,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testWithText = RandomData.GenerateWord(10);
 			var testWithWhitespace = "      ";
 
-			Assert.IsFalse(testWithText.IsWhitespace());
-			Assert.IsTrue(testWithWhitespace.IsWhitespace());
-			Assert.IsTrue(' '.IsWhitespace());
-			Assert.IsFalse('d'.IsWhitespace());
+			Assert.IsFalse(testWithText.HasWhitespace());
+			Assert.IsTrue(testWithWhitespace.HasWhitespace());
+			Assert.IsTrue(' '.IsAsciiWhitespace());
+			Assert.IsFalse('d'.IsAsciiWhitespace());
 		}
 
 		[TestMethod]
@@ -220,6 +220,14 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void IsCreditCardTest()
 		{
 			Assert.IsFalse("123".IsCreditCard());
+		}
+
+		[TestMethod]
+		public void IsDigitTest()
+		{
+			Assert.IsTrue('1'.IsAsciiDigit());
+
+			Assert.IsFalse('A'.IsAsciiDigit());
 		}
 
 		[TestMethod]
@@ -294,15 +302,15 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void IsWhiteSpaceTest()
 		{
-			Assert.IsTrue("      ".IsWhitespace());
+			Assert.IsTrue("      ".HasWhitespace());
 
-			Assert.IsTrue(ControlChars.Space.IsWhitespace());
+			Assert.IsTrue(ControlChars.Space.IsAsciiWhitespace());
 
 			string testString = null;
 
-			Assert.IsFalse(testString.IsWhitespace());
+			Assert.IsFalse(testString.HasWhitespace());
 
-			Assert.IsFalse("David".IsWhitespace());
+			Assert.IsFalse("David".HasWhitespace());
 		}
 
 		[TestMethod]

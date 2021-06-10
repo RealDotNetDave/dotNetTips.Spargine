@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
 		<AssemblyName>dotNetTips.Spargine.5.Extensions</AssemblyName>
-		<AssemblyVersion>2021.6.5.616</AssemblyVersion>
+		<AssemblyVersion>2021.6.10.633</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -41,18 +41,20 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<FileVersion>2021.6.5.10</FileVersion>
+		<FileVersion>2021.6.10.27</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 	  <OutputPath>..\..\..\appbin\</OutputPath>
 	  <DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
+	  <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

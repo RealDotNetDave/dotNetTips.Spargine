@@ -3,11 +3,19 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
-    <AssemblyVersion>2021.6.5.98</AssemblyVersion>
-    <FileVersion>2021.6.5.98</FileVersion>
+    <AssemblyVersion>2021.6.10.102</AssemblyVersion>
+    <FileVersion>2021.6.10.102</FileVersion>
     <Version>2021.9.4.1</Version>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>5.0</AnalysisLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
   <ItemGroup>

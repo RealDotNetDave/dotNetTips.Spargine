@@ -66,7 +66,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <summary>
 		/// The object used for retrieving a random number.
 		/// </summary>
-		private static readonly Random _random = new(Seed: (int)DateTime.Now.Ticks);
+		private static readonly Random _random = new(Seed: DateTime.Now.Millisecond);
 
 		/// <summary>
 		/// Gets the long test string.

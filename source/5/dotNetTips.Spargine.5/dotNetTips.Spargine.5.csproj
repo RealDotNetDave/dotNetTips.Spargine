@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.6.5.401</AssemblyVersion>
+		<AssemblyVersion>2021.6.10.417</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,7 +13,7 @@
 		<Description>Main helper methods/ code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.5.401</FileVersion>
+		<FileVersion>2021.6.10.417</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -44,11 +44,13 @@
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

@@ -369,8 +369,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsAsciiLetter(this char character) { return ( ( ( (uint)character ) - 'A' ) & ( ~0x20 ) ) < 26; }
+		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static bool IsAsciiLetter(this char character)
+		{
+			return Char.IsLetter(character);
+		}
 
 		/// <summary>
 		/// Determines whether the input is ASCII letter or digit.
@@ -378,9 +381,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool IsAsciiLetterOrDigit(this char character)
-		{ return ( ( ( ( (uint)character ) - 'A' ) & ( ~0x20 ) ) < 26 ) || ( ( (uint)character ) - '0' < 10 ); }
+		{
+			return Char.IsLetterOrDigit(character);
+
+		}
 
 		/// <summary>
 		/// Determines whether the input is credit card number.
@@ -391,6 +397,18 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool IsCreditCard(this string input)
 		{
 			return input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled);
+		}
+
+		/// <summary>
+		/// Determines whether the specified character is digit.
+		/// </summary>
+		/// <param name="character">The character.</param>
+		/// <returns>bool.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static bool IsAsciiDigit(this char character)
+		{
+			return Char.IsDigit(character);
 		}
 
 		/// <summary>
@@ -555,12 +573,24 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Determines whether the specified character is whitespace.
+		/// </summary>
+		/// <param name="character">The character.</param>
+		/// <returns>bool.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static bool IsAsciiWhitespace(this char character)
+		{
+			return Char.IsWhiteSpace(character);
+		}
+
+		/// <summary>
 		/// Determines whether the specified input is whitespace.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is whitespace; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsWhitespace(this string input)
+		public static bool HasWhitespace(this string input)
 		{
 			if (string.IsNullOrEmpty(input))
 			{
@@ -569,25 +599,13 @@ namespace dotNetTips.Spargine.Extensions
 
 			for (var i = 0; i < input.Length; i++)
 			{
-				if (!IsWhitespace(input[i]))
+				if (!IsAsciiWhitespace(input[i]))
 				{
 					return false;
 				}
 			}
 
 			return true;
-		}
-
-		/// <summary>
-		/// Determines whether the specified character is whitespace.
-		/// </summary>
-		/// <param name="character">The character.</param>
-		/// <returns><c>true</c> if the specified character is whitespace; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsWhitespace(this char character)
-		{
-			return ( character <= ' ' ) && ( ( character == ' ' ) || ( character == '\t' ) || ( character == '\r' ) || ( character == '\n' ) );
 		}
 
 		/// <summary>

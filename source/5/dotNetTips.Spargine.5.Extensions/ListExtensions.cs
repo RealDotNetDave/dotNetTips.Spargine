@@ -33,37 +33,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new((int)DateTime.Now.Ticks);
+		private static readonly Random _globalRandom = new(DateTime.Now.Millisecond);
 
 		/// <summary>
 		/// The random
 		/// </summary>
 		[ThreadStatic]
 		private static Random _random;
-
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <value>The random.</value>
-		private static Random Random
-		{
-			get
-			{
-				if (_random is null)
-				{
-					int seed;
-
-					lock (_globalRandom)
-					{
-						seed = _globalRandom.Next();
-					}
-
-					_random = new Random(seed);
-				}
-
-				return _random;
-			}
-		}
 
 		/// <summary>
 		/// Adds the item as the first item in array.
@@ -83,7 +59,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				return false;
 			}
-		
+
 			list.Insert(0, item);
 
 			return true;
@@ -455,7 +431,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(list, nameof(list));
 
-			return list.OrderBy(i => Random.Next());
+			return list.OrderBy(i => GenerateRandomNumber());
 		}
 
 		/// <summary>
@@ -511,6 +487,27 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(list, nameof(list));
 
 			return new ReadOnlyCollection<T>(list);
+		}
+
+		/// <summary>
+		/// Gets the random.
+		/// </summary>
+		/// <value>The random.</value>
+		private static int GenerateRandomNumber()
+		{
+			if (_random is null)
+			{
+				int seed;
+
+				lock (_globalRandom)
+				{
+					seed = _globalRandom.Next();
+				}
+
+				_random = new Random(seed);
+			}
+
+			return _random.Next();
 		}
 
 

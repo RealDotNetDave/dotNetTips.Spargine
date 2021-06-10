@@ -27,37 +27,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// The global random
 		/// </summary>
-		private static readonly Random _globalRandom = new((int)DateTime.Now.Ticks);
+		private static readonly Random _globalRandom = new(DateTime.Now.Millisecond);
 
 		/// <summary>
 		/// The random
 		/// </summary>
 		[ThreadStatic]
 		private static Random _random;
-
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <value>The random.</value>
-		private static Random Random
-		{
-			get
-			{
-				if (_random is null)
-				{
-					int seed;
-
-					lock (_globalRandom)
-					{
-						seed = _globalRandom.Next();
-					}
-
-					_random = new Random(seed);
-				}
-
-				return _random;
-			}
-		}
 
 		/// <summary>
 		/// Shuffles the specified items.
@@ -73,8 +49,29 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				return list;
 			}
-			
-			return list.OrderBy(i => _random.Next()).ToImmutableArray();
+
+			return list.OrderBy(i => GenerateRandomNumber()).ToImmutableArray();
+		}
+
+		/// <summary>
+		/// Gets the random.
+		/// </summary>
+		/// <value>The random.</value>
+		private static int GenerateRandomNumber()
+		{
+			if (_random is null)
+			{
+				int seed;
+
+				lock (_globalRandom)
+				{
+					seed = _globalRandom.Next();
+				}
+
+				_random = new Random(seed);
+			}
+
+			return _random.Next();
 		}
 	}
 }

@@ -45,7 +45,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			processor.Processed -= this.Processor_Processed;
 		}
 
-		private IEnumerable<FileInfo> GenerateTempFiles(int fileCount, int fileLength)
+		private IEnumerable<FileInfo> GenerateTempFiles(Int32 fileCount, Int32 fileLength)
 		{
 			var result = RandomData.GenerateFiles(this._tempFolder.FullName, fileCount, fileLength);
 

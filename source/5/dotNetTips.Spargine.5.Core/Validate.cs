@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections;
+using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
@@ -437,7 +438,7 @@ namespace dotNetTips.Spargine.Core
 
 			if (value.Length.IsInRange(minimumLength, maximumLength) == false)
 			{
-				message = CreateExceptionMessage(message, string.Format(Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
+				message = CreateExceptionMessage(message, string.Format(CultureInfo.CurrentCulture, Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
 
 				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
@@ -465,7 +466,7 @@ namespace dotNetTips.Spargine.Core
 
 			if (value.Length.IsInRange(minimumLength, maximumLength) == false)
 			{
-				message = CreateExceptionMessage(message, string.Format(Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
+				message = CreateExceptionMessage(message, string.Format(CultureInfo.CurrentCulture, Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
 
 				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
@@ -549,7 +550,6 @@ namespace dotNetTips.Spargine.Core
 				return messageFromResource;
 			}
 
-			//TODO: THIS CONDITION NOT BEING TESTED
 			return message;
 		}
 	}

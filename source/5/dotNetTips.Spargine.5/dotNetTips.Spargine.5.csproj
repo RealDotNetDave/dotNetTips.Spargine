@@ -2,18 +2,20 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.6.10.417</AssemblyVersion>
+		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
+		<AssemblyVersion>2021.6.14.427</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<Company>David McCarter - dotNetTips.com</Company>
+			<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<Configurations>Debug;Release</Configurations>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<DebugSymbols>true</DebugSymbols>
 		<Description>Main helper methods/ code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.10.417</FileVersion>
+		<FileVersion>2021.6.14.427</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -34,7 +36,7 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.9.4.1</Version>
+		<Version>2021.9.4.3</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
@@ -45,12 +47,16 @@
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.xml</DocumentationFile>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.xml</DocumentationFile>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

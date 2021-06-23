@@ -14,7 +14,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
@@ -41,7 +43,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>List&lt;EnumValue&gt;.</returns>
 		/// <exception cref="InvalidEnumTypeException"></exception>
 		[Information(nameof(GetValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 99, Status = Status.Available)]
-		public static List<EnumValue> GetValues<T>(bool fixNames, bool useXmlNames)
+		public static IEnumerable<EnumValue> GetValues<T>(bool fixNames, bool useXmlNames)
 			where T : Enum
 		{
 			var enumType = typeof(T);
@@ -61,7 +63,7 @@ namespace dotNetTips.Spargine.Core
 				result.Add(new EnumValue(allValues[i], enumNames[i]));
 			}
 
-			return result;
+			return result.AsEnumerable();
 		}
 
 		/// <summary>

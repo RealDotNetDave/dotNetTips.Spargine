@@ -4,7 +4,7 @@
 // Created          : 02-10-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-10-2021
+// Last Modified On : 06-22-2021
 // ***********************************************************************
 // <copyright file="InvalidValueException.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Runtime.Serialization;
 using dotNetTips.Spargine.Core.Internal;
 using dotNetTips.Spargine.Core.Properties;
 
@@ -26,14 +27,14 @@ namespace dotNetTips.Spargine.Core
 	public sealed class InvalidValueException<TValue> : Exception
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		public InvalidValueException() : base(Resources.GoToDotNetTipsComForHelp)
 		{
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		public InvalidValueException(TValue value) : base(Resources.GoToDotNetTipsComForHelp)
@@ -42,7 +43,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		public InvalidValueException(string message) : base(message)
@@ -50,7 +51,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
@@ -60,7 +61,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
@@ -69,7 +70,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}"/> class.
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
@@ -77,6 +78,17 @@ namespace dotNetTips.Spargine.Core
 		public InvalidValueException(string message, TValue value, Exception innerException) : base(message, innerException)
 		{
 			this.Value = value;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+		/// </summary>
+		/// <param name="serializationInfo">The serialization information.</param>
+		/// <param name="streamingContext">The streaming context.</param>
+		/// <exception cref="System.NotImplementedException"></exception>
+		private InvalidValueException(SerializationInfo serializationInfo, StreamingContext streamingContext)
+		{
+			throw new NotImplementedException();
 		}
 
 		/// <summary>

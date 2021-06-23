@@ -99,18 +99,18 @@ namespace dotNetTips.Spargine.Core.Web
 		/// <summary>
 		/// Determines whether the url is from the local server.
 		/// </summary>
-		/// <param name="url">The URL.</param>
+		/// <param name="path">The URL.</param>
 		/// <param name="request">The context.</param>
 		/// <returns><c>true</c> if [is local URL] [the specified URL]; otherwise, <c>false</c>.</returns>
 		/// <remarks>If you are using .NET 4 or above or .NET Core, this check is not needed unless you have turned
 		/// off validation in the config file or in classes.</remarks>
 		[Information(nameof(IsLocalUrl), author: "David McCarter", createdOn: "9/12/2020", modifiedOn: "9/14/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsLocalUrl(string url, HttpRequest request)
+		public static bool IsLocalUrl(string path, HttpRequest request)
 		{
-			Validate.TryValidateParam(url, nameof(url));
+			Validate.TryValidateParam(path, nameof(path));
 			Validate.TryValidateNullParam(request, nameof(request));
 
-			if (Uri.TryCreate(url, UriKind.Absolute, out var absoluteUri))
+			if (Uri.TryCreate(path, UriKind.Absolute, out var absoluteUri))
 			{
 				var validHostName = string.Equals(request.Host.ToUriComponent(), absoluteUri.Host, StringComparison.OrdinalIgnoreCase);
 
@@ -118,9 +118,9 @@ namespace dotNetTips.Spargine.Core.Web
 			}
 			else
 			{
-				var isLocal = !url.StartsWith("http:", StringComparison.OrdinalIgnoreCase) &&
-					!url.StartsWith("https:", StringComparison.OrdinalIgnoreCase) &&
-					Uri.IsWellFormedUriString(url, UriKind.Relative);
+				var isLocal = !path.StartsWith("http:", StringComparison.OrdinalIgnoreCase) &&
+					!path.StartsWith("https:", StringComparison.OrdinalIgnoreCase) &&
+					Uri.IsWellFormedUriString(path, UriKind.Relative);
 
 				return isLocal;
 			}

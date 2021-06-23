@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-07-2021
+// Last Modified On : 04-14-2021
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Class Person with proper encapsulation and validation.
-	/// Implements the <see cref="object" />
+	/// Implements the <see cref="IDataRecord" />
 	/// </summary>
 	public record PersonRecord : IDataRecord
 	{
@@ -96,6 +96,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the born on date.
 		/// </summary>
 		/// <value>The born on date.</value>
+		/// <exception cref="System.ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
 		public DateTimeOffset BornOn
 		{
@@ -113,6 +114,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the cell phone number.
 		/// </summary>
 		/// <value>The cell phone number.</value>
+		/// <exception cref="System.ArgumentNullException">CellPhone - Value for phone number cannot be null.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">CellPhone - Phone number is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
 		public string CellPhone
@@ -136,6 +139,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the email address.
 		/// </summary>
 		/// <value>The email address.</value>
+		/// <exception cref="System.ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.Email), Value for Email cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.Email), Value for Email cannot be null or empty.</exception>
 		public string Email
@@ -159,6 +164,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>The first name.</value>
+		/// <exception cref="System.ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.FirstName), Value for name cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.FirstName), Value for name cannot be null or empty.</exception>
 		public string FirstName
@@ -182,6 +189,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the home phone number.
 		/// </summary>
 		/// <value>The home phone.</value>
+		/// <exception cref="System.ArgumentNullException">HomePhone - Value for phone number cannot be null or empty.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
 		public string HomePhone
@@ -211,6 +220,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the last name.
 		/// </summary>
 		/// <value>The last name.</value>
+		/// <exception cref="System.ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">LastName - Last name length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.LastName), Value for name cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.LastName), Value for name cannot be null or empty.</exception>
 		public string LastName

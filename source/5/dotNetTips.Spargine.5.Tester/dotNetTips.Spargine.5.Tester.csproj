@@ -2,10 +2,12 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
-		<AssemblyVersion>2021.6.10.37920</AssemblyVersion>
+		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
+		<AssemblyVersion>2021.6.14.37924</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+			<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<DebugSymbols>true</DebugSymbols>
@@ -13,7 +15,7 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.10.37920</FileVersion>
+		<FileVersion>2021.6.14.37924</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -34,7 +36,7 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.9.4.1</Version>
+		<Version>2021.9.4.3</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -46,12 +48,16 @@
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.Tester.xml</DocumentationFile>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -71,7 +77,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NETCore.Platforms" Version="5.0.1" />
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="5.0.2" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.0.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -80,7 +86,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="MSTest.TestFramework" Version="2.2.1" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.4" />
 	</ItemGroup>
 
 	<ItemGroup>

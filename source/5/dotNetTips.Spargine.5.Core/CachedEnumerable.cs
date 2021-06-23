@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 		/// </summary>
-		void IDisposable.Dispose()
+		public void Dispose()
 		{
 			// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
 			this.Dispose(disposing: true);
@@ -95,7 +95,6 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Returns an enumerator that iterates through a collection.
 		/// </summary>
-		/// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
 		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 		/// <summary>

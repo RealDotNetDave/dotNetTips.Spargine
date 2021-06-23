@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 06-22-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
@@ -69,6 +70,11 @@ namespace dotNetTips.Spargine.Tester
 		private static readonly Random _random = new(Seed: DateTime.Now.Millisecond);
 
 		/// <summary>
+		/// The random number generator
+		/// </summary>
+		private static readonly RandomNumberGenerator _randomNumberGenerator = RandomNumberGenerator.Create();
+
+		/// <summary>
 		/// Gets the long test string.
 		/// </summary>
 		/// <value>The long test string.</value>
@@ -120,16 +126,18 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="sizeInKb">The size in kb.</param>
 		/// <returns>System.Byte[].</returns>
-		[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
+		/// <remarks>Uses RandomNumberGenerator due to performance increase. [CA5394]</remarks>
+		[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Updated)]
 		public static byte[] GenerateByteArray(double sizeInKb)
 		{
-			var size = Convert.ToInt32(sizeInKb * 1024);
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(sizeInKb >= Double.Epsilon, nameof(sizeInKb), $"{nameof(sizeInKb)} must be a positive value.");
 
+			var size = Convert.ToInt32(sizeInKb * 1024);
 			var bytes = new byte[size];
 
 			lock (_lock)
 			{
-				_random.NextBytes(bytes);
+				_randomNumberGenerator.GetBytes(bytes);
 			}
 
 			return bytes;
@@ -343,6 +351,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="min">The minimum int.</param>
 		/// <param name="max">The maximum int.</param>
 		/// <returns>System.Int32.</returns>
+		/// <remarks>Does not use RandomNumberGenerator due to performance increase. [CA5394]</remarks>
 		[Information(nameof(GenerateInteger), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static int GenerateInteger(int min = int.MinValue, int max = int.MaxValue)
 		{
@@ -369,6 +378,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="length">The length.</param>
 		/// <returns>System.String.</returns>
 		/// <example>"446085072052112"</example>
+		/// <remarks>Does not use RandomNumberGenerator due to performance increase. [CA5394]</remarks>
 		[Information(nameof(GenerateNumber), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateNumber(int length)
 		{

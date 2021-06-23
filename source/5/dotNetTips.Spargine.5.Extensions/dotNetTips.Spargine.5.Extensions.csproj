@@ -2,11 +2,13 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
+		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
 		<AssemblyName>dotNetTips.Spargine.5.Extensions</AssemblyName>
-		<AssemblyVersion>2021.6.10.633</AssemblyVersion>
+		<AssemblyVersion>2021.6.14.637</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Copyright>McCarter Consulting (David McCarter)</Copyright>
 		<Configurations>Debug;Release</Configurations>
@@ -14,7 +16,7 @@
 		<Description>Extensions code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<Version>2021.9.4.1</Version>
+		<Version>2021.9.4.3</Version>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -36,12 +38,12 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.9.4.1</Version>
+		<Version>2021.9.4.3</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<FileVersion>2021.6.10.27</FileVersion>
+		<FileVersion>2021.6.14.31</FileVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -49,12 +51,15 @@
 		<OutputPath>..\..\..\appbin\</OutputPath>
 		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
 		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 	  <OutputPath>..\..\..\appbin\</OutputPath>
 	  <DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Extensions.xml</DocumentationFile>
 	  <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	  <WarningsAsErrors />
 	</PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
@@ -62,10 +67,10 @@
 	</Target>
 
 	<ItemGroup>
-		<PackageReference Include="linq2db" Version="3.2.3" />
+		<PackageReference Include="linq2db" Version="3.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.3" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.7" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.0.0">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

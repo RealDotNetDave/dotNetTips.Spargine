@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 06-22-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -363,34 +363,32 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Upserts the specified array.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <typeparam name="TKey">The type of the t key.</typeparam>
-		/// <param name="array">The array.</param>
+		/// <param name="records">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
-		[Information(nameof(UpsertDataModel), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
-		public static T[] UpsertDataModel<T, TKey>(this T[] array, T item) where T : IDataModel<T, TKey>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Updated, Documentation = "ADD JUNE 21 URL")]
+		public static IDataRecord[] Upsert(this IDataRecord[] records, IDataRecord item)
 		{
 			if (Validate.TryValidateNull(item))
 			{
-				return array;
+				return records;
 			}
 
-			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
+			Validate.TryValidateParam<ArgumentReadOnlyException>(records.IsReadOnly == false, nameof(records));
 
-			var test = array.SingleOrDefault(p => p.Id.Equals(item.Id));
+			var test = records.SingleOrDefault(p => p.Id.Equals(item.Id));
 
-			var currentItem = array.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+			var currentItem = records.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
 
 			if (currentItem is not null)
 			{
 				currentItem = item;
 
-				return array;
+				return records;
 			}
 			else
 			{
-				return array.Add(item);
+				return records.Add(item);
 			}
 		}
 

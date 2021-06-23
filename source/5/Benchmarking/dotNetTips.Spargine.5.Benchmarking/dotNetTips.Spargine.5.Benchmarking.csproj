@@ -1,6 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
+		<AnalysisLevel>5.0</AnalysisLevel>
+		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
 		<AssemblyVersion>2021.6.5.135</AssemblyVersion>
@@ -22,16 +24,15 @@
 		</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<AnalysisLevel>5.0</AnalysisLevel>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.0" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.0" />
-		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.6.3.5" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.6.3.5" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.6.3.5" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.6.3.5" />
+		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.2" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.2" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.2" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.2" />
 	</ItemGroup>
 
 	<ItemGroup>

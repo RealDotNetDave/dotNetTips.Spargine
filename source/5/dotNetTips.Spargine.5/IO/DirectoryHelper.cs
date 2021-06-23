@@ -20,6 +20,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
+using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
@@ -106,6 +107,8 @@ namespace dotNetTips.Spargine.IO
 		[Information(nameof(DeleteDirectory), "David McCarter", "4/2/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
 		public static void DeleteDirectory(DirectoryInfo path)
 		{
+			Validate.TryValidateParam(path, nameof(path));
+
 			DeleteDirectory(path.ToString(), 1);
 		}
 
@@ -157,29 +160,6 @@ namespace dotNetTips.Spargine.IO
 				}
 			}
 			while (retries > tries);
-		}
-
-		/// <summary>
-		/// Delete directory, with retries, as an asynchronous operation.
-		/// </summary>
-		/// <param name="directory">The directory to delete.</param>
-		/// <returns>Task&lt;System.Boolean&gt;.</returns>
-		/// <exception cref="ArgumentNullException">directory.</exception>
-		[Information(nameof(DeleteDirectoryAsync), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
-		public static async Task<bool> DeleteDirectoryAsync(DirectoryInfo directory)
-		{
-			Validate.TryValidateParam(directory, nameof(directory));
-
-			if (directory.Exists)
-			{
-				_ = await Task.Factory.StartNew(() =>
-				{
-					DeleteDirectory(directory.FullName);
-					return true;
-				}).ConfigureAwait(false);
-			}
-
-			return false;
 		}
 
 		/// <summary>
@@ -337,6 +317,42 @@ namespace dotNetTips.Spargine.IO
 				}
 			}
 			while (tries < retries);
+		}
+
+		/// <summary>
+		/// Searches folder and returns true if it contains any files that meet one of the
+		/// search criterias.
+		/// </summary>
+		/// <param name="rootDirectory">The root directory.</param>
+		/// <param name="searchOption">The search option.</param>
+		/// <param name="searchPatterns">The search patterns.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
+		public static bool SafeDirectoryContainsAny(DirectoryInfo rootDirectory, SearchOption searchOption = SearchOption.TopDirectoryOnly, params string[] searchPatterns)
+		{
+			Validate.TryValidateParam(rootDirectory, nameof(rootDirectory));
+			Validate.TryValidateParam(searchPatterns, nameof(searchPatterns));
+
+			for (var patternCount = 0; patternCount < searchPatterns.Length; patternCount++)
+			{
+				var pattern = searchPatterns[patternCount];
+
+				try
+				{
+					var searchResult = SafeDirectorySearch(rootDirectory, pattern, searchOption);
+
+					if (searchResult.HasItems())
+					{
+						return true;
+					}
+				}
+				catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is UnauthorizedAccessException)
+				{
+					Trace.WriteLine(ex.Message);
+				}
+			}
+
+			return false;
 		}
 
 		/// <summary>

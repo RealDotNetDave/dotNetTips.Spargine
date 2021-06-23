@@ -11,9 +11,12 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
+using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
@@ -25,53 +28,52 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 	[BenchmarkCategory("TESTS")]
 	public class TestingBenchmark : Benchmark
 	{
-		private readonly TimeSpan _testTimeSpan1 = new(500, 9, 24, 10, 450);
-		private readonly TimeSpan _testTimeSpan2 = new(100, 10, 24, 10, 9);
+		private readonly PersonRecord person = RandomData.GeneratePersonCollection(1).First();
 
-		[Benchmark(Description = "CalculatePercent", Baseline = true)]
-		public void CalculatePercent01()
+		[Benchmark(Description = "Baseline", Baseline = true)]
+		public void WIPTest01()
 		{
-			var result = WIPTests.CalculatePercent(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNull(this.person);
 
 			this.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "CalculatePercentAggressiveInline")]
-		public void CalculatePercent02()
+		[Benchmark(Description = "AggressiveInline")]
+		public void WIPTest02()
 		{
-			var result = WIPTests.CalculatePercentAggressiveInline(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNullAgressive(this.person);
 
 			this.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "CalculatePercentNoInline")]
-		public void CalculatePercent03()
+		[Benchmark(Description = "NoInline")]
+		public void WIPTest03()
 		{
-			var result = WIPTests.CalculatePercentNoInline(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNullNoInlining(this.person);
 
 			this.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "CalculatePercentNoOptimization")]
-		public void CalculatePercent04()
+		[Benchmark(Description = "NoOptimization")]
+		public void WIPTest04()
 		{
-			var result = WIPTests.CalculatePercentNoOptimization(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNullNoOptimization(this.person);
 
 			this.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "CalculatePercentSynchronized")]
-		public void CalculatePercent05()
+		[Benchmark(Description = "PreserveSig")]
+		public void WIPTest05()
 		{
-			var result = WIPTests.CalculatePercentSynchronized(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNullPreserveSig(this.person);
 
 			this.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "CalculatePercentPreserveSig")]
-		public void CalculatePercent06()
+		[Benchmark(Description = "Synchronized")]
+		public void WIPTest06()
 		{
-			var result = WIPTests.CalculatePercentPreserveSig(this._testTimeSpan1, this._testTimeSpan2);
+			var result = WIPTests.TryValidateNullSynchronized(this.person);
 
 			this.Consumer.Consume(result);
 		}

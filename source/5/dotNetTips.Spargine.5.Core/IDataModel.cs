@@ -4,7 +4,7 @@
 // Created          : 02-05-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
 // <copyright file="IDataModel.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,7 +25,6 @@ namespace dotNetTips.Spargine.Core
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <typeparam name="TKey">The type of the t key.</typeparam>
 	/// <seealso cref="System.IComparable{T}" />
-	/// <seealso cref="System.IEquatable{T}" />
 	public interface IDataModel<T, TKey> : IComparable<T>, IEquatable<T>
 	{
 		/// <summary>

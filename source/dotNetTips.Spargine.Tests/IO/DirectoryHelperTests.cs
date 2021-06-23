@@ -121,6 +121,38 @@ namespace dotNetTips.Spargine.Tests.IO
 		}
 
 		[TestMethod]
+		public void SafeDirectoryContainsAnyTest()
+		{
+			var searchFolders = new List<DirectoryInfo>();
+
+			try
+			{
+				searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.CommonProgramFiles)));
+				searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyMusic)));
+				searchFolders.Add(new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)));
+				searchFolders.Add(new DirectoryInfo(Environment.GetEnvironmentVariable(EnvironmentKey.TEMP.ToString())));
+
+				var directories = new List<DirectoryInfo>();
+
+				foreach (var directory in searchFolders)
+				{
+					var result = DirectoryHelper.SafeDirectoryContainsAny(directory, SearchOption.AllDirectories, "*.txt", "*.tmp", "*.doc", "*.docx", "*.dll");
+
+					if (result)
+					{
+						directories.Add(directory);
+					}
+				}
+
+				Assert.IsTrue(directories.Count > 0);
+			}
+			catch (Exception ex)
+			{
+				Assert.Fail(ex.Message);
+			}
+		}
+
+		[TestMethod]
 		public void SafeDirectorySearchTest()
 		{
 			var searchFolders = new List<DirectoryInfo>();

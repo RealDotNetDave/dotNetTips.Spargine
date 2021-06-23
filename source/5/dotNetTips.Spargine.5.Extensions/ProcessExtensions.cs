@@ -42,7 +42,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				process.PriorityClass = ProcessPriorityClass.High;
 			}
-			catch (Exception ex)
+			catch (InvalidOperationException ex)
 			{
 				logger?.LogError(ex, Resources.FailedToSetUpHighPriority);
 			}
@@ -63,7 +63,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				process.PriorityClass = ProcessPriorityClass.BelowNormal;
 			}
-			catch (Exception ex)
+			catch (InvalidOperationException ex)
 			{
 				logger?.LogError(ex, Resources.FailedToSetUpLowPriority);
 			}
@@ -162,7 +162,7 @@ namespace dotNetTips.Spargine.Extensions
 				process.PriorityClass = priority;
 				return true;
 			}
-			catch (Exception ex)
+			catch (InvalidOperationException ex)
 			{
 				logger?.LogError(ex, $"Failed to set up priority {priority} for process {process}. Make sure you have the right permissions.");
 			}

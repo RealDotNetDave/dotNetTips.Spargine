@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 06-22-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -26,6 +27,7 @@ namespace dotNetTips.Spargine.Core
 	/// <seealso cref="System.IComparable" />
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
 	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
+	[DebuggerDisplay(nameof(DisplayName))]
 	public abstract record Enumeration
 	{
 		/// <summary>
@@ -41,13 +43,6 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Initializes a new instance of the <see cref="Enumeration" /> class.
 		/// </summary>
-		public Enumeration()
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Enumeration" /> class.
-		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="displayName">The display name.</param>
 		[Information(nameof(Enumeration), UnitTestCoverage = 100, Status = Status.Available)]
@@ -55,6 +50,13 @@ namespace dotNetTips.Spargine.Core
 		{
 			this._value = value;
 			this.DisplayName = displayName;
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Enumeration" /> class.
+		/// </summary>
+		private Enumeration()
+		{
 		}
 
 		/// <summary>
@@ -177,6 +179,15 @@ namespace dotNetTips.Spargine.Core
 			}
 
 			return matchingItem;
+		}
+
+		/// <summary>
+		/// Gets the debugger display.
+		/// </summary>
+		/// <returns>System.String.</returns>
+		private string GetDebuggerDisplay()
+		{
+			return this.ToString();
 		}
 	}
 }

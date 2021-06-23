@@ -77,7 +77,9 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool AddLast<T>(this IList<T> list, T item)
 		{
 			Validate.TryValidateParam(list, nameof(list));
+#pragma warning disable CA1062 // Validate arguments of public methods
 			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
+#pragma warning restore CA1062 // Validate arguments of public methods
 
 			if (item is null)
 			{

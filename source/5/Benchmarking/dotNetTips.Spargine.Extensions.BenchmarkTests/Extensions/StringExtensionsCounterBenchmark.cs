@@ -154,22 +154,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(StringExtensions.IsWhitespace) + ":Char")]
-		public void IsWhitespaceChar()
-		{
-			var result = this._testCharacter.IsWhitespace();
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(StringExtensions.IsWhitespace) + ":String")]
-		public void IsWhitespaceString()
-		{
-			var result = this.StringToTrim.IsWhitespace();
-
-			base.Consumer.Consume(result);
-		}
-
 		[Benchmark(Description = nameof(StringExtensions.RemoveCRLF))]
 		public void RemoveCRLF01()
 		{

@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<StringBuilderHelperCounterBenchmark>(config);
+				//BenchmarkRunner.Run<TestingBenchmark>(config);
 
 				Console.Beep();
 				Console.ReadLine();

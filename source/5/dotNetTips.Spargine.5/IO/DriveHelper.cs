@@ -62,7 +62,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
 		/// <example>Result Example - [0]: {C:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IImmutableList<DriveInfo> GetFixedDrives()
 		{
 			return DriveInfo.GetDrives()
@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
 		/// <example>Result example - [0]: {E:\} [1]: {F:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IImmutableList<DriveInfo> GetRemovableDrives()
 		{
 			return DriveInfo.GetDrives()

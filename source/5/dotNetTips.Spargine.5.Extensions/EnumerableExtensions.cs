@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<T> Add<T>(this IEnumerable<T> list, T item)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));
@@ -60,7 +60,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<T> AddIf<T>(this IEnumerable<T> list, T item, bool condition)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));
@@ -541,7 +541,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>System.Collections.Generic.IEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<T> Upsert<T>(this IEnumerable<T> list, T item)
 		{
 			Validate.TryValidateNullParam(list, nameof(list));

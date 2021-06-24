@@ -58,7 +58,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="file">The file.</param>
 		/// <param name="destinationFolder">The destination folder.</param>
 		/// <returns>File length as System.Int64.</returns>
-		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static long CopyFile(FileInfo file, DirectoryInfo destinationFolder)
 		{
 			Validate.TryValidateParam(file, nameof(file));
@@ -120,7 +120,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="files">The files.</param>
 		/// <returns>IEnumerable&lt;KeyValuePair&lt;System.String, System.String&gt;&gt;.</returns>
-		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<(string FileName, string ErrorMessage)> DeleteFiles(this IEnumerable<string> files)
 		{
 			if (files.HasItems() == false)
@@ -157,7 +157,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <param name="clientId">The client identifier.</param>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void DownloadFileFromWeb(Uri remoteFileUrl, string localFilePath, string clientId = "NONE")
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -185,7 +185,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localExpandedDirPath">The local expanded dir path.</param>
 		/// <returns>Task.</returns>
-		[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static async Task DownloadFileFromWebAndUnzipAsync(Uri remoteFileUrl, string localExpandedDirPath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -205,7 +205,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="remoteFileUrl">The remote file URL.</param>
 		/// <param name="localFilePath">The local file path.</param>
 		/// <returns>Task.</returns>
-		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(DownloadFileFromWeb), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static async Task DownloadFileFromWebAsync(Uri remoteFileUrl, string localFilePath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
@@ -281,7 +281,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="sourceFileName">Name of the source file.</param>
 		/// <param name="destinationFileName">Name of the destination file.</param>
 		/// <param name="fileMoveOptions">The file move options.</param>
-		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void MoveFile(string sourceFileName, string destinationFileName, FileMoveOptions fileMoveOptions)
 		{
 			Validate.TryValidateParam(sourceFileName, nameof(sourceFileName));

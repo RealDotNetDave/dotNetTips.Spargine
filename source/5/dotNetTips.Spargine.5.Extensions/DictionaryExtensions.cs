@@ -188,7 +188,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="item">The item.</param>
-		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void Upsert<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TValue item) where TValue : IDataModel<TValue, TKey>
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));

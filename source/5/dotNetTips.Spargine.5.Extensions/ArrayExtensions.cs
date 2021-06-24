@@ -35,7 +35,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="array">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
-		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static T[] Add<T>(this T[] array, T item)
 		{
 			Validate.TryValidateNullParam(array, nameof(array));
@@ -83,7 +83,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>T[].</returns>
-		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static T[] AddIf<T>(this T[] array, T item, bool condition)
 		{
 			if (Validate.TryValidateNull(item))
@@ -338,7 +338,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="array">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static T[] Upsert<T>(this T[] array, T item)
 		{
 			if (Validate.TryValidateNull(item))
@@ -366,7 +366,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="records">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Updated, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IDataRecord[] Upsert(this IDataRecord[] records, IDataRecord item)
 		{
 			if (Validate.TryValidateNull(item))

@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JUNE 21 URL")]
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static TValue Upsert<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key, TValue value)
 		{
 			Validate.TryValidateNullParam(dictionary, nameof(dictionary));

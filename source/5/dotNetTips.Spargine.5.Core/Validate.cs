@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 06-28-2021
 // ***********************************************************************
 // <copyright file="Validate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -177,6 +177,42 @@ namespace dotNetTips.Spargine.Core
 				message = CreateExceptionMessage(message, Resources.DirectoryDoesNotExist);
 
 				ExceptionThrower.ThrowDirectoryNotFoundException(message, directory?.FullName);
+			}
+		}
+
+		/// <summary>
+		/// Tries the validate parameter.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="span">The array.</param>
+		/// <param name="paramName">Name of the parameter.</param>
+		/// <param name="message">The message.</param>
+		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static void TryValidateParam<T>(ReadOnlySpan<T> span, string paramName, string message = "")
+		{
+			if (span.IsEmpty)
+			{
+				message = CreateExceptionMessage(message, Resources.ReadOnlySpanCannotBeNull);
+
+				ExceptionThrower.ThrowArgumentNullException(message, paramName);
+			}
+		}
+
+		/// <summary>
+		/// Tries the validate parameter.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="span">The span.</param>
+		/// <param name="paramName">Name of the parameter.</param>
+		/// <param name="message">The message.</param>
+		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		public static void TryValidateParam<T>(Span<T> span, string paramName, string message = "")
+		{
+			if (span.IsEmpty)
+			{
+				message = CreateExceptionMessage(message, Resources.SpanCannotBeNullOrEmpty);
+
+				ExceptionThrower.ThrowArgumentNullException(message, paramName);
 			}
 		}
 

@@ -105,6 +105,21 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void BytesToStringUsingSpanTest()
+		{
+			var bytes = RandomData.GenerateByteArray(100);
+
+			var readOnlySpan = new ReadOnlySpan<byte>(bytes);
+			var result = readOnlySpan.BytesToString();
+
+			Assert.IsTrue(result.Length > 20000);
+
+			byte[] nullBytes = null;
+
+			Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+		}
+
+		[TestMethod]
 		public void CloneTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();

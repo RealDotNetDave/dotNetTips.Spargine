@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 06-24-2021
 // ***********************************************************************
 // <copyright file="App.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -46,17 +46,17 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The assembly information.</value>
 		/// <example>Example Output:
-		///   Company: "Microsoft Corporation"
-		///   Copyright: "© Microsoft Corporation. All rights reserved."
-		///   EqualityContract: FullName = "dotNetTips.Spargine.Core.AppInfo", DomainInitialized = Method System.RuntimeType.get_DomainInitialized cannot be called in this context.
-		///   FileVersion: "15.0.0"
-		///   MemoryAllocated: 1720944
-		///   MemoryInfo: { System.GCMemoryInfo}
-		///   Product: "dotNetTips.Spargine"
-		///   ThreadAllocatedBytes: 745384
-		///   Title: "Spargine"
-		///   TotalAllocatedBytes: 3169744
-		///   Version: "16.9.1"
+		/// Company: "Microsoft Corporation"
+		/// Copyright: "© Microsoft Corporation. All rights reserved."
+		/// EqualityContract: FullName = "dotNetTips.Spargine.Core.AppInfo", DomainInitialized = Method System.RuntimeType.get_DomainInitialized cannot be called in this context.
+		/// FileVersion: "15.0.0"
+		/// MemoryAllocated: 1720944
+		/// MemoryInfo: { System.GCMemoryInfo}
+		/// Product: "dotNetTips.Spargine"
+		/// ThreadAllocatedBytes: 745384
+		/// Title: "Spargine"
+		/// TotalAllocatedBytes: 3169744
+		/// Version: "16.9.1"
 		/// </example>
 		[Information(nameof(AppInfo), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static AppInfo AppInfo => _appInfo.Value;
@@ -202,8 +202,8 @@ namespace dotNetTips.Spargine.Core
 		/// Determines whether user is administrator.
 		/// </summary>
 		/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		/// <exception cref="PlatformNotSupportedException"></exception>
+		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool IsUserAdministrator()
 		{
@@ -233,22 +233,22 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns>IEnumerable(Of System.String).</returns>
 		/// <example>Output example:
-		///  [0]: "System.Runtime, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [1]: "System.Resources.ResourceManager, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [2]: "System.Runtime.InteropServices, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [3]: "Microsoft.TestPlatform.PlatformAbstractions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [4]: "Microsoft.TestPlatform.CommunicationUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [5]: "Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [6]: "Microsoft.VisualStudio.TestPlatform.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [7]: "Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [8]: "System.Diagnostics.TraceSource, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [9]: "System.Diagnostics.StackTrace, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [10]: "System.Runtime.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [11]: "System.Diagnostics.Debug, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [12]: "Microsoft.TestPlatform.CrossPlatEngine, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [13]: "System.Net.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [14]: "System.Runtime.InteropServices.RuntimeInformation, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
-		///  [15]: "System.Linq, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [0]: "System.Runtime, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [1]: "System.Resources.ResourceManager, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [2]: "System.Runtime.InteropServices, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [3]: "Microsoft.TestPlatform.PlatformAbstractions, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [4]: "Microsoft.TestPlatform.CommunicationUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [5]: "Microsoft.TestPlatform.CoreUtilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [6]: "Microsoft.VisualStudio.TestPlatform.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [7]: "Microsoft.VisualStudio.TestPlatform.ObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [8]: "System.Diagnostics.TraceSource, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [9]: "System.Diagnostics.StackTrace, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [10]: "System.Runtime.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [11]: "System.Diagnostics.Debug, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [12]: "Microsoft.TestPlatform.CrossPlatEngine, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [13]: "System.Net.Primitives, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [14]: "System.Runtime.InteropServices.RuntimeInformation, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+		/// [15]: "System.Linq, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
 		/// </example>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ImmutableList<string> ReferencedAssemblies()

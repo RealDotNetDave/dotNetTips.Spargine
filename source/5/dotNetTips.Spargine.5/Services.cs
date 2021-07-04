@@ -4,7 +4,7 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -48,7 +48,7 @@ namespace dotNetTips.Spargine
 		{
 			Validate.TryValidateParam(processName, nameof(processName));
 
-			return Process.GetProcessesByName(processName).Count() > 0;
+			return Process.GetProcessesByName(processName).Length > 0;
 		}
 
 		/// <summary>
@@ -88,6 +88,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
+		/// <exception cref="System.InvalidOperationException"></exception>
 		/// <exception cref="InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ServiceControllerStatus ServiceStatus(string serviceName)

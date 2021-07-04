@@ -37,9 +37,9 @@ namespace dotNetTips.Spargine.BenchmarkTests
 				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				// BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
+				BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<DictionaryExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);

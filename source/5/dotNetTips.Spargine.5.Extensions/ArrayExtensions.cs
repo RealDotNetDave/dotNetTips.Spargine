@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-22-2021
+// Last Modified On : 06-28-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,6 +18,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using dotNetTips.Spargine.Core;
+using Microsoft.Extensions.Primitives;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
@@ -219,6 +220,26 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Array cannot be null.</exception>
 		[Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string BytesToString(this byte[] array)
+		{
+			Validate.TryValidateParam(collection: array, nameof(array));
+
+			var sb = new StringBuilder();
+
+			for (var byteCount = 0; byteCount < array.Length; byteCount++)
+			{
+				sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+			}
+
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Converts byte array to a string.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <returns>System.String.</returns>
+		[Information(nameof(BytesToString), "David McCarter", "6/24/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static string BytesToString(this ReadOnlySpan<byte> array)
 		{
 			Validate.TryValidateParam(array, nameof(array));
 

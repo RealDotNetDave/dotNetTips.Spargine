@@ -4,7 +4,7 @@
 // Created          : 02-18-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-20-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="StringBuilderHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(BytesToString), author: "David McCarter", createdOn: "2/18/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static string BytesToString(byte[] bytes)
 		{
-			Validate.TryValidateParam(bytes, nameof(bytes));
+			Validate.TryValidateParam(collection: bytes, nameof(bytes));
 
 			var sb = new StringBuilder();
 

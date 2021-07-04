@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System;
 using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
@@ -94,12 +95,23 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.BytesToString))]
-		public void BytesToString()
+		public void BytesToString01()
 		{
 			var result = base.ByteArray.BytesToString();
 
 			base.Consumer.Consume(result);
 		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
+		public void BytesToString02()
+		{
+			var readOnlySpan = new ReadOnlySpan<byte>(base.ByteArray);
+			var result = readOnlySpan.BytesToString();
+
+			base.Consumer.Consume(result);
+		}
+
+
 
 		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-PersonProper")]
 		public void Clone01()

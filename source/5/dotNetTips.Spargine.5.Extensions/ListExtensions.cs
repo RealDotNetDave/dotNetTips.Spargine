@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -77,9 +77,8 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool AddLast<T>(this IList<T> list, T item)
 		{
 			Validate.TryValidateParam(list, nameof(list));
-#pragma warning disable CA1062 // Validate arguments of public methods
 			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-#pragma warning restore CA1062 // Validate arguments of public methods
+
 
 			if (item is null)
 			{
@@ -377,6 +376,22 @@ namespace dotNetTips.Spargine.Extensions
 			return list.ElementAt(index);
 		}
 
+		/// <summary>
+		/// Picks a random item from a collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>ReadOnlySpan&lt;T&gt;.</returns>
+		[Information(nameof(PickRandom), "David McCarter", "6/28/2021", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 0)]
+		public static ReadOnlySpan<T> PickRandom<T>(this ReadOnlySpan<T> list)
+		{
+			Validate.TryValidateParam(list, nameof(list));
+
+			var index = new Random().Next(0, list.Length - 1);
+
+			return list[index..];
+		}
+
 
 		/// <summary>
 		/// Groups the elements of a sequence according to a specified firstKey selector function and rotates the unique
@@ -494,6 +509,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Gets the random.
 		/// </summary>
+		/// <returns>System.Int32.</returns>
 		/// <value>The random.</value>
 		private static int GenerateRandomNumber()
 		{

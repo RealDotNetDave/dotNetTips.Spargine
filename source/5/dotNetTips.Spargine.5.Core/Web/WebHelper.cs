@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 06-22-2021
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
@@ -43,7 +44,6 @@ namespace dotNetTips.Spargine.Core.Web
 		{
 			Validate.TryValidateParam(address, nameof(address));
 
-			// TODO: CHANGE TO HTTPCLIENT
 			using var client = new WebClient();
 
 			if (clientId.HasValue())
@@ -66,7 +66,6 @@ namespace dotNetTips.Spargine.Core.Web
 		{
 			Validate.TryValidateParam(address, nameof(address));
 
-			// TODO: CHANGE TO HTTPCLIENT
 			using var client = new WebClient();
 
 			if (clientId.HasValue())

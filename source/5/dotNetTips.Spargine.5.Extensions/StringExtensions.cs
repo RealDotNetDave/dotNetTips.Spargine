@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com

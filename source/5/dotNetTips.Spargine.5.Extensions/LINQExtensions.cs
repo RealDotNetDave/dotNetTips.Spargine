@@ -4,7 +4,7 @@
 // Created          : 08-18-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
 // <copyright file="LINQExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -19,8 +19,6 @@ using dotNetTips.Spargine.Core;
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
-	//TODO: https://exceptionnotfound.net/using-conditional-csharp-linq-clauses-to-make-a-multiple-input-search-engine/
-
 	/// <summary>
 	/// Class LINQExtensions.
 	/// </summary>

@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -73,7 +73,6 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		private static string AdjustCamelCase(string name)
 		{
-			//TODO: BEFORE NEXT RLEASE, SEE IF COMPILING THIS REGEX HELPED PERFORMANCE.
 			return _titleCaseRegex.Replace(name, replacement: " $1");
 		}
 

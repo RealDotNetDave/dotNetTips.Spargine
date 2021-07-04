@@ -36,7 +36,7 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.9.4.3</Version>
+		<Version>2021.9.4.4</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>

@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="methodName">Name of the method.</param>
 		protected static void PrintResult<T>(T input, string methodName)
 		{
-			var message = string.Empty;
+			string message;
 
 			if (input is string || input.GetType().IsValueType)
 			{

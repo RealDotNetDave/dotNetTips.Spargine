@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2021
+// Last Modified On : 06-28-2021
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -46,8 +46,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <typeparam name="TResult">The type of the t result.</typeparam>
 		/// <param name="fileName">Name of the file.</param>
 		/// <returns>TResult.</returns>
+		/// <exception cref="System.IO.FileNotFoundException">File not found. Cannot deserialize from JSON.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
-		/// <exception cref="System.IO.FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
 		{
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 
 			if (File.Exists(fileName) == false)
 			{
-				throw new FileNotFoundException("File not found. Cannot deserialize from XML.", fileName);
+				throw new FileNotFoundException("File not found. Cannot deserialize from JSON.", fileName);
 			}
 
 			return Deserialize<TResult>(File.ReadAllText(fileName));
@@ -116,8 +116,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="expected">The expected.</param>
 		/// <param name="actual">The actual.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
 		/// <exception cref="System.NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
+		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
 		private static bool JsonEqual(JsonElement expected, JsonElement actual)
 		{
 			var valueKind = expected.ValueKind;

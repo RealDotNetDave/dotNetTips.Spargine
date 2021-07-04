@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -233,5 +233,11 @@
   </data>
   <data name="InvalidValue" xml:space="preserve">
     <value>Invalid Value.</value>
+  </data>
+  <data name="ReadOnlySpanCannotBeNull" xml:space="preserve">
+    <value>ReadOnlySpan cannot be null or empty.</value>
+  </data>
+  <data name="SpanCannotBeNullOrEmpty" xml:space="preserve">
+    <value>The value of Span&lt;T&gt; cannot be empty.</value>
   </data>
 </root>

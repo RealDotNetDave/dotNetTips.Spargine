@@ -5,7 +5,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 07-04-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -552,13 +552,13 @@ namespace dotNetTips.Spargine.Extensions
 				var indexItem = list.ElementAt(list.IndexOf(item));
 
 				indexItem = item;
-
-				return list;
 			}
 			else
 			{
-				return list.Add(item);
+				list = list.Add(item);
 			}
+
+			return list;
 		}
 	}
 }

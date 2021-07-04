@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-22-2021
+// Last Modified On : 06-24-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -126,21 +126,21 @@ namespace dotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="sizeInKb">The size in kb.</param>
 		/// <returns>System.Byte[].</returns>
-		/// <remarks>Uses RandomNumberGenerator due to performance increase. [CA5394]</remarks>
+		/// <remarks>Uses RandomNumberGenerator due to performance increase [CA5394]. Uses Span.</remarks>
 		[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Updated)]
 		public static byte[] GenerateByteArray(double sizeInKb)
 		{
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(sizeInKb >= Double.Epsilon, nameof(sizeInKb), $"{nameof(sizeInKb)} must be a positive value.");
 
 			var size = Convert.ToInt32(sizeInKb * 1024);
-			var bytes = new byte[size];
+			var bytes = new Span<byte>(new byte[size]);
 
 			lock (_lock)
 			{
 				_randomNumberGenerator.GetBytes(bytes);
 			}
 
-			return bytes;
+			return bytes.ToArray();
 		}
 
 		/// <summary>

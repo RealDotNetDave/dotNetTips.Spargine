@@ -33,18 +33,19 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="interfaceNames">The interface names.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
-		[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<string> DoesObjectImplementInterface(object input, params string[] interfaceNames)
+		[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 100, Status = Status.Available)]
+		public static IEnumerable<string> DoesObjectImplementInterface(this object input, params string[] interfaceNames)
 		{
 			Validate.TryValidateNullParam(input, nameof(input));
 			Validate.TryValidateParam(interfaceNames, nameof(interfaceNames));
 
 			//TODO: CHANGE TO ALL LINQ? typeof(IMyInterface).IsAssignableFrom(typeof(MyType))
 			var interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
-
 			var foundInterfaces = new List<string>();
-			foundInterfaces.AddRange(foundInterfaces.Where(interfaceName => interfaces.Contains(interfaceName)));
-			return interfaceNames;
+
+			foundInterfaces.AddRange(interfaceNames.Where(interfaceName => interfaces.Contains(interfaceName)));
+
+			return foundInterfaces;
 		}
 
 		/// <summary>
@@ -67,7 +68,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<FieldInfo> GetAllDeclaredFields(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -94,7 +95,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("Original Code .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("Original Code .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllDeclaredMethods(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -221,7 +222,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<MethodInfo> GetAllStaticMethods(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -294,29 +295,6 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Gets the field hash.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="callback">The callback.</param>
-		/// <returns>Hash for the field as System.String.</returns>
-		/// <exception cref="ArgumentNullException">Callback cannot be null.</exception>
-		[Information(nameof(GetFieldHash), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GetFieldHash<T>(this Func<T> callback)
-		{
-			Validate.TryValidateNullParam(callback, nameof(callback));
-
-			return new string(callback.Target
-				.GetType()
-				.GetFields()
-				.Where(x => x.MemberType == MemberTypes.Field)
-				.Select(x => x.GetValue(callback.Target))
-				.Where(x => x is not null)
-				.SelectMany(x => x.ToString())
-				.ToArray());
-		}
-
-
-		/// <summary>
 		/// Gets the type members with given attribute.
 		/// </summary>
 		/// <typeparam name="TAttribute">The type of the t attribute.</typeparam>
@@ -324,7 +302,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.ValueTuple&lt;System.String, TAttribute, System.Boolean, System.Boolean, Type&gt;[].</returns>
 		/// <exception cref="InvalidOperationException">Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it</exception>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
+		[Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type ParameterType)[] GetTypeMembersWithAttribute<TAttribute>(this Type type)
 			where TAttribute : Attribute
 		{
@@ -358,7 +336,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="methodInfo">The method information.</param>
 		/// <returns><c>true</c> if the specified method information has attribute; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">MethodInfo cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasAttribute<T>(this MethodInfo methodInfo) where T : Attribute
 		{
 			Validate.TryValidateNullParam(methodInfo, nameof(methodInfo));
@@ -373,7 +351,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <param name="baseClass">The base class.</param>
 		/// <returns><c>true</c> if [has base class of] [the specified base class]; otherwise, <c>false</c>.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasBaseClass(this Type type, Type baseClass)
 		{
 			if (type == baseClass)
@@ -400,7 +378,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasParameterlessConstructor(this Type type)
 		{
 			Validate.TryValidateNullParam(type, nameof(type));
@@ -426,7 +404,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsNullable(this Type type) => Nullable.GetUnderlyingType(type) is not null;
 
 		/// <summary>
@@ -435,7 +413,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="property">The property.</param>
 		/// <returns><c>true</c> if the specified property is static; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">PropertyInfo cannot be null.</exception>
-		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool IsStatic(this PropertyInfo property)
 		{
 			Validate.TryValidateNullParam(property, nameof(property));
@@ -452,7 +430,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">Object 2 cannot be null.</exception>
 		/// <remarks>Original code by: Jeremy Clark</remarks>
-		[Information(nameof(Max), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(Max), UnitTestCoverage = 100, Status = Status.Available)]
 		public static T Max<T>(this T obj1, T obj2)
 			where T : IComparable
 		{

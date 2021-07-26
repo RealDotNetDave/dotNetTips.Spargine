@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 07-13-2021
 // ***********************************************************************
 // <copyright file="CollectionRandomizer.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Collections
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <remarks>The CollectionRandomizer is designed to shuffle a collection and allow retrieving items by using GetNext().</remarks>
-	[Information(nameof(CollectionRandomizer<T>), author: "David McCarter and Kristine Tran", createdOn: "8/26/2020", modifiedOn: "8/27/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information(nameof(CollectionRandomizer<T>), author: "David McCarter and Kristine Tran", createdOn: "8/26/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public sealed class CollectionRandomizer<T>
 	{
 		/// <summary>
@@ -94,13 +94,12 @@ namespace dotNetTips.Spargine.Collections
 		/// <summary>
 		/// Initializes this instance.
 		/// </summary>
-		/// <exception cref="System.NullReferenceException">Underlying collection is null.</exception>
-		/// <exception cref="NullReferenceException">Underlying collection is null.</exception>
+		/// <exception cref="InvalidValueException{TValue}">Underlying collection is null.</exception>
 		private void Init()
 		{
 			//Ignore if initialized unless repeat is true.
-			if (( this._initialized == true & this.HasRemainingItems ) ||
-				( this._initialized == true & this.HasRemainingItems == true & this._repeat == false ))
+			if (( this._initialized & this.HasRemainingItems ) ||
+				( this._initialized & this.HasRemainingItems & this._repeat == false ))
 			{
 				return;
 			}
@@ -108,7 +107,7 @@ namespace dotNetTips.Spargine.Collections
 			//Validate Collection
 			if (this._collection.HasItems() == false)
 			{
-				throw new NullReferenceException("Underlying collection is null.");
+				throw new InvalidValueException<ImmutableArray<T>>("Underlying collection is null.");
 			}
 
 			//Shuffle Collection

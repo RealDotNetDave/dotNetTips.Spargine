@@ -42,7 +42,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestMethod]
 		public void CopyAndDeleteDirectoryTest()
 		{
-			var destinationPath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndDeleteDirectoryTest));
+			var destinationPath = Path.Combine(_tempPath.FullName, nameof(this.CopyAndDeleteDirectoryTest));
 
 			var sourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), $"dotNetTips.com-{DateTime.Now.Ticks}");
 
@@ -67,8 +67,8 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestMethod]
 		public void CopyAndMoveDirectoryTest()
 		{
-			var sourcePath = Path.Combine(this._tempPath.FullName, $"{nameof(this.CopyAndMoveDirectoryTest)}{RandomData.GenerateKey()}");
-			var destinationPath = Path.Combine(this._tempPath.FullName, nameof(this.CopyAndMoveDirectoryTest));
+			var sourcePath = Path.Combine(_tempPath.FullName, $"{nameof(this.CopyAndMoveDirectoryTest)}{RandomData.GenerateKey()}");
+			var destinationPath = Path.Combine(_tempPath.FullName, nameof(this.CopyAndMoveDirectoryTest));
 
 			RandomData.GenerateFiles(sourcePath, 100, 100);
 
@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.Tests.IO
 
 			try
 			{
-				DirectoryHelper.CopyDirectory(folderToCopy.FullName, this._tempPath.FullName, false);
+				DirectoryHelper.CopyDirectory(folderToCopy.FullName, _tempPath.FullName, false);
 				DirectoryHelper.MoveDirectory(folderToCopy.FullName, destinationPath, 2);
 			}
 			catch (Exception ex)
@@ -92,22 +92,22 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestInitialize]
 		public void Initialize()
 		{
-			this._tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-DIRECTORYHELPER-TEST"));
+			_tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-DIRECTORYHELPER-TEST"));
 
-			if (this._tempPath.Exists == false)
+			if (_tempPath.Exists == false)
 			{
-				this._tempPath.Create();
+				_tempPath.Create();
 			}
 			else
 			{
-				var array = this._tempPath.EnumerateDirectories().ToArray();
+				var array = _tempPath.EnumerateDirectories().ToArray();
 
 				foreach (var directory in array)
 				{
 					DirectoryHelper.DeleteDirectory(directory.FullName);
 				}
 
-				FileHelper.DeleteFiles(this._tempPath.EnumerateFiles().Select(p => p.FullName));
+				FileHelper.DeleteFiles(_tempPath.EnumerateFiles().Select(p => p.FullName));
 			}
 		}
 
@@ -136,9 +136,7 @@ namespace dotNetTips.Spargine.Tests.IO
 
 				foreach (var directory in searchFolders)
 				{
-					var result = DirectoryHelper.SafeDirectoryContainsAny(directory, SearchOption.AllDirectories, "*.txt", "*.tmp", "*.doc", "*.docx", "*.dll");
-
-					if (result)
+					if (DirectoryHelper.SafeDirectoryContainsAny(directory, SearchOption.AllDirectories, "*.txt", "*.tmp", "*.doc", "*.docx", "*.dll"))
 					{
 						directories.Add(directory);
 					}

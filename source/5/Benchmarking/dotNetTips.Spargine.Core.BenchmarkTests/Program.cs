@@ -16,7 +16,7 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
-using dotNetTips.Spargine.Core.BenchmarkTests.Serialization;
+using dotNetTips.Spargine.Core.BenchmarkTests.Security;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
@@ -37,9 +37,9 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<TestingBenchmark>(config);
+				BenchmarkRunner.Run<EncryptionHelperBenchmark>(config);
 
 				Console.Beep();
 				Console.ReadLine();

@@ -51,6 +51,7 @@ namespace dotNetTips.Spargine.Extensions
 				collection.Add(item);
 			}
 		}
+
 		/// <summary>
 		/// Adds the item to the collection if it does not exist.
 		/// </summary>

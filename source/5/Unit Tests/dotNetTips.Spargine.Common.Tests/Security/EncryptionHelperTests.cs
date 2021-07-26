@@ -1,0 +1,80 @@
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography;
+using dotNetTips.Spargine.Core.Security;
+using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester;
+using dotNetTips.Spargine.Tester.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace dotNetTips.Spargine.Core.Tests.Security
+{
+	[ExcludeFromCodeCoverage]
+	[TestClass]
+	public class EncryptionHelperTests
+	{
+		private const string _key = "9999998888888877777777@#$%";
+		private const string _testString = "ThisIsATestStringToEncrypt";
+
+		[TestMethod]
+		public void AesEncryptDecryptStringTest()
+		{
+			try
+			{
+				// Create Aes that generates a new key and initialization vector (IV).  
+				// Same key must be used in encryption and decryption  
+				using var aes = new AesManaged();
+
+				// Encrypt string  
+				var encrypted = EncryptionHelper.AesEncrypt(_testString, aes.Key, aes.IV);
+
+				// Decrypt the bytes to a string.  
+				var decrypted = EncryptionHelper.AesDecrypt(encrypted, aes.Key, aes.IV);
+
+				Assert.AreEqual(_testString, decrypted);
+			}
+			catch (Exception ex)
+			{
+				Assert.Fail($"Encryption/ Description test failed. {ex.Message}");
+			}
+		}
+
+		[TestMethod]
+		public void ComputeSha256HashTest()
+		{
+			var result = _testString.ComputeSHA256Hash();
+
+			Assert.IsTrue(string.IsNullOrEmpty(result) == false);
+		}
+
+		[TestMethod]
+		public void GenerateAesIVTest()
+		{
+			var result = EncryptionHelper.GenerateAesIV();
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void GenerateAesKeyTest()
+		{
+			var result = EncryptionHelper.GenerateAesKey();
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		[TestMethod]
+		public void SimpleEncryptDecryptStringTest()
+		{
+			var cipherText = EncryptionHelper.SimpleEncrypt(_testString, _key);
+
+			Assert.IsTrue(string.IsNullOrEmpty(cipherText) == false);
+
+			var plainText = EncryptionHelper.SimpleDecrypt(cipherText, _key);
+
+			Assert.IsTrue(string.IsNullOrEmpty(plainText) == false);
+
+			Assert.IsTrue(plainText.Equals(_testString));
+		}
+	}
+}

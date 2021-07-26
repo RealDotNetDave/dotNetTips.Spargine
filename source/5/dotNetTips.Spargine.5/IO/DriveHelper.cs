@@ -15,6 +15,7 @@
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using System.Collections.Immutable;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -43,13 +44,13 @@ namespace dotNetTips.Spargine.IO
 			var driveFixed = Path.GetPathRoot(drive).Replace(@"\", string.Empty);
 
 			// Perform Query
-			using (var querySearch = new ManagementObjectSearcher(string.Format(format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'", driveFixed)))
+			using (var querySearch = new ManagementObjectSearcher(string.Format(CultureInfo.InvariantCulture, format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'", driveFixed)))
 			{
 				using var queryCollection = querySearch.Get();
 
 				foreach (var moItem in queryCollection)
 				{
-					driveSerial = Convert.ToString(moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"));
+					driveSerial = Convert.ToString(moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"), CultureInfo.CurrentCulture);
 					break;
 				}
 			}

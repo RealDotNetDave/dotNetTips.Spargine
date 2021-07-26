@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 07-25-2021
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -196,6 +196,7 @@ namespace dotNetTips.Spargine.IO
 		/// Loads the one drive folders.
 		/// </summary>
 		/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
+		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
@@ -321,13 +322,13 @@ namespace dotNetTips.Spargine.IO
 
 		/// <summary>
 		/// Searches folder and returns true if it contains any files that meet one of the
-		/// search criterias.
+		/// search criteria.
 		/// </summary>
 		/// <param name="rootDirectory">The root directory.</param>
 		/// <param name="searchOption">The search option.</param>
 		/// <param name="searchPatterns">The search patterns.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
+		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static bool SafeDirectoryContainsAny(DirectoryInfo rootDirectory, SearchOption searchOption = SearchOption.TopDirectoryOnly, params string[] searchPatterns)
 		{
 			Validate.TryValidateParam(rootDirectory, nameof(rootDirectory));

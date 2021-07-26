@@ -416,17 +416,18 @@ namespace dotNetTips.Spargine.Extensions
 
 			var collection = new BlockingCollection<T>(list.Count());
 
-			var taskResult = Task.Factory.StartNew(() =>
-			  {
-				  foreach (var item in list)
-				  {
-					  collection.TryAdd(item);
-				  }
+			using (var taskResult = Task.Run(() =>
+			   {
+				   foreach (var item in list)
+				   {
+					   collection.TryAdd(item);
+				   }
 
-				  collection.CompleteAdding();
-			  });
-
-			taskResult.Wait();
+				   collection.CompleteAdding();
+			   }))
+			{
+				taskResult.Wait();
+			}
 
 			return collection;
 		}
@@ -550,7 +551,6 @@ namespace dotNetTips.Spargine.Extensions
 			if (list.Contains(item))
 			{
 				var indexItem = list.ElementAt(list.IndexOf(item));
-
 				indexItem = item;
 			}
 			else

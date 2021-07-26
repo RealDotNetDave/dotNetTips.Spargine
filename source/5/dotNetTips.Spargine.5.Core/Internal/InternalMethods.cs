@@ -3,12 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace dotNetTips.Spargine.Core.Internal
 {
 	internal static class InternalMethods
 	{
 		private const string NullString = "[null]";
+
+		internal static string BytesToString(this byte[] array)
+		{
+			Validate.TryValidateParam(collection: array, nameof(array));
+
+			var sb = new StringBuilder();
+
+			for (var byteCount = 0; byteCount < array.Length; byteCount++)
+			{
+				sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+			}
+
+			return sb.ToString();
+		}
 
 		internal static bool IsEnumerable(Type type)
 		{

@@ -1,48 +1,44 @@
-﻿// ***********************************************************************
+﻿
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.5.Core
 // Author           : David McCarter
-// Created          : 11-11-2020
+// Created          : 07-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 07-25-2021
 // ***********************************************************************
-// <copyright file="Singleton.cs" company="dotNetTips.Spargine.5.Core">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="Singleton.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
-	/// Class Singleton.
+	/// Singleton. This class cannot be inherited.
 	/// </summary>
-	/// <typeparam name="T">Generic type parameter.</typeparam>
-	public abstract class Singleton<T>
-		where T : Singleton<T>, new()
+	/// <typeparam name="T"></typeparam>
+	/// <remarks>Inspired by the C# Design Patterns: Singleton course on Pluralsight.</remarks>
+	[Information(nameof(Singleton<T>), author: "David McCarter", createdOn: "7/12/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+	public sealed class Singleton<T> where T : new()
 	{
 		/// <summary>
-		/// The instance
+		/// The lazy instance.
 		/// </summary>
-		private static T _instance = new();
+		private static readonly Lazy<T> _lazy = new(() => new T());
 
 		/// <summary>
-		/// Gets the instance.
+		/// Initializes static members of the <see cref="Singleton{T}" /> class.
+		/// </summary>
+		private Singleton()
+		{ }
+
+		/// <summary>
+		/// Gets the instance of T.
 		/// </summary>
 		/// <value>The instance.</value>
-		public static T Instance => _instance;
-
-		/// <summary>
-		/// ts this instance.
-		/// </summary>
-		/// <param name="data">The data.</param>
-		protected static void LoadData(T data)
-		{
-			if (data is not null)
-			{
-				_instance = data;
-			}
-		}
+		public static T Instance => _lazy.Value;
 	}
 }

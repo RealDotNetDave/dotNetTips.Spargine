@@ -12,12 +12,14 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
@@ -124,13 +126,30 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.PickRandom))]
-		public void PickRandom()
+		public void PickRandom01()
 		{
-			var result = base.PersonProperList.Take(base.Count / 2);
+			var result = base.PersonProperArrayFull.PickRandom();
 
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Slice Test")]
+		public void PickRandom02()
+		{
+			var people = new ArraySegment<PersonProper>(base.PersonProperArrayFull);
+
+			var result = people.Slice(RandomData.GenerateInteger(0, people.Count - 1));
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.PickRandom2))]
+		public void PickRandom03()
+		{
+			var result = base.PersonProperArrayFull.PickRandom2();
+
+			base.Consumer.Consume(result);
+		}
 
 		public override void Setup() { base.Setup(); }
 

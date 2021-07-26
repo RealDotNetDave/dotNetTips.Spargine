@@ -392,7 +392,6 @@ namespace dotNetTips.Spargine.Extensions
 			return list[index..];
 		}
 
-
 		/// <summary>
 		/// Groups the elements of a sequence according to a specified firstKey selector function and rotates the unique
 		/// values from the secondKey selector function into multiple values in the output, and performs aggregations.
@@ -458,8 +457,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>List&lt;TSource&gt;.</returns>
-		public static async Task<List<TSource>> ToListAsync<TSource>(
-			this IAsyncEnumerable<TSource> list, CancellationToken cancellationToken = default)
+		public static async Task<List<TSource>> ToListAsync<TSource>(this IAsyncEnumerable<TSource> list, CancellationToken cancellationToken = default)
 		{
 			if (Validate.TryValidateNull(list))
 			{
@@ -527,7 +525,5 @@ namespace dotNetTips.Spargine.Extensions
 
 			return _random.Next();
 		}
-
-
 	}
 }

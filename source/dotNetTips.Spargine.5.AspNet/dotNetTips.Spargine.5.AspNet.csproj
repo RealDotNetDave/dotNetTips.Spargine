@@ -5,7 +5,8 @@
     <RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
     <AssemblyVersion>2021.6.14.103</AssemblyVersion>
     <FileVersion>2021.6.14.103</FileVersion>
-    <Version>2021.9.4.4</Version>
+	  <LangVersion>latest</LangVersion>
+    <Version>2021.9.4.8</Version>
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <AnalysisLevel>5.0</AnalysisLevel>
   </PropertyGroup>

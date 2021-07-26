@@ -16,9 +16,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.3" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.3" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.3" />
+    <PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.7" />
+    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.7" />
+    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.7" />
   </ItemGroup>
 
   <ItemGroup>

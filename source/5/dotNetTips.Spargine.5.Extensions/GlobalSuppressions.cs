@@ -14,7 +14,6 @@
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ArrayExtensions.RemoveFirst``1(``0[])~``0[]")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ArrayExtensions.RemoveLast``1(``0[])~``0[]")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ArrayExtensions.Upsert``1(``0[],``0)~``0[]")]
-[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ArrayExtensions.UpsertDataModel``2(``0[],``0)~``0[]")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFormattedString(System.DateTime,dotNetTips.Spargine.Extensions.DateTimeFormat)~System.String")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFormattedString(System.DateTimeOffset,dotNetTips.Spargine.Extensions.DateTimeFormat)~System.String")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)~System.String")]
@@ -52,6 +51,7 @@
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.NumericExtensions.ToFormattedString(System.Int32,dotNetTips.Spargine.Extensions.NumericFormat)~System.String")]
 [assembly: SuppressMessage("Security", "CA5394:Do not use insecure randomness", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ListExtensions.PickRandom``1(System.Collections.Generic.IEnumerable{``0})~``0")]
 [assembly: SuppressMessage("Security", "CA5394:Do not use insecure randomness", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ListExtensions.GenerateRandomNumber~System.Int32")]
+[assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.EnumerableExtensions.Upsert``1(System.Collections.Generic.IEnumerable{``0},``0)~System.Collections.Generic.IEnumerable{``0}")]
 
 // ***********************************************************************
 // Assembly         : dotNetTips.Spargine.5.Extensions **

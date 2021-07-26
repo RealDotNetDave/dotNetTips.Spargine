@@ -113,22 +113,14 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateNullParam(request, nameof(request));
 
-			try
+			if (( request.Body?.Length ?? 0 ) == 0)
 			{
-				if (( request.Body?.Length ?? 0 ) == 0)
-				{
-					ExceptionThrower.ThrowArgumentException("HttpRequest has no body.", nameof(request.Body));
-				}
-
-				value = GetBytes();
-
-				return true;
+				ExceptionThrower.ThrowArgumentException("HttpRequest has no body.", nameof(request.Body));
 			}
-			catch
-			{
-				value = default;
-				return false;
-			}
+
+			value = GetBytes();
+
+			return value.HasItems();
 
 			byte[] GetBytes()
 			{
@@ -143,6 +135,5 @@ namespace dotNetTips.Spargine.Extensions
 				return bytes;
 			}
 		}
-
 	}
 }

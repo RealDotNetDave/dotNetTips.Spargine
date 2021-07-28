@@ -4,9 +4,9 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-26-2021
+// Last Modified On : 07-28-2021
 // ***********************************************************************
-// <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
+// <copyright file="ChannelQueue.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Common class for collections.</summary>
@@ -26,7 +26,7 @@ namespace dotNetTips.Spargine.Core.Collections
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	[Information("Queue using Channel<T>.", "David McCarter", "7/26/2021")]
-	public class ChannelQueue<T>
+	public sealed class ChannelQueue<T>
 	{
 		/// <summary>
 		/// The channel
@@ -52,11 +52,12 @@ namespace dotNetTips.Spargine.Core.Collections
 			this._channel = Channel.CreateBounded<T>(capacity);
 		}
 
+
 		/// <summary>
 		/// Gets the count.
 		/// </summary>
 		/// <value>The count.</value>
-		[Information(nameof(Count), "David McCarter", "7/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(Count), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public int Count
 		{
 			get
@@ -98,8 +99,6 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(ReadAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public async Task<T> ReadAsync(CancellationToken cancellationToken = default)
 		{
-			Validate.TryValidateNullParam(cancellationToken, nameof(cancellationToken));
-
 			return await this._channel.Reader.ReadAsync(cancellationToken).ConfigureAwait(false);
 		}
 
@@ -112,7 +111,6 @@ namespace dotNetTips.Spargine.Core.Collections
 		public async Task WriteAsync(T item, CancellationToken cancellationToken = default)
 		{
 			Validate.TryValidateNullParam(item, nameof(item));
-			Validate.TryValidateNullParam(cancellationToken, nameof(cancellationToken));
 
 			await this._channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
 		}
@@ -127,7 +125,6 @@ namespace dotNetTips.Spargine.Core.Collections
 		public async Task WriteAsync(IEnumerable<T> items, bool lockQueue = false, CancellationToken cancellationToken = default)
 		{
 			Validate.TryValidateParam(items, nameof(items));
-			Validate.TryValidateNullParam(cancellationToken, nameof(cancellationToken));
 
 			foreach (var item in items.Where(p => p is not null))
 			{

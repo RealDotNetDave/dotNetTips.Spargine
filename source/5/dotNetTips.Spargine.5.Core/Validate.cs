@@ -187,7 +187,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="span">The array.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static void TryValidateParam<T>(ReadOnlySpan<T> span, string paramName, string message = "")
 		{
 			if (span.IsEmpty)
@@ -205,7 +205,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="span">The span.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public static void TryValidateParam<T>(Span<T> span, string paramName, string message = "")
 		{
 			if (span.IsEmpty)

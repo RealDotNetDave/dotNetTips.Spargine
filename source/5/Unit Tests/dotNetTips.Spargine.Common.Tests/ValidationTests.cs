@@ -299,6 +299,74 @@ namespace dotNetTips.Spartine.Core.Tests
 		}
 
 		[TestMethod]
+		public void TryValidateParamReadOnlySpanTest01()
+		{
+			try
+			{
+				ReadOnlySpan<PersonProper> people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+
+				Validate.TryValidateParam(people, "TEST");
+
+				Assert.IsTrue(true);
+			}
+			catch
+			{
+				Assert.Fail();
+			}
+		}
+
+		[TestMethod]
+		public void TryValidateParamReadOnlySpanTest02()
+		{
+			try
+			{
+				ReadOnlySpan<PersonProper> people = new ReadOnlySpan<PersonProper>();
+
+				Validate.TryValidateParam(people, "TEST");
+
+				Assert.Fail();
+			}
+			catch
+			{
+				Assert.IsTrue(true);
+			}
+		}
+
+		[TestMethod]
+		public void TryValidateParamSpanTest01()
+		{
+			try
+			{
+				Span<PersonProper> people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
+
+				Validate.TryValidateParam(people, "TEST");
+
+				Assert.IsTrue(true);
+			}
+			catch
+			{
+				Assert.Fail();
+			}
+		}
+
+		[TestMethod]
+		public void TryValidateParamSpanTest02()
+		{
+			try
+			{
+				Span<PersonProper> people = new Span<PersonProper>();
+
+				Validate.TryValidateParam(people, "TEST");
+
+				Assert.Fail();
+			}
+			catch
+			{
+				Assert.IsTrue(true);
+			}
+		}
+
+		[TestMethod]
 		public void TryValidateParamStringEmailTest()
 		{
 			try

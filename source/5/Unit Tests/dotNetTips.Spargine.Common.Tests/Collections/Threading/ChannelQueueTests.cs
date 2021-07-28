@@ -72,13 +72,34 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 		public async Task WriteAsyncTest03()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+			const int Count = 100;
+
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Count);
 			var token = CancellationToken.None;
 
 			await channel.WriteAsync(people, lockQueue: true, cancellationToken: token);
 
-			Assert.IsTrue(channel.Count == 100);
+			Assert.IsTrue(channel.Count == Count);
 
+		}
+
+		[TestMethod]
+		public void WriteListenTest01()
+		{
+			const int Capacity = 100;
+			var channel = new ChannelQueue<PersonProper>();
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Capacity);
+			var token = CancellationToken.None;
+
+			var tasks = new List<Task>();
+
+			tasks.Add(AddToQueue(channel, people, token));
+
+			tasks.Add(ListenToQueue(channel, token));
+
+			Task.WaitAll(tasks.ToArray());
+
+			Assert.IsTrue(channel.Count == 0);
 		}
 
 		[TestMethod]
@@ -101,21 +122,25 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 		public async Task WriteReadAsyncTest02()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			var people = RandomData.GeneratePersonCollection<PersonProper>(1000);
+			const int Count = 100;
+
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Count);
 			var token = CancellationToken.None;
 
+			/// Write
 			foreach (var person in people)
 			{
 				await channel.WriteAsync(person, cancellationToken: token);
 			}
 
-			Assert.IsTrue(channel.Count == 1000);
+			Assert.IsTrue(channel.Count == Count);
 
+			/// Read
 			do
 			{
 				var item = await channel.ReadAsync(token);
 
-			} while (channel.Count != 0);
+			} while (channel.Count > 0);
 
 			Assert.IsTrue(channel.Count == 0);
 		}
@@ -124,7 +149,9 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 		public async Task WriteReadAsyncTest03()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			var people = RandomData.GeneratePersonCollection<PersonProper>(5);
+			const int Count = 5;
+
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Count);
 			var token = CancellationToken.None;
 
 			foreach (var person in people)
@@ -132,7 +159,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 				await channel.WriteAsync(person, cancellationToken: token);
 			}
 
-			Assert.IsTrue(channel.Count == 5);
+			Assert.IsTrue(channel.Count == Count);
 
 			channel.Lock();
 
@@ -147,8 +174,9 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 		[TestMethod]
 		public async Task WriteReadAsyncTest04()
 		{
-			var channel = new ChannelQueue<PersonProper>(1000);
-			var people = RandomData.GeneratePersonCollection<PersonProper>(1000);
+			const int Capacity = 100;
+			var channel = new ChannelQueue<PersonProper>(Capacity);
+			var people = RandomData.GeneratePersonCollection<PersonProper>(Capacity);
 			var token = CancellationToken.None;
 
 			foreach (var person in people)
@@ -156,7 +184,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 				await channel.WriteAsync(person, cancellationToken: token);
 			}
 
-			Assert.IsTrue(channel.Count == 1000);
+			Assert.IsTrue(channel.Count == Capacity);
 
 			do
 			{
@@ -165,6 +193,24 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
 			} while (channel.Count != 0);
 
 			Assert.IsTrue(channel.Count == 0);
+		}
+
+		private static async Task AddToQueue(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
+		{
+			foreach (var person in people)
+			{
+				await channel.WriteAsync(person, cancellationToken: token);
+			}
+
+			channel.Lock();
+		}
+
+		private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
+		{
+			await foreach (var item in channel.ListenAsync(token))
+			{
+				Debug.WriteLine(item.Email);
+			}
 		}
 	}
 }

@@ -143,14 +143,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.PickRandom2))]
-		public void PickRandom03()
-		{
-			var result = base.PersonProperArrayFull.PickRandom2();
-
-			base.Consumer.Consume(result);
-		}
-
 		public override void Setup() { base.Setup(); }
 
 

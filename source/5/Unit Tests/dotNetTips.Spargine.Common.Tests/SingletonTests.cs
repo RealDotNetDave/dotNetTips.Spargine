@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Cache;
 using dotNetTips.Spargine.Collections.Generic;
+using dotNetTips.Spargine.Core.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Core.Tests

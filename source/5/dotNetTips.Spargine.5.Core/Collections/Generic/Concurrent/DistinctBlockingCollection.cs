@@ -17,10 +17,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Spargine.Collections
+namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 {
 	/// <summary>
 	/// DistinctBlockingCollection.
@@ -41,7 +40,7 @@ namespace dotNetTips.Spargine.Collections
 		/// <param name="collection">The collection.</param>
 		public DistinctBlockingCollection(IEnumerable<T> collection)
 		{
-			if (collection.HasItems())
+			if (collection?.Count() > 0)
 			{
 				collection.ToList()
 					.ForEach(item =>

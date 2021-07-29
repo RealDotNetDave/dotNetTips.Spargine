@@ -14,14 +14,14 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using dotNetTips.Spargine.Core.Collections;
+using dotNetTips.Spargine.Core.Collections.Generic;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 
-namespace dotNetTips.Spargine.Core.Tests.Collections
+namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]

@@ -11,21 +11,20 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-using dotNetTips.Spargine.Core.Collections;
+using dotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace dotNetTips.Spargine.Core.Tests.Collections.Threading
+namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]

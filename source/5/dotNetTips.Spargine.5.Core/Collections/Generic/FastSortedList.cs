@@ -15,11 +15,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
-using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Spargine.Collections.Generic
+namespace dotNetTips.Spargine.Core.Collections.Generic
 {
 	/// <summary>
 	/// Class SortedList.
@@ -104,7 +102,7 @@ namespace dotNetTips.Spargine.Collections.Generic
 		public IImmutableList<T> ToImmutableList()
 		{
 			this.SortCollection();
-			return this.ToImmutable();
+			return ImmutableList.CreateRange<T>(this);
 		}
 
 		/// <summary>

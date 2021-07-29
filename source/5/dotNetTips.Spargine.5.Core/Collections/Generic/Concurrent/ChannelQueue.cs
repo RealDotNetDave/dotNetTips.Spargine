@@ -19,7 +19,7 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Spargine.Core.Collections
+namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 {
 	/// <summary>
 	/// Thread-Safe queue.
@@ -32,6 +32,8 @@ namespace dotNetTips.Spargine.Core.Collections
 		/// The channel
 		/// </summary>
 		private readonly Channel<T> _channel;
+
+		private readonly object _lock = new();
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="ChannelQueue{T}" /> class from being created.
@@ -62,7 +64,10 @@ namespace dotNetTips.Spargine.Core.Collections
 		{
 			get
 			{
-				return this._channel.Reader.CanCount ? this._channel.Reader.Count : -1;
+				lock (this._lock)
+				{
+					return this._channel.Reader.CanCount ? this._channel.Reader.Count : -1;
+				}
 			}
 		}
 
@@ -88,7 +93,10 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Lock), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
 		public bool Lock()
 		{
-			return this._channel.Writer.TryComplete();
+			lock (this._lock)
+			{
+				return this._channel.Writer.TryComplete();
+			}
 		}
 
 		/// <summary>

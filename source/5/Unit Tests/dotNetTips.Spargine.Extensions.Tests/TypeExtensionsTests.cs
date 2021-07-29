@@ -27,7 +27,6 @@ using System.Runtime.CompilerServices;
 using System.Security;
 using System.Xml.Serialization;
 using dotNetTips.Spargine.Cache;
-using dotNetTips.Spargine.Collections.Generic;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;

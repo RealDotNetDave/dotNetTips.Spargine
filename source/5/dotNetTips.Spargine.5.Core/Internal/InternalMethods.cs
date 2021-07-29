@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace dotNetTips.Spargine.Core.Internal
@@ -10,6 +11,13 @@ namespace dotNetTips.Spargine.Core.Internal
 	internal static class InternalMethods
 	{
 		private const string NullString = "[null]";
+
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
+		public static int EnsureMinimum(this int value, int minValue)
+		{
+			return value < minValue ? minValue : value;
+		}
 
 		internal static string BytesToString(this byte[] array)
 		{

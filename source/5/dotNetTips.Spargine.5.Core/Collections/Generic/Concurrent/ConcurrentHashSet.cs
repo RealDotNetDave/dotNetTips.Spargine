@@ -18,7 +18,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Core.Internal;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Collections.Generic.Concurrent

@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 07-28-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Spargine.Core.Collections
+namespace dotNetTips.Spargine.Core.Collections.Generic
 {
 	/// <summary>
 	/// Collection with added features.
@@ -62,7 +62,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create(int capacity)
 		{
-			Validate.TryValidateParam<ArgumentOutOfRangeException>(capacity >= 0, nameof(capacity));
+			Validate.TryValidateParam(capacity, minimumValue: 1, maximumValue: int.MaxValue, paramName: nameof(capacity));
 
 			return new Collection<T>(capacity);
 		}
@@ -95,7 +95,7 @@ namespace dotNetTips.Spargine.Core.Collections
 
 			foreach (var item in items.Where(p => p is not null))
 			{
-				if (ensureUnique == Tristate.True || ensureUnique == Tristate.UseDefault)
+				if (ensureUnique is Tristate.True or Tristate.UseDefault)
 				{
 					newItems.AddIfNotExists(item);
 				}
@@ -129,7 +129,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public bool AddIfNotExists(T item)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			return Extensions.AddIfNotExists(this, item);
 		}
@@ -142,7 +142,7 @@ namespace dotNetTips.Spargine.Core.Collections
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public bool AddLast(T item)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(item is not null, nameof(item));
+			Validate.TryValidateNullParam(item, nameof(item));
 
 			return Extensions.AddLast(this, item);
 		}

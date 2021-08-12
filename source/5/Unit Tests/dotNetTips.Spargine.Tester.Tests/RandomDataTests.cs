@@ -45,7 +45,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 
 				for (var personCount = 0; personCount < people.Count; personCount++)
 				{
-					newPeople.AddIfNotExists(people[personCount]);
+					_ = newPeople.AddIfNotExists(people[personCount]);
 				}
 
 				Assert.IsTrue(newPeople.Count() == Count);
@@ -570,13 +570,7 @@ namespace dotNetTips.Spargine.Tester.Tests
 				{
 					File.Delete(fileName);
 				}
-				catch (Exception ex) when (ex is ArgumentException ||
-				  ex is ArgumentNullException ||
-				  ex is System.IO.DirectoryNotFoundException ||
-				  ex is IOException ||
-				  ex is NotSupportedException ||
-				  ex is PathTooLongException ||
-				  ex is UnauthorizedAccessException)
+				catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException || ex is System.IO.DirectoryNotFoundException || ex is IOException || ex is NotSupportedException || ex is PathTooLongException || ex is UnauthorizedAccessException)
 				{
 					Trace.WriteLine(ex.GetAllMessages());
 				}

@@ -60,8 +60,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				sb.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
 				sb.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
 
-				Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(person.Key, null));
-				Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(null, person.Value.Email));
+				_ = Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(person.Key, null));
+				_ = Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(null, person.Value.Email));
 			}
 
 			Assert.IsTrue(sb.ToString().Length > 50 * 4);
@@ -75,8 +75,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				pool.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
 				pool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
 
-				Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(person.Key, null));
-				Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(null, person.Value.Email));
+				_ = Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(person.Key, null));
+				_ = Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(null, person.Value.Email));
 			}
 
 			Assert.IsTrue(pool.ToString().Length > 50 * 4);
@@ -124,9 +124,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			sb.AppendValues(", ", values, (person) =>
 			{
-				sb.Append(person.X);
-				sb.Append(ControlChars.Colon);
-				sb.Append(person.Y);
+				_ = sb.Append(person.X);
+				_ = sb.Append(ControlChars.Colon);
+				_ = sb.Append(person.Y);
 			});
 
 			Assert.IsTrue(sb.Length > 50);
@@ -135,9 +135,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			pool.AppendValues(", ", values, (person) =>
 			{
-				pool.Append(person.X);
-				pool.Append(ControlChars.Colon);
-				pool.Append(person.Y);
+				_ = pool.Append(person.X);
+				_ = pool.Append(ControlChars.Colon);
+				_ = pool.Append(person.Y);
 			});
 
 			Assert.IsTrue(pool.Length > 50);

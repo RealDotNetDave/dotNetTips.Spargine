@@ -423,9 +423,10 @@ namespace dotNetTips.Spargine.Core.Properties {
         /// <summary>
         ///   Looks up a localized string similar to UNKNOWN.
         /// </summary>
-        internal static string UserUnkown {
+        internal static string UserUnknown
+		{
             get {
-                return ResourceManager.GetString("UserUnkown", resourceCulture);
+                return ResourceManager.GetString("UserUnknown", resourceCulture);
             }
         }
     }

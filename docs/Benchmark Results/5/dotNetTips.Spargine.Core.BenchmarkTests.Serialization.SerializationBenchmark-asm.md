@@ -1,4 +1,4 @@
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize01()
 ; 			var result = XmlSerialization.Deserialize<PersonProper>(this.XmlTestDataPersonProper);
@@ -28,9 +28,9 @@
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,20AEBE31528
+       mov       rdx,149F6BF1110
        mov       rdx,[rdx]
-       mov       r8,20ADBE355E0
+       mov       r8,149E6BF7DA0
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -51,9 +51,9 @@
        mov       [rbp+0FFE0],rcx
        mov       rdi,rcx
        mov       rsi,rdx
-       mov       r8,20AEBE31028
+       mov       r8,149E6BF3020
        mov       r8,[r8]
-       mov       rdx,20AEBE31570
+       mov       rdx,149F6BF1158
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -127,7 +127,7 @@ M02_L00:
 ; Total bytes of code 280
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize02()
 ; 			var result = XmlSerialization.Deserialize<PersonRecord>(this.XmlTestDataPersonRecord);
@@ -157,9 +157,9 @@ M02_L00:
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,211DB5F3108
+       mov       rdx,147E3771110
        mov       rdx,[rdx]
-       mov       r8,211FB5F59F8
+       mov       r8,147D3775990
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -180,9 +180,9 @@ M02_L00:
        mov       [rbp+0FFE0],rcx
        mov       rdi,rcx
        mov       rsi,rdx
-       mov       r8,211FB5F1028
+       mov       r8,147B3773020
        mov       r8,[r8]
-       mov       rdx,211DB5F3150
+       mov       rdx,147E3771158
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -256,7 +256,7 @@ M02_L00:
 ; Total bytes of code 280
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize02()
 ; 			var result = JsonSerialization.Serialize(this.PersonProper01);
@@ -284,9 +284,9 @@ M02_L00:
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       mov       r8,1D2FAF33020
+       mov       r8,1E5B20E3020
        mov       r8,[r8]
-       mov       rdx,1D2DAF31928
+       mov       rdx,1E5B20E9D08
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
@@ -301,7 +301,7 @@ M02_L00:
 ; Total bytes of code 70
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize03()
 ; 			var result = JsonSerialization.Serialize(this.PersonRecord02);
@@ -329,9 +329,9 @@ M02_L00:
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       mov       r8,225F5FF3020
+       mov       r8,1E23E5D3020
        mov       r8,[r8]
-       mov       rdx,225E5FF5900
+       mov       rdx,1E24E5D1110
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
@@ -346,7 +346,7 @@ M02_L00:
 ; Total bytes of code 70
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize01()
 ; 			var result = XmlSerialization.Serialize(this.PersonProper01);
@@ -383,9 +383,9 @@ M02_L00:
        test      rsi,rsi
        setne     dl
        movzx     edx,dl
-       mov       r9,1D7E81C1028
+       mov       r9,202B6C93020
        mov       r9,[r9]
-       mov       r8,1D7F81C1110
+       mov       r8,202E6C91110
        mov       r8,[r8]
        mov       rcx,offset MD_dotNetTips.Spargine.Core.Validate.TryValidateParam(Boolean, System.String, System.String)
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam[[System.__Canon, System.Private.CoreLib]](Boolean, System.String, System.String)
@@ -402,7 +402,7 @@ M02_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       rcx,rsi
-       call      00007FFADE7E0330
+       call      00007FFA4995F070
        mov       rdx,rax
        mov       rcx,rdi
        xor       r8d,r8d
@@ -418,13 +418,13 @@ M02_L00:
        mov       rcx,[rbp+0FFE8]
        mov       rcx,[rcx+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFA7EF331E8]
+       call      qword ptr [7FF9EA0F31E8]
        mov       rsi,rax
        cmp       qword ptr [rbp+0FFE0],0
        je        short M01_L00
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FFA7EB505F8
-       call      qword ptr [7FFA7EF305F8]
+       mov       r11,7FF9E9D105F8
+       call      qword ptr [7FF9EA0F05F8]
        nop
 M01_L00:
        mov       rcx,[rbp+0FFE8]
@@ -447,8 +447,8 @@ M01_L00:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M01_L01
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FFA7EB505F8
-       call      qword ptr [7FFA7EF305F8]
+       mov       r11,7FF9E9D105F8
+       call      qword ptr [7FF9EA0F05F8]
 M01_L01:
        nop
        add       rsp,40
@@ -479,7 +479,7 @@ M01_L02:
 ; Total bytes of code 372
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.StringToXDocument()
 ; 			var result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
@@ -509,9 +509,9 @@ M01_L02:
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,2438AB41110
+       mov       rdx,18AB49D1110
        mov       rdx,[rdx]
-       mov       r8,243AAB479F0
+       mov       r8,18AA49D7DA0
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -531,9 +531,9 @@ M01_L02:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,243AAB43020
+       mov       r8,18AA49D3020
        mov       r8,[r8]
-       mov       rdx,243AAB495A8
+       mov       rdx,18AA49D95A8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -556,7 +556,7 @@ M01_L02:
        mov       rdx,rsi
        call      System.IO.StringReader..ctor(System.String)
        mov       rcx,rbx
-       mov       rdx,243AAB43020
+       mov       rdx,18AA49D3020
        mov       r8,[rdx]
        mov       rdx,rdi
        xor       r9d,r9d
@@ -570,8 +570,8 @@ M01_L02:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M02_L00
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FFA7EB804D0
-       call      qword ptr [7FFA7EF504D0]
+       mov       r11,7FF9E9D204C0
+       call      qword ptr [7FF9EA0F04C0]
 M02_L00:
        mov       rax,rsi
        lea       rsp,[rbp+0FFE8]
@@ -591,8 +591,8 @@ M02_L00:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M02_L01
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FFA7EB804D0
-       call      qword ptr [7FFA7EF504D0]
+       mov       r11,7FF9E9D204C0
+       call      qword ptr [7FF9EA0F04C0]
 M02_L01:
        nop
        add       rsp,28

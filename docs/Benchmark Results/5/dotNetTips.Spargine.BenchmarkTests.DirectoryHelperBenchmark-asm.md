@@ -1,4 +1,4 @@
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.CopyDeleteDirectory01()
        push      rbp
@@ -9,7 +9,7 @@
        mov       rsi,rcx
        mov       rcx,[rsi+0D8]
        mov       rcx,[rcx+8]
-       mov       rdx,27ACA841B08
+       mov       rdx,2751FEB12F0
        mov       rdx,[rdx]
        call      System.IO.Path.Combine(System.String, System.String)
        mov       [rbp+0FFF0],rax
@@ -58,11 +58,11 @@
 M01_L00:
        test      rcx,rcx
        je        short M01_L01
-       mov       rcx,27ACA841230
+       mov       rcx,2750FEB3228
        mov       rsi,[rcx]
        jmp       short M01_L02
 M01_L01:
-       mov       rcx,27ACA841238
+       mov       rcx,2750FEB3230
        mov       rsi,[rcx]
 M01_L02:
        mov       rcx,offset MT_System.ArgumentNullException
@@ -90,15 +90,15 @@ M01_L02:
        mov       rdi,rcx
        mov       rsi,rdx
        mov       ebx,r8d
-       mov       r8,27AEA843020
+       mov       r8,2752FEB1028
        mov       r8,[r8]
-       mov       rdx,27ACA841B10
+       mov       rdx,2751FEB12F8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,27AEA843020
+       mov       r8,2752FEB1028
        mov       r8,[r8]
-       mov       rdx,27ACA841B18
+       mov       rdx,2751FEB1300
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -142,7 +142,8 @@ M02_L01:
        mov       r8d,r13d
        mov       rcx,r12
        call      System.IO.FileInfo.CopyTo(System.String, Boolean)
-       inc       r14d
+       add       r14d,1
+       jo        short M02_L05
        cmp       r15d,r14d
        jg        short M02_L01
 M02_L02:
@@ -163,7 +164,8 @@ M02_L03:
        mov       r8d,ebx
        mov       rcx,rbp
        call      dotNetTips.Spargine.IO.DirectoryHelper.CopyDirectory(System.String, System.String, Boolean)
-       inc       r12d
+       add       r12d,1
+       jo        short M02_L05
        cmp       r13d,r12d
        jg        short M02_L03
 M02_L04:
@@ -177,7 +179,10 @@ M02_L04:
        pop       r14
        pop       r15
        ret
-; Total bytes of code 332
+M02_L05:
+       call      CORINFO_HELP_OVERFLOW
+       int       3
+; Total bytes of code 344
 ```
 ```assembly
 ; dotNetTips.Spargine.IO.DirectoryHelper.DeleteDirectory(System.String, Int32)
@@ -188,9 +193,9 @@ M02_L04:
        mov       [rbp+0FFF0],rsp
        mov       [rbp+18],edx
        mov       rsi,rcx
-       mov       r8,27AEA843020
+       mov       r8,2752FEB1028
        mov       r8,[r8]
-       mov       rdx,27ACA841798
+       mov       rdx,2750FEB3790
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -223,6 +228,8 @@ M03_L02:
        pop       rsi
        pop       rbp
        ret
+       call      CORINFO_HELP_OVERFLOW
+       int       3
        push      rbp
        push      rsi
        sub       rsp,28
@@ -281,10 +288,10 @@ M03_L06:
        lea       rbp,[rbp+30]
        call      CORINFO_HELP_RETHROW
        int       3
-; Total bytes of code 300
+; Total bytes of code 306
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.CopyMoveDirectory01()
        push      rdi
@@ -293,7 +300,7 @@ M03_L06:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+0D0]
-       mov       rax,2362B8612F0
+       mov       rax,2BB1BEC96D0
        mov       rbx,[rax]
        call      dotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
        mov       rdx,rax
@@ -311,10 +318,10 @@ M03_L06:
        mov       rsi,[rax+10]
        test      rsi,rsi
        jne       short M00_L00
-       mov       rax,2361B863020
+       mov       rax,2BB1BEC3020
        mov       rsi,[rax]
 M00_L00:
-       mov       rax,2362B8612F0
+       mov       rax,2BB1BEC96D0
        mov       rbx,[rax]
        call      dotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
        mov       rdx,rax
@@ -341,9 +348,9 @@ M00_L00:
        mov       [rsp+30],rax
        lea       rcx,[rsp+28]
        call      System.Guid.NewGuid()
-       mov       rdx,2363B861220
+       mov       rdx,2BAFBEC1220
        mov       rdx,[rdx]
-       mov       r8,2361B861508
+       mov       r8,2BB1BEC1508
        mov       r8,[r8]
        lea       rcx,[rsp+28]
        call      System.Guid.ToString(System.String, System.IFormatProvider)
@@ -371,7 +378,7 @@ M02_L00:
        cmp       dword ptr [rsi+8],0
        ja        short M02_L02
 M02_L01:
-       mov       rax,2361B863020
+       mov       rax,2BB1BEC3020
        mov       rax,[rax]
        add       rsp,28
        pop       rbx
@@ -439,11 +446,11 @@ M02_L05:
 M03_L00:
        test      rcx,rcx
        je        short M03_L01
-       mov       rcx,2363B861230
+       mov       rcx,2BAFBEC1230
        mov       rsi,[rcx]
        jmp       short M03_L02
 M03_L01:
-       mov       rcx,2363B861238
+       mov       rcx,2BAFBEC1238
        mov       rsi,[rcx]
 M03_L02:
        mov       rcx,offset MT_System.ArgumentNullException
@@ -471,15 +478,15 @@ M03_L02:
        mov       rdi,rcx
        mov       rsi,rdx
        mov       ebx,r8d
-       mov       r8,2361B863020
+       mov       r8,2BB1BEC3020
        mov       r8,[r8]
-       mov       rdx,2362B8612F8
+       mov       rdx,2BB1BEC96D8
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,2361B863020
+       mov       r8,2BB1BEC3020
        mov       r8,[r8]
-       mov       rdx,2362B861300
+       mov       rdx,2BB1BEC96E0
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -523,7 +530,8 @@ M04_L01:
        mov       r8d,r13d
        mov       rcx,r12
        call      System.IO.FileInfo.CopyTo(System.String, Boolean)
-       inc       r14d
+       add       r14d,1
+       jo        short M04_L05
        cmp       r15d,r14d
        jg        short M04_L01
 M04_L02:
@@ -544,7 +552,8 @@ M04_L03:
        mov       r8d,ebx
        mov       rcx,rbp
        call      dotNetTips.Spargine.IO.DirectoryHelper.CopyDirectory(System.String, System.String, Boolean)
-       inc       r12d
+       add       r12d,1
+       jo        short M04_L05
        cmp       r13d,r12d
        jg        short M04_L03
 M04_L04:
@@ -558,7 +567,10 @@ M04_L04:
        pop       r14
        pop       r15
        ret
-; Total bytes of code 332
+M04_L05:
+       call      CORINFO_HELP_OVERFLOW
+       int       3
+; Total bytes of code 344
 ```
 ```assembly
 ; dotNetTips.Spargine.IO.DirectoryHelper.MoveDirectory(System.String, System.String, Int32)
@@ -571,24 +583,24 @@ M04_L04:
        mov       [rbp+20],r8d
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,2361B863020
+       mov       r8,2BB1BEC3020
        mov       r8,[r8]
-       mov       rdx,2362B861348
+       mov       rdx,2BB1BEC9728
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
-       mov       r8,2361B863020
+       mov       r8,2BB1BEC3020
        mov       r8,[r8]
-       mov       rdx,2362B861350
+       mov       rdx,2BB1BEC9730
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
        mov       rcx,rsi
        call      System.IO.Directory.Exists(System.String)
        mov       edx,eax
-       mov       r9,2361B863020
+       mov       r9,2BB1BEC3020
        mov       r9,[r9]
-       mov       r8,2362B861348
+       mov       r8,2BB1BEC9728
        mov       r8,[r8]
        mov       rcx,offset MD_dotNetTips.Spargine.Core.Validate.TryValidateParam(Boolean, System.String, System.String)
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam[[System.__Canon, System.Private.CoreLib]](Boolean, System.String, System.String)
@@ -609,6 +621,8 @@ M05_L01:
        pop       rdi
        pop       rbp
        ret
+       call      CORINFO_HELP_OVERFLOW
+       int       3
        push      rbp
        push      rdi
        push      rsi
@@ -673,40 +687,128 @@ M05_L05:
        lea       rbp,[rbp+40]
        call      CORINFO_HELP_RETHROW
        int       3
-; Total bytes of code 360
+; Total bytes of code 366
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
-; BenchmarkDotNet.Autogenerated.Runnable_0.__ForDisassemblyDiagnoser__()
-       push      rbp
+; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.AppDataFolder01()
+       push      rsi
        sub       rsp,20
-       lea       rbp,[rsp+20]
-       mov       [rbp+10],rcx
-;             if (NotEleven == 11)
-;             ^^^^^^^^^^^^^^^^^^^^
-       mov       rcx,[rbp+10]
-       cmp       dword ptr [rcx+110],0B
-       jne       short M00_L00
-;                 AppDataFolder01();
-;                 ^^^^^^^^^^^^^^^^^^
-       mov       rcx,[rbp+10]
-       call      00007FFA7E9F3158
-M00_L00:
+       mov       rsi,rcx
+       call      dotNetTips.Spargine.IO.DirectoryHelper.AppDataFolder()
+       mov       rcx,[rsi+10]
+       cmp       [rcx],ecx
+       add       rcx,8
+       mov       rdx,rax
+       call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
-       lea       rsp,[rbp]
+       add       rsp,20
+       pop       rsi
+       ret
+; Total bytes of code 38
+```
+```assembly
+; dotNetTips.Spargine.IO.DirectoryHelper.AppDataFolder()
+       push      rbp
+       push      r15
+       push      r14
+       push      r13
+       push      r12
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,88
+       lea       rbp,[rsp+0C0]
+       xor       ecx,ecx
+       mov       [rbp+0FFC0],rcx
+       mov       [rbp+0FFB8],rcx
+       lea       rcx,[rbp+0FF70]
+       mov       rdx,r10
+       call      CORINFO_HELP_INIT_PINVOKE_FRAME
+       mov       rsi,rax
+       mov       rax,rsp
+       mov       [rbp+0FF90],rax
+       mov       rax,rbp
+       mov       [rbp+0FFA0],rax
+       call      System.Runtime.InteropServices.OSPlatform.get_Windows()
+       mov       rcx,rax
+       call      System.OperatingSystem.IsOSPlatform(System.String)
+       test      al,al
+       jne       short M01_L00
+       mov       rcx,23B39139EE8
+       mov       rcx,[rcx]
+       jmp       short M01_L01
+M01_L00:
+       mov       rcx,23B39139EF0
+       mov       rcx,[rcx]
+M01_L01:
+       call      System.Environment.GetEnvironmentVariable(System.String)
+       mov       [rbp+0FFB0],rax
+       cmp       byte ptr [7FF9EA0C09BD],0
+       je        short M01_L02
+       mov       rdi,[rbp+0FFB0]
+       xor       edx,edx
+       jmp       short M01_L05
+M01_L02:
+       xor       ecx,ecx
+       mov       [rbp+0FFC0],rcx
+       lea       rcx,[rbp+0FFC0]
+       mov       rax,offset MD_System.Reflection.Assembly.GetEntryAssemblyNative(System.Runtime.CompilerServices.ObjectHandleOnStack)
+       mov       [rbp+0FF80],rax
+       lea       rax,[M01_L03]
+       mov       [rbp+0FF98],rax
+       lea       rax,[rbp+0FF70]
+       mov       [rsi+10],rax
+       mov       byte ptr [rsi+0C],0
+       call      qword ptr [7FF9EA0C1008]
+M01_L03:
+       mov       byte ptr [rsi+0C],1
+       cmp       dword ptr [7FF9EA0BB05C],0
+       je        short M01_L04
+       call      qword ptr [7FF9EA0BD368]
+M01_L04:
+       mov       rdx,[rbp+0FF78]
+       mov       [rsi+10],rdx
+       mov       rdx,[rbp+0FFC0]
+       xor       ecx,ecx
+       mov       [rbp+0FFC0],rcx
+       mov       rdi,[rbp+0FFB0]
+M01_L05:
+       mov       rcx,offset MD_System.Reflection.CustomAttributeExtensions.GetCustomAttributes(System.Reflection.Assembly)
+       call      System.Reflection.CustomAttributeExtensions.GetCustomAttributes[[System.__Canon, System.Private.CoreLib]](System.Reflection.Assembly)
+       mov       rdx,rax
+       lea       r8,[rbp+0FFB8]
+       mov       rcx,offset MD_System.Linq.Enumerable.TryGetFirst(System.Collections.Generic.IEnumerable`1<!!0>, Boolean ByRef)
+       call      System.Linq.Enumerable.TryGetFirst[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Boolean ByRef)
+       mov       rcx,[rax+8]
+       cmp       [rcx],ecx
+       mov       edx,3
+       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+       mov       rdx,rax
+       mov       rcx,rdi
+       call      System.IO.Path.Combine(System.String, System.String)
+       nop
+       lea       rsp,[rbp+0FFC8]
+       pop       rbx
+       pop       rsi
+       pop       rdi
+       pop       r12
+       pop       r13
+       pop       r14
+       pop       r15
        pop       rbp
        ret
-; Total bytes of code 43
+; Total bytes of code 322
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.DeleteDirectory01()
        sub       rsp,28
        mov       rcx,[rcx+0D8]
        mov       rcx,[rcx+8]
-       mov       rdx,29CDB5F5AE0
+       mov       rdx,1E78D1112F0
        mov       rdx,[rdx]
        call      System.IO.Path.Combine(System.String, System.String)
        mov       rcx,rax
@@ -731,11 +833,11 @@ M00_L00:
 M01_L00:
        test      rcx,rcx
        je        short M01_L01
-       mov       rcx,29CDB5F5208
+       mov       rcx,1E79D117200
        mov       rsi,[rcx]
        jmp       short M01_L02
 M01_L01:
-       mov       rcx,29CDB5F5210
+       mov       rcx,1E79D117208
        mov       rsi,[rcx]
 M01_L02:
        mov       rcx,offset MT_System.ArgumentNullException
@@ -758,9 +860,9 @@ M01_L02:
        mov       [rbp+0FFF0],rsp
        mov       [rbp+18],edx
        mov       rsi,rcx
-       mov       r8,29CEB5F3020
+       mov       r8,1E77D113020
        mov       r8,[r8]
-       mov       rdx,29CDB5F5770
+       mov       rdx,1E79D117768
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -793,6 +895,8 @@ M02_L02:
        pop       rsi
        pop       rbp
        ret
+       call      CORINFO_HELP_OVERFLOW
+       int       3
        push      rbp
        push      rsi
        sub       rsp,28
@@ -851,10 +955,10 @@ M02_L06:
        lea       rbp,[rbp+30]
        call      CORINFO_HELP_RETHROW
        int       3
-; Total bytes of code 300
+; Total bytes of code 306
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.LoadOneDriveFolders01()
        push      rsi
@@ -889,24 +993,24 @@ M02_L06:
        mov       rcx,rax
        call      System.OperatingSystem.IsOSPlatform(System.String)
        test      al,al
-       je        near ptr M01_L07
+       je        near ptr M01_L08
        mov       rcx,offset MT_System.Collections.Generic.List`1[[dotNetTips.Spargine.IO.OneDriveFolder, dotNetTips.Spargine.5]]
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
-       mov       rcx,7FFA7E9C0020
+       mov       rcx,7FF9E9DD0020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,29003FA2DF8
+       mov       rdx,1C1F0DA2DF8
        mov       rdx,[rdx]
        lea       rcx,[rsi+8]
        call      CORINFO_HELP_ASSIGN_REF
-       mov       rcx,29013FA72C0
+       mov       rcx,1C1F0DA32E8
        mov       rcx,[rcx]
        mov       edx,80000001
        call      dotNetTips.Spargine.Win32.RegistryHelper.GetRegistryKey(System.String, Microsoft.Win32.RegistryHive)
        test      rax,rax
        je        near ptr M01_L06
-       mov       rdx,29013FA72C8
+       mov       rdx,1C1F0DA32F0
        mov       rdx,[rdx]
        mov       rcx,rax
        call      dotNetTips.Spargine.Extensions.RegistryExtensions.GetSubKey(Microsoft.Win32.RegistryKey, System.String)
@@ -928,7 +1032,7 @@ M01_L00:
        mov       rcx,rdi
        call      Microsoft.Win32.RegistryKey.GetSubKeyNames()
        cmp       ebx,[rax+8]
-       jae       near ptr M01_L08
+       jae       near ptr M01_L09
        movsxd    rcx,ebx
        mov       rbp,[rax+rcx*8+10]
        mov       rcx,rbp
@@ -947,7 +1051,7 @@ M01_L00:
        mov       r14,rax
        mov       rcx,r14
        call      dotNetTips.Spargine.Extensions.ObjectExtensions.InitializeFields(System.Object)
-       mov       r8,29013FA72D0
+       mov       r8,1C1F0DA32F8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -972,7 +1076,7 @@ M01_L00:
        lea       rcx,[r14+10]
        mov       rdx,r12
        call      CORINFO_HELP_ASSIGN_REF
-       mov       r8,29013FA72D8
+       mov       r8,1C1F0DA3300
        mov       r8,[r8]
        mov       rdx,rbp
        mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -983,7 +1087,7 @@ M01_L00:
        mov       rdx,rax
        call      CORINFO_HELP_ASSIGN_REF
 M01_L01:
-       mov       r8,29013FA72E0
+       mov       r8,1C1F0DA3308
        mov       r8,[r8]
        mov       rdx,rbp
        mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -999,7 +1103,7 @@ M01_L01:
        call      CORINFO_HELP_ASSIGN_REF
        jmp       short M01_L03
 M01_L02:
-       mov       r8,29023FA1028
+       mov       r8,1C200DA1028
        mov       r8,[r8]
        mov       rdx,rbp
        mov       rcx,offset MD_dotNetTips.Spargine.Extensions.RegistryExtensions.GetValue(Microsoft.Win32.RegistryKey, System.String)
@@ -1030,7 +1134,8 @@ M01_L04:
        mov       rdx,r14
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M01_L05:
-       inc       ebx
+       add       ebx,1
+       jo        short M01_L07
        mov       rcx,rdi
        call      Microsoft.Win32.RegistryKey.GetSubKeyNames()
        cmp       [rax+8],ebx
@@ -1050,6 +1155,8 @@ M01_L06:
        pop       r15
        ret
 M01_L07:
+       call      CORINFO_HELP_OVERFLOW
+M01_L08:
        mov       rcx,offset MT_System.PlatformNotSupportedException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -1058,10 +1165,10 @@ M01_L07:
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
        int       3
-M01_L08:
+M01_L09:
        call      CORINFO_HELP_RNGCHKFAIL
        int       3
-; Total bytes of code 737
+; Total bytes of code 745
 ```
 ```assembly
 ; BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[System.Collections.Immutable.ImmutableArray`1[[System.__Canon, System.Private.CoreLib]], System.Collections.Immutable]](System.Collections.Immutable.ImmutableArray`1<System.__Canon> ByRef)
@@ -1069,7 +1176,7 @@ M01_L08:
 ; Total bytes of code 1
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.SafeDirectorySearch01()
        push      rdi
@@ -1090,7 +1197,7 @@ M01_L08:
        mov       rcx,rdi
        xor       r9d,r9d
        call      System.IO.DirectoryInfo.Init(System.String, System.String, System.String, Boolean)
-       mov       rdx,2052FAF76D8
+       mov       rdx,28FB7BC3700
        mov       rdx,[rdx]
        mov       rcx,rdi
        xor       r8d,r8d
@@ -1160,7 +1267,7 @@ M01_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8A4020
+       mov       rdx,7FF9E9CB4020
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -1172,14 +1279,14 @@ M01_L02:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,50EF
-       mov       rdx,7FFA7E8A4020
+       mov       rdx,7FF9E9CB4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
        call      System.SR.GetResourceString(System.String, System.String)
        mov       rdi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8A4020
+       mov       rdx,7FF9E9CB4020
        call      CORINFO_HELP_STRCNS
        mov       r8,rax
        mov       rdx,rdi
@@ -1192,14 +1299,14 @@ M01_L03:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,78A7
-       mov       rdx,7FFA7E8A4020
+       mov       rdx,7FF9E9CB4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
        call      System.SR.GetResourceString(System.String, System.String)
        mov       rdi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8A4020
+       mov       rdx,7FF9E9CB4020
        call      CORINFO_HELP_STRCNS
        mov       r8,rax
        mov       rdx,rdi
@@ -1331,7 +1438,7 @@ M02_L12:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,6DB
-       mov       rdx,7FFA7EB9BC98
+       mov       rdx,7FF9E9F9D5C8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -1353,25 +1460,25 @@ M02_L12:
        mov       [rbp+10],rcx
        mov       [rbp+18],rdx
        mov       [rbp+20],r8d
-       mov       r8,2052FAF1028
+       mov       r8,28FB7BC3020
        mov       r8,[r8]
-       mov       rdx,2052FAF76E0
+       mov       rdx,28FB7BC3708
        mov       rdx,[rdx]
        mov       rcx,[rbp+10]
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.IO.DirectoryInfo, System.String, System.String)
-       mov       r8,2052FAF1028
+       mov       r8,28FB7BC3020
        mov       r8,[r8]
-       mov       rdx,2052FAF76E8
+       mov       rdx,28FB7BC3710
        mov       rdx,[rdx]
        mov       rcx,[rbp+18]
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.IO.DirectoryInfo, System.IO.FileSystem]]
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
-       mov       rcx,7FFA7E9A0020
+       mov       rcx,7FF9E9DB0020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,2050FAF2DF8
+       mov       rdx,28FB7BC2DF8
        mov       rdx,[rdx]
        lea       rcx,[rsi+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1441,7 +1548,8 @@ M03_L04:
        nop
 M03_L05:
        mov       eax,[rbp+0FFF4]
-       inc       eax
+       add       eax,1
+       jo        short M03_L07
        mov       [rbp+0FFF4],eax
 M03_L06:
        mov       rcx,[rbp+10]
@@ -1469,6 +1577,9 @@ M03_L06:
        pop       rsi
        pop       rbp
        ret
+M03_L07:
+       call      CORINFO_HELP_OVERFLOW
+       int       3
        push      rbp
        push      rsi
        sub       rsp,38
@@ -1479,44 +1590,44 @@ M03_L06:
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        mov       rdx,rax
        test      rdx,rdx
-       jne       short M03_L07
+       jne       short M03_L08
        xor       eax,eax
-       jmp       near ptr M03_L10
-M03_L07:
+       jmp       near ptr M03_L11
+M03_L08:
        mov       [rbp+0FFE0],rdx
        mov       rcx,offset MT_System.ArgumentException
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        test      rax,rax
-       jne       short M03_L08
+       jne       short M03_L09
        mov       rdx,[rbp+0FFE0]
        mov       rcx,offset MT_System.ArgumentNullException
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        test      rax,rax
-       jne       short M03_L08
+       jne       short M03_L09
        mov       rdx,[rbp+0FFE0]
        mov       rcx,offset MT_System.ArgumentOutOfRangeException
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        test      rax,rax
-       jne       short M03_L08
+       jne       short M03_L09
        mov       rdx,[rbp+0FFE0]
        mov       rcx,offset MT_System.IO.DirectoryNotFoundException
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        test      rax,rax
-       jne       short M03_L08
+       jne       short M03_L09
        mov       rdx,[rbp+0FFE0]
        mov       rcx,offset MT_System.UnauthorizedAccessException
        call      CORINFO_HELP_ISINSTANCEOFCLASS
        test      rax,rax
        setne     al
        movzx     eax,al
-       jmp       short M03_L09
-M03_L08:
-       mov       eax,1
+       jmp       short M03_L10
 M03_L09:
+       mov       eax,1
+M03_L10:
        test      eax,eax
        setne     al
        movzx     eax,al
-M03_L10:
+M03_L11:
        add       rsp,38
        pop       rsi
        pop       rbp
@@ -1534,15 +1645,15 @@ M03_L10:
        call      qword ptr [rax+28]
        mov       rcx,rax
        call      System.Diagnostics.Trace.WriteLine(System.String)
-       lea       rax,[7FFA7EC6F0BD]
+       lea       rax,[7FF9EA07F19D]
        add       rsp,38
        pop       rsi
        pop       rbp
        ret
-; Total bytes of code 764
+; Total bytes of code 773
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.SafeFileSearch01()
        push      rdi
@@ -1563,7 +1674,7 @@ M03_L10:
        mov       rcx,rdi
        xor       r9d,r9d
        call      System.IO.DirectoryInfo.Init(System.String, System.String, System.String, Boolean)
-       mov       rdx,1F55A2232E8
+       mov       rdx,1D6326F1B08
        mov       rdx,[rdx]
        mov       rcx,rdi
        xor       r8d,r8d
@@ -1633,7 +1744,7 @@ M01_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8C4020
+       mov       rdx,7FF9E9CE4020
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -1645,14 +1756,14 @@ M01_L02:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,50EF
-       mov       rdx,7FFA7E8C4020
+       mov       rdx,7FF9E9CE4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
        call      System.SR.GetResourceString(System.String, System.String)
        mov       rdi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8C4020
+       mov       rdx,7FF9E9CE4020
        call      CORINFO_HELP_STRCNS
        mov       r8,rax
        mov       rdx,rdi
@@ -1665,14 +1776,14 @@ M01_L03:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,78A7
-       mov       rdx,7FFA7E8C4020
+       mov       rdx,7FF9E9CE4020
        call      CORINFO_HELP_STRCNS
        mov       rcx,rax
        xor       edx,edx
        call      System.SR.GetResourceString(System.String, System.String)
        mov       rdi,rax
        mov       ecx,1BA97
-       mov       rdx,7FFA7E8C4020
+       mov       rdx,7FF9E9CE4020
        call      CORINFO_HELP_STRCNS
        mov       r8,rax
        mov       rdx,rdi
@@ -1804,7 +1915,7 @@ M02_L12:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,6DB
-       mov       rdx,7FFA7EBBBC98
+       mov       rdx,7FF9E9FCD5C8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -1827,7 +1938,7 @@ M02_L12:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.IO.DirectoryInfo, System.IO.FileSystem]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1F55A222DF8
+       mov       rdx,1D6426F2DF8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1858,7 +1969,7 @@ M03_L01:
 ; Total bytes of code 123
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark.SetFileAttributesToNormal01()
        mov       rcx,[rcx+0D0]
@@ -1871,9 +1982,9 @@ M03_L01:
        push      rsi
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,1C82E553020
+       mov       r8,25073F93020
        mov       r8,[r8]
-       mov       rdx,1C83E551798
+       mov       rdx,25053F91798
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
@@ -1886,11 +1997,12 @@ M01_L00:
        mov       rcx,rsi
        call      System.IO.Directory.GetDirectories(System.String)
        cmp       edi,[rax+8]
-       jae       short M01_L04
+       jae       short M01_L05
        movsxd    rcx,edi
        mov       rcx,[rax+rcx*8+10]
        call      dotNetTips.Spargine.IO.DirectoryHelper.SetFileAttributesToNormal(System.String)
-       inc       edi
+       add       edi,1
+       jo        short M01_L04
        mov       rcx,rsi
        call      System.IO.Directory.GetDirectories(System.String)
        cmp       [rax+8],edi
@@ -1905,14 +2017,15 @@ M01_L02:
        mov       rcx,rsi
        call      System.IO.Directory.GetFiles(System.String)
        cmp       edi,[rax+8]
-       jae       short M01_L04
+       jae       short M01_L05
        movsxd    rcx,edi
        mov       rcx,[rax+rcx*8+10]
        call      System.IO.Path.GetFullPath(System.String)
        mov       rcx,rax
        mov       edx,80
        call      System.IO.FileSystem.SetAttributes(System.String, System.IO.FileAttributes)
-       inc       edi
+       add       edi,1
+       jo        short M01_L04
        mov       rcx,rsi
        call      System.IO.Directory.GetFiles(System.String)
        cmp       [rax+8],edi
@@ -1923,8 +2036,11 @@ M01_L03:
        pop       rdi
        ret
 M01_L04:
+       call      CORINFO_HELP_OVERFLOW
+       int       3
+M01_L05:
        call      CORINFO_HELP_RNGCHKFAIL
        int       3
-; Total bytes of code 183
+; Total bytes of code 195
 ```
 

@@ -57,8 +57,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Decimal));
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Hexadecimal));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Decimal));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Hexadecimal));
 
 		}
 
@@ -111,7 +111,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 		}
 
 		[TestMethod]
@@ -151,7 +151,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
 		}
 
@@ -192,7 +192,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 4);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 		}
 
 		[TestMethod]
@@ -232,7 +232,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
 		}
 
@@ -273,7 +273,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
 		}
 
@@ -314,7 +314,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
-			Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
 		}
 	}

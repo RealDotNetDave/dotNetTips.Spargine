@@ -30,11 +30,6 @@ namespace dotNetTips.Spargine.Cache
 		private const int Timeout = 20;
 
 		/// <summary>
-		/// The instance
-		/// </summary>
-		private static readonly InMemoryCache _instance = new();
-
-		/// <summary>
 		/// Prevents a default instance of the <see cref="InMemoryCache" /> class from being created.
 		/// Default timeout is 20 minutes.
 		/// </summary>
@@ -47,13 +42,7 @@ namespace dotNetTips.Spargine.Cache
 		/// Gets the instance.
 		/// </summary>
 		/// <value>The instance.</value>
-		public static InMemoryCache Instance
-		{
-			get
-			{
-				return _instance;
-			}
-		}
+		public static InMemoryCache Instance { get; } = new();
 
 		/// <summary>
 		/// Gets or sets (private) the cache.
@@ -65,7 +54,7 @@ namespace dotNetTips.Spargine.Cache
 		/// Gets the count.
 		/// </summary>
 		/// <value>The count.</value>
-		public int Count => _instance.Cache.Count;
+		public int Count => Instance.Cache.Count;
 
 		/// <summary>
 		/// Adds item to the cache.
@@ -80,7 +69,7 @@ namespace dotNetTips.Spargine.Cache
 			Validate.TryValidateParam(key, nameof(key));
 			Validate.TryValidateNullParam(item, nameof(item));
 
-			this.Cache.Set(key, item);
+			_ = this.Cache.Set(key, item);
 		}
 
 		/// <summary>
@@ -94,7 +83,7 @@ namespace dotNetTips.Spargine.Cache
 		{
 			Validate.TryValidateParam(key, nameof(key));
 
-			this.Cache.TryGetValue<T>(key, out var item);
+			_ = this.Cache.TryGetValue<T>(key, out var item);
 
 			return item;
 		}

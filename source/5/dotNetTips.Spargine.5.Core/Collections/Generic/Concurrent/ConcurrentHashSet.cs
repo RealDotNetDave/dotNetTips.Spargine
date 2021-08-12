@@ -781,7 +781,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		{
 			collection.ToList().ForEach(item =>
 			{
-				this.AddInternal(item, this._comparer.GetHashCode(item), false);
+				_ = this.AddInternal(item, this._comparer.GetHashCode(item), false);
 			});
 
 			if (this._budget == 0)

@@ -1,16 +1,16 @@
 {noformat}
 
-BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.985 (20H2/October2020Update)
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
 Unknown processor
-.NET SDK=5.0.300
-  [Host]     : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-  Job-PVYZXO : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+.NET SDK=6.0.100-preview.7.21379.14
+  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  Job-DBSZBQ : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  Categories=AssemblyExtensions  
 
 {noformat}
-||          Method ||      Mean ||   Error ||  StdDev || StdErr ||       Min ||        Q1 ||    Median ||        Q3 ||       Max ||       Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline || Gen 0 ||Gen 1 ||Gen 2 ||Allocated ||Code Size ||
-| *GetAllInterfaces* | *1,860.4 ns* |  *8.85 ns* |  *8.28 ns* | *2.14 ns* | *1,844.7 ns* | *1,854.5 ns* | *1,862.1 ns* | *1,868.0 ns* | *1,872.4 ns* |   *537,511.6* |       *8.850 ns* |      *15.00* |    *1.767* |  *2.000* |  *-0.3322* |    *3* |            *** |       *No* | *0.0324* |     *-* |     *-* |     *312 B* |     *256 B* |
-|      *GetAllTypes* | *1,263.8 ns* | *12.81 ns* | *11.99 ns* | *3.09 ns* | *1,238.1 ns* | *1,256.8 ns* | *1,266.5 ns* | *1,269.9 ns* | *1,283.8 ns* |   *791,275.3* |      *12.814 ns* |      *15.00* |    *2.431* |  *2.000* |  *-0.4089* |    *2* |            *** |       *No* | *0.0248* |     *-* |     *-* |     *240 B* |     *263 B* |
-|     *GetInstances* |   *708.9 ns* |  *5.40 ns* |  *5.05 ns* | *1.30 ns* |   *700.0 ns* |   *706.6 ns* |   *708.4 ns* |   *712.6 ns* |   *718.4 ns* | *1,410,682.2* |       *5.403 ns* |      *15.00* |    *2.118* |  *2.000* |   *0.0238* |    *1* |            *** |       *No* | *0.0057* |     *-* |     *-* |      *56 B* |     *199 B* |
+||          Method ||      Mean ||   Error ||  StdDev || StdErr ||       Min ||        Q1 ||    Median ||        Q3 ||       Max ||       Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline || Gen 0 ||Code Size ||Allocated ||
+| *GetAllInterfaces* | *2,031.6 ns* | *12.29 ns* | *10.26 ns* | *2.85 ns* | *2,014.2 ns* | *2,024.7 ns* | *2,027.2 ns* | *2,041.6 ns* | *2,048.9 ns* |   *492,228.7* |      *12.286 ns* |      *13.00* |    *1.626* |  *2.000* |   *0.1087* |    *3* |            *** |       *No* | *0.0305* |     *256 B* |     *312 B* |
+|      *GetAllTypes* | *1,368.2 ns* |  *5.68 ns* |  *5.31 ns* | *1.37 ns* | *1,357.8 ns* | *1,363.4 ns* | *1,370.8 ns* | *1,372.2 ns* | *1,375.3 ns* |   *730,888.0* |       *5.675 ns* |      *15.00* |    *1.760* |  *2.000* |  *-0.5069* |    *2* |            *** |       *No* | *0.0248* |     *263 B* |     *240 B* |
+|     *GetInstances* |   *737.8 ns* |  *3.81 ns* |  *3.37 ns* | *0.90 ns* |   *731.6 ns* |   *735.6 ns* |   *738.2 ns* |   *738.8 ns* |   *744.5 ns* | *1,355,404.1* |       *3.807 ns* |      *14.00* |    *2.443* |  *2.000* |   *0.1092* |    *1* |            *** |       *No* | *0.0057* |     *199 B* |      *56 B* |

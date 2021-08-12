@@ -1,4 +1,4 @@
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetDescription01()
 ; 			var result = this._testEnum.GetDescription();
@@ -31,14 +31,14 @@
        push      rsi
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,242E9061028
+       mov       r8,1D41E2B1028
        mov       r8,[r8]
-       mov       rdx,242D90617B0
+       mov       rdx,1D3FE2B37A8
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,rsi
-       call      00007FFADE7E0330
+       call      00007FFA4995F070
        mov       rdi,rax
        mov       rcx,rsi
        mov       rax,[rsi]
@@ -48,7 +48,7 @@
        mov       rcx,rdi
        mov       r8d,1C
        cmp       [rcx],ecx
-       call      qword ptr [7FFA7EF449A0]
+       call      qword ptr [7FF9EA0F49A0]
        mov       rdi,rax
        mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
@@ -89,7 +89,7 @@ M01_L01:
 ; Total bytes of code 207
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetItems01()
 ; 			var result = this._testEnum.GetItems();
@@ -131,24 +131,24 @@ M01_L01:
        xor       eax,eax
        mov       [rsp+38],rax
        mov       rsi,rcx
-       mov       r8,20914D03020
+       mov       r8,15371E03020
        mov       r8,[r8]
-       mov       rdx,20914D03520
+       mov       rdx,15361E01110
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FFA7EC50020
+       mov       rcx,7FF9E9DF0020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,20934D06CA8
+       mov       rdx,15371E090B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
-       call      00007FFADE7E0330
+       call      00007FFA4995F070
        mov       rsi,rax
        mov       rcx,rsi
        call      System.Enum.GetNames(System.Type)

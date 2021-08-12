@@ -136,12 +136,12 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			return ex is NullReferenceException ||
-				ex is StackOverflowException ||
-				ex is OutOfMemoryException ||
-				ex is ThreadAbortException ||
-				ex is IndexOutOfRangeException ||
-				ex is AccessViolationException;
+			return ex is NullReferenceException or
+				StackOverflowException or
+				OutOfMemoryException or
+				ThreadAbortException or
+				IndexOutOfRangeException or
+				AccessViolationException;
 		}
 
 		/// <summary>

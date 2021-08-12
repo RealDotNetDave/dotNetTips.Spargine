@@ -420,7 +420,7 @@ namespace dotNetTips.Spargine.Extensions
 			   {
 				   foreach (var item in list)
 				   {
-					   collection.TryAdd(item);
+					   _ = collection.TryAdd(item);
 				   }
 
 				   collection.CompleteAdding();
@@ -466,7 +466,7 @@ namespace dotNetTips.Spargine.Extensions
 			list.ToList()
 				.ForEach(item =>
 				{
-					sb.Append($"{item}{delimiter.ToString(CultureInfo.CurrentCulture)}");
+					_ = sb.Append($"{item}{delimiter.ToString(CultureInfo.CurrentCulture)}");
 				});
 
 			return sb.ToString(0, sb.ToString().ToTrimmed().Length - 1);

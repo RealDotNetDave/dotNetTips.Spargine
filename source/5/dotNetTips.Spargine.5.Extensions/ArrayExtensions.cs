@@ -18,7 +18,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using dotNetTips.Spargine.Core;
-using Microsoft.Extensions.Primitives;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
@@ -227,7 +226,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			for (var byteCount = 0; byteCount < array.Length; byteCount++)
 			{
-				sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString();
@@ -247,7 +246,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			for (var byteCount = 0; byteCount < array.Length; byteCount++)
 			{
-				sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString();
@@ -397,9 +396,9 @@ namespace dotNetTips.Spargine.Extensions
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(records.IsReadOnly == false, nameof(records));
 
-			var test = records.SingleOrDefault(p => p.Id.Equals(item.Id));
+			_ = records.SingleOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
-			var currentItem = records.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+			var currentItem = records.Where(p => p.Id.Equals(item.Id, StringComparison.Ordinal)).FirstOrDefault();
 
 			if (currentItem is not null)
 			{

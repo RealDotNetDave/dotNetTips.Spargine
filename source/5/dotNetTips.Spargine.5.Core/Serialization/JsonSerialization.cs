@@ -134,12 +134,12 @@ namespace dotNetTips.Spargine.Core.Serialization
 
 					foreach (var property in expected.EnumerateObject())
 					{
-						propertyNames.Add(property.Name);
+						_ = propertyNames.Add(property.Name);
 					}
 
 					foreach (var property in actual.EnumerateObject())
 					{
-						propertyNames.Add(property.Name);
+						_ = propertyNames.Add(property.Name);
 					}
 
 					foreach (var name in propertyNames)
@@ -173,12 +173,12 @@ namespace dotNetTips.Spargine.Core.Serialization
 					}
 
 				case JsonValueKind.String:
-					return expected.GetString() == actual.GetString();
+					return string.Compare(expected.GetString(), actual.GetString(), StringComparison.Ordinal) == 0;
 				case JsonValueKind.Number:
 				case JsonValueKind.True:
 				case JsonValueKind.False:
 				case JsonValueKind.Null:
-					return expected.GetRawText() == actual.GetRawText();
+					return string.Compare(expected.GetRawText(), actual.GetRawText(), StringComparison.Ordinal) == 0;
 				default:
 					throw new NotSupportedException($"Unexpected JsonValueKind: JsonValueKind.{valueKind}.");
 			}

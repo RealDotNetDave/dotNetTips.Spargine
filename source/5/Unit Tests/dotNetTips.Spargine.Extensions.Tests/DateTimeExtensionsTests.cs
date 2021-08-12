@@ -310,7 +310,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result1);
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
 		}
 
 		[TestMethod]
@@ -322,7 +322,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result1);
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
 		}
 
 		[TestMethod]
@@ -334,7 +334,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result1);
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.Add(new TimeSpan(10, 0, 0, 0)), new TimeSpan(20, 0, 0, 0), "TEST"));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.Add(new TimeSpan(10, 0, 0, 0)), new TimeSpan(20, 0, 0, 0), "TEST"));
 		}
 
 		[TestMethod]

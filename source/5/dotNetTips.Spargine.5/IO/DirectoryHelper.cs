@@ -20,7 +20,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
@@ -347,7 +346,7 @@ namespace dotNetTips.Spargine.IO
 						return true;
 					}
 				}
-				catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is UnauthorizedAccessException)
+				catch (Exception ex) when (ex is ArgumentException or ArgumentNullException or ArgumentOutOfRangeException or UnauthorizedAccessException)
 				{
 					Trace.WriteLine(ex.Message);
 				}
@@ -385,7 +384,7 @@ namespace dotNetTips.Spargine.IO
 						_ = folders.AddRange(searchResult, Tristate.True);
 					}
 				}
-				catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException || ex is ArgumentOutOfRangeException || ex is System.IO.DirectoryNotFoundException || ex is UnauthorizedAccessException)
+				catch (Exception ex) when (ex is ArgumentException or ArgumentNullException or ArgumentOutOfRangeException or System.IO.DirectoryNotFoundException or UnauthorizedAccessException)
 				{
 					Trace.WriteLine(ex.Message);
 				}
@@ -437,7 +436,7 @@ namespace dotNetTips.Spargine.IO
 						}
 					}
 				}
-				catch (Exception ex) when (ex is System.IO.DirectoryNotFoundException || ex is SecurityException || ex is UnauthorizedAccessException)
+				catch (Exception ex) when (ex is System.IO.DirectoryNotFoundException or SecurityException or UnauthorizedAccessException)
 				{
 					Trace.WriteLine(ex.Message);
 				}

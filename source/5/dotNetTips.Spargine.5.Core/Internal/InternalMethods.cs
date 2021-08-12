@@ -27,7 +27,7 @@ namespace dotNetTips.Spargine.Core.Internal
 
 			for (var byteCount = 0; byteCount < array.Length; byteCount++)
 			{
-				sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(array[byteCount].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString();

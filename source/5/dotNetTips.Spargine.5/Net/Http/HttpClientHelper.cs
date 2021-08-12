@@ -66,7 +66,7 @@ namespace dotNetTips.Spargine.Net.Http
 				// Pass in the token.
 				var response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
 
-				response.EnsureSuccessStatusCode();
+				_ = response.EnsureSuccessStatusCode();
 
 				return response;
 			}

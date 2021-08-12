@@ -48,7 +48,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			for (var i = 0; i < hash.Length; i++)
 			{
-				sb.Append(hash[i].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(hash[i].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString().ToTrimmed();
@@ -100,14 +100,14 @@ namespace dotNetTips.Spargine.Extensions
 					var value = args[argCount];
 
 					//TODO: ADD EXTENSION METHOD TO TEST FOR ENUM VALUES
-					if (addLineFeed == Tristate.True || addLineFeed == Tristate.UseDefault)
+					if (addLineFeed is Tristate.True or Tristate.UseDefault)
 					{
 						//TODO: THIS CONDITION NOT BEING TESTED
-						sb.AppendLine(value);
+						_ = sb.AppendLine(value);
 					}
 					else
 					{
-						sb.Append(string.Concat(value, delimiter));
+						_ = sb.Append(string.Concat(value, delimiter));
 					}
 				}
 			}
@@ -372,17 +372,17 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (length == 0)
 			{
-				sb.Append(input);
+				_ = sb.Append(input);
 			}
 
 			for (var charCount = 1; charCount <= Math.Abs(length); charCount++)
 			{
-				sb.Append(indentationCharacter);
+				_ = sb.Append(indentationCharacter);
 			}
 
 			if (length > 0)
 			{
-				sb.Append(input);
+				_ = sb.Append(input);
 			}
 
 			return sb.ToString();

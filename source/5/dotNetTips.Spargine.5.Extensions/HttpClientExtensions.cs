@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			using var response = await client.GetAsync(requestUri).ConfigureAwait(false);
 
-			response.EnsureSuccessStatusCode();
+			_ = response.EnsureSuccessStatusCode();
 
 			var stringResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 

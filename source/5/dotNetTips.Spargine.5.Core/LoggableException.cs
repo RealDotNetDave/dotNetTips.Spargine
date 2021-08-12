@@ -103,7 +103,7 @@ namespace dotNetTips.Spargine.Core
 			set
 			{
 				// Prevent from being set (from code) to false.
-				if (value == true)
+				if (value)
 				{
 					this._hasBeenLogged = value;
 				}
@@ -180,7 +180,7 @@ namespace dotNetTips.Spargine.Core
 
 				if (( objectValue is not null ) && ( string.Compare(objectValue.ToString(), objectValue.GetType().FullName, StringComparison.Ordinal) != 0 ))
 				{
-					sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }));
+					_ = sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }));
 				}
 			});
 

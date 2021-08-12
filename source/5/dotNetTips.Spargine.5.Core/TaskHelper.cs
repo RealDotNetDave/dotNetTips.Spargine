@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.Core
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static TResult RunSync<TResult>(Func<Task<TResult>> func, CancellationToken cancellationToken, TaskCreationOptions taskCreation = TaskCreationOptions.None, TaskContinuationOptions taskContinuation = TaskContinuationOptions.None, TaskScheduler taskScheduler = null)
 		{
-			if (taskScheduler == null)
+			if (taskScheduler is null)
 			{
 				taskScheduler = TaskScheduler.Default;
 			}
@@ -103,7 +103,7 @@ namespace dotNetTips.Spargine.Core
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void RunSync(this Func<Task> task, CancellationToken cancellationToken, TaskCreationOptions taskCreation = TaskCreationOptions.None, TaskContinuationOptions taskContinuation = TaskContinuationOptions.None, TaskScheduler taskScheduler = null)
 		{
-			if (taskScheduler == null)
+			if (taskScheduler is null)
 			{
 				taskScheduler = TaskScheduler.Default;
 			}

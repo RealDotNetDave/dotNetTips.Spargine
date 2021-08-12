@@ -84,14 +84,14 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 				XmlSerialization.SerializeToFile(person, fileName);
 
 				//Deserialize
-				XmlSerialization.DeserializeFromFile<PersonProper>(fileName);
+				_ = XmlSerialization.DeserializeFromFile<PersonProper>(fileName);
 			}
 			catch (Exception ex)
 			{
 				Assert.Fail(ex.Message);
 			}
 
-			Assert.ThrowsException<FileNotFoundException>(() => XmlSerialization.DeserializeFromFile<PersonProper>("XXX"));
+			_ = Assert.ThrowsException<FileNotFoundException>(() => XmlSerialization.DeserializeFromFile<PersonProper>("XXX"));
 		}
 
 		[TestMethod]

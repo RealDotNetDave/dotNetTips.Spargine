@@ -97,7 +97,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 			{
 				if (ensureUnique is Tristate.True or Tristate.UseDefault)
 				{
-					newItems.AddIfNotExists(item);
+					_ = newItems.AddIfNotExists(item);
 				}
 				else
 				{

@@ -33,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static ImmutableSortedSet<T> ToImmutable<T>(this SortedSet<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));
-		
+
 			return ImmutableSortedSet.CreateRange<T>(list);
 		}
 	}

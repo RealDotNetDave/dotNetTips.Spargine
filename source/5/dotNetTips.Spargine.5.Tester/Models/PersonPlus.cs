@@ -31,6 +31,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// </summary>
 	/// <seealso cref="dotNetTips.Spargine.Tester.Models.IPerson" />
 	/// <seealso cref="System.IComparable" />
+	[Obsolete("This class will be removed at the end of 2021. Instead use Person or PersonRecord.")]
 	[DebuggerDisplay("{Email}")]
 	[Serializable]
 	[DataContract(Name = "personPlus", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
@@ -71,7 +72,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// The country name.
 		/// </summary>
 		[NonSerialized]
-		private string _country = "USA";
+		private string _country = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
 
 		/// <summary>
 		/// The email address.

@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Globalization;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Tester.Models
@@ -58,7 +59,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the country.
 		/// </summary>
 		/// <value>The country.</value>
-		public string Country { get; set; } = "USA";
+		public string Country { get; set; } = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
 
 		/// <summary>
 		/// Gets the email.

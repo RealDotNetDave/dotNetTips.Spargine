@@ -94,7 +94,7 @@ namespace dotNetTips.Spargine.Core
 		public static void TryValidateObject<TException>(bool condition, string message = "")
 			where TException : Exception, new()
 		{
-			if (typeof(TException).Name == typeof(Exception).Name)
+			if (string.Compare(typeof(TException).Name, typeof(Exception).Name, StringComparison.Ordinal) == 0)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Exception is not allowed to be used for this method. Please choose a more detailed Exception type.", nameof(TException));
 			}

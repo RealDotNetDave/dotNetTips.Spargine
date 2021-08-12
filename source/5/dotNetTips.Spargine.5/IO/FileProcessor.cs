@@ -73,7 +73,7 @@ namespace dotNetTips.Spargine.IO
 
 						var psw = PerformanceStopwatch.StartNew();
 
-						tempFile.CopyTo(newFileName.FullName, overwrite: true);
+						_ = tempFile.CopyTo(newFileName.FullName, overwrite: true);
 
 						var perf = psw.StopReset();
 
@@ -155,7 +155,7 @@ namespace dotNetTips.Spargine.IO
 							SpeedInMilliseconds = perf.TotalMilliseconds,
 						});
 					}
-					catch (Exception ex) when (ex is IOException || ex is SecurityException || ex is UnauthorizedAccessException)
+					catch (Exception ex) when (ex is IOException or SecurityException or UnauthorizedAccessException)
 					{
 						this.OnProcessed(new FileProgressEventArgs
 						{
@@ -211,7 +211,7 @@ namespace dotNetTips.Spargine.IO
 							ProgressState = FileProgressState.Deleted,
 						});
 					}
-					catch (Exception ex) when (ex is IOException || ex is SecurityException || ex is UnauthorizedAccessException || ex is System.IO.DirectoryNotFoundException)
+					catch (Exception ex) when (ex is IOException or SecurityException or UnauthorizedAccessException or System.IO.DirectoryNotFoundException)
 					{
 						this.OnProcessed(new FileProgressEventArgs
 						{

@@ -32,16 +32,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="methodName">Name of the method.</param>
 		protected static void PrintResult<T>(T input, string methodName)
 		{
-			string message;
-
-			if (input is string || input.GetType().IsValueType)
-			{
-				message = $"{methodName}: {input.ToString():C}";
-			}
-			else
-			{
-				message = $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
-			}
+			var message = input is string || input.GetType().IsValueType ? $"{methodName}: {input.ToString():C}" : $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
 
 			Debug.WriteLine(message);
 		}

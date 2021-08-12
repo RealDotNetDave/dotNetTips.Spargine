@@ -48,12 +48,12 @@ namespace dotNetTips.Spargine.Extensions
 				{
 					if (dataReader.GetName(index) is not null)
 					{
-						sb.Append(dataReader.GetName(index));
+						_ = sb.Append(dataReader.GetName(index));
 					}
 
 					if (index < dataReader.FieldCount - 1)
 					{
-						sb.Append(separator);
+						_ = sb.Append(separator);
 					}
 				}
 
@@ -84,18 +84,18 @@ namespace dotNetTips.Spargine.Extensions
 							}
 						}
 
-						sb.Append(value);
+						_ = sb.Append(value);
 					}
 
 					if (index < dataReader.FieldCount - 1)
 					{
-						sb.Append(separator);
+						_ = sb.Append(separator);
 					}
 				}
 
 				if (!dataReader.IsDBNull(dataReader.FieldCount - 1))
 				{
-					sb.Append(dataReader.GetValue(dataReader.FieldCount - 1).ToString().Replace(separator, ControlChars.Space));
+					_ = sb.Append(dataReader.GetValue(dataReader.FieldCount - 1).ToString().Replace(separator, ControlChars.Space));
 				}
 
 				convertedRows.Add(sb.ToString());

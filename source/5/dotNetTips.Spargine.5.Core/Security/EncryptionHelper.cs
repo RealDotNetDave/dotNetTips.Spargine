@@ -39,21 +39,19 @@ namespace dotNetTips.Spargine.Core.Security
 			Validate.TryValidateParam(key, nameof(iv));
 
 			// Create AesManaged.
-			using (var aes = new AesManaged())
-			{
-				// Create a decryptor.
-				using var decryptor = aes.CreateDecryptor(key, iv);
+			using var aes = new AesManaged();
+			// Create a decryptor.
+			using var decryptor = aes.CreateDecryptor(key, iv);
 
-				// Create the streams used for decryption.
-				using var ms = new MemoryStream(Convert.FromBase64String(cipherText));
+			// Create the streams used for decryption.
+			using var ms = new MemoryStream(Convert.FromBase64String(cipherText));
 
-				// Create crypto stream.
-				using var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read);
+			// Create crypto stream.
+			using var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read);
 
-				// Read crypto stream.
-				using var reader = new StreamReader(cs);
-				return reader.ReadToEnd();
-			}
+			// Read crypto stream.
+			using var reader = new StreamReader(cs);
+			return reader.ReadToEnd();
 		}
 
 		/// <summary>
@@ -72,31 +70,27 @@ namespace dotNetTips.Spargine.Core.Security
 			Validate.TryValidateParam(key, nameof(iv));
 
 			// Create a new AesManaged.
-			using (var aes = new AesManaged())
+			using var aes = new AesManaged();
+
+			// Create encryptor
+			using var encryptor = aes.CreateEncryptor(key, iv);
+
+			// Create MemoryStream
+			using var ms = new MemoryStream();
+
+			// Create crypto stream using the CryptoStream class. This class is the key to encryption
+			// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
+			// to encrypt
+			using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
 			{
-				// Create encryptor
-				using (var encryptor = aes.CreateEncryptor(key, iv))
-				{
-					// Create MemoryStream
-					using (var ms = new MemoryStream())
-					{
-						// Create crypto stream using the CryptoStream class. This class is the key to encryption
-						// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
-						// to encrypt
-						using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
-						{
 
-							// Create StreamWriter and write data to a stream
-							using (var sw = new StreamWriter(cs))
-							{
-								sw.Write(plainText);
-							}
-						}
+				// Create StreamWriter and write data to a stream
+				using var sw = new StreamWriter(cs);
 
-						return Convert.ToBase64String(ms.ToArray());
-					}
-				}
+				sw.Write(plainText);
 			}
+
+			return Convert.ToBase64String(ms.ToArray());
 		}
 
 		/// <summary>
@@ -163,18 +157,17 @@ namespace dotNetTips.Spargine.Core.Security
 		{
 			var encoding = Encoding.ASCII;
 
-			using (var sha2 = new SHA256CryptoServiceProvider())
-			{
-				var rawKey = encoding.GetBytes(key);
-				var rawIV = encoding.GetBytes(key);
+			using var sha2 = new SHA256CryptoServiceProvider();
 
-				var hashKey = sha2.ComputeHash(rawKey);
-				var hashIV = sha2.ComputeHash(rawIV);
+			var rawKey = encoding.GetBytes(key);
+			var rawIV = encoding.GetBytes(key);
 
-				Array.Resize(ref hashIV, newSize: 16);
+			var hashKey = sha2.ComputeHash(rawKey);
+			var hashIV = sha2.ComputeHash(rawIV);
 
-				return (hashKey, hashIV);
-			}
+			Array.Resize(ref hashIV, newSize: 16);
+
+			return (hashKey, hashIV);
 		}
 	}
 }

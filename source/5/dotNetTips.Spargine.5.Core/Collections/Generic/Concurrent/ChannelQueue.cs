@@ -141,7 +141,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 
 			if (lockQueue)
 			{
-				this.Lock();
+				_ = this.Lock();
 			}
 		}
 	}

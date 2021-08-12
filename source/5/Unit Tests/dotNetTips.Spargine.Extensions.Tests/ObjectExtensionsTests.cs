@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			PersonProper nullPerson = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPerson.As<Person>());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.As<Person>());
 		}
 
 		[TestMethod]
@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPerson.Clone<PersonProper>());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.Clone<PersonProper>());
 		}
 
 		[TestMethod]
@@ -84,7 +84,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(string.IsNullOrEmpty(result));
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ComputeSha256Hash());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ComputeSha256Hash());
 		}
 
 		[TestMethod]
@@ -115,7 +115,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(person.HasProperty("XXXXXXXXXXXXX"));
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPerson.HasProperty("Id"));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.HasProperty("Id"));
 		}
 
 		[TestMethod]
@@ -126,7 +126,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			testObject.InitializeFields();
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullTestObject.InitializeFields());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullTestObject.InitializeFields());
 		}
 
 		[TestMethod]
@@ -242,8 +242,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Assert.Fail();
 			}
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ToJsonFile(fileName));
-			Assert.ThrowsException<ArgumentNullException>(() => person.ToJsonFile(string.Empty));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ToJsonFile(fileName));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => person.ToJsonFile(string.Empty));
 
 			File.Delete(fileName);
 		}

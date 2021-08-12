@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			SortedSet<PersonProper> nullSet = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
 		}
 	}
 }

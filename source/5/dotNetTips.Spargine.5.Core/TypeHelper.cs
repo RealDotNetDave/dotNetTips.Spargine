@@ -31,9 +31,10 @@ namespace dotNetTips.Spargine.Core
 	public static class TypeHelper
 	{
 		/// <summary>
-		/// The built in type names
+		/// Gets the built in type names.
 		/// </summary>
-		private static readonly Dictionary<Type, string> _builtInTypeNames = new()
+		/// <value>The built in type names.</value>
+		public static Dictionary<Type, string> BuiltInTypeNames { get; } = new()
 		{
 			{ typeof(void), "void" },
 			{ typeof(bool), "bool" },
@@ -54,12 +55,6 @@ namespace dotNetTips.Spargine.Core
 			{ typeof(DateTime), "datetime" },
 			{ typeof(DateTimeOffset), "datetimeoffset" },
 		};
-
-		/// <summary>
-		/// Gets the built in type names.
-		/// </summary>
-		/// <value>The built in type names.</value>
-		public static Dictionary<Type, string> BuiltInTypeNames => _builtInTypeNames;
 
 		/// <summary>
 		/// Creates type instance.
@@ -197,11 +192,11 @@ namespace dotNetTips.Spargine.Core
 				try
 				{
 					var assembly = Assembly.LoadFile(list[fileCount]);
-					var exportedTypes = assembly.ExportedTypes.ToList().Where(p => p.BaseType != null).ToList();
+					var exportedTypes = assembly.ExportedTypes.ToList().Where(p => p.BaseType is not null).ToList();
 
 					if (exportedTypes?.Count() > 0)
 					{
-						var containsBaseType = exportedTypes.Any(p => p.BaseType.FullName == baseType.FullName);
+						var containsBaseType = exportedTypes.Any(p => string.Compare(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal) == 0);
 
 						if (containsBaseType)
 						{
@@ -314,7 +309,7 @@ namespace dotNetTips.Spargine.Core
 
 			var returnValue = new Dictionary<string, string>();
 
-			var properties = input.GetType().GetAllProperties().Where(p => p.CanRead == true).OrderBy(p => p.Name).ToArray();
+			var properties = input.GetType().GetAllProperties().Where(p => p.CanRead).OrderBy(p => p.Name).ToArray();
 
 			for (var i = 0; i < properties.Length; i++)
 			{
@@ -326,7 +321,7 @@ namespace dotNetTips.Spargine.Core
 
 					if (propertyValue?.Count > 0)
 					{
-						returnValue.AddIfNotExists(new KeyValuePair<string, string>(propertyInfo.Name, propertyValue.ToDelimitedString()));
+						_ = returnValue.AddIfNotExists(new KeyValuePair<string, string>(propertyInfo.Name, propertyValue.ToDelimitedString()));
 					}
 				}
 				else
@@ -336,7 +331,7 @@ namespace dotNetTips.Spargine.Core
 
 					if (propertyValue is not null)
 					{
-						returnValue.AddIfNotExists(new KeyValuePair<string, string>(propertyInfo.Name, propertyValue.ToString()));
+						_ = returnValue.AddIfNotExists(new KeyValuePair<string, string>(propertyInfo.Name, propertyValue.ToString()));
 					}
 				}
 			}
@@ -377,7 +372,7 @@ namespace dotNetTips.Spargine.Core
 
 			ProcessType(sb, type, new DisplayNameOptions(fullName, includeGenericParameterNames, includeGenericParameters, nestedTypeDelimiter));
 
-			return sb.ToString();
+			return sb?.ToString();
 		}
 
 		/// <summary>
@@ -400,23 +395,23 @@ namespace dotNetTips.Spargine.Core
 			}
 			else if (BuiltInTypeNames.TryGetValue(type, out var builtInName))
 			{
-				builder.Append(builtInName);
+				_ = builder.Append(builtInName);
 			}
 			else if (type.IsGenericParameter)
 			{
 				if (options.IncludeGenericParameterNames)
 				{
-					builder.Append(type.Name);
+					_ = builder.Append(type.Name);
 				}
 			}
 			else
 			{
 				var name = options.FullName ? type.FullName : type.Name;
-				builder.Append(name);
+				_ = builder.Append(name);
 
 				if (options.NestedTypeDelimiter != ControlChars.Plus)
 				{
-					builder.Replace(ControlChars.Plus, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
+					_ = builder.Replace(ControlChars.Plus, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
 				}
 			}
 		}
@@ -484,27 +479,27 @@ namespace dotNetTips.Spargine.Core
 				if (type.IsNested)
 				{
 					ProcessGenericType(builder, type.DeclaringType, genericArguments, offset, options);
-					builder.Append(options.NestedTypeDelimiter);
+					_ = builder.Append(options.NestedTypeDelimiter);
 				}
 				else if (!string.IsNullOrEmpty(type.Namespace))
 				{
-					builder.Append(type.Namespace);
-					builder.Append(ControlChars.Dot);
+					_ = builder.Append(type.Namespace);
+					_ = builder.Append(ControlChars.Dot);
 				}
 			}
 
 			var genericPartIndex = type.Name.IndexOf('`', StringComparison.Ordinal);
 			if (genericPartIndex <= 0)
 			{
-				builder.Append(type.Name);
+				_ = builder.Append(type.Name);
 				return;
 			}
 
-			builder.Append(type.Name, 0, genericPartIndex);
+			_ = builder.Append(type.Name, 0, genericPartIndex);
 
 			if (options.IncludeGenericParameters)
 			{
-				builder.Append(ControlChars.StartAngleBracket);
+				_ = builder.Append(ControlChars.StartAngleBracket);
 
 				for (var i = offset; i < length; i++)
 				{
@@ -515,14 +510,14 @@ namespace dotNetTips.Spargine.Core
 						continue;
 					}
 
-					builder.Append(ControlChars.Comma);
+					_ = builder.Append(ControlChars.Comma);
 					if (options.IncludeGenericParameterNames || !genericArguments[i + 1].IsGenericParameter)
 					{
-						builder.Append(ControlChars.Space);
+						_ = builder.Append(ControlChars.Space);
 					}
 				}
 
-				builder.Append(ControlChars.EndAngleBracket);
+				_ = builder.Append(ControlChars.EndAngleBracket);
 			}
 		}
 

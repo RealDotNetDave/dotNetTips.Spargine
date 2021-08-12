@@ -4,7 +4,7 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 08-03-2021
 // ***********************************************************************
 // <copyright file="PersonFixed.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -28,6 +28,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// <seealso cref="dotNetTips.Spargine.Tester.Models.IPerson" />
 	/// <seealso cref="dotNetTips.Spargine.Tester.Models.Person" />
 	/// <seealso cref="System.IComparable" />
+	[Obsolete("This class will be removed at the end of 2021. Instead use Person or PersonRecord.")]
 	[DebuggerDisplay("{Email}")]
 	public sealed class PersonFixed : IPerson, IDataModel<PersonFixed, string>
 	{
@@ -91,7 +92,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the country.
 		/// </summary>
 		/// <value>The country.</value>
-		public string Country { get; set; } = "USA";
+		public string Country { get; set; } = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
 
 		/// <summary>
 		/// Gets the email.
@@ -195,27 +196,27 @@ namespace dotNetTips.Spargine.Tester.Models
 				return 1;
 			}
 
-			var result = string.Compare(this.Email, other.Email, StringComparison.CurrentCultureIgnoreCase);
+			var result = string.Compare(this.Email, other.Email, StringComparison.OrdinalIgnoreCase);
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.Id, other.Id, StringComparison.CurrentCultureIgnoreCase);
-
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this.Address1, other.Address1, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.Id, other.Id, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.Address2, other.Address2, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.Address1, other.Address1, StringComparison.OrdinalIgnoreCase);
+
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this.Address2, other.Address2, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
@@ -228,48 +229,48 @@ namespace dotNetTips.Spargine.Tester.Models
 				return result;
 			}
 
-			result = string.Compare(this.CellPhone, other.CellPhone, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.CellPhone, other.CellPhone, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.City, other.City, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.City, other.City, StringComparison.OrdinalIgnoreCase);
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.Country, other.Country, StringComparison.CurrentCultureIgnoreCase);
-
-			if (result != 0)
-			{
-				return result;
-			}
-
-			result = string.Compare(this.FirstName, other.FirstName, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.Country, other.Country, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.HomePhone, other.HomePhone, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.FirstName, other.FirstName, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.LastName, other.LastName, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.HomePhone, other.HomePhone, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{
 				return result;
 			}
 
-			result = string.Compare(this.PostalCode, other.PostalCode, StringComparison.CurrentCultureIgnoreCase);
+			result = string.Compare(this.LastName, other.LastName, StringComparison.OrdinalIgnoreCase);
+
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this.PostalCode, other.PostalCode, StringComparison.OrdinalIgnoreCase);
 
 			if (result != 0)
 			{

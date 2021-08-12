@@ -28,7 +28,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void FireAndForgetTest02()
 		{
-			Action<Exception> exAction = (Exception ex) => Debug.WriteLine(ex.Message);
+			Action<Exception> p = (Exception ex) => Debug.WriteLine(ex.Message);
+			var exAction = p;
 
 			this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(exAction);
 
@@ -41,7 +42,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Console.WriteLine(input);
 
-			await Task.Delay(1);
+			await Task.Delay(1).ConfigureAwait(false);
 		}
 
 	}

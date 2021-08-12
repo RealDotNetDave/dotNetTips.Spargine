@@ -70,7 +70,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			PersonProper[] result = people.Add(person);
+			var result = people.Add(person);
 
 			Assert.IsTrue(result.Count() == 11);
 		}
@@ -101,7 +101,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			byte[] nullBytes = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]
@@ -116,7 +116,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			byte[] nullBytes = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]

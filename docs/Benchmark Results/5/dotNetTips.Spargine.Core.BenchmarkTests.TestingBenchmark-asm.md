@@ -1,332 +1,207 @@
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent01()
-; 			var result = WIPTests.CalculatePercent(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest02()
+; 			var result = WIPTests.TryValidateNullAgressive(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       mov       rax,[rcx+0D0]
+       test      rax,rax
+       sete      al
+       movzx     eax,al
+       mov       rdx,[rcx+10]
+       mov       [rdx+54],al
+       ret
+; Total bytes of code 24
+```
+
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest01()
+; 			var result = WIPTests.TryValidateNull(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       mov       rax,[rcx+0D0]
+       test      rax,rax
+       sete      al
+       movzx     eax,al
+       mov       rdx,[rcx+10]
+       mov       [rdx+54],al
+       ret
+; Total bytes of code 24
+```
+
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest03()
+; 			var result = WIPTests.TryValidateNullNoInlining(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(result);
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
-       vzeroupper
        mov       rsi,rcx
        mov       rcx,[rsi+0D0]
-       mov       rdx,[rsi+0D8]
-       call      dotNetTips.Spargine.Core.WIPTests.CalculatePercent(System.TimeSpan, System.TimeSpan)
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 50
-```
-```assembly
-; dotNetTips.Spargine.Core.WIPTests.CalculatePercent(System.TimeSpan, System.TimeSpan)
-       sub       rsp,38
-       vzeroupper
-       vmovaps   [rsp+20],xmm6
-       mov       [rsp+40],rcx
-       mov       [rsp+48],rdx
-       lea       rcx,[rsp+48]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovaps   xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vsubsd    xmm6,xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFA7EF3ECF0]
-       vandps    xmm0,xmm0,xmm1
-       vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFA7EF3ED00]
-       vmovaps   xmm6,[rsp+20]
-       add       rsp,38
-       ret
-; Total bytes of code 96
-```
-
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent02()
-; 			var result = WIPTests.CalculatePercentAggressiveInline(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			this.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,40
-       vzeroupper
-       vmovaps   [rsp+30],xmm6
-       mov       rsi,rcx
-       mov       rcx,[rsi+0D0]
-       mov       [rsp+20],rcx
-       mov       rcx,[rsi+0D8]
-       mov       [rsp+28],rcx
-       lea       rcx,[rsp+28]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovaps   xmm6,xmm0
-       lea       rcx,[rsp+20]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vsubsd    xmm6,xmm6,xmm0
-       lea       rcx,[rsp+20]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFA7EF1ECC8]
-       vandps    xmm0,xmm0,xmm1
-       vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFA7EF1ECD8]
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       vmovaps   xmm6,[rsp+30]
-       add       rsp,40
-       pop       rsi
-       ret
-; Total bytes of code 129
-```
-```assembly
-; System.TimeSpan.get_TotalMilliseconds()
-       vzeroupper
-       vxorps    xmm0,xmm0,xmm0
-       vcvtsi2sd xmm0,xmm0,qword ptr [rcx]
-       vdivsd    xmm0,xmm0,[7FFA7EF1EBD0]
-       vucomisd  xmm0,qword ptr [7FFA7EF1EBE0]
-       jbe       short M01_L00
-       vmovsd    xmm0,qword ptr [7FFA7EF1EBF0]
-       ret
-M01_L00:
-       vmovsd    xmm1,qword ptr [7FFA7EF1EC00]
-       vucomisd  xmm1,xmm0
-       jbe       short M01_L01
-       vmovsd    xmm0,qword ptr [7FFA7EF1EC10]
-       ret
-M01_L01:
-       ret
-; Total bytes of code 63
-```
-
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent03()
-; 			var result = WIPTests.CalculatePercentNoInline(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			this.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       vzeroupper
-       mov       rsi,rcx
-       mov       rcx,[rsi+0D0]
-       mov       rdx,[rsi+0D8]
-       call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoInline(System.TimeSpan, System.TimeSpan)
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 50
-```
-```assembly
-; dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoInline(System.TimeSpan, System.TimeSpan)
-       sub       rsp,38
-       vzeroupper
-       vmovaps   [rsp+20],xmm6
-       mov       [rsp+40],rcx
-       mov       [rsp+48],rdx
-       lea       rcx,[rsp+48]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovaps   xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vsubsd    xmm6,xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFA7EF0EBF0]
-       vandps    xmm0,xmm0,xmm1
-       vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFA7EF0EC00]
-       vmovaps   xmm6,[rsp+20]
-       add       rsp,38
-       ret
-; Total bytes of code 96
-```
-
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent04()
-; 			var result = WIPTests.CalculatePercentNoOptimization(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			this.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       vzeroupper
-       mov       rsi,rcx
-       mov       rcx,[rsi+0D0]
-       mov       rdx,[rsi+0D8]
-       call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoOptimization(System.TimeSpan, System.TimeSpan)
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 50
-```
-```assembly
-; dotNetTips.Spargine.Core.WIPTests.CalculatePercentNoOptimization(System.TimeSpan, System.TimeSpan)
-       push      rbp
-       sub       rsp,40
-       vzeroupper
-       lea       rbp,[rsp+40]
-       mov       [rbp+10],rcx
-       mov       [rbp+18],rdx
-       lea       rcx,[rbp+18]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    qword ptr [rbp+0FFF8],xmm0
-       lea       rcx,[rbp+10]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [rbp+0FFF8]
-       vsubsd    xmm0,xmm1,xmm0
-       vmovsd    qword ptr [rbp+0FFF0],xmm0
-       lea       rcx,[rbp+10]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    qword ptr [rbp+0FFE8],xmm0
-       vmovsd    xmm0,qword ptr [rbp+0FFE8]
-       call      System.Math.Abs(Double)
-       vmovsd    xmm1,qword ptr [rbp+0FFF0]
-       vdivsd    xmm0,xmm1,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFA7EEFC150]
-       lea       rsp,[rbp]
-       pop       rbp
-       ret
-; Total bytes of code 105
-```
-
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent06()
-; 			var result = WIPTests.CalculatePercentPreserveSig(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			this.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       vzeroupper
-       mov       rsi,rcx
-       mov       rcx,[rsi+0D0]
-       mov       rdx,[rsi+0D8]
-       call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentPreserveSig(System.TimeSpan, System.TimeSpan)
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 50
-```
-```assembly
-; dotNetTips.Spargine.Core.WIPTests.CalculatePercentPreserveSig(System.TimeSpan, System.TimeSpan)
-       sub       rsp,38
-       vzeroupper
-       vmovaps   [rsp+20],xmm6
-       mov       [rsp+40],rcx
-       mov       [rsp+48],rdx
-       lea       rcx,[rsp+48]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovaps   xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vsubsd    xmm6,xmm6,xmm0
-       lea       rcx,[rsp+40]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFA7EF0EBF0]
-       vandps    xmm0,xmm0,xmm1
-       vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm0,xmm0,qword ptr [7FFA7EF0EC00]
-       vmovaps   xmm6,[rsp+20]
-       add       rsp,38
-       ret
-; Total bytes of code 96
-```
-
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.CalculatePercent05()
-; 			var result = WIPTests.CalculatePercentSynchronized(this._testTimeSpan1, this._testTimeSpan2);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			this.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       vzeroupper
-       mov       rsi,rcx
-       mov       rcx,[rsi+0D0]
-       mov       rdx,[rsi+0D8]
-       call      dotNetTips.Spargine.Core.WIPTests.CalculatePercentSynchronized(System.TimeSpan, System.TimeSpan)
-       mov       rax,[rsi+10]
-       cmp       [rax],eax
-       add       rax,18
-       vmovsd    qword ptr [rax],xmm0
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 50
-```
-```assembly
-; dotNetTips.Spargine.Core.WIPTests.CalculatePercentSynchronized(System.TimeSpan, System.TimeSpan)
-       push      rbp
-       sub       rsp,40
-       vzeroupper
-       vmovaps   [rsp+30],xmm6
-       lea       rbp,[rsp+40]
-       mov       [rbp+0FFE0],rsp
-       mov       [rbp+10],rcx
-       mov       [rbp+18],rdx
        xor       edx,edx
-       mov       [rbp+0FFE8],edx
-       lea       rdx,[rbp+0FFE8]
-       mov       rcx,17ADE3C0D58
+       call      dotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullNoInlining(System.Object, Boolean)
+       mov       rdx,[rsi+10]
+       mov       [rdx+54],al
+       add       rsp,20
+       pop       rsi
+       ret
+; Total bytes of code 35
+```
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullNoInlining(System.Object, Boolean)
+; 			var result = value is null;
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			if (result && throwException)
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			return result;
+; 			^^^^^^^^^^^^^^
+       push      rsi
+       sub       rsp,20
+       test      rcx,rcx
+       sete      sil
+       movzx     esi,sil
+       movzx     edx,dl
+       test      edx,esi
+       je        short M01_L00
+       mov       rdx,1FFC61C1110
+       mov       rdx,[rdx]
+       mov       r8,rcx
+       mov       rcx,offset MD_dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException(System.String, !!0)
+       call      dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException[[System.__Canon, System.Private.CoreLib]](System.String, System.__Canon)
+M01_L00:
+       mov       eax,esi
+       add       rsp,20
+       pop       rsi
+       ret
+; Total bytes of code 62
+```
+
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest04()
+; 			var result = WIPTests.TryValidateNullNoOptimization(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       mov       rax,[rcx+0D0]
+       test      rax,rax
+       sete      al
+       movzx     eax,al
+       mov       rdx,[rcx+10]
+       mov       [rdx+54],al
+       ret
+; Total bytes of code 24
+```
+
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest05()
+; 			var result = WIPTests.TryValidateNullPreserveSig(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       mov       rax,[rcx+0D0]
+       test      rax,rax
+       sete      al
+       movzx     eax,al
+       mov       rdx,[rcx+10]
+       mov       [rdx+54],al
+       ret
+; Total bytes of code 24
+```
+
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest06()
+; 			var result = WIPTests.TryValidateNullSynchronized(this.person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       push      rsi
+       sub       rsp,20
+       mov       rsi,rcx
+       mov       rcx,[rsi+0D0]
+       xor       edx,edx
+       call      dotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullSynchronized(System.Object, Boolean)
+       mov       rdx,[rsi+10]
+       mov       [rdx+54],al
+       add       rsp,20
+       pop       rsi
+       ret
+; Total bytes of code 35
+```
+```assembly
+; dotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullSynchronized(System.Object, Boolean)
+; 			var result = value is null;
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			if (result && throwException)
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			return result;
+; 			^^^^^^^^^^^^^^
+       push      rbp
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,38
+       lea       rbp,[rsp+50]
+       mov       [rbp+0FFD0],rsp
+       mov       rsi,rcx
+       mov       edi,edx
+       xor       edx,edx
+       mov       [rbp+0FFE0],edx
+       lea       rdx,[rbp+0FFE0]
+       mov       rcx,23FB8D93FE8
        call      CORINFO_HELP_MON_ENTER_STATIC
-       lea       rcx,[rbp+18]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovaps   xmm6,xmm0
-       lea       rcx,[rbp+10]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vsubsd    xmm6,xmm6,xmm0
-       lea       rcx,[rbp+10]
-       call      System.TimeSpan.get_TotalMilliseconds()
-       vmovsd    xmm1,qword ptr [7FFA7EF1EDE8]
-       vandps    xmm0,xmm0,xmm1
-       vdivsd    xmm0,xmm6,xmm0
-       vmulsd    xmm6,xmm0,qword ptr [7FFA7EF1EDF8]
-       lea       rdx,[rbp+0FFE8]
-       mov       rcx,17ADE3C0D58
+       test      rsi,rsi
+       sete      bl
+       movzx     ebx,bl
+       movzx     edx,dil
+       test      edx,ebx
+       je        short M01_L00
+       mov       rdx,2440AAE3108
+       mov       rdx,[rdx]
+       mov       r8,rsi
+       mov       rcx,offset MD_dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException(System.String, !!0)
+       call      dotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException[[System.__Canon, System.Private.CoreLib]](System.String, System.__Canon)
+M01_L00:
+       lea       rdx,[rbp+0FFE0]
+       mov       rcx,23FB8D93FE8
        call      CORINFO_HELP_MON_EXIT_STATIC
-       vmovaps   xmm0,xmm6
-       vmovaps   xmm6,[rsp+30]
-       lea       rsp,[rbp]
+       movzx     eax,bl
+       movzx     eax,al
+       lea       rsp,[rbp+0FFE8]
+       pop       rbx
+       pop       rsi
+       pop       rdi
        pop       rbp
        ret
        push      rbp
-       sub       rsp,40
-       vzeroupper
-       vmovaps   [rsp+30],xmm6
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,28
        mov       rbp,[rcx+20]
        mov       [rsp+20],rbp
-       lea       rbp,[rbp+40]
-       lea       rdx,[rbp+0FFE8]
-       mov       rcx,17ADE3C0D58
+       lea       rbp,[rbp+50]
+       lea       rdx,[rbp+0FFE0]
+       mov       rcx,23FB8D93FE8
        call      CORINFO_HELP_MON_EXIT_STATIC
        nop
-       vmovaps   xmm6,[rsp+30]
-       add       rsp,40
+       add       rsp,28
+       pop       rbx
+       pop       rsi
+       pop       rdi
        pop       rbp
        ret
-; Total bytes of code 208
+; Total bytes of code 178
 ```
 

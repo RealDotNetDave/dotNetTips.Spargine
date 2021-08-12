@@ -180,14 +180,5 @@ namespace dotNetTips.Spargine.Core
 
 			return matchingItem;
 		}
-
-		/// <summary>
-		/// Gets the debugger display.
-		/// </summary>
-		/// <returns>System.String.</returns>
-		private string GetDebuggerDisplay()
-		{
-			return this.ToString();
-		}
 	}
 }

@@ -332,7 +332,7 @@ namespace dotNetTips.Spargine.Tester
 
 			var files = new List<string>(count);
 
-			Directory.CreateDirectory(path);
+			_ = Directory.CreateDirectory(path);
 
 			for (var fileCount = 0; fileCount < count; fileCount++)
 			{
@@ -390,7 +390,7 @@ namespace dotNetTips.Spargine.Tester
 			{
 				for (var count = 0; count < length; count++)
 				{
-					sb.Append(_random.Next(0, 9));
+					_ = sb.Append(_random.Next(0, 9));
 				}
 			}
 
@@ -592,10 +592,10 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < GenerateInteger(1, 10); i++)
 			{
-				url.Append(GenerateUrlPart());
+				_ = url.Append(GenerateUrlPart());
 			}
 
-			url.Append('/');
+			_ = url.Append('/');
 
 			return url.ToString();
 		}

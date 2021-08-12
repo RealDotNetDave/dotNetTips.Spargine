@@ -11,7 +11,6 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core.Collections.Generic;
@@ -35,7 +34,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			collection.AddFirst(person);
+			_ = collection.AddFirst(person);
 
 			Assert.IsTrue(collection.First() == person);
 		}
@@ -47,11 +46,11 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			collection.AddIfNotExists(collection.First());
+			_ = collection.AddIfNotExists(collection.First());
 
 			Assert.IsTrue(collection.Count == 10);
 
-			collection.AddIfNotExists(person);
+			_ = collection.AddIfNotExists(person);
 
 			Assert.IsTrue(collection.Count == 11);
 		}
@@ -63,7 +62,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			collection.AddLast(person);
+			_ = collection.AddLast(person);
 
 			Assert.IsTrue(collection.Last() == person);
 		}

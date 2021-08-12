@@ -171,8 +171,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The json test data person record.</value>
 		protected string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
 
+		[Obsolete("This will be removed at the end of 2021.")]
 		protected PersonFixed PersonFixed01 { get; private set; }
 
+		[Obsolete("This will be removed at the end of 2021.")]
 		protected PersonFixed PersonFixed02 { get; private set; }
 
 

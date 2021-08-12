@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20210603-173438</title>
+<title>dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20210811-165447</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,25 +13,25 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.0, OS=Windows 10.0.19042.985 (20H2/October2020Update)
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
 Unknown processor
-.NET SDK=5.0.300
-  [Host]     : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
-  Job-IWICPT : .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+.NET SDK=6.0.100-preview.7.21379.14
+  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  Job-UTOYIO : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests.Serialization  Categories=Serialization  
 </code></pre>
 
 <table>
-<thead><tr><th>                   Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Gen 2</th><th>Allocated</th>
+<thead><tr><th>                   Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Code Size</th><th>Gen 1</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Deserialize: XML=PersonProper&#39;</td><td>19.557 &mu;s</td><td>0.0674 &mu;s</td><td>0.0597 &mu;s</td><td>0.0160 &mu;s</td><td>19.450 &mu;s</td><td>19.513 &mu;s</td><td>19.552 &mu;s</td><td>19.612 &mu;s</td><td>19.648 &mu;s</td><td>51,133.0</td><td>0.0674 &mu;s</td><td>14.00</td><td>1.646</td><td>2.000</td><td>-0.0519</td><td>6</td><td>*</td><td>No</td><td>0 KB</td><td>2.0142</td><td>0.0305</td><td>-</td><td>18 KB</td>
-</tr><tr><td>&#39;Deserialize: XML=PersonRecord&#39;</td><td>18.881 &mu;s</td><td>0.1694 &mu;s</td><td>0.1501 &mu;s</td><td>0.0401 &mu;s</td><td>18.656 &mu;s</td><td>18.803 &mu;s</td><td>18.849 &mu;s</td><td>18.927 &mu;s</td><td>19.154 &mu;s</td><td>52,964.1</td><td>0.1694 &mu;s</td><td>14.00</td><td>2.180</td><td>2.000</td><td>0.5023</td><td>5</td><td>*</td><td>No</td><td>0 KB</td><td>2.0142</td><td>0.0305</td><td>-</td><td>18 KB</td>
-</tr><tr><td>&#39;Serialize: JSON=PersonProper&#39;</td><td>4.020 &mu;s</td><td>0.0227 &mu;s</td><td>0.0212 &mu;s</td><td>0.0055 &mu;s</td><td>3.954 &mu;s</td><td>4.017 &mu;s</td><td>4.022 &mu;s</td><td>4.029 &mu;s</td><td>4.047 &mu;s</td><td>248,739.9</td><td>0.0227 &mu;s</td><td>15.00</td><td>6.545</td><td>2.000</td><td>-1.7697</td><td>2</td><td>*</td><td>No</td><td>0 KB</td><td>0.2060</td><td>-</td><td>-</td><td>2 KB</td>
-</tr><tr><td>&#39;Serialize: JSON=PersonRecord&#39;</td><td>3.620 &mu;s</td><td>0.0452 &mu;s</td><td>0.0353 &mu;s</td><td>0.0102 &mu;s</td><td>3.559 &mu;s</td><td>3.604 &mu;s</td><td>3.629 &mu;s</td><td>3.631 &mu;s</td><td>3.691 &mu;s</td><td>276,248.3</td><td>0.0452 &mu;s</td><td>12.00</td><td>2.688</td><td>2.000</td><td>-0.0779</td><td>1</td><td>*</td><td>No</td><td>0 KB</td><td>0.2594</td><td>-</td><td>-</td><td>2 KB</td>
-</tr><tr><td>&#39;Serialize: XML=PersonProper&#39;</td><td>12.990 &mu;s</td><td>0.0268 &mu;s</td><td>0.0238 &mu;s</td><td>0.0064 &mu;s</td><td>12.941 &mu;s</td><td>12.978 &mu;s</td><td>12.994 &mu;s</td><td>13.004 &mu;s</td><td>13.024 &mu;s</td><td>76,983.8</td><td>0.0268 &mu;s</td><td>14.00</td><td>2.116</td><td>2.000</td><td>-0.5019</td><td>4</td><td>*</td><td>No</td><td>0 KB</td><td>2.2736</td><td>0.0458</td><td>-</td><td>20 KB</td>
-</tr><tr><td>StringToXDocument</td><td>9.610 &mu;s</td><td>0.0733 &mu;s</td><td>0.0650 &mu;s</td><td>0.0174 &mu;s</td><td>9.447 &mu;s</td><td>9.588 &mu;s</td><td>9.639 &mu;s</td><td>9.646 &mu;s</td><td>9.675 &mu;s</td><td>104,061.2</td><td>0.0733 &mu;s</td><td>14.00</td><td>3.413</td><td>2.000</td><td>-1.2556</td><td>3</td><td>*</td><td>No</td><td>0 KB</td><td>1.7090</td><td>0.0305</td><td>-</td><td>16 KB</td>
+</thead><tbody><tr><td>&#39;Deserialize: XML=PersonProper&#39;</td><td>19.795 &mu;s</td><td>0.0766 &mu;s</td><td>0.0598 &mu;s</td><td>0.0173 &mu;s</td><td>19.624 &mu;s</td><td>19.786 &mu;s</td><td>19.811 &mu;s</td><td>19.833 &mu;s</td><td>19.850 &mu;s</td><td>50,516.9</td><td>0.0766 &mu;s</td><td>12.00</td><td>5.777</td><td>2.000</td><td>-1.8319</td><td>6</td><td>*</td><td>No</td><td>2.0142</td><td>0 KB</td><td>-</td><td>18 KB</td>
+</tr><tr><td>&#39;Deserialize: XML=PersonRecord&#39;</td><td>18.970 &mu;s</td><td>0.0378 &mu;s</td><td>0.0354 &mu;s</td><td>0.0091 &mu;s</td><td>18.924 &mu;s</td><td>18.943 &mu;s</td><td>18.955 &mu;s</td><td>19.001 &mu;s</td><td>19.033 &mu;s</td><td>52,715.5</td><td>0.0378 &mu;s</td><td>15.00</td><td>1.718</td><td>2.000</td><td>0.4985</td><td>5</td><td>*</td><td>No</td><td>2.0142</td><td>0 KB</td><td>0.0305</td><td>18 KB</td>
+</tr><tr><td>&#39;Serialize: JSON=PersonProper&#39;</td><td>3.931 &mu;s</td><td>0.0163 &mu;s</td><td>0.0153 &mu;s</td><td>0.0039 &mu;s</td><td>3.904 &mu;s</td><td>3.924 &mu;s</td><td>3.933 &mu;s</td><td>3.941 &mu;s</td><td>3.956 &mu;s</td><td>254,372.1</td><td>0.0163 &mu;s</td><td>15.00</td><td>1.990</td><td>2.000</td><td>-0.4367</td><td>2</td><td>*</td><td>No</td><td>0.2136</td><td>0 KB</td><td>-</td><td>2 KB</td>
+</tr><tr><td>&#39;Serialize: JSON=PersonRecord&#39;</td><td>3.363 &mu;s</td><td>0.0124 &mu;s</td><td>0.0110 &mu;s</td><td>0.0029 &mu;s</td><td>3.340 &mu;s</td><td>3.357 &mu;s</td><td>3.369 &mu;s</td><td>3.370 &mu;s</td><td>3.373 &mu;s</td><td>297,352.5</td><td>0.0124 &mu;s</td><td>14.00</td><td>2.214</td><td>2.000</td><td>-0.9662</td><td>1</td><td>*</td><td>No</td><td>0.2518</td><td>0 KB</td><td>-</td><td>2 KB</td>
+</tr><tr><td>&#39;Serialize: XML=PersonProper&#39;</td><td>12.476 &mu;s</td><td>0.0319 &mu;s</td><td>0.0266 &mu;s</td><td>0.0074 &mu;s</td><td>12.418 &mu;s</td><td>12.466 &mu;s</td><td>12.482 &mu;s</td><td>12.493 &mu;s</td><td>12.512 &mu;s</td><td>80,153.0</td><td>0.0319 &mu;s</td><td>13.00</td><td>2.548</td><td>2.000</td><td>-0.6260</td><td>4</td><td>*</td><td>No</td><td>2.2736</td><td>0 KB</td><td>0.0305</td><td>20 KB</td>
+</tr><tr><td>StringToXDocument</td><td>9.743 &mu;s</td><td>0.0518 &mu;s</td><td>0.0404 &mu;s</td><td>0.0117 &mu;s</td><td>9.656 &mu;s</td><td>9.718 &mu;s</td><td>9.765 &mu;s</td><td>9.772 &mu;s</td><td>9.779 &mu;s</td><td>102,636.1</td><td>0.0518 &mu;s</td><td>12.00</td><td>2.263</td><td>2.000</td><td>-0.8509</td><td>3</td><td>*</td><td>No</td><td>1.7090</td><td>0 KB</td><td>0.0305</td><td>16 KB</td>
 </tr></tbody></table>
 </body>
 </html>

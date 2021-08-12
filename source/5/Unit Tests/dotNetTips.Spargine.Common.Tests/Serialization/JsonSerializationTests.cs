@@ -79,14 +79,14 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 				JsonSerialization.SerializeToFile(person, fileName);
 
 				//Deserialize
-				JsonSerialization.DeserializeFromFile<PersonProper>(fileName);
+				_ = JsonSerialization.DeserializeFromFile<PersonProper>(fileName);
 			}
 			catch (Exception ex)
 			{
 				Assert.Fail(ex.Message);
 			}
 
-			Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{fileName}.bogus"));
+			_ = Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{fileName}.bogus"));
 		}
 	}
 }

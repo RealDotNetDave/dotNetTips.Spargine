@@ -51,14 +51,14 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateNullParam(sb, nameof(sb));
 			Validate.TryValidateParam(bytes, nameof(bytes));
 
-			sb.Append("'0x");
+			_ = sb.Append("'0x");
 
 			for (var i = 0; i < bytes.Length; i++)
 			{
-				sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
+				_ = sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
 			}
 
-			sb.Append('\'');
+			_ = sb.Append('\'');
 		}
 
 		/// <summary>
@@ -80,12 +80,12 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam(key, nameof(key));
 			Validate.TryValidateParam(value, nameof(value));
 
-			sb.Append(key);
-			sb.Append(ControlChars.Equal);
+			_ = sb.Append(key);
+			_ = sb.Append(ControlChars.Equal);
 
-			if (includeQuotes == Tristate.True || includeQuotes == Tristate.UseDefault)
+			if (includeQuotes is Tristate.True or Tristate.UseDefault)
 			{
-				sb.Append(ControlChars.Quote);
+				_ = sb.Append(ControlChars.Quote);
 				var lastSpecialIndex = 0;
 				int specialIndex;
 
@@ -96,28 +96,28 @@ namespace dotNetTips.Spargine.Extensions
 					if (specialIndex >= 0)
 					{
 						//TODO: THIS CONDITION NOT BEING TESTED FOR APPEND
-						sb.Append(value, lastSpecialIndex, specialIndex - lastSpecialIndex);
-						sb.Append(ControlChars.Backslash);
-						sb.Append(value[specialIndex]);
+						_ = sb.Append(value, lastSpecialIndex, specialIndex - lastSpecialIndex);
+						_ = sb.Append(ControlChars.Backslash);
+						_ = sb.Append(value[specialIndex]);
 						lastSpecialIndex = specialIndex + 1;
 					}
 					else
 					{
-						sb.Append(value, lastSpecialIndex, value.Length - lastSpecialIndex);
+						_ = sb.Append(value, lastSpecialIndex, value.Length - lastSpecialIndex);
 						break;
 					}
 				}
-				sb.Append(ControlChars.Quote);
+				_ = sb.Append(ControlChars.Quote);
 			}
 			else
 			{
 				//TODO: THIS CONDITION NOT BEING TESTED
-				sb.Append(value);
+				_ = sb.Append(value);
 			}
 
-			if (includeComma == Tristate.True || includeComma == Tristate.UseDefault)
+			if (includeComma is Tristate.True or Tristate.UseDefault)
 			{
-				sb.Append(ControlChars.DefaultSeparator);
+				_ = sb.Append(ControlChars.DefaultSeparator);
 			}
 		}
 
@@ -197,7 +197,7 @@ namespace dotNetTips.Spargine.Extensions
 			foreach (var value in values)
 			{
 				joinAction(value);
-				sb.Append(separator);
+				_ = sb.Append(separator);
 				appended = true;
 			}
 
@@ -240,7 +240,7 @@ namespace dotNetTips.Spargine.Extensions
 			foreach (var value in values)
 			{
 				joinAction(value, param);
-				sb.Append(separator);
+				_ = sb.Append(separator);
 				appended = true;
 			}
 
@@ -288,7 +288,7 @@ namespace dotNetTips.Spargine.Extensions
 			foreach (var value in values)
 			{
 				joinAction(sb, value, param1, param2);
-				sb.Append(separator);
+				_ = sb.Append(separator);
 				appended = true;
 			}
 

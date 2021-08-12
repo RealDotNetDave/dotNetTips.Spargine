@@ -26,10 +26,6 @@ namespace dotNetTips.Spargine.Tester.Models
 	public record PersonRecord : IDataRecord
 	{
 		/// <summary>
-		/// The addresses
-		/// </summary>
-		private List<AddressRecord> _addresses;
-		/// <summary>
 		/// The born on
 		/// </summary>
 		private DateTimeOffset _bornOn;
@@ -80,17 +76,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the addresses.
 		/// </summary>
 		/// <value>The addresses.</value>
-		public List<AddressRecord> Addresses
-		{
-			get
-			{
-				return this._addresses;
-			}
-			init
-			{
-				this._addresses = value;
-			}
-		}
+		public List<AddressRecord> Addresses { get; init; }
 
 		/// <summary>
 		/// Gets or sets the born on date.

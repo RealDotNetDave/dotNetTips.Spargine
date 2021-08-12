@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 				if (this._hashCodes.Contains(hashCode) == false)
 				{
 					base.Add(item);
-					this._hashCodes.Add(hashCode);
+					_ = this._hashCodes.Add(hashCode);
 				}
 			}
 		}
@@ -92,7 +92,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 			{
 				if (base.TryTake(out result))
 				{
-					this._hashCodes.Remove(result.GetHashCode());
+					_ = this._hashCodes.Remove(result.GetHashCode());
 					return true;
 				}
 				else

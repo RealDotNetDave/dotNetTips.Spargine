@@ -159,7 +159,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			foreach (DictionaryEntry item in dictionary)
 			{
-				sb.Append($"{item.Key}:{item.Value}{delimiter.ToString(CultureInfo.CurrentCulture)}");
+				_ = sb.Append($"{item.Key}:{item.Value}{delimiter.ToString(CultureInfo.CurrentCulture)}");
 			}
 
 			return sb.ToString(0, sb.Length - 1);
@@ -236,7 +236,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				foreach (var item in items)
 				{
-					if (item is not null && item is IDisposable disposeItem)
+					if (item is not null and IDisposable disposeItem)
 					{
 						disposeItem.TryDispose();
 					}

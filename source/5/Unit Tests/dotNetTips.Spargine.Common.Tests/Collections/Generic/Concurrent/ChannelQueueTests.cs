@@ -4,7 +4,7 @@
 // Created          : 07-26-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-26-2021
+// Last Modified On : 07-28-2021
 // ***********************************************************************
 // <copyright file="ChannelQueueTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			var person = RandomData.GeneratePerson<PersonProper>();
 			var token = CancellationToken.None;
 
-			await channel.WriteAsync(person, cancellationToken: token);
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 
 			Assert.IsTrue(channel.Count == 1);
 		}
@@ -49,11 +49,11 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			var person = RandomData.GeneratePerson<PersonProper>();
 			var token = CancellationToken.None;
 
-			channel.Lock();
+			_ = channel.Lock();
 
 			try
 			{
-				await channel.WriteAsync(person, cancellationToken: token);
+				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 			catch (ChannelClosedException ex)
 			{
@@ -76,7 +76,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			var people = RandomData.GeneratePersonCollection<PersonProper>(Count);
 			var token = CancellationToken.None;
 
-			await channel.WriteAsync(people, lockQueue: true, cancellationToken: token);
+			await channel.WriteAsync(people, lockQueue: true, cancellationToken: token).ConfigureAwait(false);
 
 			Assert.IsTrue(channel.Count == Count);
 
@@ -92,7 +92,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 
 			var tasks = new List<Task>();
 
-			tasks.Add(AddToQueue(channel, people, token));
+			tasks.Add(AddToQueueAsync(channel, people, token));
 
 			tasks.Add(ListenToQueue(channel, token));
 
@@ -108,11 +108,11 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			var person = RandomData.GeneratePerson<PersonProper>();
 			var token = CancellationToken.None;
 
-			await channel.WriteAsync(person, cancellationToken: token);
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 
 			Assert.IsTrue(channel.Count == 1);
 
-			var item = await channel.ReadAsync(token);
+			_ = await channel.ReadAsync(token).ConfigureAwait(false);
 
 			Assert.IsTrue(channel.Count == 0);
 		}
@@ -129,7 +129,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			/// Write
 			foreach (var person in people)
 			{
-				await channel.WriteAsync(person, cancellationToken: token);
+				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 
 			Assert.IsTrue(channel.Count == Count);
@@ -137,7 +137,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			/// Read
 			do
 			{
-				var item = await channel.ReadAsync(token);
+				_ = await channel.ReadAsync(token).ConfigureAwait(false);
 
 			} while (channel.Count > 0);
 
@@ -155,12 +155,12 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 
 			foreach (var person in people)
 			{
-				await channel.WriteAsync(person, cancellationToken: token);
+				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 
 			Assert.IsTrue(channel.Count == Count);
 
-			channel.Lock();
+			_ = channel.Lock();
 
 			await foreach (var item in channel.ListenAsync(token))
 			{
@@ -180,28 +180,28 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 
 			foreach (var person in people)
 			{
-				await channel.WriteAsync(person, cancellationToken: token);
+				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 
 			Assert.IsTrue(channel.Count == Capacity);
 
 			do
 			{
-				var item = await channel.ReadAsync(token);
+				_ = await channel.ReadAsync(token).ConfigureAwait(false);
 
 			} while (channel.Count != 0);
 
 			Assert.IsTrue(channel.Count == 0);
 		}
 
-		private static async Task AddToQueue(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
+		private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
 		{
 			foreach (var person in people)
 			{
-				await channel.WriteAsync(person, cancellationToken: token);
+				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 
-			channel.Lock();
+			_ = channel.Lock();
 		}
 
 		private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)

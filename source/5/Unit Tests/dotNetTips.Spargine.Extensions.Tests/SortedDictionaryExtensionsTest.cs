@@ -40,7 +40,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			SortedDictionary<string, PersonProper> nullSet = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
 		}
 
 		[TestMethod]
@@ -52,11 +52,11 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			var personFromCollection = peopleSortedSet.Shuffle().First();
 
-			peopleSortedSet.Upsert(person.Id, person);
+			_ = peopleSortedSet.Upsert(person.Id, person);
 
 			Assert.IsTrue(peopleSortedSet.Count() == 11);
 
-			peopleSortedSet.Upsert(personFromCollection.Key, personFromCollection.Value);
+			_ = peopleSortedSet.Upsert(personFromCollection.Key, personFromCollection.Value);
 
 			Assert.IsTrue(peopleSortedSet.Count() == 11);
 

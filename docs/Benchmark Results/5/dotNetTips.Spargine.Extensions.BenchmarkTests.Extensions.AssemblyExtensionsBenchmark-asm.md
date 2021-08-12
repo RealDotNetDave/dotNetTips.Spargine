@@ -1,4 +1,4 @@
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllInterfaces01()
 ; 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
@@ -41,19 +41,19 @@
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,244A3D53020
+       mov       r8,18AAD1F3020
        mov       r8,[r8]
-       mov       rdx,24483D51928
+       mov       rdx,18ABD1F1110
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FFA7EC80020
+       mov       rcx,7FF9E9E10020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,244A3D590B8
+       mov       rdx,18A9D1F4CB0
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -90,7 +90,7 @@ M02_L01:
 ; Total bytes of code 182
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllTypes01()
 ; 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
@@ -131,9 +131,9 @@ M02_L01:
        push      rsi
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,24694A71028
+       mov       r8,1FBBE403020
        mov       r8,[r8]
-       mov       rdx,24684A81888
+       mov       rdx,1FBCE401110
        mov       rdx,[rdx]
        mov       rcx,rsi
        call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
@@ -142,14 +142,14 @@ M02_L01:
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,24684A7B6E8
+       mov       rcx,1FBBE40BB10
        mov       r8,[rcx]
        test      r8,r8
        jne       short M02_L00
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,24684A7B6E0
+       mov       rdx,1FBBE40BB08
        mov       rdx,[rdx]
        test      rdx,rdx
        je        short M02_L01
@@ -157,7 +157,7 @@ M02_L01:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset dotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,24684A7B6E8
+       mov       rcx,1FBBE40BB10
        mov       rdx,rdi
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
@@ -176,7 +176,7 @@ M02_L01:
 ; Total bytes of code 189
 ```
 
-## .NET 5.0.6 (5.0.621.22011), X64 RyuJIT
+## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetInstances01()
 ; 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
@@ -194,7 +194,7 @@ M02_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       dword ptr [rbx+28],0FFFFFFFE
-       mov       rcx,7FFA7EC60020
+       mov       rcx,7FF9E9E10020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rcx,[rax+18]
@@ -204,7 +204,7 @@ M02_L01:
        mov       rcx,rax
 M00_L00:
        cmp       [rcx],ecx
-       call      00007FFADE7E1100
+       call      00007FFA49964090
        mov       [rbx+2C],eax
        lea       rcx,[rbx+18]
        mov       rdx,rdi
@@ -237,12 +237,12 @@ M00_L00:
 ; System.Threading.Thread.InitializeCurrentThread()
        push      rsi
        sub       rsp,20
-       call      qword ptr [7FFADE2E1AC8]
+       call      qword ptr [7FFA49461AC8]
        mov       rsi,rax
-       call      qword ptr [7FFADE2E1748]
+       call      qword ptr [7FFA49461748]
        lea       rcx,[rax+18]
        mov       rdx,rsi
-       call      qword ptr [7FFADE2E1020]
+       call      qword ptr [7FFA49461020]
        mov       rax,rsi
        add       rsp,20
        pop       rsi

@@ -38,9 +38,9 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				BenchmarkRunner.Run<ChannelQueueCollectionBenchmark>(config);
+				//BenchmarkRunner.Run<ChannelQueueCollectionBenchmark>(config);
 
 				Console.Beep();
 				Console.ReadLine();

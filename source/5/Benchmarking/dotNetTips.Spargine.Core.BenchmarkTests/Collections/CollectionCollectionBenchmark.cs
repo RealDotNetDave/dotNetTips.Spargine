@@ -15,6 +15,7 @@
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Core.Collections;
+using dotNetTips.Spargine.Core.Collections.Generic;
 using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections

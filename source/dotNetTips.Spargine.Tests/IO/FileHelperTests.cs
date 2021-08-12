@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Length > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
 
-				var result = await FileHelper.CopyFileAsync(file: fileToCopy, destinationFolder: this._tempPath).ConfigureAwait(false);
+				var result = await FileHelper.CopyFileAsync(file: fileToCopy, destinationFolder: _tempPath).ConfigureAwait(false);
 
 				Assert.IsTrue(result > 0);
 			}
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				var fileToCopy = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)).GetDirectories().Where(p => p.GetFiles().Length > 0).Shuffle().FirstOrDefault().GetFiles().FirstOrDefault();
 
-				var result = FileHelper.CopyFile(file: fileToCopy, destinationFolder: this._tempPath);
+				var result = FileHelper.CopyFile(file: fileToCopy, destinationFolder: _tempPath);
 
 				Assert.IsTrue(result > 0);
 			}
@@ -70,7 +70,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			try
 			{
-				var filesToDelete = RandomData.GenerateFiles(this._tempPath.FullName, 100, 500);
+				var filesToDelete = RandomData.GenerateFiles(_tempPath.FullName, 100, 500);
 
 				var result = FileHelper.DeleteFiles(filesToDelete);
 
@@ -91,7 +91,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				const string fileToDownload = @"https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png";
 
-				await FileHelper.DownloadFileFromWebAsync(remoteFileUrl: new Uri(fileToDownload), localFilePath: Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png")).ConfigureAwait(false);
+				await FileHelper.DownloadFileFromWebAsync(remoteFileUrl: new Uri(fileToDownload), localFilePath: Path.Combine(_tempPath.FullName, "dotNetTips.Com.logo.png")).ConfigureAwait(false);
 			}
 			catch (Exception ex)
 			{
@@ -106,7 +106,7 @@ namespace dotNetTips.Spargine.Tests.IO
 			{
 				const string fileToDownload = @"https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png";
 
-				FileHelper.DownloadFileFromWeb(new Uri(fileToDownload), Path.Combine(this._tempPath.FullName, "dotNetTips.Com.logo.png"));
+				FileHelper.DownloadFileFromWeb(new Uri(fileToDownload), Path.Combine(_tempPath.FullName, "dotNetTips.Com.logo.png"));
 			}
 			catch (Exception ex)
 			{
@@ -136,20 +136,20 @@ namespace dotNetTips.Spargine.Tests.IO
 		[TestInitialize]
 		public void Initialize()
 		{
-			this._tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-FILEHELPER-TEMP"));
+			_tempPath = new DirectoryInfo(Path.Combine(Path.GetTempPath(), "_DOTNETTIPS-FILEHELPER-TEMP"));
 
-			if (this._tempPath.Exists == false)
+			if (_tempPath.Exists == false)
 			{
-				this._tempPath.Create();
+				_tempPath.Create();
 			}
 			else
 			{
-				foreach (var directory in this._tempPath.EnumerateDirectories().ToArray())
+				foreach (var directory in _tempPath.EnumerateDirectories().ToArray())
 				{
 					directory.Delete();
 				}
 
-				var filesToDelete = this._tempPath.EnumerateFiles().Select(p => p.FullName);
+				var filesToDelete = _tempPath.EnumerateFiles().Select(p => p.FullName);
 
 				if (filesToDelete.HasItems())
 				{
@@ -169,7 +169,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		public void MoveFileTest01()
 		{
 			var file = RandomData.GenerateFile(Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.TEMP.ToString()), $"{RandomData.GenerateKey()}.test"));
-			var newFile = Path.Combine(Path.Combine(this._tempPath.ToString(), $"{RandomData.GenerateKey()}.moved"));
+			var newFile = Path.Combine(Path.Combine(_tempPath.ToString(), $"{RandomData.GenerateKey()}.moved"));
 
 			FileHelper.MoveFile(file, newFile, FileMoveOptions.ReplaceExisting);
 		}

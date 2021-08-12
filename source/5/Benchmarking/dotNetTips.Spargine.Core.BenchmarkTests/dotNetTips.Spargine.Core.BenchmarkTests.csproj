@@ -22,11 +22,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.0" />
-		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.0" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.8" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.8" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.8" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.11" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.11" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.11" />
 	</ItemGroup>
 
 	<ItemGroup>

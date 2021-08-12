@@ -125,7 +125,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentException">obj</exception>
 		public int CompareTo(object obj)
 		{
-			if (!( obj is CoordinateProper ))
+			if (obj is not CoordinateProper)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException(nameof(obj), $"{nameof(obj)} is not a {nameof(CoordinateProper)}");
 			}

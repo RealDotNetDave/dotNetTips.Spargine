@@ -89,7 +89,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			for (var i = 0; i < bytes.Length; i++)
 			{
-				sb.Append(bytes[i].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(bytes[i].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString();
@@ -490,7 +490,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				foreach (var item in items)
 				{
-					if (item is not null && item is IDisposable disposeItem)
+					if (item is not null and IDisposable disposeItem)
 					{
 						disposeItem.TryDispose();
 					}

@@ -70,14 +70,14 @@ namespace dotNetTips.Spargine.Core
 					var value = args[argCount];
 
 					//TODO: ADD EXTENSION METHOD TO TEST FOR ENUM VALUES
-					if (addLineFeed == Tristate.True || addLineFeed == Tristate.UseDefault)
+					if (addLineFeed is Tristate.True or Tristate.UseDefault)
 					{
 						//TODO: THIS CONDITION NOT BEING TESTED
-						sb.AppendLine(value);
+						_ = sb.AppendLine(value);
 					}
 					else
 					{
-						sb.Append(string.Concat(value, delimiter));
+						_ = sb.Append(string.Concat(value, delimiter));
 					}
 				}
 			}

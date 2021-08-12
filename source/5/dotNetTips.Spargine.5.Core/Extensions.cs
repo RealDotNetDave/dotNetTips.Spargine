@@ -420,10 +420,10 @@ namespace dotNetTips.Spargine.Core
 			{
 				if (sb.Length > 0)
 				{
-					sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
+					_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
 				}
 
-				sb.Append($"{item.Key}: {item.Value}");
+				_ = sb.Append($"{item.Key}: {item.Value}");
 			}
 
 			return sb.ToString();
@@ -452,10 +452,10 @@ namespace dotNetTips.Spargine.Core
 				{
 					if (sb.Length > 0)
 					{
-						sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
+						_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
 					}
 
-					sb.Append(item.ToString());
+					_ = sb.Append(item.ToString());
 				});
 
 			return sb.ToString();

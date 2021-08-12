@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result > 0);
 
-			Assert.ThrowsException<ArgumentNullException>(() => DirectoryInfoExtensions.GetSize(null));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => DirectoryInfoExtensions.GetSize(null));
 		}
 
 		[TestMethod]
@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result > 0);
 
-			Assert.ThrowsException<ArgumentNullException>(() => directory.GetSize(null) == 0);
+			_ = Assert.ThrowsException<ArgumentNullException>(() => directory.GetSize(null) == 0);
 		}
 
 		[TestMethod]
@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result > 0);
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
 				0);
 		}
 	}

@@ -114,7 +114,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 			Debug.WriteLine($"Temp Path={this._tempPath}");
 			Debug.WriteLine($"Source Path={this._sourcePath}");
 
-			var generatedFiles = RandomData.GenerateFiles(this._sourcePath, FileCount, FileLength);
+			_ = RandomData.GenerateFiles(this._sourcePath, FileCount, FileLength);
 
 			base.Setup();
 		}

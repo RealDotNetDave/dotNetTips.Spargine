@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-using System.Diagnostics;
+using System.Globalization;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -42,7 +42,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <summary>
 		/// The country
 		/// </summary>
-		private string _country = "United States";
+		private string _country = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
 
 		/// <summary>
 		/// The county province
@@ -123,7 +123,7 @@ namespace dotNetTips.Spargine.Tester.Models
 					ExceptionThrower.ThrowArgumentNullException("Value for address cannot be null or empty.", nameof(this.Address1));
 				}
 
-				this._address1 = ( value.Length < 10 || value.Length > 256 ) ? throw new ArgumentOutOfRangeException(nameof(this.Address1), "Address must be between 10 - 256 characters.") : value;
+				this._address1 = ( value.Length is < 10 or > 256 ) ? throw new ArgumentOutOfRangeException(nameof(this.Address1), "Address must be between 10 - 256 characters.") : value;
 			}
 		}
 

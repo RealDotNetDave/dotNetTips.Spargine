@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <value>The invalid filter chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] InvalidFilterChars => FileHelper.InvalidFileNameChars.Where(c => c != '*' && c != '|' && c != '?').ToArray();
+		public static char[] InvalidFilterChars => FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
 
 		/// <summary>
 		/// Gets the invalid path name chars.
@@ -140,7 +140,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(path, nameof(path));
 
-			return path[^1] != Path.DirectorySeparatorChar ? path + Path.DirectorySeparatorChar : path;
+			return path[^1] != Path.DirectorySeparatorChar ? $"{path}{Path.DirectorySeparatorChar}" : path;
 		}
 
 		/// <summary>

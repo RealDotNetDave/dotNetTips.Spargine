@@ -35,7 +35,9 @@ namespace dotNetTips.Spargine.Tester.Models
 	[Serializable]
 	[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 	[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+#pragma warning disable CS0618 // Type or member is obsolete
 	public sealed class PersonProper : IPerson, IDataModel<PersonProper, string>, IPersonPlus
+#pragma warning restore CS0618 // Type or member is obsolete
 	{
 
 		/// <summary>
@@ -72,7 +74,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// The country name.
 		/// </summary>
 		[NonSerialized]
-		private string _country = "USA";
+		private string _country = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
 
 		/// <summary>
 		/// The email address.

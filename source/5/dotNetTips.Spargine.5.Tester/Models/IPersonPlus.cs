@@ -21,6 +21,7 @@ namespace dotNetTips.Spargine.Tester.Models
 	/// <summary>
 	/// Interface IPersonPlus
 	/// </summary>
+	[Obsolete("This class will be removed at the end of 2021. Instead use Person or PersonRecord.")]
 	[XmlRoot(ElementName = "IPersonPlus", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 	public interface IPersonPlus : IPerson
 	{

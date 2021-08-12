@@ -12,7 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
@@ -34,7 +33,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void FireAndForget(this Task task)
 		{
-			task.ContinueWith(tsk => tsk.Exception, TaskContinuationOptions.OnlyOnFaulted);
+			_ = task.ContinueWith(tsk => tsk.Exception, TaskContinuationOptions.OnlyOnFaulted);
 		}
 
 		/// <summary>
@@ -49,7 +48,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void FireAndForget(this Task task, Action<Exception> ex)
 		{
-			task.ContinueWith((tsk) => ex?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);
+			_ = task.ContinueWith((tsk) => ex?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);
 		}
 	}
 }

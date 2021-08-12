@@ -111,7 +111,7 @@ namespace dotNetTips.Spargine.Extensions
 				{
 					if (items[index].IsNotNull())
 					{
-						collection.AddIfNotExists(items[index]);
+						_ = collection.AddIfNotExists(items[index]);
 						returnValue = true;
 					}
 				}
@@ -182,9 +182,9 @@ namespace dotNetTips.Spargine.Extensions
 				items.ToList()
 					.ForEach(item =>
 					{
-						if (ensureUnique == Tristate.True || ensureUnique == Tristate.UseDefault)
+						if (ensureUnique is Tristate.True or Tristate.UseDefault)
 						{
-							collection.AddIfNotExists(item);
+							_ = collection.AddIfNotExists(item);
 							returnValue = true;
 						}
 						else
@@ -287,7 +287,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
-			var currentItem = collection.Where(p => p.Id.Equals(item.Id)).FirstOrDefault();
+			var currentItem = collection.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
 			if (currentItem is not null)
 			{
@@ -309,7 +309,6 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			if (collection is null)
 			{
-				//TODO: WRITE TEST FOR THIS
 				collection = TypeHelper.Create<Collection<T>>();
 
 				return true;

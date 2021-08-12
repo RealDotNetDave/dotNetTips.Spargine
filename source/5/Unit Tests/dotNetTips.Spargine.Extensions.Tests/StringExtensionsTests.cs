@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var word = RandomData.GenerateWord(100);
 
-			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.ComputeHash(HashType.MD5));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => string.Empty.ComputeHash(HashType.MD5));
 
 			foreach (var item in Enum.GetValues(typeof(HashType)))
 			{
@@ -104,7 +104,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Count() == 3);
 
-			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.DelimitedStringToArray());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => string.Empty.DelimitedStringToArray());
 		}
 
 		[TestMethod]
@@ -158,13 +158,13 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.HasValue(10));
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(-100));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(-100));
 
 			Assert.IsTrue(testValue.HasValue(1, 10));
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(-10, 500));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(-10, 500));
 
-			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(12, -10));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.HasValue(12, -10));
 
 			Assert.IsFalse(testValue.HasValue("XXXXX"));
 
@@ -355,7 +355,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			string testString = null;
 
-			Assert.ThrowsException<ArgumentNullException>(() => testString.SplitRemoveEmpty());
+			_ = Assert.ThrowsException<ArgumentNullException>(() => testString.SplitRemoveEmpty());
 		}
 
 		[TestMethod]

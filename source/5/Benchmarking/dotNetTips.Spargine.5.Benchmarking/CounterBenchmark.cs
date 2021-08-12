@@ -63,6 +63,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The person fixed collection
 		/// </summary>
 		/// <value>The person fixed collection.</value>
+		[Obsolete("This will be removed at the end of 2021.")]
 		protected List<PersonFixed> PersonFixedList { get; private set; }
 
 		protected List<Person> PersonList { get; private set; }

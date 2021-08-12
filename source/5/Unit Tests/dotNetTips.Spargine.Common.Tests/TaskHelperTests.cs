@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Core.Tests
 		[TestMethod]
 		public void RunSync20()
 		{
-			TaskHelper.RunSync(() => this.FireWithReturn(nameof(this.RunSync20)));
+			_ = TaskHelper.RunSync(() => this.FireWithReturn(nameof(this.RunSync20)));
 
 			Assert.AreEqual(this._fireResult, nameof(this.RunSync20));
 		}
@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.Core.Tests
 		{
 			var cancelToken = new CancellationTokenSource().Token;
 
-			TaskHelper.RunSync(() => this.FireWithReturn(nameof(this.RunSync21)), cancellationToken: cancelToken);
+			_ = TaskHelper.RunSync(() => this.FireWithReturn(nameof(this.RunSync21)), cancellationToken: cancelToken);
 
 			Assert.AreEqual(this._fireResult, nameof(this.RunSync21));
 		}
@@ -55,7 +55,7 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			Console.WriteLine(input);
 
-			await Task.Delay(1);
+			await Task.Delay(1).ConfigureAwait(false);
 		}
 
 		private async Task<string> FireWithReturn(string input)
@@ -64,7 +64,7 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			Console.WriteLine(input);
 
-			await Task.Delay(1);
+			await Task.Delay(1).ConfigureAwait(false);
 
 			return input;
 		}

@@ -40,16 +40,11 @@ namespace dotNetTips.Spargine.IO
 		private const int Retries = 10;
 
 		/// <summary>
-		/// The invalid file name chars
-		/// </summary>
-		private static readonly char[] _invalidFileNameChars = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
-
-		/// <summary>
 		/// Gets the invalid file name chars.
 		/// </summary>
 		/// <value>The invalid file name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] InvalidFileNameChars => _invalidFileNameChars;
+		public static char[] InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
 
 		/// <summary>
 		/// Copies the file to a new directory. If the file already exists, it
@@ -136,13 +131,13 @@ namespace dotNetTips.Spargine.IO
 				{
 					File.Delete(fileName);
 				}
-				catch (Exception ex) when (ex is ArgumentException ||
-				  ex is ArgumentNullException ||
-				  ex is System.IO.DirectoryNotFoundException ||
-				  ex is IOException ||
-				  ex is NotSupportedException ||
-				  ex is PathTooLongException ||
-				  ex is UnauthorizedAccessException)
+				catch (Exception ex) when (ex is ArgumentException or
+				  ArgumentNullException or
+				  System.IO.DirectoryNotFoundException or
+				  IOException or
+				  NotSupportedException or
+				  PathTooLongException or
+				  UnauthorizedAccessException)
 				{
 					errors.Add((FileName: fileName, ErrorMessage: ex.GetAllMessages()));
 				}
@@ -163,7 +158,7 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
 			Validate.TryValidateParam(localFilePath, nameof(localFilePath));
 
-			Directory.CreateDirectory(Path.GetDirectoryName(localFilePath));
+			_ = Directory.CreateDirectory(Path.GetDirectoryName(localFilePath));
 
 			using var client = new HttpClient();
 
@@ -211,7 +206,7 @@ namespace dotNetTips.Spargine.IO
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
 			Validate.TryValidateParam(localFilePath, nameof(localFilePath));
 
-			Directory.CreateDirectory(Path.GetDirectoryName(localFilePath));
+			_ = Directory.CreateDirectory(Path.GetDirectoryName(localFilePath));
 
 			using var client = new HttpClient();
 			using var localStream = File.Create(localFilePath);
@@ -233,7 +228,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(fileName, nameof(fileName));
 
-			return fileName.IndexOfAny(_invalidFileNameChars) != -1;
+			return fileName.IndexOfAny(InvalidFileNameChars) != -1;
 		}
 
 		/// <summary>
@@ -253,7 +248,7 @@ namespace dotNetTips.Spargine.IO
 
 			if (Directory.Exists(dir) == false)
 			{
-				Directory.CreateDirectory(dir);
+				_ = Directory.CreateDirectory(dir);
 			}
 
 			for (var retryCount = 0; retryCount < Retries; retryCount++)
@@ -293,7 +288,7 @@ namespace dotNetTips.Spargine.IO
 			{
 				try
 				{
-					NativeMethods.MoveFileEx(sourceFileName, destinationFileName, (int)fileMoveOptions);
+					_ = NativeMethods.MoveFileEx(sourceFileName, destinationFileName, (int)fileMoveOptions);
 					return;
 				}
 				catch (IOException) when (retryCount < Retries - 1)
@@ -409,7 +404,7 @@ namespace dotNetTips.Spargine.IO
 
 				var extractedFilePath = Path.Combine(expandedDirectoryPath, zipArchiveEntry.FullName);
 
-				Directory.CreateDirectory(Path.GetDirectoryName(extractedFilePath));
+				_ = Directory.CreateDirectory(Path.GetDirectoryName(extractedFilePath));
 
 				using var zipStream = zipArchiveEntry.Open();
 				using var extractedFileStream = File.OpenWrite(extractedFilePath);

@@ -141,7 +141,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int Round(this decimal value, MidpointRounding mode)
 		{
-			if (value <= decimal.MinValue || value >= decimal.MaxValue)
+			if (value is <= decimal.MinValue or >= decimal.MaxValue)
 			{
 				ExceptionThrower.ThrowArgumentNullException(Resources.ValueIsInvalid, nameof(value));
 			}
@@ -174,7 +174,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int Round(this decimal value, int digits, MidpointRounding mode)
 		{
-			if (value <= decimal.MinValue || value >= decimal.MaxValue)
+			if (value is <= decimal.MinValue or >= decimal.MaxValue)
 			{
 				ExceptionThrower.ThrowArgumentNullException(Resources.ValueIsInvalid, nameof(value));
 			}

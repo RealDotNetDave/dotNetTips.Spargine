@@ -17,7 +17,6 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
-using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Collections.Generic
@@ -150,7 +149,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 
 			this.OnCountPropertyChanging();
 
-			this._set.Add(item);
+			_ = this._set.Add(item);
 
 			this.OnCollectionChanged(NotifyCollectionChangedAction.Add, item);
 
@@ -323,7 +322,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 
 			this.OnCountPropertyChanging();
 
-			this._set.Remove(item);
+			_ = this._set.Remove(item);
 
 			this.OnCollectionChanged(NotifyCollectionChangedAction.Remove, item);
 
@@ -475,46 +474,5 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// Called when [count property changing].
 		/// </summary>
 		private void OnCountPropertyChanging() => this.OnPropertyChanging(ObservableHashSetSingletons.CountPropertyChanging);
-	}
-
-	/// <summary>
-	/// ObservableHashSetSingletons.
-	/// </summary>
-	internal static class ObservableHashSetSingletons
-	{
-		/// <summary>
-		/// The count property changed
-		/// </summary>
-		private static readonly PropertyChangedEventArgs _countPropertyChanged
-			= new(propertyName: "Count");
-
-		/// <summary>
-		/// The count property changing
-		/// </summary>
-		private static readonly PropertyChangingEventArgs _countPropertyChanging
-			= new(propertyName: "Count");
-
-		/// <summary>
-		/// The no items.
-		/// </summary>
-		private static readonly object[] _noItems = Array.Empty<object>();
-
-		/// <summary>
-		/// Gets the count property changed.
-		/// </summary>
-		/// <value>The count property changed.</value>
-		internal static PropertyChangedEventArgs CountPropertyChanged => _countPropertyChanged;
-
-		/// <summary>
-		/// Gets the count property changing.
-		/// </summary>
-		/// <value>The count property changing.</value>
-		internal static PropertyChangingEventArgs CountPropertyChanging => _countPropertyChanging;
-
-		/// <summary>
-		/// Gets the no items.
-		/// </summary>
-		/// <value>The no items.</value>
-		internal static object[] NoItems => _noItems;
 	}
 }

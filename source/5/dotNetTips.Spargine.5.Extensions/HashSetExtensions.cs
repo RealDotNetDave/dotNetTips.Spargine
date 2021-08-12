@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (condition)
 			{
-				list.Add(item);
+				_ = list.Add(item);
 			}
 		}
 		/// <summary>
@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			_ = list.Remove(item);
 
-			list.Add(item);
+			_ = list.Add(item);
 		}
 	}
 }

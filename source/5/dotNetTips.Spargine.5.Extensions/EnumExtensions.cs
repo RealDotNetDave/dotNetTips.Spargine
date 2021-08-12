@@ -78,23 +78,5 @@ namespace dotNetTips.Spargine.Extensions
 
 			return (T)Enum.Parse(typeof(T), name);
 		}
-
-		/// <summary>
-		/// Gets the description of the enum value.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="obj">The value.</param>
-		/// <returns>EnumItem&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">val</exception>
-		/// <exception cref="System.ArgumentNullException">The exception.</exception>
-		private static EnumItem<T> GetDescriptionInternal<T>(object obj)
-		{
-			var field = obj.GetType().GetField(obj.ToString());
-			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-			var enumItem = new EnumItem<T>(description: attributes.Length > 0 ? attributes[0].Description : obj.ToString(), value: (T)obj);
-
-			return enumItem;
-		}
 	}
 }

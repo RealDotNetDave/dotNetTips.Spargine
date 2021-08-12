@@ -108,7 +108,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
 			var newPeople = RandomData.GeneratePersonCollection<PersonProper>(2);
 
-			people.AddRange<PersonProper>(newPeople);
+			_ = people.AddRange<PersonProper>(newPeople);
 
 			Assert.IsTrue(people.Count() == 12);
 

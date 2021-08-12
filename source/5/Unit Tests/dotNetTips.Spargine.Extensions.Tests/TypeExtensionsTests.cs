@@ -147,7 +147,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void GetAttributeMethodTest()
 		{
-			var method = typeof(TestType).GetAllMethods().Where(p => string.Compare(p.Name, "get_UserName", StringComparison.Ordinal) == 0).FirstOrDefault();
+			var method = typeof(TestType).GetAllMethods().FirstOrDefault(p => string.Compare(p.Name, "get_UserName", StringComparison.Ordinal) == 0);
 
 			var result1 = method.GetAttribute<CompilerGeneratedAttribute>();
 
@@ -343,10 +343,5 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result2 = typeof(PersonProper).GetProperty("FirstName").IsStatic();
 			Assert.IsFalse(result2);
 		}
-	}
-
-	internal class Foo
-	{
-		public int? Bar { get; set; }
 	}
 }

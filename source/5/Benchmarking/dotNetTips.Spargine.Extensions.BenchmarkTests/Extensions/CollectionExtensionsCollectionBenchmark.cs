@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(CollectionExtensions.HasItems) + ": Predicate")]
 		public void HasItems01()
 		{
-			var result = base.PersonProperList.HasItems(p => p.City.Contains("SAN"));
+			var result = base.PersonProperList.ToList().HasItems(p => p.City.Contains("SAN"));
 
 			base.Consumer.Consume(result);
 		}

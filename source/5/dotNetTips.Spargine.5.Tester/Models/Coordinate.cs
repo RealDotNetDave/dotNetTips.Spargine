@@ -18,9 +18,9 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Struct Coordinate
-	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />
+	/// Implements the <see cref="Models.ICoordinate" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />
+	/// <seealso cref="Models.ICoordinate" />
 	[Serializable]
 	public struct Coordinate : ICoordinate, IEquatable<Coordinate>
 	{
@@ -88,19 +88,13 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Returns a hash code for this instance.
 		/// </summary>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.X, this.Y);
-		}
+		public override int GetHashCode() => HashCode.Combine(this.X, this.Y);
 
 		/// <summary>
 		/// Returns a <see cref="string" /> of the coordinates.
 		/// </summary>
 		/// <returns>A <see cref="string" /> of the coordinates.</returns>
-		public override string ToString()
-		{
-			return $"{this.X}-{this.Y}";
-		}
+		public override string ToString() => $"{this.X}-{this.Y}";
 
 	}
 }

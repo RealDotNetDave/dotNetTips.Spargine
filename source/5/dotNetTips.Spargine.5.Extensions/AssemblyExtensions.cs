@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using dotNetTips.Spargine.Core;
@@ -34,10 +35,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetAllInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<Type> GetAllInterfaces(this Assembly assembly)
+		public static IEnumerable<Type> GetAllInterfaces([NotNull] this Assembly assembly)
 		{
-			Validate.TryValidateNullParam(assembly, nameof(assembly));
-
 			var interfaces = new List<Type>();
 
 			foreach (var type in assembly.GetTypes())
@@ -53,10 +52,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="assembly">The assembly.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		[Information(nameof(GetAllTypes), "David McCarter", "221/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<Type> GetAllTypes(this Assembly assembly)
+		public static IEnumerable<Type> GetAllTypes([NotNull] this Assembly assembly)
 		{
-			Validate.TryValidateNullParam(assembly, nameof(assembly));
-
 			return assembly.GetTypes().Where(p => !p.IsAbstract).AsEnumerable();
 		}
 
@@ -69,10 +66,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">assembly</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<T> GetInstances<T>(this Assembly assembly) where T : class
+		public static IEnumerable<T> GetInstances<T>([NotNull] this Assembly assembly) where T : class
 		{
-			Validate.TryValidateNullParam(assembly, nameof(assembly));
-
 			var types = assembly.GetTypes()
 				.Where(x => !x.IsInterface
 				&& !x.IsAbstract && !x.IsGenericType
@@ -98,11 +93,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">interfaceType</exception>
 		/// <remarks>Original code from: oqtane.framework</remarks>
 		[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<Type> GetTypes(this Assembly assembly, Type type)
+		public static IEnumerable<Type> GetTypes([NotNull] this Assembly assembly, [NotNull] Type type)
 		{
-			Validate.TryValidateNullParam(assembly, nameof(assembly));
-			Validate.TryValidateNullParam(type, nameof(assembly));
-
 			return assembly.GetTypes().Where(p => !p.IsAbstract && type.IsAssignableFrom(p)).AsEnumerable();
 		}
 	}

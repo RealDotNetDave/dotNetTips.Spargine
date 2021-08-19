@@ -20,9 +20,9 @@ namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Class ArgumentIsReadOnlyException.
-	/// Implements the <see cref="System.ArgumentException" />
+	/// Implements the <see cref="ArgumentException" />
 	/// </summary>
-	/// <seealso cref="System.ArgumentException" />
+	/// <seealso cref="ArgumentException" />
 	/// <seealso cref="ArgumentException" />
 	/// <seealso cref="Exception" />
 	[Serializable]

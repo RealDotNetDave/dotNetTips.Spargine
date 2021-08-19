@@ -32,10 +32,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this TimeSpan first, TimeSpan second)
-		{
-			return ( second.TotalMilliseconds - first.TotalMilliseconds ) / Math.Abs(first.TotalMilliseconds) * 100;
-		}
+		public static double CalculatePercent(this TimeSpan first, TimeSpan second) => ( second.TotalMilliseconds - first.TotalMilliseconds ) / Math.Abs(first.TotalMilliseconds) * 100;
 
 		/// <summary>
 		/// Calculates the percent.
@@ -45,10 +42,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this int first, int second)
-		{
-			return ( second - first ) / Math.Abs(first) * 100;
-		}
+		public static double CalculatePercent(this int first, int second) => ( second - first ) / Math.Abs(first) * 100;
 
 		/// <summary>
 		/// Calculates the percent.
@@ -58,10 +52,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this double first, double second)
-		{
-			return ( second - first ) / Math.Abs(first) * 100;
-		}
+		public static double CalculatePercent(this double first, double second) => ( second - first ) / Math.Abs(first) * 100;
 
 		/// <summary>
 		/// Calculates the percent.
@@ -71,10 +62,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this long first, long second)
-		{
-			return ( second - first ) / Math.Abs(first) * 100;
-		}
+		public static double CalculatePercent(this long first, long second) => ( second - first ) / Math.Abs(first) * 100;
 
 		/// <summary>
 		/// Rounds the specified value.
@@ -136,7 +124,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="mode">The mode.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">value</exception>
-		/// <exception cref="System.ArgumentNullException">value - Value is invalid.</exception>
+		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int Round(this decimal value, MidpointRounding mode)
@@ -169,7 +157,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="mode">The mode.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">value</exception>
-		/// <exception cref="System.ArgumentNullException">value - Value is invalid.</exception>
+		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
 		public static int Round(this decimal value, int digits, MidpointRounding mode)

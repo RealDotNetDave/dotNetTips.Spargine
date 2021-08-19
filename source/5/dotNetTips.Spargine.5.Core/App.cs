@@ -154,10 +154,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ExecutingFolder), author: "David McCarter", createdOn: "6/26/2017", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static string ExecutingFolder()
-		{
-			return new FileInfo(AppContext.BaseDirectory).Directory.ToString();
-		}
+		public static string ExecutingFolder() => new FileInfo(AppContext.BaseDirectory).Directory.ToString();
 
 		/// <summary>
 		/// Gets the environment variables.
@@ -183,27 +180,21 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns><c>true</c> if app is not running, <c>false</c> otherwise.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool IsRunning()
-		{
-			return Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Count() > 0;
-		}
+		public static bool IsRunning() => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Count() > 0;
 
 		/// <summary>
 		/// Checks to see if the current application is ASP.NET.
 		/// </summary>
 		/// <returns>True if running ASP.NET.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool IsRunningFromAspNet()
-		{
-			return ( !string.IsNullOrEmpty(AppDomain.CurrentDomain.DynamicDirectory) ) && AppDomain.CurrentDomain.DynamicDirectory.Contains(_tempAspFiles);
-		}
+		public static bool IsRunningFromAspNet() => ( !string.IsNullOrEmpty(AppDomain.CurrentDomain.DynamicDirectory) ) && AppDomain.CurrentDomain.DynamicDirectory.Contains(_tempAspFiles);
 
 		/// <summary>
 		/// Determines whether user is administrator.
 		/// </summary>
 		/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool IsUserAdministrator()
 		{
@@ -223,10 +214,7 @@ namespace dotNetTips.Spargine.Core
 		/// Kills the current process.
 		/// </summary>
 		[Information(UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void Kill()
-		{
-			KillProcess(Path.GetFileNameWithoutExtension(AppContext.BaseDirectory));
-		}
+		public static void Kill() => KillProcess(Path.GetFileNameWithoutExtension(AppContext.BaseDirectory));
 
 		/// <summary>
 		/// Loads a list of the running assembly referenced assemblies.

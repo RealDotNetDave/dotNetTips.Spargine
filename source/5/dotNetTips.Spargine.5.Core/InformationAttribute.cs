@@ -20,9 +20,9 @@ namespace dotNetTips.Spargine.Core
 
 	/// <summary>
 	/// Class InformationAttribute. This class cannot be inherited.
-	/// Implements the <see cref="System.Attribute" />
+	/// Implements the <see cref="Attribute" />
 	/// </summary>
-	/// <seealso cref="System.Attribute" />
+	/// <seealso cref="Attribute" />
 	[AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Event | AttributeTargets.Delegate, Inherited = false)]
 	public sealed class InformationAttribute : Attribute
 	{
@@ -157,7 +157,7 @@ namespace dotNetTips.Spargine.Core
 				}
 				else
 				{
-					ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(value), "Unit test coverage must be in the range of 0 - 100.");
+					ExceptionThrower.ThrowArgumentOutOfRangeException("Unit test coverage must be in the range of 0 - 100.", nameof(value));
 				}
 			}
 		}

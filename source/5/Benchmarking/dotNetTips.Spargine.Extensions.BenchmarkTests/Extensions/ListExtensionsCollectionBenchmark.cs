@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AddLast))]
 		public void AddLastToList()
 		{
-			var people = base.PersonProperList.CopyToList();
+			var people = base.PersonProperList.ToList();
 
 			var result = people.AddLast(this.PersonProper01);
 
@@ -48,7 +48,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.ClearNulls))]
 		public void ClearNulls()
 		{
-			var people = base.PersonProperList;
+			var people = base.PersonProperList.ToList();
 			people.AddLast(null);
 
 			var result = people.ClearNulls();
@@ -59,7 +59,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.CopyToList))]
 		public void CopyToList()
 		{
-			var result = base.PersonProperList.CopyToList();
+			var result = base.PersonProperList.ToList();
 
 			base.Consumer.Consume(result);
 		}

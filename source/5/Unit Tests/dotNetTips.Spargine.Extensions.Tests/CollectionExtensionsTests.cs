@@ -39,7 +39,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			// Test Parameters
 			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => people.AsReadOnly().AddIfNotExists(person));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => people.AddIfNotExists(person, nullComparer));
 
 			// TEST
 			Assert.IsFalse(people.AddIfNotExists(nullPerson));

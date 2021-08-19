@@ -80,11 +80,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPerson = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			// Test Parameters
 			_ = Assert.ThrowsException<ArgumentNullException>(() => people.GetOrAdd(null, newPerson));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => people.GetOrAdd(newPerson.Id, nullPerson));
 
 			// TEST
 			_ = people.GetOrAdd(newPerson.Id, newPerson);
@@ -124,11 +122,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPerson = RandomData.GeneratePerson<PersonProper>();
 			var personFromCollection = people.Shuffle().First();
-			PersonProper nullPerson = null;
 
 			// Test Parameters
 			_ = Assert.ThrowsException<ArgumentNullException>(() => people.Upsert(null, newPerson));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => people.Upsert(newPerson.Id, nullPerson));
 
 			// Test
 			people.Upsert(newPerson.Id, newPerson);

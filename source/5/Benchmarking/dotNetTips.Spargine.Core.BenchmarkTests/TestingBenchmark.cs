@@ -14,7 +14,6 @@
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
-using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 

@@ -74,10 +74,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Initializes a new instance of the <see cref="AddressRecord" /> class.
 		/// </summary>
 		/// <param name="id">The identifier.</param>
-		public AddressRecord(string id)
-		{
-			this.Id = id;
-		}
+		public AddressRecord(string id) => this.Id = id;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AddressRecord" /> class.
@@ -108,7 +105,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the Address1.
 		/// </summary>
 		/// <value>The Address1.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Address1 - Address must be between 10 - 256 characters.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Address1 - Address must be between 10 - 256 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
 		public string Address1
 		{
@@ -131,8 +128,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the Address2.
 		/// </summary>
 		/// <value>The Address2.</value>
-		/// <exception cref="System.ArgumentNullException">Address2 - Value for address cannot be null.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">Address1 - Address cannot be more than 256 characters.</exception>
+		/// <exception cref="ArgumentNullException">Address2 - Value for address cannot be null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Address1 - Address cannot be more than 256 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.Address2), Value for address cannot be null.</exception>
 		public string Address2
 		{
@@ -155,8 +152,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the city.
 		/// </summary>
 		/// <value>The city name.</value>
-		/// <exception cref="System.ArgumentNullException">City - Value for City cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">City - City length is limited to 100 characters.</exception>
+		/// <exception cref="ArgumentNullException">City - Value for City cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">City - City length is limited to 100 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.City), Value for City cannot be null or empty.</exception>
 		public string City
 		{
@@ -179,8 +176,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the country.
 		/// </summary>
 		/// <value>The country name.</value>
-		/// <exception cref="System.ArgumentNullException">Country - Value for Country cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
+		/// <exception cref="ArgumentNullException">Country - Value for Country cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
 		public string Country
 		{
@@ -203,8 +200,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the county province.
 		/// </summary>
 		/// <value>The county province.</value>
-		/// <exception cref="System.ArgumentNullException">CountyProvince - Value for County/ Province cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
+		/// <exception cref="ArgumentNullException">CountyProvince - Value for County/ Province cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.CountyProvince), Value for County/ Province cannot be null or empty.</exception>
 		public string CountyProvince
 		{
@@ -233,8 +230,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the phone.
 		/// </summary>
 		/// <value>The phone.</value>
-		/// <exception cref="System.ArgumentNullException">Phone - Value for phone number cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
+		/// <exception cref="ArgumentNullException">Phone - Value for phone number cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.Phone), Value for phone number cannot be null or empty.</exception>
 		public string Phone
 		{
@@ -258,8 +255,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the postal code.
 		/// </summary>
 		/// <value>The postal code.</value>
-		/// <exception cref="System.ArgumentNullException">PostalCode - Value for postal code cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">PostalCode - Postal code length is limited to 20 characters.</exception>
+		/// <exception cref="ArgumentNullException">PostalCode - Value for postal code cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">PostalCode - Postal code length is limited to 20 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
 		public string PostalCode
 		{
@@ -282,8 +279,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the state.
 		/// </summary>
 		/// <value>The state.</value>
-		/// <exception cref="System.ArgumentNullException">State - Value for State cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">State - State  length is limited to 50 characters.</exception>
+		/// <exception cref="ArgumentNullException">State - Value for State cannot be null or empty.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">State - State  length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.State), Value for State cannot be null or empty.</exception>
 		public string State
 		{

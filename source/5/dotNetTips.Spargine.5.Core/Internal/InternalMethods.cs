@@ -14,10 +14,7 @@ namespace dotNetTips.Spargine.Core.Internal
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
-		public static int EnsureMinimum(this int value, int minValue)
-		{
-			return value < minValue ? minValue : value;
-		}
+		public static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
 
 		internal static string BytesToString(this byte[] array)
 		{
@@ -33,10 +30,7 @@ namespace dotNetTips.Spargine.Core.Internal
 			return sb.ToString();
 		}
 
-		internal static bool IsEnumerable(Type type)
-		{
-			return type.GetInterfaces().Any(t => t == typeof(IEnumerable));
-		}
+		internal static bool IsEnumerable(Type type) => type.GetInterfaces().Any(t => t == typeof(IEnumerable));
 
 		internal static IDictionary<string, string> PropertiesToDictionary(object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{

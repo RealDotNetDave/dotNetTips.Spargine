@@ -19,11 +19,11 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Struct CoordinateProper
-	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />
-	/// Implements the <see cref="System.IComparable" />&gt;
+	/// Implements the <see cref="Models.ICoordinate" />
+	/// Implements the <see cref="IComparable" />&gt;
 	/// </summary>
-	/// <seealso cref="System.IComparable" />
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.ICoordinate" />
+	/// <seealso cref="IComparable" />
+	/// <seealso cref="Models.ICoordinate" />
 	[Serializable]
 	public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, IComparable, IComparable<CoordinateProper>
 	{
@@ -58,10 +58,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="left">The left.</param>
 		/// <param name="right">The right.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator >=(CoordinateProper left, CoordinateProper right)
-		{
-			return left.CompareTo(right) >= 0;
-		}
+		public static bool operator >=(CoordinateProper left, CoordinateProper right) => left.CompareTo(right) >= 0;
 
 		/// <summary>
 		/// Implements the &gt; operator.
@@ -69,10 +66,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="left">The left.</param>
 		/// <param name="right">The right.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator >(CoordinateProper left, CoordinateProper right)
-		{
-			return left.CompareTo(right) > 0;
-		}
+		public static bool operator >(CoordinateProper left, CoordinateProper right) => left.CompareTo(right) > 0;
 
 		/// <summary>
 		/// Implements the == operator.
@@ -80,10 +74,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="cord1">The first coordinate.</param>
 		/// <param name="cord2">The second coordinate.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator ==(CoordinateProper cord1, CoordinateProper cord2)
-		{
-			return cord1.Equals(cord2);
-		}
+		public static bool operator ==(CoordinateProper cord1, CoordinateProper cord2) => cord1.Equals(cord2);
 
 		/// <summary>
 		/// Implements the &lt;= operator.
@@ -91,10 +82,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="left">The left.</param>
 		/// <param name="right">The right.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator <=(CoordinateProper left, CoordinateProper right)
-		{
-			return left.CompareTo(right) <= 0;
-		}
+		public static bool operator <=(CoordinateProper left, CoordinateProper right) => left.CompareTo(right) <= 0;
 
 		/// <summary>
 		/// Implements the &lt; operator.
@@ -102,20 +90,14 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="left">The left.</param>
 		/// <param name="right">The right.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator <(CoordinateProper left, CoordinateProper right)
-		{
-			return left.CompareTo(right) < 0;
-		}
+		public static bool operator <(CoordinateProper left, CoordinateProper right) => left.CompareTo(right) < 0;
 		/// <summary>
 		/// Implements the != operator.
 		/// </summary>
 		/// <param name="cord1">The first coordinate.</param>
 		/// <param name="cord2">The second coordinate.</param>
 		/// <returns>The result of the operator.</returns>
-		public static bool operator !=(CoordinateProper cord1, CoordinateProper cord2)
-		{
-			return !( cord1 == cord2 );
-		}
+		public static bool operator !=(CoordinateProper cord1, CoordinateProper cord2) => !( cord1 == cord2 );
 
 		/// <summary>
 		/// Compares to.
@@ -160,37 +142,25 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// </summary>
 		/// <param name="obj">The object to compare with the this instance.</param>
 		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-		public override bool Equals(object obj)
-		{
-			return obj is CoordinateProper proper && this.Equals(proper);
-		}
+		public override bool Equals(object obj) => obj is CoordinateProper proper && this.Equals(proper);
 
 		/// <summary>
 		/// Indicates whether the current object is equal to another object of the same type.
 		/// </summary>
 		/// <param name="other">An object to compare with this instance.</param>
 		/// <returns>True if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
-		public bool Equals(CoordinateProper other)
-		{
-			return this.X == other.X && this.Y == other.Y;
-		}
+		public bool Equals(CoordinateProper other) => this.X == other.X && this.Y == other.Y;
 
 		/// <summary>
 		/// Returns a hash code for this instance.
 		/// </summary>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.X, this.Y);
-		}
+		public override int GetHashCode() => HashCode.Combine(this.X, this.Y);
 
 		/// <summary>
 		/// Returns a <see cref="string" /> of the coordinates.
 		/// </summary>
 		/// <returns>A <see cref="string" /> of the coordinates.</returns>
-		public override string ToString()
-		{
-			return $"{this.X}-{this.Y}";
-		}
+		public override string ToString() => $"{this.X}-{this.Y}";
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="ExecutionHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -31,9 +32,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="retryWaitMilliseconds">The retry wait milliseconds (default 100).</param>
 		/// <returns>System.Int32.</returns>
 		[Information(nameof(ProgressiveRetry), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int ProgressiveRetry(Action operation, byte retryCount = 3, int retryWaitMilliseconds = 100)
+		public static int ProgressiveRetry([NotNull] Action operation, byte retryCount = 3, int retryWaitMilliseconds = 100)
 		{
-			Validate.TryValidateNullParam(operation, nameof(operation));
 			Validate.TryValidateParam(retryCount, minimumValue: 1, maximumValue: byte.MaxValue, paramName: nameof(retryCount));
 			Validate.TryValidateParam(retryWaitMilliseconds, minimumValue: 1, paramName: nameof(retryWaitMilliseconds));
 

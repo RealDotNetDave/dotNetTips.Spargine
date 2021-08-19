@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-03-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -92,7 +93,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="instance">The instance.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool DoesObjectEqualInstance(object value, object instance)
+		public static bool DoesObjectEqualInstance([NotNull] object value, [NotNull] object instance)
 		{
 			var result = object.ReferenceEquals(value, instance);
 
@@ -106,10 +107,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="classOnly">The class only.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<Type> FindDerivedTypes(Type baseType, Tristate classOnly)
+		public static IEnumerable<Type> FindDerivedTypes([NotNull] Type baseType, Tristate classOnly)
 		{
-			Validate.TryValidateNullParam(baseType, nameof(baseType));
-
 			var path = Path.GetDirectoryName(AppContext.BaseDirectory);
 
 			return FindDerivedTypes(path, SearchOption.AllDirectories, baseType, classOnly);
@@ -124,11 +123,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<Type> FindDerivedTypes(AppDomain currentDomain, Type baseType, Tristate classOnly)
+		public static IEnumerable<Type> FindDerivedTypes([NotNull] AppDomain currentDomain, [NotNull] Type baseType, Tristate classOnly)
 		{
-			Validate.TryValidateNullParam(currentDomain, nameof(currentDomain));
-			Validate.TryValidateNullParam(baseType, nameof(baseType));
-
 			List<Type> types = null;
 
 			var array = currentDomain.GetAssemblies();
@@ -172,11 +168,8 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="DirectoryNotFoundException">Could not find path.</exception>
 		/// <exception cref="ArgumentNullException">Could not find path.</exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<Type> FindDerivedTypes(string path, SearchOption fileSearchType, Type baseType, Tristate classOnly)
+		public static IEnumerable<Type> FindDerivedTypes([NotNull] string path, SearchOption fileSearchType, [NotNull] Type baseType, Tristate classOnly)
 		{
-			Validate.TryValidateParam(path, nameof(path), message: "Must pass in path and file name to the assembly.");
-			Validate.TryValidateNullParam(baseType, nameof(baseType), "Parent Type must be defined");
-
 			if (Directory.Exists(path) == false)
 			{
 				ExceptionThrower.ThrowDirectoryNotFoundException("Could not find path.", path);
@@ -220,11 +213,9 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="json">The json.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(FromJson), UnitTestCoverage = 0, Status = Status.Available)]
-		public static T FromJson<T>(string json)
+		public static T FromJson<T>([NotNull] string json)
 			where T : class
 		{
-			Validate.TryValidateParam(json, nameof(json));
-
 			return JsonSerializer.Deserialize<T>(json);
 		}
 
@@ -235,9 +226,9 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="fileName">Name of the file.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="FileNotFoundException">The exception.</exception>
-		/// <exception cref="System.IO.FileNotFoundException">The exception.</exception>
+		/// <exception cref="FileNotFoundException">The exception.</exception>
 		[Information(nameof(FromJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
-		public static T FromJsonFile<T>(string fileName)
+		public static T FromJsonFile<T>([NotNull] string fileName)
 			where T : class
 		{
 			if (File.Exists(fileName) == false)
@@ -269,10 +260,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="instance">The instance.</param>
 		/// <returns>Int32.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static int GetInstanceHashCode(object instance)
+		public static int GetInstanceHashCode([NotNull] object instance)
 		{
-			Validate.TryValidateNullParam(instance, nameof(instance));
-
 			var hash = instance.GetType().GetRuntimeProperties().Where(p => p is not null).Select(prop => prop.GetValue(instance)).Where(value => value is not null).Aggregate(-1, (accumulator, value) => accumulator ^ value.GetHashCode());
 
 			return hash;
@@ -302,11 +291,8 @@ namespace dotNetTips.Spargine.Core
 		/// [PostalCode, 86560656].
 		/// </example>
 		[Information(nameof(GetPropertyValues), author: "David McCarter", createdOn: "11/03/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-		public static ImmutableDictionary<string, string> GetPropertyValues<T>(T input)
+		public static ImmutableDictionary<string, string> GetPropertyValues<T>([NotNull] T input)
 		{
-			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			Validate.TryValidateNullParam(input, nameof(input));
-
 			var returnValue = new Dictionary<string, string>();
 
 			var properties = input.GetType().GetAllProperties().Where(p => p.CanRead).OrderBy(p => p.Name).ToArray();
@@ -346,10 +332,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="fullName">if set to <c>true</c> [full name].</param>
 		/// <returns>System.String.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string GetTypeDisplayName(object item, bool fullName = true)
+		public static string GetTypeDisplayName([NotNull] object item, bool fullName = true)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			return item is null ? null : GetTypeDisplayName(item.GetType(), fullName);
 		}
 
@@ -364,15 +348,13 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>The pretty printed type name.</returns>
 		/// <exception cref="ArgumentNullException">type</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string GetTypeDisplayName(Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = ControlChars.Plus)
+		public static string GetTypeDisplayName([NotNull] Type type, bool fullName = true, bool includeGenericParameterNames = false, bool includeGenericParameters = true, char nestedTypeDelimiter = ControlChars.Plus)
 		{
-			Validate.TryValidateNullParam(type, nameof(type));
-
 			var sb = new StringBuilder();
 
 			ProcessType(sb, type, new DisplayNameOptions(fullName, includeGenericParameterNames, includeGenericParameters, nestedTypeDelimiter));
 
-			return sb?.ToString();
+			return sb.ToString();
 		}
 
 		/// <summary>
@@ -382,7 +364,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="type">The type.</param>
 		/// <param name="options">The options.</param>
 		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		internal static void ProcessType(StringBuilder builder, Type type, in DisplayNameOptions options)
+		internal static void ProcessType([NotNull] StringBuilder builder, [NotNull] Type type, in DisplayNameOptions options)
 		{
 			if (type.IsGenericType)
 			{
@@ -424,7 +406,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
 		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		private static IEnumerable<Type> LoadDerivedTypes(IEnumerable<TypeInfo> types, Type baseType, Tristate classOnly)
+		private static IEnumerable<Type> LoadDerivedTypes([NotNull] IEnumerable<TypeInfo> types, [NotNull] Type baseType, Tristate classOnly)
 		{
 			// works out the derived types
 			var list = types.ToList();
@@ -465,7 +447,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="length">The length.</param>
 		/// <param name="options">The options.</param>
 		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		private static void ProcessGenericType(StringBuilder builder, Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
+		private static void ProcessGenericType([NotNull] StringBuilder builder, [NotNull] Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
 		{
 			var offset = 0;
 

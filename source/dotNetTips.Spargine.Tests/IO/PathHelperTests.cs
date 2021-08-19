@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			var result = PathHelper.InvalidFilterChars;
 
-			Assert.IsTrue(result.Length > 0);
+			Assert.IsTrue(result.Count() > 0);
 		}
 
 		[TestMethod]
@@ -101,7 +101,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			var result = PathHelper.InvalidPathNameChars;
 
-			Assert.IsTrue(result.Length > 0);
+			Assert.IsTrue(result.Count() > 0);
 		}
 
 		[TestMethod()]
@@ -136,7 +136,7 @@ namespace dotNetTips.Spargine.Tests.IO
 		{
 			var result = PathHelper.PathSeparators;
 
-			Assert.IsTrue(result.Length > 0);
+			Assert.IsTrue(result.Count() > 0);
 		}
 	}
 }

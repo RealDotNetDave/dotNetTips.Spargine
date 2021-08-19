@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.Core.Logging
 
 			var appInfo = App.AppInfo;
 
-			var values = TypeHelper.GetPropertyValues<AppInfo>(appInfo);
+			var values = TypeHelper.GetPropertyValues(appInfo);
 
 			if (values.Count() > 0)
 			{
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Core.Logging
 
 			var computerInfo = new ComputerInfo();
 
-			var values = TypeHelper.GetPropertyValues<ComputerInfo>(computerInfo);
+			var values = TypeHelper.GetPropertyValues(computerInfo);
 
 			if (values.Count() > 0)
 			{

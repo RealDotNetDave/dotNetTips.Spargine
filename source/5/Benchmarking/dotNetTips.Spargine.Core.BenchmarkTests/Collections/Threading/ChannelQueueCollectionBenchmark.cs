@@ -18,9 +18,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
-using dotNetTips.Spargine.Core.Collections;
 using dotNetTips.Spargine.Core.Collections.Generic.Concurrent;
-using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
@@ -108,7 +106,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 			}
 		}
 
-		private static async Task AddToQueue(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
+		private static async Task AddToQueue(ChannelQueue<PersonProper> channel, IList<PersonProper> people, CancellationToken token)
 		{
 			foreach (var person in people)
 			{

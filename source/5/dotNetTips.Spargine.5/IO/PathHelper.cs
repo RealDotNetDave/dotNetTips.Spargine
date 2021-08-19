@@ -13,6 +13,8 @@
 // ***********************************************************************
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core;
@@ -30,21 +32,21 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <value>The invalid filter chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] InvalidFilterChars => FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
+		public static IEnumerable<char> InvalidFilterChars => FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
 
 		/// <summary>
 		/// Gets the invalid path name chars.
 		/// </summary>
 		/// <value>The invalid path name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] InvalidPathNameChars => Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
+		public static IEnumerable<char> InvalidPathNameChars => Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
 
 		/// <summary>
 		/// Gets the path separators.
 		/// </summary>
 		/// <value>The path separators.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+		public static IEnumerable<char> PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
 
 		/// <summary>
 		/// Combines the paths collection.
@@ -153,7 +155,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(filter, nameof(filter));
 
-			return filter.IndexOfAny(InvalidFilterChars) != -1;
+			return filter.IndexOfAny(InvalidFilterChars.ToArray()) != -1;
 		}
 
 		/// <summary>
@@ -166,7 +168,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(path, nameof(path));
 
-			return ( path?.IndexOf('*') != -1 ) || ( path?.IndexOf('?') != -1 );
+			return ( path?.IndexOf('*', StringComparison.Ordinal) != -1 ) || ( path?.IndexOf('?', StringComparison.Ordinal) != -1 );
 		}
 
 		/// <summary>
@@ -179,7 +181,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(path, nameof(path));
 
-			return path.IndexOfAny(InvalidPathNameChars) != -1;
+			return path.IndexOfAny(InvalidPathNameChars.ToArray()) != -1;
 		}
 	}
 }

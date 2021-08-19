@@ -19,11 +19,11 @@ namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Interface IDataModel
-	/// Implements the <see cref="System.IComparable{T}" />
+	/// Implements the <see cref="IComparable{T}" />
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <typeparam name="TKey">The type of the t key.</typeparam>
-	/// <seealso cref="System.IComparable{T}" />
+	/// <seealso cref="IComparable{T}" />
 	public interface IDataModel<T, TKey> : IComparable<T>, IEquatable<T>
 	{
 		/// <summary>

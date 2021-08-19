@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -92,7 +93,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IAddressRecord[].</returns>
 		[Information(nameof(GenerateAddresses), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static List<AddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+		public static Collection<AddressRecord> GenerateAddresses(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
 
@@ -117,7 +118,7 @@ namespace dotNetTips.Spargine.Tester
 
 			addresses.TrimExcess();
 
-			return addresses;
+			return new Collection<AddressRecord>(addresses);
 		}
 
 
@@ -172,8 +173,8 @@ namespace dotNetTips.Spargine.Tester
 		{
 			var coordinate = new T
 			{
-				X = RandomData.GenerateInteger(int.MinValue, int.MaxValue),
-				Y = RandomData.GenerateInteger(int.MinValue, int.MaxValue)
+				X = GenerateInteger(int.MinValue, int.MaxValue),
+				Y = GenerateInteger(int.MinValue, int.MaxValue)
 			};
 
 			return coordinate;
@@ -237,10 +238,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>fbxpfvtanqysqmuqfh@kiuvf.fr</example>
 		[Information(nameof(GenerateEmailAddress), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateEmailAddress()
-		{
-			return $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 25, 'a', 'z')}{GenerateDomainExtension()}";
-		}
+		public static string GenerateEmailAddress() => $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 25, 'a', 'z')}{GenerateDomainExtension()}";
 
 		/// <summary>
 		/// Generates the a test file.
@@ -367,10 +365,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
 		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static string GenerateKey()
-		{
-			return KeyGenerator.GenerateKey();
-		}
+		public static string GenerateKey() => KeyGenerator.GenerateKey();
 
 		/// <summary>
 		/// Creates a random number.
@@ -414,19 +409,19 @@ namespace dotNetTips.Spargine.Tester
 		{
 			var person = new T
 			{
-				Id = RandomData.GenerateKey(),
-				Address1 = RandomData.GenerateWord(addressLength),
-				Address2 = RandomData.GenerateWord(addressLength),
+				Id = GenerateKey(),
+				Address1 = GenerateWord(addressLength),
+				Address2 = GenerateWord(addressLength),
 				BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
 				CellPhone = GeneratePhoneNumberUSA(),
-				City = RandomData.GenerateWord(cityLength),
-				Country = RandomData.GenerateWord(countryLength),
-				Email = RandomData.GenerateEmailAddress(),
-				FirstName = RandomData.GenerateWord(firstNameLength),
+				City = GenerateWord(cityLength),
+				Country = GenerateWord(countryLength),
+				Email = GenerateEmailAddress(),
+				FirstName = GenerateWord(firstNameLength),
 				HomePhone = GeneratePhoneNumberUSA(),
-				LastName = RandomData.GenerateWord(lastNameLength),
-				PostalCode = RandomData.GenerateNumber(postalCodeLength),
-				State = RandomData.GenerateWord(stateLength)
+				LastName = GenerateWord(lastNameLength),
+				PostalCode = GenerateNumber(postalCodeLength),
+				State = GenerateWord(stateLength)
 			};
 
 			return person;
@@ -447,7 +442,7 @@ namespace dotNetTips.Spargine.Tester
 
 			var result = Parallel.For(0, count, index =>
 			  {
-				  people.Add(RandomData.GeneratePerson<T>());
+				  people.Add(GeneratePerson<T>());
 			  });
 
 			if (result.IsCompleted)
@@ -485,12 +480,12 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < count; i++)
 			{
-				PersonRecord person = new(RandomData.GenerateEmailAddress(), GenerateKey())
+				PersonRecord person = new(GenerateEmailAddress(), GenerateKey())
 				{
 					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-					FirstName = RandomData.GenerateWord(firstNameLength),
+					FirstName = GenerateWord(firstNameLength),
 					HomePhone = GeneratePhoneNumberUSA(),
-					LastName = RandomData.GenerateWord(lastNameLength),
+					LastName = GenerateWord(lastNameLength),
 					CellPhone = GeneratePhoneNumberUSA(),
 					Addresses = GenerateAddresses(addressCount, addressLength, cityLength, countryLength, countyProvinceLength, postalCodeLength, stateLength),
 				};
@@ -509,10 +504,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>284-424-2216</example>
 		[Information(nameof(GeneratePhoneNumberUSA), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GeneratePhoneNumberUSA()
-		{
-			return $"{RandomData.GenerateNumber(3)}-{RandomData.GenerateNumber(3)}-{RandomData.GenerateNumber(4)}";
-		}
+		public static string GeneratePhoneNumberUSA() => $"{GenerateNumber(3)}-{GenerateNumber(3)}-{GenerateNumber(4)}";
 
 		/// <summary>
 		/// Generates a random file name with path (users temp folder).
@@ -520,10 +512,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\3nvoblq5.lz1</example>
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateRandomFileName()
-		{
-			return Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-		}
+		public static string GenerateRandomFileName() => Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
 
 		/// <summary>
 		/// Generates a random file name.
@@ -625,10 +614,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
 		[Information(nameof(GenerateUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateUrl()
-		{
-			return $"{GenerateUrlHostName()}{GenerateRelativeUrl()}";
-		}
+		public static string GenerateUrl() => $"{GenerateUrlHostName()}{GenerateRelativeUrl()}";
 
 		/// <summary>
 		/// Creates a random url host name.
@@ -636,10 +622,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
 		[Information(nameof(GenerateUrlHostName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateUrlHostName()
-		{
-			return $"https://{GenerateUrlHostNameNoProtocol()}";
-		}
+		public static string GenerateUrlHostName() => $"https://{GenerateUrlHostNameNoProtocol()}";
 
 		/// <summary>
 		/// Creates a url without a protocol.
@@ -647,10 +630,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
 		[Information(nameof(GenerateUrlHostNameNoProtocol), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateUrlHostNameNoProtocol()
-		{
-			return $"www.{GenerateWord(1, 25, 'a', 'z')}.{GenerateUrlHostNameNoSubDomain()}";
-		}
+		public static string GenerateUrlHostNameNoProtocol() => $"www.{GenerateWord(1, 25, 'a', 'z')}.{GenerateUrlHostNameNoSubDomain()}";
 
 		/// <summary>
 		/// Creates host name without a sub domain.
@@ -658,10 +638,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>elqqcw.org.uk</example>
 		[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateUrlHostNameNoSubDomain()
-		{
-			return $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
-		}
+		public static string GenerateUrlHostNameNoSubDomain() => $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
 
 		/// <summary>
 		/// Create a random url part.
@@ -669,10 +646,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <remarks>/rregyyjxpjiats</remarks>
 		[Information(nameof(GenerateUrlPart), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateUrlPart()
-		{
-			return $"/{GenerateWord(1, 25, 'a', 'z')}";
-		}
+		public static string GenerateUrlPart() => $"/{GenerateWord(1, 25, 'a', 'z')}";
 
 		/// <summary>
 		/// Creates a random word.

@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="ChannelQueue.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary>Common class for collections.</summary>
 // ***********************************************************************
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -33,26 +34,23 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		private readonly Channel<T> _channel;
 
+		/// <summary>
+		/// The lock
+		/// </summary>
 		private readonly object _lock = new();
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="ChannelQueue{T}" /> class from being created.
 		/// </summary>
 		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public ChannelQueue()
-		{
-			this._channel = Channel.CreateUnbounded<T>();
-		}
+		public ChannelQueue() => this._channel = Channel.CreateUnbounded<T>();
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ChannelQueue{T}" /> class.
 		/// </summary>
 		/// <param name="capacity">The capacity.</param>
 		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public ChannelQueue(int capacity)
-		{
-			this._channel = Channel.CreateBounded<T>(capacity);
-		}
+		public ChannelQueue(int capacity) => this._channel = Channel.CreateBounded<T>(capacity);
 
 
 		/// <summary>
@@ -105,10 +103,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(ReadAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public async Task<T> ReadAsync(CancellationToken cancellationToken = default)
-		{
-			return await this._channel.Reader.ReadAsync(cancellationToken).ConfigureAwait(false);
-		}
+		public async Task<T> ReadAsync(CancellationToken cancellationToken = default) => await this._channel.Reader.ReadAsync(cancellationToken).ConfigureAwait(false);
 
 		/// <summary>
 		/// Write to the Channel as an asynchronous operation.
@@ -116,10 +111,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="item">The item.</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public async Task WriteAsync(T item, CancellationToken cancellationToken = default)
+		public async Task WriteAsync([NotNull] T item, CancellationToken cancellationToken = default)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			await this._channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
 		}
 

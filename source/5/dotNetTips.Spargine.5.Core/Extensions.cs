@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,6 +15,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -39,26 +40,14 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddFirst<T>(this IList<T> list, T item)
+		public static void AddFirst<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
-			if (list is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(list));
-			}
-
 			if (list.IsReadOnly)
 			{
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item is null)
-			{
-				return false;
-			}
-
 			list.Insert(index: 0, item);
-
-			return true;
 		}
 
 		/// <summary>
@@ -70,21 +59,16 @@ namespace dotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentNullException">list - List cannot be null. or value - Value cannot be null.</exception>
 		/// <exception cref="ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
-		/// <exception cref="System.ArgumentNullException">list - List cannot be read-only.</exception>
-		/// <exception cref="System.ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
-		public static bool AddIfNotExists<T>(this ICollection<T> list, T item)
+		/// <exception cref="ArgumentNullException">list - List cannot be read-only.</exception>
+		/// <exception cref="ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> list, [NotNull] T item)
 		{
-			if (list is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(list));
-			}
-
 			if (list.IsReadOnly)
 			{
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item is null || list.Contains(item))
+			if (list.Contains(item))
 			{
 				return false;
 			}
@@ -102,26 +86,14 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddLast<T>(this IList<T> list, T item)
+		public static void AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
-			if (list is null)
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(list));
-			}
-
 			if (list.IsReadOnly)
 			{
 				ExceptionThrower.ThrowArgumentReadOnlyCollectionException(nameof(list));
 			}
 
-			if (item is null)
-			{
-				return false;
-			}
-
 			list.Insert(list.Count, item);
-
-			return true;
 		}
 
 		/// <summary>
@@ -130,10 +102,8 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T"></typeparam>
 		/// <param name="obj">The value.</param>
 		/// <returns>T.</returns>
-		internal static T As<T>(this object obj)
+		internal static T As<T>([NotNull] this object obj)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			return (T)obj;
 		}
 
@@ -143,7 +113,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="list">The list.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
-		internal static int Count(this IEnumerable list)
+		internal static int Count([NotNull] this IEnumerable list)
 		{
 			if (list is ICollection collection)
 			{
@@ -169,7 +139,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="source">The source.</param>
 		/// <param name="nextItem">The next item.</param>
 		/// <returns>IEnumerable&lt;TSource&gt;.</returns>
-		internal static IEnumerable<TSource> FromHierarchy<TSource>(this TSource source, Func<TSource, TSource> nextItem) where TSource : Exception
+		internal static IEnumerable<TSource> FromHierarchy<TSource>([NotNull] this TSource source, [NotNull] Func<TSource, TSource> nextItem) where TSource : Exception
 		{
 			return FromHierarchy(source, nextItem, s => s is not null);
 		}
@@ -184,18 +154,10 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>IEnumerable&lt;TSource&gt;.</returns>
 		/// <exception cref="ArgumentNullException">canContinue</exception>
 		/// <exception cref="ArgumentNullException">nextItem</exception>
-		/// <exception cref="System.ArgumentNullException">canContinue or nextItem</exception>
-		internal static IEnumerable<TSource> FromHierarchy<TSource>(this TSource source, Func<TSource, TSource> nextItem, Func<TSource, bool> canContinue)
+		/// <exception cref="ArgumentNullException">canContinue or nextItem</exception>
+		internal static IEnumerable<TSource> FromHierarchy<TSource>([NotNull] this TSource source, [NotNull] Func<TSource, TSource> nextItem, [NotNull] Func<TSource, bool> canContinue)
 			where TSource : Exception
 		{
-			if (source is null)
-			{
-				yield return null;
-			}
-
-			Validate.TryValidateNullParam(canContinue, nameof(canContinue));
-			Validate.TryValidateNullParam(nextItem, nameof(nextItem));
-
 			for (var current = source; canContinue(current); current = nextItem(current))
 			{
 				yield return current;
@@ -207,7 +169,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="exception">The exception.</param>
 		/// <returns>System.String.</returns>
-		internal static string GetAllMessages(this Exception exception) => GetAllMessages(exception);
+		internal static string GetAllMessages([NotNull] this Exception exception) => GetAllMessages(exception);
 
 		/// <summary>
 		/// Gets all Exception messages.
@@ -216,10 +178,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="separator">The separator.</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">exception</exception>
-		internal static string GetAllMessages(this Exception exception, char separator = ControlChars.Comma)
+		internal static string GetAllMessages([NotNull] this Exception exception, char separator = ControlChars.Comma)
 		{
-			Validate.TryValidateNullParam(exception, nameof(exception));
-
 			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
 			return string.Join(separator, messages);
@@ -231,7 +191,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020")]
-		internal static IEnumerable<PropertyInfo> GetAllProperties(this Type type)
+		internal static IEnumerable<PropertyInfo> GetAllProperties([NotNull] this Type type)
 		{
 			var typeInfo = type.GetTypeInfo();
 
@@ -251,10 +211,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
-		internal static bool HasValue(this string input)
-		{
-			return input is not null && ( input.Trim().Length > 0 );
-		}
+		internal static bool HasValue([NotNull] this string input) => input.Trim().Length > 0;
 
 		/// <summary>
 		/// Determines whether the specified length has value.
@@ -263,7 +220,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="length">Checks for specific length of the string.</param>
 		/// <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
-		internal static bool HasValue(this string input, int length)
+		internal static bool HasValue([NotNull] this string input, int length)
 		{
 			Validate.TryValidateParam(input, minimumLength: 0, maximumLength: int.MaxValue, paramName: nameof(input));
 			Validate.TryValidateParam(length, minimumValue: 1, paramName: nameof(length));
@@ -278,11 +235,9 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="value">Checks for a specific value.</param>
 		/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentException">value</exception>
-		internal static bool HasValue(this string input, string value)
+		internal static bool HasValue([NotNull] this string input, [NotNull] string value)
 		{
-			Validate.TryValidateNullParam(input, nameof(input));
-
-			return input is not null && ( string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0 );
+			return string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0;
 		}
 
 		/// <summary>
@@ -292,7 +247,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="expression">The expression.</param>
 		/// <param name="options">The options.</param>
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
-		internal static bool HasValue(this string input, string expression, RegexOptions options)
+		internal static bool HasValue([NotNull] this string input, [NotNull] string expression, [NotNull] RegexOptions options)
 		{
 			if (input.HasValue() && expression.HasValue())
 			{
@@ -310,7 +265,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="maxLength">The maximum length.</param>
 		/// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Min Length  or Max Length must be greater than 0.</exception>
-		internal static bool HasValue(this string input, int minLength, int maxLength)
+		internal static bool HasValue([NotNull] this string input, int minLength, int maxLength)
 		{
 			Validate.TryValidateParam(minLength, minimumValue: 1, paramName: nameof(maxLength));
 			Validate.TryValidateParam(maxLength, minimumValue: minLength, paramName: nameof(maxLength));
@@ -323,10 +278,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
-		internal static bool IsEmailAddress(this string input)
-		{
-			return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase);
-		}
+		internal static bool IsEmailAddress([NotNull] this string input) => input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase);
 
 		/// <summary>
 		/// Indicate whether the number falls in the specified range.
@@ -335,10 +287,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">Lower bound</param>
 		/// <param name="upper">Upper bound</param>
 		/// <returns>True/False</returns>
-		internal static bool IsInRange(this int value, int lower, int upper)
-		{
-			return value >= lower && value <= upper;
-		}
+		internal static bool IsInRange(this int value, int lower, int upper) => value >= lower && value <= upper;
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -347,10 +296,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool IsInRange(this byte value, byte lower, byte upper)
-		{
-			return value >= lower && value <= upper;
-		}
+		internal static bool IsInRange(this byte value, byte lower, byte upper) => value >= lower && value <= upper;
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -359,10 +305,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool IsInRange(this long value, long lower, long upper)
-		{
-			return value >= lower && value <= upper;
-		}
+		internal static bool IsInRange(this long value, long lower, long upper) => value >= lower && value <= upper;
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -371,10 +314,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool IsInRange(this double value, double lower, double upper)
-		{
-			return value >= lower && value <= upper;
-		}
+		internal static bool IsInRange(this double value, double lower, double upper) => value >= lower && value <= upper;
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -383,33 +323,27 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="lower">The lower.</param>
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool IsInRange(this decimal value, decimal lower, decimal upper)
-		{
-			return value >= lower && value <= upper;
-		}
+		internal static bool IsInRange(this decimal value, decimal lower, decimal upper) => value >= lower && value <= upper;
 		/// <summary>
 		/// Determines whether the specified input is an URL.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
-		internal static bool IsUrl(this string input)
-		{
-			return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase);
-		}
+		internal static bool IsUrl([NotNull] this string input) => input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase);
 		/// <summary>
 		/// Converts IDictionary to delimited string.
 		/// </summary>
 		/// <param name="list">The list.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
-		internal static string ToDelimitedString(this IDictionary list, char delimiter = ',')
+		internal static string ToDelimitedString([NotNull] this IDictionary list, char delimiter = ',')
 		{
 			if (string.IsNullOrEmpty(delimiter.ToString()))
 			{
 				ExceptionThrower.ThrowArgumentNullException(nameof(delimiter));
 			}
 
-			if (list?.Count() == 0)
+			if (list.Count() == 0)
 			{
 				return string.Empty;
 			}
@@ -437,10 +371,10 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="delimiter">The delimiter (default is comma if not supplied).</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		/// <exception cref="System.ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
-		internal static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ControlChars.Comma)
+		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
+		internal static string ToDelimitedString<T>([NotNull] this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
-			if (list?.Count() == 0)
+			if (list.Count() == 0)
 			{
 				return string.Empty;
 			}
@@ -468,9 +402,6 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="values">The values.</param>
 		/// <returns>IImmutableDictionary&lt;TKey, TValue&gt;.</returns>
-		internal static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this Dictionary<TKey, TValue> values)
-		{
-			return ImmutableDictionary.CreateRange<TKey, TValue>(values);
-		}
+		internal static ImmutableDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> values) => ImmutableDictionary.CreateRange(values);
 	}
 }

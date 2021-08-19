@@ -35,10 +35,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = peopleSortedSet.ToImmutable();
 
 			Assert.IsNotNull(result);
-
-			SortedSet<PersonProper> nullSet = null;
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
 		}
 	}
 }

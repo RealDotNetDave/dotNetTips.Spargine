@@ -58,10 +58,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				.AddLast(person));
 
 			// Test List
-			Assert.IsFalse(peopleList.AddLast(nullPerson));
+			peopleList.AddLast(nullPerson);
 			Assert.IsTrue(peopleList.Count() == peopleList.Count());
 
-			Assert.IsTrue(peopleList.AddLast(person));
+			peopleList.AddLast(person);
 			Assert.IsTrue(peopleList.Last().Equals(person));
 
 
@@ -106,8 +106,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testPerson = peopleList[5];
 
 			//Test Parameters
-			_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(testPerson, null));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(null, new PersonProperComparer()));
+			_ = Assert.ThrowsException<NullReferenceException>(() => peopleList.IndexOf(testPerson, null));
+			_ = Assert.ThrowsException<NullReferenceException>(() => peopleList.IndexOf(null, new PersonProperComparer()));
 
 			// Test 
 			Assert.IsTrue(peopleList.IndexOf(testPerson, new PersonProperComparer()) >= 0);

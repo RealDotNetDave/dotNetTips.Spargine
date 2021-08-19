@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="Collection.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -20,10 +21,10 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 {
 	/// <summary>
 	/// Collection with added features.
-	/// Implements the <see cref="System.Collections.Generic.List{T}" />
+	/// Implements the <see cref="List{T}" />
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	/// <seealso cref="System.Collections.Generic.List{T}" />
+	/// <seealso cref="List{T}" />
 	[Information("Collection<T>.", "David McCarter", "11/12/2020")]
 	public class Collection<T> : List<T>
 	{
@@ -49,10 +50,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <returns>Collection&lt;T&gt;.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static Collection<T> Create()
-		{
-			return new Collection<T>();
-		}
+		public static Collection<T> Create() => new Collection<T>();
 
 		/// <summary>
 		/// Creates collection with the specified capacity.
@@ -60,7 +58,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="capacity">The capacity.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static Collection<T> Create(int capacity)
+		public static IList<T> Create(int capacity)
 		{
 			Validate.TryValidateParam(capacity, minimumValue: 1, maximumValue: int.MaxValue, paramName: nameof(capacity));
 
@@ -73,10 +71,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="items">The items.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static Collection<T> Create(IEnumerable<T> items)
-		{
-			return Create(items, Tristate.False);
-		}
+		public static IList<T> Create(IEnumerable<T> items) => Create(items, Tristate.False);
 
 		/// <summary>
 		/// Creates the collection with the specified items.
@@ -114,11 +109,9 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public bool AddFirst(T item)
+		public void AddFirst([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			return Extensions.AddFirst(this, item);
+			Extensions.AddFirst(this, item);
 		}
 
 		/// <summary>
@@ -127,10 +120,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public bool AddIfNotExists(T item)
+		public bool AddIfNotExists([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			return Extensions.AddIfNotExists(this, item);
 		}
 
@@ -140,11 +131,9 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public bool AddLast(T item)
+		public void AddLast([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			return Extensions.AddLast(this, item);
+			Extensions.AddLast(this, item);
 		}
 	}
 }

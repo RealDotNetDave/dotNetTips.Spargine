@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using dotNetTips.Spargine.Core;
@@ -34,10 +35,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="separator">The separator.</param>
 		/// <returns>List&lt;System.String&gt;.</returns>
 		[Information(nameof(ToCsv), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static List<string> ToCsv(this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
+		public static IList<string> ToCsv([NotNull] this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
 		{
-			Validate.TryValidateNullParam(dataReader, nameof(dataReader));
-
 			var convertedRows = new List<string>();
 
 			if (includeHeaderAsFirstRow)
@@ -72,13 +71,13 @@ namespace dotNetTips.Spargine.Extensions
 						if (dataReader.GetFieldType(index) == typeof(string))
 						{
 							// If double quotes are used in value, ensure each are replaced but 2.
-							if (value.Contains(ControlChars.Backslash))
+							if (value.Contains(ControlChars.Backslash, StringComparison.Ordinal))
 							{
-								value = value.Replace("\"", "\"\"");
+								value = value.Replace("\"", "\"\"", StringComparison.Ordinal);
 							}
 
 							// If separator are is in value, ensure it is put in double quotes.
-							if (value.Contains(separator))
+							if (value.Contains(separator, StringComparison.CurrentCulture))
 							{
 								value = $"{Convert.ToString(ControlChars.Backslash, CultureInfo.InvariantCulture)}{value}{ControlChars.Backslash}";
 							}

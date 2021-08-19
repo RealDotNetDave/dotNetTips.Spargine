@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <typeparam name="TResult">Type.</typeparam>
 		/// <param name="fileName">Name of the file.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="System.IO.FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
+		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
@@ -109,10 +109,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="input">The input.</param>
 		/// <returns>XDocument.</returns>
 		[Information(nameof(StringToXDocument), "David McCarter", "9/9/2020", "9/9/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None)]
-		public static XDocument StringToXDocument(string input)
-		{
-			return StringToXDocument(input, null);
-		}
+		public static XDocument StringToXDocument(string input) => StringToXDocument(input, null);
 
 		/// <summary>
 		/// Securely convert string to XDocument.

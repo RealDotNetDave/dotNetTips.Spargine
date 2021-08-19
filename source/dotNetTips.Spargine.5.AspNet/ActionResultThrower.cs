@@ -4,7 +4,7 @@
 // Created          : 02-22-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="ActionResultThrower.cs" company="dotNetTips.Spargine.5.AspNet">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using Microsoft.AspNetCore.Mvc;
@@ -41,10 +42,9 @@ namespace dotNetTips.Spargine._5.AspNet
 		/// <exception cref="ArgumentNullException">ErrorMessage cannot be null or empty.</exception>
 		/// <exception cref="ArgumentNullException">Exception cannot be null or empty.</exception>
 		[Information(nameof(LogErrorCreateBadRequest), "David McCarter", "2/22/21", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public BadRequestObjectResult LogErrorCreateBadRequest(string errorMessage, Exception ex, ILogger logger)
+		public BadRequestObjectResult LogErrorCreateBadRequest(string errorMessage, [NotNull] Exception ex, ILogger logger)
 		{
 			Validate.TryValidateParam(errorMessage, nameof(errorMessage));
-			Validate.TryValidateNullParam(ex, nameof(ex));
 
 			if (logger.IsNotNull())
 			{

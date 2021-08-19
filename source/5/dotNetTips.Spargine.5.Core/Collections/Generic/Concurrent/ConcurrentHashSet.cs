@@ -253,7 +253,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="array">The one-dimensional <see cref="T:System.Array"></see> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"></see>. The <see cref="T:System.Array"></see> must have zero-based indexing.</param>
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
-		/// <exception cref="System.ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
+		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
 		void ICollection<T>.CopyTo(T[] array, int arrayIndex)
 		{

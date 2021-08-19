@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="InMemoryCache.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary>In memory cache.</summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using Microsoft.Extensions.Caching.Memory;
 
@@ -33,10 +34,7 @@ namespace dotNetTips.Spargine.Cache
 		/// Prevents a default instance of the <see cref="InMemoryCache" /> class from being created.
 		/// Default timeout is 20 minutes.
 		/// </summary>
-		private InMemoryCache()
-		{
-			this.Cache = CreateCache(new TimeSpan(0, Timeout, 0));
-		}
+		private InMemoryCache() => this.Cache = CreateCache(new TimeSpan(0, Timeout, 0));
 
 		/// <summary>
 		/// Gets the instance.
@@ -64,10 +62,9 @@ namespace dotNetTips.Spargine.Cache
 		/// <param name="item">The item.</param>
 		/// <exception cref="ArgumentInvalidException">Key cannot be null or empty.</exception>
 		/// <exception cref="ArgumentNullException">Item cannot be null.</exception>
-		public void AddCacheItem<T>(string key, T item)
+		public void AddCacheItem<T>(string key, [NotNull] T item)
 		{
 			Validate.TryValidateParam(key, nameof(key));
-			Validate.TryValidateNullParam(item, nameof(item));
 
 			_ = this.Cache.Set(key, item);
 		}

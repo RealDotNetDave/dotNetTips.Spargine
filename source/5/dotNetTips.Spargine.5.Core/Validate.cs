@@ -13,6 +13,8 @@
 // ***********************************************************************
 using System;
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -40,7 +42,7 @@ namespace dotNetTips.Spargine.Core
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>(Resources.ObjectValidationFailed, value);
+				ExceptionThrower.ThrowInvalidValueException(Resources.ObjectValidationFailed, value);
 			}
 
 			return result;
@@ -49,18 +51,18 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Tries the validate null.
 		/// </summary>
-		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
+		/// <param name="message">The message.</param>
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(TryValidateNull), "David McCarter", "2/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static bool TryValidateNull(string message, object value, bool throwException = false)
+		public static bool TryValidateNull(object value, [NotNull] string message, bool throwException = false)
 		{
 			var result = value is null;
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>(message, value);
+				ExceptionThrower.ThrowInvalidValueException(message, value);
 			}
 
 			return result;
@@ -73,8 +75,11 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentNullException">Value cannot be null.</exception>
+		[Pure]
+		[DoesNotReturn]
+		[Obsolete("This method will be removed at the end of 2021. Use [NotNull] instead. ")]
 		[Information(nameof(TryValidateNullParam), "David McCarter", "1/8/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-		public static void TryValidateNullParam(object value, string paramName, string message = "")
+		public static void TryValidateNullParam(object value, [NotNull] string paramName, string message = "")
 		{
 			if (Validate.TryValidateNull(value))
 			{
@@ -90,11 +95,12 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="TException">The type of the TException.</typeparam>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <param name="message">The message.</param>
+		[DoesNotReturn]
 		[Information(nameof(TryValidateObject), "David McCarter", "2/1/2021", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static void TryValidateObject<TException>(bool condition, string message = "")
 			where TException : Exception, new()
 		{
-			if (string.Compare(typeof(TException).Name, typeof(Exception).Name, StringComparison.Ordinal) == 0)
+			if (string.Compare(typeof(TException).Name, nameof(Exception), StringComparison.Ordinal) == 0)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Exception is not allowed to be used for this method. Please choose a more detailed Exception type.", nameof(TException));
 			}
@@ -116,8 +122,9 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
+		[DoesNotReturn]
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam<TException>(bool condition, string paramName, string message = "")
+		public static void TryValidateParam<TException>(bool condition, [NotNull] string paramName, string message = "")
 			where TException : ArgumentException, new()
 		{
 			if (condition is false)
@@ -139,17 +146,11 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">File cannot be null.</exception>
 		/// <exception cref="FileNotFoundException">File not not found.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(FileInfo file, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] FileInfo file, [NotNull] string paramName, string message = "")
 		{
-			if (Validate.TryValidateNull(file))
+			if (file.Exists == false)
 			{
-				message = CreateExceptionMessage(message, Resources.FileCannotBeNull);
-
-				ExceptionThrower.ThrowArgumentNullException(message, paramName);
-			}
-			else if (file.Exists == false)
-			{
-				message = CreateExceptionMessage(message, Resources.FileNotFound);
+				message = CreateParamExceptionMessage(message, paramName, Resources.FileNotFound);
 
 				ExceptionThrower.ThrowFileNotFoundException(message, file.FullName);
 			}
@@ -164,31 +165,25 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">Directory cannot be null.</exception>
 		/// <exception cref="DirectoryNotFoundException">Directory not found.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(DirectoryInfo directory, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] DirectoryInfo directory, [NotNull] string paramName, string message = "")
 		{
-			if (Validate.TryValidateNull(directory))
+			if (directory.Exists == false)
 			{
-				message = CreateExceptionMessage(message, Resources.DirectoryCannotBeNull);
-
-				ExceptionThrower.ThrowArgumentNullException(message, paramName);
-			}
-			else if (directory.Exists == false)
-			{
-				message = CreateExceptionMessage(message, Resources.DirectoryDoesNotExist);
+				message = CreateParamExceptionMessage(message, paramName, Resources.DirectoryDoesNotExist);
 
 				ExceptionThrower.ThrowDirectoryNotFoundException(message, directory?.FullName);
 			}
 		}
 
 		/// <summary>
-		/// Tries the validate parameter.
+		/// Tries the validate parameter. Ensures ReadOnlySpan is not empty.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="span">The array.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public static void TryValidateParam<T>(ReadOnlySpan<T> span, string paramName, string message = "")
+		public static void TryValidateParam<T>([NotNull] ReadOnlySpan<T> span, [NotNull] string paramName, string message = "")
 		{
 			if (span.IsEmpty)
 			{
@@ -199,14 +194,14 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries the validate parameter.
+		/// Tries the validate parameter. Ensures that Span is not empty.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="span">The span.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public static void TryValidateParam<T>(Span<T> span, string paramName, string message = "")
+		public static void TryValidateParam<T>([NotNull] Span<T> span, [NotNull] string paramName, string message = "")
 		{
 			if (span.IsEmpty)
 			{
@@ -224,25 +219,25 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentOutOfRangeException">The value is not defined in the enum type.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(Enum value, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] Enum value, [NotNull] string paramName, string message = "")
 		{
 			if (Enum.IsDefined(value.GetType(), value) == false)
 			{
 				message = CreateExceptionMessage(message, Resources.TheValueIsNotDefinedInTheEnumeration);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
 		/// <summary>
-		/// Tries to validate a method parameter.
+		/// Tries to validate a method parameter. Ensures Guid is not empty.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentInvalidException">Guid cannot be empty.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(Guid value, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] Guid value, [NotNull] string paramName, string message = "")
 		{
 			if (value.Equals(Guid.Empty))
 			{
@@ -260,7 +255,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(Uri value, string paramName, string message = "")
+		public static void TryValidateParam(Uri value, [NotNull] string paramName, string message = "")
 		{
 			if (Validate.TryValidateNull(value))
 			{
@@ -278,7 +273,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentNullException">Value cannot be null.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(string value, string paramName, string message = "")
+		public static void TryValidateParam(string value, [NotNull] string paramName, string message = "")
 		{
 			if (string.IsNullOrEmpty(value))
 			{
@@ -289,16 +284,16 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries to validate a method parameter.
+		/// Tries to validate a method parameter. Ensures the collection has items.
 		/// </summary>
 		/// <param name="collection">The collection.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(IEnumerable collection, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] IEnumerable collection, [NotNull] string paramName, string message = "")
 		{
-			if (Validate.TryValidateNull(collection) || collection.Count() == 0)
+			if (collection.Count() == 0)
 			{
 				message = CreateExceptionMessage(message, Resources.CollectionIsNullOrHasNoItems);
 				ExceptionThrower.ThrowArgumentNullException(message, paramName);
@@ -315,7 +310,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		/// <exception cref="ArgumentNullException">Collection does not match size.</exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(IEnumerable collection, int size, string paramName, string message = "")
+		public static void TryValidateParam(IEnumerable collection, int size, [NotNull] string paramName, string message = "")
 		{
 			TryValidateParam(collection, paramName, message);
 
@@ -323,7 +318,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, Resources.CollectionSizeIsNotValid);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
 			}
 		}
 
@@ -337,13 +332,8 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">match</exception>
 		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(string value, Regex match, string paramName, string message = "")
+		public static void TryValidateParam(string value, [NotNull] Regex match, [NotNull] string paramName, string message = "")
 		{
-			if (Validate.TryValidateNull(match))
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(match));
-			}
-
 			TryValidateParam(value, paramName, message);
 
 			if (match.IsMatch(value) == false)
@@ -363,7 +353,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <exception cref="ArgumentInvalidException"></exception>
 		[Information(nameof(TryValidateParam), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-		public static void TryValidateParam(Type value, Type expectedType, string paramName, string message = "")
+		public static void TryValidateParam([NotNull] Type value, [NotNull] Type expectedType, [NotNull] string paramName, string message = "")
 		{
 			if (value != expectedType)
 			{
@@ -389,7 +379,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -409,7 +399,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -429,7 +419,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -449,7 +439,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, Resources.NumberNotInRange);
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -476,7 +466,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, string.Format(CultureInfo.CurrentCulture, Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 		}
 
@@ -504,7 +494,7 @@ namespace dotNetTips.Spargine.Core
 			{
 				message = CreateExceptionMessage(message, string.Format(CultureInfo.CurrentCulture, Resources.InvalidStringLengthAcceptableRange, minimumLength, maximumLength));
 
-				ExceptionThrower.ThrowArgumentOutOfRangeException(message, paramName);
+				ExceptionThrower.ThrowArgumentOutOfRangeException(paramName, message);
 			}
 
 
@@ -546,7 +536,7 @@ namespace dotNetTips.Spargine.Core
 
 			if (result is true && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<string>(Resources.StringIsNotValid, input);
+				ExceptionThrower.ThrowInvalidValueException(Resources.StringIsNotValid, input);
 			}
 
 			return result;
@@ -573,20 +563,32 @@ namespace dotNetTips.Spargine.Core
 			return condition;
 		}
 
+
 		/// <summary>
 		/// Creates the exception message.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="messageFromResource">The message from resource.</param>
 		/// <returns>System.String.</returns>
-		private static string CreateExceptionMessage(string message, string messageFromResource)
+		private static string CreateExceptionMessage(string message, [NotNull] string messageFromResource)
 		{
-			if (string.IsNullOrEmpty(message))
-			{
-				return messageFromResource;
-			}
+			return string.IsNullOrEmpty(message) ? messageFromResource : message;
+		}
 
-			return message;
+		/// <summary>
+		/// Creates the exception message.
+		/// </summary>
+		/// <param name="message">The message.</param>
+		/// <param name="paramName">Name of the parameter.</param>
+		/// <param name="messageFromResource">The message from resource.</param>
+		/// <returns>System.String.</returns>
+		private static string CreateParamExceptionMessage(string message, [NotNull] string paramName, [NotNull] string messageFromResource)
+		{
+			var returnMessage = $"{paramName}: ";
+
+			returnMessage = string.IsNullOrEmpty(message) ? returnMessage + messageFromResource : returnMessage + message;
+
+			return returnMessage;
 		}
 	}
 }

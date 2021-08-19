@@ -22,12 +22,12 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Person class that implements interfaces.
-	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.Person" />
-	/// Implements the <see cref="System.IComparable" />
+	/// Implements the <see cref="Person" />
+	/// Implements the <see cref="IComparable" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.IPerson" />
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.Person" />
-	/// <seealso cref="System.IComparable" />
+	/// <seealso cref="IPerson" />
+	/// <seealso cref="Person" />
+	/// <seealso cref="IComparable" />
 	[Obsolete("This class will be removed at the end of 2021. Instead use Person or PersonRecord.")]
 	[DebuggerDisplay("{Email}")]
 	public sealed class PersonFixed : IPerson, IDataModel<PersonFixed, string>
@@ -316,10 +316,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Returns the hash code for this instance.
 		/// </summary>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.Email, this.Id);
-		}
+		public override int GetHashCode() => HashCode.Combine(this.Email, this.Id);
 
 		/// <summary>
 		/// Returns a <see cref="string" /> that returns the person's id.

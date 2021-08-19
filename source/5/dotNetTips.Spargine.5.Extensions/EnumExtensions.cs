@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="name">The name.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentException">name</exception>
-		/// <exception cref="System.ArgumentException">The exception.</exception>
+		/// <exception cref="ArgumentException">The exception.</exception>
 		[Information(nameof(Parse), UnitTestCoverage = 100, Status = Status.Available)]
 		public static T Parse<T>(this string name)
 			where T : Enum

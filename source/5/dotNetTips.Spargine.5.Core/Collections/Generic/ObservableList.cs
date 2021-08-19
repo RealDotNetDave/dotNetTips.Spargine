@@ -23,16 +23,16 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 {
 	/// <summary>
 	/// Class ObservableList.
-	/// Implements the <see cref="System.Collections.Generic.ISet{T}" />
-	/// Implements the <see cref="System.Collections.Generic.IReadOnlyCollection{T}" />
-	/// Implements the <see cref="System.Collections.Specialized.INotifyCollectionChanged" />
-	/// Implements the <see cref="System.ComponentModel.INotifyPropertyChanged" />
+	/// Implements the <see cref="ISet{T}" />
+	/// Implements the <see cref="IReadOnlyCollection{T}" />
+	/// Implements the <see cref="INotifyCollectionChanged" />
+	/// Implements the <see cref="INotifyPropertyChanged" />
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	/// <seealso cref="System.Collections.Generic.ISet{T}" />
-	/// <seealso cref="System.Collections.Generic.IReadOnlyCollection{T}" />
-	/// <seealso cref="System.Collections.Specialized.INotifyCollectionChanged" />
-	/// <seealso cref="System.ComponentModel.INotifyPropertyChanged" />
+	/// <seealso cref="ISet{T}" />
+	/// <seealso cref="IReadOnlyCollection{T}" />
+	/// <seealso cref="INotifyCollectionChanged" />
+	/// <seealso cref="INotifyPropertyChanged" />
 	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 0, Status = Status.Available)]
 	public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollectionChanged, INotifyPropertyChanged, INotifyPropertyChanging
 	{
@@ -56,10 +56,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="comparer">The <see cref="IEqualityComparer{T}" /> implementation to use when
 		/// comparing values in the set, or null to use the default <see cref="IEqualityComparer{T}" />
 		/// implementation for the set type.</param>
-		public ObservableList(IEqualityComparer<T> comparer)
-		{
-			this._set = new HashSet<T>(comparer);
-		}
+		public ObservableList(IEqualityComparer<T> comparer) => this._set = new HashSet<T>(comparer);
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ObservableList{T}" /> class
@@ -82,10 +79,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="comparer">The <see cref="IEqualityComparer{T}" /> implementation to use when
 		/// comparing values in the set, or null to use the default <see cref="IEqualityComparer{T}" />
 		/// implementation for the set type.</param>
-		public ObservableList(IEnumerable<T> collection, IEqualityComparer<T> comparer)
-		{
-			this._set = new HashSet<T>(collection, comparer);
-		}
+		public ObservableList(IEnumerable<T> collection, IEqualityComparer<T> comparer) => this._set = new HashSet<T>(collection, comparer);
 
 		/// <summary>
 		/// Occurs when the contents of the hash set changes.
@@ -303,10 +297,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set and other share at least one common element; otherwise, <see langword="false" />.</returns>
-		public virtual bool Overlaps(IEnumerable<T> other)
-		{
-			return this._set.Overlaps(other);
-		}
+		public virtual bool Overlaps(IEnumerable<T> other) => this._set.Overlaps(other);
 
 		/// <summary>
 		/// Removes the specified element from the hash set.

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core;
@@ -38,11 +39,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void AddIf<T>(this ICollection<T> collection, T item, bool condition)
+		public static void AddIf<T>([NotNull] this ICollection<T> collection, [NotNull] T item, bool condition)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
-			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
@@ -62,14 +61,14 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Collection cannot be null.</exception>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool AddIfNotExists<T>(this ICollection<T> collection, T item)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, T item)
 		{
 			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}
 
-			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
@@ -92,14 +91,14 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool AddIfNotExists<T>(this ICollection<T> collection, params T[] items)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, params T[] items)
 		{
 			if (items.DoesNotHaveItems())
 			{
 				return false;
 			}
 
-			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
@@ -131,17 +130,16 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
 		/// <exception cref="ArgumentNullException">Collection cannot be <see langword="null" />.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddIfNotExists<T>(this ICollection<T> collection, T item, IEqualityComparer<T> comparer)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, T item, [NotNull] IEqualityComparer<T> comparer)
 		{
 			if (Validate.TryValidateNull(item))
 			{
 				return false;
 			}
 
-			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
-			Validate.TryValidateNullParam(comparer, nameof(comparer));
 
 			if (collection.Contains(item, comparer))
 			{
@@ -171,7 +169,7 @@ namespace dotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			Trace.WriteLine(CreateCollectionIfNull<T>(ref collection));
+			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
@@ -205,10 +203,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool DoesNotHaveItems(this ICollection collection)
-		{
-			return collection?.Count <= 0;
-		}
+		public static bool DoesNotHaveItems(this ICollection collection) => collection?.Count <= 0;
 
 		/// <summary>
 		/// Determines whether the specified collection has items.
@@ -217,10 +212,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this ICollection collection)
-		{
-			return collection?.Count > 0;
-		}
+		public static bool HasItems(this ICollection collection) => collection?.Count > 0;
 
 		/// <summary>
 		/// Determines whether the specified collection has items.
@@ -230,10 +222,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this ICollection collection, int count)
-		{
-			return collection?.Count == count;
-		}
+		public static bool HasItems(this ICollection collection, int count) => collection?.Count == count;
 
 		/// <summary>
 		/// Upserts (add or insert) the specified item.
@@ -243,11 +232,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void Upsert<T>(this ICollection<T> collection, T item)
+		public static void Upsert<T>([NotNull] this ICollection<T> collection, [NotNull] T item)
 		{
-			Validate.TryValidateNullParam(collection, nameof(collection));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
 			_ = collection.Remove(item);
@@ -263,10 +249,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>
 		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void Upsert<T, TKey>(this ICollection<T> collection, T item) where T : IDataModel<T, TKey>
+		public static void Upsert<T, TKey>([NotNull] this ICollection<T> collection, [NotNull] T item) where T : IDataModel<T, TKey>
 		{
-			Validate.TryValidateNullParam(collection, nameof(collection));
-			Validate.TryValidateNullParam(item, nameof(item));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
 			_ = collection.Remove(item);
@@ -280,11 +264,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>
 		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void Upsert(this ICollection<IDataRecord> collection, IDataRecord item)
+		public static void Upsert([NotNull] this ICollection<IDataRecord> collection, [NotNull] IDataRecord item)
 		{
-			Validate.TryValidateNullParam(collection, nameof(collection));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));
 
 			var currentItem = collection.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));

@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.IO
 			var driveSerial = string.Empty;
 
 			// No matter what is sent in, get just the drive letter
-			var driveFixed = Path.GetPathRoot(drive).Replace(@"\", string.Empty);
+			var driveFixed = Path.GetPathRoot(drive).Replace(@"\", string.Empty, StringComparison.Ordinal);
 
 			// Perform Query
 			using (var querySearch = new ManagementObjectSearcher(string.Format(CultureInfo.InvariantCulture, format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'", driveFixed)))
@@ -64,13 +64,10 @@ namespace dotNetTips.Spargine.IO
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
 		/// <example>Result Example - [0]: {C:\}</example>
 		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IImmutableList<DriveInfo> GetFixedDrives()
-		{
-			return DriveInfo.GetDrives()
+		public static IImmutableList<DriveInfo> GetFixedDrives() => DriveInfo.GetDrives()
 				.Where(p => p.DriveType == DriveType.Fixed & p.IsReady)
 				.Distinct()
 				.ToImmutableList();
-		}
 
 		/// <summary>
 		/// Gets the removable drives, that are ready, for a computer.
@@ -78,12 +75,9 @@ namespace dotNetTips.Spargine.IO
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
 		/// <example>Result example - [0]: {E:\} [1]: {F:\}</example>
 		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IImmutableList<DriveInfo> GetRemovableDrives()
-		{
-			return DriveInfo.GetDrives()
+		public static IImmutableList<DriveInfo> GetRemovableDrives() => DriveInfo.GetDrives()
 				.Where(p => p.DriveType == DriveType.Removable & p.IsReady)
 				.Distinct()
 				.ToImmutableList();
-		}
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 11-25-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-25-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="TaskExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
@@ -31,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// SomeType.FireAsync("Test Message").FireAndForget();
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static void FireAndForget(this Task task)
+		public static void FireAndForget([NotNull] this Task task)
 		{
 			_ = task.ContinueWith(tsk => tsk.Exception, TaskContinuationOptions.OnlyOnFaulted);
 		}
@@ -42,11 +43,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="task">The Task.</param>
 		/// <param name="ex">The Exception to throw.</param>
 		/// <example>
-		/// Action&lt;Exception&gt; exAction = (Exception ex) => Debug.WriteLine(ex.Message);
+		/// Action&lt;Exception&gt; exAction = (Exception ex) =&gt; Debug.WriteLine(ex.Message);
 		/// SomeType.FireAsync("Test Message").FireAndForget(exAction);
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static void FireAndForget(this Task task, Action<Exception> ex)
+		public static void FireAndForget([NotNull] this Task task, Action<Exception> ex)
 		{
 			_ = task.ContinueWith((tsk) => ex?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);
 		}

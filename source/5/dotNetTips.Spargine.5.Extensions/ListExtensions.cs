@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -14,10 +14,12 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
@@ -50,9 +52,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddFirst<T>(this IList<T> list, T item)
+		public static bool AddFirst<T>([NotNull] this IList<T> list, T item)
 		{
-			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			if (Validate.TryValidateNull(item))
@@ -74,20 +75,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddLast<T>(this IList<T> list, T item)
+		public static void AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
-
-
-			if (item is null)
-			{
-				return false;
-			}
-
 			list.Insert(list.Count, item);
-
-			return true;
 		}
 
 		/// <summary>
@@ -128,7 +118,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(ClearNulls), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool ClearNulls<T>(this List<T> list)
+		public static bool ClearNulls<T>([NotNull] this List<T> list)
 		{
 			if (list.DoesNotHaveItems())
 			{
@@ -146,10 +136,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>List&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">source</exception>
 		[Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static List<T> CopyToList<T>(this List<T> list)
+		public static List<T> CopyToList<T>([NotNull] this List<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return new List<T>(list);
 		}
 
@@ -161,13 +149,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">action</exception>
-		/// <exception cref="System.ArgumentNullException">action</exception>
+		/// <exception cref="ArgumentNullException">action</exception>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this List<T> list, Predicate<T> action)
+		public static bool HasItems<T>([NotNull] this List<T> list, [NotNull] Predicate<T> action)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(action, nameof(action));
-
 			return list.TrueForAll(action);
 		}
 
@@ -180,11 +165,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static int IndexOf<T>(this IEnumerable<T> list, T item)
+		public static int IndexOf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			return IndexOf(list, item, EqualityComparer<T>.Default);
 		}
 
@@ -199,12 +181,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">item or comparer</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static int IndexOf<T>(this IEnumerable<T> list, T item, IEqualityComparer<T> comparer)
+		public static int IndexOf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-			Validate.TryValidateNullParam(comparer, nameof(comparer));
-
 			return list.Select((x, index) => comparer.Equals(item, x) ? index : -1).FirstOrDefault(x => x != -1, -1);
 		}
 
@@ -216,10 +194,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(Join), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static string Join(this IEnumerable<object> list, string separator = ControlChars.DefaultSeparator)
+		public static string Join([NotNull] this IEnumerable<object> list, [NotNull] string separator = ControlChars.DefaultSeparator)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return string.Join(separator, list);
 		}
 
@@ -230,10 +206,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list to use to generate hash code.</param>
 		/// <returns>Hash code as System.Int32.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static int ListHashCode<T>(this ReadOnlyCollection<T> list)
+		public static int ListHashCode<T>([NotNull] this ReadOnlyCollection<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			var comparer = EqualityComparer<T>.Default;
 			var hash = list.Where(t => t is not null)
 				.Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
@@ -248,10 +222,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list to use to generate hash code.</param>
 		/// <returns>Hash code as System.Int32.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static int ListHashCode<T>(this IList<T> list)
+		public static int ListHashCode<T>([NotNull] this IList<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			var comparer = EqualityComparer<T>.Default;
 
 			var hash = list.Where(t => t is not null)
@@ -272,10 +244,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="InvalidCastException"></exception>
 		/// <remarks>Original code by: C.F.Meijers</remarks>
 		[Information(nameof(OrderBy), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<T> OrderBy<T>(this IEnumerable<T> list, string sortExpression)
+		public static IEnumerable<T> OrderBy<T>([NotNull] this IEnumerable<T> list, string sortExpression)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			if (sortExpression.HasValue() == false)
 			{
 				return null;
@@ -319,11 +289,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>(this IEnumerable<TSource> list, Func<TSource, string> keySelector)
+		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>([NotNull] this IEnumerable<TSource> list, [NotNull] Func<TSource, string> keySelector)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(keySelector, nameof(keySelector));
-
 			return list.OrderBy(keySelector, StringComparer.Ordinal);
 		}
 
@@ -336,13 +303,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
 		/// <exception cref="ArgumentNullException">pageSize</exception>
-		/// <exception cref="System.ArgumentNullException">pageSize</exception>
-		/// <exception cref="System.ArgumentOutOfRangeException">pageSize</exception>
+		/// <exception cref="ArgumentNullException">pageSize</exception>
+		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
 		[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<IEnumerable<T>> Page<T>(this IEnumerable<T> list, int pageSize)
+		public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> list, int pageSize)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			pageSize = pageSize.EnsureMinimum(1);
 
 			using var enumerator = list.GetEnumerator();
@@ -367,10 +332,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static T PickRandom<T>(this IEnumerable<T> list)
+		public static T PickRandom<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			var index = new Random().Next(0, list.Count() - 1);
 
 			return list.ElementAt(index);
@@ -387,7 +350,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(list, nameof(list));
 
-			var index = new Random().Next(0, list.Length - 1);
+			var index = RandomNumberGenerator.GetInt32(0, list.Length - 1);
 
 			return list[index..];
 		}
@@ -408,12 +371,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value. or list - Aggregate cannot be null. or firstKeySelector -
 		/// First key selector cannot be null. or secondKeySelector - Second key selector cannot be null.</exception>
 		[Information(nameof(Pivot), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot<TSource, TFirstKey, TSecondKey, TValue>(this IEnumerable<TSource> list, Func<TSource, TFirstKey> firstKeySelector, Func<TSource, TSecondKey> secondKeySelector, Func<IEnumerable<TSource>, TValue> aggregate)
+		public static Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>> Pivot<TSource, TFirstKey, TSecondKey, TValue>([NotNull] this IEnumerable<TSource> list, [NotNull] Func<TSource, TFirstKey> firstKeySelector, [NotNull] Func<TSource, TSecondKey> secondKeySelector, [NotNull] Func<IEnumerable<TSource>, TValue> aggregate)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateNullParam(firstKeySelector, nameof(firstKeySelector));
-			Validate.TryValidateNullParam(secondKeySelector, nameof(secondKeySelector));
-
 			var returnValue = new Dictionary<TFirstKey, Dictionary<TSecondKey, TValue>>();
 
 			var lookup = list.ToLookup(firstKeySelector).ToList();
@@ -443,10 +402,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
 		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99)]
-		public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list)
+		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return list.OrderBy(i => GenerateRandomNumber());
 		}
 
@@ -457,13 +414,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>List&lt;TSource&gt;.</returns>
-		public static async Task<List<TSource>> ToListAsync<TSource>(this IAsyncEnumerable<TSource> list, CancellationToken cancellationToken = default)
+		public static async Task<List<TSource>> ToListAsync<TSource>([NotNull] this IAsyncEnumerable<TSource> list, CancellationToken cancellationToken = default)
 		{
-			if (Validate.TryValidateNull(list))
-			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(list));
-			}
-
 			var returnList = new List<TSource>();
 
 			await foreach (var element in list.WithCancellation(cancellationToken))
@@ -482,10 +434,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>ObservableCollection.</returns>
 		[Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ObservableCollection<T> ToObservableCollection<T>(this IList<T> list)
+		public static ObservableCollection<T> ToObservableCollection<T>([NotNull] this IList<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return new ObservableCollection<T>(list);
 		}
 
@@ -495,12 +445,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>ReadOnlyCollection&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		[Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IList<T> list)
+		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>([NotNull] this IList<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return new ReadOnlyCollection<T>(list);
 		}
 

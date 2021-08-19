@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using dotNetTips.Spargine.Core;
@@ -46,11 +47,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// </code>
 		/// </example>
 		[Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", modifiedOn: "11/17/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static void AppendBytes(this StringBuilder sb, byte[] bytes)
+		public static void AppendBytes([NotNull] this StringBuilder sb, [NotNull] byte[] bytes)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
-			Validate.TryValidateParam(bytes, nameof(bytes));
-
 			_ = sb.Append("'0x");
 
 			for (var i = 0; i < bytes.Length; i++)
@@ -74,12 +72,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentException">value</exception>
 		/// <exception cref="ArgumentException">sb</exception>
 		[Information("FROM .NET CORE SOURCE", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, Status = Status.Available)]
-		public static void AppendKeyValue(this StringBuilder sb, string key, string value, Tristate includeQuotes = Tristate.True, Tristate includeComma = Tristate.True)
+		public static void AppendKeyValue([NotNull] this StringBuilder sb, [NotNull] string key, [NotNull] string value, Tristate includeQuotes = Tristate.True, Tristate includeComma = Tristate.True)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
-			Validate.TryValidateParam(key, nameof(key));
-			Validate.TryValidateParam(value, nameof(value));
-
 			_ = sb.Append(key);
 			_ = sb.Append(ControlChars.Equal);
 
@@ -139,11 +133,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// </code>
 		/// </example>
 		[Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static void AppendValues(this StringBuilder sb, string separator, IEnumerable<string> values)
+		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] IEnumerable<string> values)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
-			Validate.TryValidateParam(values, nameof(values));
-
 			separator = SetSeparator(separator);
 
 			sb.AppendValues(separator, values, (value) => sb.Append(value));
@@ -159,9 +150,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">sb</exception>
 		/// <exception cref="ArgumentException">values</exception>
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void AppendValues(this StringBuilder sb, string separator, params string[] values)
+		public static void AppendValues([NotNull] this StringBuilder sb, string separator, [NotNull] params string[] values)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
 			Validate.TryValidateParam(values, nameof(values));
 
 			separator = SetSeparator(separator);
@@ -184,11 +174,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">sb</exception>
 		/// <exception cref="ArgumentNullException">values</exception>
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static void AppendValues<T>(this StringBuilder sb, string separator, IEnumerable<T> values, Action<T> joinAction)
+		public static void AppendValues<T>([NotNull] this StringBuilder sb, string separator, IEnumerable<T> values, [NotNull] Action<T> joinAction)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
 			Validate.TryValidateParam(values, nameof(values));
-			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
 
 			separator = SetSeparator(separator);
 
@@ -218,21 +206,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="param">The parameter.</param>
 		/// <param name="joinAction">The join action.</param>
 		/// <returns>StringBuilder.</returns>
-		/// <exception cref="ArgumentNullException">sb</exception>
-		/// <exception cref="ArgumentNullException">values</exception>
-		/// <exception cref="ArgumentNullException">param</exception>
-		/// <exception cref="ArgumentNullException">joinAction</exception>
-		/// <exception cref="ArgumentNullException">sb</exception>
-		/// <exception cref="ArgumentNullException">values</exception>
-		/// <exception cref="ArgumentNullException">param</exception>
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.NotUsed)]
-		public static void AppendValues<T, TParam>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam param, Action<T, TParam> joinAction)
+		public static void AppendValues<T, TParam>([NotNull] this StringBuilder sb, string separator, [NotNull] IEnumerable<T> values, [NotNull] TParam param, [NotNull] Action<T, TParam> joinAction)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
-			Validate.TryValidateParam(values, nameof(values));
-			Validate.TryValidateNullParam(param, nameof(param));
-			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
-
 			separator = SetSeparator(separator);
 
 			var appended = false;
@@ -273,14 +249,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">param1</exception>
 		/// <exception cref="ArgumentNullException">param2</exception>
 		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.NotUsed)]
-		public static void AppendValues<T, TParam1, TParam2>(this StringBuilder sb, string separator, IEnumerable<T> values, TParam1 param1, TParam2 param2, Action<StringBuilder, T, TParam1, TParam2> joinAction)
+		public static void AppendValues<T, TParam1, TParam2>([NotNull] this StringBuilder sb, string separator, [NotNull] IEnumerable<T> values, [NotNull] TParam1 param1, [NotNull] TParam2 param2, [NotNull] Action<StringBuilder, T, TParam1, TParam2> joinAction)
 		{
-			Validate.TryValidateNullParam(sb, nameof(sb));
-			Validate.TryValidateParam(values, nameof(values));
-			Validate.TryValidateNullParam(param1, nameof(param1));
-			Validate.TryValidateNullParam(param2, nameof(param2));
-			Validate.TryValidateNullParam(joinAction, nameof(joinAction));
-
 			separator = SetSeparator(separator);
 
 			var appended = false;

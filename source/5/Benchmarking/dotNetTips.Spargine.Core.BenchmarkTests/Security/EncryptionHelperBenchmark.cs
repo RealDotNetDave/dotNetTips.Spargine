@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Core.Security;
 
@@ -30,7 +25,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		[Benchmark(Description = nameof(EncryptionHelper.AesEncrypt))]
 		public void AesEncrypt()
 		{
-			var result = EncryptionHelper.AesEncrypt(base.LongTestString, this._aesKey, this._aesIv);
+			var result = EncryptionHelper.AesEncrypt(LongTestString, this._aesKey, this._aesIv);
 
 			base.Consumer.Consume(result);
 		}
@@ -39,10 +34,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		{
 			base.Setup();
 
-			this._cypherText = EncryptionHelper.SimpleEncrypt(base.LongTestString, _key);
+			this._cypherText = EncryptionHelper.SimpleEncrypt(LongTestString, _key);
 			this._aesKey = EncryptionHelper.GenerateAesKey();
 			this._aesIv = EncryptionHelper.GenerateAesIV();
-			this._aesCypherText = EncryptionHelper.AesEncrypt(base.LongTestString, this._aesKey, this._aesIv);
+			this._aesCypherText = EncryptionHelper.AesEncrypt(LongTestString, this._aesKey, this._aesIv);
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.SimpleDecrypt))]
@@ -56,7 +51,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		[Benchmark(Description = nameof(EncryptionHelper.SimpleEncrypt))]
 		public void SimpleEncrypt()
 		{
-			var result = EncryptionHelper.SimpleEncrypt(base.LongTestString, _key);
+			var result = EncryptionHelper.SimpleEncrypt(LongTestString, _key);
 
 			base.Consumer.Consume(result);
 		}

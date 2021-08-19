@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using dotNetTips.Spargine.Core;
 
@@ -32,9 +33,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">thread or logger</exception>
 		/// <exception cref="ArgumentOutOfRangeException">priority</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool TrySetPriority(this Thread thread, ThreadPriority priority)
+		public static bool TrySetPriority([NotNull] this Thread thread, ThreadPriority priority)
 		{
-			Validate.TryValidateNullParam(thread, nameof(thread));
 			Validate.TryValidateParam(priority, nameof(priority));
 
 			try
@@ -53,10 +53,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="thread">The thread.</param>
 		/// <param name="interval">The wait interval.</param>
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
-		public static void WaitUntil(this Thread thread, TimeSpan interval)
+		public static void WaitUntil([NotNull] this Thread thread, TimeSpan interval)
 		{
-			Validate.TryValidateNullParam(thread, nameof(thread));
-
 			WaitUntil(thread, interval);
 		}
 
@@ -68,9 +66,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="waitIterations">The wait iterations.</param>
 		/// <exception cref="ArgumentNullException">thread</exception>
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
-		public static void WaitUntil(this Thread thread, TimeSpan interval, int waitIterations)
+		public static void WaitUntil([NotNull] this Thread thread, TimeSpan interval, int waitIterations)
 		{
-			Validate.TryValidateNullParam(thread, nameof(thread));
 			Validate.TryValidateParam(waitIterations, minimumValue: 0, paramName: nameof(waitIterations));
 
 			var stopAt = DateTime.Now.Add(interval);

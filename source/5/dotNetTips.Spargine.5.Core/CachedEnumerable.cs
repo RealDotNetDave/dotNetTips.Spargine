@@ -4,7 +4,7 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -31,20 +31,17 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T"></typeparam>
 		/// <param name="enumerable">The enumerable.</param>
 		/// <returns>CachedEnumerable&lt;T&gt;.</returns>
-		public static CachedEnumerable<T> Create<T>(IEnumerable<T> enumerable)
-		{
-			return new CachedEnumerable<T>(enumerable);
-		}
+		public static CachedEnumerable<T> Create<T>(IEnumerable<T> enumerable) => new CachedEnumerable<T>(enumerable);
 	}
 
 	/// <summary>
 	/// Class CachedEnumerable. This class cannot be inherited.
-	/// Implements the <see cref="System.Collections.Generic.IEnumerable{T}" />
-	/// Implements the <see cref="System.IDisposable" />
+	/// Implements the <see cref="IEnumerable{T}" />
+	/// Implements the <see cref="IDisposable" />
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
-	/// <seealso cref="System.Collections.Generic.IEnumerable{T}" />
-	/// <seealso cref="System.IDisposable" />
+	/// <seealso cref="IEnumerable{T}" />
+	/// <seealso cref="IDisposable" />
 	[Information(nameof(CachedEnumerable<T>), BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 	public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	{
@@ -71,16 +68,19 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The disposed value
 		/// </summary>
-		private bool disposedValue;
+		private bool _disposedValue;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CachedEnumerable{T}" /> class.
 		/// </summary>
 		/// <param name="enumerable">The enumerable.</param>
-		public CachedEnumerable(IEnumerable<T> enumerable)
-		{
-			this._enumerable = enumerable;
-		}
+		public CachedEnumerable(IEnumerable<T> enumerable) => this._enumerable = enumerable;
+
+		/// <summary>
+		/// Returns an enumerator that iterates through a collection.
+		/// </summary>
+		/// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 		/// <summary>
 		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
@@ -91,11 +91,6 @@ namespace dotNetTips.Spargine.Core
 			this.Dispose(disposing: true);
 			GC.SuppressFinalize(this);
 		}
-
-		/// <summary>
-		/// Returns an enumerator that iterates through a collection.
-		/// </summary>
-		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 		/// <summary>
 		/// Returns an enumerator that iterates through the collection.
@@ -126,10 +121,7 @@ namespace dotNetTips.Spargine.Core
 		/// Checks the enumerable.
 		/// </summary>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private void CheckEnumerable()
-		{
-			Validate.TryValidateParam<ArgumentNullException>(this._enumerable is not null, paramName: "enumerable");
-		}
+		private void CheckEnumerable() => Validate.TryValidateParam<ArgumentNullException>(this._enumerable is not null, paramName: "enumerable");
 
 		/// <summary>
 		/// Releases unmanaged and - optionally - managed resources.
@@ -137,7 +129,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
 		private void Dispose(bool disposing)
 		{
-			if (!this.disposedValue)
+			if (!this._disposedValue)
 			{
 				if (disposing)
 				{
@@ -148,7 +140,7 @@ namespace dotNetTips.Spargine.Core
 					}
 				}
 
-				this.disposedValue = true;
+				this._disposedValue = true;
 			}
 		}
 

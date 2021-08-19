@@ -14,6 +14,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
@@ -34,10 +35,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="logger">The logger.</param>
 		/// <exception cref="ArgumentNullException">process</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void EnsureHighPriority(this Process process, ILogger logger)
+		public static void EnsureHighPriority([NotNull] this Process process, ILogger logger)
 		{
-			Validate.TryValidateNullParam(process, nameof(process));
-
 			try
 			{
 				process.PriorityClass = ProcessPriorityClass.High;
@@ -55,10 +54,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="logger">The logger.</param>
 		/// <exception cref="ArgumentNullException">process</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void EnsureLowPriority(this Process process, ILogger logger)
+		public static void EnsureLowPriority([NotNull] this Process process, ILogger logger)
 		{
-			Validate.TryValidateNullParam(process, nameof(process));
-
 			try
 			{
 				process.PriorityClass = ProcessPriorityClass.BelowNormal;
@@ -152,9 +149,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">process or logger error</exception>
 		/// <exception cref="ArgumentOutOfRangeException">priority</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool TrySetPriority(this Process process, ProcessPriorityClass priority, ILogger logger)
+		public static bool TrySetPriority([NotNull] this Process process, ProcessPriorityClass priority, ILogger logger)
 		{
-			Validate.TryValidateNullParam(process, nameof(process));
 			Validate.TryValidateParam(priority, nameof(priority));
 
 			try

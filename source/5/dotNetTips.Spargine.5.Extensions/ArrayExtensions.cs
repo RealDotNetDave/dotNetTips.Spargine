@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -36,10 +37,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static T[] Add<T>(this T[] array, T item)
+		public static T[] Add<T>([NotNull] this T[] array, [NotNull] T item)
 		{
-			Validate.TryValidateNullParam(array, nameof(array));
-			Validate.TryValidateNullParam(item, nameof(item));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
 
 			var result = new T[array.Length + 1];
@@ -58,7 +57,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentReadOnlyException">The array is read-only.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static T[] AddFirst<T>(this T[] array, T item)
+		public static T[] AddFirst<T>([NotNull] this T[] array, T item)
 		{
 			if (Validate.TryValidateNull(item))
 			{
@@ -84,7 +83,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>T[].</returns>
 		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static T[] AddIf<T>(this T[] array, T item, bool condition)
+		public static T[] AddIf<T>([NotNull] this T[] array, T item, bool condition)
 		{
 			if (Validate.TryValidateNull(item))
 			{
@@ -113,14 +112,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">List cannot be null.</exception>
 		/// <exception cref="ArgumentReadOnlyException">The array is read-only.</exception>
 		[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static T[] AddIfNotExists<T>(this T[] list, params T[] items)
+		public static T[] AddIfNotExists<T>([NotNull] this T[] list, params T[] items)
 		{
 			if (items.HasItems() == false)
 			{
 				return list;
 			}
 
-			Validate.TryValidateNullParam(list, nameof(list));
 			Validate.TryValidateParam<ArgumentReadOnlyException>(list.IsReadOnly == false, nameof(list));
 
 			var returnCollection = list.ToList();
@@ -147,7 +145,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentReadOnlyException">item - Item cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static T[] AddLast<T>(this T[] array, T item)
+		public static T[] AddLast<T>([NotNull] this T[] array, T item)
 		{
 			if (item is null)
 			{
@@ -220,7 +218,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string BytesToString(this byte[] array)
 		{
-			Validate.TryValidateParam(collection: array, nameof(array));
+			Validate.TryValidateParam(array, nameof(array));
 
 			var sb = new StringBuilder();
 

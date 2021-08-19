@@ -57,16 +57,16 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The coordinate array.</value>
 		protected virtual CoordinateProper[] CoordinateProperArray { get; private set; }
 
-		protected virtual List<CoordinateProper> CoordinateProperList { get; private set; }
+		protected virtual IList<CoordinateProper> CoordinateProperList { get; private set; }
 
 		/// <summary>
 		/// The person fixed collection
 		/// </summary>
 		/// <value>The person fixed collection.</value>
 		[Obsolete("This will be removed at the end of 2021.")]
-		protected List<PersonFixed> PersonFixedList { get; private set; }
+		protected IList<PersonFixed> PersonFixedList { get; private set; }
 
-		protected List<Person> PersonList { get; private set; }
+		protected IList<Person> PersonList { get; private set; }
 
 		/// <summary>
 		/// The person proper array full
@@ -105,13 +105,13 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The person proper collection
 		/// </summary>
 		/// <value>The person proper collection.</value>
-		protected List<PersonProper> PersonProperList { get; private set; }
+		protected IList<PersonProper> PersonProperList { get; private set; }
 
 		/// <summary>
 		/// The person proper collection half count
 		/// </summary>
 		/// <value>The person proper list half.</value>
-		protected List<PersonProper> PersonProperListHalf { get; private set; }
+		protected IList<PersonProper> PersonProperListHalf { get; private set; }
 
 		protected ObservableCollection<PersonProper> PersonProperObservableCollection { get; private set; }
 
@@ -121,7 +121,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The sortable person proper collection
 		/// </summary>
 		/// <value>The sortable person proper collection.</value>
-		protected List<PersonProper> PersonProperSortableList { get; private set; }
+		protected IList<PersonProper> PersonProperSortableList { get; private set; }
 
 		/// <summary>
 		/// Gets the person record array.

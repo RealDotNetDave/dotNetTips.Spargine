@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-22-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -61,10 +62,8 @@ namespace dotNetTips.Spargine.Core.Web
 		/// <param name="clientId">The client identifier.</param>
 		/// <returns>System.String.</returns>
 		[Information("From dotNetTips.Utility", "David McCarter", "9/2/2020", "9/2/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None)]
-		public static async Task<string> DownloadStringAsync(Uri address, string clientId = "NONE")
+		public static async Task<string> DownloadStringAsync([NotNull] Uri address, string clientId = "NONE")
 		{
-			Validate.TryValidateParam(address, nameof(address));
-
 			using var client = new WebClient();
 
 			if (clientId.HasValue())
@@ -103,10 +102,9 @@ namespace dotNetTips.Spargine.Core.Web
 		/// <remarks>If you are using .NET 4 or above or .NET Core, this check is not needed unless you have turned
 		/// off validation in the config file or in classes.</remarks>
 		[Information(nameof(IsLocalUrl), author: "David McCarter", createdOn: "9/12/2020", modifiedOn: "9/14/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsLocalUrl(string path, HttpRequest request)
+		public static bool IsLocalUrl(string path, [NotNull] HttpRequest request)
 		{
 			Validate.TryValidateParam(path, nameof(path));
-			Validate.TryValidateNullParam(request, nameof(request));
 
 			if (Uri.TryCreate(path, UriKind.Absolute, out var absoluteUri))
 			{

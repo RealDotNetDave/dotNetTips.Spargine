@@ -30,6 +30,7 @@ namespace dotNetTips.Spargine
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[return: MarshalAs(UnmanagedType.Bool)]
 		[DllImport("kernel32", CharSet = CharSet.Unicode, SetLastError = true)]
+		[DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
 		internal static extern bool MoveFileEx(string lpExistingFileName, string lpNewFileName, int dwFlags);
 	}
 }

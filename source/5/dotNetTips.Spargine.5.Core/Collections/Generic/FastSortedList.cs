@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Collections.Generic
@@ -23,7 +24,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 	/// Class SortedList.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
-	/// <seealso cref="System.Collections.Generic.List{T}" />
+	/// <seealso cref="List{T}" />
 	[DebuggerDisplay("Count = {Count}"), Serializable]
 	public class FastSortedList<T> : List<T>
 	{
@@ -49,13 +50,11 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		}
 
 		/// <summary>
-		/// Adds an object to the end of <see cref="T:System.Collections.Generic.List">.</see>.
+		/// Adds an object to the end of the list.
 		/// </summary>
-		/// <param name="item">The object to be added to the end of the <see cref="T:System.Collections.Generic.List"></see>. The value can be null for reference types.</param>
-		public new void Add(T item)
+		/// <param name="item">The object to be added to the end of the list. The value can be <see langword="null" /> for reference types.</param>
+		public new void Add([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			base.Add(item);
 
 			this._sorted = false;
@@ -102,14 +101,14 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		public IImmutableList<T> ToImmutableList()
 		{
 			this.SortCollection();
-			return ImmutableList.CreateRange<T>(this);
+			return ImmutableList.CreateRange(this);
 		}
 
 		/// <summary>
 		/// Returns a new collection based on the current collection.
 		/// </summary>
 		/// <returns>List&lt;T&gt;.</returns>
-		public List<T> ToList()
+		public IList<T> ToList()
 		{
 			this.SortCollection();
 			return new List<T>(base.ToArray());

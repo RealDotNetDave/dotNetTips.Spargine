@@ -4,19 +4,19 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="SocketsHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Socket helper methods.</summary>
 // ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Net.Sockets
@@ -33,10 +33,10 @@ namespace dotNetTips.Spargine.Net.Sockets
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>Stream.</returns>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
-		public static async ValueTask<Stream> ConnectTcpAsync(SocketsHttpConnectionContext context, CancellationToken cancellationToken)
+		public static async ValueTask<Stream> ConnectTcpAsync([NotNull] SocketsHttpConnectionContext context, CancellationToken cancellationToken)
 		{
 			// The following socket constructor will create a dual-mode socket on systems where IPV6 is available.
-			var socket = new Socket(SocketType.Stream, ProtocolType.Tcp)
+			using var socket = new Socket(SocketType.Stream, ProtocolType.Tcp)
 			{
 				/* Turn off Nagle's algorithm since it degrades performance in most HttpClient scenarios.*/
 				NoDelay = true,
@@ -53,7 +53,6 @@ namespace dotNetTips.Spargine.Net.Sockets
 			}
 			catch
 			{
-				socket.TryDispose();
 				throw;
 			}
 		}

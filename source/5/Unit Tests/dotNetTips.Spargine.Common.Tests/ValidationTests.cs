@@ -37,23 +37,6 @@ namespace dotNetTips.Spartine.Core.Tests
 		private const string _goodUrl = "http://www.amazon.com";
 
 
-		[TestMethod]
-		public void TryValidateNullParamTest()
-		{
-			PersonProper personProper = null;
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateNullParam(personProper, nameof(personProper)));
-
-			try
-			{
-				personProper = RandomData.GeneratePerson<PersonProper>();
-				Validate.TryValidateNullParam(personProper, nameof(personProper));
-			}
-			catch
-			{
-				Assert.Fail();
-			}
-		}
 
 		[TestMethod]
 		public void TryValidateNullTest()
@@ -102,7 +85,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			// Test null collection
 			List<PersonProper> nullPeople = null;
-			_ = Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullPeople, "none"));
+			_ = Assert.ThrowsException<NullReferenceException>(() => Validate.TryValidateParam(nullPeople, "none"));
 
 		}
 
@@ -123,7 +106,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			// Test null collection
 			List<PersonProper> nullPeople = null;
-			_ = Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullPeople, nameof(nullPeople)));
+			_ = Assert.ThrowsException<NullReferenceException>(() => Validate.TryValidateParam(nullPeople, nameof(nullPeople)));
 
 			// Test invalid Count
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(people, 5, nameof(people)));
@@ -181,7 +164,7 @@ namespace dotNetTips.Spartine.Core.Tests
 			}
 
 			DirectoryInfo nullDirectoryInfo = null;
-			_ = Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullDirectoryInfo, "none"));
+			_ = Assert.ThrowsException<NullReferenceException>(() => Validate.TryValidateParam(nullDirectoryInfo, "none"));
 
 			_ = Assert.ThrowsException<Spargine.Core.DirectoryNotFoundException>(() => Validate.TryValidateParam(new DirectoryInfo("fakefile"), "none"));
 		}
@@ -240,7 +223,7 @@ namespace dotNetTips.Spartine.Core.Tests
 			}
 
 			FileInfo nullFileInfo = null;
-			_ = Assert.ThrowsException<ArgumentNullException>(() => Validate.TryValidateParam(nullFileInfo, "none"));
+			_ = Assert.ThrowsException<NullReferenceException>(() => Validate.TryValidateParam(nullFileInfo, "none"));
 
 			_ = Assert.ThrowsException<FileNotFoundException>(() => Validate.TryValidateParam(new FileInfo("fakefile"), "none"));
 		}

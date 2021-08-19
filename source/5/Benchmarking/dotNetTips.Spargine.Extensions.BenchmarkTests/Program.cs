@@ -29,7 +29,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 		/// Defines the entry point of the application.
 		/// </summary>
 		/// <param name="args">The arguments.</param>
-		public static void Main(string[] args)
+		public static void Main()
 		{
 			try
 			{
@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
 				//BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<ExceptionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
-				//BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
+				BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<StringBuilderExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<StringExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);

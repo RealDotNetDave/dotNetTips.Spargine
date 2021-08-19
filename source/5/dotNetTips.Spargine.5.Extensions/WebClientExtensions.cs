@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Runtime.Serialization.Json;
@@ -35,13 +36,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">client</exception>
 		/// <exception cref="ArgumentException">URL cannot be empty or null. - url</exception>
-		/// <exception cref="System.ArgumentNullException">URL cannot be empty or null.</exception>
-		/// <exception cref="System.ArgumentException">URL cannot be empty or null.</exception>
+		/// <exception cref="ArgumentNullException">URL cannot be empty or null.</exception>
+		/// <exception cref="ArgumentException">URL cannot be empty or null.</exception>
 		[Information(nameof(ConvertFrom), UnitTestCoverage = 0, Status = Status.Available)]
-		public static T ConvertFrom<T>(this WebClient client, string url)
+		public static T ConvertFrom<T>([NotNull] this WebClient client, string url)
 			where T : class
 		{
-			Validate.TryValidateNullParam(client, nameof(client));
 			Validate.TryValidateParam(url, nameof(url));
 
 			var data = client.DownloadString(url);

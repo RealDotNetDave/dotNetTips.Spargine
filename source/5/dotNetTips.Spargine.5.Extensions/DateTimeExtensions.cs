@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -12,6 +12,7 @@
 // <summary>Extension methods for DateTime and DateTimeOffset.</summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
@@ -27,7 +28,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Converts MilliEpochTime to DateTime.
 		/// </summary>
-		/// <param name="epochTime">The milli.</param>
+		/// <param name="epochTime">The Epoch time.</param>
 		/// <returns>DateTime.</returns>
 		[Information(nameof(FromMilliEpochTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static DateTime FromMilliEpochTime(this long epochTime)
@@ -56,12 +57,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="dayOfWeek">The day of week.</param>
 		/// <returns>DateTimeOffset.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static DateTimeOffset GetLastDayOfWeek(this DateTimeOffset input, DayOfWeek dayOfWeek)
-		{
-			return input.AddDays(( input.DayOfWeek > dayOfWeek
+		public static DateTimeOffset GetLastDayOfWeek(this DateTimeOffset input, DayOfWeek dayOfWeek) => input.AddDays(( input.DayOfWeek > dayOfWeek
 					? input.DayOfWeek - dayOfWeek
 					: 7 - (int)dayOfWeek + (int)input.DayOfWeek ) * -1);
-		}
 
 		/// <summary>
 		/// Gets the next day for the given day of the week.
@@ -88,10 +86,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="intersectingEndDate">The intersecting end date.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Intersects), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool Intersects(this DateTime startDate, DateTime endDate, DateTime intersectingStartDate, DateTime intersectingEndDate)
-		{
-			return intersectingEndDate >= startDate && intersectingStartDate <= endDate;
-		}
+		public static bool Intersects(this DateTime startDate, DateTime endDate, DateTime intersectingStartDate, DateTime intersectingEndDate) => intersectingEndDate >= startDate && intersectingStartDate <= endDate;
 
 		/// <summary>
 		/// Intersects the specified end date.
@@ -102,10 +97,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="intersectingEndDate">The intersecting end date.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool Intersects(this DateTimeOffset startDate, DateTimeOffset endDate, DateTimeOffset intersectingStartDate, DateTimeOffset intersectingEndDate)
-		{
-			return intersectingEndDate >= startDate && intersectingStartDate <= endDate;
-		}
+		public static bool Intersects(this DateTimeOffset startDate, DateTimeOffset endDate, DateTimeOffset intersectingStartDate, DateTimeOffset intersectingEndDate) => intersectingEndDate >= startDate && intersectingStartDate <= endDate;
 
 		/// <summary>
 		/// Determines whether value is in range of the specified beginning time and end time.
@@ -115,10 +107,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end date.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning date]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime)
-		{
-			return value >= beginningTime & value <= endTime;
-		}
+		public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime) => value >= beginningTime & value <= endTime;
 
 		/// <summary>
 		/// Determines whether value is in range of the specified beginning time and end time.
@@ -128,10 +117,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end time.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime)
-		{
-			return value >= beginningTime & value <= endTime;
-		}
+		public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime) => value >= beginningTime & value <= endTime;
 
 		/// <summary>
 		/// DDetermines whether value is in range of the specified beginning time and end time.
@@ -141,8 +127,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end time.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime)
-		{ return value >= beginningTime & value <= endTime; }
+		public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime) => value >= beginningTime & value <= endTime;
 
 		/// <summary>
 		/// Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
@@ -221,10 +206,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="compareTo">The date to compare.</param>
 		/// <returns>DateTime.</returns>
 		[Information(nameof(Max), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static DateTime Max(this DateTime date, DateTime compareTo)
-		{
-			return date > compareTo ? date : compareTo;
-		}
+		public static DateTime Max(this DateTime date, DateTime compareTo) => date > compareTo ? date : compareTo;
 
 		/// <summary>
 		/// Determines the maximum of the two dates.
@@ -233,10 +215,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="compareTo">The date to compare.</param>
 		/// <returns>DateTimeOffset.</returns>
 		[Information(nameof(Max), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static DateTimeOffset Max(this DateTimeOffset date, DateTimeOffset compareTo)
-		{
-			return date > compareTo ? date : compareTo;
-		}
+		public static DateTimeOffset Max(this DateTimeOffset date, DateTimeOffset compareTo) => date > compareTo ? date : compareTo;
 
 
 		/// <summary>
@@ -305,11 +284,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this DateTime input, DateTimeFormat format)
+		public static string ToFormattedString(this DateTime input, [NotNull] DateTimeFormat format)
 		{
-			// TODO: ADD URL FOR ARTICLE FOR THIS METHOD
-			Validate.TryValidateNullParam(format, nameof(format));
-
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
 		}
 
@@ -339,10 +315,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 		/// </example>
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this DateTimeOffset input, DateTimeFormat format)
+		public static string ToFormattedString(this DateTimeOffset input, [NotNull] DateTimeFormat format)
 		{
-			Validate.TryValidateNullParam(format, nameof(format));
-
 			return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
 		}
 

@@ -12,9 +12,11 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
+using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 
@@ -230,6 +232,30 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Testing Param for Null: != null")]
+		public void TestingForNull01()
+		{
+			var input = new object();
+
+			this.CheckForNullParamNormal(input);
+		}
+
+		[Benchmark(Description = "Testing Param for Null: Validate.TryValidateNull()")]
+		public void TestingForNull02()
+		{
+			var input = new object();
+
+			this.CheckForNullParamSpargine(input);
+		}
+
+		[Benchmark(Description = "Testing Param for Null: [NotNull]")]
+		public void TestingForNull03()
+		{
+			var input = new object();
+
+			this.TestingForNullNotNull(input);
+		}
+
 		[Benchmark(Description = nameof(ObjectExtensions.ToJson) + ": PersonProper")]
 		public void ToJson01()
 		{
@@ -252,6 +278,31 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var disposableType = new DataTable("TEST");
 
 			disposableType.TryDispose();
+		}
+
+		private void CheckForNullParamNormal(object input)
+		{
+			if (input == null)
+			{
+				input = "TEST";
+			}
+
+			this.Consumer.Consume(input);
+		}
+
+		private void CheckForNullParamSpargine(object input)
+		{
+			if (Validate.TryValidateNull(input))
+			{
+				input = "TEST";
+			}
+
+			this.Consumer.Consume(input);
+		}
+
+		private void TestingForNullNotNull([NotNull] object input)
+		{
+			this.Consumer.Consume(input);
 		}
 	}
 }

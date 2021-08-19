@@ -22,7 +22,7 @@ namespace dotNetTips.Spargine.Core.Web
 	/// Class ServiceProxy.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
-	/// <seealso cref="System.IDisposable" />
+	/// <seealso cref="IDisposable" />
 	public abstract class ServiceProxy<T> where T : ICommunicationObject, IDisposable
 	{
 		/// <summary>
@@ -49,10 +49,7 @@ namespace dotNetTips.Spargine.Core.Web
 		/// Initializes a new instance of the <see cref="ServiceProxy{T}" /> class.
 		/// </summary>
 		/// <param name="serviceEndpoint">The service endpoint.</param>
-		protected ServiceProxy(string serviceEndpoint)
-		{
-			this._serviceEndpoint = serviceEndpoint;
-		}
+		protected ServiceProxy(string serviceEndpoint) => this._serviceEndpoint = serviceEndpoint;
 
 		/// <summary>
 		/// Gets the channel.

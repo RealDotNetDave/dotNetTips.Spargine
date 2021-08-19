@@ -28,11 +28,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
 		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static string GenerateKey()
-		{
-			return Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
-
-		}
+		public static string GenerateKey() => Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
 
 		/// <summary>
 		/// Creates a random key from a GUID.

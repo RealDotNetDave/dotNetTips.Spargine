@@ -162,10 +162,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(DefaultIfNullOrEmpty), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string DefaultIfNullOrEmpty(this string value, string defaultValue)
-		{
-			return string.IsNullOrEmpty(value) ? defaultValue : value;
-		}
+		public static string DefaultIfNullOrEmpty(this string value, string defaultValue) => string.IsNullOrEmpty(value) ? defaultValue : value;
 
 		/// <summary>
 		/// Turns a delimited string to a array of strings.
@@ -190,10 +187,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(EqualsIgnoreCase), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool EqualsIgnoreCase(this string input, string valueToCompare)
-		{
-			return string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase);
-		}
+		public static bool EqualsIgnoreCase(this string input, string valueToCompare) => string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase);
 
 		/// <summary>
 		/// Determines if the two strings are null or empty.
@@ -203,10 +197,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool EqualsOrBothNullOrEmpty(this string input, string valueToCompare)
-		{
-			return string.Equals(input ?? string.Empty, valueToCompare ?? string.Empty, StringComparison.Ordinal);
-		}
+		public static bool EqualsOrBothNullOrEmpty(this string input, string valueToCompare) => string.Equals(input ?? string.Empty, valueToCompare ?? string.Empty, StringComparison.Ordinal);
 
 		/// <summary>
 		/// Extracts a string from a beginning and end value.
@@ -257,10 +248,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasValue(this string input)
-		{
-			return input is not null && ( input.Trim().Length > 0 );
-		}
+		public static bool HasValue(this string input) => input is not null && ( input.Trim().Length > 0 );
 
 		/// <summary>
 		/// Determines whether the specified string length has value.
@@ -395,10 +383,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static bool IsAsciiDigit(this char character)
-		{
-			return Char.IsDigit(character);
-		}
+		public static bool IsAsciiDigit(this char character) => Char.IsDigit(character);
 
 		/// <summary>
 		/// Determines whether the input is ASCII letter.
@@ -407,10 +392,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsAsciiLetter(this char character)
-		{
-			return Char.IsLetter(character);
-		}
+		public static bool IsAsciiLetter(this char character) => Char.IsLetter(character);
 
 		/// <summary>
 		/// Determines whether the input is ASCII letter or digit.
@@ -419,11 +401,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsAsciiLetterOrDigit(this char character)
-		{
-			return Char.IsLetterOrDigit(character);
-
-		}
+		public static bool IsAsciiLetterOrDigit(this char character) => Char.IsLetterOrDigit(character);
 
 		/// <summary>
 		/// Determines whether the specified character is whitespace.
@@ -432,10 +410,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static bool IsAsciiWhitespace(this char character)
-		{
-			return Char.IsWhiteSpace(character);
-		}
+		public static bool IsAsciiWhitespace(this char character) => Char.IsWhiteSpace(character);
 
 		/// <summary>
 		/// Determines whether the input is credit card number.
@@ -443,10 +418,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsCreditCard(this string input)
-		{
-			return input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled);
-		}
+		public static bool IsCreditCard(this string input) => input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether the input is a domain address.
@@ -455,10 +427,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsDomainAddress(this string input)
-		{
-			return input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		}
+		public static bool IsDomainAddress(this string input) => input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether the input is and email address.
@@ -466,10 +435,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsEmailAddress(this string input)
-		{
-			return input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		}
+		public static bool IsEmailAddress(this string input) => input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether the specified input is null or empty.
@@ -478,10 +444,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
-		public static bool IsEmpty(this string input)
-		{
-			return input.IsNotNull() && ( input.Length == 0 );
-		}
+		public static bool IsEmpty(this string input) => input.IsNotNull() && ( input.Length == 0 );
 
 		/// <summary>
 		/// Determines whether the input is first and last name.
@@ -489,10 +452,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsFirstLastName(this string input)
-		{
-			return input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		}
+		public static bool IsFirstLastName(this string input) => input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether the specified value is unique identifier.
@@ -520,10 +480,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsISBN(this string input)
-		{
-			return input.HasValue(Resources.RegexISBN, RegexOptions.Compiled);
-		}
+		public static bool IsISBN(this string input) => input.HasValue(Resources.RegexISBN, RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether [is mac address] [the specified value].
@@ -552,10 +509,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
-		public static bool IsNotEmpty(this string input)
-		{
-			return input.IsNotNull() && ( input.Length > 0 );
-		}
+		public static bool IsNotEmpty(this string input) => input.IsNotNull() && ( input.Length > 0 );
 
 		/// <summary>
 		/// Determines whether the specified input is scientific value.
@@ -563,10 +517,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsScientific(this string input)
-		{
-			return input.HasValue(Resources.RegexScientific, RegexOptions.Compiled);
-		}
+		public static bool IsScientific(this string input) => input.HasValue(Resources.RegexScientific, RegexOptions.Compiled);
 
 		/// <summary>
 		/// Determines whether the specified input is a valid string value.
@@ -574,10 +525,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsString(this string input)
-		{
-			return input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		}
+		public static bool IsString(this string input) => input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Check that the string is a valid SHA-1 hash with regex
@@ -604,10 +552,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsUrl(this string input)
-		{
-			return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
-		}
+		public static bool IsUrl(this string input) => input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
 		/// Removes the CR/LF from the end of a <see cref="string" />.
@@ -794,7 +739,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			if (startIndex >= input.Length - length)
 			{
-				ExceptionThrower.ThrowArgumentOutOfRangeException("startIndex + length must be <= value.Length", nameof(startIndex));
+				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(startIndex), "startIndex + length must be <= value.Length");
 			}
 
 			if (length == 0)

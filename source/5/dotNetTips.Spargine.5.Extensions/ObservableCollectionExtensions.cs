@@ -30,10 +30,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool DoesNotHaveItems<T>(this ObservableCollection<T> list)
-		{
-			return list?.Count <= 0;
-		}
+		public static bool DoesNotHaveItems<T>(this ObservableCollection<T> list) => list?.Count <= 0;
 
 		/// <summary>
 		/// Determines whether the specified source has items.
@@ -42,10 +39,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="source">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this ObservableCollection<T> source)
-		{
-			return source?.Count > 0;
-		}
+		public static bool HasItems<T>(this ObservableCollection<T> source) => source?.Count > 0;
 
 		/// <summary>
 		/// Determines whether the specified count has items.
@@ -55,9 +49,6 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this ObservableCollection<T> source, int count)
-		{
-			return source?.Count == count;
-		}
+		public static bool HasItems<T>(this ObservableCollection<T> source, int count) => source?.Count == count;
 	}
 }

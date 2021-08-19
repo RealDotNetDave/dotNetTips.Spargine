@@ -37,10 +37,7 @@ namespace dotNetTips.Spargine.Core
 		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="value">The value.</param>
-		public InvalidValueException(TValue value) : base(Resources.GoToDotNetTipsComForHelp)
-		{
-			this.Value = value;
-		}
+		public InvalidValueException(TValue value) : base(Resources.GoToDotNetTipsComForHelp) => this.Value = value;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
@@ -55,10 +52,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
-		public InvalidValueException(string message, TValue value) : base(message)
-		{
-			this.Value = value;
-		}
+		public InvalidValueException(string message, TValue value) : base(message) => this.Value = value;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
@@ -75,21 +69,15 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
 		/// <param name="innerException">The inner exception.</param>
-		public InvalidValueException(string message, TValue value, Exception innerException) : base(message, innerException)
-		{
-			this.Value = value;
-		}
+		public InvalidValueException(string message, TValue value, Exception innerException) : base(message, innerException) => this.Value = value;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
 		/// </summary>
 		/// <param name="serializationInfo">The serialization information.</param>
 		/// <param name="streamingContext">The streaming context.</param>
-		/// <exception cref="System.NotImplementedException"></exception>
-		private InvalidValueException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-		{
-			throw new NotImplementedException();
-		}
+		/// <exception cref="NotImplementedException"></exception>
+		private InvalidValueException(SerializationInfo serializationInfo, StreamingContext streamingContext) => throw new NotImplementedException();
 
 		/// <summary>
 		/// Gets the value.

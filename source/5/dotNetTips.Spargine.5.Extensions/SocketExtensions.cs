@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
@@ -35,11 +36,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="address">The address.</param>
 		/// <returns>System.Int32.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static int BindToAnonymousPort(this Socket socket, IPAddress address)
+		public static int BindToAnonymousPort([NotNull] this Socket socket, [NotNull] IPAddress address)
 		{
-			Validate.TryValidateNullParam(socket, nameof(socket));
-			Validate.TryValidateNullParam(address, nameof(address));
-
 			socket.Bind(new IPEndPoint(address, 0));
 
 			return ( (IPEndPoint)socket.LocalEndPoint ).Port;
@@ -53,10 +51,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="socket">The socket.</param>
 		/// <param name="force">if set to <c>true</c> [force].</param>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void ForceNonBlocking(this Socket socket, bool force)
+		public static void ForceNonBlocking([NotNull] this Socket socket, bool force)
 		{
-			Validate.TryValidateNullParam(socket, nameof(socket));
-
 			socket.Blocking = force;
 		}
 
@@ -68,14 +64,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="remoteEndpoint">The remote endpoint.</param>
 		/// <param name="millisecondsTimeout">The milliseconds timeout.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool TryConnect(this Socket socket, EndPoint remoteEndpoint, int millisecondsTimeout)
+		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, int millisecondsTimeout)
 		{
-			Validate.TryValidateNullParam(socket, nameof(socket));
-			Validate.TryValidateNullParam(remoteEndpoint, nameof(remoteEndpoint));
-
 			if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 			{
 				using var mre = new ManualResetEventSlim(false);

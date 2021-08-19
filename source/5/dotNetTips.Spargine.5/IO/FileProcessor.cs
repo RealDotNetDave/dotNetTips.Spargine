@@ -4,7 +4,7 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="FileProcessor.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Security;
@@ -42,11 +43,8 @@ namespace dotNetTips.Spargine.IO
 		/// <returns>System.Object.</returns>
 		/// <remarks>Use the Processed event to find out if file copied succeeded or failed.</remarks>
 		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public int CopyFiles(IEnumerable<FileInfo> files, DirectoryInfo destinationFolder)
+		public int CopyFiles([NotNull] IEnumerable<FileInfo> files, [NotNull] DirectoryInfo destinationFolder)
 		{
-			Validate.TryValidateParam(files, nameof(files));
-			Validate.TryValidateParam(destinationFolder, nameof(destinationFolder));
-
 			var successCount = 0;
 
 			if (destinationFolder.Exists == false)
@@ -64,7 +62,7 @@ namespace dotNetTips.Spargine.IO
 				{
 					try
 					{
-						var newFileName = new FileInfo(tempFile.FullName.Replace(tempFile.Directory.Root.FullName, destinationFolder.FullName));
+						var newFileName = new FileInfo(fileName: tempFile.FullName.Replace(tempFile.Directory.Root.FullName, destinationFolder.FullName, System.StringComparison.InvariantCulture));
 
 						if (newFileName.Directory.Exists == false)
 						{
@@ -122,10 +120,8 @@ namespace dotNetTips.Spargine.IO
 		/// <returns>System.Int32 with the number of files that were successfully deleted.</returns>
 		/// <remarks>Use the <seealso cref="Processed">Processed</seealso> event to find out if file deletion succeeded or failed.</remarks>
 		[Information(nameof(DeleteFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public int DeleteFiles(IEnumerable<FileInfo> files)
+		public int DeleteFiles([NotNull] IEnumerable<FileInfo> files)
 		{
-			Validate.TryValidateParam(files, nameof(files));
-
 			var successCount = 0;
 			var list = files.ToArray();
 
@@ -186,10 +182,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="folders">The folders.</param>
 		/// <returns>System.Int32.</returns>
 		[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public int DeleteFolders(IEnumerable<DirectoryInfo> folders)
+		public int DeleteFolders([NotNull] IEnumerable<DirectoryInfo> folders)
 		{
-			Validate.TryValidateParam(folders, nameof(folders));
-
 			var successCount = 0;
 			var list = folders.ToArray();
 

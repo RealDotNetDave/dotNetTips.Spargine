@@ -26,11 +26,11 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Person class that implements interfaces and validates data.
-	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.IPerson" />
-	/// Implements the <see cref="System.IComparable" />
+	/// Implements the <see cref="IPerson" />
+	/// Implements the <see cref="IComparable" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.IPerson" />
-	/// <seealso cref="System.IComparable" />
+	/// <seealso cref="IPerson" />
+	/// <seealso cref="IComparable" />
 	[Obsolete("This class will be removed at the end of 2021. Instead use Person or PersonRecord.")]
 	[DebuggerDisplay("{Email}")]
 	[Serializable]
@@ -140,7 +140,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets first address.
 		/// </summary>
 		/// <value>The address1.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Address1</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Address1</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Address1</exception>
 		[DataMember(Name = "address1")]
 		[XmlElement]
@@ -166,7 +166,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets second address.
 		/// </summary>
 		/// <value>The address2.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Address2</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Address2</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Address2</exception>
 		[DataMember(Name = "address2")]
 		[XmlElement]
@@ -192,7 +192,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the born on date and time.
 		/// </summary>
 		/// <value>The born on.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">BornOn</exception>
+		/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
 		/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
 		[DataMember(Name = "bornOn")]
 		[XmlElement]
@@ -218,7 +218,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the cell phone number.
 		/// </summary>
 		/// <value>The cell phone.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">CellPhone</exception>
+		/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
 		/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
 		[DataMember(Name = "cellPhone")]
 		[XmlElement]
@@ -244,7 +244,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the city name.
 		/// </summary>
 		/// <value>The city.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">City</exception>
+		/// <exception cref="ArgumentOutOfRangeException">City</exception>
 		/// <exception cref="ArgumentOutOfRangeException">City</exception>
 		[DataMember(Name = "city")]
 		[XmlElement]
@@ -270,7 +270,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the country.
 		/// </summary>
 		/// <value>The country.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Country</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Country</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Country</exception>
 		[DataMember(Name = "country")]
 		[XmlElement]
@@ -296,7 +296,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets the email.
 		/// </summary>
 		/// <value>The email.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Email</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Email</exception>
 		[DataMember(Name = "email", IsRequired = true)]
 		[XmlElement(IsNullable = false)]
@@ -322,7 +322,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>The first name.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">FirstName</exception>
+		/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
 		/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
 		[DataMember(Name = "firstName")]
 		[XmlElement]
@@ -347,7 +347,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the home phone.
 		/// </summary>
 		/// <value>The home phone.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">HomePhone</exception>
+		/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
 		/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
 		[DataMember(Name = "homePhone")]
 		[XmlElement]
@@ -372,7 +372,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets the identifier.
 		/// </summary>
 		/// <value>The identifier.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">Id</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Id</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Id</exception>
 		[DataMember(Name = "id", IsRequired = true)]
 		[XmlElement(IsNullable = false)]
@@ -397,7 +397,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the last name.
 		/// </summary>
 		/// <value>The last name.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">LastName</exception>
+		/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
 		/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
 		[DataMember(Name = "lastName")]
 		[XmlElement]
@@ -422,7 +422,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the postal code.
 		/// </summary>
 		/// <value>The postal code.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">PostalCode</exception>
+		/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
 		/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
 		[DataMember(Name = "postalCode")]
 		[XmlElement]
@@ -447,7 +447,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the state.
 		/// </summary>
 		/// <value>The state.</value>
-		/// <exception cref="System.ArgumentOutOfRangeException">State</exception>
+		/// <exception cref="ArgumentOutOfRangeException">State</exception>
 		/// <exception cref="ArgumentOutOfRangeException">State</exception>
 		[DataMember(Name = "state")]
 		[XmlElement]
@@ -655,10 +655,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Returns the hash code for this instance based on id.
 		/// </summary>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		public override int GetHashCode()
-		{
-			return HashCode.Combine(this.Email, this.Id);
-		}
+		public override int GetHashCode() => HashCode.Combine(this.Email, this.Id);
 
 		/// <summary>
 		/// Returns a <see cref="string" /> of the users id.

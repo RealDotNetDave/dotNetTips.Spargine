@@ -16,8 +16,6 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
-using dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading;
-using dotNetTips.Spargine.Core.BenchmarkTests.Security;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
@@ -30,7 +28,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		/// Defines the entry point of the application.
 		/// </summary>
 		/// <param name="args">The arguments.</param>
-		private static void Main(string[] args)
+		private static void Main()
 		{
 			try
 			{

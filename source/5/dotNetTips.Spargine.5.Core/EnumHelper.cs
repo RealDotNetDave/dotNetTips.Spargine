@@ -70,21 +70,15 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="name">The name.</param>
 		/// <returns>System.String.</returns>
-		private static string AdjustCamelCase(string name)
-		{
-			return _titleCaseRegex.Replace(name, replacement: " $1");
-		}
+		private static string AdjustCamelCase(string name) => _titleCaseRegex.Replace(name, replacement: " $1");
 
 		/// <summary>
 		/// Adjusts the name.
 		/// </summary>
 		/// <param name="name">The name.</param>
 		/// <returns>System.String.</returns>
-		private static string AdjustName(string name)
-		{
-			return AdjustCamelCase(name.Replace(ControlChars.Underscore, ControlChars.Space))
+		private static string AdjustName(string name) => AdjustCamelCase(name.Replace(ControlChars.Underscore, ControlChars.Space))
 				.Replace(ControlChars.Space, ControlChars.Space);
-		}
 
 		/// <summary>
 		/// Gets the enum names.

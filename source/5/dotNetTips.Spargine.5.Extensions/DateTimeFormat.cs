@@ -18,9 +18,9 @@ namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
 	/// DateTime Format.
-	/// Implements the <see cref="dotNetTips.Spargine.Core.Enumeration" />
+	/// Implements the <see cref="Enumeration" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Core.Enumeration" />
+	/// <seealso cref="Enumeration" />
 	public record DateTimeFormat : Enumeration
 	{
 

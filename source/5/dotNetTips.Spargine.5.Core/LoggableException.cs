@@ -73,24 +73,18 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="ex">The ex.</param>
 		/// <param name="userMessage">The user message.</param>
-		public LoggableException(string message, Exception ex, string userMessage) : base(message, ex)
-		{
-			this.UserMessage = userMessage;
-		}
+		public LoggableException(string message, Exception ex, string userMessage) : base(message, ex) => this.UserMessage = userMessage;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LoggableException" /> class.
 		/// </summary>
 		/// <param name="serializationInfo">The serialization information.</param>
 		/// <param name="streamingContext">The streaming context.</param>
-		/// <exception cref="System.NotImplementedException"></exception>
+		/// <exception cref="NotImplementedException"></exception>
 		/// <exception cref="NotImplementedException"></exception>
 		/// <exception cref="NotImplementedException"></exception>
 		protected LoggableException(SerializationInfo serializationInfo, StreamingContext streamingContext)
-		 : base(serializationInfo, streamingContext)
-		{
-			throw new NotImplementedException();
-		}
+		 : base(serializationInfo, streamingContext) => throw new NotImplementedException();
 
 		/// <summary>
 		/// Gets or sets a value indicating whether this instance has been logged.
@@ -118,10 +112,10 @@ namespace dotNetTips.Spargine.Core
 
 
 		/// <summary>
-		/// When overridden in a derived class, sets the <see cref="System.Runtime.Serialization.SerializationInfo"></see> with information about the exception.
+		/// When overridden in a derived class, sets the <see cref="SerializationInfo"></see> with information about the exception.
 		/// </summary>
-		/// <param name="info">The <see cref="System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
-		/// <param name="context">The <see cref="System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+		/// <param name="info">The <see cref="SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+		/// <param name="context">The <see cref="StreamingContext"></see> that contains contextual information about the source or destination.</param>
 		public override void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
 			base.GetObjectData(info, context);

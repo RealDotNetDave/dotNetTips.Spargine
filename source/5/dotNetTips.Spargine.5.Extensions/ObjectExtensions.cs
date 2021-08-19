@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -44,10 +45,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		[Information(nameof(As), UnitTestCoverage = 100, Status = Status.Available)]
-		public static T As<T>(this object obj)
+		public static T As<T>([NotNull] this object obj)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			return (T)obj;
 		}
 
@@ -59,11 +58,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		[Information(nameof(Clone), UnitTestCoverage = 100, Status = Status.Available)]
-		public static T Clone<T>(this object obj)
+		public static T Clone<T>([NotNull] this object obj)
 			where T : class
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			return FromJson<T>(obj.ToJson());
 		}
 
@@ -74,10 +71,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		[Information(nameof(ComputeSha256Hash), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ComputeSha256Hash(this object obj)
+		public static string ComputeSha256Hash([NotNull] this object obj)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			// Create a SHA256
 			using var sha256Hash = SHA256.Create();
 
@@ -140,9 +135,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified property name has property; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">Object name cannot be null.</exception>
 		[Information(nameof(HasProperty), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasProperty(this object obj, string propertyName)
+		public static bool HasProperty([NotNull] this object obj, string propertyName)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
+			Validate.TryValidateParam(propertyName, nameof(propertyName));
 
 			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Compare(p.Name, propertyName, StringComparison.Ordinal) == 0);
 
@@ -155,10 +150,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="obj">The object.</param>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		[Information(nameof(InitializeFields), UnitTestCoverage = 100, Status = Status.Available)]
-		public static void InitializeFields(this object obj)
+		public static void InitializeFields([NotNull] this object obj)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			var fieldInfos = obj.GetType().GetRuntimeFields().ToList();
 
 			if (fieldInfos.DoesNotHaveItems())
@@ -178,7 +171,7 @@ namespace dotNetTips.Spargine.Extensions
 					var safeValue = ( objectValue is null )
 						? null
 						: Convert.ChangeType(objectValue, t, CultureInfo.InvariantCulture);
-					runtimeField?.SetValue(obj, safeValue);
+					runtimeField.SetValue(obj, safeValue);
 				}
 			}
 		}
@@ -207,39 +200,36 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="ignoreNulls">if set to <c>true</c> [ignore <see langword="null" /> property values].</param>
 		/// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
-		/// <example>Output:
-		/// [0]: {[PersonRecord.BornOn, 1/29/2007 11:52:12 AM -08:00]}
-		/// [1]: {[PersonRecord.CellPhone, 747-388-4458]}
-		/// [2]: {[PersonRecord.Email, elfhlsoepfmuiyr@uomrrywscvaapwjcu.org.uk]}
-		/// [3]: {[PersonRecord.FirstName, ZyeMgwQRFABsisq]}
-		/// [4]: {[PersonRecord.HomePhone, 255 - 871 - 4415]}
-		/// [5]: {[PersonRecord.Id, 58dc933fe6004719a37e7a35373ad645]}
-		/// [6]: {[PersonRecord.LastName, j_`iqWAGoOeKTpjWhojFyRHld]}
-		/// [7]: {[PersonRecord.Addresses[0].Address1, XkbOcAlseMEMnPY ^ jkEcYWnFD]}
-		/// [8]: {[PersonRecord.Addresses[0].Address2, tJkpTHikrRfFaGENX]`_agaw[]}
-		/// [9]: {[PersonRecord.Addresses[0].City, KlWA ^ Aw]KhqADREV\uwmXJeAU]}
-		/// [10]: {[PersonRecord.Addresses[0].Country, AtN`\NbnUIVSjUQicVXNMUL[J]}
-		/// [11]: {[PersonRecord.Addresses[0].Id, 9330f3a225b14d96b67779f2c932302a]}
-		/// [12]: {[PersonRecord.Addresses[0].CountyProvince, EkdKDBGWf ^ Givi[OMhIh]}
-		/// [13]: {[PersonRecord.Addresses[0].State, RGOuDpJyfgwxyfC]}
-		/// [14]: {[PersonRecord.Addresses[0].Phone, 065 - 507 - 7161]}
-		/// [15]: {[PersonRecord.Addresses[0].PostalCode, 56633485]}
-		/// [16]: {[PersonRecord.Addresses[1].Address1, lGSJwGNOtd ^ rXv`RxPcVCZHhk]}
-		/// [17]: {[PersonRecord.Addresses[1].Address2, \EJGOmHyfAPERA ^ DrTR`xlDFU]}
-		/// [18]: {[PersonRecord.Addresses[1].City, xiWPASydY[BEHfpVrluPNgOFS]}
-		/// [19]: {[PersonRecord.Addresses[1].Country, JFpIljBDlQEkiehQ[r`\xjh[J]}
-		/// [20]: {[PersonRecord.Addresses[1].Id, 8c95fd0cbbcf4beb993081bdd9c96ceb]}
-		/// [21]: {[PersonRecord.Addresses[1].CountyProvince, FyHoHRZQwpMJ[gjABVUk]}
-		/// [22]: {[PersonRecord.Addresses[1].State, dxeZkn[HyLo\wUS]}
-		/// [23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
-		/// [24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
-		/// </example>
+		/// {D255958A-8513-4226-94B9-080D98F904A1}<example>Output:
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[0]: {[PersonRecord.BornOn, 1/29/2007 11:52:12 AM -08:00]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[1]: {[PersonRecord.CellPhone, 747-388-4458]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[2]: {[PersonRecord.Email, elfhlsoepfmuiyr@uomrrywscvaapwjcu.org.uk]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[3]: {[PersonRecord.FirstName, ZyeMgwQRFABsisq]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[4]: {[PersonRecord.HomePhone, 255 - 871 - 4415]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[5]: {[PersonRecord.Id, 58dc933fe6004719a37e7a35373ad645]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[6]: {[PersonRecord.LastName, j_`iqWAGoOeKTpjWhojFyRHld]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[7]: {[PersonRecord.Addresses[0].Address1, XkbOcAlseMEMnPY ^ jkEcYWnFD]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[8]: {[PersonRecord.Addresses[0].Address2, tJkpTHikrRfFaGENX]`_agaw[]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[9]: {[PersonRecord.Addresses[0].City, KlWA ^ Aw]KhqADREV\uwmXJeAU]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[10]: {[PersonRecord.Addresses[0].Country, AtN`\NbnUIVSjUQicVXNMUL[J]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[11]: {[PersonRecord.Addresses[0].Id, 9330f3a225b14d96b67779f2c932302a]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[12]: {[PersonRecord.Addresses[0].CountyProvince, EkdKDBGWf ^ Givi[OMhIh]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[13]: {[PersonRecord.Addresses[0].State, RGOuDpJyfgwxyfC]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[14]: {[PersonRecord.Addresses[0].Phone, 065 - 507 - 7161]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[15]: {[PersonRecord.Addresses[0].PostalCode, 56633485]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[16]: {[PersonRecord.Addresses[1].Address1, lGSJwGNOtd ^ rXv`RxPcVCZHhk]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[17]: {[PersonRecord.Addresses[1].Address2, \EJGOmHyfAPERA ^ DrTR`xlDFU]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[18]: {[PersonRecord.Addresses[1].City, xiWPASydY[BEHfpVrluPNgOFS]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[19]: {[PersonRecord.Addresses[1].Country, JFpIljBDlQEkiehQ[r`\xjh[J]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[20]: {[PersonRecord.Addresses[1].Id, 8c95fd0cbbcf4beb993081bdd9c96ceb]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[21]: {[PersonRecord.Addresses[1].CountyProvince, FyHoHRZQwpMJ[gjABVUk]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[22]: {[PersonRecord.Addresses[1].State, dxeZkn[HyLo\wUS]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[23]: {[PersonRecord.Addresses[1].Phone, 511 - 286 - 7653]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}[24]: {[PersonRecord.Addresses[1].PostalCode, 33385672]}
+		/// {D255958A-8513-4226-94B9-080D98F904A1}</example>
 		[Information("Original code by: Diego De Vita", author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static IDictionary<string, string> PropertiesToDictionary(this object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
+		public static IDictionary<string, string> PropertiesToDictionary([NotNull] this object obj, [NotNull] string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-			Validate.TryValidateNullParam(memberName, nameof(memberName));
-
 			var result = new Dictionary<string, string>();
 
 			if (Validate.TryValidateNull(obj))
@@ -309,9 +299,9 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Generates a string that returns the property names and values.
-		/// The input cannot be a collection type.
-		/// Supports nested types.
+		/// {D255958A-8513-4226-94B9-080D98F904A1}Generates a string that returns the property names and values.
+		/// {D255958A-8513-4226-94B9-080D98F904A1}The input cannot be a collection type.
+		/// {D255958A-8513-4226-94B9-080D98F904A1}Supports nested types.
 		/// </summary>
 		/// <param name="obj">The input.</param>
 		/// <param name="header">The header.</param>
@@ -322,33 +312,29 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 		/// <exception cref="ArgumentInvalidException">Object cannot be a collection type.</exception>
-		/// <example>Output:
-		/// PersonRecord, PersonRecord.BornOn:1/29/2007 11:52:12 AM -08:00, PersonRecord.CellPhone:747-388-4458,
-		/// PersonRecord.Email:elfhlsoepfmuiyr @uomrrywscvaapwjcu.org.uk, PersonRecord.FirstName:ZyeMgwQRFABsisq,
-		/// PersonRecord.HomePhone:255-871-4415, PersonRecord.Id:58dc933fe6004719a37e7a35373ad645,
-		/// PersonRecord.LastName:j_`iqWAGoOeKTpjWhojFyRHld, PersonRecord.Addresses[0].Address1:XkbOcAlseMEMnPY^jkEcYWnFD,
-		/// PersonRecord.Addresses[0].Address2:tJkpTHikrRfFaGENX]`_agaw[,
-		/// PersonRecord.Addresses[0].City:KlWA ^ Aw] KhqADREV\\uwmXJeAU,
-		/// PersonRecord.Addresses[0].Country:AtN`\\NbnUIVSjUQicVXNMUL[J,
-		/// PersonRecord.Addresses[0].Id:9330f3a225b14d96b67779f2c932302a,
-		/// PersonRecord.Addresses[0].CountyProvince:EkdKDBGWf ^ Givi[OMhIh,
-		/// PersonRecord.Addresses[0].State:RGOuDpJyfgwxyfC, PersonRecord.Addresses[0].Phone:065 - 507 - 7161,
-		/// PersonRecord.Addresses[0].PostalCode:56633485, PersonRecord.Addresses[1].Address1:lGSJwGNOtd ^ rXv`RxPcVCZHhk,
-		/// PersonRecord.Addresses[1].Address2:\\EJGOmHyfAPERA ^ DrTR`xlDFU,
-		/// PersonRecord.Addresses[1].City:xiWPASydY[BEHfpVrluPNgOFS,
-		/// PersonRecord.Addresses[1].Country:JFpIljBDlQEkiehQ[r`\\xjh[J,
-		/// PersonRecord.Addresses[1].Id:8c95fd0cbbcf4beb993081bdd9c96ceb,
-		/// PersonRecord.Addresses[1].CountyProvince:FyHoHRZQwpMJ[gjABVUk,
-		/// PersonRecord.Addresses[1].State:dxeZkn[HyLo\\wUS, PersonRecord.Addresses[1].Phone:511 - 286 - 7653,
-		/// PersonRecord.Addresses[1].PostalCode:33385672
-		/// </example>
+		/// {D255958A-8513-4226-94B9-080D98F904A1}<example>Output:
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord, PersonRecord.BornOn:1/29/2007 11:52:12 AM -08:00, PersonRecord.CellPhone:747-388-4458,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Email:elfhlsoepfmuiyr @uomrrywscvaapwjcu.org.uk, PersonRecord.FirstName:ZyeMgwQRFABsisq,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.HomePhone:255-871-4415, PersonRecord.Id:58dc933fe6004719a37e7a35373ad645,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.LastName:j_`iqWAGoOeKTpjWhojFyRHld, PersonRecord.Addresses[0].Address1:XkbOcAlseMEMnPY^jkEcYWnFD,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].Address2:tJkpTHikrRfFaGENX]`_agaw[,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].City:KlWA ^ Aw] KhqADREV\\uwmXJeAU,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].Country:AtN`\\NbnUIVSjUQicVXNMUL[J,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].Id:9330f3a225b14d96b67779f2c932302a,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].CountyProvince:EkdKDBGWf ^ Givi[OMhIh,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].State:RGOuDpJyfgwxyfC, PersonRecord.Addresses[0].Phone:065 - 507 - 7161,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[0].PostalCode:56633485, PersonRecord.Addresses[1].Address1:lGSJwGNOtd ^ rXv`RxPcVCZHhk,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].Address2:\\EJGOmHyfAPERA ^ DrTR`xlDFU,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].City:xiWPASydY[BEHfpVrluPNgOFS,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].Country:JFpIljBDlQEkiehQ[r`\\xjh[J,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].Id:8c95fd0cbbcf4beb993081bdd9c96ceb,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].CountyProvince:FyHoHRZQwpMJ[gjABVUk,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].State:dxeZkn[HyLo\\wUS, PersonRecord.Addresses[1].Phone:511 - 286 - 7653,
+		/// {D255958A-8513-4226-94B9-080D98F904A1}PersonRecord.Addresses[1].PostalCode:33385672
+		/// {D255958A-8513-4226-94B9-080D98F904A1}</example>
 		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
-		public static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemberName = true)
+		public static string PropertiesToString([NotNull] this object obj, [NotNull] string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, [NotNull] string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemberName = true)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-			Validate.TryValidateNullParam(header, nameof(header));
-			Validate.TryValidateNullParam(sequenceSeparator, nameof(sequenceSeparator));
-
 			var typeName = obj.GetType().Name;
 
 			if (string.Compare(typeName, typeof(List<>).Name, StringComparison.Ordinal) == 0)
@@ -399,9 +385,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">obj</exception>
 		/// <exception cref="ArgumentException">message - fileName</exception>
 		[Information(nameof(ToJsonFile), UnitTestCoverage = 100, Status = Status.Available)]
-		public static void ToJsonFile(this object obj, string fileName)
+		public static void ToJsonFile([NotNull] this object obj, string fileName)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
 			Validate.TryValidateParam(fileName, nameof(fileName));
 
 			var json = JsonSerializer.Serialize(obj);
@@ -457,10 +442,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="items">The items.</param>
-		private static void DisposeCollection<T>(this IEnumerable<T> items)
-		{
-			ProcessCollectionToDispose(items);
-		}
+		private static void DisposeCollection<T>(this IEnumerable<T> items) => ProcessCollectionToDispose(items);
 
 		/// <summary>
 		/// Tries to dispose collection items.
@@ -475,10 +457,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="json">The json.</param>
 		/// <returns>T.</returns>
 		private static T FromJson<T>(string json)
-	where T : class
-		{
-			return JsonSerializer.Deserialize<T>(json);
-		}
+	where T : class => JsonSerializer.Deserialize<T>(json);
 
 		/// <summary>
 		/// Processes the collection to dispose.

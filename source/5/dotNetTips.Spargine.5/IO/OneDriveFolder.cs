@@ -26,10 +26,7 @@ namespace dotNetTips.Spargine.IO
 		/// <summary>
 		/// Initializes a new instance of the <see cref="OneDriveFolder" /> class.
 		/// </summary>
-		public OneDriveFolder()
-		{
-			this.InitializeFields();
-		}
+		public OneDriveFolder() => this.InitializeFields();
 
 		/// <summary>
 		/// Gets the name of the account.

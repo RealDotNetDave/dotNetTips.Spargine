@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="DistinctConcurrentBag.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
 
@@ -24,7 +25,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 	/// Class DistinctConcurrentBag.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
-	/// <seealso cref="System.Collections.Concurrent.ConcurrentBag{T}" />
+	/// <seealso cref="ConcurrentBag{T}" />
 	[DebuggerDisplay("Count = {Count}")]
 	public class DistinctConcurrentBag<T> : ConcurrentBag<T>
 	{
@@ -62,12 +63,11 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Adds an object to the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.
+		/// Adds an object to the list.
 		/// </summary>
-		/// <param name="item">The object to be added to the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
-		public new void Add(T item)
+		/// <param name="item">The object to be added to the list. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
+		public new void Add([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item));
 
 			var hashCode = item.GetHashCode();
 

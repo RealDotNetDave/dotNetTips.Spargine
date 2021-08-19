@@ -19,10 +19,10 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// The Person class.
-	/// Implements the <see cref="dotNetTips.Spargine.Tester.Models.IPerson" />
+	/// Implements the <see cref="IPerson" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Tester.Models.IPerson" />
-	/// <seealso cref="System.IComparable" />
+	/// <seealso cref="IPerson" />
+	/// <seealso cref="IComparable" />
 	public class Person : IPerson
 	{
 		/// <summary>

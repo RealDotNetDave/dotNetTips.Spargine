@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Core.Diagnostics
 	/// <summary>
 	/// Performance Stopwatch.
 	/// </summary>
-	/// <seealso cref="System.Diagnostics.Stopwatch" />
+	/// <seealso cref="Stopwatch" />
 	[ExcludeFromCodeCoverage]
 	[Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
 	public class PerformanceStopwatch : Stopwatch

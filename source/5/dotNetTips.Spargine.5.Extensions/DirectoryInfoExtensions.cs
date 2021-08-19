@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="DirectoryInfoExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core;
@@ -35,9 +36,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Search pattern cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Search option invalid.</exception>
 		[Information(nameof(GetSize), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/20/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static long GetSize(this DirectoryInfo info, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+		public static long GetSize([NotNull] this DirectoryInfo info, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
-			Validate.TryValidateNullParam(info, nameof(info));
 			Validate.TryValidateParam(searchPattern, nameof(searchPattern));
 			Validate.TryValidateParam(searchOption, nameof(searchOption));
 

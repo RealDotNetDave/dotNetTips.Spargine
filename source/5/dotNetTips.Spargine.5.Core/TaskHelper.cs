@@ -35,10 +35,7 @@ namespace dotNetTips.Spargine.Core
 		/// TaskHelper.RunSync(() => SomeType.FireAsync("Test Message"));
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static void RunSync(Func<Task> task)
-		{
-			_taskFactory.StartNew(task).Unwrap().GetAwaiter().GetResult();
-		}
+		public static void RunSync(Func<Task> task) => _taskFactory.StartNew(task).Unwrap().GetAwaiter().GetResult();
 
 		/// <summary>
 		/// Executes an async Task&lt;T&gt; method which has a T return type synchronously.
@@ -50,14 +47,11 @@ namespace dotNetTips.Spargine.Core
 		/// TaskHelper.RunSync(() => SomeType.FireWithReturnAsync("Test Message"));
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static TResult RunSync<TResult>(this Func<Task<TResult>> task)
-		{
-			return _taskFactory
+		public static TResult RunSync<TResult>(this Func<Task<TResult>> task) => _taskFactory
 				.StartNew(task)
 				.Unwrap()
 				.GetAwaiter()
 				.GetResult();
-		}
 
 		/// <summary>
 		/// Executes an async Task&lt;T&gt; method which has a T return type synchronously.

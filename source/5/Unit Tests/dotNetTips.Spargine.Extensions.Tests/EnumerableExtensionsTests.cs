@@ -68,8 +68,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			people1.AddRange(people2);
 
 			Assert.IsTrue(people1.ContainsAny(people2.ToArray()));
-
-			Assert.IsFalse(people1.ContainsAny());
 		}
 
 		[TestMethod]
@@ -133,9 +131,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var coordinates = RandomData.GenerateCoordinateCollection<CoordinateProper>(10).AsEnumerable();
 			var searchValue = coordinates.Last().X;
 
-			//Test Params
-			_ = Assert.ThrowsException<ArgumentNullException>(() => coordinates.FirstOrNull(null));
-
 			//Test Finding Days of over 100
 			Assert.IsNotNull(coordinates.FirstOrNull(p => p.X == searchValue));
 			Assert.IsNull(coordinates.FirstOrNull(p => p.X == int.MinValue));
@@ -166,13 +161,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			result = people.Take(0).IsNullOrEmpty();
 
 			Assert.IsTrue(result);
-
-			IEnumerable<PersonProper> nullList = null;
-
-			result = nullList.IsNullOrEmpty();
-
-			Assert.IsTrue(result);
-
 		}
 
 		[TestMethod]

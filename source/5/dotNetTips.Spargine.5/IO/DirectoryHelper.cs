@@ -94,10 +94,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="path">The path.</param>
 		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
-		public static void DeleteDirectory(string path)
-		{
-			DeleteDirectory(path, 1);
-		}
+		public static void DeleteDirectory(string path) => DeleteDirectory(path, 1);
 
 		/// <summary>
 		/// Deletes the directory.
@@ -195,7 +192,7 @@ namespace dotNetTips.Spargine.IO
 		/// Loads the one drive folders.
 		/// </summary>
 		/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
@@ -270,10 +267,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="sourceDirectoryName">Name of the source directory.</param>
 		/// <param name="destinationDirectoryName">Name of the destination directory.</param>
 		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
-		public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName)
-		{
-			MoveDirectory(sourceDirectoryName, destinationDirectoryName, 1);
-		}
+		public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName) => MoveDirectory(sourceDirectoryName, destinationDirectoryName, 1);
 
 		/// <summary>
 		/// Moves the directory with retry.
@@ -401,10 +395,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
 		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "http://bit.ly/SpargineMarch2021")]
-		public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo directory, string searchPattern, SearchOption searchOption)
-		{
-			return SafeFileSearch(new List<DirectoryInfo> { directory }, searchPattern, searchOption);
-		}
+		public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo directory, string searchPattern, SearchOption searchOption) => SafeFileSearch(new List<DirectoryInfo> { directory }, searchPattern, searchOption);
 
 		/// <summary>
 		/// Safe file search. Ignores errors accessing directories.

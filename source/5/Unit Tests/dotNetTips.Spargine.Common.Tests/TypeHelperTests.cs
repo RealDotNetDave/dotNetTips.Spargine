@@ -14,6 +14,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
@@ -26,6 +27,7 @@ namespace dotNetTips.Spartine.Core.Tests
 {
 	[ExcludeFromCodeCoverage]
 	[TestClass]
+	[Guid("5AE2E147-D4DB-4FA4-AAE4-0675C3A2DFC5")]
 	public class TypeHelperTests : TestClass
 	{
 

@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Core
 	/// <summary>
 	/// Class ArgumentInvalidException.
 	/// </summary>
-	/// <seealso cref="System.ArgumentException" />
+	/// <seealso cref="ArgumentException" />
 	[Serializable]
 	public sealed class ArgumentInvalidException : ArgumentException
 	{

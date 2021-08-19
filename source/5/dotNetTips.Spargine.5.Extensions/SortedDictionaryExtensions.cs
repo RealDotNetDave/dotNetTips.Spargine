@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -35,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(list, nameof(list));
 
-			return ImmutableSortedDictionary.CreateRange<TKey, TValue>(list);
+			return ImmutableSortedDictionary.CreateRange(list);
 		}
 
 		/// <summary>
@@ -48,12 +49,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
 		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static TValue Upsert<TKey, TValue>(this SortedDictionary<TKey, TValue> dictionary, TKey key, TValue value)
+		public static TValue Upsert<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] TKey key, [NotNull] TValue value)
 		{
-			Validate.TryValidateNullParam(dictionary, nameof(dictionary));
-			Validate.TryValidateNullParam(key, nameof(key));
-			Validate.TryValidateNullParam(value, nameof(value));
-
 			if (dictionary.TryGetValue(key, out var item) == false)
 			{
 				dictionary.Add(key, value);

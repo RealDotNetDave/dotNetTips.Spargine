@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(list, nameof(list));
 
-			return ImmutableSortedSet.CreateRange<T>(list);
+			return ImmutableSortedSet.CreateRange(list);
 		}
 	}
 }

@@ -135,9 +135,6 @@ namespace dotNetTips.Spargine.Core
 		/// Names the application name and version.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		public string NameAndVersion()
-		{
-			return string.Format(CultureInfo.CurrentCulture, Resources.AppNameAndVersion, this.Product, this.Version);
-		}
+		public string NameAndVersion() => string.Format(CultureInfo.CurrentCulture, Resources.AppNameAndVersion, this.Product, this.Version);
 	}
 }

@@ -266,7 +266,9 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GeneratePersonFixedTest()
 		{
+#pragma warning disable CS0618 // Type or member is obsolete
 			var person = RandomData.GeneratePerson<PersonFixed>();
+#pragma warning restore CS0618 // Type or member is obsolete
 
 			Assert.IsNotNull(person);
 

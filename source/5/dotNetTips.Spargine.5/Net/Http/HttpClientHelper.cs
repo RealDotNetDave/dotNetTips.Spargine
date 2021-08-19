@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -44,8 +44,24 @@ namespace dotNetTips.Spargine.Net.Http
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
 		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
 		{
-			var cts = new CancellationTokenSource();
-			return await GetHttpResponseAsync(url, cts).ConfigureAwait(continueOnCapturedContext: false);
+			Validate.TryValidateParam(url, nameof(url));
+
+			return await GetHttpResponseAsync(new Uri(url)).ConfigureAwait(false);
+		}
+
+		/// <summary>
+		/// get HTTP response as an asynchronous operation.
+		/// </summary>
+		/// <param name="url">The URL.</param>
+		/// <returns>HttpResponseMessage.</returns>
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync(Uri url)
+		{
+			Validate.TryValidateParam(url, nameof(url));
+
+			using var cts = new CancellationTokenSource();
+
+			return await GetHttpResponseAsync(url.PathAndQuery, cts).ConfigureAwait(continueOnCapturedContext: false);
 		}
 
 		/// <summary>
@@ -64,7 +80,7 @@ namespace dotNetTips.Spargine.Net.Http
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
+				var response = await _client.GetAsync(new Uri(url), cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				_ = response.EnsureSuccessStatusCode();
 
@@ -100,30 +116,31 @@ namespace dotNetTips.Spargine.Net.Http
 		{
 			Validate.TryValidateParam(url, nameof(url));
 
-			var cts = new CancellationTokenSource();
+			using (var cts = new CancellationTokenSource())
+			{
+				try
+				{
+					// Pass in the token.
+					var response = await _client.GetStreamAsync(new Uri(url), cts.Token).ConfigureAwait(continueOnCapturedContext: false);
 
-			try
-			{
-				// Pass in the token.
-				var response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
-
-				return response;
-			}
-			catch (TaskCanceledException ex) when (cts.IsCancellationRequested)
-			{
-				// If the token has been canceled, it is not a timeout.
-				// Handle cancellation.
-				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
-			}
-			catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
-			{
-				// Handle timeout.
-				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
-			}
-			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
-			{
-				// Handle 404
-				ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
+					return response;
+				}
+				catch (TaskCanceledException ex) when (cts.IsCancellationRequested)
+				{
+					// If the token has been canceled, it is not a timeout.
+					// Handle cancellation.
+					ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
+				}
+				catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
+				{
+					// Handle timeout.
+					ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
+				}
+				catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
+				{
+					// Handle 404
+					ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
+				}
 			}
 
 			return null;

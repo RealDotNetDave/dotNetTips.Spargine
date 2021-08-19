@@ -19,10 +19,10 @@ namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Class MessageNotQueuedException.
-	/// Implements the <see cref="dotNetTips.Spargine.Core.LoggableException" />
+	/// Implements the <see cref="LoggableException" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Core.LoggableException" />
-	/// <seealso cref="System.Exception" />
+	/// <seealso cref="LoggableException" />
+	/// <seealso cref="Exception" />
 	[Serializable]
 	public class MessageNotQueuedException : LoggableException
 	{
@@ -49,10 +49,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="messageId">The message identifier.</param>
-		public MessageNotQueuedException(string message, string messageId) : base(message)
-		{
-			this.MessageId = messageId;
-		}
+		public MessageNotQueuedException(string message, string messageId) : base(message) => this.MessageId = messageId;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
@@ -69,18 +66,15 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="messageId">The message identifier.</param>
 		/// <param name="innerException">The inner exception.</param>
-		public MessageNotQueuedException(string message, string messageId, Exception innerException) : base(message, innerException)
-		{
-			this.MessageId = messageId;
-		}
+		public MessageNotQueuedException(string message, string messageId, Exception innerException) : base(message, innerException) => this.MessageId = messageId;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
 		/// </summary>
 		/// <param name="serializationInfo">The serialization information.</param>
 		/// <param name="streamingContext">The streaming context.</param>
-		/// <exception cref="System.NotImplementedException">The exception.</exception>
-		/// <exception cref="System.NotImplementedException">The exception.</exception>
+		/// <exception cref="NotImplementedException">The exception.</exception>
+		/// <exception cref="NotImplementedException">The exception.</exception>
 		protected MessageNotQueuedException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
 		{
 

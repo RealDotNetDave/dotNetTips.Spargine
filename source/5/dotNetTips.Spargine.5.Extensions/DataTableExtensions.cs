@@ -29,10 +29,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="table">The table.</param>
 		/// <returns><c>true</c> if the specified table has rows; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasRows), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool HasRows(this DataTable table)
-		{
-			return ( table is not null ) && ( table.Rows is not null ) && ( table.Rows.Count > 0 );
-		}
+		public static bool HasRows(this DataTable table) => ( table is not null ) && ( table.Rows is not null ) && ( table.Rows.Count > 0 );
 
 		/// <summary>
 		/// Determines whether [is database null] [the specified value].
@@ -40,10 +37,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is database null] [the specified value]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasRows), author: "David McCarter", createdOn: "10/8/2020", modifiedOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsDBNull(object value)
-		{
-			return Convert.IsDBNull(value);
-		}
+		public static bool IsDBNull(object value) => Convert.IsDBNull(value);
 
 	}
 }

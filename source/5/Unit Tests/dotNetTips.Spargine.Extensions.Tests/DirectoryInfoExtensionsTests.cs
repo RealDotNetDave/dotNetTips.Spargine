@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result > 0);
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => DirectoryInfoExtensions.GetSize(null));
+			_ = Assert.ThrowsException<NullReferenceException>(() => DirectoryInfoExtensions.GetSize(null));
 		}
 
 		[TestMethod]

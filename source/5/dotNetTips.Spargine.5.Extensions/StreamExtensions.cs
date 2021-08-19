@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Buffers;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -33,10 +34,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// Flushes and closes the Stream.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
-		public static void FlushClose(this Stream stream)
+		public static void FlushClose([NotNull] this Stream stream)
 		{
-			Validate.TryValidateNullParam(stream, nameof(stream));
-
 			stream.Flush();
 			stream.Close();
 		}
@@ -48,11 +47,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns>ValueTask&lt;System.Int32&gt;.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static ValueTask<int> ReadAsync(this Stream stream, Memory<byte> destination, CancellationToken cancellationToken = default)
+		public static ValueTask<int> ReadAsync([NotNull] this Stream stream, [NotNull] Memory<byte> destination, CancellationToken cancellationToken = default)
 		{
-			Validate.TryValidateNullParam(stream, nameof(stream));
-			Validate.TryValidateNullParam(destination, nameof(destination));
-
 			if (MemoryMarshal.TryGetArray(destination, out ArraySegment<byte> array))
 			{
 				return new ValueTask<int>(stream.ReadAsync(array.Array, array.Offset, array.Count, cancellationToken));
@@ -87,11 +83,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns>ValueTask.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static ValueTask WriteAsync(this Stream stream, ReadOnlyMemory<byte> source, CancellationToken cancellationToken = default)
+		public static ValueTask WriteAsync([NotNull] this Stream stream, [NotNull] ReadOnlyMemory<byte> source, CancellationToken cancellationToken = default)
 		{
-			Validate.TryValidateNullParam(stream, nameof(stream));
-			Validate.TryValidateNullParam(source, nameof(source));
-
 			if (MemoryMarshal.TryGetArray(source, out var array))
 			{
 				return new ValueTask(stream.WriteAsync(array.Array, array.Offset, array.Count, cancellationToken));

@@ -5,7 +5,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,6 +17,7 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -41,11 +42,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Add<T>(this IEnumerable<T> list, T item)
+		public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			var result = list.ToList();
 			result.Add(item);
 
@@ -61,11 +59,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> AddIf<T>(this IEnumerable<T> list, T item, bool condition)
+		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, bool condition)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			if (condition)
 			{
 				return list.Add(item);
@@ -84,10 +79,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">List is null or empty.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "2/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool ContainsAny<T>(this IEnumerable<T> list, params T[] items)
+		public static bool ContainsAny<T>([NotNull] this IEnumerable<T> list, [NotNull] params T[] items)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			if (items.DoesNotHaveItems())
 			{
 				return false;
@@ -135,10 +128,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool DoesNotHaveItems(this IEnumerable list)
-		{
-			return list?.Count() <= 0;
-		}
+		public static bool DoesNotHaveItems([NotNull] this IEnumerable list) => list.Count() <= 0;
 
 		/// <summary>
 		/// Fasts any.
@@ -148,13 +138,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
-		/// <exception cref="System.ArgumentNullException">Predicate cannot be null.</exception>
+		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool FastAny<T>(this IEnumerable<T> list, Func<T, bool> predicate)
+		public static bool FastAny<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-			Validate.TryValidateParam<ArgumentNullException>(predicate.IsNotNull(), nameof(predicate));
-
 			return list.FirstOrDefault(predicate) is not null;
 		}
 
@@ -165,12 +152,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Int32.</returns>
-		/// <exception cref="System.ArgumentNullException">Predicate cannot be null.</exception>
+		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
-		public static int FastCount<T>(this IEnumerable<T> list, Func<T, bool> predicate)
+		public static int FastCount<T>(this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			Validate.TryValidateNullParam(predicate, nameof(predicate));
-
 			if (Validate.TryValidateNull(list))
 			{
 				return 0;
@@ -195,10 +180,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FirstOrDefault<T>(this IEnumerable<T> list, T alternate)
+		public static T FirstOrDefault<T>([NotNull] this IEnumerable<T> list, [NotNull] T alternate)
 		{
-			Validate.TryValidateNullParam(alternate, nameof(alternate));
-
 			if (list is null)
 			{
 				return alternate;
@@ -220,11 +203,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FirstOrDefault<T>(this IEnumerable<T> list, Func<T, bool> predicate, T alternate)
+		public static T FirstOrDefault<T>(this IEnumerable<T> list, [NotNull] Func<T, bool> predicate, [NotNull] T alternate)
 		{
-			Validate.TryValidateNullParam(alternate, nameof(alternate));
-			Validate.TryValidateNullParam(predicate, nameof(predicate));
-
 			if (list is null)
 			{
 				return alternate;
@@ -251,15 +231,13 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Nullable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Match cannot be null.</exception>
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T? FirstOrNull<T>(this IEnumerable<T> list, Func<T, bool> match)
+		public static T? FirstOrNull<T>(this IEnumerable<T> list, [NotNull] Func<T, bool> match)
 			where T : struct
 		{
 			if (list is null)
 			{
 				return null;
 			}
-
-			Validate.TryValidateNullParam(match, nameof(match));
 
 			var listToProcess = list.ToList();
 
@@ -282,10 +260,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this IEnumerable list)
-		{
-			return list?.Count() > 0;
-		}
+		public static bool HasItems([NotNull] this IEnumerable list) => list.Count() > 0;
 
 		/// <summary>
 		/// Determines whether the specified count has items.
@@ -294,10 +269,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this IEnumerable list, int count)
-		{
-			return list?.Count() == count;
-		}
+		public static bool HasItems([NotNull] this IEnumerable list, int count) => list.Count() == count;
 
 		/// <summary>
 		/// Determines whether [is null or empty] [the specified source].
@@ -305,10 +277,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsNullOrEmpty(this IEnumerable list)
-		{
-			return list is null || list.GetEnumerator().MoveNext() == false;
-		}
+		public static bool IsNullOrEmpty([NotNull] this IEnumerable list) => list.GetEnumerator().MoveNext() == false;
 
 		/// <summary>
 		/// Shuffles the specified count.
@@ -410,10 +379,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>BlockingCollection&lt;T&gt;.</returns>
 		/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
 		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-		public static BlockingCollection<T> ToBlockingCollection<T>(this IEnumerable<T> list)
+		public static BlockingCollection<T> ToBlockingCollection<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			var collection = new BlockingCollection<T>(list.Count());
 
 			using (var taskResult = Task.Run(() =>
@@ -439,11 +406,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
 		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static Collection<T> ToCollection<T>(this IEnumerable<T> list)
+		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
-			return Collection<T>.Create(list);
+			return (Collection<T>)Collection<T>.Create(list);
 		}
 
 		/// <summary>
@@ -454,9 +419,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="delimiter">The delimiter (default is comma if not supplied).</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ToDelimitedString<T>(this IEnumerable<T> list, char delimiter = ControlChars.Comma)
+		public static string ToDelimitedString<T>([NotNull] this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
-			if (list?.Count() == 0)
+			if (list.Count() == 0)
 			{
 				return string.Empty;
 			}
@@ -483,10 +448,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		/// <remarks>Original code by: James Michael Hare</remarks>
 		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>(this IEnumerable<IGrouping<TKey, TValue>> list)
+		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>([NotNull] this IEnumerable<IGrouping<TKey, TValue>> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return list.ToDictionary(group => group.Key, group => group.ToList());
 		}
 
@@ -498,11 +461,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IImmutableList&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableList<T> ToImmutable<T>(this IEnumerable<T> list)
+		public static ImmutableList<T> ToImmutable<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
-			return ImmutableList.CreateRange<T>(list);
+			return ImmutableList.CreateRange(list);
 		}
 
 		/// <summary>
@@ -513,10 +474,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>LinkedList&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> list)
+		public static LinkedList<T> ToLinkedList<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return new LinkedList<T>(list);
 		}
 
@@ -528,10 +487,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
-		public static async Task<List<T>> ToListAsync<T>(this IEnumerable<T> list)
+		public static async Task<List<T>> ToListAsync<T>([NotNull] this IEnumerable<T> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return await Task.Run(() => list.ToList()).ConfigureAwait(false);
 		}
 
@@ -543,11 +500,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns>System.Collections.Generic.IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Upsert<T>(this IEnumerable<T> list, T item)
+		public static IEnumerable<T> Upsert<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
 		{
-			Validate.TryValidateNullParam(list, nameof(list));
-			Validate.TryValidateNullParam(item, nameof(item));
-
 			if (list.Contains(item))
 			{
 				var indexItem = list.ElementAt(list.IndexOf(item));

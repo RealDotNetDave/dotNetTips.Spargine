@@ -101,7 +101,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			byte[] nullBytes = null;
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]
@@ -116,7 +116,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			byte[] nullBytes = null;
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]

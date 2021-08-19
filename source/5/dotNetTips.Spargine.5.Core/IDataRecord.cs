@@ -38,9 +38,6 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns>string.</returns>
 		/// <remarks>This method uses reflection.</remarks>
-		public sealed string AllPropertiesToString()
-		{
-			return this.PropertiesToString();
-		}
+		public sealed string AllPropertiesToString() => this.PropertiesToString();
 	}
 }

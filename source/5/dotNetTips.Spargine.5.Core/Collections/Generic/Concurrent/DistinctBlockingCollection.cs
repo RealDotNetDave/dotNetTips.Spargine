@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 
@@ -24,7 +25,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 	/// DistinctBlockingCollection.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
-	/// <seealso cref="System.Collections.Concurrent.BlockingCollection{T}" />
+	/// <seealso cref="BlockingCollection{T}" />
 	public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T>
 	{
 		/// <summary>
@@ -37,7 +38,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// Initializes a new instance of the <see cref="DistinctBlockingCollection{T}" /> class.
 		/// </summary>
 		/// <param name="collection">The collection.</param>
-		public DistinctBlockingCollection(IEnumerable<T> collection)
+		public DistinctBlockingCollection([NotNull] IEnumerable<T> collection)
 		{
 			if (collection?.Count() > 0)
 			{
@@ -53,10 +54,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// Adds the item to the <see cref="T:System.Collections.Concurrent.BlockingCollection" />.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
-		public new void Add(T item)
+		public new void Add([NotNull] T item)
 		{
-			Validate.TryValidateNullParam(item, nameof(item), "Item is required.");
-
 			if (this.ItemNotInCollection(item))
 			{
 				base.Add(item);
@@ -68,10 +67,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
 		/// <param name="cancellationToken">A cancellation token to observe.</param>
-		public new void Add(T item, CancellationToken cancellationToken)
+		public new void Add([NotNull] T item, CancellationToken cancellationToken)
 		{
-			Validate.TryValidateNullParam(item, nameof(item), "Item is required.");
-
 			if (this.ItemNotInCollection(item))
 			{
 				base.Add(item, cancellationToken);
@@ -82,17 +79,15 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// Cones this instance.
 		/// </summary>
 		/// <returns>T.</returns>
-		public T Cone() { return (T)this.MemberwiseClone(); }
+		public T Cone() => (T)this.MemberwiseClone();
 
 		/// <summary>
 		/// Removes all.
 		/// </summary>
 		/// <param name="match">The match.</param>
 		/// <returns>System.Int32.</returns>
-		public int RemoveAll(Predicate<T> match)
+		public int RemoveAll([NotNull] Predicate<T> match)
 		{
-			Validate.TryValidateNullParam(match, nameof(match), message: "Match is required.");
-
 			return this.RemoveAll(match);
 		}
 
@@ -154,12 +149,12 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// within the specified time period, while observing a cancellation token.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <param name="millisecondsTimeout">The number of milliseconds to wait, or <see cref="System.Threading.Timeout.Infinite" /> (-1) to wait
+		/// <param name="millisecondsTimeout">The number of milliseconds to wait, or <see cref="Timeout.Infinite" /> (-1) to wait
 		/// indefinitely.</param>
 		/// <param name="cancellationToken">A cancellation token to observe.</param>
 		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
 		/// false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
-		/// <see cref="System.InvalidOperationException" /> is thrown.</returns>
+		/// <see cref="InvalidOperationException" /> is thrown.</returns>
 		public new bool TryAdd(T item, int millisecondsTimeout, CancellationToken cancellationToken)
 		{
 			if (item is null)
@@ -175,6 +170,6 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		private bool ItemNotInCollection(T item) { return item is null && this.Contains(item) == false; }
+		private bool ItemNotInCollection(T item) => item is null && this.Contains(item) == false;
 	}
 }

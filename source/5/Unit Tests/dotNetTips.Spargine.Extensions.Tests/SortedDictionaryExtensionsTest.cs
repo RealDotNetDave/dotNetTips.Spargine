@@ -37,10 +37,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = peopleSortedSet.ToImmutable();
 
 			Assert.IsNotNull(result);
-
-			SortedDictionary<string, PersonProper> nullSet = null;
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullSet.ToImmutable());
 		}
 
 		[TestMethod]

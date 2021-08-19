@@ -53,10 +53,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The instance.</value>
 		[XmlIgnore]
-		public T Instance
-		{
-			get { return _instance; }
-		}
+		public T Instance => _instance;
 
 		/// <summary>
 		/// Loads this instance.

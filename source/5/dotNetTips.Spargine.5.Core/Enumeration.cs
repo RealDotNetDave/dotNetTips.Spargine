@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-22-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 
@@ -22,9 +23,9 @@ namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
 	/// Enumeration class.
-	/// Implements the <see cref="System.IComparable" />
+	/// Implements the <see cref="IComparable" />
 	/// </summary>
-	/// <seealso cref="System.IComparable" />
+	/// <seealso cref="IComparable" />
 	/// <remarks>Original code by: Jimmy Bogard</remarks>
 	[Information(nameof(Enumeration), Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 	[DebuggerDisplay(nameof(DisplayName))]
@@ -98,11 +99,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="secondValue">The second value.</param>
 		/// <returns>System.Int32.</returns>
 		[Information(nameof(AbsoluteDifference), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int AbsoluteDifference(Enumeration firstValue, Enumeration secondValue)
+		public static int AbsoluteDifference([NotNull] Enumeration firstValue, [NotNull] Enumeration secondValue)
 		{
-			Validate.TryValidateNullParam(firstValue, nameof(firstValue));
-			Validate.TryValidateNullParam(secondValue, nameof(secondValue));
-
 			var absoluteDifference = Math.Abs(firstValue.Value - secondValue.Value);
 			return absoluteDifference;
 		}
@@ -118,7 +116,8 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateParam(displayName, nameof(displayName));
 
-			var matchingItem = Parse<T, string>(displayName, description: "display name", predicate: item => string.Compare(item.DisplayName, displayName, StringComparison.Ordinal) == 0);
+			var matchingItem = Parse<T>(displayName, predicate: item => string.Compare(item.DisplayName, displayName, StringComparison.Ordinal) == 0);
+
 			return matchingItem;
 		}
 
@@ -131,7 +130,8 @@ namespace dotNetTips.Spargine.Core
 		[Information(nameof(FromValue), UnitTestCoverage = 0, Status = Status.Available)]
 		public static T FromValue<T>(int value) where T : Enumeration, new()
 		{
-			var matchingItem = Parse<T, int>(value, nameof(value), item => item.Value == value);
+			var matchingItem = Parse<T>("Validating int.", item => item.Value == value);
+
 			return matchingItem;
 		}
 
@@ -161,19 +161,17 @@ namespace dotNetTips.Spargine.Core
 		/// Parses the specified value.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <typeparam name="K"></typeparam>
-		/// <param name="value">The value.</param>
 		/// <param name="description">The description.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="ApplicationException"></exception>
-		private static T Parse<T, K>(K value, string description, Func<T, bool> predicate) where T : Enumeration, new()
+		private static T Parse<T>(string description, [NotNull] Func<T, bool> predicate) where T : Enumeration, new()
 		{
 			var matchingItem = GetAll<T>().FirstOrDefault(predicate);
 
 			if (matchingItem is null)
 			{
-				var message = $"'{value}' is not a valid {description} in {typeof(T)}.";
+				var message = $"Is not a valid {description} in {typeof(T)}.";
 
 				ExceptionThrower.ThrowArgumentNullException(message, nameof(predicate));
 			}

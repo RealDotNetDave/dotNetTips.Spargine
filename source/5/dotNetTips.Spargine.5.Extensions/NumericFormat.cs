@@ -18,11 +18,18 @@ namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
 	/// Class NumericFormat.
-	/// Implements the <see cref="dotNetTips.Spargine.Core.Enumeration" />
+	/// Implements the <see cref="Enumeration" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Core.Enumeration" />
+	/// <seealso cref="Enumeration" />
 	public record NumericFormat : Enumeration
 	{
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="NumericFormat" /> class.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="displayName">The display name.</param>
+		private NumericFormat(int value, string displayName) : base(value, displayName) { }
 
 		/// <summary>
 		/// Custom format. Example: $2,147,483,647.00
@@ -68,12 +75,5 @@ namespace dotNetTips.Spargine.Extensions
 		/// Custom format. Example:  8.988465674311579E+307
 		/// </summary>
 		public static readonly NumericFormat RoundTrip = new(8, "R");
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="NumericFormat" /> class.
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="displayName">The display name.</param>
-		private NumericFormat(int value, string displayName) : base(value, displayName) { }
 	}
 }

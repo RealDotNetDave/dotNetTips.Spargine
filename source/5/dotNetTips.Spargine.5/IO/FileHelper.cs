@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <value>The invalid file name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char[] InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
+		public static IEnumerable<char> InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
 
 		/// <summary>
 		/// Copies the file to a new directory. If the file already exists, it
@@ -184,7 +184,7 @@ namespace dotNetTips.Spargine.IO
 		public static async Task DownloadFileFromWebAndUnzipAsync(Uri remoteFileUrl, string localExpandedDirPath)
 		{
 			Validate.TryValidateParam(remoteFileUrl, nameof(remoteFileUrl));
-			Validate.TryValidateParam(remoteFileUrl, nameof(localExpandedDirPath));
+			Validate.TryValidateParam(localExpandedDirPath, nameof(localExpandedDirPath));
 
 			var tempFileNameBase = Guid.NewGuid().ToString();
 			var tempDownloadPath = Path.Combine(Path.GetTempPath(), $"{tempFileNameBase}{Path.GetExtension(remoteFileUrl.ToString())}");
@@ -228,7 +228,7 @@ namespace dotNetTips.Spargine.IO
 		{
 			Validate.TryValidateParam(fileName, nameof(fileName));
 
-			return fileName.IndexOfAny(InvalidFileNameChars) != -1;
+			return fileName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
 		}
 
 		/// <summary>

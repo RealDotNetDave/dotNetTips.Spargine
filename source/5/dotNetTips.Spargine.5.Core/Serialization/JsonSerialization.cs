@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-28-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text.Json;
 
@@ -46,7 +47,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <typeparam name="TResult">The type of the t result.</typeparam>
 		/// <param name="fileName">Name of the file.</param>
 		/// <returns>TResult.</returns>
-		/// <exception cref="System.IO.FileNotFoundException">File not found. Cannot deserialize from JSON.</exception>
+		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from JSON.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
@@ -82,10 +83,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="obj">The object.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(Serialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string Serialize(object obj)
+		public static string Serialize([NotNull] object obj)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
-
 			var json = JsonSerializer.Serialize(obj);
 
 			return json;
@@ -97,9 +96,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="obj">The object.</param>
 		/// <param name="fileName">Name of the file.</param>
 		[Information(nameof(SerializeToFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static void SerializeToFile(object obj, string fileName)
+		public static void SerializeToFile([NotNull] object obj, string fileName)
 		{
-			Validate.TryValidateNullParam(obj, nameof(obj));
 			Validate.TryValidateParam(fileName, nameof(fileName));
 
 			if (File.Exists(fileName))
@@ -116,7 +114,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="expected">The expected.</param>
 		/// <param name="actual">The actual.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="System.NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
+		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
 		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
 		private static bool JsonEqual(JsonElement expected, JsonElement actual)
 		{

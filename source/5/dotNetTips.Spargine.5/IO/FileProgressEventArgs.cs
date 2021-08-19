@@ -19,9 +19,9 @@ namespace dotNetTips.Spargine.IO
 {
 	/// <summary>
 	/// Class FileProgressEventArgs. This class cannot be inherited.
-	/// Implements the <see cref="System.EventArgs" />
+	/// Implements the <see cref="EventArgs" />
 	/// </summary>
-	/// <seealso cref="System.EventArgs" />
+	/// <seealso cref="EventArgs" />
 	public sealed class FileProgressEventArgs : EventArgs
 	{
 		/// <summary>

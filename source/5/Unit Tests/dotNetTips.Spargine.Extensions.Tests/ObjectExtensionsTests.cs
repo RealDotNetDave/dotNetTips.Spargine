@@ -33,7 +33,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void AsTest()
 		{
+#pragma warning disable CS0618 // Type or member is obsolete
 			var personProper = RandomData.GeneratePerson<PersonFixed>();
+#pragma warning restore CS0618 // Type or member is obsolete
 
 			try
 			{
@@ -44,17 +46,12 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Debug.WriteLine(ex.Message);
 				Assert.Fail();
 			}
-
-			PersonProper nullPerson = null;
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.As<Person>());
 		}
 
 		[TestMethod]
 		public void CloneTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			try
 			{
@@ -68,23 +65,18 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Debug.WriteLine(ex.Message);
 				Assert.Fail();
 			}
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.Clone<PersonProper>());
 		}
 
 		[TestMethod]
 		public void ComputeSha256HashTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			var result = person.ComputeSha256Hash();
 
 			PrintResult(result, nameof(this.ComputeSha256HashTest));
 
 			Assert.IsFalse(string.IsNullOrEmpty(result));
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ComputeSha256Hash());
 		}
 
 		[TestMethod]
@@ -109,24 +101,18 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void HasPropertyTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			Assert.IsTrue(person.HasProperty("Id"));
 
 			Assert.IsFalse(person.HasProperty("XXXXXXXXXXXXX"));
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.HasProperty("Id"));
 		}
 
 		[TestMethod]
 		public void InitializeFieldsTest()
 		{
 			var testObject = new DisposableFields();
-			DisposableFields nullTestObject = null;
 
 			testObject.InitializeFields();
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullTestObject.InitializeFields());
 		}
 
 		[TestMethod]
@@ -228,7 +214,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void ToJsonFileTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			var fileName = Path.Combine(App.ExecutingFolder(), "TEST.JSON");
 
@@ -241,9 +226,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				Debug.WriteLine(ex.Message);
 				Assert.Fail();
 			}
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ToJsonFile(fileName));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => person.ToJsonFile(string.Empty));
 
 			File.Delete(fileName);
 		}

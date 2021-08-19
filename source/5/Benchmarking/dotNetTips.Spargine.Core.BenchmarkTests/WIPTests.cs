@@ -11,10 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Globalization;
 using System.Runtime.CompilerServices;
-using dotNetTips.Spargine.Extensions;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {

@@ -32,10 +32,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<string> AllServices()
-		{
-			return ServiceController.GetServices().Select(p => p.ServiceName).AsEnumerable();
-		}
+		public static IEnumerable<string> AllServices() => ServiceController.GetServices().Select(p => p.ServiceName).AsEnumerable();
 
 		/// <summary>
 		/// Determines whether [is application already running] [the specified process name].
@@ -88,7 +85,7 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
-		/// <exception cref="System.InvalidOperationException"></exception>
+		/// <exception cref="InvalidOperationException"></exception>
 		/// <exception cref="InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ServiceControllerStatus ServiceStatus(string serviceName)
@@ -211,9 +208,6 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceController.</returns>
 		[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		private static ServiceController LoadService(string serviceName)
-		{
-			return ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
-		}
+		private static ServiceController LoadService(string serviceName) => ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
 	}
 }

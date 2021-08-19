@@ -4,7 +4,7 @@
 // Created          : 08-18-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 08-18-2021
 // ***********************************************************************
 // <copyright file="LINQExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
 
@@ -34,11 +35,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="transforms">The transforms.</param>
 		/// <returns>IQueryable&lt;T&gt;.</returns>
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IQueryable<T> If<T>(this IQueryable<T> input, bool should, params Func<IQueryable<T>, IQueryable<T>>[] transforms)
+		public static IQueryable<T> If<T>([NotNull] this IQueryable<T> input, bool should, [NotNull] params Func<IQueryable<T>, IQueryable<T>>[] transforms)
 		{
-			Validate.TryValidateNullParam(input, nameof(input));
-			Validate.TryValidateNullParam(transforms, nameof(transforms));
-
 			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
 		}
 
@@ -51,11 +49,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="transforms">The transforms.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IEnumerable<T> If<T>(this IEnumerable<T> input, bool should, params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
+		public static IEnumerable<T> If<T>([NotNull] this IEnumerable<T> input, bool should, [NotNull] params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
 		{
-			Validate.TryValidateNullParam(input, nameof(input));
-			Validate.TryValidateNullParam(transforms, nameof(transforms));
-
 			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
 		}
 	}

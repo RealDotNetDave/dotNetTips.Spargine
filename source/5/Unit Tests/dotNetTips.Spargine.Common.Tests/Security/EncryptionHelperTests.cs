@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using dotNetTips.Spargine.Core.Security;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Core.Tests.Security

@@ -443,9 +443,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(testValue.StartsWithOrdinal(null));
 
-			string testString = null;
-
-			Assert.IsFalse(testString.StartsWithOrdinal("DAVID"));
 		}
 
 		[TestMethod]
@@ -494,10 +491,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = $"{RandomData.GenerateWord(25)}   ";
 
 			Assert.IsTrue(testValue.ToTrimmed().Length == 25);
-
-			string testString = null;
-
-			Assert.IsFalse(testString.ToTrimmed().HasValue());
 		}
 
 	}

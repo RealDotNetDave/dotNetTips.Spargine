@@ -59,9 +59,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				sb.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True);
 				sb.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
 				sb.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
-
-				_ = Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(person.Key, null));
-				_ = Assert.ThrowsException<ArgumentNullException>(() => sb.AppendKeyValue(null, person.Value.Email));
 			}
 
 			Assert.IsTrue(sb.ToString().Length > 50 * 4);
@@ -74,9 +71,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				pool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True);
 				pool.AppendKeyValue(person.Key, person.Value.Email, includeComma: Tristate.True);
 				pool.AppendKeyValue(person.Key, person.Value.Email, includeQuotes: Tristate.True, includeComma: Tristate.True);
-
-				_ = Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(person.Key, null));
-				_ = Assert.ThrowsException<ArgumentNullException>(() => pool.AppendKeyValue(null, person.Value.Email));
 			}
 
 			Assert.IsTrue(pool.ToString().Length > 50 * 4);

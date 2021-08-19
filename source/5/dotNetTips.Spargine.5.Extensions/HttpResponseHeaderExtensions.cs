@@ -4,13 +4,14 @@
 // Created          : 07-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 08-16-2021
 // ***********************************************************************
 // <copyright file="HttpResponseHeaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using dotNetTips.Spargine.Core;
 
@@ -66,10 +67,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="header">The header.</param>
 		/// <returns>System.String.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GetName(this HttpResponseHeader header)
+		public static string GetName([NotNull] this HttpResponseHeader header)
 		{
-			Validate.TryValidateNullParam(header, nameof(header));
-
 			return _headerNames[(int)header];
 		}
 

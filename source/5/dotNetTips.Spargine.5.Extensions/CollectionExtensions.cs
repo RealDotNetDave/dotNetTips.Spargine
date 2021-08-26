@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -91,13 +91,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, params T[] items)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] params T[] items)
 		{
-			if (items.DoesNotHaveItems())
-			{
-				return false;
-			}
-
 			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(collection.IsReadOnly == false, nameof(collection));

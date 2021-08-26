@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
 // <copyright file="TypeHelperBenchmark.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,10 +24,9 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
 	/// <summary>
 	/// TypeHelper PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.PerfTestRunner" />
+	/// Implements the <see cref="Benchmarking.PerfTestRunner" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.PerfTestRunner" />
-	[BenchmarkCategory(nameof(TypeHelper))]
+	/// <seealso cref="Benchmarking.PerfTestRunner" />
 	public class TypeHelperBenchmark : Benchmark
 	{
 
@@ -37,19 +36,21 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		private List<PersonProper> _people;
 
 		[Benchmark(Description = "Looping Collection: Normal StringBuilder")]
+		[BenchmarkCategory(Categories.Strings)]
 		public void CreateStringBuilder01()
 		{
 			var sb = new StringBuilder();
 
 			foreach (var person in this._people)
 			{
-				sb.AppendFormat("{0}={1}", person.Email, person.PostalCode);
+				_ = sb.AppendFormat("{0}={1}", person.Email, person.PostalCode);
 			}
 
 			base.Consumer.Consume(sb.ToString());
 		}
 
 		[Benchmark(Description = nameof(TypeHelper.GetPropertyValues))]
+		[BenchmarkCategory(Categories.Reflection)]
 		public void GetPropertyValues01()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();

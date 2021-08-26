@@ -33,15 +33,15 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 			try
 			{
 				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp50));
-				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
+				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
 				//BenchmarkRunner.Run<ChannelQueueCollectionBenchmark>(config);
 
 				Console.Beep();
-				Console.ReadLine();
+				_ = Console.ReadLine();
 			}
 			catch (Exception ex)
 			{
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 				Console.Beep();
 				Console.Beep();
 				Console.WriteLine(ex.Message);
-				Console.ReadLine();
+				_ = Console.ReadLine();
 			}
 		}
 	}

@@ -30,13 +30,10 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			var result = people.AddFirst(person);
 
 			Assert.IsTrue(result.Count() == 11);
-
-			Assert.IsTrue(result.AddFirst(nullPerson).Count() == 11);
 		}
 
 		[TestMethod]

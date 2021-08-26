@@ -75,8 +75,6 @@ namespace dotNetTips.Spargine.Tests.IO
 				var result = FileHelper.DeleteFiles(filesToDelete);
 
 				Assert.IsTrue(result.Count() == 0);
-
-				Assert.IsNull(FileHelper.DeleteFiles(null));
 			}
 			catch (Exception ex)
 			{

@@ -4,9 +4,9 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-10-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="ObjectExtensionsPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="ObjectExtensionsBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -22,7 +22,6 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	[BenchmarkCategory(nameof(ObjectExtensions))]
 	public class ObjectExtensionsBenchmark : Benchmark
 	{
 		private string _peopleJson;
@@ -78,6 +77,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.DisposeFields) + ": DataTable")]
+		[BenchmarkCategory(Categories.ReferenceType)]
 		public void DisposeFields()
 		{
 			var disposableType = new DataTable("TEST");
@@ -233,6 +233,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: != null")]
+		[BenchmarkCategory(Categories.New)]
 		public void TestingForNull01()
 		{
 			var input = new object();
@@ -241,6 +242,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: Validate.TryValidateNull()")]
+		[BenchmarkCategory(Categories.New)]
 		public void TestingForNull02()
 		{
 			var input = new object();
@@ -249,6 +251,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: [NotNull]")]
+		[BenchmarkCategory(Categories.New)]
 		public void TestingForNull03()
 		{
 			var input = new object();
@@ -257,6 +260,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ToJson) + ": PersonProper")]
+		[BenchmarkCategory(Categories.Serialization, Categories.JSON)]
 		public void ToJson01()
 		{
 			var result = this._person.ToJson();
@@ -265,6 +269,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ToJson) + ": PersonRecord")]
+		[BenchmarkCategory(Categories.Serialization, Categories.JSON)]
 		public void ToJson02()
 		{
 			var result = this._personRecord.ToJson();
@@ -273,6 +278,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.TryDispose) + ": PersonProper")]
+		[BenchmarkCategory(Categories.ReferenceType)]
 		public void TryDispose()
 		{
 			var disposableType = new DataTable("TEST");

@@ -4,7 +4,7 @@
 // Created          : 02-18-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="StringBuilderHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 
@@ -29,10 +30,8 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="bytes">The bytes.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(BytesToString), author: "David McCarter", createdOn: "2/18/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
-		public static string BytesToString(byte[] bytes)
+		public static string BytesToString([NotNull] byte[] bytes)
 		{
-			Validate.TryValidateParam(collection: bytes, nameof(bytes));
-
 			var sb = new StringBuilder();
 
 			_ = sb.Append("'0x");
@@ -47,20 +46,18 @@ namespace dotNetTips.Spargine.Core
 			return sb.ToString();
 		}
 
+
 		/// <summary>
-		/// Concatenates the specified first message with passed in string[].
+		/// Concats to string.
 		/// </summary>
-		/// <param name="input">The first message.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <param name="addLineFeed">The add line feed. If set to true, delimiter will not be used.</param>
 		/// <param name="args">The arguments.</param>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(ConcatToString), "David McCarter", "2/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
-		public static string ConcatToString(string input, string delimiter, Tristate addLineFeed, params string[] args)
+		public static string ConcatToString([NotNull] string delimiter, Tristate addLineFeed, params string[] args)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			var sb = new StringBuilder();
 
 			if (args.Length > 0)
@@ -93,7 +90,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="list">The list.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
-		public static string ToDelimitedString<TKey, TValue>(Dictionary<TKey, TValue> list, char delimiter = ControlChars.Comma)
+		public static string ToDelimitedString<TKey, TValue>([NotNull] Dictionary<TKey, TValue> list, char delimiter = ControlChars.Comma)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			if (list?.Count == 0)

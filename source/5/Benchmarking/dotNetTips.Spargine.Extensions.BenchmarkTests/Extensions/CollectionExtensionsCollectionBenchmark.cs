@@ -4,13 +4,14 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="CollectionExtensionsCollectionPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="CollectionExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
@@ -20,7 +21,7 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	[BenchmarkCategory(nameof(CollectionExtensions))]
+	[BenchmarkCategory(Categories.Collections)]
 	public class CollectionExtensionsCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = nameof(CollectionExtensions.AddRange))]
@@ -28,15 +29,15 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = new List<PersonProper>();
 
-			CollectionExtensions.AddRange(people, base.PersonProperList.Take(base.Count / 2), Tristate.True);
+			_ = CollectionExtensions.AddRange(people, base.PersonProperList.Take(base.Count / 2), Tristate.True);
 
 			base.Consumer.Consume(people);
 		}
 
 		[Benchmark(Description = nameof(CollectionExtensions.HasItems) + ": Predicate")]
-		public void HasItems01()
+		public void HasItems02()
 		{
-			var result = base.PersonProperList.ToList().HasItems(p => p.City.Contains("SAN"));
+			var result = base.PersonProperList.ToList().HasItems(p => p.City.Contains("SAN", StringComparison.CurrentCulture));
 
 			base.Consumer.Consume(result);
 		}

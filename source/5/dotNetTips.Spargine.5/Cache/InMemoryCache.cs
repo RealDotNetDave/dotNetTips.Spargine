@@ -37,6 +37,12 @@ namespace dotNetTips.Spargine.Cache
 		private InMemoryCache() => this.Cache = CreateCache(new TimeSpan(0, Timeout, 0));
 
 		/// <summary>
+		/// Gets the count.
+		/// </summary>
+		/// <value>The count.</value>
+		public static int Count => Instance.Cache.Count;
+
+		/// <summary>
 		/// Gets the instance.
 		/// </summary>
 		/// <value>The instance.</value>
@@ -47,12 +53,6 @@ namespace dotNetTips.Spargine.Cache
 		/// </summary>
 		/// <value>The cache.</value>
 		public MemoryCache Cache { get; private set; }
-
-		/// <summary>
-		/// Gets the count.
-		/// </summary>
-		/// <value>The count.</value>
-		public int Count => Instance.Cache.Count;
 
 		/// <summary>
 		/// Adds item to the cache.

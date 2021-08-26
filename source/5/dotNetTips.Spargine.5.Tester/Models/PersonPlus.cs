@@ -14,6 +14,7 @@
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
@@ -146,10 +147,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string Address1
 		{
-			get
-			{
-				return this._address1;
-			}
+			get => this._address1;
 
 			set
 			{
@@ -172,10 +170,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string Address2
 		{
-			get
-			{
-				return this._address2;
-			}
+			get => this._address2;
 
 			set
 			{
@@ -198,10 +193,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public DateTimeOffset BornOn
 		{
-			get
-			{
-				return this._bornOn;
-			}
+			get => this._bornOn;
 
 			set
 			{
@@ -224,10 +216,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string CellPhone
 		{
-			get
-			{
-				return this._cellPhone;
-			}
+			get => this._cellPhone;
 
 			set
 			{
@@ -250,10 +239,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string City
 		{
-			get
-			{
-				return this._city;
-			}
+			get => this._city;
 
 			set
 			{
@@ -276,10 +262,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string Country
 		{
-			get
-			{
-				return this._country;
-			}
+			get => this._country;
 
 			set
 			{
@@ -302,10 +285,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement(IsNullable = false)]
 		public string Email
 		{
-			get
-			{
-				return this._email;
-			}
+			get => this._email;
 
 			set
 			{
@@ -328,10 +308,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string FirstName
 		{
-			get
-			{
-				return this._firstName;
-			}
+			get => this._firstName;
 			set
 			{
 				if (string.Compare(this._firstName, value, StringComparison.Ordinal) == 0)
@@ -353,10 +330,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string HomePhone
 		{
-			get
-			{
-				return this._homePhone;
-			}
+			get => this._homePhone;
 			set
 			{
 				if (string.Compare(this._homePhone, value, StringComparison.Ordinal) == 0)
@@ -378,10 +352,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement(IsNullable = false)]
 		public string Id
 		{
-			get
-			{
-				return this._id;
-			}
+			get => this._id;
 			set
 			{
 				if (string.Compare(this._id, value, StringComparison.Ordinal) == 0)
@@ -403,10 +374,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string LastName
 		{
-			get
-			{
-				return this._lastName;
-			}
+			get => this._lastName;
 			set
 			{
 				if (string.Compare(this._lastName, value, StringComparison.Ordinal) == 0)
@@ -428,10 +396,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string PostalCode
 		{
-			get
-			{
-				return this._postalCode;
-			}
+			get => this._postalCode;
 			set
 			{
 				if (string.Compare(this._postalCode, value, StringComparison.Ordinal) == 0)
@@ -453,10 +418,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		[XmlElement]
 		public string State
 		{
-			get
-			{
-				return this._state;
-			}
+			get => this._state;
 			set
 			{
 				if (string.Compare(this._state, value, StringComparison.Ordinal) == 0)
@@ -492,12 +454,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <returns>The result of the operator.</returns>
 		public static bool operator ==(PersonPlus left, PersonPlus right)
 		{
-			if (left is null)
-			{
-				return right is null;
-			}
-
-			return left.Equals(right);
+			return left is null ? right is null : left.Equals(right);
 		}
 
 		/// <summary>
@@ -624,14 +581,9 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
 		/// <exception cref="NotImplementedException"></exception>
-		public override bool Equals(object obj)
+		public override bool Equals([NotNull] object obj)
 		{
-			if (ReferenceEquals(this, obj))
-			{
-				return true;
-			}
-
-			return false;
+			return ReferenceEquals(this, obj);
 		}
 
 		/// <summary>
@@ -640,13 +592,8 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="other">The other.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="NotImplementedException"></exception>
-		public bool Equals(PersonPlus other)
+		public bool Equals([NotNull] PersonPlus other)
 		{
-			if (other is null)
-			{
-				return false;
-			}
-
 			return ReferenceEquals(this, other);
 		}
 

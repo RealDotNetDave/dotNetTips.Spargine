@@ -4,9 +4,9 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="StringBuilderHelperCounterPerfTestRunner.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
+// <copyright file="StringBuilderHelperCounterBenchmark.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -23,14 +23,15 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
 	/// <summary>
 	/// StringBuilderHelper PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory(nameof(StringBuilderHelper))]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Strings)]
 	public class StringBuilderHelperCounterBenchmark : CounterBenchmark
 	{
 
 		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString))]
+		[BenchmarkCategory(Categories.Collections)]
 		public void BytesToString01()
 		{
 			var result = StringBuilderHelper.BytesToString(this.ByteArray);
@@ -39,14 +40,16 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(StringBuilderHelper.ConcatToString))]
+		[BenchmarkCategory(Categories.Collections)]
 		public void ConcatToString01()
 		{
-			var result = StringBuilderHelper.ConcatToString(this.CommaDelimitedString, ",", Tristate.True, this.StringArray);
+			var result = StringBuilderHelper.ConcatToString(this.CommaDelimitedString, Tristate.True, this.StringArray);
 
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "StringExtensions.ToDelimitedString: 01*")]
+		[BenchmarkCategory(Categories.Collections)]
 		public void ToDelimitedString01()
 		{
 			var people = base.PersonProperDictionary.AsEnumerable();
@@ -57,6 +60,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ": 01**")]
+		[BenchmarkCategory(Categories.Collections)]
 		public void ToDelimitedString02()
 		{
 			var people = base.PersonProperDictionary;
@@ -72,14 +76,14 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			var sb = new StringBuilder();
 
-			sb.Append("'0x");
+			_ = sb.Append("'0x");
 
 			for (var i = 0; i < bytes.Length; i++)
 			{
-				sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
+				_ = sb.Append(bytes[i].ToString("X2", CultureInfo.InvariantCulture));
 			}
 
-			sb.Append('\'');
+			_ = sb.Append('\'');
 
 			return sb.ToString();
 		}

@@ -249,12 +249,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
 		internal static bool HasValue([NotNull] this string input, [NotNull] string expression, [NotNull] RegexOptions options)
 		{
-			if (input.HasValue() && expression.HasValue())
-			{
-				return new Regex(expression, options).IsMatch(input);
-			}
-
-			return false;
+			return input.HasValue() && expression.HasValue() ? new Regex(expression, options).IsMatch(input) : false;
 		}
 
 		/// <summary>

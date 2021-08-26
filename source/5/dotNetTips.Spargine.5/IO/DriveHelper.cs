@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-24-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="DriveHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -34,10 +35,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="drive">The drive.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
-		public static string GetDriveSerialNumber(string drive)
+		public static string GetDriveSerialNumber([NotNull] string drive)
 		{
-			Validate.TryValidateParam(drive, nameof(drive));
-
 			var driveSerial = string.Empty;
 
 			// No matter what is sent in, get just the drive letter

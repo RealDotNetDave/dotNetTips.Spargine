@@ -4,9 +4,9 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="CollectionCollectionPerfTestRunner.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
+// <copyright file="CollectionCollectionBenchmark.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -21,10 +21,10 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections
 {
 	/// <summary>
 	/// Collection type PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory("Collection Class")]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Collections)]
 	public class CollectionCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = "Collection.Create: Count")]

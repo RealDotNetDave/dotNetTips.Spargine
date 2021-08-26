@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,10 +32,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="json">The json.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(Deserialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static TResult Deserialize<TResult>(string json)
+		public static TResult Deserialize<TResult>([NotNull] string json)
 		{
-			Validate.TryValidateParam(json, nameof(json));
-
 			var obj = JsonSerializer.Deserialize<TResult>(json);
 
 			return obj;
@@ -50,10 +48,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from JSON.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
+		public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class
 		{
-			Validate.TryValidateParam(fileName, nameof(fileName));
-
 			if (File.Exists(fileName) == false)
 			{
 				throw new FileNotFoundException("File not found. Cannot deserialize from JSON.", fileName);
@@ -69,7 +65,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="expected">The expected.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool JsonEqual(string actual, string expected)
+		public static bool JsonEqual([NotNull] string actual, [NotNull] string expected)
 		{
 			using var expectedDom = JsonDocument.Parse(expected);
 			using var actualDom = JsonDocument.Parse(actual);
@@ -115,8 +111,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="actual">The actual.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
-		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: JsonValueKind.{valueKind}.</exception>
-		private static bool JsonEqual(JsonElement expected, JsonElement actual)
+		private static bool JsonEqual([NotNull] JsonElement expected, [NotNull] JsonElement actual)
 		{
 			var valueKind = expected.ValueKind;
 

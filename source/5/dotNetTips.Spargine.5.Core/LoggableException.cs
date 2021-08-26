@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="LoggableException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -54,7 +55,7 @@ namespace dotNetTips.Spargine.Core
 		/// Initializes a new instance of the <see cref="LoggableException" /> class.
 		/// </summary>
 		/// <param name="message">The message that describes the error.</param>
-		public LoggableException(string message) : base(message)
+		public LoggableException([NotNull] string message) : base(message)
 		{
 		}
 
@@ -63,7 +64,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The error message that explains the reason for the exception.</param>
 		/// <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
-		public LoggableException(string message, Exception innerException) : base(message, innerException)
+		public LoggableException([NotNull] string message, [AllowNull] Exception innerException) : base(message, innerException)
 		{
 		}
 
@@ -73,7 +74,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="ex">The ex.</param>
 		/// <param name="userMessage">The user message.</param>
-		public LoggableException(string message, Exception ex, string userMessage) : base(message, ex) => this.UserMessage = userMessage;
+		public LoggableException([NotNull] string message, [NotNull] Exception ex, [AllowNull] string userMessage) : base(message, ex) => this.UserMessage = userMessage;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LoggableException" /> class.

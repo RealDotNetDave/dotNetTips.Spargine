@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 08-26-2021
 // ***********************************************************************
 // <copyright file="ImmutableArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
 
@@ -43,14 +44,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
 		[Information(nameof(Shuffle), "David McCarter", "8/27/2020", "1/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
-		public static ImmutableArray<T> Shuffle<T>(this ImmutableArray<T> list)
+		public static ImmutableArray<T> Shuffle<T>([NotNull] this ImmutableArray<T> list)
 		{
-			if (list.DoesNotHaveItems())
-			{
-				return list;
-			}
-
-			return list.OrderBy(i => GenerateRandomNumber()).ToImmutableArray();
+			return list.DoesNotHaveItems() ? list : list.OrderBy(i => GenerateRandomNumber()).ToImmutableArray();
 		}
 
 		/// <summary>

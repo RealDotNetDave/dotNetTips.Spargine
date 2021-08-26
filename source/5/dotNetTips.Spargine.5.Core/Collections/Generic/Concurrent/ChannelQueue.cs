@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="ChannelQueue.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -123,10 +123,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="lockQueue">if set to <c>true</c> [lock queue].</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public async Task WriteAsync(IEnumerable<T> items, bool lockQueue = false, CancellationToken cancellationToken = default)
+		public async Task WriteAsync([NotNull] IEnumerable<T> items, bool lockQueue = false, CancellationToken cancellationToken = default)
 		{
-			Validate.TryValidateParam(items, nameof(items));
-
 			foreach (var item in items.Where(p => p is not null))
 			{
 				await this._channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);

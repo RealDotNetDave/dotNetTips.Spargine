@@ -120,12 +120,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ClearNulls), author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool ClearNulls<T>([NotNull] this List<T> list)
 		{
-			if (list.DoesNotHaveItems())
-			{
-				return false;
-			}
-
-			return list.RemoveAll(p => p is null) > 0;
+			return list.DoesNotHaveItems() ? false : list.RemoveAll(p => p is null) > 0;
 		}
 
 		/// <summary>

@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester.Properties;
 
@@ -85,10 +86,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
 		public DateTimeOffset BornOn
 		{
-			get
-			{
-				return this._bornOn;
-			}
+			get => this._bornOn;
 			init
 			{
 				this._bornOn = value.ToUniversalTime() > DateTimeOffset.UtcNow ? throw new ArgumentOutOfRangeException(nameof(this.BornOn), "Person cannot be born in the future.") : value;
@@ -101,20 +99,13 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <value>The cell phone number.</value>
 		/// <exception cref="ArgumentNullException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.CellPhone), Value for phone number cannot be null.</exception>
+		[DisallowNull]
 		public string CellPhone
 		{
-			get
-			{
-				return this._cellPhone;
-			}
+			get => this._cellPhone;
 			init
 			{
-				if (value is null)
-				{
-					throw new ArgumentNullException(nameof(this.CellPhone), "Value for phone number cannot be null.");
-				}
-
-				this._cellPhone = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.CellPhone), "Phone number is limited to 50 characters.") : value;
+				this._cellPhone = value?.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.CellPhone), "Phone number is limited to 50 characters.") : value;
 			}
 		}
 
@@ -128,10 +119,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.Email), Value for Email cannot be null or empty.</exception>
 		public string Email
 		{
-			get
-			{
-				return this._email;
-			}
+			get => this._email;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -151,10 +139,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
 		public string FirstName
 		{
-			get
-			{
-				return this._firstName;
-			}
+			get => this._firstName;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -174,19 +159,12 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
 		/// <exception cref="ArgumentNullException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.HomePhone), Value for phone number cannot be null or empty.</exception>
+		[DisallowNull]
 		public string HomePhone
 		{
-			get
-			{
-				return this._homePhone;
-			}
+			get => this._homePhone;
 			init
 			{
-				if (string.IsNullOrEmpty(value))
-				{
-					throw new ArgumentNullException(nameof(this.HomePhone), "Value for phone number cannot be null or empty.");
-				}
-
 				this._homePhone = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.HomePhone), "Home phone length is limited to 50 characters.") : value;
 			}
 		}
@@ -195,6 +173,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// Gets or sets the identifier.
 		/// </summary>
 		/// <value>The identifier.</value>
+		[DisallowNull]
 		public string Id { get; init; }
 
 		/// <summary>
@@ -207,10 +186,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">nameof(this.LastName), Value for name cannot be null or empty.</exception>
 		public string LastName
 		{
-			get
-			{
-				return this._lastName;
-			}
+			get => this._lastName;
 			init
 			{
 				if (string.IsNullOrEmpty(value))

@@ -230,7 +230,7 @@ namespace dotNetTips.Spargine.IO
 		}
 
 		/// <summary>
-		/// Handles the <see cref="E:Processed" /> event that is thrown after each file is processed.
+		/// Handles the <see cref="Processed"/> event that is thrown after each file is processed.
 		/// </summary>
 		/// <param name="e">The <see cref="FileProgressEventArgs" /> instance containing the event data.</param>
 		protected virtual void OnProcessed(FileProgressEventArgs e) => this.Processed?.Invoke(this, e);

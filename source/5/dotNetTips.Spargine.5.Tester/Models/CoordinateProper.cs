@@ -19,25 +19,23 @@ namespace dotNetTips.Spargine.Tester.Models
 {
 	/// <summary>
 	/// Struct CoordinateProper
-	/// Implements the <see cref="Models.ICoordinate" />
+	/// Implements the <see cref="ICoordinate" />
 	/// Implements the <see cref="IComparable" />&gt;
 	/// </summary>
 	/// <seealso cref="IComparable" />
-	/// <seealso cref="Models.ICoordinate" />
+	/// <seealso cref="ICoordinate" />
 	[Serializable]
 	public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, IComparable, IComparable<CoordinateProper>
 	{
-
 		/// <summary>
-		/// Gets or sets the i coordinate.
+		/// Initializes a new instance of the <see cref="CoordinateProper"/> struct.
 		/// </summary>
-		/// <value>The i coordinate.</value>
-		public ICoordinate ICoordinate
+		/// <param name="x">The x.</param>
+		/// <param name="y">The y.</param>
+		public CoordinateProper(int x, int y)
 		{
-			get => default;
-			set
-			{
-			}
+			this.X = x;
+			this.Y = y;
 		}
 
 		/// <summary>

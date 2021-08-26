@@ -13,6 +13,7 @@
 // ***********************************************************************
 
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core.Internal;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -31,6 +32,7 @@ namespace dotNetTips.Spargine.Core
 		[Required]
 		[MaxLength(length: 50, ErrorMessage = "Id must be 10 characters to a max of 50.")]
 		[MinLength(length: 10, ErrorMessage = "Id must be 10 characters to a max of 50.")]
+		[DisallowNull]
 		public string Id { get; init; }
 
 		/// <summary>

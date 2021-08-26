@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-21-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
 // <copyright file="ListExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,7 +24,7 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	[BenchmarkCategory(nameof(ListExtensions))]
+	[BenchmarkCategory(Categories.Collections)]
 	public class ListExtensionsCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = nameof(ListExtensions.AddLast))]
@@ -32,9 +32,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.PersonProperList.ToList();
 
-			var result = people.AddLast(this.PersonProper01);
-
-			base.Consumer.Consume(result);
+			people.AddLast(this.PersonProper01);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
@@ -116,7 +114,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.Page))]
 		public void Page()
 		{
-			foreach (var people in base.PersonProperList.Page(2))
+			foreach (var people in base.PersonProperList.Page(25))
 			{
 				foreach (var person in people)
 				{
@@ -134,6 +132,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Slice Test")]
+		[BenchmarkCategory(Categories.New)]
 		public void PickRandom02()
 		{
 			var people = new ArraySegment<PersonProper>(base.PersonProperArrayFull);

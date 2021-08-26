@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-25-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -101,10 +102,8 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="path">The path.</param>
 		[Information(nameof(DeleteDirectory), "David McCarter", "4/2/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0)]
-		public static void DeleteDirectory(DirectoryInfo path)
+		public static void DeleteDirectory([NotNull] DirectoryInfo path)
 		{
-			Validate.TryValidateParam(path, nameof(path));
-
 			DeleteDirectory(path.ToString(), 1);
 		}
 
@@ -166,10 +165,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IAsyncEnumerable&lt;IEnumerable&lt;FileInfo&gt;&gt;.</returns>
 		[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync(IEnumerable<DirectoryInfo> directories, string searchPattern, SearchOption searchOption)
+		public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption)
 		{
-			Validate.TryValidateParam(directories, nameof(directories));
-			Validate.TryValidateParam(searchPattern, nameof(searchPattern));
 			Validate.TryValidateParam(searchOption, nameof(searchOption));
 
 			var options = new EnumerationOptions() { IgnoreInaccessible = true };
@@ -246,7 +243,7 @@ namespace dotNetTips.Spargine.IO
 							}
 							else
 							{
-								folder.AccountName = key.GetValue<string>(string.Empty);
+								folder.AccountName = (string)key.GetValue(string.Empty);
 							}
 
 							if (folder.AccountName.HasValue() && folder.DirectoryInfo.IsNotNull())
@@ -322,9 +319,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchPatterns">The search patterns.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static bool SafeDirectoryContainsAny(DirectoryInfo rootDirectory, SearchOption searchOption = SearchOption.TopDirectoryOnly, params string[] searchPatterns)
+		public static bool SafeDirectoryContainsAny([NotNull] DirectoryInfo rootDirectory, SearchOption searchOption = SearchOption.TopDirectoryOnly, [NotNull] params string[] searchPatterns)
 		{
-			Validate.TryValidateParam(rootDirectory, nameof(rootDirectory));
 			Validate.TryValidateParam(searchPatterns, nameof(searchPatterns));
 
 			for (var patternCount = 0; patternCount < searchPatterns.Length; patternCount++)
@@ -357,11 +353,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchOption">All or Top Directory Only.</param>
 		/// <returns>IEnumerable&lt;DirectoryInfo&gt;.</returns>
 		[Information(nameof(SafeDirectorySearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
-		public static IEnumerable<DirectoryInfo> SafeDirectorySearch(DirectoryInfo rootDirectory, string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+		public static IEnumerable<DirectoryInfo> SafeDirectorySearch([NotNull] DirectoryInfo rootDirectory, [NotNull] string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
-			Validate.TryValidateParam(rootDirectory, nameof(rootDirectory));
-			Validate.TryValidateParam(searchPattern, nameof(searchPattern));
-
 			var folders = new List<DirectoryInfo>
 			{
 				rootDirectory,
@@ -405,10 +398,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
 		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
-		public static IEnumerable<FileInfo> SafeFileSearch(IEnumerable<DirectoryInfo> directories, string searchPattern, SearchOption searchOption)
+		public static IEnumerable<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption)
 		{
-			Validate.TryValidateParam(directories, nameof(directories));
-			Validate.TryValidateParam(searchPattern, nameof(searchPattern));
 			Validate.TryValidateParam(searchOption, nameof(searchOption));
 
 			var files = new List<FileInfo>();
@@ -441,10 +432,8 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="path">The path.</param>
 		[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
-		public static void SetFileAttributesToNormal(string path)
+		public static void SetFileAttributesToNormal([NotNull] string path)
 		{
-			Validate.TryValidateParam(path, nameof(path));
-
 			for (var directoryCount = 0; directoryCount < Directory.GetDirectories(path).Length; directoryCount++)
 			{
 				SetFileAttributesToNormal(Directory.GetDirectories(path)[directoryCount]);

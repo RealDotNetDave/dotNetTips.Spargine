@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -56,7 +57,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="comparer">The <see cref="IEqualityComparer{T}" /> implementation to use when
 		/// comparing values in the set, or null to use the default <see cref="IEqualityComparer{T}" />
 		/// implementation for the set type.</param>
-		public ObservableList(IEqualityComparer<T> comparer) => this._set = new HashSet<T>(comparer);
+		public ObservableList([NotNull] IEqualityComparer<T> comparer) => this._set = new HashSet<T>(comparer);
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ObservableList{T}" /> class
@@ -65,7 +66,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// number of elements copied.
 		/// </summary>
 		/// <param name="collection">The collection whose elements are copied to the new set.</param>
-		public ObservableList(IEnumerable<T> collection) : this(collection, EqualityComparer<T>.Default)
+		public ObservableList([NotNull] IEnumerable<T> collection) : this(collection, EqualityComparer<T>.Default)
 		{
 		}
 
@@ -79,7 +80,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="comparer">The <see cref="IEqualityComparer{T}" /> implementation to use when
 		/// comparing values in the set, or null to use the default <see cref="IEqualityComparer{T}" />
 		/// implementation for the set type.</param>
-		public ObservableList(IEnumerable<T> collection, IEqualityComparer<T> comparer) => this._set = new HashSet<T>(collection, comparer);
+		public ObservableList([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer) => this._set = new HashSet<T>(collection, comparer);
 
 		/// <summary>
 		/// Occurs when the contents of the hash set changes.
@@ -118,10 +119,10 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		public virtual bool IsReadOnly => ( (ICollection<T>)this._set ).IsReadOnly;
 
 		/// <summary>
-		/// Adds an item to the <see cref="T:System.Collections.Generic.ICollection`1"></see>.
+		/// Adds an item to the <see cref="ObservableList{T}"/>.
 		/// </summary>
-		/// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection`1"></see>.</param>
-		void ICollection<T>.Add(T item) => this.Add(item);
+		/// <param name="item">The object to add to the collection.</param>
+		void ICollection<T>.Add([NotNull] T item) => this.Add(item);
 
 		/// <inheritdoc />
 		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
@@ -134,7 +135,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="item">The element to add to the set.</param>
 		/// <returns><see langword="true" /> if the element is added to the hash set; <see langword="false" /> if the element is already present.</returns>
-		public virtual bool Add(T item)
+		public virtual bool Add([NotNull] T item)
 		{
 			if (this._set.Contains(item))
 			{
@@ -179,14 +180,14 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="item">The element to locate in the hash set.</param>
 		/// <returns><see langword="true" /> if the hash set contains the specified element; otherwise, <see langword="false" />.</returns>
-		public virtual bool Contains(T item) => this._set.Contains(item);
+		public virtual bool Contains([NotNull] T item) => this._set.Contains(item);
 
 		/// <summary>
 		/// Copies the elements of the hash set to an array.
 		/// </summary>
 		/// <param name="array">The one-dimensional array that is the destination of the elements copied from
 		/// the hash set. The array must have zero-based indexing.</param>
-		public virtual void CopyTo(T[] array) => this._set.CopyTo(array);
+		public virtual void CopyTo([NotNull] T[] array) => this._set.CopyTo(array);
 
 		/// <summary>
 		/// Copies the elements of the hash set to an array, starting at the specified array index.
@@ -194,7 +195,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="array">The one-dimensional array that is the destination of the elements copied from
 		/// the hash set. The array must have zero-based indexing.</param>
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
-		public virtual void CopyTo(T[] array, int arrayIndex) => this._set.CopyTo(array, arrayIndex);
+		public virtual void CopyTo([NotNull] T[] array, int arrayIndex) => this._set.CopyTo(array, arrayIndex);
 
 		/// <summary>
 		/// Copies the specified number of elements of the hash set to an array, starting at the specified array index.
@@ -203,13 +204,13 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// the hash set. The array must have zero-based indexing.</param>
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
 		/// <param name="count">The number of elements to copy to array.</param>
-		public virtual void CopyTo(T[] array, int arrayIndex, int count) => this._set.CopyTo(array, arrayIndex, count);
+		public virtual void CopyTo([NotNull] T[] array, int arrayIndex, int count) => this._set.CopyTo(array, arrayIndex, count);
 
 		/// <summary>
 		/// Removes all elements in the specified collection from the hash set.
 		/// </summary>
 		/// <param name="other">The collection of items to remove from the current hash set.</param>
-		public virtual void ExceptWith(IEnumerable<T> other)
+		public virtual void ExceptWith([NotNull] IEnumerable<T> other)
 		{
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -242,7 +243,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// elements that are present in that object and in the specified collection.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
-		public virtual void IntersectWith(IEnumerable<T> other)
+		public virtual void IntersectWith([NotNull] IEnumerable<T> other)
 		{
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -269,42 +270,42 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set is a proper subset of other; otherwise, <see langword="false" />.</returns>
-		public virtual bool IsProperSubsetOf(IEnumerable<T> other) => this._set.IsProperSubsetOf(other);
+		public virtual bool IsProperSubsetOf([NotNull] IEnumerable<T> other) => this._set.IsProperSubsetOf(other);
 
 		/// <summary>
 		/// Determines whether the hash set is a proper superset of the specified collection.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set is a proper superset of other; otherwise, <see langword="false" />.</returns>
-		public virtual bool IsProperSupersetOf(IEnumerable<T> other) => this._set.IsProperSupersetOf(other);
+		public virtual bool IsProperSupersetOf([NotNull] IEnumerable<T> other) => this._set.IsProperSupersetOf(other);
 
 		/// <summary>
 		/// Determines whether the hash set is a subset of the specified collection.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set is a subset of other; otherwise, <see langword="false" />.</returns>
-		public virtual bool IsSubsetOf(IEnumerable<T> other) => this._set.IsSubsetOf(other);
+		public virtual bool IsSubsetOf([NotNull] IEnumerable<T> other) => this._set.IsSubsetOf(other);
 
 		/// <summary>
 		/// Determines whether the hash set is a superset of the specified collection.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set is a superset of other; otherwise, <see langword="false" />.</returns>
-		public virtual bool IsSupersetOf(IEnumerable<T> other) => this._set.IsSupersetOf(other);
+		public virtual bool IsSupersetOf([NotNull] IEnumerable<T> other) => this._set.IsSupersetOf(other);
 
 		/// <summary>
 		/// Determines whether the current object and a specified collection share common elements.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set and other share at least one common element; otherwise, <see langword="false" />.</returns>
-		public virtual bool Overlaps(IEnumerable<T> other) => this._set.Overlaps(other);
+		public virtual bool Overlaps([NotNull] IEnumerable<T> other) => this._set.Overlaps(other);
 
 		/// <summary>
 		/// Removes the specified element from the hash set.
 		/// </summary>
 		/// <param name="item">The element to remove.</param>
 		/// <returns><see langword="true" /> if the element is successfully found and removed; otherwise, <see langword="false" />.</returns>
-		public virtual bool Remove(T item)
+		public virtual bool Remove([NotNull] T item)
 		{
 			if (!this._set.Contains(item))
 			{
@@ -328,7 +329,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="match">The <see cref="Predicate{T}" /> delegate that defines the conditions of the elements to remove.</param>
 		/// <returns>The number of elements that were removed from the hash set.</returns>
-		public virtual int RemoveWhere(Predicate<T> match)
+		public virtual int RemoveWhere([NotNull] Predicate<T> match)
 		{
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -357,14 +358,14 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		/// <returns><see langword="true" /> if the hash set is equal to other; otherwise, <see langword="false" />.</returns>
-		public virtual bool SetEquals(IEnumerable<T> other) => this._set.SetEquals(other);
+		public virtual bool SetEquals([NotNull] IEnumerable<T> other) => this._set.SetEquals(other);
 
 		/// <summary>
 		/// Modifies the current hash set to contain only elements that are present either in that
 		/// object or in the specified collection, but not both.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
-		public virtual void SymmetricExceptWith(IEnumerable<T> other)
+		public virtual void SymmetricExceptWith([NotNull] IEnumerable<T> other)
 		{
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -397,7 +398,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// Modifies the hash set to contain all elements that are present in itself, the specified collection, or both.
 		/// </summary>
 		/// <param name="other">The collection to compare to the current hash set.</param>
-		public virtual void UnionWith(IEnumerable<T> other)
+		public virtual void UnionWith([NotNull] IEnumerable<T> other)
 		{
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 

@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -54,7 +53,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			PersonProper nullPerson = null;
 
 			//Test Parameters
-			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => peopleList.ToReadOnlyCollection()
+			_ = Assert.ThrowsException<NotSupportedException>(() => peopleList.ToReadOnlyCollection()
 				.AddLast(person));
 
 			// Test List

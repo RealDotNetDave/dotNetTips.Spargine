@@ -26,7 +26,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;
@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;
@@ -52,7 +52,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;
@@ -71,7 +71,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;
@@ -90,7 +90,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;
@@ -109,7 +109,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 
 			if (result && throwException)
 			{
-				ExceptionThrower.ThrowInvalidValueException<object>("Failed", value);
+				ExceptionThrower.ThrowInvalidValueException("Failed", value);
 			}
 
 			return result;

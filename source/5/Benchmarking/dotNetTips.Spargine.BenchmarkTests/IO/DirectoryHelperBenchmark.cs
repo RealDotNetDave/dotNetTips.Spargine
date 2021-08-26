@@ -8,7 +8,7 @@ using dotNetTips.Spargine.Tester;
 
 namespace dotNetTips.Spargine.BenchmarkTests
 {
-	[BenchmarkCategory("DirectoryHelper")]
+	[BenchmarkCategory(Categories.IO)]
 	public class DirectoryHelperBenchmark : Benchmark
 	{
 
@@ -108,7 +108,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 
 			if (Directory.Exists(this._sourcePath) == false)
 			{
-				Directory.CreateDirectory(this._sourcePath);
+				_ = Directory.CreateDirectory(this._sourcePath);
 			}
 
 			Debug.WriteLine($"Temp Path={this._tempPath}");

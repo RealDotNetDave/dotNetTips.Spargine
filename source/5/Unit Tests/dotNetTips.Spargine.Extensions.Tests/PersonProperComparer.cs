@@ -22,9 +22,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 {
 	/// <summary>
 	/// Class PersonProperComparer.
-	/// Implements the <see cref="System.Collections.Generic.IEqualityComparer{dotNetTips.Spargine.Tester.Models.PersonProper}" />
+	/// Implements the <see cref="IEqualityComparer{PersonProper}" />
 	/// </summary>
-	/// <seealso cref="System.Collections.Generic.IEqualityComparer{dotNetTips.Spargine.Tester.Models.PersonProper}" />
+	/// <seealso cref="IEqualityComparer{PersonProper}" />
 	public class PersonProperComparer : IEqualityComparer<PersonProper>
 	{
 		/// <summary>

@@ -79,7 +79,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="paramArray">The parameter array.</param>
 		/// <returns>T.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public static T Create<T>(params object[] paramArray)
+		public static T Create<T>([NotNull] params object[] paramArray)
 		{
 			var instance = (T)Activator.CreateInstance(typeof(T), args: paramArray);
 

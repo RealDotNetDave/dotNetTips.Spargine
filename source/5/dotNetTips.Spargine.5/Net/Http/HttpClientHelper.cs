@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary>HttpClient Helper Methods.</summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Net;
 using System.Net.Http;
@@ -42,10 +43,8 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <param name="url">The URL.</param>
 		/// <returns>HttpResponseMessage.</returns>
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
-		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url)
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync([NotNull] string url)
 		{
-			Validate.TryValidateParam(url, nameof(url));
-
 			return await GetHttpResponseAsync(new Uri(url)).ConfigureAwait(false);
 		}
 
@@ -55,7 +54,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <param name="url">The URL.</param>
 		/// <returns>HttpResponseMessage.</returns>
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
-		public static async Task<HttpResponseMessage> GetHttpResponseAsync(Uri url)
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync([NotNull] Uri url)
 		{
 			Validate.TryValidateParam(url, nameof(url));
 
@@ -73,10 +72,8 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <exception cref="ArgumentInvalidException">Url cannot be null or empty.</exception>
 		/// <remarks>Original code by: Máňa Píchová.</remarks>
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
-		public static async Task<HttpResponseMessage> GetHttpResponseAsync(string url, CancellationTokenSource cancellationToken)
+		public static async Task<HttpResponseMessage> GetHttpResponseAsync([NotNull] string url, CancellationTokenSource cancellationToken)
 		{
-			Validate.TryValidateParam(url, nameof(url));
-
 			try
 			{
 				// Pass in the token.
@@ -112,10 +109,8 @@ namespace dotNetTips.Spargine.Net.Http
 		/// <param name="url">The URL.</param>
 		/// <returns>Stream.</returns>
 		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
-		public static async Task<Stream> GetStreamAsync(string url)
+		public static async Task<Stream> GetStreamAsync([NotNull] string url)
 		{
-			Validate.TryValidateParam(url, nameof(url));
-
 			using (var cts = new CancellationTokenSource())
 			{
 				try

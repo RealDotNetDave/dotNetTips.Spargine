@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -92,14 +92,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
 
-			if (condition)
-			{
-				return array.Add(item);
-			}
-			else
-			{
-				return array;
-			}
+			return condition ? array.Add(item) : array;
 		}
 
 		/// <summary>

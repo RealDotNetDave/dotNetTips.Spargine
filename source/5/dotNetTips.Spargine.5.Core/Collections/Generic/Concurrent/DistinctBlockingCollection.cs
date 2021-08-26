@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,7 +51,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Adds the item to the <see cref="T:System.Collections.Concurrent.BlockingCollection" />.
+		/// Adds the item to the <see cref="DistinctBlockingCollection{T}"/>.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
 		public new void Add([NotNull] T item)
@@ -63,11 +63,11 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Adds the item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+		/// Adds the item to the <see cref="DistinctBlockingCollection{T}"/>.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
 		/// <param name="cancellationToken">A cancellation token to observe.</param>
-		public new void Add([NotNull] T item, CancellationToken cancellationToken)
+		public new void Add([NotNull] T item, CancellationToken cancellationToken = default)
 		{
 			if (this.ItemNotInCollection(item))
 			{
@@ -92,60 +92,42 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <returns>true if <paramref name="item" /> could be added; otherwise false. If the item is a duplicate, and the
-		/// underlying collection does not accept duplicate items, then an <see cref="T:System.InvalidOperationException" /> is thrown.</returns>
-		public new bool TryAdd(T item)
+		/// <returns><see langword="true" /> if <paramref name="item" /> could be added; otherwise, <see langword="false" />. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an <see cref="InvalidOperationException"/> is thrown.</returns>
+		public new bool TryAdd([NotNull] T item)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.ItemNotInCollection(item) && base.TryAdd(item);
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />
 		/// within the specified time period.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <param name="millisecondsTimeout">The number of milliseconds to wait, or <see cref="F:System.Threading.Timeout.Infinite" /> (-1) to wait
+		/// <param name="millisecondsTimeout">The number of milliseconds to wait, or infinite (-1) to wait
 		/// indefinitely.</param>
-		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
-		/// false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
-		/// <see cref="T:System.InvalidOperationException" /> is thrown.</returns>
-		public new bool TryAdd(T item, int millisecondsTimeout)
+		/// <returns><see langword="true" /> if the <paramref name="item" /> could be added to the collection within the specified time; otherwise, false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an <see cref="InvalidOperationException" /> is thrown.</returns>
+		public new bool TryAdd([NotNull] T item, int millisecondsTimeout)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout);
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection`1" />.
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}"/>.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <param name="timeout">A <see cref="T:System.TimeSpan" /> that represents the number of milliseconds to wait, or a <see cref="T:System.TimeSpan" /> that represents -1 milliseconds to wait indefinitely.</param>
+		/// <param name="timeout">A <see cref="TimeSpan"/> that represents the number of milliseconds to wait, or a <see cref="TimeSpan" /> that represents -1 milliseconds to wait indefinitely.</param>
 		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time span;
 		/// otherwise, false.</returns>
-		public new bool TryAdd(T item, TimeSpan timeout)
+		public new bool TryAdd([NotNull] T item, TimeSpan timeout)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.ItemNotInCollection(item) && base.TryAdd(item, timeout);
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="T:System.Collections.Concurrent.BlockingCollection" />
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}"/>
 		/// within the specified time period, while observing a cancellation token.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
@@ -155,13 +137,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
 		/// false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
 		/// <see cref="InvalidOperationException" /> is thrown.</returns>
-		public new bool TryAdd(T item, int millisecondsTimeout, CancellationToken cancellationToken)
+		public new bool TryAdd([NotNull] T item, int millisecondsTimeout, CancellationToken cancellationToken = default)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout, cancellationToken);
 		}
 

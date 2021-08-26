@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="SocketExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -57,14 +57,13 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Tries to connect within the provided timeout interval Useful to speed up "can not connect" assertions on
+		/// Tries to connect within the provided timeout interval Useful to speed up "cannot connect" assertions on
 		/// Windows
 		/// </summary>
 		/// <param name="socket">The socket.</param>
 		/// <param name="remoteEndpoint">The remote endpoint.</param>
 		/// <param name="millisecondsTimeout">The milliseconds timeout.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="PlatformNotSupportedException"></exception>
 		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, int millisecondsTimeout)

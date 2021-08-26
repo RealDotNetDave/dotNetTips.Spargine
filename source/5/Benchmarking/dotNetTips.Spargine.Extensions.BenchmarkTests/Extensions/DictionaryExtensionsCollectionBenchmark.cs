@@ -4,9 +4,9 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="DictionaryExtensionsCollectionPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="DictionaryExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -18,12 +18,12 @@ using dotNetTips.Spargine.Core;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	[BenchmarkCategory(nameof(DictionaryExtensions))]
+	[BenchmarkCategory(Categories.Collections)]
 	public class DictionaryExtensionsCollectionBenchmark : CollectionBenchmark
 	{
 
 		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary")]
-		public void GetOrAddDictionary()
+		public void GetOrAddDictionary01()
 		{
 			var people = base.PersonProperDictionary;
 			var person = base.PersonProperDictionary.Last();
@@ -34,8 +34,9 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 
-		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary-New")]
-		public void GetOrAddDictionaryNew()
+		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary")]
+		[BenchmarkCategory(Categories.New)]
+		public void GetOrAddDictionary02()
 		{
 			var people = base.PersonProperDictionary;
 
@@ -47,6 +48,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		public override void Setup() { base.Setup(); }
 
 		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ":*POOL")]
+		[BenchmarkCategory(Categories.Strings)]
 		public void ToDelimitedString01()
 		{
 			var people = base.PersonProperDictionary;
@@ -58,7 +60,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert))]
-		public void UpsertDictionary()
+		public void UpsertDictionary01()
 		{
 			var people = base.PersonProperDictionary;
 			var person = base.PersonProperDictionary.Last();
@@ -69,8 +71,11 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 
+		/// <summary>
+		/// Upserts the dictionary02.
+		/// </summary>
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert) + ":New Person")]
-		public void UpsertDictionaryNew()
+		public void UpsertDictionary02()
 		{
 			var people = base.PersonProperDictionary;
 

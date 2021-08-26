@@ -4,9 +4,9 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="ArrayExtensionsCollectionPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -20,7 +20,7 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	[BenchmarkCategory(nameof(ArrayExtensions))]
+	[BenchmarkCategory(Categories.Collections)]
 	public class ArrayExtensionsCollectionBenchmark : CollectionBenchmark
 	{
 
@@ -95,6 +95,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.BytesToString))]
+		[BenchmarkCategory(Categories.Strings)]
 		public void BytesToString01()
 		{
 			var result = base.ByteArray.BytesToString();
@@ -103,6 +104,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
+		[BenchmarkCategory(Categories.New, Categories.Strings)]
 		public void BytesToString02()
 		{
 			var readOnlySpan = new ReadOnlySpan<byte>(base.ByteArray);
@@ -144,12 +146,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 			base.Consumer.Consume(result);
 		}
-
-		//[Benchmark(Description = nameof(ArrayExtensions.RemoveDuplicates))]
-		//public void RemoveDuplicates01()
-		//{
-
-		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
 		public void RemoveFirst()

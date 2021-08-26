@@ -4,9 +4,9 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="CachedEnumerableCollectionPerfTestRunner.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
+// <copyright file="CachedEnumerableCollectionBenchmark.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -14,25 +14,24 @@
 
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
-using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {
 	/// <summary>
 	/// Collection type PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory("CachedEnumerable Class")]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Collections)]
 	public class CachedEnumerableCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = "CachedEnumerable.Create: From List")]
+		[BenchmarkCategory(Categories.Collections)]
 		public void CollectionCreate01()
 		{
-			using (var result = CachedEnumerable.Create<PersonProper>(this.PersonProperList))
-			{
-				this.Consumer.Consume(result);
-			}
+			using var result = CachedEnumerable.Create(this.PersonProperList);
+
+			this.Consumer.Consume(result);
 		}
 	}
 }

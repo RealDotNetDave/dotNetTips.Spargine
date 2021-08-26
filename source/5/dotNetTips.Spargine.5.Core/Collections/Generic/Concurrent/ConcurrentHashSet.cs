@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,6 +15,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using dotNetTips.Spargine.Core;
@@ -28,7 +29,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	[DebuggerDisplay("Count = {Count}")]
-	public class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
+	public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
 	{
 		/// <summary>
 		/// The default capacity..
@@ -72,7 +73,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
 		/// </summary>
 		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
-		public ConcurrentHashSet(IEnumerable<T> collection)
+		public ConcurrentHashSet([NotNull] IEnumerable<T> collection)
 			: this(collection, null)
 		{
 		}
@@ -81,7 +82,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
 		/// </summary>
 		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet(IEqualityComparer<T> comparer)
+		public ConcurrentHashSet([NotNull] IEqualityComparer<T> comparer)
 			: this(DefaultConcurrencyLevel, DefaultCapacity, true, comparer)
 		{
 		}
@@ -101,13 +102,10 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="collection">The collection to pre load items.</param>
 		/// <param name="comparer">The comparer.</param>
-		public ConcurrentHashSet(IEnumerable<T> collection, IEqualityComparer<T> comparer)
+		public ConcurrentHashSet([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
 			: this(comparer)
 		{
-			if (collection is not null)
-			{
-				this.InitializeFromCollection(collection);
-			}
+			this.InitializeFromCollection(collection);
 		}
 
 		/// <summary>
@@ -116,13 +114,11 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
 		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
 		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet(int concurrencyLevel, IEnumerable<T> collection, IEqualityComparer<T> comparer)
+		public ConcurrentHashSet(int concurrencyLevel, [NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
 			: this(concurrencyLevel, DefaultCapacity, false, comparer)
 		{
-			if (collection is not null)
-			{
-				this.InitializeFromCollection(collection);
-			}
+			this.InitializeFromCollection(collection);
+
 		}
 
 		/// <summary>
@@ -131,7 +127,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
 		/// <param name="capacity">The capacity<see cref="int" />.</param>
 		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet(int concurrencyLevel, int capacity, IEqualityComparer<T> comparer)
+		public ConcurrentHashSet(int concurrencyLevel, int capacity, [NotNull] IEqualityComparer<T> comparer)
 			: this(concurrencyLevel, capacity, false, comparer)
 		{
 		}
@@ -176,7 +172,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Gets a value indicating whether the <see cref="T:ICollection"></see> is read-only.
+		/// Gets a value indicating whether the <see cref="ICollection"></see> is read-only.
 		/// </summary>
 		/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
 		bool ICollection<T>.IsReadOnly => false;
@@ -243,21 +239,20 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		private static int DefaultConcurrencyLevel => Environment.ProcessorCount;
 
 		/// <summary>
-		/// Adds an item to the <see cref="T:System.Collections.Generic.ICollection">.</see>.
+		/// Adds an item to the <see cref="ICollection">.</see>.
 		/// </summary>
-		/// <param name="item">The object to add to the <see cref="T:System.Collections.Generic.ICollection"></see>.</param>
-		void ICollection<T>.Add(T item) => this.Add(item);
+		/// <param name="item">The object to add to the <see cref="ICollection"></see>.</param>
+		void ICollection<T>.Add([NotNull] T item) => this.Add(item);
 
 		/// <summary>
-		/// Copies the elements of the <see cref="T:System.Collections.Generic.ICollection`1"></see> to an <see cref="T:System.Array"></see>, starting at a particular <see cref="T:System.Array"></see> index.
+		/// Copies the elements of the <see cref="ICollection"></see> to an <see cref="Array"></see>, starting at a particular <see cref="Array"></see> index.
 		/// </summary>
-		/// <param name="array">The one-dimensional <see cref="T:System.Array"></see> that is the destination of the elements copied from <see cref="T:System.Collections.Generic.ICollection`1"></see>. The <see cref="T:System.Array"></see> must have zero-based indexing.</param>
+		/// <param name="array">The one-dimensional <see cref="Array"></see> that is the destination of the elements copied from <see cref="ICollection"></see>. The <see cref="Array"></see> must have zero-based indexing.</param>
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
-		void ICollection<T>.CopyTo(T[] array, int arrayIndex)
+		void ICollection<T>.CopyTo([NotNull] T[] array, int arrayIndex)
 		{
-			Validate.TryValidateParam(array, nameof(array));
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(arrayIndex < 0, nameof(arrayIndex));
 
 			var locksAcquired = 0;
@@ -288,24 +283,19 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Removes the first occurrence of a specific object from the <see cref="T:System.Collections.Generic.ICollection`1"></see>.
+		/// Removes the first occurrence of a specific object from the <see cref="ICollection"></see>.
 		/// </summary>
-		/// <param name="item">The object to remove from the <see cref="T:System.Collections.Generic.ICollection`1"></see>.</param>
-		/// <returns>true if <paramref name="item">item</paramref> was successfully removed from the <see cref="T:System.Collections.Generic.ICollection`1"></see>; otherwise, false. This method also returns false if <paramref name="item">item</paramref> is not found in the original <see cref="T:System.Collections.Generic.ICollection`1"></see>.</returns>
-		bool ICollection<T>.Remove(T item)
+		/// <param name="item">The object to remove from the collection.</param>
+		/// <returns>true if <paramref name="item">item</paramref> was successfully removed from the <see cref="ICollection"></see>; otherwise, false. This method also returns false if <paramref name="item">item</paramref> is not found in the original <see cref="ICollection"></see>.</returns>
+		bool ICollection<T>.Remove([NotNull] T item)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.TryRemove(item);
 		}
 
 		/// <summary>
 		/// Returns an enumerator that iterates through a collection.
 		/// </summary>
-		/// <returns>An <see cref="T:System.Collections.IEnumerator"></see> object that can be used to iterate through the collection.</returns>
+		/// <returns>An <see cref="IEnumerator"></see> object that can be used to iterate through the collection.</returns>
 		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 		/// <summary>
@@ -313,13 +303,8 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The item to add.</param>
 		/// <returns>The <see cref="bool" />.</returns>
-		public bool Add(T item)
+		public bool Add([NotNull] T item)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			return this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
 		}
 
@@ -349,13 +334,8 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The item to locate in the <see cref="ConcurrentHashSet{T}" />.</param>
 		/// <returns>true if the <see cref="ConcurrentHashSet{T}" /> contains the item; otherwise, false.</returns>
-		public bool Contains(T item)
+		public bool Contains([NotNull] T item)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			var hashCode = this._comparer.GetHashCode(item);
 
 			// We must capture the _buckets field in a local variable. It is set to a new table on each table resize.
@@ -406,13 +386,8 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The item to remove.</param>
 		/// <returns>true if an item was removed successfully; otherwise, false.</returns>
-		public bool TryRemove(T item)
+		public bool TryRemove([NotNull] T item)
 		{
-			if (item is null)
-			{
-				return false;
-			}
-
 			var hashCode = this._comparer.GetHashCode(item);
 
 			while (true)

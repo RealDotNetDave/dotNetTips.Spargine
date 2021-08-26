@@ -4,9 +4,9 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="StringExtensionsCounterPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="StringExtensionsCounterBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -21,10 +21,10 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	/// <summary>
 	/// StringExtensions CounterPerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory(nameof(StringExtensions))]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Strings)]
 	public class StringExtensionsCounterBenchmark : CounterBenchmark
 	{
 
@@ -120,6 +120,15 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(StringExtensions.IsAsciiDigit))]
+		[BenchmarkCategory(Categories.New)]
+		public void IsAsciiDigit()
+		{
+			var result = this._testCharacter.IsAsciiDigit();
+
+			base.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(StringExtensions.IsAsciiLetter))]
 		public void IsAsciiLetter()
 		{
@@ -132,6 +141,15 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		public void IsAsciiLetterOrDigit()
 		{
 			var result = this._testCharacter.IsAsciiLetterOrDigit();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.IsAsciiWhitespace))]
+		[BenchmarkCategory(Categories.New)]
+		public void IsAsciiWhitespace()
+		{
+			var result = this._testCharacter.IsAsciiDigit();
 
 			base.Consumer.Consume(result);
 		}
@@ -180,7 +198,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringBuilderHelper.ConcatToString) + ":01**")]
 		public void SplitCharSeparator02()
 		{
-			var result = StringBuilderHelper.ConcatToString(this.CommaDelimitedString, ",", Tristate.True, this.StringArray);
+			var result = StringBuilderHelper.ConcatToString(this.CommaDelimitedString, Tristate.True, this.StringArray);
 
 			base.Consumer.Consume(result);
 		}

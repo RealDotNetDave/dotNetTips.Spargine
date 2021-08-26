@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-07-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="ServiceProxy.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 
@@ -49,7 +50,7 @@ namespace dotNetTips.Spargine.Core.Web
 		/// Initializes a new instance of the <see cref="ServiceProxy{T}" /> class.
 		/// </summary>
 		/// <param name="serviceEndpoint">The service endpoint.</param>
-		protected ServiceProxy(string serviceEndpoint) => this._serviceEndpoint = serviceEndpoint;
+		protected ServiceProxy([NotNull] string serviceEndpoint) => this._serviceEndpoint = serviceEndpoint;
 
 		/// <summary>
 		/// Gets the channel.

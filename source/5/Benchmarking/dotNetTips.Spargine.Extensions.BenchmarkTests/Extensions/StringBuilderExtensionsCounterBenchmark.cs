@@ -4,9 +4,9 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="StringBuilderExtensionsCounterPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="StringBuilderExtensionsCounterBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -21,10 +21,10 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	/// <summary>
 	/// StringBuilderExtensions CounterPerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory(nameof(StringBuilderExtensions))]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Strings)]
 	public class StringBuilderExtensionsCounterBenchmark : CounterBenchmark
 	{
 		[Benchmark(Description = nameof(StringBuilderExtensions.AppendBytes) + ":01*")]

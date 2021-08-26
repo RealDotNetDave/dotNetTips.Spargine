@@ -31,10 +31,10 @@ namespace dotNetTips.Spartine.Core.Tests
 	[TestClass]
 	public class ValidationTests
 	{
-		private const string _badEmail = "BADEMAIL";
-		private const string _badUrl = "123://www.amazon.com";
-		private const string _goodEmail = "fakeemail@google.com";
-		private const string _goodUrl = "http://www.amazon.com";
+		private const string BadEmail = "BADEMAIL";
+		private const string BadUrl = "123://www.amazon.com";
+		private const string GoodEmail = "fakeemail@google.com";
+		private const string GoodUrl = "http://www.amazon.com";
 
 
 
@@ -133,7 +133,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		[TestMethod]
 		public void TryValidateParamDecimalTest()
 		{
-			Decimal testValue = 10000;
+			var testValue = 10000m;
 
 			try
 			{
@@ -354,16 +354,16 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			try
 			{
-				Validate.TryValidateParam(_goodEmail, StringType.Email, 1, 100, nameof(_goodEmail));
+				Validate.TryValidateParam(GoodEmail, StringType.Email, 1, 100, nameof(GoodEmail));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(_goodEmail, StringType.Email, 100, 200, nameof(_goodEmail)));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(GoodEmail, StringType.Email, 100, 200, nameof(GoodEmail)));
 
-			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badEmail, StringType.Email, 1, 100, nameof(_badEmail)));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(BadEmail, StringType.Email, 1, 100, nameof(BadEmail)));
 
 		}
 
@@ -409,14 +409,14 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			try
 			{
-				Validate.TryValidateParam(_goodEmail, expression, nameof(_goodEmail));
+				Validate.TryValidateParam(GoodEmail, expression, nameof(GoodEmail));
 			}
 			catch
 			{
 				Assert.Fail();
 			}
 
-			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badEmail, expression, nameof(_badEmail)));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(BadEmail, expression, nameof(BadEmail)));
 
 		}
 
@@ -441,7 +441,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			try
 			{
-				Validate.TryValidateParam(_goodUrl, StringType.Url, 0, 100, nameof(_goodUrl));
+				Validate.TryValidateParam(GoodUrl, StringType.Url, 0, 100, nameof(GoodUrl));
 			}
 			catch
 			{
@@ -449,9 +449,9 @@ namespace dotNetTips.Spartine.Core.Tests
 			}
 
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(_goodUrl, StringType.Url, 50, 100, "none"));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => Validate.TryValidateParam(GoodUrl, StringType.Url, 50, 100, "none"));
 
-			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(_badUrl, StringType.Url, 0, 100, "none"));
+			_ = Assert.ThrowsException<ArgumentInvalidException>(() => Validate.TryValidateParam(BadUrl, StringType.Url, 0, 100, "none"));
 		}
 
 

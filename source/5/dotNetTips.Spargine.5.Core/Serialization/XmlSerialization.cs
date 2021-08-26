@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-14-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="XmlSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Xml;
 using System.Xml.Linq;
@@ -33,10 +34,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">xml.</exception>
 		[Information(nameof(Deserialize), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static TResult Deserialize<TResult>(string xml) where TResult : class
+		public static TResult Deserialize<TResult>([NotNull] string xml) where TResult : class
 		{
-			Validate.TryValidateParam(xml, nameof(xml));
-
 			using var sr = new StringReader(xml);
 			var xs = new XmlSerializer(typeof(TResult));
 
@@ -52,16 +51,11 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static TResult DeserializeFromFile<TResult>(string fileName) where TResult : class
+		public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class
 		{
-			Validate.TryValidateParam(fileName, nameof(fileName));
-
-			if (File.Exists(fileName) == false)
-			{
-				throw new FileNotFoundException("File not found. Cannot deserialize from XML.", fileName);
-			}
-
-			return Deserialize<TResult>(File.ReadAllText(fileName));
+			return File.Exists(fileName) == false
+				? throw new FileNotFoundException("File not found. Cannot deserialize from XML.", fileName)
+				: Deserialize<TResult>(File.ReadAllText(fileName));
 		}
 
 		/// <summary>
@@ -71,10 +65,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentNullException">obj.</exception>
 		[Information(nameof(Serialize), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string Serialize(object obj)
+		public static string Serialize([NotNull] object obj)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(obj is not null, nameof(obj));
-
 			using var writer = new StringWriter();
 			using var xmlWriter = XmlWriter.Create(writer);
 
@@ -90,11 +82,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="obj">The obj.</param>
 		/// <param name="fileName">Name of the file.</param>
 		[Information(nameof(SerializeToFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static void SerializeToFile(object obj, string fileName)
+		public static void SerializeToFile([NotNull] object obj, [NotNull] string fileName)
 		{
-			Validate.TryValidateParam<ArgumentNullException>(obj is not null, nameof(obj));
-			Validate.TryValidateParam(fileName, nameof(fileName));
-
 			if (File.Exists(fileName))
 			{
 				File.Delete(fileName);
@@ -109,7 +98,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="input">The input.</param>
 		/// <returns>XDocument.</returns>
 		[Information(nameof(StringToXDocument), "David McCarter", "9/9/2020", "9/9/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None)]
-		public static XDocument StringToXDocument(string input) => StringToXDocument(input, null);
+		public static XDocument StringToXDocument([NotNull] string input) => StringToXDocument(input, null);
 
 		/// <summary>
 		/// Securely convert string to XDocument.
@@ -119,10 +108,8 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <returns>XDocument.</returns>
 		/// <remarks>Uses DtdProcessing.Prohibit.</remarks>
 		[Information(nameof(StringToXDocument), "David McCarter", "9/9/2020", "9/9/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None)]
-		public static XDocument StringToXDocument(string input, XmlResolver resolver)
+		public static XDocument StringToXDocument([NotNull] string input, XmlResolver resolver)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			var options = new XmlReaderSettings { DtdProcessing = DtdProcessing.Prohibit, XmlResolver = resolver };
 
 			using var reader = XmlReader.Create(new StringReader(input), options);

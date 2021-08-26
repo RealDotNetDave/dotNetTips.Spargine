@@ -1,31 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
-    <AssemblyVersion>2021.6.14.103</AssemblyVersion>
-    <FileVersion>2021.6.14.103</FileVersion>
+	<TargetFramework>net5.0</TargetFramework>
+	<RootNamespace>dotNetTips.Spargine._5.AspNet</RootNamespace>
+	<AssemblyVersion>2021.6.14.103</AssemblyVersion>
+	<FileVersion>2021.6.14.103</FileVersion>
 	  <LangVersion>latest</LangVersion>
-    <Version>2021.9.4.15</Version>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <AnalysisLevel>5.0</AnalysisLevel>
+	<Version>2021.9.4.21</Version>
+	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	<AnalysisLevel>5.0</AnalysisLevel>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+	<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+	<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\5\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
-    <ProjectReference Include="..\5\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
+	<ProjectReference Include="..\5\dotNetTips.Spargine.5.Core\dotNetTips.Spargine.5.Core.csproj" />
+	<ProjectReference Include="..\5\dotNetTips.Spargine.5.Extensions\dotNetTips.Spargine.5.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

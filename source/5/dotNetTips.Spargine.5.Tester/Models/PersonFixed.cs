@@ -288,12 +288,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="NotImplementedException"></exception>
 		public override bool Equals(object obj)
 		{
-			if (ReferenceEquals(this, obj))
-			{
-				return true;
-			}
-
-			return false;
+			return ReferenceEquals(this, obj);
 		}
 
 		/// <summary>
@@ -304,12 +299,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="NotImplementedException"></exception>
 		public bool Equals(PersonFixed other)
 		{
-			if (ReferenceEquals(this, other))
-			{
-				return true;
-			}
-
-			return false;
+			return ReferenceEquals(this, other);
 		}
 
 		/// <summary>

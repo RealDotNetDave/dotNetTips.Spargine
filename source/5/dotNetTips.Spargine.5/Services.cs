@@ -4,7 +4,7 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -14,6 +14,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.ServiceProcess;
 using dotNetTips.Spargine.Core;
@@ -41,10 +42,8 @@ namespace dotNetTips.Spargine
 		/// <returns><c>true</c> if [is application already running] [the specified process name]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">processName - Process name is required.</exception>
 		[Information(Status = Status.Available)]
-		public static bool IsProcessRunning(string processName)
+		public static bool IsProcessRunning([NotNull] string processName)
 		{
-			Validate.TryValidateParam(processName, nameof(processName));
-
 			return Process.GetProcessesByName(processName).Length > 0;
 		}
 
@@ -54,10 +53,8 @@ namespace dotNetTips.Spargine
 		/// <param name="processName">Name of the process.</param>
 		/// <exception cref="ArgumentNullException">Process name is nothing or empty.</exception>
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
-		public static void KillProcess(string processName)
+		public static void KillProcess([NotNull] string processName)
 		{
-			Validate.TryValidateParam(processName, nameof(processName));
-
 			var app = Process.GetProcessesByName(processName).FirstOrDefault();
 
 			if (app is not null)
@@ -73,7 +70,7 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(ServiceExists), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool ServiceExists(string serviceName)
+		public static bool ServiceExists([NotNull] string serviceName)
 		{
 			var service = LoadService(serviceName);
 
@@ -88,7 +85,7 @@ namespace dotNetTips.Spargine
 		/// <exception cref="InvalidOperationException"></exception>
 		/// <exception cref="InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static ServiceControllerStatus ServiceStatus(string serviceName)
+		public static ServiceControllerStatus ServiceStatus([NotNull] string serviceName)
 		{
 			var service = LoadService(serviceName);
 
@@ -101,7 +98,7 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceActionResult.</returns>
 		[Information(nameof(StartService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static ServiceActionResult StartService(string serviceName)
+		public static ServiceActionResult StartService([NotNull] string serviceName)
 		{
 			var statusResult = ServiceActionResult.Error;
 
@@ -127,10 +124,8 @@ namespace dotNetTips.Spargine
 		/// <param name="requests">The requests.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		[Information(nameof(StartServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void StartServices(IEnumerable<ServiceAction> requests)
+		public static void StartServices([NotNull] IEnumerable<ServiceAction> requests)
 		{
-			Validate.TryValidateParam(requests, nameof(requests));
-
 			requests.ToList().ForEach(request =>
 			{
 				request.ServiceActionResult = StartService(request.ServiceName);
@@ -142,10 +137,8 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="requests">The requests.</param>
 		[Information(nameof(StartStopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void StartStopServices(IEnumerable<ServiceAction> requests)
+		public static void StartStopServices([NotNull] IEnumerable<ServiceAction> requests)
 		{
-			Validate.TryValidateParam(requests, nameof(requests));
-
 			requests.ToList().ForEach(request =>
 			{
 				if (request.ServiceActionRequest == ServiceActionRequest.Start)
@@ -165,10 +158,8 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceActionResult.</returns>
 		[Information(nameof(StopService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static ServiceActionResult StopService(string serviceName)
+		public static ServiceActionResult StopService([NotNull] string serviceName)
 		{
-			Validate.TryValidateParam(serviceName, nameof(serviceName));
-
 			var statusResult = ServiceActionResult.NotFound;
 
 			if (ServiceExists(serviceName) == false)
@@ -192,14 +183,12 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="requests">The requests.</param>
 		[Information(nameof(StopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void StopServices(IEnumerable<ServiceAction> requests)
+		public static void StopServices([NotNull] IEnumerable<ServiceAction> requests)
 		{
-			Validate.TryValidateParam(requests, nameof(requests));
-
 			requests.ToList().ForEach(request =>
-			{
-				request.ServiceActionResult = StopService(request.ServiceName);
-			});
+					{
+						request.ServiceActionResult = StopService(request.ServiceName);
+					});
 		}
 
 		/// <summary>
@@ -208,6 +197,6 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceController.</returns>
 		[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		private static ServiceController LoadService(string serviceName) => ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
+		private static ServiceController LoadService([NotNull] string serviceName) => ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
 	}
 }

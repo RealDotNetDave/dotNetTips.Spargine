@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-14-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="ExceptionThrower.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core.Properties;
@@ -31,12 +32,13 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <exception cref="ArgumentException"></exception>
-		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowArgumentException(string message, [NotNull] string paramName) => throw new ArgumentException(paramName, message.DefaultIfNull(Resources.ExMessageInvalidArgument));
+		public static void ThrowArgumentException([NotNull] string message, [NotNull] string paramName) => throw new ArgumentException(paramName, message.DefaultIfNull(Resources.ExMessageInvalidArgument));
 
 		/// <summary>
 		/// Throws the ArgumentException.
@@ -44,25 +46,25 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
 		/// <exception cref="ArgumentException"></exception>
-		/// <exception cref="ArgumentException"></exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowArgumentException(string message, Exception innerException) => throw new ArgumentException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
+		public static void ThrowArgumentException([NotNull] string message, [AllowNull] Exception innerException) => throw new ArgumentException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
 
 		/// <summary>
 		/// Throws the ArgumentInvalidException.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
-		/// <exception cref="ArgumentInvalidException"></exception>
-		/// <exception cref="ArgumentException"></exception>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="ArgumentInvalidException">Argument is invalid.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowArgumentInvalidException), author: "David McCarter", createdOn: "8/13/2020", modifiedOn: "8/13/2020", Status = Status.Available)]
-		public static void ThrowArgumentInvalidException(string message, [NotNull] string paramName) => throw new ArgumentInvalidException(paramName, message.DefaultIfNull(Resources.ExMessageInvalidArgument));
+		public static void ThrowArgumentInvalidException([NotNull] string message, [NotNull] string paramName) => throw new ArgumentInvalidException(paramName, message.DefaultIfNull(Resources.ExMessageInvalidArgument));
 
 		/// <summary>
 		/// Throws the ArgumentInvalidException.
@@ -70,20 +72,22 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
 		/// <exception cref="ArgumentInvalidException"></exception>
-		/// <exception cref="ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowArgumentInvalidException), author: "David McCarter", createdOn: "8/13/2020", modifiedOn: "8/13/2020", Status = Status.Available)]
-		public static void ThrowArgumentInvalidException(string message, Exception innerException) => throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
+		public static void ThrowArgumentInvalidException([NotNull] string message, [AllowNull] Exception innerException) => throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
 
 		/// <summary>
 		/// Throws the argument null exception.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="ArgumentNullException"></exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "8/12/2020", modifiedOn: "8/12/2020", Status = Status.Available)]
@@ -94,31 +98,34 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="ArgumentNullException">Argument is null.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowArgumentNullException(string message, [NotNull] string paramName) => throw new ArgumentNullException(paramName, message.DefaultIfNull(Resources.ExMessageArgumentNull));
+		public static void ThrowArgumentNullException([NotNull] string message, [NotNull] string paramName) => throw new ArgumentNullException(paramName, message.DefaultIfNull(Resources.ExMessageArgumentNull));
 
 		/// <summary>
 		/// Throws the ArgumentNullException.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentNullException"></exception>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="ArgumentNullException">Argument is null.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowArgumentNullException(string message, Exception innerException) => throw new ArgumentNullException(message.DefaultIfNull(Resources.ExMessageArgumentNull), innerException);
+		public static void ThrowArgumentNullException([NotNull] string message, [AllowNull] Exception innerException) => throw new ArgumentNullException(message.DefaultIfNull(Resources.ExMessageArgumentNull), innerException);
 
 		/// <summary>
 		/// Throws the argument out of range exception.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", modifiedOn: "9/5/2020", Status = Status.Available)]
@@ -129,31 +136,34 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", modifiedOn: "9/5/2020", Status = Status.Available)]
-		public static void ThrowArgumentOutOfRangeException([NotNull] string paramName, string message) => throw new ArgumentOutOfRangeException(paramName, message.DefaultIfNull(Resources.ExArgumentOutOfRange));
+		public static void ThrowArgumentOutOfRangeException([NotNull] string paramName, [NotNull] string message) => throw new ArgumentOutOfRangeException(paramName, message.DefaultIfNull(Resources.ExArgumentOutOfRange));
 
 		/// <summary>
 		/// Throws the argument out of range exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		/// <exception cref="ArgumentOutOfRangeException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", modifiedOn: "9/5/2020", Status = Status.Available)]
-		public static void ThrowArgumentOutOfRangeException(string message, Exception innerException) => throw new ArgumentOutOfRangeException(message.DefaultIfNull(Resources.ExArgumentOutOfRange), innerException);
+		public static void ThrowArgumentOutOfRangeException([NotNull] string message, [AllowNull] Exception innerException) => throw new ArgumentOutOfRangeException(message.DefaultIfNull(Resources.ExArgumentOutOfRange), innerException);
 
 		/// <summary>
 		/// Throws the ArgumentReadOnlyException.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentReadOnlyException"></exception>
-		/// <exception cref="ArgumentReadOnlyException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
@@ -164,50 +174,52 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="directory">The directory.</param>
-		/// <exception cref="DirectoryNotFoundException"></exception>
-		/// <exception cref="DirectoryNotFoundException"></exception>
+		/// <exception cref="DirectoryNotFoundException">Directory not found.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowDirectoryNotFoundException), author: "David McCarter", createdOn: "8/13/2020", modifiedOn: "8/13/2020", Status = Status.Available)]
-		public static void ThrowDirectoryNotFoundException(string message, [NotNull] string directory) => throw new DirectoryNotFoundException(directory, message.DefaultIfNull(Resources.ExMessageDirectoryNotFound));
+		public static void ThrowDirectoryNotFoundException([NotNull] string message, [NotNull] string directory) => throw new DirectoryNotFoundException(directory, message.DefaultIfNull(Resources.ExMessageDirectoryNotFound));
 
 		/// <summary>
 		/// Throws the ArgumentInvalidException.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
-		/// <exception cref="ArgumentInvalidException"></exception>
-		/// <exception cref="ArgumentException"></exception>
-		/// <exception cref="ArgumentNullException"></exception>
+		/// <exception cref="ArgumentInvalidException">Argument is invalid.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowDirectoryNotFoundException), author: "David McCarter", createdOn: "8/13/2020", modifiedOn: "8/13/2020", Status = Status.Available)]
-		public static void ThrowDirectoryNotFoundException(string message, Exception innerException) => throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ExMessageDirectoryNotFound), innerException);
+		public static void ThrowDirectoryNotFoundException([NotNull] string message, [AllowNull] Exception innerException) => throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ExMessageDirectoryNotFound), innerException);
 
 		/// <summary>
 		/// Throws the file not found exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="FileNotFoundException"></exception>
-		/// <exception cref="FileNotFoundException"></exception>
+		/// <exception cref="FileNotFoundException">File not found.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowFileNotFoundException(string message, Exception innerException) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), innerException);
+		public static void ThrowFileNotFoundException([NotNull] string message, [AllowNull] Exception innerException) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), innerException);
 
 		/// <summary>
 		/// Throws the file not found exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="fileName">Name of the file.</param>
-		/// <exception cref="FileNotFoundException"></exception>
-		/// <exception cref="FileNotFoundException"></exception>
+		/// <exception cref="FileNotFoundException">File not found.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowFileNotFoundException(string message, [NotNull] string fileName) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), fileName);
+		public static void ThrowFileNotFoundException([NotNull] string message, [NotNull] string fileName) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), fileName);
 
 		/// <summary>
 		/// Throws the file not found exception.
@@ -215,24 +227,26 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="FileNotFoundException"></exception>
-		/// <exception cref="FileNotFoundException"></exception>
+		/// <exception cref="FileNotFoundException">File is not found.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowFileNotFoundException(string message, [NotNull] string fileName, Exception innerException) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), fileName, innerException);
+		public static void ThrowFileNotFoundException([NotNull] string message, [NotNull] string fileName, [AllowNull] Exception innerException) => throw new FileNotFoundException(message.DefaultIfNull(Resources.FileNotFound), fileName, innerException);
 
 		/// <summary>
 		/// Throws the invalid cast exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="InvalidCastException"></exception>
-		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidCastException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowInvalidCastException(string message, [NotNull] string paramName) => throw new InvalidCastException($"{message.DefaultIfNull(Resources.ExMessageInvalidArgument)} ParamName: {paramName}");
+		public static void ThrowInvalidCastException([NotNull] string message, [NotNull] string paramName) => throw new InvalidCastException($"{message.DefaultIfNull(Resources.ExMessageInvalidArgument)} ParamName: {paramName}");
 
 
 		/// <summary>
@@ -240,58 +254,63 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidCastException"></exception>
-		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidCastException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowInvalidCastException(string message, Exception innerException) => throw new InvalidCastException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
+		public static void ThrowInvalidCastException([NotNull] string message, [AllowNull] Exception innerException) => throw new InvalidCastException(message.DefaultIfNull(Resources.ExMessageInvalidArgument), innerException);
 
 		/// <summary>
 		/// Throws the invalid enum type exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
-		/// <exception cref="InvalidEnumTypeException"></exception>
-		/// <exception cref="InvalidEnumTypeException"></exception>
+		/// <exception cref="InvalidEnumTypeException">Invalid enum type.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidEnumTypeException), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowInvalidEnumTypeException(string message) => throw new InvalidEnumTypeException(message.DefaultIfNull(Resources.ExMessageInvalidEnumType));
+		public static void ThrowInvalidEnumTypeException([NotNull] string message) => throw new InvalidEnumTypeException(message.DefaultIfNull(Resources.ExMessageInvalidEnumType));
 
 		/// <summary>
 		/// Throws the invalid enum type exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidCastException"></exception>
-		/// <exception cref="InvalidCastException"></exception>
+		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidEnumTypeException), author: "David McCarter", createdOn: "11/11/2020", modifiedOn: "11/11/2020", Status = Status.Available)]
-		public static void ThrowInvalidEnumTypeException(string message, Exception innerException) => throw new InvalidCastException(message.DefaultIfNull(Resources.ExMessageInvalidEnumType), innerException);
+		public static void ThrowInvalidEnumTypeException([NotNull] string message, [AllowNull] Exception innerException) => throw new InvalidCastException(message.DefaultIfNull(Resources.ExMessageInvalidEnumType), innerException);
 
 		/// <summary>
 		/// Throws a InvalidOperationException.
 		/// </summary>
 		/// <param name="message">The message.</param>
-		/// <exception cref="InvalidOperationException"></exception>
-		/// <exception cref="InvalidOperationException"></exception>
+		/// <exception cref="InvalidOperationException">Invalid operation.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowInvalidOperationException(string message) => throw new InvalidOperationException(message.DefaultIfNull(Resources.ExMessageInvalidOperation));
+		public static void ThrowInvalidOperationException([NotNull] string message) => throw new InvalidOperationException(message.DefaultIfNull(Resources.ExMessageInvalidOperation));
 
 		/// <summary>
 		/// Throws a InvalidOperationException.
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidOperationException"></exception>
-		/// <exception cref="InvalidOperationException"></exception>
+		/// <exception cref="InvalidOperationException">Invalid operation.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", Status = Status.Available)]
-		public static void ThrowInvalidOperationException(string message, Exception innerException) => throw new InvalidOperationException(message.DefaultIfNull(Resources.ExMessageInvalidOperation), innerException);
+		public static void ThrowInvalidOperationException([NotNull] string message, [AllowNull] Exception innerException) => throw new InvalidOperationException(message.DefaultIfNull(Resources.ExMessageInvalidOperation), innerException);
 
 		/// <summary>
 		/// Throws the invalid value exception.
@@ -299,11 +318,13 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
-		/// <exception cref="InvalidValueException{TValue}"></exception>
+		/// <exception cref="InvalidValueException{TValue}">Invalid value.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidValueException), author: "David McCarter", createdOn: "2/10/2021", Status = Status.Available)]
-		public static void ThrowInvalidValueException<TValue>(string message, [NotNull] TValue value) => throw new InvalidValueException<TValue>(message: message, value: value);
+		public static void ThrowInvalidValueException<TValue>([NotNull] string message, [NotNull] TValue value) => throw new InvalidValueException<TValue>(message: message, value: value);
 
 		/// <summary>
 		/// Throws the invalid value exception.
@@ -312,11 +333,13 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidValueException{TValue}"></exception>
+		/// <exception cref="InvalidValueException{TValue}">Invalid value.</exception>
+		[Pure]
+		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
 		[Information(nameof(ThrowInvalidValueException), author: "David McCarter", createdOn: "2/10/2021", Status = Status.Available)]
-		public static void ThrowInvalidValueException<TValue>(string message, [NotNull] TValue value, Exception innerException) => throw new InvalidValueException<TValue>(message: message, value: value, innerException: innerException);
+		public static void ThrowInvalidValueException<TValue>([NotNull] string message, [NotNull] TValue value, [AllowNull] Exception innerException) => throw new InvalidValueException<TValue>(message: message, value: value, innerException: innerException);
 
 		/// <summary>
 		/// Defaults if null.
@@ -324,6 +347,6 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="value">The value.</param>
 		/// <param name="defaultValue">The default value.</param>
 		/// <returns>System.String.</returns>
-		private static string DefaultIfNull(this string value, [NotNull] string defaultValue) => value ?? defaultValue ?? string.Empty;
+		private static string DefaultIfNull([NotNull] this string value, [NotNull] string defaultValue) => value ?? defaultValue ?? string.Empty;
 	}
 }

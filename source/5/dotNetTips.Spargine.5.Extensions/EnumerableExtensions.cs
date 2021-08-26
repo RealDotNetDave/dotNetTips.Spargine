@@ -61,14 +61,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, bool condition)
 		{
-			if (condition)
-			{
-				return list.Add(item);
-			}
-			else
-			{
-				return list;
-			}
+			return condition ? list.Add(item) : list;
 		}
 		/// <summary>
 		/// Determines whether the specified collection has items specified.
@@ -131,7 +124,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool DoesNotHaveItems([NotNull] this IEnumerable list) => list.Count() <= 0;
 
 		/// <summary>
-		/// Fasts any.
+		/// Fast any.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The source.</param>
@@ -142,7 +135,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool FastAny<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			return list.FirstOrDefault(predicate) is not null;
+			return list.Any(predicate);
 		}
 
 		/// <summary>
@@ -154,20 +147,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
-		public static int FastCount<T>(this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		public static int FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			if (Validate.TryValidateNull(list))
-			{
-				return 0;
-			}
-
-			if (list is List<T>)
-			{
-				return ( list as List<T> ).Count(predicate);
-			}
-
 			return list.Count(predicate);
-
 		}
 
 		/// <summary>
@@ -180,14 +162,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FirstOrDefault<T>([NotNull] this IEnumerable<T> list, [NotNull] T alternate)
+		public static T FirstOrDefault<T>(this IEnumerable<T> list, [NotNull] T alternate)
 		{
-			if (list is null)
-			{
-				return alternate;
-			}
-
-			return list.DefaultIfEmpty(alternate).First();
+			return list is null ? alternate : list.DefaultIfEmpty(alternate).First();
 		}
 
 
@@ -212,14 +189,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var filteredList = list.Where(predicate).AsEnumerable();
 
-			if (filteredList.HasItems())
-			{
-				return filteredList.FirstOrDefault(alternate);
-			}
-			else
-			{
-				return alternate;
-			}
+			return filteredList.HasItems() ? filteredList.FirstOrDefault(alternate) : alternate;
 		}
 
 		/// <summary>
@@ -277,7 +247,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsNullOrEmpty([NotNull] this IEnumerable list) => list.GetEnumerator().MoveNext() == false;
+		public static bool IsNullOrEmpty(this IEnumerable list)
+		{
+			return list is null || list.GetEnumerator().MoveNext() == false;
+		}
 
 		/// <summary>
 		/// Shuffles the specified count.
@@ -289,9 +262,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">List cannot be null.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 0</exception>
 		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> list, int count = 1)
+		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> list, int count = 1)
 		{
-			Validate.TryValidateParam(list, nameof(list));
 			Validate.TryValidateParam(count, 1, int.MaxValue, nameof(count));
 
 			return list.Shuffle().Take(count);
@@ -408,7 +380,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> list)
 		{
-			return (Collection<T>)Collection<T>.Create(list);
+			return Collection<T>.Create(list);
 		}
 
 		/// <summary>

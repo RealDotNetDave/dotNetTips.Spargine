@@ -4,14 +4,15 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-20-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
-// <copyright file="EnumerableExtensionsPerfTestRunner.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+// <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
 
+using System;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
@@ -21,12 +22,21 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	/// <summary>
 	/// EnumerableExtensions PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CollectionBenchmark" />
+	/// Implements the <see cref="CollectionBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CollectionBenchmark" />
-	[BenchmarkCategory(nameof(EnumerableExtensions))]
+	/// <seealso cref="CollectionBenchmark" />
+	[BenchmarkCategory(Categories.Collections)]
 	public class EnumerableExtensionsCollectionBenchmark : CollectionBenchmark
 	{
+
+		[Benchmark(Description = "Any: With Predicate")]
+		[BenchmarkCategory(Categories.LINQ)]
+		public void Any01()
+		{
+			var result = base.PersonProperList.Any(p => p.City.Contains("A", StringComparison.CurrentCulture));
+
+			base.Consumer.Consume(result);
+		}
 		[Benchmark(Description = nameof(EnumerableExtensions.Count))]
 		public void Count01()
 		{
@@ -35,10 +45,10 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(EnumerableExtensions.FastAny))]
-		public void FastAny01()
+		[Benchmark(Description = nameof(EnumerableExtensions.FastAny) + ": With Predicate")]
+		public void FastAny02()
 		{
-			var result = base.PersonProperList.FastAny(p => p.City.Contains("A"));
+			var result = base.PersonProperList.FastAny(p => p.City.Contains("A", StringComparison.CurrentCulture));
 
 			base.Consumer.Consume(result);
 		}

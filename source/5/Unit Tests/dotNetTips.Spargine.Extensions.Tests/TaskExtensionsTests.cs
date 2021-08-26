@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using dotNetTips.Spargine.Core;
-using dotNetTips.Spargine.IO;
-using Microsoft.AspNetCore.Components;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -29,9 +22,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void FireAndForgetTest02()
 		{
 			Action<Exception> p = (Exception ex) => Debug.WriteLine(ex.Message);
-			var exAction = p;
 
-			this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(exAction);
+			this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(p);
 
 			Assert.AreEqual(this._fireResult, nameof(this.FireAndForgetTest01));
 		}

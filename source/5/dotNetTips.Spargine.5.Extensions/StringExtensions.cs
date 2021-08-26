@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-04-2021
+// Last Modified On : 08-26-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -37,11 +38,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "1/9/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ComputeHash(this string input, HashType hashType = HashType.SHA256)
+		public static string ComputeHash([NotNull] this string input, HashType hashType = HashType.SHA256)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-			Validate.TryValidateParam(hashType, nameof(hashType));
-
 			var hash = GetHash(input, hashType);
 
 			var sb = new StringBuilder(input.Count());
@@ -61,10 +59,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(ComputeSHA256Hash), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ComputeSHA256Hash(this string input)
+		public static string ComputeSHA256Hash([NotNull] this string input)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			// Create a SHA256
 			using var sha256Hash = SHA256.Create();
 
@@ -85,10 +81,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(Concat), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string Concat(this string input, string delimiter, Tristate addLineFeed, params string[] args)
+		public static string Concat([NotNull] this string input, string delimiter, Tristate addLineFeed, params string[] args)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			delimiter = delimiter.DefaultIfNull();
 
 			var sb = new StringBuilder(input);
@@ -122,14 +116,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="characters">The characters.</param>
 		/// <returns><c>true</c> if the specified characters contains any; otherwise, <c>false</c>.</returns>
 		[Information(nameof(ContainsAny), "David McCarter", "9/15/2017", "2/9/2021", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool ContainsAny(this string input, params string[] characters)
+		public static bool ContainsAny([NotNull] this string input, [NotNull] params string[] characters)
 		{
-			if (input.HasValue() == false || characters.Length == 0)
-			{
-				return false;
-			}
-
-			return characters.FastAny(character =>
+			return characters.Length != 0 && characters.FastAny(character =>
 			{
 				return input.Contains(character);
 			});
@@ -152,7 +141,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string DefaultIfNull(this string value, string defaultValue) => value ?? defaultValue ?? string.Empty;
+		public static string DefaultIfNull(this string value, [NotNull] string defaultValue) => value ?? defaultValue ?? string.Empty;
 
 		/// <summary>
 		/// Defaults to value if string is null or empty.
@@ -162,7 +151,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(DefaultIfNullOrEmpty), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string DefaultIfNullOrEmpty(this string value, string defaultValue) => string.IsNullOrEmpty(value) ? defaultValue : value;
+		public static string DefaultIfNullOrEmpty(this string value, [NotNull] string defaultValue) => string.IsNullOrEmpty(value) ? defaultValue : value;
 
 		/// <summary>
 		/// Turns a delimited string to a array of strings.
@@ -172,10 +161,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String[].</returns>
 		/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 		[Information(nameof(DelimitedStringToArray), "David McCarter", "8/13/2020", "8/13/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string[] DelimitedStringToArray(this string input, char delimiter = ControlChars.Comma)
+		public static string[] DelimitedStringToArray([NotNull] this string input, char delimiter = ControlChars.Comma)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			return input.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
 		}
 
@@ -187,7 +174,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(EqualsIgnoreCase), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool EqualsIgnoreCase(this string input, string valueToCompare) => string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase);
+		public static bool EqualsIgnoreCase([NotNull] this string input, [NotNull] string valueToCompare) => string.Equals(input, valueToCompare, StringComparison.OrdinalIgnoreCase);
 
 		/// <summary>
 		/// Determines if the two strings are null or empty.
@@ -197,7 +184,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool EqualsOrBothNullOrEmpty(this string input, string valueToCompare) => string.Equals(input ?? string.Empty, valueToCompare ?? string.Empty, StringComparison.Ordinal);
+		public static bool EqualsOrBothNullOrEmpty(this string input, [NotNull] string valueToCompare) => string.Equals(input ?? string.Empty, valueToCompare ?? string.Empty, StringComparison.Ordinal);
 
 		/// <summary>
 		/// Extracts a string from a beginning and end value.
@@ -207,19 +194,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="end">The end.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(Extract), "David McCarter", "10/8/2020", "2/9/2021", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string Extract(this string input, string start, string end)
+		public static string Extract([NotNull] this string input, [NotNull] string start, [NotNull] string end)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				return input;
-			}
-			else
-			{
-				var i = input.IndexOf(start, StringComparison.Ordinal);
-				var j = input.IndexOf(end, StringComparison.Ordinal);
+			var i = input.IndexOf(start, StringComparison.Ordinal);
+			var j = input.IndexOf(end, StringComparison.Ordinal);
 
-				return input[i..j];
-			}
+			return input[i..j];
 		}
 
 		/// <summary>
@@ -228,17 +208,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The value.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(FromBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string FromBase64(this string input)
+		public static string FromBase64([NotNull] this string input)
 		{
-			if (input.HasValue() == false)
-			{
-				return input;
-			}
-			else
-			{
-				var encoding = new ASCIIEncoding();
-				return encoding.GetString(Convert.FromBase64String(input));
-			}
+			var encoding = new ASCIIEncoding();
+			return encoding.GetString(Convert.FromBase64String(input));
 		}
 
 		/// <summary>
@@ -273,10 +246,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be null.</exception>
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasValue(this string input, string value)
+		public static bool HasValue(this string input, [NotNull] string value)
 		{
 			Validate.TryValidateParam(input, nameof(input));
-			Validate.TryValidateParam(value, nameof(value));
 
 			return input is not null && ( string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0 );
 		}
@@ -291,12 +263,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasValue(this string input, string expression, RegexOptions options)
 		{
-			if (input.HasValue() && expression.HasValue())
-			{
-				return new Regex(expression, options).IsMatch(input);
-			}
-
-			return false;
+			return input.HasValue() && expression.HasValue() ? new Regex(expression, options).IsMatch(input) : false;
 		}
 
 		/// <summary>
@@ -323,13 +290,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is whitespace; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool HasWhitespace(this string input)
+		public static bool HasWhitespace([NotNull] this string input)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				return false;
-			}
-
 			for (var i = 0; i < input.Length; i++)
 			{
 				if (!IsAsciiWhitespace(input[i]))
@@ -351,9 +313,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">Input cannot be null or empty.</exception>
 		/// <exception cref="InvalidCastException">Length must be greater a positive value.</exception>
 		[Information(nameof(Indent), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string Indent(this string input, int length, char indentationCharacter)
+		public static string Indent([NotNull] this string input, int length, char indentationCharacter)
 		{
-			Validate.TryValidateParam(input, nameof(input));
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() == false, nameof(length));
 
 			var sb = new StringBuilder(input.Count());
@@ -383,7 +344,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static bool IsAsciiDigit(this char character) => Char.IsDigit(character);
+		public static bool IsAsciiDigit(this char character) => char.IsDigit(character);
 
 		/// <summary>
 		/// Determines whether the input is ASCII letter.
@@ -392,7 +353,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsAsciiLetter(this char character) => Char.IsLetter(character);
+		public static bool IsAsciiLetter(this char character) => char.IsLetter(character);
 
 		/// <summary>
 		/// Determines whether the input is ASCII letter or digit.
@@ -401,7 +362,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool IsAsciiLetterOrDigit(this char character) => Char.IsLetterOrDigit(character);
+		public static bool IsAsciiLetterOrDigit(this char character) => char.IsLetterOrDigit(character);
 
 		/// <summary>
 		/// Determines whether the specified character is whitespace.
@@ -410,7 +371,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
-		public static bool IsAsciiWhitespace(this char character) => Char.IsWhiteSpace(character);
+		public static bool IsAsciiWhitespace(this char character) => char.IsWhiteSpace(character);
 
 		/// <summary>
 		/// Determines whether the input is credit card number.
@@ -444,7 +405,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
-		public static bool IsEmpty(this string input) => input.IsNotNull() && ( input.Length == 0 );
+		public static bool IsEmpty([NotNull] this string input) => input.Length == 0;
 
 		/// <summary>
 		/// Determines whether the input is first and last name.
@@ -460,18 +421,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
-		public static bool IsGuid(this string value)
+		public static bool IsGuid([NotNull] this string value)
 		{
-			var returnValue = false;
+			var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
 
-			if (value is not null)
-			{
-				var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
-
-				returnValue = reg.IsMatch(value);
-			}
-
-			return returnValue;
+			return reg.IsMatch(value);
 		}
 
 		/// <summary>
@@ -488,18 +442,11 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
-		public static bool IsMacAddress(this string value)
+		public static bool IsMacAddress([NotNull] this string value)
 		{
-			var returnValue = false;
+			var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
 
-			if (value is not null)
-			{
-				var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
-
-				returnValue = reg.IsMatch(value);
-			}
-
-			return returnValue;
+			return reg.IsMatch(value);
 		}
 
 		/// <summary>
@@ -534,16 +481,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>Boolean representing if the input is valid or not</returns>
 		/// <remarks>Original Code By: Troy Hunt</remarks>
 		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsStringSHA1Hash(this string input)
+		public static bool IsStringSHA1Hash([NotNull] this string input)
 		{
-			if (string.IsNullOrWhiteSpace(input))
-			{
-				return false;
-			}
-
-			var match = Regex.Match(input, pattern: @"\b([a-fA-F0-9]{40})\b");
-
-			return match.Length > 0;
+			return Regex.Match(input, pattern: @"\b([a-fA-F0-9]{40})\b").Length > 0;
 		}
 
 		/// <summary>
@@ -561,13 +501,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="replacement">The replacement.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-		public static string RemoveCRLF(this string input, string replacement = "")
+		public static string RemoveCRLF([NotNull] this string input, [NotNull] string replacement = "")
 		{
-			if (input.IsNullOrEmpty())
-			{
-				return input;
-			}
-
 			return Regex.Replace(input, @"[\r\n]+", replacement, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
@@ -577,13 +512,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ReplaceEllipsisWithPeriod), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ReplaceEllipsisWithPeriod(this string input)
+		public static string ReplaceEllipsisWithPeriod([NotNull] this string input)
 		{
-			if (input.HasValue() == false)
-			{
-				return input;
-			}
-
 			input = input.ToTrimmed();
 
 			if (input.EndsWith("...", StringComparison.OrdinalIgnoreCase))
@@ -605,9 +535,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Options are invalid.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, StringSplitOptions options, char separator = ControlChars.Comma)
+		public static string[] Split([NotNull] this string input, StringSplitOptions options, char separator = ControlChars.Comma)
 		{
-			Validate.TryValidateParam(input, nameof(input));
 			Validate.TryValidateParam(options, nameof(options));
 
 			return input.Split(new[] { separator }, options);
@@ -626,9 +555,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 1.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
+		public static string[] Split([NotNull] this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
 		{
-			Validate.TryValidateParam(input, nameof(input));
 			Validate.TryValidateParam(options, nameof(options));
 			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
 
@@ -648,9 +576,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 1.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string[] Split(this string input, StringSplitOptions options, int count, string separator = ControlChars.DefaultSeparator)
+		public static string[] Split([NotNull] this string input, StringSplitOptions options, int count, [NotNull] string separator = ControlChars.DefaultSeparator)
 		{
-			Validate.TryValidateParam(input, nameof(input));
 			Validate.TryValidateParam(options, nameof(options));
 			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
 
@@ -665,10 +592,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">input string cannot be null.</exception>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(SplitRemoveEmpty), UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<string> SplitRemoveEmpty(this string input)
+		public static IEnumerable<string> SplitRemoveEmpty([NotNull] this string input)
 		{
-			Validate.TryValidateParam(input, nameof(input));
-
 			return input.Trim().Split(new char[] { ControlChars.Comma }, options: StringSplitOptions.RemoveEmptyEntries);
 		}
 
@@ -680,13 +605,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool StartsWithOrdinal(this string input, string valueToCompare)
+		public static bool StartsWithOrdinal([NotNull] this string input, [NotNull] string valueToCompare)
 		{
-			if (input.IsNullOrEmpty() || valueToCompare.IsNullOrEmpty())
-			{
-				return false;
-			}
-
 			return 0 == string.Compare(input, 0, valueToCompare, 0, valueToCompare.Length, StringComparison.Ordinal);
 		}
 
@@ -698,13 +618,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool StartsWithOrdinalIgnoreCase(this string input, string valueToCompare)
+		public static bool StartsWithOrdinalIgnoreCase([NotNull] this string input, [NotNull] string valueToCompare)
 		{
-			if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(valueToCompare))
-			{
-				return false;
-			}
-
 			return 0 == string.Compare(input, 0, valueToCompare, 0, valueToCompare.Length, StringComparison.OrdinalIgnoreCase);
 		}
 
@@ -715,18 +630,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="startIndex">The start index.</param>
 		/// <param name="length">The length.</param>
 		/// <returns>System.String.</returns>
-		/// <exception cref="ArgumentOutOfRangeException">startIndex - startIndex + length must be less than or equal value.Length</exception>
 		/// <exception cref="ArgumentOutOfRangeException">startIndex - startIndex + length must be less than or equal to  value.Length</exception>
 		/// <exception cref="ArgumentOutOfRangeException">startIndex length must be less than or
 		/// equal to value.Length</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string SubstringTrim(this string input, int startIndex, int length)
+		public static string SubstringTrim([NotNull] this string input, int startIndex, int length)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				return input;
-			}
-
 			if (startIndex.IsNegative())
 			{
 				ExceptionThrower.ThrowArgumentOutOfRangeException(nameof(startIndex));
@@ -761,14 +670,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var newLength = endIndex - startIndex + 1;
 
-			if (newLength == 0)
-			{
-				return string.Empty;
-			}
-			else
-			{
-				return ( newLength == input.Length ) ? input : input.Substring(startIndex, newLength);
-			}
+			return newLength == 0 ? string.Empty : ( newLength == input.Length ) ? input : input.Substring(startIndex, newLength);
 		}
 
 		/// <summary>
@@ -777,16 +679,9 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The value.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string ToBase64(this string input)
+		public static string ToBase64([NotNull] this string input)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				return input;
-			}
-			else
-			{
-				return Convert.ToBase64String(new ASCIIEncoding().GetBytes(input));
-			}
+			return Convert.ToBase64String(new ASCIIEncoding().GetBytes(input));
 		}
 
 		/// <summary>
@@ -796,13 +691,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(Extract), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string ToTitleCase(this string input)
+		public static string ToTitleCase([NotNull] this string input)
 		{
-			if (string.IsNullOrEmpty(input))
-			{
-				return input;
-			}
-
 			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input);
 		}
 
@@ -813,13 +703,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>Trimmed System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(ToTrimmed), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ToTrimmed(this string input)
+		public static string ToTrimmed([NotNull] this string input)
 		{
-			if (input.IsNullOrEmpty())
-			{
-				return input;
-			}
-
 			return input.TrimEnd().TrimStart();
 		}
 

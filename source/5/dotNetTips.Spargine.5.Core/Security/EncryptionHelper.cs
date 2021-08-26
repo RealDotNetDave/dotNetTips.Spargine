@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-19-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -32,12 +33,8 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <returns>System.String.</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
 		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string AesDecrypt(string cipherText, byte[] key, byte[] iv)
+		public static string AesDecrypt([NotNull] string cipherText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
-			Validate.TryValidateParam(cipherText, nameof(cipherText));
-			Validate.TryValidateParam(key, nameof(key));
-			Validate.TryValidateParam(key, nameof(iv));
-
 			// Create AesManaged.
 			using var aes = new AesManaged();
 			// Create a decryptor.
@@ -63,12 +60,8 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <returns>System.Byte[].</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
 		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string AesEncrypt(string plainText, byte[] key, byte[] iv)
+		public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
-			Validate.TryValidateParam(plainText, nameof(plainText));
-			Validate.TryValidateParam(key, nameof(key));
-			Validate.TryValidateParam(key, nameof(iv));
-
 			// Create a new AesManaged.
 			using var aes = new AesManaged();
 
@@ -126,7 +119,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="key">The key.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(SimpleDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string SimpleDecrypt(string cipherText, string key)
+		public static string SimpleDecrypt([NotNull] string cipherText, [NotNull] string key)
 		{
 			var keys = GetHashKeys(key);
 
@@ -141,7 +134,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <returns>System.String.</returns>
 		/// <example>Example output: pVGs2TkJkzcHYW3Wiq2QEx8/kyFBJmE2Ji2lbwwAPaA=</example>
 		[Information(nameof(SimpleEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string SimpleEncrypt(string plainText, string key)
+		public static string SimpleEncrypt([NotNull] string plainText, [NotNull] string key)
 		{
 			var keys = GetHashKeys(key);
 
@@ -153,7 +146,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// </summary>
 		/// <param name="key">The key.</param>
 		/// <returns>System.ValueTuple&lt;System.Byte[], System.Byte[]&gt;.</returns>
-		private static (byte[] key, byte[] iv) GetHashKeys(string key)
+		private static (byte[] key, byte[] iv) GetHashKeys([NotNull] string key)
 		{
 			var encoding = Encoding.ASCII;
 

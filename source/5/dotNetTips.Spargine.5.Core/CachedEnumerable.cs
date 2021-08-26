@@ -4,7 +4,7 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -31,7 +32,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T"></typeparam>
 		/// <param name="enumerable">The enumerable.</param>
 		/// <returns>CachedEnumerable&lt;T&gt;.</returns>
-		public static CachedEnumerable<T> Create<T>(IEnumerable<T> enumerable) => new CachedEnumerable<T>(enumerable);
+		public static CachedEnumerable<T> Create<T>([NotNull] IEnumerable<T> enumerable) => new(enumerable);
 	}
 
 	/// <summary>
@@ -56,6 +57,11 @@ namespace dotNetTips.Spargine.Core
 		private readonly IEnumerable<T> _enumerable;
 
 		/// <summary>
+		/// The disposed value
+		/// </summary>
+		private bool _disposedValue;
+
+		/// <summary>
 		/// The enumerated
 		/// </summary>
 		private bool _enumerated;
@@ -66,11 +72,6 @@ namespace dotNetTips.Spargine.Core
 		private IEnumerator<T> _enumerator;
 
 		/// <summary>
-		/// The disposed value
-		/// </summary>
-		private bool _disposedValue;
-
-		/// <summary>
 		/// Initializes a new instance of the <see cref="CachedEnumerable{T}" /> class.
 		/// </summary>
 		/// <param name="enumerable">The enumerable.</param>
@@ -79,7 +80,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// Returns an enumerator that iterates through a collection.
 		/// </summary>
-		/// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+		/// <returns>An <see cref="IEnumerator" /> object that can be used to iterate through the collection.</returns>
 		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 		/// <summary>

@@ -16,14 +16,13 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
-using dotNetTips.Spargine.Extensions.BenchmarkTests;
 
 namespace dotNetTips.Spargine.BenchmarkTests
 {
 	/// <summary>
 	/// Class Program.
 	/// </summary>
-	public class Program
+	public static class Program
 	{
 		/// <summary>
 		/// Defines the entry point of the application.
@@ -34,10 +33,10 @@ namespace dotNetTips.Spargine.BenchmarkTests
 			try
 			{
 				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp50));
-				config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
+				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				//BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
 				//BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
@@ -46,20 +45,20 @@ namespace dotNetTips.Spargine.BenchmarkTests
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<ExceptionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
-				BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
+				//BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<StringBuilderExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<StringExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
 
 				Console.Beep();
 				Console.Beep(frequency: 50000, duration: 5000);
-				Console.ReadLine();
+				_ = Console.ReadLine();
 			}
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.Message);
 				Console.Beep(frequency: 500, duration: 2000);
-				Console.ReadLine();
+				_ = Console.ReadLine();
 			}
 		}
 	}

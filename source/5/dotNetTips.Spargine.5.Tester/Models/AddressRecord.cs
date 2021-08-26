@@ -109,10 +109,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.Address1), Value for address cannot be null or empty.</exception>
 		public string Address1
 		{
-			get
-			{
-				return this._address1;
-			}
+			get => this._address1;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -133,10 +130,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.Address2), Value for address cannot be null.</exception>
 		public string Address2
 		{
-			get
-			{
-				return this._address2;
-			}
+			get => this._address2;
 			init
 			{
 				if (value is null)
@@ -157,10 +151,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.City), Value for City cannot be null or empty.</exception>
 		public string City
 		{
-			get
-			{
-				return this._city;
-			}
+			get => this._city;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -181,10 +172,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.Country), Value for Country cannot be null or empty.</exception>
 		public string Country
 		{
-			get
-			{
-				return this._country;
-			}
+			get => this._country;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -205,10 +193,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.CountyProvince), Value for County/ Province cannot be null or empty.</exception>
 		public string CountyProvince
 		{
-			get
-			{
-				return this._countyProvince;
-			}
+			get => this._countyProvince;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -235,10 +220,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.Phone), Value for phone number cannot be null or empty.</exception>
 		public string Phone
 		{
-			get
-			{
-				return this._phone;
-			}
+			get => this._phone;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -260,10 +242,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.PostalCode), Value for postal code cannot be null or empty.</exception>
 		public string PostalCode
 		{
-			get
-			{
-				return this._postalCode;
-			}
+			get => this._postalCode;
 			init
 			{
 				if (string.IsNullOrEmpty(value))
@@ -284,10 +263,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentNullException">nameof(this.State), Value for State cannot be null or empty.</exception>
 		public string State
 		{
-			get
-			{
-				return this._state;
-			}
+			get => this._state;
 			init
 			{
 				if (string.IsNullOrEmpty(value))

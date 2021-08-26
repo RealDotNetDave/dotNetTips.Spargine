@@ -536,14 +536,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(ToStringOrEmpty), UnitTestCoverage = 0, Status = Status.Available)]
 		public static string ToStringOrEmpty(this int value, int lowerLimit = 0, int upperLimit = 9000, string defaultText = ControlChars.DoubleQuote)
 		{
-			if (value <= lowerLimit || value > upperLimit)
-			{
-				return defaultText;
-			}
-			else
-			{
-				return value.ToString(CultureInfo.InvariantCulture);
-			}
+			return value <= lowerLimit || value > upperLimit ? defaultText : value.ToString(CultureInfo.InvariantCulture);
 		}
 
 		/// <summary>

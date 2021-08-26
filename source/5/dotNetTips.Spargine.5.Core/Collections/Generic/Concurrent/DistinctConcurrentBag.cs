@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-24-2021
 // ***********************************************************************
 // <copyright file="DistinctConcurrentBag.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Collections.Generic.Concurrent
@@ -50,10 +49,10 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DistinctConcurrentBag{T}" /> class.
 		/// </summary>
-		/// <param name="collection">The collection whose elements are copied to the new <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.</param>
-		public DistinctConcurrentBag(IEnumerable<T> collection)
+		/// <param name="collection">The collection whose elements are copied to the <see cref="DistinctConcurrentBag{T}"/>.</param>
+		public DistinctConcurrentBag([NotNull] IEnumerable<T> collection)
 		{
-			if (collection?.Count() > 0)
+			if (collection.Any())
 			{
 				collection.ToList().ForEach(item =>
 				{
@@ -82,9 +81,9 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Attempts to remove and return an object from the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see>.
+		/// Attempts to remove and return an object from the <see cref="DistinctConcurrentBag{T}"/>.
 		/// </summary>
-		/// <param name="result">When this method returns, result contains the object removed from the <see cref="T:System.Collections.Concurrent.ConcurrentBag"></see> or the default value of T if the bag is empty.</param>
+		/// <param name="result">When this method returns, result contains the object removed from the <see cref="DistinctConcurrentBag{T}"/> or the default value of T if the bag is empty.</param>
 		/// <returns>true if an object was removed successfully; otherwise, false.</returns>
 		public new bool TryTake(out T result)
 		{

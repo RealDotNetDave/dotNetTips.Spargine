@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-24-2021
+// Last Modified On : 08-12-2021
 // ***********************************************************************
 // <copyright file="PathHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core;
@@ -55,10 +56,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="paths">The paths.</param>
 		/// <returns>DirectoryInfo.</returns>
 		[Information(nameof(CombinePaths), author: "David McCarter", createdOn: "8/10/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static DirectoryInfo CombinePaths(bool createIfNotExists, params string[] paths)
+		public static DirectoryInfo CombinePaths(bool createIfNotExists, [NotNull] params string[] paths)
 		{
-			Validate.TryValidateParam(paths, nameof(paths));
-
 			for (var paramCount = 0; paramCount < paths.Length; paramCount++)
 			{
 				paths[paramCount] = paths[paramCount].ToTrimmed();
@@ -84,11 +83,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path2">The path2.</param>
 		/// <returns>DirectoryInfo.</returns>
 		[Information(nameof(CombinePaths), author: "David McCarter", createdOn: "8/10/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static DirectoryInfo CombinePaths(bool createIfNotExists, string path1, string path2)
+		public static DirectoryInfo CombinePaths(bool createIfNotExists, [NotNull] string path1, [NotNull] string path2)
 		{
-			Validate.TryValidateParam(path1, nameof(path1));
-			Validate.TryValidateParam(path2, nameof(path2));
-
 			return CombinePaths(createIfNotExists, new string[] { path1, path2 });
 		}
 
@@ -101,12 +97,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path3">The path3.</param>
 		/// <returns>DirectoryInfo.</returns>
 		[Information(nameof(CombinePaths), author: "David McCarter", createdOn: "8/10/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static DirectoryInfo CombinePaths(bool createIfNotExists, string path1, string path2, string path3)
+		public static DirectoryInfo CombinePaths(bool createIfNotExists, [NotNull] string path1, [NotNull] string path2, [NotNull] string path3)
 		{
-			Validate.TryValidateParam(path1, nameof(path1));
-			Validate.TryValidateParam(path2, nameof(path2));
-			Validate.TryValidateParam(path3, nameof(path3));
-
 			return CombinePaths(createIfNotExists, new string[] { path1, path2, path3 });
 		}
 
@@ -120,13 +112,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path4">The path4.</param>
 		/// <returns>DirectoryInfo.</returns>
 		[Information(nameof(CombinePaths), author: "David McCarter", createdOn: "8/10/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static DirectoryInfo CombinePaths(bool createIfNotExists, string path1, string path2, string path3, string path4)
+		public static DirectoryInfo CombinePaths(bool createIfNotExists, [NotNull] string path1, [NotNull] string path2, [NotNull] string path3, [NotNull] string path4)
 		{
-			Validate.TryValidateParam(path1, nameof(path1));
-			Validate.TryValidateParam(path2, nameof(path2));
-			Validate.TryValidateParam(path3, nameof(path3));
-			Validate.TryValidateParam(path4, nameof(path4));
-
 			var paths = new string[] { path1, path2, path3, path4 };
 
 			return CombinePaths(createIfNotExists, paths);
@@ -138,10 +125,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <returns>System.String.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static string EnsureTrailingSlash(string path)
+		public static string EnsureTrailingSlash([NotNull] string path)
 		{
-			Validate.TryValidateParam(path, nameof(path));
-
 			return path[^1] != Path.DirectorySeparatorChar ? $"{path}{Path.DirectorySeparatorChar}" : path;
 		}
 
@@ -151,10 +136,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="filter">The path.</param>
 		/// <returns><c>true</c> if [has invalid filter chars] [the specified path]; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool HasInvalidFilterChars(string filter)
+		public static bool HasInvalidFilterChars([NotNull] string filter)
 		{
-			Validate.TryValidateParam(filter, nameof(filter));
-
 			return filter.IndexOfAny(InvalidFilterChars.ToArray()) != -1;
 		}
 
@@ -164,10 +147,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(PathContainsWildcard), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool PathContainsWildcard(string path)
+		public static bool PathContainsWildcard([NotNull] string path)
 		{
-			Validate.TryValidateParam(path, nameof(path));
-
 			return ( path?.IndexOf('*', StringComparison.Ordinal) != -1 ) || ( path?.IndexOf('?', StringComparison.Ordinal) != -1 );
 		}
 
@@ -177,10 +158,8 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool PathHasInvalidChars(string path)
+		public static bool PathHasInvalidChars([NotNull] string path)
 		{
-			Validate.TryValidateParam(path, nameof(path));
-
 			return path.IndexOfAny(InvalidPathNameChars.ToArray()) != -1;
 		}
 	}

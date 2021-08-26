@@ -4,7 +4,7 @@
 // Created          : 07-30-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="GuidExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
 
@@ -29,6 +30,6 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The Guid value.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ToDigits(this Guid value) => value.ToString("N", CultureInfo.InvariantCulture);
+		public static string ToDigits([NotNull] this Guid value) => value.ToString("N", CultureInfo.InvariantCulture);
 	}
 }

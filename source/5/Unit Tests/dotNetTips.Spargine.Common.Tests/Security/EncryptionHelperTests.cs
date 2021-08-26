@@ -12,8 +12,8 @@ namespace dotNetTips.Spargine.Core.Tests.Security
 	[TestClass]
 	public class EncryptionHelperTests
 	{
-		private const string _key = "9999998888888877777777@#$%";
-		private const string _testString = "ThisIsATestStringToEncrypt";
+		private const string Key = "9999998888888877777777@#$%";
+		private const string TestString = "ThisIsATestStringToEncrypt";
 
 		[TestMethod]
 		public void AesEncryptDecryptStringTest()
@@ -25,12 +25,12 @@ namespace dotNetTips.Spargine.Core.Tests.Security
 				using var aes = new AesManaged();
 
 				// Encrypt string  
-				var encrypted = EncryptionHelper.AesEncrypt(_testString, aes.Key, aes.IV);
+				var encrypted = EncryptionHelper.AesEncrypt(TestString, aes.Key, aes.IV);
 
 				// Decrypt the bytes to a string.  
 				var decrypted = EncryptionHelper.AesDecrypt(encrypted, aes.Key, aes.IV);
 
-				Assert.AreEqual(_testString, decrypted);
+				Assert.AreEqual(TestString, decrypted);
 			}
 			catch (Exception ex)
 			{
@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Core.Tests.Security
 		[TestMethod]
 		public void ComputeSha256HashTest()
 		{
-			var result = _testString.ComputeSHA256Hash();
+			var result = TestString.ComputeSHA256Hash();
 
 			Assert.IsTrue(string.IsNullOrEmpty(result) == false);
 		}
@@ -65,15 +65,15 @@ namespace dotNetTips.Spargine.Core.Tests.Security
 		[TestMethod]
 		public void SimpleEncryptDecryptStringTest()
 		{
-			var cipherText = EncryptionHelper.SimpleEncrypt(_testString, _key);
+			var cipherText = EncryptionHelper.SimpleEncrypt(TestString, Key);
 
 			Assert.IsTrue(string.IsNullOrEmpty(cipherText) == false);
 
-			var plainText = EncryptionHelper.SimpleDecrypt(cipherText, _key);
+			var plainText = EncryptionHelper.SimpleDecrypt(cipherText, Key);
 
 			Assert.IsTrue(string.IsNullOrEmpty(plainText) == false);
 
-			Assert.IsTrue(plainText.Equals(_testString));
+			Assert.IsTrue(plainText.Equals(TestString));
 		}
 	}
 }

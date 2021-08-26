@@ -120,13 +120,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="ex">The ex.</param>
 		/// <returns><c>true</c> if the specified ex is critical; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsCritical(this Exception ex)
+		public static bool IsCritical([NotNull] this Exception ex)
 		{
-			if (Validate.TryValidateNull(ex))
-			{
-				return false;
-			}
-
 			return ex is NullReferenceException or
 				StackOverflowException or
 				OutOfMemoryException or
@@ -141,13 +136,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="ex">The ex.</param>
 		/// <returns><c>true</c> if the specified ex is fatal; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsFatal(this Exception ex)
+		public static bool IsFatal([NotNull] this Exception ex)
 		{
-			if (Validate.TryValidateNull(ex))
-			{
-				return false;
-			}
-
 			return ex is OutOfMemoryException;
 		}
 
@@ -157,13 +147,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="ex">The ex.</param>
 		/// <returns><c>true</c> if [is security or critical] [the specified ex]; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsSecurityOrCritical(this Exception ex)
+		public static bool IsSecurityOrCritical([NotNull] this Exception ex)
 		{
-			if (Validate.TryValidateNull(ex))
-			{
-				return false;
-			}
-
 			return ( ex is SecurityException ) || ex.IsCritical();
 		}
 
@@ -178,12 +163,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static T TraverseFor<T>([NotNull] this Exception ex)
 			where T : class
 		{
-			if (ReferenceEquals(ex.GetType(), typeof(T)))
-			{
-				return ex as T;
-			}
-
-			return ex.InnerException.TraverseFor<T>();
+			return ReferenceEquals(ex.GetType(), typeof(T)) ? ex as T : ex.InnerException.TraverseFor<T>();
 		}
 	}
 }

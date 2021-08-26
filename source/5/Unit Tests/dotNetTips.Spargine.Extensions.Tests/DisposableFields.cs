@@ -21,9 +21,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 {
 	/// <summary>
 	/// Class DisposableFields.
-	/// Implements the <see cref="System.IDisposable" />
+	/// Implements the <see cref="IDisposable" />
 	/// </summary>
-	/// <seealso cref="System.IDisposable" />
+	/// <seealso cref="IDisposable" />
 	[ExcludeFromCodeCoverage]
 	public class DisposableFields : IDisposable
 	{
@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		/// <summary>
 		/// The disposed value
 		/// </summary>
-		private bool disposedValue;
+		private bool _disposedValue;
 
 		/// <summary>
 		/// Disposes this instance.
@@ -52,14 +52,14 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		/// <param name="disposing">The disposing.</param>
 		protected virtual void Dispose(bool disposing)
 		{
-			if (!this.disposedValue)
+			if (!this._disposedValue)
 			{
 				if (disposing)
 				{
 					this._dataSet.Dispose();
 				}
 
-				this.disposedValue = true;
+				this._disposedValue = true;
 			}
 		}
 	}

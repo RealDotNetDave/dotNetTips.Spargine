@@ -1,4 +1,17 @@
-﻿using System.Linq;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.Extensions.BenchmarkTests
+// Author           : David McCarter
+// Created          : 02-08-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 08-24-2021
+// ***********************************************************************
+// <copyright file="RandomDataBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
+//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Tester;
@@ -6,7 +19,6 @@ using dotNetTips.Spargine.Tester.Models;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 {
-	[BenchmarkCategory(nameof(RandomData))]
 	public class RandomDataBenchmark : Benchmark
 	{
 		[Benchmark(Description = "Creating: " + nameof(Person))]

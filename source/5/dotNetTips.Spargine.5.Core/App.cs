@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-24-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="App.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,6 +16,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -130,10 +131,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="cultureName">Name of the culture.</param>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void ChangeCulture(string cultureName)
+		public static void ChangeCulture([NotNull] string cultureName)
 		{
-			Validate.TryValidateParam(cultureName, nameof(cultureName));
-
 			CultureInfo.CurrentCulture = new CultureInfo(cultureName);
 		}
 
@@ -142,10 +141,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="cultureName">Name of the culture.</param>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void ChangeUICulture(string cultureName)
+		public static void ChangeUICulture([NotNull] string cultureName)
 		{
-			Validate.TryValidateParam(cultureName, nameof(cultureName));
-
 			CultureInfo.CurrentUICulture = new CultureInfo(cultureName);
 		}
 
@@ -262,7 +259,7 @@ namespace dotNetTips.Spargine.Core
 				return;
 			}
 
-			var processInfo = new ProcessStartInfo(Assembly.GetEntryAssembly().CodeBase)
+			var processInfo = new ProcessStartInfo(AppContext.BaseDirectory)
 			{
 				UseShellExecute = true,
 				Verb = "runas",

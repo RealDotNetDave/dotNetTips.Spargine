@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Collections.Generic;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 
@@ -59,7 +60,7 @@ namespace dotNetTips.Spargine.Collections
 		/// <param name="repeat">If set to <c>true</c> and when using GetNext() the collection will repeat over and over and each time re-
 		/// shuffled. Be careful of getting into an endless loop, it could cause your app to crash.</param>
 		/// <remarks>The collection cannot be changed after initialization.</remarks>
-		public CollectionRandomizer(IEnumerable<T> collection, bool repeat = false)
+		public CollectionRandomizer([NotNull] IEnumerable<T> collection, bool repeat = false)
 		{
 			this._collection = collection.ToImmutableArray();
 			this._repeat = repeat;

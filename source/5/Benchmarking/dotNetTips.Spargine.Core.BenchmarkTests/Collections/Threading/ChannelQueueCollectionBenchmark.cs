@@ -25,13 +25,14 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 {
 	/// <summary>
 	/// Collection type PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
-	[BenchmarkCategory("Queue")]
+	/// <seealso cref="CounterBenchmark" />
+	[BenchmarkCategory(Categories.Queues, Categories.New)]
 	public class ChannelQueueCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = "WriteAsync")]
+		[BenchmarkCategory(Categories.New)]
 		public async Task WriteAsync01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -46,6 +47,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "WriteAsync: IEnumerable")]
+		[BenchmarkCategory(Categories.New)]
 		public async Task WriteAsync02()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -58,17 +60,18 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 
 		[Benchmark(Description = "Write & Listen Async")]
+		[BenchmarkCategory(Categories.New)]
 		public void WriteListenTest01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
 			var people = this.PersonProperList;
 			var token = CancellationToken.None;
 
-			var tasks = new List<Task>();
-
-			tasks.Add(AddToQueue(channel, people, token));
-
-			tasks.Add(ListenToQueue(channel, token));
+			var tasks = new List<Task>
+			{
+				AddToQueue(channel, people, token),
+				ListenToQueue(channel, token)
+			};
 
 			Task.WaitAll(tasks.ToArray());
 
@@ -76,6 +79,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "Write & Read Async")]
+		[BenchmarkCategory(Categories.New)]
 		public async Task WriteReadAsync01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -93,6 +97,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "Write & Read Async: IEnumerable")]
+		[BenchmarkCategory(Categories.New)]
 		public async Task WriteReadAsync02()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -113,7 +118,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 			}
 
-			channel.Lock();
+			_ = channel.Lock();
 		}
 
 		private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)

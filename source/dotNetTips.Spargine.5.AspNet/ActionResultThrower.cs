@@ -4,7 +4,7 @@
 // Created          : 02-22-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="ActionResultThrower.cs" company="dotNetTips.Spargine.5.AspNet">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

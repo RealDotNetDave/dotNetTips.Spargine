@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -45,7 +45,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// Initializes a new instance of the <see cref="FastSortedList{T}" /> class.
 		/// </summary>
 		/// <param name="collection">Creates class and copies in items from collection.</param>
-		public FastSortedList(IEnumerable<T> collection) : base(collection)
+		public FastSortedList([NotNull] IEnumerable<T> collection) : base(collection)
 		{
 		}
 
@@ -64,19 +64,17 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// Adds the items to the end of the list.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		public new void AddRange(IEnumerable<T> items)
+		public new void AddRange([NotNull] IEnumerable<T> items)
 		{
-			Validate.TryValidateParam(items, nameof(items));
-
 			base.AddRange(items);
 
 			this._sorted = false;
 		}
 
 		/// <summary>
-		/// Returns an enumerator that iterates through the <see cref="T:System.Collections.Generic.List`1"></see>.
+		/// Returns an enumerator that iterates through the collection.
 		/// </summary>
-		/// <returns>A <see cref="T:System.Collections.Generic.List`1.Enumerator"></see> for the <see cref="T:System.Collections.Generic.List`1"></see>.</returns>
+		/// <returns>A enumerator for the <see cref="List{T}"/>.</returns>
 		public new Enumerator GetEnumerator()
 		{
 			this.SortCollection();
@@ -87,7 +85,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <summary>
 		/// Copies the elements of the list to a new array.
 		/// </summary>
-		/// <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.List`1"></see>.</returns>
+		/// <returns>An array containing copies of the elements of the <see cref="List{T}"/>.</returns>
 		public new T[] ToArray()
 		{
 			this.SortCollection();

@@ -12,7 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
-using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -234,10 +233,8 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void ToJsonTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
-			PersonProper nullPerson = null;
 
 			Assert.IsFalse(string.IsNullOrEmpty(person.ToJson()));
-			Assert.IsTrue(string.IsNullOrEmpty(nullPerson.ToJson()));
 		}
 
 		[TestMethod]

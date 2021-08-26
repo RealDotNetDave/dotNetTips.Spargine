@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-24-2021
+// Last Modified On : 08-19-2021
 // ***********************************************************************
 // <copyright file="SortedDictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,10 +32,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The values.</param>
 		/// <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>(this SortedDictionary<TKey, TValue> list)
+		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> list)
 		{
-			Validate.TryValidateParam(list, nameof(list));
-
 			return ImmutableSortedDictionary.CreateRange(list);
 		}
 

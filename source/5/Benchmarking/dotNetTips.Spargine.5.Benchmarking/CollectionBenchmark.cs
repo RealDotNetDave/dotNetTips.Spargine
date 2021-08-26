@@ -22,9 +22,9 @@ namespace dotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
 	/// Collection PerfTestRunner.
-	/// Implements the <see cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
-	/// <seealso cref="dotNetTips.Spargine.Benchmarking.CounterBenchmark" />
+	/// <seealso cref="CounterBenchmark" />
 	public abstract class CollectionBenchmark : CounterBenchmark
 	{
 		/// <summary>

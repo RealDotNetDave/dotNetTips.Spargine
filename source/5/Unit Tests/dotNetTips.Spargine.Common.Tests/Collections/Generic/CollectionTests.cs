@@ -11,11 +11,9 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core.Collections.Generic;
-using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -36,7 +34,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			_ = collection.AddFirst(person);
+			collection.AddFirst(person);
 
 			Assert.IsTrue(collection.First() == person);
 		}
@@ -104,11 +102,9 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic
 		[TestMethod]
 		public void CreateWithCountTest()
 		{
-			var collection = Collection<PersonProper>.Create(10).ToList();
+			var collection = Collection<PersonProper>.Create(10);
 
 			Assert.IsNotNull(collection);
-
-			Assert.IsTrue(collection.Capacity == 10);
 		}
 	}
 }

@@ -32,8 +32,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		{
 			var word = RandomData.GenerateWord(100);
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => string.Empty.ComputeHash(HashType.MD5));
-
 			foreach (var item in Enum.GetValues(typeof(HashType)))
 			{
 				var result = word.ComputeHash((HashType)item);
@@ -103,8 +101,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Count() == 3);
 
 			Assert.IsTrue(result.Count() == 3);
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => string.Empty.DelimitedStringToArray());
 		}
 
 		[TestMethod]
@@ -133,10 +129,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = inputString.Extract("Micro", "V");
 
 			Assert.IsTrue(result.HasValue());
-
-			result = string.Empty.Extract("M", "V");
-
-			Assert.IsTrue(string.IsNullOrEmpty(result));
 		}
 
 		[TestMethod]
@@ -306,10 +298,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(ControlChars.Space.IsAsciiWhitespace());
 
-			string testString = null;
-
-			Assert.IsFalse(testString.HasWhitespace());
-
 			Assert.IsFalse("David".HasWhitespace());
 		}
 
@@ -352,10 +340,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = $"{RandomData.GenerateWord(25)},{RandomData.GenerateWord(25)}";
 
 			Assert.IsTrue(testValue.SplitRemoveEmpty().Count() > 1);
-
-			string testString = null;
-
-			_ = Assert.ThrowsException<ArgumentNullException>(() => testString.SplitRemoveEmpty());
 		}
 
 		[TestMethod]
@@ -440,9 +424,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(10);
 
 			Assert.IsTrue(testValue.StartsWithOrdinal(testValue));
-
-			Assert.IsFalse(testValue.StartsWithOrdinal(null));
-
 		}
 
 		[TestMethod]
@@ -451,9 +432,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(50);
 
 			//Test parameters
-			Assert.IsFalse(string.Empty.SubstringTrim(1, 10).HasValue());
-			Assert.IsFalse(string.Empty.SubstringTrim(0, 0).HasValue());
-
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(-100, 10));
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(1, -10));
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.SubstringTrim(1, 100));
@@ -479,10 +457,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = words.ToTitleCase();
 
 			Assert.IsTrue(testValue.IsNotEmpty());
-
-			string testString = null;
-
-			Assert.IsFalse(testString.ToTitleCase().HasValue());
 		}
 
 		[TestMethod]

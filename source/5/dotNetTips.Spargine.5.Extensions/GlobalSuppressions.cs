@@ -109,21 +109,9 @@
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ThreadExtensions.TrySetPriority(System.Threading.Thread,System.Threading.ThreadPriority)~System.Boolean")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.SocketExtensions.TryConnect(System.Net.Sockets.Socket,System.Net.EndPoint,System.Int32)~System.Boolean")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ObjectExtensions.HasProperty(System.Object,System.String)~System.Boolean")]
-[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ListExtensions.AddLast``1(System.Collections.Generic.IList{``0},``0)~System.Boolean")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.HttpRequestExtensions.TryGetBody(Microsoft.AspNetCore.Http.HttpRequest,System.Byte[]@)~System.Boolean")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ExceptionExtensions.TraverseFor``1(System.Exception)~``0")]
 [assembly: SuppressMessage("Design", "CA1030:Use events where appropriate", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task)")]
-
-// ***********************************************************************
-// Assembly         : dotNetTips.Spargine.5.Extensions **
-// Author           : David McCarter
-// Created          : 09-28-2018
-//
-// Last Modified By : David McCarter
-// Last Modified On : 03-03-2019
-// ***********************************************************************
-// <copyright file="GlobalSuppressions.cs" company="David McCarter - dotNetTips.com">
-//     McCarter Consulting (David McCarter)
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
+[assembly: SuppressMessage("Design", "CA1030:Use events where appropriate", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})")]
+[assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task)")]
+[assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})")]

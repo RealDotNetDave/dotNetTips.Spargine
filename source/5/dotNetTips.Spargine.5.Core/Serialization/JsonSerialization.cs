@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <typeparam name="TResult">The type of the t result.</typeparam>
 		/// <param name="json">The json.</param>
 		/// <returns>T.</returns>
-		[Information(nameof(Deserialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(Deserialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TResult Deserialize<TResult>([NotNull] string json)
 		{
 			var obj = JsonSerializer.Deserialize<TResult>(json);
@@ -64,7 +64,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <param name="actual">The actual.</param>
 		/// <param name="expected">The expected.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool JsonEqual([NotNull] string actual, [NotNull] string expected)
 		{
 			using var expectedDom = JsonDocument.Parse(expected);
@@ -78,7 +78,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// </summary>
 		/// <param name="obj">The object.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(Serialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(Serialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string Serialize([NotNull] object obj)
 		{
 			var json = JsonSerializer.Serialize(obj);

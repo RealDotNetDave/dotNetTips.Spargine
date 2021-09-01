@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 08-27-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,8 @@
 // ***********************************************************************
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
@@ -33,30 +35,30 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		[BenchmarkCategory(Categories.LINQ)]
 		public void Any01()
 		{
-			var result = base.PersonProperList.Any(p => p.City.Contains("A", StringComparison.CurrentCulture));
-
-			base.Consumer.Consume(result);
-		}
-		[Benchmark(Description = nameof(EnumerableExtensions.Count))]
-		public void Count01()
-		{
-			var result = base.PersonProperList.Count();
+			var result = this.AnyWithPredicate(base.PersonProperList, p => p.City.Contains("A", StringComparison.CurrentCulture));
 
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(EnumerableExtensions.FastAny) + ": With Predicate")]
-		public void FastAny02()
+		public void Any02()
 		{
 			var result = base.PersonProperList.FastAny(p => p.City.Contains("A", StringComparison.CurrentCulture));
 
 			base.Consumer.Consume(result);
 		}
-
-		[Benchmark(Description = nameof(EnumerableExtensions.FastCount))]
-		public void FastCount01()
+		[Benchmark(Description = nameof(EnumerableExtensions.Count) + ": With Predicate")]
+		public void Count01()
 		{
-			var result = base.PersonProperList.FastCount(p => p.City.Contains("A"));
+			var result = this.CountWithPredicate(base.PersonProperList, p => p.City.Contains("A", StringComparison.CurrentCulture));
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.FastCount) + ": With Predicate")]
+		public void Count02()
+		{
+			var result = base.PersonProperList.FastCount(p => p.City.Contains("A", StringComparison.CurrentCulture));
 
 			base.Consumer.Consume(result);
 		}
@@ -81,6 +83,24 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		public void FirstOrNull01()
 		{
 			var result = base.CoordinateProperArray.FirstOrNull(p => p.X == this.Coordinate01.X);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.HasItems))]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItems01()
+		{
+			var result = base.PersonProperList.AsEnumerable().HasItems();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.HasItems) + ": With Count")]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItems02()
+		{
+			var result = base.PersonProperList.AsEnumerable().HasItems(5);
 
 			base.Consumer.Consume(result);
 		}
@@ -149,6 +169,16 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var result = base.PersonProperList.ToLinkedList();
 
 			base.Consumer.Consume(result);
+		}
+
+		private bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		{
+			return list.Any(predicate);
+		}
+
+		private int CountWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		{
+			return list.Count(predicate);
 		}
 	}
 }

@@ -25,7 +25,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// <summary>
 	/// Extensions for Socket.
 	/// </summary>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", Status = Status.Available)]
 	public static class SocketExtensions
 	{
 

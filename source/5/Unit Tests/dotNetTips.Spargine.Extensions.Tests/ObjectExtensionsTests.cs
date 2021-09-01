@@ -179,7 +179,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			result = person.PropertiesToString(header: person.Id);
 
-			Assert.IsTrue(result.Length > 900);
+			Assert.IsTrue(result.Length > 500);
 			Assert.IsTrue(result.Contains("Address1"));
 			PrintResult(result, nameof(this.PropertiesToStringTest));
 

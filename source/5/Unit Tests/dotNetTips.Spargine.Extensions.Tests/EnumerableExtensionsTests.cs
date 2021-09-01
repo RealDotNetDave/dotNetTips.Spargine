@@ -150,6 +150,22 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void HasItemsTest01()
+		{
+			var collection = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			Assert.IsTrue(collection.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTest02()
+		{
+			var collection = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();
+
+			Assert.IsFalse(collection.HasItems(5));
+		}
+
+		[TestMethod]
 		public void IsNullOrEmptyTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).AsEnumerable();

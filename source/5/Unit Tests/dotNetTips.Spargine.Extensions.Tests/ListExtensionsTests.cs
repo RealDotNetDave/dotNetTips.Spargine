@@ -91,13 +91,31 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(people.Count == newPeople.Count);
 		}
+
 		[TestMethod]
-		public void HasItemsTest()
+		public void HasItemsTest01()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+
+			Assert.IsTrue(collection.ToList().HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTest02()
 		{
 			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
 
 			Assert.IsFalse(collection.ToList().HasItems(p => p.X == 999999999));
 		}
+
+		[TestMethod]
+		public void HasItemsTest03()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+
+			Assert.IsFalse(collection.ToList().HasItems(5));
+		}
+
 		[TestMethod]
 		public void IndexOfTest()
 		{

@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine
 		/// Alls the services.
 		/// </summary>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
-		[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+		[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IEnumerable<string> AllServices() => ServiceController.GetServices().Select(p => p.ServiceName).AsEnumerable();
 
 		/// <summary>

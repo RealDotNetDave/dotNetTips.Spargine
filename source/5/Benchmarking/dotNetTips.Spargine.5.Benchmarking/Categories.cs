@@ -2,6 +2,7 @@
 {
 	public static class Categories
 	{
+		public const string Async = "Async";
 		public const string Collections = "Collections";
 		public const string Encryption = "Encryption";
 		public const string GenericCollections = "Collections<>";

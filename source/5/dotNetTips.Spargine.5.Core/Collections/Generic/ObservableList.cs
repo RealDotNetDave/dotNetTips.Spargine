@@ -34,7 +34,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 	/// <seealso cref="IReadOnlyCollection{T}" />
 	/// <seealso cref="INotifyCollectionChanged" />
 	/// <seealso cref="INotifyPropertyChanged" />
-	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 0, Status = Status.Available)]
+	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", Status = Status.Available)]
 	public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollectionChanged, INotifyPropertyChanged, INotifyPropertyChanging
 	{
 		/// <summary>

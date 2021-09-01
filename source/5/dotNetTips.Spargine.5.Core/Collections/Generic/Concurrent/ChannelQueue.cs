@@ -42,29 +42,29 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <summary>
 		/// Prevents a default instance of the <see cref="ChannelQueue{T}" /> class from being created.
 		/// </summary>
-		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public ChannelQueue() => this._channel = Channel.CreateUnbounded<T>();
+		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		public ChannelQueue() => _channel = Channel.CreateUnbounded<T>();
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ChannelQueue{T}" /> class.
 		/// </summary>
 		/// <param name="capacity">The capacity.</param>
-		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public ChannelQueue(int capacity) => this._channel = Channel.CreateBounded<T>(capacity);
+		[Information(nameof(ChannelQueue<T>), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		public ChannelQueue(int capacity) => _channel = Channel.CreateBounded<T>(capacity);
 
 
 		/// <summary>
 		/// Gets the count.
 		/// </summary>
 		/// <value>The count.</value>
-		[Information(nameof(Count), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(Count), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public int Count
 		{
 			get
 			{
-				lock (this._lock)
+				lock (_lock)
 				{
-					return this._channel.Reader.CanCount ? this._channel.Reader.Count : -1;
+					return _channel.Reader.CanCount ? _channel.Reader.Count : -1;
 				}
 			}
 		}
@@ -75,10 +75,10 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>IAsyncEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(ListenAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(ListenAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public async IAsyncEnumerable<T> ListenAsync([EnumeratorCancellation] CancellationToken cancellationToken = default)
 		{
-			await foreach (var item in this._channel.Reader.ReadAllAsync(cancellationToken).ConfigureAwait(false))
+			await foreach (var item in _channel.Reader.ReadAllAsync(cancellationToken).ConfigureAwait(false))
 			{
 				yield return item;
 			}
@@ -88,12 +88,12 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// Locks the Channel so more items cannot be added. This is not reversable.
 		/// </summary>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(Lock), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(Lock), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public bool Lock()
 		{
-			lock (this._lock)
+			lock (_lock)
 			{
-				return this._channel.Writer.TryComplete();
+				return _channel.Writer.TryComplete();
 			}
 		}
 
@@ -102,18 +102,18 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 		/// <returns>T.</returns>
-		[Information(nameof(ReadAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
-		public async Task<T> ReadAsync(CancellationToken cancellationToken = default) => await this._channel.Reader.ReadAsync(cancellationToken).ConfigureAwait(false);
+		[Information(nameof(ReadAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		public async Task<T> ReadAsync(CancellationToken cancellationToken = default) => await _channel.Reader.ReadAsync(cancellationToken).ConfigureAwait(false);
 
 		/// <summary>
 		/// Write to the Channel as an asynchronous operation.
 		/// </summary>
 		/// <param name="item">The item.</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public async Task WriteAsync([NotNull] T item, CancellationToken cancellationToken = default)
 		{
-			await this._channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
+			await _channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
 		}
 
 		/// <summary>
@@ -122,17 +122,17 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="items">The items.</param>
 		/// <param name="lockQueue">if set to <c>true</c> [lock queue].</param>
 		/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public async Task WriteAsync([NotNull] IEnumerable<T> items, bool lockQueue = false, CancellationToken cancellationToken = default)
 		{
 			foreach (var item in items.Where(p => p is not null))
 			{
-				await this._channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
+				await _channel.Writer.WriteAsync(item, cancellationToken).ConfigureAwait(false);
 			}
 
 			if (lockQueue)
 			{
-				_ = this.Lock();
+				_ = Lock();
 			}
 		}
 	}

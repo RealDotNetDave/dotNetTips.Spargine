@@ -130,11 +130,19 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns>List&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">source</exception>
-		[Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(CopyToList), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static List<T> CopyToList<T>([NotNull] this List<T> list)
 		{
 			return new List<T>(list);
 		}
+
+		/// <summary>
+		/// Determines whether the specified list has items.
+		/// </summary>
+		/// <param name="list">The list.</param>
+		/// <returns><c>true</c> if the specified list has items; otherwise, <c>false</c>.</returns>
+		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool HasItems<T>([NotNull] this List<T> list) => list.Count() > 0;
 
 		/// <summary>
 		/// Determines whether the specified collection has items based on the Predicate.
@@ -144,12 +152,21 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">action</exception>
-		/// <exception cref="ArgumentNullException">action</exception>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([NotNull] this List<T> list, [NotNull] Predicate<T> action)
 		{
 			return list.TrueForAll(action);
 		}
+
+		/// <summary>
+		/// Determines whether the collection has a specified count.
+		/// </summary>
+		/// <param name="list">The source.</param>
+		/// <param name="count">The specific count.</param>
+		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool HasItems<T>([NotNull] this List<T> list, int count) => list.Count() == count;
+
 
 		/// <summary>
 		/// Returns index of item in the collection.
@@ -340,7 +357,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>ReadOnlySpan&lt;T&gt;.</returns>
-		[Information(nameof(PickRandom), "David McCarter", "6/28/2021", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, UnitTestCoverage = 0)]
+		[Information(nameof(PickRandom), "David McCarter", "6/28/2021", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
 		public static ReadOnlySpan<T> PickRandom<T>(this ReadOnlySpan<T> list)
 		{
 			Validate.TryValidateParam(list, nameof(list));
@@ -396,7 +413,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The items.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
-		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99)]
+		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
 		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> list)
 		{
 			return list.OrderBy(i => GenerateRandomNumber());

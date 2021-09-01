@@ -21,21 +21,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Collections)]
 	public class DictionaryExtensionsCollectionBenchmark : CollectionBenchmark
 	{
-
-		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary")]
-		public void GetOrAddDictionary01()
-		{
-			var people = base.PersonProperDictionary;
-			var person = base.PersonProperDictionary.Last();
-
-			var result = people.GetOrAdd(person.Key, person.Value);
-
-			base.Consumer.Consume(result);
-		}
-
-
-		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ":Dictionary")]
-		[BenchmarkCategory(Categories.New)]
+		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ": Dictionary")]
+		[BenchmarkCategory(Categories.Collections)]
 		public void GetOrAddDictionary02()
 		{
 			var people = base.PersonProperDictionary;
@@ -47,7 +34,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 		public override void Setup() { base.Setup(); }
 
-		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ":*POOL")]
+		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ": *POOL")]
 		[BenchmarkCategory(Categories.Strings)]
 		public void ToDelimitedString01()
 		{
@@ -74,7 +61,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		/// <summary>
 		/// Upserts the dictionary02.
 		/// </summary>
-		[Benchmark(Description = nameof(DictionaryExtensions.Upsert) + ":New Person")]
+		[Benchmark(Description = nameof(DictionaryExtensions.Upsert) + ": New Person")]
 		public void UpsertDictionary02()
 		{
 			var people = base.PersonProperDictionary;

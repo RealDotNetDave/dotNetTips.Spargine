@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 08-27-2021
 // ***********************************************************************
 // <copyright file="ListExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -33,6 +33,8 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var people = base.PersonProperList.ToList();
 
 			people.AddLast(this.PersonProper01);
+
+			this.Consumer.Consume(people);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
@@ -60,6 +62,32 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var result = base.PersonProperList.ToList();
 
 			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.HasItems))]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItems01()
+		{
+			var people = base.PersonProperList.ToList();
+
+			this.Consumer.Consume(people.HasItems());
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
+		public void HasItems02()
+		{
+			var people = base.PersonProperList.ToList();
+
+			this.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItems03()
+		{
+			var people = base.PersonProperList.ToList();
+
+			this.Consumer.Consume(people.HasItems(5));
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.IndexOf))]
@@ -132,7 +160,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Slice Test")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Collections)]
 		public void PickRandom02()
 		{
 			var people = new ArraySegment<PersonProper>(base.PersonProperArrayFull);

@@ -104,7 +104,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
-		[BenchmarkCategory(Categories.New, Categories.Strings)]
+		[BenchmarkCategory(Categories.Strings)]
 		public void BytesToString02()
 		{
 			var readOnlySpan = new ReadOnlySpan<byte>(base.ByteArray);

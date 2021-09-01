@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:FileVersion - 15.0.0
 		/// AppInfo:Title - dotNetTips.Spargine
 		/// </example>
-		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
+		[Information(nameof(LogApplicationInformation), author: "David McCarter", createdOn: "11/03/2020", modifiedOn: "1/03/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static void LogApplicationInformation([NotNull] ILogger logger)
 		{
 			var appInfo = App.AppInfo;
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// AppInfo:SystemDirectory - C:\\WINDOWS\\system32
 		/// AppInfo:HasShutdownStarted - False
 		/// </example>
-		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
+		[Information(nameof(LogComputerInformation), author: "David McCarter", createdOn: "11/04/2020", modifiedOn: "1/04/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static void LogComputerInformation([NotNull] ILogger logger)
 		{
 			var computerInfo = new ComputerInfo();
@@ -107,7 +107,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// <param name="ex">The ex.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Exception cannot be null.</exception>
-		[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string[] RetrieveAllExceptionMessages([NotNull] Exception ex)
 		{
 			var exceptions = RetrieveAllExceptions(ex);
@@ -128,7 +128,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// <param name="ex">The ex.</param>
 		/// <returns>IEnumerable&lt;Exception&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Exception cannot be null.</exception>
-		[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 100, Status = Status.Available)]
 		public static Exception[] RetrieveAllExceptions([NotNull] Exception ex)
 		{
 			var collection = new List<Exception> { ex };

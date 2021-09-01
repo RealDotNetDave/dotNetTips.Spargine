@@ -24,7 +24,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// <summary>
 	/// StringBuilder Extensions.
 	/// </summary>
-	[Information(nameof(StringBuilderExtensions), "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(StringBuilderExtensions), "David McCarter", "5/26/2020", "7/29/2020", Status = Status.Available)]
 	public static class StringBuilderExtensions
 	{
 		/// <summary>
@@ -149,7 +149,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>StringBuilder.</returns>
 		/// <exception cref="ArgumentNullException">sb</exception>
 		/// <exception cref="ArgumentException">values</exception>
-		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 0, Status = Status.Available)]
+		[Information("Original code from efcore-master on GitHub", "David McCarter", "5/26/2020", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static void AppendValues([NotNull] this StringBuilder sb, string separator, [NotNull] params string[] values)
 		{
 			Validate.TryValidateParam(values, nameof(values));

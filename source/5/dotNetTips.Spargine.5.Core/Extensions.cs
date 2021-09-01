@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static void AddFirst<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
 			if (list.IsReadOnly)
@@ -85,7 +85,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static void AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
 			if (list.IsReadOnly)

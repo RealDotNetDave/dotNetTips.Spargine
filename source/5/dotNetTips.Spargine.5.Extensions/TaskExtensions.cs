@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <example>
 		/// SomeType.FireAsync("Test Message").FireAndForget();
 		/// </example>
-		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void FireAndForget([NotNull] this Task task)
 		{
 			_ = task.ContinueWith(tsk => tsk.Exception, TaskContinuationOptions.OnlyOnFaulted);
@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Action&lt;Exception&gt; exAction = (Exception ex) =&gt; Debug.WriteLine(ex.Message);
 		/// SomeType.FireAsync("Test Message").FireAndForget(exAction);
 		/// </example>
-		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void FireAndForget([NotNull] this Task task, Action<Exception> ex)
 		{
 			_ = task.ContinueWith((tsk) => ex?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);

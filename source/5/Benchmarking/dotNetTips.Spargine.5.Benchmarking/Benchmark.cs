@@ -261,7 +261,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		{
 			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Setup() - {this.GetType().FullName}.");
 
-			this.Base64String = this.StringToTrim.ToBase64();
+			this.Base64String = LongTestString.Substring(1, 50).ToBase64();
 
 			this.PersonProper01 = RandomData.GeneratePerson<PersonProper>();
 

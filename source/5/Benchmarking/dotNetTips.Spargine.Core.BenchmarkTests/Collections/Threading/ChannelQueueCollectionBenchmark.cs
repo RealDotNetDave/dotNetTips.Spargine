@@ -28,11 +28,11 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
-	[BenchmarkCategory(Categories.Queues, Categories.New)]
+	[BenchmarkCategory(Categories.Async)]
 	public class ChannelQueueCollectionBenchmark : CollectionBenchmark
 	{
 		[Benchmark(Description = "WriteAsync")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Async)]
 		public async Task WriteAsync01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "WriteAsync: IEnumerable")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Async)]
 		public async Task WriteAsync02()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -60,7 +60,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 
 		[Benchmark(Description = "Write & Listen Async")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Async)]
 		public void WriteListenTest01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -79,7 +79,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "Write & Read Async")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Async)]
 		public async Task WriteReadAsync01()
 		{
 			var channel = new ChannelQueue<PersonProper>();
@@ -97,7 +97,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		}
 
 		[Benchmark(Description = "Write & Read Async: IEnumerable")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Async)]
 		public async Task WriteReadAsync02()
 		{
 			var channel = new ChannelQueue<PersonProper>();

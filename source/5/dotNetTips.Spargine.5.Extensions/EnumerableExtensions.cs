@@ -135,7 +135,10 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool FastAny<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
+			//TODO: TRY TO MAKE THIS FASTER
 			return list.Any(predicate);
+
+			//return list.First(predicate) != null; DOES NOT WORK
 		}
 
 		/// <summary>
@@ -233,13 +236,14 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool HasItems([NotNull] this IEnumerable list) => list.Count() > 0;
 
 		/// <summary>
-		/// Determines whether the specified count has items.
+		/// Determines whether the collection has a specified count.
 		/// </summary>
 		/// <param name="list">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems([NotNull] this IEnumerable list, int count) => list.Count() == count;
+
 
 		/// <summary>
 		/// Determines whether [is null or empty] [the specified source].
@@ -377,7 +381,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> list)
 		{
 			return Collection<T>.Create(list);
@@ -419,7 +423,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		/// <remarks>Original code by: James Michael Hare</remarks>
-		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>([NotNull] this IEnumerable<IGrouping<TKey, TValue>> list)
 		{
 			return list.ToDictionary(group => group.Key, group => group.ToList());
@@ -458,7 +462,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
-		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
 		public static async Task<List<T>> ToListAsync<T>([NotNull] this IEnumerable<T> list)
 		{
 			return await Task.Run(() => list.ToList()).ConfigureAwait(false);

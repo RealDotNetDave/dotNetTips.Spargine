@@ -53,7 +53,7 @@ namespace dotNetTips.Spargine.Net.Http
 		/// </summary>
 		/// <param name="url">The URL.</param>
 		/// <returns>HttpResponseMessage.</returns>
-		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.New)]
+		[Information(nameof(GetHttpResponseAsync), UnitTestCoverage = 0, BenchMarkStatus = 0, Status = Status.Available)]
 		public static async Task<HttpResponseMessage> GetHttpResponseAsync([NotNull] Uri url)
 		{
 			Validate.TryValidateParam(url, nameof(url));

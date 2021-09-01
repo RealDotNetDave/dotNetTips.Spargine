@@ -27,6 +27,7 @@
 			--MAR 2021: Initial release.
 			--MAY 2021: Second release: 2021.5.1.50
 			--JUN 2021: Third release: 2021.6.3.5
+			--SEP 2021: Forth release. Code cleanup. 2021.9.4.23
 		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags></PackageTags>
@@ -37,7 +38,7 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2021.9.4.21</Version>
+		<Version>2021.9.4.23</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>

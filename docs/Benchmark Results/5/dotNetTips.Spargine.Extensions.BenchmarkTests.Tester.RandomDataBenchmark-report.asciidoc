@@ -3,19 +3,19 @@ BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
 Unknown processor
 .NET SDK=6.0.100-preview.7.21379.14
   [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
-  Job-DBSZBQ : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  Job-LAXWQE : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
-Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Tester  Categories=RandomData  
+Namespace=dotNetTips.Spargine.Extensions.BenchmarkTests.Tester  
 ....
 [options="header"]
 |===
-|                                Method|       Mean|      Error|     StdDev|     StdErr|        Min|         Q1|     Median|         Q3|        Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|   Gen 0|  Code Size|   Gen 1|  Allocated
-|                    'Creating: Person'|   7.040 μs|  0.0111 μs|  0.0103 μs|  0.0027 μs|   7.019 μs|   7.035 μs|   7.046 μs|   7.047 μs|   7.050 μs|  142,053.4|       0.0111 μs|       15.00|     2.120|   2.000|   -0.8715|     1|             *|        No|  0.3357|       1 KB|       -|       3 KB
-|               'Creating: PersonFixed'|   7.042 μs|  0.0122 μs|  0.0115 μs|  0.0030 μs|   7.021 μs|   7.040 μs|   7.046 μs|   7.049 μs|   7.056 μs|  141,995.2|       0.0122 μs|       15.00|     2.331|   2.000|   -0.8579|     1|             *|        No|  0.3357|       1 KB|       -|       3 KB
-|                'Creating: PersonPlus'|   7.620 μs|  0.0075 μs|  0.0070 μs|  0.0018 μs|   7.599 μs|   7.619 μs|   7.620 μs|   7.624 μs|   7.627 μs|  131,234.3|       0.0075 μs|       15.00|     5.951|   2.000|   -1.6888|     3|             *|        No|  0.3357|       1 KB|       -|       3 KB
-|              'Creating: PersonProper'|   7.354 μs|  0.0215 μs|  0.0201 μs|  0.0052 μs|   7.328 μs|   7.334 μs|   7.358 μs|   7.361 μs|   7.392 μs|  135,984.5|       0.0215 μs|       15.00|     2.115|   2.000|    0.3187|     2|             *|        No|  0.3357|       1 KB|       -|       3 KB
-|              'Creating: PersonRecord'|   9.365 μs|  0.0080 μs|  0.0067 μs|  0.0019 μs|   9.349 μs|   9.362 μs|   9.364 μs|   9.368 μs|   9.374 μs|  106,785.4|       0.0080 μs|       13.00|     3.108|   2.000|   -0.6427|     4|             *|        No|  0.4578|       1 KB|       -|       4 KB
-|  'PropertiesToString(): PersonProper'|  58.485 μs|  0.0899 μs|  0.0841 μs|  0.0217 μs|  58.367 μs|  58.429 μs|  58.457 μs|  58.539 μs|  58.693 μs|   17,098.5|       0.0899 μs|       15.00|     3.050|   2.000|    0.8483|     6|             *|        No|  7.9346|       1 KB|  0.0610|      71 KB
-|  'PropertiesToString(): PersonRecord'|  40.378 μs|  0.0692 μs|  0.0647 μs|  0.0167 μs|  40.183 μs|  40.369 μs|  40.396 μs|  40.407 μs|  40.452 μs|   24,766.0|       0.0692 μs|       15.00|     5.765|   2.000|   -1.7255|     5|             *|        No|  5.0049|       2 KB|       -|      45 KB
+|                                Method|       Mean|      Error|     StdDev|     StdErr|        Min|         Q1|     Median|         Q3|        Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|   Gen 0|  Code Size|  Allocated
+|                    'Creating: Person'|   6.786 μs|  0.0185 μs|  0.0164 μs|  0.0044 μs|   6.740 μs|   6.783 μs|   6.786 μs|   6.792 μs|   6.812 μs|  147,362.6|       0.0185 μs|       14.00|     5.144|   2.000|   -1.2211|     1|             *|        No|  0.3128|       1 KB|       3 KB
+|               'Creating: PersonFixed'|   6.765 μs|  0.0063 μs|  0.0059 μs|  0.0015 μs|   6.756 μs|   6.761 μs|   6.765 μs|   6.770 μs|   6.776 μs|  147,809.0|       0.0063 μs|       15.00|     1.726|   2.000|    0.1314|     1|             *|        No|  0.3128|       1 KB|       3 KB
+|                'Creating: PersonPlus'|   6.871 μs|  0.0084 μs|  0.0078 μs|  0.0020 μs|   6.862 μs|   6.865 μs|   6.870 μs|   6.876 μs|   6.889 μs|  145,534.2|       0.0084 μs|       15.00|     2.427|   2.000|    0.6600|     2|             *|        No|  0.3128|       1 KB|       3 KB
+|              'Creating: PersonProper'|   7.009 μs|  0.0075 μs|  0.0067 μs|  0.0018 μs|   6.998 μs|   7.005 μs|   7.007 μs|   7.013 μs|   7.022 μs|  142,681.2|       0.0075 μs|       14.00|     2.202|   2.000|    0.2938|     3|             *|        No|  0.3128|       1 KB|       3 KB
+|              'Creating: PersonRecord'|   9.257 μs|  0.0412 μs|  0.0344 μs|  0.0095 μs|   9.149 μs|   9.258 μs|   9.261 μs|   9.269 μs|   9.294 μs|  108,028.7|       0.0412 μs|       13.00|     7.594|   2.000|   -2.2475|     4|             *|        No|  0.4120|       1 KB|       4 KB
+|  'PropertiesToString(): PersonProper'|  29.037 μs|  0.0339 μs|  0.0264 μs|  0.0076 μs|  28.981 μs|  29.027 μs|  29.047 μs|  29.055 μs|  29.061 μs|   34,439.2|       0.0339 μs|       12.00|     2.408|   2.000|   -0.9514|     5|             *|        No|  3.5095|       1 KB|      31 KB
+|  'PropertiesToString(): PersonRecord'|  38.583 μs|  0.0647 μs|  0.0574 μs|  0.0153 μs|  38.466 μs|  38.547 μs|  38.589 μs|  38.615 μs|  38.692 μs|   25,918.0|       0.0647 μs|       14.00|     2.460|   2.000|   -0.1032|     6|             *|        No|  5.0049|       1 KB|      45 KB
 |===

@@ -46,7 +46,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The values.</param>
 		/// <returns>ImmutableHashSet<typeparamref name="T" />&gt;.</returns>
-		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ImmutableHashSet<T> ToImmutable<T>([NotNull] this HashSet<T> list)
 		{
 			return ImmutableHashSet.CreateRange(list);

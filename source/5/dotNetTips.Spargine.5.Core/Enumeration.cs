@@ -98,7 +98,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="firstValue">The first value.</param>
 		/// <param name="secondValue">The second value.</param>
 		/// <returns>System.Int32.</returns>
-		[Information(nameof(AbsoluteDifference), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(AbsoluteDifference), UnitTestCoverage = 100, Status = Status.Available)]
 		public static int AbsoluteDifference([NotNull] Enumeration firstValue, [NotNull] Enumeration secondValue)
 		{
 			var absoluteDifference = Math.Abs(firstValue.Value - secondValue.Value);

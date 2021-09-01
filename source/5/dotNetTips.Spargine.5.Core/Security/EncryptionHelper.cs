@@ -32,7 +32,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="iv">The initialization vector.</param>
 		/// <returns>System.String.</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
-		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static string AesDecrypt([NotNull] string cipherText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create AesManaged.
@@ -59,7 +59,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="iv">The initialization vector.</param>
 		/// <returns>System.Byte[].</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
-		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create a new AesManaged.
@@ -90,7 +90,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// Generates the AES IV.
 		/// </summary>
 		/// <returns>System.Byte[].</returns>
-		[Information(nameof(GenerateAesIV), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(GenerateAesIV), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static byte[] GenerateAesIV()
 		{
 			using var aes = new AesManaged();
@@ -103,7 +103,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// Generates the AES key.
 		/// </summary>
 		/// <returns>System.Byte[].</returns>
-		[Information(nameof(GenerateAesKey), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(GenerateAesKey), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static byte[] GenerateAesKey()
 		{
 			using var aes = new AesManaged();
@@ -118,7 +118,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="cipherText">The encrypted text.</param>
 		/// <param name="key">The key.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(SimpleDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(SimpleDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static string SimpleDecrypt([NotNull] string cipherText, [NotNull] string key)
 		{
 			var keys = GetHashKeys(key);
@@ -133,7 +133,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="key">The key.</param>
 		/// <returns>System.String.</returns>
 		/// <example>Example output: pVGs2TkJkzcHYW3Wiq2QEx8/kyFBJmE2Ji2lbwwAPaA=</example>
-		[Information(nameof(SimpleEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(SimpleEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static string SimpleEncrypt([NotNull] string plainText, [NotNull] string key)
 		{
 			var keys = GetHashKeys(key);

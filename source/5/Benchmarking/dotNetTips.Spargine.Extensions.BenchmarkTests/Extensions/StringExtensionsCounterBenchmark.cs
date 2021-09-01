@@ -121,7 +121,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(StringExtensions.IsAsciiDigit))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Strings)]
 		public void IsAsciiDigit()
 		{
 			var result = this._testCharacter.IsAsciiDigit();
@@ -146,7 +146,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = nameof(StringExtensions.IsAsciiWhitespace))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Strings)]
 		public void IsAsciiWhitespace()
 		{
 			var result = this._testCharacter.IsAsciiDigit();

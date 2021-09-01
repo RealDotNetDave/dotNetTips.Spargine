@@ -7,12 +7,16 @@
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -28,18 +32,18 @@
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,21DDFEB2DC0
+       mov       rdx,22508592DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -110,7 +114,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1F9A88
+       mov       rdx,7FF7AD36C0F0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -126,34 +130,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -231,7 +234,7 @@ M04_L00:
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA21F958
+       mov       rdx,7FF7AD3B1F90
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -254,7 +257,7 @@ M05_L02:
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA21F948
+       mov       rdx,7FF7AD3B1F80
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -656,7 +659,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -682,7 +685,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -700,7 +703,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -720,12 +723,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -741,18 +748,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1BE535E2DC0
+       mov       rdx,1DA02DC2DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -823,7 +830,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1E9F20
+       mov       rdx,7FF7AD34C540
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -839,34 +846,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -939,12 +945,12 @@ M04_L00:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+60]
+       mov       rdx,[rdx+58]
        test      rdx,rdx
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA20FDC8
+       mov       rdx,7FF7AD393768
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -961,13 +967,13 @@ M05_L02:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+58]
+       mov       rdx,[rdx+60]
        test      rdx,rdx
        je        short M05_L03
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA20FDB8
+       mov       rdx,7FF7AD393778
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -1369,7 +1375,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -1395,7 +1401,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -1413,7 +1419,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -1433,12 +1439,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -1454,18 +1464,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,20CE3D52DC0
+       mov       rdx,20F8B492DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -1536,7 +1546,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1CA120
+       mov       rdx,7FF7AD38C570
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -1552,34 +1562,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -1652,12 +1661,12 @@ M04_L00:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+60]
+       mov       rdx,[rdx+58]
        test      rdx,rdx
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA210070
+       mov       rdx,7FF7AD3D3918
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -1674,13 +1683,13 @@ M05_L02:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+58]
+       mov       rdx,[rdx+60]
        test      rdx,rdx
        je        short M05_L03
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA210060
+       mov       rdx,7FF7AD3D3928
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -2082,7 +2091,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -2108,7 +2117,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -2126,7 +2135,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -2146,12 +2155,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -2167,18 +2180,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1C932DB2DC0
+       mov       rdx,1D858892DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -2249,7 +2262,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1FA120
+       mov       rdx,7FF7AD34C558
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -2265,34 +2278,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -2370,7 +2382,7 @@ M04_L00:
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA240020
+       mov       rdx,7FF7AD392548
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -2393,7 +2405,7 @@ M05_L02:
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA21FFE8
+       mov       rdx,7FF7AD392538
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -2795,7 +2807,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -2821,7 +2833,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -2839,7 +2851,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -2859,12 +2871,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -2880,18 +2896,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1ED380C2DC0
+       mov       rdx,20C0CAA2DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -2962,7 +2978,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1D9F20
+       mov       rdx,7FF7AD38C518
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -2978,34 +2994,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -3083,7 +3098,7 @@ M04_L00:
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA1FFDB8
+       mov       rdx,7FF7AD3D23C8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -3106,7 +3121,7 @@ M05_L02:
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA1FFDA8
+       mov       rdx,7FF7AD3D23B8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -3508,7 +3523,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -3534,7 +3549,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -3552,7 +3567,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -3572,12 +3587,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -3593,18 +3612,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,2206C642DC0
+       mov       rdx,222A4612DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -3675,7 +3694,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1D9EB0
+       mov       rdx,7FF7AD37C518
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -3691,34 +3710,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -3796,7 +3814,7 @@ M04_L00:
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA1FFD30
+       mov       rdx,7FF7AD3C23B8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -3819,7 +3837,7 @@ M05_L02:
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA1FFD20
+       mov       rdx,7FF7AD3C23A8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -4221,7 +4239,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -4247,7 +4265,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -4265,7 +4283,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -4285,12 +4303,16 @@ M07_L05:
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			var token = CancellationToken.None;
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			var tasks = new List<Task>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(AddToQueue(channel, people, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			tasks.Add(ListenToQueue(channel, token));
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			var tasks = new List<Task>
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			{
+; 			 
+; 				AddToQueue(channel, people, token),
+; 				                                   
+; 				ListenToQueue(channel, token)
+; 				                             
+; 			};
+; 			  
 ; 			Task.WaitAll(tasks.ToArray());
 ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ; 			this.Consumer.Consume(channel.Count);
@@ -4306,18 +4328,18 @@ M07_L05:
        mov       rdi,rax
        mov       rcx,rdi
        call      dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1[[System.__Canon, System.Private.CoreLib]]..ctor()
-       mov       rbx,[rsi+160]
+       mov       rbx,[rsi+148]
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,169F37E2DC0
+       mov       rdx,1C5D7F72DC0
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rdi
        mov       rdx,rbx
        xor       r8d,r8d
-       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       call      dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
        mov       r8,rax
        inc       dword ptr [rbp+14]
        mov       rcx,[rbp+8]
@@ -4388,7 +4410,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FF9EA1FA120
+       mov       rdx,7FF7AD35C558
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -4404,34 +4426,33 @@ M01_L01:
 ; Total bytes of code 106
 ```
 ```assembly
-; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.List`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
-       sub       rsp,78
+; dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark.AddToQueue(dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Collections.Generic.IList`1<dotNetTips.Spargine.Tester.Models.PersonProper>, System.Threading.CancellationToken)
+       sub       rsp,68
        xor       eax,eax
        mov       [rsp+28],rax
        vxorps    xmm4,xmm4,xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        vmovdqa   xmmword ptr [rsp+50],xmm4
-       vmovdqa   xmmword ptr [rsp+60],xmm4
-       mov       [rsp+70],rax
+       mov       [rsp+60],rax
        xor       eax,eax
-       mov       [rsp+40],rax
+       mov       [rsp+48],rax
        mov       [rsp+30],rcx
        mov       [rsp+28],rdx
-       mov       [rsp+48],r8
-       mov       dword ptr [rsp+38],0FFFFFFFF
+       mov       [rsp+50],r8
+       mov       dword ptr [rsp+40],0FFFFFFFF
        lea       rcx,[rsp+28]
        call      System.Runtime.CompilerServices.AsyncMethodBuilderCore.Start[[dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark+<AddToQueue>d__5, dotNetTips.Spargine.Core.BenchmarkTests]](<AddToQueue>d__5 ByRef)
-       mov       rax,[rsp+40]
+       mov       rax,[rsp+48]
        test      rax,rax
        jne       short M02_L00
-       lea       rcx,[rsp+40]
+       lea       rcx,[rsp+48]
        call      System.Runtime.CompilerServices.AsyncTaskMethodBuilder.InitializeTaskAsPromise()
 M02_L00:
        nop
-       add       rsp,78
+       add       rsp,68
        ret
-; Total bytes of code 110
+; Total bytes of code 104
 ```
 ```assembly
 ; System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
@@ -4509,7 +4530,7 @@ M04_L00:
        je        short M05_L00
        jmp       short M05_L01
 M05_L00:
-       mov       rdx,7FF9EA240020
+       mov       rdx,7FF7AD3A23F0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L01:
@@ -4532,7 +4553,7 @@ M05_L02:
        mov       [rsp+20],rdx
        jmp       short M05_L04
 M05_L03:
-       mov       rdx,7FF9EA21FFE8
+       mov       rdx,7FF7AD3A23E0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -4934,7 +4955,7 @@ M06_L35:
        jne       short M07_L01
        lea       rdx,[rbp+0FFE8]
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498C7C60
+       call      00007FF80CA47C60
        mov       rcx,[rsi+8]
        mov       rcx,[rcx+8]
        mov       rax,[rcx]
@@ -4960,7 +4981,7 @@ M07_L03:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L04
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L04:
        mov       eax,edi
        lea       rsp,[rbp+0FFF0]
@@ -4978,7 +4999,7 @@ M07_L04:
        cmp       byte ptr [rbp+0FFE8],0
        je        short M07_L05
        mov       rcx,[rbp+0FFE0]
-       call      00007FFA498CA910
+       call      00007FF80CA4A910
 M07_L05:
        nop
        add       rsp,30
@@ -5044,7 +5065,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF50020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5168,7 +5189,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5292,7 +5313,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5416,7 +5437,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5540,7 +5561,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5664,7 +5685,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF90020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5788,7 +5809,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -5913,7 +5934,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6038,7 +6059,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6163,7 +6184,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6288,7 +6309,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6413,7 +6434,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6538,7 +6559,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6663,7 +6684,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF90020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6786,7 +6807,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6909,7 +6930,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7032,7 +7053,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7155,7 +7176,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7278,7 +7299,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF70020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7401,7 +7422,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF90020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7524,7 +7545,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7647,7 +7668,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7770,7 +7791,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DF0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7893,7 +7914,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF90020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8016,7 +8037,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8139,7 +8160,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9DE0020
+       mov       rcx,7FF7ACF90020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8262,7 +8283,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E00020
+       mov       rcx,7FF7ACF60020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8385,7 +8406,7 @@ M02_L00:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]

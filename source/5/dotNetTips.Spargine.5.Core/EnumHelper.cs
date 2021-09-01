@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 08-26-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="useXmlNames">if set to <c>true</c> [use XML names].</param>
 		/// <returns>List&lt;EnumValue&gt;.</returns>
 		/// <exception cref="InvalidEnumTypeException"></exception>
-		[Information(nameof(GetValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 99, Status = Status.Available)]
+		[Information(nameof(GetValues), author: "David McCarter", createdOn: "1/1/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<EnumValue> GetValues<T>(bool fixNames, bool useXmlNames)
 			where T : Enum
 		{
@@ -86,8 +86,6 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="t">The t.</param>
 		/// <param name="fixNames">if set to <c>true</c> [fix names].</param>
 		/// <param name="useXml">if set to <c>true</c> [use XML].</param>
-		/// <returns>List&lt;System.String&gt;.</returns>
-		[Information(nameof(GetNames), UnitTestCoverage = 99, Status = Status.Available)]
 		private static List<string> GetNames(Type t, bool fixNames, bool useXml)
 		{
 			// Set up result

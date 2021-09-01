@@ -11,8 +11,8 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Data.Services.Client;
 using System.Security;
+using System.Security.Policy;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 
@@ -20,7 +20,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	public class ExceptionExtensionsBenchmark : Benchmark
 	{
-		private readonly SecurityException _testException = new("Message from SecurityException", new DataServiceClientException("Cannot access service!"));
+		private readonly SecurityException _testException = new("Message from SecurityException", new PolicyException("Cannot access service!"));
 
 		[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
 		public void GetAllMessages01()

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.Core.BenchmarkTests.CachedEnumerableCollectionBenchmark-20210811-161630</title>
+<title>dotNetTips.Spargine.Core.BenchmarkTests.CachedEnumerableCollectionBenchmark-20210828-134641</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,22 +17,22 @@ BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
 Unknown processor
 .NET SDK=6.0.100-preview.7.21379.14
   [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
-  Job-UTOYIO : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  Job-YNYGDE : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
-Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=CachedEnumerable Class  
+Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=Collections  
 </code></pre>
 
 <table>
 <thead><tr><th>                        Method</th><th>Count</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th>  Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>10</td><td>14.72 ns</td><td>0.078 ns</td><td>0.061 ns</td><td>0.018 ns</td><td>14.56 ns</td><td>14.73 ns</td><td>14.74 ns</td><td>14.75 ns</td><td>14.78 ns</td><td>67,916,095.5</td><td>0.0781 ns</td><td>12.00</td><td>4.389</td><td>2.000</td><td>-1.5226</td><td>3</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>25</td><td>14.42 ns</td><td>0.307 ns</td><td>0.440 ns</td><td>0.083 ns</td><td>13.88 ns</td><td>14.12 ns</td><td>14.23 ns</td><td>14.67 ns</td><td>15.43 ns</td><td>69,339,415.9</td><td>0.3070 ns</td><td>28.00</td><td>2.459</td><td>2.471</td><td>0.9196</td><td>2</td><td>*</td><td>No</td><td>128 B</td><td>0.0087</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>50</td><td>14.83 ns</td><td>0.067 ns</td><td>0.059 ns</td><td>0.016 ns</td><td>14.71 ns</td><td>14.81 ns</td><td>14.85 ns</td><td>14.87 ns</td><td>14.92 ns</td><td>67,414,432.4</td><td>0.0670 ns</td><td>14.00</td><td>2.419</td><td>2.000</td><td>-0.6825</td><td>3</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>100</td><td>14.07 ns</td><td>0.024 ns</td><td>0.023 ns</td><td>0.006 ns</td><td>14.02 ns</td><td>14.05 ns</td><td>14.07 ns</td><td>14.08 ns</td><td>14.11 ns</td><td>71,095,468.5</td><td>0.0244 ns</td><td>15.00</td><td>2.355</td><td>2.000</td><td>0.0649</td><td>1</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>250</td><td>14.34 ns</td><td>0.029 ns</td><td>0.027 ns</td><td>0.007 ns</td><td>14.29 ns</td><td>14.33 ns</td><td>14.34 ns</td><td>14.36 ns</td><td>14.39 ns</td><td>69,724,668.6</td><td>0.0294 ns</td><td>15.00</td><td>2.227</td><td>2.000</td><td>0.1894</td><td>2</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>500</td><td>16.64 ns</td><td>0.166 ns</td><td>0.147 ns</td><td>0.039 ns</td><td>16.48 ns</td><td>16.55 ns</td><td>16.61 ns</td><td>16.66 ns</td><td>17.01 ns</td><td>60,080,295.9</td><td>0.1659 ns</td><td>14.00</td><td>3.309</td><td>2.000</td><td>1.1101</td><td>4</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
-</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>1000</td><td>18.01 ns</td><td>0.210 ns</td><td>0.196 ns</td><td>0.051 ns</td><td>17.76 ns</td><td>17.82 ns</td><td>18.01 ns</td><td>18.16 ns</td><td>18.38 ns</td><td>55,525,105.5</td><td>0.2097 ns</td><td>15.00</td><td>1.681</td><td>2.000</td><td>0.1995</td><td>5</td><td>*</td><td>No</td><td>128 B</td><td>0.0086</td><td>80 B</td>
+</thead><tbody><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>10</td><td>18.47 ns</td><td>0.031 ns</td><td>0.027 ns</td><td>0.007 ns</td><td>18.42 ns</td><td>18.46 ns</td><td>18.47 ns</td><td>18.48 ns</td><td>18.52 ns</td><td>54,144,075.2</td><td>0.0306 ns</td><td>14.00</td><td>2.134</td><td>2.000</td><td>-0.0434</td><td>1</td><td>*</td><td>No</td><td>372 B</td><td>0.0087</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>25</td><td>18.50 ns</td><td>0.020 ns</td><td>0.018 ns</td><td>0.005 ns</td><td>18.48 ns</td><td>18.48 ns</td><td>18.49 ns</td><td>18.51 ns</td><td>18.54 ns</td><td>54,065,036.1</td><td>0.0203 ns</td><td>14.00</td><td>3.589</td><td>2.000</td><td>1.0991</td><td>1</td><td>*</td><td>No</td><td>372 B</td><td>0.0087</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>50</td><td>18.27 ns</td><td>0.030 ns</td><td>0.028 ns</td><td>0.007 ns</td><td>18.24 ns</td><td>18.25 ns</td><td>18.27 ns</td><td>18.29 ns</td><td>18.34 ns</td><td>54,719,718.5</td><td>0.0304 ns</td><td>15.00</td><td>2.425</td><td>2.000</td><td>0.6147</td><td>1</td><td>*</td><td>No</td><td>372 B</td><td>0.0087</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>100</td><td>18.62 ns</td><td>0.032 ns</td><td>0.030 ns</td><td>0.008 ns</td><td>18.57 ns</td><td>18.60 ns</td><td>18.62 ns</td><td>18.64 ns</td><td>18.67 ns</td><td>53,699,787.3</td><td>0.0316 ns</td><td>15.00</td><td>1.889</td><td>2.000</td><td>-0.1257</td><td>1</td><td>*</td><td>No</td><td>372 B</td><td>0.0087</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>250</td><td>18.34 ns</td><td>0.033 ns</td><td>0.029 ns</td><td>0.008 ns</td><td>18.30 ns</td><td>18.32 ns</td><td>18.34 ns</td><td>18.37 ns</td><td>18.39 ns</td><td>54,516,748.3</td><td>0.0330 ns</td><td>14.00</td><td>1.648</td><td>2.000</td><td>0.0975</td><td>1</td><td>*</td><td>No</td><td>372 B</td><td>0.0089</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>500</td><td>20.47 ns</td><td>0.437 ns</td><td>0.893 ns</td><td>0.125 ns</td><td>18.43 ns</td><td>20.60 ns</td><td>20.80 ns</td><td>20.90 ns</td><td>21.33 ns</td><td>48,850,457.4</td><td>0.4373 ns</td><td>51.00</td><td>3.895</td><td>2.000</td><td>-1.5747</td><td>2</td><td>*</td><td>No</td><td>372 B</td><td>0.0086</td><td>80 B</td>
+</tr><tr><td>&#39;CachedEnumerable.Create: From List&#39;</td><td>1000</td><td>20.80 ns</td><td>0.199 ns</td><td>0.186 ns</td><td>0.048 ns</td><td>20.44 ns</td><td>20.81 ns</td><td>20.83 ns</td><td>20.95 ns</td><td>21.01 ns</td><td>48,074,129.7</td><td>0.1986 ns</td><td>15.00</td><td>2.421</td><td>2.000</td><td>-0.9549</td><td>2</td><td>*</td><td>No</td><td>372 B</td><td>0.0087</td><td>80 B</td>
 </tr></tbody></table>
 </body>
 </html>

@@ -1,28 +1,33 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>2021.6.5.53</AssemblyVersion>
-    <FileVersion>2021.6.5.53</FileVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net5.0</TargetFramework>
+		<AssemblyVersion>2021.6.5.53</AssemblyVersion>
+		<FileVersion>2021.6.5.53</FileVersion>
+		<Description>dotNetTips.Spargine.BenchmarkTests</Description>
+		<Copyright>David McCarter</Copyright>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\OutputBin\</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\OutputBin\</OutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\OutputBin\</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\OutputBin\</OutputPath>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.20" />
-    <PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.20" />
-    <PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.20" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
+		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.23" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\dotNetTips.Spargine.5.Benchmarking\dotNetTips.Spargine.5.Benchmarking.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\dotNetTips.Spargine.5.Benchmarking\dotNetTips.Spargine.5.Benchmarking.csproj" />
+	</ItemGroup>
 
 </Project>

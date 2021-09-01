@@ -318,7 +318,7 @@ namespace dotNetTips.Spargine.IO
 		/// <param name="searchOption">The search option.</param>
 		/// <param name="searchPatterns">The search patterns.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static bool SafeDirectoryContainsAny([NotNull] DirectoryInfo rootDirectory, SearchOption searchOption = SearchOption.TopDirectoryOnly, [NotNull] params string[] searchPatterns)
 		{
 			Validate.TryValidateParam(searchPatterns, nameof(searchPatterns));
@@ -431,7 +431,7 @@ namespace dotNetTips.Spargine.IO
 		/// Sets the file attributes to normal for a path.
 		/// </summary>
 		/// <param name="path">The path.</param>
-		[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
+		[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 99)]
 		public static void SetFileAttributesToNormal([NotNull] string path)
 		{
 			for (var directoryCount = 0; directoryCount < Directory.GetDirectories(path).Length; directoryCount++)

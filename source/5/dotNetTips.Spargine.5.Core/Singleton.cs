@@ -21,7 +21,7 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <remarks>Inspired by the C# Design Patterns: Singleton course on Pluralsight.</remarks>
-	[Information(nameof(Singleton<T>), author: "David McCarter", createdOn: "7/12/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL TO SEP ARTICLE")]
+	[Information(nameof(Singleton<T>), author: "David McCarter", createdOn: "7/12/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 	public sealed class Singleton<T> where T : new()
 	{
 		/// <summary>

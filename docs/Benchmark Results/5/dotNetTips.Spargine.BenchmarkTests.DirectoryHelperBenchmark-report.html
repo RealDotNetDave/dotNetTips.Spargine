@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210811-161003</title>
+<title>dotNetTips.Spargine.BenchmarkTests.DirectoryHelperBenchmark-20210828-133544</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,23 +17,23 @@ BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
 Unknown processor
 .NET SDK=6.0.100-preview.7.21379.14
   [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
-  Job-JKZSDL : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+  Job-IASTIE : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
-Namespace=dotNetTips.Spargine.BenchmarkTests  Categories=DirectoryHelper  
+Namespace=dotNetTips.Spargine.BenchmarkTests  Categories=IO  
 </code></pre>
 
 <table>
 <thead><tr><th>             Method</th><th>   Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th> Median</th><th>    Min</th><th>     Q1</th><th>     Q3</th><th>    Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Copy &amp; Delete Directory&#39;</td><td>52,057.840 &mu;s</td><td>986.3831 &mu;s</td><td>823.6746 &mu;s</td><td>228.4462 &mu;s</td><td>51,885.790 &mu;s</td><td>50,937.070 &mu;s</td><td>51,643.720 &mu;s</td><td>52,202.880 &mu;s</td><td>54,161.390 &mu;s</td><td>19.21</td><td>986.3831 &mu;s</td><td>13.00</td><td>3.855</td><td>2.000</td><td>1.1932</td><td>8</td><td>*</td><td>No</td><td>885 B</td><td>100.0000</td><td>1,577,684 B</td>
-</tr><tr><td>&#39;Copy &amp; Move Directory&#39;</td><td>39,875.379 &mu;s</td><td>693.1282 &mu;s</td><td>851.2237 &mu;s</td><td>181.4815 &mu;s</td><td>39,612.550 &mu;s</td><td>38,969.254 &mu;s</td><td>39,248.758 &mu;s</td><td>40,280.810 &mu;s</td><td>42,041.423 &mu;s</td><td>25.08</td><td>693.1282 &mu;s</td><td>22.00</td><td>3.503</td><td>2.000</td><td>1.1381</td><td>7</td><td>*</td><td>No</td><td>1,197 B</td><td>-</td><td>45,656 B</td>
-</tr><tr><td>AppDataFolder</td><td>2.337 &mu;s</td><td>0.0459 &mu;s</td><td>0.0581 &mu;s</td><td>0.0121 &mu;s</td><td>2.313 &mu;s</td><td>2.279 &mu;s</td><td>2.299 &mu;s</td><td>2.366 &mu;s</td><td>2.481 &mu;s</td><td>427,875.71</td><td>0.0459 &mu;s</td><td>23.00</td><td>3.181</td><td>2.000</td><td>1.1609</td><td>1</td><td>*</td><td>No</td><td>360 B</td><td>0.0801</td><td>736 B</td>
-</tr><tr><td>DeleteDirectory</td><td>11.344 &mu;s</td><td>0.1345 &mu;s</td><td>0.1258 &mu;s</td><td>0.0325 &mu;s</td><td>11.315 &mu;s</td><td>11.171 &mu;s</td><td>11.237 &mu;s</td><td>11.450 &mu;s</td><td>11.558 &mu;s</td><td>88,155.39</td><td>0.1345 &mu;s</td><td>15.00</td><td>1.443</td><td>2.000</td><td>0.1368</td><td>2</td><td>*</td><td>No</td><td>454 B</td><td>0.0153</td><td>240 B</td>
-</tr><tr><td>LoadOneDriveFolders</td><td>71.797 &mu;s</td><td>0.8734 &mu;s</td><td>0.8170 &mu;s</td><td>0.2109 &mu;s</td><td>71.681 &mu;s</td><td>70.531 &mu;s</td><td>71.286 &mu;s</td><td>72.264 &mu;s</td><td>73.316 &mu;s</td><td>13,928.12</td><td>0.8734 &mu;s</td><td>15.00</td><td>2.010</td><td>2.000</td><td>0.4492</td><td>3</td><td>*</td><td>No</td><td>804 B</td><td>0.3662</td><td>3,809 B</td>
-</tr><tr><td>SafeDirectorySearch</td><td>106.295 &mu;s</td><td>4.7341 &mu;s</td><td>13.8097 &mu;s</td><td>1.3950 &mu;s</td><td>98.309 &mu;s</td><td>96.530 &mu;s</td><td>97.412 &mu;s</td><td>119.336 &mu;s</td><td>145.271 &mu;s</td><td>9,407.74</td><td>4.7341 &mu;s</td><td>98.00</td><td>2.960</td><td>2.563</td><td>1.2163</td><td>4</td><td>*</td><td>No</td><td>1,686 B</td><td>-</td><td>616 B</td>
-</tr><tr><td>SafeFileSearch</td><td>349.320 &mu;s</td><td>2.6083 &mu;s</td><td>2.3122 &mu;s</td><td>0.6180 &mu;s</td><td>349.321 &mu;s</td><td>346.518 &mu;s</td><td>347.066 &mu;s</td><td>350.615 &mu;s</td><td>354.877 &mu;s</td><td>2,862.70</td><td>2.6083 &mu;s</td><td>14.00</td><td>2.881</td><td>2.000</td><td>0.6537</td><td>5</td><td>*</td><td>No</td><td>1,036 B</td><td>2.4414</td><td>26,401 B</td>
-</tr><tr><td>SetFileAttributesToNormal</td><td>9,835.976 &mu;s</td><td>100.3934 &mu;s</td><td>93.9080 &mu;s</td><td>24.2469 &mu;s</td><td>9,876.841 &mu;s</td><td>9,694.773 &mu;s</td><td>9,765.615 &mu;s</td><td>9,897.730 &mu;s</td><td>10,025.369 &mu;s</td><td>101.67</td><td>100.3934 &mu;s</td><td>15.00</td><td>2.046</td><td>2.000</td><td>0.0136</td><td>6</td><td>*</td><td>No</td><td>207 B</td><td>140.6250</td><td>1,276,936 B</td>
+</thead><tbody><tr><td>&#39;Copy &amp; Delete Directory&#39;</td><td>51,233.984 &mu;s</td><td>818.2152 &mu;s</td><td>683.2467 &mu;s</td><td>189.4986 &mu;s</td><td>51,023.340 &mu;s</td><td>50,513.290 &mu;s</td><td>50,798.780 &mu;s</td><td>51,305.100 &mu;s</td><td>53,040.630 &mu;s</td><td>19.52</td><td>818.2152 &mu;s</td><td>13.00</td><td>4.050</td><td>2.000</td><td>1.3297</td><td>8</td><td>*</td><td>No</td><td>885 B</td><td>100.0000</td><td>1,577,648 B</td>
+</tr><tr><td>&#39;Copy &amp; Move Directory&#39;</td><td>43,833.916 &mu;s</td><td>742.0732 &mu;s</td><td>579.3619 &mu;s</td><td>167.2474 &mu;s</td><td>43,593.314 &mu;s</td><td>43,206.991 &mu;s</td><td>43,449.005 &mu;s</td><td>44,453.682 &mu;s</td><td>44,800.473 &mu;s</td><td>22.81</td><td>742.0732 &mu;s</td><td>12.00</td><td>1.416</td><td>2.000</td><td>0.4570</td><td>7</td><td>*</td><td>No</td><td>1,197 B</td><td>-</td><td>46,476 B</td>
+</tr><tr><td>AppDataFolder</td><td>2.415 &mu;s</td><td>0.0411 &mu;s</td><td>0.0385 &mu;s</td><td>0.0099 &mu;s</td><td>2.390 &mu;s</td><td>2.377 &mu;s</td><td>2.386 &mu;s</td><td>2.448 &mu;s</td><td>2.480 &mu;s</td><td>414,145.12</td><td>0.0411 &mu;s</td><td>15.00</td><td>1.447</td><td>2.000</td><td>0.5379</td><td>1</td><td>*</td><td>No</td><td>360 B</td><td>0.0801</td><td>736 B</td>
+</tr><tr><td>DeleteDirectory</td><td>11.237 &mu;s</td><td>0.0309 &mu;s</td><td>0.0274 &mu;s</td><td>0.0073 &mu;s</td><td>11.239 &mu;s</td><td>11.189 &mu;s</td><td>11.227 &mu;s</td><td>11.256 &mu;s</td><td>11.276 &mu;s</td><td>88,989.71</td><td>0.0309 &mu;s</td><td>14.00</td><td>1.892</td><td>2.000</td><td>-0.3062</td><td>2</td><td>*</td><td>No</td><td>454 B</td><td>0.0153</td><td>240 B</td>
+</tr><tr><td>LoadOneDriveFolders</td><td>68.165 &mu;s</td><td>0.1611 &mu;s</td><td>0.1345 &mu;s</td><td>0.0373 &mu;s</td><td>68.178 &mu;s</td><td>67.968 &mu;s</td><td>68.078 &mu;s</td><td>68.265 &mu;s</td><td>68.425 &mu;s</td><td>14,670.23</td><td>0.1611 &mu;s</td><td>13.00</td><td>1.942</td><td>2.000</td><td>0.2804</td><td>4</td><td>*</td><td>No</td><td>845 B</td><td>0.3662</td><td>3,809 B</td>
+</tr><tr><td>SafeDirectorySearch</td><td>50.391 &mu;s</td><td>0.1423 &mu;s</td><td>0.1331 &mu;s</td><td>0.0344 &mu;s</td><td>50.412 &mu;s</td><td>50.178 &mu;s</td><td>50.269 &mu;s</td><td>50.504 &mu;s</td><td>50.568 &mu;s</td><td>19,844.72</td><td>0.1423 &mu;s</td><td>15.00</td><td>1.525</td><td>2.000</td><td>-0.2469</td><td>3</td><td>*</td><td>No</td><td>1,549 B</td><td>0.0610</td><td>616 B</td>
+</tr><tr><td>SafeFileSearch</td><td>300.905 &mu;s</td><td>0.3378 &mu;s</td><td>0.3160 &mu;s</td><td>0.0816 &mu;s</td><td>300.934 &mu;s</td><td>300.363 &mu;s</td><td>300.636 &mu;s</td><td>301.173 &mu;s</td><td>301.330 &mu;s</td><td>3,323.31</td><td>0.3378 &mu;s</td><td>15.00</td><td>1.589</td><td>2.000</td><td>-0.2536</td><td>5</td><td>*</td><td>No</td><td>1,036 B</td><td>2.4414</td><td>26,401 B</td>
+</tr><tr><td>SetFileAttributesToNormal</td><td>8,818.679 &mu;s</td><td>180.6446 &mu;s</td><td>466.3015 &mu;s</td><td>52.7982 &mu;s</td><td>8,993.819 &mu;s</td><td>7,440.609 &mu;s</td><td>8,971.227 &mu;s</td><td>9,010.434 &mu;s</td><td>9,096.075 &mu;s</td><td>113.40</td><td>180.6446 &mu;s</td><td>78.00</td><td>5.927</td><td>2.000</td><td>-2.1905</td><td>6</td><td>*</td><td>No</td><td>173 B</td><td>132.8125</td><td>1,276,936 B</td>
 </tr></tbody></table>
 </body>
 </html>

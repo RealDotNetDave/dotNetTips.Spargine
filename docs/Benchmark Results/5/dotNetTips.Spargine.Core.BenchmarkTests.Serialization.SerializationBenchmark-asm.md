@@ -28,9 +28,9 @@
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,149F6BF1110
+       mov       rdx,2061B6554C8
        mov       rdx,[rdx]
-       mov       r8,149E6BF7DA0
+       mov       r8,2060B653998
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -49,36 +49,30 @@
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       [rbp+0FFE0],rcx
-       mov       rdi,rcx
-       mov       rsi,rdx
-       mov       r8,149E6BF3020
-       mov       r8,[r8]
-       mov       rdx,149F6BF1158
-       mov       rdx,[rdx]
-       mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
+       mov       rsi,rcx
+       mov       rdi,rdx
        mov       rcx,offset MT_System.IO.StringReader
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       rcx,rbx
-       mov       rdx,rsi
+       mov       rdx,rdi
        call      System.IO.StringReader..ctor(System.String)
        mov       [rbp+0FFD8],rbx
        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
        call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       rdi,[rdi+10]
-       mov       rcx,[rdi]
+       mov       rdi,rax
+       mov       rsi,[rsi+10]
+       mov       rcx,[rsi]
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
        mov       rdx,rax
-       mov       rcx,rsi
+       mov       rcx,rdi
        xor       r8d,r8d
        call      System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)
-       mov       rcx,rsi
+       mov       rcx,rdi
        mov       rdx,[rbp+0FFD8]
        call      System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
        mov       rdx,rax
-       mov       rcx,[rdi]
+       mov       rcx,[rsi]
        call      CORINFO_HELP_CHKCASTARRAY
        mov       rsi,rax
        mov       rcx,[rbp+0FFD8]
@@ -124,7 +118,7 @@ M02_L00:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 280
+; Total bytes of code 246
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -157,9 +151,9 @@ M02_L00:
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,147E3771110
+       mov       rdx,276CEAA1CF0
        mov       rdx,[rdx]
-       mov       r8,147D3775990
+       mov       r8,276AEAA5990
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -178,36 +172,30 @@ M02_L00:
        lea       rbp,[rsp+50]
        mov       [rbp+0FFD0],rsp
        mov       [rbp+0FFE0],rcx
-       mov       rdi,rcx
-       mov       rsi,rdx
-       mov       r8,147B3773020
-       mov       r8,[r8]
-       mov       rdx,147E3771158
-       mov       rdx,[rdx]
-       mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
+       mov       rsi,rcx
+       mov       rdi,rdx
        mov       rcx,offset MT_System.IO.StringReader
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       rcx,rbx
-       mov       rdx,rsi
+       mov       rdx,rdi
        call      System.IO.StringReader..ctor(System.String)
        mov       [rbp+0FFD8],rbx
        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
        call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       rdi,[rdi+10]
-       mov       rcx,[rdi]
+       mov       rdi,rax
+       mov       rsi,[rsi+10]
+       mov       rcx,[rsi]
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
        mov       rdx,rax
-       mov       rcx,rsi
+       mov       rcx,rdi
        xor       r8d,r8d
        call      System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)
-       mov       rcx,rsi
+       mov       rcx,rdi
        mov       rdx,[rbp+0FFD8]
        call      System.Xml.Serialization.XmlSerializer.Deserialize(System.IO.TextReader)
        mov       rdx,rax
-       mov       rcx,[rdi]
+       mov       rcx,[rsi]
        call      CORINFO_HELP_CHKCASTARRAY
        mov       rsi,rax
        mov       rcx,[rbp+0FFD8]
@@ -253,7 +241,7 @@ M02_L00:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 280
+; Total bytes of code 246
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -266,39 +254,58 @@ M02_L00:
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       mov       rcx,[rsi+30]
-       call      dotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+       mov       rdx,[rsi+28]
+       mov       rcx,offset MD_System.Text.Json.JsonSerializer.Serialize(!!0, System.Text.Json.JsonSerializerOptions)
+       xor       r8d,r8d
+       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       mov       rdx,rax
        mov       rcx,[rsi+10]
        cmp       [rcx],ecx
        add       rcx,8
-       mov       rdx,rax
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 42
+; Total bytes of code 55
 ```
 ```assembly
-; dotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+; System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       push      rdi
        push      rsi
-       sub       rsp,20
+       push      rbp
+       push      rbx
+       sub       rsp,28
+       mov       [rsp+20],rcx
+       mov       [rsp+58],rdx
        mov       rsi,rcx
-       mov       r8,1E5B20E3020
-       mov       r8,[r8]
-       mov       rdx,1E5B20E9D08
-       mov       rdx,[rdx]
+       mov       rdi,r8
+       mov       rbx,[rsi+10]
+       mov       rcx,[rbx]
+       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+       mov       rbp,rax
+       mov       rcx,[rbx+18]
+       test      rcx,rcx
+       je        short M01_L00
+       jmp       short M01_L01
+M01_L00:
        mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       rdx,rsi
-       mov       rcx,offset MD_System.Text.Json.JsonSerializer.Serialize(!!0, System.Text.Json.JsonSerializerOptions)
-       xor       r8d,r8d
-       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       mov       rdx,7FF7AD3CDED8
+       call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+       mov       rcx,rax
+M01_L01:
+       lea       rdx,[rsp+58]
+       mov       r8,rbp
+       mov       r9,rdi
+       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Type, System.Text.Json.JsonSerializerOptions)
        nop
-       add       rsp,20
+       add       rsp,28
+       pop       rbx
+       pop       rbp
        pop       rsi
+       pop       rdi
        ret
-; Total bytes of code 70
+; Total bytes of code 97
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -311,39 +318,58 @@ M02_L00:
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       mov       rcx,[rsi+48]
-       call      dotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+       mov       rdx,[rsi+40]
+       mov       rcx,offset MD_System.Text.Json.JsonSerializer.Serialize(!!0, System.Text.Json.JsonSerializerOptions)
+       xor       r8d,r8d
+       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       mov       rdx,rax
        mov       rcx,[rsi+10]
        cmp       [rcx],ecx
        add       rcx,8
-       mov       rdx,rax
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
        add       rsp,20
        pop       rsi
        ret
-; Total bytes of code 42
+; Total bytes of code 55
 ```
 ```assembly
-; dotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+; System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       push      rdi
        push      rsi
-       sub       rsp,20
+       push      rbp
+       push      rbx
+       sub       rsp,28
+       mov       [rsp+20],rcx
+       mov       [rsp+58],rdx
        mov       rsi,rcx
-       mov       r8,1E23E5D3020
-       mov       r8,[r8]
-       mov       rdx,1E24E5D1110
-       mov       rdx,[rdx]
+       mov       rdi,r8
+       mov       rbx,[rsi+10]
+       mov       rcx,[rbx]
+       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+       mov       rbp,rax
+       mov       rcx,[rbx+18]
+       test      rcx,rcx
+       je        short M01_L00
+       jmp       short M01_L01
+M01_L00:
        mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       rdx,rsi
-       mov       rcx,offset MD_System.Text.Json.JsonSerializer.Serialize(!!0, System.Text.Json.JsonSerializerOptions)
-       xor       r8d,r8d
-       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Text.Json.JsonSerializerOptions)
+       mov       rdx,7FF7AD3D33C8
+       call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+       mov       rcx,rax
+M01_L01:
+       lea       rdx,[rsp+58]
+       mov       r8,rbp
+       mov       r9,rdi
+       call      System.Text.Json.JsonSerializer.Serialize[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Type, System.Text.Json.JsonSerializerOptions)
        nop
-       add       rsp,20
+       add       rsp,28
+       pop       rbx
+       pop       rbp
        pop       rsi
+       pop       rdi
        ret
-; Total bytes of code 70
+; Total bytes of code 97
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -356,7 +382,7 @@ M02_L00:
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       mov       rcx,[rsi+30]
+       mov       rcx,[rsi+28]
        call      dotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
        mov       rcx,[rsi+10]
        cmp       [rcx],ecx
@@ -380,15 +406,6 @@ M02_L00:
        mov       [rbp+0FFE8],rax
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
-       test      rsi,rsi
-       setne     dl
-       movzx     edx,dl
-       mov       r9,202B6C93020
-       mov       r9,[r9]
-       mov       r8,202E6C91110
-       mov       r8,[r8]
-       mov       rcx,offset MD_dotNetTips.Spargine.Core.Validate.TryValidateParam(Boolean, System.String, System.String)
-       call      dotNetTips.Spargine.Core.Validate.TryValidateParam[[System.__Canon, System.Private.CoreLib]](Boolean, System.String, System.String)
        mov       rcx,offset MT_System.IO.StringWriter
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -402,7 +419,7 @@ M02_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       rcx,rsi
-       call      00007FFA4995F070
+       call      00007FF80CADF070
        mov       rdx,rax
        mov       rcx,rdi
        xor       r8d,r8d
@@ -418,13 +435,13 @@ M02_L00:
        mov       rcx,[rbp+0FFE8]
        mov       rcx,[rcx+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FF9EA0F31E8]
+       call      qword ptr [7FF7AD2631E8]
        mov       rsi,rax
        cmp       qword ptr [rbp+0FFE0],0
        je        short M01_L00
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FF9E9D105F8
-       call      qword ptr [7FF9EA0F05F8]
+       mov       r11,7FF7ACE805F0
+       call      qword ptr [7FF7AD2605F0]
        nop
 M01_L00:
        mov       rcx,[rbp+0FFE8]
@@ -447,8 +464,8 @@ M01_L00:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M01_L01
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FF9E9D105F8
-       call      qword ptr [7FF9EA0F05F8]
+       mov       r11,7FF7ACE805F0
+       call      qword ptr [7FF7AD2605F0]
 M01_L01:
        nop
        add       rsp,40
@@ -476,7 +493,7 @@ M01_L02:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 372
+; Total bytes of code 322
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -509,9 +526,9 @@ M01_L02:
        sub       rsp,28
        call      dotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,18AB49D1110
+       mov       rdx,209BE5420D8
        mov       rdx,[rdx]
-       mov       r8,18AA49D7DA0
+       mov       r8,209CE547DA0
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -531,12 +548,6 @@ M01_L02:
        mov       [rbp+0FFD0],rsp
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       r8,18AA49D3020
-       mov       r8,[r8]
-       mov       rdx,18AA49D95A8
-       mov       rdx,[rdx]
-       mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.String, System.String, System.String)
        mov       rcx,offset MT_System.Xml.XmlReaderSettings
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
@@ -556,7 +567,7 @@ M01_L02:
        mov       rdx,rsi
        call      System.IO.StringReader..ctor(System.String)
        mov       rcx,rbx
-       mov       rdx,18AA49D3020
+       mov       rdx,209CE543020
        mov       r8,[rdx]
        mov       rdx,rdi
        xor       r9d,r9d
@@ -570,8 +581,8 @@ M01_L02:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M02_L00
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FF9E9D204C0
-       call      qword ptr [7FF9EA0F04C0]
+       mov       r11,7FF7ACE604D8
+       call      qword ptr [7FF7AD2304D8]
 M02_L00:
        mov       rax,rsi
        lea       rsp,[rbp+0FFE8]
@@ -591,8 +602,8 @@ M02_L00:
        cmp       qword ptr [rbp+0FFE0],0
        je        short M02_L01
        mov       rcx,[rbp+0FFE0]
-       mov       r11,7FF9E9D204C0
-       call      qword ptr [7FF9EA0F04C0]
+       mov       r11,7FF7ACE604D8
+       call      qword ptr [7FF7AD2304D8]
 M02_L01:
        nop
        add       rsp,28
@@ -601,6 +612,6 @@ M02_L01:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 279
+; Total bytes of code 245
 ```
 

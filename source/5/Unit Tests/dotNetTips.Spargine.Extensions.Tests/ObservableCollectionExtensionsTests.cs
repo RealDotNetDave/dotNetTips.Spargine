@@ -25,17 +25,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	public class ObservableCollectionExtensionsTests
 	{
 		[TestMethod]
-		public void HasItemsTest()
+		public void HasItemsTest01()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList().ToObservableCollection();
 
 			Assert.IsTrue(collection.HasItems());
+		}
 
-			Assert.IsTrue(collection.HasItems(10));
+		[TestMethod]
+		public void HasItemsTest02()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList().ToObservableCollection();
 
-			Assert.IsTrue(collection.ToObservableCollection().HasItems());
-
-			Assert.IsTrue(collection.ToObservableCollection().HasItems(10));
+			Assert.IsFalse(collection.HasItems(5));
 		}
 
 		[TestMethod]

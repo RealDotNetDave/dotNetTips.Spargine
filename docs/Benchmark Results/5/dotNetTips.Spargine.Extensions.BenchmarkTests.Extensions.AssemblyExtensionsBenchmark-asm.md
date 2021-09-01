@@ -41,19 +41,13 @@
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
-       mov       r8,18AAD1F3020
-       mov       r8,[r8]
-       mov       rdx,18ABD1F1110
-       mov       rdx,[rdx]
-       mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF80020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,18A9D1F4CB0
+       mov       rdx,1574F9E2D28
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -87,7 +81,7 @@ M02_L01:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 182
+; Total bytes of code 148
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -130,26 +124,18 @@ M02_L01:
        push      rdi
        push      rsi
        sub       rsp,28
-       mov       rsi,rcx
-       mov       r8,1FBBE403020
-       mov       r8,[r8]
-       mov       rdx,1FBCE401110
-       mov       rdx,[rdx]
-       mov       rcx,rsi
-       call      dotNetTips.Spargine.Core.Validate.TryValidateNullParam(System.Object, System.String, System.String)
-       mov       rcx,rsi
-       mov       rax,[rsi]
+       mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,1FBBE40BB10
+       mov       rcx,27F57C4BE10
        mov       r8,[rcx]
        test      r8,r8
        jne       short M02_L00
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,1FBBE40BB08
+       mov       rdx,27F57C4BE08
        mov       rdx,[rdx]
        test      rdx,rdx
        je        short M02_L01
@@ -157,7 +143,7 @@ M02_L01:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset dotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,1FBBE40BB10
+       mov       rcx,27F57C4BE10
        mov       rdx,rdi
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
@@ -173,7 +159,7 @@ M02_L00:
 M02_L01:
        call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
        int       3
-; Total bytes of code 189
+; Total bytes of code 149
 ```
 
 ## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
@@ -194,7 +180,7 @@ M02_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       dword ptr [rbx+28],0FFFFFFFE
-       mov       rcx,7FF9E9E10020
+       mov       rcx,7FF7ACF80020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rcx,[rax+18]
@@ -204,7 +190,7 @@ M02_L01:
        mov       rcx,rax
 M00_L00:
        cmp       [rcx],ecx
-       call      00007FFA49964090
+       call      00007FF80CAE4090
        mov       [rbx+2C],eax
        lea       rcx,[rbx+18]
        mov       rdx,rdi
@@ -237,12 +223,12 @@ M00_L00:
 ; System.Threading.Thread.InitializeCurrentThread()
        push      rsi
        sub       rsp,20
-       call      qword ptr [7FFA49461AC8]
+       call      qword ptr [7FF804F51AC8]
        mov       rsi,rax
-       call      qword ptr [7FFA49461748]
+       call      qword ptr [7FF804F51748]
        lea       rcx,[rax+18]
        mov       rdx,rsi
-       call      qword ptr [7FFA49461020]
+       call      qword ptr [7FF804F51020]
        mov       rax,rsi
        add       rsp,20
        pop       rsi

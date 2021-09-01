@@ -23,7 +23,7 @@ namespace dotNetTips.Spargine.Core
 	/// <summary>
 	/// Class CachedEnumerable.
 	/// </summary>
-	[Information(nameof(CachedEnumerable), BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https:www.meziantou.net/caching-an-ienumerable-t-instance.htm")]
+	[Information(nameof(CachedEnumerable), BenchMarkStatus = 0, Status = Status.Available, Documentation = "https:www.meziantou.net/caching-an-ienumerable-t-instance.htm")]
 	public static class CachedEnumerable
 	{
 		/// <summary>
@@ -43,7 +43,7 @@ namespace dotNetTips.Spargine.Core
 	/// <typeparam name="T"></typeparam>
 	/// <seealso cref="IEnumerable{T}" />
 	/// <seealso cref="IDisposable" />
-	[Information(nameof(CachedEnumerable<T>), BenchMarkStatus = 0, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(CachedEnumerable<T>), BenchMarkStatus = 0, Status = Status.Available)]
 	public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	{
 		/// <summary>

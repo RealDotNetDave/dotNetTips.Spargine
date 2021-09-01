@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 08-23-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -37,7 +37,9 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The built in type names.</value>
 		public static Dictionary<Type, string> BuiltInTypeNames { get; } = new()
 		{
-			{ typeof(void), "void" },
+			{ typeof(DateTime), "datetime" },
+			{ typeof(DateTimeOffset), "datetimeoffset" },
+			{ typeof(TimeSpan), "timespan" },
 			{ typeof(bool), "bool" },
 			{ typeof(byte), "byte" },
 			{ typeof(char), "char" },
@@ -53,8 +55,7 @@ namespace dotNetTips.Spargine.Core
 			{ typeof(uint), "uint" },
 			{ typeof(ulong), "ulong" },
 			{ typeof(ushort), "ushort" },
-			{ typeof(DateTime), "datetime" },
-			{ typeof(DateTimeOffset), "datetimeoffset" },
+			{ typeof(void), "void" },
 		};
 
 		/// <summary>
@@ -212,7 +213,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="json">The json.</param>
 		/// <returns>T.</returns>
-		[Information(nameof(FromJson), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(FromJson), UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FromJson<T>([NotNull] string json)
 			where T : class
 		{
@@ -227,7 +228,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>T.</returns>
 		/// <exception cref="FileNotFoundException">The exception.</exception>
 		/// <exception cref="FileNotFoundException">The exception.</exception>
-		[Information(nameof(FromJsonFile), UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(FromJsonFile), UnitTestCoverage = 99, Status = Status.Available)]
 		public static T FromJsonFile<T>([NotNull] string fileName)
 			where T : class
 		{
@@ -246,7 +247,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <returns>T.</returns>
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static T GetDefault<T>()
 		{
 			var result = default(T);

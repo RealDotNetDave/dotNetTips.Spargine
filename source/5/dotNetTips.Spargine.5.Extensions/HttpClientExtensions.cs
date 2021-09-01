@@ -36,7 +36,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="requestUri">The request URI.</param>
 		/// <param name="options">The options.</param>
 		/// <returns>T.</returns>
-		[Information("Original code from: https://ardalis.com/keep-tests-short-and-dry-with-extensions", "David McCarter", "7/13/2021", UnitTestCoverage = 0, Status = Status.New)]
+		[Information("Original code from: https://ardalis.com/keep-tests-short-and-dry-with-extensions", "David McCarter", "7/13/2021", UnitTestCoverage = 0, Status = Status.Available)]
 		public static async Task<T> GetAndDeserialize<T>([NotNull] this HttpClient client, string requestUri, [NotNull] JsonSerializerOptions options)
 		{
 			return await GetAndDeserialize<T>(client, new Uri(requestUri), options).ConfigureAwait(false);
@@ -50,7 +50,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="requestUri">The request URI.</param>
 		/// <param name="options">The options.</param>
 		/// <returns>T.</returns>
-		[Information("Original code from: https://ardalis.com/keep-tests-short-and-dry-with-extensions", "David McCarter", "7/13/2021", UnitTestCoverage = 0, Status = Status.New)]
+		[Information("Original code from: https://ardalis.com/keep-tests-short-and-dry-with-extensions", "David McCarter", "7/13/2021", UnitTestCoverage = 0, Status = Status.Available)]
 		public static async Task<T> GetAndDeserialize<T>([NotNull] this HttpClient client, [NotNull] Uri requestUri, [NotNull] JsonSerializerOptions options)
 		{
 			using var response = await client.GetAsync(new Uri(requestUri.PathAndQuery)).ConfigureAwait(false);

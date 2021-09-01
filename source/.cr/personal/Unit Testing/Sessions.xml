@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root Type="DevExpress.CodeRush.TestRunner.Core.TestRunnerSessions">
+  <Options Language="Neutral">
+    <Sessions>
+      <Item Id="MainSession">
+        <ShowDuration>True</ShowDuration>
+        <ShowFailed>True</ShowFailed>
+        <ShowNone>True</ShowNone>
+        <ShowPassed>True</ShowPassed>
+      </Item>
+    </Sessions>
+  </Options>
+</Root>

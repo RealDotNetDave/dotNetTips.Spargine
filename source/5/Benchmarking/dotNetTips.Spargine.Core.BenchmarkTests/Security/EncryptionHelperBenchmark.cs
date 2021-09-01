@@ -28,7 +28,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		private string _cypherText = string.Empty;
 
 		[Benchmark(Description = nameof(EncryptionHelper.AesDecrypt))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Encryption)]
 		public void AesDecrypt()
 		{
 			var result = EncryptionHelper.AesEncrypt(this._aesCypherText, this._aesKey, this._aesIv);
@@ -37,7 +37,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.AesEncrypt))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Encryption)]
 		public void AesEncrypt()
 		{
 			var result = EncryptionHelper.AesEncrypt(LongTestString, this._aesKey, this._aesIv);
@@ -56,7 +56,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.SimpleDecrypt))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Encryption)]
 		public void SimpleDecrypt()
 		{
 			var result = EncryptionHelper.SimpleDecrypt(this._cypherText, Key);
@@ -65,7 +65,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests.Security
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.SimpleEncrypt))]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Encryption)]
 		public void SimpleEncrypt()
 		{
 			var result = EncryptionHelper.SimpleEncrypt(LongTestString, Key);

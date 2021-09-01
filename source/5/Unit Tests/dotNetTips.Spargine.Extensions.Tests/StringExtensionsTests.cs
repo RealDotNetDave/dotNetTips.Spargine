@@ -68,9 +68,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.ContainsAny("d", "T"));
 
-			Assert.IsFalse(testValue.ContainsAny());
-
-			Assert.IsFalse(string.Empty.ContainsAny("M", "D"));
+			Assert.IsFalse(string.Empty.ContainsAny("Z", "W"));
 		}
 
 		[TestMethod]

@@ -132,7 +132,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// </summary>
 		/// <param name="id">The unique identifier.</param>
 		/// <param name="email">The email address.</param>
-		public PersonProper(string id, string email)
+		public PersonProper([NotNull] string id, [NotNull] string email)
 		{
 			this.Id = id;
 			this.Email = email;
@@ -291,6 +291,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">Email</exception>
 		[DataMember(Name = "email", IsRequired = true)]
 		[XmlElement(IsNullable = false)]
+		[DisallowNull]
 		public string Email
 		{
 			get => this._email;
@@ -358,6 +359,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <exception cref="ArgumentOutOfRangeException">Id</exception>
 		[DataMember(Name = "id", IsRequired = true)]
 		[XmlElement(IsNullable = false)]
+		[DisallowNull]
 		public string Id
 		{
 			get => this._id;
@@ -589,7 +591,7 @@ namespace dotNetTips.Spargine.Tester.Models
 		/// <param name="obj">The object to compare with the current object.</param>
 		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
 		/// <exception cref="NotImplementedException"></exception>
-		public override bool Equals(object obj)
+		public override bool Equals([NotNull] object obj)
 		{
 			return ReferenceEquals(this, obj);
 		}

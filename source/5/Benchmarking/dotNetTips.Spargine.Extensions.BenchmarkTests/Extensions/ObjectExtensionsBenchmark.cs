@@ -233,7 +233,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: != null")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.ReferenceType)]
 		public void TestingForNull01()
 		{
 			var input = new object();
@@ -242,7 +242,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: Validate.TryValidateNull()")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.ReferenceType)]
 		public void TestingForNull02()
 		{
 			var input = new object();
@@ -251,7 +251,7 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 		}
 
 		[Benchmark(Description = "Testing Param for Null: [NotNull]")]
-		[BenchmarkCategory(Categories.New)]
+		[BenchmarkCategory(Categories.Reflection)]
 		public void TestingForNull03()
 		{
 			var input = new object();

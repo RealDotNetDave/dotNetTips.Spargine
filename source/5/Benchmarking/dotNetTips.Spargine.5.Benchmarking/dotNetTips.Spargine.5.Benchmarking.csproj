@@ -7,7 +7,7 @@
 		<RootNamespace>dotNetTips.Spargine.Benchmarking</RootNamespace>
 		<AssemblyVersion>2021.6.5.135</AssemblyVersion>
 		<FileVersion>2021.6.5.135</FileVersion>
-		<Version>2021.9.4.17</Version>
+		<Version>2021.9.4.23</Version>
 		<Authors>David McCarter</Authors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Description>Common classes that can be used with BenchmarkDotNet.</Description>
@@ -21,6 +21,7 @@
 			--MAR 2021: Initial release.
 			--MAY 2021: Second release: 2021.5.1.50
 			--JUN 2021: Third release: 2021.6.3.5
+			--SEP 2021: Forth release. Minor changes. 2021.9.4.23
 		</PackageReleaseNotes>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
@@ -29,10 +30,10 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
-		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.20" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.20" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.20" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.20" />
+		<PackageReference Include="dotNetTips.Spargine.5" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2021.9.4.23" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2021.9.4.23" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -212,7 +212,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The size of the system page.</value>
 		[DataMember]
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public int SystemPageSize { get; private set; } = Environment.SystemPageSize;
 
 		/// <summary>
@@ -220,7 +220,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The tick count.</value>
 		[DataMember]
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public int TickCount { get; private set; } = Environment.TickCount;
 
 		/// <summary>
@@ -228,7 +228,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The tick count as long.</value>
 		[DataMember]
-		[Information(UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public long TickCount64 { get; private set; } = Environment.TickCount64;
 
 		/// <summary>

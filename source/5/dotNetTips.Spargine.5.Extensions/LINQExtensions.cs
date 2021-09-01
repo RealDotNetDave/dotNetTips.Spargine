@@ -23,7 +23,7 @@ namespace dotNetTips.Spargine.Extensions
 	/// <summary>
 	/// Class LINQExtensions.
 	/// </summary>
-	[Information(nameof(LINQExtensions), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
+	[Information(nameof(LINQExtensions), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available)]
 	public static class LINQExtensions
 	{
 		/// <summary>

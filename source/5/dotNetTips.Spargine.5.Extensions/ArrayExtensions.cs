@@ -228,7 +228,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="array">The array.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(BytesToString), "David McCarter", "6/24/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(BytesToString), "David McCarter", "6/24/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string BytesToString(this ReadOnlySpan<byte> array)
 		{
 			Validate.TryValidateParam(array, nameof(array));

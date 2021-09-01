@@ -131,17 +131,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void HasItemsTest()
+		public void HasItemsTest01()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToCollection();
 
 			Assert.IsTrue(collection.HasItems());
+		}
 
-			Assert.IsTrue(collection.HasItems(10));
+		[TestMethod]
+		public void HasItemsTest02()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToCollection();
 
-			Assert.IsTrue(collection.ToList().HasItems());
-
-			Assert.IsTrue(collection.ToList().HasItems(10));
+			Assert.IsFalse(collection.HasItems(5));
 		}
 
 		[TestMethod]

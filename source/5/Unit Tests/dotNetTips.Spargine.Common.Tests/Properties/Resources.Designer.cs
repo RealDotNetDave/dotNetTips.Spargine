@@ -20,62 +20,62 @@ namespace dotNetTips.Spargine.Core.Tests.Properties
 	// To add or remove a member, edit your .ResX file then rerun ResGen
 	// with the /str option, or rebuild your VS project.
 	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
-        
-        private static global::System.Resources.ResourceManager resourceMan;
-        
-        private static global::System.Globalization.CultureInfo resourceCulture;
-        
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
-        }
-        
-        /// <summary>
-        ///   Returns the cached ResourceManager instance used by this class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("dotNetTips.Spargine.Core.Tests.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
-                }
-                return resourceMan;
-            }
-        }
-        
-        /// <summary>
-        ///   Overrides the current thread's CurrentUICulture property for all
-        ///   resource lookups using this strongly typed resource class.
-        /// </summary>
-        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
-            get {
-                return resourceCulture;
-            }
-            set {
-                resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {&quot;address1&quot;:&quot;jLTwNc`MiJ`YXpuSTMk]_v[`M&quot;,&quot;address2&quot;:&quot;Eke\\qPViPZQnyjPEdcsvTvZwZ&quot;,&quot;bornOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(163789511670)\/&quot;,&quot;OffsetMinutes&quot;:-480},&quot;cellPhone&quot;:&quot;377-276-7617&quot;,&quot;city&quot;:&quot;ukqtKiHWe^T]\\Xu&quot;,&quot;country&quot;:&quot;TacsHRhCNsbuyf_&quot;,&quot;email&quot;:&quot;gokew@ytptbhxgwhjjleevanfr.ly&quot;,&quot;firstName&quot;:&quot;AbmIjF^EvENCabq&quot;,&quot;homePhone&quot;:&quot;232-318-8245&quot;,&quot;id&quot;:&quot;e14b8f5661cc4f75acce98a7316db0d9&quot;,&quot;lastName&quot;:&quot;LVpW_qwKIxKqeSMXKvNISraSc&quot;,&quot;postalCode&quot;:&quot;62755022&quot;,&quot;state&quot;:&quot;__jghWMQqYdgXhu&quot;}.
-        /// </summary>
-        internal static string JsonPersonProper {
-            get {
-                return ResourceManager.GetString("JsonPersonProper", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {&quot;Id&quot;:&quot;f0bcfdcb122f48899daa06a418db2187&quot;,&quot;Addresses&quot;:[{&quot;Id&quot;:&quot;903cd2abd1d341a2a9f88bd3551b71f1&quot;,&quot;Address1&quot;:&quot;OCR\\ZqsUHvuIyfDUcixNbEUEZ&quot;,&quot;Address2&quot;:&quot;CFPS\\MvJBvMARBHWEsh^hjI^I&quot;,&quot;City&quot;:&quot;XxZwNKhNCXkdBfjxywjqTRhqq&quot;,&quot;Country&quot;:&quot;^LgalRwlKDO]Lnl_mPdWmCMx_&quot;,&quot;CountyProvince&quot;:&quot;ilYgnFPcGjyBgPFnqqb[&quot;,&quot;Phone&quot;:&quot;471-825-0040&quot;,&quot;PostalCode&quot;:&quot;48600440&quot;,&quot;State&quot;:&quot;VwxtEDl]Fy^buLe&quot;},{&quot;Id&quot;:&quot;64d5a70595db4d05852790ec0e4bd09b&quot;,&quot;Address1&quot;:&quot;]Duc[TNDMHCOBSfMaPm\\d]aiF&quot;,&quot;Address2&quot;:&quot;Lo[D`rIOSLwHvDjHtklCokKZl&quot;,&quot;City&quot;:&quot;wRIjAy]M]O_lAgPsyhGhFd [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string JsonPersonRecord {
-            get {
-                return ResourceManager.GetString("JsonPersonRecord", resourceCulture);
-            }
-        }
-    }
+	[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+	[global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+	internal class Resources {
+		
+		private static global::System.Resources.ResourceManager resourceMan;
+		
+		private static global::System.Globalization.CultureInfo resourceCulture;
+		
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+		internal Resources() {
+		}
+		
+		/// <summary>
+		///   Returns the cached ResourceManager instance used by this class.
+		/// </summary>
+		[global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+		internal static global::System.Resources.ResourceManager ResourceManager {
+			get {
+				if (object.ReferenceEquals(resourceMan, null)) {
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("dotNetTips.Spargine.Core.Tests.Properties.Resources", typeof(Resources).Assembly);
+					resourceMan = temp;
+				}
+				return resourceMan;
+			}
+		}
+		
+		/// <summary>
+		///   Overrides the current thread's CurrentUICulture property for all
+		///   resource lookups using this strongly typed resource class.
+		/// </summary>
+		[global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+		internal static global::System.Globalization.CultureInfo Culture {
+			get {
+				return resourceCulture;
+			}
+			set {
+				resourceCulture = value;
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to {&quot;address1&quot;:&quot;jLTwNc`MiJ`YXpuSTMk]_v[`M&quot;,&quot;address2&quot;:&quot;Eke\\qPViPZQnyjPEdcsvTvZwZ&quot;,&quot;bornOn&quot;:{&quot;DateTime&quot;:&quot;\/Date(163789511670)\/&quot;,&quot;OffsetMinutes&quot;:-480},&quot;cellPhone&quot;:&quot;377-276-7617&quot;,&quot;city&quot;:&quot;ukqtKiHWe^T]\\Xu&quot;,&quot;country&quot;:&quot;TacsHRhCNsbuyf_&quot;,&quot;email&quot;:&quot;gokew@ytptbhxgwhjjleevanfr.ly&quot;,&quot;firstName&quot;:&quot;AbmIjF^EvENCabq&quot;,&quot;homePhone&quot;:&quot;232-318-8245&quot;,&quot;id&quot;:&quot;e14b8f5661cc4f75acce98a7316db0d9&quot;,&quot;lastName&quot;:&quot;LVpW_qwKIxKqeSMXKvNISraSc&quot;,&quot;postalCode&quot;:&quot;62755022&quot;,&quot;state&quot;:&quot;__jghWMQqYdgXhu&quot;}.
+		/// </summary>
+		internal static string JsonPersonProper {
+			get {
+				return ResourceManager.GetString("JsonPersonProper", resourceCulture);
+			}
+		}
+		
+		/// <summary>
+		///   Looks up a localized string similar to {&quot;Id&quot;:&quot;f0bcfdcb122f48899daa06a418db2187&quot;,&quot;Addresses&quot;:[{&quot;Id&quot;:&quot;903cd2abd1d341a2a9f88bd3551b71f1&quot;,&quot;Address1&quot;:&quot;OCR\\ZqsUHvuIyfDUcixNbEUEZ&quot;,&quot;Address2&quot;:&quot;CFPS\\MvJBvMARBHWEsh^hjI^I&quot;,&quot;City&quot;:&quot;XxZwNKhNCXkdBfjxywjqTRhqq&quot;,&quot;Country&quot;:&quot;^LgalRwlKDO]Lnl_mPdWmCMx_&quot;,&quot;CountyProvince&quot;:&quot;ilYgnFPcGjyBgPFnqqb[&quot;,&quot;Phone&quot;:&quot;471-825-0040&quot;,&quot;PostalCode&quot;:&quot;48600440&quot;,&quot;State&quot;:&quot;VwxtEDl]Fy^buLe&quot;},{&quot;Id&quot;:&quot;64d5a70595db4d05852790ec0e4bd09b&quot;,&quot;Address1&quot;:&quot;]Duc[TNDMHCOBSfMaPm\\d]aiF&quot;,&quot;Address2&quot;:&quot;Lo[D`rIOSLwHvDjHtklCokKZl&quot;,&quot;City&quot;:&quot;wRIjAy]M]O_lAgPsyhGhFd [rest of string was truncated]&quot;;.
+		/// </summary>
+		internal static string JsonPersonRecord {
+			get {
+				return ResourceManager.GetString("JsonPersonRecord", resourceCulture);
+			}
+		}
+	}
 }

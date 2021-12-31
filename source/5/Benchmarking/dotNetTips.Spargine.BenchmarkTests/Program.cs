@@ -1,4 +1,17 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.BenchmarkTests
+// Author           : David McCarter
+// Created          : 04-01-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 08-21-2021
+// ***********************************************************************
+// <copyright file="Program.cs" company="dotNetTips.Spargine.BenchmarkTests">
+//     David McCarter
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
@@ -6,8 +19,14 @@ using BenchmarkDotNet.Toolchains.CsProj;
 
 namespace dotNetTips.Spargine.BenchmarkTests
 {
+	/// <summary>
+	/// Class Program.
+	/// </summary>
 	public static class Program
 	{
+		/// <summary>
+		/// Defines the entry point of the application.
+		/// </summary>
 		public static void Main()
 		{
 			{

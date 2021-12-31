@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-14-2021
 // ***********************************************************************
 // <copyright file="DateTimeFormat.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,7 +13,7 @@
 // ***********************************************************************
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

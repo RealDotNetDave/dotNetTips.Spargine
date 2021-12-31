@@ -4,19 +4,16 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 09-17-2021
 // ***********************************************************************
 // <copyright file="LoggableException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -81,8 +78,6 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="serializationInfo">The serialization information.</param>
 		/// <param name="streamingContext">The streaming context.</param>
-		/// <exception cref="NotImplementedException"></exception>
-		/// <exception cref="NotImplementedException"></exception>
 		/// <exception cref="NotImplementedException"></exception>
 		protected LoggableException(SerializationInfo serializationInfo, StreamingContext streamingContext)
 		 : base(serializationInfo, streamingContext) => throw new NotImplementedException();
@@ -173,7 +168,7 @@ namespace dotNetTips.Spargine.Core
 					Trace.WriteLine(securityEx);
 				}
 
-				if (( objectValue is not null ) && ( string.Compare(objectValue.ToString(), objectValue.GetType().FullName, StringComparison.Ordinal) != 0 ))
+				if (( objectValue is not null ) && ( !string.Equals(objectValue.ToString(), objectValue.GetType().FullName, StringComparison.Ordinal) ))
 				{
 					_ = sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }));
 				}

@@ -4,19 +4,17 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

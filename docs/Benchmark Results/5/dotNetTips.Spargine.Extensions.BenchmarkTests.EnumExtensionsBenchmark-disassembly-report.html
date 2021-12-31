@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20210828-161810</title>
+<title>DisassemblyDiagnoser Output dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20211222-194816</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,10 +14,10 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="2">dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20210828-161810</th></tr>
+<tr><th colspan="2">dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20211222-194816</th></tr>
 <tr>
-<th>GetDescription01 .NET 5.0.9 (5.0.921.35908), X64 RyuJIT</th>
-<th>GetItems01 .NET 5.0.9 (5.0.921.35908), X64 RyuJIT</th>
+<th>GetDescription01 .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT</th>
+<th>GetItems01 .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT</th>
 </tr>
 </thead>
 <tbody>
@@ -33,7 +33,7 @@ sub       rsp,20
 mov       rsi,rcx
 mov       rcx,offset MT_System.StringComparison
 call      CORINFO_HELP_NEWSFAST
-mov       ecx,[rsi+0B8]
+mov       ecx,[rsi+0A8]
 mov       [rax+8],ecx
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.EnumExtensions.GetDescription(System.Enum)
@@ -52,14 +52,14 @@ push      rdi
 push      rsi
 sub       rsp,28
 mov       rsi,rcx
-mov       r8,24D92063020
+mov       r8,20DEC2A3020
 mov       r8,[r8]
-mov       rdx,24D82062778
+mov       rdx,20DEC2A4370
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
 mov       rcx,rsi
-call      00007FF80CADF070
+call      00007FF8CEEEEB30
 mov       rdi,rax
 mov       rcx,rsi
 mov       rax,[rsi]
@@ -69,7 +69,7 @@ mov       rdx,rax
 mov       rcx,rdi
 mov       r8d,1C
 cmp       [rcx],ecx
-call      qword ptr [7FF7AD2649A0]
+call      qword ptr [7FF86F6A49A0]
 mov       rdi,rax
 mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute
 call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
@@ -84,7 +84,7 @@ mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute[]
 call      CORINFO_HELP_CHKCASTARRAY
 mov       edi,[rax+8]
 test      edi,edi
-jne       short 00007FF7AD26132C
+jne       short 00007FF86F6A09EC
 mov       rcx,rsi
 mov       rax,[rsi]
 mov       rax,[rax+40]
@@ -94,7 +94,7 @@ pop       rsi
 pop       rdi
 jmp       rax
 cmp       edi,0
-jbe       short 00007FF7AD261349
+jbe       short 00007FF86F6A0A09
 mov       rcx,[rax+10]
 mov       rax,[rcx]
 mov       rax,[rax+40]
@@ -118,7 +118,7 @@ sub       rsp,20
 mov       rsi,rcx
 mov       rcx,offset MT_System.StringComparison
 call      CORINFO_HELP_NEWSFAST
-mov       ecx,[rsi+0B8]
+mov       ecx,[rsi+0A8]
 mov       [rax+8],ecx
 mov       rcx,rax
 call      dotNetTips.Spargine.Extensions.EnumExtensions.GetItems(System.Enum)
@@ -146,24 +146,24 @@ vmovdqu   xmmword ptr [rsp+28],xmm4
 xor       eax,eax
 mov       [rsp+38],rax
 mov       rsi,rcx
-mov       r8,20CBBCE3020
+mov       r8,1EC74943020
 mov       r8,[r8]
-mov       rdx,20CBBCE54C8
+mov       rdx,1EC549420D8
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      dotNetTips.Spargine.Core.Validate.TryValidateParam(System.Enum, System.String, System.String)
 mov       rcx,offset MT_System.Collections.Generic.List`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rdi,rax
-mov       rcx,7FF7ACF80020
+mov       rcx,7FF86F3A0020
 mov       edx,22
 call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-mov       rdx,20CBBCE2D28
+mov       rdx,1EC74942D28
 mov       rdx,[rdx]
 lea       rcx,[rdi+8]
 call      CORINFO_HELP_ASSIGN_REF
 mov       rcx,rsi
-call      00007FF80CADF070
+call      00007FF8CEEEEB30
 mov       rsi,rax
 mov       rcx,rsi
 call      System.Enum.GetNames(System.Type)
@@ -171,7 +171,7 @@ mov       rbx,rax
 xor       ebp,ebp
 mov       r14d,[rbx+8]
 test      r14d,r14d
-jle       near ptr 00007FF7AD28BE76
+jle       near ptr 00007FF86F6CB1E6
 movsxd    rcx,ebp
 mov       r15,[rbx+rcx*8+10]
 mov       rcx,rsi
@@ -186,7 +186,7 @@ xor       edx,edx
 mov       [rsp+38],rdx
 mov       rdx,offset MT_System.Int32
 cmp       [r12],rdx
-je        short 00007FF7AD28BE19
+je        short 00007FF86F6CB189
 mov       rdx,r12
 mov       rcx,offset MT_System.Int32
 call      CORINFO_HELP_UNBOX
@@ -196,7 +196,7 @@ inc       dword ptr [rdi+14]
 mov       rcx,[rdi+8]
 mov       eax,[rdi+10]
 cmp       [rcx+8],eax
-jbe       short 00007FF7AD28BE52
+jbe       short 00007FF86F6CB1C2
 lea       r8d,[rax+1]
 mov       [rdi+10],r8d
 movsxd    rax,eax
@@ -205,7 +205,7 @@ lea       r15,[rcx+rax+10]
 mov       rcx,r15
 call      CORINFO_HELP_CHECKED_ASSIGN_REF
 mov       [r15+8],r12d
-jmp       short 00007FF7AD28BE6B
+jmp       short 00007FF86F6CB1DB
 lea       rcx,[rsp+28]
 mov       [rcx],rdx
 mov       [rcx+8],r12d
@@ -214,7 +214,7 @@ lea       rdx,[rsp+28]
 call      System.Collections.Generic.List`1[[System.ValueTuple`2[[System.__Canon, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]].AddWithResize(System.ValueTuple`2<System.__Canon,Int32>)
 inc       ebp
 cmp       r14d,ebp
-jg        near ptr 00007FF7AD28BDC5
+jg        near ptr 00007FF86F6CB135
 mov       rax,rdi
 add       rsp,40
 pop       rbx

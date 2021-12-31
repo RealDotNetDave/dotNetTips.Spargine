@@ -4,22 +4,18 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-12-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="PathHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 
 namespace dotNetTips.Spargine.IO
 {
@@ -29,25 +25,14 @@ namespace dotNetTips.Spargine.IO
 	public static class PathHelper
 	{
 		/// <summary>
-		/// Gets the invalid filter chars.
+		/// The invalid file name chars
 		/// </summary>
-		/// <value>The invalid filter chars.</value>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> InvalidFilterChars => FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
+		private static readonly char[] _invalidFileNameChars = FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
 
 		/// <summary>
-		/// Gets the invalid path name chars.
+		/// The invalid path chars
 		/// </summary>
-		/// <value>The invalid path name chars.</value>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> InvalidPathNameChars => Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
-
-		/// <summary>
-		/// Gets the path separators.
-		/// </summary>
-		/// <value>The path separators.</value>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+		private static readonly char[] _invalidPathChars = Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
 
 		/// <summary>
 		/// Combines the paths collection.
@@ -162,5 +147,28 @@ namespace dotNetTips.Spargine.IO
 		{
 			return path.IndexOfAny(InvalidPathNameChars.ToArray()) != -1;
 		}
+
+		//TODO: CHANGE TO METHOD IN 6.
+		/// <summary>
+		/// Gets the invalid filter chars.
+		/// </summary>
+		/// <value>The invalid filter chars.</value>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		public static IEnumerable<char> InvalidFilterChars => _invalidFileNameChars;
+
+		//TODO: CHANGE TO METHOD IN 6.
+		/// <summary>
+		/// Gets the invalid path name chars.
+		/// </summary>
+		/// <value>The invalid path name chars.</value>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		public static IEnumerable<char> InvalidPathNameChars => _invalidPathChars;
+
+		/// <summary>
+		/// Gets the path separators.
+		/// </summary>
+		/// <value>The path separators.</value>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
+		public static IEnumerable<char> PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
 	}
 }

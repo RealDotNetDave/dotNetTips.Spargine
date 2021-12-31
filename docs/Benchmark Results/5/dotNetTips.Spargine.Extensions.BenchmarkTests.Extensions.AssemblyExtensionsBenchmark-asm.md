@@ -1,4 +1,4 @@
-## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+## .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllInterfaces01()
 ; 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
@@ -44,10 +44,10 @@
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FF7ACF80020
+       mov       rcx,7FF86F370020
        mov       edx,22
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,1574F9E2D28
+       mov       rdx,21995752D28
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -84,7 +84,7 @@ M02_L01:
 ; Total bytes of code 148
 ```
 
-## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+## .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllTypes01()
 ; 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
@@ -128,14 +128,14 @@ M02_L01:
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,27F57C4BE10
+       mov       rcx,1D83122B608
        mov       r8,[rcx]
        test      r8,r8
        jne       short M02_L00
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,27F57C4BE08
+       mov       rdx,1D83122B600
        mov       rdx,[rdx]
        test      rdx,rdx
        je        short M02_L01
@@ -143,7 +143,7 @@ M02_L01:
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset dotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,27F57C4BE10
+       mov       rcx,1D83122B608
        mov       rdx,rdi
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
@@ -162,7 +162,7 @@ M02_L01:
 ; Total bytes of code 149
 ```
 
-## .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+## .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
 ```assembly
 ; dotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetInstances01()
 ; 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
@@ -180,7 +180,7 @@ M02_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       dword ptr [rbx+28],0FFFFFFFE
-       mov       rcx,7FF7ACF80020
+       mov       rcx,7FF86F390020
        mov       edx,26C
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rcx,[rax+18]
@@ -190,7 +190,7 @@ M02_L01:
        mov       rcx,rax
 M00_L00:
        cmp       [rcx],ecx
-       call      00007FF80CAE4090
+       call      00007FF8CEEF3B50
        mov       [rbx+2C],eax
        lea       rcx,[rbx+18]
        mov       rdx,rdi
@@ -223,12 +223,12 @@ M00_L00:
 ; System.Threading.Thread.InitializeCurrentThread()
        push      rsi
        sub       rsp,20
-       call      qword ptr [7FF804F51AC8]
+       call      qword ptr [7FF8A1021AC8]
        mov       rsi,rax
-       call      qword ptr [7FF804F51748]
+       call      qword ptr [7FF8A1021748]
        lea       rcx,[rax+18]
        mov       rdx,rsi
-       call      qword ptr [7FF804F51020]
+       call      qword ptr [7FF8A1021020]
        mov       rax,rsi
        add       rsp,20
        pop       rsi

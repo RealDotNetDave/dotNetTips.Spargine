@@ -18,13 +18,13 @@ using System.IO;
 using System.Linq;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
-
 	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class ObjectExtensionsTests : TestClass
@@ -32,9 +32,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void AsTest()
 		{
-#pragma warning disable CS0618 // Type or member is obsolete
-			var personProper = RandomData.GeneratePerson<PersonFixed>();
-#pragma warning restore CS0618 // Type or member is obsolete
+			var personProper = RandomData.GeneratePerson<PersonProper>();
 
 			try
 			{
@@ -144,7 +142,9 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Count() > 1);
 
-			result = propertiesTest.PropertiesToDictionary(memberName: $"TestPerson-{personProper.Id}", ignoreNulls: true);
+			result = propertiesTest.PropertiesToDictionary(
+				memberName: $"TestPerson-{personProper.Id}",
+				ignoreNulls: true);
 
 			Assert.IsTrue(result.Count() > 1);
 		}
@@ -163,13 +163,22 @@ namespace dotNetTips.Spargine.Extensions.Tests
 				ClosedOn = DateTimeOffset.Now,
 			};
 
-			var result = personRecord.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true);
+			var result = personRecord.PropertiesToString(
+				header: "PersonRecord",
+				keyValueSeparator: ':',
+				sequenceSeparator: ", ",
+				ignoreNulls: true);
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
 			PrintResult(result, nameof(this.PropertiesToStringTest));
 
-			result = propertiesTest.PropertiesToString(header: "PersonRecord", keyValueSeparator: ':', sequenceSeparator: ", ", ignoreNulls: true, includeMemberName: false);
+			result = propertiesTest.PropertiesToString(
+				header: "PersonRecord",
+				keyValueSeparator: ':',
+				sequenceSeparator: ", ",
+				ignoreNulls: true,
+				includeMemberName: false);
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
@@ -207,7 +216,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(string.IsNullOrEmpty(person.StripNull()));
 			Assert.IsTrue(string.IsNullOrEmpty(nullPerson.StripNull()));
 		}
-
 
 		[TestMethod]
 		public void ToJsonFileTest()

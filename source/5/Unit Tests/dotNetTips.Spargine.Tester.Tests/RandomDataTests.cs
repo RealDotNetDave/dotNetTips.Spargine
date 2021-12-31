@@ -21,7 +21,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Tester.Tests
@@ -33,6 +34,34 @@ namespace dotNetTips.Spargine.Tester.Tests
 		private const int Count = 100;
 		private const string FileExtension = "dotnettips.com";
 		private const int FileLength = 500;
+
+		private void DeleteFiles(IEnumerable<string> files)
+		{
+			if (files.HasItems() == false)
+			{
+				return;
+			}
+
+			_ = Parallel.ForEach(
+				source: files,
+				body: (fileName) =>
+				{
+					try
+					{
+						File.Delete(fileName);
+					}
+					catch (Exception ex) when (ex is ArgumentException ||
+						ex is ArgumentNullException ||
+						ex is System.IO.DirectoryNotFoundException ||
+						ex is IOException ||
+						ex is NotSupportedException ||
+						ex is PathTooLongException ||
+						ex is UnauthorizedAccessException)
+					{
+						Trace.WriteLine(ex.GetAllMessages());
+					}
+				});
+		}
 
 		[TestMethod]
 		public void AddToPersonCollectionTest()
@@ -48,16 +77,14 @@ namespace dotNetTips.Spargine.Tester.Tests
 					_ = newPeople.AddIfNotExists(people[personCount]);
 				}
 
-				Assert.IsTrue(newPeople.Count() == Count);
+				Assert.IsTrue(newPeople.Count == Count);
 			}
 			catch (Exception ex)
 			{
 				Debug.WriteLine(ex.Message);
 				Assert.Fail();
 			}
-
 		}
-
 
 		[TestMethod]
 		public void ClonePersonProperTest()
@@ -76,7 +103,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 				Assert.Fail();
 			}
 		}
-
 
 		[TestMethod]
 		public void GenerateByteArrayTest()
@@ -112,7 +138,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(coordinates);
 
 			Assert.IsTrue(coordinates.Count() == Count);
-
 		}
 
 		[TestMethod]
@@ -123,7 +148,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(coordinate);
 
 			Assert.IsNotNull(coordinate.ToString());
-
 		}
 
 		[TestMethod]
@@ -134,7 +158,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(coordinate);
 
 			Assert.IsNotNull(coordinate.ToString());
-
 		}
 
 		[TestMethod]
@@ -193,7 +216,12 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateFilesWithPathTest()
 		{
-			var files = RandomData.GenerateFiles(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), Count, FileLength);
+			var files = RandomData.GenerateFiles(
+				Environment.GetFolderPath(
+					Environment.SpecialFolder.ApplicationData,
+					Environment.SpecialFolderOption.DoNotVerify),
+				Count,
+				FileLength);
 
 			Assert.IsNotNull(files);
 
@@ -205,7 +233,13 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateFileTest()
 		{
-			var fileName = RandomData.GenerateFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), "UnitTest.test"), fileLength: FileLength);
+			var fileName = RandomData.GenerateFile(
+				Path.Combine(
+					Environment.GetFolderPath(
+						Environment.SpecialFolder.ApplicationData,
+						Environment.SpecialFolderOption.DoNotVerify),
+					"UnitTest.test"),
+				fileLength: FileLength);
 
 			Assert.IsNotNull(fileName);
 
@@ -264,45 +298,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 		}
 
 		[TestMethod]
-		public void GeneratePersonFixedTest()
-		{
-#pragma warning disable CS0618 // Type or member is obsolete
-			var person = RandomData.GeneratePerson<PersonFixed>();
-#pragma warning restore CS0618 // Type or member is obsolete
-
-			Assert.IsNotNull(person);
-
-			Assert.IsNotNull(person.Address1);
-
-			Assert.IsNotNull(person.Address2);
-
-			Assert.IsTrue(person.BornOn > DateTimeOffset.Parse("1/1/1800"));
-
-			Assert.IsNotNull(person.CellPhone);
-
-			Assert.IsNotNull(person.City);
-
-			Assert.IsNotNull(person.Country);
-
-			Assert.IsNotNull(person.Email);
-
-			Assert.IsNotNull(person.FirstName);
-
-			Assert.IsNotNull(person.HomePhone);
-
-			Assert.IsNotNull(person.Id);
-
-			Assert.IsNotNull(person.LastName);
-
-			Assert.IsNotNull(person.PostalCode);
-
-			Assert.IsTrue(person.Age.TotalMinutes > 0);
-
-			Assert.IsNotNull(person.ToString());
-		}
-
-
-		[TestMethod]
 		public void GeneratePersonProperTest()
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
@@ -346,13 +341,12 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(people);
 
 			Assert.IsTrue(people.Count == Count);
-
 		}
 
 		[TestMethod]
 		public void GeneratePersonTest()
 		{
-			var person = RandomData.GeneratePerson<Person>();
+			var person = RandomData.GeneratePerson<Models.RefTypes.Person>();
 
 			Assert.IsNotNull(person);
 
@@ -391,11 +385,15 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(stringValue);
 		}
 
-
 		[TestMethod]
 		public void GenerateRandomFileNameAllParamsTest()
 		{
-			var stringValue = RandomData.GenerateRandomFileName(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify), fileNameLength: 10, extension: FileExtension);
+			var stringValue = RandomData.GenerateRandomFileName(
+				Environment.GetFolderPath(
+					Environment.SpecialFolder.ApplicationData,
+					Environment.SpecialFolderOption.DoNotVerify),
+				fileNameLength: 10,
+				extension: FileExtension);
 
 			Assert.IsNotNull(stringValue);
 
@@ -427,7 +425,10 @@ namespace dotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateRandomFileNameWithPathTest()
 		{
-			var stringValue = RandomData.GenerateRandomFileName(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData, Environment.SpecialFolderOption.DoNotVerify));
+			var stringValue = RandomData.GenerateRandomFileName(
+				Environment.GetFolderPath(
+					Environment.SpecialFolder.ApplicationData,
+					Environment.SpecialFolderOption.DoNotVerify));
 
 			Assert.IsNotNull(stringValue);
 		}
@@ -557,27 +558,6 @@ namespace dotNetTips.Spargine.Tester.Tests
 			Debug.WriteLine(person2.ToString());
 
 			Debug.WriteLine(person2.PropertiesToString());
-		}
-
-		private void DeleteFiles(IEnumerable<string> files)
-		{
-			if (files.HasItems() == false)
-			{
-				return;
-			}
-
-			_ = Parallel.ForEach(source: files, body: (fileName) =>
-			{
-				try
-				{
-					File.Delete(fileName);
-				}
-				catch (Exception ex) when (ex is ArgumentException || ex is ArgumentNullException || ex is System.IO.DirectoryNotFoundException || ex is IOException || ex is NotSupportedException || ex is PathTooLongException || ex is UnauthorizedAccessException)
-				{
-					Trace.WriteLine(ex.GetAllMessages());
-				}
-			});
-
 		}
 	}
 }

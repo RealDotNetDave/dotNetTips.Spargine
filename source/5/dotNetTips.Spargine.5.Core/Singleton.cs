@@ -1,18 +1,16 @@
-﻿
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.5.Core
 // Author           : David McCarter
 // Created          : 07-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-25-2021
+// Last Modified On : 09-01-2021
 // ***********************************************************************
 // <copyright file="Singleton.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 
 namespace dotNetTips.Spargine.Core
 {

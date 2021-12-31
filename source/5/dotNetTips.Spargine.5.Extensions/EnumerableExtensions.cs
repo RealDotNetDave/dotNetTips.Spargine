@@ -1,31 +1,27 @@
-﻿
-// ***********************************************************************
+﻿// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.5.Extensions **
 // Author           : David McCarter
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for IEnumerable types.</summary>
 // ***********************************************************************
-using System;
 using System.Collections;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Collections.Generic;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -63,6 +59,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			return condition ? list.Add(item) : list;
 		}
+
 		/// <summary>
 		/// Determines whether the specified collection has items specified.
 		/// </summary>
@@ -81,7 +78,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var itemsList = items.ToReadOnlyCollection();
 
-			return itemsList.HasItems() && list.ToList().Any(p => itemsList.Contains(p));
+			return itemsList.HasItems() && list.Any(p => itemsList.Contains(p));
 		}
 
 		/// <summary>
@@ -135,10 +132,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool FastAny<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			//TODO: TRY TO MAKE THIS FASTER
 			return list.Any(predicate);
-
-			//return list.First(predicate) != null; DOES NOT WORK
 		}
 
 		/// <summary>
@@ -153,6 +147,43 @@ namespace dotNetTips.Spargine.Extensions
 		public static int FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
 			return list.Count(predicate);
+		}
+
+		/// <summary>
+		/// Processes the collection with the specified action in parallel processing.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="source">The source.</param>
+		/// <param name="action">The action.</param>
+		/// <param name="maxDegreeOfParallelism">The maximum degree of parallelism.</param>
+		/// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
+		/// <param name="scheduler">The scheduler.</param>
+		/// <returns>Task.</returns>
+		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
+		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> source, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
+		{
+			var options = new ExecutionDataflowBlockOptions
+			{
+				MaxDegreeOfParallelism = maxDegreeOfParallelism,
+				EnsureOrdered = ensureOrdered
+			};
+
+			if (scheduler != null)
+			{
+				options.TaskScheduler = scheduler;
+			}
+
+			var block = new ActionBlock<T>(action, options);
+
+			foreach (var item in source)
+			{
+				block.Post(item);
+			}
+
+			block.Complete();
+
+			return block.Completion;
 		}
 
 		/// <summary>
@@ -381,7 +412,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
-		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> list)
 		{
 			return Collection<T>.Create(list);
@@ -423,7 +454,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		/// <remarks>Original code by: James Michael Hare</remarks>
-		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(ToDictionary), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static Dictionary<TKey, List<TValue>> ToDictionary<TKey, TValue>([NotNull] this IEnumerable<IGrouping<TKey, TValue>> list)
 		{
 			return list.ToDictionary(group => group.Key, group => group.ToList());
@@ -462,7 +493,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
-		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = 100, UnitTestCoverage = 0, Status = Status.Available)]
+		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static async Task<List<T>> ToListAsync<T>([NotNull] this IEnumerable<T> list)
 		{
 			return await Task.Run(() => list.ToList()).ConfigureAwait(false);

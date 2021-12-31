@@ -4,17 +4,14 @@
 // Created          : 07-25-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 09-01-2021
 // ***********************************************************************
 // <copyright file="TaskHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace dotNetTips.Spargine.Core
 {
@@ -33,7 +30,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="task">The Task.</param>
 		/// <example>
-		/// TaskHelper.RunSync(() => SomeType.FireAsync("Test Message"));
+		/// TaskHelper.RunSync(() =&gt; SomeType.FireAsync("Test Message"));
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void RunSync([NotNull] Func<Task> task) => _taskFactory.StartNew(task).Unwrap().GetAwaiter().GetResult();
@@ -45,7 +42,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="task">Task&lt;T&gt; method to execute</param>
 		/// <returns>TResult.</returns>
 		/// <example>
-		/// TaskHelper.RunSync(() => SomeType.FireWithReturnAsync("Test Message"));
+		/// TaskHelper.RunSync(() =&gt; SomeType.FireWithReturnAsync("Test Message"));
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static TResult RunSync<TResult>([NotNull] this Func<Task<TResult>> task) => _taskFactory
@@ -66,7 +63,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns>TResult.</returns>
 		/// <example>
 		/// var cancelToken = new CancellationTokenSource().Token;
-		/// TaskHelper.RunSync(() => SomeType.FireWithReturnAsync("Test Message", cancellationToken: cancelToken);
+		/// TaskHelper.RunSync(() =&gt; SomeType.FireWithReturnAsync("Test Message", cancellationToken: cancelToken);
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static TResult RunSync<TResult>([NotNull] Func<Task<TResult>> func, CancellationToken cancellationToken, TaskCreationOptions taskCreation = TaskCreationOptions.None, TaskContinuationOptions taskContinuation = TaskContinuationOptions.None, TaskScheduler taskScheduler = null)
@@ -93,7 +90,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="taskScheduler">The task scheduler.</param>
 		/// <example>
 		/// var cancelToken = new CancellationTokenSource().Token;
-		/// TaskHelper.RunSync(() => SomeType.FireAsync("Test Message"), cancellationToken: cancelToken);
+		/// TaskHelper.RunSync(() =&gt; SomeType.FireAsync("Test Message"), cancellationToken: cancelToken);
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
 		public static void RunSync([NotNull] this Func<Task> task, CancellationToken cancellationToken, TaskCreationOptions taskCreation = TaskCreationOptions.None, TaskContinuationOptions taskContinuation = TaskContinuationOptions.None, TaskScheduler taskScheduler = null)

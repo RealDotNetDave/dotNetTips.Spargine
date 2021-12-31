@@ -4,25 +4,20 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Threading;
-using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Internal;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-namespace dotNetTips.Spargine.Collections.Generic.Concurrent
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
+namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 {
 	/// <summary>
 	/// Represents a thread-safe hash-based unique collection.
@@ -42,6 +37,11 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		private const int MaxLockNumber = 1024;
 
 		/// <summary>
+		/// The budget..
+		/// </summary>
+		private int _budget;
+
+		/// <summary>
 		/// The comparer..
 		/// </summary>
 		private readonly IEqualityComparer<T> _comparer;
@@ -52,85 +52,9 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		private readonly bool _growLockArray;
 
 		/// <summary>
-		/// The budget..
-		/// </summary>
-		private int _budget;
-
-		/// <summary>
 		/// The tables..
 		/// </summary>
 		private volatile Tables _tables;
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		public ConcurrentHashSet()
-			: this(DefaultConcurrencyLevel, DefaultCapacity, true, null)
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
-		public ConcurrentHashSet([NotNull] IEnumerable<T> collection)
-			: this(collection, null)
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet([NotNull] IEqualityComparer<T> comparer)
-			: this(DefaultConcurrencyLevel, DefaultCapacity, true, comparer)
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="concurrencyLevel">The concurrency level.</param>
-		/// <param name="capacity">The initial capacity for the collection.</param>
-		public ConcurrentHashSet(int concurrencyLevel, int capacity)
-			: this(concurrencyLevel, capacity, false, null)
-		{
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="collection">The collection to pre load items.</param>
-		/// <param name="comparer">The comparer.</param>
-		public ConcurrentHashSet([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
-			: this(comparer)
-		{
-			this.InitializeFromCollection(collection);
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
-		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
-		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet(int concurrencyLevel, [NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
-			: this(concurrencyLevel, DefaultCapacity, false, comparer)
-		{
-			this.InitializeFromCollection(collection);
-
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
-		/// </summary>
-		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
-		/// <param name="capacity">The capacity<see cref="int" />.</param>
-		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
-		public ConcurrentHashSet(int concurrencyLevel, int capacity, [NotNull] IEqualityComparer<T> comparer)
-			: this(concurrencyLevel, capacity, false, comparer)
-		{
-		}
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="ConcurrentHashSet{T}" /> class from being created.
@@ -139,12 +63,14 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <param name="capacity">The capacity. Must be a value of 0 or greater.</param>
 		/// <param name="growLockArray">if set to <c>true</c> [grow lock array].</param>
 		/// <param name="comparer">The comparer.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		private ConcurrentHashSet(int concurrencyLevel, int capacity, bool growLockArray, IEqualityComparer<T> comparer)
 		{
 			if (concurrencyLevel < 1)
 			{
 				concurrencyLevel = 1;
 			}
+
 			concurrencyLevel = concurrencyLevel.EnsureMinimum(1);
 			capacity = capacity.EnsureMinimum(0);
 
@@ -172,76 +98,88 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Gets a value indicating whether the <see cref="ICollection"></see> is read-only.
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
 		/// </summary>
-		/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
-		bool ICollection<T>.IsReadOnly => false;
-
-		/// <summary>
-		/// Gets the number of items contained in the <see cref="ConcurrentHashSet{T}" />...
-		/// </summary>
-		/// <value>The count.</value>
-		public int Count
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet()
+			: this(DefaultConcurrencyLevel, DefaultCapacity, true, null)
 		{
-			get
-			{
-				var count = 0;
-				var acquiredLocks = 0;
-				try
-				{
-					this.AcquireAllLocks(ref acquiredLocks);
-					count = this._tables._countPerLock.Aggregate(count, (accumulator, countPerLock) => accumulator += countPerLock);
-				}
-				finally
-				{
-					this.ReleaseLocks(0, acquiredLocks);
-				}
-
-				return count;
-			}
 		}
 
 		/// <summary>
-		/// Gets a value indicating whether this instance is empty...
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
 		/// </summary>
-		/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
-		public bool IsEmpty
+		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet([NotNull] IEnumerable<T> collection)
+			: this(collection, null)
 		{
-			get
-			{
-				var acquiredLocks = 0;
-
-				try
-				{
-					this.AcquireAllLocks(ref acquiredLocks);
-
-					for (var counter = 0; counter < this._tables._countPerLock.Length; counter++)
-					{
-						if (this._tables._countPerLock[counter] != 0)
-						{
-							return false;
-						}
-					}
-				}
-				finally
-				{
-					this.ReleaseLocks(0, acquiredLocks);
-				}
-
-				return true;
-			}
 		}
 
 		/// <summary>
-		/// Gets the default concurrency level...
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
 		/// </summary>
-		/// <value>The default concurrency level.</value>
-		private static int DefaultConcurrencyLevel => Environment.ProcessorCount;
+		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet([NotNull] IEqualityComparer<T> comparer)
+			: this(concurrencyLevel: DefaultConcurrencyLevel, capacity: DefaultCapacity, growLockArray: true, comparer: comparer)
+		{
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
+		/// </summary>
+		/// <param name="concurrencyLevel">The concurrency level.</param>
+		/// <param name="capacity">The initial capacity for the collection.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet(int concurrencyLevel, int capacity)
+			: this(concurrencyLevel, capacity, false, null)
+		{
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
+		/// </summary>
+		/// <param name="collection">The collection to pre load items.</param>
+		/// <param name="comparer">The comparer.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
+			: this(comparer)
+		{
+			this.InitializeFromCollection(collection);
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
+		/// </summary>
+		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
+		/// <param name="collection">The collection<see cref="IEnumerable{T}" />.</param>
+		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet(int concurrencyLevel, [NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
+			: this(concurrencyLevel, DefaultCapacity, false, comparer)
+		{
+			this.InitializeFromCollection(collection);
+
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
+		/// </summary>
+		/// <param name="concurrencyLevel">The concurrencyLevel<see cref="int" />.</param>
+		/// <param name="capacity">The capacity<see cref="int" />.</param>
+		/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
+		[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public ConcurrentHashSet(int concurrencyLevel, int capacity, [NotNull] IEqualityComparer<T> comparer)
+			: this(concurrencyLevel, capacity, false, comparer)
+		{
+		}
 
 		/// <summary>
 		/// Adds an item to the <see cref="ICollection">.</see>.
 		/// </summary>
 		/// <param name="item">The object to add to the <see cref="ICollection"></see>.</param>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		void ICollection<T>.Add([NotNull] T item) => this.Add(item);
 
 		/// <summary>
@@ -251,6 +189,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
 		/// <exception cref="ArgumentException">The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.</exception>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		void ICollection<T>.CopyTo([NotNull] T[] array, int arrayIndex)
 		{
 			Validate.TryValidateParam<ArgumentOutOfRangeException>(arrayIndex < 0, nameof(arrayIndex));
@@ -287,181 +226,24 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The object to remove from the collection.</param>
 		/// <returns>true if <paramref name="item">item</paramref> was successfully removed from the <see cref="ICollection"></see>; otherwise, false. This method also returns false if <paramref name="item">item</paramref> is not found in the original <see cref="ICollection"></see>.</returns>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		bool ICollection<T>.Remove([NotNull] T item)
 		{
 			return this.TryRemove(item);
 		}
 
 		/// <summary>
+		/// Gets a value indicating whether the <see cref="ICollection"></see> is read-only.
+		/// </summary>
+		/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
+		bool ICollection<T>.IsReadOnly => false;
+
+		/// <summary>
 		/// Returns an enumerator that iterates through a collection.
 		/// </summary>
 		/// <returns>An <see cref="IEnumerator"></see> object that can be used to iterate through the collection.</returns>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
-
-		/// <summary>
-		/// Adds the specified item to the <see cref="ConcurrentHashSet{T}" />.
-		/// </summary>
-		/// <param name="item">The item to add.</param>
-		/// <returns>The <see cref="bool" />.</returns>
-		public bool Add([NotNull] T item)
-		{
-			return this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
-		}
-
-		/// <summary>
-		/// Removes all items from the <see cref="ConcurrentHashSet{T}" />.
-		/// </summary>
-		public void Clear()
-		{
-			var locksAcquired = 0;
-			try
-			{
-				this.AcquireAllLocks(ref locksAcquired);
-
-				var newTables = new Tables(new Node[DefaultCapacity], this._tables._locks, new int[this._tables._countPerLock.Length]);
-				this._tables = newTables;
-				this._budget = Math.Max(1, newTables._buckets.Length / newTables._locks.Length);
-			}
-			finally
-			{
-				this.ReleaseLocks(0, locksAcquired);
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the <see cref="ConcurrentHashSet{T}" /> contains the specified
-		/// item.
-		/// </summary>
-		/// <param name="item">The item to locate in the <see cref="ConcurrentHashSet{T}" />.</param>
-		/// <returns>true if the <see cref="ConcurrentHashSet{T}" /> contains the item; otherwise, false.</returns>
-		public bool Contains([NotNull] T item)
-		{
-			var hashCode = this._comparer.GetHashCode(item);
-
-			// We must capture the _buckets field in a local variable. It is set to a new table on each table resize.
-			var tables = this._tables;
-
-			var bucketNo = GetBucket(hashCode, tables._buckets.Length);
-
-			// We can get away w/out a lock here.
-			// The Volatile.Read ensures that the load of the fields of 'n' doesn't move before the load from buckets[i].
-			var current = Volatile.Read(ref tables._buckets[bucketNo]);
-
-			while (current is not null)
-			{
-				if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
-				{
-					return true;
-				}
-
-				current = current._next;
-			}
-
-			return false;
-		}
-
-		/// <summary>
-		/// Returns an enumerator that iterates through the <see cref="ConcurrentHashSet{T}" />.
-		/// </summary>
-		/// <returns>An enumerator for the <see cref="ConcurrentHashSet{T}" />.</returns>
-		public IEnumerator<T> GetEnumerator()
-		{
-			var buckets = this._tables._buckets;
-
-			for (var i = 0; i < buckets.Length; i++)
-			{
-				// The Volatile.Read ensures that the load of the fields of 'current' doesn't move before the load from buckets[i].
-				var current = Volatile.Read(ref buckets[i]);
-
-				while (current is not null)
-				{
-					yield return current._item;
-					current = current._next;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Attempts to remove the item from the <see cref="ConcurrentHashSet{T}" />.
-		/// </summary>
-		/// <param name="item">The item to remove.</param>
-		/// <returns>true if an item was removed successfully; otherwise, false.</returns>
-		public bool TryRemove([NotNull] T item)
-		{
-			var hashCode = this._comparer.GetHashCode(item);
-
-			while (true)
-			{
-				var tables = this._tables;
-
-				GetBucketAndLockNo(hashCode, out var bucketNo, out var lockNo, tables._buckets.Length, tables._locks.Length);
-
-				lock (tables._locks[lockNo])
-				{
-					// If the table just got resized, we may not be holding the right lock, and must retry.
-					// This should be a rare occurrence.
-					if (tables != this._tables)
-					{
-						continue;
-					}
-
-					Node previous = null;
-					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
-					{
-						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
-
-						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
-						{
-							if (previous is null)
-							{
-								Volatile.Write(ref tables._buckets[bucketNo], current._next);
-							}
-							else
-							{
-								previous._next = current._next;
-							}
-
-							tables._countPerLock[lockNo]--;
-							return true;
-						}
-
-						previous = current;
-					}
-				}
-
-				return false;
-			}
-		}
-
-		/// <summary>
-		/// Gets the bucket.
-		/// </summary>
-		/// <param name="hashCode">The hash code.</param>
-		/// <param name="bucketCount">The bucket count.</param>
-		/// <returns>System.Int32.</returns>
-		private static int GetBucket(int hashCode, int bucketCount)
-		{
-			var bucketNo = ( hashCode & 0x7fffffff ) % bucketCount;
-			Debug.Assert(bucketNo >= 0 && bucketNo < bucketCount);
-			return bucketNo;
-		}
-
-		/// <summary>
-		/// Gets the bucket and lock no.
-		/// </summary>
-		/// <param name="hashCode">The hash code.</param>
-		/// <param name="bucketNo">The bucket no.</param>
-		/// <param name="lockNo">The lock no.</param>
-		/// <param name="bucketCount">The bucket count.</param>
-		/// <param name="lockCount">The lock count.</param>
-		private static void GetBucketAndLockNo(int hashCode, out int bucketNo, out int lockNo, int bucketCount, int lockCount)
-		{
-			bucketNo = ( hashCode & 0x7fffffff ) % bucketCount;
-			lockNo = bucketNo % lockCount;
-
-			Debug.Assert(bucketNo >= 0 && bucketNo < bucketCount);
-			Debug.Assert(lockNo >= 0 && lockNo < lockCount);
-		}
 
 		/// <summary>
 		/// Acquires all locks.
@@ -609,6 +391,36 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 					index++; // this should never flow, CopyToItems is only called when there's no overflow risk
 				}
 			}
+		}
+
+		/// <summary>
+		/// Gets the bucket.
+		/// </summary>
+		/// <param name="hashCode">The hash code.</param>
+		/// <param name="bucketCount">The bucket count.</param>
+		/// <returns>System.Int32.</returns>
+		private static int GetBucket(int hashCode, int bucketCount)
+		{
+			var bucketNo = ( hashCode & 0x7fffffff ) % bucketCount;
+			Debug.Assert(bucketNo >= 0 && bucketNo < bucketCount);
+			return bucketNo;
+		}
+
+		/// <summary>
+		/// Gets the bucket and lock no.
+		/// </summary>
+		/// <param name="hashCode">The hash code.</param>
+		/// <param name="bucketNo">The bucket no.</param>
+		/// <param name="lockNo">The lock no.</param>
+		/// <param name="bucketCount">The bucket count.</param>
+		/// <param name="lockCount">The lock count.</param>
+		private static void GetBucketAndLockNo(int hashCode, out int bucketNo, out int lockNo, int bucketCount, int lockCount)
+		{
+			bucketNo = ( hashCode & 0x7fffffff ) % bucketCount;
+			lockNo = bucketNo % lockCount;
+
+			Debug.Assert(bucketNo >= 0 && bucketNo < bucketCount);
+			Debug.Assert(lockNo >= 0 && lockNo < lockCount);
 		}
 
 		/// <summary>
@@ -781,9 +593,214 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
+		/// Adds the specified item to the <see cref="ConcurrentHashSet{T}" />.
+		/// </summary>
+		/// <param name="item">The item to add.</param>
+		/// <returns>The <see cref="bool" />.</returns>
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public bool Add([NotNull] T item)
+		{
+			return this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
+		}
+
+		/// <summary>
+		/// Removes all items from the <see cref="ConcurrentHashSet{T}" />.
+		/// </summary>
+		[Information(nameof(Clear), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public void Clear()
+		{
+			var locksAcquired = 0;
+
+			try
+			{
+				this.AcquireAllLocks(ref locksAcquired);
+
+				var newTables = new Tables(new Node[DefaultCapacity], this._tables._locks, new int[this._tables._countPerLock.Length]);
+				this._tables = newTables;
+				this._budget = Math.Max(1, newTables._buckets.Length / newTables._locks.Length);
+			}
+			finally
+			{
+				this.ReleaseLocks(0, locksAcquired);
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the <see cref="ConcurrentHashSet{T}" /> contains the specified
+		/// item.
+		/// </summary>
+		/// <param name="item">The item to locate in the <see cref="ConcurrentHashSet{T}" />.</param>
+		/// <returns>true if the <see cref="ConcurrentHashSet{T}" /> contains the item; otherwise, false.</returns>
+		[Information(nameof(Contains), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public bool Contains([NotNull] T item)
+		{
+			var hashCode = this._comparer.GetHashCode(item);
+
+			// We must capture the _buckets field in a local variable. It is set to a new table on each table resize.
+			var tables = this._tables;
+
+			var bucketNo = GetBucket(hashCode, tables._buckets.Length);
+
+			// We can get away w/out a lock here.
+			// The Volatile.Read ensures that the load of the fields of 'n' doesn't move before the load from buckets[i].
+			var current = Volatile.Read(ref tables._buckets[bucketNo]);
+
+			while (current is not null)
+			{
+				if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
+				{
+					return true;
+				}
+
+				current = current._next;
+			}
+
+			return false;
+		}
+
+		/// <summary>
+		/// Returns an enumerator that iterates through the <see cref="ConcurrentHashSet{T}" />.
+		/// </summary>
+		/// <returns>An enumerator for the <see cref="ConcurrentHashSet{T}" />.</returns>
+		[Information(nameof(GetEnumerator), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public IEnumerator<T> GetEnumerator()
+		{
+			var buckets = this._tables._buckets;
+
+			for (var i = 0; i < buckets.Length; i++)
+			{
+				// The Volatile.Read ensures that the load of the fields of 'current' doesn't move before the load from buckets[i].
+				var current = Volatile.Read(ref buckets[i]);
+
+				while (current is not null)
+				{
+					yield return current._item;
+					current = current._next;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Attempts to remove the item from the <see cref="ConcurrentHashSet{T}" />.
+		/// </summary>
+		/// <param name="item">The item to remove.</param>
+		/// <returns>true if an item was removed successfully; otherwise, false.</returns>
+		[Information(nameof(TryRemove), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public bool TryRemove([NotNull] T item)
+		{
+			var hashCode = this._comparer.GetHashCode(item);
+
+			while (true)
+			{
+				var tables = this._tables;
+
+				GetBucketAndLockNo(hashCode, out var bucketNo, out var lockNo, tables._buckets.Length, tables._locks.Length);
+
+				lock (tables._locks[lockNo])
+				{
+					// If the table just got resized, we may not be holding the right lock, and must retry.
+					// This should be a rare occurrence.
+					if (tables != this._tables)
+					{
+						continue;
+					}
+
+					Node previous = null;
+					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
+					{
+						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
+
+						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
+						{
+							if (previous is null)
+							{
+								Volatile.Write(ref tables._buckets[bucketNo], current._next);
+							}
+							else
+							{
+								previous._next = current._next;
+							}
+
+							tables._countPerLock[lockNo]--;
+							return true;
+						}
+
+						previous = current;
+					}
+				}
+
+				return false;
+			}
+		}
+
+		/// <summary>
+		/// Gets the number of items contained in the <see cref="ConcurrentHashSet{T}" />...
+		/// </summary>
+		/// <value>The count.</value>
+		[Information(nameof(Count), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public int Count
+		{
+			get
+			{
+				var count = 0;
+				var acquiredLocks = 0;
+
+				try
+				{
+					this.AcquireAllLocks(ref acquiredLocks);
+					count = this._tables._countPerLock.Aggregate(count, (accumulator, countPerLock) => accumulator += countPerLock);
+				}
+				finally
+				{
+					this.ReleaseLocks(0, acquiredLocks);
+				}
+
+				return count;
+			}
+		}
+
+		/// <summary>
+		/// Gets the default concurrency level...
+		/// </summary>
+		/// <value>The default concurrency level.</value>
+		public static int DefaultConcurrencyLevel => Environment.ProcessorCount;
+
+		/// <summary>
+		/// Gets a value indicating whether this instance is empty...
+		/// </summary>
+		/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
+		[Information(nameof(IsEmpty), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public bool IsEmpty
+		{
+			get
+			{
+				var acquiredLocks = 0;
+
+				try
+				{
+					this.AcquireAllLocks(ref acquiredLocks);
+
+					for (var counter = 0; counter < this._tables._countPerLock.Length; counter++)
+					{
+						if (this._tables._countPerLock[counter] != 0)
+						{
+							return false;
+						}
+					}
+				}
+				finally
+				{
+					this.ReleaseLocks(0, acquiredLocks);
+				}
+
+				return true;
+			}
+		}
+
+		/// <summary>
 		/// Class Node.
 		/// </summary>
-		private class Node
+		private sealed class Node
 		{
 			/// <summary>
 			/// The Hash Code...
@@ -817,7 +834,7 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 		/// <summary>
 		/// Class Tables.
 		/// </summary>
-		private class Tables
+		private sealed class Tables
 		{
 			/// <summary>
 			/// The buckets..
@@ -825,14 +842,14 @@ namespace dotNetTips.Spargine.Collections.Generic.Concurrent
 			internal readonly Node[] _buckets;
 
 			/// <summary>
-			/// The locks..
-			/// </summary>
-			internal readonly object[] _locks;
-
-			/// <summary>
 			/// The count per lock..
 			/// </summary>
 			internal volatile int[] _countPerLock;
+
+			/// <summary>
+			/// The locks..
+			/// </summary>
+			internal readonly object[] _locks;
 
 			/// <summary>
 			/// Initializes a new instance of the <see cref="Tables" /> class.

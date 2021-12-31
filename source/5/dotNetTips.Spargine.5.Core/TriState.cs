@@ -4,9 +4,9 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
-// <copyright file="TriState.cs" company="dotNetTips.Spargine.5.Core">
+// <copyright file="Tristate.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>

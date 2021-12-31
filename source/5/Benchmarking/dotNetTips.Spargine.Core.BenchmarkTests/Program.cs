@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-21-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="Program.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -22,7 +22,7 @@ namespace dotNetTips.Spargine.Core.BenchmarkTests
 	/// <summary>
 	/// Class Program.
 	/// </summary>
-	public class Program
+	public static class Program
 	{
 		/// <summary>
 		/// Defines the entry point of the application.

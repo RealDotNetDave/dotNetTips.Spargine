@@ -6,9 +6,11 @@
 		<AssemblyVersion>2021.6.14.103</AssemblyVersion>
 		<FileVersion>2021.6.14.103</FileVersion>
 		<LangVersion>latest</LangVersion>
-		<Version>2022.1.5.1</Version>
+		<Version>2022.1.5.40</Version>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 		<AnalysisLevel>5.0</AnalysisLevel>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -20,6 +22,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.1">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
 	</ItemGroup>
 

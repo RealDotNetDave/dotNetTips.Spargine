@@ -4,14 +4,13 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-02-2021
 // ***********************************************************************
 // <copyright file="ServiceProxy.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
@@ -27,16 +26,6 @@ namespace dotNetTips.Spargine.Core.Web
 	public abstract class ServiceProxy<T> where T : ICommunicationObject, IDisposable
 	{
 		/// <summary>
-		/// The lock.
-		/// </summary>
-		private readonly object _lock = new();
-
-		/// <summary>
-		/// The service endpoint.
-		/// </summary>
-		private readonly string _serviceEndpoint;
-
-		/// <summary>
 		/// The channel.
 		/// </summary>
 		private T _channel;
@@ -47,10 +36,75 @@ namespace dotNetTips.Spargine.Core.Web
 		private IChannelFactory<T> _channelFactory;
 
 		/// <summary>
+		/// The lock.
+		/// </summary>
+		private readonly object _lock = new();
+
+		/// <summary>
+		/// The service endpoint.
+		/// </summary>
+		private readonly string _serviceEndpoint;
+
+		/// <summary>
 		/// Initializes a new instance of the <see cref="ServiceProxy{T}" /> class.
 		/// </summary>
 		/// <param name="serviceEndpoint">The service endpoint.</param>
 		protected ServiceProxy([NotNull] string serviceEndpoint) => this._serviceEndpoint = serviceEndpoint;
+
+		/// <summary>
+		/// Initializes this instance.
+		/// </summary>
+		private void Initialize()
+		{
+			lock (this._lock)
+			{
+				if (this.Channel is not null)
+				{
+					return;
+				} ( this._channelFactory as IDisposable )?.Dispose();
+
+				this._channelFactory = new ChannelFactory<T>(this._serviceEndpoint);
+
+				this.Channel?.Dispose();
+				this.Channel = this._channelFactory.CreateChannel(to: new EndpointAddress(this._serviceEndpoint));
+			}
+		}
+
+		/// <summary>
+		/// Closes the channel.
+		/// </summary>
+		protected void CloseChannel()
+		{
+			if (this.Channel is not null && this.Disposed == false)
+			{
+				this.Channel.Close();
+			}
+		}
+
+		/// <summary>
+		/// Releases unmanaged and - optionally - managed resources.
+		/// </summary>
+		/// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+		protected virtual void Dispose(bool disposing)
+		{
+			// Do nothing if the object has already been disposed of.
+			if (this.Disposed)
+			{
+				return;
+			}
+
+			if (disposing)
+			{
+				lock (this._lock)
+				{
+					// Release disposable objects used by this instance here.
+					this._channel?.Dispose();
+				}
+			}
+
+			// Remember that the object has been disposed of.
+			this.Disposed = true;
+		}
 
 		/// <summary>
 		/// Gets the channel.
@@ -76,70 +130,12 @@ namespace dotNetTips.Spargine.Core.Web
 		/// <summary>
 		/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 		/// </summary>
-		public virtual void Dispose()
+		public void Dispose()
 		{
 			this.Dispose(true);
 
 			// Unregister object for finalization.
 			GC.SuppressFinalize(this);
-		}
-
-		/// <summary>
-		/// Closes the channel.
-		/// </summary>
-		protected void CloseChannel()
-		{
-			if (this.Channel is not null)
-			{
-				this.Channel.Close();
-			}
-		}
-
-		/// <summary>
-		/// Releases unmanaged and - optionally - managed resources.
-		/// </summary>
-		/// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
-		protected virtual void Dispose(bool disposing)
-		{
-			// Do nothing if the object has already been disposed of.
-			if (this.Disposed)
-			{
-				return;
-			}
-
-			if (disposing)
-			{
-				lock (this._lock)
-				{
-					// Release disposable objects used by this instance here.
-					if (this.Channel is not null)
-					{
-						this.Channel.Dispose();
-					}
-				}
-			}
-
-			// Release unmanaged resources here. Don't access reference type fields.
-
-			// Remember that the object has been disposed of.
-			this.Disposed = true;
-		}
-
-		/// <summary>
-		/// Initializes this instance.
-		/// </summary>
-		private void Initialize()
-		{
-			lock (this._lock)
-			{
-				if (this.Channel is not null)
-				{
-					return;
-				}
-
-				this._channelFactory = new ChannelFactory<T>(this._serviceEndpoint);
-				this.Channel = this._channelFactory.CreateChannel(to: new EndpointAddress(this._serviceEndpoint));
-			}
 		}
 
 	}

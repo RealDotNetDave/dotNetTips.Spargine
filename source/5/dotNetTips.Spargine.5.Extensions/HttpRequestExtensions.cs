@@ -4,23 +4,20 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using Microsoft.AspNetCore.Http;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

@@ -1,7 +1,16 @@
-﻿// This file is used by Code Analysis to maintain SuppressMessage
-// attributes that are applied to this project.
-// Project-level suppressions either have no target or are given
-// a specific target and scoped to a namespace, type, member, etc.
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Benchmarking
+// Author           : David McCarter
+// Created          : 08-20-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 08-21-2021
+// ***********************************************************************
+// <copyright file="GlobalSuppressions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 
 using System.Diagnostics.CodeAnalysis;
 

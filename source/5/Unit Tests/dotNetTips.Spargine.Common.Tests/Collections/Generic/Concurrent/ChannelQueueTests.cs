@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -21,7 +21,7 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 using dotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent

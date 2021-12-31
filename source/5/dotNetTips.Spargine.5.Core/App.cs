@@ -4,27 +4,23 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="App.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Application information and helper methods.</summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -191,7 +187,6 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool IsUserAdministrator()
 		{
@@ -296,6 +291,12 @@ namespace dotNetTips.Spargine.Core
 
 			return appInfo;
 		}
+
+		/// <summary>
+		/// Calculates the maximum degree of parallelism.
+		/// </summary>
+		/// <returns>System.Int32.</returns>
+		public static int MaxDegreeOfParallelism() => Convert.ToInt32(Math.Ceiling(Environment.ProcessorCount * 0.75 * 2.0));
 
 		/// <summary>
 		/// Kills the process.

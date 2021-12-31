@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="JsonSerializationTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,17 +19,23 @@ using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Serialization;
 using dotNetTips.Spargine.Core.Tests.Properties;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spartine.Core.Tests.Serialization
 {
+	/// <summary>
+	/// Defines test class JsonSerializationTests.
+	/// </summary>
 	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class JsonSerializationTests
 	{
 
+		/// <summary>
+		/// Defines the test method SerializeDeserializeTestPersonProper.
+		/// </summary>
 		[TestMethod]
 		public void SerializeDeserializeTestPersonProper()
 		{
@@ -49,6 +55,9 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			Assert.IsNotNull(serializedPerson);
 		}
 
+		/// <summary>
+		/// Defines the test method SerializeDeserializeTestPersonRecord.
+		/// </summary>
 		[TestMethod]
 		public void SerializeDeserializeTestPersonRecord()
 		{
@@ -67,6 +76,9 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 			Assert.IsNotNull(serializedPerson);
 		}
 
+		/// <summary>
+		/// Defines the test method SerializeDeserializeToFileTestPersonProper.
+		/// </summary>
 		[TestMethod]
 		public void SerializeDeserializeToFileTestPersonProper()
 		{

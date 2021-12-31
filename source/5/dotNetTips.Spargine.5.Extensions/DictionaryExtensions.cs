@@ -4,24 +4,21 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for IDictionary types.</summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -220,7 +217,7 @@ namespace dotNetTips.Spargine.Extensions
 			{
 				foreach (var item in items)
 				{
-					if (item is not null and IDisposable disposeItem)
+					if (item is IDisposable disposeItem)
 					{
 						disposeItem.TryDispose();
 					}

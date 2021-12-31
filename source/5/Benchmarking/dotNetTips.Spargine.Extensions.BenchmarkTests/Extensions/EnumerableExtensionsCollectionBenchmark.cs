@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-27-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,6 +19,7 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Extensions;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
@@ -30,6 +31,16 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Collections)]
 	public class EnumerableExtensionsCollectionBenchmark : CollectionBenchmark
 	{
+
+		private bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		{
+			return list.Any(predicate);
+		}
+
+		private int CountWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		{
+			return list.Count(predicate);
+		}
 
 		[Benchmark(Description = "Any: With Predicate")]
 		[BenchmarkCategory(Categories.LINQ)]
@@ -105,6 +116,78 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Process Collection: for()")]
+		[BenchmarkCategory(Categories.New)]
+		public void Processor01()
+		{
+			var result = base.PersonProperList;
+
+			for (var count = 0; count < result.Count; count++)
+			{
+				result[count].Address2 = "TEST DATA";
+			}
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = "Process Collection: FastProcessor")]
+		[BenchmarkCategory(Categories.New)]
+		public void Processor02()
+		{
+			var result = base.PersonProperList.ToArray();
+
+			Action<PersonProper> action = (PersonProper person) => person.Address2 = "TEST DATA";
+
+			result.FastProcessor(action);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = "FastParallelProcessor(): MaxDegree=Default")]
+		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		public void Processor03()
+		{
+			var collection = PersonProperList.AsEnumerable();
+
+			_ = collection.FastParallelProcessor((PersonProper person) =>
+			{
+				person.Address2 = "TEST DATA";
+
+			});
+
+			Consumer.Consume(collection.Count());
+		}
+
+		[Benchmark(Description = "FastParallelProcessor(): MaxDegree=App.MaxDegreeOfParallelism()")]
+		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		public void Processor04()
+		{
+			var collection = PersonProperList.AsEnumerable();
+
+			_ = collection.FastParallelProcessor((PersonProper person) =>
+			{
+				person.Address2 = "TEST DATA";
+
+			}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism());
+
+			Consumer.Consume(collection.Count());
+		}
+
+		[Benchmark(Description = "FastParallelProcessor():Ensure Ordered & MaxDegree=App.MaxDegreeOfParallelism()")]
+		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		public void Processor05()
+		{
+			var collection = PersonProperList.AsEnumerable();
+
+			_ = collection.FastParallelProcessor((PersonProper person) =>
+			{
+				person.Address2 = "TEST DATA";
+
+			}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism(), true);
+
+			Consumer.Consume(collection.Count());
+		}
+
 		public override void Setup() { base.Setup(); }
 
 		[Benchmark(Description = nameof(EnumerableExtensions.StartsWith))]
@@ -169,16 +252,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			var result = base.PersonProperList.ToLinkedList();
 
 			base.Consumer.Consume(result);
-		}
-
-		private bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
-		{
-			return list.Any(predicate);
-		}
-
-		private int CountWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
-		{
-			return list.Count(predicate);
 		}
 	}
 }

@@ -4,17 +4,16 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-26-2021
+// Last Modified On : 12-31-2021
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary>Common String Extensions.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -31,6 +30,130 @@ namespace dotNetTips.Spargine.Extensions
 	public static class StringExtensions
 	{
 		/// <summary>
+		/// Converts a Brotli compressed string as an asynchronous operation.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns>Uncompressed string.</returns>
+		/// <remarks>Original code from: https://khalidabuhakmeh.com/compress-strings-with-dotnet-and-csharp</remarks>
+		[Information(nameof(FromBrotliStringAsync), "David McCarter", "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		private static async Task<string> FromBrotliStringAsync(string value)
+		{
+			await using var input = new MemoryStream(Convert.FromBase64String(value));
+			await using var output = new MemoryStream();
+			await using var stream = new BrotliStream(input, CompressionMode.Decompress);
+
+			await stream.CopyToAsync(output).ConfigureAwait(false);
+
+			return Encoding.Unicode.GetString(output.ToArray());
+		}
+
+		/// <summary>
+		/// From Gzip compressed string as an asynchronous operation.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <returns>Uncompressed string.</returns>
+		/// <remarks>Original code from: https://khalidabuhakmeh.com/compress-strings-with-dotnet-and-csharp</remarks>
+		[Information(nameof(FromGZipStringAsync), "David McCarter", "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		private static async Task<string> FromGZipStringAsync(string value)
+		{
+			var bytes = Convert.FromBase64String(value);
+			await using var input = new MemoryStream(bytes);
+			await using var output = new MemoryStream();
+			await using var stream = new GZipStream(input, CompressionMode.Decompress);
+
+			await stream.CopyToAsync(output).ConfigureAwait(false);
+			await stream.FlushAsync().ConfigureAwait(false);
+
+			return Encoding.Unicode.GetString(output.ToArray());
+		}
+
+		/// <summary>
+		/// Creates a hash of the input string.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="hash">The hash.</param>
+		/// <returns>System.Byte[].</returns>
+		private static byte[] GetHash(string input, HashType hash)
+		{
+			var inputBytes = Encoding.ASCII.GetBytes(input);
+
+			switch (hash)
+			{
+				case HashType.MD5:
+					{
+						using var hasher = MD5.Create();
+						return hasher.ComputeHash(inputBytes);
+					}
+				case HashType.SHA1:
+					{
+						using var hasher = SHA1.Create();
+						return hasher.ComputeHash(inputBytes);
+					}
+				case HashType.SHA256:
+					{
+						using var hasher = SHA256.Create();
+						return hasher.ComputeHash(inputBytes);
+					}
+				case HashType.SHA384:
+					{
+						using var hasher = SHA384.Create();
+						return hasher.ComputeHash(inputBytes);
+					}
+				case HashType.SHA512:
+					{
+						using var hasher = SHA512.Create();
+						return hasher.ComputeHash(inputBytes);
+					}
+				default:
+					break;
+			}
+
+			return Array.Empty<byte>();
+		}
+
+		/// <summary>
+		/// To brotli as an asynchronous operation.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="level">The level.</param>
+		/// <returns>Compressed string.</returns>
+		[Information(nameof(ToBrotliStringAsync), "David McCarter", "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		private static async Task<string> ToBrotliStringAsync(string value, CompressionLevel level = CompressionLevel.Fastest)
+		{
+			var bytes = Encoding.Unicode.GetBytes(value);
+			await using var input = new MemoryStream(bytes);
+			await using var output = new MemoryStream();
+			await using var stream = new BrotliStream(output, level);
+
+			await input.CopyToAsync(stream).ConfigureAwait(false);
+			await stream.FlushAsync().ConfigureAwait(false);
+
+			return Convert.ToBase64String(output.ToArray());
+		}
+
+		/// <summary>
+		/// To gzip as an asynchronous operation.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="level">The level.</param>
+		/// <returns>Compressed string.</returns>
+		[Information(nameof(ToGZipStringAsync), "David McCarter", "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
+		private static async Task<string> ToGZipStringAsync(string value, CompressionLevel level = CompressionLevel.Fastest)
+		{
+			var bytes = Encoding.Unicode.GetBytes(value);
+			await using var input = new MemoryStream(bytes);
+			await using var output = new MemoryStream();
+			await using var stream = new GZipStream(output, level);
+
+			await input.CopyToAsync(stream);
+
+			await stream.FlushAsync()
+				;
+
+			return Convert.ToBase64String(output.ToArray());
+		}
+
+		/// <summary>
 		/// Computes a hash from the string.
 		/// </summary>
 		/// <param name="input">The input.</param>
@@ -44,9 +167,9 @@ namespace dotNetTips.Spargine.Extensions
 
 			var sb = new StringBuilder(input.Count());
 
-			for (var i = 0; i < hash.Length; i++)
+			for (var charCount = 0; charCount < hash.Length; charCount++)
 			{
-				_ = sb.Append(hash[i].ToString("x2", CultureInfo.InvariantCulture));
+				_ = sb.Append(hash[charCount].ToString("x2", CultureInfo.InvariantCulture));
 			}
 
 			return sb.ToString().ToTrimmed();
@@ -154,7 +277,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static string DefaultIfNullOrEmpty(this string value, [NotNull] string defaultValue) => string.IsNullOrEmpty(value) ? defaultValue : value;
 
 		/// <summary>
-		/// Turns a delimited string to a array of strings.
+		/// Turns a delimited string to a array of strings. Removed empty entries.
 		/// </summary>
 		/// <param name="input">The delimited input.</param>
 		/// <param name="delimiter">The delimiter.</param>
@@ -215,12 +338,38 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Converts Brotli compressed string to an uncompressed string as an asynchronous operation.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <returns>Uncompressed string.</returns>
+		/// <example>
+		/// Original string: C`sk^yOurOCd]KVIXpR]QBf`T
+		/// Converted string: ixiAQwBgAHMAawBeAHkATwB1AHIATwBDAGQAXQBLAFYASQBYAHAAUgBdAFEAQgBmAGAAVAA=
+		/// </example>
+		[Information(nameof(FromBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static async Task<string> FromBrotliAsync([NotNull] this string input)
+		{
+			return await FromBrotliStringAsync(input);
+		}
+
+		/// <summary>
+		/// Converts Gzip compressed string as an asynchronous operation.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <returns>Unpressed string.</returns>
+		[Information(nameof(FromGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static async Task<string> FromGZipAsync([NotNull] this string input)
+		{
+			return await FromGZipStringAsync(input);
+		}
+
+		/// <summary>
 		/// Determines whether the specified input has a value.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool HasValue(this string input) => input is not null && ( input.Trim().Length > 0 );
 
 		/// <summary>
@@ -230,7 +379,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="length">Checks for specific length of the string.</param>
 		/// <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool HasValue(this string input, int length)
 		{
 			Validate.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
@@ -245,12 +394,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Checks for a specific value.</param>
 		/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be null.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool HasValue(this string input, [NotNull] string value)
 		{
 			Validate.TryValidateParam(input, nameof(input));
 
-			return input is not null && ( string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0 );
+			return input is not null && string.Equals(input.Trim(), value.Trim(), StringComparison.Ordinal);
 		}
 
 		/// <summary>
@@ -260,10 +409,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="expression">The expression.</param>
 		/// <param name="options">The options.</param>
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool HasValue(this string input, string expression, RegexOptions options)
 		{
-			return input.HasValue() && expression.HasValue() ? new Regex(expression, options).IsMatch(input) : false;
+			return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 		}
 
 		/// <summary>
@@ -275,7 +424,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Maximum length must be greater than Minimum length.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool HasValue(this string input, int minLength, int maxLength)
 		{
 			Validate.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
@@ -315,7 +464,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(Indent), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string Indent([NotNull] this string input, int length, char indentationCharacter)
 		{
-			Validate.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() == false, nameof(length));
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(length.IsNegative() is false, nameof(length));
 
 			var sb = new StringBuilder(input.Count());
 
@@ -343,7 +492,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsAsciiDigit(this char character) => char.IsDigit(character);
 
 		/// <summary>
@@ -352,7 +501,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsAsciiLetter(this char character) => char.IsLetter(character);
 
 		/// <summary>
@@ -361,7 +510,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsAsciiLetterOrDigit(this char character) => char.IsLetterOrDigit(character);
 
 		/// <summary>
@@ -370,7 +519,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsAsciiWhitespace(this char character) => char.IsWhiteSpace(character);
 
 		/// <summary>
@@ -378,8 +527,8 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsCreditCard(this string input) => input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled);
+		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static bool IsCreditCard(this string input) => input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled); //TODO: CHANGE TO IsCreditCardNumber
 
 		/// <summary>
 		/// Determines whether the input is a domain address.
@@ -387,7 +536,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsDomainAddress(this string input) => input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -395,7 +544,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsEmailAddress(this string input) => input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -408,11 +557,11 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool IsEmpty([NotNull] this string input) => input.Length == 0;
 
 		/// <summary>
-		/// Determines whether the input is first and last name.
+		/// Determines whether the input contains a first and last name.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsFirstLastName(this string input) => input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -420,7 +569,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
+		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsGuid([NotNull] this string value)
 		{
 			var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
@@ -433,7 +582,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsISBN(this string input) => input.HasValue(Resources.RegexISBN, RegexOptions.Compiled);
 
 		/// <summary>
@@ -441,7 +590,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
+		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsMacAddress([NotNull] this string value)
 		{
 			var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
@@ -459,11 +608,11 @@ namespace dotNetTips.Spargine.Extensions
 		public static bool IsNotEmpty(this string input) => input.IsNotNull() && ( input.Length > 0 );
 
 		/// <summary>
-		/// Determines whether the specified input is scientific value.
+		/// Determines whether the specified input is a scientific value.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsScientific(this string input) => input.HasValue(Resources.RegexScientific, RegexOptions.Compiled);
 
 		/// <summary>
@@ -471,7 +620,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsString(this string input) => input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -480,9 +629,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">Input hash to check</param>
 		/// <returns>Boolean representing if the input is valid or not</returns>
 		/// <remarks>Original Code By: Troy Hunt</remarks>
-		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsStringSHA1Hash([NotNull] this string input)
 		{
+			//TODO: CHANGE TO ISSHA1HASH
 			return Regex.Match(input, pattern: @"\b([a-fA-F0-9]{40})\b").Length > 0;
 		}
 
@@ -491,7 +641,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
 		public static bool IsUrl(this string input) => input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -558,7 +708,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static string[] Split([NotNull] this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
 		{
 			Validate.TryValidateParam(options, nameof(options));
-			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
+			Validate.TryValidateParam(value: count, minimumValue: 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -579,7 +729,7 @@ namespace dotNetTips.Spargine.Extensions
 		public static string[] Split([NotNull] this string input, StringSplitOptions options, int count, [NotNull] string separator = ControlChars.DefaultSeparator)
 		{
 			Validate.TryValidateParam(options, nameof(options));
-			Validate.TryValidateParam(count, count = 1, paramName: nameof(count));
+			Validate.TryValidateParam(count, 1, paramName: nameof(count));
 
 			return input.Split(new[] { separator }, count, options);
 		}
@@ -670,7 +820,10 @@ namespace dotNetTips.Spargine.Extensions
 
 			var newLength = endIndex - startIndex + 1;
 
-			return newLength == 0 ? string.Empty : ( newLength == input.Length ) ? input : input.Substring(startIndex, newLength);
+			string condition;
+			condition = newLength == input.Length ? input : input.Substring(startIndex, newLength);
+
+			return newLength == 0 ? string.Empty : condition;
 		}
 
 		/// <summary>
@@ -685,6 +838,44 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// To Brotli string as an asynchronous operation.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="level">The level.</param>
+		/// <returns>Compressed stgring.</returns>
+		/// <example>
+		/// Original: QGhymbrMHsvbmVfQloPxv`csQ
+		/// Compressed: ixgA+I+UrOGddJv/qY/gHm9RiI4kKJAKgJIkpFjhguavOMK3o2xgbX3tCQ==
+		/// </example>
+		[Information(nameof(ToBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static async Task<string> ToBrotliAsync([NotNull] this string input, CompressionLevel level = CompressionLevel.Fastest)
+		{
+			Validate.TryValidateParam(level, nameof(level));
+
+			return await ToBrotliStringAsync(input, level).ConfigureAwait(false);
+		}
+
+		/// <summary>
+		/// To Gzip string as an asynchronous operation.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <param name="level">The level.</param>
+		/// <returns>Compressed string.</returns>
+		/// <example>
+		/// Original: ^w^vaBlKJ\\bNhvspfHfNTupWG
+		/// Compressed: H4sIAAAAAAAECgTBMQqAIAAAwHtbS2HgFLSIoIM0NAiSfd+77JdNxeZ1CpIqekxD1xya6PLpbrsFAAD//w==
+		/// </example>
+		[Information(nameof(ToGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static async Task<string> ToGZipAsync([NotNull] this string input, CompressionLevel level = CompressionLevel.Fastest)
+		{
+			Validate.TryValidateParam(level, nameof(level));
+
+			var result = await ToGZipStringAsync(input, level).ConfigureAwait(false);
+
+			return result;
+		}
+
+		/// <summary>
 		/// Converts to a string to title case.
 		/// </summary>
 		/// <param name="input">The source.</param>
@@ -696,6 +887,7 @@ namespace dotNetTips.Spargine.Extensions
 			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input);
 		}
 
+
 		/// <summary>
 		/// Trims the beginning and end of a string.
 		/// </summary>
@@ -706,27 +898,6 @@ namespace dotNetTips.Spargine.Extensions
 		public static string ToTrimmed([NotNull] this string input)
 		{
 			return input.TrimEnd().TrimStart();
-		}
-
-		/// <summary>
-		/// Creates a hash of the input string.
-		/// </summary>
-		/// <param name="input">The input.</param>
-		/// <param name="hash">The hash.</param>
-		/// <returns>System.Byte[].</returns>
-		private static byte[] GetHash(string input, HashType hash)
-		{
-			var inputBytes = Encoding.ASCII.GetBytes(input);
-
-			return hash switch
-			{
-				HashType.MD5 => MD5.Create().ComputeHash(inputBytes),
-				HashType.SHA1 => SHA1.Create().ComputeHash(inputBytes),
-				HashType.SHA256 => SHA256.Create().ComputeHash(inputBytes),
-				HashType.SHA384 => SHA384.Create().ComputeHash(inputBytes),
-				HashType.SHA512 => SHA512.Create().ComputeHash(inputBytes),
-				_ => inputBytes,
-			};
 		}
 	}
 }

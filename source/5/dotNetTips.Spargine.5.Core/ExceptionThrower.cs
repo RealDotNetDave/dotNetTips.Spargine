@@ -4,21 +4,18 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="ExceptionThrower.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Contracts;
-using System.IO;
 using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core.Properties;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -31,9 +28,8 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentException"></exception>
+		/// <exception cref="System.ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
-		[Pure]
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -45,8 +41,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentException"></exception>
-		[Pure]
+		/// <exception cref="System.ArgumentException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -58,8 +53,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentInvalidException">Argument is invalid.</exception>
-		[Pure]
+		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -71,10 +65,9 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentInvalidException"></exception>
+		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
 		/// <exception cref="ArgumentException"></exception>
 		/// <exception cref="ArgumentNullException"></exception>
-		[Pure]
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -85,8 +78,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the argument null exception.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentNullException"></exception>
-		[Pure]
+		/// <exception cref="System.ArgumentNullException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -98,8 +90,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentNullException">Argument is null.</exception>
-		[Pure]
+		/// <exception cref="System.ArgumentNullException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -111,8 +102,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentNullException">Argument is null.</exception>
-		[Pure]
+		/// <exception cref="System.ArgumentNullException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -123,8 +113,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the argument out of range exception.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
-		[Pure]
+		/// <exception cref="System.ArgumentOutOfRangeException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -136,8 +125,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <param name="message">The message.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
-		[Pure]
+		/// <exception cref="System.ArgumentOutOfRangeException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -149,8 +137,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
-		[Pure]
+		/// <exception cref="System.ArgumentOutOfRangeException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -161,8 +148,8 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the ArgumentReadOnlyException.
 		/// </summary>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="ArgumentOutOfRangeException">Argument out of range.</exception>
-		[Pure]
+		/// <exception cref="dotNetTips.Spargine.Core.ArgumentReadOnlyException"></exception>
+		/// <exception cref="ArgumentOutOfRangeException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -174,8 +161,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="directory">The directory.</param>
-		/// <exception cref="DirectoryNotFoundException">Directory not found.</exception>
-		[Pure]
+		/// <exception cref="dotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -187,8 +173,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="ArgumentInvalidException">Argument is invalid.</exception>
-		[Pure]
+		/// <exception cref="dotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -200,8 +185,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="FileNotFoundException">File not found.</exception>
-		[Pure]
+		/// <exception cref="System.IO.FileNotFoundException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -213,8 +197,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="fileName">Name of the file.</param>
-		/// <exception cref="FileNotFoundException">File not found.</exception>
-		[Pure]
+		/// <exception cref="System.IO.FileNotFoundException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -227,8 +210,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="FileNotFoundException">File is not found.</exception>
-		[Pure]
+		/// <exception cref="System.IO.FileNotFoundException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -240,8 +222,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
-		[Pure]
+		/// <exception cref="System.InvalidCastException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -254,8 +235,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
-		[Pure]
+		/// <exception cref="System.InvalidCastException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -266,8 +246,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws the invalid enum type exception.
 		/// </summary>
 		/// <param name="message">The message.</param>
-		/// <exception cref="InvalidEnumTypeException">Invalid enum type.</exception>
-		[Pure]
+		/// <exception cref="dotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -279,8 +258,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidCastException">Invalid type cast.</exception>
-		[Pure]
+		/// <exception cref="System.InvalidCastException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -291,8 +269,7 @@ namespace dotNetTips.Spargine.Core
 		/// Throws a InvalidOperationException.
 		/// </summary>
 		/// <param name="message">The message.</param>
-		/// <exception cref="InvalidOperationException">Invalid operation.</exception>
-		[Pure]
+		/// <exception cref="System.InvalidOperationException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -304,8 +281,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <param name="message">The message.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidOperationException">Invalid operation.</exception>
-		[Pure]
+		/// <exception cref="System.InvalidOperationException"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -318,8 +294,7 @@ namespace dotNetTips.Spargine.Core
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
-		/// <exception cref="InvalidValueException{TValue}">Invalid value.</exception>
-		[Pure]
+		/// <exception cref="InvalidValueException{TValue}"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]
@@ -333,8 +308,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="message">The message.</param>
 		/// <param name="value">The value.</param>
 		/// <param name="innerException">The inner exception.</param>
-		/// <exception cref="InvalidValueException{TValue}">Invalid value.</exception>
-		[Pure]
+		/// <exception cref="InvalidValueException{TValue}"></exception>
 		[DoesNotReturn]
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[ExcludeFromCodeCoverage]

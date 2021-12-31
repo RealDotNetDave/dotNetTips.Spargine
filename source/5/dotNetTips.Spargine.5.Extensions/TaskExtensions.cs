@@ -4,16 +4,14 @@
 // Created          : 11-25-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 09-01-2021
 // ***********************************************************************
 // <copyright file="TaskExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )

@@ -1,1 +1,1 @@
-## dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20210828-161810
+## dotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark-20211222-194816

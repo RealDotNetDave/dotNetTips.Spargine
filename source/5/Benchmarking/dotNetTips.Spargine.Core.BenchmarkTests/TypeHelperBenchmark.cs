@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="TypeHelperBenchmark.cs" company="dotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,7 +18,7 @@ using System.Text;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace dotNetTips.Spargine.Core.BenchmarkTests
 {

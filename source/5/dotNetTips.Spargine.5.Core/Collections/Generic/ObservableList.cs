@@ -4,20 +4,17 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 09-01-2021
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Collections.Generic
@@ -119,7 +116,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		public virtual bool IsReadOnly => ( (ICollection<T>)this._set ).IsReadOnly;
 
 		/// <summary>
-		/// Adds an item to the <see cref="ObservableList{T}"/>.
+		/// Adds an item to the <see cref="ObservableList{T}" />.
 		/// </summary>
 		/// <param name="item">The object to add to the collection.</param>
 		void ICollection<T>.Add([NotNull] T item) => this.Add(item);

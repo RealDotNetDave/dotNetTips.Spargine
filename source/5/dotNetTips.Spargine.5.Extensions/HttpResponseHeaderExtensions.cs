@@ -4,7 +4,7 @@
 // Created          : 07-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="HttpResponseHeaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,7 +15,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

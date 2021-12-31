@@ -1,7 +1,16 @@
-﻿// This file is used by Code Analysis to maintain SuppressMessage
-// attributes that are applied to this project.
-// Project-level suppressions either have no target or are given
-// a specific target and scoped to a namespace, type, member, etc.
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Core
+// Author           : David McCarter
+// Created          : 12-23-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 11-27-2021
+// ***********************************************************************
+// <copyright file="GlobalSuppressions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 
 using System.Diagnostics.CodeAnalysis;
 
@@ -39,7 +48,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)~System.String")]
 [assembly: SuppressMessage("Naming", "CA1724:Type names should not match namespaces", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Core.Enumeration")]
 [assembly: SuppressMessage("Naming", "CA1711:Identifiers should not have incorrect suffix", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Core.Collections.Generic.Concurrent.ChannelQueue`1")]
-[assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Collections.Generic.Concurrent.ConcurrentHashSet`1")]
 [assembly: SuppressMessage("Security", "CA5401:Do not use CreateEncryptor with non-default IV", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String,System.Byte[],System.Byte[])~System.String")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Web.WebHelper.DownloadString(System.Uri,System.String)~System.String")]
 [assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Web.WebHelper.DownloadStringAsync(System.Uri,System.String)~System.Threading.Tasks.Task{System.String}")]
@@ -48,3 +56,26 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.TaskHelper.RunSync(System.Func{System.Threading.Tasks.Task},System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)")]
 [assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.TaskHelper.RunSync``1(System.Func{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken,System.Threading.Tasks.TaskCreationOptions,System.Threading.Tasks.TaskContinuationOptions,System.Threading.Tasks.TaskScheduler)~``0")]
 [assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.TaskHelper.RunSync(System.Func{System.Threading.Tasks.Task})")]
+[assembly: SuppressMessage("Security", "CA5379:Ensure Key Derivation Function algorithm is sufficiently strong", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.PBKDF2PasswordHasher.VerifyHashedPassword(System.String,System.String)~dotNetTips.Spargine.Core.Security.PasswordVerificationResult")]
+[assembly: SuppressMessage("Security", "CA5379:Ensure Key Derivation Function algorithm is sufficiently strong", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.PBKDF2PasswordHasher.HashPassword(System.String)~System.String")]
+[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.SHA256PasswordHasher.FixedTimeEquals(System.Byte[],System.Byte[])~System.Boolean")]
+[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.PBKDF2PasswordHasher.FixedTimeEquals(System.Byte[],System.Byte[])~System.Boolean")]
+[assembly: SuppressMessage("Design", "CA1000:Do not declare static members on generic types", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Collection`1.Create~dotNetTips.Spargine.Core.Collections.Generic.Collection`1")]
+[assembly: SuppressMessage("Design", "CA1000:Do not declare static members on generic types", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Collection`1.Create(System.Int32)~dotNetTips.Spargine.Core.Collections.Generic.Collection`1")]
+[assembly: SuppressMessage("Design", "CA1000:Do not declare static members on generic types", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Collection`1.Create(System.Collections.Generic.IEnumerable{`0})~dotNetTips.Spargine.Core.Collections.Generic.Collection`1")]
+[assembly: SuppressMessage("Design", "CA1000:Do not declare static members on generic types", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Collection`1.Create(System.Collections.Generic.IEnumerable{`0},dotNetTips.Spargine.Core.Tristate)~dotNetTips.Spargine.Core.Collections.Generic.Collection`1")]
+[assembly: SuppressMessage("Critical Vulnerability", "S2053:Hashes should include an unpredictable salt", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Security.PBKDF2PasswordHasher.VerifyHashedPassword(System.String,System.String)~dotNetTips.Spargine.Core.Security.PasswordVerificationResult")]
+[assembly: SuppressMessage("Minor Code Smell", "S101:Types should be named in PascalCase", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Core.Security.PBKDF2PasswordHasher")]
+[assembly: SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Concurrent.DistinctBlockingCollection`1.ItemNotInCollection(`0)~System.Boolean")]
+[assembly: SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.FastSortedList`1.SortCollection")]
+[assembly: SuppressMessage("Major Code Smell", "S2743:Static fields should not be used in generic types", Justification = "<Pending>", Scope = "member", Target = "~F:dotNetTips.Spargine.Core.Config`1._instance")]
+[assembly: SuppressMessage("Minor Code Smell", "S1125:Boolean literals should not be redundant", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.TypeHelper.FromJsonFile``1(System.String)~``0")]
+[assembly: SuppressMessage("Minor Code Smell", "S101:Types should be named in PascalCase", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Core.Security.SHA256PasswordHasher")]
+[assembly: SuppressMessage("Blocker Bug", "S2190:Recursion should not be infinite", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Collections.Generic.Concurrent.DistinctBlockingCollection`1.RemoveAll(System.Predicate{`0})~System.Int32")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Serialization.JsonSerialization.JsonEqual(System.Text.Json.JsonElement,System.Text.Json.JsonElement)~System.Boolean")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP009:Add IDisposable interface.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Web.ServiceProxy`1.Dispose")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable.", Justification = "<Pending>", Scope = "member", Target = "~F:dotNetTips.Spargine.Core.Web.ServiceProxy`1._channelFactory")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP006:Implement IDisposable.", Justification = "<Pending>", Scope = "member", Target = "~F:dotNetTips.Spargine.Core.Web.ServiceProxy`1._channel")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP004:Don't ignore created IDisposable.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System.String,System.Xml.XmlResolver)~System.Xml.Linq.XDocument")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP023:Don't use reference types in finalizer context.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.CachedEnumerable`1.Finalize")]
+[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Core.DataRecordComparer.GetHashCode(dotNetTips.Spargine.Core.IDataRecord)~System.Int32")]

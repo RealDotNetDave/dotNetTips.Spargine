@@ -16,7 +16,7 @@
 		<Description>Extensions code for Spargine.</Description>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<Version>2022.1.5.1</Version>
+		<Version>2022.1.5.40</Version>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -26,9 +26,10 @@
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
 		<PackageReleaseNotes>
 			--MAR 2021: Initial release.
-			--MAY 2021: Second release: 2021.5.1.50
-			--JUN 2021: Third release: 2021.6.3.5
+			--MAY 2021: Second release. 2021.5.1.50
+			--JUN 2021: Third release. 2021.6.3.5
 			--SEP 2021: Forth release. New methods, unit tests and benchmarking. 2021.9.4.23
+			--JAN 2022: Fifth release. New methods, unit tests and benchmarking. Code cleanup. 2022.1.5.40
 		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
@@ -40,12 +41,14 @@
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2022.1.5.1</Version>
+		<Version>2022.1.5.40</Version>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<FileVersion>2021.6.14.31</FileVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -69,19 +72,23 @@
 	</Target>
 
 	<ItemGroup>
-		<PackageReference Include="linq2db" Version="3.4.3" />
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.1">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="linq2db" Version="3.6.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.9" />
-		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.0.0">
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="6.0.0" />
+		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+		<PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

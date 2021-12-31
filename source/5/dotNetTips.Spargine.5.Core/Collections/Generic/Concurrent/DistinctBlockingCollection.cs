@@ -4,21 +4,17 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Threading;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 {
 	/// <summary>
@@ -26,6 +22,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <seealso cref="BlockingCollection{T}" />
+	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
+	/// to remove from memory.</remarks>
 	public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T>
 	{
 		/// <summary>
@@ -42,28 +40,15 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		{
 			if (collection?.Count() > 0)
 			{
-				collection.ToList()
-					.ForEach(item =>
-					{
-						this.Add(item);
-					});
+				foreach (var _ in collection.Where(p => p is not null).Where(item => this.TryAdd(item) is false).Select(item => new { }))
+				{
+					ExceptionThrower.ThrowArgumentInvalidException("There was an issue adding an item in the collection", nameof(collection));
+				}
 			}
 		}
 
 		/// <summary>
-		/// Adds the item to the <see cref="DistinctBlockingCollection{T}"/>.
-		/// </summary>
-		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
-		public new void Add([NotNull] T item)
-		{
-			if (this.ItemNotInCollection(item))
-			{
-				base.Add(item);
-			}
-		}
-
-		/// <summary>
-		/// Adds the item to the <see cref="DistinctBlockingCollection{T}"/>.
+		/// Adds the item to the <see cref="DistinctBlockingCollection{T}" />.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection. The value can be a null reference.</param>
 		/// <param name="cancellationToken">A cancellation token to observe.</param>
@@ -79,6 +64,8 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// Cones this instance.
 		/// </summary>
 		/// <returns>T.</returns>
+		/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
+		/// to remove from memory.</remarks>
 		public T Cone() => (T)this.MemberwiseClone();
 
 		/// <summary>
@@ -86,19 +73,17 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="match">The match.</param>
 		/// <returns>System.Int32.</returns>
-		public int RemoveAll([NotNull] Predicate<T> match)
-		{
-			return this.RemoveAll(match);
-		}
+		public int RemoveAll([NotNull] Predicate<T> match) => this.RemoveAll(match);
 
 		/// <summary>
 		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <returns><see langword="true" /> if <paramref name="item" /> could be added; otherwise, <see langword="false" />. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an <see cref="InvalidOperationException"/> is thrown.</returns>
+		/// <returns><see langword="true" /> if <paramref name="item" /> could be added; otherwise, <see langword="false" />. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an <see cref="InvalidOperationException" /> is thrown.</returns>
 		public new bool TryAdd([NotNull] T item)
 		{
-			return this.ItemNotInCollection(item) && base.TryAdd(item);
+			return base.TryAdd(item);
+
 		}
 
 		/// <summary>
@@ -115,10 +100,10 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}"/>.
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
-		/// <param name="timeout">A <see cref="TimeSpan"/> that represents the number of milliseconds to wait, or a <see cref="TimeSpan" /> that represents -1 milliseconds to wait indefinitely.</param>
+		/// <param name="timeout">A <see cref="TimeSpan" /> that represents the number of milliseconds to wait, or a <see cref="TimeSpan" /> that represents -1 milliseconds to wait indefinitely.</param>
 		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time span;
 		/// otherwise, false.</returns>
 		public new bool TryAdd([NotNull] T item, TimeSpan timeout)
@@ -127,7 +112,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		}
 
 		/// <summary>
-		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}"/>
+		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />
 		/// within the specified time period, while observing a cancellation token.
 		/// </summary>
 		/// <param name="item">The item to be added to the collection.</param>
@@ -137,7 +122,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
 		/// false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
 		/// <see cref="InvalidOperationException" /> is thrown.</returns>
-		public new bool TryAdd([NotNull] T item, int millisecondsTimeout, CancellationToken cancellationToken = default)
+		public new bool TryAdd([NotNull] T item, int millisecondsTimeout, CancellationToken cancellationToken)
 		{
 			return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout, cancellationToken);
 		}

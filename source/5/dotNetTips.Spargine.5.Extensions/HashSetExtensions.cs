@@ -4,19 +4,19 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-31-2021
 // ***********************************************************************
 // <copyright file="HashSetExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Extension methods for the HashSet type.</summary>
 // ***********************************************************************
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -40,6 +40,19 @@ namespace dotNetTips.Spargine.Extensions
 				_ = list.Add(item);
 			}
 		}
+
+		/// <summary>
+		/// Converts collection to <see cref="ConcurrentHashSet{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>ConcurrentHashSet&lt;T&gt;.</returns>
+		[Information(nameof(ToImmutable), "David McCarter", "12/3/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static ConcurrentHashSet<T> ToConcurrentHashSet<T>([NotNull] this HashSet<T> list)
+		{
+			return new ConcurrentHashSet<T>(list);
+		}
+
 		/// <summary>
 		/// Converts to ImmutableHashSet<typeparamref name="T" />&gt;.
 		/// </summary>
@@ -51,6 +64,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			return ImmutableHashSet.CreateRange(list);
 		}
+
 		/// <summary>
 		/// Upserts the specified item into the collection.
 		/// </summary>

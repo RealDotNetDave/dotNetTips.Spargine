@@ -1,21 +1,22 @@
 ``` ini
 
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
-Unknown processor
-.NET SDK=6.0.100-preview.7.21379.14
-  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
-  Job-YNYGDE : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19043.1415 (21H1/May2021Update)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
+  Job-GHFTZK : .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests  Categories=Collections  
 
 ```
-|                               Method | Count |     Mean |    Error |   StdDev |   StdErr |      Min |       Q1 |   Median |       Q3 |      Max |         Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size |  Gen 0 | Allocated |
-|------------------------------------- |------ |---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|-------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|-------:|----------:|
-| &#39;CachedEnumerable.Create: From List&#39; |    10 | 18.47 ns | 0.031 ns | 0.027 ns | 0.007 ns | 18.42 ns | 18.46 ns | 18.47 ns | 18.48 ns | 18.52 ns | 54,144,075.2 |      0.0306 ns |      14.00 |    2.134 |  2.000 |  -0.0434 |    1 |            * |       No |     372 B | 0.0087 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |    25 | 18.50 ns | 0.020 ns | 0.018 ns | 0.005 ns | 18.48 ns | 18.48 ns | 18.49 ns | 18.51 ns | 18.54 ns | 54,065,036.1 |      0.0203 ns |      14.00 |    3.589 |  2.000 |   1.0991 |    1 |            * |       No |     372 B | 0.0087 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |    50 | 18.27 ns | 0.030 ns | 0.028 ns | 0.007 ns | 18.24 ns | 18.25 ns | 18.27 ns | 18.29 ns | 18.34 ns | 54,719,718.5 |      0.0304 ns |      15.00 |    2.425 |  2.000 |   0.6147 |    1 |            * |       No |     372 B | 0.0087 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |   100 | 18.62 ns | 0.032 ns | 0.030 ns | 0.008 ns | 18.57 ns | 18.60 ns | 18.62 ns | 18.64 ns | 18.67 ns | 53,699,787.3 |      0.0316 ns |      15.00 |    1.889 |  2.000 |  -0.1257 |    1 |            * |       No |     372 B | 0.0087 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |   250 | 18.34 ns | 0.033 ns | 0.029 ns | 0.008 ns | 18.30 ns | 18.32 ns | 18.34 ns | 18.37 ns | 18.39 ns | 54,516,748.3 |      0.0330 ns |      14.00 |    1.648 |  2.000 |   0.0975 |    1 |            * |       No |     372 B | 0.0089 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |   500 | 20.47 ns | 0.437 ns | 0.893 ns | 0.125 ns | 18.43 ns | 20.60 ns | 20.80 ns | 20.90 ns | 21.33 ns | 48,850,457.4 |      0.4373 ns |      51.00 |    3.895 |  2.000 |  -1.5747 |    2 |            * |       No |     372 B | 0.0086 |      80 B |
-| &#39;CachedEnumerable.Create: From List&#39; |  1000 | 20.80 ns | 0.199 ns | 0.186 ns | 0.048 ns | 20.44 ns | 20.81 ns | 20.83 ns | 20.95 ns | 21.01 ns | 48,074,129.7 |      0.1986 ns |      15.00 |    2.421 |  2.000 |  -0.9549 |    2 |            * |       No |     372 B | 0.0087 |      80 B |
+|                               Method | Count |     Mean |    Error |   StdDev |   StdErr |      Min |       Q1 |   Median |       Q3 |      Max |         Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size | Allocated |
+|------------------------------------- |------ |---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|-------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|----------:|
+| &#39;CachedEnumerable.Create: From List&#39; |    10 | 58.54 ns | 0.186 ns | 0.174 ns | 0.045 ns | 58.28 ns | 58.41 ns | 58.52 ns | 58.64 ns | 58.94 ns | 17,081,694.1 |      0.1860 ns |      15.00 |    2.694 |  2.000 |   0.5174 |    2 |            * |       No | 0.0086 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |    25 | 60.02 ns | 0.180 ns | 0.168 ns | 0.043 ns | 59.76 ns | 59.91 ns | 59.98 ns | 60.13 ns | 60.32 ns | 16,661,163.1 |      0.1795 ns |      15.00 |    1.872 |  2.000 |   0.3743 |    2 |            * |       No | 0.0086 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |    50 | 59.83 ns | 0.135 ns | 0.119 ns | 0.032 ns | 59.56 ns | 59.76 ns | 59.85 ns | 59.91 ns | 59.99 ns | 16,715,125.5 |      0.1346 ns |      14.00 |    2.391 |  2.000 |  -0.7786 |    2 |            * |       No | 0.0086 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |   100 | 57.81 ns | 0.238 ns | 0.223 ns | 0.058 ns | 57.55 ns | 57.64 ns | 57.75 ns | 57.93 ns | 58.31 ns | 17,296,704.2 |      0.2382 ns |      15.00 |    2.708 |  2.000 |   0.8830 |    1 |            * |       No | 0.0087 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |   250 | 57.73 ns | 0.238 ns | 0.199 ns | 0.055 ns | 57.44 ns | 57.60 ns | 57.72 ns | 57.87 ns | 58.02 ns | 17,321,688.1 |      0.2382 ns |      13.00 |    1.492 |  2.000 |   0.0763 |    1 |            * |       No | 0.0086 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |   500 | 59.00 ns | 0.192 ns | 0.180 ns | 0.046 ns | 58.71 ns | 58.90 ns | 58.97 ns | 59.13 ns | 59.40 ns | 16,949,347.8 |      0.1925 ns |      15.00 |    2.503 |  2.000 |   0.3539 |    2 |            * |       No | 0.0087 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |  1000 | 58.61 ns | 0.490 ns | 0.458 ns | 0.118 ns | 57.91 ns | 58.17 ns | 58.59 ns | 58.95 ns | 59.36 ns | 17,063,125.3 |      0.4895 ns |      15.00 |    1.649 |  2.000 |   0.1833 |    2 |            * |       No | 0.0086 |     372 B |      80 B |
+| &#39;CachedEnumerable.Create: From List&#39; |  2500 | 59.22 ns | 0.947 ns | 0.886 ns | 0.229 ns | 58.04 ns | 58.34 ns | 59.41 ns | 60.07 ns | 60.52 ns | 16,887,044.6 |      0.9467 ns |      15.00 |    1.213 |  2.000 |  -0.0092 |    2 |            * |       No | 0.0087 |     372 B |      80 B |

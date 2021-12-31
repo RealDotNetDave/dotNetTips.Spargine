@@ -4,20 +4,16 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
@@ -36,6 +32,39 @@ namespace dotNetTips.Spargine.Extensions
 		/// The null string
 		/// </summary>
 		private const string NullString = "[null]";
+
+		/// <summary>
+		/// Tries to dispose collection items.
+		/// </summary>
+		/// <param name="items">The items.</param>
+		private static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
+
+		/// <summary>
+		/// Converts JSON to Type.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="json">The json.</param>
+		/// <returns>T.</returns>
+		private static T FromJson<T>(string json)
+	where T : class => JsonSerializer.Deserialize<T>(json);
+
+		/// <summary>
+		/// Processes the collection to dispose.
+		/// </summary>
+		/// <param name="items">The items.</param>
+		private static void ProcessCollectionToDispose(IEnumerable items)
+		{
+			if (items.HasItems())
+			{
+				foreach (var item in items)
+				{
+					if (item is IDisposable disposeItem)
+					{
+						disposeItem.TryDispose();
+					}
+				}
+			}
+		}
 
 		/// <summary>
 		/// Converts object to a different type.
@@ -138,7 +167,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(propertyName, nameof(propertyName));
 
-			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Compare(p.Name, propertyName, StringComparison.Ordinal) == 0);
+			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Equals(p.Name, propertyName, StringComparison.Ordinal));
 
 			return propertyInfo is not null;
 		}
@@ -265,8 +294,10 @@ namespace dotNetTips.Spargine.Extensions
 					//}
 
 					var itemInnerMember = string.Format(CultureInfo.CurrentCulture, "{0}[{1}]", memberName, itemId);
+
 					result = result.Concat(item.PropertiesToDictionary(itemInnerMember)).ToDictionary(e => e.Key, e => e.Value);
 				}
+
 				return result;
 			}
 
@@ -331,12 +362,12 @@ namespace dotNetTips.Spargine.Extensions
 		/// PersonRecord.Addresses[1].State:dxeZkn[HyLo\\wUS, PersonRecord.Addresses[1].Phone:511 - 286 - 7653,
 		/// PersonRecord.Addresses[1].PostalCode:33385672
 		/// </example>
-		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2021/02/12/coding-faster-with-the-dotnettips-utility-february-2021-update/")]
+		[Information(nameof(PropertiesToString), author: "David McCarter", createdOn: "11/19/2020", modifiedOn: "1/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineFeb2021")]
 		public static string PropertiesToString([NotNull] this object obj, [NotNull] string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, [NotNull] string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemberName = true)
 		{
 			var typeName = obj.GetType().Name;
 
-			if (string.Compare(typeName, typeof(List<>).Name, StringComparison.Ordinal) == 0)
+			if (string.Equals(typeName, typeof(List<>).Name, StringComparison.Ordinal))
 			{
 				typeName = "Item";
 			}
@@ -427,46 +458,6 @@ namespace dotNetTips.Spargine.Extensions
 				if (throwException)
 				{
 					throw;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Disposes the collection.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="items">The items.</param>
-		private static void DisposeCollection<T>(this IEnumerable<T> items) => ProcessCollectionToDispose(items);
-
-		/// <summary>
-		/// Tries to dispose collection items.
-		/// </summary>
-		/// <param name="items">The items.</param>
-		private static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
-
-		/// <summary>
-		/// Converts JSON to Type.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="json">The json.</param>
-		/// <returns>T.</returns>
-		private static T FromJson<T>(string json)
-	where T : class => JsonSerializer.Deserialize<T>(json);
-
-		/// <summary>
-		/// Processes the collection to dispose.
-		/// </summary>
-		/// <param name="items">The items.</param>
-		private static void ProcessCollectionToDispose(IEnumerable items)
-		{
-			if (items.HasItems())
-			{
-				foreach (var item in items)
-				{
-					if (item is not null and IDisposable disposeItem)
-					{
-						disposeItem.TryDispose();
-					}
 				}
 			}
 		}

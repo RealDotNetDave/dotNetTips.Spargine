@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-27-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="ListExtensionsCollectionBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,14 +13,12 @@
 // ***********************************************************************
 
 using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
@@ -203,20 +201,5 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 			base.Consumer.Consume(result);
 		}
-	}
-
-	public class PersonProperComparer : IEqualityComparer<PersonProper>
-	{
-
-		public bool Equals([AllowNull] PersonProper x, [AllowNull] PersonProper y)
-		{
-			return x.Id == y.Id;
-		}
-
-		public int GetHashCode([DisallowNull] PersonProper obj)
-		{
-			return obj.Id.GetHashCode();
-		}
-
 	}
 }

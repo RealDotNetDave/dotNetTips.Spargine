@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2021
+// Last Modified On : 12-02-2021
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,7 +14,9 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.IO.Compression;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -444,6 +446,44 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(25);
 
 			Assert.IsTrue(testValue.ToBase64().IsNotEmpty());
+		}
+
+		[TestMethod]
+		public async Task GzipStringCompressionAsyncTest()
+		{
+			var testValue = RandomData.GenerateWord(25);
+
+			var r1 = await testValue.ToGZipAsync(); // Fastest is default
+			var r2 = await testValue.ToGZipAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToGZipAsync(CompressionLevel.Optimal);
+
+			Assert.IsFalse(string.IsNullOrEmpty(r1));
+			Assert.IsFalse(string.IsNullOrEmpty(r2));
+			Assert.IsFalse(string.IsNullOrEmpty(r3));
+
+			//var test = await r1.FromGZipAsync();
+
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromGZipAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromGZipAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromGZipAsync()));
+		}
+
+		[TestMethod]
+		public async Task BrotliStringCompressionAsyncTest()
+		{
+			var testValue = RandomData.GenerateWord(25);
+
+			var r1 = await testValue.ToBrotliAsync();  //Fastest is default
+			var r2 = await testValue.ToBrotliAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToBrotliAsync(CompressionLevel.Optimal);
+
+			Assert.IsFalse(string.IsNullOrEmpty(r1));
+			Assert.IsFalse(string.IsNullOrEmpty(r2));
+			Assert.IsFalse(string.IsNullOrEmpty(r3));
+
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromBrotliAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromBrotliAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromBrotliAsync()));
 		}
 
 		[TestMethod]

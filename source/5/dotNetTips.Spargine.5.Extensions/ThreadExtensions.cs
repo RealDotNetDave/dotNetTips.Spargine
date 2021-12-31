@@ -4,16 +4,14 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 11-24-2021
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading;
 using dotNetTips.Spargine.Core;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -37,16 +35,10 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			Validate.TryValidateParam(priority, nameof(priority));
 
-			try
-			{
-				thread.Priority = priority;
-				return true;
-			}
-			catch (Exception)
-			{
-				throw;
-			}
+			thread.Priority = priority;
+			return true;
 		}
+
 		/// <summary>
 		/// Waits for a certain amount of time. Does not use timer (no need to call Dispose).
 		/// </summary>

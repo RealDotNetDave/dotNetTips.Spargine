@@ -4,14 +4,13 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2021
+// Last Modified On : 08-14-2021
 // ***********************************************************************
 // <copyright file="PerformanceStopwatch.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Performance Stopwatch</summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 

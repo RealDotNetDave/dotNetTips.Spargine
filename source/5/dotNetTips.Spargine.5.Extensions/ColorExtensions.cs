@@ -4,20 +4,17 @@
 // Created          : 07-29-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2021
+// Last Modified On : 03-01-2021
 // ***********************************************************************
 // <copyright file="ColorExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Extensions methods for the Color type.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

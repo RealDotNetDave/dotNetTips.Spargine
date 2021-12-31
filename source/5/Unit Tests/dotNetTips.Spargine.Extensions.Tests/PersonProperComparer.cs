@@ -15,7 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -41,5 +41,23 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		/// <param name="obj">The <see cref="T:System.Object" /> for which a hash code is to be returned.</param>
 		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
 		public int GetHashCode([DisallowNull] PersonProper obj) { return obj.Id.GetHashCode(); }
+	}
+
+	public class PersonRecordComparer : IEqualityComparer<PersonRecord>
+	{
+		/// <summary>
+		/// Determines whether the specified objects are equal.
+		/// </summary>
+		/// <param name="x">The first object of type <paramref name="T" /> to compare.</param>
+		/// <param name="y">The second object of type <paramref name="T" /> to compare.</param>
+		/// <returns><see langword="true" /> if the specified objects are equal; otherwise, <see langword="false" />.</returns>
+		public bool Equals([AllowNull] PersonRecord x, [AllowNull] PersonRecord y) { return string.Compare(x.Id, y.Id, StringComparison.Ordinal) == 0; }
+
+		/// <summary>
+		/// Returns a hash code for this instance.
+		/// </summary>
+		/// <param name="obj">The <see cref="T:System.Object" /> for which a hash code is to be returned.</param>
+		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+		public int GetHashCode([DisallowNull] PersonRecord obj) { return obj.Id.GetHashCode(); }
 	}
 }

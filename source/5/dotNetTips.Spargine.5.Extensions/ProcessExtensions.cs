@@ -11,11 +11,8 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
 using Microsoft.Extensions.Logging;

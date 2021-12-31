@@ -4,26 +4,22 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-26-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary>Methods to randomly generate data for unit and benchmark testing.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using dotNetTips.Spargine.Tester.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -77,10 +73,11 @@ namespace dotNetTips.Spargine.Tester
 		private static readonly RandomNumberGenerator _randomNumberGenerator = RandomNumberGenerator.Create();
 
 		/// <summary>
-		/// Gets the long test string.
+		/// Picks a random string from an array.
 		/// </summary>
-		/// <value>The long test string.</value>
-		public static string LongTestString => Resources.LongTestString;
+		/// <param name="words">The words.</param>
+		/// <returns>System.String.</returns>
+		private static string Of(params string[] words) => words[GenerateInteger(0, words.Length - 1)];
 
 		/// <summary>
 		/// Generates the addresses.
@@ -132,7 +129,7 @@ namespace dotNetTips.Spargine.Tester
 		[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Updated)]
 		public static byte[] GenerateByteArray(double sizeInKb)
 		{
-			Validate.TryValidateParam<ArgumentOutOfRangeException>(sizeInKb >= Double.Epsilon, nameof(sizeInKb), $"{nameof(sizeInKb)} must be a positive value.");
+			Validate.TryValidateParam<ArgumentOutOfRangeException>(sizeInKb >= double.Epsilon, nameof(sizeInKb), $"{nameof(sizeInKb)} must be a positive value.");
 
 			var size = Convert.ToInt32(sizeInKb * 1024);
 			var bytes = new Span<byte>(new byte[size]);
@@ -737,11 +734,10 @@ namespace dotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Picks a random string from an array.
+		/// Gets the long test string.
 		/// </summary>
-		/// <param name="words">The words.</param>
-		/// <returns>System.String.</returns>
-		private static string Of(params string[] words) => words[GenerateInteger(0, words.Length - 1)];
+		/// <value>The long test string.</value>
+		public static string LongTestString => Resources.LongTestString;
 
 	}
 }

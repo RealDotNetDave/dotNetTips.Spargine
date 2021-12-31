@@ -22,7 +22,7 @@ using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spartine.Core.Tests

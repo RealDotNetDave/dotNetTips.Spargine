@@ -4,23 +4,20 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extensions methods for the Array type.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -28,6 +25,22 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ArrayExtensions
 	{
+		/// <summary>
+		/// Processes the collection with the specified action.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="action">The action.</param>
+		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
+		{
+			var collection = new ReadOnlySpan<T>(list);
+
+			for (var itemCount = 0; itemCount < collection.Length; itemCount++)
+			{
+				action(collection[itemCount]);
+			}
+		}
 
 		/// <summary>
 		/// Adds the specified item to the array, to the last position.
@@ -389,18 +402,18 @@ namespace dotNetTips.Spargine.Extensions
 
 			_ = records.SingleOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
-			var currentItem = records.Where(p => p.Id.Equals(item.Id, StringComparison.Ordinal)).FirstOrDefault();
+			var currentItem = records.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
 			if (currentItem is not null)
 			{
 				currentItem = item;
-
-				return records;
 			}
 			else
 			{
-				return records.Add(item);
+				_ = records.Add(item);
 			}
+
+			return records;
 		}
 
 	}

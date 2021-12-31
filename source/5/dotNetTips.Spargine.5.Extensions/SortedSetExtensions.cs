@@ -4,14 +4,13 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-01-2021
+// Last Modified On : 08-14-2021
 // ***********************************************************************
 // <copyright file="SortedSetExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using dotNetTips.Spargine.Core;
 

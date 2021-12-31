@@ -4,7 +4,7 @@
 // Created          : 02-27-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2021
+// Last Modified On : 04-21-2021
 // ***********************************************************************
 // <copyright file="BenchMarkStatus.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>

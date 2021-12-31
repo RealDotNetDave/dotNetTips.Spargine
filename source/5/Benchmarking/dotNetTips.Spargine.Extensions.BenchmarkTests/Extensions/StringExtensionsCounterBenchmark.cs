@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="StringExtensionsCounterBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Core;
@@ -27,10 +28,12 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Strings)]
 	public class StringExtensionsCounterBenchmark : CounterBenchmark
 	{
-
 		private readonly char _testCharacter = RandomData.GenerateCharacter();
 
 		private string _crlfString;
+		private string _gzipString;
+		private string _brotliString;
+		private string _testString;
 
 		[Benchmark(Description = nameof(StringExtensions.ComputeSHA256Hash))]
 		public void ComputeMD5Hash()
@@ -182,9 +185,14 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 
 		public override void Setup()
 		{
+			base.Setup();
+
 			this._crlfString = RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF;
 
-			base.Setup();
+			this._gzipString = RandomData.GenerateWord(Count).ToGZipAsync().Result;
+			this._brotliString = RandomData.GenerateWord(Count).ToBrotliAsync().Result;
+
+			this._testString = RandomData.GenerateWord(this.Count);
 		}
 
 		[Benchmark(Description = nameof(StringExtensions.Split) + ":Char Separator:01*")]
@@ -300,5 +308,76 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(StringExtensions.ToGZipAsync) + ":Optimal")]
+		[BenchmarkCategory(Categories.Strings)]
+		public void Compression100()
+		{
+			var result = this._testString.ToGZipAsync(System.IO.Compression.CompressionLevel.Optimal);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToGZipAsync) + ":NoCompression")]
+		[BenchmarkCategory(Categories.Strings)]
+		public void Compression101()
+		{
+			var result = this._testString.ToGZipAsync(System.IO.Compression.CompressionLevel.NoCompression);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToGZipAsync) + ":Fastest")]
+		[BenchmarkCategory(Categories.Strings)]
+		public void Compression102()
+		{
+			var result = this._testString.ToGZipAsync(System.IO.Compression.CompressionLevel.Fastest);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToBrotliAsync) + ":NoCompression")]
+		[BenchmarkCategory(Categories.Strings)]
+		public async Task Compression103()
+		{
+			var result = await this._testString.ToBrotliAsync(System.IO.Compression.CompressionLevel.NoCompression).ConfigureAwait(false);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToBrotliAsync) + ":Fastest")]
+		[BenchmarkCategory(Categories.Strings)]
+		public async Task Compression104()
+		{
+			var result = await this._testString.ToBrotliAsync(System.IO.Compression.CompressionLevel.Fastest).ConfigureAwait(false);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToBrotliAsync) + ":Optimal")]
+		[BenchmarkCategory(Categories.Strings)]
+		public async Task Compression105()
+		{
+			var result = await this._testString.ToBrotliAsync(System.IO.Compression.CompressionLevel.Optimal).ConfigureAwait(false);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.FromBrotliAsync))]
+		[BenchmarkCategory(Categories.Strings)]
+		public async Task Compression106()
+		{
+			var result = await this._brotliString.FromBrotliAsync().ConfigureAwait(false);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.FromGZipAsync))]
+		[BenchmarkCategory(Categories.Strings)]
+		public async Task Compression107()
+		{
+			var result = await this._gzipString.FromGZipAsync().ConfigureAwait(false);
+
+			base.Consumer.Consume(result);
+		}
 	}
 }

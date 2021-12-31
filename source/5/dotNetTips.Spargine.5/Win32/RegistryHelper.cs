@@ -11,12 +11,11 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System;
 using System.Runtime.InteropServices;
 using dotNetTips.Spargine.Core;
 using Microsoft.Win32;
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 
 namespace dotNetTips.Spargine.Win32
 {

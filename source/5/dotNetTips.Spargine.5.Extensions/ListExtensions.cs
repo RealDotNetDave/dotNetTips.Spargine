@@ -4,27 +4,25 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-31-2021
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Extensions for different collection types.</summary>
+// <summary>Extensions for different List collection types.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
-using System.Threading;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Core.Collections.Generic;
+using dotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -42,6 +40,28 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		[ThreadStatic]
 		private static Random _random;
+
+		/// <summary>
+		/// Gets the random.
+		/// </summary>
+		/// <returns>System.Int32.</returns>
+		/// <value>The random.</value>
+		private static int GenerateRandomNumber()
+		{
+			if (_random is null)
+			{
+				int seed;
+
+				lock (_globalRandom)
+				{
+					seed = _globalRandom.Next();
+				}
+
+				_random = new Random(seed);
+			}
+
+			return _random.Next();
+		}
 
 		/// <summary>
 		/// Adds the item as the first item in array.
@@ -139,6 +159,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Determines whether the specified list has items.
 		/// </summary>
+		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if the specified list has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
@@ -161,6 +182,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Determines whether the collection has a specified count.
 		/// </summary>
+		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
@@ -239,7 +261,10 @@ namespace dotNetTips.Spargine.Extensions
 			var comparer = EqualityComparer<T>.Default;
 
 			var hash = list.Where(t => t is not null)
-				.Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
+				.Aggregate(6551, (accumulator, t) =>
+				{
+					return accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t);
+				});
 
 			return hash;
 		}
@@ -256,14 +281,10 @@ namespace dotNetTips.Spargine.Extensions
 		/// <exception cref="InvalidCastException"></exception>
 		/// <remarks>Original code by: C.F.Meijers</remarks>
 		[Information(nameof(OrderBy), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<T> OrderBy<T>([NotNull] this IEnumerable<T> list, string sortExpression)
+		public static IEnumerable<T> OrderBy<T>([NotNull] this IEnumerable<T> list, [NotNull] string sortExpression)
 		{
-			if (sortExpression.HasValue() == false)
-			{
-				return null;
-			}
-
 			sortExpression += string.Empty;
+
 			var parts = sortExpression.Split(Convert.ToChar(" ", CultureInfo.InvariantCulture));
 			var descending = false;
 			var property = string.Empty;
@@ -420,6 +441,77 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Converts to <see cref="Core.Collections.Generic.Collection{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>Core.Collections.Generic.Collection&lt;T&gt;.</returns>
+		[Information(nameof(ToCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static Core.Collections.Generic.Collection<T> ToCollection<T>([NotNull] this IList<T> list)
+		{
+			return Core.Collections.Generic.Collection<T>.Create(list);
+		}
+
+		/// <summary>
+		/// Converts to <see cref=" DistinctBlockingCollection{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="completeAdding">Set to true if no more items will be acced
+		/// to this collection.</param>
+		/// <returns>DistinctBlockingCollection&lt;T&gt;.</returns>
+		/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
+		/// to remove from memory.</remarks>
+		[Information(nameof(ToDistinctBlockingCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static DistinctBlockingCollection<T> ToDistinctBlockingCollection<T>([NotNull] this IList<T> list, bool completeAdding = false)
+		{
+			var result = new DistinctBlockingCollection<T>(list);
+
+			if (completeAdding)
+			{
+				result.CompleteAdding();
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// Converts to <see cref="DistinctConcurrentBag{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>DistinctConcurrentBag&lt;T&gt;.</returns>
+		[Information(nameof(ToDistinctConcurrentBag), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static DistinctConcurrentBag<T> ToDistinctConcurrentBag<T>([NotNull] this IList<T> list)
+		{
+			return new DistinctConcurrentBag<T>(list);
+		}
+
+		/// <summary>
+		/// Converts a list to the Spargine <see cref="FastSortedList{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>FastSortedList&lt;T&gt;.</returns>
+		[Information(nameof(ToFastSortedList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static FastSortedList<T> ToFastSortedList<T>([NotNull] this IList<T> list)
+		{
+			return new FastSortedList<T>(list);
+		}
+
+		/// <summary>
+		/// Converts collection to an <see cref="ImmutableArray{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>ImmutableArray&lt;T&gt;.</returns>
+		[Information(nameof(ToCollection), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static ImmutableArray<T> ToImmutableArray<T>([NotNull] this IList<T> list)
+		{
+			return ImmutableArray.Create(list.ToArray());
+		}
+
+		/// <summary>
 		/// Converts to List in an asynchronous operation.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t source.</typeparam>
@@ -438,7 +530,6 @@ namespace dotNetTips.Spargine.Extensions
 			return returnList;
 		}
 
-
 		/// <summary>
 		/// Converts List to ObservableCollection.
 		/// </summary>
@@ -452,6 +543,18 @@ namespace dotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Converts to <see cref="ObservableList{T}" />.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>ObservableList&lt;T&gt;.</returns>
+		[Information(nameof(ToObservableList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		public static ObservableList<T> ToObservableList<T>([NotNull] this IList<T> list)
+		{
+			return new ObservableList<T>(list);
+		}
+
+		/// <summary>
 		/// Creates a read only list.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
@@ -461,28 +564,6 @@ namespace dotNetTips.Spargine.Extensions
 		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>([NotNull] this IList<T> list)
 		{
 			return new ReadOnlyCollection<T>(list);
-		}
-
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <returns>System.Int32.</returns>
-		/// <value>The random.</value>
-		private static int GenerateRandomNumber()
-		{
-			if (_random is null)
-			{
-				int seed;
-
-				lock (_globalRandom)
-				{
-					seed = _globalRandom.Next();
-				}
-
-				_random = new Random(seed);
-			}
-
-			return _random.Next();
 		}
 	}
 }

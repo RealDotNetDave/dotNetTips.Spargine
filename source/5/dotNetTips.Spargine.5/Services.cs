@@ -4,18 +4,15 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 09-17-2021
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.ServiceProcess;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Properties;
@@ -82,7 +79,6 @@ namespace dotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
-		/// <exception cref="InvalidOperationException"></exception>
 		/// <exception cref="InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ServiceControllerStatus ServiceStatus([NotNull] string serviceName)
@@ -197,6 +193,6 @@ namespace dotNetTips.Spargine
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceController.</returns>
 		[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		private static ServiceController LoadService([NotNull] string serviceName) => ServiceController.GetServices().FirstOrDefault(p => string.Compare(p.ServiceName, serviceName, StringComparison.Ordinal) == 0);
+		private static ServiceController LoadService([NotNull] string serviceName) => ServiceController.GetServices().FirstOrDefault(p => string.Equals(p.ServiceName, serviceName, StringComparison.Ordinal));
 	}
 }

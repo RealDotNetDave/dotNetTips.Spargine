@@ -4,20 +4,19 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary>Extension methods for DateTime and DateTimeOffset.</summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -107,7 +106,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end date.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning date]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime) => value >= beginningTime & value <= endTime;
+		public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime) => value >= beginningTime && value <= endTime;
 
 		/// <summary>
 		/// Determines whether value is in range of the specified beginning time and end time.
@@ -117,7 +116,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end time.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime) => value >= beginningTime & value <= endTime;
+		public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime) => value >= beginningTime && value <= endTime;
 
 		/// <summary>
 		/// DDetermines whether value is in range of the specified beginning time and end time.
@@ -127,7 +126,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="endTime">The end time.</param>
 		/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/24/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime) => value >= beginningTime & value <= endTime;
+		public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime) => value >= beginningTime && value <= endTime;
 
 		/// <summary>
 		/// Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
@@ -336,12 +335,21 @@ namespace dotNetTips.Spargine.Extensions
 			}
 			else
 			{
+				string condition;
+
+				if (input.Date > DateTime.Today.AddDays(-6))
+				{
+					condition = input.ToString("dddd", CultureInfo.CurrentCulture);
+				}
+				else
+				{
+					condition = input.ToString(CultureInfo.CurrentCulture.DateTimeFormat.LongDatePattern,
+													  CultureInfo.CurrentCulture);
+				}
+
 				formattedDate = input.Date == DateTime.Today.AddDays(-1)
 					? Resources.Yesterday
-					: input.Date > DateTime.Today.AddDays(-6)
-						? input.ToString("dddd", CultureInfo.CurrentCulture)
-						: input.ToString(CultureInfo.CurrentCulture.DateTimeFormat.LongDatePattern,
-										 CultureInfo.CurrentCulture);
+					: condition;
 			}
 
 			formattedDate += $" @ { input.ToString(CultureInfo.CurrentCulture.DateTimeFormat.LongTimePattern, CultureInfo.CurrentCulture).ToLower(CultureInfo.CurrentCulture) }";

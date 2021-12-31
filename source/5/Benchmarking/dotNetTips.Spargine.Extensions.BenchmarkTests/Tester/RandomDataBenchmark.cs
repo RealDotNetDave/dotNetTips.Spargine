@@ -4,7 +4,7 @@
 // Created          : 02-08-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="RandomDataBenchmark.cs" company="dotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,7 +15,7 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 {
@@ -25,22 +25,6 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		public void CreatePerson01()
 		{
 			var person = RandomData.GeneratePerson<Person>();
-
-			base.Consumer.Consume(person);
-		}
-
-		[Benchmark(Description = "Creating: " + nameof(PersonFixed))]
-		public void CreatePerson02()
-		{
-			var person = RandomData.GeneratePerson<PersonFixed>();
-
-			base.Consumer.Consume(person);
-		}
-
-		[Benchmark(Description = "Creating: " + nameof(PersonPlus))]
-		public void CreatePerson03()
-		{
-			var person = RandomData.GeneratePerson<PersonPlus>();
 
 			base.Consumer.Consume(person);
 		}

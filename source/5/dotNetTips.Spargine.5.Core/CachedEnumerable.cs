@@ -4,20 +4,18 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Original code by: Gérald Barré</summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -43,6 +41,8 @@ namespace dotNetTips.Spargine.Core
 	/// <typeparam name="T"></typeparam>
 	/// <seealso cref="IEnumerable{T}" />
 	/// <seealso cref="IDisposable" />
+	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
+	/// to remove from memory.</remarks>
 	[Information(nameof(CachedEnumerable<T>), BenchMarkStatus = 0, Status = Status.Available)]
 	public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	{
@@ -94,6 +94,11 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
+		/// Finalizes an instance of the <see cref="CachedEnumerable{T}" /> class.
+		/// </summary>
+		~CachedEnumerable() => this.Dispose();
+
+		/// <summary>
 		/// Returns an enumerator that iterates through the collection.
 		/// </summary>
 		/// <returns>An enumerator that can be used to iterate through the collection.</returns>
@@ -132,13 +137,10 @@ namespace dotNetTips.Spargine.Core
 		{
 			if (!this._disposedValue)
 			{
-				if (disposing)
+				if (disposing && this._enumerator is not null)
 				{
-					if (this._enumerator is not null)
-					{
-						this._enumerator.Dispose();
-						this._enumerator = null;
-					}
+					this._enumerator.Dispose();
+					this._enumerator = null;
 				}
 
 				this._disposedValue = true;

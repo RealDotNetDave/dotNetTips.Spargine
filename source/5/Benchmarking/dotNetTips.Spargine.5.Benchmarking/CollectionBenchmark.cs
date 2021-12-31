@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="CollectionBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Loggers;
 using dotNetTips.Spargine.Extensions;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://github.com/RealDotNetDave/dotNetTips.Spargine)
 namespace dotNetTips.Spargine.Benchmarking

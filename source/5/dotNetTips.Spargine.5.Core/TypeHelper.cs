@@ -4,21 +4,17 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
@@ -31,32 +27,152 @@ namespace dotNetTips.Spargine.Core
 	/// </summary>
 	public static class TypeHelper
 	{
+
 		/// <summary>
-		/// Gets the built in type names.
+		/// Loads the derived types of a type.
 		/// </summary>
-		/// <value>The built in type names.</value>
-		public static Dictionary<Type, string> BuiltInTypeNames { get; } = new()
+		/// <param name="types">The types.</param>
+		/// <param name="baseType">Type of the base.</param>
+		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
+		/// <returns>IEnumerable&lt;Type&gt;.</returns>
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
+		private static IEnumerable<Type> LoadDerivedTypes([NotNull] IEnumerable<TypeInfo> types, [NotNull] Type baseType, Tristate classOnly)
 		{
-			{ typeof(DateTime), "datetime" },
-			{ typeof(DateTimeOffset), "datetimeoffset" },
-			{ typeof(TimeSpan), "timespan" },
-			{ typeof(bool), "bool" },
-			{ typeof(byte), "byte" },
-			{ typeof(char), "char" },
-			{ typeof(decimal), "decimal" },
-			{ typeof(double), "double" },
-			{ typeof(float), "float" },
-			{ typeof(int), "int" },
-			{ typeof(long), "long" },
-			{ typeof(object), "object" },
-			{ typeof(sbyte), "sbyte" },
-			{ typeof(short), "short" },
-			{ typeof(string), "string" },
-			{ typeof(uint), "uint" },
-			{ typeof(ulong), "ulong" },
-			{ typeof(ushort), "ushort" },
-			{ typeof(void), "void" },
-		};
+			// works out the derived types
+			var list = types.ToList();
+
+			for (var typeCount = 0; typeCount < list.Count; typeCount++)
+			{
+				var type = list[typeCount];
+
+				// if classOnly, it must be a class
+				// useful when you want to create instance
+				if (( classOnly == Tristate.True || classOnly == Tristate.UseDefault ) && !type.IsClass)
+				{
+					continue;
+				}
+
+				if (baseType.IsInterface)
+				{
+					if (type.GetInterface(baseType.FullName) is not null)
+					{
+						// add it to result list
+						yield return type;
+					}
+				}
+				else if (type.IsSubclassOf(baseType))
+				{
+					// add it to result list
+					yield return type;
+				}
+			}
+		}
+
+		/// <summary>
+		/// Processes the type of the generic.
+		/// </summary>
+		/// <param name="builder">The builder.</param>
+		/// <param name="type">The type.</param>
+		/// <param name="genericArguments">The generic arguments.</param>
+		/// <param name="length">The length.</param>
+		/// <param name="options">The options.</param>
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
+		private static void ProcessGenericType([NotNull] StringBuilder builder, [NotNull] Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
+		{
+			var offset = 0;
+
+			if (type.IsNested)
+			{
+				offset = type.DeclaringType.GetGenericArguments().Length;
+			}
+
+			if (options.FullName)
+			{
+				if (type.IsNested)
+				{
+					ProcessGenericType(builder, type.DeclaringType, genericArguments, offset, options);
+					_ = builder.Append(options.NestedTypeDelimiter);
+				}
+				else if (!string.IsNullOrEmpty(type.Namespace))
+				{
+					_ = builder.Append(type.Namespace);
+					_ = builder.Append(ControlChars.Dot);
+				}
+			}
+
+			var genericPartIndex = type.Name.IndexOf('`', StringComparison.Ordinal);
+			if (genericPartIndex <= 0)
+			{
+				_ = builder.Append(type.Name);
+				return;
+			}
+
+			_ = builder.Append(type.Name, 0, genericPartIndex);
+
+			if (options.IncludeGenericParameters)
+			{
+				_ = builder.Append(ControlChars.StartAngleBracket);
+
+				for (var typeCount = offset; typeCount < length; typeCount++)
+				{
+					ProcessType(builder, genericArguments[typeCount], options);
+
+					if (typeCount + 1 == length)
+					{
+						continue;
+					}
+
+					_ = builder.Append(ControlChars.Comma);
+					if (options.IncludeGenericParameterNames || !genericArguments[typeCount + 1].IsGenericParameter)
+					{
+						_ = builder.Append(ControlChars.Space);
+					}
+				}
+
+				_ = builder.Append(ControlChars.EndAngleBracket);
+			}
+		}
+
+		/// <summary>
+		/// Processes the type.
+		/// </summary>
+		/// <param name="builder">The builder.</param>
+		/// <param name="type">The type.</param>
+		/// <param name="options">The options.</param>
+		[Information(UnitTestCoverage = 99, Status = Status.Available)]
+		internal static void ProcessType([NotNull] StringBuilder builder, [NotNull] Type type, in DisplayNameOptions options)
+		{
+			if (type.IsGenericType)
+			{
+				var genericArguments = type.GetGenericArguments();
+				ProcessGenericType(builder, type, genericArguments, genericArguments.Length, options);
+			}
+			else if (type.IsArray)
+			{
+				ProcessType(builder, type, options);
+			}
+			else if (BuiltInTypeNames.TryGetValue(type, out var builtInName))
+			{
+				_ = builder.Append(builtInName);
+			}
+			else if (type.IsGenericParameter)
+			{
+				if (options.IncludeGenericParameterNames)
+				{
+					_ = builder.Append(type.Name);
+				}
+			}
+			else
+			{
+				var name = options.FullName ? type.FullName : type.Name;
+				_ = builder.Append(name);
+
+				if (options.NestedTypeDelimiter != ControlChars.Plus)
+				{
+					_ = builder.Replace(ControlChars.Plus, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
+				}
+			}
+		}
 
 		/// <summary>
 		/// Creates type instance.
@@ -186,11 +302,11 @@ namespace dotNetTips.Spargine.Core
 				try
 				{
 					var assembly = Assembly.LoadFile(list[fileCount]);
-					var exportedTypes = assembly.ExportedTypes.ToList().Where(p => p.BaseType is not null).ToList();
+					var exportedTypes = assembly.ExportedTypes.Where(p => p.BaseType is not null).ToList();
 
 					if (exportedTypes?.Count() > 0)
 					{
-						var containsBaseType = exportedTypes.Any(p => string.Compare(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal) == 0);
+						var containsBaseType = exportedTypes.Any(p => string.Equals(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal));
 
 						if (containsBaseType)
 						{
@@ -250,9 +366,7 @@ namespace dotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
 		public static T GetDefault<T>()
 		{
-			var result = default(T);
-
-			return result;
+			return default(T);
 		}
 
 		/// <summary>
@@ -267,8 +381,6 @@ namespace dotNetTips.Spargine.Core
 
 			return hash;
 		}
-
-
 
 		/// <summary>
 		/// Gets the property values from a type.
@@ -298,11 +410,11 @@ namespace dotNetTips.Spargine.Core
 
 			var properties = input.GetType().GetAllProperties().Where(p => p.CanRead).OrderBy(p => p.Name).ToArray();
 
-			for (var i = 0; i < properties.Length; i++)
+			for (var propertyCount = 0; propertyCount < properties.Length; propertyCount++)
 			{
-				var propertyInfo = properties[i];
+				var propertyInfo = properties[propertyCount];
 
-				if (string.Compare(propertyInfo.PropertyType.Name, "IDictionary", StringComparison.Ordinal) == 0)
+				if (string.Equals(propertyInfo.PropertyType.Name, "IDictionary", StringComparison.Ordinal))
 				{
 					var propertyValue = propertyInfo.GetValue(input) as IDictionary;
 
@@ -359,150 +471,31 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Processes the type.
+		/// Gets the built in type names.
 		/// </summary>
-		/// <param name="builder">The builder.</param>
-		/// <param name="type">The type.</param>
-		/// <param name="options">The options.</param>
-		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		internal static void ProcessType([NotNull] StringBuilder builder, [NotNull] Type type, in DisplayNameOptions options)
+		/// <value>The built in type names.</value>
+		public static Dictionary<Type, string> BuiltInTypeNames { get; } = new()
 		{
-			if (type.IsGenericType)
-			{
-				var genericArguments = type.GetGenericArguments();
-				ProcessGenericType(builder, type, genericArguments, genericArguments.Length, options);
-			}
-			else if (type.IsArray)
-			{
-				ProcessType(builder, type, options);
-			}
-			else if (BuiltInTypeNames.TryGetValue(type, out var builtInName))
-			{
-				_ = builder.Append(builtInName);
-			}
-			else if (type.IsGenericParameter)
-			{
-				if (options.IncludeGenericParameterNames)
-				{
-					_ = builder.Append(type.Name);
-				}
-			}
-			else
-			{
-				var name = options.FullName ? type.FullName : type.Name;
-				_ = builder.Append(name);
-
-				if (options.NestedTypeDelimiter != ControlChars.Plus)
-				{
-					_ = builder.Replace(ControlChars.Plus, options.NestedTypeDelimiter, builder.Length - name.Length, name.Length);
-				}
-			}
-		}
-
-		/// <summary>
-		/// Loads the derived types of a type.
-		/// </summary>
-		/// <param name="types">The types.</param>
-		/// <param name="baseType">Type of the base.</param>
-		/// <param name="classOnly">if set to <c>true</c> [class only].</param>
-		/// <returns>IEnumerable&lt;Type&gt;.</returns>
-		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		private static IEnumerable<Type> LoadDerivedTypes([NotNull] IEnumerable<TypeInfo> types, [NotNull] Type baseType, Tristate classOnly)
-		{
-			// works out the derived types
-			var list = types.ToList();
-
-			for (var i = 0; i < list.Count; i++)
-			{
-				var type = list[i];
-
-				// if classOnly, it must be a class
-				// useful when you want to create instance
-				if (( classOnly == Tristate.True || classOnly == Tristate.UseDefault ) && !type.IsClass)
-				{
-					continue;
-				}
-
-				if (baseType.IsInterface)
-				{
-					if (type.GetInterface(baseType.FullName) is not null)
-					{
-						// add it to result list
-						yield return type;
-					}
-				}
-				else if (type.IsSubclassOf(baseType))
-				{
-					// add it to result list
-					yield return type;
-				}
-			}
-		}
-
-		/// <summary>
-		/// Processes the type of the generic.
-		/// </summary>
-		/// <param name="builder">The builder.</param>
-		/// <param name="type">The type.</param>
-		/// <param name="genericArguments">The generic arguments.</param>
-		/// <param name="length">The length.</param>
-		/// <param name="options">The options.</param>
-		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		private static void ProcessGenericType([NotNull] StringBuilder builder, [NotNull] Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
-		{
-			var offset = 0;
-
-			if (type.IsNested)
-			{
-				offset = type.DeclaringType.GetGenericArguments().Length;
-			}
-
-			if (options.FullName)
-			{
-				if (type.IsNested)
-				{
-					ProcessGenericType(builder, type.DeclaringType, genericArguments, offset, options);
-					_ = builder.Append(options.NestedTypeDelimiter);
-				}
-				else if (!string.IsNullOrEmpty(type.Namespace))
-				{
-					_ = builder.Append(type.Namespace);
-					_ = builder.Append(ControlChars.Dot);
-				}
-			}
-
-			var genericPartIndex = type.Name.IndexOf('`', StringComparison.Ordinal);
-			if (genericPartIndex <= 0)
-			{
-				_ = builder.Append(type.Name);
-				return;
-			}
-
-			_ = builder.Append(type.Name, 0, genericPartIndex);
-
-			if (options.IncludeGenericParameters)
-			{
-				_ = builder.Append(ControlChars.StartAngleBracket);
-
-				for (var i = offset; i < length; i++)
-				{
-					ProcessType(builder, genericArguments[i], options);
-
-					if (i + 1 == length)
-					{
-						continue;
-					}
-
-					_ = builder.Append(ControlChars.Comma);
-					if (options.IncludeGenericParameterNames || !genericArguments[i + 1].IsGenericParameter)
-					{
-						_ = builder.Append(ControlChars.Space);
-					}
-				}
-
-				_ = builder.Append(ControlChars.EndAngleBracket);
-			}
-		}
+			{ typeof(DateTime), "datetime" },
+			{ typeof(DateTimeOffset), "datetimeoffset" },
+			{ typeof(TimeSpan), "timespan" },
+			{ typeof(bool), "bool" },
+			{ typeof(byte), "byte" },
+			{ typeof(char), "char" },
+			{ typeof(decimal), "decimal" },
+			{ typeof(double), "double" },
+			{ typeof(float), "float" },
+			{ typeof(int), "int" },
+			{ typeof(long), "long" },
+			{ typeof(object), "object" },
+			{ typeof(sbyte), "sbyte" },
+			{ typeof(short), "short" },
+			{ typeof(string), "string" },
+			{ typeof(uint), "uint" },
+			{ typeof(ulong), "ulong" },
+			{ typeof(ushort), "ushort" },
+			{ typeof(void), "void" },
+		};
 
 		/// <summary>
 		/// Struct DisplayNameOptions.
@@ -549,6 +542,5 @@ namespace dotNetTips.Spargine.Core
 			public char NestedTypeDelimiter { get; }
 
 		}
-
 	}
 }

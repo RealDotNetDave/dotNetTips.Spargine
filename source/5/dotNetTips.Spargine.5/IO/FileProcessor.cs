@@ -4,24 +4,20 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="FileProcessor.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Processes files and fires events.</summary>
 // ***********************************************************************
-
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using System.Security;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Diagnostics;
 using dotNetTips.Spargine.Properties;
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 
 namespace dotNetTips.Spargine.IO
 {
@@ -230,7 +226,7 @@ namespace dotNetTips.Spargine.IO
 		}
 
 		/// <summary>
-		/// Handles the <see cref="Processed"/> event that is thrown after each file is processed.
+		/// Handles the <see cref="Processed" /> event that is thrown after each file is processed.
 		/// </summary>
 		/// <param name="e">The <see cref="FileProgressEventArgs" /> instance containing the event data.</param>
 		protected virtual void OnProcessed(FileProgressEventArgs e) => this.Processed?.Invoke(this, e);

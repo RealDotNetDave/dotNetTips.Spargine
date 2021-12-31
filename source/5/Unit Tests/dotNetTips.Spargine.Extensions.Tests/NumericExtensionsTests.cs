@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
@@ -23,6 +24,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class NumericExtensionsTests : TestClass
 	{
+		private const string OutOfRange = "OUT OF RANGE";
+
+		[TestMethod]
+		public void DecrementTest()
+		{
+			var testValue = 256234;
+
+			var result = testValue.Decrement(lowerBound: 1, step: 5);
+
+			Assert.IsTrue(testValue - result == 5);
+
+			PrintResult(result, nameof(this.DecrementTest));
+		}
 
 		[TestMethod]
 		public void DoubleToFormattedStringTest()
@@ -62,6 +76,18 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 		}
 
+		[TestMethod]
+		public void EnsureMinimumTest()
+		{
+			var testValue = 99;
+
+			var result = testValue.EnsureMinimum(100);
+
+			Assert.IsTrue(result == 100);
+
+			PrintResult(result, nameof(this.EnsureMinimumTest));
+		}
+
 
 		[TestMethod]
 		public void FormatSizeTest()
@@ -74,6 +100,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 			PrintResult(result, nameof(this.FormatSizeTest));
 		}
+
+		[TestMethod]
+		public void IncrementTest()
+		{
+			var testValue = 256234;
+
+			var result = testValue.Increment(upperBound: 300000, step: 5);
+
+			Assert.IsTrue(result == 256239);
+
+			PrintResult(result, nameof(this.IncrementTest));
+		}
+
 		[TestMethod]
 		public void IntToFormattedStringTest()
 		{
@@ -112,6 +151,251 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 5);
 
 			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+		}
+
+		[TestMethod]
+		public void IsEvenDecimalTest()
+		{
+			decimal testValue = 256234;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsEvenDoubleTest()
+		{
+			double testValue = 256234;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsEvenFloatTest()
+		{
+			float testValue = 256234;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsEvenIntTest()
+		{
+			int testValue = 256234;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsEvenShortTest()
+		{
+			short testValue = 266;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsEvenLongTest()
+		{
+			long testValue = 256234;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void ToStringOrEmptyTest()
+		{
+			int testValue = 1000;
+
+			Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 2000, defaultText: OutOfRange).HasValue());
+
+			Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 200, defaultText: OutOfRange) == OutOfRange);
+		}
+
+		[TestMethod]
+		public void ToWordsTest()
+		{
+			int testValue = 54928;
+
+			Assert.IsTrue(testValue.ToWords().HasValue());
+
+			Assert.IsTrue(testValue.ToWords().Count() == 49);
+		}
+
+		[TestMethod]
+		public void IsEvenSbyteTest()
+		{
+			sbyte testValue = 32;
+
+			Assert.IsTrue(testValue.IsEven());
+
+			testValue++;
+
+			Assert.IsFalse(testValue.IsEven());
+		}
+
+		[TestMethod]
+		public void IsInRangeTest()
+		{
+			int testValue1 = 100;
+			long testValue2 = 100;
+			double testValue3 = 100;
+			decimal testValue4 = 100;
+
+			Assert.IsTrue(testValue1.IsInRange(50, 500));
+
+			Assert.IsTrue(testValue2.IsInRange(50, 500));
+
+			Assert.IsTrue(testValue3.IsInRange(50, 500));
+
+			Assert.IsTrue(testValue4.IsInRange(50, 500));
+		}
+
+		[TestMethod]
+		public void IsInRangeThrowsExceptionTest()
+		{
+			int testValue1 = 100;
+			long testValue2 = 100;
+			double testValue3 = 100;
+			decimal testValue4 = 100;
+
+			Assert.IsTrue(testValue1.IsInRangeThrowsException(50, 500));
+
+			Assert.IsTrue(testValue2.IsInRangeThrowsException(50, 500));
+
+			Assert.IsTrue(testValue3.IsInRangeThrowsException(50, 500));
+
+			Assert.IsTrue(testValue4.IsInRangeThrowsException(50, 500));
+
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue1.IsInRangeThrowsException(200, 300));
+
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue2.IsInRangeThrowsException(200, 300));
+
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue3.IsInRangeThrowsException(200, 300));
+
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue4.IsInRangeThrowsException(200, 300));
+		}
+
+		[TestMethod]
+		public void IsIntervalTest()
+		{
+			var testValue = 400;
+
+			Assert.IsTrue(testValue.IsInterval(100));
+
+			Assert.IsFalse(testValue.IsInterval(99));
+
+			Assert.IsTrue(testValue.IsIntervalThrowsException(100, "test"));
+
+			Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.IsIntervalThrowsException(99, "test"));
+		}
+
+		[TestMethod]
+		public void IsNegativeDecimalTest()
+		{
+			decimal testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+		[TestMethod]
+		public void IsNegativeDoubleTest()
+		{
+			double testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+
+		[TestMethod]
+		public void IsNegativeFloatTest()
+		{
+			float testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+		[TestMethod]
+		public void IsNegativeIntTest()
+		{
+			int testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+		[TestMethod]
+		public void IsNegativeLongTest()
+		{
+			long testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+		[TestMethod]
+		public void IsNegativeSbyteTest()
+		{
+			sbyte testValue = -1;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 20;
+
+			Assert.IsFalse(testValue.IsNegative());
+		}
+
+		[TestMethod]
+		public void IsNegativeShortTest()
+		{
+			short testValue = -100;
+
+			Assert.IsTrue(testValue.IsNegative());
+
+			testValue += 300;
+
+			Assert.IsFalse(testValue.IsNegative());
 		}
 
 		[TestMethod]
@@ -156,6 +440,18 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void RoundToPowerOf2Test()
+		{
+			var testValue = 256234;
+
+			var result = testValue.RoundToPowerOf2();
+
+			Assert.IsTrue(result == 262144);
+
+			PrintResult(result, nameof(this.RoundToPowerOf2Test));
+		}
+
+		[TestMethod]
 		public void ShortToFormattedStringTest()
 		{
 			var testValue = short.MaxValue;
@@ -193,6 +489,30 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 4);
 
 			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
+		}
+
+		[TestMethod]
+		public void ToPositiveValueDecimalTest()
+		{
+			decimal testValue = -100;
+
+			Assert.IsTrue(testValue.ToPositiveValue() > -1);
+		}
+
+		[TestMethod]
+		public void ToPositiveValueIntTest()
+		{
+			int testValue = -100;
+
+			Assert.IsTrue(testValue.ToPositiveValue() > -1);
+		}
+
+		[TestMethod]
+		public void ToPositiveValueLongTest()
+		{
+			long testValue = -100;
+
+			Assert.IsTrue(testValue.ToPositiveValue() > -1);
 		}
 
 		[TestMethod]

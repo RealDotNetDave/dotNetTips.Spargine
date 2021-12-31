@@ -4,27 +4,20 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Helper methods for files.</summary>
 // ***********************************************************************
-
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Properties;
+
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 
 namespace dotNetTips.Spargine.IO
 {
@@ -237,9 +230,11 @@ namespace dotNetTips.Spargine.IO
 				}
 				catch (IOException) when (retryCount < Retries - 1)
 				{
+					//RETRY
 				}
 				catch (UnauthorizedAccessException) when (retryCount < Retries - 1)
 				{
+					//RETRY
 				}
 
 				// If something has a transient lock on the file waiting may resolve the issue
@@ -268,9 +263,11 @@ namespace dotNetTips.Spargine.IO
 				}
 				catch (IOException) when (retryCount < Retries - 1)
 				{
+					//RETRY
 				}
 				catch (UnauthorizedAccessException) when (retryCount < Retries - 1)
 				{
+					//RETRY
 				}
 
 				// If something has a transient lock on the file waiting may resolve the issue

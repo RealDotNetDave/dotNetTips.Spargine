@@ -1,4 +1,17 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Extensions
+// Author           : David McCarter
+// Created          : 12-17-2020
+//
+// Last Modified By : David McCarter
+// Last Modified On : 11-21-2021
+// ***********************************************************************
+// <copyright file="GlobalSuppressions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.DataContextExtensions.GetTrackedObjects``1(LinqToDB.DataContext)~System.Collections.Generic.IList{System.Tuple{``0,``0}}")]
 [assembly: SuppressMessage("Style", "IDE0059:Unnecessary assignment of a value", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.DateTimeExtensions.ToFriendlyDateString(System.DateTime)~System.String")]
@@ -115,3 +128,15 @@
 [assembly: SuppressMessage("Design", "CA1030:Use events where appropriate", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})")]
 [assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task)")]
 [assembly: SuppressMessage("Reliability", "CA2008:Do not create tasks without passing a TaskScheduler", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.TaskExtensions.FireAndForget(System.Threading.Tasks.Task,System.Action{System.Exception})")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.ToGZipAsync(System.String,System.IO.Compression.CompressionLevel)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.ToBrotliAsync(System.String,System.IO.Compression.CompressionLevel)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.FromGZipAsync(System.String)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.FromBrotliAsync(System.String)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.ToGZipStringAsync(System.String,System.IO.Compression.CompressionLevel)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.FromBrotliStringAsync(System.String)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.FromGZipStringAsync(System.String)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("Reliability", "CA2007:Consider calling ConfigureAwait on the awaited task", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.StringExtensions.ToBrotliStringAsync(System.String,System.IO.Compression.CompressionLevel)~System.Threading.Tasks.Task{System.String}")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ObjectExtensions.TryDispose(System.IDisposable,System.Boolean)")]
+[assembly: SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP015:Member should not return created and cached instance.", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.EnumerableExtensions.ToBlockingCollection``1(System.Collections.Generic.IEnumerable{``0})~System.Collections.Concurrent.BlockingCollection{``0}")]
+[assembly: SuppressMessage("Major Bug", "S2259:Null pointers should not be dereferenced", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Extensions.ArrayExtensions.AreEqual``1(``0[],``0[])~System.Boolean")]
+[assembly: SuppressMessage("Minor Code Smell", "S101:Types should be named in PascalCase", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Extensions.LINQExtensions")]

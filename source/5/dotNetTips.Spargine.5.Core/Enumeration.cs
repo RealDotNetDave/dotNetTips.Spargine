@@ -4,21 +4,18 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="Enumeration.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Reflection;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -116,7 +113,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			Validate.TryValidateParam(displayName, nameof(displayName));
 
-			var matchingItem = Parse<T>(displayName, predicate: item => string.Compare(item.DisplayName, displayName, StringComparison.Ordinal) == 0);
+			var matchingItem = Parse<T>(displayName, predicate: item => string.Equals(item.DisplayName, displayName, StringComparison.Ordinal));
 
 			return matchingItem;
 		}

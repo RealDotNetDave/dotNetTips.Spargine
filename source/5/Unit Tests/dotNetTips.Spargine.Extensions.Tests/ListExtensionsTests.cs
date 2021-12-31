@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-07-2021
+// Last Modified On : 12-02-2021
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,10 +16,11 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]
@@ -215,6 +216,80 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var shuffleCount = people.Shuffle().Count();
 
 			Assert.IsTrue(people.Count == shuffleCount);
+		}
+
+		[TestMethod]
+		public void ToCollectionTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToCollection();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
+		}
+
+		[TestMethod]
+		public void ToObservableListTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToObservableList();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
+		}
+
+		[TestMethod]
+		public void ToFastSortedListTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToFastSortedList();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
+		}
+
+		[TestMethod]
+		public void ToDistinctConcurrentBagTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToDistinctConcurrentBag();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
+		}
+
+		[TestMethod]
+		public void ToDistinctBlockingCollectionTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToDistinctBlockingCollection(true);
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
+
+			Assert.IsTrue(result.IsAddingCompleted);
+		}
+
+		[TestMethod]
+		public void ToImmutableArrayTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100);
+
+			var result = people.ToImmutableArray();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.Count() == 100);
 		}
 	}
 }

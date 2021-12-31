@@ -4,14 +4,13 @@
 // Created          : 02-18-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="StringBuilderHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
@@ -48,7 +47,7 @@ namespace dotNetTips.Spargine.Core
 
 
 		/// <summary>
-		/// Concats to string.
+		/// Concat to string.
 		/// </summary>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <param name="addLineFeed">The add line feed. If set to true, delimiter will not be used.</param>

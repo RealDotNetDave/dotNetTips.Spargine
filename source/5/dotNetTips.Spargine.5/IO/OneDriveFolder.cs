@@ -4,17 +4,16 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 08-13-2021
 // ***********************************************************************
 // <copyright file="OneDriveFolder.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using dotNetTips.Spargine.Extensions;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System.IO;
-using dotNetTips.Spargine.Extensions;
 
 namespace dotNetTips.Spargine.IO
 {

@@ -1,21 +1,48 @@
-﻿using System;
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Core
+// Author           : David McCarter
+// Created          : 02-10-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 09-17-2021
+// ***********************************************************************
+// <copyright file="InternalMethods.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace dotNetTips.Spargine.Core.Internal
 {
+	/// <summary>
+	/// Class InternalMethods.
+	/// </summary>
 	internal static class InternalMethods
 	{
+		/// <summary>
+		/// The null string
+		/// </summary>
 		private const string NullString = "[null]";
 
+		/// <summary>
+		/// Ensures the minimum.
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="minValue">The minimum value.</param>
+		/// <returns>System.Int32.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
 		public static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
 
+		/// <summary>
+		/// Byteses to string.
+		/// </summary>
+		/// <param name="array">The array.</param>
+		/// <returns>System.String.</returns>
 		internal static string BytesToString(this byte[] array)
 		{
 			Validate.TryValidateParam(collection: array, nameof(array));
@@ -30,8 +57,20 @@ namespace dotNetTips.Spargine.Core.Internal
 			return sb.ToString();
 		}
 
+		/// <summary>
+		/// Determines whether the specified type is enumerable.
+		/// </summary>
+		/// <param name="type">The type.</param>
+		/// <returns><c>true</c> if the specified type is enumerable; otherwise, <c>false</c>.</returns>
 		internal static bool IsEnumerable(Type type) => type.GetInterfaces().Any(t => t == typeof(IEnumerable));
 
+		/// <summary>
+		/// Propertieses to dictionary.
+		/// </summary>
+		/// <param name="obj">The object.</param>
+		/// <param name="memberName">Name of the member.</param>
+		/// <param name="ignoreNulls">if set to <c>true</c> [ignore nulls].</param>
+		/// <returns>IDictionary&lt;System.String, System.String&gt;.</returns>
 		internal static IDictionary<string, string> PropertiesToDictionary(object obj, string memberName = ControlChars.EmptyString, bool ignoreNulls = true)
 		{
 			var result = new Dictionary<string, string>();
@@ -96,11 +135,21 @@ namespace dotNetTips.Spargine.Core.Internal
 			return result;
 		}
 
+		/// <summary>
+		/// Propertieses to string.
+		/// </summary>
+		/// <param name="obj">The object.</param>
+		/// <param name="header">The header.</param>
+		/// <param name="keyValueSeparator">The key value separator.</param>
+		/// <param name="sequenceSeparator">The sequence separator.</param>
+		/// <param name="ignoreNulls">if set to <c>true</c> [ignore nulls].</param>
+		/// <param name="includeMemberName">if set to <c>true</c> [include member name].</param>
+		/// <returns>System.String.</returns>
 		internal static string PropertiesToString(this object obj, string header = ControlChars.EmptyString, char keyValueSeparator = ControlChars.Colon, string sequenceSeparator = ControlChars.DefaultSeparator, bool ignoreNulls = true, bool includeMemberName = true)
 		{
 			var typeName = obj.GetType().Name;
 
-			if (string.Compare(typeName, typeof(List<>).Name, StringComparison.Ordinal) == 0)
+			if (string.Equals(typeName, typeof(List<>).Name, StringComparison.Ordinal))
 			{
 				typeName = "Item";
 			}

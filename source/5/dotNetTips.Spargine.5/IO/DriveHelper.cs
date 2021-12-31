@@ -4,24 +4,19 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="DriveHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
-using System;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Management;
 using dotNetTips.Spargine.Core;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.IO
 {
 	/// <summary>
@@ -34,7 +29,13 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="drive">The drive.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
+		[Information(
+			nameof(GetDriveSerialNumber),
+			author: "David McCarter",
+			createdOn: "9/6/2020",
+			UnitTestCoverage = 100,
+			Status = Status.Available,
+			Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
 		public static string GetDriveSerialNumber([NotNull] string drive)
 		{
 			var driveSerial = string.Empty;
@@ -43,13 +44,19 @@ namespace dotNetTips.Spargine.IO
 			var driveFixed = Path.GetPathRoot(drive).Replace(@"\", string.Empty, StringComparison.Ordinal);
 
 			// Perform Query
-			using (var querySearch = new ManagementObjectSearcher(string.Format(CultureInfo.InvariantCulture, format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'", driveFixed)))
+			using (var querySearch = new System.Management.ManagementObjectSearcher(
+				string.Format(
+					CultureInfo.InvariantCulture,
+					format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'",
+					driveFixed)))
 			{
 				using var queryCollection = querySearch.Get();
 
 				foreach (var moItem in queryCollection)
 				{
-					driveSerial = Convert.ToString(moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"), CultureInfo.CurrentCulture);
+					driveSerial = Convert.ToString(
+						moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"),
+						CultureInfo.CurrentCulture);
 					break;
 				}
 			}
@@ -62,21 +69,33 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IImmutableList&lt;DirectoryInfo&gt;.</returns>
 		/// <example>Result Example - [0]: {C:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+		[Information(
+			nameof(GetDriveSerialNumber),
+			author: "David McCarter",
+			createdOn: "9/6/2020",
+			UnitTestCoverage = 100,
+			Status = Status.Available,
+			Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IImmutableList<DriveInfo> GetFixedDrives() => DriveInfo.GetDrives()
-				.Where(p => p.DriveType == DriveType.Fixed & p.IsReady)
-				.Distinct()
-				.ToImmutableList();
+			.Where(p => p.DriveType == DriveType.Fixed && p.IsReady)
+			.Distinct()
+			.ToImmutableList();
 
 		/// <summary>
 		/// Gets the removable drives, that are ready, for a computer.
 		/// </summary>
 		/// <returns>IImmutableList&lt;DriveInfo&gt;.</returns>
 		/// <example>Result example - [0]: {E:\} [1]: {F:\}</example>
-		[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+		[Information(
+			nameof(GetDriveSerialNumber),
+			author: "David McCarter",
+			createdOn: "9/6/2020",
+			UnitTestCoverage = 100,
+			Status = Status.Available,
+			Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IImmutableList<DriveInfo> GetRemovableDrives() => DriveInfo.GetDrives()
-				.Where(p => p.DriveType == DriveType.Removable & p.IsReady)
-				.Distinct()
-				.ToImmutableList();
+			.Where(p => p.DriveType == DriveType.Removable && p.IsReady)
+			.Distinct()
+			.ToImmutableList();
 	}
 }

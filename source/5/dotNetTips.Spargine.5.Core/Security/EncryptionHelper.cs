@@ -4,19 +4,19 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-31-2021
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
+using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
 
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Security
 {
 	/// <summary>
@@ -25,6 +25,29 @@ namespace dotNetTips.Spargine.Core.Security
 	public static class EncryptionHelper
 	{
 		/// <summary>
+		/// Gets the hash keys.
+		/// </summary>
+		/// <param name="key">The key.</param>
+		/// <returns>System.ValueTuple&lt;System.Byte[], System.Byte[]&gt;.</returns>
+		private static (byte[] key, byte[] iv) GetSHA256HashKeys([NotNull] string key)
+		{
+			var encoding = Encoding.ASCII;
+
+			using (var sha2 = new SHA256CryptoServiceProvider())
+			{
+				var rawKey = encoding.GetBytes(key);
+				var rawIV = encoding.GetBytes(key);
+
+				var hashKey = sha2.ComputeHash(rawKey);
+				var hashIV = sha2.ComputeHash(rawIV);
+
+				Array.Resize(ref hashIV, newSize: 16);
+
+				return (hashKey, hashIV);
+			}
+		}
+
+		/// <summary>
 		/// Decrypts array to string using AES security.
 		/// </summary>
 		/// <param name="cipherText">The cipher text.</param>
@@ -32,11 +55,12 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="iv">The initialization vector.</param>
 		/// <returns>System.String.</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
-		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 		public static string AesDecrypt([NotNull] string cipherText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create AesManaged.
 			using var aes = new AesManaged();
+
 			// Create a decryptor.
 			using var decryptor = aes.CreateDecryptor(key, iv);
 
@@ -48,6 +72,7 @@ namespace dotNetTips.Spargine.Core.Security
 
 			// Read crypto stream.
 			using var reader = new StreamReader(cs);
+
 			return reader.ReadToEnd();
 		}
 
@@ -59,7 +84,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="iv">The initialization vector.</param>
 		/// <returns>System.Byte[].</returns>
 		/// <remarks>Original code by: Mahesh Chand.</remarks>
-		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
+		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 		public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create a new AesManaged.
@@ -113,15 +138,53 @@ namespace dotNetTips.Spargine.Core.Security
 		}
 
 		/// <summary>
-		/// Decrypts text using a key. Use AesManaged.
+		/// Creates a random key from a GUID.
+		/// </summary>
+		/// <returns>System.String.</returns>
+		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
+		[Information(nameof(GenerateRandomKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+		public static string GenerateRandomKey() => Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
+
+		/// <summary>
+		/// Hashes a password with PBKDf2 encryption.
+		/// </summary>
+		/// <param name="plainText">The plain text.</param>
+		/// <returns>System.String.</returns>
+		/// <example>
+		/// Original: H\\gFRUfbq_EMPlq
+		/// Hashed: AY19M0MX0ANKDnG6yB3JIgHxHa7MWlO8aXEf7VD+hsD2B0LyFwBOJpUy7RhmflYYag==
+		/// </example>
+		[Information(nameof(HashPasswordWithPBKDF2), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		public static string HashPasswordWithPBKDF2([NotNull] string plainText)
+		{
+			return PBKDF2PasswordHasher.HashPassword(plainText);
+		}
+
+		/// <summary>
+		/// Hashes a password with SHA256 encryption.
+		/// </summary>
+		/// <param name="plainText">The plain text.</param>
+		/// <returns>System.String.</returns>
+		/// <example>
+		/// Original: mHfVpo[wbvuYMal
+		/// Hashed: AQAAAAAAAAAAAAAAAAAAAAC9sZ+PLwKAk4Vw5JAlOuY/GU4N6MNuMtT+Yj/ZfIPg7Q==
+		/// </example>
+		[Information(nameof(HashPasswordWithSHA256), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		public static string HashPasswordWithSHA256([NotNull] string plainText)
+		{
+			return SHA256PasswordHasher.HashPassword(plainText);
+		}
+
+		/// <summary>
+		/// Simple the SHA256 decrypt.
 		/// </summary>
 		/// <param name="cipherText">The encrypted text.</param>
 		/// <param name="key">The key.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(SimpleDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string SimpleDecrypt([NotNull] string cipherText, [NotNull] string key)
+		[Information(nameof(SimpleSHA256Decrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
+		public static string SimpleSHA256Decrypt([NotNull] string cipherText, [NotNull] string key)
 		{
-			var keys = GetHashKeys(key);
+			var keys = GetSHA256HashKeys(key);
 
 			return AesDecrypt(cipherText, keys.key, keys.iv);
 		}
@@ -132,35 +195,40 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="plainText">The plain text.</param>
 		/// <param name="key">The key.</param>
 		/// <returns>System.String.</returns>
-		/// <example>Example output: pVGs2TkJkzcHYW3Wiq2QEx8/kyFBJmE2Ji2lbwwAPaA=</example>
-		[Information(nameof(SimpleEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static string SimpleEncrypt([NotNull] string plainText, [NotNull] string key)
+		/// <example>
+		/// Original: cUjmkES]gbgSneP
+		/// Encrypted: fdfc6PjkJp/3m5hONEMGMQ==
+		/// </example>
+		[Information(nameof(SimpleSHA256Encrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
+		public static string SimpleSHA256Encrypt([NotNull] string plainText, [NotNull] string key)
 		{
-			var keys = GetHashKeys(key);
+			var keys = GetSHA256HashKeys(key);
 
 			return AesEncrypt(plainText, keys.key, keys.iv);
 		}
 
 		/// <summary>
-		/// Gets the hash keys.
+		/// Verifies a hashed password with PBKDf2.
 		/// </summary>
-		/// <param name="key">The key.</param>
-		/// <returns>System.ValueTuple&lt;System.Byte[], System.Byte[]&gt;.</returns>
-		private static (byte[] key, byte[] iv) GetHashKeys([NotNull] string key)
+		/// <param name="hashedPassword">The hashed password.</param>
+		/// <param name="password">The password.</param>
+		/// <returns>PasswordVerificationResult.</returns>
+		[Information(nameof(VerifyPBKDF2HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		public static PasswordVerificationResult VerifyPBKDF2HashedPassword(string hashedPassword, [NotNull] string password)
 		{
-			var encoding = Encoding.ASCII;
+			return PBKDF2PasswordHasher.VerifyHashedPassword(hashedPassword, password);
+		}
 
-			using var sha2 = new SHA256CryptoServiceProvider();
-
-			var rawKey = encoding.GetBytes(key);
-			var rawIV = encoding.GetBytes(key);
-
-			var hashKey = sha2.ComputeHash(rawKey);
-			var hashIV = sha2.ComputeHash(rawIV);
-
-			Array.Resize(ref hashIV, newSize: 16);
-
-			return (hashKey, hashIV);
+		/// <summary>
+		/// Verifies a hashed password with sha256.
+		/// </summary>
+		/// <param name="hashedPassword">The hashed password.</param>
+		/// <param name="password">The password.</param>
+		/// <returns>PasswordVerificationResult.</returns>
+		[Information(nameof(VerifySHA256HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		public static PasswordVerificationResult VerifySHA256HashedPassword(string hashedPassword, [NotNull] string password)
+		{
+			return SHA256PasswordHasher.VerifyHashedPassword(hashedPassword, password);
 		}
 	}
 }

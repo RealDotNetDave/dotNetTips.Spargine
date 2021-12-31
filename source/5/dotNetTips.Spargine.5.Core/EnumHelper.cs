@@ -4,23 +4,19 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-26-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -86,6 +82,7 @@ namespace dotNetTips.Spargine.Core
 		/// <param name="t">The t.</param>
 		/// <param name="fixNames">if set to <c>true</c> [fix names].</param>
 		/// <param name="useXml">if set to <c>true</c> [use XML].</param>
+		/// <returns>List&lt;System.String&gt;.</returns>
 		private static List<string> GetNames(Type t, bool fixNames, bool useXml)
 		{
 			// Set up result

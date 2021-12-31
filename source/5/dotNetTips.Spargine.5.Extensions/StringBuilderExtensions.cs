@@ -4,15 +4,13 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 09-01-2021
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>StringBuilder Extensions.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;

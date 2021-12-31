@@ -4,7 +4,7 @@
 // Created          : 07-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-18-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="HttpClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,14 +12,11 @@
 // <summary></summary>
 // ***********************************************************************
 
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Net.Http;
 using System.Text.Json;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>

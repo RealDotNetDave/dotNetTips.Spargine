@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AnalysisLevel>5.0</AnalysisLevel>
+		<AnalysisLevel>latest</AnalysisLevel>
 		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
 		<AssemblyVersion>2021.6.14.486</AssemblyVersion>
@@ -28,11 +28,11 @@
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
 		<PackageReleaseNotes>
 			--MAR 2021: Initial release.
-			--MAY 2021: Second release: 2021.5.1.50
-			--JUN 2021: Third release: 2021.6.3.5
+			--MAY 2021: Second release. 2021.5.1.50
+			--JUN 2021: Third release. 2021.6.3.5
 			--SEP 2021: Forth release. New classes, methods, unit tests and benchmarking. 2021.9.4.23
+			--JAN 2022: Fifth release. New classes, methods, unit tests and benchmarking. Code cleanup. 2022.1.5.40
 		</PackageReleaseNotes>
-		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<PublishSingleFile>true</PublishSingleFile>
@@ -44,7 +44,11 @@
 		<SelfContained>true</SelfContained>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2022.1.5.1</Version>
+		<Version>2022.1.5.40</Version>
+		<SignAssembly>False</SignAssembly>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -67,25 +71,28 @@
 	<ItemGroup>
 		<Compile Remove="CachedEnumerable`1.cs" />
 		<Compile Remove="Date.cs" />
+		<Compile Remove="Web\ServiceProxy`1.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.1">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="5.0.9" />
-		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.0.0">
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
-		<PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
-		<PackageReference Include="System.Management" Version="5.0.0" />
+		<PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
 		<PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="4.8.1" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -107,6 +114,10 @@
 		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath></PackagePath>
 		</None>
 	</ItemGroup>
 

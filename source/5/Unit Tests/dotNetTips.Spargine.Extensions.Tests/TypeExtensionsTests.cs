@@ -25,7 +25,8 @@ using System.Xml.Serialization;
 using dotNetTips.Spargine.Cache;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -96,13 +97,13 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void GetAllFieldsTest()
 		{
-			var result = typeof(TestType).GetAllFields();
+			var result1 = typeof(TestType).GetAllFields();
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result1.Count() == 1);
 
-			result = typeof(PersonProper).GetAllFields();
+			var result2 = typeof(PersonProper).GetAllFields();
 
-			Assert.IsTrue(result.Count() >= 12);
+			Assert.IsTrue(result2.Count() >= 12);
 		}
 
 		/// <summary>

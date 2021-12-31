@@ -4,16 +4,14 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="XmlSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -37,6 +35,7 @@ namespace dotNetTips.Spargine.Core.Serialization
 		public static TResult Deserialize<TResult>([NotNull] string xml) where TResult : class
 		{
 			using var sr = new StringReader(xml);
+
 			var xs = new XmlSerializer(typeof(TResult));
 
 			return (TResult)xs.Deserialize(sr);
@@ -48,7 +47,6 @@ namespace dotNetTips.Spargine.Core.Serialization
 		/// <typeparam name="TResult">Type.</typeparam>
 		/// <param name="fileName">Name of the file.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
 		[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class

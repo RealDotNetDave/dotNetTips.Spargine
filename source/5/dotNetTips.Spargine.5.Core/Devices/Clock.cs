@@ -4,17 +4,16 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-02-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="Clock.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Clock Information.</summary>
 // ***********************************************************************
-using System;
 using System.Diagnostics.CodeAnalysis;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Devices
 {
 	/// <summary>

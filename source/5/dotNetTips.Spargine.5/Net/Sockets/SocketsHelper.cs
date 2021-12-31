@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-19-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="SocketsHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,11 +12,7 @@
 // <summary>Socket helper methods.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Net.Http;
 using System.Net.Sockets;
-using System.Threading;
-using System.Threading.Tasks;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 namespace dotNetTips.Spargine.Net.Sockets
@@ -43,18 +39,11 @@ namespace dotNetTips.Spargine.Net.Sockets
 				DualMode = true,
 			};
 
-			try
-			{
-				await socket.ConnectAsync(context.DnsEndPoint, cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+			await socket.ConnectAsync(context.DnsEndPoint, cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
 
-				// The stream should take the ownership of the underlying socket,
-				// closing it when it's disposed.
-				return new NetworkStream(socket, ownsSocket: true);
-			}
-			catch
-			{
-				throw;
-			}
+			// The stream should take the ownership of the underlying socket,
+			// closing it when it's disposed.
+			return new NetworkStream(socket, ownsSocket: true);
 		}
 	}
 }

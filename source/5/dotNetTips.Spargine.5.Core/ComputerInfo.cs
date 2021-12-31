@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2021
+// Last Modified On : 11-24-2021
 // ***********************************************************************
 // <copyright file="ComputerInfo.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,16 +12,13 @@
 // <summary></summary>
 // ***********************************************************************
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -109,7 +106,7 @@ namespace dotNetTips.Spargine.Core
 		/// <value>The ip address.</value>
 		[DataMember]
 		[Information(UnitTestCoverage = 100, Status = Status.Available)]
-		public string IPAddress { get; private set; } = Dns.GetHostAddresses(Dns.GetHostName()).Where(p => p.AddressFamily == AddressFamily.InterNetwork).ToList().ToDelimitedString(char.Parse(","));
+		public string IPAddress { get; private set; } = Dns.GetHostAddresses(Dns.GetHostName()).Where(p => p.AddressFamily == AddressFamily.InterNetwork).ToDelimitedString(char.Parse(","));
 
 		/// <summary>
 		/// Gets a value indicating whether [is64 bit operating system].

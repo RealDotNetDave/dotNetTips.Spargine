@@ -4,7 +4,7 @@
 // Created          : 04-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-02-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="NativeMethods.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -19,7 +19,7 @@ namespace dotNetTips.Spargine
 	/// <summary>
 	/// Class NativeMethods. This class cannot be inherited.
 	/// </summary>
-	internal sealed class NativeMethods
+	internal static class NativeMethods
 	{
 		/// <summary>
 		/// Moves the file ex.

@@ -4,31 +4,25 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security;
-using System.Threading;
-using System.Threading.Tasks;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Win32;
 using Microsoft.Win32;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.IO
 {
 	/// <summary>
@@ -89,13 +83,6 @@ namespace dotNetTips.Spargine.IO
 				CopyDirectory(subDirectory.FullName, Path.Combine(destinationDirectory, subDirectory.Name), overwrite);
 			}
 		}
-
-		/// <summary>
-		/// Deletes the directory.
-		/// </summary>
-		/// <param name="path">The path.</param>
-		[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
-		public static void DeleteDirectory(string path) => DeleteDirectory(path, 1);
 
 		/// <summary>
 		/// Deletes the directory.
@@ -190,7 +177,6 @@ namespace dotNetTips.Spargine.IO
 		/// </summary>
 		/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
 		/// <exception cref="PlatformNotSupportedException"></exception>
-		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 		{
@@ -206,18 +192,18 @@ namespace dotNetTips.Spargine.IO
 
 			var folders = new List<OneDriveFolder>();
 
-			var oneDriveKey = RegistryHelper.GetRegistryKey(RegistryHelper.KeyCurrentUserOneDrive, RegistryHive.CurrentUser);
+			using var oneDriveKey = RegistryHelper.GetRegistryKey(RegistryHelper.KeyCurrentUserOneDrive, RegistryHive.CurrentUser);
 
 			if (oneDriveKey.IsNotNull())
 			{
 				// Get Accounts
-				var accountKey = oneDriveKey.GetSubKey(AccountsKey);
+				using var accountKey = oneDriveKey.GetSubKey(AccountsKey);
 
 				if (accountKey.IsNotNull() && accountKey.SubKeyCount > 0)
 				{
 					for (var subKeyCount = 0; subKeyCount < accountKey.GetSubKeyNames().Length; subKeyCount++)
 					{
-						var key = accountKey.OpenSubKey(accountKey.GetSubKeyNames()[subKeyCount]);
+						using var key = accountKey.OpenSubKey(accountKey.GetSubKeyNames()[subKeyCount]);
 
 						var folder = new OneDriveFolder();
 						var directoryValue = key.GetValue<string>(UserFolderKey);
@@ -257,14 +243,6 @@ namespace dotNetTips.Spargine.IO
 
 			return folders.ToImmutableArray();
 		}
-
-		/// <summary>
-		/// Moves the directory.
-		/// </summary>
-		/// <param name="sourceDirectoryName">Name of the source directory.</param>
-		/// <param name="destinationDirectoryName">Name of the destination directory.</param>
-		[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0)]
-		public static void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName) => MoveDirectory(sourceDirectoryName, destinationDirectoryName, 1);
 
 		/// <summary>
 		/// Moves the directory with retry.

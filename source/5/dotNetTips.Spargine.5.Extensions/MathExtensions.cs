@@ -4,14 +4,13 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-21-2021
+// Last Modified On : 08-14-2021
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Runtime.CompilerServices;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions.Properties;

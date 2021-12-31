@@ -4,7 +4,7 @@
 // Created          : 01-16-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2021
+// Last Modified On : 11-27-2021
 // ***********************************************************************
 // <copyright file="TestClass.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -30,7 +30,7 @@ namespace dotNetTips.Spargine.Tester
 		/// <typeparam name="T"></typeparam>
 		/// <param name="input">The input.</param>
 		/// <param name="methodName">Name of the method.</param>
-		protected static void PrintResult<T>(T input, string methodName)
+		public void PrintResult<T>(T input, string methodName)
 		{
 			var message = input is string || input.GetType().IsValueType ? $"{methodName}: {input.ToString():C}" : $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
 

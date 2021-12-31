@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-01-2021
+// Last Modified On : 12-15-2021
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -21,7 +21,8 @@ using BenchmarkDotNet.Order;
 using dotNetTips.Spargine.Benchmarking.Properties;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Perfolizer.Mathematics.SignificanceTesting;
 using static BenchmarkDotNet.Attributes.MarkdownExporterAttribute;
 using static BenchmarkDotNet.Attributes.XmlExporterAttribute;
@@ -124,6 +125,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
 		public bool LaunchDebugger { get; set; }
 
+		/// <summary>
+		/// Gets the test unique identifier.
+		/// </summary>
+		/// <value>The test unique identifier.</value>
 		public Guid TestGuid { get; internal set; }
 
 		/// <summary>
@@ -138,8 +143,16 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The consumer.</value>
 		protected Consumer Consumer { get; } = new();
 
+		/// <summary>
+		/// Gets the coordinate01.
+		/// </summary>
+		/// <value>The coordinate01.</value>
 		protected Coordinate Coordinate01 { get; private set; }
 
+		/// <summary>
+		/// Gets the coordinate02.
+		/// </summary>
+		/// <value>The coordinate02.</value>
 		protected Coordinate Coordinate02 { get; private set; }
 
 		/// <summary>
@@ -148,6 +161,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The coordinate.</value>
 		protected CoordinateProper CoordinateProper01 { get; private set; }
 
+		/// <summary>
+		/// Gets the coordinate proper02.
+		/// </summary>
+		/// <value>The coordinate proper02.</value>
 		protected CoordinateProper CoordinateProper02 { get; private set; }
 
 		/// <summary>
@@ -162,19 +179,28 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The json test data person record.</value>
 		protected string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
 
-		[Obsolete("This will be removed at the end of 2021.")]
-		protected PersonFixed PersonFixed01 { get; private set; }
-
-		[Obsolete("This will be removed at the end of 2021.")]
-		protected PersonFixed PersonFixed02 { get; private set; }
-
-
+		/// <summary>
+		/// Gets the person proper01.
+		/// </summary>
+		/// <value>The person proper01.</value>
 		protected PersonProper PersonProper01 { get; private set; }
 
+		/// <summary>
+		/// Gets the person proper02.
+		/// </summary>
+		/// <value>The person proper02.</value>
 		protected PersonProper PersonProper02 { get; private set; }
 
+		/// <summary>
+		/// Gets the person record01.
+		/// </summary>
+		/// <value>The person record01.</value>
 		protected PersonRecord PersonRecord01 { get; private set; }
 
+		/// <summary>
+		/// Gets the person record02.
+		/// </summary>
+		/// <value>The person record02.</value>
 		protected PersonRecord PersonRecord02 { get; private set; }
 
 		/// <summary>
@@ -183,6 +209,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The string10 characters.</value>
 		protected string String10Characters01 { get; private set; }
 
+		/// <summary>
+		/// Gets the string10 characters02.
+		/// </summary>
+		/// <value>The string10 characters02.</value>
 		protected string String10Characters02 { get; private set; }
 
 		/// <summary>
@@ -191,6 +221,10 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// <value>The string15 characters.</value>
 		protected string String15Characters01 { get; private set; }
 
+		/// <summary>
+		/// Gets the string15 characters02.
+		/// </summary>
+		/// <value>The string15 characters02.</value>
 		protected string String15Characters02 { get; private set; }
 
 		/// <summary>
@@ -267,14 +301,6 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			this.PersonProper02 = RandomData.GeneratePerson<PersonProper>();
 
-#pragma warning disable CS0618 // Type or member is obsolete
-			this.PersonFixed01 = RandomData.GeneratePerson<PersonFixed>();
-#pragma warning restore CS0618 // Type or member is obsolete
-
-#pragma warning disable CS0618 // Type or member is obsolete
-			this.PersonFixed02 = RandomData.GeneratePerson<PersonFixed>();
-#pragma warning restore CS0618 // Type or member is obsolete
-
 			this.PersonRecord01 = RandomData.GeneratePersonCollection(1).First();
 
 			this.PersonRecord02 = RandomData.GeneratePersonCollection(1).First();
@@ -287,11 +313,9 @@ namespace dotNetTips.Spargine.Benchmarking
 			this.String10Characters02 = RandomData.GenerateWord(10);
 			this.String15Characters02 = RandomData.GenerateWord(15);
 
-
 			this.CoordinateProper01 = RandomData.GenerateCoordinate<CoordinateProper>();
 
 			this.CoordinateProper02 = RandomData.GenerateCoordinate<CoordinateProper>();
-
 
 			this.Coordinate01 = RandomData.GenerateCoordinate<Coordinate>();
 

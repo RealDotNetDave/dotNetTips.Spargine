@@ -4,17 +4,15 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Helper methods for use in logging.</summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
+using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.Logging;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -25,6 +23,37 @@ namespace dotNetTips.Spargine.Core.Logging
 	/// </summary>
 	public static class LoggingHelper
 	{
+		/// <summary>
+		/// The application domain exception logger
+		/// </summary>
+		private static ILogger _appDomainExceptionLogger;
+
+		/// <summary>
+		/// Handles the FirstChanceException event of the CurrentDomain control.
+		/// </summary>
+		/// <param name="sender">The source of the event.</param>
+		/// <param name="e">The <see cref="FirstChanceExceptionEventArgs" /> instance containing the event data.</param>
+		private static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
+		{
+			_appDomainExceptionLogger.LogError(e.Exception, e.Exception.GetAllMessages());
+		}
+
+		/// <summary>
+		/// Logs the application domain exceptions.
+		/// </summary>
+		/// <param name="logger">The logger.</param>
+		/// <remarks>Logger can only be set once. If this is called twice or more, it will be ignored.</remarks>
+		[Information(nameof(LogAppDomainExceptions), author: "David McCarter", createdOn: "10/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD JAN URL")]
+		public static void LogAppDomainExceptions([NotNull] ILogger logger)
+		{
+			if (_appDomainExceptionLogger is null)
+			{
+				_appDomainExceptionLogger = logger;
+				AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
+
+				logger.LogInformation($"Starting to capture all exceptions on {DateTime.UtcNow} UTC");
+			}
+		}
 		/// <summary>
 		/// Logs application information.
 		/// </summary>
@@ -114,9 +143,9 @@ namespace dotNetTips.Spargine.Core.Logging
 
 			var messages = new string[exceptions.Length];
 
-			for (var i = 0; i < exceptions.Length; i++)
+			for (var exCount = 0; exCount < exceptions.Length; exCount++)
 			{
-				messages[i] = exceptions[i].Message;
+				messages[exCount] = exceptions[exCount].Message;
 			}
 
 			return messages;

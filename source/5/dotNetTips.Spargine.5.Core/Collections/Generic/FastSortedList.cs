@@ -4,20 +4,18 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core.Collections.Generic
 {
 	/// <summary>
@@ -74,7 +72,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <summary>
 		/// Returns an enumerator that iterates through the collection.
 		/// </summary>
-		/// <returns>A enumerator for the <see cref="List{T}"/>.</returns>
+		/// <returns>A enumerator for the <see cref="List{T}" />.</returns>
 		public new Enumerator GetEnumerator()
 		{
 			this.SortCollection();
@@ -85,7 +83,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// <summary>
 		/// Copies the elements of the list to a new array.
 		/// </summary>
-		/// <returns>An array containing copies of the elements of the <see cref="List{T}"/>.</returns>
+		/// <returns>An array containing copies of the elements of the <see cref="List{T}" />.</returns>
 		public new T[] ToArray()
 		{
 			this.SortCollection();

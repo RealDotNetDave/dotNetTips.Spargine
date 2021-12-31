@@ -4,26 +4,23 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-16-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="dotNetTips.Spargine.5.Core">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using dotNetTips.Spargine.Core.Properties;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -165,13 +162,6 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Gets all messages.
-		/// </summary>
-		/// <param name="exception">The exception.</param>
-		/// <returns>System.String.</returns>
-		internal static string GetAllMessages([NotNull] this Exception exception) => GetAllMessages(exception);
-
-		/// <summary>
 		/// Gets all Exception messages.
 		/// </summary>
 		/// <param name="exception">The exception.</param>
@@ -237,7 +227,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentException">value</exception>
 		internal static bool HasValue([NotNull] this string input, [NotNull] string value)
 		{
-			return string.Compare(input.Trim(), value.Trim(), StringComparison.Ordinal) == 0;
+			return string.Equals(input.Trim(), value.Trim(), StringComparison.Ordinal);
 		}
 
 		/// <summary>
@@ -249,7 +239,7 @@ namespace dotNetTips.Spargine.Core
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
 		internal static bool HasValue([NotNull] this string input, [NotNull] string expression, [NotNull] RegexOptions options)
 		{
-			return input.HasValue() && expression.HasValue() ? new Regex(expression, options).IsMatch(input) : false;
+			return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 		}
 
 		/// <summary>

@@ -1,7 +1,16 @@
-﻿// This file is used by Code Analysis to maintain SuppressMessage
-// attributes that are applied to this project.
-// Project-level suppressions either have no target or are given
-// a specific target and scoped to a namespace, type, member, etc.
+﻿// ***********************************************************************
+// Assembly         : dotNetTips.Spargine.5.Tester
+// Author           : David McCarter
+// Created          : 01-03-2021
+//
+// Last Modified By : David McCarter
+// Last Modified On : 10-25-2021
+// ***********************************************************************
+// <copyright file="GlobalSuppressions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 
 using System.Diagnostics.CodeAnalysis;
 
@@ -17,3 +26,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Security", "CA5394:Do not use insecure randomness", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Tester.RandomData.GenerateInteger(System.Int32,System.Int32)~System.Int32")]
 [assembly: SuppressMessage("Usage", "CA2227:Collection properties should be read only", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Tester.Models.PersonRecord.Addresses")]
 [assembly: SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Tester.Models.Coordinate")]
+[assembly: SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>", Scope = "type", Target = "~T:dotNetTips.Spargine.Tester.Models.ValueTypes.Coordinate")]
+[assembly: SuppressMessage("Design", "CA1002:Do not expose generic lists", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Tester.RandomData.GeneratePersonCollection(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)~System.Collections.Generic.List{dotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord}")]

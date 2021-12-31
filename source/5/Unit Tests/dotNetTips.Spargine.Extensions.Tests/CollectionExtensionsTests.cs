@@ -16,10 +16,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]
@@ -27,7 +28,7 @@ namespace dotNetTips.Spargine.Extensions.Tests
 	public class CollectionExtensionsTests
 	{
 		[TestMethod]
-		public void AddIfNotExistsComparerTest()
+		public void AddIfNotExists()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10);
 			var person = RandomData.GeneratePerson<PersonProper>();

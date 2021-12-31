@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-17-2020
+// Last Modified On : 12-13-2021
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,10 +15,10 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions.Tests
 {
 	[ExcludeFromCodeCoverage]
@@ -34,6 +34,18 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			var result = people.AddFirst(person);
 
 			Assert.IsTrue(result.Count() == 11);
+		}
+
+		[TestMethod]
+		public void FastProcessorTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(100).ToArray();
+
+			people.FastProcessor((PersonProper person) =>
+			{
+				person.Address2 = "TEST DATA";
+
+			});
 		}
 
 		[TestMethod]
@@ -165,26 +177,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 
 		[TestMethod]
 		public void UpsertTest01()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
-			var personFromCollection = people.Shuffle().First();
-			var person = RandomData.GeneratePerson<PersonProper>();
-
-			var result = people.Upsert(personFromCollection);
-
-			Assert.IsTrue(result.Count() == 10);
-
-			result = people.Upsert(person);
-
-			Assert.IsTrue(result.Count() == 11);
-
-			result = people.Upsert(personFromCollection);
-
-			Assert.IsTrue(result.Count() == 10);
-		}
-
-		[TestMethod]
-		public void UpsertTest02()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToArray();
 			var personFromCollection = people.Shuffle().First();

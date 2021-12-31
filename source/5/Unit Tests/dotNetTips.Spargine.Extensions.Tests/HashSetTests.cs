@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace dotNetTips.Spargine.Extensions.Tests
@@ -28,6 +28,14 @@ namespace dotNetTips.Spargine.Extensions.Tests
 		public void ToImmutableTest()
 		{
 			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToHashSet().ToImmutable();
+
+			Assert.IsTrue(people.Count() == 10);
+		}
+
+		[TestMethod]
+		public void ToConcurrentHashSetTest()
+		{
+			var people = RandomData.GeneratePersonCollection<PersonProper>(10).ToHashSet().ToConcurrentHashSet();
 
 			Assert.IsTrue(people.Count() == 10);
 		}

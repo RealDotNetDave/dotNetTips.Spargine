@@ -19,7 +19,7 @@ using System.Security.AccessControl;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
@@ -166,11 +166,11 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			var result = TypeHelper.GetTypeDisplayName(person);
 
-			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.PersonProper", StringComparison.Ordinal) == 0);
+			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.RefTypes.PersonProper", StringComparison.Ordinal) == 0);
 
 			result = TypeHelper.GetTypeDisplayName(person, true);
 
-			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.PersonProper", StringComparison.Ordinal) == 0);
+			Assert.IsTrue(string.Compare(result, "dotNetTips.Spargine.Tester.Models.RefTypes.PersonProper", StringComparison.Ordinal) == 0);
 
 			result = TypeHelper.GetTypeDisplayName(typeof(int), true, true, true, '-');
 

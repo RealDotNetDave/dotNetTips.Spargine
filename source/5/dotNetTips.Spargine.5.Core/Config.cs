@@ -4,19 +4,17 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 11-24-2021
 // ***********************************************************************
 // <copyright file="Config.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.IO;
 using System.Xml.Serialization;
 using dotNetTips.Spargine.Core.Serialization;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Core
 {
 	/// <summary>
@@ -28,7 +26,7 @@ namespace dotNetTips.Spargine.Core
 		/// <summary>
 		/// The instance.
 		/// </summary>
-		private static T _instance = new();
+		private static readonly T _instance = new();
 
 		/// <summary>
 		/// Prevents a default instance of the <see cref="Config{T}" /> class from being created.
@@ -63,7 +61,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			if (File.Exists(this.ConfigFileName))
 			{
-				_instance = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
+				_ = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
 
 				return true;
 			}

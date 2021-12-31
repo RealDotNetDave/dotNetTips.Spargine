@@ -14,10 +14,10 @@
 using System.Diagnostics.CodeAnalysis;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
-using dotNetTips.Spargine.Tester.Models;
+using dotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spartine.Core.Tests
 {
 	[ExcludeFromCodeCoverage]
@@ -31,13 +31,7 @@ namespace dotNetTips.Spartine.Core.Tests
 			Assert.IsTrue(DateTimeFormat.AbsoluteDifference(DateTimeFormat.MonthDay, DateTimeFormat.MonthYear) > 0);
 		}
 
-		[TestMethod]
-		public void CompareToTest()
-		{
-			var dateTimeFormat = DateTimeFormat.FullDateLongTime;
 
-			Assert.IsTrue(dateTimeFormat.Equals(DateTimeFormat.FullDateLongTime));
-		}
 		[TestMethod]
 		public void DisplayNameTest()
 		{

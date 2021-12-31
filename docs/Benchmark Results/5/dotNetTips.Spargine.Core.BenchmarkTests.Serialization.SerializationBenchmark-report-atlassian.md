@@ -1,19 +1,19 @@
 {noformat}
 
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19042.1165 (20H2/October2020Update)
-Unknown processor
-.NET SDK=6.0.100-preview.7.21379.14
-  [Host]     : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
-  Job-YNYGDE : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19043.1415 (21H1/May2021Update)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
+  Job-GHFTZK : .NET 5.0.13 (5.0.1321.56516), X64 RyuJIT
 
 EvaluateOverhead=True  Server=True  Toolchain=.NET 5.0  
 Namespace=dotNetTips.Spargine.Core.BenchmarkTests.Serialization  
 
 {noformat}
-||                         Method ||        Categories ||     Mean ||    Error ||   StdDev ||   StdErr ||      Min ||       Q1 ||   Median ||       Q3 ||      Max ||     Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline || Gen 0 ||Code Size || Gen 1 ||Allocated ||
-| *'Deserialize: XML=PersonProper'* |  *XML,Serialization* | *19.444 μs* | *0.0575 μs* | *0.0480 μs* | *0.0133 μs* | *19.387 μs* | *19.400 μs* | *19.440 μs* | *19.467 μs* | *19.530 μs* |  *51,430.8* |      *0.0575 μs* |      *13.00* |    *1.884* |  *2.000* |   *0.5165* |    *6* |            *** |       *No* | *2.0142* |      *0 KB* | *0.0305* |     *18 KB* |
-| *'Deserialize: XML=PersonRecord'* |  *XML,Serialization* | *18.924 μs* | *0.0601 μs* | *0.0533 μs* | *0.0142 μs* | *18.821 μs* | *18.892 μs* | *18.926 μs* | *18.949 μs* | *19.032 μs* |  *52,842.2* |      *0.0601 μs* |      *14.00* |    *2.554* |  *2.000* |   *0.1110* |    *5* |            *** |       *No* | *2.0142* |      *0 KB* |      *-* |     *18 KB* |
-|  *'Serialize: JSON=PersonProper'* | *JSON,Serialization* |  *3.935 μs* | *0.0159 μs* | *0.0141 μs* | *0.0038 μs* |  *3.901 μs* |  *3.932 μs* |  *3.935 μs* |  *3.942 μs* |  *3.958 μs* | *254,148.5* |      *0.0159 μs* |      *14.00* |    *3.197* |  *2.000* |  *-0.7621* |    *2* |            *** |       *No* | *0.2060* |      *0 KB* |      *-* |      *2 KB* |
-|  *'Serialize: JSON=PersonRecord'* | *JSON,Serialization* |  *3.526 μs* | *0.0103 μs* | *0.0096 μs* | *0.0025 μs* |  *3.506 μs* |  *3.522 μs* |  *3.526 μs* |  *3.532 μs* |  *3.541 μs* | *283,625.3* |      *0.0103 μs* |      *15.00* |    *2.239* |  *2.000* |  *-0.3693* |    *1* |            *** |       *No* | *0.2594* |      *0 KB* |      *-* |      *2 KB* |
-|   *'Serialize: XML=PersonProper'* |  *XML,Serialization* | *12.491 μs* | *0.0204 μs* | *0.0181 μs* | *0.0048 μs* | *12.447 μs* | *12.485 μs* | *12.494 μs* | *12.502 μs* | *12.516 μs* |  *80,055.7* |      *0.0204 μs* |      *14.00* |    *3.127* |  *2.000* |  *-0.7555* |    *4* |            *** |       *No* | *2.2736* |      *0 KB* | *0.0458* |     *20 KB* |
-|               *StringToXDocument* |  *XML,Serialization* |  *9.782 μs* | *0.0345 μs* | *0.0288 μs* | *0.0080 μs* |  *9.720 μs* |  *9.783 μs* |  *9.793 μs* |  *9.795 μs* |  *9.818 μs* | *102,224.6* |      *0.0345 μs* |      *13.00* |    *3.221* |  *2.000* |  *-1.2107* |    *3* |            *** |       *No* | *1.7090* |      *0 KB* | *0.0305* |     *16 KB* |
+||                         Method ||        Categories ||     Mean ||    Error ||   StdDev ||   StdErr ||      Min ||       Q1 ||   Median ||       Q3 ||      Max ||     Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline ||Code Size || Gen 0 || Gen 1 ||Allocated ||
+| *'Deserialize: XML=PersonProper'* |  *XML,Serialization* | *19.808 μs* | *0.1544 μs* | *0.1444 μs* | *0.0373 μs* | *19.614 μs* | *19.718 μs* | *19.763 μs* | *19.883 μs* | *20.121 μs* |  *50,484.2* |      *0.1544 μs* |      *15.00* |    *2.296* |  *2.000* |   *0.7340* |    *6* |            *** |       *No* |      *0 KB* | *2.0142* |      *-* |     *18 KB* |
+| *'Deserialize: XML=PersonRecord'* |  *XML,Serialization* | *19.377 μs* | *0.1685 μs* | *0.1576 μs* | *0.0407 μs* | *19.053 μs* | *19.283 μs* | *19.408 μs* | *19.493 μs* | *19.579 μs* |  *51,607.2* |      *0.1685 μs* |      *15.00* |    *2.068* |  *2.000* |  *-0.4624* |    *5* |            *** |       *No* |      *0 KB* | *2.0142* |      *-* |     *18 KB* |
+|  *'Serialize: JSON=PersonProper'* | *JSON,Serialization* |  *3.572 μs* | *0.0426 μs* | *0.0399 μs* | *0.0103 μs* |  *3.486 μs* |  *3.554 μs* |  *3.572 μs* |  *3.599 μs* |  *3.639 μs* | *279,944.9* |      *0.0426 μs* |      *15.00* |    *2.399* |  *2.000* |  *-0.3777* |    *2* |            *** |       *No* |      *0 KB* | *0.2098* |      *-* |      *2 KB* |
+|  *'Serialize: JSON=PersonRecord'* | *JSON,Serialization* |  *3.221 μs* | *0.0320 μs* | *0.0299 μs* | *0.0077 μs* |  *3.151 μs* |  *3.204 μs* |  *3.220 μs* |  *3.246 μs* |  *3.261 μs* | *310,472.0* |      *0.0320 μs* |      *15.00* |    *2.584* |  *2.000* |  *-0.5932* |    *1* |            *** |       *No* |      *0 KB* | *0.2518* |      *-* |      *2 KB* |
+|   *'Serialize: XML=PersonProper'* |  *XML,Serialization* | *12.866 μs* | *0.1094 μs* | *0.1023 μs* | *0.0264 μs* | *12.673 μs* | *12.809 μs* | *12.837 μs* | *12.950 μs* | *13.056 μs* |  *77,724.3* |      *0.1094 μs* |      *15.00* |    *2.047* |  *2.000* |   *0.1080* |    *4* |            *** |       *No* |      *0 KB* | *2.2736* | *0.0458* |     *20 KB* |
+|               *StringToXDocument* |  *XML,Serialization* |  *9.840 μs* | *0.0808 μs* | *0.0716 μs* | *0.0191 μs* |  *9.696 μs* |  *9.792 μs* |  *9.863 μs* |  *9.878 μs* |  *9.970 μs* | *101,624.7* |      *0.0808 μs* |      *14.00* |    *2.274* |  *2.000* |  *-0.1576* |    *3* |            *** |       *No* |      *0 KB* | *1.7090* | *0.0305* |     *16 KB* |

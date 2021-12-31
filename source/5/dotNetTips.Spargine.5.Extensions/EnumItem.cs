@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 12-27-2021
 // ***********************************************************************
 // <copyright file="EnumItem.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -12,7 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
-//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
+//`![](3E0A21AABFC7455594710AC4CAC7CD5C.png; https://www.spargine.net )
 namespace dotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -22,7 +22,7 @@ namespace dotNetTips.Spargine.Extensions
 	public record EnumItem<T>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="EnumItem{T}"/> class.
+		/// Initializes a new instance of the <see cref="EnumItem{T}" /> class.
 		/// </summary>
 		/// <param name="description">The description.</param>
 		/// <param name="value">The value.</param>

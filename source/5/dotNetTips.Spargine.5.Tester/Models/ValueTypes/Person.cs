@@ -11,21 +11,120 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
+using dotNetTips.Spargine.Core;
+using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester.Models.RefTypes;
+using dotNetTips.Spargine.Tester.Properties;
 
 //`![](3E0A21AABFC7455594710AC4CAC7CD5C.png;https://www.spargine.net )
 
 namespace dotNetTips.Spargine.Tester.Models.ValueTypes
 {
 	/// <summary>
-	/// Struct Person
-	/// Implements the <see cref="IPerson" />
+	/// Person structure that implements interfaces and validates data. Implements the <see cref="IPerson" /> Implements the
+	/// <see cref="IComparable" />
 	/// </summary>
 	/// <seealso cref="IPerson" />
-	/// <seealso cref="IEquatable{Person}" />
-	public struct Person : IPerson, IEquatable<Person>
+	/// <seealso cref="IComparable" />
+	[DebuggerDisplay("{Email}")]
+	[Serializable]
+	[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+	[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+	public struct Person : IDataModel<Person, string>, IPerson, IEquatable<Person>
 	{
+		/// <summary>
+		/// Address 1.
+		/// </summary>
+		[NonSerialized]
+		private string _address1 = default;
+
+		/// <summary>
+		/// Address 2.
+		/// </summary>
+		[NonSerialized]
+		private string _address2 = default;
+
+		/// <summary>
+		/// The born on date and time.
+		/// </summary>
+		[NonSerialized]
+		private DateTimeOffset _bornOn = default;
+
+		/// <summary>
+		/// The cell phone number.
+		/// </summary>
+		[NonSerialized]
+		private string _cellPhone = default;
+
+		/// <summary>
+		/// The city name.
+		/// </summary>
+		[NonSerialized]
+		private string _city = default;
+
+		/// <summary>
+		/// The country name.
+		/// </summary>
+		[NonSerialized]
+		private string _country = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
+
+		/// <summary>
+		/// The email address.
+		/// </summary>
+		[NonSerialized]
+		private string _email = default;
+
+		/// <summary>
+		/// The first name.
+		/// </summary>
+		[NonSerialized]
+		private string _firstName = default;
+
+		/// <summary>
+		/// The home phone number.
+		/// </summary>
+		[NonSerialized]
+		private string _homePhone = default;
+
+		/// <summary>
+		/// The unique identifier.
+		/// </summary>
+		[NonSerialized]
+		private string _id = default;
+
+		/// <summary>
+		/// The last name.
+		/// </summary>
+		[NonSerialized]
+		private string _lastName = default;
+
+		/// <summary>
+		/// The postal code.
+		/// </summary>
+		[NonSerialized]
+		private string _postalCode = default;
+
+		/// <summary>
+		/// The state
+		/// </summary>
+		[NonSerialized]
+		private string _state = default;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Person"/> struct.
+		/// </summary>
+		/// <param name="id">The identifier.</param>
+		/// <param name="email">The email.</param>
+		public Person([NotNull] string id, [NotNull] string email) : this()
+		{
+			this.Id = id;
+			this.Email = email;
+		}
 
 		/// <summary>
 		/// Implements the != operator.
@@ -50,11 +149,70 @@ namespace dotNetTips.Spargine.Tester.Models.ValueTypes
 		}
 
 		/// <summary>
+		/// Calculates the person's current age.
+		/// </summary>
+		/// <returns>TimeSpan.</returns>
+		private TimeSpan CalculateAge() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
+
+		/// <summary>
+		/// Compares to.
+		/// </summary>
+		/// <param name="other">The other.</param>
+		/// <returns>System.Int32.</returns>
+		public int CompareTo([NotNull] Person other)
+		{
+			var result = this._bornOn.CompareTo(other._bornOn);
+
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._cellPhone, other._cellPhone, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._email, other._email, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._firstName, other._firstName, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._homePhone, other._homePhone, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._id, other._id, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			result = string.Compare(this._lastName, other._lastName, StringComparison.OrdinalIgnoreCase);
+			if (result != 0)
+			{
+				return result;
+			}
+
+			return -1;
+		}
+
+		/// <summary>
 		/// Determines whether the specified <see cref="object" /> is equal to this instance.
 		/// </summary>
 		/// <param name="obj">The object to compare with the current instance.</param>
 		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-		public override bool Equals(object obj)
+		public override bool Equals([NotNull] object obj)
 		{
 			return base.Equals(obj);
 		}
@@ -64,7 +222,7 @@ namespace dotNetTips.Spargine.Tester.Models.ValueTypes
 		/// </summary>
 		/// <param name="other">An object to compare with this object.</param>
 		/// <returns><see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-		public bool Equals(Person other)
+		public bool Equals([NotNull] Person other)
 		{
 			return base.Equals(other);
 		}
@@ -82,87 +240,345 @@ namespace dotNetTips.Spargine.Tester.Models.ValueTypes
 		/// Returns a <see cref="string" /> that represents this instance.
 		/// </summary>
 		/// <returns>A <see cref="string" /> that represents this instance.</returns>
-		public override string ToString()
+		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
+
+		/// <summary>
+		/// Gets or sets first address.
+		/// </summary>
+		/// <value>The address1.</value>
+		/// <exception cref="ArgumentOutOfRangeException">Address1</exception>
+		[DataMember(Name = "address1")]
+		[XmlElement]
+		public string Address1
 		{
-			return base.ToString();
+			get => this._address1;
+
+			set
+			{
+				if (string.Equals(this._address1, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._address1 = value.HasValue(0, 100) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.Address1),
+						Resources.AddressLengthIsLimitedTo100Characters)
+					: value;
+			}
 		}
 
 		/// <summary>
-		/// Gets or sets the address1.
-		/// </summary>
-		/// <value>The address1.</value>
-		public string Address1 { get; set; }
-
-		/// <summary>
-		/// Gets or sets the address2.
+		/// Gets or sets second address.
 		/// </summary>
 		/// <value>The address2.</value>
-		public string Address2 { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">Address2</exception>
+		[DataMember(Name = "address2")]
+		[XmlElement]
+		public string Address2
+		{
+			get => this._address2;
+
+			set
+			{
+				if (string.Equals(this._address2, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._address2 = value.HasValue(0, 100) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.Address2),
+						Resources.AddressLengthIsLimitedTo100Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
-		/// Gets or sets the born on.
+		/// Gets the person's current age.
+		/// </summary>
+		/// <value>The age.</value>
+		[IgnoreDataMember]
+		public TimeSpan Age => this.CalculateAge();
+
+		/// <summary>
+		/// Gets or sets the born on date and time.
 		/// </summary>
 		/// <value>The born on.</value>
-		public DateTimeOffset BornOn { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
+		[DataMember(Name = "bornOn")]
+		[XmlElement]
+		public DateTimeOffset BornOn
+		{
+			get => this._bornOn;
+
+			set
+			{
+				if (this._bornOn == value)
+				{
+					return;
+				}
+
+				this._bornOn = value.ToUniversalTime() > DateTimeOffset.UtcNow
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.BornOn),
+						Resources.PersonBornOnCannotBeInTheFuture)
+					: value;
+			}
+		}
 
 		/// <summary>
-		/// Gets or sets the cell phone.
+		/// Gets or sets the cell phone number.
 		/// </summary>
 		/// <value>The cell phone.</value>
-		public string CellPhone { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
+		[DataMember(Name = "cellPhone")]
+		[XmlElement]
+		public string CellPhone
+		{
+			get => this._cellPhone;
+
+			set
+			{
+				if (string.Equals(this._cellPhone, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._cellPhone = value.HasValue(0, 50) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.CellPhone),
+						Resources.PhoneNumberIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
-		/// Gets or sets the city.
+		/// Gets or sets the city name.
 		/// </summary>
 		/// <value>The city.</value>
-		public string City { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">City</exception>
+		[DataMember(Name = "city")]
+		[XmlElement]
+		public string City
+		{
+			get => this._city;
+
+			set
+			{
+				if (string.Equals(this._city, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._city = value.HasValue(0, 100) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.City),
+						Resources.CityLengthIsLimitedTo100Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the country.
 		/// </summary>
 		/// <value>The country.</value>
-		public string Country { get; set; } = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
+		/// <exception cref="ArgumentOutOfRangeException">Country</exception>
+		[DataMember(Name = "country")]
+		[XmlElement]
+		public string Country
+		{
+			get => this._country;
+
+			set
+			{
+				if (string.Equals(this._country, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._country = value.HasValue(0, 50) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.Country),
+						Resources.CountryLengthIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the email.
 		/// </summary>
 		/// <value>The email.</value>
-		public string Email { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+		[DataMember(Name = "email", IsRequired = true)]
+		[XmlElement(IsNullable = false)]
+		[DisallowNull]
+		public string Email
+		{
+			get => this._email;
+
+			set
+			{
+				if (string.Equals(this._email, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._email = value.HasValue(0, 75) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.Email),
+						Resources.EmailLengthIsLimitedTo75Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
 		/// <value>The first name.</value>
-		public string FirstName { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
+		[DataMember(Name = "firstName")]
+		[XmlElement]
+		public string FirstName
+		{
+			get => this._firstName;
+			set
+			{
+				if (string.Equals(this._firstName, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._firstName = value.HasValue(0, 50) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.FirstName),
+						Resources.FirstNameLengthIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the home phone.
 		/// </summary>
 		/// <value>The home phone.</value>
-		public string HomePhone { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
+		[DataMember(Name = "homePhone")]
+		[XmlElement]
+		public string HomePhone
+		{
+			get => this._homePhone;
+			set
+			{
+				if (string.Equals(this._homePhone, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._homePhone = value.HasValue(0, 50) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.HomePhone),
+						Resources.PhoneNumberIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets the identifier.
 		/// </summary>
 		/// <value>The identifier.</value>
-		public string Id { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">Id</exception>
+		[DataMember(Name = "id", IsRequired = true)]
+		[XmlElement(IsNullable = false)]
+		[DisallowNull]
+		public string Id
+		{
+			get => this._id;
+			set
+			{
+				if (string.Equals(this._id, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._id = value.HasValue(1, 50) == false
+					? throw new ArgumentOutOfRangeException(nameof(this.Id), Resources.IdLengthIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the last name.
 		/// </summary>
 		/// <value>The last name.</value>
-		public string LastName { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
+		[DataMember(Name = "lastName")]
+		[XmlElement]
+		public string LastName
+		{
+			get => this._lastName;
+			set
+			{
+				if (string.Equals(this._lastName, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._lastName = value.HasValue(0, 50) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.LastName),
+						Resources.LastNameLengthIsLimitedTo50Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets the postal code.
 		/// </summary>
 		/// <value>The postal code.</value>
-		public string PostalCode { get; set; }
+		/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
+		[DataMember(Name = "postalCode")]
+		[XmlElement]
+		public string PostalCode
+		{
+			get => this._postalCode;
+			set
+			{
+				if (string.Equals(this._postalCode, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._postalCode = value.HasValue(0, 15) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.PostalCode),
+						Resources.PostalCodeLengthIsLimitedTo15Characters)
+					: value;
+			}
+		}
 
 		/// <summary>
-		/// Gets or sets the state.
+		/// Gets or sets the State.
 		/// </summary>
-		/// <value>The state.</value>
-		public string State { get; set; }
+		/// <value>The State.</value>
+		/// <exception cref="ArgumentOutOfRangeException">State</exception>
+		[DataMember(Name = "state")]
+		[XmlElement]
+		public string State
+		{
+			get => this._state;
+			set
+			{
+				if (string.Equals(this._state, value, StringComparison.Ordinal))
+				{
+					return;
+				}
+
+				this._state = value.HasValue(0, 25) == false
+					? throw new ArgumentOutOfRangeException(
+						nameof(this.State),
+						Resources.StateLengthIsLimitedTo25Characters)
+					: value;
+			}
+		}
 	}
 }

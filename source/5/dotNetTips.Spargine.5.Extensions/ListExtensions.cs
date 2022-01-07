@@ -446,7 +446,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>Core.Collections.Generic.Collection&lt;T&gt;.</returns>
-		[Information(nameof(ToCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static Core.Collections.Generic.Collection<T> ToCollection<T>([NotNull] this IList<T> list)
 		{
 			return Core.Collections.Generic.Collection<T>.Create(list);
@@ -462,7 +462,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>DistinctBlockingCollection&lt;T&gt;.</returns>
 		/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
 		/// to remove from memory.</remarks>
-		[Information(nameof(ToDistinctBlockingCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToDistinctBlockingCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static DistinctBlockingCollection<T> ToDistinctBlockingCollection<T>([NotNull] this IList<T> list, bool completeAdding = false)
 		{
 			var result = new DistinctBlockingCollection<T>(list);
@@ -481,7 +481,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>DistinctConcurrentBag&lt;T&gt;.</returns>
-		[Information(nameof(ToDistinctConcurrentBag), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToDistinctConcurrentBag), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static DistinctConcurrentBag<T> ToDistinctConcurrentBag<T>([NotNull] this IList<T> list)
 		{
 			return new DistinctConcurrentBag<T>(list);
@@ -493,7 +493,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>FastSortedList&lt;T&gt;.</returns>
-		[Information(nameof(ToFastSortedList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToFastSortedList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static FastSortedList<T> ToFastSortedList<T>([NotNull] this IList<T> list)
 		{
 			return new FastSortedList<T>(list);
@@ -505,7 +505,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>ImmutableArray&lt;T&gt;.</returns>
-		[Information(nameof(ToCollection), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToCollection), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static ImmutableArray<T> ToImmutableArray<T>([NotNull] this IList<T> list)
 		{
 			return ImmutableArray.Create(list.ToArray());
@@ -548,7 +548,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>ObservableList&lt;T&gt;.</returns>
-		[Information(nameof(ToObservableList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToObservableList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static ObservableList<T> ToObservableList<T>([NotNull] this IList<T> list)
 		{
 			return new ObservableList<T>(list);

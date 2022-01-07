@@ -31,7 +31,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="interfaceNames">The interface names.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
-		[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<string> DoesObjectImplementInterface([NotNull] this object input, [NotNull] params string[] interfaceNames)
 		{
 			//TODO: CHANGE TO ALL LINQ? typeof(IMyInterface).IsAssignableFrom(typeof(MyType))
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information(nameof(GetAllAbstractMethods), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(GetAllAbstractMethods), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllAbstractMethods([NotNull] this Type type)
 		{
 			return type.GetRuntimeMethods().Where(m => m.IsAbstract);
@@ -97,7 +97,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// get_State, set_State, op_GreaterThanOrEqual, op_GreaterThan, op_Equality, op_LessThanOrEqual, op_LessThan,
 		/// op_Inequality, CompareTo, Equals, Equals, GetHashCode, ToString, CalculateAge"
 		/// </example>
-		[Information("Original Code .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllDeclaredMethods([NotNull] this Type type)
 		{
 			for (var i = 0; i < type.GetMethods(BindingFlags.Instance |
@@ -121,7 +121,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information(nameof(GetAllFields), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(GetAllFields), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<FieldInfo> GetAllFields([NotNull] this Type type)
 		{
 			var typeInfo = type.GetTypeInfo();
@@ -143,7 +143,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllGenericMethods([NotNull] this Type type)
 		{
 			return type.GetRuntimeMethods().Where(m => m.IsGenericMethod);
@@ -155,7 +155,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllMethods([NotNull] this Type type)
 		{
 			var typeInfo = type.GetTypeInfo();
@@ -177,7 +177,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<PropertyInfo> GetAllProperties([NotNull] this Type type)
 		{
 			var typeInfo = type.GetTypeInfo();
@@ -199,7 +199,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllPublicMethods([NotNull] this Type type)
 		{
 			return type.GetRuntimeMethods().Where(m => m.IsPublic);
@@ -211,7 +211,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllStaticMethods([NotNull] this Type type)
 		{
 			return type.GetRuntimeMethods().Where(m => m.IsStatic);
@@ -224,7 +224,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns>TAttribute.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static TAttribute GetAttribute<TAttribute>([NotNull] this Type type)
 			where TAttribute : Attribute
 		{
@@ -238,7 +238,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="methodInfo">The method information.</param>
 		/// <returns>TAttribute.</returns>
 		/// <exception cref="ArgumentNullException">MethodInfo cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static TAttribute GetAttribute<TAttribute>([NotNull] this MethodInfo methodInfo)
 			where TAttribute : Attribute
 		{
@@ -252,7 +252,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="propertyInfo">The property information.</param>
 		/// <returns>TAttribute.</returns>
 		/// <exception cref="ArgumentNullException">PropertyInfo cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static TAttribute GetAttribute<TAttribute>([NotNull] this PropertyInfo propertyInfo)
 			where TAttribute : Attribute
 		{
@@ -266,7 +266,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="fieldInfo">The field information.</param>
 		/// <returns>TAttribute.</returns>
 		/// <exception cref="ArgumentNullException">FieldInfo cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static TAttribute GetAttribute<TAttribute>([NotNull] this FieldInfo fieldInfo)
 			where TAttribute : Attribute
 		{
@@ -281,7 +281,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.ValueTuple&lt;System.String, TAttribute, System.Boolean, System.Boolean, Type&gt;[].</returns>
 		/// <exception cref="InvalidOperationException">Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it</exception>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static (string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type ParameterType)[] GetTypeMembersWithAttribute<TAttribute>([NotNull] this Type type)
 			where TAttribute : Attribute
 		{
@@ -313,7 +313,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="methodInfo">The method information.</param>
 		/// <returns><c>true</c> if the specified method information has attribute; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">MethodInfo cannot be null.</exception>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasAttribute<T>([NotNull] this MethodInfo methodInfo) where T : Attribute
 		{
 			return methodInfo.GetAttribute<T>() is not null;
@@ -326,7 +326,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <param name="baseClass">The base class.</param>
 		/// <returns><c>true</c> if [has base class of] [the specified base class]; otherwise, <c>false</c>.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasBaseClass(this Type type, Type baseClass)
 		{
 			if (type == baseClass)
@@ -353,7 +353,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
-		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasParameterlessConstructor), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasParameterlessConstructor([NotNull] this Type type)
 		{
 			return type.GetConstructor(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null) is not null;
@@ -375,7 +375,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNullable(this Type type) => Nullable.GetUnderlyingType(type) is not null;
 
 		/// <summary>
@@ -384,7 +384,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="property">The property.</param>
 		/// <returns><c>true</c> if the specified property is static; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">PropertyInfo cannot be null.</exception>
-		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", modifiedOn: "7/31/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsStatic([NotNull] this PropertyInfo property)
 		{
 			return ( property.GetMethod ?? property.SetMethod ).IsStatic;

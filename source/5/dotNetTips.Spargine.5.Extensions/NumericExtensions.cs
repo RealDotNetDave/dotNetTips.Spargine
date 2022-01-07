@@ -35,7 +35,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="step">Step of the decrement</param>
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(Decrement), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(Decrement), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static int Decrement(this int value, int lowerBound = 0, int step = 1)
 		{
 			var n = value - step;
@@ -49,7 +49,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="minValue">The minimum value.</param>
 		/// <returns>System.Int32.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
 
 		/// <summary>
@@ -58,7 +58,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="fileSize">Size of the file.</param>
 		/// <returns>System.String.</returns>
 		/// <example>Return Example: 250 KB</example>
-		[Information(nameof(FormatSize), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(FormatSize), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static string FormatSize(this long fileSize)
 		{
 			long size = 0;
@@ -80,7 +80,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="step">Step of the increment</param>
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(Increment), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(Increment), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static int Increment(this int value, int upperBound = 100, int step = 1)
 		{
 			var number = value + step;
@@ -93,7 +93,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this decimal value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this double value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -111,7 +111,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this float value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -120,7 +120,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this int value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -129,7 +129,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this long value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -138,7 +138,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this sbyte value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -147,7 +147,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEven(this short value) => ( value % 2 ) == 0;
 
 		/// <summary>
@@ -158,7 +158,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="upper">Upper bound</param>
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRange(this int value, int lower, int upper) => value >= lower && value <= upper;
 
 		/// <summary>
@@ -169,7 +169,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRange(this long value, long lower, long upper) => value >= lower && value <= upper;
 
 		/// <summary>
@@ -180,7 +180,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRange(this double value, double lower, double upper) => value >= lower && value <= upper;
 
 		/// <summary>
@@ -191,7 +191,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="upper">The upper.</param>
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRange(this decimal value, decimal lower, decimal upper) => value >= lower && value <= upper;
 
 		/// <summary>
@@ -204,7 +204,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRangeThrowsException(this double value, double lower, double upper)
 		{
 			if (value.IsInRange(lower, upper) == false)
@@ -225,7 +225,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRangeThrowsException(this decimal value, decimal lower, decimal upper)
 		{
 			if (value.IsInRange(lower, upper) == false)
@@ -245,7 +245,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRangeThrowsException(this int value, int lower, int upper)
 		{
 			if (value.IsInRange(lower, upper) == false)
@@ -266,7 +266,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInRangeThrowsException(this long value, long lower, long upper)
 		{
 			if (value.IsInRange(lower, upper) == false)
@@ -286,7 +286,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="interval">The interval.</param>
 		/// <returns><c>true</c> if the specified number is interval; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsInterval), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsInterval), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsInterval(this int value, int interval) => value % interval == 0;
 
 		/// <summary>
@@ -299,7 +299,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Interval is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsIntervalThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsIntervalThrowsException), author: "David McCarter", createdOn: "10/5/2020", modifiedOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsIntervalThrowsException(this int value, int interval, string paramName)
 		{
 			if (value.IsInterval(interval) == false)
@@ -317,7 +317,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this double value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -326,7 +326,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this int value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -335,7 +335,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this long value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -344,7 +344,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this sbyte value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -353,7 +353,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this short value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -362,7 +362,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "7/29/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this decimal value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -371,7 +371,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsNegative(this float value) => Math.Sign(value) == -1;
 
 		/// <summary>
@@ -380,7 +380,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Number to process</param>
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(RoundToPowerOf2), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(RoundToPowerOf2), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static int RoundToPowerOf2(this int value)
 		{
 			var exponent = 1;
@@ -562,7 +562,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns>System.Int32.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static int ToPositiveValue(this int value) => value.IsInRange(0, int.MaxValue) ? value : 0;
 
 		/// <summary>
@@ -571,7 +571,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns>System.Int64.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static long ToPositiveValue(this long value) => value.IsInRange(0, int.MaxValue) ? value : 0;
 
 		/// <summary>
@@ -580,7 +580,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns>System.Decimal.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static decimal ToPositiveValue(this decimal value) => value.IsInRange(0, int.MaxValue) ? value : 0;
 
 		/// <summary>
@@ -606,7 +606,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Input: 54928
 		/// Output: Fifty-Four Thousand Nine Hundred and Twenty-Eight"
 		/// </example>
-		[Information(nameof(ToWords), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToWords), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static string ToWords(this int value)
 		{
 			if (value == 0)

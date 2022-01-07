@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-15-2021
+// Last Modified On : 01-06-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -18,7 +18,7 @@ using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Order;
-using dotNetTips.Spargine.Benchmarking.Properties;
+using dotNetTips.Spargine.Core.Serialization;
 using dotNetTips.Spargine.Extensions;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models.RefTypes;
@@ -44,7 +44,7 @@ namespace dotNetTips.Spargine.Benchmarking
 	[CsvExporter]
 	[CsvMeasurementsExporter]
 	[Default]
-	[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
+	//[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
 	[EvaluateOverhead]
 	[Full]
 	[GcServer(true)]
@@ -120,18 +120,6 @@ namespace dotNetTips.Spargine.Benchmarking
 		protected const string UpperCaseString = "DAVID MCCARTER";
 
 		/// <summary>
-		/// Gets or sets a value indicating whether to [launch the debugger].
-		/// </summary>
-		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
-		public bool LaunchDebugger { get; set; }
-
-		/// <summary>
-		/// Gets the test unique identifier.
-		/// </summary>
-		/// <value>The test unique identifier.</value>
-		public Guid TestGuid { get; internal set; }
-
-		/// <summary>
 		/// Gets the base64 string.
 		/// </summary>
 		/// <value>The base64 string.</value>
@@ -171,13 +159,19 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// Gets the json test data person proper.
 		/// </summary>
 		/// <value>The json test data person proper.</value>
-		protected string JsonTestDataPersonProper => Resources.JsonTestDataPersonProper;
+		protected string JsonTestDataPersonProper { get; private set; }
 
 		/// <summary>
 		/// Gets the json test data person record.
 		/// </summary>
 		/// <value>The json test data person record.</value>
-		protected string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
+		protected string JsonTestDataPersonRecord { get; private set; }
+
+		/// <summary>
+		/// Gets the json test data person record.
+		/// </summary>
+		/// <value>The json test data person record.</value>
+		protected string JsonTestDataPersonVal { get; private set; }
 
 		/// <summary>
 		/// Gets the person proper01.
@@ -249,13 +243,19 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// Gets the XML test data.
 		/// </summary>
 		/// <value>The XML test data.</value>
-		protected string XmlTestDataPersonProper => Resources.XmlTestDataPersonProper;
+		protected string XmlTestDataPersonProper { get; private set; }
 
 		/// <summary>
 		/// Gets the XML test data person record.
 		/// </summary>
 		/// <value>The XML test data person record.</value>
-		protected string XmlTestDataPersonRecord => Resources.XmlTestDataPersonRecord;
+		protected string XmlTestDataPersonRecord { get; private set; }
+
+		/// <summary>
+		/// Gets the XML test data person value.
+		/// </summary>
+		/// <value>The XML test data person value.</value>
+		protected string XmlTestDataPersonVal { get; private set; }
 
 		/// <summary>
 		/// Cleanups this instance.
@@ -305,6 +305,10 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			this.PersonRecord02 = RandomData.GeneratePersonCollection(1).First();
 
+			this.PersonVal01 = RandomData.GeneratePerson<Tester.Models.ValueTypes.Person>();
+
+			this.PersonVal02 = RandomData.GeneratePerson<Tester.Models.ValueTypes.Person>();
+
 			this.StringToTrim = "         " + LongTestString + "                   ";
 
 			this.String10Characters01 = RandomData.GenerateWord(10);
@@ -322,6 +326,36 @@ namespace dotNetTips.Spargine.Benchmarking
 			this.Coordinate02 = RandomData.GenerateCoordinate<Coordinate>();
 
 			this.TestGuid = Guid.NewGuid();
+
+			this.JsonTestDataPersonProper = JsonSerialization.Serialize(this.PersonProper01);
+			this.JsonTestDataPersonRecord = JsonSerialization.Serialize(this.PersonRecord01);
+			this.JsonTestDataPersonVal = JsonSerialization.Serialize(this.PersonVal01);
+
+			this.XmlTestDataPersonProper = XmlSerialization.Serialize(this.PersonProper01);
+			this.XmlTestDataPersonRecord = XmlSerialization.Serialize(this.PersonRecord01);
+			this.XmlTestDataPersonVal = XmlSerialization.Serialize(this.PersonVal01);
 		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether to [launch the debugger].
+		/// </summary>
+		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
+		public bool LaunchDebugger { get; set; }
+		/// <summary>
+		/// Gets the person val01.
+		/// </summary>
+		/// <value>The person val01.</value>
+		public Tester.Models.ValueTypes.Person PersonVal01 { get; private set; }
+		/// <summary>
+		/// Gets the person val02.
+		/// </summary>
+		/// <value>The person val02.</value>
+		public Tester.Models.ValueTypes.Person PersonVal02 { get; private set; }
+
+		/// <summary>
+		/// Gets the test unique identifier.
+		/// </summary>
+		/// <value>The test unique identifier.</value>
+		public Guid TestGuid { get; internal set; }
 	}
 }

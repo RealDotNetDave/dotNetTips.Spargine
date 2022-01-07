@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-21-2021
+// Last Modified On : 01-06-2022
 // ***********************************************************************
 // <copyright file="CounterBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -40,6 +40,7 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// The person reference array
 		/// </summary>
 		private Tester.Models.RefTypes.Person[] _personRefArray;
+
 		/// <summary>
 		/// The person value array
 		/// </summary>
@@ -252,6 +253,15 @@ namespace dotNetTips.Spargine.Benchmarking
 		}
 
 		/// <summary>
+		/// Clones the person value list.
+		/// </summary>
+		/// <returns>List&lt;Tester.Models.RefTypes.Person&gt;.</returns>
+		public List<Tester.Models.RefTypes.Person> ClonePersonValList()
+		{
+			return this.PersonValList.Clone<List<Tester.Models.RefTypes.Person>>();
+		}
+
+		/// <summary>
 		/// Setups this instance.
 		/// </summary>
 		public override void Setup()
@@ -298,6 +308,8 @@ namespace dotNetTips.Spargine.Benchmarking
 
 			this.PersonRecordArray = RandomData.GeneratePersonCollection(this.Count).ToArray();
 
+			this.PersonRecordList = RandomData.GeneratePersonCollection(this.Count);
+
 			this.PersonProperImmutableList = this.PersonProperList.ToImmutable();
 
 			this.PersonProperObservableCollection = this.PersonProperList.ToObservableCollection();
@@ -321,13 +333,15 @@ namespace dotNetTips.Spargine.Benchmarking
 			this.PersonList = RandomData.GeneratePersonCollection<Tester.Models.RefTypes.Person>(this.Count);
 
 			this.PersonProperEnumerable = this.PersonProperList.AsEnumerable();
+
+			this.PersonValList = RandomData.GeneratePersonCollection<Tester.Models.ValueTypes.Person>(Count);
 		}
 
 		/// <summary>
 		/// Gets or sets the collection count.
 		/// </summary>
 		/// <value>The collection count.</value>
-		[Params(10, 25, 50, 100, 250, 500, 1000, 2500)]
+		[Params(10, 25, 50, 100, 250, 500, 1000)]
 		public int Count { get; set; }
 
 		/// <summary>
@@ -335,5 +349,17 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value>The person proper enumerable.</value>
 		public IEnumerable<PersonProper> PersonProperEnumerable { get; private set; }
+
+		/// <summary>
+		/// Gets the person record collection.
+		/// </summary>
+		/// <value>The person record collection.</value>
+		public List<PersonRecord> PersonRecordList { get; private set; }
+
+		/// <summary>
+		/// Gets the clone person value list.
+		/// </summary>
+		/// <value>The clone person value list.</value>
+		public List<Tester.Models.ValueTypes.Person> PersonValList { get; private set; }
 	}
 }

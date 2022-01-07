@@ -60,7 +60,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// </summary>
 		/// <param name="password">The password.</param>
 		/// <returns>System.String.</returns>
-		[Information(nameof(HashPassword), "David McCarter", "10/12/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HashPassword), "David McCarter", "10/12/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static string HashPassword([NotNull] string password)
 		{
 			byte[] salt;
@@ -87,7 +87,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="hashedPassword">The hashed password.</param>
 		/// <param name="password">The password.</param>
 		/// <returns>PasswordVerificationResult.</returns>
-		[Information(nameof(VerifyHashedPassword), "David McCarter", "10/12/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(VerifyHashedPassword), "David McCarter", "10/12/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static PasswordVerificationResult VerifyHashedPassword(string hashedPassword, [NotNull] string password)
 		{
 			if (string.IsNullOrEmpty(hashedPassword))

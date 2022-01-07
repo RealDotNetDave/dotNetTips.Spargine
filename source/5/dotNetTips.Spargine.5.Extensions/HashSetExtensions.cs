@@ -47,7 +47,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>ConcurrentHashSet&lt;T&gt;.</returns>
-		[Information(nameof(ToImmutable), "David McCarter", "12/3/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToImmutable), "David McCarter", "12/3/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static ConcurrentHashSet<T> ToConcurrentHashSet<T>([NotNull] this HashSet<T> list)
 		{
 			return new ConcurrentHashSet<T>(list);

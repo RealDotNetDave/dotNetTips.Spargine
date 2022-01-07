@@ -23,3 +23,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "CA1002:Do not expose generic lists", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Benchmarking.CounterBenchmark.PersonList")]
 [assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Benchmarking.CollectionBenchmark.PeopleToInsert")]
 [assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Benchmarking.CounterBenchmark.ByteArray")]
+[assembly: SuppressMessage("Design", "CA1002:Do not expose generic lists", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Benchmarking.CounterBenchmark.PersonRecordList")]
+[assembly: SuppressMessage("Design", "CA1002:Do not expose generic lists", Justification = "<Pending>", Scope = "member", Target = "~P:dotNetTips.Spargine.Benchmarking.CounterBenchmark.PersonValList")]
+[assembly: SuppressMessage("Design", "CA1002:Do not expose generic lists", Justification = "<Pending>", Scope = "member", Target = "~M:dotNetTips.Spargine.Benchmarking.CounterBenchmark.ClonePersonValList~System.Collections.Generic.List{dotNetTips.Spargine.Tester.Models.RefTypes.Person}")]

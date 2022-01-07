@@ -43,7 +43,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		/// </summary>
 		/// <param name="logger">The logger.</param>
 		/// <remarks>Logger can only be set once. If this is called twice or more, it will be ignored.</remarks>
-		[Information(nameof(LogAppDomainExceptions), author: "David McCarter", createdOn: "10/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD JAN URL")]
+		[Information(nameof(LogAppDomainExceptions), author: "David McCarter", createdOn: "10/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static void LogAppDomainExceptions([NotNull] ILogger logger)
 		{
 			if (_appDomainExceptionLogger is null)

@@ -346,7 +346,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Original string: C`sk^yOurOCd]KVIXpR]QBf`T
 		/// Converted string: ixiAQwBgAHMAawBeAHkATwB1AHIATwBDAGQAXQBLAFYASQBYAHAAUgBdAFEAQgBmAGAAVAA=
 		/// </example>
-		[Information(nameof(FromBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(FromBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static async Task<string> FromBrotliAsync([NotNull] this string input)
 		{
 			return await FromBrotliStringAsync(input);
@@ -357,7 +357,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>Unpressed string.</returns>
-		[Information(nameof(FromGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(FromGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static async Task<string> FromGZipAsync([NotNull] this string input)
 		{
 			return await FromGZipStringAsync(input);
@@ -369,7 +369,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input) => input is not null && ( input.Trim().Length > 0 );
 
 		/// <summary>
@@ -379,7 +379,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="length">Checks for specific length of the string.</param>
 		/// <returns><c>true</c> if the specified length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input, int length)
 		{
 			Validate.TryValidateParam(length, minimumValue: 1, maximumValue: length, nameof(input));
@@ -394,7 +394,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="value">Checks for a specific value.</param>
 		/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be null.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input, [NotNull] string value)
 		{
 			Validate.TryValidateParam(input, nameof(input));
@@ -409,7 +409,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="expression">The expression.</param>
 		/// <param name="options">The options.</param>
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input, string expression, RegexOptions options)
 		{
 			return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
@@ -424,7 +424,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified minimum length has value; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length must be greater than 0.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Maximum length must be greater than Minimum length.</exception>
-		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input, int minLength, int maxLength)
 		{
 			Validate.TryValidateParam(minLength, minimumValue: 0, maximumValue: maxLength, nameof(minLength));
@@ -492,7 +492,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiDigit(this char character) => char.IsDigit(character);
 
 		/// <summary>
@@ -501,7 +501,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiLetter(this char character) => char.IsLetter(character);
 
 		/// <summary>
@@ -510,7 +510,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", modifiedOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiLetterOrDigit(this char character) => char.IsLetterOrDigit(character);
 
 		/// <summary>
@@ -519,7 +519,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiWhitespace(this char character) => char.IsWhiteSpace(character);
 
 		/// <summary>
@@ -527,7 +527,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsCreditCard), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsCreditCard(this string input) => input.HasValue(Resources.RegexCreditCard, RegexOptions.Compiled); //TODO: CHANGE TO IsCreditCardNumber
 
 		/// <summary>
@@ -536,7 +536,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsDomainAddress(this string input) => input.HasValue(Resources.RegexDomain, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -544,7 +544,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is email address] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsEmailAddress(this string input) => input.HasValue(Resources.RegexEmail, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -561,7 +561,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsFirstLastName(this string input) => input.HasValue(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -569,7 +569,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsGuid([NotNull] this string value)
 		{
 			var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
@@ -582,7 +582,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsISBN(this string input) => input.HasValue(Resources.RegexISBN, RegexOptions.Compiled);
 
 		/// <summary>
@@ -590,7 +590,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsMacAddress([NotNull] this string value)
 		{
 			var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
@@ -612,7 +612,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsScientific(this string input) => input.HasValue(Resources.RegexScientific, RegexOptions.Compiled);
 
 		/// <summary>
@@ -620,7 +620,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsString(this string input) => input.HasValue(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -629,7 +629,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="input">Input hash to check</param>
 		/// <returns>Boolean representing if the input is valid or not</returns>
 		/// <remarks>Original Code By: Troy Hunt</remarks>
-		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsStringSHA1Hash([NotNull] this string input)
 		{
 			//TODO: CHANGE TO ISSHA1HASH
@@ -641,7 +641,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
-		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsUrl(this string input) => input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 		/// <summary>
@@ -847,7 +847,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Original: QGhymbrMHsvbmVfQloPxv`csQ
 		/// Compressed: ixgA+I+UrOGddJv/qY/gHm9RiI4kKJAKgJIkpFjhguavOMK3o2xgbX3tCQ==
 		/// </example>
-		[Information(nameof(ToBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToBrotliAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static async Task<string> ToBrotliAsync([NotNull] this string input, CompressionLevel level = CompressionLevel.Fastest)
 		{
 			Validate.TryValidateParam(level, nameof(level));
@@ -865,7 +865,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// Original: ^w^vaBlKJ\\bNhvspfHfNTupWG
 		/// Compressed: H4sIAAAAAAAECgTBMQqAIAAAwHtbS2HgFLSIoIM0NAiSfd+77JdNxeZ1CpIqekxD1xya6PLpbrsFAAD//w==
 		/// </example>
-		[Information(nameof(ToGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD JAN URL")]
+		[Information(nameof(ToGZipAsync), author: "David McCarter", createdOn: "10/24/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static async Task<string> ToGZipAsync([NotNull] this string input, CompressionLevel level = CompressionLevel.Fastest)
 		{
 			Validate.TryValidateParam(level, nameof(level));

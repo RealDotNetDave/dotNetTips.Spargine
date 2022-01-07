@@ -41,61 +41,73 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 		/// </summary>
 		[NonSerialized]
 		private string _address1;
+
 		/// <summary>
 		/// Address 2.
 		/// </summary>
 		[NonSerialized]
 		private string _address2;
+
 		/// <summary>
 		/// The born on date and time.
 		/// </summary>
 		[NonSerialized]
 		private DateTimeOffset _bornOn;
+
 		/// <summary>
 		/// The cell phone number.
 		/// </summary>
 		[NonSerialized]
 		private string _cellPhone;
+
 		/// <summary>
 		/// The city name.
 		/// </summary>
 		[NonSerialized]
 		private string _city;
+
 		/// <summary>
 		/// The country name.
 		/// </summary>
 		[NonSerialized]
 		private string _country = RegionInfo.CurrentRegion.ThreeLetterISORegionName;
+
 		/// <summary>
 		/// The email address.
 		/// </summary>
 		[NonSerialized]
 		private string _email;
+
 		/// <summary>
 		/// The first name.
 		/// </summary>
 		[NonSerialized]
 		private string _firstName;
+
 		/// <summary>
 		/// The home phone number.
 		/// </summary>
 		[NonSerialized]
 		private string _homePhone;
+
 		/// <summary>
 		/// The unique identifier.
 		/// </summary>
 		[NonSerialized]
 		private string _id;
+
 		/// <summary>
 		/// The last name.
 		/// </summary>
 		[NonSerialized]
 		private string _lastName;
+
 		/// <summary>
 		/// The postal code.
 		/// </summary>
 		[NonSerialized]
 		private string _postalCode;
+
 		/// <summary>
 		/// The state
 		/// </summary>
@@ -188,7 +200,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 		/// </summary>
 		/// <param name="other">The other.</param>
 		/// <returns>System.Int32.</returns>
-		public int CompareTo(PersonProper other)
+		public int CompareTo([NotNull] PersonProper other)
 		{
 			if (other is null)
 			{
@@ -237,8 +249,9 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 				return result;
 			}
 
-			return result;
+			return -1;
 		}
+
 		/// <summary>
 		/// Determines whether the specified <see cref="object" /> is equal to this instance.
 		/// </summary>
@@ -246,6 +259,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 		/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
 		/// <exception cref="NotImplementedException"></exception>
 		public override bool Equals([NotNull] object obj) { return ReferenceEquals(this, obj); }
+
 		/// <summary>
 		/// Equals the specified other.
 		/// </summary>
@@ -253,16 +267,41 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="NotImplementedException"></exception>
 		public bool Equals([NotNull] PersonProper other) { return ReferenceEquals(this, other); }
-		/// <summary>
-		/// Returns the hash code for this instance based on id.
-		/// </summary>
-		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		public override int GetHashCode() => HashCode.Combine(this.Email, this.Id);
+
+		///// <summary>
+		///// Returns the hash code for this instance based on id.
+		///// </summary>
+		///// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+		//public override int GetHashCode() => HashCode.Combine(this.Email, this.Id);
 		/// <summary>
 		/// Returns a <see cref="string" /> of the users id.
 		/// </summary>
 		/// <returns>A <see cref="string" /> of the users id.</returns>
 		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
+
+		/// <summary>
+		/// Returns a hash code for this instance.
+		/// </summary>
+		/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
+		public override int GetHashCode()
+		{
+			var hash = new HashCode();
+			hash.Add(this.Address1);
+			hash.Add(this.Address2);
+			hash.Add(this.Age);
+			hash.Add(this.BornOn);
+			hash.Add(this.CellPhone);
+			hash.Add(this.City);
+			hash.Add(this.Country);
+			hash.Add(this.Email);
+			hash.Add(this.FirstName);
+			hash.Add(this.HomePhone);
+			hash.Add(this.Id);
+			hash.Add(this.LastName);
+			hash.Add(this.PostalCode);
+			hash.Add(this.State);
+			return hash.ToHashCode();
+		}
 
 		/// <summary>
 		/// Gets or sets first address.
@@ -315,12 +354,14 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets the person's current age.
 		/// </summary>
 		/// <value>The age.</value>
 		[IgnoreDataMember]
 		public TimeSpan Age => this.CalculateAge();
+
 		/// <summary>
 		/// Gets or sets the born on date and time.
 		/// </summary>
@@ -346,6 +387,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the cell phone number.
 		/// </summary>
@@ -371,6 +413,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the city name.
 		/// </summary>
@@ -396,6 +439,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the country.
 		/// </summary>
@@ -421,6 +465,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets the email.
 		/// </summary>
@@ -447,6 +492,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the first name.
 		/// </summary>
@@ -471,6 +517,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the home phone.
 		/// </summary>
@@ -495,6 +542,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets the identifier.
 		/// </summary>
@@ -518,6 +566,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the last name.
 		/// </summary>
@@ -542,6 +591,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the postal code.
 		/// </summary>
@@ -566,6 +616,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 					: value;
 			}
 		}
+
 		/// <summary>
 		/// Gets or sets the State.
 		/// </summary>

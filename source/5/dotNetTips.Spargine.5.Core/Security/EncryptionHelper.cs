@@ -154,7 +154,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// Original: H\\gFRUfbq_EMPlq
 		/// Hashed: AY19M0MX0ANKDnG6yB3JIgHxHa7MWlO8aXEf7VD+hsD2B0LyFwBOJpUy7RhmflYYag==
 		/// </example>
-		[Information(nameof(HashPasswordWithPBKDF2), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		[Information(nameof(HashPasswordWithPBKDF2), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022", BenchMarkStatus = BenchMarkStatus.Completed)]
 		public static string HashPasswordWithPBKDF2([NotNull] string plainText)
 		{
 			return PBKDF2PasswordHasher.HashPassword(plainText);
@@ -169,7 +169,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// Original: mHfVpo[wbvuYMal
 		/// Hashed: AQAAAAAAAAAAAAAAAAAAAAC9sZ+PLwKAk4Vw5JAlOuY/GU4N6MNuMtT+Yj/ZfIPg7Q==
 		/// </example>
-		[Information(nameof(HashPasswordWithSHA256), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		[Information(nameof(HashPasswordWithSHA256), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022", BenchMarkStatus = BenchMarkStatus.Completed)]
 		public static string HashPasswordWithSHA256([NotNull] string plainText)
 		{
 			return SHA256PasswordHasher.HashPassword(plainText);
@@ -213,7 +213,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="hashedPassword">The hashed password.</param>
 		/// <param name="password">The password.</param>
 		/// <returns>PasswordVerificationResult.</returns>
-		[Information(nameof(VerifyPBKDF2HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		[Information(nameof(VerifyPBKDF2HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022", BenchMarkStatus = BenchMarkStatus.Completed)]
 		public static PasswordVerificationResult VerifyPBKDF2HashedPassword(string hashedPassword, [NotNull] string password)
 		{
 			return PBKDF2PasswordHasher.VerifyHashedPassword(hashedPassword, password);
@@ -225,7 +225,7 @@ namespace dotNetTips.Spargine.Core.Security
 		/// <param name="hashedPassword">The hashed password.</param>
 		/// <param name="password">The password.</param>
 		/// <returns>PasswordVerificationResult.</returns>
-		[Information(nameof(VerifySHA256HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD JAN URL", BenchMarkStatus = BenchMarkStatus.Completed)]
+		[Information(nameof(VerifySHA256HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022", BenchMarkStatus = BenchMarkStatus.Completed)]
 		public static PasswordVerificationResult VerifySHA256HashedPassword(string hashedPassword, [NotNull] string password)
 		{
 			return SHA256PasswordHasher.VerifyHashedPassword(hashedPassword, password);

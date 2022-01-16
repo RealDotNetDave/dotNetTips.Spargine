@@ -268,15 +268,10 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 		/// <exception cref="NotImplementedException"></exception>
 		public bool Equals([NotNull] PersonProper other) { return ReferenceEquals(this, other); }
 
-		///// <summary>
-		///// Returns the hash code for this instance based on id.
-		///// </summary>
-		///// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-		//public override int GetHashCode() => HashCode.Combine(this.Email, this.Id);
 		/// <summary>
-		/// Returns a <see cref="string" /> of the users id.
+		/// Returns a <see cref="System.String" /> that represents this instance.
 		/// </summary>
-		/// <returns>A <see cref="string" /> of the users id.</returns>
+		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
 
 		/// <summary>

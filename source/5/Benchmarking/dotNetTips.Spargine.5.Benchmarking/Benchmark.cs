@@ -341,11 +341,13 @@ namespace dotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
 		public bool LaunchDebugger { get; set; }
+
 		/// <summary>
 		/// Gets the person val01.
 		/// </summary>
 		/// <value>The person val01.</value>
 		public Tester.Models.ValueTypes.Person PersonVal01 { get; private set; }
+
 		/// <summary>
 		/// Gets the person val02.
 		/// </summary>

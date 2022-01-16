@@ -23,7 +23,7 @@ namespace dotNetTips.Spargine.Tester.Models.RefTypes
 	/// Class Person with proper encapsulation and validation.
 	/// Implements the <see cref="IDataRecord" />
 	/// </summary>
-	public record PersonRecord : IDataRecord, IComparable<PersonRecord>
+	public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	{
 		/// <summary>
 		/// The born on

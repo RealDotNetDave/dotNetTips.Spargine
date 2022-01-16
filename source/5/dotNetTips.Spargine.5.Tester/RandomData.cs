@@ -477,7 +477,7 @@ namespace dotNetTips.Spargine.Tester
 
 			for (var i = 0; i < count; i++)
 			{
-				PersonRecord person = new(GenerateEmailAddress(), GenerateKey())
+				PersonRecord person = new(email: GenerateEmailAddress(), id: GenerateKey())
 				{
 					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
 					FirstName = GenerateWord(firstNameLength),

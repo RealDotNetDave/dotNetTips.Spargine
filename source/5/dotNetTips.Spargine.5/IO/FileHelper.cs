@@ -355,7 +355,7 @@ namespace dotNetTips.Spargine.IO
 			using var zipFileStream = File.OpenRead(zipPath);
 			using var zipArchiveStream = new ZipArchive(zipFileStream);
 
-			for (var zipArchiveCount = 0; zipArchiveCount < zipArchiveStream.Entries.Count; zipArchiveCount++)
+			for (var zipArchiveCount = 0; zipArchiveCount < zipArchiveStream.Entries.LongCount(); zipArchiveCount++)
 			{
 				var zipArchiveEntry = zipArchiveStream.Entries[zipArchiveCount];
 

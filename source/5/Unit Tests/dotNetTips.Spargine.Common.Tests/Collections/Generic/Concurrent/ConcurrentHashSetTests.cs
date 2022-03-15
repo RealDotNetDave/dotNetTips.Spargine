@@ -87,8 +87,11 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 		[TestMethod]
 		public void ContainsTest()
 		{
-			var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonCollection<PersonProper>(100));
-			var person = people.Shuffle(1).First();
+			var people = new ConcurrentHashSet<PersonProper>(2, 10);
+			people.AddRange(RandomData.GeneratePersonCollection<PersonProper>(10));
+			var person = people.Last();
+
+			var test = people.Contains<PersonProper>(person);
 
 			var result = people.Contains(person);
 
@@ -100,7 +103,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 		[TestMethod]
 		public void TryRemoveTest()
 		{
-			var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonCollection<PersonProper>(100));
+			var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonCollection<PersonProper>(10));
 			var person = people.Shuffle(1).First();
 
 			var result = people.TryRemove(person);
@@ -113,7 +116,7 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 		[TestMethod]
 		public void GetEnumeratorTest()
 		{
-			var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonCollection<PersonProper>(100));
+			var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonCollection<PersonProper>(10));
 
 			var result = people.GetEnumerator();
 

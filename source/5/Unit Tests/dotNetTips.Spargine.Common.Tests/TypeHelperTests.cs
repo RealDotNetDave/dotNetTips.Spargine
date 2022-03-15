@@ -136,7 +136,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			var person = RandomData.GeneratePerson<PersonProper>();
 
-			Assert.IsTrue(TypeHelper.GetInstanceHashCode(person).IsNegative());
+			Assert.IsTrue(TypeHelper.GetInstanceHashCode(person) > 0);
 
 		}
 

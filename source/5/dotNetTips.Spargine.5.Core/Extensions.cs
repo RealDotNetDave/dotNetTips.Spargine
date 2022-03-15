@@ -328,7 +328,7 @@ namespace dotNetTips.Spargine.Core
 				ExceptionThrower.ThrowArgumentNullException(nameof(delimiter));
 			}
 
-			if (list.Count() == 0)
+			if (list.Count == 0)
 			{
 				return string.Empty;
 			}
@@ -359,7 +359,7 @@ namespace dotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		internal static string ToDelimitedString<T>([NotNull] this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
-			if (list.Count() == 0)
+			if (list.LongCount() == 0)
 			{
 				return string.Empty;
 			}

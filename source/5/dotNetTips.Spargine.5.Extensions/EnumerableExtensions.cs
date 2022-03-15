@@ -17,7 +17,6 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
-using System.Threading.Tasks.Dataflow;
 using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Core.Collections.Generic;
 
@@ -149,42 +148,44 @@ namespace dotNetTips.Spargine.Extensions
 			return list.Count(predicate);
 		}
 
-		/// <summary>
-		/// Processes the collection with the specified action in parallel processing.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="source">The source.</param>
-		/// <param name="action">The action.</param>
-		/// <param name="maxDegreeOfParallelism">The maximum degree of parallelism.</param>
-		/// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
-		/// <param name="scheduler">The scheduler.</param>
-		/// <returns>Task.</returns>
-		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
-		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
-		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> source, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
-		{
-			var options = new ExecutionDataflowBlockOptions
-			{
-				MaxDegreeOfParallelism = maxDegreeOfParallelism,
-				EnsureOrdered = ensureOrdered
-			};
+		//TODO: SEE IF THIS CAN BE MADE FASTER. IT'S SLOWER THAN A NORMAL FOR.
 
-			if (scheduler != null)
-			{
-				options.TaskScheduler = scheduler;
-			}
+		///// <summary>
+		///// Processes the collection with the specified action in parallel processing.
+		///// </summary>
+		///// <typeparam name="T"></typeparam>
+		///// <param name="source">The source.</param>
+		///// <param name="action">The action.</param>
+		///// <param name="maxDegreeOfParallelism">The maximum degree of parallelism.</param>
+		///// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
+		///// <param name="scheduler">The scheduler.</param>
+		///// <returns>Task.</returns>
+		///// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
+		//[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		//public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> source, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
+		//{
+		//	var options = new ExecutionDataflowBlockOptions
+		//	{
+		//		MaxDegreeOfParallelism = maxDegreeOfParallelism,
+		//		EnsureOrdered = ensureOrdered
+		//	};
 
-			var block = new ActionBlock<T>(action, options);
+		//	if (scheduler != null)
+		//	{
+		//		options.TaskScheduler = scheduler;
+		//	}
 
-			foreach (var item in source)
-			{
-				block.Post(item);
-			}
+		//	var block = new ActionBlock<T>(action, options);
 
-			block.Complete();
+		//	foreach (var item in source)
+		//	{
+		//		block.Post(item);
+		//	}
 
-			return block.Completion;
-		}
+		//	block.Complete();
+
+		//	return block.Completion;
+		//}
 
 		/// <summary>
 		/// Returns first item in the collection or an alternate.
@@ -245,7 +246,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var listToProcess = list.ToList();
 
-			for (var listCount = 0; listCount < listToProcess.Count; listCount++)
+			for (var listCount = 0; listCount < listToProcess.FastCount(); listCount++)
 			{
 				var local = listToProcess[listCount];
 

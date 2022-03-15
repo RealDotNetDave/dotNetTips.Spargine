@@ -41,7 +41,7 @@ namespace dotNetTips.Spargine.Core
 			// works out the derived types
 			var list = types.ToList();
 
-			for (var typeCount = 0; typeCount < list.Count; typeCount++)
+			for (var typeCount = 0; typeCount < list.LongCount(); typeCount++)
 			{
 				var type = list[typeCount];
 
@@ -253,7 +253,7 @@ namespace dotNetTips.Spargine.Core
 					var assembly = array[assemblyCount];
 					var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
 
-					if (tempTypes?.Count() > 0)
+					if (tempTypes?.LongCount() > 0)
 					{
 						if (types is null)
 						{
@@ -297,14 +297,14 @@ namespace dotNetTips.Spargine.Core
 			var list = files.ToList();
 			var foundTypes = new List<Type>();
 
-			for (var fileCount = 0; fileCount < list.Count; fileCount++)
+			for (var fileCount = 0; fileCount < list.LongCount(); fileCount++)
 			{
 				try
 				{
 					var assembly = Assembly.LoadFile(list[fileCount]);
 					var exportedTypes = assembly.ExportedTypes.Where(p => p.BaseType is not null).ToList();
 
-					if (exportedTypes?.Count() > 0)
+					if (exportedTypes?.LongCount() > 0)
 					{
 						var containsBaseType = exportedTypes.Any(p => string.Equals(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal));
 

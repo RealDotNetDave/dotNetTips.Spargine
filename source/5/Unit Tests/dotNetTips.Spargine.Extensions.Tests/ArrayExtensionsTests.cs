@@ -36,17 +36,17 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Count() == 11);
 		}
 
-		[TestMethod]
-		public void FastProcessorTest()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(100).ToArray();
+		//[TestMethod]
+		//public void FastProcessorTest()
+		//{
+		//	var people = RandomData.GeneratePersonCollection<PersonProper>(100).ToArray();
 
-			people.FastProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
+		//	people.FastProcessor((PersonProper person) =>
+		//	{
+		//		person.Address2 = "TEST DATA";
 
-			});
-		}
+		//	});
+		//}
 
 		[TestMethod]
 		public void AddIfTest()
@@ -147,11 +147,6 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(people.ContainsAny(person));
 
 			Assert.IsTrue(people.ContainsAny(people.Last()));
-
-			PersonProper[] nullPerson = null;
-
-			Assert.IsFalse(people.ContainsAny(nullPerson));
-
 		}
 
 		[TestMethod]

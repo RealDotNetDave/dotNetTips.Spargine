@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AnalysisLevel>latest</AnalysisLevel>
+		<AnalysisLevel>5.0-recommended</AnalysisLevel>
 		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2021.6.14.486</AssemblyVersion>
+		<AssemblyVersion>2022.3.6.04</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -15,9 +15,9 @@
 		<DebugSymbols>true</DebugSymbols>
 		<Description>Core types and helper methods for Spargine.</Description>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.14.486</FileVersion>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+		<FileVersion>2022.3.6.04</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -32,6 +32,7 @@
 			--JUN 2021: Third release. 2021.6.3.5
 			--SEP 2021: Forth release. New classes, methods, unit tests and benchmarking. 2021.9.4.23
 			--JAN 2022: Fifth release. New classes, methods, unit tests and benchmarking. Code cleanup. 2022.1.5.40
+			--MAR 2022: Sixth release. 2022.3.6.04
 		</PackageReleaseNotes>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -39,12 +40,12 @@
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
 		<RootNamespace>dotNetTips.Spargine.Core</RootNamespace>
-		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
-		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2022.3.6.01</Version>
+		<Version>2022.3.6.04</Version>
 		<SignAssembly>False</SignAssembly>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<ImplicitUsings>enable</ImplicitUsings>

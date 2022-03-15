@@ -39,7 +39,7 @@ namespace dotNetTips.Spargine.BenchmarkTests
 				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
 				//BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
-				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
+				// BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<DictionaryExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);

@@ -380,7 +380,7 @@ namespace dotNetTips.Spargine.Tester
 
 			lock (_lock)
 			{
-				for (var count = 0; count < length; count++)
+				for (var numberIndex = 0; numberIndex < length; numberIndex++)
 				{
 					_ = sb.Append(_random.Next(0, 9));
 				}

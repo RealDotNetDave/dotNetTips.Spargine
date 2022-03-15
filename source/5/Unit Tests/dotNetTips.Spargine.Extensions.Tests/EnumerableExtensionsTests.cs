@@ -13,11 +13,9 @@
 // ***********************************************************************
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using dotNetTips.Spargine.Core;
 using dotNetTips.Spargine.Tester;
 using dotNetTips.Spargine.Tester.Models.RefTypes;
 using dotNetTips.Spargine.Tester.Models.ValueTypes;
@@ -59,19 +57,19 @@ namespace dotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Count() == 11);
 		}
 
-		[TestMethod]
-		public void FastParallelProcessorTest()
-		{
-			var people = RandomData.GeneratePersonCollection<PersonProper>(100).AsEnumerable();
+		//[TestMethod]
+		//public void FastParallelProcessorTest()
+		//{
+		//	var people = RandomData.GeneratePersonCollection<PersonProper>(100).AsEnumerable();
 
-			var task = people.FastParallelProcessor((PersonProper person) =>
-			  {
-				  person.Address2 = "TEST DATA";
+		//	var task = people.FastParallelProcessor((PersonProper person) =>
+		//	  {
+		//		  person.Address2 = "TEST DATA";
 
-			  }, App.MaxDegreeOfParallelism());
+		//	  }, App.MaxDegreeOfParallelism());
 
-			Debug.WriteLine(task.IsCompleted);
-		}
+		//	Debug.WriteLine(task.IsCompleted);
+		//}
 
 
 		[TestMethod]

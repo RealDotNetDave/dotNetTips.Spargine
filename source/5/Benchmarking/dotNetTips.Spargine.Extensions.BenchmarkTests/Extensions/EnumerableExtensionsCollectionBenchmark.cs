@@ -19,7 +19,6 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using dotNetTips.Spargine.Benchmarking;
 using dotNetTips.Spargine.Extensions;
-using dotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 {
@@ -130,63 +129,63 @@ namespace dotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "Process Collection: FastProcessor")]
-		[BenchmarkCategory(Categories.New)]
-		public void Processor02()
-		{
-			var result = base.PersonProperList.ToArray();
+		//[Benchmark(Description = "Process Collection: FastProcessor")]
+		//[BenchmarkCategory(Categories.New)]
+		//public void Processor02()
+		//{
+		//	var result = base.PersonProperList.ToArray();
 
-			Action<PersonProper> action = (PersonProper person) => person.Address2 = "TEST DATA";
+		//	Action<PersonProper> action = (PersonProper person) => person.Address2 = "TEST DATA";
 
-			result.FastProcessor(action);
+		//	result.FastProcessor(action);
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
-		[Benchmark(Description = "FastParallelProcessor(): MaxDegree=Default")]
-		[BenchmarkCategory(Categories.Collections, Categories.New)]
-		public void Processor03()
-		{
-			var collection = PersonProperList.AsEnumerable();
+		//[Benchmark(Description = "FastParallelProcessor(): MaxDegree=Default")]
+		//[BenchmarkCategory(Categories.Collections, Categories.New)]
+		//public void Processor03()
+		//{
+		//	var collection = PersonProperList.AsEnumerable();
 
-			_ = collection.FastParallelProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
+		//	_ = collection.FastParallelProcessor((PersonProper person) =>
+		//	{
+		//		person.Address2 = "TEST DATA";
 
-			});
+		//	});
 
-			Consumer.Consume(collection.Count());
-		}
+		//	Consumer.Consume(collection.Count());
+		//}
 
-		[Benchmark(Description = "FastParallelProcessor(): MaxDegree=App.MaxDegreeOfParallelism()")]
-		[BenchmarkCategory(Categories.Collections, Categories.New)]
-		public void Processor04()
-		{
-			var collection = PersonProperList.AsEnumerable();
+		//[Benchmark(Description = "FastParallelProcessor(): MaxDegree=App.MaxDegreeOfParallelism()")]
+		//[BenchmarkCategory(Categories.Collections, Categories.New)]
+		//public void Processor04()
+		//{
+		//	var collection = PersonProperList.AsEnumerable();
 
-			_ = collection.FastParallelProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
+		//	_ = collection.FastParallelProcessor((PersonProper person) =>
+		//	{
+		//		person.Address2 = "TEST DATA";
 
-			}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism());
+		//	}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism());
 
-			Consumer.Consume(collection.Count());
-		}
+		//	Consumer.Consume(collection.Count());
+		//}
+		//[Benchmark(Description = "FastParallelProcessor():Ensure Ordered & MaxDegree=App.MaxDegreeOfParallelism()")]
+		//[BenchmarkCategory(Categories.Collections, Categories.New)]
+		//public void Processor05()
+		//{
+		//	var collection = PersonProperList.AsEnumerable();
 
-		[Benchmark(Description = "FastParallelProcessor():Ensure Ordered & MaxDegree=App.MaxDegreeOfParallelism()")]
-		[BenchmarkCategory(Categories.Collections, Categories.New)]
-		public void Processor05()
-		{
-			var collection = PersonProperList.AsEnumerable();
+		//	_ = collection.FastParallelProcessor((PersonProper person) =>
+		//	{
+		//		person.Address2 = "TEST DATA";
 
-			_ = collection.FastParallelProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
+		//	}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism(), true);
 
-			}, dotNetTips.Spargine.Core.App.MaxDegreeOfParallelism(), true);
+		//	Consumer.Consume(collection.Count());
+		//}
 
-			Consumer.Consume(collection.Count());
-		}
 
 		public override void Setup() { base.Setup(); }
 

@@ -15,13 +15,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dotNetTips.Spargine._5.AspNet
 {
-	/// <summary>
-	/// Class ResultController.
-	/// Implements the <see cref="ControllerBase" />
-	/// </summary>
-	/// <seealso cref="ControllerBase" />
-	internal class ResultController : ControllerBase
-	{
+    /// <summary>
+    /// Class ResultController.
+    /// Implements the <see cref="ControllerBase" />
+    /// </summary>
+    /// <seealso cref="ControllerBase" />
+    internal class ResultController : ControllerBase
+    {
 
-	}
+    }
 }

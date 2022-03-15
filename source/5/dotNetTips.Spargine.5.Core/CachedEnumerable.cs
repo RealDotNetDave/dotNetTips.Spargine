@@ -158,7 +158,7 @@ namespace dotNetTips.Spargine.Core
 			this.CheckEnumerable();
 
 			// if the item is in the cache, use it
-			if (index < this._cache.Count)
+			if (index < this._cache.LongCount())
 			{
 				result = this._cache[index];
 				return true;
@@ -172,7 +172,7 @@ namespace dotNetTips.Spargine.Core
 				}
 
 				// Another thread may have get the item while we were acquiring the lock
-				if (index < this._cache.Count)
+				if (index < this._cache.LongCount())
 				{
 					result = this._cache[index];
 					return true;

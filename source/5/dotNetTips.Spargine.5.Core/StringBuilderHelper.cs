@@ -92,7 +92,7 @@ namespace dotNetTips.Spargine.Core
 		public static string ToDelimitedString<TKey, TValue>([NotNull] Dictionary<TKey, TValue> list, char delimiter = ControlChars.Comma)
 		{
 			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
-			if (list?.Count == 0)
+			if (list?.LongCount() == 0)
 			{
 				return string.Empty;
 			}

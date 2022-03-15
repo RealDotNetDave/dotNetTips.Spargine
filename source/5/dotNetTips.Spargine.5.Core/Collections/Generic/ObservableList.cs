@@ -155,7 +155,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		public virtual void Clear()
 		{
-			if (this._set.Count == 0)
+			if (this._set.LongCount() == 0)
 			{
 				return;
 			}
@@ -213,7 +213,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 
 			copy.ExceptWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.LongCount() == this._set.LongCount())
 			{
 				return;
 			}
@@ -246,7 +246,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 
 			copy.IntersectWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.LongCount() == this._set.LongCount())
 			{
 				return;
 			}
@@ -371,7 +371,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 			var removed = this._set.Where(i => !copy.Contains(i)).ToList();
 			var added = copy.Where(i => !this._set.Contains(i)).ToList();
 
-			if (removed.Count == 0 && added.Count == 0)
+			if (removed.LongCount() == 0 && added.LongCount() == 0)
 			{
 				return;
 			}
@@ -401,7 +401,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic
 
 			copy.UnionWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.LongCount() == this._set.LongCount())
 			{
 				return;
 			}

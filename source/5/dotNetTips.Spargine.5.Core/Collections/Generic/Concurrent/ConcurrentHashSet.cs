@@ -325,9 +325,11 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 
 					// Try to find this item in the bucket
 					Node previous = null;
+
 					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
 						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
+
 						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
 						{
 							return false;
@@ -643,7 +645,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 
 			// We can get away w/out a lock here.
 			// The Volatile.Read ensures that the load of the fields of 'n' doesn't move before the load from buckets[i].
-			var current = Volatile.Read(ref tables._buckets[bucketNo]);
+			var current = this._tables._buckets[bucketNo];
 
 			while (current is not null)
 			{
@@ -706,6 +708,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 					}
 
 					Node previous = null;
+
 					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
 						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
@@ -722,6 +725,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 							}
 
 							tables._countPerLock[lockNo]--;
+
 							return true;
 						}
 

@@ -4,7 +4,7 @@ Open-source .NET assemblies from dotNetTips.com and David McCarter
 This repository is for the dotNetTips.Spargine code for .NET 5 (formerly in a different repositories). Please support this project by <a href="https://github.com/sponsors/RealDotNetDave" target="_blank">**clicking here**</a>. 
 Much of this code is documented on <a href="https://dotnettips.wordpress.com/category/open-source/spargine/" target="_blank">dotNetTips.com</a>.
 ## GitHub
-All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/packages?q=spargine+dotnettips" target="_blank">clicking here</a>. **Latest Official Release: v2022.1.5.40**
+All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/packages?q=spargine+dotnettips" target="_blank">clicking here</a>. **Latest Official Release: v2022.3.6.04**
 
 [![Build All](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml/badge.svg)](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml)
 ## Projects
@@ -23,7 +23,8 @@ Below are the current benchmark results for these projects. *Currently it takes 
 1. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.CachedEnumerableCollectionBenchmark-report-github.md" target="_blank">DirectoryHelper</a>
 #### dotNetTips.Spargine.Core
 1. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.CachedEnumerableCollectionBenchmark-report-github.md" target="_blank">CachedEnumerable</a>
-2. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading.ChannelQueueCollectionBenchmark-report-github.md" target="_blank">ChannelQueueCollection</a>
+2. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.Collections.
+ing.ChannelQueueCollectionBenchmark-report-github.md" target="_blank">ChannelQueueCollection</a>
 2. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.CollectionCollectionBenchmark-report-github.md" target="_blank">Collection</a>
 3. [Serialization](docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-report-github.md)
 3. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/5/dotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-report-github.md" target="_blank">EncryptionHelper</a>

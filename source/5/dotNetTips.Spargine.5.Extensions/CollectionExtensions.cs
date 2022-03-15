@@ -197,6 +197,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool DoesNotHaveItems(this ICollection collection) => collection?.Count <= 0;
 
+
 		/// <summary>
 		/// Determines whether the specified collection has items.
 		/// </summary>

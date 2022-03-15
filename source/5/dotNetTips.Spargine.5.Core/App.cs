@@ -173,7 +173,7 @@ namespace dotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns><c>true</c> if app is not running, <c>false</c> otherwise.</returns>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static bool IsRunning() => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).Count() > 0;
+		public static bool IsRunning() => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).LongCount() > 0;
 
 		/// <summary>
 		/// Checks to see if the current application is ASP.NET.

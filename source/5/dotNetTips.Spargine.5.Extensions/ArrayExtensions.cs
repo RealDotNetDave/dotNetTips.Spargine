@@ -25,22 +25,25 @@ namespace dotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ArrayExtensions
 	{
-		/// <summary>
-		/// Processes the collection with the specified action.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="action">The action.</param>
-		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
-		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
-		{
-			var collection = new ReadOnlySpan<T>(list);
 
-			for (var itemCount = 0; itemCount < collection.Length; itemCount++)
-			{
-				action(collection[itemCount]);
-			}
-		}
+		//TODO: SEE IF THIS CAN BE MADE FASTER. IT'S SLOWER THAN A NORMAL FOR.
+
+		///// <summary>
+		///// Processes the collection with the specified action.
+		///// </summary>
+		///// <typeparam name="T"></typeparam>
+		///// <param name="list">The list.</param>
+		///// <param name="action">The action.</param>
+		//[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		//public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
+		//{
+		//	var collection = new ReadOnlySpan<T>(list);
+
+		//	for (var itemIndex = 0; itemIndex < collection.Length; itemIndex++)
+		//	{
+		//		action(collection[itemIndex]);
+		//	}
+		//}
 
 		/// <summary>
 		/// Adds the specified item to the array, to the last position.
@@ -55,7 +58,7 @@ namespace dotNetTips.Spargine.Extensions
 			Validate.TryValidateParam<ArgumentReadOnlyException>(array.IsReadOnly == false, nameof(array));
 
 			var result = new T[array.Length + 1];
-			result[result.Count() - 1] = item;
+			result[result.Length - 1] = item;
 
 			array.CopyTo(result, index: 0);
 
@@ -129,7 +132,7 @@ namespace dotNetTips.Spargine.Extensions
 
 			var returnCollection = list.ToList();
 
-			for (var itemCount = 0; itemCount < items.Count(); itemCount++)
+			for (var itemCount = 0; itemCount < items.FastCount(); itemCount++)
 			{
 				var item = items[itemCount];
 
@@ -284,7 +287,7 @@ namespace dotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", modifiedOn: "11/21/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool ContainsAny<T>(this T[] array, params T[] items)
 		{
-			if (Validate.TryValidateNull(array) || items.Count() == 0)
+			if (Validate.TryValidateNull(array) || items.FastCount() == 0)
 			{
 				return false;
 			}

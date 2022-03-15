@@ -38,7 +38,7 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="collection">The collection.</param>
 		public DistinctBlockingCollection([NotNull] IEnumerable<T> collection)
 		{
-			if (collection?.Count() > 0)
+			if (collection?.LongCount() > 0)
 			{
 				foreach (var _ in collection.Where(p => p is not null).Where(item => this.TryAdd(item) is false).Select(item => new { }))
 				{
@@ -67,13 +67,6 @@ namespace dotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
 		/// to remove from memory.</remarks>
 		public T Cone() => (T)this.MemberwiseClone();
-
-		/// <summary>
-		/// Removes all.
-		/// </summary>
-		/// <param name="match">The match.</param>
-		/// <returns>System.Int32.</returns>
-		public int RemoveAll([NotNull] Predicate<T> match) => this.RemoveAll(match);
 
 		/// <summary>
 		/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />.

@@ -116,16 +116,16 @@ namespace dotNetTips.Spargine.Extensions
 				return true;
 			}
 
-			if (( Validate.TryValidateNull(list) && Validate.TryValidateNull(listToCheck) ) || list.Count != listToCheck.Count)
+			if (( Validate.TryValidateNull(list) && Validate.TryValidateNull(listToCheck) ) || list.FastCount() != listToCheck.Count)
 			{
 				return false;
 			}
 
 			var areSame = true;
 
-			for (var i = 0; i < list.Count; i++)
+			for (var itemIndex = 0; itemIndex < list.FastCount(); itemIndex++)
 			{
-				areSame &= list[i].Equals(listToCheck[i]);
+				areSame &= list[itemIndex].Equals(listToCheck[itemIndex]);
 			}
 
 			return areSame;
@@ -163,7 +163,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if the specified list has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list) => list.Count() > 0;
+		public static bool HasItems<T>([NotNull] this List<T> list) => list.FastCount() > 0;
 
 		/// <summary>
 		/// Determines whether the specified collection has items based on the Predicate.
@@ -187,7 +187,7 @@ namespace dotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = 0, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list, int count) => list.Count() == count;
+		public static bool HasItems<T>([NotNull] this List<T> list, int count) => list.FastCount() == count;
 
 
 		/// <summary>
@@ -474,6 +474,16 @@ namespace dotNetTips.Spargine.Extensions
 
 			return result;
 		}
+
+		/// <summary>
+		/// Collection count.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <returns>System.Int64.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(FastCount), "David McCarter", "3/4/2022", BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		public static long FastCount<T>([NotNull] this IList<T> collection) => collection.LongCount();
 
 		/// <summary>
 		/// Converts to <see cref="DistinctConcurrentBag{T}" />.

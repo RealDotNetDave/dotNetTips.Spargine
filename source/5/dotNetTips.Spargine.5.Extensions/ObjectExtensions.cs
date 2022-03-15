@@ -137,7 +137,7 @@ namespace dotNetTips.Spargine.Extensions
 				return;
 			}
 
-			for (var fieldCount = 0; fieldCount < list.Count; fieldCount++)
+			for (var fieldCount = 0; fieldCount < list.FastCount(); fieldCount++)
 			{
 				var value = list[fieldCount].GetValue(obj);
 
@@ -187,7 +187,7 @@ namespace dotNetTips.Spargine.Extensions
 				return;
 			}
 
-			for (var fieldCount = 0; fieldCount < fieldInfos.Count; fieldCount++)
+			for (var fieldCount = 0; fieldCount < fieldInfos.FastCount(); fieldCount++)
 			{
 				var fieldInfo = fieldInfos[fieldCount];
 				var objectValue = fieldInfo.GetValue(obj);

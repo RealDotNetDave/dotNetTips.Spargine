@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AnalysisLevel>5.0</AnalysisLevel>
 		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
-		<AssemblyVersion>2021.6.14.37924</AssemblyVersion>
+		<AssemblyVersion>2022.3.6.04</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -13,9 +13,9 @@
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>embedded</DebugType>
 		<Description>Common code to help with unit tests by generating random data.</Description>
-		<EnableNETAnalyzers>true</EnableNETAnalyzers>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2021.6.14.37924</FileVersion>
+		<EnableNETAnalyzers>False</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+		<FileVersion>2022.3.6.04</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -29,6 +29,7 @@
 			--JUN 2021: Third release. 2021.6.3.5
 			--SEP 2021: Forth release. Code cleanup. 2021.9.4.23
 			--JAN 2022: Fifth release. Removed obsolete classes. Code cleanup. 2022.1.5.40
+			--MAR 2022: Sixth release. 2022.3.6.04
 		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags></PackageTags>
@@ -39,13 +40,15 @@
 		<RootNamespace>dotNetTips.Spargine.Tester</RootNamespace>
 		<SelfContained>true</SelfContained>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2022.3.6.01</Version>
+		<Version>2022.3.6.04</Version>
 		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+		<RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

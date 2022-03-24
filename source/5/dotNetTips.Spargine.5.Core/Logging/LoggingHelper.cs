@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 03-23-2022
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary>Helper methods for use in logging.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
 using Microsoft.Extensions.Logging;
 
@@ -29,13 +30,107 @@ namespace dotNetTips.Spargine.Core.Logging
 		private static ILogger _appDomainExceptionLogger;
 
 		/// <summary>
+		/// The logger message criticle
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageCriticle = LoggerMessage.Define<string>(LogLevel.Critical, new EventId(100, "CRITICLE"), "{Message}");
+
+		/// <summary>
+		/// The logger message debug
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageDebug = LoggerMessage.Define<string>(LogLevel.Debug, new EventId(200, "DEBUG"), "{Message}");
+
+		/// <summary>
+		/// The logger message error
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageError = LoggerMessage.Define<string>(LogLevel.Error, new EventId(300, "ERROR"), "{Message}");
+
+		/// <summary>
+		/// The logger message information
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageInformation = LoggerMessage.Define<string>(LogLevel.Information, new EventId(400, "INFORMATION"), "{Message}");
+
+		/// <summary>
+		/// The logger message trace
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageTrace = LoggerMessage.Define<string>(LogLevel.Trace, new EventId(500, "TRACE"), "{Message}");
+
+		/// <summary>
+		/// The logger message warning
+		/// </summary>
+		private static readonly Action<ILogger, string, Exception> _loggerMessageWarning = LoggerMessage.Define<string>(LogLevel.Warning, new EventId(600, "WARNING"), "{Message}");
+
+		/// <summary>
 		/// Handles the FirstChanceException event of the CurrentDomain control.
 		/// </summary>
 		/// <param name="sender">The source of the event.</param>
 		/// <param name="e">The <see cref="FirstChanceExceptionEventArgs" /> instance containing the event data.</param>
 		private static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
 		{
-			_appDomainExceptionLogger.LogError(e.Exception, e.Exception.GetAllMessages());
+			_loggerMessageError(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
+		}
+
+		/// <summary>
+		/// Fasts the logger.
+		/// </summary>
+		/// <param name="logger">The logger.</param>
+		/// <param name="logLevel">The log level.</param>
+		/// <param name="message">The message.</param>
+		/// <param name="ex">The Exception.</param>
+		/// <exception cref="ArgumentNullException">logger</exception>
+		/// <exception cref="ArgumentException">'{nameof(message)}' cannot be null or empty. - message</exception>
+		[DoesNotReturn]
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(FastLogger), author: "David McCarter", createdOn: "3/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static void FastLogger([NotNull] ILogger logger, LogLevel logLevel, string message, [AllowNull] Exception ex)
+		{
+			if (logger is null)
+			{
+				throw new ArgumentNullException(nameof(logger));
+			}
+
+			if (string.IsNullOrEmpty(message))
+			{
+				throw new ArgumentException($"'{nameof(message)}' cannot be null or empty.", nameof(message));
+			}
+
+			switch (logLevel)
+			{
+				case LogLevel.Critical:
+					{
+						_loggerMessageCriticle(logger, message, ex);
+						break;
+					}
+
+				case LogLevel.Debug:
+					{
+						_loggerMessageDebug(logger, message, ex);
+						break;
+					}
+
+				case LogLevel.Error:
+					{
+						_loggerMessageError(logger, message, ex);
+						break;
+					}
+
+				case LogLevel.Trace:
+					{
+						_loggerMessageTrace(logger, message, ex);
+						break;
+					}
+
+				case LogLevel.Warning:
+					{
+						_loggerMessageWarning(logger, message, ex);
+						break;
+					}
+
+				default:
+					{
+						_loggerMessageInformation(logger, message, ex);
+						break;
+					}
+			}
 		}
 
 		/// <summary>
@@ -51,7 +146,7 @@ namespace dotNetTips.Spargine.Core.Logging
 				_appDomainExceptionLogger = logger;
 				AppDomain.CurrentDomain.FirstChanceException += CurrentDomain_FirstChanceException;
 
-				logger.LogInformation($"Starting to capture all exceptions on {DateTime.UtcNow} UTC");
+				_loggerMessageInformation(logger, $"Starting to capture all exceptions on {DateTime.UtcNow} UTC", null);
 			}
 		}
 		/// <summary>
@@ -74,11 +169,11 @@ namespace dotNetTips.Spargine.Core.Logging
 
 			var values = TypeHelper.GetPropertyValues(appInfo);
 
-			if (values.LongCount() > 0)
+			if (values?.LongCount() > 0)
 			{
-				foreach (var item in values.OrderBy(p => p.Key))
+				foreach (var item in values.OrderBy(p => p.Key).ToArray())
 				{
-					logger.LogInformation($"{nameof(AppInfo)}:{item.Key} - {item.Value}");
+					_loggerMessageInformation(logger, $"{nameof(AppInfo)}:{item.Key} - {item.Value}", null);
 				}
 			}
 		}
@@ -121,11 +216,11 @@ namespace dotNetTips.Spargine.Core.Logging
 
 			var values = TypeHelper.GetPropertyValues(computerInfo);
 
-			if (values.LongCount() > 0)
+			if (values?.LongCount() > 0)
 			{
 				foreach (var item in values.OrderBy(p => p.Key))
 				{
-					logger.LogDebug($"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
+					_loggerMessageDebug(logger, $"{nameof(ComputerInfo)}:{item.Key} - {item.Value}", null);
 				}
 			}
 		}
@@ -162,7 +257,7 @@ namespace dotNetTips.Spargine.Core.Logging
 		{
 			var collection = new List<Exception> { ex };
 
-			if (( ex.InnerException is null ) == false)
+			if (ex.InnerException is not null)
 			{
 				collection.AddRange(RetrieveAllExceptions(ex.InnerException));
 			}

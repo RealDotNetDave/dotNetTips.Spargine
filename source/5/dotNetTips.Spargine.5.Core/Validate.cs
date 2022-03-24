@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-27-2021
+// Last Modified On : 03-04-2022
 // ***********************************************************************
 // <copyright file="Validate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -400,7 +400,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries the validate a <see cref="double"/> parameter.
+		/// Tries the validate a <see cref="double" /> parameter.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="minimumValue">The minimum value.</param>
@@ -421,7 +421,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries the validate a <see cref="long"/> parameter.
+		/// Tries the validate a <see cref="long" /> parameter.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="minimumValue">The minimum value.</param>
@@ -442,7 +442,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries the validate a <see cref="decimal"/> parameter.
+		/// Tries the validate a <see cref="decimal" /> parameter.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="minimumValue">The minimum value.</param>
@@ -497,7 +497,7 @@ namespace dotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Tries the validate a <see cref="string"/> parameter.
+		/// Tries the validate a <see cref="string" /> parameter.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="stringType">Type of the string.</param>

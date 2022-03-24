@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-31-2021
+// Last Modified On : 03-23-2022
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -59,21 +59,22 @@ namespace dotNetTips.Spargine.Core.Security
 		public static string AesDecrypt([NotNull] string cipherText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create AesManaged.
-			using var aes = new AesManaged();
+			using (var aes = new AesManaged())
+			{
+				// Create a decryptor.
+				using var decryptor = aes.CreateDecryptor(key, iv);
 
-			// Create a decryptor.
-			using var decryptor = aes.CreateDecryptor(key, iv);
+				// Create the streams used for decryption.
+				using var ms = new MemoryStream(Convert.FromBase64String(cipherText));
 
-			// Create the streams used for decryption.
-			using var ms = new MemoryStream(Convert.FromBase64String(cipherText));
+				// Create crypto stream.
+				using var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read);
 
-			// Create crypto stream.
-			using var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read);
+				// Read crypto stream.
+				using var reader = new StreamReader(cs);
 
-			// Read crypto stream.
-			using var reader = new StreamReader(cs);
-
-			return reader.ReadToEnd();
+				return reader.ReadToEnd();
+			}
 		}
 
 		/// <summary>
@@ -88,27 +89,28 @@ namespace dotNetTips.Spargine.Core.Security
 		public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			// Create a new AesManaged.
-			using var aes = new AesManaged();
-
-			// Create encryptor
-			using var encryptor = aes.CreateEncryptor(key, iv);
-
-			// Create MemoryStream
-			using var ms = new MemoryStream();
-
-			// Create crypto stream using the CryptoStream class. This class is the key to encryption
-			// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
-			// to encrypt
-			using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+			using (var aes = new AesManaged())
 			{
+				// Create encryptor
+				using var encryptor = aes.CreateEncryptor(key, iv);
 
-				// Create StreamWriter and write data to a stream
-				using var sw = new StreamWriter(cs);
+				// Create MemoryStream
+				using var ms = new MemoryStream();
 
-				sw.Write(plainText);
+				// Create crypto stream using the CryptoStream class. This class is the key to encryption
+				// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
+				// to encrypt
+				using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+				{
+
+					// Create StreamWriter and write data to a stream
+					using var sw = new StreamWriter(cs);
+
+					sw.Write(plainText);
+				}
+
+				return Convert.ToBase64String(ms.ToArray());
 			}
-
-			return Convert.ToBase64String(ms.ToArray());
 		}
 
 		/// <summary>

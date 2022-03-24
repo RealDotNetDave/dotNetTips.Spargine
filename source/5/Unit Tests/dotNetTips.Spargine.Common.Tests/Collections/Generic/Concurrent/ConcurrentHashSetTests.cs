@@ -4,7 +4,7 @@
 // Created          : 12-06-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-06-2021
+// Last Modified On : 03-07-2022
 // ***********************************************************************
 // <copyright file="ConcurrentHashSetTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -90,8 +90,6 @@ namespace dotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
 			var people = new ConcurrentHashSet<PersonProper>(2, 10);
 			people.AddRange(RandomData.GeneratePersonCollection<PersonProper>(10));
 			var person = people.Last();
-
-			var test = people.Contains<PersonProper>(person);
 
 			var result = people.Contains(person);
 

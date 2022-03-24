@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-06-2021
+// Last Modified On : 03-23-2022
 // ***********************************************************************
 // <copyright file="LoggingHelperTest.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,21 +24,18 @@ namespace dotNetTips.Spartine.Core.Tests.Logging
 	[TestClass]
 	public class LoggingHelperTest
 	{
+		private readonly ILogger<LoggingHelperTest> _logger = new LoggerFactory().CreateLogger<LoggingHelperTest>();
 
 		[TestMethod]
 		public void LogApplicationInformationTest()
 		{
-			var logger = new LoggerFactory().CreateLogger<LoggingHelperTest>();
-
-			LoggingHelper.LogApplicationInformation(logger);
+			LoggingHelper.LogApplicationInformation(_logger);
 		}
 
 		[TestMethod]
 		public void LogComputerInformationTest()
 		{
-			var logger = new LoggerFactory().CreateLogger<LoggingHelperTest>();
-
-			LoggingHelper.LogComputerInformation(logger);
+			LoggingHelper.LogComputerInformation(_logger);
 		}
 
 		[TestMethod]
@@ -50,6 +47,25 @@ namespace dotNetTips.Spartine.Core.Tests.Logging
 
 			Assert.IsTrue(result.Length == 2);
 		}
+
+		[TestMethod]
+		public void FastLoggerTest()
+		{
+			var testException = new ArgumentNullException("TEST EX1.", new ArithmeticException("TEST EX2"));
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Debug, "Test Message 1", testException);
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Critical, "Test Message 2", testException);
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Error, "Test Message 3", testException);
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Information, "Test Message 4", testException);
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Trace, "Test Message 5", testException);
+
+			LoggingHelper.FastLogger(_logger, LogLevel.Warning, "Test Message 6", null);
+		}
+
 		[TestMethod]
 		public void RetrieveAllExceptionsTest()
 		{

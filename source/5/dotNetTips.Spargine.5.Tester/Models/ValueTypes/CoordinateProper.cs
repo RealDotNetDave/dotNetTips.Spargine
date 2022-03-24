@@ -4,7 +4,7 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2021
+// Last Modified On : 03-23-2022
 // ***********************************************************************
 // <copyright file="CoordinateProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -126,6 +126,7 @@ namespace dotNetTips.Spargine.Tester.Models.ValueTypes
 			}
 
 			result = this.Y.CompareTo(other.Y);
+
 			if (result != 0)
 			{
 				return result;

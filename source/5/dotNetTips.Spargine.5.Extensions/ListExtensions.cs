@@ -244,7 +244,7 @@ namespace dotNetTips.Spargine.Extensions
 		{
 			var comparer = EqualityComparer<T>.Default;
 			var hash = list.Where(t => t is not null)
-				.Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
+				.Aggregate(6551, func: (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ comparer.GetHashCode(t));
 
 			return hash;
 		}

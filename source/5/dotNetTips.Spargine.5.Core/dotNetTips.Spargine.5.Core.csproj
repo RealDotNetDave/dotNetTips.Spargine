@@ -4,7 +4,7 @@
 		<AnalysisLevel>5.0-recommended</AnalysisLevel>
 		<!--<AnalysisMode>AllEnabledByDefault</AnalysisMode>-->
 		<AssemblyName>dotNetTips.Spargine.5.Core</AssemblyName>
-		<AssemblyVersion>2022.3.6.04</AssemblyVersion>
+		<AssemblyVersion>2022.6.5.03</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -17,7 +17,7 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<EnableNETAnalyzers>False</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
-		<FileVersion>2022.3.6.04</FileVersion>
+		<FileVersion>2022.6.5.03</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -33,6 +33,7 @@
 			--SEP 2021: Forth release. New classes, methods, unit tests and benchmarking. 2021.9.4.23
 			--JAN 2022: Fifth release. New classes, methods, unit tests and benchmarking. Code cleanup. 2022.1.5.40
 			--MAR 2022: Sixth release. 2022.3.6.04
+			--MAR 2022: Added methods for faster logging. 2022.6.5.03
 		</PackageReleaseNotes>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -45,7 +46,7 @@
 		<SelfContained>true</SelfContained>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net5.0</TargetFramework>
-		<Version>2022.3.6.04</Version>
+		<Version>2022.6.5.03</Version>
 		<SignAssembly>False</SignAssembly>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<ImplicitUsings>enable</ImplicitUsings>

@@ -24,10 +24,10 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
-		<PackageReference Include="dotNetTips.Spargine.5" Version="2022.3.6.4" />
-		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2022.3.6.4" />
-		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2022.3.6.4" />
-		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2022.3.6.4" />
+		<PackageReference Include="dotNetTips.Spargine.5" Version="2022.6.5.3" />
+		<PackageReference Include="dotNetTips.Spargine.5.Core" Version="2022.6.5.3" />
+		<PackageReference Include="dotNetTips.Spargine.5.Extensions" Version="2022.6.5.3" />
+		<PackageReference Include="dotNetTips.Spargine.5.Tester" Version="2022.6.5.3" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-20220428-070234</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="4">DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-20220428-070234</th></tr>
+<tr>
+<th>AesDecrypt .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>AesEncrypt .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>SimpleSHA256Decrypt .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>SimpleEncrypt .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesDecrypt()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+0A8]
+mov       rdx,[rsi+0B8]
+mov       r8,[rsi+0B0]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,70
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
+mov       [rbp+0FF98],rsp
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rsi,rsi
+je        short 00007FFF28D55148
+cmp       dword ptr [rsi+8],0
+je        short 00007FFF28D55148
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D55115
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,285E7817108
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rsi],esi
+mov       rcx,rsi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+test      rdi,rdi
+je        short 00007FFF28D5514F
+lea       rdx,[rbp+0FFD8]
+mov       rcx,rdi
+call      System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.Byte, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<Byte>, Int32 ByRef)
+test      eax,eax
+je        short 00007FFF28D5514F
+cmp       dword ptr [rbp+0FFD8],0
+setg      al
+movzx     eax,al
+jmp       short 00007FFF28D55151
+mov       eax,1
+jmp       short 00007FFF28D550EF
+xor       eax,eax
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D55172
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorCollectionSizeIsNotValid()
+mov       rcx,rax
+mov       rdx,285E7815B08
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+test      rbx,rbx
+je        short 00007FFF28D55193
+lea       rdx,[rbp+0FFD0]
+mov       rcx,rbx
+call      System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.Byte, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<Byte>, Int32 ByRef)
+test      eax,eax
+je        short 00007FFF28D55193
+cmp       dword ptr [rbp+0FFD0],0
+setg      al
+movzx     eax,al
+jmp       short 00007FFF28D55195
+xor       eax,eax
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D551B6
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorCollectionSizeIsNotValid()
+mov       rcx,rax
+mov       rdx,285E78132C0
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+mov       rcx,offset MT_Internal.Cryptography.AesImplementation
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+mov       rcx,r14
+call      System.Security.Cryptography.Aes..ctor()
+mov       rcx,r14
+mov       [rbp+0FFC8],rcx
+mov       rdx,rdi
+call      qword ptr [7FFF28D625D8]
+mov       rcx,[rbp+0FFC8]
+mov       rdx,rbx
+call      qword ptr [7FFF28D625C8]
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D640F8]
+mov       [rbp+0FFC0],rax
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+xor       edx,edx
+call      System.IO.MemoryStream..ctor(Int32)
+mov       [rbp+0FFB8],rdi
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+xor       ecx,ecx
+mov       [rsp+20],ecx
+mov       rcx,rbx
+mov       rdx,rdi
+mov       r8,[rbp+0FFC0]
+mov       r9d,1
+call      System.Security.Cryptography.CryptoStream..ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode, Boolean)
+mov       [rbp+0FFB0],rbx
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+xor       r8d,r8d
+mov       [rsp+20],r8d
+mov       r8,285E7812578
+mov       r8,[r8]
+mov       rcx,r14
+mov       rdx,rbx
+mov       r9d,400
+call      System.IO.StreamWriter..ctor(System.IO.Stream, System.Text.Encoding, Int32, Boolean)
+mov       rcx,r14
+mov       [rbp+0FFA8],rcx
+mov       rdx,rsi
+call      qword ptr [7FFF28D59BC0]
+nop
+mov       rcx,[rbp+0FFA8]
+mov       edx,1
+call      qword ptr [7FFF28D59B28]
+mov       rcx,[rbp+0FFA8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+mov       rcx,rbx
+mov       edx,1
+call      qword ptr [7FFF28D634B0]
+mov       rcx,rbx
+call      System.GC.SuppressFinalize(System.Object)
+mov       rcx,rdi
+call      qword ptr [7FFF28D62EE8]
+mov       rcx,rax
+call      System.Convert.ToBase64String(Byte[])
+mov       rbx,rax
+mov       rcx,rdi
+mov       edx,1
+call      qword ptr [7FFF28D62E18]
+mov       rcx,rdi
+call      System.GC.SuppressFinalize(System.Object)
+nop
+mov       r8,[rbp+0FFC0]
+test      r8,r8
+je        short 00007FFF28D5530C
+mov       rcx,r8
+mov       r11,7FFF289B0538
+call      qword ptr [7FFF28D60538]
+nop
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D62640]
+mov       rax,rbx
+add       rsp,70
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFA8],0
+je        short 00007FFF28D5535D
+mov       rcx,[rbp+0FFA8]
+mov       edx,1
+call      qword ptr [7FFF28D59B28]
+mov       rcx,[rbp+0FFA8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFB0],0
+je        short 00007FFF28D553A2
+mov       rcx,[rbp+0FFB0]
+mov       edx,1
+call      qword ptr [7FFF28D634B0]
+mov       rcx,[rbp+0FFB0]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28D553E7
+mov       rcx,[rbp+0FFB8]
+mov       edx,1
+call      qword ptr [7FFF28D62E18]
+mov       rcx,[rbp+0FFB8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFC0],0
+je        short 00007FFF28D55428
+mov       rcx,[rbp+0FFC0]
+mov       r11,7FFF289B0538
+call      qword ptr [7FFF28D60538]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFC8],0
+je        short 00007FFF28D5545F
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D62640]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesEncrypt()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+0B8]
+mov       r8,[rsi+0B0]
+mov       rcx,271477B3988
+mov       rcx,[rcx]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,70
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
+mov       [rbp+0FF98],rsp
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rsi,rsi
+je        short 00007FFF28D324F8
+cmp       dword ptr [rsi+8],0
+je        short 00007FFF28D324F8
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D324C5
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,271477B4CF8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rsi],esi
+mov       rcx,rsi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+test      rdi,rdi
+je        short 00007FFF28D324FF
+lea       rdx,[rbp+0FFD8]
+mov       rcx,rdi
+call      System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.Byte, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<Byte>, Int32 ByRef)
+test      eax,eax
+je        short 00007FFF28D324FF
+cmp       dword ptr [rbp+0FFD8],0
+setg      al
+movzx     eax,al
+jmp       short 00007FFF28D32501
+mov       eax,1
+jmp       short 00007FFF28D3249F
+xor       eax,eax
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D32522
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorCollectionSizeIsNotValid()
+mov       rcx,rax
+mov       rdx,271477B36F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+test      rbx,rbx
+je        short 00007FFF28D32543
+lea       rdx,[rbp+0FFD0]
+mov       rcx,rbx
+call      System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.Byte, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<Byte>, Int32 ByRef)
+test      eax,eax
+je        short 00007FFF28D32543
+cmp       dword ptr [rbp+0FFD0],0
+setg      al
+movzx     eax,al
+jmp       short 00007FFF28D32545
+xor       eax,eax
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D32566
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorCollectionSizeIsNotValid()
+mov       rcx,rax
+mov       rdx,271377B12C8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+mov       rcx,offset MT_Internal.Cryptography.AesImplementation
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+mov       rcx,r14
+call      System.Security.Cryptography.Aes..ctor()
+mov       rcx,r14
+mov       [rbp+0FFC8],rcx
+mov       rdx,rdi
+call      qword ptr [7FFF28D325D8]
+mov       rcx,[rbp+0FFC8]
+mov       rdx,rbx
+call      qword ptr [7FFF28D325C8]
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D340F8]
+mov       [rbp+0FFC0],rax
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+xor       edx,edx
+call      System.IO.MemoryStream..ctor(Int32)
+mov       [rbp+0FFB8],rdi
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+xor       ecx,ecx
+mov       [rsp+20],ecx
+mov       rcx,rbx
+mov       rdx,rdi
+mov       r8,[rbp+0FFC0]
+mov       r9d,1
+call      System.Security.Cryptography.CryptoStream..ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode, Boolean)
+mov       [rbp+0FFB0],rbx
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+xor       r8d,r8d
+mov       [rsp+20],r8d
+mov       r8,271477B2578
+mov       r8,[r8]
+mov       rcx,r14
+mov       rdx,rbx
+mov       r9d,400
+call      System.IO.StreamWriter..ctor(System.IO.Stream, System.Text.Encoding, Int32, Boolean)
+mov       rcx,r14
+mov       [rbp+0FFA8],rcx
+mov       rdx,rsi
+call      qword ptr [7FFF28D39BC0]
+nop
+mov       rcx,[rbp+0FFA8]
+mov       edx,1
+call      qword ptr [7FFF28D39B28]
+mov       rcx,[rbp+0FFA8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+mov       rcx,rbx
+mov       edx,1
+call      qword ptr [7FFF28D334B0]
+mov       rcx,rbx
+call      System.GC.SuppressFinalize(System.Object)
+mov       rcx,rdi
+call      qword ptr [7FFF28D32EE8]
+mov       rcx,rax
+call      System.Convert.ToBase64String(Byte[])
+mov       rbx,rax
+mov       rcx,rdi
+mov       edx,1
+call      qword ptr [7FFF28D32E18]
+mov       rcx,rdi
+call      System.GC.SuppressFinalize(System.Object)
+nop
+mov       r8,[rbp+0FFC0]
+test      r8,r8
+je        short 00007FFF28D326BC
+mov       rcx,r8
+mov       r11,7FFF28990510
+call      qword ptr [7FFF28D40510]
+nop
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D42640]
+mov       rax,rbx
+add       rsp,70
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFA8],0
+je        short 00007FFF28D3270D
+mov       rcx,[rbp+0FFA8]
+mov       edx,1
+call      qword ptr [7FFF28D39B28]
+mov       rcx,[rbp+0FFA8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFB0],0
+je        short 00007FFF28D32752
+mov       rcx,[rbp+0FFB0]
+mov       edx,1
+call      qword ptr [7FFF28D334B0]
+mov       rcx,[rbp+0FFB0]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28D32797
+mov       rcx,[rbp+0FFB8]
+mov       edx,1
+call      qword ptr [7FFF28D32E18]
+mov       rcx,[rbp+0FFB8]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFC0],0
+je        short 00007FFF28D327D8
+mov       rcx,[rbp+0FFC0]
+mov       r11,7FFF28990510
+call      qword ptr [7FFF28D40510]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+push      rbp
+push      r14
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp+0FFC8],0
+je        short 00007FFF28D3280F
+mov       rcx,[rbp+0FFC8]
+call      qword ptr [7FFF28D42640]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r14
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleSHA256Decrypt()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+0C0]
+mov       rdx,170A6823178
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Decrypt(System.String, System.String)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Decrypt(System.String, System.String)
+push      rdi
+push      rsi
+sub       rsp,38
+xor       eax,eax
+mov       [rsp+28],rax
+mov       [rsp+30],rax
+mov       rsi,rcx
+mov       rdi,rdx
+test      rsi,rsi
+je        near ptr 00007FFF28D46AFE
+cmp       dword ptr [rsi+8],0
+je        near ptr 00007FFF28D46AFE
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D46A83
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,170C68220F0
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rsi],esi
+mov       rcx,rsi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+test      rdi,rdi
+je        short 00007FFF28D46B08
+cmp       dword ptr [rdi+8],0
+je        short 00007FFF28D46B08
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D46AC8
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,170C6821700
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rdi],edi
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdx,rax
+lea       rcx,[rsp+28]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.GetSHA256HashKeys(System.String)
+mov       rcx,rsi
+mov       rdx,[rsp+28]
+mov       r8,[rsp+30]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesDecrypt(System.String, Byte[], Byte[])
+nop
+add       rsp,38
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+jmp       near ptr 00007FFF28D46A5D
+mov       eax,1
+jmp       short 00007FFF28D46AA2
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleEncrypt()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,22CAAB01178
+mov       rcx,[rcx]
+mov       rdx,22CAAB01180
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Encrypt(System.String, System.String)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Encrypt(System.String, System.String)
+push      rdi
+push      rsi
+sub       rsp,38
+xor       eax,eax
+mov       [rsp+28],rax
+mov       [rsp+30],rax
+mov       rsi,rcx
+mov       rdi,rdx
+test      rsi,rsi
+je        near ptr 00007FFF28D35F0E
+cmp       dword ptr [rsi+8],0
+je        near ptr 00007FFF28D35F0E
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D35E93
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,22C9AB038E0
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rsi],esi
+mov       rcx,rsi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+test      rdi,rdi
+je        short 00007FFF28D35F18
+cmp       dword ptr [rdi+8],0
+je        short 00007FFF28D35F18
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28D35ED8
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rcx,rax
+mov       rdx,22CBAB036F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+cmp       [rdi],edi
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdx,rax
+lea       rcx,[rsp+28]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.GetSHA256HashKeys(System.String)
+mov       rcx,rsi
+mov       rdx,[rsp+28]
+mov       r8,[rsp+30]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+nop
+add       rsp,38
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+jmp       near ptr 00007FFF28D35E6D
+mov       eax,1
+jmp       short 00007FFF28D35EB2
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

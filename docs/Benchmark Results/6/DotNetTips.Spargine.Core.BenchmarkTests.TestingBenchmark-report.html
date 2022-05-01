@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark-20220428-055733</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1682 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.300-preview.22204.3
+  [Host]     : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+  Job-FLIPTB : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
+Namespace=DotNetTips.Spargine.Core.BenchmarkTests  Categories=**NEW**,Work in Progress  
+</code></pre>
+
+<table>
+<thead><tr><th>                      Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Median</th><th> Min</th><th>  Q1</th><th>  Q3</th><th> Max</th><th>       Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Ratio</th><th>RatioSD</th><th>Welch(10%)/p-values</th><th>Rank</th><th>                                                LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>MethodImplOptions:AggressiveInline</td><td>0.0012 ns</td><td>0.0027 ns</td><td>0.0024 ns</td><td>0.0006 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0008 ns</td><td>0.0072 ns</td><td>824,677,452,299.2</td><td>0.0027 ns</td><td>14.00</td><td>4.106</td><td>2.000</td><td>1.6571</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:Baseline</td><td>0.0041 ns</td><td>0.0068 ns</td><td>0.0063 ns</td><td>0.0016 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0068 ns</td><td>0.0165 ns</td><td>243,628,400,197.2</td><td>0.0068 ns</td><td>15.00</td><td>2.240</td><td>2.727</td><td>1.0328</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>Yes</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:NoInline</td><td>1.4205 ns</td><td>0.0142 ns</td><td>0.0126 ns</td><td>0.0034 ns</td><td>1.4174 ns</td><td>1.4022 ns</td><td>1.4143 ns</td><td>1.4278 ns</td><td>1.4490 ns</td><td>703,956,138.4</td><td>0.0142 ns</td><td>14.00</td><td>2.617</td><td>2.000</td><td>0.5452</td><td>?</td><td>?</td><td>?</td><td>2</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>No</td><td>97 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:NoOptimization</td><td>0.0067 ns</td><td>0.0057 ns</td><td>0.0054 ns</td><td>0.0014 ns</td><td>0.0066 ns</td><td>0.0000 ns</td><td>0.0016 ns</td><td>0.0097 ns</td><td>0.0163 ns</td><td>148,843,595,876.1</td><td>0.0057 ns</td><td>15.00</td><td>1.733</td><td>2.000</td><td>0.2039</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:PreserveSig</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>Infinity</td><td>0.0000 ns</td><td>14.00</td><td>NA</td><td>2.000</td><td>NA</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:Synchronized</td><td>14.6995 ns</td><td>0.0543 ns</td><td>0.0508 ns</td><td>0.0131 ns</td><td>14.6867 ns</td><td>14.6183 ns</td><td>14.6729 ns</td><td>14.7390 ns</td><td>14.7809 ns</td><td>68,029,403.4</td><td>0.0543 ns</td><td>15.00</td><td>1.797</td><td>2.000</td><td>0.3144</td><td>?</td><td>?</td><td>?</td><td>3</td><td>Job-FLIPTB(EvaluateOverhead=True, Server=True, Toolchain=.NET 6.0)</td><td>No</td><td>213 B</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

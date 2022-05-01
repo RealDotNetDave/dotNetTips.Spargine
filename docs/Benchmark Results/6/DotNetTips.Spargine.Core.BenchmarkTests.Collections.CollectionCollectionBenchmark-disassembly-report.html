@@ -1,0 +1,4817 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark-20220428-060134</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="8">CollectionCollectionBenchmark.'Collection.Create: Count'</th></tr>
+<tr>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F01BE2
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F01BE4
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F01BF1
+mov       edi,1
+jmp       short 00007FFF28F01C0F
+test      edx,edx
+jne       short 00007FFF28F01C0F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,196895F9AD8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F303C2
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F303C4
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F303D1
+mov       edi,1
+jmp       short 00007FFF28F303EF
+test      edx,edx
+jne       short 00007FFF28F303EF
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,1E98ECC16F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28EF0162
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28EF0164
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28EF0171
+mov       edi,1
+jmp       short 00007FFF28EF018F
+test      edx,edx
+jne       short 00007FFF28EF018F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,1DD703B16F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F12BE2
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F12BE4
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F12BF1
+mov       edi,1
+jmp       short 00007FFF28F12C0F
+test      edx,edx
+jne       short 00007FFF28F12C0F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,24D458916F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F00D32
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F00D34
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F00D41
+mov       edi,1
+jmp       short 00007FFF28F00D5F
+test      edx,edx
+jne       short 00007FFF28F00D5F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,1753C6616F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F00A22
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F00A24
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F00A31
+mov       edi,1
+jmp       short 00007FFF28F00A4F
+test      edx,edx
+jne       short 00007FFF28F00A4F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,1F0F5A49AD8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F10302
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F10304
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F10311
+mov       edi,1
+jmp       short 00007FFF28F1032F
+test      edx,edx
+jne       short 00007FFF28F1032F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,22821359AD8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       edx,[rsi+124]
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.Person, dotNetTips.Spargine.6.Tester]]
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       edi,edx
+test      edi,edi
+jle       short 00007FFF28F32BB2
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FFF28F32BB4
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FFF28F32BC1
+mov       edi,1
+jmp       short 00007FFF28F32BDF
+test      edx,edx
+jne       short 00007FFF28F32BDF
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rcx,rax
+mov       rdx,1C70C1B16F8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+mov       edx,edi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="8">CollectionCollectionBenchmark.'Collection.Create: From List-Ensure Unique'</th></tr>
+<tr>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F20615
+mov       rax,29B28981028
+mov       rbx,[rax]
+mov       rax,29B48983580
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F2062F
+jmp       short 00007FFF28F20644
+mov       rcx,rsi
+mov       rdx,7FFF28DCFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EFE499
+jmp       short 00007FFF28EFE4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FD1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,29B28981028
+mov       r8,[r8]
+mov       r9,29B28983F88
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE4F1
+jmp       short 00007FFF28EFE506
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EFE5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE523
+jmp       short 00007FFF28EFE538
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EFE54B
+jmp       short 00007FFF28EFE560
+mov       rcx,rdi
+mov       rdx,7FFF28FD1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EFE6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE596
+jmp       short 00007FFF28EFE5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EFE5CA
+jmp       short 00007FFF28EFE5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FD19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EFE5F8
+jmp       short 00007FFF28EFE60D
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+je        near ptr 00007FFF28EFE6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EFE640
+jmp       short 00007FFF28EFE655
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EFE665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EFE672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EFE6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EFE695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EFE6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+jne       near ptr 00007FFF28EFE635
+mov       rcx,rbx
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EFE720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F30635
+mov       rax,16C8A0C1028
+mov       rbx,[rax]
+mov       rax,16CAA0C3580
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F3064F
+jmp       short 00007FFF28F30664
+mov       rcx,rsi
+mov       rdx,7FFF28DDFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F0E499
+jmp       short 00007FFF28F0E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FE1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,16C8A0C1028
+mov       r8,[r8]
+mov       r9,16C8A0C7F60
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E4F1
+jmp       short 00007FFF28F0E506
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F0E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E523
+jmp       short 00007FFF28F0E538
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F0E54B
+jmp       short 00007FFF28F0E560
+mov       rcx,rdi
+mov       rdx,7FFF28FE1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F0E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E596
+jmp       short 00007FFF28F0E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F0E5CA
+jmp       short 00007FFF28F0E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F0E5F8
+jmp       short 00007FFF28F0E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+je        near ptr 00007FFF28F0E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F0E640
+jmp       short 00007FFF28F0E655
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F0E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F0E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F0E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F0E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F0E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+jne       near ptr 00007FFF28F0E635
+mov       rcx,rbx
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F0E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F40635
+mov       rax,1EFC77A1028
+mov       rbx,[rax]
+mov       rax,1EFC77A7970
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F4064F
+jmp       short 00007FFF28F40664
+mov       rcx,rsi
+mov       rdx,7FFF28DEFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F1E799
+jmp       short 00007FFF28F1E7AE
+mov       rcx,rdi
+mov       rdx,7FFF28FF1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,1EFC77A1028
+mov       r8,[r8]
+mov       r9,1EFA77A3B70
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E7F1
+jmp       short 00007FFF28F1E806
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F1E8BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E823
+jmp       short 00007FFF28F1E838
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F1E84B
+jmp       short 00007FFF28F1E860
+mov       rcx,rdi
+mov       rdx,7FFF28FF1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F1E9E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E896
+jmp       short 00007FFF28F1E8AB
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F1E8CA
+jmp       short 00007FFF28F1E8DF
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F1E8F8
+jmp       short 00007FFF28F1E90D
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+je        near ptr 00007FFF28F1E9BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F1E940
+jmp       short 00007FFF28F1E955
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F1E965
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F1E972
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F1E9A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F1E995
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F1E9A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+jne       near ptr 00007FFF28F1E935
+mov       rcx,rbx
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F1EA20
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F40615
+mov       rax,20DE12D3020
+mov       rbx,[rax]
+mov       rax,20E012D1588
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F4062F
+jmp       short 00007FFF28F40644
+mov       rcx,rsi
+mov       rdx,7FFF28DEFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F1E499
+jmp       short 00007FFF28F1E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FF1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,20DE12D3020
+mov       r8,[r8]
+mov       r9,20DE12D6F98
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E4F1
+jmp       short 00007FFF28F1E506
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F1E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E523
+jmp       short 00007FFF28F1E538
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F1E54B
+jmp       short 00007FFF28F1E560
+mov       rcx,rdi
+mov       rdx,7FFF28FF1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F1E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E596
+jmp       short 00007FFF28F1E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F1E5CA
+jmp       short 00007FFF28F1E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F1E5F8
+jmp       short 00007FFF28F1E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+je        near ptr 00007FFF28F1E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F1E640
+jmp       short 00007FFF28F1E655
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F1E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F1E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F1E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F1E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F1E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+jne       near ptr 00007FFF28F1E635
+mov       rcx,rbx
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F1E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F405F5
+mov       rax,21F4E8D1028
+mov       rbx,[rax]
+mov       rax,21F4E8D7970
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F4060F
+jmp       short 00007FFF28F40624
+mov       rcx,rsi
+mov       rdx,7FFF28DEFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F1E499
+jmp       short 00007FFF28F1E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FF1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,21F4E8D1028
+mov       r8,[r8]
+mov       r9,21F4E8D9790
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E4F1
+jmp       short 00007FFF28F1E506
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F1E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E523
+jmp       short 00007FFF28F1E538
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F1E54B
+jmp       short 00007FFF28F1E560
+mov       rcx,rdi
+mov       rdx,7FFF28FF1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F1E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E596
+jmp       short 00007FFF28F1E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F1E5CA
+jmp       short 00007FFF28F1E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FF19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F1E5F8
+jmp       short 00007FFF28F1E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+je        near ptr 00007FFF28F1E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F1E640
+jmp       short 00007FFF28F1E655
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F1E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F1E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F1E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F1E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F1E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+jne       near ptr 00007FFF28F1E635
+mov       rcx,rbx
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F1E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F40615
+mov       rax,2499E7D3020
+mov       rbx,[rax]
+mov       rax,249CE7D5560
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F4062F
+jmp       short 00007FFF28F40644
+mov       rcx,rsi
+mov       rdx,7FFF28DEFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F1E499
+jmp       short 00007FFF28F1E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FF1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,2499E7D3020
+mov       r8,[r8]
+mov       r9,2499E7D6F98
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E4F1
+jmp       short 00007FFF28F1E506
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F1E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E523
+jmp       short 00007FFF28F1E538
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F1E54B
+jmp       short 00007FFF28F1E560
+mov       rcx,rdi
+mov       rdx,7FFF28FF1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F1E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F1E596
+jmp       short 00007FFF28F1E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FF1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F1E5CA
+jmp       short 00007FFF28F1E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FF19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F1E5F8
+jmp       short 00007FFF28F1E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FF19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+je        near ptr 00007FFF28F1E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F1E640
+jmp       short 00007FFF28F1E655
+mov       rcx,rdi
+mov       rdx,7FFF28FF1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F1E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F1E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F1E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F1E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F1E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289B0630
+call      qword ptr [7FFF28F20630]
+test      eax,eax
+jne       near ptr 00007FFF28F1E635
+mov       rcx,rbx
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F1E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289B0638
+call      qword ptr [7FFF28F20638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F30655
+mov       rax,20C14E41028
+mov       rbx,[rax]
+mov       rax,20C24E43580
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F3066F
+jmp       short 00007FFF28F30684
+mov       rcx,rsi
+mov       rdx,7FFF28DDFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F0E799
+jmp       short 00007FFF28F0E7AE
+mov       rcx,rdi
+mov       rdx,7FFF28FE1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,20C14E41028
+mov       r8,[r8]
+mov       r9,20C04E41B78
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E7F1
+jmp       short 00007FFF28F0E806
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F0E8BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E823
+jmp       short 00007FFF28F0E838
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F0E84B
+jmp       short 00007FFF28F0E860
+mov       rcx,rdi
+mov       rdx,7FFF28FE1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F0E9E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E896
+jmp       short 00007FFF28F0E8AB
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F0E8CA
+jmp       short 00007FFF28F0E8DF
+mov       rcx,rdi
+mov       rdx,7FFF28FE19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F0E8F8
+jmp       short 00007FFF28F0E90D
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+je        near ptr 00007FFF28F0E9BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F0E940
+jmp       short 00007FFF28F0E955
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F0E965
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F0E972
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F0E9A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F0E995
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F0E9A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+jne       near ptr 00007FFF28F0E935
+mov       rcx,rbx
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F0EA20
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F20575
+mov       rax,2B126403020
+mov       rbx,[rax]
+mov       rax,2B126405990
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F2058F
+jmp       short 00007FFF28F205A4
+mov       rcx,rsi
+mov       rdx,7FFF28DCFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EFE499
+jmp       short 00007FFF28EFE4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FD1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,2B126403020
+mov       r8,[r8]
+mov       r9,2B106401B78
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE4F1
+jmp       short 00007FFF28EFE506
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EFE5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE523
+jmp       short 00007FFF28EFE538
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EFE54B
+jmp       short 00007FFF28EFE560
+mov       rcx,rdi
+mov       rdx,7FFF28FD1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EFE6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE596
+jmp       short 00007FFF28EFE5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EFE5CA
+jmp       short 00007FFF28EFE5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EFE5F8
+jmp       short 00007FFF28EFE60D
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+je        near ptr 00007FFF28EFE6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EFE640
+jmp       short 00007FFF28EFE655
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EFE665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EFE672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EFE6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EFE695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EFE6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+jne       near ptr 00007FFF28EFE635
+mov       rcx,rbx
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EFE720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="8">CollectionCollectionBenchmark.'Collection.Create: From List'</th></tr>
+<tr>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>.NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F10875
+mov       rax,1C7E7A83020
+mov       rbx,[rax]
+mov       rax,1C7E7A89968
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F1088F
+jmp       short 00007FFF28F108A4
+mov       rcx,rsi
+mov       rdx,7FFF28DBFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EEE799
+jmp       short 00007FFF28EEE7AE
+mov       rcx,rdi
+mov       rdx,7FFF28FC1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,1C7E7A83020
+mov       r8,[r8]
+mov       r9,1C7C7A81B78
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE7F1
+jmp       short 00007FFF28EEE806
+mov       rcx,rdi
+mov       rdx,7FFF28FC19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EEE8BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE823
+jmp       short 00007FFF28EEE838
+mov       rcx,rdi
+mov       rdx,7FFF28FC19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EEE84B
+jmp       short 00007FFF28EEE860
+mov       rcx,rdi
+mov       rdx,7FFF28FC1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EEE9E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE896
+jmp       short 00007FFF28EEE8AB
+mov       rcx,rdi
+mov       rdx,7FFF28FC19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EEE8CA
+jmp       short 00007FFF28EEE8DF
+mov       rcx,rdi
+mov       rdx,7FFF28FC1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EEE8F8
+jmp       short 00007FFF28EEE90D
+mov       rcx,rdi
+mov       rdx,7FFF28FC1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28980630
+call      qword ptr [7FFF28EF0630]
+test      eax,eax
+je        near ptr 00007FFF28EEE9BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EEE940
+jmp       short 00007FFF28EEE955
+mov       rcx,rdi
+mov       rdx,7FFF28FC1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EEE965
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EEE972
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EEE9A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EEE995
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EEE9A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28980630
+call      qword ptr [7FFF28EF0630]
+test      eax,eax
+jne       near ptr 00007FFF28EEE935
+mov       rcx,rbx
+mov       r11,7FFF28980638
+call      qword ptr [7FFF28EF0638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EEEA20
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28980638
+call      qword ptr [7FFF28EF0638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F205F5
+mov       rax,26CE0EB1028
+mov       rbx,[rax]
+mov       rax,26CF0EB1588
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F2060F
+jmp       short 00007FFF28F20624
+mov       rcx,rsi
+mov       rdx,7FFF28DCFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EFE499
+jmp       short 00007FFF28EFE4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FD1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,26CE0EB1028
+mov       r8,[r8]
+mov       r9,26CD0EB4B88
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE4F1
+jmp       short 00007FFF28EFE506
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EFE5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE523
+jmp       short 00007FFF28EFE538
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EFE54B
+jmp       short 00007FFF28EFE560
+mov       rcx,rdi
+mov       rdx,7FFF28FD1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EFE6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE596
+jmp       short 00007FFF28EFE5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FD1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EFE5CA
+jmp       short 00007FFF28EFE5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FD19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EFE5F8
+jmp       short 00007FFF28EFE60D
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+je        near ptr 00007FFF28EFE6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EFE640
+jmp       short 00007FFF28EFE655
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EFE665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EFE672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EFE6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EFE695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EFE6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+jne       near ptr 00007FFF28EFE635
+mov       rcx,rbx
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EFE720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F206D5
+mov       rax,193A33E3020
+mov       rbx,[rax]
+mov       rax,193C33E1588
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F206EF
+jmp       short 00007FFF28F20704
+mov       rcx,rsi
+mov       rdx,7FFF28DCFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EFE5B9
+jmp       short 00007FFF28EFE5CE
+mov       rcx,rdi
+mov       rdx,7FFF28FD1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,193A33E3020
+mov       r8,[r8]
+mov       r9,193C33E33A8
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE611
+jmp       short 00007FFF28EFE626
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EFE6DF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE643
+jmp       short 00007FFF28EFE658
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EFE66B
+jmp       short 00007FFF28EFE680
+mov       rcx,rdi
+mov       rdx,7FFF28FD1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EFE802
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE6B6
+jmp       short 00007FFF28EFE6CB
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EFE6EA
+jmp       short 00007FFF28EFE6FF
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EFE718
+jmp       short 00007FFF28EFE72D
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+je        near ptr 00007FFF28EFE7DB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EFE760
+jmp       short 00007FFF28EFE775
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EFE785
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EFE792
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EFE7C0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EFE7B5
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EFE7C0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+jne       near ptr 00007FFF28EFE755
+mov       rcx,rbx
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EFE840
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F30635
+mov       rax,19EFE573020
+mov       rbx,[rax]
+mov       rax,19EFE579968
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F3064F
+jmp       short 00007FFF28F30664
+mov       rcx,rsi
+mov       rdx,7FFF28DDFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F0E499
+jmp       short 00007FFF28F0E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FE1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,19EFE573020
+mov       r8,[r8]
+mov       r9,19EFE57A770
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E4F1
+jmp       short 00007FFF28F0E506
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F0E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E523
+jmp       short 00007FFF28F0E538
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F0E54B
+jmp       short 00007FFF28F0E560
+mov       rcx,rdi
+mov       rdx,7FFF28FE1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F0E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E596
+jmp       short 00007FFF28F0E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FE1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F0E5CA
+jmp       short 00007FFF28F0E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FE19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F0E5F8
+jmp       short 00007FFF28F0E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+je        near ptr 00007FFF28F0E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F0E640
+jmp       short 00007FFF28F0E655
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F0E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F0E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F0E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F0E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F0E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+jne       near ptr 00007FFF28F0E635
+mov       rcx,rbx
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F0E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F30635
+mov       rax,1D80D913020
+mov       rbx,[rax]
+mov       rax,1D82D911588
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F3064F
+jmp       short 00007FFF28F30664
+mov       rcx,rsi
+mov       rdx,7FFF28DDFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F0E499
+jmp       short 00007FFF28F0E4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FE1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,1D80D913020
+mov       r8,[r8]
+mov       r9,1D80D916F98
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E4F1
+jmp       short 00007FFF28F0E506
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F0E5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E523
+jmp       short 00007FFF28F0E538
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F0E54B
+jmp       short 00007FFF28F0E560
+mov       rcx,rdi
+mov       rdx,7FFF28FE1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F0E6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E596
+jmp       short 00007FFF28F0E5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F0E5CA
+jmp       short 00007FFF28F0E5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F0E5F8
+jmp       short 00007FFF28F0E60D
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+je        near ptr 00007FFF28F0E6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F0E640
+jmp       short 00007FFF28F0E655
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F0E665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F0E672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F0E6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F0E695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F0E6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+jne       near ptr 00007FFF28F0E635
+mov       rcx,rbx
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F0E720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F206B5
+mov       rax,17001271028
+mov       rbx,[rax]
+mov       rax,17001277970
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F206CF
+jmp       short 00007FFF28F206E4
+mov       rcx,rsi
+mov       rdx,7FFF28DCFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EFE5B9
+jmp       short 00007FFF28EFE5CE
+mov       rcx,rdi
+mov       rdx,7FFF28FD1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,17001271028
+mov       r8,[r8]
+mov       r9,16FE1273B70
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE611
+jmp       short 00007FFF28EFE626
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EFE6DF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE643
+jmp       short 00007FFF28EFE658
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EFE66B
+jmp       short 00007FFF28EFE680
+mov       rcx,rdi
+mov       rdx,7FFF28FD1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EFE802
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EFE6B6
+jmp       short 00007FFF28EFE6CB
+mov       rcx,rdi
+mov       rdx,7FFF28FD19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EFE6EA
+jmp       short 00007FFF28EFE6FF
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EFE718
+jmp       short 00007FFF28EFE72D
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+je        near ptr 00007FFF28EFE7DB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EFE760
+jmp       short 00007FFF28EFE775
+mov       rcx,rdi
+mov       rdx,7FFF28FD1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EFE785
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EFE792
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EFE7C0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EFE7B5
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EFE7C0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28990630
+call      qword ptr [7FFF28F00630]
+test      eax,eax
+jne       near ptr 00007FFF28EFE755
+mov       rcx,rbx
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EFE840
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28990638
+call      qword ptr [7FFF28F00638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F10615
+mov       rax,1C432293020
+mov       rbx,[rax]
+mov       rax,1C452291588
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F1062F
+jmp       short 00007FFF28F10644
+mov       rcx,rsi
+mov       rdx,7FFF28DBFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28EEE499
+jmp       short 00007FFF28EEE4AE
+mov       rcx,rdi
+mov       rdx,7FFF28FC1730
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,1C432293020
+mov       r8,[r8]
+mov       r9,1C432295F80
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE4F1
+jmp       short 00007FFF28EEE506
+mov       rcx,rdi
+mov       rdx,7FFF28FC1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28EEE5BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE523
+jmp       short 00007FFF28EEE538
+mov       rcx,rdi
+mov       rdx,7FFF28FC1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28EEE54B
+jmp       short 00007FFF28EEE560
+mov       rcx,rdi
+mov       rdx,7FFF28FC1C10
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28EEE6E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28EEE596
+jmp       short 00007FFF28EEE5AB
+mov       rcx,rdi
+mov       rdx,7FFF28FC1970
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28EEE5CA
+jmp       short 00007FFF28EEE5DF
+mov       rcx,rdi
+mov       rdx,7FFF28FC19B0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28EEE5F8
+jmp       short 00007FFF28EEE60D
+mov       rcx,rdi
+mov       rdx,7FFF28FC19D0
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF28980630
+call      qword ptr [7FFF28EF0630]
+test      eax,eax
+je        near ptr 00007FFF28EEE6BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28EEE640
+jmp       short 00007FFF28EEE655
+mov       rcx,rdi
+mov       rdx,7FFF28FC1A00
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28EEE665
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28EEE672
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28EEE6A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28EEE695
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28EEE6A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF28980630
+call      qword ptr [7FFF28EF0630]
+test      eax,eax
+jne       near ptr 00007FFF28EEE635
+mov       rcx,rbx
+mov       r11,7FFF28980638
+call      qword ptr [7FFF28EF0638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28EEE720
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF28980638
+call      qword ptr [7FFF28EF0638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+100]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdx,rax
+mov       rcx,offset MT_DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+mov       rcx,[rsi+10]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+test      rdi,rdi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FFF28F30895
+mov       rax,274C7083020
+mov       rbx,[rax]
+mov       rax,274C7089968
+mov       rbp,[rax]
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rdx,rbp
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FFF28F308AF
+jmp       short 00007FFF28F308C4
+mov       rcx,rsi
+mov       rdx,7FFF28DDFCF8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+
+DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].Create(System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+70]
+mov       [rbp+0FFB0],rsp
+mov       [rbp+0FFC0],rcx
+mov       rdi,rcx
+mov       rbx,rdx
+mov       esi,r8d
+mov       rcx,[rdi+30]
+mov       r14,[rcx+8]
+mov       rcx,[r14+10]
+test      rcx,rcx
+je        short 00007FFF28F0E799
+jmp       short 00007FFF28F0E7AE
+mov       rcx,rdi
+mov       rdx,7FFF28FE1798
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       r8,274C7083020
+mov       r8,[r8]
+mov       r9,274A7081B78
+mov       r9,[r9]
+mov       rdx,rbx
+call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.String, System.String)
+mov       rbx,rax
+mov       rcx,rdi
+call      CORINFO_HELP_NEWSFAST
+mov       r15,rax
+mov       rcx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor()
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E7F1
+jmp       short 00007FFF28F0E806
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax+8]
+test      r12,r12
+jne       near ptr 00007FFF28F0E8BF
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E823
+jmp       short 00007FFF28F0E838
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+mov       r12,[rax]
+mov       rcx,[r14+38]
+test      rcx,rcx
+je        short 00007FFF28F0E84B
+jmp       short 00007FFF28F0E860
+mov       rcx,rdi
+mov       rdx,7FFF28FE1C78
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_NEWSFAST
+mov       r13,rax
+test      r12,r12
+je        near ptr 00007FFF28F0E9E2
+lea       rcx,[r13+8]
+mov       rdx,r12
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,offset DotNetTips.Spargine.Core.Collections.Generic.Collection`1+<>c[[System.__Canon, System.Private.CoreLib]].<Create>b__8_0(System.__Canon)
+mov       [r13+18],rcx
+mov       rcx,[r14+18]
+test      rcx,rcx
+je        short 00007FFF28F0E896
+jmp       short 00007FFF28F0E8AB
+mov       rcx,rdi
+mov       rdx,7FFF28FE19D8
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+call      CORINFO_HELP_GETGENERICS_GCSTATIC_BASE
+lea       rcx,[rax+8]
+mov       rdx,r13
+call      CORINFO_HELP_ASSIGN_REF
+mov       r12,r13
+mov       rcx,[r14+20]
+test      rcx,rcx
+je        short 00007FFF28F0E8CA
+jmp       short 00007FFF28F0E8DF
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A18
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       rcx,rax
+mov       rdx,rbx
+mov       r8,r12
+call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+mov       rbx,rax
+mov       r11,[r14+28]
+test      r11,r11
+je        short 00007FFF28F0E8F8
+jmp       short 00007FFF28F0E90D
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A38
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+mov       rbx,rax
+mov       [rbp+0FFB8],rbx
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+je        near ptr 00007FFF28F0E9BB
+mov       r11,[r14+30]
+test      r11,r11
+je        short 00007FFF28F0E940
+jmp       short 00007FFF28F0E955
+mov       rcx,rdi
+mov       rdx,7FFF28FE1A68
+call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
+mov       r11,rax
+mov       rcx,rbx
+call      qword ptr [r11]
+cmp       esi,0FFFFFFFF
+je        short 00007FFF28F0E965
+cmp       esi,0FFFFFFFE
+jne       short 00007FFF28F0E972
+mov       rcx,r15
+mov       rdx,rax
+call      DotNetTips.Spargine.Core.Collections.Generic.Collection`1[[System.__Canon, System.Private.CoreLib]].AddIfNotExists(System.__Canon)
+jmp       short 00007FFF28F0E9A0
+inc       dword ptr [r15+14]
+mov       rcx,[r15+8]
+mov       edx,[r15+10]
+cmp       [rcx+8],edx
+jbe       short 00007FFF28F0E995
+lea       r8d,[rdx+1]
+mov       [r15+10],r8d
+mov       r8,rax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FFF28F0E9A0
+mov       rcx,r15
+mov       rdx,rax
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+mov       rcx,rbx
+mov       r11,7FFF289A0630
+call      qword ptr [7FFF28F10630]
+test      eax,eax
+jne       near ptr 00007FFF28F0E935
+mov       rcx,rbx
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+mov       rax,r15
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+call      System.MulticastDelegate.ThrowNullThisInDelegateToInstance()
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+70]
+cmp       qword ptr [rbp+0FFB8],0
+je        short 00007FFF28F0EA20
+mov       rcx,[rbp+0FFB8]
+mov       r11,7FFF289A0638
+call      qword ptr [7FFF28F10638]
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
+		<AnalysisLevel>latest-recommended</AnalysisLevel>
+		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
+		<AssemblyVersion>2022.6.5.01</AssemblyVersion>
+		<Authors>David McCarter</Authors>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
+		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+		<Company>David McCarter - dotNetTips.com</Company>
+		<Configurations>Debug;Release</Configurations>
+		<Copyright>McCarter Consulting (David McCarter)</Copyright>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>embedded</DebugType>
+		<Description>Core types and helper methods for Spargine.</Description>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<EnableNETAnalyzers>True</EnableNETAnalyzers>
+		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<FileVersion>2022.6.5.01</FileVersion>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<IncludeSymbols>true</IncludeSymbols>
+		<LangVersion>latest</LangVersion>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>--April 2022: Initial release.</PackageReleaseNotes>
+		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<PublishSingleFile>true</PublishSingleFile>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</RepositoryUrl>
+		<RootNamespace>DotNetTips.Spargine.Core</RootNamespace>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+		<SelfContained>true</SelfContained>
+		<SignAssembly>False</SignAssembly>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>2022.6.5.01</Version>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\..\appbin\</OutputPath>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Core.xml</DocumentationFile>
+		<WarningLevel>5</WarningLevel>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<WarningsAsErrors />
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\..\appbin\</OutputPath>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.5.Core.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="CachedEnumerable`1.cs" />
+		<Compile Remove="Date.cs" />
+		<Compile Remove="Security\PBKDF2PasswordHasher.cs" />
+		<Compile Remove="Serialization\BinarySerialization.cs" />
+		<Compile Remove="Web\ServiceProxy`1.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.2">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+		<PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
+		<PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
+	</Target>
+
+</Project>

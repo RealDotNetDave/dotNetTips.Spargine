@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppNameAndVersion" xml:space="preserve">
+    <value>{0} v{1}</value>
+  </data>
+  <data name="ErrorCannotBeOfTypeException" xml:space="preserve">
+    <value>{0} should never ever be Exception. Use a more specific exception from the framework or a custom Exception inheriting type Exception (only).</value>
+  </data>
+  <data name="ErrorCollectionIsNullOrHasNoItems" xml:space="preserve">
+    <value>Collection is null or has no items.</value>
+  </data>
+  <data name="ErrorCollectionSizeIsNotValid" xml:space="preserve">
+    <value>Collection size is not valid.</value>
+  </data>
+  <data name="ErrorDirectoryCannotBeNull" xml:space="preserve">
+    <value>Directory cannot be null.</value>
+  </data>
+  <data name="ErrorDirectoryDoesNotExist" xml:space="preserve">
+    <value>Directory does not exist.</value>
+  </data>
+  <data name="ErrorArgumentOutOfRange" xml:space="preserve">
+    <value>Argument is out of the given range.</value>
+  </data>
+  <data name="ErrorArgumentNull" xml:space="preserve">
+    <value>Argument cannot be null.</value>
+  </data>
+  <data name="ErrorDirectoryNotFound" xml:space="preserve">
+    <value>The specified directory was not found.</value>
+  </data>
+  <data name="ErrorInvalidArgument" xml:space="preserve">
+    <value>Invalid argument.</value>
+  </data>
+  <data name="ErrorInvalidOperation" xml:space="preserve">
+    <value>Invalid operation.</value>
+  </data>
+  <data name="ErrorNullException" xml:space="preserve">
+    <value>Exception cannot be null.</value>
+  </data>
+  <data name="ErrorReadOnlyCollection" xml:space="preserve">
+    <value>Collection cannot be read-only.</value>
+  </data>
+  <data name="ErrorFileCannotBeNull" xml:space="preserve">
+    <value>File cannot be null.</value>
+  </data>
+  <data name="ErrorFileNotFound" xml:space="preserve">
+    <value>File not found.</value>
+  </data>
+  <data name="MessageGoToDotNetTipsComForHelp" xml:space="preserve">
+    <value>Go to dotNetTips.com for help.</value>
+  </data>
+  <data name="ErrorGuidIsNullOrEmpty" xml:space="preserve">
+    <value>Guid is Nulll or Empty.</value>
+  </data>
+  <data name="ErrorInvalidEmailAddress" xml:space="preserve">
+    <value>Invalid email address.</value>
+  </data>
+  <data name="ErrorInvalidStringType" xml:space="preserve">
+    <value>Invalid StringType.</value>
+  </data>
+  <data name="ErrorInvalidType" xml:space="preserve">
+    <value>Invalid type.</value>
+  </data>
+  <data name="ErrorInvalidUrlAddress" xml:space="preserve">
+    <value>Invalid url address.</value>
+  </data>
+  <data name="ErrorParameterIsInvalid" xml:space="preserve">
+    <value>Parameter is invalid. </value>
+  </data>
+  <data name="RegexEmail" xml:space="preserve">
+    <value>\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*</value>
+  </data>
+  <data name="RegexUrl" xml:space="preserve">
+    <value>(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;amp;:/~\+#]*[\w\-\@?^=%&amp;amp;/~\+#])?</value>
+  </data>
+  <data name="ErrorStringDoesNotMatch" xml:space="preserve">
+    <value>Strings do not match.</value>
+  </data>
+  <data name="ErrorStringDoesNotMatchMaximumLength" xml:space="preserve">
+    <value>String does not match maximum length.</value>
+  </data>
+  <data name="ErrorStringDoesNotMatchMinimumLength" xml:space="preserve">
+    <value>String does not match minimum length.</value>
+  </data>
+  <data name="ErrorStringIsNullOrEmpty" xml:space="preserve">
+    <value>String is Null or Empty.</value>
+  </data>
+  <data name="ErrorStringIsNotValid" xml:space="preserve">
+    <value>String is not valid.</value>
+  </data>
+  <data name="ErrorEnumNotDefined" xml:space="preserve">
+    <value>The value is not defined in the Enum.</value>
+  </data>
+  <data name="ErrorUriCannotBeNull" xml:space="preserve">
+    <value>Uri cannot be null.</value>
+  </data>
+  <data name="UserUnknown" xml:space="preserve">
+    <value>UNKNOWN</value>
+  </data>
+  <data name="ErrorInvalidEnumType" xml:space="preserve">
+    <value>Invalid enum type.</value>
+  </data>
+  <data name="ErrorInvalidStringLengthAcceptableRange" xml:space="preserve">
+    <value>Invalid string length. Acceptable range is between {0} and {1}.</value>
+  </data>
+  <data name="ErrorObjectValidationFailed" xml:space="preserve">
+    <value>Object validation failed.</value>
+  </data>
+  <data name="ErrorInvalidValue" xml:space="preserve">
+    <value>Invalid Value.</value>
+  </data>
+  <data name="ErrorReadOnlySpanCannotBeNull" xml:space="preserve">
+    <value>ReadOnlySpan cannot be null or empty.</value>
+  </data>
+  <data name="ErrorSpanCannotBeNullOrEmpty" xml:space="preserve">
+    <value>The value of Span&lt;T&gt; cannot be empty.</value>
+  </data>
+  <data name="ErrorDateIsInvalidBasedOnMinMaxDateTime" xml:space="preserve">
+    <value>Date is invalid based on min/max range.</value>
+  </data>
+  <data name="ErrorObjectCannotBeNull" xml:space="preserve">
+    <value>Object cannot be null. Duh!</value>
+  </data>
+  <data name="ErrorDictionaryCannotBeReadOnly" xml:space="preserve">
+    <value>Dictionary cannot be null or read-only.</value>
+  </data>
+  <data name="ErrorListCannotBeReadOnly" xml:space="preserve">
+    <value>List cannot be null or read-only.</value>
+  </data>
+  <data name="ErrorArrayCannotBeReadOnly" xml:space="preserve">
+    <value>Array cannot be null or read-only.</value>
+  </data>
+  <data name="ErrorStringLengthIsTooLongOrTooShort" xml:space="preserve">
+    <value>String is null or length is too long or too short</value>
+  </data>
+  <data name="ErrorSpanIsEmpty" xml:space="preserve">
+    <value>Span is empty.</value>
+  </data>
+  <data name="ErrorGUIDIsEmpty" xml:space="preserve">
+    <value>GUID is empty.</value>
+  </data>
+  <data name="ErrorNumberIsInvalidBasedOnTheMinMaxValue" xml:space="preserve">
+    <value>Number is invalid based on the min/max range.</value>
+  </data>
+  <data name="ErrorTimeIsInvalidBasedOnTheMinMaxRange" xml:space="preserve">
+    <value>Time is invalid based on the min/max range.</value>
+  </data>
+  <data name="ErrorDateIsInvalidBasedOnTheMinMaxRange" xml:space="preserve">
+    <value>Date is invalid based on the min / max range.</value>
+  </data>
+  <data name="ErrorParameterNameIsRequired" xml:space="preserve">
+    <value>Parameter name is required.</value>
+  </data>
+</root>

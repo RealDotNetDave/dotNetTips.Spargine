@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="dotNetTips.Spargine.Tester.Models.PersonFixed" Collapsed="true">
+    <Position X="11.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAEAAICAAAAQMoECEAgAAAAoAgIAAAAAABAQAByg=</HashCode>
+      <FileName>Models\PersonFixed.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="dotNetTips.Spargine.Tester.Models.IPerson" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAEAAICAAAAAIIAAEAAAAAAoAAAAAAAAABAQAAAg=</HashCode>
+      <FileName>Models\IPerson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="dotNetTips.Spargine.Tester.Models.IPersonPlus" Collapsed="true">
+    <Position X="8.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IPersonPlus.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

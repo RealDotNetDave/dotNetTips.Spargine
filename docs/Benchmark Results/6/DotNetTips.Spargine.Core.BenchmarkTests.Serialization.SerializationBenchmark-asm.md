@@ -24,9 +24,9 @@
        sub       rsp,28
        call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,1E084009B40
+       mov       rdx,21E909A5738
        mov       rdx,[rdx]
-       mov       r8,1E084008600
+       mov       r8,21E909A3FE8
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -39,55 +39,69 @@
 ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
        push      rdi
        push      rsi
-       sub       rsp,28
-       mov       [rsp+20],rcx
+       push      rbx
+       sub       rsp,30
+       mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rdi,rdx
-       test      rdi,rdi
-       je        short M02_L02
-       cmp       dword ptr [rdi+8],0
-       je        short M02_L02
+       mov       rax,21EB09A3020
+       mov       rdi,[rax]
+       mov       rbx,rdx
+       test      rbx,rbx
+       je        short M02_L01
+       cmp       dword ptr [rbx+8],0
+       je        short M02_L01
        xor       eax,eax
 M02_L00:
        test      eax,eax
        sete      al
        movzx     eax,al
        test      eax,eax
-       jne       short M02_L01
+       jne       short M02_L05
+       jmp       short M02_L02
+M02_L01:
+       mov       eax,1
+       jmp       short M02_L00
+M02_L02:
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
        mov       rcx,rax
-       mov       rdx,1E084009CE0
+       cmp       dword ptr [rdi+8],0
+       je        short M02_L03
+       jmp       short M02_L04
+M02_L03:
+       mov       rdi,rcx
+M02_L04:
+       mov       rdx,21E909A58D8
        mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M02_L01:
-       cmp       [rdi],edi
        mov       rcx,rdi
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+M02_L05:
+       cmp       [rbx],ebx
+       mov       rcx,rbx
        mov       edx,3
        call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
        mov       rdi,rax
        mov       rcx,[rsi+10]
+       cmp       qword ptr [rcx+10],0
+       je        short M02_L06
+       mov       rcx,[rsi+10]
        mov       rcx,[rcx+10]
-       test      rcx,rcx
-       je        short M02_L03
-       jmp       short M02_L04
-M02_L02:
-       mov       eax,1
-       jmp       short M02_L00
-M02_L03:
+       jmp       short M02_L07
+M02_L06:
        mov       rcx,rsi
-       mov       rdx,7FFF28E3D608
+       mov       rdx,7FFF30A0D608
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
-M02_L04:
+M02_L07:
        mov       rdx,rdi
        xor       r8d,r8d
        call      System.Text.Json.JsonSerializer.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String, System.Text.Json.JsonSerializerOptions)
        nop
-       add       rsp,28
+       add       rsp,30
+       pop       rbx
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 148
+; Total bytes of code 185
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -116,9 +130,9 @@ M02_L04:
        sub       rsp,28
        call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,1A892631B78
+       mov       rdx,1489C771F78
        mov       rdx,[rdx]
-       mov       r8,1A8B26381E8
+       mov       r8,148AC773FE8
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -131,55 +145,69 @@ M02_L04:
 ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
        push      rdi
        push      rsi
-       sub       rsp,28
-       mov       [rsp+20],rcx
+       push      rbx
+       sub       rsp,30
+       mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rdi,rdx
-       test      rdi,rdi
-       je        short M02_L02
-       cmp       dword ptr [rdi+8],0
-       je        short M02_L02
+       mov       rax,1487C773020
+       mov       rdi,[rax]
+       mov       rbx,rdx
+       test      rbx,rbx
+       je        short M02_L01
+       cmp       dword ptr [rbx+8],0
+       je        short M02_L01
        xor       eax,eax
 M02_L00:
        test      eax,eax
        sete      al
        movzx     eax,al
        test      eax,eax
-       jne       short M02_L01
+       jne       short M02_L05
+       jmp       short M02_L02
+M02_L01:
+       mov       eax,1
+       jmp       short M02_L00
+M02_L02:
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
        mov       rcx,rax
-       mov       rdx,1A892631D18
+       cmp       dword ptr [rdi+8],0
+       je        short M02_L03
+       jmp       short M02_L04
+M02_L03:
+       mov       rdi,rcx
+M02_L04:
+       mov       rdx,1489C772118
        mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M02_L01:
-       cmp       [rdi],edi
        mov       rcx,rdi
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+M02_L05:
+       cmp       [rbx],ebx
+       mov       rcx,rbx
        mov       edx,3
        call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
        mov       rdi,rax
        mov       rcx,[rsi+10]
+       cmp       qword ptr [rcx+10],0
+       je        short M02_L06
+       mov       rcx,[rsi+10]
        mov       rcx,[rcx+10]
-       test      rcx,rcx
-       je        short M02_L03
-       jmp       short M02_L04
-M02_L02:
-       mov       eax,1
-       jmp       short M02_L00
-M02_L03:
+       jmp       short M02_L07
+M02_L06:
        mov       rcx,rsi
-       mov       rdx,7FFF28E3D608
+       mov       rdx,7FFF30A0D608
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
-M02_L04:
+M02_L07:
        mov       rdx,rdi
        xor       r8d,r8d
        call      System.Text.Json.JsonSerializer.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String, System.Text.Json.JsonSerializerOptions)
        nop
-       add       rsp,28
+       add       rsp,30
+       pop       rbx
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 148
+; Total bytes of code 185
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -208,9 +236,9 @@ M02_L04:
        sub       rsp,28
        call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,1F8C52F6B80
+       mov       rdx,2361C295F50
        mov       rdx,[rdx]
-       mov       r8,1F8F52F41F8
+       mov       r8,2361C293FE8
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -235,26 +263,40 @@ M02_L04:
        mov       [rbp+0FFA0],rsp
        mov       [rbp+0FFE0],rcx
        mov       rsi,rcx
-       mov       rdi,rdx
-       test      rdi,rdi
-       je        short M02_L02
-       cmp       dword ptr [rdi+8],0
-       je        short M02_L02
+       mov       rax,235FC293020
+       mov       rdi,[rax]
+       mov       rbx,rdx
+       test      rbx,rbx
+       je        short M02_L01
+       cmp       dword ptr [rbx+8],0
+       je        short M02_L01
        xor       eax,eax
 M02_L00:
        test      eax,eax
        sete      al
        movzx     eax,al
        test      eax,eax
-       jne       short M02_L01
+       jne       short M02_L05
+       jmp       short M02_L02
+M02_L01:
+       mov       eax,1
+       jmp       short M02_L00
+M02_L02:
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
        mov       rcx,rax
-       mov       rdx,1F8C52F6D20
+       cmp       dword ptr [rdi+8],0
+       je        short M02_L03
+       jmp       short M02_L04
+M02_L03:
+       mov       rdi,rcx
+M02_L04:
+       mov       rdx,2361C2960F0
        mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M02_L01:
-       cmp       [rdi],edi
        mov       rcx,rdi
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+M02_L05:
+       cmp       [rbx],ebx
+       mov       rcx,rbx
        mov       edx,3
        call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
        mov       rdi,rax
@@ -262,7 +304,7 @@ M02_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        test      rdi,rdi
-       je        near ptr M02_L05
+       je        near ptr M02_L07
        lea       rcx,[rbx+8]
        mov       rdx,rdi
        call      CORINFO_HELP_ASSIGN_REF
@@ -270,11 +312,6 @@ M02_L01:
        mov       [rbx+14],ecx
        mov       rcx,rbx
        mov       [rbp+0FFB0],rcx
-       jmp       short M02_L03
-M02_L02:
-       mov       eax,1
-       jmp       short M02_L00
-M02_L03:
        call      System.Xml.XmlReader.Create(System.IO.TextReader)
        mov       [rbp+0FFA8],rax
        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
@@ -306,12 +343,12 @@ M02_L03:
        mov       rsi,rax
        mov       rax,[rbp+0FFA8]
        test      rax,rax
-       je        short M02_L04
+       je        short M02_L06
        mov       rcx,rax
-       mov       r11,7FFF289C0618
-       call      qword ptr [7FFF28F80618]
+       mov       r11,7FFF305705C0
+       call      qword ptr [7FFF30B305C0]
        nop
-M02_L04:
+M02_L06:
        xor       ecx,ecx
        mov       rax,[rbp+0FFB0]
        mov       [rax+8],rcx
@@ -319,7 +356,7 @@ M02_L04:
        mov       [rax+14],ecx
        mov       rcx,rax
        mov       edx,1
-       call      qword ptr [7FFF28F8DB78]
+       call      qword ptr [7FFF30B2DB78]
        mov       rcx,[rbp+0FFB0]
        call      System.GC.SuppressFinalize(System.Object)
        mov       rax,rsi
@@ -329,7 +366,7 @@ M02_L04:
        pop       rdi
        pop       rbp
        ret
-M02_L05:
+M02_L07:
        mov       ecx,11
        call      System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)
        int       3
@@ -343,11 +380,11 @@ M02_L05:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+80]
        cmp       qword ptr [rbp+0FFA8],0
-       je        short M02_L06
+       je        short M02_L08
        mov       rcx,[rbp+0FFA8]
-       mov       r11,7FFF289C0618
-       call      qword ptr [7FFF28F80618]
-M02_L06:
+       mov       r11,7FFF305705C0
+       call      qword ptr [7FFF30B305C0]
+M02_L08:
        nop
        add       rsp,28
        pop       rbx
@@ -365,7 +402,7 @@ M02_L06:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+80]
        cmp       qword ptr [rbp+0FFB0],0
-       je        short M02_L07
+       je        short M02_L09
        xor       ecx,ecx
        mov       rax,[rbp+0FFB0]
        mov       [rax+8],rcx
@@ -373,10 +410,10 @@ M02_L06:
        mov       [rax+14],ecx
        mov       rcx,rax
        mov       edx,1
-       call      qword ptr [7FFF28F8DB78]
+       call      qword ptr [7FFF30B2DB78]
        mov       rcx,[rbp+0FFB0]
        call      System.GC.SuppressFinalize(System.Object)
-M02_L07:
+M02_L09:
        nop
        add       rsp,28
        pop       rbx
@@ -384,7 +421,7 @@ M02_L07:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 540
+; Total bytes of code 567
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -413,9 +450,9 @@ M02_L07:
        sub       rsp,28
        call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,1B4FF125B68
+       mov       rdx,1E2A09C3F70
        mov       rdx,[rdx]
-       mov       r8,1B52F1241F8
+       mov       r8,1E2B09C3FE8
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -440,26 +477,40 @@ M02_L07:
        mov       [rbp+0FFA0],rsp
        mov       [rbp+0FFE0],rcx
        mov       rsi,rcx
-       mov       rdi,rdx
-       test      rdi,rdi
-       je        short M02_L02
-       cmp       dword ptr [rdi+8],0
-       je        short M02_L02
+       mov       rax,1E2809C1028
+       mov       rdi,[rax]
+       mov       rbx,rdx
+       test      rbx,rbx
+       je        short M02_L01
+       cmp       dword ptr [rbx+8],0
+       je        short M02_L01
        xor       eax,eax
 M02_L00:
        test      eax,eax
        sete      al
        movzx     eax,al
        test      eax,eax
-       jne       short M02_L01
+       jne       short M02_L05
+       jmp       short M02_L02
+M02_L01:
+       mov       eax,1
+       jmp       short M02_L00
+M02_L02:
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
        mov       rcx,rax
-       mov       rdx,1B4FF125D08
+       cmp       dword ptr [rdi+8],0
+       je        short M02_L03
+       jmp       short M02_L04
+M02_L03:
+       mov       rdi,rcx
+M02_L04:
+       mov       rdx,1E2A09C4110
        mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M02_L01:
-       cmp       [rdi],edi
        mov       rcx,rdi
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+M02_L05:
+       cmp       [rbx],ebx
+       mov       rcx,rbx
        mov       edx,3
        call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
        mov       rdi,rax
@@ -467,7 +518,7 @@ M02_L01:
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        test      rdi,rdi
-       je        near ptr M02_L05
+       je        near ptr M02_L07
        lea       rcx,[rbx+8]
        mov       rdx,rdi
        call      CORINFO_HELP_ASSIGN_REF
@@ -475,11 +526,6 @@ M02_L01:
        mov       [rbx+14],ecx
        mov       rcx,rbx
        mov       [rbp+0FFB0],rcx
-       jmp       short M02_L03
-M02_L02:
-       mov       eax,1
-       jmp       short M02_L00
-M02_L03:
        call      System.Xml.XmlReader.Create(System.IO.TextReader)
        mov       [rbp+0FFA8],rax
        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
@@ -511,12 +557,12 @@ M02_L03:
        mov       rsi,rax
        mov       rax,[rbp+0FFA8]
        test      rax,rax
-       je        short M02_L04
+       je        short M02_L06
        mov       rcx,rax
-       mov       r11,7FFF289B0608
-       call      qword ptr [7FFF28F60608]
+       mov       r11,7FFF30580608
+       call      qword ptr [7FFF30B30608]
        nop
-M02_L04:
+M02_L06:
        xor       ecx,ecx
        mov       rax,[rbp+0FFB0]
        mov       [rax+8],rcx
@@ -524,7 +570,7 @@ M02_L04:
        mov       [rax+14],ecx
        mov       rcx,rax
        mov       edx,1
-       call      qword ptr [7FFF28F5DB78]
+       call      qword ptr [7FFF30B2DB78]
        mov       rcx,[rbp+0FFB0]
        call      System.GC.SuppressFinalize(System.Object)
        mov       rax,rsi
@@ -534,7 +580,7 @@ M02_L04:
        pop       rdi
        pop       rbp
        ret
-M02_L05:
+M02_L07:
        mov       ecx,11
        call      System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)
        int       3
@@ -548,11 +594,11 @@ M02_L05:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+80]
        cmp       qword ptr [rbp+0FFA8],0
-       je        short M02_L06
+       je        short M02_L08
        mov       rcx,[rbp+0FFA8]
-       mov       r11,7FFF289B0608
-       call      qword ptr [7FFF28F60608]
-M02_L06:
+       mov       r11,7FFF30580608
+       call      qword ptr [7FFF30B30608]
+M02_L08:
        nop
        add       rsp,28
        pop       rbx
@@ -570,7 +616,7 @@ M02_L06:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+80]
        cmp       qword ptr [rbp+0FFB0],0
-       je        short M02_L07
+       je        short M02_L09
        xor       ecx,ecx
        mov       rax,[rbp+0FFB0]
        mov       [rax+8],rcx
@@ -578,10 +624,10 @@ M02_L06:
        mov       [rax+14],ecx
        mov       rcx,rax
        mov       edx,1
-       call      qword ptr [7FFF28F5DB78]
+       call      qword ptr [7FFF30B2DB78]
        mov       rcx,[rbp+0FFB0]
        call      System.GC.SuppressFinalize(System.Object)
-M02_L07:
+M02_L09:
        nop
        add       rsp,28
        pop       rbx
@@ -589,7 +635,7 @@ M02_L07:
        pop       rdi
        pop       rbp
        ret
-; Total bytes of code 540
+; Total bytes of code 567
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -613,88 +659,116 @@ M02_L07:
 ```
 ```assembly
 ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+       push      r15
+       push      r14
        push      rdi
        push      rsi
+       push      rbp
        push      rbx
-       sub       rsp,30
+       sub       rsp,28
        xor       eax,eax
-       mov       [rsp+28],rax
-       mov       rsi,rcx
-       test      rsi,rsi
+       mov       [rsp+20],rax
+       mov       rax,1F129F63020
+       mov       rsi,[rax]
+       mov       rdi,rcx
+       mov       rax,1F149F61588
+       mov       rbx,[rax]
+       test      rdi,rdi
        setne     al
        movzx     eax,al
        test      eax,eax
-       jne       near ptr M01_L00
+       jne       near ptr M01_L05
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       rdi,rax
-       mov       ecx,5
+       mov       rbp,rax
+       cmp       dword ptr [rbx+8],0
+       je        short M01_L01
+       mov       r14d,[rbx+8]
+       lea       ecx,[r14+2]
        call      System.String.FastAllocateString(Int32)
-       mov       rbx,rax
-       cmp       dword ptr [rbx+8],3
-       jl        near ptr M01_L07
-       lea       rcx,[rbx+0C]
-       mov       rdx,18A71031588
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,6
+       mov       r15,rax
+       mov       r8d,[rbx+8]
+       cmp       r8d,[r15+8]
+       jg        near ptr M01_L12
+       lea       rcx,[r15+0C]
+       lea       rdx,[rbx+0C]
+       mov       r8d,[rbx+8]
+       add       r8,r8
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       ecx,[rbx+8]
-       sub       ecx,3
+       mov       ecx,[r15+8]
+       sub       ecx,r14d
        cmp       ecx,2
-       jl        near ptr M01_L08
-       lea       rcx,[rbx+0C]
-       add       rcx,6
-       mov       rdx,18A51033090
+       jl        near ptr M01_L13
+       lea       rcx,[r15+0C]
+       movsxd    rdx,r14d
+       lea       rcx,[rcx+rdx*2]
+       mov       rdx,1F129F63090
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,4
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       rcx,rbx
-       mov       rdx,rdi
+       mov       rcx,r15
+M01_L00:
+       cmp       dword ptr [rsi+8],0
+       je        short M01_L03
+       jmp       short M01_L02
+M01_L01:
+       mov       rcx,1F129F63090
+       mov       rcx,[rcx]
+       jmp       short M01_L00
+M01_L02:
+       mov       rdx,rsi
        call      System.String.Concat(System.String, System.String)
+       jmp       short M01_L04
+M01_L03:
+       mov       rdx,rbp
+       call      System.String.Concat(System.String, System.String)
+M01_L04:
        mov       rcx,rax
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       [rsp+28],rsi
+M01_L05:
+       mov       [rsp+20],rdi
        mov       rcx,offset MT_System.Object
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,18A71034A30
+       mov       rcx,1F159F64D30
        cmp       rax,[rcx]
-       jne       short M01_L01
-       cmp       qword ptr [rsp+28],0
-       je        short M01_L01
-       mov       rcx,[rsp+28]
+       jne       short M01_L06
+       cmp       qword ptr [rsp+20],0
+       je        short M01_L06
+       mov       rcx,[rsp+20]
        call      System.Object.GetType()
-M01_L01:
+M01_L06:
        mov       rsi,rax
-       mov       rcx,18A71034900
+       mov       rcx,1F159F64C00
        mov       rdi,[rcx]
        cmp       byte ptr [rdi+85],0
-       jne       short M01_L02
+       jne       short M01_L07
        mov       rcx,rdi
        call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
-M01_L02:
+M01_L07:
        mov       rbx,[rdi+20]
        test      rbx,rbx
-       je        short M01_L06
+       je        short M01_L11
        mov       rcx,[rbx+80]
-M01_L03:
+M01_L08:
        mov       rdx,rsi
        call      System.Type.op_Inequality(System.Type, System.Type)
        test      eax,eax
-       jne       short M01_L05
-M01_L04:
+       jne       short M01_L10
+M01_L09:
        mov       r8,rbx
-       lea       rdx,[rsp+28]
+       lea       rdx,[rsp+20]
        mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
        call      System.Text.Json.JsonSerializer.WriteStringUsingSerializer[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
        nop
-       add       rsp,30
+       add       rsp,28
        pop       rbx
+       pop       rbp
        pop       rsi
        pop       rdi
+       pop       r14
+       pop       r15
        ret
-M01_L05:
+M01_L10:
        mov       rcx,rdi
        mov       rdx,rsi
        call      System.Text.Json.JsonSerializerOptions.GetOrAddClass(System.Type)
@@ -702,11 +776,11 @@ M01_L05:
        lea       rcx,[rdi+20]
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
-       jmp       short M01_L04
-M01_L06:
+       jmp       short M01_L09
+M01_L11:
        xor       ecx,ecx
-       jmp       short M01_L03
-M01_L07:
+       jmp       short M01_L08
+M01_L12:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -714,7 +788,7 @@ M01_L07:
        call      System.IndexOutOfRangeException..ctor()
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
-M01_L08:
+M01_L13:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -723,7 +797,7 @@ M01_L08:
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
        int       3
-; Total bytes of code 414
+; Total bytes of code 488
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -747,88 +821,116 @@ M01_L08:
 ```
 ```assembly
 ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+       push      r15
+       push      r14
        push      rdi
        push      rsi
+       push      rbp
        push      rbx
-       sub       rsp,30
+       sub       rsp,28
        xor       eax,eax
-       mov       [rsp+28],rax
-       mov       rsi,rcx
-       test      rsi,rsi
+       mov       [rsp+20],rax
+       mov       rax,27F7C9C3020
+       mov       rsi,[rax]
+       mov       rdi,rcx
+       mov       rax,27F7C9C9968
+       mov       rbx,[rax]
+       test      rdi,rdi
        setne     al
        movzx     eax,al
        test      eax,eax
-       jne       near ptr M01_L00
+       jne       near ptr M01_L05
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       rdi,rax
-       mov       ecx,5
+       mov       rbp,rax
+       cmp       dword ptr [rbx+8],0
+       je        short M01_L01
+       mov       r14d,[rbx+8]
+       lea       ecx,[r14+2]
        call      System.String.FastAllocateString(Int32)
-       mov       rbx,rax
-       cmp       dword ptr [rbx+8],3
-       jl        near ptr M01_L07
-       lea       rcx,[rbx+0C]
-       mov       rdx,19D2EE81588
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,6
+       mov       r15,rax
+       mov       r8d,[rbx+8]
+       cmp       r8d,[r15+8]
+       jg        near ptr M01_L12
+       lea       rcx,[r15+0C]
+       lea       rdx,[rbx+0C]
+       mov       r8d,[rbx+8]
+       add       r8,r8
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       ecx,[rbx+8]
-       sub       ecx,3
+       mov       ecx,[r15+8]
+       sub       ecx,r14d
        cmp       ecx,2
-       jl        near ptr M01_L08
-       lea       rcx,[rbx+0C]
-       add       rcx,6
-       mov       rdx,19D3EE83090
+       jl        near ptr M01_L13
+       lea       rcx,[r15+0C]
+       movsxd    rdx,r14d
+       lea       rcx,[rcx+rdx*2]
+       mov       rdx,27F7C9C3090
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,4
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       rcx,rbx
-       mov       rdx,rdi
+       mov       rcx,r15
+M01_L00:
+       cmp       dword ptr [rsi+8],0
+       je        short M01_L03
+       jmp       short M01_L02
+M01_L01:
+       mov       rcx,27F7C9C3090
+       mov       rcx,[rcx]
+       jmp       short M01_L00
+M01_L02:
+       mov       rdx,rsi
        call      System.String.Concat(System.String, System.String)
+       jmp       short M01_L04
+M01_L03:
+       mov       rdx,rbp
+       call      System.String.Concat(System.String, System.String)
+M01_L04:
        mov       rcx,rax
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       [rsp+28],rsi
+M01_L05:
+       mov       [rsp+20],rdi
        mov       rcx,offset MT_System.Object
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,19D1EE84218
+       mov       rcx,27F7C9C9138
        cmp       rax,[rcx]
-       jne       short M01_L01
-       cmp       qword ptr [rsp+28],0
-       je        short M01_L01
-       mov       rcx,[rsp+28]
+       jne       short M01_L06
+       cmp       qword ptr [rsp+20],0
+       je        short M01_L06
+       mov       rcx,[rsp+20]
        call      System.Object.GetType()
-M01_L01:
+M01_L06:
        mov       rsi,rax
-       mov       rcx,19D1EE840E8
+       mov       rcx,27F7C9C9008
        mov       rdi,[rcx]
        cmp       byte ptr [rdi+85],0
-       jne       short M01_L02
+       jne       short M01_L07
        mov       rcx,rdi
        call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
-M01_L02:
+M01_L07:
        mov       rbx,[rdi+20]
        test      rbx,rbx
-       je        short M01_L06
+       je        short M01_L11
        mov       rcx,[rbx+80]
-M01_L03:
+M01_L08:
        mov       rdx,rsi
        call      System.Type.op_Inequality(System.Type, System.Type)
        test      eax,eax
-       jne       short M01_L05
-M01_L04:
+       jne       short M01_L10
+M01_L09:
        mov       r8,rbx
-       lea       rdx,[rsp+28]
+       lea       rdx,[rsp+20]
        mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
        call      System.Text.Json.JsonSerializer.WriteStringUsingSerializer[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
        nop
-       add       rsp,30
+       add       rsp,28
        pop       rbx
+       pop       rbp
        pop       rsi
        pop       rdi
+       pop       r14
+       pop       r15
        ret
-M01_L05:
+M01_L10:
        mov       rcx,rdi
        mov       rdx,rsi
        call      System.Text.Json.JsonSerializerOptions.GetOrAddClass(System.Type)
@@ -836,11 +938,11 @@ M01_L05:
        lea       rcx,[rdi+20]
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
-       jmp       short M01_L04
-M01_L06:
+       jmp       short M01_L09
+M01_L11:
        xor       ecx,ecx
-       jmp       short M01_L03
-M01_L07:
+       jmp       short M01_L08
+M01_L12:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -848,7 +950,7 @@ M01_L07:
        call      System.IndexOutOfRangeException..ctor()
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
-M01_L08:
+M01_L13:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -857,7 +959,7 @@ M01_L08:
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
        int       3
-; Total bytes of code 414
+; Total bytes of code 488
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -882,59 +984,84 @@ M01_L08:
 ```assembly
 ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
        push      rbp
+       push      r15
+       push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbx
-       sub       rsp,48
-       lea       rbp,[rsp+60]
+       sub       rsp,50
+       lea       rbp,[rsp+80]
        xor       eax,eax
-       mov       [rbp+0FFE0],rax
-       mov       [rbp+0FFD0],rsp
+       mov       [rbp+0FFC8],rax
+       mov       [rbp+0FFB0],rsp
        mov       rsi,rcx
+       mov       rax,2307E163020
+       mov       rdi,[rax]
+       mov       rax,2309E161588
+       mov       rbx,[rax]
        test      rsi,rsi
        setne     al
        movzx     eax,al
        test      eax,eax
-       jne       near ptr M01_L00
+       jne       near ptr M01_L05
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       rdi,rax
-       mov       ecx,5
+       mov       r14,rax
+       cmp       dword ptr [rbx+8],0
+       je        short M01_L01
+       mov       r15d,[rbx+8]
+       lea       ecx,[r15+2]
        call      System.String.FastAllocateString(Int32)
-       mov       rbx,rax
-       cmp       dword ptr [rbx+8],3
-       jl        near ptr M01_L02
-       lea       rcx,[rbx+0C]
-       mov       rdx,27C10DA9968
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,6
+       mov       r12,rax
+       mov       r8d,[rbx+8]
+       cmp       r8d,[r12+8]
+       jg        near ptr M01_L07
+       lea       rcx,[r12+0C]
+       lea       rdx,[rbx+0C]
+       mov       r8d,[rbx+8]
+       add       r8,r8
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       ecx,[rbx+8]
-       sub       ecx,3
+       mov       ecx,[r12+8]
+       sub       ecx,r15d
        cmp       ecx,2
-       jl        near ptr M01_L03
-       lea       rcx,[rbx+0C]
-       add       rcx,6
-       mov       rdx,27C10DA3090
+       jl        near ptr M01_L08
+       lea       rcx,[r12+0C]
+       movsxd    rdx,r15d
+       lea       rcx,[rcx+rdx*2]
+       mov       rdx,2307E163090
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,4
        call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
-       mov       rcx,rbx
+       mov       rcx,r12
+M01_L00:
+       cmp       dword ptr [rdi+8],0
+       je        short M01_L03
+       jmp       short M01_L02
+M01_L01:
+       mov       rcx,2307E163090
+       mov       rcx,[rcx]
+       jmp       short M01_L00
+M01_L02:
        mov       rdx,rdi
        call      System.String.Concat(System.String, System.String)
+       jmp       short M01_L04
+M01_L03:
+       mov       rdx,r14
+       call      System.String.Concat(System.String, System.String)
+M01_L04:
        mov       rcx,rax
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
+M01_L05:
        mov       rcx,offset MT_System.IO.StringWriter
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       rcx,rdi
        call      System.IO.StringWriter..ctor()
        mov       rcx,rdi
-       mov       [rbp+0FFE0],rcx
+       mov       [rbp+0FFC8],rcx
        call      System.Xml.XmlWriter.Create(System.IO.TextWriter)
-       mov       [rbp+0FFD8],rax
+       mov       [rbp+0FFC0],rax
        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
@@ -948,37 +1075,40 @@ M01_L00:
        mov       [rsp+20],rcx
        mov       [rsp+28],rcx
        mov       rcx,rdi
-       mov       rdx,[rbp+0FFD8]
+       mov       rdx,[rbp+0FFC0]
        mov       r8,rsi
        xor       r9d,r9d
        call      System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter, System.Object, System.Xml.Serialization.XmlSerializerNamespaces, System.String, System.String)
-       mov       rcx,[rbp+0FFE0]
+       mov       rcx,[rbp+0FFC8]
        mov       rcx,[rcx+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFF28F52E80]
-       mov       rsi,rax
-       mov       rdx,[rbp+0FFD8]
+       call      qword ptr [7FFF30B22E80]
+       mov       rdi,rax
+       mov       rdx,[rbp+0FFC0]
        test      rdx,rdx
-       je        short M01_L01
+       je        short M01_L06
        mov       rcx,rdx
-       mov       r11,7FFF28990618
-       call      qword ptr [7FFF28F50618]
+       mov       r11,7FFF30570618
+       call      qword ptr [7FFF30B20618]
        nop
-M01_L01:
-       mov       rcx,[rbp+0FFE0]
+M01_L06:
+       mov       rcx,[rbp+0FFC8]
        mov       byte ptr [rcx+28],0
        mov       edx,1
-       call      qword ptr [7FFF28F4D038]
-       mov       rcx,[rbp+0FFE0]
+       call      qword ptr [7FFF30B1D038]
+       mov       rcx,[rbp+0FFC8]
        call      System.GC.SuppressFinalize(System.Object)
-       mov       rax,rsi
-       add       rsp,48
+       mov       rax,rdi
+       add       rsp,50
        pop       rbx
        pop       rsi
        pop       rdi
+       pop       r12
+       pop       r14
+       pop       r15
        pop       rbp
        ret
-M01_L02:
+M01_L07:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -986,7 +1116,7 @@ M01_L02:
        call      System.IndexOutOfRangeException..ctor()
        mov       rcx,rsi
        call      CORINFO_HELP_THROW
-M01_L03:
+M01_L08:
        mov       rcx,offset MT_System.IndexOutOfRangeException
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
@@ -996,51 +1126,63 @@ M01_L03:
        call      CORINFO_HELP_THROW
        int       3
        push      rbp
+       push      r15
+       push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbx
-       sub       rsp,38
+       sub       rsp,40
        mov       rbp,[rcx+30]
        mov       [rsp+30],rbp
-       lea       rbp,[rbp+60]
-       cmp       qword ptr [rbp+0FFD8],0
-       je        short M01_L04
-       mov       rcx,[rbp+0FFD8]
-       mov       r11,7FFF28990618
-       call      qword ptr [7FFF28F50618]
-M01_L04:
+       lea       rbp,[rbp+80]
+       cmp       qword ptr [rbp+0FFC0],0
+       je        short M01_L09
+       mov       rcx,[rbp+0FFC0]
+       mov       r11,7FFF30570618
+       call      qword ptr [7FFF30B20618]
+M01_L09:
        nop
-       add       rsp,38
+       add       rsp,40
        pop       rbx
        pop       rsi
        pop       rdi
+       pop       r12
+       pop       r14
+       pop       r15
        pop       rbp
        ret
        push      rbp
+       push      r15
+       push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbx
-       sub       rsp,38
+       sub       rsp,40
        mov       rbp,[rcx+30]
        mov       [rsp+30],rbp
-       lea       rbp,[rbp+60]
-       cmp       qword ptr [rbp+0FFE0],0
-       je        short M01_L05
-       mov       rcx,[rbp+0FFE0]
+       lea       rbp,[rbp+80]
+       cmp       qword ptr [rbp+0FFC8],0
+       je        short M01_L10
+       mov       rcx,[rbp+0FFC8]
        mov       byte ptr [rcx+28],0
        mov       edx,1
-       call      qword ptr [7FFF28F4D038]
-       mov       rcx,[rbp+0FFE0]
+       call      qword ptr [7FFF30B1D038]
+       mov       rcx,[rbp+0FFC8]
        call      System.GC.SuppressFinalize(System.Object)
-M01_L05:
+M01_L10:
        nop
-       add       rsp,38
+       add       rsp,40
        pop       rbx
        pop       rsi
        pop       rdi
+       pop       r12
+       pop       r14
+       pop       r15
        pop       rbp
        ret
-; Total bytes of code 569
+; Total bytes of code 682
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -1068,9 +1210,9 @@ M01_L05:
        sub       rsp,28
        call      DotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
        mov       rcx,rax
-       mov       rdx,20F89C73758
+       mov       rdx,27894EA1F78
        mov       rdx,[rdx]
-       mov       r8,20FA9C76618
+       mov       r8,278A4EA3FF8
        mov       r8,[r8]
        mov       rax,[rax]
        mov       rax,[rax+48]
@@ -1081,38 +1223,53 @@ M01_L05:
 ```
 ```assembly
 ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System.String)
+       push      rdi
        push      rsi
-       sub       rsp,20
-       mov       rsi,rcx
-       test      rsi,rsi
-       je        short M02_L02
-       cmp       dword ptr [rsi+8],0
-       je        short M02_L02
+       sub       rsp,28
+       mov       rax,27874EA3020
+       mov       rsi,[rax]
+       mov       rdi,rcx
+       test      rdi,rdi
+       je        short M02_L01
+       cmp       dword ptr [rdi+8],0
+       je        short M02_L01
        xor       eax,eax
 M02_L00:
        test      eax,eax
        sete      al
        movzx     eax,al
        test      eax,eax
-       jne       short M02_L01
+       jne       short M02_L05
+       jmp       short M02_L02
+M02_L01:
+       mov       eax,1
+       jmp       short M02_L00
+M02_L02:
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
        mov       rcx,rax
-       mov       rdx,20FA9C777F0
+       cmp       dword ptr [rsi+8],0
+       je        short M02_L03
+       jmp       short M02_L04
+M02_L03:
+       mov       rsi,rcx
+M02_L04:
+       mov       rdx,27894EA1408
        mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M02_L01:
-       cmp       [rsi],esi
        mov       rcx,rsi
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+M02_L05:
+       cmp       [rdi],edi
+       mov       rcx,rdi
        mov       edx,3
        call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
        mov       rcx,rax
        xor       edx,edx
-       add       rsp,20
+       call      DotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System.String, System.Xml.XmlResolver)
+       nop
+       add       rsp,28
        pop       rsi
-       jmp       near ptr DotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System.String, System.Xml.XmlResolver)
-M02_L02:
-       mov       eax,1
-       jmp       short M02_L00
-; Total bytes of code 96
+       pop       rdi
+       ret
+; Total bytes of code 129
 ```
 

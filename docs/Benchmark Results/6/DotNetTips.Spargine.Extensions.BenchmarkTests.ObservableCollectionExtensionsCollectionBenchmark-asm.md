@@ -14,8 +14,8 @@
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0C0760
-       call      qword ptr [7FFE3C670760]
+       mov       r11,7FFF26540790
+       call      qword ptr [7FFF26B00790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -37,6 +37,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,24436293020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -44,16 +47,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EB668
+       mov       rdx,7FFF26B6B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1E7A3F53020
-       mov       r8,[r8]
-       mov       r9,1E7A3F63938
+       mov       r9,2446629ED18
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -61,7 +63,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EBB38
+       mov       rdx,7FFF26B6BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -76,7 +78,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -95,8 +97,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0B0760
-       call      qword ptr [7FFE3C660760]
+       mov       r11,7FFF26560790
+       call      qword ptr [7FFF26B20790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -118,6 +120,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1BF2DC53020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -125,16 +130,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DB668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1E18B3B1028
-       mov       r8,[r8]
-       mov       r9,1E18B3B3CE0
+       mov       r9,1BF2DC55CD8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -142,7 +146,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DBB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -157,7 +161,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -176,8 +180,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0C0790
-       call      qword ptr [7FFE3C680790]
+       mov       r11,7FFF26580790
+       call      qword ptr [7FFF26B40790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -199,6 +203,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,22B1E783020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -206,16 +213,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EB668
+       mov       rdx,7FFF26BAB8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,27320C63020
-       mov       r8,[r8]
-       mov       r9,27300C628E8
+       mov       r9,22B1E7864F0
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -223,7 +229,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EBB38
+       mov       rdx,7FFF26BABD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -238,7 +244,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -257,8 +263,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0D0760
-       call      qword ptr [7FFE3C680760]
+       mov       r11,7FFF26570760
+       call      qword ptr [7FFF26B30760]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -280,6 +286,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1662FA43020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -287,16 +296,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FC2E0
+       mov       rdx,7FFF26B9B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1F1DA743020
-       mov       r8,[r8]
-       mov       r9,1F1DA752108
+       mov       r9,1660FA428E8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -304,7 +312,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FC7B0
+       mov       rdx,7FFF26B9BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -319,7 +327,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -338,8 +346,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0E0790
-       call      qword ptr [7FFE3C6A0790]
+       mov       r11,7FFF26540790
+       call      qword ptr [7FFF26B00790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -361,6 +369,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,2863BC63020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -368,16 +379,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C70B668
+       mov       rdx,7FFF26B6B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,26075AE1028
-       mov       r8,[r8]
-       mov       r9,26095AE40E0
+       mov       r9,2863BC72920
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -385,7 +395,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C70BB38
+       mov       rdx,7FFF26B6BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -400,7 +410,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -419,8 +429,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0B0760
-       call      qword ptr [7FFE3C660760]
+       mov       r11,7FFF26560790
+       call      qword ptr [7FFF26B20790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -442,6 +452,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,18FEAB83020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -449,16 +462,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DB668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1E444373020
-       mov       r8,[r8]
-       mov       r9,1E444383938
+       mov       r9,1900AB83100
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -466,7 +478,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DBB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -481,7 +493,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -500,8 +512,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0B0790
-       call      qword ptr [7FFE3C670790]
+       mov       r11,7FFF26580760
+       call      qword ptr [7FFF26B40760]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -523,6 +535,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1F3C0EC3020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -530,16 +545,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DB668
+       mov       rdx,7FFF26BAB8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1D4ED0C3020
-       mov       r8,[r8]
-       mov       r9,1D4CD0C28E8
+       mov       r9,1F3A0EC18D0
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -547,7 +561,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DBB38
+       mov       rdx,7FFF26BABD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -562,7 +576,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -581,8 +595,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0A0790
-       call      qword ptr [7FFE3C660790]
+       mov       r11,7FFF26560760
+       call      qword ptr [7FFF26B20760]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -604,6 +618,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1FF69D01028
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -611,16 +628,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CB668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,23A2D7F3020
-       mov       r8,[r8]
-       mov       r9,23A0D7F18D0
+       mov       r9,1FF79D018D0
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -628,7 +644,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CBB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -643,7 +659,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -662,8 +678,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0A07B8
-       call      qword ptr [7FFE3C6607B8]
+       mov       r11,7FFF26550760
+       call      qword ptr [7FFF26B10760]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -685,6 +701,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,19511011028
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -692,16 +711,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CB668
+       mov       rdx,7FFF26B7B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,16F5B713020
-       mov       r8,[r8]
-       mov       r9,16F5B722920
+       mov       r9,19511014CF8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -709,7 +727,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CBB38
+       mov       rdx,7FFF26B7BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -724,7 +742,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -743,8 +761,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0C0790
-       call      qword ptr [7FFE3C680790]
+       mov       r11,7FFF26550790
+       call      qword ptr [7FFF26B10790]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -766,6 +784,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1AEBE3C3020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -773,16 +794,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EB668
+       mov       rdx,7FFF26B7B650
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,2956CA93020
-       mov       r8,[r8]
-       mov       r9,2956CA95CD8
+       mov       r9,1AEDE3C20E8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -790,7 +810,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6EBB38
+       mov       rdx,7FFF26B7BB20
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -805,7 +825,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -824,8 +844,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0D0760
-       call      qword ptr [7FFE3C680760]
+       mov       r11,7FFF26550760
+       call      qword ptr [7FFF26B10760]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -847,6 +867,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,2028EB43020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -854,16 +877,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FB668
+       mov       rdx,7FFF26B7B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,23F6C453020
-       mov       r8,[r8]
-       mov       r9,23F4C4518D0
+       mov       r9,2028EB464F0
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -871,7 +893,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FBB38
+       mov       rdx,7FFF26B7BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -886,7 +908,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -905,8 +927,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0D0760
-       call      qword ptr [7FFE3C680760]
+       mov       r11,7FFF26560760
+       call      qword ptr [7FFF26B20760]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -928,6 +950,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,2473AC23020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -935,16 +960,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FC558
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,2B749953020
-       mov       r8,[r8]
-       mov       r9,2B7799518D0
+       mov       r9,2474AC218D0
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -952,7 +976,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6FCA28
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -967,7 +991,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -986,8 +1010,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0E0760
-       call      qword ptr [7FFE3C690760]
+       mov       r11,7FFF26560790
+       call      qword ptr [7FFF26B20790]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1009,6 +1033,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1D027891028
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -1016,16 +1043,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C70B668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,14FC0383020
-       mov       r8,[r8]
-       mov       r9,14FB038DD00
+       mov       r9,1D0478920E8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -1033,7 +1059,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C70BB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1048,7 +1074,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -1067,8 +1093,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0B0790
-       call      qword ptr [7FFE3C670790]
+       mov       r11,7FFF26560790
+       call      qword ptr [7FFF26B20790]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1090,6 +1116,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,1808B931028
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -1097,16 +1126,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DB668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,15F32051028
-       mov       r8,[r8]
-       mov       r9,15F120538C8
+       mov       r9,1805B9338C8
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -1114,7 +1142,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6DBB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1129,7 +1157,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -1148,8 +1176,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0A0790
-       call      qword ptr [7FFE3C660790]
+       mov       r11,7FFF26570790
+       call      qword ptr [7FFF26B30790]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1171,6 +1199,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,2A3D5F53020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -1178,16 +1209,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CB668
+       mov       rdx,7FFF26B9B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,1939EF33020
-       mov       r8,[r8]
-       mov       r9,1939EF43938
+       mov       r9,2A3D5F63938
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -1195,7 +1225,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CBB38
+       mov       rdx,7FFF26B9BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1210,7 +1240,7 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -1229,8 +1259,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFE3C0A0790
-       call      qword ptr [7FFE3C660790]
+       mov       r11,7FFF26560760
+       call      qword ptr [7FFF26B20760]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1252,6 +1282,9 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
+       mov       rcx,23A4E9B3020
+       mov       rcx,[rcx]
+       mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
        mov       rcx,[rbx+10]
        test      rcx,rcx
@@ -1259,16 +1292,15 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CB668
+       mov       rdx,7FFF26B8B8C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r8,28C6C783020
-       mov       r8,[r8]
-       mov       r9,28C6C792108
+       mov       r9,23A6E9BE518
        mov       r9,[r9]
+       lea       r8,[rsp+20]
        mov       rdx,rdi
-       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String, System.String)
+       call      DotNetTips.Spargine.Core.Validator.ArgumentItemsExists[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>, System.String ByRef, System.String)
        mov       rdi,rax
        mov       rcx,[rbx+18]
        test      rcx,rcx
@@ -1276,7 +1308,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFE3C6CBB38
+       mov       rdx,7FFF26B8BD90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1291,6 +1323,6 @@ M01_L03:
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 153
+; Total bytes of code 163
 ```
 

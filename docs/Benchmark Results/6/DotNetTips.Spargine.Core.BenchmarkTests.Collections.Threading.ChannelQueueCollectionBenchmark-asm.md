@@ -16,7 +16,7 @@
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,19AF9802FD8
+       mov       rdx,1D8C9C22FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -94,7 +94,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F8BAD8
+       mov       rdx,7FFF30B3BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -226,7 +226,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28ED5A30
+       mov       rdx,7FFF30A84C18
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -239,7 +239,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28ED5A28
+       mov       rdx,7FFF30A84C10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -345,7 +345,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,19AF9802FD8
+       mov       rdx,1D8C9C22FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -413,7 +413,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,19AF9802FD8
+       mov       rdx,1D8C9C22FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -683,10 +683,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30664928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,19AF9802FE0
+       mov       rdx,1D8C9C22FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -843,7 +843,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,28079452FD8
+       mov       rdx,11AE0D92FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -921,7 +921,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F6BAD8
+       mov       rdx,7FFF30B7BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -1053,7 +1053,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28EB5BB0
+       mov       rdx,7FFF30AC5E00
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -1066,7 +1066,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28EB5BA8
+       mov       rdx,7FFF30AC5DF8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -1172,7 +1172,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,28079452FD8
+       mov       rdx,11AE0D92FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1240,7 +1240,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,28079452FD8
+       mov       rdx,11AE0D92FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1510,10 +1510,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28A84928
+       mov       rcx,7FFF306A4928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,28079452FE0
+       mov       rdx,11AE0D92FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1670,7 +1670,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,2189C5C2FD8
+       mov       rdx,2761D342FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1748,7 +1748,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F8BAD8
+       mov       rdx,7FFF30B4BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -1880,7 +1880,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28ED5BB0
+       mov       rdx,7FFF30A94C88
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -1893,7 +1893,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28ED5BA8
+       mov       rdx,7FFF30A94C80
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -1999,7 +1999,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,2189C5C2FD8
+       mov       rdx,2761D342FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2067,7 +2067,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,2189C5C2FD8
+       mov       rdx,2761D342FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2337,10 +2337,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30674928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,2189C5C2FE0
+       mov       rdx,2761D342FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2497,7 +2497,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1C060CB2FD8
+       mov       rdx,246D32C2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2575,7 +2575,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F9BAD8
+       mov       rdx,7FFF30B5BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -2707,7 +2707,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28EE48A0
+       mov       rdx,7FFF30AA5F78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -2720,7 +2720,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28EE4898
+       mov       rdx,7FFF30AA5F70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -2826,7 +2826,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,1C060CB2FD8
+       mov       rdx,246D32C2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2894,7 +2894,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,1C060CB2FD8
+       mov       rdx,246D32C2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3164,10 +3164,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30684928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,1C060CB2FE0
+       mov       rdx,246D32C2FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3324,7 +3324,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,267D3CA2FD8
+       mov       rdx,1E9313F2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3402,7 +3402,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F6BAD8
+       mov       rdx,7FFF30B3BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -3534,7 +3534,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28EB5BB0
+       mov       rdx,7FFF30A85F60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -3547,7 +3547,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28EB5BA8
+       mov       rdx,7FFF30A85F58
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -3653,7 +3653,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,267D3CA2FD8
+       mov       rdx,1E9313F2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3721,7 +3721,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,267D3CA2FD8
+       mov       rdx,1E9313F2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3991,10 +3991,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28A84928
+       mov       rcx,7FFF30664928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,267D3CA2FE0
+       mov       rdx,1E9313F2FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4151,7 +4151,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,1D1BF572FD8
+       mov       rdx,24223692FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4229,7 +4229,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F7B660
+       mov       rdx,7FFF30B3BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -4347,7 +4347,7 @@ M03_L01:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+50]
+       mov       rdx,[rdx+38]
        test      rdx,rdx
        je        short M05_L03
        mov       [rsp+20],rdx
@@ -4356,12 +4356,12 @@ M05_L00:
        mov       rcx,[rsi]
        mov       rdx,[rcx+30]
        mov       rdx,[rdx]
-       mov       rdx,[rdx+58]
+       mov       rdx,[rdx+40]
        test      rdx,rdx
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28F9A4C8
+       mov       rdx,7FFF30A85F60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -4374,7 +4374,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28F9A4C0
+       mov       rdx,7FFF30A85F58
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -4480,7 +4480,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,1D1BF572FD8
+       mov       rdx,24223692FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4548,7 +4548,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,1D1BF572FD8
+       mov       rdx,24223692FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4818,10 +4818,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30664928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,1D1BF572FE0
+       mov       rdx,24223692FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4978,7 +4978,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,215D0E72FD8
+       mov       rdx,1AA2D542FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5056,7 +5056,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F8BAD8
+       mov       rdx,7FFF30B6BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -5188,7 +5188,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28ED5BB0
+       mov       rdx,7FFF30AB5F78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -5201,7 +5201,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28ED5BA8
+       mov       rdx,7FFF30AB5F70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -5307,7 +5307,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,215D0E72FD8
+       mov       rdx,1AA2D542FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5375,7 +5375,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,215D0E72FD8
+       mov       rdx,1AA2D542FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5645,10 +5645,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30694928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,215D0E72FE0
+       mov       rdx,1AA2D542FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5805,7 +5805,7 @@ M07_L05:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Threading.Tasks.Task, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbp,rax
-       mov       rdx,2299CC62FD8
+       mov       rdx,1BC75BF2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5883,7 +5883,7 @@ M00_L03:
        je        short M01_L00
        jmp       short M01_L01
 M01_L00:
-       mov       rdx,7FFF28F7BAD8
+       mov       rdx,7FFF30B4BD30
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M01_L01:
@@ -6015,7 +6015,7 @@ M05_L00:
        je        short M05_L01
        jmp       short M05_L02
 M05_L01:
-       mov       rdx,7FFF28EC5BB0
+       mov       rdx,7FFF30A95F78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rdx,rax
 M05_L02:
@@ -6028,7 +6028,7 @@ M05_L02:
        pop       rdi
        ret
 M05_L03:
-       mov       rdx,7FFF28EC5BA8
+       mov       rdx,7FFF30A95F70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       [rsp+20],rax
 M05_L04:
@@ -6134,7 +6134,7 @@ M06_L03:
        mov       eax,[rsp+30]
        jmp       near ptr M06_L13
 M06_L04:
-       mov       rdx,2299CC62FD8
+       mov       rdx,1BC75BF2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6202,7 +6202,7 @@ M06_L10:
        mov       eax,[rsp+30]
        jmp       short M06_L13
 M06_L11:
-       mov       rdx,2299CC62FD8
+       mov       rdx,1BC75BF2FD8
        mov       rdx,[rdx]
        lea       rcx,[rbp+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6472,10 +6472,10 @@ M06_L42:
        jle       near ptr M06_L51
        jmp       near ptr M06_L40
 M06_L43:
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30674928
        mov       edx,46
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,2299CC62FE0
+       mov       rdx,1BC75BF2FE0
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6672,7 +6672,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6832,7 +6832,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30674928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -6992,7 +6992,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30674928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7152,7 +7152,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF30674928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7312,7 +7312,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7472,7 +7472,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7632,7 +7632,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30674928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7792,7 +7792,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -7953,7 +7953,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8114,7 +8114,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF306A4928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8275,7 +8275,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8436,7 +8436,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8597,7 +8597,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8758,7 +8758,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30674928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -8919,7 +8919,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF306A4928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9080,7 +9080,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9239,7 +9239,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF306A4928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9398,7 +9398,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9557,7 +9557,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30664928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9716,7 +9716,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -9875,7 +9875,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10034,7 +10034,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10193,7 +10193,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10352,7 +10352,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF306A4928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10511,7 +10511,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AA4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10670,7 +10670,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10829,7 +10829,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -10988,7 +10988,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -11147,7 +11147,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A84928
+       mov       rcx,7FFF30664928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -11306,7 +11306,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28AC4928
+       mov       rcx,7FFF30684928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -11465,7 +11465,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A94928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]
@@ -11624,7 +11624,7 @@ M02_L00:
        mov       [rbp+0FFC0],rsp
        mov       rsi,rcx
        cmp       [rsi],esi
-       mov       rcx,7FFF28A84928
+       mov       rcx,7FFF30694928
        mov       edx,2BD
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+18]

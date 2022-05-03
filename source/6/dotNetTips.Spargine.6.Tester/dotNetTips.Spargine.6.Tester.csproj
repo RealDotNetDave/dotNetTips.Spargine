@@ -27,7 +27,7 @@
 		<IncludeSymbols>true</IncludeSymbols>
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
-		<PackageIcon>dotNetTips-Spargine-Logo@0.1x.jpg</PackageIcon>
+		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
 		<PackageLicenseUrl></PackageLicenseUrl>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -72,7 +72,7 @@
 
 	<ItemGroup>
 		<None Remove="dotNetTips.Spargine.Tester.xml" />
-		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-Logo@0.1x.jpg">
+		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-6-Logo.png">
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
@@ -97,6 +97,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="MSTest.TestFramework" Version="2.2.9" />
+		<PackageReference Include="System.Text.Json" Version="6.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>

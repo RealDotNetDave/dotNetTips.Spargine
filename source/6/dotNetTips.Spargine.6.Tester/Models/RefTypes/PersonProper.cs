@@ -37,7 +37,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes
 	[JsonSerializable(typeof(PersonProper))]
 	[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 	[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-	public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
+	public sealed partial class PersonProper : IDataModel<PersonProper, string>, IPerson
 	{
 		//TODO: .NET 7 Research StringSyntaxAttribute
 

@@ -35,35 +35,42 @@
        push      rsi
        push      rbp
        push      rbx
-       sub       rsp,28
+       sub       rsp,38
+       xor       eax,eax
+       mov       [rsp+20],rax
+       mov       rax,298D6723020
+       mov       rax,[rax]
+       mov       [rsp+30],rax
        mov       rsi,rcx
+       mov       rax,298D6731F98
+       mov       rax,[rax]
+       mov       [rsp+28],rax
        test      rsi,rsi
        setne     al
        movzx     eax,al
        test      eax,eax
        jne       short M02_L00
-       mov       rax,162B6E83020
-       mov       rdi,[rax]
-       mov       rax,162B6E8A358
-       mov       rbx,[rax]
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,rbx
-       mov       rcx,rdi
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+       mov       [rsp+20],rax
+       lea       rcx,[rsp+30]
+       lea       rdx,[rsp+28]
+       lea       r8,[rsp+20]
+       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String ByRef, System.String ByRef, System.String ByRef)
        mov       rcx,rax
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
 M02_L00:
+       xor       ecx,ecx
+       mov       [rsp+20],rcx
        mov       rcx,offset MT_System.Collections.ObjectModel.Collection`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rcx,7FFF28AB4928
+       mov       rcx,7FFF26684928
        mov       edx,27
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,162B6E82FA0
+       mov       rdx,298D6722F48
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -95,13 +102,13 @@ M02_L01:
        jg        short M02_L01
 M02_L02:
        mov       rax,rdi
-       add       rsp,28
+       add       rsp,38
        pop       rbx
        pop       rbp
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 255
+; Total bytes of code 290
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
@@ -139,45 +146,51 @@ M02_L02:
 ; DotNetTips.Spargine.Extensions.AssemblyExtensions.GetAllTypes(System.Reflection.Assembly)
        push      rdi
        push      rsi
-       push      rbx
-       sub       rsp,20
+       sub       rsp,38
+       xor       eax,eax
+       mov       [rsp+20],rax
+       mov       rax,1FC7A123020
+       mov       rax,[rax]
+       mov       [rsp+30],rax
        mov       rsi,rcx
+       mov       rax,1FC9A129F10
+       mov       rax,[rax]
+       mov       [rsp+28],rax
        test      rsi,rsi
        setne     al
        movzx     eax,al
        test      eax,eax
        jne       short M02_L00
-       mov       rax,1DDA3263020
-       mov       rdi,[rax]
-       mov       rax,1DD83262778
-       mov       rbx,[rax]
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,rbx
-       mov       rcx,rdi
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+       mov       [rsp+20],rax
+       lea       rcx,[rsp+30]
+       lea       rdx,[rsp+28]
+       lea       r8,[rsp+20]
+       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String ByRef, System.String ByRef, System.String ByRef)
        mov       rcx,rax
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
 M02_L00:
+       xor       ecx,ecx
+       mov       [rsp+20],rcx
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,1DDA3267A48
+       mov       rcx,1FC9A123640
        mov       r8,[rcx]
        test      r8,r8
        jne       short M02_L01
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,1DDA3267A40
+       mov       rdx,1FC9A123638
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,1DDA3267A48
+       mov       rcx,1FC9A123640
        mov       rdx,rdi
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
@@ -186,12 +199,11 @@ M02_L01:
        mov       rcx,offset MD_System.Linq.Enumerable.Where(System.Collections.Generic.IEnumerable`1<!!0>, System.Func`2<!!0,Boolean>)
        call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        nop
-       add       rsp,20
-       pop       rbx
+       add       rsp,38
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 212
+; Total bytes of code 245
 ```
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT

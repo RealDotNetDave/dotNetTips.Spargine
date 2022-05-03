@@ -12,7 +12,7 @@
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2628DA65FE0
+       mov       rdx,2CBB6596FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -24,18 +24,18 @@
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,262BDA64AC0
+       mov       rcx,2CBE6594878
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2628DA65FE8
+       mov       r8,2CBB6597000
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -68,7 +68,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,27323131BD8
+       mov       rdx,22778729FB8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -80,18 +80,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF305A0600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,27343138EC8
+       mov       rcx,22778728C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,27323131BE0
+       mov       r8,22778729FC0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -124,7 +124,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,16FA90397F0
+       mov       rdx,28A5B863408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -136,18 +136,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28980600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F10600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28D98958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,16FA9036ED0
+       mov       rcx,28A4B864878
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,16FA90397F8
+       mov       r8,28A5B863410
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -180,7 +180,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2F12F7543E8
+       mov       rdx,29603AF23F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -192,18 +192,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2F13F754AC0
+       mov       rcx,29613AF4878
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2F12F7543F0
+       mov       r8,29603AF23F8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -236,7 +236,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21BFE39B7E8
+       mov       rdx,1DC01C72BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -248,18 +248,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21BFE398EC8
+       mov       rcx,1DC21C78C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21BFE39B7F0
+       mov       r8,1DC01C72BF8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -292,7 +292,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2132A3EA7D0
+       mov       rdx,12D90E423F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -304,18 +304,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2132A3E8EC8
+       mov       rcx,12DA0E44878
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2132A3EA7D8
+       mov       r8,12D90E423F8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -348,7 +348,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21E9F8A2BF0
+       mov       rdx,21358BE3008
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -360,18 +360,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21EBF8A8EC8
+       mov       rcx,21378BE6870
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21E9F8A2BF8
+       mov       r8,21358BE3010
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -404,7 +404,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,298CCD463C8
+       mov       rdx,22D13B82BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -416,18 +416,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF30580600
        mov       edx,5
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,298CCD44AC0
+       mov       rcx,22D33B88C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,298CCD463D0
+       mov       r8,22D13B82BF8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -460,7 +460,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1B8C40F2BF0
+       mov       rdx,2642A963FE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -472,18 +472,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28980600
+       mov       r11,7FFF30590600
        mov       edx,5
-       call      qword ptr [7FFF28F10600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28D98958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B8E40F8EC8
+       mov       rcx,2645A964878
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B8C40F2BF8
+       mov       r8,2642A963FF0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -516,7 +516,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22AD9B51BD8
+       mov       rdx,22D1E371BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -528,18 +528,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30580600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22AF9B58EC8
+       mov       rcx,22CFE378C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22AD9B51BE0
+       mov       r8,22D1E371BE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -572,7 +572,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1B194D65BB0
+       mov       rdx,1B34ACD9FB8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -584,18 +584,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30570600
        mov       edx,5
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B194D64AC0
+       mov       rcx,1B34ACD8C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B194D65BB8
+       mov       r8,1B34ACD9FC0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -628,7 +628,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,177A02923F0
+       mov       rdx,19435671BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -640,18 +640,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30590600
        mov       edx,5
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,17780298EC8
+       mov       rcx,19425678C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,177A02923F8
+       mov       r8,19435671BE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -684,7 +684,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,18ACC7D63C8
+       mov       rdx,21EADF4A7D0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -696,18 +696,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30580600
        mov       edx,5
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,18ACC7D4AC0
+       mov       rcx,21EADF48C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,18ACC7D63D0
+       mov       r8,21EADF4A7D8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -740,7 +740,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29959149FB8
+       mov       rdx,26C6FBB4BE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -752,18 +752,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30590600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,29959148EC8
+       mov       rcx,26C8FBB6C88
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,29959149FC0
+       mov       r8,26C6FBB4BF0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -796,7 +796,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,16200A73BD0
+       mov       rdx,21F131D1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -808,18 +808,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30590600
        mov       edx,5
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,16220A76ED0
+       mov       rcx,21EF31D6C88
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,16200A73BD8
+       mov       r8,21F131D1BE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -852,7 +852,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,23B5B3DB7E8
+       mov       rdx,273F74B1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -864,18 +864,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF305A0600
        mov       edx,5
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,23B5B3D8EC8
+       mov       rcx,274174B8C80
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,23B5B3DB7F0
+       mov       r8,273F74B1BE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -908,7 +908,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,17E8E3D1BD8
+       mov       rdx,1F7AFE797F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -920,18 +920,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30580600
        mov       edx,4
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,17EBE3D6AC8
+       mov       rcx,1F7AFE76C98
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,17E8E3D1BE0
+       mov       r8,1F7AFE797F8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -964,7 +964,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,12FD21F5000
+       mov       rdx,23F9FCDAFD0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -976,18 +976,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30580600
        mov       edx,4
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,130021F4AD0
+       mov       rcx,23F9FCD8C90
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,12FD21F5008
+       mov       r8,23F9FCDAFD8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1020,7 +1020,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,212D4301BD8
+       mov       rdx,18F8CF69FB8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1032,18 +1032,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28980600
+       mov       r11,7FFF30570600
        mov       edx,4
-       call      qword ptr [7FFF28F10600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28D98958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,212F4308ED8
+       mov       rcx,18F8CF68C90
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,212D4301BE0
+       mov       r8,18F8CF69FC0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1076,7 +1076,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1A2977F3408
+       mov       rdx,17F2DEA1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1088,18 +1088,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30580600
        mov       edx,4
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1A2A77F4AD0
+       mov       rcx,17F1DEA8C90
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1A2977F3410
+       mov       r8,17F2DEA1BE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1132,7 +1132,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2BADCF95000
+       mov       rdx,224CD725FE0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1144,18 +1144,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289B0600
+       mov       r11,7FFF30590600
        mov       edx,4
-       call      qword ptr [7FFF28F40600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DC8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2BAFCF94AD0
+       mov       rcx,224ED724888
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2BADCF95008
+       mov       r8,224CD725FE8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1188,7 +1188,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1EEAC71B7E8
+       mov       rdx,182D52E2BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1200,18 +1200,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30590600
        mov       edx,4
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1EEAC718ED8
+       mov       rcx,183052E4888
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1EEAC71B7F0
+       mov       r8,182D52E2BF8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1244,7 +1244,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2901DE123F0
+       mov       rdx,1A6144CB7E8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1256,18 +1256,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30570600
        mov       edx,4
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,28FFDE16EE0
+       mov       rcx,1A6144C8C90
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2901DE123F8
+       mov       r8,1A6144CB7F0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1300,7 +1300,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,19EDFD05FE0
+       mov       rdx,27AAE5673E0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1312,18 +1312,18 @@ M00_L02:
 M00_L00:
        mov       rbp,[rsi+128]
        mov       rcx,rbp
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF30570600
        mov       edx,4
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,19F0FD04AD0
+       mov       rcx,27AAE564888
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,19EDFD05FE8
+       mov       r8,27AAE5673E8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
@@ -1356,18 +1356,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF305A0600
        mov       edx,2
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21E918F8EE0
+       mov       rcx,1F033564890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21E918FB7E8
+       mov       r8,1F0335673E0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1399,18 +1399,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30590600
        mov       edx,2
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,210892A4AD8
+       mov       rcx,2963FCE6888
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,210792A1BD8
+       mov       r8,2963FCE7BA8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1442,18 +1442,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289B0600
+       mov       r11,7FFF30590600
        mov       edx,2
-       call      qword ptr [7FFF28F40600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DC8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,17799654AD8
+       mov       rcx,1A065894890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,177A9653FE8
+       mov       r8,1A035891BD8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1485,18 +1485,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289B0600
+       mov       r11,7FFF305A0600
        mov       edx,2
-       call      qword ptr [7FFF28F40600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DC8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,27A497D4AD8
+       mov       rcx,20AE27B4890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,27A197D2BF0
+       mov       r8,20AB27B5FE0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1528,18 +1528,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289B0600
+       mov       r11,7FFF30590600
        mov       edx,2
-       call      qword ptr [7FFF28F40600]
+       call      qword ptr [7FFF30B10600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DC8958
-       mov       edx,36
+       mov       rcx,7FFF30998970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,23126198EE0
+       mov       rcx,1716F8A4890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,231461923F0
+       mov       r8,1714F8A3FE8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1571,18 +1571,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF305A0600
        mov       edx,2
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2449D4B8EE0
+       mov       rcx,19BA29E4890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2449D4BB7E8
+       mov       r8,19BA29E63C8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1614,18 +1614,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30580600
        mov       edx,2
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,19D161F4AD8
+       mov       rcx,20504496888
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,19CE61F6FF8
+       mov       r8,204E4495000
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1657,18 +1657,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30580600
        mov       edx,2
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,19496CA8EE0
+       mov       rcx,2371D8E4890
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,19476CA1BD8
+       mov       r8,236ED8E5FE0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1700,18 +1700,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF305A0600
        xor       edx,edx
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1DA37BB8EE8
+       mov       rcx,242FEEC8CA0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1DA17BB1BD8
+       mov       r8,242FEECB7E8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1743,18 +1743,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30560600
        xor       edx,edx
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AE0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30968970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1CF98256EF0
+       mov       rcx,2331F7F4898
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1CF88252BF0
+       mov       r8,2330F7F3408
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1786,18 +1786,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF30580600
        xor       edx,edx
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B012AA4AE0
+       mov       rcx,20B43DB4898
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1AFE2AA3BD0
+       mov       r8,20B13DB6FF8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1829,18 +1829,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289A0600
+       mov       r11,7FFF30560600
        xor       edx,edx
-       call      qword ptr [7FFF28F30600]
+       call      qword ptr [7FFF30AE0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DB8958
-       mov       edx,36
+       mov       rcx,7FFF30968970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,24DEB534AE0
+       mov       rcx,1E57F478CA0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,24DFB537810
+       mov       r8,1E55F472BF0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1872,18 +1872,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30580600
        xor       edx,edx
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2E32F316EF0
+       mov       rcx,1D844006CA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2E32F317FC0
+       mov       r8,1D8440097F0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1915,18 +1915,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF28990600
+       mov       r11,7FFF305A0600
        xor       edx,edx
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30B20600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF309A8970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1DF3F7F4AE0
+       mov       rcx,18EB7F38CA0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1DF0F7F2BF0
+       mov       r8,18EC7F31BD8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -1958,18 +1958,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF289C0600
+       mov       r11,7FFF30580600
        xor       edx,edx
-       call      qword ptr [7FFF28F50600]
+       call      qword ptr [7FFF30B00600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DD8958
-       mov       edx,36
+       mov       rcx,7FFF30988970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21C25404AE0
+       mov       rcx,236D2CB4898
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21BF5401BD8
+       mov       r8,236C2CB3408
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -2001,18 +2001,18 @@ M00_L02:
 M00_L00:
        mov       rbx,[rsi+128]
        mov       rcx,rbx
-       mov       r11,7FFF28990600
+       mov       r11,7FFF30570600
        xor       edx,edx
-       call      qword ptr [7FFF28F20600]
+       call      qword ptr [7FFF30AF0600]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF28DA8958
-       mov       edx,36
+       mov       rcx,7FFF30978970
+       mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B09A928EE8
+       mov       rcx,17478588CA0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B09A92A7D0
+       mov       r8,17458581BD8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
@@ -2032,3006 +2032,6 @@ M00_L02:
 
 ## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
 ```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1D7C7F61BD8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1D7C7F61BE0
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,1D797F63020
-       mov       r14,[rax]
-       mov       rax,1D7C7F61BE8
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,1D7C7F61BF0
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,1D7C7F61BF8
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1485FFEA7D0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1485FFEA7D8
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,1485FFE3020
-       mov       r14,[rax]
-       mov       rax,1485FFEA7E0
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,1485FFEA7E8
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,1485FFEA7F0
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2C629D6AFD0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,2C629D6AFD8
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,2C629D63020
-       mov       r14,[rax]
-       mov       rax,2C629D6AFE0
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,2C629D6AFE8
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,2C629D6AFF0
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,22C8AEC23F0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,22C8AEC23F8
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,22C6AEC3020
-       mov       r14,[rax]
-       mov       rax,22C8AEC2400
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,22C8AEC2408
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,22C8AEC2410
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,16CFADD6FF8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,16CFADD7000
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,16CFADD3020
-       mov       r14,[rax]
-       mov       rax,16CFADD7008
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,16CFADD7010
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,16CFADD7018
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,24B8ACB23F0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,24B8ACB23F8
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,24B7ACB1028
-       mov       r14,[rax]
-       mov       rax,24B8ACB2400
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,24B8ACB2408
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,24B8ACB2410
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,279DD881BD8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,279DD881BE0
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,279FD883020
-       mov       r14,[rax]
-       mov       rax,279DD881BE8
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,279DD881BF0
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,279DD881BF8
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.FastLoggerBenchmark()
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2346F549FB8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,2346F549FC0
-       mov       rbp,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       mov       r8,rbp
-       mov       r9,rdi
-       mov       edx,3
-       call      DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 145
-```
-```assembly
-; DotNetTips.Spargine.Extensions.LoggerExtensions.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       push      r15
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       ebx,edx
-       mov       rsi,r8
-       mov       rdi,r9
-       mov       rbp,rcx
-       test      rbp,rbp
-       setne     al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L00
-       mov       rax,2346F543020
-       mov       r14,[rax]
-       mov       rax,2346F549FC8
-       mov       r15,[rax]
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
-       mov       r8,rax
-       mov       rdx,r15
-       mov       rcx,r14
-       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
-       mov       rcx,rax
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
-M01_L00:
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_NEWSFAST
-       mov       r14,rax
-       mov       rcx,offset MT_Microsoft.Extensions.Logging.LogLevel
-       call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-       mov       rcx,rax
-       mov       [r14+8],ebx
-       mov       rdx,r14
-       call      System.Enum.IsDefined(System.Type, System.Object)
-       test      eax,eax
-       jne       short M01_L01
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorEnumNotDefined()
-       mov       rcx,rax
-       mov       rdx,2346F549FD0
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
-M01_L01:
-       test      rsi,rsi
-       je        short M01_L04
-       cmp       dword ptr [rsi+8],0
-       je        short M01_L04
-       xor       eax,eax
-M01_L02:
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       short M01_L03
-       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
-       mov       rcx,rax
-       mov       rdx,2346F549FD8
-       mov       rdx,[rdx]
-       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
-M01_L03:
-       cmp       [rsi],esi
-       mov       rcx,rsi
-       mov       edx,3
-       call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
-       mov       r8,rax
-       mov       rcx,rbp
-       mov       edx,ebx
-       mov       r9,rdi
-       call      DotNetTips.Spargine.Core.Logging.LoggingHelper.FastLogger(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, System.String, System.Exception)
-       nop
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       pop       r15
-       ret
-M01_L04:
-       mov       eax,1
-       jmp       short M01_L02
-; Total bytes of code 270
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,13A560B3BD0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,13A560B2F58
-       mov       rbp,[rcx]
-       mov       rcx,13A560B3BD8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,13A660B6C10
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DC57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2A423F45BB0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,2A443F42F58
-       mov       rbp,[rcx]
-       mov       rcx,2A423F45BB8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,2A423F44800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DA57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,24070FC23F0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,24050FC2F58
-       mov       rbp,[rcx]
-       mov       rcx,24070FC23F8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,24080FC4800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DB57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1C9D7E22BF0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1C9F7E22F58
-       mov       rbp,[rcx]
-       mov       rcx,1C9D7E22BF8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,1C9F7E28C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DB57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1A7D5F0B7E8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1A7D5F02F58
-       mov       rbp,[rcx]
-       mov       rcx,1A7D5F0B7F0
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,1A7D5F08C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DC57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2962BF4A7D0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,2962BF42F58
-       mov       rbp,[rcx]
-       mov       rcx,2962BF4A7D8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,2962BF48C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DA57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,258BCA7B7E8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,258BCA72F58
-       mov       rbp,[rcx]
-       mov       rcx,258BCA7B7F0
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,258BCA78C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DA57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogCriticalBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,19CA1A83408
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,19CC1A82F58
-       mov       rbp,[rcx]
-       mov       rcx,19CA1A83410
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,5
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,19CC1A88C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DA57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,22BADD4A7D0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,22BADD42F58
-       mov       rbp,[rcx]
-       mov       rcx,22BADD4A7D8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,22BADD48C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28D957A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1F2BFE323F0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1F29FE32F58
-       mov       rbp,[rcx]
-       mov       rcx,1F2BFE323F8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,1F2CFE34800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DC57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,166E1CE5FE0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,166E1CE2F58
-       mov       rbp,[rcx]
-       mov       rcx,166E1CE5FE8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,16701CE4800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28D957A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2B4C9A25400
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,2B4C9A22F58
-       mov       rbp,[rcx]
-       mov       rcx,2B4C9A25408
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,2B4D9A24800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DA57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,2108FA02BF0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,210AFA02F58
-       mov       rbp,[rcx]
-       mov       rcx,2108FA02BF8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,210AFA08C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DD57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1F8DBE9A7D0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1F8DBE92F58
-       mov       rbp,[rcx]
-       mov       rcx,1F8DBE9A7D8
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,1F8DBE98C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DB57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,1C18B213408
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,1C16B212F58
-       mov       rbp,[rcx]
-       mov       rcx,1C18B213410
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,1C19B214800
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28DC57A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogDebugBenchmark()
-       push      r14
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,40
-       xor       eax,eax
-       mov       [rsp+30],rax
-       mov       [rsp+38],rax
-       mov       rsi,rcx
-       mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rdi,rax
-       mov       dword ptr [rdi+70],0E0434352
-       mov       dword ptr [rdi+74],80131500
-       mov       rdx,293A4391BD8
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+10]
-       call      CORINFO_HELP_ASSIGN_REF
-       mov       dword ptr [rdi+74],80131501
-       mov       dword ptr [rdi+74],80070057
-       xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
-       jle       short M00_L01
-       mov       rcx,293C4392F58
-       mov       rbp,[rcx]
-       mov       rcx,293A4391BE0
-       mov       r14,[rcx]
-M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
-       lea       r8,[rsp+30]
-       mov       r9,rdi
-       mov       edx,1
-       call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       inc       ebx
-       cmp       ebx,[rsi+124]
-       jl        short M00_L00
-M00_L01:
-       add       rsp,40
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       pop       r14
-       ret
-; Total bytes of code 208
-```
-```assembly
-; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,68
-       xor       eax,eax
-       mov       [rsp+38],rax
-       vxorps    xmm4,xmm4,xmm4
-       vmovdqa   xmmword ptr [rsp+40],xmm4
-       vmovdqa   xmmword ptr [rsp+50],xmm4
-       mov       [rsp+60],rax
-       mov       rdi,rcx
-       mov       ebp,edx
-       mov       rsi,r8
-       mov       rbx,r9
-       test      rdi,rdi
-       je        near ptr M01_L00
-       lea       rcx,[rsp+50]
-       mov       rdx,[rsp+0B0]
-       mov       r8,[rsp+0B8]
-       call      Microsoft.Extensions.Logging.FormattedLogValues..ctor(System.String, System.Object[])
-       mov       rcx,rdi
-       mov       rdx,offset MT_Microsoft.Extensions.Logging.ILogger
-       mov       r8,offset MD_Microsoft.Extensions.Logging.ILogger.Log(Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, !!0, System.Exception, System.Func`3<!!0,System.Exception,System.String>)
-       call      CORINFO_HELP_VIRTUAL_FUNC_PTR
-       mov       rcx,rdi
-       mov       edx,ebp
-       mov       r8,rsi
-       mov       r9,[rsp+50]
-       mov       [rsp+38],r9
-       mov       r9,[rsp+58]
-       mov       [rsp+40],r9
-       mov       r9,[rsp+60]
-       mov       [rsp+48],r9
-       mov       [rsp+20],rbx
-       mov       r9,293C4398C08
-       mov       r9,[r9]
-       mov       [rsp+28],r9
-       lea       r9,[rsp+38]
-       call      rax
-       nop
-       add       rsp,68
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-M01_L00:
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      CORINFO_HELP_NEWSFAST
-       mov       rsi,rax
-       mov       ecx,191
-       mov       rdx,7FFF28D957A8
-       call      CORINFO_HELP_STRCNS
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      System.ArgumentNullException..ctor(System.String)
-       mov       rcx,rsi
-       call      CORINFO_HELP_THROW
-       int       3
-; Total bytes of code 246
-```
-
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
        push      r14
        push      rdi
@@ -5048,7 +2048,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,172E83523F0
+       mov       rdx,29D8B5B1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5057,9 +2057,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,172C8352F58
+       mov       rcx,29DAB5B2F58
        mov       rbp,[rcx]
-       mov       rcx,172E83523F8
+       mov       rcx,29D8B5B1BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5124,7 +2124,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,172F8354800
+       mov       r9,29DAB5B89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5141,7 +2141,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309757A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5170,7 +2170,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,137E286B7E8
+       mov       rdx,215CF9F2BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5179,9 +2179,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,137E2862F58
+       mov       rcx,215EF9F2F58
        mov       rbp,[rcx]
-       mov       rcx,137E286B7F0
+       mov       rcx,215CF9F2BF8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5246,7 +2246,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,137E2868C08
+       mov       r9,215EF9F89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5263,7 +2263,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5292,7 +2292,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2106924A7D0
+       mov       rdx,27452F72BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5301,9 +2301,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,21069242F58
+       mov       rcx,27472F72F58
        mov       rbp,[rcx]
-       mov       rcx,2106924A7D8
+       mov       rcx,27452F72BF8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5368,7 +2368,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,21069248C08
+       mov       r9,27472F789F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5385,7 +2385,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DB57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5414,7 +2414,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,185020F1BD8
+       mov       rdx,28C0B243408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5423,9 +2423,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,185220F2F58
+       mov       rcx,28BEB242F58
        mov       rbp,[rcx]
-       mov       rcx,185020F1BE0
+       mov       rcx,28C0B243410
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5490,7 +2490,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,185220F8C08
+       mov       r9,28BEB2489F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5507,7 +2507,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5536,7 +2536,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FE33055FE0
+       mov       rdx,269BB071BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5545,9 +2545,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1FE33052F58
+       mov       rcx,269DB072F58
        mov       rbp,[rcx]
-       mov       rcx,1FE33055FE8
+       mov       rcx,269BB071BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5612,7 +2612,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1FE53054800
+       mov       r9,269EB0745F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5629,7 +2629,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DD57A8
+       mov       rdx,7FFF309757A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5658,7 +2658,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,26ECE3B3BD0
+       mov       rdx,235E61FA7D0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5667,9 +2667,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,26ECE3B2F58
+       mov       rcx,235E61F2F58
        mov       rbp,[rcx]
-       mov       rcx,26ECE3B3BD8
+       mov       rcx,235E61FA7D8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5734,7 +2734,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,26EFE3B4800
+       mov       r9,235E61F89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5751,7 +2751,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5780,7 +2780,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2320AB9A7D0
+       mov       rdx,1FC00B623F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5789,9 +2789,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,2320AB92F58
+       mov       rcx,1FBE0B62F58
        mov       rbp,[rcx]
-       mov       rcx,2320AB9A7D8
+       mov       rcx,1FC00B623F8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5856,7 +2856,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2320AB98C08
+       mov       r9,1FC10B645F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5873,7 +2873,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5902,7 +2902,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1E620765FE0
+       mov       rdx,1C67A595000
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5911,9 +2911,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1E620762F58
+       mov       rcx,1C68A592F58
        mov       rbp,[rcx]
-       mov       rcx,1E620765FE8
+       mov       rcx,1C67A595008
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -5978,7 +2978,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1E650764800
+       mov       r9,1C69A5945F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5995,7 +2995,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DB57A8
+       mov       rdx,7FFF309757A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6024,7 +3024,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1B8FA0A1BD8
+       mov       rdx,21946022BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6033,9 +3033,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1B91A0A2F58
+       mov       rcx,21936022F58
        mov       rbp,[rcx]
-       mov       rcx,1B8FA0A1BE0
+       mov       rcx,21946022BF8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6100,7 +3100,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1B91A0A8C08
+       mov       r9,219360289F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6117,7 +3117,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28D957A8
+       mov       rdx,7FFF309957A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6146,7 +3146,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,217063B1BD8
+       mov       rdx,20E9A615FE0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6155,9 +3155,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,216E63B2F58
+       mov       rcx,20E9A612F58
        mov       rbp,[rcx]
-       mov       rcx,217063B1BE0
+       mov       rcx,20E9A615FE8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6222,7 +3222,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,216E63B8C08
+       mov       r9,20EBA6145F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6239,7 +3239,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6268,7 +3268,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2150C3E3FE8
+       mov       rdx,1E296371BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6277,9 +3277,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,2151C3E2F58
+       mov       rcx,1E2B6372F58
        mov       rbp,[rcx]
-       mov       rcx,2150C3E3FF0
+       mov       rcx,1E296371BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6344,7 +3344,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2153C3E4800
+       mov       r9,1E2C63745F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6361,7 +3361,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28D957A8
+       mov       rdx,7FFF309957A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6390,7 +3390,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,18A5092A7D0
+       mov       rdx,16407BC1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6399,9 +3399,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,18A50922F58
+       mov       rcx,16427BC2F58
        mov       rbp,[rcx]
-       mov       rcx,18A5092A7D8
+       mov       rcx,16407BC1BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6466,7 +3466,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,18A50928C08
+       mov       r9,16427BC89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6483,7 +3483,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28D957A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6512,7 +3512,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1DFD3064800
+       mov       rdx,1F00D483FE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6521,9 +3521,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1DFD3062F58
+       mov       rcx,1F01D482F58
        mov       rbp,[rcx]
-       mov       rcx,1DFD3064808
+       mov       rcx,1F00D483FF0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6588,7 +3588,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1DFE3064800
+       mov       r9,1F03D4845F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6605,7 +3605,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309757A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6634,7 +3634,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,27594E23BD0
+       mov       rdx,22EB28763C8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6643,9 +3643,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,27594E22F58
+       mov       rcx,22E92872F58
        mov       rbp,[rcx]
-       mov       rcx,27594E23BD8
+       mov       rcx,22EB28763D0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6710,7 +3710,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,275B4E24800
+       mov       r9,22EB28745F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6727,7 +3727,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6756,7 +3756,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1F8B2295FE0
+       mov       rdx,2553830AFD0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6765,9 +3765,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1F8B2292F58
+       mov       rcx,25538302F58
        mov       rbp,[rcx]
-       mov       rcx,1F8B2295FE8
+       mov       rcx,2553830AFD8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6832,7 +3832,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1F8E2294800
+       mov       r9,255383089F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6849,7 +3849,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DD57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -6878,7 +3878,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1EC462E23F0
+       mov       rdx,25C8AEC1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -6887,9 +3887,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1EC262E2F58
+       mov       rcx,25CAAEC2F58
        mov       rbp,[rcx]
-       mov       rcx,1EC462E23F8
+       mov       rcx,25C8AEC1BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -6954,7 +3954,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1EC262E8C08
+       mov       r9,25CAAEC89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -6971,7 +3971,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309957A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7000,7 +4000,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,179BFE92BF0
+       mov       rdx,17CB1CC2BF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7009,9 +4009,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,179CFE92F58
+       mov       rcx,17CD1CC2F58
        mov       rbp,[rcx]
-       mov       rcx,179BFE92BF8
+       mov       rcx,17CB1CC2BF8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7076,7 +4076,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,179DFE96C10
+       mov       r9,17CD1CC89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7093,7 +4093,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DB57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7122,7 +4122,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FF171423F0
+       mov       rdx,295522497F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7131,9 +4131,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1FEF7142F58
+       mov       rcx,29532242F58
        mov       rbp,[rcx]
-       mov       rcx,1FF171423F8
+       mov       rcx,295522497F8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7198,7 +4198,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1FF27144800
+       mov       r9,29552246A00
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7215,7 +4215,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7244,7 +4244,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,238DF585400
+       mov       rdx,16F60BB6FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7253,9 +4253,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,238DF582F58
+       mov       rcx,16F60BB2F58
        mov       rbp,[rcx]
-       mov       rcx,238DF585408
+       mov       rcx,16F60BB7000
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7320,7 +4320,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,238EF584800
+       mov       r9,16F90BB45F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7337,7 +4337,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DA57A8
+       mov       rdx,7FFF309957A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7366,7 +4366,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,17F52B63408
+       mov       rdx,257EFC73FE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7375,9 +4375,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,17F32B62F58
+       mov       rcx,2580FC72F58
        mov       rbp,[rcx]
-       mov       rcx,17F52B63410
+       mov       rcx,257EFC73FF0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7442,7 +4442,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,17F62B64800
+       mov       r9,2580FC765E8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7459,7 +4459,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DD57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7488,7 +4488,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,19E18A51BD8
+       mov       rdx,29C95D263C8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7497,9 +4497,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,19E38A52F58
+       mov       rcx,29C75D22F58
        mov       rbp,[rcx]
-       mov       rcx,19E18A51BE0
+       mov       rcx,29C95D263D0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7564,7 +4564,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,19E38A58C08
+       mov       r9,29C95D245F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7581,7 +4581,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309857A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7610,7 +4610,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,23932FF97F0
+       mov       rdx,218ABF63BD0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7619,9 +4619,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,23922FF2F58
+       mov       rcx,218ABF62F58
        mov       rbp,[rcx]
-       mov       rcx,23932FF97F8
+       mov       rcx,218ABF63BD8
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7686,7 +4686,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,23932FF6C10
+       mov       r9,218CBF645F0
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7703,7 +4703,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DB57A8
+       mov       rdx,7FFF309957A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7732,7 +4732,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21153C43BD0
+       mov       rdx,292AA8F1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7741,9 +4741,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,21153C42F58
+       mov       rcx,2927A8F2F58
        mov       rbp,[rcx]
-       mov       rcx,21153C43BD8
+       mov       rcx,292AA8F1BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7808,7 +4808,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,21173C46C10
+       mov       r9,2929A8F6A00
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7825,7 +4825,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309657A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -7854,7 +4854,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FC2EEE4BE8
+       mov       rdx,2D5166A1BD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -7863,9 +4863,9 @@ M01_L00:
        xor       ebx,ebx
        cmp       dword ptr [rsi+124],0
        jle       short M00_L01
-       mov       rcx,1FC2EEE2F58
+       mov       rcx,2D5366A2F58
        mov       rbp,[rcx]
-       mov       rcx,1FC2EEE4BF0
+       mov       rcx,2D5166A1BE0
        mov       r14,[rcx]
 M00_L00:
        mov       rcx,[rsi+128]
@@ -7930,7 +4930,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1FC5EEE4800
+       mov       r9,2D5366A89F8
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -7947,7 +4947,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF28DC57A8
+       mov       rdx,7FFF309A57A8
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi

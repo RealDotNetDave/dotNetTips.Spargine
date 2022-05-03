@@ -51,7 +51,11 @@ namespace DotNetTips.Spargine.Extensions
 		public static bool AddFirst<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
 			list = list.ArgumentNotReadOnly();
-			item = item.ArgumentNotNull();
+
+			if (item is null)
+			{
+				return false;
+			}
 
 			list.Insert(0, item);
 
@@ -67,9 +71,18 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static void AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
+		public static bool AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
-			list.ArgumentNotReadOnly().Insert(list.Count, item.ArgumentNotNull());
+			list = list.ArgumentNotReadOnly();
+
+			if (item is null)
+			{
+				return false;
+			}
+
+			list.Insert(list.Count, item);
+
+			return true;
 		}
 
 		/// <summary>

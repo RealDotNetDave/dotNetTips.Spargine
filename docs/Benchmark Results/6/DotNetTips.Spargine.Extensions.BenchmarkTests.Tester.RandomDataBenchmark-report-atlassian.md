@@ -1,0 +1,18 @@
+{noformat}
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1682 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=6.0.300-preview.22204.3
+  [Host]     : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+  Job-LWZYFI : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+
+EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
+Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Tester  
+
+{noformat}
+||                              Method ||    Mean ||   Error ||  StdDev ||  StdErr ||     Min ||      Q1 ||  Median ||      Q3 ||     Max ||    Op/s ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline ||Code Size || Gen 0 ||Allocated ||
+|                   *'Creating: Person'* | *25.11 μs* | *0.341 μs* | *0.284 μs* | *0.079 μs* | *24.63 μs* | *24.86 μs* | *25.06 μs* | *25.34 μs* | *25.57 μs* | *39,824.7* |      *0.3406 μs* |      *13.00* |    *1.664* |  *2.000* |   *0.0429* |    *1* |            *** |       *No* |      *1 KB* | *0.2747* |      *3 KB* |
+|             *'Creating: PersonProper'* | *25.80 μs* | *0.185 μs* | *0.155 μs* | *0.043 μs* | *25.55 μs* | *25.70 μs* | *25.80 μs* | *25.95 μs* | *26.03 μs* | *38,760.9* |      *0.1853 μs* |      *13.00* |    *1.621* |  *2.000* |  *-0.1490* |    *2* |            *** |       *No* |      *1 KB* | *0.2747* |      *3 KB* |
+|             *'Creating: PersonRecord'* | *32.31 μs* | *0.473 μs* | *0.442 μs* | *0.114 μs* | *31.71 μs* | *32.02 μs* | *32.20 μs* | *32.55 μs* | *33.25 μs* | *30,945.8* |      *0.4727 μs* |      *15.00* |    *2.284* |  *2.000* |   *0.5948* |    *3* |            *** |       *No* |      *2 KB* | *0.3662* |      *4 KB* |
+| *'PropertiesToString(): PersonProper'* | *47.62 μs* | *0.374 μs* | *0.350 μs* | *0.090 μs* | *46.97 μs* | *47.44 μs* | *47.70 μs* | *47.82 μs* | *48.35 μs* | *21,000.5* |      *0.3743 μs* |      *15.00* |    *2.558* |  *2.000* |  *-0.0504* |    *4* |            *** |       *No* |      *1 KB* | *3.4180* |     *31 KB* |
+| *'PropertiesToString(): PersonRecord'* | *61.39 μs* | *0.811 μs* | *0.719 μs* | *0.192 μs* | *59.99 μs* | *61.04 μs* | *61.59 μs* | *61.77 μs* | *62.53 μs* | *16,290.4* |      *0.8111 μs* |      *14.00* |    *2.146* |  *2.000* |  *-0.4157* |    *5* |            *** |       *No* |      *3 KB* | *4.8828* |     *44 KB* |

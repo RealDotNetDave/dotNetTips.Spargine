@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20220428-060102</title>
+<title>DotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20220501-135121</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -17,7 +17,7 @@ BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1682 (21H2)
 Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
 .NET SDK=6.0.300-preview.22204.3
   [Host]     : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
-  Job-FLIPTB : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+  Job-URPYHK : .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
 Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
@@ -26,8 +26,8 @@ Namespace=DotNetTips.Spargine.Core.BenchmarkTests
 <table>
 <thead><tr><th>                              Method</th><th>Categories</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Gen 1</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>Strings</td><td>4.965 &mu;s</td><td>0.0800 &mu;s</td><td>0.0748 &mu;s</td><td>0.0193 &mu;s</td><td>4.838 &mu;s</td><td>4.914 &mu;s</td><td>4.968 &mu;s</td><td>5.027 &mu;s</td><td>5.073 &mu;s</td><td>201,423.8</td><td>0.0800 &mu;s</td><td>15.00</td><td>1.670</td><td>2.000</td><td>-0.1047</td><td>1</td><td>*</td><td>No</td><td>3 KB</td><td>1.4648</td><td>0.0076</td><td>13 KB</td>
-</tr><tr><td>GetPropertyValues</td><td>Reflection</td><td>31.916 &mu;s</td><td>0.2119 &mu;s</td><td>0.1879 &mu;s</td><td>0.0502 &mu;s</td><td>31.592 &mu;s</td><td>31.782 &mu;s</td><td>31.956 &mu;s</td><td>32.033 &mu;s</td><td>32.180 &mu;s</td><td>31,331.9</td><td>0.2119 &mu;s</td><td>14.00</td><td>1.776</td><td>2.000</td><td>-0.3153</td><td>2</td><td>*</td><td>No</td><td>2 KB</td><td>0.6714</td><td>-</td><td>6 KB</td>
+</thead><tbody><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>Strings</td><td>5.348 &mu;s</td><td>0.1022 &mu;s</td><td>0.1003 &mu;s</td><td>0.0251 &mu;s</td><td>5.169 &mu;s</td><td>5.296 &mu;s</td><td>5.306 &mu;s</td><td>5.415 &mu;s</td><td>5.578 &mu;s</td><td>186,969.2</td><td>0.1022 &mu;s</td><td>16.00</td><td>2.737</td><td>2.000</td><td>0.5570</td><td>1</td><td>*</td><td>No</td><td>3 KB</td><td>1.4648</td><td>0.0229</td><td>13 KB</td>
+</tr><tr><td>GetPropertyValues</td><td>Reflection</td><td>32.702 &mu;s</td><td>0.3815 &mu;s</td><td>0.3568 &mu;s</td><td>0.0921 &mu;s</td><td>32.171 &mu;s</td><td>32.471 &mu;s</td><td>32.609 &mu;s</td><td>32.905 &mu;s</td><td>33.409 &mu;s</td><td>30,579.5</td><td>0.3815 &mu;s</td><td>15.00</td><td>2.265</td><td>2.000</td><td>0.6534</td><td>2</td><td>*</td><td>No</td><td>2 KB</td><td>0.6714</td><td>-</td><td>6 KB</td>
 </tr></tbody></table>
 </body>
 </html>

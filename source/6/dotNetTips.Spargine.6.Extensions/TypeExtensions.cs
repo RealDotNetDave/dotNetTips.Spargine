@@ -346,12 +346,14 @@ namespace DotNetTips.Spargine.Extensions
 
 			while (type.CheckIsNotNull())
 			{
-				if (type == baseClass)
+				if (type.CheckEquals(baseClass))
 				{
 					return true;
 				}
-
-				type = type.BaseType;
+				else
+				{
+					type = type.BaseType;
+				}
 			}
 
 			return false;

@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 05-10-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -33,6 +33,8 @@ namespace DotNetTips.Spargine.IO
 		/// The count for retries.
 		/// </summary>
 		private const int Retries = 10;
+
+		private const int NoResult = -1;
 
 		/// <summary>
 		/// The HTTP client
@@ -96,33 +98,38 @@ namespace DotNetTips.Spargine.IO
 		/// </summary>
 		/// <param name="file">The file.</param>
 		/// <param name="destination">The destination folder.</param>
-		/// <returns>File length as System.Int64.</returns>
+		/// <returns>File length as System.Int64. If value is -1, then there is an issue creating the file.</returns>
 		[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static long CopyFile([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 		{
 			var fileName = file.ArgumentExists().FullName;
 
-			destination.CheckExists();
-
-			var destinationName = destination.FullName;
-
-			var newFileName = Path.Combine(destinationName, fileName);
-
-			using (var sourceStream = file.Open(FileMode.Open))
+			if (destination.CheckExists(throwException: true))
 			{
-				if (File.Exists(newFileName))
+				var destinationName = destination.FullName;
+
+				var newFileName = Path.Combine(destinationName, fileName);
+
+				using (var sourceStream = file.Open(FileMode.Open))
 				{
-					File.Delete(newFileName);
+					if (File.Exists(newFileName))
+					{
+						File.Delete(newFileName);
+					}
+
+					using var destinationStream = File.Create(newFileName);
+
+					sourceStream.CopyTo(destinationStream);
+
+					destinationStream.Flush();
 				}
 
-				using var destinationStream = File.Create(newFileName);
-
-				sourceStream.CopyTo(destinationStream);
-
-				destinationStream.Flush();
+				return file.Length;
 			}
-
-			return file.Length;
+			else
+			{
+				return NoResult;
+			}
 		}
 
 		/// <summary>
@@ -137,8 +144,7 @@ namespace DotNetTips.Spargine.IO
 		public static async Task<long> CopyFileAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 		{
 			var fileName = file.ArgumentExists().FullName;
-
-			_ = destination.CheckExists(throwException: true, errorMessage: string.Format(CultureInfo.InvariantCulture, Resources.DirectoryDoesNotExistOrCannotBeCreated, destination.FullName));
+			_ = destination.CheckExists(throwException: true, createDirectory: true, errorMessage: string.Format(CultureInfo.InvariantCulture, Resources.DirectoryDoesNotExistOrCannotBeCreated, destination.FullName));
 
 			var destinationName = destination.FullName;
 
@@ -176,7 +182,10 @@ namespace DotNetTips.Spargine.IO
 			{
 				try
 				{
-					File.Delete(fileName);
+					if (File.Exists(fileName))
+					{
+						File.Delete(fileName);
+					}
 				}
 				catch (Exception ex) when (ex is ArgumentException or
 				  ArgumentNullException or
@@ -250,7 +259,14 @@ namespace DotNetTips.Spargine.IO
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool FileHasInvalidChars(FileInfo file)
 		{
-			return file.ArgumentExists().FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
+			if (file.CheckExists())
+			{
+				return file.FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		/// <summary>

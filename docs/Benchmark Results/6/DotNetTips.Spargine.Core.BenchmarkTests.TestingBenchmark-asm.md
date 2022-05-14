@@ -1,6 +1,10 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest08()
+; 			var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			WIPTests.InTest02(ex);
+; 			^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -31,22 +35,38 @@
        mov       dword ptr [rbx+74],80070057
        mov       dword ptr [rbx+74],80004003
        mov       rcx,rbx
-       mov       rax,[7FFF3090D4B8]
+       mov       rax,[7FFE6461D358]
        call      qword ptr [rax+20]
-       mov       rcx,rax
-       test      rcx,rcx
+       mov       rsi,rax
+       test      rsi,rsi
        jne       short M00_L00
-       mov       rcx,1D71B873020
-       mov       rcx,[rcx]
+       mov       rcx,2A0D39D1028
+       mov       rsi,[rcx]
 M00_L00:
-       call      System.Console.WriteLine(System.String)
+       mov       rcx,2A0F39D4368
+       mov       rdi,[rcx]
+       mov       rcx,offset MT_System.Action`1[[System.String, System.Private.CoreLib]]
+       call      CORINFO_HELP_NEWSFAST
+       mov       rbx,rax
+       lea       rcx,[rbx+8]
+       mov       rdx,rbx
+       call      CORINFO_HELP_ASSIGN_REF
+       mov       rcx,7FFE6426D170
+       mov       [rbx+18],rcx
+       mov       rcx,offset System.Console.WriteLine(System.String)
+       mov       [rbx+20],rcx
+       mov       rcx,rdi
+       mov       r9,rsi
+       mov       r8,rbx
+       xor       edx,edx
+       call      BenchmarkDotNet.Loggers.ConsoleLogger.Write(BenchmarkDotNet.Loggers.LogKind, System.Action`1<System.String>, System.String)
        nop
        add       rsp,20
        pop       rbx
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 179
+; Total bytes of code 261
 ```
 ```assembly
 ; System.DateTime.get_Now()
@@ -54,13 +74,13 @@ M00_L00:
        push      rsi
        sub       rsp,38
        lea       rcx,[rsp+28]
-       mov       rax,7FFFCC6D5040
+       mov       rax,7FFF810B5040
        call      rax
        mov       rsi,[rsp+28]
-       mov       rax,1D71B871230
+       mov       rax,2A0F39D1230
        mov       rdi,[rax]
        sub       rsi,[rdi+8]
-       cmp       dword ptr [7FFF30914A34],0
+       cmp       dword ptr [7FFE64614A34],0
        jne       near ptr M01_L07
 M01_L00:
        mov       eax,0B2D05E00
@@ -116,17 +136,17 @@ M01_L07:
 ```assembly
 ; System.Globalization.CultureInfo.get_CurrentCulture()
        sub       rsp,28
-       mov       rcx,7FFF30674928
+       mov       rcx,7FFE64374928
        mov       edx,230
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+8]
        test      rax,rax
        jne       short M02_L00
-       mov       rax,1D71B871578
+       mov       rax,2A0F39D1578
        mov       rax,[rax]
        test      rax,rax
        jne       short M02_L00
-       mov       rax,1D71B871558
+       mov       rax,2A0F39D1558
        mov       rax,[rax]
        test      rax,rax
        je        short M02_L01
@@ -154,7 +174,7 @@ M02_L01:
        vmovdqa   xmmword ptr [rbp+10],xmm4
        vmovdqa   xmmword ptr [rbp+20],xmm4
        mov       [rbp+30],rax
-       mov       rax,94B2990D96ED
+       mov       rax,0BCB466771E6D
        mov       [rbp],rax
        mov       rdi,rcx
        mov       rsi,rdx
@@ -186,7 +206,7 @@ M03_L00:
        lea       r9,[rbp+38]
        call      System.DateTimeFormat.TryFormatR(System.DateTime, System.TimeSpan, System.Span`1<Char>, Int32 ByRef)
        mov       rax,rsi
-       mov       rcx,94B2990D96ED
+       mov       rcx,0BCB466771E6D
        cmp       [rbp],rcx
        je        short M03_L01
        call      CORINFO_HELP_FAIL_FAST
@@ -219,14 +239,14 @@ M03_L03:
        mov       rdi,rax
        mov       rcx,rdi
        cmp       [rcx],ecx
-       call      qword ptr [7FFF30912E80]
+       call      qword ptr [7FFE64612E80]
        mov       rbx,rax
        mov       rcx,[rdi+8]
        mov       ecx,[rcx+8]
        add       ecx,[rdi+1C]
        cmp       ecx,168
        jg        short M03_L04
-       mov       rcx,7FFF30674928
+       mov       rcx,7FFE64374928
        mov       edx,413
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        lea       rcx,[rax+50]
@@ -234,7 +254,7 @@ M03_L03:
        call      CORINFO_HELP_ASSIGN_REF
 M03_L04:
        mov       rax,rbx
-       mov       rcx,94B2990D96ED
+       mov       rcx,0BCB466771E6D
        cmp       [rbp],rcx
        je        short M03_L05
        call      CORINFO_HELP_FAIL_FAST
@@ -272,7 +292,7 @@ M03_L06:
        mov       [rbp+30],ecx
        lea       rcx,[rbp+28]
        call      System.Span`1[[System.Char, System.Private.CoreLib]].ToString()
-       mov       rcx,94B2990D96ED
+       mov       rcx,0BCB466771E6D
        cmp       [rbp],rcx
        je        short M03_L07
        call      CORINFO_HELP_FAIL_FAST
@@ -303,7 +323,7 @@ M03_L10:
 ```
 ```assembly
 ; System.SR.get_ArgumentNull_Generic()
-       mov       rcx,1D73B8725F0
+       mov       rcx,2A0D39D4A00
        mov       rcx,[rcx]
        jmp       near ptr System.SR.GetResourceString(System.String)
 ; Total bytes of code 18
@@ -325,10 +345,114 @@ M03_L10:
        ret
 ; Total bytes of code 36
 ```
+```assembly
+; BenchmarkDotNet.Loggers.ConsoleLogger.Write(BenchmarkDotNet.Loggers.LogKind, System.Action`1<System.String>, System.String)
+       push      rbp
+       push      r15
+       push      r14
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,38
+       lea       rbp,[rsp+60]
+       mov       [rbp+0FFC0],rsp
+       mov       rsi,rcx
+       mov       ebx,edx
+       mov       r14,r8
+       mov       rdi,r9
+       cmp       byte ptr [rsi+10],0
+       jne       short M06_L00
+       mov       rcx,rdi
+       call      BenchmarkDotNet.Helpers.AsciiHelper.ToAscii(System.String)
+       mov       rdi,rax
+M06_L00:
+       call      System.ConsolePal.get_ForegroundColor()
+       mov       [rbp+0FFD4],eax
+       mov       rcx,[rsi+8]
+       cmp       [rcx],ecx
+       mov       edx,ebx
+       call      System.Collections.Generic.Dictionary`2[[BenchmarkDotNet.Loggers.LogKind, BenchmarkDotNet],[System.ConsoleColor, System.Console]].FindValue(BenchmarkDotNet.Loggers.LogKind)
+       test      rax,rax
+       jne       short M06_L01
+       mov       r15d,7
+       jmp       short M06_L02
+M06_L01:
+       mov       rcx,[rsi+8]
+       mov       edx,ebx
+       cmp       [rcx],ecx
+       call      qword ptr [7FFE64619210]
+       mov       r15d,eax
+M06_L02:
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,r15d
+       je        short M06_L03
+       call      System.ConsolePal.get_BackgroundColor()
+       cmp       eax,r15d
+       je        short M06_L03
+       mov       ecx,r15d
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M06_L03:
+       mov       rcx,[r14+8]
+       mov       rdx,rdi
+       call      qword ptr [r14+18]
+       nop
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M06_L04
+       call      System.ConsolePal.get_BackgroundColor()
+       mov       edx,[rbp+0FFD4]
+       cmp       eax,edx
+       je        short M06_L04
+       mov       ecx,edx
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M06_L04:
+       nop
+       add       rsp,38
+       pop       rbx
+       pop       rsi
+       pop       rdi
+       pop       r14
+       pop       r15
+       pop       rbp
+       ret
+       push      rbp
+       push      r15
+       push      r14
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,28
+       mov       rbp,[rcx+20]
+       mov       [rsp+20],rbp
+       lea       rbp,[rbp+60]
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M06_L05
+       call      System.ConsolePal.get_BackgroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M06_L05
+       mov       ecx,[rbp+0FFD4]
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M06_L05:
+       nop
+       add       rsp,28
+       pop       rbx
+       pop       rsi
+       pop       rdi
+       pop       r14
+       pop       r15
+       pop       rbp
+       ret
+; Total bytes of code 250
+```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest07()
+; 			var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			WIPTests.InTest01(ex);
+; 			^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
@@ -359,21 +483,37 @@ M03_L10:
        mov       dword ptr [rbx+74],80070057
        mov       dword ptr [rbx+74],80004003
        mov       rcx,rbx
-       call      qword ptr [7FFF30924BC0]
-       mov       rcx,rax
-       test      rcx,rcx
+       call      qword ptr [7FFE64634BC0]
+       mov       rsi,rax
+       test      rsi,rsi
        jne       short M00_L00
-       mov       rcx,19136BF3020
-       mov       rcx,[rcx]
+       mov       rcx,27E24203020
+       mov       rsi,[rcx]
 M00_L00:
-       call      System.Console.WriteLine(System.String)
+       mov       rcx,27E24206778
+       mov       rdi,[rcx]
+       mov       rcx,offset MT_System.Action`1[[System.String, System.Private.CoreLib]]
+       call      CORINFO_HELP_NEWSFAST
+       mov       rbx,rax
+       lea       rcx,[rbx+8]
+       mov       rdx,rbx
+       call      CORINFO_HELP_ASSIGN_REF
+       mov       rcx,7FFE6428D170
+       mov       [rbx+18],rcx
+       mov       rcx,offset System.Console.WriteLine(System.String)
+       mov       [rbx+20],rcx
+       mov       rcx,rdi
+       mov       r9,rsi
+       mov       r8,rbx
+       xor       edx,edx
+       call      BenchmarkDotNet.Loggers.ConsoleLogger.Write(BenchmarkDotNet.Loggers.LogKind, System.Action`1<System.String>, System.String)
        nop
        add       rsp,20
        pop       rbx
        pop       rsi
        pop       rdi
        ret
-; Total bytes of code 175
+; Total bytes of code 257
 ```
 ```assembly
 ; System.DateTime.get_Now()
@@ -381,13 +521,13 @@ M00_L00:
        push      rsi
        sub       rsp,38
        lea       rcx,[rsp+28]
-       mov       rax,7FFFCC6D5040
+       mov       rax,7FFF810B5040
        call      rax
        mov       rsi,[rsp+28]
-       mov       rax,19136BF1230
+       mov       rax,27E24201230
        mov       rdi,[rax]
        sub       rsi,[rdi+8]
-       cmp       dword ptr [7FFF30924A34],0
+       cmp       dword ptr [7FFE64634A34],0
        jne       near ptr M01_L07
 M01_L00:
        mov       eax,0B2D05E00
@@ -443,17 +583,17 @@ M01_L07:
 ```assembly
 ; System.Globalization.CultureInfo.get_CurrentCulture()
        sub       rsp,28
-       mov       rcx,7FFF30684928
+       mov       rcx,7FFE64394928
        mov       edx,230
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        mov       rax,[rax+8]
        test      rax,rax
        jne       short M02_L00
-       mov       rax,19136BF1578
+       mov       rax,27E24201578
        mov       rax,[rax]
        test      rax,rax
        jne       short M02_L00
-       mov       rax,19136BF1558
+       mov       rax,27E24201558
        mov       rax,[rax]
        test      rax,rax
        je        short M02_L01
@@ -481,7 +621,7 @@ M02_L01:
        vmovdqa   xmmword ptr [rbp+10],xmm4
        vmovdqa   xmmword ptr [rbp+20],xmm4
        mov       [rbp+30],rax
-       mov       rax,4BDBE490C7D4
+       mov       rax,574556152640
        mov       [rbp],rax
        mov       rdi,rcx
        mov       rsi,rdx
@@ -513,7 +653,7 @@ M03_L00:
        lea       r9,[rbp+38]
        call      System.DateTimeFormat.TryFormatR(System.DateTime, System.TimeSpan, System.Span`1<Char>, Int32 ByRef)
        mov       rax,rsi
-       mov       rcx,4BDBE490C7D4
+       mov       rcx,574556152640
        cmp       [rbp],rcx
        je        short M03_L01
        call      CORINFO_HELP_FAIL_FAST
@@ -546,14 +686,14 @@ M03_L03:
        mov       rdi,rax
        mov       rcx,rdi
        cmp       [rcx],ecx
-       call      qword ptr [7FFF30922E80]
+       call      qword ptr [7FFE64632E80]
        mov       rbx,rax
        mov       rcx,[rdi+8]
        mov       ecx,[rcx+8]
        add       ecx,[rdi+1C]
        cmp       ecx,168
        jg        short M03_L04
-       mov       rcx,7FFF30684928
+       mov       rcx,7FFE64394928
        mov       edx,413
        call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
        lea       rcx,[rax+50]
@@ -561,7 +701,7 @@ M03_L03:
        call      CORINFO_HELP_ASSIGN_REF
 M03_L04:
        mov       rax,rbx
-       mov       rcx,4BDBE490C7D4
+       mov       rcx,574556152640
        cmp       [rbp],rcx
        je        short M03_L05
        call      CORINFO_HELP_FAIL_FAST
@@ -599,7 +739,7 @@ M03_L06:
        mov       [rbp+30],ecx
        lea       rcx,[rbp+28]
        call      System.Span`1[[System.Char, System.Private.CoreLib]].ToString()
-       mov       rcx,4BDBE490C7D4
+       mov       rcx,574556152640
        cmp       [rbp],rcx
        je        short M03_L07
        call      CORINFO_HELP_FAIL_FAST
@@ -630,7 +770,7 @@ M03_L10:
 ```
 ```assembly
 ; System.SR.get_ArgumentNull_Generic()
-       mov       rcx,19156BF65C8
+       mov       rcx,27E44201DD8
        mov       rcx,[rcx]
        jmp       near ptr System.SR.GetResourceString(System.String)
 ; Total bytes of code 18
@@ -656,7 +796,7 @@ M05_L00:
        je        near ptr M05_L01
        cmp       dword ptr [rcx+8],0
        je        near ptr M05_L01
-       mov       rcx,19136BF5DA0
+       mov       rcx,27E2420A590
        mov       rcx,[rcx]
        call      System.SR.GetResourceString(System.String)
        mov       rcx,rax
@@ -692,7 +832,7 @@ M05_L00:
        lea       rdx,[rbp+0C]
        movsxd    rcx,ecx
        lea       rcx,[rdx+rcx*2]
-       mov       rdx,19156BF65F0
+       mov       rdx,27E44201E00
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,2
@@ -735,7 +875,7 @@ M05_L02:
        jle       near ptr M05_L12
        movsxd    rcx,esi
        lea       rcx,[r15+rcx*2]
-       mov       rdx,19156BF65F0
+       mov       rdx,27E44201E00
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,2
@@ -744,7 +884,7 @@ M05_L02:
 M05_L03:
        jmp       short M05_L01
 M05_L04:
-       mov       rcx,19156BF65F0
+       mov       rcx,27E44201E00
        mov       rdi,[rcx]
        jmp       short M05_L03
 M05_L05:
@@ -759,7 +899,7 @@ M05_L05:
        cmp       dword ptr [rdi+8],1
        jl        near ptr M05_L13
        lea       rcx,[rdi+0C]
-       mov       rdx,19156BF65F0
+       mov       rdx,27E44201E00
        mov       rdx,[rdx]
        add       rdx,0C
        mov       r8d,2
@@ -771,18 +911,18 @@ M05_L05:
 M05_L06:
        jmp       near ptr M05_L01
 M05_L07:
-       mov       rcx,19156BF65F0
+       mov       rcx,27E44201E00
        mov       rdi,[rcx]
        jmp       short M05_L06
 M05_L08:
-       mov       rcx,19136BF5DB0
+       mov       rcx,27E2420A5A0
        mov       rcx,[rcx]
        call      System.SR.GetResourceString(System.String)
        mov       rdi,rax
        mov       rcx,rsi
        call      System.Object.GetType()
        mov       rcx,rax
-       call      qword ptr [7FFF30929438]
+       call      qword ptr [7FFE64639438]
        mov       rdx,rax
        mov       rcx,rdi
        call      System.SR.Format(System.String, System.Object)
@@ -848,10 +988,114 @@ M05_L13:
        ret
 ; Total bytes of code 36
 ```
+```assembly
+; BenchmarkDotNet.Loggers.ConsoleLogger.Write(BenchmarkDotNet.Loggers.LogKind, System.Action`1<System.String>, System.String)
+       push      rbp
+       push      r15
+       push      r14
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,38
+       lea       rbp,[rsp+60]
+       mov       [rbp+0FFC0],rsp
+       mov       rsi,rcx
+       mov       ebx,edx
+       mov       r14,r8
+       mov       rdi,r9
+       cmp       byte ptr [rsi+10],0
+       jne       short M07_L00
+       mov       rcx,rdi
+       call      BenchmarkDotNet.Helpers.AsciiHelper.ToAscii(System.String)
+       mov       rdi,rax
+M07_L00:
+       call      System.ConsolePal.get_ForegroundColor()
+       mov       [rbp+0FFD4],eax
+       mov       rcx,[rsi+8]
+       cmp       [rcx],ecx
+       mov       edx,ebx
+       call      System.Collections.Generic.Dictionary`2[[BenchmarkDotNet.Loggers.LogKind, BenchmarkDotNet],[System.ConsoleColor, System.Console]].FindValue(BenchmarkDotNet.Loggers.LogKind)
+       test      rax,rax
+       jne       short M07_L01
+       mov       r15d,7
+       jmp       short M07_L02
+M07_L01:
+       mov       rcx,[rsi+8]
+       mov       edx,ebx
+       cmp       [rcx],ecx
+       call      qword ptr [7FFE64639210]
+       mov       r15d,eax
+M07_L02:
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,r15d
+       je        short M07_L03
+       call      System.ConsolePal.get_BackgroundColor()
+       cmp       eax,r15d
+       je        short M07_L03
+       mov       ecx,r15d
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M07_L03:
+       mov       rcx,[r14+8]
+       mov       rdx,rdi
+       call      qword ptr [r14+18]
+       nop
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M07_L04
+       call      System.ConsolePal.get_BackgroundColor()
+       mov       edx,[rbp+0FFD4]
+       cmp       eax,edx
+       je        short M07_L04
+       mov       ecx,edx
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M07_L04:
+       nop
+       add       rsp,38
+       pop       rbx
+       pop       rsi
+       pop       rdi
+       pop       r14
+       pop       r15
+       pop       rbp
+       ret
+       push      rbp
+       push      r15
+       push      r14
+       push      rdi
+       push      rsi
+       push      rbx
+       sub       rsp,28
+       mov       rbp,[rcx+20]
+       mov       [rsp+20],rbp
+       lea       rbp,[rbp+60]
+       call      System.ConsolePal.get_ForegroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M07_L05
+       call      System.ConsolePal.get_BackgroundColor()
+       cmp       eax,[rbp+0FFD4]
+       je        short M07_L05
+       mov       ecx,[rbp+0FFD4]
+       call      System.ConsolePal.set_ForegroundColor(System.ConsoleColor)
+M07_L05:
+       nop
+       add       rsp,28
+       pop       rbx
+       pop       rsi
+       pop       rdi
+       pop       r14
+       pop       r15
+       pop       rbp
+       ret
+; Total bytes of code 250
+```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest02()
+; 			var result = WIPTests.TryValidateNullAgressive(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rax,[rcx+0A8]
        test      rax,rax
        sete      al
@@ -862,9 +1106,13 @@ M05_L13:
 ; Total bytes of code 24
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest01()
+; 			var result = WIPTests.TryValidateNull(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rax,[rcx+0A8]
        test      rax,rax
        sete      al
@@ -875,9 +1123,13 @@ M05_L13:
 ; Total bytes of code 24
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest03()
+; 			var result = WIPTests.TryValidateNullNoInlining(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -893,6 +1145,14 @@ M05_L13:
 ```
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullNoInlining(System.Object, Boolean)
+; 			var result = value is null;
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			if (result && throwException)
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 				ExceptionThrower.ThrowInvalidValueException("Failed", value);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			return result;
+; 			^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        test      rcx,rcx
@@ -901,7 +1161,7 @@ M05_L13:
        movzx     edx,dl
        test      edx,esi
        je        short M01_L00
-       mov       rdx,1903DFA1760
+       mov       rdx,22B9DAE9B40
        mov       rdx,[rdx]
        mov       r8,rcx
        mov       rcx,offset MD_DotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException(System.String, !!0)
@@ -914,9 +1174,13 @@ M01_L00:
 ; Total bytes of code 62
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest04()
+; 			var result = WIPTests.TryValidateNullNoOptimization(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rax,[rcx+0A8]
        test      rax,rax
        sete      al
@@ -927,9 +1191,13 @@ M01_L00:
 ; Total bytes of code 24
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest05()
+; 			var result = WIPTests.TryValidateNullPreserveSig(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rax,[rcx+0A8]
        test      rax,rax
        sete      al
@@ -940,9 +1208,13 @@ M01_L00:
 ; Total bytes of code 24
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark.WIPTest06()
+; 			var result = WIPTests.TryValidateNullSynchronized(this._person);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -958,6 +1230,14 @@ M01_L00:
 ```
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.WIPTests.TryValidateNullSynchronized(System.Object, Boolean)
+; 			var result = value is null;
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			if (result && throwException)
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 				ExceptionThrower.ThrowInvalidValueException("Failed", value);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			return result;
+; 			^^^^^^^^^^^^^^
        push      rbp
        push      rdi
        push      rsi
@@ -970,7 +1250,7 @@ M01_L00:
        xor       edx,edx
        mov       [rbp+0FFE0],edx
        lea       rdx,[rbp+0FFE0]
-       mov       rcx,1CDD0F6B058
+       mov       rcx,1766A092338
        call      CORINFO_HELP_MON_ENTER_STATIC
        test      rsi,rsi
        sete      bl
@@ -978,14 +1258,14 @@ M01_L00:
        movzx     edx,dil
        test      edx,ebx
        je        short M01_L00
-       mov       rdx,1D232BA2F90
+       mov       rdx,1761F381F78
        mov       rdx,[rdx]
        mov       r8,rsi
        mov       rcx,offset MD_DotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException(System.String, !!0)
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowInvalidValueException[[System.__Canon, System.Private.CoreLib]](System.String, System.__Canon)
 M01_L00:
        lea       rdx,[rbp+0FFE0]
-       mov       rcx,1CDD0F6B058
+       mov       rcx,1766A092338
        call      CORINFO_HELP_MON_EXIT_STATIC
        movzx     eax,bl
        movzx     eax,al
@@ -1004,7 +1284,7 @@ M01_L00:
        mov       [rsp+20],rbp
        lea       rbp,[rbp+50]
        lea       rdx,[rbp+0FFE0]
-       mov       rcx,1CDD0F6B058
+       mov       rcx,1766A092338
        call      CORINFO_HELP_MON_EXIT_STATIC
        nop
        add       rsp,28

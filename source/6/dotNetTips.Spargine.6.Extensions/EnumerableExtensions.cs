@@ -467,11 +467,13 @@ namespace DotNetTips.Spargine.Extensions
 
 				var prop = typeof(T).GetRuntimeProperty(property);
 
-				_ = prop.CheckIsNotNull(throwException: true);
+				if (prop.CheckIsNotNull(throwException: true))
+				{
 
-				return @descending
-					? list.OrderByDescending(x => prop.GetValue(x, null))
-					: list.OrderBy(x => prop.GetValue(x, null));
+					return @descending
+						? list.OrderByDescending(x => prop.GetValue(x, null))
+						: list.OrderBy(x => prop.GetValue(x, null));
+				}
 			}
 
 			return list;

@@ -141,7 +141,11 @@ namespace DotNetTips.Spargine.IO
 		{
 			directories = directories.ArgumentItemsExists();
 			searchPattern = searchPattern.ArgumentNotNullOrEmpty();
-			searchOption = searchOption.ArgumentDefined();
+
+			if (searchOption.CheckIsDefined() is false)
+			{
+				searchOption = SearchOption.TopDirectoryOnly;
+			}
 
 			var options = new EnumerationOptions() { IgnoreInaccessible = true };
 
@@ -246,38 +250,38 @@ namespace DotNetTips.Spargine.IO
 		public static void MoveDirectory([NotNull] DirectoryInfo source, [NotNull] DirectoryInfo destination, int retries = 10)
 		{
 			source = source.ArgumentExists();
+			retries = retries.ArgumentInRange(1, 100, 10, Resources.RetriesAreLimitedTo0100);
 
-			_ = destination.CheckExists();
-
-			_ = retries.CheckIsInRange(1, 100, true, Resources.RetriesAreLimitedTo0100);
-
-			var tries = 0;
-
-			do
+			if (destination.CheckExists(throwException: true))
 			{
-				tries++;
+				var tries = 0;
 
-				if (tries > 1)
+				do
 				{
-					// If something has a transient lock on the file waiting may resolve the issue
-					Thread.Sleep(( retries + 1 ) * 10);
-				}
+					tries++;
 
-				try
-				{
-					Directory.Move(source.FullName, destination.FullName);
-					return;
+					if (tries > 1)
+					{
+						// If something has a transient lock on the file waiting may resolve the issue
+						Thread.Sleep(( retries + 1 ) * 10);
+					}
+
+					try
+					{
+						Directory.Move(source.FullName, destination.FullName);
+						return;
+					}
+					catch (IOException) when (tries >= retries)
+					{
+						throw;
+					}
+					catch (UnauthorizedAccessException) when (tries >= retries)
+					{
+						throw;
+					}
 				}
-				catch (IOException) when (tries >= retries)
-				{
-					throw;
-				}
-				catch (UnauthorizedAccessException) when (tries >= retries)
-				{
-					throw;
-				}
+				while (tries < retries);
 			}
-			while (tries < retries);
 		}
 
 		/// <summary>

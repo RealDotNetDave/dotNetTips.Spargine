@@ -86,12 +86,13 @@ namespace DotNetTips.Spargine.Core
 		/// Checks if <see cref="DirectoryInfo" /> directory exists. Creates path if it does not exist.
 		/// </summary>
 		/// <param name="input">The <see cref="DirectoryInfo" /> directory to validate.</param>
+		/// <param name="createDirectory">if set to <c>true</c> [create directory]. By default, the directory will be created.</param>
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckExists(this DirectoryInfo input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckExists(this DirectoryInfo input, in bool createDirectory = true, in bool throwException = false, in string errorMessage = "")
 		{
 			var isValid = input is not null && input.Exists;
 
@@ -99,11 +100,11 @@ namespace DotNetTips.Spargine.Core
 			{
 				ExceptionThrower.ThrowDirectoryNotFoundException(CreateExceptionMessage(errorMessage, input!.FullName), input);
 			}
-			else if (isValid is false)
+			else if (isValid is false && createDirectory)
 			{
 				input!.Create();
 
-				isValid = true;
+				isValid = input.Exists;
 			}
 
 			return isValid;

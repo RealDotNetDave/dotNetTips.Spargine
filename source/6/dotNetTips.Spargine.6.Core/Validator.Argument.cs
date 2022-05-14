@@ -84,7 +84,7 @@ namespace DotNetTips.Spargine.Core
 			input = input.ArgumentNotNull();
 			expectedType = expectedType.ArgumentNotNull();
 
-			if (input != expectedType)
+			if (input.CheckEquals(expectedType) == false)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException(CreateExceptionMessage(errorMessage, Resources.ErrorInvalidType), paramName);
 			}
@@ -628,7 +628,7 @@ namespace DotNetTips.Spargine.Core
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static ReadOnlySpan<T> ArgumentNotEmpty<T>(this in ReadOnlySpan<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
-			if (input.IsEmpty)
+			if (input.CheckIsNotEmpty() == false)
 			{
 				ExceptionThrower.ThrowArgumentNullException(CreateExceptionMessage(errorMessage, Resources.ErrorReadOnlySpanCannotBeNull), paramName);
 			}
@@ -728,7 +728,7 @@ namespace DotNetTips.Spargine.Core
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Guid ArgumentNotNullOrEmpty(this Guid input, in string errorMessage = "", in Guid? defaultValue = null, [CallerArgumentExpression("input")] string paramName = "")
 		{
-			var inValid = input == Guid.Empty;
+			var inValid = input.CheckIsNotEmpty();
 
 			if (inValid && defaultValue is not null)
 			{

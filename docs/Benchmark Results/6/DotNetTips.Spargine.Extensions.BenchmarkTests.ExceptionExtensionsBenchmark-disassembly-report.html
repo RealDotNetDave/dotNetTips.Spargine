@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20220502-200452</title>
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20220513-200433</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,15 +14,17 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="1">DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20220502-200452</th></tr>
+<tr><th colspan="1">DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20220513-200433</th></tr>
 <tr>
-<th>GetAllMessages01 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>GetAllMessages01 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark.GetAllMessages01()
+			this.Consumer.Consume(this._testException.GetAllMessages());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,[rcx+10]
@@ -47,18 +49,18 @@ vxorps    xmm4,xmm4,xmm4
 vmovdqa   xmmword ptr [rsp+20],xmm4
 vmovdqa   xmmword ptr [rsp+30],xmm4
 mov       esi,edx
-mov       rax,24422B81028
+mov       rax,21134723020
 mov       rax,[rax]
 mov       [rsp+48],rax
 mov       rdi,rcx
-mov       rax,24422B917E0
+mov       rax,21114721F88
 mov       rax,[rax]
 mov       [rsp+40],rax
 test      rdi,rdi
 setne     al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF26958903
+jne       short 00007FFEBCD69683
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
 mov       [rsp+38],rax
 lea       rcx,[rsp+48]
@@ -69,20 +71,20 @@ mov       rcx,rax
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
 xor       ecx,ecx
 mov       [rsp+38],rcx
-mov       rcx,24422B89F50
+mov       rcx,2113472BF48
 mov       r8,[rcx]
 test      r8,r8
-jne       short 00007FFF26958967
+jne       short 00007FFEBCD696E7
 mov       rcx,offset MT_System.Func`2[[System.Exception, System.Private.CoreLib],[System.Exception, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rbx,rax
-mov       rdx,24422B89F48
+mov       rdx,2113472BF40
 mov       rdx,[rdx]
 lea       rcx,[rbx+8]
 call      CORINFO_HELP_ASSIGN_REF
 mov       rdx,offset DotNetTips.Spargine.Extensions.ExceptionExtensions+<>c.<GetAllMessages>b__2_0(System.Exception)
 mov       [rbx+18],rdx
-mov       rcx,24422B89F50
+mov       rcx,2113472BF48
 mov       rdx,rbx
 call      CORINFO_HELP_CHECKED_ASSIGN_REF
 mov       r8,rbx
@@ -90,20 +92,20 @@ mov       rdx,rdi
 mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy(!!0, System.Func`2<!!0,!!0>)
 call      DotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Func`2<System.__Canon,System.__Canon>)
 mov       rdi,rax
-mov       rcx,24422B89F58
+mov       rcx,2113472BF50
 mov       r8,[rcx]
 test      r8,r8
-jne       short 00007FFF269589D9
+jne       short 00007FFEBCD69759
 mov       rcx,offset MT_System.Func`2[[System.Exception, System.Private.CoreLib],[System.String, System.Private.CoreLib]]
 call      CORINFO_HELP_NEWSFAST
 mov       rbx,rax
-mov       rdx,24422B89F48
+mov       rdx,2113472BF40
 mov       rdx,[rdx]
 lea       rcx,[rbx+8]
 call      CORINFO_HELP_ASSIGN_REF
 mov       rdx,offset DotNetTips.Spargine.Extensions.ExceptionExtensions+<>c.<GetAllMessages>b__2_1(System.Exception)
 mov       [rbx+18],rdx
-mov       rcx,24422B89F58
+mov       rcx,2113472BF50
 mov       rdx,rbx
 call      CORINFO_HELP_CHECKED_ASSIGN_REF
 mov       r8,rbx

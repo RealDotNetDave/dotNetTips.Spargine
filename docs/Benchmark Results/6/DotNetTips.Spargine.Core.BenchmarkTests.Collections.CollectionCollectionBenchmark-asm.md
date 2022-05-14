@@ -1,6 +1,10 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -26,7 +30,7 @@
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,14DBFFF3020
+       mov       rax,1820E221028
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -54,7 +58,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,14DDFFF56D0
+       mov       rdx,1820E223B48
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -74,9 +78,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -102,7 +110,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,1589C1B3020
+       mov       rax,21CAE771028
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -130,7 +138,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,158BC1B16F8
+       mov       rdx,21C7E773730
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -150,9 +158,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -178,7 +190,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,2A83B3D3020
+       mov       rax,2C11FD13020
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -206,7 +218,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,2A83B3D9AD8
+       mov       rdx,2C11FD15B40
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -226,9 +238,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -254,7 +270,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,2BD21AC1028
+       mov       rax,1F01C8B1028
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -282,7 +298,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,2BD41AC56D0
+       mov       rdx,1F01C8B3B48
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -302,9 +318,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -330,7 +350,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,28C7E0D3020
+       mov       rax,2051AFA3020
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -358,7 +378,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,28C9E0D16F8
+       mov       rdx,204FAFA1738
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -378,9 +398,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -406,7 +430,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,1A0453C3020
+       mov       rax,20441AC3020
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -434,7 +458,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,1A0653C16F8
+       mov       rdx,20421AC1738
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -454,9 +478,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -482,7 +510,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,16F030E3020
+       mov       rax,23DD19F3020
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -510,7 +538,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,16F230E16F8
+       mov       rdx,23DB19F1738
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -530,9 +558,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate01()
+; 			var result = Collection<Person>.Create(Count);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -558,7 +590,7 @@ M01_L05:
        sub       rsp,30
        mov       [rsp+28],rcx
        mov       rsi,rcx
-       mov       rax,197F10C1028
+       mov       rax,2797FCB3020
        mov       rdi,[rax]
        mov       ebx,edx
        test      ebx,ebx
@@ -586,7 +618,7 @@ M01_L02:
 M01_L03:
        mov       rdi,rcx
 M01_L04:
-       mov       rdx,197F10C7AE0
+       mov       rdx,2797FCB9B18
        mov       rdx,[rdx]
        mov       rcx,rdi
        call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
@@ -606,9 +638,13 @@ M01_L05:
 ; Total bytes of code 139
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -639,11 +675,11 @@ M01_L05:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,216DA0C1028
+       mov       rax,252E8C91028
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,216EA0C7558
+       mov       rax,252E8C919E0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -672,7 +708,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309C0108
+       mov       rdx,7FFE646F00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -704,7 +740,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,216DA0C1028
+       mov       rcx,252E8C91028
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -715,11 +751,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1780
+       mov       rdx,7FFE648C3C20
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,216CA0C2B90
+       mov       r9,25308C99A18
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -736,7 +772,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -750,7 +786,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -762,7 +798,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1C60
+       mov       rdx,7FFE648C4100
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -781,7 +817,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -797,7 +833,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A00
+       mov       rdx,7FFE648C3EA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -811,7 +847,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A20
+       mov       rdx,7FFE648C3EC0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -820,8 +856,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE642A0630
+       call      qword ptr [7FFE64850630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -831,7 +867,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A50
+       mov       rdx,7FFE648C3EF0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -863,14 +899,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE642A0630
+       call      qword ptr [7FFE64850630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE642A0638
+       call      qword ptr [7FFE64850638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -900,8 +936,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE642A0638
+       call      qword ptr [7FFE64850638]
 M02_L24:
        nop
        add       rsp,28
@@ -917,9 +953,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -950,11 +990,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,20457ED3020
+       mov       rax,1C8B5473020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,20477ED1588
+       mov       rax,1C8B54799A8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -983,7 +1023,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309B0108
+       mov       rdx,7FFE646F00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -1015,7 +1055,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,20457ED3020
+       mov       rcx,1C8B5473020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -1026,11 +1066,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91718
+       mov       rdx,7FFE648C3C20
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,20477ED33A8
+       mov       r9,1C895472A68
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -1047,7 +1087,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91958
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -1061,7 +1101,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91958
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -1073,7 +1113,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91BF8
+       mov       rdx,7FFE648C4100
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -1092,7 +1132,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91958
+       mov       rdx,7FFE648C3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -1108,7 +1148,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30B91998
+       mov       rdx,7FFE648C3EA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -1122,7 +1162,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30B919B8
+       mov       rdx,7FFE648C3EC0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -1131,8 +1171,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30560630
-       call      qword ptr [7FFF30AC0630]
+       mov       r11,7FFE642A0630
+       call      qword ptr [7FFE64850630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -1142,7 +1182,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30B919E8
+       mov       rdx,7FFE648C3EF0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -1174,14 +1214,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30560630
-       call      qword ptr [7FFF30AC0630]
+       mov       r11,7FFE642A0630
+       call      qword ptr [7FFE64850630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30560638
-       call      qword ptr [7FFF30AC0638]
+       mov       r11,7FFE642A0638
+       call      qword ptr [7FFE64850638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -1211,8 +1251,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30560638
-       call      qword ptr [7FFF30AC0638]
+       mov       r11,7FFE642A0638
+       call      qword ptr [7FFE64850638]
 M02_L24:
        nop
        add       rsp,28
@@ -1228,9 +1268,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -1261,11 +1305,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1D64D9B3020
+       mov       rax,246186E3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1D66D9B1588
+       mov       rax,246186E59D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -1294,7 +1338,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309D0108
+       mov       rdx,7FFE646C00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -1326,7 +1370,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1D64D9B3020
+       mov       rcx,246186E3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -1337,11 +1381,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1780
+       mov       rdx,7FFE64893C20
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1D66D9B2390
+       mov       r9,246386E1A50
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -1358,7 +1402,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -1372,7 +1416,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -1384,7 +1428,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1C60
+       mov       rdx,7FFE64894100
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -1403,7 +1447,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -1419,7 +1463,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A00
+       mov       rdx,7FFE64893EA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -1433,7 +1477,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A20
+       mov       rdx,7FFE64893EC0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -1442,8 +1486,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -1453,7 +1497,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A50
+       mov       rdx,7FFE64893EF0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -1485,14 +1529,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -1522,8 +1566,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
 M02_L24:
        nop
        add       rsp,28
@@ -1539,9 +1583,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -1572,11 +1620,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1B7B6BB3020
+       mov       rax,17EE4B23020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1B7D6BB1588
+       mov       rax,17EC4B215C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -1605,7 +1653,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309F0108
+       mov       rdx,7FFE646C00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -1637,7 +1685,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1B7B6BB3020
+       mov       rcx,17EE4B23020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -1648,11 +1696,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1718
+       mov       rdx,7FFE64893AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1B7B6BBAF70
+       mov       r9,17EC4B22268
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -1669,7 +1717,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -1683,7 +1731,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -1695,7 +1743,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1BF8
+       mov       rdx,7FFE64893FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -1714,7 +1762,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -1730,7 +1778,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1998
+       mov       rdx,7FFE64893D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -1744,7 +1792,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19B8
+       mov       rdx,7FFE64893D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -1753,8 +1801,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -1764,7 +1812,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19E8
+       mov       rdx,7FFE64893DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -1796,14 +1844,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -1833,8 +1881,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
 M02_L24:
        nop
        add       rsp,28
@@ -1850,9 +1898,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -1883,11 +1935,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,26C6F363020
+       mov       rax,238CB7D3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,26C8F361588
+       mov       rax,238CB7D59D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -1916,7 +1968,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309D0108
+       mov       rdx,7FFE646D00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -1948,7 +2000,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,26C6F363020
+       mov       rcx,238CB7D3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -1959,11 +2011,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1718
+       mov       rdx,7FFE648A3C20
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,26C6F366F98
+       mov       r9,238CB7D7688
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -1980,7 +2032,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1958
+       mov       rdx,7FFE648A3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -1994,7 +2046,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1958
+       mov       rdx,7FFE648A3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -2006,7 +2058,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1BF8
+       mov       rdx,7FFE648A4100
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -2025,7 +2077,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1958
+       mov       rdx,7FFE648A3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -2041,7 +2093,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1998
+       mov       rdx,7FFE648A3EA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -2055,7 +2107,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19B8
+       mov       rdx,7FFE648A3EC0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -2064,8 +2116,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64280630
+       call      qword ptr [7FFE64830630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -2075,7 +2127,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19E8
+       mov       rdx,7FFE648A3EF0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -2107,14 +2159,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64280630
+       call      qword ptr [7FFE64830630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64280638
+       call      qword ptr [7FFE64830638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -2144,8 +2196,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64280638
+       call      qword ptr [7FFE64830638]
 M02_L24:
        nop
        add       rsp,28
@@ -2161,9 +2213,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -2194,11 +2250,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1E17CCE1028
+       mov       rax,238C4C23020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1E19CCE5560
+       mov       rax,238A4C215C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -2227,7 +2283,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309D0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -2259,7 +2315,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1E17CCE1028
+       mov       rcx,238C4C23020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -2270,11 +2326,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1780
+       mov       rdx,7FFE648B3AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1E17CCE4FA0
+       mov       r9,238C4C25E58
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -2291,7 +2347,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -2305,7 +2361,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -2317,7 +2373,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1C60
+       mov       rdx,7FFE648B3FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -2336,7 +2392,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -2352,7 +2408,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A00
+       mov       rdx,7FFE648B3D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -2366,7 +2422,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A20
+       mov       rdx,7FFE648B3D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -2375,8 +2431,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -2386,7 +2442,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A50
+       mov       rdx,7FFE648B3DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -2418,14 +2474,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -2455,8 +2511,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -2472,9 +2528,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -2505,11 +2565,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1CD760C3020
+       mov       rax,16418ED3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1CDA60C5560
+       mov       rax,16418ED59D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -2538,7 +2598,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309C0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -2570,7 +2630,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1CD760C3020
+       mov       rcx,16418ED3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -2581,11 +2641,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1780
+       mov       rdx,7FFE648B3AE8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1CD760C5F80
+       mov       r9,16418ED7688
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -2602,7 +2662,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D28
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -2616,7 +2676,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D28
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -2628,7 +2688,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1C60
+       mov       rdx,7FFE648B3FC8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -2647,7 +2707,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D28
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -2663,7 +2723,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A00
+       mov       rdx,7FFE648B3D68
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -2677,7 +2737,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A20
+       mov       rdx,7FFE648B3D88
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -2686,8 +2746,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -2697,7 +2757,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A50
+       mov       rdx,7FFE648B3DB8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -2729,14 +2789,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -2766,8 +2826,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -2783,9 +2843,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate03()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -2816,11 +2880,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,207824F3020
+       mov       rax,14CD3923020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,207824F9968
+       mov       rax,14CE39215C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -2849,7 +2913,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309F0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -2881,7 +2945,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,207824F3020
+       mov       rcx,14CD3923020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -2892,11 +2956,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1718
+       mov       rdx,7FFE648C1798
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,207624F1B78
+       mov       r9,14CD392AE48
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -2913,7 +2977,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648C19D8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -2927,7 +2991,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648C19D8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -2939,7 +3003,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1BF8
+       mov       rdx,7FFE648C1C78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -2958,7 +3022,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648C19D8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -2974,7 +3038,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1998
+       mov       rdx,7FFE648C1A18
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -2988,7 +3052,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19B8
+       mov       rdx,7FFE648C1A38
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -2997,8 +3061,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE647E0630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -3008,7 +3072,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19E8
+       mov       rdx,7FFE648C1A68
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -3040,14 +3104,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE647E0630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE647E0638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -3077,8 +3141,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE647E0638]
 M02_L24:
        nop
        add       rsp,28
@@ -3094,9 +3158,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -3127,11 +3195,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1EB25ED3020
+       mov       rax,2937CFA3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1EB45ED7558
+       mov       rax,2937CFA59D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -3160,7 +3228,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309D0108
+       mov       rdx,7FFE646C00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -3192,7 +3260,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1EB25ED3020
+       mov       rcx,2937CFA3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -3203,11 +3271,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1780
+       mov       rdx,7FFE64893AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1EB45ED8360
+       mov       r9,2937CFA7688
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -3224,7 +3292,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -3238,7 +3306,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -3250,7 +3318,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1C60
+       mov       rdx,7FFE64893FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -3269,7 +3337,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -3285,7 +3353,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A00
+       mov       rdx,7FFE64893D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -3299,7 +3367,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A20
+       mov       rdx,7FFE64893D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -3308,8 +3376,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -3319,7 +3387,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BB1A50
+       mov       rdx,7FFE64893DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -3351,14 +3419,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30580630
-       call      qword ptr [7FFF30AE0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -3388,8 +3456,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30580638
-       call      qword ptr [7FFF30AE0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
 M02_L24:
        nop
        add       rsp,28
@@ -3405,9 +3473,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -3438,11 +3510,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1985C723020
+       mov       rax,2445F8D3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1985C729968
+       mov       rax,2443F8D15C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -3471,7 +3543,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309C0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -3503,7 +3575,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1985C723020
+       mov       rcx,2445F8D3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -3514,11 +3586,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1780
+       mov       rdx,7FFE648B3AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1985C72B788
+       mov       r9,2443F8D3280
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -3535,7 +3607,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -3549,7 +3621,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -3561,7 +3633,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1C60
+       mov       rdx,7FFE648B3FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -3580,7 +3652,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -3596,7 +3668,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A00
+       mov       rdx,7FFE648B3D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -3610,7 +3682,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A20
+       mov       rdx,7FFE648B3D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -3619,8 +3691,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -3630,7 +3702,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A50
+       mov       rdx,7FFE648B3DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -3662,14 +3734,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -3699,8 +3771,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -3716,9 +3788,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -3749,11 +3825,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,28486C63020
+       mov       rax,258BF113020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,284A6C61588
+       mov       rax,258BF1199A8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -3782,7 +3858,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309E0108
+       mov       rdx,7FFE646C00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -3814,7 +3890,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,28486C63020
+       mov       rcx,258BF113020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -3825,11 +3901,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1780
+       mov       rdx,7FFE64893AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,28486C66F98
+       mov       r9,258DF111A50
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -3846,7 +3922,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -3860,7 +3936,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -3872,7 +3948,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1C60
+       mov       rdx,7FFE64893FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -3891,7 +3967,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE64893D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -3907,7 +3983,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A00
+       mov       rdx,7FFE64893D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -3921,7 +3997,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A20
+       mov       rdx,7FFE64893D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -3930,8 +4006,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -3941,7 +4017,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A50
+       mov       rdx,7FFE64893DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -3973,14 +4049,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64270630
+       call      qword ptr [7FFE64820630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -4010,8 +4086,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64270638
+       call      qword ptr [7FFE64820638]
 M02_L24:
        nop
        add       rsp,28
@@ -4027,9 +4103,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -4060,11 +4140,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,17A080E3020
+       mov       rax,215AE243020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,17A080E9968
+       mov       rax,215AE2459D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -4093,7 +4173,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309C0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -4125,7 +4205,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,17A080E3020
+       mov       rcx,215AE243020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -4136,11 +4216,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1780
+       mov       rdx,7FFE648B3C20
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,179E80E1B78
+       mov       r9,215BE241A50
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -4157,7 +4237,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -4171,7 +4251,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -4183,7 +4263,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1C60
+       mov       rdx,7FFE648B4100
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -4202,7 +4282,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3E60
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -4218,7 +4298,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A00
+       mov       rdx,7FFE648B3EA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -4232,7 +4312,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A20
+       mov       rdx,7FFE648B3EC0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -4241,8 +4321,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -4252,7 +4332,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A50
+       mov       rdx,7FFE648B3EF0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -4284,14 +4364,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -4321,8 +4401,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -4338,9 +4418,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -4371,11 +4455,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1EEA91A3020
+       mov       rax,23A5F3B3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1EEA91A9968
+       mov       rax,23A3F3B15C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -4404,7 +4488,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309F0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -4436,7 +4520,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1EEA91A3020
+       mov       rcx,23A5F3B3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -4447,11 +4531,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1718
+       mov       rdx,7FFE648B3AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1EEA91AB788
+       mov       r9,23A3F3B3280
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -4468,7 +4552,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -4482,7 +4566,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -4494,7 +4578,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1BF8
+       mov       rdx,7FFE648B3FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -4513,7 +4597,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1958
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -4529,7 +4613,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD1998
+       mov       rdx,7FFE648B3D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -4543,7 +4627,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19B8
+       mov       rdx,7FFE648B3D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -4552,8 +4636,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -4563,7 +4647,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BD19E8
+       mov       rdx,7FFE648B3DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -4595,14 +4679,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF305A0630
-       call      qword ptr [7FFF30B00630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -4632,8 +4716,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF305A0638
-       call      qword ptr [7FFF30B00638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -4649,9 +4733,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -4682,11 +4770,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1EEB7CA3020
+       mov       rax,1AF901D3020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1EEB7CA9968
+       mov       rax,1AF901D59D0
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -4715,7 +4803,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309C0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -4747,7 +4835,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1EEB7CA3020
+       mov       rcx,1AF901D3020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -4758,11 +4846,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1780
+       mov       rdx,7FFE648B3AD0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1EEB7CAA770
+       mov       r9,1AF901D6670
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -4779,7 +4867,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -4793,7 +4881,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -4805,7 +4893,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1C60
+       mov       rdx,7FFE648B3FB0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -4824,7 +4912,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA19C0
+       mov       rdx,7FFE648B3D10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -4840,7 +4928,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A00
+       mov       rdx,7FFE648B3D50
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -4854,7 +4942,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A20
+       mov       rdx,7FFE648B3D70
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -4863,8 +4951,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -4874,7 +4962,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BA1A50
+       mov       rdx,7FFE648B3DA0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -4906,14 +4994,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30570630
-       call      qword ptr [7FFF30AD0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -4943,8 +5031,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30570638
-       call      qword ptr [7FFF30AD0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -4960,9 +5048,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -4993,11 +5085,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,1B21FE91028
+       mov       rax,186FA1D1028
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,1B23FE93580
+       mov       rax,186FA1D39D8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -5026,7 +5118,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309E0108
+       mov       rdx,7FFE646E00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -5058,7 +5150,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,1B21FE91028
+       mov       rcx,186FA1D1028
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -5069,11 +5161,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1780
+       mov       rdx,7FFE648B3C38
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,1B21FE93F88
+       mov       r9,186FA1D4678
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -5090,7 +5182,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE648B3E78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -5104,7 +5196,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE648B3E78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -5116,7 +5208,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1C60
+       mov       rdx,7FFE648B4118
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -5135,7 +5227,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19C0
+       mov       rdx,7FFE648B3E78
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -5151,7 +5243,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A00
+       mov       rdx,7FFE648B3EB8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -5165,7 +5257,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A20
+       mov       rdx,7FFE648B3ED8
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -5174,8 +5266,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -5185,7 +5277,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1A50
+       mov       rdx,7FFE648B3F08
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -5217,14 +5309,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64290630
+       call      qword ptr [7FFE64840630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -5254,8 +5346,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64290638
+       call      qword ptr [7FFE64840638]
 M02_L24:
        nop
        add       rsp,28
@@ -5271,9 +5363,13 @@ M02_L24:
 ; Total bytes of code 742
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Collections.CollectionCollectionBenchmark.CollectionCreate02()
+; 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -5304,11 +5400,11 @@ M02_L24:
        mov       [rsp+28],rax
        mov       [rsp+40],rcx
        mov       rsi,rcx
-       mov       rax,28EFB653020
+       mov       rax,1AA48733020
        mov       rax,[rax]
        mov       [rsp+38],rax
        mov       rdi,rdx
-       mov       rax,28F1B655560
+       mov       rax,1AA287315C8
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rdi,rdi
@@ -5337,7 +5433,7 @@ M01_L00:
        jmp       short M01_L02
 M01_L01:
        mov       rcx,rsi
-       mov       rdx,7FFF309E0108
+       mov       rdx,7FFE646B00A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L02:
@@ -5369,7 +5465,7 @@ M01_L02:
        mov       rdi,rcx
        mov       rbx,rdx
        mov       esi,r8d
-       mov       rcx,28EFB653020
+       mov       rcx,1AA48733020
        mov       rcx,[rcx]
        mov       [rbp+0FFB8],rcx
        mov       rcx,[rdi+30]
@@ -5380,11 +5476,11 @@ M01_L02:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1718
+       mov       rdx,7FFE64891730
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L01:
-       mov       r9,28EFB655F80
+       mov       r9,1AA48739E30
        mov       r9,[r9]
        lea       r8,[rbp+0FFB8]
        mov       rdx,rbx
@@ -5401,7 +5497,7 @@ M02_L01:
        jmp       short M02_L03
 M02_L02:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1958
+       mov       rdx,7FFE64891970
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L03:
@@ -5415,7 +5511,7 @@ M02_L03:
        jmp       short M02_L05
 M02_L04:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1958
+       mov       rdx,7FFE64891970
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L05:
@@ -5427,7 +5523,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1BF8
+       mov       rdx,7FFE64891C10
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L07:
@@ -5446,7 +5542,7 @@ M02_L07:
        jmp       short M02_L09
 M02_L08:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1958
+       mov       rdx,7FFE64891970
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L09:
@@ -5462,7 +5558,7 @@ M02_L10:
        jmp       short M02_L12
 M02_L11:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC1998
+       mov       rdx,7FFE648919B0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       rcx,rax
 M02_L12:
@@ -5476,7 +5572,7 @@ M02_L12:
        jmp       short M02_L14
 M02_L13:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19B8
+       mov       rdx,7FFE648919D0
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L14:
@@ -5485,8 +5581,8 @@ M02_L14:
        mov       rbx,rax
        mov       [rbp+0FFB0],rbx
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64260630
+       call      qword ptr [7FFE647B0630]
        test      eax,eax
        je        near ptr M02_L22
 M02_L15:
@@ -5496,7 +5592,7 @@ M02_L15:
        jmp       short M02_L17
 M02_L16:
        mov       rcx,rdi
-       mov       rdx,7FFF30BC19E8
+       mov       rdx,7FFE64891A00
        call      CORINFO_HELP_RUNTIMEHANDLE_CLASS
        mov       r11,rax
 M02_L17:
@@ -5528,14 +5624,14 @@ M02_L20:
        call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
 M02_L21:
        mov       rcx,rbx
-       mov       r11,7FFF30590630
-       call      qword ptr [7FFF30AF0630]
+       mov       r11,7FFE64260630
+       call      qword ptr [7FFE647B0630]
        test      eax,eax
        jne       near ptr M02_L15
 M02_L22:
        mov       rcx,rbx
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64260638
+       call      qword ptr [7FFE647B0638]
        mov       rax,r15
        add       rsp,48
        pop       rbx
@@ -5565,8 +5661,8 @@ M02_L23:
        cmp       qword ptr [rbp+0FFB0],0
        je        short M02_L24
        mov       rcx,[rbp+0FFB0]
-       mov       r11,7FFF30590638
-       call      qword ptr [7FFF30AF0638]
+       mov       r11,7FFE64260638
+       call      qword ptr [7FFE647B0638]
 M02_L24:
        nop
        add       rsp,28

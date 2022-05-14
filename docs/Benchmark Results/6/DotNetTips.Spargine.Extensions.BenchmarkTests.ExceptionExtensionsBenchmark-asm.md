@@ -1,6 +1,8 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark.GetAllMessages01()
+; 			this.Consumer.Consume(this._testException.GetAllMessages());
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,[rcx+10]
@@ -27,11 +29,11 @@
        vmovdqa   xmmword ptr [rsp+20],xmm4
        vmovdqa   xmmword ptr [rsp+30],xmm4
        mov       esi,edx
-       mov       rax,24422B81028
+       mov       rax,21134723020
        mov       rax,[rax]
        mov       [rsp+48],rax
        mov       rdi,rcx
-       mov       rax,24422B917E0
+       mov       rax,21114721F88
        mov       rax,[rax]
        mov       [rsp+40],rax
        test      rdi,rdi
@@ -50,20 +52,20 @@
 M01_L00:
        xor       ecx,ecx
        mov       [rsp+38],rcx
-       mov       rcx,24422B89F50
+       mov       rcx,2113472BF48
        mov       r8,[rcx]
        test      r8,r8
        jne       short M01_L01
        mov       rcx,offset MT_System.Func`2[[System.Exception, System.Private.CoreLib],[System.Exception, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,24422B89F48
+       mov       rdx,2113472BF40
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.ExceptionExtensions+<>c.<GetAllMessages>b__2_0(System.Exception)
        mov       [rbx+18],rdx
-       mov       rcx,24422B89F50
+       mov       rcx,2113472BF48
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -72,20 +74,20 @@ M01_L01:
        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy(!!0, System.Func`2<!!0,!!0>)
        call      DotNetTips.Spargine.Extensions.ExceptionExtensions.FromHierarchy[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.Func`2<System.__Canon,System.__Canon>)
        mov       rdi,rax
-       mov       rcx,24422B89F58
+       mov       rcx,2113472BF50
        mov       r8,[rcx]
        test      r8,r8
        jne       short M01_L02
        mov       rcx,offset MT_System.Func`2[[System.Exception, System.Private.CoreLib],[System.String, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,24422B89F48
+       mov       rdx,2113472BF40
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.ExceptionExtensions+<>c.<GetAllMessages>b__2_1(System.Exception)
        mov       [rbx+18],rdx
-       mov       rcx,24422B89F58
+       mov       rcx,2113472BF50
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx

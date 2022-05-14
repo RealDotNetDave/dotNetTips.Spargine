@@ -310,7 +310,7 @@ namespace DotNetTips.Spargine.Tester
 		[Information(nameof(GenerateFile), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateFile(string fileName, int fileLength = DefaultFileLength)
 		{
-			fileName = fileName.ArgumentNotNullOrEmpty();
+			fileName = fileName.ArgumentNotNullOrEmpty(trim: true);
 			fileLength = fileLength.ArgumentInRange(lower: 1);
 
 			CreateFile(fileName, fileLength);

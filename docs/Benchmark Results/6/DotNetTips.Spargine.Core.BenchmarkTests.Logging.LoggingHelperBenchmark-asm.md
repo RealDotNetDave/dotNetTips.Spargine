@@ -1,4 +1,4 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -7,42 +7,48 @@
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2CBB6596FF8
+       mov       rdx,22BC6BE77B0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642704A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2CBE6594878
+       mov       rcx,22BC6BE6798
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2CBB6597000
+       mov       r8,22BC6BE77B8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -54,7 +60,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -63,42 +69,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22778729FB8
+       mov       rdx,1E6B0123010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642704A0
        mov       edx,5
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22778728C80
+       mov       rcx,1E6D0128BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22778729FC0
+       mov       r8,1E6B0123018
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -110,7 +122,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -119,42 +131,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,28A5B863408
+       mov       rdx,1E71D7E27F8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642904A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,28A4B864878
+       mov       rcx,1E72D7E47A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,28A5B863410
+       mov       r8,1E71D7E2800
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -166,7 +184,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -175,42 +193,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29603AF23F0
+       mov       rdx,21D4AE98BE0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642904A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,29613AF4878
+       mov       rcx,21D4AE96BB0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,29603AF23F8
+       mov       r8,21D4AE98BE8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -222,7 +246,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -231,42 +255,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1DC01C72BF0
+       mov       rdx,1DC0F381FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642804A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1DC21C78C80
+       mov       rcx,1DC2F388BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1DC01C72BF8
+       mov       r8,1DC0F382000
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -278,7 +308,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -287,42 +317,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,12D90E423F0
+       mov       rdx,290770057B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642A04A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646304A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646A86F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,12DA0E44878
+       mov       rcx,290770047A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,12D90E423F8
+       mov       r8,290770057C0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -334,7 +370,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -343,42 +379,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21358BE3008
+       mov       rdx,22DE4A43010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642604A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE645F04A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646686F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21378BE6870
+       mov       rcx,22E04A48BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21358BE3010
+       mov       r8,22DE4A43018
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -390,7 +432,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyCriticalBenchmark()
        push      rdi
@@ -399,42 +441,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22D13B82BF0
+       mov       rdx,1C3B583ABD8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        mov       edx,5
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22D33B88C80
+       mov       rcx,1C3B5838BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22D13B82BF8
+       mov       r8,1C3B583ABE0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -446,7 +494,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -455,42 +503,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2642A963FE8
+       mov       rdx,1C8E9133FF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642804A0
        mov       edx,5
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2645A964878
+       mov       rcx,1C909136BB0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2642A963FF0
+       mov       r8,1C8E9133FF8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -502,7 +556,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -511,42 +565,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22D1E371BD8
+       mov       rdx,28E80ED1FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642704A0
        mov       edx,5
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22CFE378C80
+       mov       rcx,28EA0ED8BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22D1E371BE0
+       mov       r8,28E80ED2000
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -558,7 +618,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -567,42 +627,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1B34ACD9FB8
+       mov       rdx,2412CE593F8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642804A0
        mov       edx,5
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B34ACD8C80
+       mov       rcx,2412CE56BB0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B34ACD9FC0
+       mov       r8,2412CE59400
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -614,7 +680,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -623,42 +689,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,19435671BD8
+       mov       rdx,22457167418
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642A04A0
        mov       edx,5
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646304A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646A86F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,19425678C80
+       mov       rcx,224771647A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,19435671BE0
+       mov       r8,22457167420
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -670,7 +742,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -679,42 +751,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21EADF4A7D0
+       mov       rdx,22496824408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        mov       edx,5
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21EADF48C80
+       mov       rcx,224C68247A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21EADF4A7D8
+       mov       r8,22496824410
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -726,7 +804,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -735,42 +813,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,26C6FBB4BE8
+       mov       rdx,25A0FD76400
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642A04A0
        mov       edx,5
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646304A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646A86F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,26C8FBB6C88
+       mov       rcx,25A3FD747A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,26C6FBB4BF0
+       mov       r8,25A0FD76408
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -782,7 +866,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -791,42 +875,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21F131D1BD8
+       mov       rdx,1606FEA9BC0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642704A0
        mov       edx,5
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21EF31D6C88
+       mov       rcx,1606FEA8BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21F131D1BE0
+       mov       r8,1606FEA9BC8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -838,7 +928,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyDebugBenchmark()
        push      rdi
@@ -847,42 +937,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,273F74B1BD8
+       mov       rdx,1FB69F587C8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642904A0
        mov       edx,5
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,274174B8C80
+       mov       rcx,1FB69F56798
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,273F74B1BE0
+       mov       r8,1FB69F587D0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -894,7 +990,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -903,42 +999,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1F7AFE797F0
+       mov       rdx,23BEE5EB3F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        mov       edx,4
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F7AFE76C98
+       mov       rcx,23BEE5E8BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1F7AFE797F8
+       mov       r8,23BEE5EB3F8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -950,7 +1052,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -959,42 +1061,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,23F9FCDAFD0
+       mov       rdx,2A428233010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642704A0
        mov       edx,4
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,23F9FCD8C90
+       mov       rcx,2A448238BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,23F9FCDAFD8
+       mov       r8,2A428233018
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1006,7 +1114,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1015,42 +1123,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,18F8CF69FB8
+       mov       rdx,1FE39574408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642904A0
        mov       edx,4
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,18F8CF68C90
+       mov       rcx,1FE595767A8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,18F8CF69FC0
+       mov       r8,1FE39574410
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1062,7 +1176,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1071,42 +1185,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,17F2DEA1BD8
+       mov       rdx,2F222631FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        mov       edx,4
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,17F1DEA8C90
+       mov       rcx,2F242638BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,17F2DEA1BE0
+       mov       r8,2F222632000
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1118,7 +1238,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1127,42 +1247,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,224CD725FE0
+       mov       rdx,1EA47AF17E0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642A04A0
        mov       edx,4
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646304A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646A86F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,224ED724888
+       mov       rcx,1EA57AF6BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,224CD725FE8
+       mov       r8,1EA47AF17E8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1174,7 +1300,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1183,42 +1309,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,182D52E2BF0
+       mov       rdx,1FDC9949BC0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642904A0
        mov       edx,4
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,183052E4888
+       mov       rcx,1FDC9948BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,182D52E2BF8
+       mov       r8,1FDC9949BC8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1230,7 +1362,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1239,42 +1371,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1A6144CB7E8
+       mov       rdx,20111103010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642804A0
        mov       edx,4
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1A6144C8C90
+       mov       rcx,20131108BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1A6144CB7F0
+       mov       r8,20111103018
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1286,7 +1424,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyErrorBenchmark()
        push      rdi
@@ -1295,42 +1433,48 @@ M00_L02:
        push      rbx
        sub       rsp,28
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,27AAE5673E0
+       mov       rdx,20087DC1FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+128]
+       mov       rbp,[rsi+0B0]
        mov       rcx,rbp
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642704A0
        mov       edx,4
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,27AAE564888
+       mov       rcx,200A7DC8BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,27AAE5673E8
+       mov       r8,20087DC2000
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1342,7 +1486,7 @@ M00_L02:
 ; Total bytes of code 203
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1350,31 +1494,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642704A0
        mov       edx,2
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1F033564890
+       mov       rcx,1B74CE047B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1F0335673E0
+       mov       r8,1B71CE07418
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1385,7 +1533,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1393,31 +1541,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642804A0
        mov       edx,2
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2963FCE6888
+       mov       rcx,2826B8847B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2963FCE7BA8
+       mov       r8,2823B886400
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1428,7 +1580,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1436,31 +1588,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642804A0
        mov       edx,2
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1A065894890
+       mov       rcx,284300C6BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1A035891BD8
+       mov       r8,284100C3FF0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1471,7 +1627,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1479,31 +1635,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642604A0
        mov       edx,2
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE645F04A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646686F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,20AE27B4890
+       mov       rcx,200ADEF47B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,20AB27B5FE0
+       mov       r8,2007DEF6400
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1514,7 +1674,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1522,31 +1682,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30590600
+       mov       r11,7FFE642704A0
        mov       edx,2
-       call      qword ptr [7FFF30B10600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30998970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1716F8A4890
+       mov       rcx,253EB1847B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1714F8A3FE8
+       mov       r8,253DB1827F8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1557,7 +1721,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1565,31 +1729,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642904A0
        mov       edx,2
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,19BA29E4890
+       mov       rcx,1C3CE1D8BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,19BA29E63C8
+       mov       r8,1C3AE1D3010
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1600,7 +1768,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1608,31 +1776,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642904A0
        mov       edx,2
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,20504496888
+       mov       rcx,1CBBB3147B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,204E4495000
+       mov       r8,1CB8B316400
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1643,7 +1815,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyInformationBenchmark()
        push      rdi
@@ -1651,31 +1823,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642704A0
        mov       edx,2
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2371D8E4890
+       mov       rcx,22087928BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,236ED8E5FE0
+       mov       r8,22087929BC0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1686,7 +1862,7 @@ M00_L02:
 ; Total bytes of code 133
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1694,31 +1870,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642904A0
        xor       edx,edx
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646204A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646986F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,242FEEC8CA0
+       mov       rcx,18E80E48BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,242FEECB7E8
+       mov       r8,18E60E41FF8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1729,7 +1909,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1737,31 +1917,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30560600
+       mov       r11,7FFE642604A0
        xor       edx,edx
-       call      qword ptr [7FFF30AE0600]
+       call      qword ptr [7FFE645F04A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30968970
+       mov       rcx,7FFE646686F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2331F7F4898
+       mov       rcx,2104FD747C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2330F7F3408
+       mov       r8,2101FD727F8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1772,7 +1956,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1780,31 +1964,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        xor       edx,edx
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,20B43DB4898
+       mov       rcx,238752E6BD0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,20B13DB6FF8
+       mov       r8,238552E3010
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1815,7 +2003,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1823,31 +2011,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30560600
+       mov       r11,7FFE642804A0
        xor       edx,edx
-       call      qword ptr [7FFF30AE0600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30968970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1E57F478CA0
+       mov       rcx,250A2C58BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1E55F472BF0
+       mov       r8,25092C517E0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1858,7 +2050,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1866,31 +2058,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642704A0
        xor       edx,edx
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646004A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646786F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1D844006CA8
+       mov       rcx,22BD8968BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1D8440097F0
+       mov       r8,22BD8969BC0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1901,7 +2097,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1909,31 +2105,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF305A0600
+       mov       r11,7FFE642804A0
        xor       edx,edx
-       call      qword ptr [7FFF30B20600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF309A8970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,18EB7F38CA0
+       mov       rcx,1EFE8B68BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,18EC7F31BD8
+       mov       r8,1EFC8B63010
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1944,7 +2144,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1952,31 +2152,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30580600
+       mov       r11,7FFE642804A0
        xor       edx,edx
-       call      qword ptr [7FFF30B00600]
+       call      qword ptr [7FFE646104A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30988970
+       mov       rcx,7FFE646886F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,236D2CB4898
+       mov       rcx,1B7235C47C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,236C2CB3408
+       mov       r8,1B6F35C6400
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1987,7 +2191,7 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogEasyTraceBenchmark()
        push      rdi
@@ -1995,31 +2199,35 @@ M00_L02:
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L02
+; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+128]
+       mov       rbx,[rsi+0B0]
        mov       rcx,rbx
-       mov       r11,7FFF30570600
+       mov       r11,7FFE642604A0
        xor       edx,edx
-       call      qword ptr [7FFF30AF0600]
+       call      qword ptr [7FFE645F04A0]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFF30978970
+       mov       rcx,7FFE646686F8
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,17478588CA0
+       mov       rcx,2375A508BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,17458581BD8
+       mov       r8,2375A509BC0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+124]
+       cmp       edi,[rsi+0A8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2030,10 +2238,12 @@ M00_L02:
 ; Total bytes of code 130
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2043,39 +2253,48 @@ M00_L02:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29D8B5B1BD8
+       mov       rdx,221738D7418
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,29DAB5B2F58
+       mov       rcx,221738D7420
        mov       rbp,[rcx]
-       mov       rcx,29D8B5B1BE0
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,221738D2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2083,9 +2302,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2124,7 +2345,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,29DAB5B89F8
+       mov       r9,221938D4518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2141,7 +2362,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309757A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2152,10 +2373,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2165,39 +2388,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,215CF9F2BF0
+       mov       rdx,2881A333FF0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,215EF9F2F58
+       mov       rcx,2881A333FF8
        mov       rbp,[rcx]
-       mov       rcx,215CF9F2BF8
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2881A332F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2205,9 +2437,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2246,7 +2480,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,215EF9F89F8
+       mov       r9,287FA336928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2263,7 +2497,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2274,10 +2508,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2287,39 +2523,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,27452F72BF0
+       mov       rdx,1D0D0F61FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,27472F72F58
+       mov       rcx,1D0D0F62000
        mov       rbp,[rcx]
-       mov       rcx,27452F72BF8
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE643A4928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1D0F0F62F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2327,9 +2572,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2368,7 +2615,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,27472F789F8
+       mov       r9,1D0F0F68920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2385,7 +2632,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE646A5D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2396,10 +2643,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2409,39 +2658,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,28C0B243408
+       mov       rdx,251C6953010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,28BEB242F58
+       mov       rcx,251C6953018
        mov       rbp,[rcx]
-       mov       rcx,28C0B243410
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,251E6952F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2449,9 +2707,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2490,7 +2750,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,28BEB2489F8
+       mov       r9,251E6958920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2507,7 +2767,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2518,10 +2778,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2531,39 +2793,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,269BB071BD8
+       mov       rdx,28E034FB3F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,269DB072F58
+       mov       rcx,28E034FB3F8
        mov       rbp,[rcx]
-       mov       rcx,269BB071BE0
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,28E034F2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2571,9 +2842,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2612,7 +2885,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,269EB0745F0
+       mov       r9,28E034F8920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2629,7 +2902,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309757A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2640,10 +2913,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2653,39 +2928,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,235E61FA7D0
+       mov       rdx,29FA19D3010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,235E61F2F58
+       mov       rcx,29FA19D3018
        mov       rbp,[rcx]
-       mov       rcx,235E61FA7D8
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64364928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,29FC19D2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2693,9 +2977,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2734,7 +3020,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,235E61F89F8
+       mov       r9,29FC19D8920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2751,7 +3037,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64665D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2762,10 +3048,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2775,39 +3063,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FC00B623F0
+       mov       rdx,29684355BE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,1FBE0B62F58
+       mov       rcx,29684355BF0
        mov       rbp,[rcx]
-       mov       rcx,1FC00B623F8
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64384928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,29684352F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2815,9 +3112,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2856,7 +3155,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1FC10B645F0
+       mov       r9,296A4354518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2873,7 +3172,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64685D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2884,10 +3183,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -2897,39 +3198,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1C67A595000
+       mov       rdx,166CF3217E0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,1C68A592F58
+       mov       rcx,166CF3217E8
        mov       rbp,[rcx]
-       mov       rcx,1C67A595008
-       mov       r14,[rcx]
+; 				this._logger.LogError(100, testException, "ERROR ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,166AF322F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2937,9 +3247,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -2978,7 +3290,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1C69A5945F0
+       mov       r9,166DF324518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2995,7 +3307,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309757A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3006,10 +3318,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3019,39 +3333,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21946022BF0
+       mov       rdx,2CB710E7BC8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,21936022F58
+       mov       rcx,2CB710E7BD0
        mov       rbp,[rcx]
-       mov       rcx,21946022BF8
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2CB810E2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3059,9 +3382,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3100,7 +3425,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,219360289F8
+       mov       r9,2CB710E6928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3117,7 +3442,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309957A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3128,10 +3453,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3141,39 +3468,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,20E9A615FE0
+       mov       rdx,2557DE44408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,20E9A612F58
+       mov       rcx,2557DE44410
        mov       rbp,[rcx]
-       mov       rcx,20E9A615FE8
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2559DE42F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3181,9 +3517,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3222,7 +3560,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,20EBA6145F0
+       mov       r9,255ADE44518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3239,7 +3577,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3250,10 +3588,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3263,39 +3603,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1E296371BD8
+       mov       rdx,1CAB8B99BC0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,1E2B6372F58
+       mov       rcx,1CAB8B99BC8
        mov       rbp,[rcx]
-       mov       rcx,1E296371BE0
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE643A4928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1CAB8B92F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3303,9 +3652,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3344,7 +3695,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1E2C63745F0
+       mov       r9,1CAB8B98920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3361,7 +3712,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309957A8
+       mov       rdx,7FFE646A5D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3372,10 +3723,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3385,39 +3738,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,16407BC1BD8
+       mov       rdx,127F2E01FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,16427BC2F58
+       mov       rcx,127F2E02000
        mov       rbp,[rcx]
-       mov       rcx,16407BC1BE0
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,12812E02F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3425,9 +3787,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3466,7 +3830,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,16427BC89F8
+       mov       r9,12812E08920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3483,7 +3847,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3494,10 +3858,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3507,39 +3873,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1F00D483FE8
+       mov       rdx,1FA28F457B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,1F01D482F58
+       mov       rcx,1FA28F457C0
        mov       rbp,[rcx]
-       mov       rcx,1F00D483FF0
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1FA48F42F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3547,9 +3922,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3588,7 +3965,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1F03D4845F0
+       mov       r9,1FA28F44518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3605,7 +3982,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309757A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3616,10 +3993,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3629,39 +4008,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22EB28763C8
+       mov       rdx,2660FB5A3D8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,22E92872F58
+       mov       rcx,2660FB5A3E0
        mov       rbp,[rcx]
-       mov       rcx,22EB28763D0
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64384928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2660FB52F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3669,9 +4057,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3710,7 +4100,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,22EB28745F0
+       mov       r9,2660FB58920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3727,7 +4117,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE64685D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3738,10 +4128,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3751,39 +4143,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2553830AFD0
+       mov       rdx,195C5871FF8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,25538302F58
+       mov       rcx,195C5872000
        mov       rbp,[rcx]
-       mov       rcx,2553830AFD8
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64364928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,195F5872F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3791,9 +4192,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3832,7 +4235,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,255383089F8
+       mov       r9,195E5876928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3849,7 +4252,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE64665D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3860,10 +4263,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3873,39 +4278,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,25C8AEC1BD8
+       mov       rdx,25A77B467D0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,25CAAEC2F58
+       mov       rcx,25A77B467D8
        mov       rbp,[rcx]
-       mov       rcx,25C8AEC1BE0
-       mov       r14,[rcx]
+; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64384928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,25A57B42F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3913,9 +4327,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 208
+; Total bytes of code 236
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -3954,7 +4370,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,25CAAEC89F8
+       mov       r9,25A77B44518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3971,7 +4387,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309957A8
+       mov       rdx,7FFE64685D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3982,10 +4398,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -3995,39 +4413,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,17CB1CC2BF0
+       mov       rdx,1A64B8B5BE8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,17CD1CC2F58
+       mov       rcx,1A64B8B5BF0
        mov       rbp,[rcx]
-       mov       rcx,17CB1CC2BF8
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64364928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1A64B8B2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4035,9 +4462,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4076,7 +4505,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,17CD1CC89F8
+       mov       r9,1A67B8B4518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4093,7 +4522,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64665D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4104,10 +4533,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4117,39 +4548,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,295522497F0
+       mov       rdx,2B301013010
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,29532242F58
+       mov       rcx,2B301013018
        mov       rbp,[rcx]
-       mov       rcx,295522497F8
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2B321012F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4157,9 +4597,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4198,7 +4640,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,29552246A00
+       mov       r9,2B321018920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4215,7 +4657,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4226,10 +4668,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4239,39 +4683,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,16F60BB6FF8
+       mov       rdx,1D022E277B0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,16F60BB2F58
+       mov       rcx,1D022E277B8
        mov       rbp,[rcx]
-       mov       rcx,16F60BB7000
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1D022E22F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4279,9 +4732,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4320,7 +4775,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,16F90BB45F0
+       mov       r9,1D022E26510
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4337,7 +4792,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309957A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4348,10 +4803,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4361,39 +4818,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,257EFC73FE8
+       mov       rdx,2A5BDB55008
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,2580FC72F58
+       mov       rcx,2A5BDB55010
        mov       rbp,[rcx]
-       mov       rcx,257EFC73FF0
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2A5BDB52F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4401,9 +4867,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4442,7 +4910,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2580FC765E8
+       mov       r9,2A5DDB56928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4459,7 +4927,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4470,10 +4938,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4483,39 +4953,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29C95D263C8
+       mov       rdx,19729F75420
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,29C75D22F58
+       mov       rcx,19729F75428
        mov       rbp,[rcx]
-       mov       rcx,29C95D263D0
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64374928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,19729F72F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4523,9 +5002,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4564,7 +5045,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,29C95D245F0
+       mov       r9,19749F76510
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4581,7 +5062,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309857A8
+       mov       rdx,7FFE64675D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4592,10 +5073,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4605,39 +5088,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,218ABF63BD0
+       mov       rdx,136B6544408
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,218ABF62F58
+       mov       rcx,136B6544410
        mov       rbp,[rcx]
-       mov       rcx,218ABF63BD8
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64384928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,136B6542F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4645,9 +5137,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4686,7 +5180,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,218CBF645F0
+       mov       r9,136D6546510
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4703,7 +5197,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309957A8
+       mov       rdx,7FFE64685D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4714,10 +5208,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4727,39 +5223,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,292AA8F1BD8
+       mov       rdx,1D8A3387BC8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,2927A8F2F58
+       mov       rcx,1D8A3387BD0
        mov       rbp,[rcx]
-       mov       rcx,292AA8F1BE0
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,1D8B3382F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4767,9 +5272,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4808,7 +5315,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2929A8F6A00
+       mov       r9,1D8A3386928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4825,7 +5332,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309657A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4836,10 +5343,12 @@ M01_L00:
 ; Total bytes of code 246
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark()
+       push      r15
        push      r14
+       push      r12
        push      rdi
        push      rsi
        push      rbp
@@ -4849,39 +5358,48 @@ M01_L00:
        mov       [rsp+30],rax
        mov       [rsp+38],rax
        mov       rsi,rcx
+; 			var testException = new ArgumentInvalidException("TEST EX MESSAGE");
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        mov       rcx,offset MT_DotNetTips.Spargine.Core.ArgumentInvalidException
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2D5166A1BD8
+       mov       rdx,2DDB5CE47F0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
        mov       dword ptr [rdi+74],80131501
        mov       dword ptr [rdi+74],80070057
+; 			for (var index = 0; index < this.Count; index++)
+; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+124],0
+       cmp       dword ptr [rsi+0A8],0
        jle       short M00_L01
-       mov       rcx,2D5366A2F58
+       mov       rcx,2DDB5CE47F8
        mov       rbp,[rcx]
-       mov       rcx,2D5166A1BE0
-       mov       r14,[rcx]
+; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
+; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rcx,[rsi+128]
-       xor       r8d,r8d
-       mov       r9d,64
-       mov       rdx,rbp
-       mov       [rsp+30],r8
-       mov       [rsp+38],r9d
-       mov       [rsp+20],r14
-       mov       [rsp+28],rdx
+       mov       r14,[rsi+0B0]
+       xor       r15d,r15d
+       mov       r12d,64
+       mov       rcx,7FFE64394928
+       mov       edx,2D
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rcx,2DDB5CE2F78
+       mov       rcx,[rcx]
+       mov       [rsp+30],r15
+       mov       [rsp+38],r12d
+       mov       [rsp+20],rbp
+       mov       [rsp+28],rcx
+       mov       rcx,r14
        lea       r8,[rsp+30]
        mov       r9,rdi
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+124]
+       cmp       ebx,[rsi+0A8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4889,9 +5407,11 @@ M00_L01:
        pop       rbp
        pop       rsi
        pop       rdi
+       pop       r12
        pop       r14
+       pop       r15
        ret
-; Total bytes of code 205
+; Total bytes of code 233
 ```
 ```assembly
 ; Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
@@ -4930,7 +5450,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2D5366A89F8
+       mov       r9,2DDC5CE4518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4947,7 +5467,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFF309A57A8
+       mov       rdx,7FFE64695D18
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi

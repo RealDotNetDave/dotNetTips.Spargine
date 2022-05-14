@@ -32,7 +32,14 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
 		public static string ToDigits([NotNull] this Guid input)
 		{
-			return input.ArgumentNotNull().ToString("N", CultureInfo.InvariantCulture);
+			if (input.CheckIsNotEmpty())
+			{
+				return input.ToString("N", CultureInfo.InvariantCulture);
+			}
+			else
+			{
+				return String.Empty;
+			}
 		}
 	}
 }

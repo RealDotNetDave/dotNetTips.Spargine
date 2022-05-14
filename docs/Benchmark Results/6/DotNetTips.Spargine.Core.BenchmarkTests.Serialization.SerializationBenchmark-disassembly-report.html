@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220501-144608</title>
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220513-172407</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,22 +14,26 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="8">DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220501-144608</th></tr>
+<tr><th colspan="8">DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220513-172407</th></tr>
 <tr>
-<th>Deserialize04 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Deserialize03 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Deserialize01 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Deserialize02 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Serialize02 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Serialize03 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>Serialize01 .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
-<th>StringToXDocument .NET 6.0.4 (6.0.422.16404), X64 RyuJIT</th>
+<th>Deserialize04 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Deserialize03 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Deserialize01 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Deserialize02 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Serialize02 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Serialize03 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>Serialize01 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
+<th>StringToXDocument .NET 6.0.5 (6.0.522.21309), X64 RyuJIT</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize04()
+			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonProperJson);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -48,12 +52,14 @@ pop       rsi
 ret
 
 DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonProperJson()
+                return ResourceManager.GetString("PersonProperJson", resourceCulture);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 sub       rsp,28
 call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
 mov       rcx,rax
-mov       rdx,21E909A5738
+mov       rdx,2374F057730
 mov       rdx,[rdx]
-mov       r8,21E909A3FE8
+mov       r8,2374F055F08
 mov       r8,[r8]
 mov       rax,[rax]
 mov       rax,[rax+48]
@@ -68,29 +74,29 @@ push      rbx
 sub       rsp,30
 mov       [rsp+28],rcx
 mov       rsi,rcx
-mov       rax,21EB09A3020
+mov       rax,2375F051028
 mov       rdi,[rax]
 mov       rbx,rdx
 test      rbx,rbx
-je        short 00007FFF30AF439A
+je        short 00007FFE647C47BA
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30AF439A
+je        short 00007FFE647C47BA
 xor       eax,eax
 test      eax,eax
 sete      al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF30AF43C9
-jmp       short 00007FFF30AF43A1
+jne       short 00007FFE647C47E9
+jmp       short 00007FFE647C47C1
 mov       eax,1
-jmp       short 00007FFF30AF438C
+jmp       short 00007FFE647C47AC
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
 mov       rcx,rax
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF30AF43B1
-jmp       short 00007FFF30AF43B4
+je        short 00007FFE647C47D1
+jmp       short 00007FFE647C47D4
 mov       rdi,rcx
-mov       rdx,21E909A58D8
+mov       rdx,2374F0578D0
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
@@ -101,12 +107,12 @@ call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
 mov       rdi,rax
 mov       rcx,[rsi+10]
 cmp       qword ptr [rcx+10],0
-je        short 00007FFF30AF43F0
+je        short 00007FFE647C4810
 mov       rcx,[rsi+10]
 mov       rcx,[rcx+10]
-jmp       short 00007FFF30AF4405
+jmp       short 00007FFE647C4825
 mov       rcx,rsi
-mov       rdx,7FFF30A0D608
+mov       rdx,7FFE646DD620
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -122,6 +128,10 @@ ret
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize03()
+			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonRecordJson);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -140,12 +150,14 @@ pop       rsi
 ret
 
 DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonRecordJson()
+                return ResourceManager.GetString("PersonRecordJson", resourceCulture);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 sub       rsp,28
 call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
 mov       rcx,rax
-mov       rdx,1489C771F78
+mov       rdx,2484DDE2F90
 mov       rdx,[rdx]
-mov       r8,148AC773FE8
+mov       r8,2486DDE8318
 mov       r8,[r8]
 mov       rax,[rax]
 mov       rax,[rax+48]
@@ -160,29 +172,29 @@ push      rbx
 sub       rsp,30
 mov       [rsp+28],rcx
 mov       rsi,rcx
-mov       rax,1487C773020
+mov       rax,2486DDE3020
 mov       rdi,[rax]
 mov       rbx,rdx
 test      rbx,rbx
-je        short 00007FFF30AF761A
+je        short 00007FFE64808C9A
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30AF761A
+je        short 00007FFE64808C9A
 xor       eax,eax
 test      eax,eax
 sete      al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF30AF7649
-jmp       short 00007FFF30AF7621
+jne       short 00007FFE64808CC9
+jmp       short 00007FFE64808CA1
 mov       eax,1
-jmp       short 00007FFF30AF760C
+jmp       short 00007FFE64808C8C
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
 mov       rcx,rax
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF30AF7631
-jmp       short 00007FFF30AF7634
+je        short 00007FFE64808CB1
+jmp       short 00007FFE64808CB4
 mov       rdi,rcx
-mov       rdx,1489C772118
+mov       rdx,2484DDE3130
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
@@ -193,12 +205,12 @@ call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
 mov       rdi,rax
 mov       rcx,[rsi+10]
 cmp       qword ptr [rcx+10],0
-je        short 00007FFF30AF7670
+je        short 00007FFE64808CF0
 mov       rcx,[rsi+10]
 mov       rcx,[rcx+10]
-jmp       short 00007FFF30AF7685
+jmp       short 00007FFE64808D05
 mov       rcx,rsi
-mov       rdx,7FFF30A0D608
+mov       rdx,7FFE6471D620
 call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
 mov       rcx,rax
 mov       rdx,rdi
@@ -214,6 +226,10 @@ ret
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize01()
+			var result = XmlSerialization.Deserialize<PersonProper>(Resources.PersonProperXml);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -232,12 +248,14 @@ pop       rsi
 ret
 
 DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonProperXml()
+                return ResourceManager.GetString("PersonProperXml", resourceCulture);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 sub       rsp,28
 call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
 mov       rcx,rax
-mov       rdx,2361C295F50
+mov       rdx,1FC485C6380
 mov       rdx,[rdx]
-mov       r8,2361C293FE8
+mov       r8,1FC785C3F10
 mov       r8,[r8]
 mov       rax,[rax]
 mov       rax,[rax+48]
@@ -260,29 +278,29 @@ vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
 mov       [rbp+0FFA0],rsp
 mov       [rbp+0FFE0],rcx
 mov       rsi,rcx
-mov       rax,235FC293020
+mov       rax,1FC485C3020
 mov       rdi,[rax]
 mov       rbx,rdx
 test      rbx,rbx
-je        short 00007FFF30B26E5C
+je        short 00007FFE6483725C
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30B26E5C
+je        short 00007FFE6483725C
 xor       eax,eax
 test      eax,eax
 sete      al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF30B26E8B
-jmp       short 00007FFF30B26E63
+jne       short 00007FFE6483728B
+jmp       short 00007FFE64837263
 mov       eax,1
-jmp       short 00007FFF30B26E4E
+jmp       short 00007FFE6483724E
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
 mov       rcx,rax
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF30B26E73
-jmp       short 00007FFF30B26E76
+je        short 00007FFE64837273
+jmp       short 00007FFE64837276
 mov       rdi,rcx
-mov       rdx,2361C2960F0
+mov       rdx,1FC485C6520
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
@@ -295,7 +313,7 @@ mov       rcx,offset MT_System.IO.StringReader
 call      CORINFO_HELP_NEWSFAST
 mov       rbx,rax
 test      rdi,rdi
-je        near ptr 00007FFF30B26F99
+je        near ptr 00007FFE64837399
 lea       rcx,[rbx+8]
 mov       rdx,rdi
 call      CORINFO_HELP_ASSIGN_REF
@@ -334,10 +352,10 @@ call      CORINFO_HELP_CHKCASTARRAY
 mov       rsi,rax
 mov       rax,[rbp+0FFA8]
 test      rax,rax
-je        short 00007FFF30B26F66
+je        short 00007FFE64837366
 mov       rcx,rax
-mov       r11,7FFF305705C0
-call      qword ptr [7FFF30B305C0]
+mov       r11,7FFE642805C0
+call      qword ptr [7FFE648405C0]
 nop
 xor       ecx,ecx
 mov       rax,[rbp+0FFB0]
@@ -346,7 +364,7 @@ mov       [rax+10],ecx
 mov       [rax+14],ecx
 mov       rcx,rax
 mov       edx,1
-call      qword ptr [7FFF30B2DB78]
+call      qword ptr [7FFE6483DB78]
 mov       rcx,[rbp+0FFB0]
 call      System.GC.SuppressFinalize(System.Object)
 mov       rax,rsi
@@ -369,10 +387,10 @@ mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFA8],0
-je        short 00007FFF30B26FDA
+je        short 00007FFE648373DA
 mov       rcx,[rbp+0FFA8]
-mov       r11,7FFF305705C0
-call      qword ptr [7FFF30B305C0]
+mov       r11,7FFE642805C0
+call      qword ptr [7FFE648405C0]
 nop
 add       rsp,28
 pop       rbx
@@ -390,7 +408,7 @@ mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFB0],0
-je        short 00007FFF30B2702D
+je        short 00007FFE6483742D
 xor       ecx,ecx
 mov       rax,[rbp+0FFB0]
 mov       [rax+8],rcx
@@ -398,7 +416,7 @@ mov       [rax+10],ecx
 mov       [rax+14],ecx
 mov       rcx,rax
 mov       edx,1
-call      qword ptr [7FFF30B2DB78]
+call      qword ptr [7FFE6483DB78]
 mov       rcx,[rbp+0FFB0]
 call      System.GC.SuppressFinalize(System.Object)
 nop
@@ -412,6 +430,10 @@ ret
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize02()
+			var result = XmlSerialization.Deserialize<PersonRecord>(Resources.PersonRecordXml);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -430,12 +452,14 @@ pop       rsi
 ret
 
 DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonRecordXml()
+                return ResourceManager.GetString("PersonRecordXml", resourceCulture);
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 sub       rsp,28
 call      DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_ResourceManager()
 mov       rcx,rax
-mov       rdx,1E2A09C3F70
+mov       rdx,224774A6380
 mov       rdx,[rdx]
-mov       r8,1E2B09C3FE8
+mov       r8,224974A3F10
 mov       r8,[r8]
 mov       rax,[rax]
 mov       rax,[rax+48]
@@ -458,29 +482,29 @@ vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
 mov       [rbp+0FFA0],rsp
 mov       [rbp+0FFE0],rcx
 mov       rsi,rcx
-mov       rax,1E2809C1028
+mov       rax,224774A3020
 mov       rdi,[rax]
 mov       rbx,rdx
 test      rbx,rbx
-je        short 00007FFF30B294FC
+je        short 00007FFE648393FC
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30B294FC
+je        short 00007FFE648393FC
 xor       eax,eax
 test      eax,eax
 sete      al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF30B2952B
-jmp       short 00007FFF30B29503
+jne       short 00007FFE6483942B
+jmp       short 00007FFE64839403
 mov       eax,1
-jmp       short 00007FFF30B294EE
+jmp       short 00007FFE648393EE
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
 mov       rcx,rax
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF30B29513
-jmp       short 00007FFF30B29516
+je        short 00007FFE64839413
+jmp       short 00007FFE64839416
 mov       rdi,rcx
-mov       rdx,1E2A09C4110
+mov       rdx,224774A6520
 mov       rdx,[rdx]
 mov       rcx,rdi
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
@@ -493,7 +517,7 @@ mov       rcx,offset MT_System.IO.StringReader
 call      CORINFO_HELP_NEWSFAST
 mov       rbx,rax
 test      rdi,rdi
-je        near ptr 00007FFF30B29639
+je        near ptr 00007FFE64839539
 lea       rcx,[rbx+8]
 mov       rdx,rdi
 call      CORINFO_HELP_ASSIGN_REF
@@ -532,10 +556,10 @@ call      CORINFO_HELP_CHKCASTARRAY
 mov       rsi,rax
 mov       rax,[rbp+0FFA8]
 test      rax,rax
-je        short 00007FFF30B29606
+je        short 00007FFE64839506
 mov       rcx,rax
-mov       r11,7FFF30580608
-call      qword ptr [7FFF30B30608]
+mov       r11,7FFE64290608
+call      qword ptr [7FFE64840608]
 nop
 xor       ecx,ecx
 mov       rax,[rbp+0FFB0]
@@ -544,7 +568,7 @@ mov       [rax+10],ecx
 mov       [rax+14],ecx
 mov       rcx,rax
 mov       edx,1
-call      qword ptr [7FFF30B2DB78]
+call      qword ptr [7FFE6483DB78]
 mov       rcx,[rbp+0FFB0]
 call      System.GC.SuppressFinalize(System.Object)
 mov       rax,rsi
@@ -567,10 +591,10 @@ mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFA8],0
-je        short 00007FFF30B2967A
+je        short 00007FFE6483957A
 mov       rcx,[rbp+0FFA8]
-mov       r11,7FFF30580608
-call      qword ptr [7FFF30B30608]
+mov       r11,7FFE64290608
+call      qword ptr [7FFE64840608]
 nop
 add       rsp,28
 pop       rbx
@@ -588,7 +612,7 @@ mov       rbp,[rcx+20]
 mov       [rsp+20],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFB0],0
-je        short 00007FFF30B296CD
+je        short 00007FFE648395CD
 xor       ecx,ecx
 mov       rax,[rbp+0FFB0]
 mov       [rax+8],rcx
@@ -596,7 +620,7 @@ mov       [rax+10],ecx
 mov       [rax+14],ecx
 mov       rcx,rax
 mov       edx,1
-call      qword ptr [7FFF30B2DB78]
+call      qword ptr [7FFE6483DB78]
 mov       rcx,[rbp+0FFB0]
 call      System.GC.SuppressFinalize(System.Object)
 nop
@@ -610,6 +634,10 @@ ret
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize02()
+			var result = JsonSerialization.Serialize(this.PersonProper01);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -635,27 +663,27 @@ push      rbx
 sub       rsp,28
 xor       eax,eax
 mov       [rsp+20],rax
-mov       rax,1F129F63020
+mov       rax,1CDCB4D3020
 mov       rsi,[rax]
 mov       rdi,rcx
-mov       rax,1F149F61588
+mov       rax,1CDDB4D1588
 mov       rbx,[rax]
 test      rdi,rdi
 setne     al
 movzx     eax,al
 test      eax,eax
-jne       near ptr 00007FFF3090061C
+jne       near ptr 00007FFE64630E7C
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
 mov       rbp,rax
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF309005F3
+je        short 00007FFE64630E53
 mov       r14d,[rbx+8]
 lea       ecx,[r14+2]
 call      System.String.FastAllocateString(Int32)
 mov       r15,rax
 mov       r8d,[rbx+8]
 cmp       r8d,[r15+8]
-jg        near ptr 00007FFF309006D3
+jg        near ptr 00007FFE64630F33
 lea       rcx,[r15+0C]
 lea       rdx,[rbx+0C]
 mov       r8d,[rbx+8]
@@ -664,25 +692,25 @@ call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       ecx,[r15+8]
 sub       ecx,r14d
 cmp       ecx,2
-jl        near ptr 00007FFF309006F5
+jl        near ptr 00007FFE64630F55
 lea       rcx,[r15+0C]
 movsxd    rdx,r14d
 lea       rcx,[rcx+rdx*2]
-mov       rdx,1F129F63090
+mov       rdx,1CDCB4D3090
 mov       rdx,[rdx]
 add       rdx,0C
 mov       r8d,4
 call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       rcx,r15
 cmp       dword ptr [rsi+8],0
-je        short 00007FFF3090060C
-jmp       short 00007FFF30900602
-mov       rcx,1F129F63090
+je        short 00007FFE64630E6C
+jmp       short 00007FFE64630E62
+mov       rcx,1CDCB4D3090
 mov       rcx,[rcx]
-jmp       short 00007FFF309005EB
+jmp       short 00007FFE64630E4B
 mov       rdx,rsi
 call      System.String.Concat(System.String, System.String)
-jmp       short 00007FFF30900614
+jmp       short 00007FFE64630E74
 mov       rdx,rbp
 call      System.String.Concat(System.String, System.String)
 mov       rcx,rax
@@ -690,28 +718,28 @@ call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(S
 mov       [rsp+20],rdi
 mov       rcx,offset MT_System.Object
 call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-mov       rcx,1F159F64D30
+mov       rcx,1CDCB4D9060
 cmp       rax,[rcx]
-jne       short 00007FFF30900651
+jne       short 00007FFE64630EB1
 cmp       qword ptr [rsp+20],0
-je        short 00007FFF30900651
+je        short 00007FFE64630EB1
 mov       rcx,[rsp+20]
 call      System.Object.GetType()
 mov       rsi,rax
-mov       rcx,1F159F64C00
+mov       rcx,1CDCB4D8F30
 mov       rdi,[rcx]
 cmp       byte ptr [rdi+85],0
-jne       short 00007FFF30900672
+jne       short 00007FFE64630ED2
 mov       rcx,rdi
 call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
 mov       rbx,[rdi+20]
 test      rbx,rbx
-je        short 00007FFF309006CF
+je        short 00007FFE64630F2F
 mov       rcx,[rbx+80]
 mov       rdx,rsi
 call      System.Type.op_Inequality(System.Type, System.Type)
 test      eax,eax
-jne       short 00007FFF309006B3
+jne       short 00007FFE64630F13
 mov       r8,rbx
 lea       rdx,[rsp+20]
 mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
@@ -732,9 +760,9 @@ mov       rbx,rax
 lea       rcx,[rdi+20]
 mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
-jmp       short 00007FFF3090068E
+jmp       short 00007FFE64630EEE
 xor       ecx,ecx
-jmp       short 00007FFF30900682
+jmp       short 00007FFE64630EE2
 mov       rcx,offset MT_System.IndexOutOfRangeException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
@@ -754,6 +782,10 @@ int       3
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize03()
+			var result = JsonSerialization.Serialize(this.PersonRecord02);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -779,27 +811,27 @@ push      rbx
 sub       rsp,28
 xor       eax,eax
 mov       [rsp+20],rax
-mov       rax,27F7C9C3020
+mov       rax,2B8F4453020
 mov       rsi,[rax]
 mov       rdi,rcx
-mov       rax,27F7C9C9968
+mov       rax,2B8F4459968
 mov       rbx,[rax]
 test      rdi,rdi
 setne     al
 movzx     eax,al
 test      eax,eax
-jne       near ptr 00007FFF30936C3C
+jne       near ptr 00007FFE64625E6C
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
 mov       rbp,rax
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30936C13
+je        short 00007FFE64625E43
 mov       r14d,[rbx+8]
 lea       ecx,[r14+2]
 call      System.String.FastAllocateString(Int32)
 mov       r15,rax
 mov       r8d,[rbx+8]
 cmp       r8d,[r15+8]
-jg        near ptr 00007FFF30936CF3
+jg        near ptr 00007FFE64625F23
 lea       rcx,[r15+0C]
 lea       rdx,[rbx+0C]
 mov       r8d,[rbx+8]
@@ -808,25 +840,25 @@ call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       ecx,[r15+8]
 sub       ecx,r14d
 cmp       ecx,2
-jl        near ptr 00007FFF30936D15
+jl        near ptr 00007FFE64625F45
 lea       rcx,[r15+0C]
 movsxd    rdx,r14d
 lea       rcx,[rcx+rdx*2]
-mov       rdx,27F7C9C3090
+mov       rdx,2B8F4453090
 mov       rdx,[rdx]
 add       rdx,0C
 mov       r8d,4
 call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       rcx,r15
 cmp       dword ptr [rsi+8],0
-je        short 00007FFF30936C2C
-jmp       short 00007FFF30936C22
-mov       rcx,27F7C9C3090
+je        short 00007FFE64625E5C
+jmp       short 00007FFE64625E52
+mov       rcx,2B8F4453090
 mov       rcx,[rcx]
-jmp       short 00007FFF30936C0B
+jmp       short 00007FFE64625E3B
 mov       rdx,rsi
 call      System.String.Concat(System.String, System.String)
-jmp       short 00007FFF30936C34
+jmp       short 00007FFE64625E64
 mov       rdx,rbp
 call      System.String.Concat(System.String, System.String)
 mov       rcx,rax
@@ -834,28 +866,28 @@ call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(S
 mov       [rsp+20],rdi
 mov       rcx,offset MT_System.Object
 call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
-mov       rcx,27F7C9C9138
+mov       rcx,2B8F4459060
 cmp       rax,[rcx]
-jne       short 00007FFF30936C71
+jne       short 00007FFE64625EA1
 cmp       qword ptr [rsp+20],0
-je        short 00007FFF30936C71
+je        short 00007FFE64625EA1
 mov       rcx,[rsp+20]
 call      System.Object.GetType()
 mov       rsi,rax
-mov       rcx,27F7C9C9008
+mov       rcx,2B8F4458F30
 mov       rdi,[rcx]
 cmp       byte ptr [rdi+85],0
-jne       short 00007FFF30936C92
+jne       short 00007FFE64625EC2
 mov       rcx,rdi
 call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
 mov       rbx,[rdi+20]
 test      rbx,rbx
-je        short 00007FFF30936CEF
+je        short 00007FFE64625F1F
 mov       rcx,[rbx+80]
 mov       rdx,rsi
 call      System.Type.op_Inequality(System.Type, System.Type)
 test      eax,eax
-jne       short 00007FFF30936CD3
+jne       short 00007FFE64625F03
 mov       r8,rbx
 lea       rdx,[rsp+20]
 mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
@@ -876,9 +908,9 @@ mov       rbx,rax
 lea       rcx,[rdi+20]
 mov       rdx,rbx
 call      CORINFO_HELP_ASSIGN_REF
-jmp       short 00007FFF30936CAE
+jmp       short 00007FFE64625EDE
 xor       ecx,ecx
-jmp       short 00007FFF30936CA2
+jmp       short 00007FFE64625ED2
 mov       rcx,offset MT_System.IndexOutOfRangeException
 call      CORINFO_HELP_NEWSFAST
 mov       rsi,rax
@@ -898,6 +930,10 @@ int       3
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize01()
+			var result = XmlSerialization.Serialize(this.PersonProper01);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -927,26 +963,26 @@ xor       eax,eax
 mov       [rbp+0FFC8],rax
 mov       [rbp+0FFB0],rsp
 mov       rsi,rcx
-mov       rax,2307E163020
+mov       rax,1A5F3633020
 mov       rdi,[rax]
-mov       rax,2309E161588
+mov       rax,1A603631588
 mov       rbx,[rax]
 test      rsi,rsi
 setne     al
 movzx     eax,al
 test      eax,eax
-jne       near ptr 00007FFF30B1A7AD
+jne       near ptr 00007FFE64812D6D
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
 mov       r14,rax
 cmp       dword ptr [rbx+8],0
-je        short 00007FFF30B1A784
+je        short 00007FFE64812D44
 mov       r15d,[rbx+8]
 lea       ecx,[r15+2]
 call      System.String.FastAllocateString(Int32)
 mov       r12,rax
 mov       r8d,[rbx+8]
 cmp       r8d,[r12+8]
-jg        near ptr 00007FFF30B1A87B
+jg        near ptr 00007FFE64812E3B
 lea       rcx,[r12+0C]
 lea       rdx,[rbx+0C]
 mov       r8d,[rbx+8]
@@ -955,25 +991,25 @@ call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       ecx,[r12+8]
 sub       ecx,r15d
 cmp       ecx,2
-jl        near ptr 00007FFF30B1A89D
+jl        near ptr 00007FFE64812E5D
 lea       rcx,[r12+0C]
 movsxd    rdx,r15d
 lea       rcx,[rcx+rdx*2]
-mov       rdx,2307E163090
+mov       rdx,1A5F3633090
 mov       rdx,[rdx]
 add       rdx,0C
 mov       r8d,4
 call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
 mov       rcx,r12
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF30B1A79D
-jmp       short 00007FFF30B1A793
-mov       rcx,2307E163090
+je        short 00007FFE64812D5D
+jmp       short 00007FFE64812D53
+mov       rcx,1A5F3633090
 mov       rcx,[rcx]
-jmp       short 00007FFF30B1A77C
+jmp       short 00007FFE64812D3C
 mov       rdx,rdi
 call      System.String.Concat(System.String, System.String)
-jmp       short 00007FFF30B1A7A5
+jmp       short 00007FFE64812D65
 mov       rdx,r14
 call      System.String.Concat(System.String, System.String)
 mov       rcx,rax
@@ -1007,19 +1043,19 @@ call      System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter,
 mov       rcx,[rbp+0FFC8]
 mov       rcx,[rcx+20]
 cmp       [rcx],ecx
-call      qword ptr [7FFF30B22E80]
+call      qword ptr [7FFE64812E80]
 mov       rdi,rax
 mov       rdx,[rbp+0FFC0]
 test      rdx,rdx
-je        short 00007FFF30B1A84D
+je        short 00007FFE64812E0D
 mov       rcx,rdx
-mov       r11,7FFF30570618
-call      qword ptr [7FFF30B20618]
+mov       r11,7FFE642705D0
+call      qword ptr [7FFE648205D0]
 nop
 mov       rcx,[rbp+0FFC8]
 mov       byte ptr [rcx+28],0
 mov       edx,1
-call      qword ptr [7FFF30B1D038]
+call      qword ptr [7FFE6481D038]
 mov       rcx,[rbp+0FFC8]
 call      System.GC.SuppressFinalize(System.Object)
 mov       rax,rdi
@@ -1059,10 +1095,10 @@ mov       rbp,[rcx+30]
 mov       [rsp+30],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFC0],0
-je        short 00007FFF30B1A8F9
+je        short 00007FFE64812EB9
 mov       rcx,[rbp+0FFC0]
-mov       r11,7FFF30570618
-call      qword ptr [7FFF30B20618]
+mov       r11,7FFE642705D0
+call      qword ptr [7FFE648205D0]
 nop
 add       rsp,40
 pop       rbx
@@ -1085,11 +1121,11 @@ mov       rbp,[rcx+30]
 mov       [rsp+30],rbp
 lea       rbp,[rbp+80]
 cmp       qword ptr [rbp+0FFC8],0
-je        short 00007FFF30B1A94A
+je        short 00007FFE64812F0A
 mov       rcx,[rbp+0FFC8]
 mov       byte ptr [rcx+28],0
 mov       edx,1
-call      qword ptr [7FFF30B1D038]
+call      qword ptr [7FFE6481D038]
 mov       rcx,[rbp+0FFC8]
 call      System.GC.SuppressFinalize(System.Object)
 nop
@@ -1106,6 +1142,10 @@ ret
 </code></pre></td>
 <td style="vertical-align:top;"><pre><code>
 DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.StringToXDocument()
+			var result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			base.Consumer.Consume(result);
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 push      rsi
 sub       rsp,20
 mov       rsi,rcx
@@ -1126,9 +1166,9 @@ DotNetTips.Spargine.Benchmarking.Properties.Resources.get_XmlTestDataPersonPrope
 sub       rsp,28
 call      DotNetTips.Spargine.Benchmarking.Properties.Resources.get_ResourceManager()
 mov       rcx,rax
-mov       rdx,27894EA1F78
+mov       rdx,23FB88D9B40
 mov       rdx,[rdx]
-mov       r8,278A4EA3FF8
+mov       r8,23FB88D8328
 mov       r8,[r8]
 mov       rax,[rax]
 mov       rax,[rax+48]
@@ -1140,29 +1180,29 @@ DotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System
 push      rdi
 push      rsi
 sub       rsp,28
-mov       rax,27874EA3020
+mov       rax,23FB88D3020
 mov       rsi,[rax]
 mov       rdi,rcx
 test      rdi,rdi
-je        short 00007FFF3091AAB1
+je        short 00007FFE6462AE51
 cmp       dword ptr [rdi+8],0
-je        short 00007FFF3091AAB1
+je        short 00007FFE6462AE51
 xor       eax,eax
 test      eax,eax
 sete      al
 movzx     eax,al
 test      eax,eax
-jne       short 00007FFF3091AAE0
-jmp       short 00007FFF3091AAB8
+jne       short 00007FFE6462AE80
+jmp       short 00007FFE6462AE58
 mov       eax,1
-jmp       short 00007FFF3091AAA3
+jmp       short 00007FFE6462AE43
 call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
 mov       rcx,rax
 cmp       dword ptr [rsi+8],0
-je        short 00007FFF3091AAC8
-jmp       short 00007FFF3091AACB
+je        short 00007FFE6462AE68
+jmp       short 00007FFE6462AE6B
 mov       rsi,rcx
-mov       rdx,27894EA1408
+mov       rdx,23F988D1408
 mov       rdx,[rdx]
 mov       rcx,rsi
 call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)

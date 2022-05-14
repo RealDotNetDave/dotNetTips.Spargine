@@ -1,6 +1,10 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllInterfaces01()
+; 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -38,11 +42,11 @@
        sub       rsp,38
        xor       eax,eax
        mov       [rsp+20],rax
-       mov       rax,298D6723020
+       mov       rax,1A11D123020
        mov       rax,[rax]
        mov       [rsp+30],rax
        mov       rsi,rcx
-       mov       rax,298D6731F98
+       mov       rax,1A12D121760
        mov       rax,[rax]
        mov       [rsp+28],rax
        test      rsi,rsi
@@ -67,10 +71,10 @@ M02_L00:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rcx,7FFF26684928
+       mov       rcx,7FFEBCA64928
        mov       edx,27
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,298D6722F48
+       mov       rdx,1A11D122F48
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
@@ -111,9 +115,13 @@ M02_L02:
 ; Total bytes of code 290
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllTypes01()
+; 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -149,11 +157,11 @@ M02_L02:
        sub       rsp,38
        xor       eax,eax
        mov       [rsp+20],rax
-       mov       rax,1FC7A123020
+       mov       rax,1A7DB531028
        mov       rax,[rax]
        mov       [rsp+30],rax
        mov       rsi,rcx
-       mov       rax,1FC9A129F10
+       mov       rax,1A7DB540FB8
        mov       rax,[rax]
        mov       [rsp+28],rax
        test      rsi,rsi
@@ -177,20 +185,20 @@ M02_L00:
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,1FC9A123640
+       mov       rcx,1A7DB539EE8
        mov       r8,[rcx]
        test      r8,r8
        jne       short M02_L01
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,1FC9A123638
+       mov       rdx,1A7DB539EE0
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,1FC9A123640
+       mov       rcx,1A7DB539EE8
        mov       rdx,rdi
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
@@ -206,9 +214,13 @@ M02_L01:
 ; Total bytes of code 245
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetInstances01()
+; 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			this.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx

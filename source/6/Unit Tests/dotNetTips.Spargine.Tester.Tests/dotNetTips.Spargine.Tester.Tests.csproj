@@ -1,38 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+	<PropertyGroup>
+		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<IsPackable>false</IsPackable>
+		<AssemblyVersion>2021.6.14.247</AssemblyVersion>
+		<FileVersion>2021.6.14.247</FileVersion>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<AnalysisLevel>none</AnalysisLevel>
+	</PropertyGroup>
 
-    <IsPackable>false</IsPackable>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\appbin</OutputPath>
+	</PropertyGroup>
 
-    <AssemblyVersion>2021.6.14.247</AssemblyVersion>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\appbin</OutputPath>
+	</PropertyGroup>
 
-    <FileVersion>2021.6.14.247</FileVersion>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+		<PackageReference Include="MSTest.TestAdapter" Version="2.2.9" />
+		<PackageReference Include="MSTest.TestFramework" Version="2.2.9" />
+		<PackageReference Include="coverlet.collector" Version="3.1.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
+	</ItemGroup>
 
-    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-
-    <EnableNETAnalyzers>false</EnableNETAnalyzers>
-
-    <AnalysisLevel>none</AnalysisLevel>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="2.2.9" />
-    <PackageReference Include="MSTest.TestFramework" Version="2.2.9" />
-    <PackageReference Include="coverlet.collector" Version="3.1.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="System.ServiceModel.Primitives" Version="4.9.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\dotNetTips.Spargine.6.Core.csproj" />
-    <ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\dotNetTips.Spargine.6.Extensions.csproj" />
-    <ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\dotNetTips.Spargine.6.Tester.csproj" />
-    <ProjectReference Include="..\..\dotNetTips.Spargine.6\dotNetTips.Spargine.6.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\dotNetTips.Spargine.6.Core.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\dotNetTips.Spargine.6.Extensions.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\dotNetTips.Spargine.6.Tester.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6\dotNetTips.Spargine.6.csproj" />
+	</ItemGroup>
 
 </Project>

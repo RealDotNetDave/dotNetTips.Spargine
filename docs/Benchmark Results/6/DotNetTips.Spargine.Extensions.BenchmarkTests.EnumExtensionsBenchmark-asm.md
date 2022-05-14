@@ -1,6 +1,10 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetDescription01()
+; 			var result = this._testEnum.GetDescription();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -30,10 +34,10 @@
        xor       eax,eax
        mov       [rsp+28],rax
        mov       rsi,rcx
-       mov       rax,14137CE3020
+       mov       rax,2281F021028
        mov       rax,[rax]
        mov       [rsp+38],rax
-       mov       rax,14157CE1408
+       mov       rax,227FF023400
        mov       rax,[rax]
        mov       [rsp+30],rax
        test      rsi,rsi
@@ -63,7 +67,7 @@ M01_L00:
        mov       rcx,rdi
        mov       r8d,1C
        cmp       [rcx],ecx
-       call      qword ptr [7FFF26929638]
+       call      qword ptr [7FFEBCD49638]
        mov       rdi,rax
        mov       rcx,offset MT_System.ComponentModel.DescriptionAttribute
        call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
@@ -100,9 +104,13 @@ M01_L01:
 ; Total bytes of code 254
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.EnumExtensionsBenchmark.GetItems01()
+; 			var result = this._testEnum.GetItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
@@ -137,10 +145,10 @@ M01_L01:
        vmovdqa   xmmword ptr [rsp+30],xmm4
        vmovdqa   xmmword ptr [rsp+40],xmm4
        mov       rsi,rcx
-       mov       rax,239E9CB3020
+       mov       rax,149FA933020
        mov       rax,[rax]
        mov       [rsp+58],rax
-       mov       rax,23A09CB1408
+       mov       rax,149DA931408
        mov       rax,[rax]
        mov       [rsp+50],rax
        test      rsi,rsi
@@ -162,10 +170,10 @@ M01_L00:
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.ValueTuple`2[[System.String, System.Private.CoreLib],[System.Int32, System.Private.CoreLib]], System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rcx,7FFF26654928
+       mov       rcx,7FFEBCA64928
        mov       edx,27
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rdx,239E9CB2F48
+       mov       rdx,149FA932F48
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
        call      CORINFO_HELP_ASSIGN_REF

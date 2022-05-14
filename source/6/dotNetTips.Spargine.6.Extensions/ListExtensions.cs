@@ -182,7 +182,7 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			return list.Count() > 0;
+			return list.Any();
 		}
 
 		/// <summary>

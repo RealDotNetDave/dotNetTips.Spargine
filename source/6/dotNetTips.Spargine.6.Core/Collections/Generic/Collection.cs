@@ -130,6 +130,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		public static Collection<T> Create([NotNull] IEnumerable<T> items, Tristate ensureUnique)
 		{
 			items = items.ArgumentItemsExists();
+			ensureUnique = ensureUnique.ArgumentDefined();
 
 			var newItems = new Collection<T>();
 

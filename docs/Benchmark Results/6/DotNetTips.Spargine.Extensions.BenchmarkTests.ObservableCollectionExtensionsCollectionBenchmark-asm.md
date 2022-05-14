@@ -1,6 +1,10 @@
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -14,8 +18,8 @@
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26540790
-       call      qword ptr [7FFF26B00790]
+       mov       r11,7FFEBC9A0630
+       call      qword ptr [7FFEBCF50630]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -37,7 +41,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,24436293020
+       mov       rcx,2C2775D3020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -47,11 +51,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B6B8C0
+       mov       rdx,7FFEBCF34160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,2446629ED18
+       mov       r9,2C2775D3BB0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -63,7 +67,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B6BD90
+       mov       rdx,7FFEBCF34630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -81,9 +85,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -97,8 +105,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560790
-       call      qword ptr [7FFF26B20790]
+       mov       r11,7FFEBC970650
+       call      qword ptr [7FFEBCF20650]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -120,7 +128,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1BF2DC53020
+       mov       rcx,24915673020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -130,11 +138,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCF04160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1BF2DC55CD8
+       mov       r9,24915681FD8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -146,7 +154,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCF04630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -164,9 +172,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -180,8 +192,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26580790
-       call      qword ptr [7FFF26B40790]
+       mov       r11,7FFEBC980630
+       call      qword ptr [7FFEBCF30630]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -203,7 +215,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,22B1E783020
+       mov       rcx,248F0761028
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -213,11 +225,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26BAB8C0
+       mov       rdx,7FFEBCF14160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,22B1E7864F0
+       mov       r9,248F07623D0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -229,7 +241,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26BABD90
+       mov       rdx,7FFEBCF14630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -247,9 +259,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -263,8 +279,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26570760
-       call      qword ptr [7FFF26B30760]
+       mov       r11,7FFEBC970638
+       call      qword ptr [7FFEBCF20638]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -286,7 +302,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1662FA43020
+       mov       rcx,1C390C03020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -296,11 +312,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B9B8C0
+       mov       rdx,7FFEBCF04160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1660FA428E8
+       mov       r9,1C370C02FD0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -312,7 +328,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B9BD90
+       mov       rdx,7FFEBCF04630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -330,9 +346,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -346,8 +366,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26540790
-       call      qword ptr [7FFF26B00790]
+       mov       r11,7FFEBC980630
+       call      qword ptr [7FFEBCF30630]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -369,7 +389,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,2863BC63020
+       mov       rcx,1325BCA3020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -379,11 +399,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B6B8C0
+       mov       rdx,7FFEBCF14160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,2863BC72920
+       mov       r9,1325BCB2FF0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -395,7 +415,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B6BD90
+       mov       rdx,7FFEBCF14630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -413,9 +433,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -429,8 +453,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560790
-       call      qword ptr [7FFF26B20790]
+       mov       r11,7FFEBC970630
+       call      qword ptr [7FFEBCF20630]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -452,7 +476,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,18FEAB83020
+       mov       rcx,1E792703020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -462,11 +486,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCF04160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1900AB83100
+       mov       r9,1E792712FF0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -478,7 +502,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCF04630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -496,9 +520,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -512,8 +540,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26580760
-       call      qword ptr [7FFF26B40760]
+       mov       r11,7FFEBC980630
+       call      qword ptr [7FFEBCF30630]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -535,7 +563,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1F3C0EC3020
+       mov       rcx,22FD9A31028
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -545,11 +573,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26BAB8C0
+       mov       rdx,7FFEBCF14160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1F3A0EC18D0
+       mov       r9,22FD9A34BC8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -561,7 +589,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26BABD90
+       mov       rdx,7FFEBCF14630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -579,9 +607,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems02()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -595,8 +627,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560760
-       call      qword ptr [7FFF26B20760]
+       mov       r11,7FFEBC990790
+       call      qword ptr [7FFEBCF40790]
        cmp       eax,5
        sete      dil
        movzx     edi,dil
@@ -618,7 +650,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1FF69D01028
+       mov       rcx,1844C971028
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -628,11 +660,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCFBCDF0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1FF79D018D0
+       mov       r9,1846C974FC8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -644,7 +676,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCFBD2C0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -662,9 +694,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -678,8 +714,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26550760
-       call      qword ptr [7FFF26B10760]
+       mov       r11,7FFEBC990630
+       call      qword ptr [7FFEBCF40630]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -701,7 +737,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,19511011028
+       mov       rcx,2706DD83020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -711,11 +747,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7B8C0
+       mov       rdx,7FFEBCF24160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,19511014CF8
+       mov       r9,2704DD81FB8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -727,7 +763,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7BD90
+       mov       rdx,7FFEBCF24630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -745,9 +781,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -761,8 +801,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26550790
-       call      qword ptr [7FFF26B10790]
+       mov       r11,7FFEBC990650
+       call      qword ptr [7FFEBCF40650]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -784,7 +824,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1AEBE3C3020
+       mov       rcx,2591FEE3020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -794,11 +834,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7B650
+       mov       rdx,7FFEBCF24160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1AEDE3C20E8
+       mov       r9,258FFEE1FB8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -810,7 +850,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7BB20
+       mov       rdx,7FFEBCF24630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -828,9 +868,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -844,8 +888,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26550760
-       call      qword ptr [7FFF26B10760]
+       mov       r11,7FFEBC980630
+       call      qword ptr [7FFEBCF30630]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -867,7 +911,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,2028EB43020
+       mov       rcx,1C519773020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -877,11 +921,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7B8C0
+       mov       rdx,7FFEBCF14160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,2028EB464F0
+       mov       r9,1C5197763C0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -893,7 +937,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B7BD90
+       mov       rdx,7FFEBCF14630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -911,9 +955,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -927,8 +975,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560760
-       call      qword ptr [7FFF26B20760]
+       mov       r11,7FFEBC960630
+       call      qword ptr [7FFEBCF10630]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -950,7 +998,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,2473AC23020
+       mov       rcx,1F60D803020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -960,11 +1008,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCEF4160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,2474AC218D0
+       mov       r9,1F62D8017A0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -976,7 +1024,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCEF4630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -994,9 +1042,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1010,8 +1062,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560790
-       call      qword ptr [7FFF26B20790]
+       mov       r11,7FFEBC970638
+       call      qword ptr [7FFEBCF20638]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1033,7 +1085,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1D027891028
+       mov       rcx,28385763020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -1043,11 +1095,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCF04160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1D0478920E8
+       mov       r9,28385771FD8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -1059,7 +1111,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCF04630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1077,9 +1129,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1093,8 +1149,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560790
-       call      qword ptr [7FFF26B20790]
+       mov       r11,7FFEBC970630
+       call      qword ptr [7FFEBCF20630]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1116,7 +1172,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,1808B931028
+       mov       rcx,14F8D7F3020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -1126,11 +1182,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCF04160
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,1805B9338C8
+       mov       r9,14F6D7F17A0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -1142,7 +1198,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCF04630
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1160,9 +1216,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1176,8 +1236,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26570790
-       call      qword ptr [7FFF26B30790]
+       mov       r11,7FFEBC960630
+       call      qword ptr [7FFEBCF10630]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1199,7 +1259,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,2A3D5F53020
+       mov       rcx,1E2747B3020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -1209,11 +1269,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B9B8C0
+       mov       rdx,7FFEBCEF4140
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,2A3D5F63938
+       mov       r9,1E2547B1FB8
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -1225,7 +1285,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B9BD90
+       mov       rdx,7FFEBCEF4610
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:
@@ -1243,9 +1303,13 @@ M01_L03:
 ; Total bytes of code 163
 ```
 
-## .NET 6.0.4 (6.0.422.16404), X64 RyuJIT
+## .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems01()
+; 			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			base.Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        sub       rsp,28
@@ -1259,8 +1323,8 @@ M01_L03:
        jmp       short M00_L01
 M00_L00:
        mov       rcx,[rax+8]
-       mov       r11,7FFF26560760
-       call      qword ptr [7FFF26B20760]
+       mov       r11,7FFEBC970790
+       call      qword ptr [7FFEBCF20790]
        test      eax,eax
        setg      dil
        movzx     edi,dil
@@ -1282,7 +1346,7 @@ M00_L01:
        mov       [rsp+28],rcx
        mov       rsi,rcx
        mov       rdi,rdx
-       mov       rcx,23A4E9B3020
+       mov       rcx,1B6F1363020
        mov       rcx,[rcx]
        mov       [rsp+20],rcx
        mov       rbx,[rsi+10]
@@ -1292,11 +1356,11 @@ M00_L01:
        jmp       short M01_L01
 M01_L00:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8B8C0
+       mov       rdx,7FFEBCF9D270
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L01:
-       mov       r9,23A6E9BE518
+       mov       r9,1B7113617A0
        mov       r9,[r9]
        lea       r8,[rsp+20]
        mov       rdx,rdi
@@ -1308,7 +1372,7 @@ M01_L01:
        jmp       short M01_L03
 M01_L02:
        mov       rcx,rsi
-       mov       rdx,7FFF26B8BD90
+       mov       rdx,7FFEBCF9D740
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       rcx,rax
 M01_L03:

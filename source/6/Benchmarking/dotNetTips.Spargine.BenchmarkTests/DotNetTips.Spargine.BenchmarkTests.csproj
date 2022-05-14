@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyVersion>2022.6.5.16</AssemblyVersion>
+		<FileVersion>2022.6.5.16</FileVersion>
+		<Description>DotNetTips.Spargine.BenchmarkTests</Description>
+		<Copyright>David McCarter</Copyright>
+		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>..\..\appbin</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>..\..\appbin</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.5.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.5.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.5.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj" />
+	</ItemGroup>
+
+</Project>

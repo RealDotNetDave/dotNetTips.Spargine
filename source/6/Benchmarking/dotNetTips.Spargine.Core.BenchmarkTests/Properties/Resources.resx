@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PersonProperJson" xml:space="preserve">
+    <value>{"Address1":"kFMEXMxCCGDmSIYxBJVEXiqCE","Address2":"LFywoulsFLk^YPDHViI_CUtLw","Age":"5840.00:00:00.0350488","BornOn":"2006-04-30T15:42:21.5603971-07:00","CellPhone":"745-442-6873","City":"[BOpiPKrU^IKyHl","Country":"GeL[ot]CxI_V][b","Email":"vsecutbwrvgmnglljry@dqijtmogvvbsxbs.band","FirstName":"FZMxhsOFJvjUOcE","HomePhone":"748-543-3086","Id":"57026b9d8d8146959891e37579c73f39","LastName":"MAqXlW^qJWFSCpMBuD^lbySnH","PostalCode":"63835673","State":"MKlm\u0060UEPc_IPRKX"}</value>
+  </data>
+  <data name="PersonProperXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;PersonProper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://dotNetTips.Spargine.Tester.Models"&gt;&lt;Address1&gt;DxKMwshdbxZjeRGXOBBfsgYwo&lt;/Address1&gt;&lt;Address2&gt;SWrlU\iNOSYqRcGJ]tU[euaeb&lt;/Address2&gt;&lt;BornOn&gt;2012-04-29T09:02:49.8686639-07:00&lt;/BornOn&gt;&lt;CellPhone&gt;128-436-5183&lt;/CellPhone&gt;&lt;City&gt;[LiLtknUapqEeGj&lt;/City&gt;&lt;Country&gt;lSVje[VvP^UoK[r&lt;/Country&gt;&lt;Email&gt;saiywiday@jaudmsuxbercl.us&lt;/Email&gt;&lt;FirstName&gt;GJ`CFQwZD]EOg]b&lt;/FirstName&gt;&lt;HomePhone&gt;325-238-0036&lt;/HomePhone&gt;&lt;Id&gt;e89e05f40e134399b95d75b716fdf297&lt;/Id&gt;&lt;LastName&gt;ePcpdKicHgipMR`_ZQLgPDBee&lt;/LastName&gt;&lt;PostalCode&gt;24070537&lt;/PostalCode&gt;&lt;State&gt;[xwAEVefwjHGbQV&lt;/State&gt;&lt;/PersonProper&gt;</value>
+  </data>
+  <data name="PersonRecordJson" xml:space="preserve">
+    <value>{"Addresses":[{"Address1":"by\u0060fEjGnGhFBStEpqIseKKQhP","Address2":"LDaTeJWUgeWIDnbGeqbdqcGcP","City":"AwhdbXmomHjtUDB[baHtQSNiv","Country":"UHJX\u0060lFXZUNYrqSawV]^g[pNq","CountyProvince":"tnwiGlJJZ\u0060swfmVNvvCs","Id":"fae8983040664a1191bcbdc9015953bc","Phone":"243-657-1576","PostalCode":"66030566","State":"VDpwZOvotsHJkOp"},{"Address1":"uudsj^DtM_IkhmebQKKJLIBjj","Address2":"UFjWShnWaACeJBIeIrQ\\TjLdK","City":"^[hQSjaAuMpuReDvbEZoqBqqb","Country":"gE\u0060ooJIPx[mkETY_vKf\u0060\u0060SFF\u0060","CountyProvince":"Gyq[GORXy\\XTIEE]oWjW","Id":"e4293db8f68d4a28a04c6639ec42ee6c","Phone":"334-815-3173","PostalCode":"53826816","State":"Ms^Il\u0060kkUEVlwZu"}],"BornOn":"1988-05-04T15:43:47.0854483-07:00","CellPhone":"550-440-3310","Email":"humpasuduaurenlcjcirthk@gvbnmctcexduxol.store","FirstName":"qEZKocbAr\\IhYGR","HomePhone":"214-624-5105","Id":"160cf1523c254aaa83d32d2f1fef6959","LastName":"SMtUBUth\u0060ikX^Sa\u0060[d\\RETgw["}</value>
+  </data>
+  <data name="PersonRecordXml" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;PersonRecord xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;&lt;Addresses&gt;&lt;AddressRecord&gt;&lt;Address1&gt;A_OasUYEVSBApO^HRrNJb\Pv[&lt;/Address1&gt;&lt;Address2&gt;Ne]EIgLCltCbp][aIkCITSndR&lt;/Address2&gt;&lt;City&gt;ePIdbC`UdX[e[PXoC[p[mQk_y&lt;/City&gt;&lt;Country&gt;bejmmfI^SgJjZCGwSAwrKIvJ_&lt;/Country&gt;&lt;CountyProvince&gt;Go[UHN[fflXHAGLogIOR&lt;/CountyProvince&gt;&lt;Id&gt;0a23510e83d9419cab41661781186853&lt;/Id&gt;&lt;Phone&gt;360-685-8043&lt;/Phone&gt;&lt;PostalCode&gt;70674581&lt;/PostalCode&gt;&lt;State&gt;HMOnftkRHmXcoBq&lt;/State&gt;&lt;/AddressRecord&gt;&lt;AddressRecord&gt;&lt;Address1&gt;AY^FdLv[[hhB\yi\_IlvfPtXa&lt;/Address1&gt;&lt;Address2&gt;Ay_BIavUJUl^N[x\QXI`VA^^e&lt;/Address2&gt;&lt;City&gt;rMUJqkTCC]DcpsIigJ`lTvdeL&lt;/City&gt;&lt;Country&gt;kFIPmwsFN`phZKUjVimnBjWVM&lt;/Country&gt;&lt;CountyProvince&gt;jCQilVAvXdXPrjri_eCh&lt;/CountyProvince&gt;&lt;Id&gt;db4f7bf4503146318bd0ee4ac2117d1e&lt;/Id&gt;&lt;Phone&gt;387-218-7275&lt;/Phone&gt;&lt;PostalCode&gt;57517033&lt;/PostalCode&gt;&lt;State&gt;EriQkjYoXYiXqR[&lt;/State&gt;&lt;/AddressRecord&gt;&lt;/Addresses&gt;&lt;BornOn&gt;1966-05-11T09:05:04.4496899-07:00&lt;/BornOn&gt;&lt;CellPhone&gt;132-471-3157&lt;/CellPhone&gt;&lt;Email&gt;nvetqku@mvbeubjeqyflssdwadxyel.ac.uk&lt;/Email&gt;&lt;FirstName&gt;yVUXThbXepJ]hS]&lt;/FirstName&gt;&lt;HomePhone&gt;603-762-6134&lt;/HomePhone&gt;&lt;Id&gt;b4a5e24fd9cc489395cbe0c6386514a6&lt;/Id&gt;&lt;LastName&gt;wFZGbbwrlukB\GbOWFlaSXJmn&lt;/LastName&gt;&lt;/PersonRecord&gt;</value>
+  </data>
+</root>

@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections
 		{
 			var result = Collection<Person>.Create(Count);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -46,7 +46,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections
 		{
 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), Tristate.True);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections
 		{
 			var result = Collection<PersonProper>.Create(this.GetPersonProperArray(), ensureUnique: Tristate.True);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 05-21-2022
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -166,7 +166,7 @@ namespace DotNetTips.Spargine.Core.Logging
 
 			var values = TypeHelper.GetPropertyValues(appInfo);
 
-			if (values?.Count() > 0)
+			if (values?.FastCount() > 0)
 			{
 				foreach (var item in values.OrderBy(p => p.Key))
 				{
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Core.Logging
 
 			var values = TypeHelper.GetPropertyValues(computerInfo);
 
-			if (values?.Count() > 0)
+			if (values?.FastCount() > 0)
 			{
 				foreach (var item in values.OrderBy(p => p.Key))
 				{

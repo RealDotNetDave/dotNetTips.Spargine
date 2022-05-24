@@ -151,9 +151,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = inputString.DelimitedStringToArray();
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 		}
 
 		/// <summary>
@@ -453,7 +453,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var testValue = $"{RandomData.GenerateWord(25)},{RandomData.GenerateWord(25)}";
 
-			Assert.IsTrue(testValue.SplitRemoveEmpty().Count() > 1);
+			Assert.IsTrue(testValue.SplitRemoveEmpty().FastCount() > 1);
 		}
 
 		/// <summary>
@@ -464,9 +464,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var testValue = $"{RandomData.GenerateWord(25)},{RandomData.GenerateWord(25)}";
 
-			Assert.IsTrue(testValue.Split(',', options: StringSplitOptions.RemoveEmptyEntries).Count() == 2);
+			Assert.IsTrue(testValue.Split(',', options: StringSplitOptions.RemoveEmptyEntries).FastCount() == 2);
 
-			Assert.IsTrue(testValue.Split(',', count: 2, options: StringSplitOptions.RemoveEmptyEntries).Count() == 2);
+			Assert.IsTrue(testValue.Split(',', count: 2, options: StringSplitOptions.RemoveEmptyEntries).FastCount() == 2);
 		}
 
 		/// <summary>
@@ -479,11 +479,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = testValue.Split(',', 2, StringSplitOptions.RemoveEmptyEntries);
 
-			Assert.IsTrue(result.Count() == 2);
+			Assert.IsTrue(result.FastCount() == 2);
 
 			result = testValue.Split(',', 1, StringSplitOptions.None);
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 		}
 
 		/// <summary>
@@ -496,11 +496,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = testValue.Split(',', StringSplitOptions.RemoveEmptyEntries);
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 
 			result = testValue.Split(',', StringSplitOptions.None);
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 		}
 
 		/// <summary>
@@ -513,11 +513,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = testValue.Split(",", 2, StringSplitOptions.RemoveEmptyEntries);
 
-			Assert.IsTrue(result.Count() == 2);
+			Assert.IsTrue(result.FastCount() == 2);
 
 			result = testValue.Split(",", 1, StringSplitOptions.None);
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 		}
 
 		/// <summary>
@@ -530,11 +530,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = testValue.Split(",", StringSplitOptions.RemoveEmptyEntries);
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 
 			result = testValue.Split(",", StringSplitOptions.None);
 
-			Assert.IsTrue(result.Count() == 3);
+			Assert.IsTrue(result.FastCount() == 3);
 		}
 
 		/// <summary>

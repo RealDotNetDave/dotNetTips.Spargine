@@ -4,7 +4,7 @@
 // Created          : 07-30-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-15-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="GuidExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,12 +25,12 @@ namespace DotNetTips.Spargine.Extensions
 	public static class GuidExtensions
 	{
 		/// <summary>
-		/// Returns the <see cref="Guid"/> without dashes.
+		/// Returns the <see cref="Guid" /> without dashes.
 		/// </summary>
 		/// <param name="input">The Guid value.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ToDigits([NotNull] this Guid input)
+		public static string ToDigits([NotNull] in this Guid input)
 		{
 			if (input.CheckIsNotEmpty())
 			{

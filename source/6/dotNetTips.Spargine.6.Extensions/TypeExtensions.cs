@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -415,7 +415,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Object 2 cannot be null.</exception>
 		/// <remarks>Original code by: Jeremy Clark</remarks>
 		[Information(nameof(Max), UnitTestCoverage = 100, Status = Status.Available)]
-		public static T Max<T>(this T obj1, T obj2) where T : IComparable
+		public static T Max<T>(this T obj1, in T obj2) where T : IComparable
 		{
 			return obj1.CompareTo(obj2) >= 0 ? obj1 : obj2;
 		}

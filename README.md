@@ -7,7 +7,7 @@ This repository is for the dotNetTips.Spargine code for .NET 6. Please support t
 > <a href="README-5.md" target="_blank">Click here</a> for the .NET 5 version of Spargine.
 
 ## GitHub
-All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/packages?q=spargine+dotnettips" target="_blank">clicking here</a>. **Latest Official Release: v2022.6.5.01**
+All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/packages?q=spargine+dotnettips" target="_blank">clicking here</a>. **Latest Official Release: v2022.6.5.24**
 
 [![Build All](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml/badge.svg)](https://github.com/RealDotNetDave/dotNetTips.Spargine/actions/workflows/buildall.yml)
 ## Projects

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void AddIf<T>([NotNull] this ICollection<T> collection, [NotNull] T item, bool condition)
+		public static void AddIf<T>([NotNull] this ICollection<T> collection, [NotNull] T item, in bool condition)
 		{
 			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 			item = item.ArgumentNotNull();
@@ -78,7 +78,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Collection cannot be null.</exception>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] in T item)
 		{
 			if (item is null)
 			{
@@ -143,7 +143,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
 		/// <exception cref="ArgumentNullException">Collection cannot be <see langword="null" />.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
+		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] in T item, [NotNull] IEqualityComparer<T> comparer)
 		{
 			if (item is null)
 			{

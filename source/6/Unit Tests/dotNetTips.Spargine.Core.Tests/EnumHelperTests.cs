@@ -30,16 +30,16 @@ namespace dotNetTips.Spartine.Core.Tests
 		public void AddToPersonCollectionTest()
 		{
 			var result = EnumHelper.GetValues<RequestCacheLevel>(false, false);
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 
 			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, false);
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 
 			result = EnumHelper.GetValues<HttpCacheAgeControl>(false, true);
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 
 			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 
 	}

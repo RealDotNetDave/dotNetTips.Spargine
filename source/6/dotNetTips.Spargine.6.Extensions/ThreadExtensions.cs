@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -45,7 +45,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="thread">The thread.</param>
 		/// <param name="interval">The wait interval.</param>
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
-		public static void WaitUntil([NotNull] this Thread thread, TimeSpan interval)
+		public static void WaitUntil([NotNull] this Thread thread, in TimeSpan interval)
 		{
 			WaitUntil(thread.ArgumentNotNull(), interval);
 		}
@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="waitIterations">The wait iterations.</param>
 		/// <exception cref="ArgumentNullException">thread</exception>
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
-		public static void WaitUntil([NotNull] this Thread thread, TimeSpan interval, int waitIterations)
+		public static void WaitUntil([NotNull] this Thread thread, in TimeSpan interval, int waitIterations)
 		{
 			thread = thread.ArgumentNotNull();
 			waitIterations = waitIterations.ArgumentInRange(paramName: nameof(waitIterations), lower: 0);

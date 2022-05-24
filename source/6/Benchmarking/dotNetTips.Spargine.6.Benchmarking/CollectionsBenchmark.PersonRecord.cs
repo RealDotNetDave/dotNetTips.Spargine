@@ -4,13 +4,14 @@
 // Created          : 04-19-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-04-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
-// <copyright file="LargeCollectionBenchmark.PersonRecord.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="CollectionsBenchmark.PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -42,10 +43,10 @@ namespace DotNetTips.Spargine.Benchmarking
 		protected void LoadPersonRecordArray()
 		{
 			this._personRecordArray = RandomData.GeneratePersonRecordCollection(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArray)} length = {this._personRecordArray.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArray)} Length = {this._personRecordArray.Length}.");
 
 			this._personRecordArrayHalf = RandomData.GeneratePersonRecordCollection(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArrayHalf)} length = {this._personRecordArrayHalf.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArrayHalf)} Length = {this._personRecordArrayHalf.Length}.");
 		}
 
 		/// <summary>

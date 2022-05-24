@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			people.AddLast(this.PersonProper01);
 
-			this.Consumer.Consume(people);
+			base.Consumer.Consume(people);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
@@ -71,7 +71,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.GetPersonProperArray().ToList();
 
-			this.Consumer.Consume(people.HasItems());
+			base.Consumer.Consume(people.HasItems());
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
@@ -79,7 +79,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.GetPersonProperArray(Tristate.False).ToList();
 
-			this.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
+			base.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
@@ -88,7 +88,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var people = base.GetPersonProperArray(Tristate.False).ToList();
 
-			this.Consumer.Consume(people.HasItems(5));
+			base.Consumer.Consume(people.HasItems(5));
 		}
 
 		[Benchmark(Description = nameof(EnumerableExtensions.IndexOf))]

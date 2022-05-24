@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-25-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// Processes the collection to dispose.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		internal static void ProcessCollectionToDispose(IEnumerable items)
+		internal static void ProcessCollectionToDispose(in IEnumerable items)
 		{
 			if (items.HasItems())
 			{
@@ -96,7 +96,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Dictionary cannot be null. or key - Key cannot be null.</exception>
 		/// <remarks>Code by: Lucas</remarks>
 		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool AddRange<T, TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, IEnumerable<T> items, [NotNull] Func<T, TKey> key, [NotNull] Func<T, TValue> value)
+		public static bool AddRange<T, TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, in IEnumerable<T> items, [NotNull] Func<T, TKey> key, [NotNull] Func<T, TValue> value)
 		{
 			dictionary = dictionary.ArgumentNotNull();
 			key = key.ArgumentNotNull();
@@ -170,7 +170,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU: Dnadh[d`FP^SjNeChCvVuBXuEl^yVFUbKXsaacsCpJuxAscU.
 		/// </example>
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/03/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 99, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToDelimitedString([NotNull] this IDictionary dictionary, char delimiter = ControlChars.Comma)
+		public static string ToDelimitedString([NotNull] this IDictionary dictionary, in char delimiter = ControlChars.Comma)
 		{
 			if (dictionary.DoesNotHaveItems())
 			{

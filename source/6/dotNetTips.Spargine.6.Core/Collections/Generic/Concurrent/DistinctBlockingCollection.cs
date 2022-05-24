@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-14-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -39,7 +39,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="collection">The collection.</param>
 		public DistinctBlockingCollection([NotNull] IEnumerable<T> collection)
 		{
-			if (collection?.Count() > 0)
+			if (collection?.FastCount() > 0)
 			{
 				foreach (var _ in collection.Where(p => p is not null).Where(item => this.TryAdd(item) is false).Select(item => new { }))
 				{
@@ -111,7 +111,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// </summary>
 		/// <param name="item">The object to remove from the collection.</param>
 		/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
-		/// <exception cref="NotImplementedException"></exception>
+		/// <exception cref="System.NotImplementedException"></exception>
 		public bool Remove(T item)
 		{
 			throw new NotImplementedException();

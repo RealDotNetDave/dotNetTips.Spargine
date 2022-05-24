@@ -4,7 +4,7 @@
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 05-21-2022
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -54,7 +54,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>Enum.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">The value is not defined in the enum type.</exception>
-		[Information(nameof(ArgumentDefined), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentDefined), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ArgumentDefined<T>(this T input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "") where T : Enum
 		{
@@ -77,7 +77,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>Type.</returns>
 		/// <exception cref="ArgumentInvalidException"></exception>
-		[Information(nameof(ArgumentEquals), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentEquals), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Type ArgumentEquals(this Type input, Type expectedType, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -99,13 +99,11 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value that will be returned if the directory does not exist.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>System.IO.DirectoryInfo.</returns>
 		/// <exception cref="ArgumentNullException">input</exception>
 		/// <exception cref="DirectoryNotFoundException">Directory cannot be null.</exception>
-		[Information(nameof(ArgumentExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DirectoryInfo ArgumentExists(this DirectoryInfo input, in DirectoryInfo? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -135,13 +133,11 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default <see cref="FileInfo" /> value that will be returned if the file does not exist.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>A valid <see cref="FileInfo" /> object.</returns>
 		/// <exception cref="ArgumentException">'paramName' cannot be null or empty. - paramName</exception>
 		/// <exception cref="FileNotFoundException">File cannot be found.</exception>
-		[Information(nameof(ArgumentExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static FileInfo ArgumentExists(this FileInfo input, in FileInfo? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -168,7 +164,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Byte.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static byte ArgumentInRange(this in byte input, in byte lower = byte.MinValue, in byte upper = byte.MaxValue, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -191,7 +187,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateTime.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateTime ArgumentInRange(this DateTime input, in DateTime lower, in DateTime upper, in DateTime? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -219,7 +215,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateTimeOffset.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateTimeOffset ArgumentInRange(this DateTimeOffset input, in DateTimeOffset lower, in DateTimeOffset upper, in DateTimeOffset? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -248,7 +244,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static int ArgumentInRange(this int input, in int lower = 0, in int upper = int.MaxValue, in int? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -277,7 +273,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Double.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double ArgumentInRange(this double input, in double lower = 0, in double upper = double.MaxValue, in double? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -306,7 +302,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Int64.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static long ArgumentInRange(this long input, in long lower = 0, in long upper = long.MaxValue, in long? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -335,7 +331,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Decimal.</returns>
 		/// <exception cref="ArgumentOutOfRangeException"></exception>
-		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static decimal ArgumentInRange(this decimal input, in decimal lower = 0, in decimal upper = decimal.MaxValue, in decimal? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -363,7 +359,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateOnly.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateOnly ArgumentInRange(this DateOnly input, in DateOnly lower, in DateOnly upper, in DateOnly? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -391,7 +387,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>TimeOnly.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static TimeOnly ArgumentInRange(this TimeOnly input, in TimeOnly lower, in TimeOnly upper, in TimeOnly? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -419,14 +415,12 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value that will be returned if validation fails.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentInvalidException">Value cannot be null.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Minimum length is not valid.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
-		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static string ArgumentInRange(this string input, in int lower = 0, in int upper = int.MaxValue, in bool trim = true, in string? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -451,12 +445,10 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="input">The <see cref="IEnumerable{T}" /> to validate.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>IEnumerable.</returns>
 		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IEnumerable<T> ArgumentItemsExists<T>(this IEnumerable<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -477,12 +469,10 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="input">The <see cref="List{T}" /> to validate.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>IEnumerable.</returns>
 		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IList<T> ArgumentItemsExists<T>(this IList<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -503,11 +493,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="input">The array to validate.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>T[].</returns>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T[] ArgumentItemsExists<T>(this T[] input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -529,11 +517,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="count">The count.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IEnumerable<T> ArgumentItemsExists<T>(this IEnumerable<T> input, in long count, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -558,13 +544,11 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value that will be returned if validation fails.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentException">'input' cannot be null or empty. - input</exception>
 		/// <exception cref="ArgumentNullException">match</exception>
-		[Information(nameof(ArgumentMatched), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentMatched), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static string ArgumentMatched(this string input, Regex match, in bool trim = true, in string? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -594,11 +578,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value to be returned if condition failed.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>T.</returns>
-		[Information(nameof(ArgumentMeetsCondition), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentMeetsCondition), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ArgumentMeetsCondition<T>(this T input, in bool condition, T? defaultValue = default, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -624,7 +606,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>ReadOnlySpan&lt;T&gt;.</returns>
-		[Information(nameof(ArgumentNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static ReadOnlySpan<T> ArgumentNotEmpty<T>(this in ReadOnlySpan<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -644,7 +626,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>Span&lt;T&gt;.</returns>
-		[Information(nameof(ArgumentNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Span<T> ArgumentNotEmpty<T>(this in Span<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -664,11 +646,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value that will be returned if validation fails.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(ArgumentNotNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentNotNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ArgumentNotNull<T>(this T input, T? defaultValue = default, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "") //where T : class
 		{
@@ -693,11 +673,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="defaultValue">The default value that will be returned if validation fails.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>Uri.</returns>
-		[Information(nameof(ArgumentNotNull), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentNotNull), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Uri ArgumentNotNull(this Uri input, in Uri? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -724,7 +702,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>Guid.</returns>
 		/// <exception cref="ArgumentInvalidException">Guid cannot be empty.</exception>
-		[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Guid ArgumentNotNullOrEmpty(this Guid input, in string errorMessage = "", in Guid? defaultValue = null, [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -753,7 +731,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>System.String.</returns>
 		/// <exception cref="ArgumentException">'input' cannot be null or empty. - input</exception>
 		/// <exception cref="ArgumentException">'paramName' cannot be null or empty. - paramName</exception>
-		[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static string ArgumentNotNullOrEmpty(this string input, in bool trim = true, in string? defaultValue = null, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -778,11 +756,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="input">The <see cref="IList{T}" /> to validate.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>IList&lt;T&gt;.</returns>
-		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IList<T> ArgumentNotReadOnly<T>(this IList<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -803,11 +779,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="input">The <see cref="ICollection{T}" /> to validate.</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
-		/// <remarks>
-		/// This also checks the input for null.
-		/// </remarks>
 		/// <returns>ICollection&lt;T&gt;.</returns>
-		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/28/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO ARGUMENT VALIDATION ARTICLE")]
+		/// <remarks>This also checks the input for null.</remarks>
+		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/28/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static ICollection<T> ArgumentNotReadOnly<T>(this ICollection<T> input, in string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{

@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-10-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -34,6 +34,9 @@ namespace DotNetTips.Spargine.IO
 		/// </summary>
 		private const int Retries = 10;
 
+		/// <summary>
+		/// The no result
+		/// </summary>
 		private const int NoResult = -1;
 
 		/// <summary>
@@ -69,7 +72,7 @@ namespace DotNetTips.Spargine.IO
 			using var zipFileStream = File.OpenRead(zipPath);
 			using var zipArchiveStream = new ZipArchive(zipFileStream);
 
-			for (var zipArchiveCount = 0; zipArchiveCount < zipArchiveStream.Entries.Count; zipArchiveCount++)
+			for (var zipArchiveCount = 0; zipArchiveCount < zipArchiveStream.Entries.FastCount(); zipArchiveCount++)
 			{
 				var zipArchiveEntry = zipArchiveStream.Entries[zipArchiveCount];
 

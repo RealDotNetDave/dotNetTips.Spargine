@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-25-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -156,7 +156,7 @@ namespace DotNetTips.Spargine.IO
 
 			var validDirectories = directories.Where(directory => directory.Exists).Select(directory => directory).ToList();
 
-			for (var directoryCount = 0; directoryCount < validDirectories.Count; directoryCount++)
+			for (var directoryCount = 0; directoryCount < validDirectories.FastCount(); directoryCount++)
 			{
 				var files = await Task.Run(() =>
 				{

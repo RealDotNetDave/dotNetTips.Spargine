@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-15-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -38,6 +38,66 @@ namespace DotNetTips.Spargine.Core
 		internal static T As<T>([NotNull] this object obj)
 		{
 			return (T)obj;
+		}
+
+		/// <summary>
+		/// Indicate whether the number falls in the specified range.
+		/// </summary>
+		/// <param name="value">Number to process</param>
+		/// <param name="lower">Lower bound</param>
+		/// <param name="upper">Upper bound</param>
+		/// <returns>True/False</returns>
+		internal static bool CheckIsInRange(this int value, int lower, int upper)
+		{
+			return value >= lower && value <= upper;
+		}
+
+		/// <summary>
+		/// Determines whether [is in range] [the specified lower].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="lower">The lower.</param>
+		/// <param name="upper">The upper.</param>
+		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+		internal static bool CheckIsInRange(this byte value, byte lower, byte upper)
+		{
+			return value >= lower && value <= upper;
+		}
+
+		/// <summary>
+		/// Determines whether [is in range] [the specified lower].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="lower">The lower.</param>
+		/// <param name="upper">The upper.</param>
+		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+		internal static bool CheckIsInRange(this long value, long lower, long upper)
+		{
+			return value >= lower && value <= upper;
+		}
+
+		/// <summary>
+		/// Determines whether [is in range] [the specified lower].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="lower">The lower.</param>
+		/// <param name="upper">The upper.</param>
+		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+		internal static bool CheckIsInRange(this double value, double lower, double upper)
+		{
+			return value >= lower && value <= upper;
+		}
+
+		/// <summary>
+		/// Determines whether [is in range] [the specified lower].
+		/// </summary>
+		/// <param name="value">The value.</param>
+		/// <param name="lower">The lower.</param>
+		/// <param name="upper">The upper.</param>
+		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
+		internal static bool CheckIsInRange(this decimal value, decimal lower, decimal upper)
+		{
+			return value >= lower && value <= upper;
 		}
 
 		/// <summary>
@@ -214,66 +274,6 @@ namespace DotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Indicate whether the number falls in the specified range.
-		/// </summary>
-		/// <param name="value">Number to process</param>
-		/// <param name="lower">Lower bound</param>
-		/// <param name="upper">Upper bound</param>
-		/// <returns>True/False</returns>
-		internal static bool CheckIsInRange(this int value, int lower, int upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
-		/// <summary>
-		/// Determines whether [is in range] [the specified lower].
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="lower">The lower.</param>
-		/// <param name="upper">The upper.</param>
-		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool CheckIsInRange(this byte value, byte lower, byte upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
-		/// <summary>
-		/// Determines whether [is in range] [the specified lower].
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="lower">The lower.</param>
-		/// <param name="upper">The upper.</param>
-		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool CheckIsInRange(this long value, long lower, long upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
-		/// <summary>
-		/// Determines whether [is in range] [the specified lower].
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="lower">The lower.</param>
-		/// <param name="upper">The upper.</param>
-		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool CheckIsInRange(this double value, double lower, double upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
-		/// <summary>
-		/// Determines whether [is in range] [the specified lower].
-		/// </summary>
-		/// <param name="value">The value.</param>
-		/// <param name="lower">The lower.</param>
-		/// <param name="upper">The upper.</param>
-		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-		internal static bool CheckIsInRange(this decimal value, decimal lower, decimal upper)
-		{
-			return value >= lower && value <= upper;
-		}
-
-		/// <summary>
 		/// Determines whether the specified input is an URL.
 		/// </summary>
 		/// <param name="input">The input.</param>
@@ -328,7 +328,7 @@ namespace DotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">list - Source cannot be null or have a 0 value.</exception>
 		internal static string ToDelimitedString<T>([NotNull] this IEnumerable<T> list, char delimiter = ControlChars.Comma)
 		{
-			if (list.Count() == 0)
+			if (list.FastCount() == 0)
 			{
 				return string.Empty;
 			}
@@ -411,6 +411,29 @@ namespace DotNetTips.Spargine.Core
 		public static void AddLast<T>(this IList<T> list, [NotNull] T item)
 		{
 			list.ArgumentNotReadOnly().Insert(list.Count, item);
+		}
+
+		/// <summary>
+		/// Counts the number of items in a collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>System.Int64.</returns>
+		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
+		{
+			return list.ArgumentNotNull().LongCount();
+		}
+
+		/// <summary>
+		/// Counts the number of items in a collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="predicate">The predicate.</param>
+		/// <returns>System.Int64.</returns>
+		public static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		{
+			return list.ArgumentNotNull().FastCount(predicate.ArgumentNotNull());
 		}
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="BooleanExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[ExcludeFromCodeCoverage]
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
-		public static string ToLowerCase(this bool value)
+		public static string ToLowerCase(this in bool value)
 		{
 			return value ? Resources.TrueLowerCase : Resources.FalseLowerCase;
 		}

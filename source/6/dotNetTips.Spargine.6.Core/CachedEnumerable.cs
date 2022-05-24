@@ -4,7 +4,7 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -127,7 +127,7 @@ namespace DotNetTips.Spargine.Core
 			this.CheckEnumerable();
 
 			// if the item is in the cache, use it
-			if (index < this._cache.Count)
+			if (index < this._cache.FastCount())
 			{
 				result = this._cache[index];
 				return true;
@@ -141,7 +141,7 @@ namespace DotNetTips.Spargine.Core
 				}
 
 				// Another thread may have get the item while we were acquiring the lock
-				if (index < this._cache.Count)
+				if (index < this._cache.FastCount())
 				{
 					result = this._cache[index];
 					return true;

@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-29-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -208,7 +208,7 @@ namespace DotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Creates a random character.
+		/// Creates a random <see cref="char"/>.
 		/// </summary>
 		/// <param name="minValue">The minimum character value.</param>
 		/// <param name="maxValue">The maximum character value.</param>
@@ -237,7 +237,7 @@ namespace DotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Creates collection of  <see cref="ICoordinate" />s.
+		/// Creates collection of  <see cref="ICoordinate" />.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="count">The number of items to create. Minimum value is 1.</param>
@@ -305,7 +305,7 @@ namespace DotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="fileLength">Byte length of the file. Minimum length = 1</param>
-		/// <returns>System.String.</returns>
+		/// <returns>Name of the file generated.</returns>
 		/// <example>c:\\temp\\UnitTest.test</example>
 		[Information(nameof(GenerateFile), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateFile(string fileName, int fileLength = DefaultFileLength)
@@ -351,7 +351,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="path">The path.</param>
 		/// <param name="count">The number of files to create. Minimum value = 1.</param>
 		/// <param name="fileLength">Length of the file. Minimum value = 1.</param>
-		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
+		/// <returns>Collection of file names that were created.</returns>
 		/// <example>[0]: "c:\\temp\\dobybcyx.lj"  [1]: "c:\\temp\\zo2ggwub.3ro"</example>
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<string> GenerateFiles(string path, int count = 100, int fileLength = DefaultFileLength)
@@ -408,7 +408,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <summary>
 		/// Creates a random number.
 		/// </summary>
-		/// <param name="length">The length. Minimum value = 1.</param>
+		/// <param name="length">The length of the number. Minimum value = 1.</param>
 		/// <returns>System.String.</returns>
 		/// <example>"446085072052112"</example>
 		/// <remarks>Does not use RandomNumberGenerator due to performance increase. [CA5394]</remarks>
@@ -603,7 +603,7 @@ namespace DotNetTips.Spargine.Tester
 			fileNameLength = fileNameLength.ArgumentInRange(1, 256);
 			extension = extension.ArgumentNotNullOrEmpty(defaultValue: DefaultFileExtension);
 
-			var fileName = $"{ GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile) }{ControlChars.Dot}{extension}";
+			var fileName = $"{GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile)}{ControlChars.Dot}{extension}";
 
 			return Path.Combine(Path.GetTempPath(), fileName);
 		}
@@ -622,7 +622,7 @@ namespace DotNetTips.Spargine.Tester
 			fileNameLength = fileNameLength.ArgumentInRange(1, 256);
 			extension = extension.ArgumentNotNullOrEmpty(defaultValue: DefaultFileExtension);
 
-			var fileName = $"{ GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile) }{ControlChars.Dot}{extension}";
+			var fileName = $"{GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile)}{ControlChars.Dot}{extension}";
 
 			return Path.Combine(path, fileName);
 		}

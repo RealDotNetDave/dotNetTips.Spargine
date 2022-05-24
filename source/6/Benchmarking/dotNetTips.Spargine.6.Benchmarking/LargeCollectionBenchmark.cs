@@ -4,13 +4,14 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
 // <copyright file="LargeCollectionBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Loggers;
 
@@ -28,7 +29,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		public LargeCollectionBenchmark() : base(2500)
 		{
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Max Count={this.MaxCount}:LargeCollectionBenchmark");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Max Count={this.MaxCount}: {nameof(LargeCollectionBenchmark)}.");
 		}
 
 		/// <summary>
@@ -43,13 +44,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		public override void Setup()
 		{
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Count={this.Count}:LargeCollectionBenchmark Before Setup");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Count={this.Count}: {nameof(LargeCollectionBenchmark)} Before Setup");
 
-			base.MaxCount = Count;
+			base.MaxCount = this.Count;
 
 			base.Setup();
 
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Count={this.Count}:LargeCollectionBenchmark After Setup");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Count={this.Count}: {nameof(LargeCollectionBenchmark)} After Setup");
 		}
 	}
 }

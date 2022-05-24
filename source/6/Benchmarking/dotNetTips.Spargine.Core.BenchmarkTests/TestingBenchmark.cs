@@ -37,7 +37,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNull(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:AggressiveInline")]
@@ -46,7 +46,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullAgressive(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:NoInline")]
@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullNoInlining(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:NoOptimization")]
@@ -64,7 +64,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullNoOptimization(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:PreserveSig")]
@@ -73,7 +73,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullPreserveSig(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:Synchronized")]
@@ -82,7 +82,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullSynchronized(this._person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "IN TEST WITHOUT IN")]

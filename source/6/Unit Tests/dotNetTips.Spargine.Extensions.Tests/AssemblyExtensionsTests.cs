@@ -30,7 +30,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
 
-			Assert.IsTrue(result.Count() >= 1);
+			Assert.IsTrue(result.FastCount() >= 1);
 		}
 
 		[TestMethod]
@@ -38,7 +38,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsTests>();
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 		}
 
 		[TestMethod]
@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = assembly.GetAllInterfaces().ToList();
 
-			Assert.IsTrue(result.Count > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 
 		[TestMethod]
@@ -56,7 +56,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = Assembly.GetExecutingAssembly().GetTypes();
 
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 	}
 }

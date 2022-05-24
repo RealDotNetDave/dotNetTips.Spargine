@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-28-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="EnumItem.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -27,7 +27,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="description">The description.</param>
 		/// <param name="value">The value.</param>
-		public EnumItem(string description, T value)
+		public EnumItem(in string description, in T value)
 		{
 			this.Description = description;
 			this.Value = value;

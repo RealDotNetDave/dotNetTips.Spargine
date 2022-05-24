@@ -25,7 +25,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
 		public void GetAllMessages01()
 		{
-			this.Consumer.Consume(this._testException.GetAllMessages());
+			base.Consumer.Consume(this._testException.GetAllMessages());
 		}
 	}
 }

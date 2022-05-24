@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -43,8 +44,8 @@ namespace DotNetTips.Spargine.Benchmarking
 			this._coordinateArray = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount).ToArray();
 			this._coordinateArrayHalf = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount / 2).ToArray();
 
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArray)} count = {this._coordinateArray.Length}.");
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArrayHalf)} count = {this._coordinateArrayHalf.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArray)} Count = {this._coordinateArray.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArrayHalf)} Count = {this._coordinateArrayHalf.Length}.");
 		}
 
 		/// <summary>

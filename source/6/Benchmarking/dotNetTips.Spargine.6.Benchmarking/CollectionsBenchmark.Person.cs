@@ -4,13 +4,14 @@
 // Created          : 04-18-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.Person.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -52,10 +53,10 @@ namespace DotNetTips.Spargine.Benchmarking
 		protected void LoadPersonRefArray()
 		{
 			this._personRefArray = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArray)} length = {this._personRefArray.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArray)} Length = {this._personRefArray.Length}.");
 
 			this._personRefArrayHalf = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArrayHalf)} length = {this._personRefArrayHalf.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArrayHalf)} Length = {this._personRefArrayHalf.Length}.");
 		}
 
 		/// <summary>
@@ -64,10 +65,10 @@ namespace DotNetTips.Spargine.Benchmarking
 		protected void LoadPersonValArray()
 		{
 			this._personValArray = RandomData.GeneratePersonValCollection(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArray)} length = {this._personValArray.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArray)} Length = {this._personValArray.Length}.");
 
 			this._personValArrayHalf = RandomData.GeneratePersonValCollection(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArrayHalf)} length = {this._personValArrayHalf.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArrayHalf)} Length = {this._personValArrayHalf.Length}.");
 		}
 
 		/// <summary>

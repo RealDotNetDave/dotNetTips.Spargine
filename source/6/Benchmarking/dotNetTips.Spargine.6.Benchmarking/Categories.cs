@@ -4,13 +4,14 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-13-2022
+// Last Modified On : 05-21-2022
 // ***********************************************************************
 // <copyright file="Categories.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
@@ -19,97 +20,107 @@ namespace DotNetTips.Spargine.Benchmarking
 	public static class Categories
 	{
 		/// <summary>
-		/// The asynchronous
+		/// Asynchronous code
 		/// </summary>
 		public const string Async = "Async";
 
 		/// <summary>
-		/// The collections
+		/// Cloud code
+		/// </summary>
+		public const string Cloud = "Cloud";
+
+		/// <summary>
+		/// Code for collections
 		/// </summary>
 		public const string Collections = "Collections";
 
 		/// <summary>
-		/// The compression
+		/// Code for compression
 		/// </summary>
 		public const string Compression = "Compression";
 
 		/// <summary>
-		/// The encryption
+		/// Code for encryption
 		/// </summary>
 		public const string Encryption = "Encryption";
 
 		/// <summary>
-		/// The generic collections
+		/// Generic collections code
 		/// </summary>
 		public const string GenericCollections = "Collections<>";
 
 		/// <summary>
-		/// The globalization
+		/// Code for globalization
 		/// </summary>
 		public const string Globalization = "Globalization";
 
 		/// <summary>
-		/// The immutable
+		/// Immutable code
 		/// </summary>
 		public const string Immutable = "Immutable";
 
 		/// <summary>
-		/// The io
+		/// I/O code
 		/// </summary>
 		public const string IO = "IO";
 
 		/// <summary>
-		/// The json
+		/// Code that uses JSON
 		/// </summary>
 		public const string JSON = "JSON";
 
 		/// <summary>
-		/// The linq
+		/// Code that uses LINQ
 		/// </summary>
 		public const string LINQ = "LINQ";
 
 		/// <summary>
-		/// The logging
+		/// Logging code
 		/// </summary>
 		public const string Logging = "LOGGING";
 
 		/// <summary>
-		/// The new
+		/// New code
 		/// </summary>
 		public const string New = "**NEW**";
 
 		/// <summary>
-		/// The queues
+		/// Code for queues
 		/// </summary>
 		public const string Queues = "Queues";
 
 		/// <summary>
-		/// The reference type
+		/// Code for reference types
 		/// </summary>
 		public const string ReferenceType = "RefType";
 
 		/// <summary>
-		/// The reflection
+		/// Code for reflection
 		/// </summary>
 		public const string Reflection = "Reflection";
 
 		/// <summary>
-		/// The serialization
+		/// Code for serialization
 		/// </summary>
 		public const string Serialization = "Serialization";
 
 		/// <summary>
-		/// The span
+		/// Code for Span
 		/// </summary>
 		public const string Span = "Span";
 
 		/// <summary>
-		/// The strings
+		/// Code for strings
 		/// </summary>
 		public const string Strings = "Strings";
 
 		/// <summary>
-		/// The value type
+		/// Code for threading
+		/// </summary>
+		public const string Threading = "Threading";
+
+		/// <summary>
+		/// Code for value types
 		/// </summary>
 		public const string ValueType = "ValueType";
 

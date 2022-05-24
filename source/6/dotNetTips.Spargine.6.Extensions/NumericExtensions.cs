@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Decrement), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static int Decrement(this int value, int lowerBound = 0, int step = 1)
+		public static int Decrement(this in int value, in int lowerBound = 0, in int step = 1)
 		{
 			var n = value - step;
 			return n < lowerBound ? lowerBound : n;
@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static int EnsureMinimum(this int value, int minValue)
+		public static int EnsureMinimum(this in int value, in int minValue)
 		{
 			return value < minValue ? minValue : value;
 		}
@@ -71,7 +71,7 @@ namespace DotNetTips.Spargine.Extensions
 				size += 1;
 			}
 
-			return $"{fileSize} { ( new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB } )[Convert.ToInt32(size)] }";
+			return $"{fileSize} {( new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB } )[Convert.ToInt32(size)]}";
 		}
 
 		/// <summary>
@@ -83,7 +83,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Increment), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static int Increment(this int value, int upperBound = 100, int step = 1)
+		public static int Increment(this in int value, in int upperBound = 100, in int step = 1)
 		{
 			var number = value + step;
 			return number > upperBound ? upperBound : number;
@@ -96,7 +96,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this decimal value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in decimal value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -105,7 +108,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this double value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in double value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -114,7 +120,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this float value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in float value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -123,7 +132,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this int value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in int value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -132,7 +144,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this long value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in long value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -141,7 +156,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this sbyte value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in sbyte value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number is even.
@@ -150,7 +168,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEven), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsEven(this short value) { return ( value % 2 ) == 0; }
+		public static bool IsEven(this in short value)
+		{
+			return ( value % 2 ) == 0;
+		}
 
 		/// <summary>
 		/// Indicate whether the number falls in the specified range.
@@ -161,7 +182,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>True/False</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRange(this int value, int lower, int upper) { return value >= lower && value <= upper; }
+		public static bool IsInRange(this in int value, in int lower, in int upper)
+		{
+			return value >= lower && value <= upper;
+		}
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -172,8 +196,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRange(this long value, long lower, long upper)
-		{ return value >= lower && value <= upper; }
+		public static bool IsInRange(this in long value, in long lower, in long upper)
+		{
+			return value >= lower && value <= upper;
+		}
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -184,8 +210,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRange(this double value, double lower, double upper)
-		{ return value >= lower && value <= upper; }
+		public static bool IsInRange(this in double value, in double lower, in double upper)
+		{
+			return value >= lower && value <= upper;
+		}
 
 		/// <summary>
 		/// Determines whether [is in range] [the specified lower].
@@ -196,8 +224,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRange), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRange(this decimal value, decimal lower, decimal upper)
-		{ return value >= lower && value <= upper; }
+		public static bool IsInRange(this in decimal value, in decimal lower, in decimal upper)
+		{
+			return value >= lower && value <= upper;
+		}
 
 		/// <summary>
 		/// Determines whether [is in range throws exception] [the specified value]. Throws Exception if invalid.
@@ -209,7 +239,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRangeThrowsException(this double value, double lower, double upper)
+		public static bool IsInRangeThrowsException(this in double value, in double lower, in double upper)
 		{
 			if (value.IsInRange(lower, upper) is false)
 			{
@@ -229,7 +259,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRangeThrowsException(this decimal value, decimal lower, decimal upper)
+		public static bool IsInRangeThrowsException(this in decimal value, in decimal lower, in decimal upper)
 		{
 			if (value.IsInRange(lower, upper) is false)
 			{
@@ -249,7 +279,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRangeThrowsException(this int value, int lower, int upper)
+		public static bool IsInRangeThrowsException(this in int value, in int lower, in int upper)
 		{
 			if (value.IsInRange(lower, upper) is false)
 			{
@@ -269,7 +299,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Value is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInRangeThrowsException), author: "David McCarter", createdOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInRangeThrowsException(this long value, long lower, long upper)
+		public static bool IsInRangeThrowsException(this in long value, in long lower, in long upper)
 		{
 			if (value.IsInRange(lower, upper) is false)
 			{
@@ -288,7 +318,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified number is interval; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsInterval), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsInterval(this int value, int interval) => value % interval == 0;
+		public static bool IsInterval(this in int value, in int interval)
+		{
+			return value % interval == 0;
+		}
 
 		/// <summary>
 		/// Determines whether [is interval throws exception] [the specified value] and throws Exception if invalid.
@@ -300,7 +333,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">Interval is out of range.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsIntervalThrowsException), author: "David McCarter", createdOn: "10/5/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsIntervalThrowsException(this int value, int interval, string paramName)
+		public static bool IsIntervalThrowsException(this in int value, in int interval, in string paramName)
 		{
 			if (value.IsInterval(interval) is false)
 			{
@@ -326,7 +359,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this int value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in int value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Determines whether the specified value is negative.
@@ -335,7 +371,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this long value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in long value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Determines whether the specified value is negative.
@@ -344,7 +383,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this sbyte value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in sbyte value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Determines whether the specified value is negative.
@@ -353,7 +395,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this short value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in short value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Determines whether the specified value is negative.
@@ -362,7 +407,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this decimal value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in decimal value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Determines whether the specified value is negative.
@@ -371,7 +419,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified value is negative; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNegative(this float value) { return Math.Sign(value) == -1; }
+		public static bool IsNegative(this in float value)
+		{
+			return Math.Sign(value) == -1;
+		}
 
 		/// <summary>
 		/// Returns the nearest power of 2 that is bigger than the number.
@@ -380,7 +431,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Integer</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(RoundToPowerOf2), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static int RoundToPowerOf2(this int value)
+		public static int RoundToPowerOf2(this in int value)
 		{
 			var exponent = 1;
 
@@ -410,8 +461,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this int input, NumericFormat format)
+		public static string ToFormattedString(this in int input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -433,8 +486,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" /> or <see cref="NumericFormat.Hexadecimal" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this double input, NumericFormat format)
+		public static string ToFormattedString(this in double input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.Decimal || format == NumericFormat.Hexadecimal)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -457,8 +512,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this long input, NumericFormat format)
+		public static string ToFormattedString(this in long input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -483,6 +540,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
 		public static string ToFormattedString(this ulong input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -504,8 +563,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this uint input, NumericFormat format)
+		public static string ToFormattedString(this in uint input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -527,8 +588,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this short input, NumericFormat format)
+		public static string ToFormattedString(this in short input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -550,8 +613,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This method does not support <see cref="NumericFormat.RoundTrip" />.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-		public static string ToFormattedString(this ushort input, NumericFormat format)
+		public static string ToFormattedString(this in ushort input, NumericFormat format)
 		{
+			format = format.ArgumentNotNull();
+
 			if (format == NumericFormat.RoundTrip)
 			{
 				ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
@@ -567,7 +632,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static int ToPositiveValue(this int value) { return value.IsInRange(0, int.MaxValue) ? value : 0; }
+		public static int ToPositiveValue(this in int value)
+		{
+			return value.IsInRange(0, int.MaxValue) ? value : 0;
+		}
 
 		/// <summary>
 		/// To the positive value.
@@ -576,7 +644,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Int64.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static long ToPositiveValue(this long value) { return value.IsInRange(0, int.MaxValue) ? value : 0; }
+		public static long ToPositiveValue(this in long value)
+		{
+			return value.IsInRange(0, int.MaxValue) ? value : 0;
+		}
 
 		/// <summary>
 		/// To the positive value.
@@ -585,8 +656,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Decimal.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToPositiveValue), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static decimal ToPositiveValue(this decimal value)
-		{ return value.IsInRange(0, int.MaxValue) ? value : 0; }
+		public static decimal ToPositiveValue(this in decimal value)
+		{
+			return value.IsInRange(0, int.MaxValue) ? value : 0;
+		}
 
 		/// <summary>
 		/// Parses the number to a string or a default string if outside given range.
@@ -598,7 +671,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>String</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToStringOrEmpty), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ToStringOrEmpty(this int value, int lowerLimit = 100, int upperLimit = 9000, string defaultText = ControlChars.DoubleQuote)
+		public static string ToStringOrEmpty(this in int value, int lowerLimit = 100, int upperLimit = 9000, string defaultText = ControlChars.DoubleQuote)
 		{
 			return value <= lowerLimit || value > upperLimit
 				? defaultText

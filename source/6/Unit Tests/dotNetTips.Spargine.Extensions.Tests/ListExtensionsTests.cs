@@ -36,15 +36,15 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(20).ToArray();
 
 			people = people.AddIfNotExists(null);
-			Assert.IsTrue(people.Count() == 20);
+			Assert.IsTrue(people.FastCount() == 20);
 
 			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 
 			people = people.AddIfNotExists(newPeople);
-			Assert.IsTrue(people.Count() == 30);
+			Assert.IsTrue(people.FastCount() == 30);
 
 			people = people.AddIfNotExists(newPeople);
-			Assert.IsTrue(people.Count() == 30);
+			Assert.IsTrue(people.FastCount() == 30);
 		}
 
 		[TestMethod]
@@ -61,7 +61,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			// Test List
 			peopleList.AddLast(nullPerson);
-			Assert.IsTrue(peopleList.Count() == peopleList.Count());
+			Assert.IsTrue(peopleList.FastCount() == peopleList.FastCount());
 
 			peopleList.AddLast(person);
 			Assert.IsTrue(peopleList.Last().Equals(person));
@@ -92,7 +92,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToList();
 			var newPeople = people.CopyToCollection();
 
-			Assert.IsTrue(people.Count == newPeople.Count);
+			Assert.IsTrue(people.FastCount() == newPeople.FastCount());
 		}
 
 		[TestMethod]
@@ -184,7 +184,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 
-			Assert.IsTrue(people.RemoveFirst().Count() == 9);
+			Assert.IsTrue(people.RemoveFirst().FastCount() == 9);
 		}
 
 		[TestMethod]
@@ -192,7 +192,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 
-			Assert.IsTrue(people.RemoveLast().Count() == 9);
+			Assert.IsTrue(people.RemoveLast().FastCount() == 9);
 		}
 
 		[TestMethod]
@@ -205,7 +205,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var shuffledPeople = people.Shuffle();
 
-			Assert.IsTrue(people.Count == shuffledPeople.Count());
+			Assert.IsTrue(people.FastCount() == shuffledPeople.FastCount());
 		}
 
 		[TestMethod]
@@ -215,9 +215,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			List<PersonProper> nullList = null;
 			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
-			var shuffleCount = people.Shuffle().Count();
+			var shuffleCount = people.Shuffle().FastCount();
 
-			Assert.IsTrue(people.Count == shuffleCount);
+			Assert.IsTrue(people.FastCount() == shuffleCount);
 		}
 
 		[TestMethod]
@@ -225,7 +225,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToReadOnlyList();
 
-			Assert.IsTrue(people.Count == 10);
+			Assert.IsTrue(people.FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -237,7 +237,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 		}
 
 		[TestMethod]
@@ -249,7 +249,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 		}
 
 		[TestMethod]
@@ -261,7 +261,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 		}
 
 		[TestMethod]
@@ -273,7 +273,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 		}
 
 		[TestMethod]
@@ -285,7 +285,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 
 			Assert.IsTrue(result.IsAddingCompleted);
 		}
@@ -299,7 +299,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.Count() == 100);
+			Assert.IsTrue(result.FastCount() == 100);
 		}
 	}
 }

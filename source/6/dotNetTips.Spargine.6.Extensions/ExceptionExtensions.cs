@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 04-28-2022
 // ***********************************************************************
 // <copyright file="ExceptionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com

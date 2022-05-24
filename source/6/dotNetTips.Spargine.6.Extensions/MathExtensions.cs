@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -31,7 +31,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this TimeSpan first, TimeSpan second)
+		public static double CalculatePercent(this in TimeSpan first, in TimeSpan second)
 		{
 			return ( second.TotalMilliseconds - first.TotalMilliseconds ) / Math.Abs(first.TotalMilliseconds) * 100;
 		}
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this int first, int second)
+		public static double CalculatePercent(this in int first, in int second)
 		{
 			return ( second - first ) / Math.Abs(first) * 100;
 		}
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this double first, double second)
+		public static double CalculatePercent(this in double first, in double second)
 		{
 			return ( second - first ) / Math.Abs(first) * 100;
 		}
@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Double.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-		public static double CalculatePercent(this long first, long second)
+		public static double CalculatePercent(this in long first, in long second)
 		{
 			return ( second - first ) / Math.Abs(first) * 100;
 		}
@@ -83,7 +83,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this double value)
+		public static int Round(this in double value)
 		{
 			return Convert.ToInt32(Math.Round(value));
 		}
@@ -96,7 +96,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this decimal value)
+		public static int Round(this in decimal value)
 		{
 			return Convert.ToInt32(Math.Round(value));
 		}
@@ -110,7 +110,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this double value, int digits)
+		public static int Round(this in double value, in int digits)
 		{
 			return Convert.ToInt32(Math.Round(value, digits));
 		}
@@ -124,7 +124,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this double value, MidpointRounding mode)
+		public static int Round(this in double value, MidpointRounding mode)
 		{
 			mode = mode.ArgumentDefined(nameof(mode));
 
@@ -140,7 +140,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this decimal value, int digits)
+		public static int Round(this in decimal value, in int digits)
 		{
 			return Convert.ToInt32(Math.Round(value, digits));
 		}
@@ -155,7 +155,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this decimal value, MidpointRounding mode)
+		public static int Round(this in decimal value, MidpointRounding mode)
 		{
 			mode = mode.ArgumentDefined(nameof(mode));
 
@@ -172,7 +172,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this double value, int digits, MidpointRounding mode)
+		public static int Round(this in double value, in int digits, MidpointRounding mode)
 		{
 			mode = mode.ArgumentDefined(nameof(mode));
 
@@ -190,7 +190,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-		public static int Round(this decimal value, int digits, MidpointRounding mode)
+		public static int Round(this in decimal value, in int digits, MidpointRounding mode)
 		{
 			mode = mode.ArgumentDefined(nameof(mode));
 

@@ -31,7 +31,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(AssemblyExtensions.GetAllTypes))]
@@ -40,7 +40,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(AssemblyExtensions.GetInstances))]
@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 	}
 }

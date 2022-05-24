@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-15-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -45,7 +45,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>ValueTask&lt;System.Int32&gt;.</returns>
 		/// <remarks>Make sure to call .Dispose on Task,</remarks>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static ValueTask<int> ReadAsync([NotNull] this Stream stream, [NotNull] Memory<byte> destination, CancellationToken cancellationToken = default)
+		public static ValueTask<int> ReadAsync([NotNull] this Stream stream, [NotNull] in Memory<byte> destination, in CancellationToken cancellationToken = default)
 		{
 			stream = stream.ArgumentNotNull();
 
@@ -83,7 +83,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns>ValueTask.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static ValueTask WriteAsync([NotNull] this Stream stream, [NotNull] ReadOnlyMemory<byte> source, CancellationToken cancellationToken = default)
+		public static ValueTask WriteAsync([NotNull] this Stream stream, [NotNull] in ReadOnlyMemory<byte> source, in CancellationToken cancellationToken = default)
 		{
 			stream = stream.ArgumentNotNull();
 

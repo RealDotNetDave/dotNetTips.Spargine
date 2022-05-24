@@ -4,13 +4,14 @@
 // Created          : 04-18-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.PersonProper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -52,16 +53,16 @@ namespace DotNetTips.Spargine.Benchmarking
 		protected void LoadPersonProperRefArray()
 		{
 			this._personProperRefArray = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperRefArray)} length = {this._personProperRefArray.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperRefArray)} Length = {this._personProperRefArray.Length}.");
 
 			this._personProperRefArrayHalf = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperRefArrayHalf)} length = {this._personProperRefArrayHalf.Length}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperRefArrayHalf)} Length = {this._personProperRefArrayHalf.Length}.");
 
 			this._personProperDictionary = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount).ToDictionary(p => p.Id);
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperDictionary)} count = {this._personProperDictionary.Count}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperDictionary)} Count = {this._personProperDictionary.Count}.");
 
 			this._personProperDictionaryHalf = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount / 2).ToDictionary(p => p.Id);
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperDictionaryHalf)} count = {this._personProperDictionaryHalf.Count}.");
+			ConsoleLogger.Default.WriteLine($"{nameof(this._personProperDictionaryHalf)} Count = {this._personProperDictionaryHalf.Count}.");
 		}
 
 		/// <summary>

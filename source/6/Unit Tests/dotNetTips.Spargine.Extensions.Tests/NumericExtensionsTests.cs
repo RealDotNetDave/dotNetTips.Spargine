@@ -252,7 +252,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.ToWords().HasValue());
 
-			Assert.IsTrue(testValue.ToWords().Count() == 49);
+			Assert.IsTrue(testValue.ToWords().FastCount() == 49);
 		}
 
 		[TestMethod]

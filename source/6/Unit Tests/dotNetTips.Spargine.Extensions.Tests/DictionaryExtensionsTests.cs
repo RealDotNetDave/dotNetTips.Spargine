@@ -58,10 +58,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(2).ToDictionary(p => p.Id);
 
 			_ = people.AddRange(newPeople);
-			Assert.IsTrue(people.Count == 12);
+			Assert.IsTrue(people.FastCount() == 12);
 
 			_ = people.AddRange(newPeople, Tristate.UseDefault);
-			Assert.IsTrue(people.Count == 12);
+			Assert.IsTrue(people.FastCount() == 12);
 		}
 
 		[TestMethod]
@@ -72,7 +72,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(people1.AddRange(people2));
 
-			Assert.IsTrue(people1.Count() == 12);
+			Assert.IsTrue(people1.FastCount() == 12);
 
 		}
 
@@ -87,10 +87,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			// TEST
 			_ = people.GetOrAdd(newPerson.Id, newPerson);
-			Assert.IsTrue(people.Count == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			_ = people.GetOrAdd(newPerson.Id, newPerson);
-			Assert.IsTrue(people.Count == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 		}
 		[TestMethod]
 		public void ToDelimitedDictionaryTest()
@@ -129,13 +129,13 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			// Test
 			people.Upsert(newPerson.Id, newPerson);
-			Assert.IsTrue(people.Count == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			people.Upsert(newPerson);
-			Assert.IsTrue(people.Count == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			people.Upsert(personFromCollection.Value.Id, personFromCollection.Value);
-			Assert.IsTrue(people.Count == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 		}
 	}
 }

@@ -4,13 +4,14 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-04-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using System.Diagnostics;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
@@ -53,7 +54,7 @@ namespace DotNetTips.Spargine.Benchmarking
 	[LogicalGroupColumn]
 	[MarkdownExporter]
 	[MaxColumn]
-	[MemoryDiagnoser]
+	[MemoryDiagnoser(displayGenColumns: true)]
 	[MinColumn]
 	[MValueColumn]
 	[NamespaceColumn]
@@ -141,13 +142,25 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the json test data person proper.
 		/// </summary>
 		/// <value>The json test data person proper.</value>
-		protected static string JsonTestDataPersonProper => Resources.JsonTestDataPersonProper;
+		protected static string JsonTestDataPersonProper
+		{
+			get
+			{
+				return Resources.JsonTestDataPersonProper;
+			}
+		}
 
 		/// <summary>
 		/// Gets the json test data person record.
 		/// </summary>
 		/// <value>The json test data person record.</value>
-		protected static string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
+		protected static string JsonTestDataPersonRecord
+		{
+			get
+			{
+				return Resources.JsonTestDataPersonRecord;
+			}
+		}
 
 		/// <summary>
 		/// Gets the person proper01.
@@ -219,13 +232,25 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the XML test data.
 		/// </summary>
 		/// <value>The XML test data.</value>
-		protected string XmlTestDataPersonProper => Resources.XmlTestDataPersonProper;
+		protected string XmlTestDataPersonProper
+		{
+			get
+			{
+				return Resources.XmlTestDataPersonProper;
+			}
+		}
 
 		/// <summary>
 		/// Gets the XML test data person record.
 		/// </summary>
 		/// <value>The XML test data person record.</value>
-		protected string XmlTestDataPersonRecord => Resources.XmlTestDataPersonRecord;
+		protected string XmlTestDataPersonRecord
+		{
+			get
+			{
+				return Resources.XmlTestDataPersonRecord;
+			}
+		}
 
 
 		/// <summary>
@@ -233,7 +258,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		public virtual void Cleanup()
 		{
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Cleanup():{this.GetType().FullName}.");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Cleanup(): {nameof(Benchmark)}.");
 		}
 
 		/// <summary>
@@ -253,7 +278,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="minLength">The minimum string length.</param>
 		/// <param name="maxLength">The maximum string length.</param>
 		/// <returns>System.String[].</returns>
-		public string[] GetStringArray(in int count, in int minLength, in int maxLength)
+		public string[] GetStringArray(in int count, in int minLength = 10, in int maxLength = 15)
 		{
 			return RandomData.GenerateWords(count, minLength, maxLength).ToArray();
 		}
@@ -286,7 +311,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		public virtual void Setup()
 		{
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Setup():{this.GetType().FullName}.");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Setup(): {nameof(Benchmark)}.");
 
 			this.Base64String = LongTestString.Substring(1, 50).ToBase64();
 

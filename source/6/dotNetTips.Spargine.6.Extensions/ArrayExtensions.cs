@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -41,7 +41,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var result = new T[array.Length + 1];
 
-			result[result.Count() - 1] = item;
+			result[result.FastCount() - 1] = item;
 
 			array.CopyTo(result, index: 0);
 
@@ -79,7 +79,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>T[].</returns>
 		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static T[] AddIf<T>([NotNull] this T[] array, [NotNull] T item, bool condition)
+		public static T[] AddIf<T>([NotNull] this T[] array, [NotNull] T item, in bool condition)
 		{
 			array = array.ArgumentNotNull();
 			item = item.ArgumentNotNull();
@@ -99,9 +99,14 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static T[] AddIfNotExists<T>([NotNull] this T[] array, [NotNull] params T[] items)
 		{
-			var returnCollection = array.ToList();
+			if (items.DoesNotHaveItems())
+			{
+				return array;
+			}
 
-			for (var itemCount = 0; itemCount < items.Count(); itemCount++)
+			var returnCollection = array.ArgumentNotNull().ToList();
+
+			for (var itemCount = 0; itemCount < items.FastCount(); itemCount++)
 			{
 				var item = items[itemCount];
 
@@ -123,9 +128,9 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentReadOnlyException">item - Item cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static T[] AddLast<T>([NotNull] this T[] array, [NotNull] T item)
+		public static T[] AddLast<T>([NotNull] this T[] array, [NotNull] in T item)
 		{
-			if (item is null)
+			if (item.IsNull())
 			{
 				return array;
 			}
@@ -151,7 +156,7 @@ namespace DotNetTips.Spargine.Extensions
 		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 		public static bool AreEqual<T>([NotNull] this T[] array, [NotNull] T[] arrayToCheck)
 		{
-			if (array is null || arrayToCheck is null)
+			if (array.IsNull() || arrayToCheck.IsNull())
 			{
 				return false;
 			}
@@ -261,7 +266,7 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			if (items.ArgumentNotNull().Count() == 0)
+			if (items.ArgumentNotNull().FastCount() == 0)
 			{
 				return false;
 			}
@@ -278,7 +283,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="action">The action.</param>
 		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
-		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
+		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] in Action<T> action)
 		{
 			var collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();
 

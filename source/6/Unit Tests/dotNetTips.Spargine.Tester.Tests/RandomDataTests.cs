@@ -93,12 +93,12 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 				var newPeople = new List<PersonProper>();
 
-				for (var personCount = 0; personCount < people.Count; personCount++)
+				for (var personCount = 0; personCount < people.FastCount(); personCount++)
 				{
 					_ = newPeople.AddIfNotExists(people[personCount]);
 				}
 
-				Assert.IsTrue(newPeople.Count == Count);
+				Assert.IsTrue(newPeople.FastCount() == Count);
 			}
 			catch (Exception ex)
 			{
@@ -147,9 +147,9 @@ namespace DotNetTips.Spargine.Tester.Tests
 		{
 			var result = RandomData.GeneratePersonValCollection(1000);
 
-			Assert.IsTrue(result.Count == 1000);
+			Assert.IsTrue(result.FastCount() == 1000);
 
-			Assert.IsTrue(result.ToDictionary(item => item.Id).Count == 1000);
+			Assert.IsTrue(result.ToDictionary(item => item.Id).FastCount() == 1000);
 
 		}
 
@@ -185,7 +185,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Assert.IsNotNull(coordinates);
 
-			Assert.IsTrue(coordinates.Count() == Count);
+			Assert.IsTrue(coordinates.FastCount() == Count);
 		}
 
 		/// <summary>
@@ -260,7 +260,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Assert.IsNotNull(files.Path);
 
-			Assert.IsTrue(files.Files.Count() == Count);
+			Assert.IsTrue(files.Files.FastCount() == Count);
 
 			this.DeleteFiles(files.Files);
 		}
@@ -277,7 +277,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Assert.IsNotNull(files.Path);
 
-			Assert.IsTrue(files.Files.Count() == Count);
+			Assert.IsTrue(files.Files.FastCount() == Count);
 
 			this.DeleteFiles(files.Files);
 		}
@@ -292,7 +292,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Assert.IsNotNull(files);
 
-			Assert.IsTrue(files.Count() == Count);
+			Assert.IsTrue(files.FastCount() == Count);
 
 			this.DeleteFiles(files);
 		}
@@ -373,7 +373,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Assert.IsNotNull(people);
 
-			Assert.IsTrue(people.Count == Count);
+			Assert.IsTrue(people.FastCount() == Count);
 		}
 
 		/// <summary>
@@ -658,7 +658,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			var words = RandomData.GenerateWords(WordCount, 10, 25);
 
-			Assert.IsTrue(words.Count == WordCount);
+			Assert.IsTrue(words.FastCount() == WordCount);
 		}
 
 		/// <summary>

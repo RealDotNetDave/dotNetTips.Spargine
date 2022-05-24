@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -35,13 +35,16 @@ namespace DotNetTips.Spargine.Extensions
 		/// Tries to dispose items in the <see cref="IEnumerable" />.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		private static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
+		private static void DisposeCollection(this IEnumerable items)
+		{
+			ProcessCollectionToDispose(items);
+		}
 
 		/// <summary>
 		/// Processes the <see cref="IEnumerable" /> to dispose.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		private static void ProcessCollectionToDispose(IEnumerable items)
+		private static void ProcessCollectionToDispose(in IEnumerable items)
 		{
 			if (items.HasItems())
 			{
@@ -129,7 +132,7 @@ namespace DotNetTips.Spargine.Extensions
 				return;
 			}
 
-			for (var fieldCount = 0; fieldCount < list.Count; fieldCount++)
+			for (var fieldCount = 0; fieldCount < list.FastCount(); fieldCount++)
 			{
 				var value = list[fieldCount].GetValue(obj);
 
@@ -213,7 +216,7 @@ namespace DotNetTips.Spargine.Extensions
 				return;
 			}
 
-			for (var fieldCount = 0; fieldCount < fieldInfos.Count; fieldCount++)
+			for (var fieldCount = 0; fieldCount < fieldInfos.FastCount(); fieldCount++)
 			{
 				var fieldInfo = fieldInfos[fieldCount];
 				var objectValue = fieldInfo.GetValue(obj);
@@ -484,7 +487,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">obj</exception>
 		[SuppressMessage("Microsoft.Build", "IDISP007")]
 		[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
-		public static void TryDispose([NotNull] this IDisposable obj, [DoesNotReturnIf(true)] bool throwException)
+		public static void TryDispose([NotNull] this IDisposable obj, [DoesNotReturnIf(true)] in bool throwException)
 		{
 			if (obj is null)
 			{

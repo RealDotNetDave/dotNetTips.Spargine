@@ -4,14 +4,14 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 05-21-2022
 // ***********************************************************************
 // <copyright file="SmallCounterBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Attributes;
 
 namespace DotNetTips.Spargine.Benchmarking

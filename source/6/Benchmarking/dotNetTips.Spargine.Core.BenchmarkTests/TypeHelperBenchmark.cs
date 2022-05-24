@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 
 			var result = TypeHelper.GetPropertyValues(person);
 
-			this.Consumer.Consume(result);
+			base.Consumer.Consume(result);
 		}
 
 		public override void Setup()

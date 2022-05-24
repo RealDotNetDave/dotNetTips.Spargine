@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-23-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="HashSetExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -33,7 +33,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <param name="condition">The condition.</param>
 		[Information(nameof(AddIf), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void AddIf<T>([NotNull] this HashSet<T> list, [NotNull] T item, bool condition)
+		public static void AddIf<T>([NotNull] this HashSet<T> list, [NotNull] T item, in bool condition)
 		{
 			list = list.ArgumentNotNull();
 			item = item.ArgumentNotNull();

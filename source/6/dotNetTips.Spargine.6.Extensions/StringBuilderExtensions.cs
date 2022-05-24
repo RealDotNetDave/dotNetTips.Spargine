@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -155,7 +155,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </code>
 		/// </example>
 		[Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] IEnumerable<string> values)
+		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] in IEnumerable<string> values)
 		{
 			sb = sb.ArgumentNotNull();
 

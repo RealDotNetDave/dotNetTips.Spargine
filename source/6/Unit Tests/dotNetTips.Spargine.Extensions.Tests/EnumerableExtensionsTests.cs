@@ -41,11 +41,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.AddIf(person, true);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 
 			result = people.AddIf(person, false);
 
-			Assert.IsTrue(result.Count() == 10);
+			Assert.IsTrue(result.FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.Add(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -95,7 +95,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			const int Count = 10;
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
-			Assert.IsTrue(people.Count() == Count);
+			Assert.IsTrue(people.FastCount() == Count);
 		}
 
 		[TestMethod]
@@ -204,7 +204,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
-			Assert.IsTrue(people.Shuffle(5).Count() == 5);
+			Assert.IsTrue(people.Shuffle(5).FastCount() == 5);
 		}
 
 		[TestMethod]
@@ -241,7 +241,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.ToBlockingCollection();
 
-			Assert.IsTrue(result.Count() == Count);
+			Assert.IsTrue(result.FastCount() == Count);
 		}
 
 		[TestMethod]
@@ -282,11 +282,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.Upsert(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 
 			result = people.Upsert(personFromCollection);
 
-			Assert.IsTrue(result.Count() == 10);
+			Assert.IsTrue(result.FastCount() == 10);
 		}
 	}
 }

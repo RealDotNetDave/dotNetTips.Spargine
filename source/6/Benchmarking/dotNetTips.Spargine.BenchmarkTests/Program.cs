@@ -11,29 +11,27 @@ namespace DotNetTips.Spargine.BenchmarkTests
 	{
 		public static void Main()
 		{
+			try
 			{
-				try
-				{
-					var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60));
+				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60));
 
-					_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
-						  .WithOption(ConfigOptions.StopOnFirstError, true);
+				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
+					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-					_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-					//BenchmarkRunner.Run<SerializationBenchmark>(config);
+				//BenchmarkRunner.Run<SerializationBenchmark>(config);
 
-					Console.Beep();
-					_ = Console.ReadLine();
-				}
-				catch (Exception ex)
-				{
-					Console.Beep();
-					Console.Beep();
-					Console.Beep();
-					ConsoleLogger.Default.WriteLine(ex.Message);
-					_ = Console.ReadLine();
-				}
+				Console.Beep();
+				_ = Console.ReadLine();
+			}
+			catch (Exception ex)
+			{
+				Console.Beep();
+				Console.Beep();
+				Console.Beep();
+				ConsoleLogger.Default.WriteLine(ex.Message);
+				_ = Console.ReadLine();
 			}
 		}
 	}

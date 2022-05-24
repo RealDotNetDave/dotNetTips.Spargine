@@ -41,7 +41,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = enumValue.GetItems();
 
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 
 		[TestMethod]

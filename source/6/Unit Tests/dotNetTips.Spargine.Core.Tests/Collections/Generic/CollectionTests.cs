@@ -14,6 +14,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DotNetTips.Spargine.Core.Collections.Generic;
+using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -48,11 +49,11 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 
 			_ = collection.AddIfNotExists(collection.First());
 
-			Assert.IsTrue(collection.Count == 10);
+			Assert.IsTrue(collection.FastCount() == 10);
 
 			_ = collection.AddIfNotExists(person);
 
-			Assert.IsTrue(collection.Count == 11);
+			Assert.IsTrue(collection.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -84,7 +85,7 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 
 			Assert.IsNotNull(collection);
 
-			Assert.IsTrue(collection.Count == 10);
+			Assert.IsTrue(collection.FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -96,7 +97,7 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 
 			Assert.IsNotNull(collection);
 
-			Assert.IsTrue(collection.Count == 10);
+			Assert.IsTrue(collection.FastCount() == 10);
 		}
 
 		[TestMethod]

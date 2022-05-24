@@ -4,7 +4,7 @@
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-15-2022
+// Last Modified On : 05-24-2022
 // ***********************************************************************
 // <copyright file="ProcessExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="logger">The logger.</param>
 		/// <exception cref="ArgumentNullException">process</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void EnsureHighPriority([NotNull] this Process process, ILogger logger)
+		public static void EnsureHighPriority([NotNull] this Process process, in ILogger logger)
 		{
 			process = process.ArgumentNotNull();
 
@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="logger">The logger.</param>
 		/// <exception cref="ArgumentNullException">process</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void EnsureLowPriority([NotNull] this Process process, ILogger logger)
+		public static void EnsureLowPriority([NotNull] this Process process, in ILogger logger)
 		{
 			try
 			{
@@ -82,7 +82,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentException">fileName</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static int RunProcessAndIgnoreOutput(string fileName, string arguments, TimeSpan timeout)
+		public static int RunProcessAndIgnoreOutput(string fileName, in string arguments, in TimeSpan timeout)
 		{
 			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) is false)
 			{
@@ -118,7 +118,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.ValueTuple&lt;System.Int32, System.String&gt;.</returns>
 		/// <exception cref="ArgumentException">fileName</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static (int exitCode, string output) RunProcessAndReadOutput(string fileName, string arguments, TimeSpan timeout)
+		public static (int exitCode, string output) RunProcessAndReadOutput(string fileName, in string arguments, in TimeSpan timeout)
 		{
 			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) is false)
 			{
@@ -156,7 +156,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">process or logger error</exception>
 		/// <exception cref="ArgumentOutOfRangeException">priority</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool TrySetPriority([NotNull] this Process process, ProcessPriorityClass priority, ILogger logger)
+		public static bool TrySetPriority([NotNull] this Process process, ProcessPriorityClass priority, in ILogger logger)
 		{
 			if (process is null)
 			{

@@ -298,7 +298,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				input = "TEST";
 			}
 
-			this.Consumer.Consume(input);
+			base.Consumer.Consume(input);
 		}
 
 		private void CheckForNullParamSpargine(object input)
@@ -308,7 +308,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				input = "SPARGINE";
 			}
 
-			this.Consumer.Consume(input);
+			base.Consumer.Consume(input);
 		}
 	}
 }

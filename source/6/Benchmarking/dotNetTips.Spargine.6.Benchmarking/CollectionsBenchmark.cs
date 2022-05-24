@@ -4,13 +4,14 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 05-22-2022
 // ***********************************************************************
-// <copyright file="Collections.cs" company="David McCarter - dotNetTips.com">
+// <copyright file="CollectionsBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -30,7 +31,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		private PersonProper[] _peopleToInsert;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="CollectionsBenchmark"/> class.
+		/// Initializes a new instance of the <see cref="CollectionsBenchmark" /> class.
 		/// </summary>
 		/// <param name="maxCount">The maximum count.</param>
 		protected CollectionsBenchmark(in int maxCount)
@@ -54,7 +55,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		{
 			base.Setup();
 
-			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Collection Count={this.MaxCount}:{this.GetType().FullName}.");
+			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Collection Count={this.MaxCount}: {nameof(CollectionsBenchmark)}.");
 
 			//Load collections
 			this.LoadCoordinateArray();
@@ -64,7 +65,7 @@ namespace DotNetTips.Spargine.Benchmarking
 			this.LoadPersonRefArray();
 			this.LoadPersonValArray();
 
-			this._peopleToInsert = new List<PersonProper>(this.GetPersonProperArray(Core.Tristate.False)).Shuffle(10).ToArray();
+			this._peopleToInsert = new List<PersonProper>(this.GetPersonProperArray(Core.Tristate.False)).Shuffle(Math.Max(2, this.MaxCount / 2)).ToArray();
 		}
 
 		/// <summary>

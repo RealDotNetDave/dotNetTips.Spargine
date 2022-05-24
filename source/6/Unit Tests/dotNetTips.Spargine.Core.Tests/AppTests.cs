@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -86,7 +87,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			var result = App.GetEnvironmentVariables();
 
-			Assert.IsTrue(result.Count > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 
 			foreach (var info in result)
 			{
@@ -149,7 +150,7 @@ namespace dotNetTips.Spartine.Core.Tests
 		{
 			var result = App.ReferencedAssemblies();
 
-			Assert.IsTrue(result.Count > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 	}
 }

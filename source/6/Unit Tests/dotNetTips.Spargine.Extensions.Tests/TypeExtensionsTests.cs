@@ -48,15 +48,15 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = table.DoesObjectImplementInterface("IComponent");
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 
 			result = table.DoesObjectImplementInterface("IFakeInterface");
 
-			Assert.IsTrue(result.Count() == 0);
+			Assert.IsTrue(result.FastCount() == 0);
 
 			result = table.DoesObjectImplementInterface("IComponent", "IDisposable");
 
-			Assert.IsTrue(result.Count() == 2);
+			Assert.IsTrue(result.FastCount() == 2);
 
 		}
 
@@ -68,11 +68,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(AbstractTestType).GetAllAbstractMethods();
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 
 			result = typeof(DataTable).GetAllAbstractMethods();
 
-			Assert.IsTrue(result.Count() == 0);
+			Assert.IsTrue(result.FastCount() == 0);
 		}
 
 		[TestMethod]
@@ -80,7 +80,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(PersonProper).GetAllDeclaredFields();
 
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 
 		[TestMethod]
@@ -88,7 +88,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(PersonProper).GetAllDeclaredMethods();
 
-			Assert.IsTrue(result.Count() > 0);
+			Assert.IsTrue(result.FastCount() > 0);
 		}
 
 		/// <summary>
@@ -99,11 +99,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result1 = typeof(TestType).GetAllFields();
 
-			Assert.IsTrue(result1.Count() == 1);
+			Assert.IsTrue(result1.FastCount() == 1);
 
 			var result2 = typeof(PersonProper).GetAllFields();
 
-			Assert.IsTrue(result2.Count() >= 12);
+			Assert.IsTrue(result2.FastCount() >= 12);
 		}
 
 		/// <summary>
@@ -114,11 +114,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(TestType).GetAllMethods();
 
-			Assert.IsTrue(result.Count() == 13);
+			Assert.IsTrue(result.FastCount() == 13);
 
 			result = typeof(PersonProper).GetAllMethods();
 
-			Assert.IsTrue(result.Count() >= 45);
+			Assert.IsTrue(result.FastCount() >= 45);
 		}
 
 		/// <summary>
@@ -193,7 +193,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(TestType).GetAllGenericMethods();
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 		}
 
 		[TestMethod]
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(PersonProper).GetAllProperties();
 
-			Assert.IsTrue(result.Count() >= 10);
+			Assert.IsTrue(result.FastCount() >= 10);
 		}
 
 		/// <summary>
@@ -226,7 +226,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(PersonProper).GetAllPublicMethods();
 
-			Assert.IsTrue(result.Count() >= 30);
+			Assert.IsTrue(result.FastCount() >= 30);
 		}
 
 		/// <summary>
@@ -237,7 +237,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = typeof(TestType).GetAllStaticMethods();
 
-			Assert.IsTrue(result.Count() == 1);
+			Assert.IsTrue(result.FastCount() == 1);
 		}
 
 		/// <summary>
@@ -248,11 +248,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result1 = typeof(TestType).GetTypeMembersWithAttribute<XmlIgnoreAttribute>();
 
-			Assert.IsTrue(result1.Count() == 1);
+			Assert.IsTrue(result1.FastCount() == 1);
 
 			var result2 = typeof(TestType).GetTypeMembersWithAttribute<XmlAnyAttributeAttribute>();
 
-			Assert.IsTrue(result2.Count() == 0);
+			Assert.IsTrue(result2.FastCount() == 0);
 		}
 
 		[TestMethod]

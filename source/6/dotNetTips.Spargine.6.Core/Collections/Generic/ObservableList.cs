@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -190,7 +190,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// </summary>
 		public virtual void Clear()
 		{
-			if (this._set.Count == 0)
+			if (this._set.FastCount() == 0)
 			{
 				return;
 			}
@@ -267,7 +267,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 
 			copy.ExceptWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.FastCount() == this._set.FastCount())
 			{
 				return;
 			}
@@ -302,7 +302,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 
 			copy.IntersectWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.FastCount() == this._set.FastCount())
 			{
 				return;
 			}
@@ -454,7 +454,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 			var removed = this._set.Where(i => !copy.Contains(i)).ToList();
 			var added = copy.Where(i => !this._set.Contains(i)).ToList();
 
-			if (removed.Count == 0 && added.Count == 0)
+			if (removed.FastCount() == 0 && added.FastCount() == 0)
 			{
 				return;
 			}
@@ -486,7 +486,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 
 			copy.UnionWith(other);
 
-			if (copy.Count == this._set.Count)
+			if (copy.FastCount() == this._set.FastCount())
 			{
 				return;
 			}

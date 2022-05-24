@@ -49,11 +49,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			_ = peopleSortedSet.Upsert(person.Id, person);
 
-			Assert.IsTrue(peopleSortedSet.Count() == 11);
+			Assert.IsTrue(peopleSortedSet.FastCount() == 11);
 
 			_ = peopleSortedSet.Upsert(personFromCollection.Key, personFromCollection.Value);
 
-			Assert.IsTrue(peopleSortedSet.Count() == 11);
+			Assert.IsTrue(peopleSortedSet.FastCount() == 11);
 
 		}
 	}

@@ -24,7 +24,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			var folder = DirectoryHelper.AppDataFolder();
 
-			this.Consumer.Consume(folder);
+			base.Consumer.Consume(folder);
 		}
 
 		public override void Cleanup()
@@ -89,7 +89,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			var folders = DirectoryHelper.LoadOneDriveFolders();
 
-			this.Consumer.Consume(folders);
+			base.Consumer.Consume(folders);
 		}
 
 		[Benchmark(Description = nameof(DirectoryHelper.SafeDirectorySearch))]
@@ -97,7 +97,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			var folders = DirectoryHelper.SafeDirectorySearch(this._sourcePath, "*.*", SearchOption.TopDirectoryOnly);
 
-			this.Consumer.Consume(folders);
+			base.Consumer.Consume(folders);
 		}
 
 		[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
@@ -105,7 +105,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			var files = DirectoryHelper.SafeFileSearch(this._sourcePath, "*.*", SearchOption.TopDirectoryOnly);
 
-			this.Consumer.Consume(files);
+			base.Consumer.Consume(files);
 		}
 
 		[Benchmark(Description = nameof(DirectoryHelper.SetFileAttributesToNormal))]

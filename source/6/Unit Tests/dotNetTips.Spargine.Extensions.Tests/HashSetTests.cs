@@ -31,11 +31,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			people.AddIf(person, true);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			people.AddIf(person, false);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 		}
 
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToHashSet().ToImmutable();
 
-			Assert.IsTrue(people.Count() == 10);
+			Assert.IsTrue(people.FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -52,7 +52,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToHashSet().ToConcurrentHashSet();
 
-			Assert.IsTrue(people.Count() == 10);
+			Assert.IsTrue(people.FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -64,11 +64,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			people.Upsert(person);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			people.Upsert(personFromCollection);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 		}
 

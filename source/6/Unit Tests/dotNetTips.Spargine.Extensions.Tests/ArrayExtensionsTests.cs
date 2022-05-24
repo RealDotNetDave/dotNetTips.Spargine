@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.AddFirst(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.AddIf(person, people.Length == 10);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -68,10 +68,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.AddLast(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 			Assert.IsTrue(result.Last() == person);
 
-			Assert.IsTrue(result.AddLast(null).Count() == 11);
+			Assert.IsTrue(result.AddLast(null).FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -82,7 +82,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.Add(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -162,7 +162,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = numbers.RemoveDuplicates();
 
-			Assert.IsTrue(result.Count() == numbers.Length - 1);
+			Assert.IsTrue(result.FastCount() == numbers.Length - 1);
 
 		}
 
@@ -173,7 +173,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			people = people.AddLast(people.First());
 
-			Assert.IsTrue(people.ToDistinct().Count() == 10);
+			Assert.IsTrue(people.ToDistinct().FastCount() == 10);
 		}
 
 		[TestMethod]
@@ -185,15 +185,15 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = people.Upsert(personFromCollection);
 
-			Assert.IsTrue(result.Count() == 10);
+			Assert.IsTrue(result.FastCount() == 10);
 
 			result = people.Upsert(person);
 
-			Assert.IsTrue(result.Count() == 11);
+			Assert.IsTrue(result.FastCount() == 11);
 
 			result = people.Upsert(personFromCollection);
 
-			Assert.IsTrue(result.Count() == 10);
+			Assert.IsTrue(result.FastCount() == 10);
 		}
 	}
 }

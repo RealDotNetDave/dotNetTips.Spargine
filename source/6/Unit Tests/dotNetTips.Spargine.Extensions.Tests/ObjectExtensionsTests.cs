@@ -141,13 +141,13 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = personProper.PropertiesToDictionary(memberName: $"Person-{personProper.Id}", ignoreNulls: true);
 
-			Assert.IsTrue(result.Count() > 1);
+			Assert.IsTrue(result.FastCount() > 1);
 
 			result = propertiesTest.PropertiesToDictionary(
 				memberName: $"TestPerson-{personProper.Id}",
 				ignoreNulls: true);
 
-			Assert.IsTrue(result.Count() > 1);
+			Assert.IsTrue(result.FastCount() > 1);
 		}
 
 		[TestMethod]

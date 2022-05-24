@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -42,7 +42,7 @@ namespace DotNetTips.Spargine.Core
 			// works out the derived types
 			var list = types.ToList();
 
-			for (var typeCount = 0; typeCount < list.Count; typeCount++)
+			for (var typeCount = 0; typeCount < list.FastCount(); typeCount++)
 			{
 				var type = list[typeCount];
 
@@ -255,7 +255,7 @@ namespace DotNetTips.Spargine.Core
 					var assembly = array[assemblyCount];
 					var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
 
-					if (tempTypes?.Count() > 0)
+					if (tempTypes?.FastCount() > 0)
 					{
 						if (types is null)
 						{
@@ -296,14 +296,14 @@ namespace DotNetTips.Spargine.Core
 			var list = files.ToList();
 			var foundTypes = new List<Type>();
 
-			for (var fileIndex = 0; fileIndex < list.Count; fileIndex++)
+			for (var fileIndex = 0; fileIndex < list.FastCount(); fileIndex++)
 			{
 				try
 				{
 					var assembly = Assembly.LoadFrom(list[fileIndex].FullName);
 					var exportedTypes = assembly.ExportedTypes.Where(p => p.BaseType is not null).ToList();
 
-					if (exportedTypes?.Count() > 0)
+					if (exportedTypes?.FastCount() > 0)
 					{
 						var containsBaseType = exportedTypes.Any(p => string.Equals(p.BaseType.FullName, baseType.FullName, StringComparison.Ordinal));
 

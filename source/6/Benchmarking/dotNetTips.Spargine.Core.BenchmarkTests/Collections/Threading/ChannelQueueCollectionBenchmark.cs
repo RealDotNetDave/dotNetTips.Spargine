@@ -43,7 +43,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 				await channel.WriteAsync(people[peopleCount]).ConfigureAwait(false);
 			}
 
-			this.Consumer.Consume(channel.Count);
+			base.Consumer.Consume(channel.Count);
 		}
 
 		[Benchmark(Description = "WriteAsync: IEnumerable")]
@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 			await channel.WriteAsync(people).ConfigureAwait(false);
 
-			this.Consumer.Consume(channel.Count);
+			base.Consumer.Consume(channel.Count);
 		}
 
 
@@ -75,7 +75,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 			Task.WaitAll(tasks.ToArray());
 
-			this.Consumer.Consume(channel.Count);
+			base.Consumer.Consume(channel.Count);
 		}
 
 		[Benchmark(Description = "Write & Read Async")]
@@ -92,7 +92,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 			while (channel.Count > 0)
 			{
-				this.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
+				base.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
 			}
 		}
 
@@ -107,7 +107,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 			while (channel.Count > 0)
 			{
-				this.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
+				base.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
 			}
 		}
 

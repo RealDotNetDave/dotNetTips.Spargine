@@ -63,13 +63,13 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(10);
 
 			_ = people.AddIfNotExists(newPeople.ToArray());
-			Assert.IsTrue(people.Count() == 20);
+			Assert.IsTrue(people.FastCount() == 20);
 
 			_ = people.AddIfNotExists(newPeople.ToArray());
-			Assert.IsTrue(people.Count() == 20);
+			Assert.IsTrue(people.FastCount() == 20);
 
 			_ = people.AddIfNotExists();
-			Assert.IsTrue(people.Count() == 20);
+			Assert.IsTrue(people.FastCount() == 20);
 		}
 
 		[TestMethod]
@@ -95,9 +95,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
 			// TEST
-			people.AddIf(person, people.Count() == 10);
+			people.AddIf(person, people.FastCount() == 10);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 		}
 
 		[TestMethod]
@@ -108,11 +108,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			_ = people.AddRange(newPeople, Tristate.True);
 
-			Assert.IsTrue(people.Count() == 12);
+			Assert.IsTrue(people.FastCount() == 12);
 
 			_ = people.AddRange(newPeople, Tristate.UseDefault);
 
-			Assert.IsTrue(people.Count() == 12);
+			Assert.IsTrue(people.FastCount() == 12);
 
 			var nullCollection = new List<PersonProper>();
 
@@ -158,15 +158,15 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			// TEST
 			people.Upsert(person);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			people.Upsert<PersonProper, string>(personFromCollection);
 
-			Assert.IsTrue(people.Count() == 11);
+			Assert.IsTrue(people.FastCount() == 11);
 
 			personRecords.Upsert(personRecord);
 
-			Assert.IsTrue(personRecords.Count() == 11);
+			Assert.IsTrue(personRecords.FastCount() == 11);
 		}
 	}
 }

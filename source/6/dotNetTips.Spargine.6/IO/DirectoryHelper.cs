@@ -250,7 +250,7 @@ namespace DotNetTips.Spargine.IO
 		public static void MoveDirectory([NotNull] DirectoryInfo source, [NotNull] DirectoryInfo destination, int retries = 10)
 		{
 			source = source.ArgumentExists();
-			retries = retries.ArgumentInRange(1, 100, 10, Resources.RetriesAreLimitedTo0100);
+			retries = retries.ArgumentInRange(1, upper: 100, defaultValue: 10, errorMessage: Resources.RetriesAreLimitedTo0100);
 
 			if (destination.CheckExists(throwException: true))
 			{
@@ -379,7 +379,7 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="searchOption">The search option.</param>
 		/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
 		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
-		public static IEnumerable<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
+		public static IReadOnlyList<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
 			directories = directories.ArgumentItemsExists();
 			searchPattern = searchPattern.ArgumentNotNullOrEmpty();
@@ -407,7 +407,7 @@ namespace DotNetTips.Spargine.IO
 				}
 			});
 
-			return files.AsEnumerable();
+			return files;
 		}
 
 		/// <summary>

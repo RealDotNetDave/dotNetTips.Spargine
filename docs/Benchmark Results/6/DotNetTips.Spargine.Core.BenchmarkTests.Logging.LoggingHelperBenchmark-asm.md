@@ -14,7 +14,7 @@
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22BC6BE77B0
+       mov       rdx,1E4B7DF21A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -23,32 +23,32 @@
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        mov       edx,5
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22BC6BE6798
+       mov       rcx,1E4D7DF8BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22BC6BE77B8
+       mov       r8,1E4B7DF21A8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -76,7 +76,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1E6B0123010
+       mov       rdx,1BFD3271988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -85,32 +85,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1E6D0128BA8
+       mov       rcx,1BFE32747A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1E6B0123018
+       mov       r8,1BFD3271990
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -138,7 +138,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1E71D7E27F8
+       mov       rdx,1641C8C5960
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -147,32 +147,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1E72D7E47A0
+       mov       rcx,1641C8C47A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1E71D7E2800
+       mov       r8,1641C8C5968
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -200,7 +200,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,21D4AE98BE0
+       mov       rdx,19847531988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -209,32 +209,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED07B0500
        mov       edx,5
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B40500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0BBA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,21D4AE96BB0
+       mov       rcx,19837538BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,21D4AE98BE8
+       mov       r8,19847531990
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -262,7 +262,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1DC0F381FF8
+       mov       rdx,27B26C129A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -271,32 +271,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED07B0500
        mov       edx,5
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B40500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0BBA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1DC2F388BA8
+       mov       rcx,27B36C147A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1DC0F382000
+       mov       r8,27B26C129A8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -324,7 +324,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,290770057B8
+       mov       rdx,20EE8441988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -333,32 +333,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642A04A0
+       mov       r11,7FFED07A0500
        mov       edx,5
-       call      qword ptr [7FFE646304A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646A86F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,290770047A0
+       mov       rcx,20ED8448BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,290770057C0
+       mov       r8,20EE8441990
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -386,7 +386,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22DE4A43010
+       mov       rdx,1E72DD721A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -395,32 +395,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642604A0
+       mov       r11,7FFED07A0500
        mov       edx,5
-       call      qword ptr [7FFE645F04A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646686F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22E04A48BA8
+       mov       rcx,1E74DD78BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22DE4A43018
+       mov       r8,1E72DD721A8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -448,7 +448,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1C3B583ABD8
+       mov       rdx,229473629A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -457,32 +457,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "CRITICAL ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED07A0500
        mov       edx,5
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1C3B5838BA8
+       mov       rcx,229573647A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1C3B583ABE0
+       mov       r8,229473629A8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -510,7 +510,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1C8E9133FF0
+       mov       rdx,27E8F9721A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -519,32 +519,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1C909136BB0
+       mov       rcx,27EAF978BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1C8E9133FF8
+       mov       r8,27E8F9721A8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -572,7 +572,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,28E80ED1FF8
+       mov       rdx,16484A331B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -581,32 +581,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED0790500
        mov       edx,5
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,28EA0ED8BA8
+       mov       rcx,164A4A38BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,28E80ED2000
+       mov       r8,16484A331C0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -634,7 +634,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2412CE593F8
+       mov       rdx,2164098AD80
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -643,32 +643,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0790500
        mov       edx,5
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2412CE56BB0
+       mov       rcx,21640988BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2412CE59400
+       mov       r8,2164098AD88
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -696,7 +696,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22457167418
+       mov       rdx,226BC1131B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -705,32 +705,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642A04A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646304A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646A86F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,224771647A0
+       mov       rcx,226EC1147A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22457167420
+       mov       r8,226BC1131C0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -758,7 +758,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,22496824408
+       mov       rdx,28A79AE7958
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -767,32 +767,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,224C68247A0
+       mov       rcx,28A79AE6798
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22496824410
+       mov       r8,28A79AE7960
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -820,7 +820,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,25A0FD76400
+       mov       rdx,2477A70B598
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -829,32 +829,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642A04A0
+       mov       r11,7FFED07B0500
        mov       edx,5
-       call      qword ptr [7FFE646304A0]
+       call      qword ptr [7FFED0B40500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646A86F8
+       mov       rcx,7FFED0BBA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,25A3FD747A0
+       mov       rcx,2477A708BA8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,25A0FD76408
+       mov       r8,2477A70B5A0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -882,7 +882,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1606FEA9BC0
+       mov       rdx,1C9300E75C0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -891,32 +891,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED0790500
        mov       edx,5
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1606FEA8BA8
+       mov       rcx,1C9500E47A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1606FEA9BC8
+       mov       r8,1C9300E75C8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -944,7 +944,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FB69F587C8
+       mov       rdx,24772551988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -953,32 +953,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogCritical(this._logger, "DEBUG ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED0780500
        mov       edx,5
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1FB69F56798
+       mov       rcx,247625547A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1FB69F587D0
+       mov       r8,24772551990
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1006,7 +1006,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,23BEE5EB3F0
+       mov       rdx,2933D284DB0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1015,32 +1015,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0790500
        mov       edx,4
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,23BEE5E8BB8
+       mov       rcx,2936D2847B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,23BEE5EB3F8
+       mov       r8,2933D284DB8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1068,7 +1068,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2A428233010
+       mov       rdx,1E2E7A875C0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1077,32 +1077,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED0790500
        mov       edx,4
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2A448238BB8
+       mov       rcx,1E307A847B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2A428233018
+       mov       r8,1E2E7A875C8
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1130,7 +1130,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FE39574408
+       mov       rdx,17C68EB6DA8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1139,32 +1139,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED07B0500
        mov       edx,4
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B40500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0BBA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1FE595767A8
+       mov       rcx,17C78EB47B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1FE39574410
+       mov       r8,17C68EB6DB0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1192,7 +1192,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2F222631FF8
+       mov       rdx,24ACA131988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1201,32 +1201,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0770500
        mov       edx,4
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B00500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B7A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2F242638BB8
+       mov       rcx,24ADA138BB8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2F222632000
+       mov       r8,24ACA131990
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1254,7 +1254,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1EA47AF17E0
+       mov       rdx,1ABDF3465A8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1263,32 +1263,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642A04A0
+       mov       r11,7FFED0780500
        mov       edx,4
-       call      qword ptr [7FFE646304A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646A86F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1EA57AF6BC0
+       mov       rcx,1ABEF3447B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1EA47AF17E8
+       mov       r8,1ABDF3465B0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1316,7 +1316,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FDC9949BC0
+       mov       rdx,217B6F5A968
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1325,32 +1325,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED07A0500
        mov       edx,4
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1FDC9948BB8
+       mov       rcx,217B6F587A0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1FDC9949BC8
+       mov       r8,217B6F5A970
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1378,7 +1378,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,20111103010
+       mov       rdx,1BC96E655C8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1387,32 +1387,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED07A0500
        mov       edx,4
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,20131108BB8
+       mov       rcx,1BCC6E647B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,20111103018
+       mov       r8,1BC96E655D0
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1440,7 +1440,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,20087DC1FF8
+       mov       rdx,150BFEE5D90
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -1449,32 +1449,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogError(this._logger, "ERROR ENTRY", testException);
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbp,[rsi+0B0]
+       mov       rbp,[rsi+0C0]
        mov       rcx,rbp
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        mov       edx,4
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,200A7DC8BB8
+       mov       rcx,150DFEE47B0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,20087DC2000
+       mov       r8,150BFEE5D98
        mov       r8,[r8]
        mov       rdx,rbp
        mov       r9,rdi
        call      qword ptr [rax+18]
 M00_L01:
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,28
@@ -1497,32 +1497,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        mov       edx,2
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B74CE047B8
+       mov       rcx,1C04A6B47B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B71CE07418
+       mov       r8,1C01A6B55C8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1544,32 +1544,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0780500
        mov       edx,2
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2826B8847B8
+       mov       rcx,21C746947B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2823B886400
+       mov       r8,21C446945B0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1591,32 +1591,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0780500
        mov       edx,2
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,284300C6BC8
+       mov       rcx,2A9A6618BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,284100C3FF0
+       mov       r8,2A9A661AD80
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1638,32 +1638,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642604A0
+       mov       r11,7FFED0770500
        mov       edx,2
-       call      qword ptr [7FFE645F04A0]
+       call      qword ptr [7FFED0B00500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646686F8
+       mov       rcx,7FFED0B7A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,200ADEF47B8
+       mov       rcx,17FA1B88BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2007DEF6400
+       mov       r8,17F81B831B8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1685,32 +1685,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        mov       edx,2
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,253EB1847B8
+       mov       rcx,203E57247B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,253DB1827F8
+       mov       r8,203B5723D98
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1732,32 +1732,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED07B0500
        mov       edx,2
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B40500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0BBA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1C3CE1D8BC0
+       mov       rcx,219A27A47B8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1C3AE1D3010
+       mov       r8,219A27A5960
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1779,32 +1779,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED0780500
        mov       edx,2
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1CBBB3147B8
+       mov       rcx,11730BF8BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1CB8B316400
+       mov       r8,11710BF21A0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1826,32 +1826,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogInformation(this._logger, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        mov       edx,2
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22087928BC0
+       mov       rcx,25A97F98BC0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22087929BC0
+       mov       r8,25A97F99D68
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1873,32 +1873,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642904A0
+       mov       r11,7FFED0780500
        xor       edx,edx
-       call      qword ptr [7FFE646204A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646986F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,18E80E48BC8
+       mov       rcx,1F3CD6547C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,18E60E41FF8
+       mov       r8,1F3BD655D90
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1920,32 +1920,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642604A0
+       mov       r11,7FFED07A0500
        xor       edx,edx
-       call      qword ptr [7FFE645F04A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646686F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2104FD747C0
+       mov       rcx,1F9BA8047C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2101FD727F8
+       mov       r8,1F99A801988
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -1967,32 +1967,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED07A0500
        xor       edx,edx
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,238752E6BD0
+       mov       rcx,257F7458BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,238552E3010
+       mov       r8,257F7459D68
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2014,32 +2014,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0790500
        xor       edx,edx
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,250A2C58BC8
+       mov       rcx,1E5B45447C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,25092C517E0
+       mov       r8,1E5B4546978
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2061,32 +2061,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642704A0
+       mov       r11,7FFED07A0500
        xor       edx,edx
-       call      qword ptr [7FFE646004A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646786F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,22BD8968BC8
+       mov       rcx,1B0732647C0
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,22BD8969BC0
+       mov       r8,1B053266DA8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2108,32 +2108,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED0780500
        xor       edx,edx
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B10500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0B8A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1EFE8B68BC8
+       mov       rcx,26B9B058BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1EFC8B63010
+       mov       r8,26B7B0531B8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2155,32 +2155,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642804A0
+       mov       r11,7FFED07A0500
        xor       edx,edx
-       call      qword ptr [7FFE646104A0]
+       call      qword ptr [7FFED0B30500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646886F8
+       mov       rcx,7FFED0BAA660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,1B7235C47C0
+       mov       rcx,2016B378BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,1B6F35C6400
+       mov       r8,2014B3721A0
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2202,32 +2202,32 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       edi,edi
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L02
 ; 				EasyLogger.LogTrace(this._logger, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       rbx,[rsi+0B0]
+       mov       rbx,[rsi+0C0]
        mov       rcx,rbx
-       mov       r11,7FFE642604A0
+       mov       r11,7FFED0790500
        xor       edx,edx
-       call      qword ptr [7FFE645F04A0]
+       call      qword ptr [7FFED0B20500]
        test      eax,eax
        je        short M00_L01
-       mov       rcx,7FFE646686F8
+       mov       rcx,7FFED0B9A660
        mov       edx,35
        call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
-       mov       rcx,2375A508BC8
+       mov       rcx,1C6BB8D8BC8
        mov       rax,[rcx]
        mov       rcx,[rax+8]
-       mov       r8,2375A509BC0
+       mov       r8,1C69B8D31B8
        mov       r8,[r8]
        mov       rdx,rbx
        xor       r9d,r9d
        call      qword ptr [rax+18]
 M00_L01:
        inc       edi
-       cmp       edi,[rsi+0A8]
+       cmp       edi,[rsi+0B8]
        jl        short M00_L00
 M00_L02:
        add       rsp,20
@@ -2260,7 +2260,7 @@ M00_L02:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,221738D7418
+       mov       rdx,169CEAF65A8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2269,20 +2269,20 @@ M00_L02:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,221738D7420
+       mov       rcx,169CEAF65B0
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED0884928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,221738D2F78
+       mov       rcx,169CEAF2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2294,7 +2294,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2345,7 +2345,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,221938D4518
+       mov       r9,169FEAF4518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2362,7 +2362,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0B88110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2395,7 +2395,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2881A333FF0
+       mov       rdx,17CE5D8AD80
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2404,20 +2404,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2881A333FF8
+       mov       rcx,17CE5D8AD88
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2881A332F78
+       mov       rcx,17CE5D82FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2429,7 +2429,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2480,7 +2480,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,287FA336928
+       mov       r9,17CE5D88920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2497,7 +2497,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2530,7 +2530,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1D0D0F61FF8
+       mov       rdx,215E423A580
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2539,20 +2539,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1D0D0F62000
+       mov       rcx,215E423A588
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE643A4928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1D0F0F62F78
+       mov       rcx,215E4232FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2564,7 +2564,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2615,7 +2615,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1D0F0F68920
+       mov       r9,215E4238920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2632,7 +2632,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE646A5D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2665,7 +2665,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,251C6953010
+       mov       rdx,29DF08465A8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2674,20 +2674,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,251C6953018
+       mov       rcx,29DF08465B0
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08B4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,251E6952F78
+       mov       rcx,29DF0842FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2699,7 +2699,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2750,7 +2750,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,251E6958920
+       mov       r9,29E20844518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2767,7 +2767,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BB8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2800,7 +2800,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,28E034FB3F0
+       mov       rdx,16915005960
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2809,20 +2809,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,28E034FB3F8
+       mov       rcx,16915005968
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED0894928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,28E034F2F78
+       mov       rcx,168F5002FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2834,7 +2834,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -2885,7 +2885,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,28E034F8920
+       mov       r9,16915004518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -2902,7 +2902,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0B98110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -2935,7 +2935,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29FA19D3010
+       mov       rdx,23EB8E98D88
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -2944,20 +2944,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,29FA19D3018
+       mov       rcx,23EB8E98D90
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64364928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,29FC19D2F78
+       mov       rcx,23E98E92FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -2969,7 +2969,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3020,7 +3020,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,29FC19D8920
+       mov       r9,23EB8E96928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3037,7 +3037,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64665D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3070,7 +3070,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,29684355BE8
+       mov       rdx,1C1C7DE31B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3079,20 +3079,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,29684355BF0
+       mov       rcx,1C1C7DE31C0
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64384928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,29684352F78
+       mov       rcx,1C1E7DE2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3104,7 +3104,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3155,7 +3155,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,296A4354518
+       mov       r9,1C1E7DE8920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3172,7 +3172,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64685D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3205,7 +3205,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,166CF3217E0
+       mov       rdx,266C3399D68
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3214,20 +3214,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,166CF3217E8
+       mov       rcx,266C3399D70
        mov       rbp,[rcx]
 ; 				this._logger.LogError(100, testException, "ERROR ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED0874928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,166AF322F78
+       mov       rcx,266C3392FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3239,7 +3239,7 @@ M00_L00:
        mov       edx,4
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3290,7 +3290,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,166DF324518
+       mov       r9,266C3398920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3307,7 +3307,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0B78110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3340,7 +3340,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2CB710E7BC8
+       mov       rdx,14BB81631B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3349,20 +3349,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2CB710E7BD0
+       mov       rcx,14BB81631C0
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08B4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2CB810E2F78
+       mov       rcx,14BC8162FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3374,7 +3374,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3425,7 +3425,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2CB710E6928
+       mov       r9,14BE8164518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3442,7 +3442,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BB8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3475,7 +3475,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2557DE44408
+       mov       rdx,1B697A57958
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3484,20 +3484,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2557DE44410
+       mov       rcx,1B697A57960
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08B4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2559DE42F78
+       mov       rcx,1B697A52FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3509,7 +3509,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3560,7 +3560,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,255ADE44518
+       mov       r9,1B697A56510
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3577,7 +3577,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BB8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3610,7 +3610,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1CAB8B99BC0
+       mov       rdx,28737BA31B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3619,20 +3619,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1CAB8B99BC8
+       mov       rcx,28737BA31C0
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE643A4928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1CAB8B92F78
+       mov       rcx,28747BA2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3644,7 +3644,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3695,7 +3695,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1CAB8B98920
+       mov       r9,28767BA4518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3712,7 +3712,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE646A5D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3745,7 +3745,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,127F2E01FF8
+       mov       rdx,2DDD1B7AD80
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3754,20 +3754,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,127F2E02000
+       mov       rcx,2DDD1B7AD88
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED0884928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,12812E02F78
+       mov       rcx,2DDD1B72FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3779,7 +3779,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3830,7 +3830,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,12812E08920
+       mov       r9,2DDD1B78920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3847,7 +3847,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0B88110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -3880,7 +3880,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1FA28F457B8
+       mov       rdx,193226831B8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -3889,20 +3889,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1FA28F457C0
+       mov       rcx,193226831C0
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED0884928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1FA48F42F78
+       mov       rcx,19342682FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -3914,7 +3914,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -3965,7 +3965,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1FA28F44518
+       mov       r9,19342688920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -3982,7 +3982,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0B88110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4015,7 +4015,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2660FB5A3D8
+       mov       rdx,24D33CF9D68
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4024,20 +4024,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2660FB5A3E0
+       mov       rcx,24D33CF9D70
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64384928
-       mov       edx,2D
+       mov       rcx,7FFED0874928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2660FB52F78
+       mov       rcx,24D33CF2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4049,7 +4049,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4100,7 +4100,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2660FB58920
+       mov       r9,24D33CF8920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4117,7 +4117,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64685D18
+       mov       rdx,7FFED0B78110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4150,7 +4150,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,195C5871FF8
+       mov       rdx,1B3A43555C8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4159,20 +4159,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,195C5872000
+       mov       rcx,1B3A43555D0
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64364928
-       mov       edx,2D
+       mov       rcx,7FFED0894928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,195F5872F78
+       mov       rcx,1B3A4352FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4184,7 +4184,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4235,7 +4235,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,195E5876928
+       mov       r9,1B3D4354518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4252,7 +4252,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64665D18
+       mov       rdx,7FFED0B98110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4285,7 +4285,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,25A77B467D0
+       mov       rdx,1F55F089D68
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4294,20 +4294,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,25A77B467D8
+       mov       rcx,1F55F089D70
        mov       rbp,[rcx]
 ; 				this._logger.LogInformation(100, testException, "INFORMATION ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64384928
-       mov       edx,2D
+       mov       rcx,7FFED0874928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,25A57B42F78
+       mov       rcx,1F55F082FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4319,7 +4319,7 @@ M00_L00:
        mov       edx,2
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4370,7 +4370,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,25A77B44518
+       mov       r9,1F55F088920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4387,7 +4387,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64685D18
+       mov       rdx,7FFED0B78110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4420,7 +4420,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1A64B8B5BE8
+       mov       rdx,17BF33AAD80
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4429,20 +4429,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1A64B8B5BF0
+       mov       rcx,17BF33AAD88
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64364928
-       mov       edx,2D
+       mov       rcx,7FFED0894928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1A64B8B2F78
+       mov       rcx,17BF33A2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4454,7 +4454,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4505,7 +4505,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1A67B8B4518
+       mov       r9,17BF33A8920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4522,7 +4522,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64665D18
+       mov       rdx,7FFED0B98110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4555,7 +4555,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2B301013010
+       mov       rdx,1A8CA826DA8
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4564,20 +4564,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2B301013018
+       mov       rcx,1A8CA826DB0
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2B321012F78
+       mov       rcx,1A8CA822FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4589,7 +4589,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4640,7 +4640,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2B321018920
+       mov       r9,1A8AA824518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4657,7 +4657,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4690,7 +4690,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1D022E277B0
+       mov       rdx,20C8BD3B598
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4699,20 +4699,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1D022E277B8
+       mov       rcx,20C8BD3B5A0
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1D022E22F78
+       mov       rcx,20C8BD32FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4724,7 +4724,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4775,7 +4775,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1D022E26510
+       mov       r9,20C8BD38920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4792,7 +4792,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4825,7 +4825,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2A5BDB55008
+       mov       rdx,1B3FC72AD80
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4834,20 +4834,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2A5BDB55010
+       mov       rcx,1B3FC72AD88
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2A5BDB52F78
+       mov       rcx,1B3FC722FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4859,7 +4859,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -4910,7 +4910,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2A5DDB56928
+       mov       r9,1B3FC728920
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -4927,7 +4927,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -4960,7 +4960,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,19729F75420
+       mov       rdx,2609B9E3980
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -4969,20 +4969,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,19729F75428
+       mov       rcx,2609B9E3988
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64374928
-       mov       edx,2D
+       mov       rcx,7FFED0884928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,19729F72F78
+       mov       rcx,2609B9E2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -4994,7 +4994,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -5045,7 +5045,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,19749F76510
+       mov       r9,260BB9E6928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5062,7 +5062,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64675D18
+       mov       rdx,7FFED0B88110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5095,7 +5095,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,136B6544408
+       mov       rdx,173649A1988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5104,20 +5104,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,136B6544410
+       mov       rcx,173649A1990
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64384928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,136B6542F78
+       mov       rcx,173349A2FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -5129,7 +5129,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -5180,7 +5180,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,136D6546510
+       mov       r9,173349A6928
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5197,7 +5197,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64685D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5230,7 +5230,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,1D8A3387BC8
+       mov       rdx,1E17E7221A0
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5239,20 +5239,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,1D8A3387BD0
+       mov       rcx,1E17E7221A8
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED0884928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,1D8B3382F78
+       mov       rcx,1E19E722FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -5264,7 +5264,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -5315,7 +5315,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,1D8A3386928
+       mov       r9,1E1AE724518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5332,7 +5332,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0B88110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi
@@ -5365,7 +5365,7 @@ M01_L00:
        mov       rdi,rax
        mov       dword ptr [rdi+70],0E0434352
        mov       dword ptr [rdi+74],80131500
-       mov       rdx,2DDB5CE47F0
+       mov       rdx,1968FC11988
        mov       rdx,[rdx]
        lea       rcx,[rdi+10]
        call      CORINFO_HELP_ASSIGN_REF
@@ -5374,20 +5374,20 @@ M01_L00:
 ; 			for (var index = 0; index < this.Count; index++)
 ; 			     ^^^^^^^^^^^^^
        xor       ebx,ebx
-       cmp       dword ptr [rsi+0A8],0
+       cmp       dword ptr [rsi+0B8],0
        jle       short M00_L01
-       mov       rcx,2DDB5CE47F8
+       mov       rcx,1968FC11990
        mov       rbp,[rcx]
 ; 				this._logger.LogTrace(100, testException, "TRACE ENTRY");
 ; 				^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 M00_L00:
-       mov       r14,[rsi+0B0]
+       mov       r14,[rsi+0C0]
        xor       r15d,r15d
        mov       r12d,64
-       mov       rcx,7FFE64394928
-       mov       edx,2D
+       mov       rcx,7FFED08A4928
+       mov       edx,2E
        call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
-       mov       rcx,2DDB5CE2F78
+       mov       rcx,1966FC12FA0
        mov       rcx,[rcx]
        mov       [rsp+30],r15
        mov       [rsp+38],r12d
@@ -5399,7 +5399,7 @@ M00_L00:
        xor       edx,edx
        call      Microsoft.Extensions.Logging.LoggerExtensions.Log(Microsoft.Extensions.Logging.ILogger, Microsoft.Extensions.Logging.LogLevel, Microsoft.Extensions.Logging.EventId, System.Exception, System.String, System.Object[])
        inc       ebx
-       cmp       ebx,[rsi+0A8]
+       cmp       ebx,[rsi+0B8]
        jl        short M00_L00
 M00_L01:
        add       rsp,40
@@ -5450,7 +5450,7 @@ M00_L01:
        mov       r9,[rsp+60]
        mov       [rsp+48],r9
        mov       [rsp+20],rbx
-       mov       r9,2DDC5CE4518
+       mov       r9,1969FC14518
        mov       r9,[r9]
        mov       [rsp+28],r9
        lea       r9,[rsp+38]
@@ -5467,7 +5467,7 @@ M01_L00:
        call      CORINFO_HELP_NEWSFAST
        mov       rsi,rax
        mov       ecx,191
-       mov       rdx,7FFE64695D18
+       mov       rdx,7FFED0BA8110
        call      CORINFO_HELP_STRCNS
        mov       rdx,rax
        mov       rcx,rsi

@@ -33,7 +33,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
 		[Information(nameof(Shuffle), "David McCarter", "8/27/2020", "1/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 0)]
-		public static ImmutableArray<T> Shuffle<T>([NotNull] in this ImmutableArray<T> list)
+		public static ImmutableArray<T> Shuffle<T>([NotNull] this ImmutableArray<T> list)
 		{
 			return list.DoesNotHaveItems() ? list : list.OrderBy(i => RandomNumberGenerator.GetInt32(int.MinValue, int.MaxValue)).ToImmutableArray();
 		}

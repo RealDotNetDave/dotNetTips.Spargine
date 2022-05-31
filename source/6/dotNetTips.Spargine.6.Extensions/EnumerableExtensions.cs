@@ -40,7 +40,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> list, [NotNull] in T item)
+		public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
 		{
 			if (item is null)
 			{
@@ -124,7 +124,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> list, [NotNull] in T item, in bool condition)
+		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, bool condition)
 		{
 			if (item is null)
 			{
@@ -233,7 +233,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
-			return list.ArgumentNotNull().FastCount(predicate.ArgumentNotNull());
+			return list.ArgumentNotNull().LongCount(predicate.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -260,7 +260,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Task.</returns>
 		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
 		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
-		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> list, [NotNull] Action<T> action, in int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, in bool ensureOrdered = false, in TaskScheduler scheduler = null)
+		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> list, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{
 			list = list.ArgumentNotNull();
 			action = action.ArgumentNotNull();
@@ -298,7 +298,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FirstOrDefault<T>([AllowNull] this IEnumerable<T> list, [NotNull] in T alternate)
+		public static T FirstOrDefault<T>([AllowNull] this IEnumerable<T> list, [NotNull] T alternate)
 		{
 			return list is null ? alternate : list.DefaultIfEmpty(alternate).First();
 		}
@@ -340,7 +340,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Nullable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Match cannot be null.</exception>
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T? FirstOrNull<T>([NotNull] this IEnumerable<T> list, [NotNull] in Func<T, bool> match)
+		public static T? FirstOrNull<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> match)
 			where T : struct
 		{
 			var listToProcess = list.ArgumentItemsExists().ToCollection();
@@ -366,7 +366,14 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems([NotNull] this IEnumerable list)
 		{
-			return list?.Count() > 0;
+			if (list is null)
+			{
+				return false;
+			}
+			else
+			{
+				return list.Count() > 0;
+			}
 		}
 
 		/// <summary>
@@ -376,9 +383,16 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([NotNull] this IEnumerable list, in int count)
+		public static bool HasItems([NotNull] this IEnumerable list, int count)
 		{
-			return list?.Count() == count;
+			if (list is null)
+			{
+				return false;
+			}
+			else
+			{
+				return list.Count() == count;
+			}
 		}
 
 		/// <summary>
@@ -519,7 +533,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool StartsWith<T>(this IEnumerable<T> first, in IEnumerable<T> second)
+		public static bool StartsWith<T>(this IEnumerable<T> first, IEnumerable<T> second)
 		{
 			if (first is null || second is null)
 			{
@@ -557,7 +571,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">second</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(StructuralSequenceEqual), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool StructuralSequenceEqual<T>(this IEnumerable<T> first, in IEnumerable<T> second)
+		public static bool StructuralSequenceEqual<T>(this IEnumerable<T> first, IEnumerable<T> second)
 		{
 			if (first is null || second is null)
 			{
@@ -702,7 +716,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="item">The item.</param>
 		/// <returns>System.Collections.Generic.IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Upsert<T>([NotNull] this IEnumerable<T> list, [NotNull] in T item)
+		public static IEnumerable<T> Upsert<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
 		{
 			list = list.ArgumentItemsExists();
 

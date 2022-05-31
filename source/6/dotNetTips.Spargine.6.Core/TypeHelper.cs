@@ -78,7 +78,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="length">The length.</param>
 		/// <param name="options">The options.</param>
 		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		private static void ProcessGenericType([NotNull] StringBuilder builder, [NotNull] Type type, Type[] genericArguments, int length, in DisplayNameOptions options)
+		private static void ProcessGenericType([NotNull] StringBuilder builder, [NotNull] Type type, Type[] genericArguments, int length, DisplayNameOptions options)
 		{
 			var offset = 0;
 
@@ -141,7 +141,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="type">The type.</param>
 		/// <param name="options">The options.</param>
 		[Information(UnitTestCoverage = 99, Status = Status.Available)]
-		internal static void ProcessType([NotNull] StringBuilder builder, [NotNull] Type type, in DisplayNameOptions options)
+		internal static void ProcessType([NotNull] StringBuilder builder, [NotNull] Type type, DisplayNameOptions options)
 		{
 			if (type.IsGenericType)
 			{
@@ -315,7 +315,11 @@ namespace DotNetTips.Spargine.Core
 				}
 				catch (BadImageFormatException ex)
 				{
-					Trace.WriteLine(ex.Message);
+					Trace.WriteLine(ex.GetAllMessages());
+				}
+				catch (FileLoadException fileLoadEx)
+				{
+					Trace.WriteLine(fileLoadEx.GetAllMessages());
 				}
 			}
 

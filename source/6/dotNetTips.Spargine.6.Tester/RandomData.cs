@@ -146,7 +146,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IAddressRecord[].</returns>
 		[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static Collection<AddressRecord> GenerateAddressRecordCollection(int count = 2, in int addressLength = 25, in int cityLength = 25, in int countryLength = 25, in int countyProvinceLength = 20, in int postalCodeLength = 8, in int stateLength = 15)
+		public static Collection<AddressRecord> GenerateAddressRecordCollection(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			count = count.ArgumentInRange(paramName: nameof(count), lower: 1, upper: 100, defaultValue: 2);
 
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.Char.</returns>
 		/// <example>65 'A'</example>
 		[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static char GenerateCharacter(in char minValue, in char maxValue)
+		public static char GenerateCharacter(char minValue, char maxValue)
 		{
 			return (char)GenerateInteger(minValue, maxValue);
 		}
@@ -269,7 +269,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.Decimal.</returns>
 		/// <example>95.15</example>
 		[Information(nameof(GenerateDecimal), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static decimal GenerateDecimal(in decimal minValue, in decimal maxValue, int decimalPlaces)
+		public static decimal GenerateDecimal(decimal minValue, decimal maxValue, int decimalPlaces)
 		{
 			decimalPlaces = decimalPlaces.ArgumentInRange(paramName: nameof(decimalPlaces), lower: 0);
 
@@ -386,8 +386,12 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.Int32.</returns>
 		/// <remarks>Does not use RandomNumberGenerator due to performance increase. [CA5394]</remarks>
 		[Information(nameof(GenerateInteger), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static int GenerateInteger(in int min = int.MinValue, in int max = int.MaxValue)
+		public static int GenerateInteger(int min = int.MinValue, int max = int.MaxValue)
 		{
+			//Ensure maxLength is +1 of minLength so the RandomNumberGenerator does not cause an exception.
+			min = min.EnsureMinimum(1);
+			max = max.EnsureMinimum(min + 1);
+
 			lock (_lock)
 			{
 				return RandomNumberGenerator.GetInt32(min, max);
@@ -443,7 +447,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static T GenerateRefPerson<T>(in int addressLength = 25, in int cityLength = 15, in int countryLength = 15, in int firstNameLength = 15, in int lastNameLength = 25, in int postalCodeLength = 8, in int stateLength = 15) where T : IPerson, new()
+		public static T GenerateRefPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15) where T : IPerson, new()
 		{
 			var person = new T
 			{
@@ -477,7 +481,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>Models.ValueTypes.Person.</returns>
 		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static Models.ValueTypes.Person GenerateValPerson(in int addressLength = 25, in int cityLength = 15, in int countryLength = 15, in int firstNameLength = 15, in int lastNameLength = 25, in int postalCodeLength = 8, in int stateLength = 15)
+		public static Models.ValueTypes.Person GenerateValPerson(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15)
 		{
 			var person = new Models.ValueTypes.Person
 			{
@@ -555,7 +559,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="stateLength">Length of the state.</param>
 		/// <returns>IPersonRecord[].</returns>
 		[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, in int addressCount = 2, in int firstNameLength = 15, in int lastNameLength = 25, in int addressLength = 25, in int cityLength = 25, in int countryLength = 25, in int countyProvinceLength = 20, in int postalCodeLength = 8, in int stateLength = 15)
+		public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
 			count = count.ArgumentInRange(paramName: nameof(count), lower: 1);
 
@@ -600,7 +604,7 @@ namespace DotNetTips.Spargine.Tester
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(int fileNameLength = 10, string extension = DefaultFileExtension)
 		{
-			fileNameLength = fileNameLength.ArgumentInRange(1, 256);
+			fileNameLength = fileNameLength.ArgumentInRange(1, upper: 256);
 			extension = extension.ArgumentNotNullOrEmpty(defaultValue: DefaultFileExtension);
 
 			var fileName = $"{GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile)}{ControlChars.Dot}{extension}";
@@ -617,9 +621,9 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>c:\\temp\\FFDHRBMDXP.dotnettips</example>
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GenerateRandomFileName([NotNull] in string path, int fileNameLength = 10, string extension = DefaultFileExtension)
+		public static string GenerateRandomFileName([NotNull] string path, int fileNameLength = 10, string extension = DefaultFileExtension)
 		{
-			fileNameLength = fileNameLength.ArgumentInRange(1, 256);
+			fileNameLength = fileNameLength.ArgumentInRange(1, upper: 256);
 			extension = extension.ArgumentNotNullOrEmpty(defaultValue: DefaultFileExtension);
 
 			var fileName = $"{GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile)}{ControlChars.Dot}{extension}";
@@ -730,7 +734,7 @@ namespace DotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int length)
 		{
-			length = length.ArgumentInRange(paramName: nameof(length), lower: 1);
+			length = length.ArgumentInRange(lower: 1, paramName: nameof(length));
 
 			var returnValue = GenerateWord(length, DefaultMinCharacter, DefaultMaxCharacter);
 
@@ -747,8 +751,8 @@ namespace DotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength)
 		{
-			minLength = minLength.ArgumentInRange(paramName: nameof(minLength), lower: 1);
-			maxLength = maxLength.ArgumentInRange(paramName: nameof(maxLength), lower: 1);
+			minLength = minLength.ArgumentInRange(lower: 1, paramName: nameof(minLength));
+			maxLength = maxLength.ArgumentInRange(lower: 1, paramName: nameof(maxLength));
 
 			return GenerateWord(minLength, maxLength, DefaultMinCharacter, DefaultMaxCharacter);
 		}
@@ -762,9 +766,9 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>LBEEUMHHHK</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string GenerateWord(int length, in char minCharacter, in char maxCharacter)
+		public static string GenerateWord(int length, char minCharacter, char maxCharacter)
 		{
-			length = length.ArgumentInRange(paramName: nameof(length), lower: 1);
+			length = length.ArgumentInRange(lower: 1, paramName: nameof(length));
 
 			var word = new StringBuilder(length);
 
@@ -786,8 +790,11 @@ namespace DotNetTips.Spargine.Tester
 		/// <returns>System.String.</returns>
 		/// <example>ACRNFTPAE</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string GenerateWord(in int minLength, in int maxLength, in char minCharacter, in char maxCharacter)
+		public static string GenerateWord(int minLength, int maxLength, char minCharacter, char maxCharacter)
 		{
+			minLength = minLength.ArgumentInRange(1, paramName: nameof(minLength));
+			maxLength = maxLength.ArgumentInRange(1, paramName: nameof(maxLength));
+
 			return GenerateWord(GenerateInteger(minLength, maxLength), minCharacter, maxCharacter);
 		}
 
@@ -801,9 +808,9 @@ namespace DotNetTips.Spargine.Tester
 		[Information(nameof(GenerateWords), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static ImmutableList<string> GenerateWords(int count, int minLength, int maxLength)
 		{
-			count = count.ArgumentInRange(paramName: nameof(count), lower: 1);
-			minLength = minLength.ArgumentInRange(paramName: nameof(minLength), lower: 1);
-			maxLength = maxLength.ArgumentInRange(paramName: nameof(maxLength), lower: 1);
+			count = count.ArgumentInRange(lower: 1, paramName: nameof(count));
+			minLength = minLength.ArgumentInRange(lower: 1, paramName: nameof(minLength));
+			maxLength = maxLength.ArgumentInRange(lower: 1, paramName: nameof(maxLength));
 
 			var strings = new List<string>(count);
 

@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Initializes a new instance of the <see cref="CounterBenchmark" /> class.
 		/// </summary>
 		/// <param name="maxCount">The maximum collection count.</param>
-		protected CounterBenchmark(in int maxCount)
+		protected CounterBenchmark(int maxCount)
 		{
 			this._maxCount = Math.Max(2, maxCount);
 

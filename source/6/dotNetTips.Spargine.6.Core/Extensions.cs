@@ -370,7 +370,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static void AddFirst<T>(this IList<T> list, [NotNull] T item)
+		internal static void AddFirst<T>(this IList<T> list, [NotNull] T item)
 		{
 			list.ArgumentNotReadOnly().Insert(index: 0, item);
 		}
@@ -386,7 +386,7 @@ namespace DotNetTips.Spargine.Core
 		/// <exception cref="ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
 		/// <exception cref="ArgumentNullException">list - List cannot be read-only.</exception>
 		/// <exception cref="ArgumentException">list - List cannot be null. or value - Value cannot be null.</exception>
-		public static bool AddIfNotExists<T>(this ICollection<T> list, [NotNull] T item)
+		internal static bool AddIfNotExists<T>(this ICollection<T> list, [NotNull] T item)
 		{
 			list = list.ArgumentNotReadOnly();
 
@@ -408,7 +408,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static void AddLast<T>(this IList<T> list, [NotNull] T item)
+		internal static void AddLast<T>(this IList<T> list, [NotNull] T item)
 		{
 			list.ArgumentNotReadOnly().Insert(list.Count, item);
 		}
@@ -419,7 +419,7 @@ namespace DotNetTips.Spargine.Core
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>System.Int64.</returns>
-		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
+		internal static long FastCount<T>([NotNull] this IEnumerable<T> list)
 		{
 			return list.ArgumentNotNull().LongCount();
 		}
@@ -431,7 +431,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="list">The list.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Int64.</returns>
-		public static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		internal static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
 			return list.ArgumentNotNull().FastCount(predicate.ArgumentNotNull());
 		}

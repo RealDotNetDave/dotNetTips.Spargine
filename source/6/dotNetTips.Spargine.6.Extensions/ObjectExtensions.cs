@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// Processes the <see cref="IEnumerable" /> to dispose.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		private static void ProcessCollectionToDispose(in IEnumerable items)
+		private static void ProcessCollectionToDispose(IEnumerable items)
 		{
 			if (items.HasItems())
 			{
@@ -487,7 +487,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">obj</exception>
 		[SuppressMessage("Microsoft.Build", "IDISP007")]
 		[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
-		public static void TryDispose([NotNull] this IDisposable obj, [DoesNotReturnIf(true)] in bool throwException)
+		public static void TryDispose([NotNull] this IDisposable obj, [DoesNotReturnIf(true)] bool throwException)
 		{
 			if (obj is null)
 			{

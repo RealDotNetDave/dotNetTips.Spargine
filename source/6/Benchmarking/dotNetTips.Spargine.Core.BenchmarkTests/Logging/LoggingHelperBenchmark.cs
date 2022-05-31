@@ -23,7 +23,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
 	{
 		private ILogger<LoggingHelperBenchmark> _logger;
 
-		[Benchmark(Description = "EasyLoger.LogCritical")]
+		[Benchmark(Description = "EasyLogger.LogCritical")]
 		[BenchmarkCategory(Categories.Logging)]
 		public void LogEasyCriticalBenchmark()
 		{
@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
 			}
 		}
 
-		[Benchmark(Description = "EasyLoger.LogDebug")]
+		[Benchmark(Description = "EasyLogger.LogDebug")]
 		[BenchmarkCategory(Categories.Logging)]
 		public void LogEasyDebugBenchmark()
 		{
@@ -47,7 +47,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
 			}
 		}
 
-		[Benchmark(Description = "EasyLoger.LogError")]
+		[Benchmark(Description = "EasyLogger.LogError")]
 		[BenchmarkCategory(Categories.Logging)]
 		public void LogEasyErrorBenchmark()
 		{
@@ -59,7 +59,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
 			}
 		}
 
-		[Benchmark(Description = "EasyLoger.LogInformation")]
+		[Benchmark(Description = "EasyLogger.LogInformation")]
 		[BenchmarkCategory(Categories.Logging)]
 		public void LogEasyInformationBenchmark()
 		{
@@ -69,7 +69,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
 			}
 		}
 
-		[Benchmark(Description = "EasyLoger.LogTrace")]
+		[Benchmark(Description = "EasyLogger.LogTrace")]
 		[BenchmarkCategory(Categories.Logging)]
 		public void LogEasyTraceBenchmark()
 		{

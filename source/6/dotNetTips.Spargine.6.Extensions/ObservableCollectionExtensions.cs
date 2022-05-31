@@ -44,7 +44,14 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>(this ObservableCollection<T> source)
 		{
-			return source?.FastCount() > 0;
+			if (source is null)
+			{
+				return false;
+			}
+			else
+			{
+				return source?.FastCount() > 0;
+			}
 		}
 
 		/// <summary>
@@ -55,9 +62,16 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this ObservableCollection<T> source, in int count)
+		public static bool HasItems<T>(this ObservableCollection<T> source, int count)
 		{
-			return source?.FastCount() == count;
+			if (source is null)
+			{
+				return false;
+			}
+			else
+			{
+				return source.FastCount() == count;
+			}
 		}
 	}
 }

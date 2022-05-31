@@ -138,7 +138,7 @@ namespace DotNetTips.Spargine
 		/// <param name="requests">The requests.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		[Information(nameof(StartServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void StartServices([NotNull] IEnumerable<ServiceAction> requests)
+		public static void StartServices([NotNull] IReadOnlyCollection<ServiceAction> requests)
 		{
 			requests.ToList().ForEach(request =>
 			{
@@ -151,7 +151,7 @@ namespace DotNetTips.Spargine
 		/// </summary>
 		/// <param name="requests">The requests.</param>
 		[Information(nameof(StartStopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void StartStopServices([NotNull] IEnumerable<ServiceAction> requests)
+		public static void StartStopServices([NotNull] IReadOnlyCollection<ServiceAction> requests)
 		{
 			requests.ToList().ForEach(request =>
 			{

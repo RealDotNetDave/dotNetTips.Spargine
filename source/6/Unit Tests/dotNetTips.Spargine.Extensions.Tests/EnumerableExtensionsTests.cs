@@ -126,8 +126,8 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			// Test Params
 			_ = Assert.ThrowsException<ArgumentNullException>(() => people.FastCount(null));
 
-			//Test Finding Days of over 100
-			Assert.IsTrue(people.FastCount(p => p.Age.TotalDays >= 1) > 0);
+			//Test Finding City names that contain 'A'.
+			Assert.IsNotNull(people.FastCount(p => p.City.Contains('A', StringComparison.CurrentCultureIgnoreCase)));
 		}
 
 		[TestMethod]

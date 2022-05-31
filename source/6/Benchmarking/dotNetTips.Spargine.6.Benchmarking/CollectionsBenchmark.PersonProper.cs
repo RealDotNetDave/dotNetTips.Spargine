@@ -71,7 +71,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>PersonProper[].</returns>
-		public PersonProper[] GetPersonProperArray(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public PersonProper[] GetPersonProperArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize == CollectionSize.Full
 				? clone is Tristate.True or Tristate.UseDefault ? this._personProperRefArray.Clone<PersonProper[]>() : this._personProperRefArray
@@ -84,7 +84,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Dictionary&lt;System.String, PersonProper&gt;.</returns>
-		public Dictionary<string, PersonProper> GetPersonProperDictionary(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public Dictionary<string, PersonProper> GetPersonProperDictionary(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? clone is Tristate.True or Tristate.UseDefault ? this._personProperDictionary.Clone<Dictionary<string, PersonProper>>() : this._personProperDictionary

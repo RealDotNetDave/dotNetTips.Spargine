@@ -77,7 +77,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Person[].</returns>
-		public Person[] GetPersonRefArray(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public Person[] GetPersonRefArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? clone is Tristate.True or Tristate.UseDefault ? this._personRefArray.Clone<Person[]>() : this._personRefArray
@@ -90,7 +90,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Tester.Models.ValueTypes.Person[].</returns>
-		public Tester.Models.ValueTypes.Person[] GetPersonValArray(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public Tester.Models.ValueTypes.Person[] GetPersonValArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			if (collectionSize is CollectionSize.Full)
 			{

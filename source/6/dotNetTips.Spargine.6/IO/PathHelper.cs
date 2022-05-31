@@ -176,7 +176,7 @@ namespace DotNetTips.Spargine.IO
 		/// <returns>IEnumerable&lt;System.Char&gt;.</returns>
 		/// <value>The invalid filter chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> InvalidFilterChars()
+		public static IReadOnlyList<char> InvalidFilterChars()
 		{
 			return _invalidFileNameChars;
 		}
@@ -187,7 +187,7 @@ namespace DotNetTips.Spargine.IO
 		/// <returns>IEnumerable&lt;System.Char&gt;.</returns>
 		/// <value>The invalid path name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> InvalidPathNameChars()
+		public static IReadOnlyList<char> InvalidPathNameChars()
 		{
 			return _invalidPathChars;
 		}
@@ -197,6 +197,6 @@ namespace DotNetTips.Spargine.IO
 		/// </summary>
 		/// <value>The path separators.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<char> PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
+		public static IReadOnlyList<char> PathSeparators => new[] { Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar };
 	}
 }

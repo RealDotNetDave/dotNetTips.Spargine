@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddFirst<T>([NotNull] this IList<T> list, [NotNull] in T item)
+		public static bool AddFirst<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
 			list = list.ArgumentNotReadOnly();
 
@@ -71,7 +71,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool AddLast<T>([NotNull] this IList<T> list, [NotNull] in T item)
+		public static bool AddLast<T>([NotNull] this IList<T> list, [NotNull] T item)
 		{
 			list = list.ArgumentNotReadOnly();
 
@@ -94,7 +94,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-		public static bool AreEqual<T>([NotNull] this IList<T> list, [NotNull] in IList<T> listToCheck)
+		public static bool AreEqual<T>([NotNull] this IList<T> list, [NotNull] IList<T> listToCheck)
 		{
 			if (list is null || listToCheck is null)
 			{
@@ -143,7 +143,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(CopyToCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static System.Collections.ObjectModel.Collection<T> CopyToCollection<T>([NotNull] this List<T> list)
 		{
-			return new System.Collections.ObjectModel.Collection<T>(list.ArgumentItemsExists());
+			if (list is null)
+			{
+				ExceptionThrower.ThrowArgumentNullException(nameof(list));
+			}
+
+			return new System.Collections.ObjectModel.Collection<T>(list);
 		}
 
 		/// <summary>
@@ -177,12 +182,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([NotNull] this List<T> list)
 		{
-			if (list.CheckIsNotNull() is false)
+			if (list is null)
 			{
 				return false;
 			}
 
-			return list.Any();
+			return list.LongCount() > 0;
 		}
 
 		/// <summary>
@@ -212,9 +217,16 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list, in int count)
+		public static bool HasItems<T>([NotNull] this List<T> list, int count)
 		{
-			return list.ArgumentItemsExists().FastCount() == count;
+			if (list is null)
+			{
+				return false;
+			}
+			else
+			{
+				return list.LongCount() == count;
+			}
 		}
 
 		/// <summary>
@@ -297,7 +309,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
 		/// to remove from memory.</remarks>
 		[Information(nameof(ToDistinctBlockingCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static DistinctBlockingCollection<T> ToDistinctBlockingCollection<T>([NotNull] this IList<T> list, in bool completeAdding = false)
+		public static DistinctBlockingCollection<T> ToDistinctBlockingCollection<T>([NotNull] this IList<T> list, bool completeAdding = false)
 		{
 			var result = new DistinctBlockingCollection<T>(list.ArgumentItemsExists());
 

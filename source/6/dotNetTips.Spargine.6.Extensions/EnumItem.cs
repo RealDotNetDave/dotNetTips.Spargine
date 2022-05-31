@@ -27,7 +27,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="description">The description.</param>
 		/// <param name="value">The value.</param>
-		public EnumItem(in string description, in T value)
+		public EnumItem(string description, T value)
 		{
 			this.Description = description;
 			this.Value = value;

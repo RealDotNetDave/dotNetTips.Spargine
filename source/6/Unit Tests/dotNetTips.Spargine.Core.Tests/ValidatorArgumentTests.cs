@@ -380,7 +380,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			try
 			{
-				var result = testValue.ArgumentInRange(0, int.MaxValue);
+				var result = testValue.ArgumentInRange(0, upper: int.MaxValue);
 			}
 			catch
 			{
@@ -388,7 +388,7 @@ namespace dotNetTips.Spartine.Core.Tests
 			}
 
 			// Test Exception
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.ArgumentInRange(0, 100));
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => testValue.ArgumentInRange(0, upper: 100));
 		}
 
 		[TestMethod]
@@ -399,7 +399,7 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			try
 			{
-				var result = testValue.ArgumentInRange(0, 500, defaultValue);
+				var result = testValue.ArgumentInRange(0, upper: 500, defaultValue: defaultValue);
 
 				Assert.AreEqual(result, defaultValue);
 			}

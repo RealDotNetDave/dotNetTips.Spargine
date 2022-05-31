@@ -55,7 +55,8 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>CoordinateProper[].</returns>
-		public CoordinateProper[] GetCoordinateProperArray(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public CoordinateProper[] GetCoordinateProperArray(
+			Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? clone is Tristate.True or Tristate.UseDefault ? this._coordinateProperArray.Clone<CoordinateProper[]>() : this._coordinateProperArray

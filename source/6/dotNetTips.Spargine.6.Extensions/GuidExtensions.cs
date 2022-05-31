@@ -30,7 +30,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The Guid value.</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToDigits), UnitTestCoverage = 0, Status = Status.Available)]
-		public static string ToDigits([NotNull] in this Guid input)
+		public static string ToDigits([NotNull] this Guid input)
 		{
 			if (input.CheckIsNotEmpty())
 			{

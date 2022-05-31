@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="socket">The socket.</param>
 		/// <param name="force">if set to <c>true</c> [force].</param>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static void ForceNonBlocking([NotNull] this Socket socket, in bool force)
+		public static void ForceNonBlocking([NotNull] this Socket socket, bool force)
 		{
 			if (socket.CheckIsNotNull())
 			{
@@ -67,7 +67,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, in int millisecondsTimeout)
+		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, int millisecondsTimeout)
 		{
 			socket = socket.ArgumentNotNull();
 			remoteEndpoint = remoteEndpoint.ArgumentNotNull();

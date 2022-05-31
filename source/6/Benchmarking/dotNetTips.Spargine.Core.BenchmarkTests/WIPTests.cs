@@ -124,7 +124,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 			ConsoleLogger.Default.WriteLine(result);
 		}
 
-		public static void InTest02(in Exception ex)
+		public static void InTest02(Exception ex)
 		{
 			var result = $"{ex.Message}";
 

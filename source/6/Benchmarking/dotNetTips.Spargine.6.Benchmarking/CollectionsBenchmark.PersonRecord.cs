@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>PersonProper[].</returns>
-		public PersonRecord[] GetPersonRecordArray(in Tristate clone = Tristate.True, in CollectionSize collectionSize = CollectionSize.Full)
+		public PersonRecord[] GetPersonRecordArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? clone is Tristate.True or Tristate.UseDefault ? this._personRecordArray.Clone<PersonRecord[]>() : this._personRecordArray

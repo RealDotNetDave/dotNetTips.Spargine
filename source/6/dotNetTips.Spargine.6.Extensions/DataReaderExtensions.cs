@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="separator">The separator.</param>
 		/// <returns>List&lt;System.String&gt;.</returns>
 		[Information(nameof(ToCsv), author: "David McCarter", createdOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static IList<string> ToCsv([NotNull] this IDataReader dataReader, in bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
+		public static IList<string> ToCsv([NotNull] this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
 		{
 			dataReader = dataReader.ArgumentNotNull();
 

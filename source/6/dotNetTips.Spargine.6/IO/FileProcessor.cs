@@ -192,7 +192,7 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="folders">The folders.</param>
 		/// <returns>System.Int32.</returns>
 		[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public int DeleteFolders([NotNull] IEnumerable<DirectoryInfo> folders)
+		public int DeleteFolders([NotNull] IReadOnlyCollection<DirectoryInfo> folders)
 		{
 			if (folders.HasItems() is false)
 			{

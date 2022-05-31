@@ -33,7 +33,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="transforms">The transforms.</param>
 		/// <returns>IQueryable&lt;T&gt;.</returns>
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IQueryable<T> If<T>([NotNull] this IQueryable<T> input, in bool should, [NotNull] params Func<IQueryable<T>, IQueryable<T>>[] transforms)
+		public static IQueryable<T> If<T>([NotNull] this IQueryable<T> input, bool should, [NotNull] params Func<IQueryable<T>, IQueryable<T>>[] transforms)
 		{
 			input = input.ArgumentNotNull();
 			transforms = transforms.ArgumentItemsExists();
@@ -50,7 +50,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="transforms">The transforms.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IEnumerable<T> If<T>([NotNull] this IEnumerable<T> input, in bool should, [NotNull] params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
+		public static IEnumerable<T> If<T>([NotNull] this IEnumerable<T> input, bool should, [NotNull] params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
 		{
 			input = input.ArgumentNotNull();
 			transforms = transforms.ArgumentItemsExists();

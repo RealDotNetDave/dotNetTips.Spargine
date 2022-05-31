@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="messageFromResource">The message from resource.</param>
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		private static string CreateExceptionMessage(in string message, in string messageFromResource)
+		private static string CreateExceptionMessage(string message, string messageFromResource)
 		{
 			return string.IsNullOrEmpty(message) ? messageFromResource : message;
 		}
@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsCondition), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsCondition<T>(this T input, bool condition, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsCondition<T>(this T input, bool condition, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input is not null && condition;
 
@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckEquals), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckEquals(this Type input, Type expectedType, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckEquals(this Type input, Type expectedType, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input is not null ) && ( expectedType != null ) && ( input == expectedType );
 
@@ -92,7 +92,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckExists(this DirectoryInfo input, in bool createDirectory = true, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckExists(this DirectoryInfo input, bool createDirectory = true, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input is not null && input.Exists;
 
@@ -119,7 +119,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckExists(this FileInfo input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckExists(this FileInfo input, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input is not null && input.Exists;
 
@@ -140,7 +140,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if the specified throw exception is defined; otherwise, <c>false</c>.</returns>
 		[Information(nameof(CheckIsDefined), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsDefined(this Enum input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsDefined(this Enum input, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input is not null && Enum.IsDefined(input.GetType(), input);
 
@@ -163,7 +163,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>DateTime.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in DateTime input, in DateTime lower, in DateTime upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this DateTime input, DateTime lower, DateTime upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -186,7 +186,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in TimeOnly input, in TimeOnly lower, in TimeOnly upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this TimeOnly input, TimeOnly lower, TimeOnly upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -209,7 +209,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in DateOnly input, in DateOnly lower, in DateOnly upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this DateOnly input, DateOnly lower, DateOnly upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -232,7 +232,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>System.Int32.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/3/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in int input, in int lower, in int upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this int input, int lower, int upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -255,7 +255,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in long input, in long lower, in long upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this long input, long lower, long upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -278,7 +278,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in double input, in double lower, in double upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this double input, double lower, double upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -301,7 +301,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in decimal input, in decimal lower, in decimal upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this decimal input, decimal lower, decimal upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -324,7 +324,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>DateTimeOffset.</returns>
 		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsInRange(this in DateTimeOffset input, in DateTimeOffset lower, in DateTimeOffset upper, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsInRange(this DateTimeOffset input, DateTimeOffset lower, DateTimeOffset upper, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = ( input >= lower ) && ( input <= upper );
 
@@ -346,7 +346,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if [is not empty] [the specified span]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(CheckIsNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsNotEmpty<T>(this in ReadOnlySpan<T> input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsNotEmpty<T>(this ReadOnlySpan<T> input, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input.IsEmpty is false;
 
@@ -367,7 +367,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsNotEmpty), "David McCarter", "2/2/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsNotEmpty(this in Guid input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckIsNotEmpty(this Guid input, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input.Equals(Guid.Empty) is false;
 
@@ -389,7 +389,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(CheckIsNotNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckIsNotNull<T>(this T input, in bool throwException = false, in string errorMessage = "") where T : class
+		public static bool CheckIsNotNull<T>(this T input, bool throwException = false, string errorMessage = "") where T : class
 		{
 			var isValid = input != null;
 
@@ -411,7 +411,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(CheckItemsExists), "David McCarter", "4/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool CheckItemsExists<T>(this IEnumerable<T> input, in bool throwException = false, in string errorMessage = "")
+		public static bool CheckItemsExists<T>(this IEnumerable<T> input, bool throwException = false, string errorMessage = "")
 		{
 			var isValid = input is not null && input.TryGetNonEnumeratedCount(out var collectionCount) && collectionCount > 0;
 

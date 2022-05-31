@@ -98,7 +98,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="hash">The hash.</param>
 		/// <returns>System.Byte[].</returns>
-		private static byte[] GetHash(in string input, in HashType hash)
+		private static byte[] GetHash(string input, HashType hash)
 		{
 			var inputBytes = Encoding.ASCII.GetBytes(input);
 
@@ -314,7 +314,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static string DefaultIfNull(this string value, in string defaultValue)
+		public static string DefaultIfNull(this string value, string defaultValue)
 		{
 			return value ?? defaultValue ?? string.Empty;
 		}
@@ -373,7 +373,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool EqualsOrBothNullOrEmpty(this string input, in string inputToCompare)
+		public static bool EqualsOrBothNullOrEmpty(this string input, string inputToCompare)
 		{
 			return string.Equals(input ?? string.Empty, inputToCompare ?? string.Empty, StringComparison.Ordinal);
 		}
@@ -496,7 +496,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="options">The options.</param>
 		/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool HasValue(this string input, string expression, in RegexOptions options)
+		public static bool HasValue(this string input, string expression, RegexOptions options)
 		{
 			return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 		}
@@ -551,7 +551,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">Input cannot be null or empty.</exception>
 		/// <exception cref="InvalidCastException">Length must be greater a positive value.</exception>
 		[Information(nameof(Indent), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string Indent([NotNull] this string input, in int length, in char indentationCharacter)
+		public static string Indent([NotNull] this string input, int length, char indentationCharacter)
 		{
 			var sb = new StringBuilder(input.ArgumentNotNullOrEmpty().Count());
 
@@ -580,7 +580,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsAsciiDigit(this in char character)
+		public static bool IsAsciiDigit(this char character)
 		{
 			return char.IsDigit(character);
 		}
@@ -592,7 +592,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsAsciiLetter(this in char character)
+		public static bool IsAsciiLetter(this char character)
 		{
 			return char.IsLetter(character);
 		}
@@ -604,7 +604,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsAsciiLetterOrDigit(this in char character)
+		public static bool IsAsciiLetterOrDigit(this char character)
 		{
 			return char.IsLetterOrDigit(character);
 		}
@@ -616,7 +616,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsAsciiWhitespace(this in char character)
+		public static bool IsAsciiWhitespace(this char character)
 		{
 			return char.IsWhiteSpace(character);
 		}
@@ -1002,7 +1002,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentOutOfRangeException">startIndex length must be less than or
 		/// equal to value.Length</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static string SubstringTrim(this string input, int startIndex, in int length)
+		public static string SubstringTrim(this string input, int startIndex, int length)
 		{
 			input = input.ArgumentNotNullOrEmpty();
 

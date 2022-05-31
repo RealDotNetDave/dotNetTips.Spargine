@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.String.</returns>
 		[ExcludeFromCodeCoverage]
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
-		public static string ToLowerCase(this in bool value)
+		public static string ToLowerCase(this bool value)
 		{
 			return value ? Resources.TrueLowerCase : Resources.FalseLowerCase;
 		}

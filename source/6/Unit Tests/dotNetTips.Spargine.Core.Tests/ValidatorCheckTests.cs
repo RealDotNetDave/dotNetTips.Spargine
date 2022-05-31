@@ -263,7 +263,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			DirectoryInfo nullDirectoryInfo = null;
 			_ = Assert.ThrowsException<NullReferenceException>(() => nullDirectoryInfo.CheckExists(true));
 
-			_ = Assert.ThrowsException<DotNetTips.Spargine.Core.DirectoryNotFoundException>(() => new DirectoryInfo("fakefile").CheckExists(true));
+			_ = Assert.ThrowsException<DotNetTips.Spargine.Core.DirectoryNotFoundException>(() => new DirectoryInfo("fakefile").CheckExists(throwException: true));
 		}
 
 		[TestMethod]

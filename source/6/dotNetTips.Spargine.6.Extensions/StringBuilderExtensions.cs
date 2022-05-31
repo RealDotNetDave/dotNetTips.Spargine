@@ -155,7 +155,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </code>
 		/// </example>
 		[Information("Original code from efcore-master on GitHub.", author: "David McCarter", createdOn: "7/1/2020", UnitTestCoverage = 100, Status = Status.Available)]
-		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] in IEnumerable<string> values)
+		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] IEnumerable<string> values)
 		{
 			sb = sb.ArgumentNotNull();
 

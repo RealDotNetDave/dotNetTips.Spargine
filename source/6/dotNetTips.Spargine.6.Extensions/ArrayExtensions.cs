@@ -79,7 +79,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>T[].</returns>
 		[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static T[] AddIf<T>([NotNull] this T[] array, [NotNull] T item, in bool condition)
+		public static T[] AddIf<T>([NotNull] this T[] array, [NotNull] T item, bool condition)
 		{
 			array = array.ArgumentNotNull();
 			item = item.ArgumentNotNull();
@@ -99,7 +99,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static T[] AddIfNotExists<T>([NotNull] this T[] array, [NotNull] params T[] items)
 		{
-			if (items.DoesNotHaveItems())
+			if (items is null || items.DoesNotHaveItems())
 			{
 				return array;
 			}
@@ -128,7 +128,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentReadOnlyException">item - Item cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static T[] AddLast<T>([NotNull] this T[] array, [NotNull] in T item)
+		public static T[] AddLast<T>([NotNull] this T[] array, [NotNull] T item)
 		{
 			if (item.IsNull())
 			{
@@ -283,7 +283,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="action">The action.</param>
 		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
-		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] in Action<T> action)
+		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
 		{
 			var collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();
 

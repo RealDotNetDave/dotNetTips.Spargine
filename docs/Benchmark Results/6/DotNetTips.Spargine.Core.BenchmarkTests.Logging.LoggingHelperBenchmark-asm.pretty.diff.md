@@ -1,2017 +1,2017 @@
-## DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark-20220513-170007
+## DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark-20220529-124903
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b29639a-159c-428c-8b27-41afd9b06940-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35572556-3247-4e5f-bddb-49daf7e9ac17-diff.temp
-index fa6c161..9420f42 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35572556-3247-4e5f-bddb-49daf7e9ac17-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b29639a-159c-428c-8b27-41afd9b06940-diff.temp
-```
-**Diff for LogEasyCriticalBenchmark method between:**
-.NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-.NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b5940b34-f046-4874-ac72-ee580b063eb0-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c88c4b57-c20f-4790-b45e-e54a52134151-diff.temp
-index fa6c161..3da1ae5 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c88c4b57-c20f-4790-b45e-e54a52134151-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b5940b34-f046-4874-ac72-ee580b063eb0-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85004ab9-dd5d-4af8-a5f4-db18253e92e6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d89fac9e-460f-4b8d-920c-85b67ad7bb5e-diff.temp
+index c8fdab4..746ed95 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d89fac9e-460f-4b8d-920c-85b67ad7bb5e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85004ab9-dd5d-4af8-a5f4-db18253e92e6-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c93a8de7-9e38-4941-a4c5-192f7a903704-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6ac46d9-a545-485b-a5e1-ab6af75cac22-diff.temp
-index fa6c161..da19c78 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6ac46d9-a545-485b-a5e1-ab6af75cac22-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c93a8de7-9e38-4941-a4c5-192f7a903704-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ae6cf07d-8141-4081-adde-4978d11f2a1e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2ff56097-9ce0-4268-a08f-b57f8e4fcf68-diff.temp
+index c8fdab4..a09b4f8 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2ff56097-9ce0-4268-a08f-b57f8e4fcf68-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ae6cf07d-8141-4081-adde-4978d11f2a1e-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/513bd916-355c-4ec1-a5d7-a703e0781aef-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e6d6181-e74c-4ce0-b7e7-b761b55f2dd2-diff.temp
-index fa6c161..9b6901b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e6d6181-e74c-4ce0-b7e7-b761b55f2dd2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/513bd916-355c-4ec1-a5d7-a703e0781aef-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7662f697-83c0-49b7-92e6-2f138fceb464-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/22f0b5e3-67c7-4c00-9e99-927fd1eb06e8-diff.temp
+index c8fdab4..fda7f29 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/22f0b5e3-67c7-4c00-9e99-927fd1eb06e8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7662f697-83c0-49b7-92e6-2f138fceb464-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b0607dd-abdb-458c-815f-4873b3c30dea-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6063e571-ea00-4bf1-8d14-d2e934c1221c-diff.temp
-index fa6c161..7a7f2cb 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6063e571-ea00-4bf1-8d14-d2e934c1221c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b0607dd-abdb-458c-815f-4873b3c30dea-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/002cf67a-2564-4641-ad9a-7dc2ab1d35ab-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1ec24e6-3c6d-45a5-9b4a-3d98d0b090b7-diff.temp
+index c8fdab4..14f8e97 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1ec24e6-3c6d-45a5-9b4a-3d98d0b090b7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/002cf67a-2564-4641-ad9a-7dc2ab1d35ab-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7032657-3563-4b9f-ae0b-c245bed68400-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f10e874c-3047-4520-be4b-3894e9df25b8-diff.temp
-index fa6c161..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f10e874c-3047-4520-be4b-3894e9df25b8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7032657-3563-4b9f-ae0b-c245bed68400-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85a2c7c7-a145-48cc-a33e-2111cfdd16ff-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d6d7e41b-3e97-4776-b01c-7c8113e84bc7-diff.temp
+index c8fdab4..7a7b863 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d6d7e41b-3e97-4776-b01c-7c8113e84bc7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85a2c7c7-a145-48cc-a33e-2111cfdd16ff-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9bb93bb1-b036-498b-8f83-83f01eb15ad1-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b973652-972b-4828-9b16-7eaa7570fd40-diff.temp
-index fa6c161..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b973652-972b-4828-9b16-7eaa7570fd40-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9bb93bb1-b036-498b-8f83-83f01eb15ad1-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e13254b-33f9-487d-8393-cbf21f2058a9-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0818a9cb-476b-4623-adf1-f468c4a94325-diff.temp
+index c8fdab4..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0818a9cb-476b-4623-adf1-f468c4a94325-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e13254b-33f9-487d-8393-cbf21f2058a9-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/34f55dce-8e22-4010-beee-e8e212e654cb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/26ef67fb-1ccb-44c7-af8e-8955b95d4326-diff.temp
-index 9420f42..3da1ae5 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/26ef67fb-1ccb-44c7-af8e-8955b95d4326-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/34f55dce-8e22-4010-beee-e8e212e654cb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94a22f76-b25b-4f36-85b3-3e3150a2f75d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd58ea64-9cc3-4673-b2c7-97991575c7e1-diff.temp
+index c8fdab4..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd58ea64-9cc3-4673-b2c7-97991575c7e1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94a22f76-b25b-4f36-85b3-3e3150a2f75d-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/54731a30-f318-4c85-b819-fa970782a038-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/512a3fb3-0e11-4609-92f0-61b270d9118d-diff.temp
-index 9420f42..da19c78 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/512a3fb3-0e11-4609-92f0-61b270d9118d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/54731a30-f318-4c85-b819-fa970782a038-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e684b2fd-f71b-4ceb-84a3-8aa87109cbd2-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9be53848-99e9-48da-aa25-3280742b7c9a-diff.temp
+index 746ed95..a09b4f8 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9be53848-99e9-48da-aa25-3280742b7c9a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e684b2fd-f71b-4ceb-84a3-8aa87109cbd2-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f423fd02-3490-4aa1-ad07-662d23981fe7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9f7602a-12de-4e64-b214-e2c6ec654f25-diff.temp
-index 9420f42..9b6901b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9f7602a-12de-4e64-b214-e2c6ec654f25-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f423fd02-3490-4aa1-ad07-662d23981fe7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d957c43-31a9-4816-9702-ec84ea0b0f43-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/395189c6-bf49-4f31-b14b-bee0ff085b69-diff.temp
+index 746ed95..fda7f29 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/395189c6-bf49-4f31-b14b-bee0ff085b69-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d957c43-31a9-4816-9702-ec84ea0b0f43-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7562c402-6e1d-4f4e-92a5-b27f91eb9b39-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6813310e-dab9-4f9f-99ae-4a2bf8fdb03e-diff.temp
-index 9420f42..7a7f2cb 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6813310e-dab9-4f9f-99ae-4a2bf8fdb03e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7562c402-6e1d-4f4e-92a5-b27f91eb9b39-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c719448-bd58-44da-b4c5-9f5b7f1d5ec4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bbfff53d-50ed-4850-9ba6-3b28b3fa3df3-diff.temp
+index 746ed95..14f8e97 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bbfff53d-50ed-4850-9ba6-3b28b3fa3df3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c719448-bd58-44da-b4c5-9f5b7f1d5ec4-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b94d3a0-1d87-42fd-a65b-7e5ff775836e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/648e68be-d74c-41b1-8aa3-13bcb96dd859-diff.temp
-index 9420f42..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/648e68be-d74c-41b1-8aa3-13bcb96dd859-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b94d3a0-1d87-42fd-a65b-7e5ff775836e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0f02b30d-d235-47a7-972a-24819bb79f57-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c129b04c-a3a9-4384-85f1-112177062a22-diff.temp
+index 746ed95..7a7b863 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c129b04c-a3a9-4384-85f1-112177062a22-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0f02b30d-d235-47a7-972a-24819bb79f57-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/64ab9d98-4a8e-4783-8998-d5ad4877f60b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/97a71657-b76f-44d6-9869-626765a48af3-diff.temp
-index 9420f42..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/97a71657-b76f-44d6-9869-626765a48af3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/64ab9d98-4a8e-4783-8998-d5ad4877f60b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a339c11-c6be-400f-b75e-8789377b0aed-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b19342a5-edc0-430e-aeca-9b9d9b216fa8-diff.temp
+index 746ed95..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b19342a5-edc0-430e-aeca-9b9d9b216fa8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a339c11-c6be-400f-b75e-8789377b0aed-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c671fd24-ddbc-4435-8e74-bd02f155dec4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/78a52538-8163-4e55-b0d9-97edb0ec9a83-diff.temp
-index 3da1ae5..da19c78 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/78a52538-8163-4e55-b0d9-97edb0ec9a83-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c671fd24-ddbc-4435-8e74-bd02f155dec4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a408de2d-379c-4887-9164-70d79c1c9172-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a9fc8607-c3a5-4560-9be0-e8e9a2bc02e0-diff.temp
+index 746ed95..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a9fc8607-c3a5-4560-9be0-e8e9a2bc02e0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a408de2d-379c-4887-9164-70d79c1c9172-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e89a201f-0029-4bad-bde4-c7cb7287af01-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ee39f9c5-b16c-41cd-bdc0-59cff4d47b0d-diff.temp
-index 3da1ae5..9b6901b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ee39f9c5-b16c-41cd-bdc0-59cff4d47b0d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e89a201f-0029-4bad-bde4-c7cb7287af01-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e3134abe-deb7-4b59-ad43-884c739b58c0-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b04e59ea-4674-4e4d-adc7-f967d229473c-diff.temp
+index a09b4f8..fda7f29 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b04e59ea-4674-4e4d-adc7-f967d229473c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e3134abe-deb7-4b59-ad43-884c739b58c0-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e9374d4b-725c-40ec-9540-6def3a5b0690-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1697b467-2c1f-41eb-989f-49ec154ff081-diff.temp
-index 3da1ae5..7a7f2cb 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1697b467-2c1f-41eb-989f-49ec154ff081-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e9374d4b-725c-40ec-9540-6def3a5b0690-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c8e372ac-9d59-42bf-8de1-2bae59cec902-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3595d9d-8e2e-4d8a-bfbd-7a39b43f7b06-diff.temp
+index a09b4f8..14f8e97 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3595d9d-8e2e-4d8a-bfbd-7a39b43f7b06-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c8e372ac-9d59-42bf-8de1-2bae59cec902-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7632d2bc-f724-422a-8912-7bbbd9496907-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a43b1c7-8702-475c-ae94-29362cbbf731-diff.temp
-index 3da1ae5..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a43b1c7-8702-475c-ae94-29362cbbf731-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7632d2bc-f724-422a-8912-7bbbd9496907-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2ae3fac6-e43d-4777-a6c2-0d05d456664f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cae13a47-c9fb-4036-848b-8427e169b154-diff.temp
+index a09b4f8..7a7b863 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cae13a47-c9fb-4036-848b-8427e169b154-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2ae3fac6-e43d-4777-a6c2-0d05d456664f-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9eb30b2-b99c-4565-b4cd-f84b728c1fe5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/167eb221-ab78-4cf3-81f4-c0d183981432-diff.temp
-index 3da1ae5..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/167eb221-ab78-4cf3-81f4-c0d183981432-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9eb30b2-b99c-4565-b4cd-f84b728c1fe5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c54c5580-6123-41be-96e8-f5f6d5139ab4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4e939e23-6f3a-4eaa-980e-44a011bb3f9f-diff.temp
+index a09b4f8..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4e939e23-6f3a-4eaa-980e-44a011bb3f9f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c54c5580-6123-41be-96e8-f5f6d5139ab4-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a09d0e66-5de1-40d5-9bef-d25da46d545e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0923b7dd-3a7f-4907-b1ea-e8160bc3ab68-diff.temp
-index da19c78..9b6901b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0923b7dd-3a7f-4907-b1ea-e8160bc3ab68-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a09d0e66-5de1-40d5-9bef-d25da46d545e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de0a1f19-5fa3-4230-a3ea-6fab33e99e4e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f71b9726-c509-4e2a-bbf0-006b0663055c-diff.temp
+index a09b4f8..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f71b9726-c509-4e2a-bbf0-006b0663055c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de0a1f19-5fa3-4230-a3ea-6fab33e99e4e-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b40f0832-6aa5-4a18-8839-b846a7eadfa9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dc83bf0-749d-4542-8c7f-2068922f38b2-diff.temp
-index da19c78..7a7f2cb 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dc83bf0-749d-4542-8c7f-2068922f38b2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b40f0832-6aa5-4a18-8839-b846a7eadfa9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/15640281-7894-4f6c-a139-de2202e7c81d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0dd121a9-b2cd-48a5-8ce0-544f12d67330-diff.temp
+index fda7f29..14f8e97 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0dd121a9-b2cd-48a5-8ce0-544f12d67330-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/15640281-7894-4f6c-a139-de2202e7c81d-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/05f0d116-eea7-4591-9dc2-489a2558135a-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139a3c13-6c72-4ec1-9db0-a830f416b44d-diff.temp
-index da19c78..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139a3c13-6c72-4ec1-9db0-a830f416b44d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/05f0d116-eea7-4591-9dc2-489a2558135a-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3039c754-7c84-446f-8cd2-9b692d8aaff8-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/593cd945-ca54-4726-a142-ca422f22252f-diff.temp
+index fda7f29..7a7b863 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/593cd945-ca54-4726-a142-ca422f22252f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3039c754-7c84-446f-8cd2-9b692d8aaff8-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/467f9477-e258-45b1-a61c-8a986768862d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/836b10eb-bb83-4e57-b287-616ffa161945-diff.temp
-index da19c78..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/836b10eb-bb83-4e57-b287-616ffa161945-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/467f9477-e258-45b1-a61c-8a986768862d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1c9f5fbf-69fa-4fc1-9a9a-392a38763f77-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c0758644-ec7b-4a5d-b0b7-5658ee9d87ca-diff.temp
+index fda7f29..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c0758644-ec7b-4a5d-b0b7-5658ee9d87ca-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1c9f5fbf-69fa-4fc1-9a9a-392a38763f77-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/264d0622-443e-4fcb-86ae-da8947aa2375-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eb95a279-babd-46d8-9382-c92dc9d909cc-diff.temp
-index 9b6901b..7a7f2cb 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eb95a279-babd-46d8-9382-c92dc9d909cc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/264d0622-443e-4fcb-86ae-da8947aa2375-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/68017eee-37b7-4776-9b70-db11b18547c4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b05c23aa-c6ed-4f90-85c0-f34c779e52e7-diff.temp
+index fda7f29..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b05c23aa-c6ed-4f90-85c0-f34c779e52e7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/68017eee-37b7-4776-9b70-db11b18547c4-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4666fec7-e7b9-4314-b178-c65c192d91f7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2bc4ce32-159a-4ec3-a694-facff6650e96-diff.temp
-index 9b6901b..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2bc4ce32-159a-4ec3-a694-facff6650e96-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4666fec7-e7b9-4314-b178-c65c192d91f7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c87ea030-cfde-4ed6-88cc-5613965e8e4a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b03fb73e-231b-490a-b67c-b665d8b0c85c-diff.temp
+index 14f8e97..7a7b863 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b03fb73e-231b-490a-b67c-b665d8b0c85c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c87ea030-cfde-4ed6-88cc-5613965e8e4a-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d6006532-dcd0-4d64-8866-709c0b8fceed-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a5d2123-0796-459e-b04f-fdb74c0da91d-diff.temp
-index 9b6901b..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a5d2123-0796-459e-b04f-fdb74c0da91d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d6006532-dcd0-4d64-8866-709c0b8fceed-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9bcc6efc-18ff-41c2-92f4-3b3f1711644f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc445a7f-1066-49de-b0ab-2cecbd68cab6-diff.temp
+index 14f8e97..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc445a7f-1066-49de-b0ab-2cecbd68cab6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9bcc6efc-18ff-41c2-92f4-3b3f1711644f-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e356d260-9dad-46c5-ad2d-ab0e33da7982-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4311ad85-504e-46a2-acab-44d4e8732d9b-diff.temp
-index 7a7f2cb..c2c9f77 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4311ad85-504e-46a2-acab-44d4e8732d9b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e356d260-9dad-46c5-ad2d-ab0e33da7982-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/17165c68-fef6-4bdb-b6bb-e216c0810a84-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a062e1-aea0-463f-bd40-0695dfd16ecd-diff.temp
+index 14f8e97..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a062e1-aea0-463f-bd40-0695dfd16ecd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/17165c68-fef6-4bdb-b6bb-e216c0810a84-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fbf39ea-12f0-40ae-996e-175ec9dd7bd2-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b2032a59-1af0-43f2-aa7a-e508630d3d9f-diff.temp
-index 7a7f2cb..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b2032a59-1af0-43f2-aa7a-e508630d3d9f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fbf39ea-12f0-40ae-996e-175ec9dd7bd2-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90e61cea-a237-486c-a3b0-fbb84f9c11c9-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c586f054-4dd9-4611-96fe-0dff877f522d-diff.temp
+index 7a7b863..219007d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c586f054-4dd9-4611-96fe-0dff877f522d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90e61cea-a237-486c-a3b0-fbb84f9c11c9-diff.temp
 ```
 **Diff for LogEasyCriticalBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/27ee2a42-4826-4d5c-a810-6bd7974bfa8e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/941347d8-d3a6-434f-bbfc-ff42f656c4e3-diff.temp
-index c2c9f77..4e83846 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/941347d8-d3a6-434f-bbfc-ff42f656c4e3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/27ee2a42-4826-4d5c-a810-6bd7974bfa8e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9079b38-1c8c-411a-8d71-831b1886685f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e99f27f-95f7-4fe4-ad1d-5d5f28dec851-diff.temp
+index 7a7b863..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e99f27f-95f7-4fe4-ad1d-5d5f28dec851-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9079b38-1c8c-411a-8d71-831b1886685f-diff.temp
+```
+**Diff for LogEasyCriticalBenchmark method between:**
+.NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+.NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+```diff
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6d2b0feb-b3c5-46ef-9693-243dce8b9c8d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e270938c-187d-4e5d-961d-c877d2e5278a-diff.temp
+index 219007d..5d5a37b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e270938c-187d-4e5d-961d-c877d2e5278a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6d2b0feb-b3c5-46ef-9693-243dce8b9c8d-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61d5eb91-e28e-4ac5-8331-192cd5ffd252-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/57e2c4b3-259d-4646-9ada-b2ad11bf6380-diff.temp
-index 0fdbcd8..2423d30 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/57e2c4b3-259d-4646-9ada-b2ad11bf6380-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61d5eb91-e28e-4ac5-8331-192cd5ffd252-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b51e7d8-8251-4b22-919c-f648ba0558a4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/49787eb2-5991-4234-a6d4-dff907b9d67c-diff.temp
+index 3578703..4d365d8 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/49787eb2-5991-4234-a6d4-dff907b9d67c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b51e7d8-8251-4b22-919c-f648ba0558a4-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4cd90e0-a982-4e79-b283-6c70dacc474c-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83fbb07e-a94b-4579-9528-c828ac5a156a-diff.temp
-index 0fdbcd8..f3018d9 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83fbb07e-a94b-4579-9528-c828ac5a156a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4cd90e0-a982-4e79-b283-6c70dacc474c-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6352ad7a-4322-4d4c-8730-778cf5a88e4b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14e4aeb0-5f64-48c6-94e1-9fa357cbd988-diff.temp
+index 3578703..d2bba99 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14e4aeb0-5f64-48c6-94e1-9fa357cbd988-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6352ad7a-4322-4d4c-8730-778cf5a88e4b-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d72329d-4927-4dbb-91ff-2dc65d2e93e2-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4789c157-7318-420b-b715-e4ecdb94a82d-diff.temp
-index 0fdbcd8..4678bb1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4789c157-7318-420b-b715-e4ecdb94a82d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d72329d-4927-4dbb-91ff-2dc65d2e93e2-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/625ee95a-def5-44be-863c-f3317468a2d3-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bba2cba7-62f8-4392-b44d-b9f3780a977b-diff.temp
+index 3578703..ef62d92 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bba2cba7-62f8-4392-b44d-b9f3780a977b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/625ee95a-def5-44be-863c-f3317468a2d3-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a74e85d0-33e7-4171-9574-c23c5a082267-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cf7cb982-e258-4cba-80f8-b2cd02e721af-diff.temp
-index 0fdbcd8..96e2978 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cf7cb982-e258-4cba-80f8-b2cd02e721af-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a74e85d0-33e7-4171-9574-c23c5a082267-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0f656d8f-5aee-4d67-a88b-4629915de797-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48e988ca-1da0-401c-aea4-cda22c42b8a6-diff.temp
+index 3578703..453b4ea 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48e988ca-1da0-401c-aea4-cda22c42b8a6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0f656d8f-5aee-4d67-a88b-4629915de797-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/751e2717-8895-4576-9486-7b7d00eeab41-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1413d045-62ac-4dc5-9ad9-538b58235149-diff.temp
-index 0fdbcd8..948f5be 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1413d045-62ac-4dc5-9ad9-538b58235149-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/751e2717-8895-4576-9486-7b7d00eeab41-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a4f84b6-93e7-46ac-8dc9-8787b2d6dd55-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58c546dc-46f4-450d-aad8-1788313834e0-diff.temp
+index 3578703..28b6d3b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58c546dc-46f4-450d-aad8-1788313834e0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a4f84b6-93e7-46ac-8dc9-8787b2d6dd55-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b4e1ac5-f57a-40d8-93c2-ae90e2a5f8a0-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0dd325bf-2a1b-4394-897c-03398dc89c0e-diff.temp
-index 0fdbcd8..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0dd325bf-2a1b-4394-897c-03398dc89c0e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b4e1ac5-f57a-40d8-93c2-ae90e2a5f8a0-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0fba8997-31ae-444a-9cde-5fadae3e9617-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bdf7d16e-c8f1-4203-bcc0-05917f2bbb57-diff.temp
+index 3578703..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bdf7d16e-c8f1-4203-bcc0-05917f2bbb57-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0fba8997-31ae-444a-9cde-5fadae3e9617-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc6a3c9b-5cb2-42ee-9eed-bca9c32a0bd6-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ed58072b-393e-4e25-868d-1f586c5ce33e-diff.temp
-index 0fdbcd8..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ed58072b-393e-4e25-868d-1f586c5ce33e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc6a3c9b-5cb2-42ee-9eed-bca9c32a0bd6-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d4132dfd-96f2-4281-a1fc-62cb2c80d7ed-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5d750ea-3f16-498c-b140-de22a185482c-diff.temp
+index 3578703..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5d750ea-3f16-498c-b140-de22a185482c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d4132dfd-96f2-4281-a1fc-62cb2c80d7ed-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7d1de41f-3adb-40b6-85f4-7caa88449147-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75b13ffd-6fac-4242-a91e-ed63a276642d-diff.temp
-index 2423d30..f3018d9 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75b13ffd-6fac-4242-a91e-ed63a276642d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7d1de41f-3adb-40b6-85f4-7caa88449147-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/70264506-c069-4f2e-8758-afa989fd5d8b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c5566a8-db0c-4e4e-b87b-9c2f379e6dbb-diff.temp
+index 4d365d8..d2bba99 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c5566a8-db0c-4e4e-b87b-9c2f379e6dbb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/70264506-c069-4f2e-8758-afa989fd5d8b-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a44479eb-0eef-491d-837e-f7e1bd91df2f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/787a3eaf-4024-4db1-afdd-f03d6ae5d0df-diff.temp
-index 2423d30..4678bb1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/787a3eaf-4024-4db1-afdd-f03d6ae5d0df-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a44479eb-0eef-491d-837e-f7e1bd91df2f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35f407ba-485d-4c4b-9555-6de5a54b0406-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b7fc496-2111-422e-9636-01fd438cd09e-diff.temp
+index 4d365d8..ef62d92 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b7fc496-2111-422e-9636-01fd438cd09e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35f407ba-485d-4c4b-9555-6de5a54b0406-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e94dc300-3d94-4cfa-b9b1-66adaa3a7f74-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e6b48d2f-07c5-49d5-b8f0-e8ef33ccc709-diff.temp
-index 2423d30..96e2978 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e6b48d2f-07c5-49d5-b8f0-e8ef33ccc709-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e94dc300-3d94-4cfa-b9b1-66adaa3a7f74-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bd109913-2972-4a8d-b9c7-e6875f3efd7d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f06a58ff-3c47-48cc-b6ca-7f105b496f81-diff.temp
+index 4d365d8..453b4ea 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f06a58ff-3c47-48cc-b6ca-7f105b496f81-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bd109913-2972-4a8d-b9c7-e6875f3efd7d-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7f3c95a2-26ae-4835-9482-5d9643f5641a-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/23e8003d-9724-4661-830c-a03b109e4a3e-diff.temp
-index 2423d30..948f5be 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/23e8003d-9724-4661-830c-a03b109e4a3e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7f3c95a2-26ae-4835-9482-5d9643f5641a-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0239ba73-819c-427f-970b-fbe64c0a3f2a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94c9830c-558d-459e-9859-e244480cfc8c-diff.temp
+index 4d365d8..28b6d3b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94c9830c-558d-459e-9859-e244480cfc8c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0239ba73-819c-427f-970b-fbe64c0a3f2a-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b57987d3-1ebf-47a3-a0c4-f2a4c8aa21d0-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/50d94871-f80f-47da-9e42-0577cae974af-diff.temp
-index 2423d30..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/50d94871-f80f-47da-9e42-0577cae974af-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b57987d3-1ebf-47a3-a0c4-f2a4c8aa21d0-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c124128-9699-4e1b-96cf-49eb79f24327-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67342254-af1c-49fe-810a-5ff9c1fa01be-diff.temp
+index 4d365d8..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67342254-af1c-49fe-810a-5ff9c1fa01be-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c124128-9699-4e1b-96cf-49eb79f24327-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7f6ad63d-a645-46e3-a4ae-bda4a1cefa89-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/da79dcb5-4406-40cc-b5f4-0b7f7ea20a8c-diff.temp
-index 2423d30..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/da79dcb5-4406-40cc-b5f4-0b7f7ea20a8c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7f6ad63d-a645-46e3-a4ae-bda4a1cefa89-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a53ac000-3f58-4608-8f25-4cadf1e26ada-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5aa94e8f-3be2-4f0c-9532-5480540e7243-diff.temp
+index 4d365d8..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5aa94e8f-3be2-4f0c-9532-5480540e7243-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a53ac000-3f58-4608-8f25-4cadf1e26ada-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a74ddef6-45f6-4aa5-aac4-d0d9b3a9accc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bec016a3-1ea0-43a7-9197-40eb0ceff4f2-diff.temp
-index f3018d9..4678bb1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bec016a3-1ea0-43a7-9197-40eb0ceff4f2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a74ddef6-45f6-4aa5-aac4-d0d9b3a9accc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/288cdb4b-ab5d-4352-a16f-564ddb4fd16d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e850cfd-5b3a-40bb-b320-7c0fa32b4d89-diff.temp
+index d2bba99..ef62d92 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e850cfd-5b3a-40bb-b320-7c0fa32b4d89-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/288cdb4b-ab5d-4352-a16f-564ddb4fd16d-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c023961-9025-49c5-bac9-c89830c54481-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67833b85-d9d0-43be-9c06-20e022b04514-diff.temp
-index f3018d9..96e2978 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67833b85-d9d0-43be-9c06-20e022b04514-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0c023961-9025-49c5-bac9-c89830c54481-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e7b3db77-3724-4407-8f15-4104cbdb786c-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e2a4edab-2cba-4102-a628-c385772039a3-diff.temp
+index d2bba99..453b4ea 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e2a4edab-2cba-4102-a628-c385772039a3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e7b3db77-3724-4407-8f15-4104cbdb786c-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99b3e01a-69eb-4fd7-9db2-de418b86fe94-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f1c2ecb-8339-4970-aded-e4931e0cc491-diff.temp
-index f3018d9..948f5be 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f1c2ecb-8339-4970-aded-e4931e0cc491-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99b3e01a-69eb-4fd7-9db2-de418b86fe94-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c7efd546-9a6f-4764-8107-06d15b89bf8a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85b8a52c-f653-4fe5-a664-f8b55f8be4a1-diff.temp
+index d2bba99..28b6d3b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85b8a52c-f653-4fe5-a664-f8b55f8be4a1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c7efd546-9a6f-4764-8107-06d15b89bf8a-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90372e44-301b-4831-9c5d-c0660107081c-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d06faa16-1f53-4ad4-a65b-3a937d4051c1-diff.temp
-index f3018d9..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d06faa16-1f53-4ad4-a65b-3a937d4051c1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90372e44-301b-4831-9c5d-c0660107081c-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/599bdb06-2a73-4a34-b1ca-4760f0aad931-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dbf2fcb7-4015-4acf-ae3f-d0cf65b391af-diff.temp
+index d2bba99..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dbf2fcb7-4015-4acf-ae3f-d0cf65b391af-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/599bdb06-2a73-4a34-b1ca-4760f0aad931-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f02774d-9900-41fe-996c-6adc32510451-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/03a6f35b-15ed-44cd-8df8-20e86d6f0942-diff.temp
-index f3018d9..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/03a6f35b-15ed-44cd-8df8-20e86d6f0942-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f02774d-9900-41fe-996c-6adc32510451-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6d439757-2ade-4c64-8873-aac64e3707af-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/53bc6c50-cd7a-46b2-af31-d94e78adc982-diff.temp
+index d2bba99..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/53bc6c50-cd7a-46b2-af31-d94e78adc982-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6d439757-2ade-4c64-8873-aac64e3707af-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fd2c995e-1433-4eff-9c64-3670a3a46c16-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fb7aea73-9191-434d-be5f-0cf45783b815-diff.temp
-index 4678bb1..96e2978 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fb7aea73-9191-434d-be5f-0cf45783b815-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fd2c995e-1433-4eff-9c64-3670a3a46c16-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4ef6dd47-f034-4347-bcb9-2918675a96b1-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25550e69-e473-4636-a390-777c63b7000b-diff.temp
+index ef62d92..453b4ea 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25550e69-e473-4636-a390-777c63b7000b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4ef6dd47-f034-4347-bcb9-2918675a96b1-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7e425dd2-2c43-4ba2-9a15-4ff40e7b124f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0b6de02-c043-4ad6-97d3-77183f6cef23-diff.temp
-index 4678bb1..948f5be 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0b6de02-c043-4ad6-97d3-77183f6cef23-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7e425dd2-2c43-4ba2-9a15-4ff40e7b124f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f038cb43-e4ba-46f1-b27a-8bbde3832371-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f988513f-f0aa-4356-b529-d105bbc7f7f4-diff.temp
+index ef62d92..28b6d3b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f988513f-f0aa-4356-b529-d105bbc7f7f4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f038cb43-e4ba-46f1-b27a-8bbde3832371-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eedd052b-f12f-48c9-bb1f-d16ae1cfe525-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf1712cf-5257-440c-95bf-24010fbd09a9-diff.temp
-index 4678bb1..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf1712cf-5257-440c-95bf-24010fbd09a9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eedd052b-f12f-48c9-bb1f-d16ae1cfe525-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a8803531-3e18-4a33-8c32-e277cc7c6c7f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd99ae6c-dfa1-47e1-8395-5ea35946745c-diff.temp
+index ef62d92..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd99ae6c-dfa1-47e1-8395-5ea35946745c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a8803531-3e18-4a33-8c32-e277cc7c6c7f-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/507ee072-027d-4a51-8844-db60ea5dab5b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bd46f266-cab0-4ea4-93ac-281624992656-diff.temp
-index 4678bb1..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bd46f266-cab0-4ea4-93ac-281624992656-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/507ee072-027d-4a51-8844-db60ea5dab5b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/29d37b16-d451-45f6-961d-64462b1a1de1-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6167d52e-dc05-4c03-8315-d47d55f958eb-diff.temp
+index ef62d92..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6167d52e-dc05-4c03-8315-d47d55f958eb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/29d37b16-d451-45f6-961d-64462b1a1de1-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a2a0c245-ee50-458e-993d-82c44ad6276e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5abe2723-10db-4de1-8d74-b551a6499d1b-diff.temp
-index 96e2978..948f5be 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5abe2723-10db-4de1-8d74-b551a6499d1b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a2a0c245-ee50-458e-993d-82c44ad6276e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dd62c79-70c2-4e42-bc40-149710ff6bd1-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8efe8d48-51cb-484b-81fc-b64829eae817-diff.temp
+index 453b4ea..28b6d3b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8efe8d48-51cb-484b-81fc-b64829eae817-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dd62c79-70c2-4e42-bc40-149710ff6bd1-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74fbcf39-22d2-4ca8-853d-fac66eb9fe11-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82d6601f-6387-4ade-b2d7-d22771d60a1c-diff.temp
-index 96e2978..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82d6601f-6387-4ade-b2d7-d22771d60a1c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74fbcf39-22d2-4ca8-853d-fac66eb9fe11-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2cea40b8-925d-4f4e-bf0d-99a5747bccdf-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6785719-4fb7-49af-92a0-8b680fc106bf-diff.temp
+index 453b4ea..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6785719-4fb7-49af-92a0-8b680fc106bf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2cea40b8-925d-4f4e-bf0d-99a5747bccdf-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0b0f955-8791-4875-8bd5-311325784b0b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c8a1e17-9fd6-441f-b05f-7f0d2b5f371d-diff.temp
-index 96e2978..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c8a1e17-9fd6-441f-b05f-7f0d2b5f371d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0b0f955-8791-4875-8bd5-311325784b0b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f48ca3a-7fb0-42d9-ae50-a31e8edc8d1c-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4099108d-9cff-4bad-a90c-e6e4848b220d-diff.temp
+index 453b4ea..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4099108d-9cff-4bad-a90c-e6e4848b220d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f48ca3a-7fb0-42d9-ae50-a31e8edc8d1c-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dc76f0ae-080a-4fb1-b00f-618db95b30eb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e35b105d-a1fb-4d2d-a4bc-a33ce79ddca8-diff.temp
-index 948f5be..128264b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e35b105d-a1fb-4d2d-a4bc-a33ce79ddca8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dc76f0ae-080a-4fb1-b00f-618db95b30eb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7dbc2ff3-3e8c-4872-89b5-d787c85900ee-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02ad00db-9397-4d3a-a1e0-6c70788b5a9d-diff.temp
+index 28b6d3b..ad7ab7c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02ad00db-9397-4d3a-a1e0-6c70788b5a9d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7dbc2ff3-3e8c-4872-89b5-d787c85900ee-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/12ae34d9-68e0-4bcd-92e6-bc2c00abaf2c-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5925d1b5-1bba-4bee-a7bb-9fb4eef5bec6-diff.temp
-index 948f5be..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5925d1b5-1bba-4bee-a7bb-9fb4eef5bec6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/12ae34d9-68e0-4bcd-92e6-bc2c00abaf2c-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/151b7081-60aa-4ae5-bc7c-3690e7e82a01-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f1919b4e-be03-40e1-9da9-04e6081df7f5-diff.temp
+index 28b6d3b..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f1919b4e-be03-40e1-9da9-04e6081df7f5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/151b7081-60aa-4ae5-bc7c-3690e7e82a01-diff.temp
 ```
 **Diff for LogEasyDebugBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e440bec-b179-4d4f-8912-0e023d342b19-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2136252-f4f5-4d3f-ad79-288f94aa1afd-diff.temp
-index 128264b..5507d82 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2136252-f4f5-4d3f-ad79-288f94aa1afd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9e440bec-b179-4d4f-8912-0e023d342b19-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1d71c308-6644-490b-b865-796fbccb22b9-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/39cf45e2-3668-4b00-b927-551b54a56e69-diff.temp
+index ad7ab7c..1efadc1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/39cf45e2-3668-4b00-b927-551b54a56e69-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1d71c308-6644-490b-b865-796fbccb22b9-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c84512b-e369-4419-bc36-0aecdf5b31c4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1424bc04-2188-4b2a-acf7-92a46bafd094-diff.temp
-index 1900a7d..0dd9fec 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1424bc04-2188-4b2a-acf7-92a46bafd094-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c84512b-e369-4419-bc36-0aecdf5b31c4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99f03bfc-7705-4de4-add6-8b47a286bf7d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b1ba9ab-aac6-4585-9181-4fbb8fbc78e5-diff.temp
+index 59fd386..ce6acf2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b1ba9ab-aac6-4585-9181-4fbb8fbc78e5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99f03bfc-7705-4de4-add6-8b47a286bf7d-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ecbe3e8-6304-42ca-95f7-c59cb402f055-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/894f2f88-ece3-4803-9c75-3b0123c77477-diff.temp
-index 1900a7d..f68c60c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/894f2f88-ece3-4803-9c75-3b0123c77477-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ecbe3e8-6304-42ca-95f7-c59cb402f055-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5ba1434-353a-465e-8615-964f007d7be0-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6c054cf6-6c4e-4556-b669-004534c39588-diff.temp
+index 59fd386..1b3df72 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6c054cf6-6c4e-4556-b669-004534c39588-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5ba1434-353a-465e-8615-964f007d7be0-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25dc8beb-0244-401b-b129-e66b5a612bb6-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fff06544-8f34-493f-9343-3328216d763d-diff.temp
-index 1900a7d..77b861a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fff06544-8f34-493f-9343-3328216d763d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25dc8beb-0244-401b-b129-e66b5a612bb6-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e205e400-938f-4f36-80a5-35ddf9614f5a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e248ca7-f11e-4fd1-ba9e-a3b6df9f6409-diff.temp
+index 59fd386..58b395c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e248ca7-f11e-4fd1-ba9e-a3b6df9f6409-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e205e400-938f-4f36-80a5-35ddf9614f5a-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cebb6d08-d50b-4f8a-8f21-ed51e31c1708-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85d96e1f-fff6-42c6-87f3-b7745955bccd-diff.temp
-index 1900a7d..89481f6 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85d96e1f-fff6-42c6-87f3-b7745955bccd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cebb6d08-d50b-4f8a-8f21-ed51e31c1708-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6631c966-7587-4c7d-a1fa-0fa0598fda06-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/092cce9d-7b66-4615-946d-cd99c10c8769-diff.temp
+index 59fd386..36dff9b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/092cce9d-7b66-4615-946d-cd99c10c8769-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6631c966-7587-4c7d-a1fa-0fa0598fda06-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e123c17-efce-4628-ba1e-3efc8929995b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3fbace51-e2fd-4e60-9e13-42818367cffe-diff.temp
-index 1900a7d..d795548 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3fbace51-e2fd-4e60-9e13-42818367cffe-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e123c17-efce-4628-ba1e-3efc8929995b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c072ac8f-902f-49d2-9c16-c8bf86061c18-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e5bae62-6146-4de2-97a6-2fb71604de47-diff.temp
+index 59fd386..50bd363 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e5bae62-6146-4de2-97a6-2fb71604de47-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c072ac8f-902f-49d2-9c16-c8bf86061c18-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/12b61270-7537-45a7-b498-8f6e0cdcf250-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6fbadfe5-d1a7-4b13-bb5c-4563ef04042f-diff.temp
-index 1900a7d..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6fbadfe5-d1a7-4b13-bb5c-4563ef04042f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/12b61270-7537-45a7-b498-8f6e0cdcf250-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/749202ac-4784-4a99-9a54-6c159ff3c5bf-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/110cbb2d-cf11-4c8d-a89e-e577dc35b832-diff.temp
+index 59fd386..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/110cbb2d-cf11-4c8d-a89e-e577dc35b832-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/749202ac-4784-4a99-9a54-6c159ff3c5bf-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e29e2c4d-eb98-45ea-9f5c-24462c0c47b9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3076241b-b46d-4e1b-8529-5fd6d3e54f7b-diff.temp
-index 1900a7d..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3076241b-b46d-4e1b-8529-5fd6d3e54f7b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e29e2c4d-eb98-45ea-9f5c-24462c0c47b9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eee100fd-cc70-4e6f-b750-ad3e55152c4d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d7e1393-b72e-40f4-817b-6181019fe696-diff.temp
+index 59fd386..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d7e1393-b72e-40f4-817b-6181019fe696-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eee100fd-cc70-4e6f-b750-ad3e55152c4d-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4231d257-8d11-42d4-be1b-33c6e53f39b4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6609b45c-2afc-453a-92c0-d4fcb38cc943-diff.temp
-index 0dd9fec..f68c60c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6609b45c-2afc-453a-92c0-d4fcb38cc943-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4231d257-8d11-42d4-be1b-33c6e53f39b4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/55c8d853-8000-49ad-8626-6c763ebc4910-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f96dc38-051f-40d9-8b1f-140e32d9dc35-diff.temp
+index ce6acf2..1b3df72 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f96dc38-051f-40d9-8b1f-140e32d9dc35-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/55c8d853-8000-49ad-8626-6c763ebc4910-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2d97e7c0-589e-46b5-b5a7-bb08ce61319d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e0956e6-966c-42fb-bff2-c50a36a1aae9-diff.temp
-index 0dd9fec..77b861a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e0956e6-966c-42fb-bff2-c50a36a1aae9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2d97e7c0-589e-46b5-b5a7-bb08ce61319d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b08426d6-a371-49cb-801c-e1926581c9df-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cb615e05-0774-4784-adf6-0024bac1cf6b-diff.temp
+index ce6acf2..58b395c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cb615e05-0774-4784-adf6-0024bac1cf6b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b08426d6-a371-49cb-801c-e1926581c9df-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b7c2ba0-ff9a-4bf0-aefa-904d04810540-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/972067a3-dbcc-4850-9a6b-7f22d53ac99c-diff.temp
-index 0dd9fec..89481f6 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/972067a3-dbcc-4850-9a6b-7f22d53ac99c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b7c2ba0-ff9a-4bf0-aefa-904d04810540-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eca7fcd0-6a8f-4957-849d-835694621989-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0a3f431c-f598-458c-8b5d-5d264cb93d38-diff.temp
+index ce6acf2..36dff9b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0a3f431c-f598-458c-8b5d-5d264cb93d38-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eca7fcd0-6a8f-4957-849d-835694621989-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bcf3a40-7901-490c-8e23-cfbc722c175b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/935522d1-d178-4f63-989a-e2983e8cfd1b-diff.temp
-index 0dd9fec..d795548 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/935522d1-d178-4f63-989a-e2983e8cfd1b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bcf3a40-7901-490c-8e23-cfbc722c175b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4cae4689-6190-42cc-9c79-c2dbdd831a2f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec717b83-9389-4a67-9485-19c8c393a061-diff.temp
+index ce6acf2..50bd363 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec717b83-9389-4a67-9485-19c8c393a061-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4cae4689-6190-42cc-9c79-c2dbdd831a2f-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5115787-7b84-4ecf-8088-0cafaaf59d4f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/20766420-de14-4af6-ab78-c55a1e9e63f1-diff.temp
-index 0dd9fec..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/20766420-de14-4af6-ab78-c55a1e9e63f1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5115787-7b84-4ecf-8088-0cafaaf59d4f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ca5d33e-703a-43ce-a8aa-6411c27823b6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f63802dc-43d0-461b-835a-505d17bc2a8c-diff.temp
+index ce6acf2..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f63802dc-43d0-461b-835a-505d17bc2a8c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ca5d33e-703a-43ce-a8aa-6411c27823b6-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b915cc7d-4bb1-4e38-aec8-1a79ef3404bc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6cb224c8-1c07-44e7-abd8-3c2de6aeca7b-diff.temp
-index 0dd9fec..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6cb224c8-1c07-44e7-abd8-3c2de6aeca7b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b915cc7d-4bb1-4e38-aec8-1a79ef3404bc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c442384a-add9-49b7-b58b-4e6627bc9853-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82ee7f52-927d-4a53-9e4b-abb8f93c2cc9-diff.temp
+index ce6acf2..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82ee7f52-927d-4a53-9e4b-abb8f93c2cc9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c442384a-add9-49b7-b58b-4e6627bc9853-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/720eedbe-38e4-46f3-9c4e-cc6cf0c01bf1-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d9240023-08d5-428f-9b60-1b9355b09a4b-diff.temp
-index f68c60c..77b861a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d9240023-08d5-428f-9b60-1b9355b09a4b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/720eedbe-38e4-46f3-9c4e-cc6cf0c01bf1-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fcc1a316-a648-41bf-bd13-c9627d672498-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/627d1710-05d5-486c-a9ac-31b86968f245-diff.temp
+index 1b3df72..58b395c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/627d1710-05d5-486c-a9ac-31b86968f245-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fcc1a316-a648-41bf-bd13-c9627d672498-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e92ed70-0aca-4308-8b9d-03ee79098418-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3a3ea8f3-4339-43e5-9ae6-06683d0845d1-diff.temp
-index f68c60c..89481f6 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3a3ea8f3-4339-43e5-9ae6-06683d0845d1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e92ed70-0aca-4308-8b9d-03ee79098418-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c257a9a-83c4-4e6b-80ab-88310be3c6cb-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c693ac96-921d-4e46-b93f-f5829c79688b-diff.temp
+index 1b3df72..36dff9b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c693ac96-921d-4e46-b93f-f5829c79688b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c257a9a-83c4-4e6b-80ab-88310be3c6cb-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/79e43e5f-5730-4764-b039-7dc2caa19e1b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a8b6640b-7ec4-43d3-9ef7-c53f9efc01aa-diff.temp
-index f68c60c..d795548 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a8b6640b-7ec4-43d3-9ef7-c53f9efc01aa-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/79e43e5f-5730-4764-b039-7dc2caa19e1b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/037ac90e-749e-45c7-a27f-979536843530-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b1e9a2f-be03-41fc-8c18-3ccdec7f369d-diff.temp
+index 1b3df72..50bd363 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b1e9a2f-be03-41fc-8c18-3ccdec7f369d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/037ac90e-749e-45c7-a27f-979536843530-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/39bee53e-20b7-4218-82a6-89df6079a1b5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/aca7a1ff-cb9f-4b3a-92c6-6c2d66aa70cb-diff.temp
-index f68c60c..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/aca7a1ff-cb9f-4b3a-92c6-6c2d66aa70cb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/39bee53e-20b7-4218-82a6-89df6079a1b5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61ba3d67-d56f-4e25-af30-4a306dfa4c18-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/62e05671-c0cf-41b4-9246-d71f66d5df5e-diff.temp
+index 1b3df72..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/62e05671-c0cf-41b4-9246-d71f66d5df5e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61ba3d67-d56f-4e25-af30-4a306dfa4c18-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d13ded9f-3b68-45c2-9c57-54b5f67efe50-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a589669-7c94-4887-a3db-2438642dc56f-diff.temp
-index f68c60c..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a589669-7c94-4887-a3db-2438642dc56f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d13ded9f-3b68-45c2-9c57-54b5f67efe50-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3317bf41-1c09-4a57-a7a3-5bf0a93d5b1b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dbd398be-c540-430b-a7d4-a39cf0dec478-diff.temp
+index 1b3df72..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dbd398be-c540-430b-a7d4-a39cf0dec478-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3317bf41-1c09-4a57-a7a3-5bf0a93d5b1b-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a26e2d5-fc46-4f3e-8b83-ee846986f48c-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b9e5aa1f-cbfd-450e-bf06-5277afe63682-diff.temp
-index 77b861a..89481f6 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b9e5aa1f-cbfd-450e-bf06-5277afe63682-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a26e2d5-fc46-4f3e-8b83-ee846986f48c-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c5b8393-328f-462e-b905-ceb9eb0ee7a2-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/289a1af9-7c12-4890-900c-95d492893113-diff.temp
+index 58b395c..36dff9b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/289a1af9-7c12-4890-900c-95d492893113-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c5b8393-328f-462e-b905-ceb9eb0ee7a2-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a06afe10-1724-4b58-a4c1-d522c480723d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9ac404ab-1eca-48c0-9a6c-ec8dd50ee328-diff.temp
-index 77b861a..d795548 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9ac404ab-1eca-48c0-9a6c-ec8dd50ee328-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a06afe10-1724-4b58-a4c1-d522c480723d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/efecb1f2-b1be-44c8-a6c0-0a234d9b84cd-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8156f706-eb4a-4354-a458-cd02a3117d8f-diff.temp
+index 58b395c..50bd363 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8156f706-eb4a-4354-a458-cd02a3117d8f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/efecb1f2-b1be-44c8-a6c0-0a234d9b84cd-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/56f85a9e-6838-488e-9903-b98a93d4270d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c7d3458-3890-4a04-b94a-072223d79299-diff.temp
-index 77b861a..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c7d3458-3890-4a04-b94a-072223d79299-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/56f85a9e-6838-488e-9903-b98a93d4270d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fdbc6795-ec20-4146-bf42-3f1b9a1e5595-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48f88f79-a279-44a5-99ee-e708aaf46e88-diff.temp
+index 58b395c..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48f88f79-a279-44a5-99ee-e708aaf46e88-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fdbc6795-ec20-4146-bf42-3f1b9a1e5595-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a4fd04a8-a76e-4d30-b071-59f0136fb511-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4e921334-a9f3-4d81-bfb8-4ea207eb3307-diff.temp
-index 77b861a..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4e921334-a9f3-4d81-bfb8-4ea207eb3307-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a4fd04a8-a76e-4d30-b071-59f0136fb511-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/804b9494-d7df-4781-9b96-8879b174f249-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d24acf72-597a-4a18-b418-20b2664dfa34-diff.temp
+index 58b395c..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d24acf72-597a-4a18-b418-20b2664dfa34-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/804b9494-d7df-4781-9b96-8879b174f249-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8e153ccb-dced-4115-9d3a-afff7b5c5a61-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b5ee8268-1b1b-441b-b569-240b4c3e2f65-diff.temp
-index 89481f6..d795548 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b5ee8268-1b1b-441b-b569-240b4c3e2f65-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8e153ccb-dced-4115-9d3a-afff7b5c5a61-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b3785b6b-ac7b-45dc-ba64-7bbe20e1ce35-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b8feec6a-7f10-437f-bbae-21c22f0e3f2b-diff.temp
+index 36dff9b..50bd363 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b8feec6a-7f10-437f-bbae-21c22f0e3f2b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b3785b6b-ac7b-45dc-ba64-7bbe20e1ce35-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b73d08d-b348-4b9f-92d3-6f0f36805f31-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/97972dda-9436-446d-89b5-d8aebb06b450-diff.temp
-index 89481f6..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/97972dda-9436-446d-89b5-d8aebb06b450-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b73d08d-b348-4b9f-92d3-6f0f36805f31-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9ef10a2-eb28-4ed4-bd1f-314e924bbe1a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96f104cb-ad00-4be7-86c9-f342eecc0821-diff.temp
+index 36dff9b..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96f104cb-ad00-4be7-86c9-f342eecc0821-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c9ef10a2-eb28-4ed4-bd1f-314e924bbe1a-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3b8800e-15c6-4cef-95fb-524577dbb6f7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4cd26b24-af22-489c-a480-7b29b7675374-diff.temp
-index 89481f6..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4cd26b24-af22-489c-a480-7b29b7675374-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3b8800e-15c6-4cef-95fb-524577dbb6f7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c3a45bf6-01b1-47d8-82c0-5b41c1685006-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/084b4ee2-aca5-4bc2-bebc-043a5a67beea-diff.temp
+index 36dff9b..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/084b4ee2-aca5-4bc2-bebc-043a5a67beea-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c3a45bf6-01b1-47d8-82c0-5b41c1685006-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e7fe3555-dffd-414d-8aeb-f25a3e092db9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bacccd33-c453-47b2-9f52-9291e9379ee3-diff.temp
-index d795548..1aae832 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bacccd33-c453-47b2-9f52-9291e9379ee3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e7fe3555-dffd-414d-8aeb-f25a3e092db9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fb033700-90fb-49ee-a3e4-891648e98a96-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e17bc62c-444e-4f97-b1bd-4eab629ab6cb-diff.temp
+index 50bd363..037db53 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e17bc62c-444e-4f97-b1bd-4eab629ab6cb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fb033700-90fb-49ee-a3e4-891648e98a96-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8341d84a-ff32-4e0a-9848-efada2047cd7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cf7374c9-5a88-45e1-8ff5-990e8462a736-diff.temp
-index d795548..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cf7374c9-5a88-45e1-8ff5-990e8462a736-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8341d84a-ff32-4e0a-9848-efada2047cd7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90c830e3-22b1-4bb1-8b55-9555e5cbf41e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7def7f30-a784-4cfa-8fda-2e2a347d96db-diff.temp
+index 50bd363..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7def7f30-a784-4cfa-8fda-2e2a347d96db-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90c830e3-22b1-4bb1-8b55-9555e5cbf41e-diff.temp
 ```
 **Diff for LogEasyErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f8997a1-95fc-441d-8ea0-d18e68ff8518-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af6018c3-00f9-4133-9aa2-c9ac633034ba-diff.temp
-index 1aae832..b61fb85 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af6018c3-00f9-4133-9aa2-c9ac633034ba-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f8997a1-95fc-441d-8ea0-d18e68ff8518-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/46eea404-f06a-4004-a259-360aa394681d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cac5f8d1-fc86-4948-b4c4-6fba39d52d6c-diff.temp
+index 037db53..95f2917 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cac5f8d1-fc86-4948-b4c4-6fba39d52d6c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/46eea404-f06a-4004-a259-360aa394681d-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dab3d366-1a05-4f30-aeb3-428967aabc57-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de4a0604-2543-4768-a2ab-7681179a57d7-diff.temp
-index 13eddf2..44c2e0a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de4a0604-2543-4768-a2ab-7681179a57d7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dab3d366-1a05-4f30-aeb3-428967aabc57-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/93d3e81d-39e7-468d-beca-8f62842a8f22-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fd9dc2e-dbf8-4817-9dd5-9eff6aa49399-diff.temp
+index 2c7e714..a5a62fb 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fd9dc2e-dbf8-4817-9dd5-9eff6aa49399-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/93d3e81d-39e7-468d-beca-8f62842a8f22-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bbf127bb-46e5-45c4-8b7b-6153f5355336-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bb5f9e4d-37b9-4232-a197-2777c024d04e-diff.temp
-index 13eddf2..9b33dd7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bb5f9e4d-37b9-4232-a197-2777c024d04e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bbf127bb-46e5-45c4-8b7b-6153f5355336-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6e45572-da89-447f-962c-4f976424828a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a8aab95-a05f-4b81-ba81-26d3008fde25-diff.temp
+index 2c7e714..15c497d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a8aab95-a05f-4b81-ba81-26d3008fde25-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6e45572-da89-447f-962c-4f976424828a-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f663788-df01-4db4-bd93-59bbf1ce0ebc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b63dc878-1f49-44b1-80eb-84a0f53828bc-diff.temp
-index 13eddf2..215bf46 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b63dc878-1f49-44b1-80eb-84a0f53828bc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f663788-df01-4db4-bd93-59bbf1ce0ebc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f6e1191b-8cea-4a0d-9b58-cb89968b0a96-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6bf3b243-7267-4e0c-b040-411f17873139-diff.temp
+index 2c7e714..38a4cd7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6bf3b243-7267-4e0c-b040-411f17873139-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f6e1191b-8cea-4a0d-9b58-cb89968b0a96-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2f2b1cb9-f3c4-4def-9674-0b58eaa76fa2-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58980302-b203-4772-bb83-10f6ec359dde-diff.temp
-index 13eddf2..6444ae3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58980302-b203-4772-bb83-10f6ec359dde-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2f2b1cb9-f3c4-4def-9674-0b58eaa76fa2-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0574db7-4259-4f31-8ac1-87ab7c896484-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bac2125-8e1d-48d6-956f-d59d3c84d3b8-diff.temp
+index 2c7e714..db106bf 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bac2125-8e1d-48d6-956f-d59d3c84d3b8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0574db7-4259-4f31-8ac1-87ab7c896484-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a2a5f75-4a76-492c-8360-5c1df133fddb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/22241e52-9f70-4567-8091-52f4cb920f0d-diff.temp
-index 13eddf2..9f54f6c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/22241e52-9f70-4567-8091-52f4cb920f0d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a2a5f75-4a76-492c-8360-5c1df133fddb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0c098fc-b13b-449a-b48c-201d06b3a84d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/44c75426-b8bd-46f0-a61a-a6384fa3e8d4-diff.temp
+index 2c7e714..4125497 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/44c75426-b8bd-46f0-a61a-a6384fa3e8d4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f0c098fc-b13b-449a-b48c-201d06b3a84d-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fdce249-1e4c-44c2-af9c-8354122dd999-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/21d40efc-0dc5-4dd3-b4a4-f6d98cd57694-diff.temp
-index 13eddf2..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/21d40efc-0dc5-4dd3-b4a4-f6d98cd57694-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5fdce249-1e4c-44c2-af9c-8354122dd999-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3445506-ac6c-4708-a41b-fed8a1f9f17d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0a1223f-ec40-47e1-9da2-4c8b86b7f14e-diff.temp
+index 2c7e714..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0a1223f-ec40-47e1-9da2-4c8b86b7f14e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3445506-ac6c-4708-a41b-fed8a1f9f17d-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/84fdf854-e33e-4ed7-87bf-05e48096c04e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35c3088c-e2b8-4829-a09d-b5b8dab06019-diff.temp
-index 13eddf2..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35c3088c-e2b8-4829-a09d-b5b8dab06019-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/84fdf854-e33e-4ed7-87bf-05e48096c04e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06510ccc-d664-4d68-aea0-bb04ae580fb5-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7e97879-bd25-41aa-90e9-7acc87b594c7-diff.temp
+index 2c7e714..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7e97879-bd25-41aa-90e9-7acc87b594c7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06510ccc-d664-4d68-aea0-bb04ae580fb5-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38077a7f-ed32-4104-993f-8cac1081aa7a-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a151a2-bee6-450e-bd2b-d7783422185a-diff.temp
-index 44c2e0a..9b33dd7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a151a2-bee6-450e-bd2b-d7783422185a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38077a7f-ed32-4104-993f-8cac1081aa7a-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ce0b038a-b28c-4672-876c-08e35b988949-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31302118-fd25-4a1f-8da3-43a3390bd33e-diff.temp
+index a5a62fb..15c497d 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31302118-fd25-4a1f-8da3-43a3390bd33e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ce0b038a-b28c-4672-876c-08e35b988949-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/47eedddb-c89e-4264-ac3d-ae9ec69b4ede-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/659d9dc2-fb65-444b-9e77-d2228a8475c6-diff.temp
-index 44c2e0a..215bf46 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/659d9dc2-fb65-444b-9e77-d2228a8475c6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/47eedddb-c89e-4264-ac3d-ae9ec69b4ede-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9922e1b3-1eb8-43a3-b69f-be4e6337eae3-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d28518d-50c8-4d39-8c05-d4cbb2871668-diff.temp
+index a5a62fb..38a4cd7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d28518d-50c8-4d39-8c05-d4cbb2871668-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9922e1b3-1eb8-43a3-b69f-be4e6337eae3-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f994e34b-9ecb-4bb0-9530-83d6a81d8bbe-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96026303-336f-4c23-9d53-48d23ef01e99-diff.temp
-index 44c2e0a..6444ae3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96026303-336f-4c23-9d53-48d23ef01e99-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f994e34b-9ecb-4bb0-9530-83d6a81d8bbe-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/668c1e7c-93c8-49ce-a940-7aea4e7b0f4b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a21b02d2-f80a-4760-b7ad-3cd225b6a140-diff.temp
+index a5a62fb..db106bf 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a21b02d2-f80a-4760-b7ad-3cd225b6a140-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/668c1e7c-93c8-49ce-a940-7aea4e7b0f4b-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2446ec0d-f8f8-496d-9144-68b1fb8493b5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a79dafec-9470-4ae1-8d16-ceb1837a41b1-diff.temp
-index 44c2e0a..9f54f6c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a79dafec-9470-4ae1-8d16-ceb1837a41b1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2446ec0d-f8f8-496d-9144-68b1fb8493b5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/24528817-d980-42e5-83af-26933072a014-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88c0ea17-9075-443d-a5c3-38f4b7a1ecb0-diff.temp
+index a5a62fb..4125497 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88c0ea17-9075-443d-a5c3-38f4b7a1ecb0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/24528817-d980-42e5-83af-26933072a014-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c0f0df5b-bd26-4537-bed6-ec89f5f80306-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ec638df-e985-4a06-a793-f558699d5183-diff.temp
-index 44c2e0a..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ec638df-e985-4a06-a793-f558699d5183-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c0f0df5b-bd26-4537-bed6-ec89f5f80306-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4556c882-d7bf-4fab-9fd7-9a34839c5cd8-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d04d0ab1-da4e-47fe-9a7f-6f72d49bf686-diff.temp
+index a5a62fb..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d04d0ab1-da4e-47fe-9a7f-6f72d49bf686-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4556c882-d7bf-4fab-9fd7-9a34839c5cd8-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3bfe6e34-aa61-4f15-b905-e79472b713d1-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc087d17-d7f1-410e-a541-87f02e88ba3a-diff.temp
-index 44c2e0a..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc087d17-d7f1-410e-a541-87f02e88ba3a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3bfe6e34-aa61-4f15-b905-e79472b713d1-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/26a2e67d-bead-4d50-a783-5ae2603381da-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/884aa357-8142-4f1d-9910-81e97c6975f4-diff.temp
+index a5a62fb..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/884aa357-8142-4f1d-9910-81e97c6975f4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/26a2e67d-bead-4d50-a783-5ae2603381da-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5609da9-bff4-4d36-b6c1-c1dc7e246c20-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3c5b98b7-ad54-4dad-99d3-739e772f2528-diff.temp
-index 9b33dd7..215bf46 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3c5b98b7-ad54-4dad-99d3-739e772f2528-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5609da9-bff4-4d36-b6c1-c1dc7e246c20-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dca2b5c-55c6-48a2-beae-46fc7e822236-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/46bfa43d-dc49-4cfc-bdac-be624ed74503-diff.temp
+index 15c497d..38a4cd7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/46bfa43d-dc49-4cfc-bdac-be624ed74503-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dca2b5c-55c6-48a2-beae-46fc7e822236-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e50c5b5-13ba-4aba-8b87-a87f4d7b874d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4dad8bd3-e085-4cf6-a8e9-8b7035a527b0-diff.temp
-index 9b33dd7..6444ae3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4dad8bd3-e085-4cf6-a8e9-8b7035a527b0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e50c5b5-13ba-4aba-8b87-a87f4d7b874d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/72ddd1d5-db66-4d69-8466-bdda83fe1408-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/87633d4c-f53d-4187-9e2a-07f372e6d5a0-diff.temp
+index 15c497d..db106bf 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/87633d4c-f53d-4187-9e2a-07f372e6d5a0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/72ddd1d5-db66-4d69-8466-bdda83fe1408-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/db840965-6e62-426f-b463-a0ff037a4419-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5067530-e1ef-47ba-9566-a63b2a713ce8-diff.temp
-index 9b33dd7..9f54f6c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5067530-e1ef-47ba-9566-a63b2a713ce8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/db840965-6e62-426f-b463-a0ff037a4419-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6522c1e2-85b5-4f3a-a960-a1b35649cb24-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4de9629c-8d64-4f2d-b8d9-5502e9051983-diff.temp
+index 15c497d..4125497 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4de9629c-8d64-4f2d-b8d9-5502e9051983-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6522c1e2-85b5-4f3a-a960-a1b35649cb24-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36be4659-bf0e-4a01-a74d-43ec44e75c73-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/696694c5-0470-4644-a56b-44c7d9d80cd5-diff.temp
-index 9b33dd7..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/696694c5-0470-4644-a56b-44c7d9d80cd5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36be4659-bf0e-4a01-a74d-43ec44e75c73-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90e765b9-8b05-499a-86df-bc1eb1da9315-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61855912-8334-427f-970d-d14a21a943e8-diff.temp
+index 15c497d..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61855912-8334-427f-970d-d14a21a943e8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/90e765b9-8b05-499a-86df-bc1eb1da9315-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a447b665-3546-498d-905f-71f4da8fc881-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/599d358f-0535-425c-ada9-07f368f4391c-diff.temp
-index 9b33dd7..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/599d358f-0535-425c-ada9-07f368f4391c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a447b665-3546-498d-905f-71f4da8fc881-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6156c622-b33f-4d26-892a-ba1ca26bcafc-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2225333b-2e0f-4fad-954f-e21c48a44e98-diff.temp
+index 15c497d..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2225333b-2e0f-4fad-954f-e21c48a44e98-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6156c622-b33f-4d26-892a-ba1ca26bcafc-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/803b69b1-0d8f-4967-8d62-b4c1d7c7b4b9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/979436cc-0055-4525-9051-ec88a07979a5-diff.temp
-index 215bf46..6444ae3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/979436cc-0055-4525-9051-ec88a07979a5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/803b69b1-0d8f-4967-8d62-b4c1d7c7b4b9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/42499ba3-0259-4ddd-8be5-a2e2a0ae8dfe-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1903e0da-c7f9-433b-ac39-c6d8b1574378-diff.temp
+index 38a4cd7..db106bf 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1903e0da-c7f9-433b-ac39-c6d8b1574378-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/42499ba3-0259-4ddd-8be5-a2e2a0ae8dfe-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e9eaceac-d19f-4063-afee-6a698308cf46-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f50f1422-e718-424b-a05e-702ef1b79d01-diff.temp
-index 215bf46..9f54f6c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f50f1422-e718-424b-a05e-702ef1b79d01-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e9eaceac-d19f-4063-afee-6a698308cf46-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/980bf72d-6059-4ee3-abca-8d40b7c95140-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5ff60f0-f31d-4f60-a691-b141ca0cb94a-diff.temp
+index 38a4cd7..4125497 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f5ff60f0-f31d-4f60-a691-b141ca0cb94a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/980bf72d-6059-4ee3-abca-8d40b7c95140-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f2a2dec-f816-4aa4-b080-12dcb571dc55-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2f3fbf7-b3d8-43f7-9a76-2d37fb7b938c-diff.temp
-index 215bf46..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2f3fbf7-b3d8-43f7-9a76-2d37fb7b938c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f2a2dec-f816-4aa4-b080-12dcb571dc55-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7bde4097-91a3-4c0a-8def-eed7048b67c2-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139030b9-327b-4358-aae2-46ab80dd9300-diff.temp
+index 38a4cd7..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139030b9-327b-4358-aae2-46ab80dd9300-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7bde4097-91a3-4c0a-8def-eed7048b67c2-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/65780b42-a10e-4b95-b8fe-ea8a9d8732ef-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99fd5502-653e-4c4c-a43e-1385fb9895c4-diff.temp
-index 215bf46..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99fd5502-653e-4c4c-a43e-1385fb9895c4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/65780b42-a10e-4b95-b8fe-ea8a9d8732ef-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e17642eb-be01-483e-85d8-66fc80535691-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/318b9f28-2652-4bcd-a780-69738d232ab4-diff.temp
+index 38a4cd7..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/318b9f28-2652-4bcd-a780-69738d232ab4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e17642eb-be01-483e-85d8-66fc80535691-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/982a6bab-4576-4e4b-8dea-8d75bb3b55c9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/11541200-19e1-462c-9dad-1456857c28ae-diff.temp
-index 6444ae3..9f54f6c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/11541200-19e1-462c-9dad-1456857c28ae-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/982a6bab-4576-4e4b-8dea-8d75bb3b55c9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c06ad66-35c5-482e-bd2d-e88e77ceb271-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8adc4c41-2fe1-4a8a-ae86-b8c585f04ecf-diff.temp
+index db106bf..4125497 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8adc4c41-2fe1-4a8a-ae86-b8c585f04ecf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8c06ad66-35c5-482e-bd2d-e88e77ceb271-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28516ef0-f0d8-49cc-9ea3-89f38bce5091-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6fdc22a5-25b1-4303-8d8e-1e453474f41f-diff.temp
-index 6444ae3..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6fdc22a5-25b1-4303-8d8e-1e453474f41f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28516ef0-f0d8-49cc-9ea3-89f38bce5091-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/978dca19-752a-4783-a6c8-d9979a450b2c-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c65c1e8-4b86-4042-83a7-a99690be8f58-diff.temp
+index db106bf..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c65c1e8-4b86-4042-83a7-a99690be8f58-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/978dca19-752a-4783-a6c8-d9979a450b2c-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad218aa3-d1ea-47ef-9799-78702f410fa9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/86f64191-f340-4dfe-96e6-ba8a995be42f-diff.temp
-index 6444ae3..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/86f64191-f340-4dfe-96e6-ba8a995be42f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad218aa3-d1ea-47ef-9799-78702f410fa9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a8d7ffc-e9d0-4ec2-abb1-9cedc43bd84a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f5a5221-fbf0-4b06-b620-3f2357c1d846-diff.temp
+index db106bf..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f5a5221-fbf0-4b06-b620-3f2357c1d846-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a8d7ffc-e9d0-4ec2-abb1-9cedc43bd84a-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/114541ff-50a1-4913-8eea-cdcc6dd4640b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a1e43817-f2be-4d38-9e59-53d537d79cea-diff.temp
-index 9f54f6c..8eccc87 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a1e43817-f2be-4d38-9e59-53d537d79cea-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/114541ff-50a1-4913-8eea-cdcc6dd4640b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3413d5c7-3ff7-4379-95f1-4bb8d136577b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8bb69783-b2dd-4191-b488-241b01291500-diff.temp
+index 4125497..31278d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8bb69783-b2dd-4191-b488-241b01291500-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3413d5c7-3ff7-4379-95f1-4bb8d136577b-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6e79689-cb30-4874-9f63-29e57ef5723b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/69ceb885-337f-4b40-b204-2a7fff013a65-diff.temp
-index 9f54f6c..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/69ceb885-337f-4b40-b204-2a7fff013a65-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6e79689-cb30-4874-9f63-29e57ef5723b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f8069e0-9673-48b9-a939-e0957f258537-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/514c7636-f5bf-4e42-8cfd-d99bbed07a61-diff.temp
+index 4125497..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/514c7636-f5bf-4e42-8cfd-d99bbed07a61-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f8069e0-9673-48b9-a939-e0957f258537-diff.temp
 ```
 **Diff for LogEasyInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/89d35429-297b-46d2-8f29-0a026ba1e5bc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48139765-2a53-420e-9600-1ff6100185f0-diff.temp
-index 8eccc87..d961be1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48139765-2a53-420e-9600-1ff6100185f0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/89d35429-297b-46d2-8f29-0a026ba1e5bc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6542d705-6212-4511-bc21-23a60d1a8c6f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c726618-7f87-48b8-99ea-7f4dbc1e2c80-diff.temp
+index 31278d9..c78e288 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c726618-7f87-48b8-99ea-7f4dbc1e2c80-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6542d705-6212-4511-bc21-23a60d1a8c6f-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a03ecbb9-67d6-434a-a394-f4f4252f9f1f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a9e9d7a8-fc0f-4587-8905-cb811ae6585a-diff.temp
-index 393e5ab..f06443d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a9e9d7a8-fc0f-4587-8905-cb811ae6585a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a03ecbb9-67d6-434a-a394-f4f4252f9f1f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ff41410b-08a2-4cd5-807a-43819021aa38-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7bafbad-351b-4328-9103-8c87b2e81e77-diff.temp
+index 6f1d345..61fa818 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7bafbad-351b-4328-9103-8c87b2e81e77-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ff41410b-08a2-4cd5-807a-43819021aa38-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5809c678-dadd-4b40-9838-f34f4af72716-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a380f342-2889-423c-9fad-e34f4bce9942-diff.temp
-index 393e5ab..da7abfe 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a380f342-2889-423c-9fad-e34f4bce9942-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5809c678-dadd-4b40-9838-f34f4af72716-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e18dcb2a-9458-44af-ad46-e4cd5e50dcca-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fef8718f-9942-4a34-9acc-1443aa6407b8-diff.temp
+index 6f1d345..eac9aa1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fef8718f-9942-4a34-9acc-1443aa6407b8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e18dcb2a-9458-44af-ad46-e4cd5e50dcca-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/efdaf543-9614-4310-8a7b-6f40f4589982-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7966bdc1-2ca9-4925-9f69-ee12aeac6891-diff.temp
-index 393e5ab..6d0a86b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7966bdc1-2ca9-4925-9f69-ee12aeac6891-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/efdaf543-9614-4310-8a7b-6f40f4589982-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0980f050-e32c-4a61-a325-6bcbf7282eba-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9c169f3b-e47a-4ac7-9873-1e42fab7d166-diff.temp
+index 6f1d345..b6254d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9c169f3b-e47a-4ac7-9873-1e42fab7d166-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0980f050-e32c-4a61-a325-6bcbf7282eba-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e7c77cf-d7d9-49e5-b7c5-a9e0a8c62091-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/76e00a1a-a554-4809-bb2d-07ae76e94b90-diff.temp
-index 393e5ab..83c74d7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/76e00a1a-a554-4809-bb2d-07ae76e94b90-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e7c77cf-d7d9-49e5-b7c5-a9e0a8c62091-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9eac319b-9ca6-490f-a7c3-4fcc0a471bfe-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e61d995-2ef7-447d-b929-599209dea847-diff.temp
+index 6f1d345..1be0ad1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e61d995-2ef7-447d-b929-599209dea847-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9eac319b-9ca6-490f-a7c3-4fcc0a471bfe-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cb2aee74-b0d3-42bf-b159-5a9a4c127032-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c2f7638-d203-403f-b92a-9786ec3c392f-diff.temp
-index 393e5ab..a6c49a0 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c2f7638-d203-403f-b92a-9786ec3c392f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cb2aee74-b0d3-42bf-b159-5a9a4c127032-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d471ec61-8efe-4f89-92d3-3ad0cce51359-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/809a380f-6935-4d5b-a0cd-be6873de3184-diff.temp
+index 6f1d345..32887b2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/809a380f-6935-4d5b-a0cd-be6873de3184-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d471ec61-8efe-4f89-92d3-3ad0cce51359-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad852089-bbfe-4e9e-a840-d17842452b89-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8524a3ca-0c38-448e-bf03-fb4853e28cec-diff.temp
-index 393e5ab..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8524a3ca-0c38-448e-bf03-fb4853e28cec-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad852089-bbfe-4e9e-a840-d17842452b89-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/51db286a-3c01-4f48-a18f-76a9e67b18fa-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/17769d8b-3a3c-4ebd-a405-8c33ebb8496e-diff.temp
+index 6f1d345..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/17769d8b-3a3c-4ebd-a405-8c33ebb8496e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/51db286a-3c01-4f48-a18f-76a9e67b18fa-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4abb483a-d737-48f5-b448-02881d65e5a5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5a72d1f-e973-41f0-aa63-b240057291e6-diff.temp
-index 393e5ab..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5a72d1f-e973-41f0-aa63-b240057291e6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4abb483a-d737-48f5-b448-02881d65e5a5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a7cf78e-9d17-4675-bc41-5fadd0205570-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/832994dd-63f1-443d-87c1-8afb92d52c16-diff.temp
+index 6f1d345..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/832994dd-63f1-443d-87c1-8afb92d52c16-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a7cf78e-9d17-4675-bc41-5fadd0205570-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d05a2817-694b-4284-94ca-f53ff6b234dd-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1dd328ce-c776-4f39-bb60-90055a78aed9-diff.temp
-index f06443d..da7abfe 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1dd328ce-c776-4f39-bb60-90055a78aed9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d05a2817-694b-4284-94ca-f53ff6b234dd-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d59c24ce-472b-4828-8c11-c99d37a846fb-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d23d1c24-50b1-44c0-8311-4735843bfff8-diff.temp
+index 61fa818..eac9aa1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d23d1c24-50b1-44c0-8311-4735843bfff8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d59c24ce-472b-4828-8c11-c99d37a846fb-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a99efbbd-ab2b-45bd-8585-68389f7f1aed-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cacb611b-d02a-446d-b4ca-2783e9c90d5c-diff.temp
-index f06443d..6d0a86b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cacb611b-d02a-446d-b4ca-2783e9c90d5c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a99efbbd-ab2b-45bd-8585-68389f7f1aed-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eb89d33b-84f8-44af-af7a-46a883ba57d6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d5b7e2e9-3d29-49de-808f-f30914750139-diff.temp
+index 61fa818..b6254d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d5b7e2e9-3d29-49de-808f-f30914750139-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/eb89d33b-84f8-44af-af7a-46a883ba57d6-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dd8d0d2-9878-4249-bdd0-d709c45d4276-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ca28e71f-7ef0-4344-9657-d3c9f788ff9a-diff.temp
-index f06443d..83c74d7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ca28e71f-7ef0-4344-9657-d3c9f788ff9a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9dd8d0d2-9878-4249-bdd0-d709c45d4276-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec7d98c8-fc41-43bd-9265-8afa64b7eebe-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/56d86c1a-1fae-4f5c-be0d-6f4e1014d450-diff.temp
+index 61fa818..1be0ad1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/56d86c1a-1fae-4f5c-be0d-6f4e1014d450-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec7d98c8-fc41-43bd-9265-8afa64b7eebe-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8f64df35-b3af-4bfe-83d2-f36f20e0a1b4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1395d4f6-85fe-4a05-9e9c-b3a75d68e064-diff.temp
-index f06443d..a6c49a0 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1395d4f6-85fe-4a05-9e9c-b3a75d68e064-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8f64df35-b3af-4bfe-83d2-f36f20e0a1b4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1b264ef-a664-4647-a7c5-37266ff30aba-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bcb447b0-1ce4-46a4-b7e4-1c643af43c31-diff.temp
+index 61fa818..32887b2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bcb447b0-1ce4-46a4-b7e4-1c643af43c31-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1b264ef-a664-4647-a7c5-37266ff30aba-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36b4d514-5f06-489e-bf4a-5b986b6f140d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f572dc85-f1e6-4731-96a7-6d1db366fe83-diff.temp
-index f06443d..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f572dc85-f1e6-4731-96a7-6d1db366fe83-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36b4d514-5f06-489e-bf4a-5b986b6f140d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/92692c09-fef5-415b-adef-fe400b86ec4b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3e07ab67-f097-49ae-b549-a237e375c6fc-diff.temp
+index 61fa818..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3e07ab67-f097-49ae-b549-a237e375c6fc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/92692c09-fef5-415b-adef-fe400b86ec4b-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88fb72ff-e9d0-4a5a-9a34-ae19666f52ab-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ae5d6872-fae3-4a01-8ac5-d08db01d5fd7-diff.temp
-index f06443d..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ae5d6872-fae3-4a01-8ac5-d08db01d5fd7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88fb72ff-e9d0-4a5a-9a34-ae19666f52ab-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99cf0a07-4d6a-4571-9de3-3b5cd46ee4de-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/01f4e70d-064d-4ee0-95ba-deb397b5b710-diff.temp
+index 61fa818..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/01f4e70d-064d-4ee0-95ba-deb397b5b710-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99cf0a07-4d6a-4571-9de3-3b5cd46ee4de-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc795bae-d9ec-4db4-a035-fae7d0765253-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14b395d7-d5db-4a29-85db-32e31f84446d-diff.temp
-index da7abfe..6d0a86b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14b395d7-d5db-4a29-85db-32e31f84446d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc795bae-d9ec-4db4-a035-fae7d0765253-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b381c14-d652-4d95-a713-637f5cf3fb6e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f8210cd-4019-41b5-898f-81b2ce8c6dcd-diff.temp
+index eac9aa1..b6254d9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f8210cd-4019-41b5-898f-81b2ce8c6dcd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b381c14-d652-4d95-a713-637f5cf3fb6e-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bd5f677-fd65-43d6-816f-c87fc7c6fa96-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3810a199-b354-4c9e-8803-51ce41bb19cb-diff.temp
-index da7abfe..83c74d7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3810a199-b354-4c9e-8803-51ce41bb19cb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0bd5f677-fd65-43d6-816f-c87fc7c6fa96-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6877d07-8f0e-44e1-91af-a23a9fda8f2a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25f97aad-2b21-4584-a524-bc47159ce66f-diff.temp
+index eac9aa1..1be0ad1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25f97aad-2b21-4584-a524-bc47159ce66f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b6877d07-8f0e-44e1-91af-a23a9fda8f2a-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6ff8a503-c516-46f0-aaba-a8baec14cd1f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f59e0bdf-2a68-4f53-baac-452bef404953-diff.temp
-index da7abfe..a6c49a0 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f59e0bdf-2a68-4f53-baac-452bef404953-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6ff8a503-c516-46f0-aaba-a8baec14cd1f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e64ad68-7700-4403-a140-b3dafdffa4d3-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/53b73d3e-26e3-4897-9ad1-8dac1bd4c49f-diff.temp
+index eac9aa1..32887b2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/53b73d3e-26e3-4897-9ad1-8dac1bd4c49f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e64ad68-7700-4403-a140-b3dafdffa4d3-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bdcacad0-173b-4a9f-a433-fab82eb64582-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/793fe3c0-f5b7-4d7c-b2e5-7e100936696a-diff.temp
-index da7abfe..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/793fe3c0-f5b7-4d7c-b2e5-7e100936696a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bdcacad0-173b-4a9f-a433-fab82eb64582-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd1082c9-4d5a-4fde-b49d-19ccafbfa608-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d546f0e5-e1d6-47fd-bd6e-b138034b5d5b-diff.temp
+index eac9aa1..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d546f0e5-e1d6-47fd-bd6e-b138034b5d5b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd1082c9-4d5a-4fde-b49d-19ccafbfa608-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75099ba6-0443-452f-be6a-8b03197b3b54-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc505ecc-aab1-4f4c-88b0-9e162f798551-diff.temp
-index da7abfe..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cc505ecc-aab1-4f4c-88b0-9e162f798551-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75099ba6-0443-452f-be6a-8b03197b3b54-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06b6b791-88f7-41ab-8b6a-7e1cb2a53a5b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/522c775a-4d11-4746-8dd9-357b5cab98cd-diff.temp
+index eac9aa1..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/522c775a-4d11-4746-8dd9-357b5cab98cd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06b6b791-88f7-41ab-8b6a-7e1cb2a53a5b-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a997a85d-97b9-4016-bff5-74762bb74e15-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c3f1162-7371-478f-9f96-7329cb9214e4-diff.temp
-index 6d0a86b..83c74d7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c3f1162-7371-478f-9f96-7329cb9214e4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a997a85d-97b9-4016-bff5-74762bb74e15-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/27bb9722-5f7d-494e-a14c-57c674103fd6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/16849902-607a-4266-8411-90d5e6bf21ef-diff.temp
+index b6254d9..1be0ad1 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/16849902-607a-4266-8411-90d5e6bf21ef-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/27bb9722-5f7d-494e-a14c-57c674103fd6-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ddbb9e75-e6a3-460c-8166-03682b191ddf-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4ebe5d0b-d02e-4a43-8520-443f8bfd168a-diff.temp
-index 6d0a86b..a6c49a0 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4ebe5d0b-d02e-4a43-8520-443f8bfd168a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ddbb9e75-e6a3-460c-8166-03682b191ddf-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b1338ed-a69f-47ad-a359-0842a87f743e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e7b95c2-4a71-4d62-aaa9-d49abc672472-diff.temp
+index b6254d9..32887b2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e7b95c2-4a71-4d62-aaa9-d49abc672472-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b1338ed-a69f-47ad-a359-0842a87f743e-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0b2b594-30d2-432d-8448-aabe12b3d637-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/69440416-4e3d-42d3-a326-8b463a03f460-diff.temp
-index 6d0a86b..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/69440416-4e3d-42d3-a326-8b463a03f460-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0b2b594-30d2-432d-8448-aabe12b3d637-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/579d594f-0b27-470f-ac40-9508b2a1bcf4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6567e47b-61bd-495a-8b2a-999cbd027881-diff.temp
+index b6254d9..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6567e47b-61bd-495a-8b2a-999cbd027881-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/579d594f-0b27-470f-ac40-9508b2a1bcf4-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec3a2658-f134-4e7b-a523-c2a0a34b2995-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d470dd3f-4a56-437d-8b68-ca0a44a3a13a-diff.temp
-index 6d0a86b..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d470dd3f-4a56-437d-8b68-ca0a44a3a13a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec3a2658-f134-4e7b-a523-c2a0a34b2995-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e413dd18-b571-4749-8ee7-b30be5a4a5f6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7759f46e-7ff2-44ff-81c8-ce5d5a16f121-diff.temp
+index b6254d9..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7759f46e-7ff2-44ff-81c8-ce5d5a16f121-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e413dd18-b571-4749-8ee7-b30be5a4a5f6-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a3ebbc2-7b39-4927-980c-9a6a32dd5f24-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/855b3dcc-995d-40a8-acb3-86c8a1d76752-diff.temp
-index 83c74d7..a6c49a0 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/855b3dcc-995d-40a8-acb3-86c8a1d76752-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a3ebbc2-7b39-4927-980c-9a6a32dd5f24-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de3164c8-d200-4d20-b9e1-2a5e7ca5a479-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dc9ee953-62f3-4de9-9d21-2036c5f1960c-diff.temp
+index 1be0ad1..32887b2 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dc9ee953-62f3-4de9-9d21-2036c5f1960c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de3164c8-d200-4d20-b9e1-2a5e7ca5a479-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5db8400e-e099-4f44-9f7a-ff39ada40c51-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a0bd8d9-e72c-4fa8-849c-4f8ad027586a-diff.temp
-index 83c74d7..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a0bd8d9-e72c-4fa8-849c-4f8ad027586a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5db8400e-e099-4f44-9f7a-ff39ada40c51-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/47753d6e-7144-4a57-9861-8f2670b6c851-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6583c6c4-755f-46e9-8e59-3ad40ee90494-diff.temp
+index 1be0ad1..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6583c6c4-755f-46e9-8e59-3ad40ee90494-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/47753d6e-7144-4a57-9861-8f2670b6c851-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a50ed908-d43e-4563-86a2-64483ef68ade-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1d71f5bf-d288-469c-a86b-ee8177d8424f-diff.temp
-index 83c74d7..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1d71f5bf-d288-469c-a86b-ee8177d8424f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a50ed908-d43e-4563-86a2-64483ef68ade-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e84608e-f6a8-4cd5-b0a2-7fda31996eb6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/527abeac-39ae-4840-976e-1e53d9c46dff-diff.temp
+index 1be0ad1..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/527abeac-39ae-4840-976e-1e53d9c46dff-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6e84608e-f6a8-4cd5-b0a2-7fda31996eb6-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/86bcb2df-68bc-4cf6-9f78-23b970645390-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/667bba86-9d90-46f4-9c09-ff93639379c9-diff.temp
-index a6c49a0..c49f485 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/667bba86-9d90-46f4-9c09-ff93639379c9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/86bcb2df-68bc-4cf6-9f78-23b970645390-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b42f21ca-c7be-44f0-a869-9817b417a366-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b1c69ae-cfe1-4590-9693-338c3f41c81f-diff.temp
+index 32887b2..e0f7e2c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b1c69ae-cfe1-4590-9693-338c3f41c81f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b42f21ca-c7be-44f0-a869-9817b417a366-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b95adfa-2eb4-495d-9fdf-fc988678edaf-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec01d0c1-acef-4127-829a-b39a35748989-diff.temp
-index a6c49a0..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ec01d0c1-acef-4127-829a-b39a35748989-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b95adfa-2eb4-495d-9fdf-fc988678edaf-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06603776-aa1d-4cc8-ac07-44ff36563d14-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/df516e31-d9d1-4d4d-bbb6-1334748f1c4b-diff.temp
+index 32887b2..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/df516e31-d9d1-4d4d-bbb6-1334748f1c4b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06603776-aa1d-4cc8-ac07-44ff36563d14-diff.temp
 ```
 **Diff for LogEasyTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28ff5b91-f9cb-42c0-8ed5-781171e87ce2-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b65ccd77-2a2e-4f0d-8d35-04c11b5829be-diff.temp
-index c49f485..2b52814 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b65ccd77-2a2e-4f0d-8d35-04c11b5829be-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28ff5b91-f9cb-42c0-8ed5-781171e87ce2-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/03bb9e12-9c85-49b8-88af-eb65516ab6ca-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f51dc6a-1226-4a9c-bd9d-8aa49a90807a-diff.temp
+index e0f7e2c..7d474ff 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5f51dc6a-1226-4a9c-bd9d-8aa49a90807a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/03bb9e12-9c85-49b8-88af-eb65516ab6ca-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d441abc-0a74-45ef-a19a-30abf2bba5c9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a3aade5-960c-4963-8e3e-77c914e3bb61-diff.temp
-index f837478..b80307a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a3aade5-960c-4963-8e3e-77c914e3bb61-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d441abc-0a74-45ef-a19a-30abf2bba5c9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/839763ed-8847-4013-bcf7-2610976fd45f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02a78be3-6c81-498c-a293-4e6ba15b6e54-diff.temp
+index aef785d..59314e5 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02a78be3-6c81-498c-a293-4e6ba15b6e54-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/839763ed-8847-4013-bcf7-2610976fd45f-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8af97f73-484c-4efa-a1b3-ca22f8d66199-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e53a6769-5e14-465a-b30f-7750436a65bb-diff.temp
-index f837478..f07a67a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e53a6769-5e14-465a-b30f-7750436a65bb-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8af97f73-484c-4efa-a1b3-ca22f8d66199-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6b16f938-817f-41f1-a467-68f7effa94f4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/68679265-b659-4a63-815b-1145936ad6a3-diff.temp
+index aef785d..d376842 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/68679265-b659-4a63-815b-1145936ad6a3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6b16f938-817f-41f1-a467-68f7effa94f4-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14a9d0a3-7dbc-49ce-8fed-38ff73eb9482-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf88c384-b609-4095-b03b-e4d5c2e40e98-diff.temp
-index f837478..5f45307 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf88c384-b609-4095-b03b-e4d5c2e40e98-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14a9d0a3-7dbc-49ce-8fed-38ff73eb9482-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/142b4618-ed55-403e-ad4f-0a17ada83a0a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/561ed7df-ffdd-4ca3-9ede-bf6e0fd5a508-diff.temp
+index aef785d..5021b31 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/561ed7df-ffdd-4ca3-9ede-bf6e0fd5a508-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/142b4618-ed55-403e-ad4f-0a17ada83a0a-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/498c12a0-0dcb-4841-8fd4-15281abfc210-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4dab4c7-12b9-4ade-91aa-b18405bc687b-diff.temp
-index f837478..949d684 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4dab4c7-12b9-4ade-91aa-b18405bc687b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/498c12a0-0dcb-4841-8fd4-15281abfc210-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b5c0eaa-71b7-4903-9a56-df506ff28719-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6300983-9f99-4cfe-b8c1-a5759aec7647-diff.temp
+index aef785d..6d47bc9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6300983-9f99-4cfe-b8c1-a5759aec7647-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b5c0eaa-71b7-4903-9a56-df506ff28719-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fabff8cc-9332-4166-bdc9-63a2148c964f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/226ed89e-641e-4ba6-9258-8ad29e1b878e-diff.temp
-index f837478..5a61fd2 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/226ed89e-641e-4ba6-9258-8ad29e1b878e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fabff8cc-9332-4166-bdc9-63a2148c964f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3abb1c29-ef48-4a8b-8d3b-d6fe7f635370-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f157b0c0-4c7f-46fc-86da-2854dcc96b7b-diff.temp
+index aef785d..0eb6d0c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f157b0c0-4c7f-46fc-86da-2854dcc96b7b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3abb1c29-ef48-4a8b-8d3b-d6fe7f635370-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1462ca6e-57e8-4628-a077-2ff37a736a5a-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/468bc8a0-6965-4fc9-93ef-5ec5a2676be0-diff.temp
-index f837478..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/468bc8a0-6965-4fc9-93ef-5ec5a2676be0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1462ca6e-57e8-4628-a077-2ff37a736a5a-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/30d47b64-c0d3-40be-b766-3af5c5c7f4e0-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a56c35c3-3f9d-48a2-80c5-d19cbd3c8251-diff.temp
+index aef785d..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a56c35c3-3f9d-48a2-80c5-d19cbd3c8251-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/30d47b64-c0d3-40be-b766-3af5c5c7f4e0-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/73130023-4dfe-4f9e-be35-356686919779-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af0ba9fa-1464-4898-ab9e-c2f31da86c76-diff.temp
-index f837478..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af0ba9fa-1464-4898-ab9e-c2f31da86c76-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/73130023-4dfe-4f9e-be35-356686919779-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b7197eb-4ec5-4474-8339-6545816e1065-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a912e553-2919-464c-9ce7-e9514b333a24-diff.temp
+index aef785d..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a912e553-2919-464c-9ce7-e9514b333a24-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b7197eb-4ec5-4474-8339-6545816e1065-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2af0aa70-620a-4b99-bc28-66afae2f2846-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38dfde8c-f319-4fac-aa64-0582a9a8f9bf-diff.temp
-index b80307a..f07a67a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38dfde8c-f319-4fac-aa64-0582a9a8f9bf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2af0aa70-620a-4b99-bc28-66afae2f2846-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b77726df-81a5-4f02-ad85-d48460bb6934-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1ad8f86e-13be-4771-85da-fb4cff72a3ef-diff.temp
+index 59314e5..d376842 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1ad8f86e-13be-4771-85da-fb4cff72a3ef-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b77726df-81a5-4f02-ad85-d48460bb6934-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd6c597e-7ab0-4ecb-aea5-fa4fd2831661-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/10d723f0-a371-48a6-9443-6f4bcbe4a4fd-diff.temp
-index b80307a..5f45307 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/10d723f0-a371-48a6-9443-6f4bcbe4a4fd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd6c597e-7ab0-4ecb-aea5-fa4fd2831661-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e242a83f-dcb0-4b30-97d1-a324d8368a57-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3c6b6f51-7f96-4923-b64b-7aaf7291f258-diff.temp
+index 59314e5..5021b31 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3c6b6f51-7f96-4923-b64b-7aaf7291f258-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e242a83f-dcb0-4b30-97d1-a324d8368a57-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02c2a09f-5f51-4342-9e0f-871c43867adb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7369b557-5c50-4092-ad25-9c4b452b89e9-diff.temp
-index b80307a..949d684 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7369b557-5c50-4092-ad25-9c4b452b89e9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/02c2a09f-5f51-4342-9e0f-871c43867adb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f8558978-cda3-49e0-a730-375ca005ea9b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a334828e-f758-4b40-992d-5bbbc51aca91-diff.temp
+index 59314e5..6d47bc9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a334828e-f758-4b40-992d-5bbbc51aca91-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f8558978-cda3-49e0-a730-375ca005ea9b-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3414710b-8e42-466d-a180-d2da60252227-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/81f145d9-b152-4593-b76b-18d721be8518-diff.temp
-index b80307a..5a61fd2 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/81f145d9-b152-4593-b76b-18d721be8518-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3414710b-8e42-466d-a180-d2da60252227-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd6c6843-ac40-41de-901d-c47e896cc4a5-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3015e0c7-5ca2-4c0c-b032-124ba0925ad7-diff.temp
+index 59314e5..0eb6d0c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3015e0c7-5ca2-4c0c-b032-124ba0925ad7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd6c6843-ac40-41de-901d-c47e896cc4a5-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6aeebfe1-2af0-43cf-bfa3-5727ae5e66a9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/24df1a9c-9b3f-4c4b-81b1-492179397c65-diff.temp
-index b80307a..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/24df1a9c-9b3f-4c4b-81b1-492179397c65-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6aeebfe1-2af0-43cf-bfa3-5727ae5e66a9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a9b778-90b2-4de7-a132-348019f602e9-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4b821f2b-a9ad-435c-b498-af1f4478bf41-diff.temp
+index 59314e5..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4b821f2b-a9ad-435c-b498-af1f4478bf41-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/19a9b778-90b2-4de7-a132-348019f602e9-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/993fd8d7-9d2a-4531-a9bd-b5cc0d8369d3-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7c3e7ac0-7432-4a73-928d-f9d2b3789ea3-diff.temp
-index b80307a..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7c3e7ac0-7432-4a73-928d-f9d2b3789ea3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/993fd8d7-9d2a-4531-a9bd-b5cc0d8369d3-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/16a0d8b2-da98-462e-8498-54119cd864da-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/37da1433-c27b-4ee1-9593-c801d203fb02-diff.temp
+index 59314e5..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/37da1433-c27b-4ee1-9593-c801d203fb02-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/16a0d8b2-da98-462e-8498-54119cd864da-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dba18ea9-4d60-471c-b8a1-c09f328e3317-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/62f9a9f7-d9d8-4ba6-a5b1-6635961c749f-diff.temp
-index f07a67a..5f45307 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/62f9a9f7-d9d8-4ba6-a5b1-6635961c749f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dba18ea9-4d60-471c-b8a1-c09f328e3317-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5af67493-2272-4a86-894d-dfa50061d31e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7eab5909-9005-45f8-bbe9-534e8b61097b-diff.temp
+index d376842..5021b31 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7eab5909-9005-45f8-bbe9-534e8b61097b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5af67493-2272-4a86-894d-dfa50061d31e-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36367943-5912-49a6-9232-cce988b07eeb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2c136de-a162-4079-8161-aae5b64ee157-diff.temp
-index f07a67a..949d684 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2c136de-a162-4079-8161-aae5b64ee157-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/36367943-5912-49a6-9232-cce988b07eeb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31450b2c-b2dd-40e3-972e-464144326d82-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cbe911b2-42ea-4c46-baaa-825a0d953626-diff.temp
+index d376842..6d47bc9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cbe911b2-42ea-4c46-baaa-825a0d953626-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31450b2c-b2dd-40e3-972e-464144326d82-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/79fc15f9-807c-4b82-9a8d-510fa1a7bb52-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b71b8d3-fd7f-4fff-b190-bcfe616fd311-diff.temp
-index f07a67a..5a61fd2 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b71b8d3-fd7f-4fff-b190-bcfe616fd311-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/79fc15f9-807c-4b82-9a8d-510fa1a7bb52-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3cde8781-67cf-4601-8bf6-24bc8124a9b4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a58ce6b2-ee72-425b-8c15-f355ba6ceadd-diff.temp
+index d376842..0eb6d0c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a58ce6b2-ee72-425b-8c15-f355ba6ceadd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3cde8781-67cf-4601-8bf6-24bc8124a9b4-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0b6e940b-4d2e-4c3d-a8bf-ac723b56ec10-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af8a7429-872c-41ea-8805-c0bc480c9b6e-diff.temp
-index f07a67a..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af8a7429-872c-41ea-8805-c0bc480c9b6e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0b6e940b-4d2e-4c3d-a8bf-ac723b56ec10-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2d189cf2-9e4a-45d5-b11e-62dcf788c97e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d58f8fc-748f-4a5f-8e7b-4d6f00f4d647-diff.temp
+index d376842..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d58f8fc-748f-4a5f-8e7b-4d6f00f4d647-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2d189cf2-9e4a-45d5-b11e-62dcf788c97e-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/012a6cde-24ad-4059-9a34-6d2176843fbf-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e319160-e2c3-4162-9a7f-04a26a9e4a78-diff.temp
-index f07a67a..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1e319160-e2c3-4162-9a7f-04a26a9e4a78-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/012a6cde-24ad-4059-9a34-6d2176843fbf-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/33e57834-1272-4799-a5bf-358962356afc-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/21a176cd-d664-431c-9221-322ecd7b2316-diff.temp
+index d376842..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/21a176cd-d664-431c-9221-322ecd7b2316-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/33e57834-1272-4799-a5bf-358962356afc-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8450c3ef-ae04-47dd-8ab3-9ed431876875-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25c00f87-a059-4e30-a6f9-0c395c4790d3-diff.temp
-index 5f45307..949d684 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25c00f87-a059-4e30-a6f9-0c395c4790d3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8450c3ef-ae04-47dd-8ab3-9ed431876875-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad219126-dfe7-43df-aa02-09f2d6c4bc2a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99618b75-ae89-4e0d-97e0-e9f36e8663d6-diff.temp
+index 5021b31..6d47bc9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/99618b75-ae89-4e0d-97e0-e9f36e8663d6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ad219126-dfe7-43df-aa02-09f2d6c4bc2a-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0d06be4d-0120-4008-9485-4fd41f251b3b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4121891d-917e-4770-b471-b04659c73742-diff.temp
-index 5f45307..5a61fd2 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4121891d-917e-4770-b471-b04659c73742-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0d06be4d-0120-4008-9485-4fd41f251b3b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d0a1c8b9-1d7a-4fb0-97a8-7b3e66554669-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/546bd0be-ae2c-4f60-bc69-523d4352a6dc-diff.temp
+index 5021b31..0eb6d0c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/546bd0be-ae2c-4f60-bc69-523d4352a6dc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d0a1c8b9-1d7a-4fb0-97a8-7b3e66554669-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/add9eb30-d2f4-455f-8f87-1d55b884d9c2-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/edfcf7ec-a32d-4ec7-8836-90ad709bb525-diff.temp
-index 5f45307..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/edfcf7ec-a32d-4ec7-8836-90ad709bb525-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/add9eb30-d2f4-455f-8f87-1d55b884d9c2-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c336cfd-de16-4593-bfee-6d14f27e9a72-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/703c336b-7cfe-4b3b-bcba-94a3235c5a0b-diff.temp
+index 5021b31..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/703c336b-7cfe-4b3b-bcba-94a3235c5a0b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c336cfd-de16-4593-bfee-6d14f27e9a72-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48dc7050-b279-4272-9d9f-73dc2aaefa7e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/65267dea-f890-4204-b4df-58949b18b725-diff.temp
-index 5f45307..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/65267dea-f890-4204-b4df-58949b18b725-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/48dc7050-b279-4272-9d9f-73dc2aaefa7e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/121a96dc-12a3-430d-8731-f096e8033613-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85894c18-14e5-4f81-aec0-f4bfe8d43a4e-diff.temp
+index 5021b31..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85894c18-14e5-4f81-aec0-f4bfe8d43a4e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/121a96dc-12a3-430d-8731-f096e8033613-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5bebdd2a-9da0-43a9-b4c6-19e109d6efde-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/be0d1fc2-8a38-423b-83cd-05534e6351d7-diff.temp
-index 949d684..5a61fd2 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/be0d1fc2-8a38-423b-83cd-05534e6351d7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5bebdd2a-9da0-43a9-b4c6-19e109d6efde-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/44938c79-f77d-4e19-bcdb-fdb10e80dbdb-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9bf25ea-acc3-468e-b307-2d37e2745ffc-diff.temp
+index 6d47bc9..0eb6d0c 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9bf25ea-acc3-468e-b307-2d37e2745ffc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/44938c79-f77d-4e19-bcdb-fdb10e80dbdb-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94e4cd2e-97b6-406f-ae67-bff7ee963e45-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a0f31cb7-1a64-44e4-8f67-d113c2483ef3-diff.temp
-index 949d684..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a0f31cb7-1a64-44e4-8f67-d113c2483ef3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/94e4cd2e-97b6-406f-ae67-bff7ee963e45-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bffd0ae1-e459-4819-b257-66086b0b2aff-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/700bede7-b811-4fd9-97ab-8172cc23554c-diff.temp
+index 6d47bc9..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/700bede7-b811-4fd9-97ab-8172cc23554c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bffd0ae1-e459-4819-b257-66086b0b2aff-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f7061720-921d-4df9-8a2d-ece0830ed58e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af0eea56-4440-4480-87bd-a2e463327f83-diff.temp
-index 949d684..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af0eea56-4440-4480-87bd-a2e463327f83-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f7061720-921d-4df9-8a2d-ece0830ed58e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b55a8267-1485-4712-9c57-94a1c9717db1-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/536bc321-fac0-4ffa-a5ce-2a00df6bea90-diff.temp
+index 6d47bc9..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/536bc321-fac0-4ffa-a5ce-2a00df6bea90-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b55a8267-1485-4712-9c57-94a1c9717db1-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/13d999a2-649d-499e-aa13-78d13baa1767-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ed7e59cd-9d90-40c7-921c-02e3aa9d9c25-diff.temp
-index 5a61fd2..851594e 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ed7e59cd-9d90-40c7-921c-02e3aa9d9c25-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/13d999a2-649d-499e-aa13-78d13baa1767-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b4ae179-f1dc-4f52-b044-354a968b4208-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1a73339-4ff4-4446-be6d-01e00a0473dd-diff.temp
+index 0eb6d0c..c294139 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1a73339-4ff4-4446-be6d-01e00a0473dd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2b4ae179-f1dc-4f52-b044-354a968b4208-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6ec673e-8dd2-4f5d-bc5f-791dc1e4c478-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ebf48f27-cdbc-40d6-9e3e-0440fc6acbf0-diff.temp
-index 5a61fd2..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ebf48f27-cdbc-40d6-9e3e-0440fc6acbf0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6ec673e-8dd2-4f5d-bc5f-791dc1e4c478-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31e92dda-37c4-4177-a0f2-a5f1e71f3d35-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b47270e-525e-4ae5-944d-f419ed2fb968-diff.temp
+index 0eb6d0c..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9b47270e-525e-4ae5-944d-f419ed2fb968-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31e92dda-37c4-4177-a0f2-a5f1e71f3d35-diff.temp
 ```
 **Diff for LogErrorBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28ca7829-b656-405c-b9fe-3cd449e6698b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d4f45164-48d1-4781-8dde-d75886482923-diff.temp
-index 851594e..e09456d 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d4f45164-48d1-4781-8dde-d75886482923-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/28ca7829-b656-405c-b9fe-3cd449e6698b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b26f1d4d-8b3c-48bc-a775-7883ebd82420-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/912763ab-2685-4062-bd7f-5a8ae9c5833a-diff.temp
+index c294139..6c5945b 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/912763ab-2685-4062-bd7f-5a8ae9c5833a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b26f1d4d-8b3c-48bc-a775-7883ebd82420-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2faf4c76-d06b-4399-a23f-734727e6c01f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/00ce8614-39b3-4fbb-9827-72ad99cd19a6-diff.temp
-index f2c2446..5ae6f5f 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/00ce8614-39b3-4fbb-9827-72ad99cd19a6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2faf4c76-d06b-4399-a23f-734727e6c01f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e100e287-60ba-4bca-86d2-29bf37474f9d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/943a38e6-0dc4-4a41-9ab9-232495e0f74a-diff.temp
+index 53ac01e..8973969 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/943a38e6-0dc4-4a41-9ab9-232495e0f74a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e100e287-60ba-4bca-86d2-29bf37474f9d-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/890fe61f-8b8b-4df9-98d4-70a112dbcaf1-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3e36f4f-a3ac-435d-bc69-8c53bd3d7833-diff.temp
-index f2c2446..d36a17f 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d3e36f4f-a3ac-435d-bc69-8c53bd3d7833-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/890fe61f-8b8b-4df9-98d4-70a112dbcaf1-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1da66059-0b1f-422a-83a5-798a7eb544a7-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f511bf4-86dd-4dee-8f2c-78840bdddff5-diff.temp
+index 53ac01e..a3c0757 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f511bf4-86dd-4dee-8f2c-78840bdddff5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1da66059-0b1f-422a-83a5-798a7eb544a7-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5daca2fc-7a55-4f3e-868c-308e0750bbfc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c16167f9-6a84-45f6-b971-4004265068b1-diff.temp
-index f2c2446..9770fd3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c16167f9-6a84-45f6-b971-4004265068b1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5daca2fc-7a55-4f3e-868c-308e0750bbfc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1c516585-d7ef-4fe1-a8c3-ac8f4158bd6c-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/975fc085-bd23-476d-8760-c0f18347c2c1-diff.temp
+index 53ac01e..f30aaf7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/975fc085-bd23-476d-8760-c0f18347c2c1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1c516585-d7ef-4fe1-a8c3-ac8f4158bd6c-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74c22706-291d-4432-a146-b543575b0dba-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fce29458-fc50-4f9d-b5eb-331dab13460e-diff.temp
-index f2c2446..95d4873 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fce29458-fc50-4f9d-b5eb-331dab13460e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74c22706-291d-4432-a146-b543575b0dba-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9bcb01e-75bc-4ae8-a5a4-85f6e094968a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6b916f7e-5921-4da8-bcbd-b85658a768b0-diff.temp
+index 53ac01e..b26f2c9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6b916f7e-5921-4da8-bcbd-b85658a768b0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f9bcb01e-75bc-4ae8-a5a4-85f6e094968a-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b88c7834-6d34-4d8a-b1eb-e144e34a4f5d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2528405-92cd-4ca7-a39b-460e5bc75184-diff.temp
-index f2c2446..826995c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2528405-92cd-4ca7-a39b-460e5bc75184-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b88c7834-6d34-4d8a-b1eb-e144e34a4f5d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2b1862e-6816-4d2d-bdc6-cf91035d2da6-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61c5ff5f-bba8-4424-aef8-2d66dc7b25f5-diff.temp
+index 53ac01e..97289ee 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61c5ff5f-bba8-4424-aef8-2d66dc7b25f5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2b1862e-6816-4d2d-bdc6-cf91035d2da6-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74617922-e234-46a7-8f98-d8b5805020e4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dfed7ed0-3de6-459d-9f3d-e3f3fad26d26-diff.temp
-index f2c2446..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dfed7ed0-3de6-459d-9f3d-e3f3fad26d26-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/74617922-e234-46a7-8f98-d8b5805020e4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d73933a-6280-4bd5-9e17-6f683b7c79a4-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0af0cf75-7b62-4a55-a244-47e6854ee0e8-diff.temp
+index 53ac01e..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0af0cf75-7b62-4a55-a244-47e6854ee0e8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8d73933a-6280-4bd5-9e17-6f683b7c79a4-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c43ba33-6245-4546-8158-9a1fb8d35143-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/413b6a17-b802-4acc-9630-933d7994055e-diff.temp
-index f2c2446..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/413b6a17-b802-4acc-9630-933d7994055e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4c43ba33-6245-4546-8158-9a1fb8d35143-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0ca56dc-d363-47bb-80a7-9e6bb103a276-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f60599f0-8c6b-4b38-bd61-b70090330bcd-diff.temp
+index 53ac01e..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f60599f0-8c6b-4b38-bd61-b70090330bcd-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e0ca56dc-d363-47bb-80a7-9e6bb103a276-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/547cc2a9-93e0-4aec-8d95-37da2bf2d61f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a3f3ef79-4a00-4511-9dc7-df0da9da4c14-diff.temp
-index 5ae6f5f..d36a17f 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a3f3ef79-4a00-4511-9dc7-df0da9da4c14-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/547cc2a9-93e0-4aec-8d95-37da2bf2d61f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f4cfe82-9eb3-44ec-b697-c0d86b147c03-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7885054a-2a6e-40c8-935c-54f08727500d-diff.temp
+index 8973969..a3c0757 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7885054a-2a6e-40c8-935c-54f08727500d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6f4cfe82-9eb3-44ec-b697-c0d86b147c03-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/578c42da-03cd-4091-bbf5-06d34dc3b1e7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/229acba2-16d1-4dbb-89f3-ddb3f4d83e9c-diff.temp
-index 5ae6f5f..9770fd3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/229acba2-16d1-4dbb-89f3-ddb3f4d83e9c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/578c42da-03cd-4091-bbf5-06d34dc3b1e7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75253ed1-d808-4c25-9c67-548feb6e6b27-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c99ab17d-6c12-4247-bfbd-cd73a5e77908-diff.temp
+index 8973969..f30aaf7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c99ab17d-6c12-4247-bfbd-cd73a5e77908-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/75253ed1-d808-4c25-9c67-548feb6e6b27-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc575ad7-7d75-4de5-8653-db27f58d831b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ceb25cfa-3f04-45a6-83b7-c4e4ee8cc094-diff.temp
-index 5ae6f5f..95d4873 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ceb25cfa-3f04-45a6-83b7-c4e4ee8cc094-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc575ad7-7d75-4de5-8653-db27f58d831b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f14da0c9-e371-47e7-9d8a-64da31d57fa5-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82f06064-2aa4-46aa-80a8-3b143f49a3bc-diff.temp
+index 8973969..b26f2c9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/82f06064-2aa4-46aa-80a8-3b143f49a3bc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f14da0c9-e371-47e7-9d8a-64da31d57fa5-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9450d0dc-1fbe-4fb3-b52b-5bd1d86722db-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b4447bfe-180b-471f-bb3e-d50ac11e6f09-diff.temp
-index 5ae6f5f..826995c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b4447bfe-180b-471f-bb3e-d50ac11e6f09-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9450d0dc-1fbe-4fb3-b52b-5bd1d86722db-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3e3d62f2-f5e4-472a-9d8f-50bb0a9319b9-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1c6a573-f71d-4063-a38c-31509fb73363-diff.temp
+index 8973969..97289ee 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e1c6a573-f71d-4063-a38c-31509fb73363-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3e3d62f2-f5e4-472a-9d8f-50bb0a9319b9-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/902a499c-7b7e-424c-a1c0-e90bf3dc8725-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/50a31248-2ee2-4e1d-95c3-209b6187dd25-diff.temp
-index 5ae6f5f..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/50a31248-2ee2-4e1d-95c3-209b6187dd25-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/902a499c-7b7e-424c-a1c0-e90bf3dc8725-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ff53c5c-8e48-45c8-a252-f8fe543be079-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc728683-928d-4209-83f0-d3beee125b12-diff.temp
+index 8973969..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc728683-928d-4209-83f0-d3beee125b12-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ff53c5c-8e48-45c8-a252-f8fe543be079-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bea0eb18-7170-4e8e-b430-65a0239310f1-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139fd05f-a5f0-4b34-a9d1-0b969b3786fc-diff.temp
-index 5ae6f5f..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/139fd05f-a5f0-4b34-a9d1-0b969b3786fc-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bea0eb18-7170-4e8e-b430-65a0239310f1-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b4d0921-b7ff-40df-b369-02ca7a700a4e-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a9f024e-4a8e-4bc3-b93c-0b224e8310e5-diff.temp
+index 8973969..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9a9f024e-4a8e-4bc3-b93c-0b224e8310e5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b4d0921-b7ff-40df-b369-02ca7a700a4e-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fad8bbe4-ae15-4aa2-8c5f-916ef3e81791-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b11ebb15-50c0-4b65-9976-d9472f3b3ef2-diff.temp
-index d36a17f..9770fd3 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b11ebb15-50c0-4b65-9976-d9472f3b3ef2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fad8bbe4-ae15-4aa2-8c5f-916ef3e81791-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/faaa7fe6-23de-4908-a664-3c0c6a4e8156-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e3953c65-a503-423a-bd81-f40bca6e588d-diff.temp
+index a3c0757..f30aaf7 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e3953c65-a503-423a-bd81-f40bca6e588d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/faaa7fe6-23de-4908-a664-3c0c6a4e8156-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b78351cf-5a34-421a-8d30-a629dceff016-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c585569f-8dfc-4080-909d-8efd767c9590-diff.temp
-index d36a17f..95d4873 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c585569f-8dfc-4080-909d-8efd767c9590-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b78351cf-5a34-421a-8d30-a629dceff016-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cfc75113-6c99-484e-9b5d-23110252c62c-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5e9e0fcd-5e7b-4d21-bebf-86cdd9d3d887-diff.temp
+index a3c0757..b26f2c9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5e9e0fcd-5e7b-4d21-bebf-86cdd9d3d887-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cfc75113-6c99-484e-9b5d-23110252c62c-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f4cda7a4-ef3c-40b8-9fea-7defbf94cbc9-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a0f6ef4e-6452-4431-a771-965a39a5dc62-diff.temp
-index d36a17f..826995c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a0f6ef4e-6452-4431-a771-965a39a5dc62-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f4cda7a4-ef3c-40b8-9fea-7defbf94cbc9-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/664c8b4d-6c68-4688-bed5-df620a8f4752-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2408aa1-0d6a-4b2f-8155-35513f99aa41-diff.temp
+index a3c0757..97289ee 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f2408aa1-0d6a-4b2f-8155-35513f99aa41-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/664c8b4d-6c68-4688-bed5-df620a8f4752-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd79dfbf-8a21-4cb0-ac53-ec5e8ad7a871-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38c12fe2-ad0e-430f-92ca-fa0e53d500e8-diff.temp
-index d36a17f..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38c12fe2-ad0e-430f-92ca-fa0e53d500e8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/dd79dfbf-8a21-4cb0-ac53-ec5e8ad7a871-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/10451ff6-7d5d-47c5-91d6-b3785c5e3b90-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1760bfe2-3f1a-4fd4-9289-66c20a9ef864-diff.temp
+index a3c0757..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1760bfe2-3f1a-4fd4-9289-66c20a9ef864-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/10451ff6-7d5d-47c5-91d6-b3785c5e3b90-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38f3fcd4-6b6d-469c-ac2f-41cee800b72d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a7bab6a-432a-4f45-964d-7915858deb40-diff.temp
-index d36a17f..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5a7bab6a-432a-4f45-964d-7915858deb40-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38f3fcd4-6b6d-469c-ac2f-41cee800b72d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2217c5ef-5f7d-481d-8e05-f9a28d0f610a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/499fa591-eaf1-44a2-a8a9-536c60790274-diff.temp
+index a3c0757..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/499fa591-eaf1-44a2-a8a9-536c60790274-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2217c5ef-5f7d-481d-8e05-f9a28d0f610a-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6885376-e8e3-43a1-9ec0-5c30f359b09f-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7268fa8-c394-46f2-a25a-e0f2bf26a9bf-diff.temp
-index 9770fd3..95d4873 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b7268fa8-c394-46f2-a25a-e0f2bf26a9bf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6885376-e8e3-43a1-9ec0-5c30f359b09f-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8cb71250-f087-4ef8-8a9b-514573188883-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/828a8b8d-a7b6-4d38-ae8e-f0377edad03d-diff.temp
+index f30aaf7..b26f2c9 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/828a8b8d-a7b6-4d38-ae8e-f0377edad03d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8cb71250-f087-4ef8-8a9b-514573188883-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4b6a2951-a326-4757-b2ab-952caf1f5e87-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/acc535e2-4873-4426-99ab-0be42a5e9979-diff.temp
-index 9770fd3..826995c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/acc535e2-4873-4426-99ab-0be42a5e9979-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4b6a2951-a326-4757-b2ab-952caf1f5e87-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af8d6d20-f769-444f-9bb6-de93d4375b9d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/550a93f5-4972-49ff-ae6a-141a63d069a7-diff.temp
+index f30aaf7..97289ee 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/550a93f5-4972-49ff-ae6a-141a63d069a7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/af8d6d20-f769-444f-9bb6-de93d4375b9d-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ea591c14-9377-4d6f-a3fb-a40c1f00dc6d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a1c3197a-c64e-46ce-91ca-fe64863c8c7d-diff.temp
-index 9770fd3..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a1c3197a-c64e-46ce-91ca-fe64863c8c7d-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ea591c14-9377-4d6f-a3fb-a40c1f00dc6d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6d0ce1b-d278-4e4d-9253-36a254d193fd-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e6cf0e47-a3bc-4650-a080-19ba9b1599af-diff.temp
+index f30aaf7..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e6cf0e47-a3bc-4650-a080-19ba9b1599af-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a6d0ce1b-d278-4e4d-9253-36a254d193fd-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6227356f-13fa-46da-9003-2ee8243707d8-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fe87c0b2-7d7c-4d55-b841-5b5e1306afdf-diff.temp
-index 9770fd3..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fe87c0b2-7d7c-4d55-b841-5b5e1306afdf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6227356f-13fa-46da-9003-2ee8243707d8-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bffebc0e-3010-48bc-a9ff-f57d698c4e54-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58bf78d5-7b88-436b-9550-b508182e3e85-diff.temp
+index f30aaf7..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/58bf78d5-7b88-436b-9550-b508182e3e85-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bffebc0e-3010-48bc-a9ff-f57d698c4e54-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a771ced6-495c-4685-9f82-c3af8f72f0c4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6316550-e833-4fd6-b1b2-1c08bf3cd23b-diff.temp
-index 95d4873..826995c 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6316550-e833-4fd6-b1b2-1c08bf3cd23b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a771ced6-495c-4685-9f82-c3af8f72f0c4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1e5a6f0-74da-4b91-8493-9294b27093d0-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/05aee1d8-e6ab-433c-a1b1-40b4a01f7881-diff.temp
+index b26f2c9..97289ee 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/05aee1d8-e6ab-433c-a1b1-40b4a01f7881-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1e5a6f0-74da-4b91-8493-9294b27093d0-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6b723c1-32f4-4c83-8972-1dcc8ca5f979-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83bab87c-a43e-4d86-a447-1e1f654a8884-diff.temp
-index 95d4873..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83bab87c-a43e-4d86-a447-1e1f654a8884-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6b723c1-32f4-4c83-8972-1dcc8ca5f979-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/781855ae-f017-4f09-ad1a-7f33ae404a56-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d2d55fa4-5002-4c16-8148-5834ce3712f9-diff.temp
+index b26f2c9..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d2d55fa4-5002-4c16-8148-5834ce3712f9-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/781855ae-f017-4f09-ad1a-7f33ae404a56-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1a6ca39-cc00-4444-a9f5-66d581670003-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7c724c7d-0fa2-408f-88ef-6120d3d53dc0-diff.temp
-index 95d4873..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7c724c7d-0fa2-408f-88ef-6120d3d53dc0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d1a6ca39-cc00-4444-a9f5-66d581670003-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d959afe3-679f-4d69-a3b0-cd965c89b018-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5d77f1a-9220-416c-95be-0ae485eaa670-diff.temp
+index b26f2c9..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c5d77f1a-9220-416c-95be-0ae485eaa670-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d959afe3-679f-4d69-a3b0-cd965c89b018-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fbb1d41c-e0cf-4bc4-a26a-0e4657e57b95-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e27a91f3-b866-46f3-8dfb-9b4dfc0fec83-diff.temp
-index 826995c..c9fe342 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e27a91f3-b866-46f3-8dfb-9b4dfc0fec83-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fbb1d41c-e0cf-4bc4-a26a-0e4657e57b95-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/587f86ef-e670-4baa-9581-068d7c477604-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7ac69f2-73ce-49ba-a565-9bd110865c16-diff.temp
+index 97289ee..627f5be 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7ac69f2-73ce-49ba-a565-9bd110865c16-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/587f86ef-e670-4baa-9581-068d7c477604-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6c24b6d-bcd5-4909-8d90-99d938514dc4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0a6f0570-c5f0-4891-8407-57dc097dfcf6-diff.temp
-index 826995c..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0a6f0570-c5f0-4891-8407-57dc097dfcf6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c6c24b6d-bcd5-4909-8d90-99d938514dc4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a9c0098-3ecc-48c1-9a63-dd03d273e483-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e7438f5-b012-4749-86b4-1bbbd4a15216-diff.temp
+index 97289ee..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e7438f5-b012-4749-86b4-1bbbd4a15216-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8a9c0098-3ecc-48c1-9a63-dd03d273e483-diff.temp
 ```
 **Diff for LogInformationBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85124ae9-a112-4c8c-a9ca-91a9d97d5cbc-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/049dcf93-ba8b-4d6e-9949-fe9c07c84ef8-diff.temp
-index c9fe342..c800140 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/049dcf93-ba8b-4d6e-9949-fe9c07c84ef8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/85124ae9-a112-4c8c-a9ca-91a9d97d5cbc-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f8624355-9694-4826-8aa4-2f767f0f6a16-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d835b26c-a0b2-4fe5-805e-b6ab3c950785-diff.temp
+index 627f5be..69fe533 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d835b26c-a0b2-4fe5-805e-b6ab3c950785-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f8624355-9694-4826-8aa4-2f767f0f6a16-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f14956e3-052c-457e-94e3-037cd10a290e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0634e9a0-bee4-431e-a6ee-96fbd61dbe3c-diff.temp
-index a558982..c298b8b 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0634e9a0-bee4-431e-a6ee-96fbd61dbe3c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f14956e3-052c-457e-94e3-037cd10a290e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ee17f0d8-da66-4e89-bf12-b072e9bfd24d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf96b542-36ac-431a-abc7-85d01e6bfca3-diff.temp
+index 304758b..834e7ec 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bf96b542-36ac-431a-abc7-85d01e6bfca3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ee17f0d8-da66-4e89-bf12-b072e9bfd24d-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e8c02338-4614-433f-907f-2b524e348cd6-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a16d32bb-1e44-4c5e-b411-03fbf96c2cfe-diff.temp
-index a558982..2ff04a1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a16d32bb-1e44-4c5e-b411-03fbf96c2cfe-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/e8c02338-4614-433f-907f-2b524e348cd6-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b2b2c9e2-26f4-4c56-853d-b936c1906161-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/775ca43d-aa21-41a1-a829-d5278d98a796-diff.temp
+index 304758b..a4e518e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/775ca43d-aa21-41a1-a829-d5278d98a796-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b2b2c9e2-26f4-4c56-853d-b936c1906161-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d66b2ca-1871-41b0-b685-387bfb51d5e6-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61e0dfb0-e632-4568-a2ee-7365cb181ca3-diff.temp
-index a558982..1e9ff79 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61e0dfb0-e632-4568-a2ee-7365cb181ca3-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d66b2ca-1871-41b0-b685-387bfb51d5e6-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2449a933-e015-48e6-8e24-934b093f7d2a-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4daeb674-872d-433e-ab94-4ce9c6d2e515-diff.temp
+index 304758b..e4fad07 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4daeb674-872d-433e-ab94-4ce9c6d2e515-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2449a933-e015-48e6-8e24-934b093f7d2a-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fdfed253-7297-47c9-b13c-66081f95f5ee-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a268ca6d-47cc-4519-bfd4-46181bc4cd65-diff.temp
-index a558982..c4ede2a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a268ca6d-47cc-4519-bfd4-46181bc4cd65-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fdfed253-7297-47c9-b13c-66081f95f5ee-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7b69bab-eb92-4e8a-bb79-791c3a89517b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a041a26f-f00f-4ebd-bf0d-40b69c08252e-diff.temp
+index 304758b..c88ea8f 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a041a26f-f00f-4ebd-bf0d-40b69c08252e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d7b69bab-eb92-4e8a-bb79-791c3a89517b-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b4ae191-a020-46f1-8f24-b9a03f8360ea-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/868dfeb7-9681-4756-a5d6-87bcdd7f9a0b-diff.temp
-index a558982..4abaf00 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/868dfeb7-9681-4756-a5d6-87bcdd7f9a0b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b4ae191-a020-46f1-8f24-b9a03f8360ea-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a2d73e6d-6b63-4caf-a733-bc730fd2f29f-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd0420d2-aa04-4f61-8d87-9d08b3f0c7f6-diff.temp
+index 304758b..dba37d4 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cd0420d2-aa04-4f61-8d87-9d08b3f0c7f6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a2d73e6d-6b63-4caf-a733-bc730fd2f29f-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a4f42dd5-dd13-45a4-967a-69b4a145f3df-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d2f7933-40c3-4ae4-9a86-553ddb3fb21c-diff.temp
-index a558982..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d2f7933-40c3-4ae4-9a86-553ddb3fb21c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a4f42dd5-dd13-45a4-967a-69b4a145f3df-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/faa5cd0f-e54c-49d0-8c83-fbecd6720502-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b8d54d8f-5b43-417b-a06a-c231626c4324-diff.temp
+index 304758b..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b8d54d8f-5b43-417b-a06a-c231626c4324-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/faa5cd0f-e54c-49d0-8c83-fbecd6720502-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fde3cc05-1713-4633-80c4-fb79d25f69d5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d2e12f8-779d-4ac2-a68c-354df4e1a4d0-diff.temp
-index a558982..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9d2e12f8-779d-4ac2-a68c-354df4e1a4d0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fde3cc05-1713-4633-80c4-fb79d25f69d5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9ba02a5b-e4a3-437d-9adc-c95986b6daa7-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/041407c5-9bcc-419c-9286-7ca6168187e7-diff.temp
+index 304758b..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/041407c5-9bcc-419c-9286-7ca6168187e7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9ba02a5b-e4a3-437d-9adc-c95986b6daa7-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/865fe848-1fa6-4d9c-a34d-dad94e3e1c70-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7db280f4-f439-4965-b56f-8c8b10a9d714-diff.temp
-index c298b8b..2ff04a1 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7db280f4-f439-4965-b56f-8c8b10a9d714-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/865fe848-1fa6-4d9c-a34d-dad94e3e1c70-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31d3c7d4-50be-4815-ac68-7ba9601a0047-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f298311-732a-45e2-9667-2276809f5630-diff.temp
+index 834e7ec..a4e518e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9f298311-732a-45e2-9667-2276809f5630-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/31d3c7d4-50be-4815-ac68-7ba9601a0047-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/07a0abf5-7065-4056-980d-3528cb08b81c-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1583a9ad-d48e-4e08-9c54-c43ea75453bf-diff.temp
-index c298b8b..1e9ff79 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1583a9ad-d48e-4e08-9c54-c43ea75453bf-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/07a0abf5-7065-4056-980d-3528cb08b81c-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ad5bf86-03cb-4548-bbd4-0f9684e647d8-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5d433bd4-5167-49bc-a463-f8ad7c056ed7-diff.temp
+index 834e7ec..e4fad07 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5d433bd4-5167-49bc-a463-f8ad7c056ed7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8ad5bf86-03cb-4548-bbd4-0f9684e647d8-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6a94e857-3527-44dd-8dae-e9029a5f1616-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b98f52c-354c-4bcf-af6f-336b43d3e52c-diff.temp
-index c298b8b..c4ede2a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b98f52c-354c-4bcf-af6f-336b43d3e52c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6a94e857-3527-44dd-8dae-e9029a5f1616-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8e98d6b6-7808-4892-aa97-13bbd6128e3b-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67d42e04-f364-4eaa-a582-680971d19df6-diff.temp
+index 834e7ec..c88ea8f 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/67d42e04-f364-4eaa-a582-680971d19df6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/8e98d6b6-7808-4892-aa97-13bbd6128e3b-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/30187908-52f3-40e3-9cf8-bccdccc7984e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/adc8ddc6-3a98-491b-af3d-c1e1a8094707-diff.temp
-index c298b8b..4abaf00 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/adc8ddc6-3a98-491b-af3d-c1e1a8094707-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/30187908-52f3-40e3-9cf8-bccdccc7984e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e02e3d6-ebef-4e81-a398-3f6ddb7ff118-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0662b442-afd1-47ea-8b7f-04347480fd3a-diff.temp
+index 834e7ec..dba37d4 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0662b442-afd1-47ea-8b7f-04347480fd3a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0e02e3d6-ebef-4e81-a398-3f6ddb7ff118-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a9b361e-8b23-4387-976b-c4cdfc2f7b03-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38bb1533-2969-4355-9459-8552023dadd6-diff.temp
-index c298b8b..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/38bb1533-2969-4355-9459-8552023dadd6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7a9b361e-8b23-4387-976b-c4cdfc2f7b03-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06705e4e-eb4b-46f5-9ac2-5b0ddcb094d2-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1bae4d75-af89-4b41-842c-0f29a070955c-diff.temp
+index 834e7ec..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1bae4d75-af89-4b41-842c-0f29a070955c-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/06705e4e-eb4b-46f5-9ac2-5b0ddcb094d2-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d71fc342-a996-4cb4-a3fe-1ee0597265e5-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/179132c2-eb29-4da4-b5a4-e3a530036988-diff.temp
-index c298b8b..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/179132c2-eb29-4da4-b5a4-e3a530036988-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d71fc342-a996-4cb4-a3fe-1ee0597265e5-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4e470aa-38f5-467d-87a0-946ee132fb74-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f1158eee-f407-4c98-a141-15def0689bf2-diff.temp
+index 834e7ec..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f1158eee-f407-4c98-a141-15def0689bf2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c4e470aa-38f5-467d-87a0-946ee132fb74-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a3c6222-bc6b-46a3-bd9c-982ba147343e-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0260511d-058e-41ce-a07d-f43cd608767a-diff.temp
-index 2ff04a1..1e9ff79 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0260511d-058e-41ce-a07d-f43cd608767a-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a3c6222-bc6b-46a3-bd9c-982ba147343e-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/162ff3b3-4a29-44e3-9c04-925b7491d402-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2b34dd2-28b9-4d39-91cb-121b67dbaae8-diff.temp
+index a4e518e..e4fad07 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c2b34dd2-28b9-4d39-91cb-121b67dbaae8-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/162ff3b3-4a29-44e3-9c04-925b7491d402-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b3291119-1bb9-4a38-aca5-660101d1a0ae-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f1309c8-3382-4ee1-8f85-61678f415bad-diff.temp
-index 2ff04a1..c4ede2a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f1309c8-3382-4ee1-8f85-61678f415bad-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b3291119-1bb9-4a38-aca5-660101d1a0ae-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c9650ea-9c20-4eeb-b87c-9c3c71077628-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35eeb880-6611-472a-99d5-4b303f323b0f-diff.temp
+index a4e518e..c88ea8f 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35eeb880-6611-472a-99d5-4b303f323b0f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5c9650ea-9c20-4eeb-b87c-9c3c71077628-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/32efa3d2-a56e-4049-8c6f-7b829fef6f4d-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83f23930-7e59-46f9-94e3-aa3ed82f9b14-diff.temp
-index 2ff04a1..4abaf00 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/83f23930-7e59-46f9-94e3-aa3ed82f9b14-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/32efa3d2-a56e-4049-8c6f-7b829fef6f4d-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14b95d97-c2bd-4fbd-a5e2-07ec327821d7-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a33c2b3-6468-4549-bfab-b5698596f98f-diff.temp
+index a4e518e..dba37d4 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/2a33c2b3-6468-4549-bfab-b5698596f98f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/14b95d97-c2bd-4fbd-a5e2-07ec327821d7-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc4853e7-f960-4263-bb9e-36a06c6a3cd4-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d3deb8b-673b-46fa-9942-252463791d7f-diff.temp
-index 2ff04a1..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d3deb8b-673b-46fa-9942-252463791d7f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fc4853e7-f960-4263-bb9e-36a06c6a3cd4-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1cf94576-73db-4693-a869-000a4ecf7d55-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cee95f54-1ea3-49cf-8f18-aa4fa9c1fdab-diff.temp
+index a4e518e..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/cee95f54-1ea3-49cf-8f18-aa4fa9c1fdab-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1cf94576-73db-4693-a869-000a4ecf7d55-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b10fce00-16e3-4331-a801-3bff1dabc8b3-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bb1f675a-d37f-49d0-94e6-d882efd3244e-diff.temp
-index 2ff04a1..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/bb1f675a-d37f-49d0-94e6-d882efd3244e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/b10fce00-16e3-4331-a801-3bff1dabc8b3-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d2107868-a9be-4e94-b95e-a49bc090d0a3-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ade0e35c-576c-4732-b5df-5036422609c0-diff.temp
+index a4e518e..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ade0e35c-576c-4732-b5df-5036422609c0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/d2107868-a9be-4e94-b95e-a49bc090d0a3-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a19e63db-9b6a-4ccb-94d1-f0d3a3233ccb-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25190545-4e08-4994-ae1a-1484b07d7c3f-diff.temp
-index 1e9ff79..c4ede2a 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/25190545-4e08-4994-ae1a-1484b07d7c3f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a19e63db-9b6a-4ccb-94d1-f0d3a3233ccb-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96411872-f7ba-486d-8ead-c6cc33085059-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6eda3f6c-8d1a-42b1-99ec-4442f8f302b0-diff.temp
+index e4fad07..c88ea8f 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6eda3f6c-8d1a-42b1-99ec-4442f8f302b0-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/96411872-f7ba-486d-8ead-c6cc33085059-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7be9b892-1cbc-42d0-b0b9-ad0ca64472b7-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a081f168-07bf-4f2b-95cb-6e8907ec0d11-diff.temp
-index 1e9ff79..4abaf00 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a081f168-07bf-4f2b-95cb-6e8907ec0d11-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7be9b892-1cbc-42d0-b0b9-ad0ca64472b7-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c09435e4-30d4-45f2-9e11-48951fcd9724-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6bb079be-cea3-44eb-9fc0-8ba5b4ea41d4-diff.temp
+index e4fad07..dba37d4 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/6bb079be-cea3-44eb-9fc0-8ba5b4ea41d4-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/c09435e4-30d4-45f2-9e11-48951fcd9724-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/71b3c5c8-234e-4af6-b8c6-8ee9e1e5ba31-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d799d5e-e82c-4547-a107-efe16d2f383f-diff.temp
-index 1e9ff79..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4d799d5e-e82c-4547-a107-efe16d2f383f-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/71b3c5c8-234e-4af6-b8c6-8ee9e1e5ba31-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0fbc0ff8-9f94-4f3e-bc89-2e8c5f190f8d-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61a56f58-9fd5-4207-af78-8dd665bf95c2-diff.temp
+index e4fad07..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/61a56f58-9fd5-4207-af78-8dd665bf95c2-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/0fbc0ff8-9f94-4f3e-bc89-2e8c5f190f8d-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3a3578a5-512a-458a-9ddd-6a1917ad025b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fa14d0e0-5bba-40a7-b68d-2ceb64f87389-diff.temp
-index 1e9ff79..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fa14d0e0-5bba-40a7-b68d-2ceb64f87389-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3a3578a5-512a-458a-9ddd-6a1917ad025b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88f27eea-77ed-4ac3-81de-dac0a80fde70-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de8a07a2-ae5d-4e5a-bbe2-3675ea256628-diff.temp
+index e4fad07..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/de8a07a2-ae5d-4e5a-bbe2-3675ea256628-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/88f27eea-77ed-4ac3-81de-dac0a80fde70-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b4353b8-42e1-4338-b575-ef2e8a90c91b-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f4a4c64-f8e8-4e67-aa5f-77d363ad6bf7-diff.temp
-index c4ede2a..4abaf00 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1f4a4c64-f8e8-4e67-aa5f-77d363ad6bf7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7b4353b8-42e1-4338-b575-ef2e8a90c91b-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f70d4d62-c9ba-46d0-8311-67628f90d7b7-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ff37d0aa-c20f-4551-b564-7129c0a77b43-diff.temp
+index c88ea8f..dba37d4 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ff37d0aa-c20f-4551-b564-7129c0a77b43-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/f70d4d62-c9ba-46d0-8311-67628f90d7b7-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/afb7d227-eb1c-47f6-938a-78c1da6df7ce-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fd765d56-9b78-4d15-b72d-5e709318c0ff-diff.temp
-index c4ede2a..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/fd765d56-9b78-4d15-b72d-5e709318c0ff-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/afb7d227-eb1c-47f6-938a-78c1da6df7ce-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/33bcedac-1291-4b88-bb72-61b66b5f78cf-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b722f74-a251-40a0-a9d0-cba17206e8e1-diff.temp
+index c88ea8f..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3b722f74-a251-40a0-a9d0-cba17206e8e1-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/33bcedac-1291-4b88-bb72-61b66b5f78cf-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3f3092da-ffe6-471d-aaea-3eed934187ea-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b6ce5a6-130d-49d2-ab45-31b4753c4b05-diff.temp
-index c4ede2a..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5b6ce5a6-130d-49d2-ab45-31b4753c4b05-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/3f3092da-ffe6-471d-aaea-3eed934187ea-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a192160f-a7e3-4d11-a901-89dad83869be-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1500d379-4afe-4f79-ab85-f5db3d3ba8ac-diff.temp
+index c88ea8f..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/1500d379-4afe-4f79-ab85-f5db3d3ba8ac-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/a192160f-a7e3-4d11-a901-89dad83869be-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/07bf0c9f-f21a-4cde-b620-694116143155-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/482e54d8-f609-49c9-834d-5ebb0e3e063e-diff.temp
-index 4abaf00..3ed5dc7 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/482e54d8-f609-49c9-834d-5ebb0e3e063e-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/07bf0c9f-f21a-4cde-b620-694116143155-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5e3262b8-26b6-41a8-be6d-eb97fb73fa48-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4fb39a20-975f-435a-99ac-d2524ff6f1d5-diff.temp
+index dba37d4..c549f6e 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/4fb39a20-975f-435a-99ac-d2524ff6f1d5-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5e3262b8-26b6-41a8-be6d-eb97fb73fa48-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5ffc8bda-fe77-4c19-8151-a20dba038317-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/09833746-2151-4a97-a310-ff0e78b361e6-diff.temp
-index 4abaf00..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/09833746-2151-4a97-a310-ff0e78b361e6-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/5ffc8bda-fe77-4c19-8151-a20dba038317-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35f69392-333d-4a5d-b394-240074553a12-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/127461b4-d934-468a-9b21-1f8e1683c5fa-diff.temp
+index dba37d4..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/127461b4-d934-468a-9b21-1f8e1683c5fa-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/35f69392-333d-4a5d-b394-240074553a12-diff.temp
 ```
 **Diff for LogTraceBenchmark method between:**
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
 ```diff
-+++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9cb9d8df-fbc0-4a11-9bc0-0f87ce252643-diff.temp
---- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7962021a-aff6-42a2-bf12-005f35a290e7-diff.temp
-index 3ed5dc7..031fc59 100644
-diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/7962021a-aff6-42a2-bf12-005f35a290e7-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/9cb9d8df-fbc0-4a11-9bc0-0f87ce252643-diff.temp
++++ b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ba598b8f-46f7-4d2b-805a-39c732d8e013-diff.temp
+--- a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/692e1ee3-5d42-4fc9-8bae-ae73ae17937b-diff.temp
+index c549f6e..53d3247 100644
+diff --git a/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/692e1ee3-5d42-4fc9-8bae-ae73ae17937b-diff.temp b/C:/src/GitHub/dotNetTips.Spargine/source/6/appbin/net6.0/BenchmarkDotNet.Artifacts/results/ba598b8f-46f7-4d2b-805a-39c732d8e013-diff.temp
 ```

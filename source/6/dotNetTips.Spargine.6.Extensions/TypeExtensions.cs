@@ -415,7 +415,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Object 2 cannot be null.</exception>
 		/// <remarks>Original code by: Jeremy Clark</remarks>
 		[Information(nameof(Max), UnitTestCoverage = 100, Status = Status.Available)]
-		public static T Max<T>(this T obj1, in T obj2) where T : IComparable
+		public static T Max<T>(this T obj1, T obj2) where T : IComparable
 		{
 			return obj1.CompareTo(obj2) >= 0 ? obj1 : obj2;
 		}

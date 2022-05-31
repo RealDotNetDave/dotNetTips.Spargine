@@ -4,14 +4,13 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-22-2022
+// Last Modified On : 05-26-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 using System.Diagnostics;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
@@ -101,6 +100,16 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// The upper case string
 		/// </summary>
 		protected const string UpperCaseString = "JOHN DOE";
+
+		/// <summary>
+		/// The byte array cache
+		/// </summary>
+		private readonly Dictionary<int, byte[]> _byteArrayCache = new Dictionary<int, byte[]>();
+
+		/// <summary>
+		/// The string array cache
+		/// </summary>
+		private readonly Dictionary<string, string[]> _stringArrayCache = new Dictionary<string, string[]>();
 
 		/// <summary>
 		/// Gets the base64 string.
@@ -266,9 +275,14 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <param name="sizeInKb">The size in kb.</param>
 		/// <returns>System.Byte[].</returns>
-		public byte[] GetByteArray(in int sizeInKb)
+		public byte[] GetByteArray(int sizeInKb)
 		{
-			return RandomData.GenerateByteArray(sizeInKb);
+			if (this._byteArrayCache.ContainsKey(sizeInKb) is false)
+			{
+				this._byteArrayCache.Add(sizeInKb, RandomData.GenerateByteArray(sizeInKb));
+			}
+
+			return this._byteArrayCache[sizeInKb];
 		}
 
 		/// <summary>
@@ -278,9 +292,20 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <param name="minLength">The minimum string length.</param>
 		/// <param name="maxLength">The maximum string length.</param>
 		/// <returns>System.String[].</returns>
-		public string[] GetStringArray(in int count, in int minLength = 10, in int maxLength = 15)
+		public string[] GetStringArray(int count, int minLength = 10, int maxLength = 15)
 		{
-			return RandomData.GenerateWords(count, minLength, maxLength).ToArray();
+			//Ensure maxLenth is at least +1 of minLength.
+			minLength = minLength.EnsureMinimum(1);
+			maxLength = maxLength.EnsureMinimum(minLength + 1);
+
+			var key = $"{count}-{minLength}-{maxLength}";
+
+			if (this._stringArrayCache.ContainsKey(key) is false)
+			{
+				this._stringArrayCache.Add(key, RandomData.GenerateWords(count, minLength, maxLength).ToArray());
+			}
+
+			return this._stringArrayCache[key];
 		}
 
 		/// <summary>
@@ -300,6 +325,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		{
 			if (this.LaunchDebugger)
 			{
+				ConsoleLogger.Default.WriteLine(LogKind.Info, $"Launching debugger: {nameof(Benchmark)}.");
 				_ = Debugger.Launch();
 			}
 
@@ -342,6 +368,12 @@ namespace DotNetTips.Spargine.Benchmarking
 			this.Coordinate02 = RandomData.GenerateCoordinate<Coordinate>();
 
 			this.TestGuid = Guid.NewGuid();
+
+			//Setup byte array
+			_ = this.GetByteArray(1);
+
+			//Setup string array
+			_ = this.GetStringArray(10, 15, 20);
 		}
 
 		/// <summary>

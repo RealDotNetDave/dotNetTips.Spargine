@@ -13,3 +13,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Performance", "CA1848:Use the LoggerMessage delegates", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogErrorBenchmark")]
 [assembly: SuppressMessage("Performance", "CA1848:Use the LoggerMessage delegates", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogInformationBenchmark")]
 [assembly: SuppressMessage("Performance", "CA1848:Use the LoggerMessage delegates", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingHelperBenchmark.LogTraceBenchmark")]
+[assembly: SuppressMessage("Reliability", "CA2000:Dispose objects before losing scope", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingBenchmark.Setup")]

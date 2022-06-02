@@ -21,7 +21,7 @@ using DotNetTips.Spargine.Core.Properties;
 namespace DotNetTips.Spargine.Core
 {
 	/// <summary>
-	/// Class to validate method parameters.
+	/// Class to validate variables.
 	/// </summary>
 	public static partial class Validator
 	{
@@ -68,7 +68,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckEquals), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckEquals), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckEquals(this Type input, Type expectedType, bool throwException = false, string errorMessage = "")
 		{
@@ -90,7 +90,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckExists(this DirectoryInfo input, bool createDirectory = true, bool throwException = false, string errorMessage = "")
 		{
@@ -117,7 +117,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckExists(this FileInfo input, bool throwException = false, string errorMessage = "")
 		{
@@ -138,7 +138,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if the specified throw exception is defined; otherwise, <c>false</c>.</returns>
-		[Information(nameof(CheckIsDefined), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsDefined), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsDefined(this Enum input, bool throwException = false, string errorMessage = "")
 		{
@@ -161,7 +161,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns>DateTime.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this DateTime input, DateTime lower, DateTime upper, bool throwException = false, string errorMessage = "")
 		{
@@ -184,7 +184,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this TimeOnly input, TimeOnly lower, TimeOnly upper, bool throwException = false, string errorMessage = "")
 		{
@@ -207,7 +207,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this DateOnly input, DateOnly lower, DateOnly upper, bool throwException = false, string errorMessage = "")
 		{
@@ -230,7 +230,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns>System.Int32.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/3/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/3/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this int input, int lower, int upper, bool throwException = false, string errorMessage = "")
 		{
@@ -253,7 +253,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this long input, long lower, long upper, bool throwException = false, string errorMessage = "")
 		{
@@ -276,7 +276,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The errorMessage.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this double input, double lower, double upper, bool throwException = false, string errorMessage = "")
 		{
@@ -299,7 +299,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "2/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this decimal input, decimal lower, decimal upper, bool throwException = false, string errorMessage = "")
 		{
@@ -322,7 +322,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns>DateTimeOffset.</returns>
-		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsInRange), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsInRange(this DateTimeOffset input, DateTimeOffset lower, DateTimeOffset upper, bool throwException = false, string errorMessage = "")
 		{
@@ -344,7 +344,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if [is not empty] [the specified span]; otherwise, <c>false</c>.</returns>
-		[Information(nameof(CheckIsNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsNotEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsNotEmpty<T>(this ReadOnlySpan<T> input, bool throwException = false, string errorMessage = "")
 		{
@@ -365,7 +365,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckIsNotEmpty), "David McCarter", "2/2/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckIsNotEmpty), "David McCarter", "2/2/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckIsNotEmpty(this Guid input, bool throwException = false, string errorMessage = "")
 		{
@@ -409,7 +409,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="throwException">if set to <c>true</c> [throw exception].</param>
 		/// <param name="errorMessage">The error message.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		[Information(nameof(CheckItemsExists), "David McCarter", "4/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+		[Information(nameof(CheckItemsExists), "David McCarter", "4/14/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool CheckItemsExists<T>(this IEnumerable<T> input, bool throwException = false, string errorMessage = "")
 		{

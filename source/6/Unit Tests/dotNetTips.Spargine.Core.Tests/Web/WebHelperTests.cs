@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 using DotNetTips.Spargine.Core.Web;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -28,15 +27,15 @@ namespace dotNetTips.Spartine.Core.Tests.Web
 		[TestMethod]
 		public void DownloadStringAsyncTest()
 		{
-			var result = WebHelper.DownloadStringAsync(new Uri(@"https://dotnettips.com"), clientId: "UNITTEST1").Result;
+			var result = WebHelper.DownloadStringAsync(new Uri(@"https://dotnettips.com"), clientId: "UNITTEST1").GetAwaiter().GetResult;
 
 			Assert.IsNotNull(result);
 		}
 
 		[TestMethod]
-		public async Task DownloadStringTest()
+		public void DownloadStringTest()
 		{
-			var result = await WebHelper.DownloadStringAsync(new Uri(@"https://www.google.com/"), clientId: "UNITTEST2");
+			var result = WebHelper.DownloadStringAsync(new Uri(@"https://www.google.com/"), clientId: "UNITTEST2").GetAwaiter().GetResult();
 
 			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 		}

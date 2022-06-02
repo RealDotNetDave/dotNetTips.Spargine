@@ -22,7 +22,7 @@ using DotNetTips.Spargine.Core.Properties;
 namespace DotNetTips.Spargine.Core
 {
 	/// <summary>
-	/// Class Validator.
+	/// Class to validate method parameters.
 	/// </summary>
 	public static partial class Validator
 	{
@@ -164,7 +164,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>System.Byte.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static byte ArgumentInRange(this byte input, byte lower = byte.MinValue, byte upper = byte.MaxValue, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -187,7 +187,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateTime.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateTime ArgumentInRange(this DateTime input, DateTime lower, DateTime upper, DateTime? defaultValue = null, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateTimeOffset.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "1/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateTimeOffset ArgumentInRange(this DateTimeOffset input, DateTimeOffset lower, DateTimeOffset upper, DateTimeOffset? defaultValue = null, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -359,7 +359,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>DateOnly.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static DateOnly ArgumentInRange(this DateOnly input, DateOnly lower, DateOnly upper, DateOnly? defaultValue = null, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -387,7 +387,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>TimeOnly.</returns>
-		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentInRange), "David McCarter", "2/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static TimeOnly ArgumentInRange(this TimeOnly input, TimeOnly lower, TimeOnly upper, TimeOnly? defaultValue = null, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -516,7 +516,7 @@ namespace DotNetTips.Spargine.Core
 		/// <returns>IEnumerable.</returns>
 		/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IList<T> ArgumentItemsExists<T>(this IList<T> input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -539,7 +539,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>T[].</returns>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "2/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T[] ArgumentItemsExists<T>(this T[] input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -563,7 +563,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentItemsExists), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentItemsExists), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IEnumerable<T> ArgumentItemsExists<T>(this IEnumerable<T> input, long count, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -624,7 +624,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>T.</returns>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentMeetsCondition), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentMeetsCondition), "David McCarter", "4/4/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static T ArgumentMeetsCondition<T>(this T input, bool condition, T? defaultValue = default, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -802,7 +802,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>IList&lt;T&gt;.</returns>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/29/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static IList<T> ArgumentNotReadOnly<T>(this IList<T> input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{
@@ -825,7 +825,7 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="paramName">Name of the parameter.</param>
 		/// <returns>ICollection&lt;T&gt;.</returns>
 		/// <remarks>This also checks the input for null.</remarks>
-		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/28/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineMay2022Args")]
+		[Information(nameof(ArgumentNotReadOnly), "David McCarter", "1/28/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static ICollection<T> ArgumentNotReadOnly<T>(this ICollection<T> input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		{

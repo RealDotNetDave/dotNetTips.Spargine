@@ -282,7 +282,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <param name="action">The action.</param>
-		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
 		{
 			var collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();

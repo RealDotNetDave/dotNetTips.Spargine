@@ -17,6 +17,7 @@ using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
+using DotNetTips.Spargine.Core.BenchmarkTests.Logging;
 
 namespace DotNetTips.Spargine.Core.BenchmarkTests
 {
@@ -37,9 +38,9 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				// BenchmarkRunner.Run<SerializationBenchmark>(config);
+				BenchmarkRunner.Run<LoggingBenchmark>(config);
 
 				Console.Beep();
 				_ = Console.ReadLine();

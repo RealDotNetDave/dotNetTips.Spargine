@@ -421,7 +421,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The <see cref="List{T}" /> to convert.</param>
 		/// <returns>IReadOnlyList&lt;T&gt;.</returns>
-		[Information(nameof(ToReadOnlyList), "David McCarter", "4/10/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToReadOnlyList), "David McCarter", "4/10/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static IReadOnlyList<T> ToReadOnlyList<T>([NotNull] this IList<T> list)
 		{
 			return (IReadOnlyList<T>)list.ArgumentItemsExists();

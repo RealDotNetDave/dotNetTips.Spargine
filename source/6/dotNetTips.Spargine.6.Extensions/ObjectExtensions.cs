@@ -168,7 +168,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="TResult">The type of the t result.</typeparam>
 		/// <param name="json">The json.</param>
 		/// <returns>TResult.</returns>
-		[Information(nameof(FromJson), "David McCarter", "4/21/2022", UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(FromJson), "David McCarter", "4/21/2022", UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult FromJson<TResult>([NotNull] this string json)
 		{
 			return JsonSerialization.Deserialize<TResult>(json.ArgumentNotNull());

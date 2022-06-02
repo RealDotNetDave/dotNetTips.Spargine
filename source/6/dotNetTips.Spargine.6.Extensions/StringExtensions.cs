@@ -836,7 +836,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="newValue">The new value.</param>
 		/// <param name="stringComparison">The string comparison.</param>
 		/// <returns>System.String.</returns>
-		[Information("Original code from: https://github.com/Fody/Caseless ", "David McCarter", "3/21/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+		[Information("Original code from: https://github.com/Fody/Caseless ", "David McCarter", "3/21/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static string Replace(this string str, string oldValue, string newValue, StringComparison stringComparison = StringComparison.OrdinalIgnoreCase)
 		{
 			str = str.ArgumentNotNullOrEmpty();

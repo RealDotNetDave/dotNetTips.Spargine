@@ -242,7 +242,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns>System.Int64.</returns>
-		[Information(nameof(FastCount), "David McCarter", "5/21/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(FastCount), "David McCarter", "5/21/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
 		{
 			return list.ArgumentNotNull().LongCount();
@@ -259,7 +259,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="scheduler">The scheduler.</param>
 		/// <returns>Task.</returns>
 		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
-		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD APR URL")]
+		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = https://bit.ly/SpargineApril2022")]
 		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> list, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{
 			list = list.ArgumentNotNull();

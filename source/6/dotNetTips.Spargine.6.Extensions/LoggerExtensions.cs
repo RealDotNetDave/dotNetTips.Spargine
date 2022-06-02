@@ -4,7 +4,7 @@
 // Created          : 03-23-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 05-01-2022
 // ***********************************************************************
 // <copyright file="LoggerExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

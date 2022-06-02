@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 05-31-2022
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -208,7 +208,7 @@ namespace DotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Creates a random <see cref="char"/>.
+		/// Creates a random <see cref="char" />.
 		/// </summary>
 		/// <param name="minValue">The minimum character value.</param>
 		/// <param name="maxValue">The maximum character value.</param>

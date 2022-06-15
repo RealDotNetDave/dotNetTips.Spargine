@@ -48,5 +48,5 @@ Below are the current benchmark results for these projects. *Currently it takes 
 11. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/6/DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsCounterBenchmark-report-github.md" target="_blank">String</a>
 #### dotNetTips.Spargine.Tester
 1. <a href="https://github.com/RealDotNetDave/dotNetTips.Spargine/blob/main/docs/Benchmark%20Results/6/DotNetTips.Spargine.Extensions.BenchmarkTests.Tester.RandomDataBenchmark-report-github.md" target="_blank">RandomData</a>
-# Your Support Is Needed
+# Your Support Is Appreciated!
 Do you have code you would like to submit to these repositories? Submit a pull request or submit an issue. I promise to take a look and include it if I like it! **I might just send you some cool geeky swag that includes one of my books (as supplies last).** You can also support this via GitHub Sponsors: <a href="https://github.com/sponsors/RealDotNetDave" target="_blank">https://github.com/sponsors/RealDotNetDave</a>

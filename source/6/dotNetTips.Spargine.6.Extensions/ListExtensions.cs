@@ -180,7 +180,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if the specified list has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list)
+		public static bool HasItems<T>([AllowNull] this List<T> list)
 		{
 			if (list is null)
 			{
@@ -199,7 +199,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">action</exception>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list, [NotNull] Predicate<T> action)
+		public static bool HasItems<T>([AllowNull] this List<T> list, [NotNull] Predicate<T> action)
 		{
 			if (list.CheckIsNotNull() is false || action.CheckIsNotNull() is false)
 			{
@@ -217,7 +217,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this List<T> list, int count)
+		public static bool HasItems<T>([AllowNull] this List<T> list, int count)
 		{
 			if (list is null)
 			{

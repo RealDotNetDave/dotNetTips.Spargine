@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>([NotNull] this SortedSet<T> list)
+		public static bool HasItems<T>([AllowNull] this SortedSet<T> list)
 		{
 			if (list is null)
 			{
@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this SortedSet<T> list, [NotNull] Func<T, bool> action)
+		public static bool HasItems<T>([AllowNull] this SortedSet<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)
 			{

@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this ReadOnlyCollection<T> list, [NotNull] Func<T, bool> action)
+		public static bool HasItems<T>([AllowNull] this ReadOnlyCollection<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)
 			{

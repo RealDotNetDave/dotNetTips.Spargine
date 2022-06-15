@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-13-2021
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -101,17 +101,55 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void HasItemsTest()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsTrue(people1.HasItems());
+
+			Assert.IsFalse(nullPeople.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithFunction()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Func<PersonProper, bool> selector = (person) => person.Email.IsNotNull();
+
+			Assert.IsTrue(people1.HasItems(selector));
+
+			Assert.IsFalse(nullPeople.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithCount()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsTrue(people1.HasItems(10));
+
+			Assert.IsFalse(people1.HasItems(100));
+
+			Assert.IsFalse(nullPeople.HasItems(10));
+
+		}
+
+		[TestMethod]
 		public void BytesToStringTest()
 		{
 			var bytes = RandomData.GenerateByteArray(100);
 
 			var result = bytes.BytesToString();
 
-			Assert.IsTrue(result.Length > 20000);
+			Assert.IsTrue(result.Length > 100);
 
 			byte[] nullBytes = null;
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]
@@ -122,11 +160,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var readOnlySpan = new ReadOnlySpan<byte>(bytes);
 			var result = readOnlySpan.BytesToString();
 
-			Assert.IsTrue(result.Length > 20000);
+			Assert.IsTrue(result.Length > 100);
 
 			byte[] nullBytes = null;
 
-			_ = Assert.ThrowsException<ArgumentNullException>(() => nullBytes.BytesToString());
+			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]

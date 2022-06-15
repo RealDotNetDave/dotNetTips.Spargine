@@ -364,7 +364,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([NotNull] this IEnumerable list)
+		public static bool HasItems([AllowNull] this IEnumerable list)
 		{
 			if (list is null)
 			{
@@ -383,7 +383,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([NotNull] this IEnumerable list, int count)
+		public static bool HasItems([AllowNull] this IEnumerable list, int count)
 		{
 			if (list is null)
 			{

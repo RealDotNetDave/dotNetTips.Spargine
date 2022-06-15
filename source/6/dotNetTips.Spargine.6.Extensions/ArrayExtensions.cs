@@ -303,7 +303,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified array has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this T[] array)
+		public static bool HasItems<T>([AllowNull] this T[] array)
 		{
 			if (array is null)
 			{
@@ -324,7 +324,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this T[] array, [NotNull] Func<T, bool> action)
+		public static bool HasItems<T>([AllowNull] this T[] array, [NotNull] Func<T, bool> action)
 		{
 			if (array is null || action is null)
 			{
@@ -345,7 +345,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this T[] array, int count)
+		public static bool HasItems<T>([AllowNull] this T[] array, int count)
 		{
 			if (array is null)
 			{

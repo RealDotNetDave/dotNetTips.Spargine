@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified dictionary has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary)
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary)
 		{
 			if (dictionary is null)
 			{
@@ -92,7 +92,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
 			if (dictionary is null || action is null)
 			{
@@ -114,7 +114,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, int count)
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, int count)
 		{
 			if (dictionary is null)
 			{

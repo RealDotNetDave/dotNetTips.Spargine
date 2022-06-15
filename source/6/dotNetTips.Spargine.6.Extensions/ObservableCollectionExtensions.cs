@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="source">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this ObservableCollection<T> source)
+		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> source)
 		{
 			if (source is null)
 			{
@@ -65,7 +65,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<T>([NotNull] this ObservableCollection<T> list, [NotNull] Func<T, bool> action)
+		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)
 			{
@@ -85,7 +85,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems<T>(this ObservableCollection<T> source, int count)
+		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> source, int count)
 		{
 			if (source is null)
 			{

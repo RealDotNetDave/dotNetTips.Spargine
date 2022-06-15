@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-30-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -167,19 +167,27 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void HasItemsTest01()
+		public void HasItemsTest()
 		{
 			var collection = RandomData.GeneratePersonRefCollection<PersonProper>(10).AsEnumerable();
+			IEnumerable<PersonProper> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems());
+
+			Assert.IsFalse(nullCollection.HasItems());
 		}
 
 		[TestMethod]
-		public void HasItemsTest02()
+		public void HasItemsWithCountTest()
 		{
 			var collection = RandomData.GeneratePersonRefCollection<PersonProper>(10).AsEnumerable();
+			IEnumerable<PersonProper> nullCollection = null;
 
-			Assert.IsFalse(collection.HasItems(5));
+			Assert.IsTrue(collection.HasItems(10));
+
+			Assert.IsFalse(collection.HasItems(100));
+
+			Assert.IsFalse(nullCollection.HasItems(10));
 		}
 
 		[TestMethod]

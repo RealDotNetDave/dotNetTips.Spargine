@@ -172,7 +172,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
+		public static bool HasItems<TKey, TValue>([AllowNull] this IDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
 			if (dictionary is null || action is null)
 			{
@@ -181,28 +181,6 @@ namespace DotNetTips.Spargine.Extensions
 			else
 			{
 				return dictionary.Any(action);
-			}
-		}
-
-		/// <summary>
-		/// Determines whether the specified count has items.
-		/// </summary>
-		/// <typeparam name="TKey">The type of the t key.</typeparam>
-		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
-		/// <param name="count">The count.</param>
-		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, int count)
-		{
-			if (dictionary is null)
-			{
-				return false;
-			}
-			else
-			{
-				return dictionary.Count() == count;
 			}
 		}
 

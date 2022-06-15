@@ -4,13 +4,14 @@
 // Created          : 12-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-03-2021
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="SortedDictionaryExtensionsTest.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -26,12 +27,43 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class SortedDictionaryExtensionsTest
 	{
+
+		[TestMethod]
+		public void HasItemsTest()
+		{
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
+			SortedDictionary<string, PersonProper> nullPeople = null;
+
+			Assert.IsTrue(peopleSortedSet.HasItems());
+
+			Assert.IsFalse(nullPeople.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithFunction()
+		{
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
+
+			Func<KeyValuePair<string, PersonProper>, bool> selector = p => p.Value.Email.IsNotNull();
+
+			Assert.IsTrue(peopleSortedSet.HasItems(selector));
+		}
+
+		[TestMethod]
+		public void HasItemsWithCountTest()
+		{
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
+			SortedDictionary<string, PersonProper> nullPeople = null;
+
+			Assert.IsTrue(peopleSortedSet.HasItems(10));
+			Assert.IsFalse(peopleSortedSet.HasItems(100));
+
+			Assert.IsFalse(nullPeople.HasItems(10));
+		}
 		[TestMethod]
 		public void ToImmutableTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToDictionary(p => p.Id);
-
-			var peopleSortedSet = new SortedDictionary<string, PersonProper>(people);
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100).ToDictionary(p => p.Id));
 
 			var result = peopleSortedSet.ToImmutable();
 
@@ -41,8 +73,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void UpsertTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
-			var peopleSortedSet = new SortedDictionary<string, PersonProper>(people);
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
 			var personFromCollection = peopleSortedSet.Shuffle().First();

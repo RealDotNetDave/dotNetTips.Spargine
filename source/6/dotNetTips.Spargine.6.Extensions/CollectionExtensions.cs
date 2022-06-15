@@ -224,7 +224,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([NotNull] this ICollection collection)
+		public static bool HasItems([AllowNull] this ICollection collection)
 		{
 			if (collection is null)
 			{
@@ -244,7 +244,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([NotNull] this ICollection collection, int count)
+		public static bool HasItems([AllowNull] this ICollection collection, int count)
 		{
 			if (collection is null)
 			{

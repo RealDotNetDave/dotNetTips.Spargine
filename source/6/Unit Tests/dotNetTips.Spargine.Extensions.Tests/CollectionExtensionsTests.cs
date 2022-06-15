@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-17-2020
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -131,19 +131,36 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void HasItemsTest01()
+		public void HasItemsTest()
 		{
 			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToCollection();
+			Core.Collections.Generic.Collection<Coordinate> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems());
+
+			Assert.IsFalse(nullCollection.HasItems());
 		}
 
 		[TestMethod]
-		public void HasItemsTest02()
+		public void HasItemsTestWithCount()
 		{
 			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToCollection();
+			Core.Collections.Generic.Collection<Coordinate> nullCollection = null;
 
 			Assert.IsFalse(collection.HasItems(5));
+
+			Assert.IsFalse(nullCollection.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithFunction()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToCollection();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsTrue(people1.HasItems(p => p.Email.IsNotNull()));
+
+			Assert.IsFalse(nullPeople.HasItems());
 		}
 
 		[TestMethod]

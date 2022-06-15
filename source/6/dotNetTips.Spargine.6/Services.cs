@@ -4,7 +4,7 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-12-2022
+// Last Modified On : 05-27-2022
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -96,7 +96,7 @@ namespace DotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
-		/// <exception cref="InvalidOperationException"></exception>
+		/// <exception cref="System.InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ServiceControllerStatus ServiceStatus(string serviceName)
 		{

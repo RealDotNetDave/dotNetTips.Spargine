@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Text;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions.Properties;
@@ -28,6 +29,8 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class DictionaryExtensions
 	{
+
+
 		/// <summary>
 		/// Processes the collection to dispose.
 		/// </summary>
@@ -157,6 +160,50 @@ namespace DotNetTips.Spargine.Extensions
 			}
 
 			return item;
+		}
+
+		/// <summary>
+		/// Determines whether the specified action has items.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="action">The action.</param>
+		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
+		{
+			if (dictionary is null || action is null)
+			{
+				return true;
+			}
+			else
+			{
+				return dictionary.Any(action);
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the specified count has items.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="count">The count.</param>
+		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> dictionary, int count)
+		{
+			if (dictionary is null)
+			{
+				return false;
+			}
+			else
+			{
+				return dictionary.Count() == count;
+			}
 		}
 
 		/// <summary>

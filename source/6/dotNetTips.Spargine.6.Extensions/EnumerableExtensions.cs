@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -259,7 +259,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="scheduler">The scheduler.</param>
 		/// <returns>Task.</returns>
 		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
-		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = https://bit.ly/SpargineApril2022")]
+		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> list, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{
 			list = list.ArgumentNotNull();
@@ -429,7 +429,6 @@ namespace DotNetTips.Spargine.Extensions
 			return list.Select((x, index) => comparer.Equals(item, x) ? index : -1).FirstOrDefault(x => x != -1, -1);
 		}
 
-
 		/// <summary>
 		/// Determines whether <see cref="IEnumerable" /> is null or empty.
 		/// </summary>
@@ -475,7 +474,6 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			list = list.ArgumentNotNull();
 
-
 			sortExpression += string.Empty;
 
 			var parts = sortExpression.Split(Convert.ToChar(" ", CultureInfo.InvariantCulture));
@@ -495,7 +493,6 @@ namespace DotNetTips.Spargine.Extensions
 
 				if (prop.CheckIsNotNull(throwException: true))
 				{
-
 					return @descending
 						? list.OrderByDescending(x => prop.GetValue(x, null))
 						: list.OrderBy(x => prop.GetValue(x, null));
@@ -522,7 +519,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return list.Shuffle().Take(count);
 		}
-
 
 		/// <summary>
 		/// Determines if first <see cref="IEnumerable{T}" /> starts with the second <see cref="IEnumerable{T}" />.
@@ -653,11 +649,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var sb = new StringBuilder(list.Count() * 10);
 
-			list.ToList()
-				.ForEach(item =>
-				{
-					_ = sb.Append($"{item}{delimiter}".ToString(CultureInfo.CurrentCulture));
-				});
+			list.ToList().ForEach(item => _ = sb.Append($"{item}{delimiter}".ToString(CultureInfo.CurrentCulture)));
 
 			return sb.ToString(0, sb.ToString().ToTrimmed().Length - 1);
 		}

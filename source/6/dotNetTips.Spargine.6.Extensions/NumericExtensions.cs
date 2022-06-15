@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Formats the number to friendly <see cref="string" />.
 		/// </summary>
-		/// <param name="fileSize">Size of the file.</param>
+		/// <param name="fileSize">Size of the file or other resourse.</param>
 		/// <returns>System.String.</returns>
 		/// <example>Return Example: 250 KB</example>
 		[Information(nameof(FormatSize), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
@@ -68,10 +68,30 @@ namespace DotNetTips.Spargine.Extensions
 			while (fileSize > 1024 && size < 4)
 			{
 				fileSize = Convert.ToInt64(fileSize / 1024);
-				size += 1;
+				size++;
 			}
 
-			return $"{fileSize} {( new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB } )[Convert.ToInt32(size)]}";
+			return $"{fileSize} {( new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB } )[Convert.ToInt64(size)]}";
+		}
+
+		/// <summary>
+		/// Formats the number to friendly <see cref="string" />.
+		/// </summary>
+		/// <param name="fileSize">Size of the file or other resource.</param>
+		/// <returns>System.String.</returns>
+		/// <example>Return Example: 250 KB</example>
+		[Information(nameof(FormatSize), UnitTestCoverage = 0, Status = Status.New, Documentation = "https://bit.ly/SpargineJan2022")]
+		public static string FormatSize(this double fileSize)
+		{
+			double size = 0;
+
+			while (fileSize > 1024 && size < 4)
+			{
+				fileSize = Convert.ToDouble(fileSize / 1024);
+				size++;
+			}
+
+			return $"{fileSize} {( new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB } )[Convert.ToInt64(size)]}";
 		}
 
 		/// <summary>

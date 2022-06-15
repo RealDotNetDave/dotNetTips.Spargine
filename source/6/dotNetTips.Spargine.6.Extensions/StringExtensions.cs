@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 06-09-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -942,6 +942,20 @@ namespace DotNetTips.Spargine.Extensions
 			count = count.ArgumentInRange(paramName: nameof(count), lower: 1);
 
 			return input.Split(new[] { separator }, count, options);
+		}
+
+		/// <summary>
+		/// Splits the lines of text into separate lines.
+		/// </summary>
+		/// <param name="input">The string.</param>
+		/// <returns>DotNetTips.Spargine.Extensions.LineSplitEnumerator.</returns>
+		[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 0, Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, Documentation = "https://www.meziantou.net/split-a-string-into-lines-without-allocation.htm")]
+		public static LineSplitEnumerator SplitLines(this string input)
+		{
+			input = input.ArgumentNotNullOrEmpty();
+
+			// LineSplitEnumerator is a struct so there is no allocation here
+			return new LineSplitEnumerator(input.AsSpan());
 		}
 
 		/// <summary>

@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,8 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -51,6 +53,27 @@ namespace DotNetTips.Spargine.Extensions
 			else
 			{
 				return source?.FastCount() > 0;
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the specified list has items.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="action">The action.</param>
+		/// <returns>bool.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<T>([NotNull] this ObservableCollection<T> list, [NotNull] Func<T, bool> action)
+		{
+			if (list is null || action is null)
+			{
+				return false;
+			}
+			else
+			{
+				return list.Any(action);
 			}
 		}
 

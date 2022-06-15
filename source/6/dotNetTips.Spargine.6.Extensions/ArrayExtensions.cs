@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -177,21 +177,6 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Generates hash code for the array.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="array">The list to use to generate hash code.</param>
-		/// <returns>Hash code as System.Int32.</returns>
-		/// <exception cref="ArgumentNullException">Array cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static int GenerateHashCode<T>([NotNull] this T[] array)
-		{
-			var hash = array.Where(t => t is not null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
-
-			return hash;
-		}
-
-		/// <summary>
 		/// Returns a <see cref="string" /> that represents this instance.
 		/// </summary>
 		/// <param name="array">The bytes.</param>
@@ -200,7 +185,10 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(BytesToString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string BytesToString([NotNull] this byte[] array)
 		{
-			array = array.ArgumentNotNull();
+			if (array.DoesNotHaveItems())
+			{
+				return String.Empty;
+			}
 
 			var sb = new StringBuilder(array.Length);
 
@@ -220,7 +208,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(BytesToString), "David McCarter", "6/24/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static string BytesToString(this ReadOnlySpan<byte> array)
 		{
-			array = Validator.ArgumentNotEmpty(array, nameof(array));
+			array = array.ArgumentNotEmpty(nameof(array));
 
 			var sb = new StringBuilder(array.Length);
 
@@ -274,7 +262,6 @@ namespace DotNetTips.Spargine.Extensions
 			var itemsList = items.ToReadOnlyCollection();
 
 			return itemsList.HasItems() && array.ToReadOnlyCollection().Any(p => itemsList.Contains(p));
-
 		}
 		/// <summary>
 		/// Processes the collection with the specified action.
@@ -290,6 +277,83 @@ namespace DotNetTips.Spargine.Extensions
 			for (var itemCount = 0; itemCount < collection.Length; itemCount++)
 			{
 				action(collection[itemCount]);
+			}
+		}
+
+		/// <summary>
+		/// Generates hash code for the array.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="array">The list to use to generate hash code.</param>
+		/// <returns>Hash code as System.Int32.</returns>
+		/// <exception cref="ArgumentNullException">Array cannot be null.</exception>
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		public static int GenerateHashCode<T>([NotNull] this T[] array)
+		{
+			var hash = array.Where(t => t is not null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
+
+			return hash;
+		}
+
+		/// <summary>
+		/// Determines whether the specified array has items.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <returns><c>true</c> if the specified array has items; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<T>([NotNull] this T[] array)
+		{
+			if (array is null)
+			{
+				return false;
+			}
+			else
+			{
+				return array.Count() > 0;
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the specified action has items.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="action">The action.</param>
+		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<T>([NotNull] this T[] array, [NotNull] Func<T, bool> action)
+		{
+			if (array is null || action is null)
+			{
+				return false;
+			}
+			else
+			{
+				return array.Any(action);
+			}
+		}
+
+		/// <summary>
+		/// Determines whether the specified count has items.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <param name="count">The count.</param>
+		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.NoInlining)]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<T>([NotNull] this T[] array, int count)
+		{
+			if (array is null)
+			{
+				return false;
+			}
+			else
+			{
+				return array.Count() == count;
 			}
 		}
 
@@ -391,7 +455,7 @@ namespace DotNetTips.Spargine.Extensions
 			item = item.ArgumentNotNull();
 			var recordsList = records.ArgumentNotNull().ToList();
 
-			var currentItem = recordsList.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
+			var currentItem = recordsList.Find(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
 			if (currentItem is not null)
 			{

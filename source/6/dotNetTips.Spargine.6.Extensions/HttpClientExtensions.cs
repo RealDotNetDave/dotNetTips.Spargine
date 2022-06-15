@@ -4,7 +4,7 @@
 // Created          : 07-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 06-06-2022
 // ***********************************************************************
 // <copyright file="HttpClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <remarks>Make sure to call .Dispose on Task,</remarks>
 		[Information("Original code from: https://ardalis.com/keep-tests-short-and-dry-with-extensions", "David McCarter", "7/13/2021", UnitTestCoverage = 0, Status = Status.Available)]
-		public static async Task<T> GetAndDeserialize<T>([NotNull] this HttpClient client, [NotNull] Uri url, [NotNull] JsonSerializerOptions options)
+		public static async Task<T> GetAndDeserializeAsync<T>([NotNull] this HttpClient client, [NotNull] Uri url, [NotNull] JsonSerializerOptions options)
 		{
 			client = client.ArgumentNotNull();
 			url = url.ArgumentNotNull();
@@ -46,9 +46,7 @@ namespace DotNetTips.Spargine.Extensions
 
 				var stringResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-				var result = JsonSerializer.Deserialize<T>(stringResponse, options);
-
-				return result;
+				return JsonSerializer.Deserialize<T>(stringResponse, options);
 			}
 		}
 	}

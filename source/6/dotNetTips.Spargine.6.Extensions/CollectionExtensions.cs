@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 06-15-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,7 +27,6 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class CollectionExtensions
 	{
-
 		/// <summary>
 		/// Creates a <see cref="ICollection{T}" /> if null.
 		/// </summary>
@@ -245,7 +244,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems(this ICollection collection, int count)
+		public static bool HasItems([NotNull] this ICollection collection, int count)
 		{
 			if (collection is null)
 			{

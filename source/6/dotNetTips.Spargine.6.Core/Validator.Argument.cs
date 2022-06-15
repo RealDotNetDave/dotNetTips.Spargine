@@ -683,7 +683,7 @@ namespace DotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Validates the the input is not <see langword="null" />.
+		/// Validates the input is not <see langword="null" />.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="input">The input to validate.</param>

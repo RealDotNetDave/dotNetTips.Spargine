@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 06-06-2022
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -283,7 +283,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
 		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> list)
 		{
-			return list.ArgumentItemsExists().OrderBy(i => GenerateRandomNumber());
+			return list.ArgumentItemsExists().OrderBy(random => GenerateRandomNumber());
 		}
 
 		/// <summary>

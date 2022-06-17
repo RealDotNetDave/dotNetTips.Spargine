@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -14,6 +14,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO.Compression;
+using System.Security.AccessControl;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Properties;
@@ -29,15 +30,15 @@ namespace DotNetTips.Spargine.IO
 	[Information(nameof(FileHelper), "David McCarter", "2/11/2017", Status = Status.Available)]
 	public static class FileHelper
 	{
-		/// <summary>
-		/// The count for retries.
-		/// </summary>
-		private const int Retries = 10;
 
 		/// <summary>
 		/// The no result
 		/// </summary>
 		private const int NoResult = -1;
+		/// <summary>
+		/// The count for retries.
+		/// </summary>
+		private const int Retries = 10;
 
 		/// <summary>
 		/// The HTTP client
@@ -93,6 +94,57 @@ namespace DotNetTips.Spargine.IO
 					}
 				}
 			}
+		}
+
+		/// <summary>
+		/// Checks the permission of a file.
+		/// </summary>
+		/// <param name="path">The path.</param>
+		/// <param name="permission">The requested permission.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+		public static bool CheckPermission(string path, FileSystemRights permission = FileSystemRights.Read)
+		{
+			path = path.ArgumentNotNullOrEmpty(trim: true);
+
+			var access = FileSystemAclExtensions.GetAccessControl(new FileInfo(path));
+
+			if (access is null)
+			{
+				return false;
+			}
+
+			var rules = access.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
+
+			if (rules is null)
+			{
+				return false;
+			}
+
+			var allow = false;
+			var deny = false;
+
+			for (var index = 0; index < rules.Count; index++)
+			{
+				var rule = (FileSystemAccessRule)rules[index];
+
+				if (( permission & rule.FileSystemRights ) != permission)
+				{
+					continue;
+				}
+
+				if (rule.AccessControlType == AccessControlType.Allow)
+				{
+					allow = true;
+				}
+				else if (rule.AccessControlType == AccessControlType.Deny)
+				{
+					deny = true;
+				}
+
+			}
+
+			return allow && !deny;
 		}
 
 		/// <summary>
@@ -403,6 +455,5 @@ namespace DotNetTips.Spargine.IO
 		/// <value>The invalid file name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<char> InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
-
 	}
 }

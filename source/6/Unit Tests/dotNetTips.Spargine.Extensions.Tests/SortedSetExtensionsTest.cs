@@ -4,7 +4,7 @@
 // Created          : 12-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="SortedSetExtensionsTest.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,6 +28,17 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class SortedSetExtensionsTest
 	{
+
+		[TestMethod]
+		public void DoesNotHaveItemsTest()
+		{
+			var collection = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			SortedSet<PersonProper> nullCollection = null;
+
+			Assert.IsFalse(collection.DoesNotHaveItems());
+
+			Assert.IsTrue(nullCollection.DoesNotHaveItems());
+		}
 
 		[TestMethod]
 		public void HasItemsTest()

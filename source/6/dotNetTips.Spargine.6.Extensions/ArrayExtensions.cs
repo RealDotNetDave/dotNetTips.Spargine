@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -263,6 +263,26 @@ namespace DotNetTips.Spargine.Extensions
 
 			return itemsList.HasItems() && array.ToReadOnlyCollection().Any(p => itemsList.Contains(p));
 		}
+
+		/// <summary>
+		/// Checks array for null and insurese there are items in the array.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool DoesNotHaveItems<T>([AllowNull] this T[] list)
+		{
+			if (list is null)
+			{
+				return true;
+			}
+			else
+			{
+				return list.Count() <= 0;
+			}
+		}
+
 		/// <summary>
 		/// Processes the collection with the specified action.
 		/// </summary>

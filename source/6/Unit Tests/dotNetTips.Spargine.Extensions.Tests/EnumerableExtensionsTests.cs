@@ -60,20 +60,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 11);
 		}
 
-		[TestMethod]
-		public void FastParallelProcessorTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).AsEnumerable();
-
-			var task = people.FastParallelProcessor((PersonProper person) =>
-			  {
-				  person.Address2 = "TEST DATA";
-
-			  }, App.MaxDegreeOfParallelism());
-
-			Debug.WriteLine(task.IsCompleted);
-		}
-
 
 		[TestMethod]
 		public void ContainsAnyTest()
@@ -128,6 +114,20 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			//Test Finding City names that contain 'A'.
 			Assert.IsNotNull(people.FastCount(p => p.City.Contains('A', StringComparison.CurrentCultureIgnoreCase)));
+		}
+
+		[TestMethod]
+		public void FastParallelProcessorTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).AsEnumerable();
+
+			var task = people.FastParallelProcessor((PersonProper person) =>
+			  {
+				  person.Address2 = "TEST DATA";
+
+			  }, App.MaxDegreeOfParallelism());
+
+			Debug.WriteLine(task.IsCompleted);
 		}
 
 		[TestMethod]

@@ -53,69 +53,6 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Pages the specified list.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="pageSize">Size of the page. Minimum page size is 1.</param>
-		/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
-		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
-		/// <exception cref="ArgumentNullException">pageSize</exception>
-		/// <exception cref="ArgumentNullException">pageSize</exception>
-		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
-		[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> list, int pageSize)
-		{
-			list = list.ArgumentNotNull();
-
-			pageSize = pageSize.EnsureMinimum(1);
-
-			using var enumerator = list.GetEnumerator();
-
-			while (enumerator.MoveNext())
-			{
-				var currentPage = new List<T>(pageSize) { enumerator.Current };
-
-				while (currentPage.FastCount() < pageSize && enumerator.MoveNext())
-				{
-					currentPage.Add(enumerator.Current);
-				}
-
-				yield return currentPage.AsEnumerable();
-			}
-		}
-
-		/// <summary>
-		/// Picks a random item from a collection.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
-		/// <returns>T.</returns>
-		[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static T PickRandom<T>([NotNull] this IEnumerable<T> list)
-		{
-			list = list.ArgumentNotNull();
-
-			var index = RandomNumberGenerator.GetInt32(0, list.Count() - 1);
-
-			return list.ElementAt(index);
-		}
-
-		/// <summary>
-		/// Orders <see cref="IEnumerable{T}" /> by <see cref="StringComparer.Ordinal" />
-		/// </summary>
-		/// <typeparam name="TSource">The type of the t source.</typeparam>
-		/// <param name="list">The source.</param>
-		/// <param name="keySelector">The key selector.</param>
-		/// <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
-		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>([NotNull] this IEnumerable<TSource> list, [NotNull] Func<TSource, string> keySelector)
-		{
-			return list.ArgumentNotNull().OrderBy(keySelector.ArgumentNotNull(), StringComparer.Ordinal);
-		}
-
-		/// <summary>
 		/// Adds item to the <see cref="IEnumerable{T}" /> if the condition is met.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
@@ -225,6 +162,18 @@ namespace DotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Counts items in the <see cref="IEnumerable{T}" />.
 		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>System.Int64.</returns>
+		[Information(nameof(FastCount), "David McCarter", "5/21/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
+		{
+			return list.ArgumentNotNull().LongCount();
+		}
+
+		/// <summary>
+		/// Counts items in the <see cref="IEnumerable{T}" />.
+		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The source.</param>
 		/// <param name="predicate">The predicate.</param>
@@ -234,18 +183,6 @@ namespace DotNetTips.Spargine.Extensions
 		public static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 		{
 			return list.ArgumentNotNull().LongCount(predicate.ArgumentNotNull());
-		}
-
-		/// <summary>
-		/// Counts items in the <see cref="IEnumerable{T}" />.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <returns>System.Int64.</returns>
-		[Information(nameof(FastCount), "David McCarter", "5/21/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
-		{
-			return list.ArgumentNotNull().LongCount();
 		}
 
 		/// <summary>
@@ -500,6 +437,69 @@ namespace DotNetTips.Spargine.Extensions
 			}
 
 			return list;
+		}
+
+		/// <summary>
+		/// Orders <see cref="IEnumerable{T}" /> by <see cref="StringComparer.Ordinal" />
+		/// </summary>
+		/// <typeparam name="TSource">The type of the t source.</typeparam>
+		/// <param name="list">The source.</param>
+		/// <param name="keySelector">The key selector.</param>
+		/// <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
+		/// <remarks>Original code from efcore-master on GitHub.</remarks>
+		[Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>([NotNull] this IEnumerable<TSource> list, [NotNull] Func<TSource, string> keySelector)
+		{
+			return list.ArgumentNotNull().OrderBy(keySelector.ArgumentNotNull(), StringComparer.Ordinal);
+		}
+
+		/// <summary>
+		/// Pages the specified list.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The list.</param>
+		/// <param name="pageSize">Size of the page. Minimum page size is 1.</param>
+		/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
+		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
+		/// <exception cref="ArgumentNullException">pageSize</exception>
+		/// <exception cref="ArgumentNullException">pageSize</exception>
+		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
+		[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> list, int pageSize)
+		{
+			list = list.ArgumentNotNull();
+
+			pageSize = pageSize.EnsureMinimum(1);
+
+			using var enumerator = list.GetEnumerator();
+
+			while (enumerator.MoveNext())
+			{
+				var currentPage = new List<T>(pageSize) { enumerator.Current };
+
+				while (currentPage.FastCount() < pageSize && enumerator.MoveNext())
+				{
+					currentPage.Add(enumerator.Current);
+				}
+
+				yield return currentPage.AsEnumerable();
+			}
+		}
+
+		/// <summary>
+		/// Picks a random item from a collection.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns>T.</returns>
+		[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
+		public static T PickRandom<T>([NotNull] this IEnumerable<T> list)
+		{
+			list = list.ArgumentNotNull();
+
+			var index = RandomNumberGenerator.GetInt32(0, list.Count() - 1);
+
+			return list.ElementAt(index);
 		}
 
 		/// <summary>

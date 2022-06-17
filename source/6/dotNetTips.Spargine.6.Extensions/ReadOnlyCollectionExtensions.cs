@@ -4,7 +4,7 @@
 // Created          : 04-27-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ReadOnlyCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,26 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ReadOnlyCollectionExtensions
 	{
+
+		/// <summary>
+		/// Checks collection for null and insurese there are items in the collection.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="list">The list.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool DoesNotHaveItems<T>([AllowNull] this ReadOnlyCollection<T> list)
+		{
+			if (list is null)
+			{
+				return true;
+			}
+			else
+			{
+				return list.Count() <= 0;
+			}
+		}
+
 		/// <summary>
 		/// Generates hash code for the collection.
 		/// </summary>

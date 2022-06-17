@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -93,6 +93,17 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var newPeople = people.CopyToCollection();
 
 			Assert.IsTrue(people.FastCount() == newPeople.FastCount());
+		}
+
+		[TestMethod]
+		public void DoesNotHaveItemsTest()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList();
+			List<Coordinate> nullCollection = null;
+
+			Assert.IsFalse(collection.DoesNotHaveItems());
+
+			Assert.IsTrue(nullCollection.DoesNotHaveItems());
 		}
 
 		[TestMethod]
@@ -221,55 +232,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void ToReadOnlyTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToReadOnlyList();
-
-			Assert.IsTrue(people.FastCount() == 10);
-		}
-
-		[TestMethod]
 		public void ToCollectionTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
 
 			var result = people.ToCollection();
-
-			Assert.IsNotNull(result);
-
-			Assert.IsTrue(result.FastCount() == 100);
-		}
-
-		[TestMethod]
-		public void ToObservableListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
-
-			var result = people.ToObservableList();
-
-			Assert.IsNotNull(result);
-
-			Assert.IsTrue(result.FastCount() == 100);
-		}
-
-		[TestMethod]
-		public void ToFastSortedListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
-
-			var result = people.ToFastSortedList();
-
-			Assert.IsNotNull(result);
-
-			Assert.IsTrue(result.FastCount() == 100);
-		}
-
-		[TestMethod]
-		public void ToDistinctConcurrentBagTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
-
-			var result = people.ToDistinctConcurrentBag();
 
 			Assert.IsNotNull(result);
 
@@ -291,6 +258,30 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void ToDistinctConcurrentBagTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+
+			var result = people.ToDistinctConcurrentBag();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.FastCount() == 100);
+		}
+
+		[TestMethod]
+		public void ToFastSortedListTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+
+			var result = people.ToFastSortedList();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.FastCount() == 100);
+		}
+
+		[TestMethod]
 		public void ToImmutableArrayTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
@@ -300,6 +291,26 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsNotNull(result);
 
 			Assert.IsTrue(result.FastCount() == 100);
+		}
+
+		[TestMethod]
+		public void ToObservableListTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+
+			var result = people.ToObservableList();
+
+			Assert.IsNotNull(result);
+
+			Assert.IsTrue(result.FastCount() == 100);
+		}
+
+		[TestMethod]
+		public void ToReadOnlyTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToReadOnlyList();
+
+			Assert.IsTrue(people.FastCount() == 10);
 		}
 	}
 }

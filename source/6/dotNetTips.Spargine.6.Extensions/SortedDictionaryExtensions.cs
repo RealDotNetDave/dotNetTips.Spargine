@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="SortedDictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,40 +25,25 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class SortedDictionaryExtensions
 	{
+
 		/// <summary>
-		/// Converts to immutable Dictionary.
+		/// Checks dictionary for null and insurese there are items in the dictionary.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="list">The values.</param>
-		/// <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
-		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> list)
+		/// <param name="dictionary">The list.</param>
+		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		public static bool DoesNotHaveItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary)
 		{
-			return ImmutableSortedDictionary.CreateRange(list.ArgumentItemsExists());
-		}
-
-		/// <summary>
-		/// Upserts the by the specified key.
-		/// </summary>
-		/// <typeparam name="TKey">The type of the t key.</typeparam>
-		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
-		/// <param name="key">The key.</param>
-		/// <param name="value">The value.</param>
-		/// <returns>TValue.</returns>
-		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static TValue Upsert<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] TKey key, [NotNull] TValue value)
-		{
-			value = value.ArgumentNotNull();
-
-			if (dictionary.ArgumentNotNull().TryGetValue(key.ArgumentNotNull(), out var item) is false)
+			if (dictionary is null)
 			{
-				dictionary.Add(key, value);
-				item = value;
+				return true;
 			}
-
-			return item;
+			else
+			{
+				return dictionary.Count() <= 0;
+			}
 		}
 
 		/// <summary>
@@ -124,6 +109,41 @@ namespace DotNetTips.Spargine.Extensions
 			{
 				return dictionary.Count() == count;
 			}
+		}
+		/// <summary>
+		/// Converts to immutable Dictionary.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="list">The values.</param>
+		/// <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
+		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> list)
+		{
+			return ImmutableSortedDictionary.CreateRange(list.ArgumentItemsExists());
+		}
+
+		/// <summary>
+		/// Upserts the by the specified key.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="key">The key.</param>
+		/// <param name="value">The value.</param>
+		/// <returns>TValue.</returns>
+		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+		public static TValue Upsert<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] TKey key, [NotNull] TValue value)
+		{
+			value = value.ArgumentNotNull();
+
+			if (dictionary.ArgumentNotNull().TryGetValue(key.ArgumentNotNull(), out var item) is false)
+			{
+				dictionary.Add(key, value);
+				item = value;
+			}
+
+			return item;
 		}
 	}
 }

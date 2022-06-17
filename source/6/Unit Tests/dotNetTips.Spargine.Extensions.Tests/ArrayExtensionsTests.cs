@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -35,18 +35,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = people.AddFirst(person);
 
 			Assert.IsTrue(result.FastCount() == 11);
-		}
-
-		[TestMethod]
-		public void FastProcessorTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
-
-			people.FastProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
-
-			});
 		}
 
 		[TestMethod]
@@ -98,44 +86,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people1.AreEqual(people2));
 
 			Assert.IsFalse(people1.AreEqual(arrayToCheck: null));
-		}
-
-		[TestMethod]
-		public void HasItemsTest()
-		{
-			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
-			PersonProper[] nullPeople = null;
-
-			Assert.IsTrue(people1.HasItems());
-
-			Assert.IsFalse(nullPeople.HasItems());
-		}
-
-		[TestMethod]
-		public void HasItemsTestWithFunction()
-		{
-			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
-			PersonProper[] nullPeople = null;
-
-			Func<PersonProper, bool> selector = (person) => person.Email.IsNotNull();
-
-			Assert.IsTrue(people1.HasItems(selector));
-
-			Assert.IsFalse(nullPeople.HasItems());
-		}
-
-		[TestMethod]
-		public void HasItemsTestWithCount()
-		{
-			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
-			PersonProper[] nullPeople = null;
-
-			Assert.IsTrue(people1.HasItems(10));
-
-			Assert.IsFalse(people1.HasItems(100));
-
-			Assert.IsFalse(nullPeople.HasItems(10));
-
 		}
 
 		[TestMethod]
@@ -191,6 +141,67 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			//Assert.IsFalse(people.ContainsAny(nullPerson));
 
+		}
+
+		[TestMethod]
+		public void DoesNotHasItemsTest()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsFalse(people1.DoesNotHaveItems());
+
+			Assert.IsTrue(nullPeople.DoesNotHaveItems());
+		}
+
+		[TestMethod]
+		public void FastProcessorTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
+
+			people.FastProcessor((PersonProper person) =>
+			{
+				person.Address2 = "TEST DATA";
+
+			});
+		}
+
+		[TestMethod]
+		public void HasItemsTest()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsTrue(people1.HasItems());
+
+			Assert.IsFalse(nullPeople.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithCount()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Assert.IsTrue(people1.HasItems(10));
+
+			Assert.IsFalse(people1.HasItems(100));
+
+			Assert.IsFalse(nullPeople.HasItems(10));
+
+		}
+
+		[TestMethod]
+		public void HasItemsTestWithFunction()
+		{
+			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullPeople = null;
+
+			Func<PersonProper, bool> selector = (person) => person.Email.IsNotNull();
+
+			Assert.IsTrue(people1.HasItems(selector));
+
+			Assert.IsFalse(nullPeople.HasItems());
 		}
 
 		[TestMethod]

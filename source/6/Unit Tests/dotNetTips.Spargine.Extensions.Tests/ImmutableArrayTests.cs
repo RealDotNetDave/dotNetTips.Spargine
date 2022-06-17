@@ -4,7 +4,7 @@
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ImmutableArrayTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -25,14 +25,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class ImmutableArrayTests
 	{
-		[TestMethod]
-		public void ImmutableArrayTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToHashSet().ToImmutable();
-			var copyPeople = people;
-			Assert.IsTrue(people == copyPeople);
-			Assert.IsFalse(people == copyPeople.Shuffle());
-		}
 
 		[TestMethod]
 		public void HasItemsTest()
@@ -54,6 +46,14 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(collection.HasItems(5));
 
 			Assert.IsFalse(nullCollection.HasItems());
+		}
+		[TestMethod]
+		public void ImmutableArrayTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToHashSet().ToImmutable();
+			var copyPeople = people;
+			Assert.IsTrue(people == copyPeople);
+			Assert.IsFalse(people == copyPeople.Shuffle());
 		}
 	}
 }

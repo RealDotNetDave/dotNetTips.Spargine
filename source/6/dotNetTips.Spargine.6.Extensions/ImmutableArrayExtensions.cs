@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="ImmutableArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,7 +26,6 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ImmutableArrayExtensions
 	{
-
 		/// <summary>
 		/// Determines whether the specified <see cref="ICollection{T}" /> has items.
 		/// </summary>

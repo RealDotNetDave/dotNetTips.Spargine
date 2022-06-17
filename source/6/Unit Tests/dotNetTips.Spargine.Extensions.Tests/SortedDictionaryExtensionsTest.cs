@@ -4,7 +4,7 @@
 // Created          : 12-23-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 06-17-2022
 // ***********************************************************************
 // <copyright file="SortedDictionaryExtensionsTest.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -29,6 +29,17 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	{
 
 		[TestMethod]
+		public void DoesNotHaveItemsTest()
+		{
+			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
+			SortedDictionary<string, PersonProper> nullPeople = null;
+
+			Assert.IsFalse(peopleSortedSet.DoesNotHaveItems());
+
+			Assert.IsTrue(nullPeople.DoesNotHaveItems());
+		}
+
+		[TestMethod]
 		public void HasItemsTest()
 		{
 			var peopleSortedSet = new SortedDictionary<string, PersonProper>((IDictionary<string, PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id));
@@ -39,6 +50,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(nullPeople.HasItems());
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTestWithFunction.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTestWithFunction()
 		{

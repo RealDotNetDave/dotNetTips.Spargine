@@ -38,6 +38,5 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes
 		/// </summary>
 		/// <returns>A <see cref="string" /> of the coordinates.</returns>
 		string ToString();
-
 	}
 }

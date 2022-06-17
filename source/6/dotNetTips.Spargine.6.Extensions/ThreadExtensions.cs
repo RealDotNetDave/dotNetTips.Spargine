@@ -47,7 +47,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(WaitUntil), UnitTestCoverage = 0, Status = Status.Available)]
 		public static void WaitUntil([NotNull] this Thread thread, TimeSpan interval)
 		{
-			WaitUntil(thread.ArgumentNotNull(), interval);
+			WaitUntil(thread.ArgumentNotNull(), interval, 0);
 		}
 
 		/// <summary>

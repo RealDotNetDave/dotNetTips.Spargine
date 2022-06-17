@@ -21,7 +21,6 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes
 	/// </summary>
 	public interface IPerson
 	{
-
 		/// <summary>
 		/// Gets or sets address 1.
 		/// </summary>

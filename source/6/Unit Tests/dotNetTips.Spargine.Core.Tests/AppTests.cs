@@ -26,7 +26,6 @@ namespace dotNetTips.Spartine.Core.Tests
 	[TestClass]
 	public class AppTests
 	{
-
 		[TestMethod]
 		public void AppInfoTest()
 		{

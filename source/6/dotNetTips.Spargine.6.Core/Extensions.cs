@@ -423,17 +423,5 @@ namespace DotNetTips.Spargine.Core
 		{
 			return list.ArgumentNotNull().LongCount();
 		}
-
-		/// <summary>
-		/// Counts the number of items in a collection.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
-		/// <param name="predicate">The predicate.</param>
-		/// <returns>System.Int64.</returns>
-		internal static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
-		{
-			return list.ArgumentNotNull().FastCount(predicate.ArgumentNotNull());
-		}
 	}
 }

@@ -84,7 +84,7 @@ namespace DotNetTips.Spargine.Core
 		/// Gets the message identifier.
 		/// </summary>
 		/// <value>The message identifier.</value>
-		public string MessageId { get; private set; }
+		public string MessageId { get; }
 
 	}
 }

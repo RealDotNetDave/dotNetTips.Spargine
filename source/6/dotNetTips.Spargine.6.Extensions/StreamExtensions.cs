@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -87,7 +87,7 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			stream = stream.ArgumentNotNull();
 
-			if (MemoryMarshal.TryGetArray(source.ArgumentNotNull(), out var array))
+			if (MemoryMarshal.TryGetArray(source.ArgumentNotNull(), out ArraySegment<byte> array))
 			{
 				return new ValueTask(stream.WriteAsync(array.Array, array.Offset, array.Count, cancellationToken));
 			}

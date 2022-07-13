@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-03-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -96,10 +96,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = bytes.BytesToString();
 
 			Assert.IsTrue(result.Length > 100);
-
-			byte[] nullBytes = null;
-
-			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]
@@ -111,10 +107,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = readOnlySpan.BytesToString();
 
 			Assert.IsTrue(result.Length > 100);
-
-			byte[] nullBytes = null;
-
-			_ = Assert.ThrowsException<NullReferenceException>(() => nullBytes.BytesToString());
 		}
 
 		[TestMethod]
@@ -194,14 +186,16 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTestWithFunction()
 		{
-			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
-			PersonProper[] nullPeople = null;
+			var collection = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			PersonProper[] nullCollection = null;
 
 			Func<PersonProper, bool> selector = (person) => person.Email.IsNotNull();
 
-			Assert.IsTrue(people1.HasItems(selector));
+			Assert.IsTrue(collection.HasItems(selector));
 
-			Assert.IsFalse(nullPeople.HasItems());
+			Assert.IsFalse(nullCollection.HasItems(selector));
+
+			Assert.IsFalse(nullCollection.HasItems(null));
 		}
 
 		[TestMethod]

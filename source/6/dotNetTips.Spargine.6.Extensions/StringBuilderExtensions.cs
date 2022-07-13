@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -209,7 +209,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var appended = false;
 
-			foreach (var value in values)
+			foreach (T value in values)
 			{
 				joinAction(value);
 				_ = sb.Append(separator);
@@ -245,7 +245,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var appended = false;
 
-			foreach (var value in values)
+			foreach (T value in values)
 			{
 				joinAction(value, param);
 				_ = sb.Append(separator);
@@ -293,7 +293,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var appended = false;
 
-			foreach (var value in values)
+			foreach (T value in values)
 			{
 				joinAction(sb, value, param1, param2);
 				_ = sb.Append(separator);

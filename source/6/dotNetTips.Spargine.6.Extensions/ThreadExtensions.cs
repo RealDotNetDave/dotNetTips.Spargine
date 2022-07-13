@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -63,7 +63,7 @@ namespace DotNetTips.Spargine.Extensions
 			thread = thread.ArgumentNotNull();
 			waitIterations = waitIterations.ArgumentInRange(paramName: nameof(waitIterations), lower: 0);
 
-			var stopAt = DateTime.Now.Add(interval);
+			DateTime stopAt = DateTime.Now.Add(interval);
 
 			do
 			{

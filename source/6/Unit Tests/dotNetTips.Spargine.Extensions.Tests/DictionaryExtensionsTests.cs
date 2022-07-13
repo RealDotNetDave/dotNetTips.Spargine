@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,11 +26,17 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotNetTips.Spargine.Extensions.Tests
 {
+	/// <summary>
+	/// Defines test class DictionaryExtensionsTests.
+	/// </summary>
 	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class DictionaryExtensionsTests
 	{
 
+		/// <summary>
+		/// Defines the test method AddIfNotExistDictionaryTest.
+		/// </summary>
 		[TestMethod]
 		public void AddIfNotExistDictionaryTest()
 		{
@@ -51,6 +57,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 		}
 
+		/// <summary>
+		/// Defines the test method AddRangeDictionaryTest01.
+		/// </summary>
 		[TestMethod]
 		public void AddRangeDictionaryTest01()
 		{
@@ -64,6 +73,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people.FastCount() == 12);
 		}
 
+		/// <summary>
+		/// Defines the test method AddRangeDictionaryTest02.
+		/// </summary>
 		[TestMethod]
 		public void AddRangeDictionaryTest02()
 		{
@@ -76,21 +88,24 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 		}
 
+		/// <summary>
+		/// Defines the test method DoesNotHaveItemsTest.
+		/// </summary>
 		[TestMethod]
 		public void DoesNotHaveItemsTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
-			Dictionary<string, PersonProper> nullPeople = null;
 
-			Assert.IsTrue(people.DoesNotHaveItems());
-
-			Assert.IsFalse(nullPeople.HasItems());
+			Assert.IsFalse(people.DoesNotHaveItems());
 		}
 
+		/// <summary>
+		/// Defines the test method GetOrAddTest.
+		/// </summary>
 		[TestMethod]
 		public void GetOrAddTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+			Dictionary<string, PersonProper> people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPerson = RandomData.GenerateRefPerson<PersonProper>();
 
 			// Test Parameters
@@ -104,6 +119,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people.FastCount() == 11);
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTest.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTest()
 		{
@@ -115,6 +133,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(nullPeople.HasItems());
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTestWithFunction.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTestWithFunction()
 		{
@@ -125,6 +146,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people.HasItems(selector));
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsWithCountTest.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsWithCountTest()
 		{
@@ -136,6 +160,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(nullPeople.HasItems(10));
 		}
+		/// <summary>
+		/// Defines the test method ToDelimitedDictionaryTest.
+		/// </summary>
 		[TestMethod]
 		public void ToDelimitedDictionaryTest()
 		{
@@ -151,6 +178,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsNotNull(( dic as IDictionary ).ToDelimitedString(','));
 		}
 
+		/// <summary>
+		/// Defines the test method ToImmutableTest.
+		/// </summary>
 		[TestMethod]
 		public void ToImmutableTest()
 		{
@@ -161,6 +191,22 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.HasItems());
 		}
 
+		/// <summary>
+		/// Defines the test method ToSortedDictionaryTest.
+		/// </summary>
+		[TestMethod]
+		public void ToSortedDictionaryTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+
+			var result = people.ToSortedDictionary();
+
+			Assert.IsTrue(result.HasItems());
+		}
+
+		/// <summary>
+		/// Defines the test method UpsertDictionaryTest.
+		/// </summary>
 		[TestMethod]
 		public void UpsertDictionaryTest()
 		{

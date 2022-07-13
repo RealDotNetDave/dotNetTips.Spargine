@@ -37,6 +37,10 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		private Dictionary<string, PersonProper> _personProperDictionaryHalf;
 
+		private SortedDictionary<string, PersonProper> _personProperSortedDictionary;
+
+		private SortedDictionary<string, PersonProper> _personProperSortedDictionaryHalf;
+
 		/// <summary>
 		/// The person proper reference array
 		/// </summary>

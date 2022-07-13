@@ -4,7 +4,7 @@
 // Created          : 04-27-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="ReadOnlyCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 1000, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool DoesNotHaveItems<T>([AllowNull] this ReadOnlyCollection<T> list)
 		{
 			if (list is null)
@@ -56,7 +56,7 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			list = list.ArgumentNotNull();
 
-			var comparer = EqualityComparer<T>.Default;
+			EqualityComparer<T> comparer = EqualityComparer<T>.Default;
 			var hash = list.Where(item => item is not null)
 				.Aggregate(6551, (accumulator, t) =>
 				{
@@ -74,7 +74,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this ReadOnlyCollection<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)

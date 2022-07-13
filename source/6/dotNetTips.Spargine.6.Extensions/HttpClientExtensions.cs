@@ -4,7 +4,7 @@
 // Created          : 07-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-06-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="HttpClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -40,7 +40,7 @@ namespace DotNetTips.Spargine.Extensions
 			url = url.ArgumentNotNull();
 			options = options.ArgumentNotNull();
 
-			using (var response = await client.GetAsync(new Uri(url.PathAndQuery)).ConfigureAwait(false))
+			using (HttpResponseMessage response = await client.GetAsync(new Uri(url.PathAndQuery)).ConfigureAwait(false))
 			{
 				_ = response.EnsureSuccessStatusCode();
 

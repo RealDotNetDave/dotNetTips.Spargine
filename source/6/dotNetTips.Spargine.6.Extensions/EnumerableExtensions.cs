@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -123,7 +123,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var count = 0;
 
-			var enumerator = list.GetEnumerator();
+			IEnumerator enumerator = list.GetEnumerator();
 
 			while (enumerator.MoveNext())
 			{
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var block = new ActionBlock<T>(action, options);
 
-			foreach (var item in list)
+			foreach (T item in list)
 			{
 				_ = block.Post(item);
 			}
@@ -263,7 +263,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			predicate = predicate.ArgumentNotNull();
 
-			var filteredList = list.Where(predicate).AsEnumerable();
+			IEnumerable<T> filteredList = list.Where(predicate).AsEnumerable();
 
 			return filteredList.HasItems() ? filteredList.FirstOrDefault(alternate) : alternate;
 		}
@@ -284,7 +284,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			for (var listCount = 0; listCount < listToProcess.FastCount(); listCount++)
 			{
-				var local = listToProcess[listCount];
+				T local = listToProcess[listCount];
 
 				if (match?.Invoke(local) ?? default)
 				{
@@ -426,7 +426,7 @@ namespace DotNetTips.Spargine.Extensions
 					@descending = CultureInfo.InvariantCulture.TextInfo.ToLower(parts[1]).Contains("esc", StringComparison.OrdinalIgnoreCase);
 				}
 
-				var prop = typeof(T).GetRuntimeProperty(property);
+				PropertyInfo prop = typeof(T).GetRuntimeProperty(property);
 
 				if (prop.CheckIsNotNull(throwException: true))
 				{
@@ -471,7 +471,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			pageSize = pageSize.EnsureMinimum(1);
 
-			using var enumerator = list.GetEnumerator();
+			using IEnumerator<T> enumerator = list.GetEnumerator();
 
 			while (enumerator.MoveNext())
 			{
@@ -541,9 +541,9 @@ namespace DotNetTips.Spargine.Extensions
 				return true;
 			}
 
-			using (var firstEnumerator = first.GetEnumerator())
+			using (IEnumerator<T> firstEnumerator = first.GetEnumerator())
 			{
-				using var secondEnumerator = second.GetEnumerator();
+				using IEnumerator<T> secondEnumerator = second.GetEnumerator();
 
 				while (secondEnumerator.MoveNext())
 				{
@@ -579,8 +579,8 @@ namespace DotNetTips.Spargine.Extensions
 				return true;
 			}
 
-			using var firstEnumerator = first.GetEnumerator();
-			using var secondEnumerator = second.GetEnumerator();
+			using IEnumerator<T> firstEnumerator = first.GetEnumerator();
+			using IEnumerator<T> secondEnumerator = second.GetEnumerator();
 
 			while (firstEnumerator.MoveNext())
 			{
@@ -610,7 +610,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var collection = new BlockingCollection<T>(list.Count());
 
-			foreach (var item in list)
+			foreach (T item in list)
 			{
 				_ = collection.TryAdd(item);
 			}

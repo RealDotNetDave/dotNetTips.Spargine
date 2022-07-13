@@ -122,7 +122,7 @@ namespace DotNetTips.Spargine.Tester
 
 			var sliceStart = 0;
 
-			using (var stream = File.AppendText(fileName))
+			using (StreamWriter stream = File.AppendText(fileName))
 			{
 				foreach (var size in fileLength.ChunkNumber(FileByteLengthChunk))
 				{

@@ -45,9 +45,9 @@ namespace DotNetTips.Spargine.IO
 					format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'",
 					driveFixed)))
 			{
-				using (var queryCollection = querySearch.Get())
+				using (System.Management.ManagementObjectCollection queryCollection = querySearch.Get())
 				{
-					foreach (var moItem in queryCollection)
+					foreach (System.Management.ManagementBaseObject moItem in queryCollection)
 					{
 						driveSerial = Convert.ToString(
 							moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"),

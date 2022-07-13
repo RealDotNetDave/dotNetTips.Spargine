@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-12-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="InMemoryCache.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -79,7 +79,7 @@ namespace DotNetTips.Spargine.Cache
 		{
 			key = key.ArgumentNotNullOrEmpty();
 
-			_ = this.Cache.TryGetValue<T>(key, out var item);
+			_ = this.Cache.TryGetValue(key, out T item);
 
 			return item;
 		}

@@ -310,7 +310,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		{
 			while (true)
 			{
-				var tables = this._tables;
+				Tables tables = this._tables;
 
 				GetBucketAndLockNo(hashCode, out var bucketNo, out var lockNo, tables._buckets.Length, tables._locks.Length);
 
@@ -334,7 +334,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 					// Try to find this item in the bucket
 					Node previous = null;
 
-					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
+					for (Node current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
 						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
 						if (hashCode == current._hashCode && this._comparer.Equals(current._item, item))
@@ -390,11 +390,11 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		/// <param name="index">The index.</param>
 		private void CopyToItems(T[] array, int index)
 		{
-			var buckets = this._tables._buckets;
+			Node[] buckets = this._tables._buckets;
 
 			for (var bucketCount = 0; bucketCount < buckets.Length; bucketCount++)
 			{
-				for (var current = buckets[bucketCount]; current is not null; current = current._next)
+				for (Node current = buckets[bucketCount]; current is not null; current = current._next)
 				{
 					array[index] = current._item;
 					index++; // this should never flow, CopyToItems is only called when there's no overflow risk
@@ -542,11 +542,11 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 				// Copy all data into a new table, creating new nodes for all elements
 				for (var bucketCount = 0; bucketCount < tables._buckets.Length; bucketCount++)
 				{
-					var current = tables._buckets[bucketCount];
+					Node current = tables._buckets[bucketCount];
 
 					while (current is not null)
 					{
-						var next = current._next;
+						Node next = current._next;
 						GetBucketAndLockNo(current._hashCode, out var newBucketNo, out var newLockNo, newBuckets.Length, newLocks.Length);
 
 						newBuckets[newBucketNo] = new Node(current._item, current._hashCode, newBuckets[newBucketNo]);
@@ -650,13 +650,13 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 			var hashCode = this._comparer.GetHashCode(item);
 
 			// We must capture the _buckets field in a local variable. It is set to a new table on each table resize.
-			var tables = this._tables;
+			Tables tables = this._tables;
 
 			var bucketNo = GetBucket(hashCode, tables._buckets.Length);
 
 			// We can get away w/out a lock here.
 			// The Volatile.Read ensures that the load of the fields of 'n' doesn't move before the load from buckets[i].
-			var current = Volatile.Read(ref tables._buckets[bucketNo]);
+			Node current = Volatile.Read(ref tables._buckets[bucketNo]);
 
 			while (current is not null)
 			{
@@ -678,12 +678,12 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		[Information(nameof(GetEnumerator), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public IEnumerator<T> GetEnumerator()
 		{
-			var buckets = this._tables._buckets;
+			Node[] buckets = this._tables._buckets;
 
 			for (var i = 0; i < buckets.Length; i++)
 			{
 				// The Volatile.Read ensures that the load of the fields of 'current' doesn't move before the load from buckets[i].
-				var current = Volatile.Read(ref buckets[i]);
+				Node current = Volatile.Read(ref buckets[i]);
 
 				while (current is not null)
 				{
@@ -710,7 +710,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 
 			while (true)
 			{
-				var tables = this._tables;
+				Tables tables = this._tables;
 
 				GetBucketAndLockNo(hashCode, out var bucketNo, out var lockNo, tables._buckets.Length, tables._locks.Length);
 
@@ -724,7 +724,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 					}
 
 					Node previous = null;
-					for (var current = tables._buckets[bucketNo]; current is not null; current = current._next)
+					for (Node current = tables._buckets[bucketNo]; current is not null; current = current._next)
 					{
 						Debug.Assert(( previous is null && current == tables._buckets[bucketNo] ) || previous._next == current);
 

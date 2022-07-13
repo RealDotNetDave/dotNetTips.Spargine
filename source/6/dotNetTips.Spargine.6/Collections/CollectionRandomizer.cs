@@ -86,7 +86,7 @@ namespace DotNetTips.Spargine.Collections
 			{
 				this.Init();
 
-				var collectionItem = this._collectionEnumerator.Current;
+				T collectionItem = this._collectionEnumerator.Current;
 
 				this.HasRemainingItems = this._collectionEnumerator.MoveNext();
 

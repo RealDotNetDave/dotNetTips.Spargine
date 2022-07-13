@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Core.Diagnostics
 		[Information(nameof(StartNew), "David McCarter", "11/11/2020", Status = Status.Available)]
 		public static new PerformanceStopwatch StartNew()
 		{
-			var sw = TypeHelper.Create<PerformanceStopwatch>();
+			PerformanceStopwatch sw = TypeHelper.Create<PerformanceStopwatch>();
 			sw.Start();
 
 			return sw;
@@ -46,7 +46,7 @@ namespace DotNetTips.Spargine.Core.Diagnostics
 		public TimeSpan StopReset()
 		{
 			this.Stop();
-			var result = this.Elapsed;
+			TimeSpan result = this.Elapsed;
 			this.Reset();
 
 			return result;
@@ -59,7 +59,7 @@ namespace DotNetTips.Spargine.Core.Diagnostics
 		[Information(nameof(StopRestart), "David McCarter", "11/11/2020", Status = Status.Available)]
 		public TimeSpan StopRestart()
 		{
-			var result = this.Elapsed;
+			TimeSpan result = this.Elapsed;
 
 			this.Restart();
 

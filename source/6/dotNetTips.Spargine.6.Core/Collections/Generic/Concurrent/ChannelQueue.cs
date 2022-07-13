@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		[Information(nameof(ListenAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public async IAsyncEnumerable<T> ListenAsync([EnumeratorCancellation] CancellationToken cancellationToken = default)
 		{
-			await foreach (var item in this._channel.Reader.ReadAllAsync(cancellationToken).ConfigureAwait(false))
+			await foreach (T item in this._channel.Reader.ReadAllAsync(cancellationToken).ConfigureAwait(false))
 			{
 				yield return item;
 			}
@@ -117,7 +117,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		{
 			items = items.ArgumentItemsExists();
 
-			foreach (var item in items.Where(p =>
+			foreach (T item in items.Where(p =>
 			{
 				return p is not null;
 			}))

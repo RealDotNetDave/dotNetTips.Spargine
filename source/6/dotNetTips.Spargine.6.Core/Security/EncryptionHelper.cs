@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-19-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Core.Security
 		/// <returns>System.ValueTuple&lt;System.Byte[], System.Byte[]&gt;.</returns>
 		private static (byte[] key, byte[] iv) GetSHA256HashKeys([NotNull] string key)
 		{
-			var encoding = Encoding.ASCII;
+			Encoding encoding = Encoding.ASCII;
 
 			using (var sha2 = SHA256.Create())
 			{
@@ -67,7 +67,7 @@ namespace DotNetTips.Spargine.Core.Security
 			using (var aes = Aes.Create())
 			{
 				// Create a decryptor.
-				using (var decryptor = aes.CreateDecryptor(key, iv))
+				using (ICryptoTransform decryptor = aes.CreateDecryptor(key, iv))
 				{
 					// Create the streams used for decryption.
 					using (var ms = new MemoryStream(Convert.FromBase64String(cipherText)))
@@ -108,7 +108,7 @@ namespace DotNetTips.Spargine.Core.Security
 				aes.IV = iv;
 
 				// Create encryptor
-				using (var encryptor = aes.CreateEncryptor())
+				using (ICryptoTransform encryptor = aes.CreateEncryptor())
 				{
 					// Create MemoryStream
 					using (var ms = new MemoryStream())
@@ -181,7 +181,7 @@ namespace DotNetTips.Spargine.Core.Security
 			cipherText = cipherText.ArgumentNotNullOrEmpty(true);
 			key = key.ArgumentNotNullOrEmpty();
 
-			var keys = GetSHA256HashKeys(key);
+			(byte[] key, byte[] iv) keys = GetSHA256HashKeys(key);
 
 			return AesDecrypt(cipherText, keys.key, keys.iv);
 		}
@@ -202,7 +202,7 @@ namespace DotNetTips.Spargine.Core.Security
 			plainText = plainText.ArgumentNotNullOrEmpty(true);
 			key = key.ArgumentNotNullOrEmpty();
 
-			var keys = GetSHA256HashKeys(key);
+			(byte[] key, byte[] iv) keys = GetSHA256HashKeys(key);
 
 			return AesEncrypt(plainText, keys.key, keys.iv);
 		}

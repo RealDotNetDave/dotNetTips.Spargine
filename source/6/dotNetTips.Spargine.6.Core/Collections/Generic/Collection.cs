@@ -134,7 +134,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 
 			var newItems = new Collection<T>();
 
-			foreach (var item in items.Where(p => p is not null))
+			foreach (T item in items.Where(p => p is not null))
 			{
 				if (ensureUnique is Tristate.True or Tristate.UseDefault)
 				{

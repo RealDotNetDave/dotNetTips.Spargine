@@ -82,7 +82,7 @@ namespace DotNetTips.Spargine.Net.Http
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
+				HttpResponseMessage response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				_ = response.EnsureSuccessStatusCode();
 
@@ -138,7 +138,7 @@ namespace DotNetTips.Spargine.Net.Http
 				try
 				{
 					// Pass in the token.
-					var response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
+					Stream response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 					return response;
 				}

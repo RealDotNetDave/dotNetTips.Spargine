@@ -115,7 +115,7 @@ namespace DotNetTips.Spargine.Core
 
 			var count = 0;
 
-			var enumerator = list.GetEnumerator();
+			IEnumerator enumerator = list.GetEnumerator();
 
 			while (enumerator.MoveNext())
 			{
@@ -151,7 +151,7 @@ namespace DotNetTips.Spargine.Core
 		internal static IEnumerable<TSource> FromHierarchy<TSource>([NotNull] this TSource source, [NotNull] Func<TSource, TSource> nextItem, [NotNull] Func<TSource, bool> canContinue)
 			where TSource : Exception
 		{
-			for (var current = source; canContinue(current); current = nextItem(current))
+			for (TSource current = source; canContinue(current); current = nextItem(current))
 			{
 				yield return current;
 			}
@@ -166,7 +166,7 @@ namespace DotNetTips.Spargine.Core
 		/// <exception cref="ArgumentNullException">exception</exception>
 		internal static string GetAllMessages([NotNull] this Exception exception, char separator = ControlChars.Comma)
 		{
-			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
+			IEnumerable<string> messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
 			return string.Join(separator, messages);
 		}
@@ -179,11 +179,11 @@ namespace DotNetTips.Spargine.Core
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available)]
 		internal static IEnumerable<PropertyInfo> GetAllProperties([NotNull] this Type type)
 		{
-			var typeInfo = type.GetTypeInfo();
+			TypeInfo typeInfo = type.GetTypeInfo();
 
 			while (typeInfo is not null)
 			{
-				foreach (var propertyInfo in typeInfo.DeclaredProperties)
+				foreach (PropertyInfo propertyInfo in typeInfo.DeclaredProperties)
 				{
 					yield return propertyInfo;
 				}

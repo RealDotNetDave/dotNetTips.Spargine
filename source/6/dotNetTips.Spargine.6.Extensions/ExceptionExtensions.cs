@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-28-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="ExceptionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -56,7 +56,7 @@ namespace DotNetTips.Spargine.Extensions
 			nextItem = nextItem.ArgumentNotNull();
 			canContinue = canContinue.ArgumentNotNull();
 
-			for (var current = source; canContinue(current); current = nextItem(current))
+			for (TSource current = source; canContinue(current); current = nextItem(current))
 			{
 				yield return current;
 			}
@@ -73,7 +73,7 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			exception = exception.ArgumentNotNull();
 
-			var messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
+			IEnumerable<string> messages = exception.FromHierarchy(ex => ex.InnerException).Select(ex => ex.Message);
 
 			return string.Join(separator, messages);
 		}

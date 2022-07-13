@@ -70,11 +70,11 @@ namespace DotNetTips.Spargine.Core
 			this.Description = description;
 			this.Author = string.IsNullOrEmpty(author) ? Resources.UserUnknown : author;
 
-			if (string.IsNullOrEmpty(createdOn) is false && DateTimeOffset.TryParse(createdOn, out var createdDate))
+			if (string.IsNullOrEmpty(createdOn) is false && DateTimeOffset.TryParse(createdOn, out DateTimeOffset createdDate))
 			{
 				this.CreatedOn = createdDate;
 
-				if (string.IsNullOrEmpty(modifiedOn) == DateTimeOffset.TryParse(modifiedOn, out var modifiedDate))
+				if (string.IsNullOrEmpty(modifiedOn) == DateTimeOffset.TryParse(modifiedOn, out DateTimeOffset modifiedDate))
 				{
 					this.ModifiedOn = modifiedDate;
 				}

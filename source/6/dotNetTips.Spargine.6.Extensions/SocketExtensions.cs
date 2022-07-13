@@ -65,7 +65,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="remoteEndpoint">The remote endpoint.</param>
 		/// <param name="millisecondsTimeout">The milliseconds timeout.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, int millisecondsTimeout)
 		{

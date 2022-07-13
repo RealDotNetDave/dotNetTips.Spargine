@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -39,7 +39,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var interfaces = new Collection<Type>();
 
-			foreach (var type in assembly.GetTypes())
+			foreach (Type type in assembly.GetTypes())
 			{
 				_ = interfaces.AddRange(type.GetInterfaces());
 			}
@@ -73,12 +73,12 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			assembly = assembly.ArgumentNotNull();
 
-			var types = assembly.GetTypes()
+			IEnumerable<Type> types = assembly.GetTypes()
 				.Where(x => !x.IsInterface
 				&& !x.IsAbstract && !x.IsGenericType
 				&& typeof(T).IsAssignableFrom(x));
 
-			foreach (var type in types)
+			foreach (Type type in types)
 			{
 				if (Activator.CreateInstance(type) is T instance)
 				{

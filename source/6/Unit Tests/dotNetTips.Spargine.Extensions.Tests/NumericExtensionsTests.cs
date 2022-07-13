@@ -100,7 +100,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 
 		[TestMethod]
-		public void FormatSizeTest()
+		public void FormatSizeLongTest()
 		{
 			long testValue = 256234;
 
@@ -108,7 +108,19 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsNotNull(result);
 
-			PrintResult(result, nameof(this.FormatSizeTest));
+			PrintResult(result, nameof(this.FormatSizeLongTest));
+		}
+
+		[TestMethod]
+		public void FormatSizeDoubleTest()
+		{
+			double testValue = 256234.98;
+
+			var result = testValue.FormatSize();
+
+			Assert.IsNotNull(result);
+
+			PrintResult(result, nameof(this.FormatSizeLongTest));
 		}
 
 		[TestMethod]

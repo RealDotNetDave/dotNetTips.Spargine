@@ -135,12 +135,12 @@ namespace DotNetTips.Spargine.Core
 		/// <value>The messages.</value>
 		public virtual string[] Messages()
 		{
-			var exceptions = LoggingHelper.RetrieveAllExceptions(this);
+			Exception[] exceptions = LoggingHelper.RetrieveAllExceptions(this);
 			var errorMessages = new List<string>();
 
 			for (var exCount = 0; exCount < exceptions.Length; exCount++)
 			{
-				var current = exceptions[exCount];
+				Exception current = exceptions[exCount];
 				errorMessages.Add(current.GetType().FullName);
 				errorMessages.Add(ReflectException(current));
 

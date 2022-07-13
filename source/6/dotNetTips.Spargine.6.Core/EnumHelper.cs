@@ -61,7 +61,7 @@ namespace DotNetTips.Spargine.Core
 			// Enum names (text) are defined as fields for the type
 			for (var fieldCount = 0; fieldCount < t.GetFields(BindingFlags.Public | BindingFlags.Static).Length; fieldCount++)
 			{
-				var enumValue = t.GetFields(BindingFlags.Public | BindingFlags.Static)[fieldCount];
+				FieldInfo enumValue = t.GetFields(BindingFlags.Public | BindingFlags.Static)[fieldCount];
 
 				// If XML is specified and found, use this name
 				if (useXml)
@@ -105,7 +105,7 @@ namespace DotNetTips.Spargine.Core
 		public static IEnumerable<EnumValue> GetValues<T>(bool fixNames, bool useXmlNames)
 			where T : Enum
 		{
-			var enumType = typeof(T);
+			Type enumType = typeof(T);
 
 			// Get the enum values
 			var allValues = (int[])Enum.GetValues(enumType);
@@ -115,7 +115,7 @@ namespace DotNetTips.Spargine.Core
 			var result = new List<EnumValue>();
 
 			// TODO: This does not work if enums are not defined 0,1,2, etc
-			var enumNames = GetNames(enumType, fixNames, useXmlNames);
+			List<string> enumNames = GetNames(enumType, fixNames, useXmlNames);
 
 			for (var valueCount = 0; valueCount < allValues.Length; valueCount++)
 			{

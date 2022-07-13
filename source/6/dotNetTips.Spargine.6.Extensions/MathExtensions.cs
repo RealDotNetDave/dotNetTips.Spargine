@@ -196,5 +196,47 @@ namespace DotNetTips.Spargine.Extensions
 
 			return Convert.ToInt32(Math.Round(value, digits, mode));
 		}
+
+		/// <summary>
+		/// Determines whether the specified number is prime.
+		/// </summary>
+		/// <param name="number">The number.</param>
+		/// <remarks>
+		/// Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9
+		/// </remarks>
+		/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(IsPrime), UnitTestCoverage = 0, Status = Status.New)]
+		public static bool IsPrime(this int number)
+		{
+			// local function
+			bool CalculatePrime(int value)
+			{
+				// A simple but slow method of checking
+				// the primality of a given number
+				// n, called trial division, tests whether n is a multiple
+				// of any integer between 2 and sqrt(n)
+				var possibleFactors = Math.Sqrt(number);
+
+				// we start with low factors (2,3,4,5,etc...)
+				// this makes sure we short circuit as early
+				// as possible during calculations
+				for (var factor = 2; factor <= possibleFactors; factor++)
+				{
+					if (value % factor == 0)
+					{
+						return false;
+					}
+				}
+
+				// we've exhausted all factors
+				// so we know this number is prime
+				return true;
+			}
+
+			// negative numbers can't be prime
+			// only call CalculatePrime if non-negative
+			return number > 1 && CalculatePrime(number);
+		}
 	}
 }

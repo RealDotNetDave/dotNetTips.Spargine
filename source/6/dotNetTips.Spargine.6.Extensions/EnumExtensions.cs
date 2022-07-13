@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System.ComponentModel;
+using System.Reflection;
 using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -34,7 +35,7 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			input = input.ArgumentNotNull();
 
-			var field = input.GetType().GetField(input.ToString());
+			FieldInfo field = input.GetType().GetField(input.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
 			return attributes.Length > 0 ? attributes[0].Description : input.ToString();
@@ -51,11 +52,11 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			input = input.ArgumentNotNull();
 
-			var items = new List<(string Desctiption, int Value)>();
+			var items = new List<(string Description, int Value)>();
 
 			foreach (var name in Enum.GetNames(input.GetType()))
 			{
-				items.Add((Desctiption: name, Value: (int)Enum.Parse(input.GetType(), name)));
+				items.Add((Description: name, Value: (int)Enum.Parse(input.GetType(), name)));
 			}
 
 			return items;

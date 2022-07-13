@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.Core.Web
 			}
 
 			// Download the data
-			using (var response = await _httpClient.GetAsync(address).ConfigureAwait(false))
+			using (HttpResponseMessage response = await _httpClient.GetAsync(address).ConfigureAwait(false))
 			{
 				return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 			}
@@ -87,7 +87,7 @@ namespace DotNetTips.Spargine.Core.Web
 			path = path.ArgumentNotNullOrEmpty(true);
 			request = request.ArgumentNotNull();
 
-			if (Uri.TryCreate(path, UriKind.Absolute, out var absoluteUri))
+			if (Uri.TryCreate(path, UriKind.Absolute, out Uri absoluteUri))
 			{
 				var validHostName = string.Equals(request.Host.ToUriComponent(), absoluteUri.Host, StringComparison.OrdinalIgnoreCase);
 

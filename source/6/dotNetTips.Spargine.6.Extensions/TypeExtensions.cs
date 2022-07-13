@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -38,8 +38,7 @@ namespace DotNetTips.Spargine.Extensions
 			input = input.ArgumentNotNull();
 			interfaceNames = interfaceNames.ArgumentItemsExists();
 
-			//TODO: CHANGE TO ALL LINQ? typeof(IMyInterface).IsAssignableFrom(typeof(MyType))
-			var interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
+			IEnumerable<string> interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
 			var foundInterfaces = new List<string>();
 
 			foundInterfaces.AddRange(interfaceNames.Where(interfaceName => interfaces.Contains(interfaceName)));
@@ -132,11 +131,11 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(GetAllFields), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<FieldInfo> GetAllFields([NotNull] this Type type)
 		{
-			var typeInfo = type.ArgumentNotNull().GetTypeInfo();
+			TypeInfo typeInfo = type.ArgumentNotNull().GetTypeInfo();
 
 			while (typeInfo is not null)
 			{
-				foreach (var fieldInfo in typeInfo.DeclaredFields)
+				foreach (FieldInfo fieldInfo in typeInfo.DeclaredFields)
 				{
 					yield return fieldInfo;
 				}
@@ -166,11 +165,11 @@ namespace DotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<MethodInfo> GetAllMethods([NotNull] this Type type)
 		{
-			var typeInfo = type.ArgumentNotNull().GetTypeInfo();
+			TypeInfo typeInfo = type.ArgumentNotNull().GetTypeInfo();
 
 			while (typeInfo is not null)
 			{
-				foreach (var methodInfo in typeInfo.DeclaredMethods)
+				foreach (MethodInfo methodInfo in typeInfo.DeclaredMethods)
 				{
 					yield return methodInfo;
 				}
@@ -188,11 +187,11 @@ namespace DotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static IEnumerable<PropertyInfo> GetAllProperties([NotNull] this Type type)
 		{
-			var typeInfo = type.ArgumentNotNull().GetTypeInfo();
+			TypeInfo typeInfo = type.ArgumentNotNull().GetTypeInfo();
 
 			while (typeInfo is not null)
 			{
-				foreach (var propertyInfo in typeInfo.DeclaredProperties)
+				foreach (PropertyInfo propertyInfo in typeInfo.DeclaredProperties)
 				{
 					yield return propertyInfo;
 				}
@@ -295,20 +294,20 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			type = type.ArgumentNotNull();
 
-			var allFields = type.GetFields()
+			IEnumerable<(string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type ParameterType)> allFields = type.GetFields()
 							.Select(f => (f.Name,
 											Attribute: f.GetAttribute<TAttribute>(), f.IsPrivate, f.IsStatic,
 											ParameterType: f.FieldType));
 
-			var allProperties = type.GetProperties()
+			IEnumerable<(string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type PropertyType)> allProperties = type.GetProperties()
 				.Select(p => (p.Name,
 								Attribute: p.GetAttribute<TAttribute>(),
 								IsPrivate: p.GetSetMethod() is null,
 								IsStatic: p.GetSetMethod() is not null && p.GetSetMethod().IsStatic, p.PropertyType));
 
-			var joined = allFields.Concat(allProperties).Where(member => member.Attribute is not null).ToArray();
+			(string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type)[] joined = allFields.Concat(allProperties).Where(member => member.Attribute is not null).ToArray();
 
-			foreach (var member in joined.Where(m => m.IsPrivate))
+			foreach ((string Name, TAttribute Attribute, bool IsPrivate, bool IsStatic, Type) member in joined.Where(m => m.IsPrivate))
 			{
 				ExceptionThrower.ThrowArgumentOutOfRangeException($"Member \"{member.Name}\" must be public if it has the [{typeof(TAttribute).Name}] attribute applied to it", "Member");
 			}

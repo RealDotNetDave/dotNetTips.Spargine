@@ -162,13 +162,13 @@ namespace DotNetTips.Spargine.Core.Logging
 		{
 			logger = logger.ArgumentNotNull();
 
-			var appInfo = App.AppInfo;
+			AppInfo appInfo = App.AppInfo;
 
-			var values = TypeHelper.GetPropertyValues(appInfo);
+			System.Collections.Immutable.ImmutableDictionary<string, string> values = TypeHelper.GetPropertyValues(appInfo);
 
 			if (values?.FastCount() > 0)
 			{
-				foreach (var item in values.OrderBy(p => p.Key))
+				foreach (KeyValuePair<string, string> item in values.OrderBy(p => p.Key))
 				{
 					EasyLogger.LogInformation(logger, $"{nameof(AppInfo)}:{item.Key} - {item.Value}");
 				}
@@ -213,11 +213,11 @@ namespace DotNetTips.Spargine.Core.Logging
 
 			var computerInfo = new ComputerInfo();
 
-			var values = TypeHelper.GetPropertyValues(computerInfo);
+			System.Collections.Immutable.ImmutableDictionary<string, string> values = TypeHelper.GetPropertyValues(computerInfo);
 
 			if (values?.FastCount() > 0)
 			{
-				foreach (var item in values.OrderBy(p => p.Key))
+				foreach (KeyValuePair<string, string> item in values.OrderBy(p => p.Key))
 				{
 					EasyLogger.LogDebug(logger, $"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
 				}
@@ -235,7 +235,7 @@ namespace DotNetTips.Spargine.Core.Logging
 		{
 			exception = exception.ArgumentNotNull();
 
-			var exceptions = RetrieveAllExceptions(exception);
+			Exception[] exceptions = RetrieveAllExceptions(exception);
 
 			var messages = new string[exceptions.Length];
 

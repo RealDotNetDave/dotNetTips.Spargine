@@ -79,8 +79,8 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="fileSize">Size of the file or other resource.</param>
 		/// <returns>System.String.</returns>
-		/// <example>Return Example: 250 KB</example>
-		[Information(nameof(FormatSize), UnitTestCoverage = 0, Status = Status.New, Documentation = "https://bit.ly/SpargineJan2022")]
+		/// <example>Return Example: 250.22947265625 KB</example>
+		[Information(nameof(FormatSize), UnitTestCoverage = 100, Status = Status.New, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static string FormatSize(this double fileSize)
 		{
 			double size = 0;

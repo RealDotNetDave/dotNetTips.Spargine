@@ -41,7 +41,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
 		public void AreEqualList()
 		{
-			var result = base.GetPersonProperArray(Core.Tristate.False).AreEqual(base.GetPersonProperArray(Core.Tristate.False, CollectionSize.Half));
+			var result = base.GetPersonProperArray(Tristate.False).AreEqual(base.GetPersonProperArray(Tristate.False, CollectionSize.Half));
 
 			base.Consumer.Consume(result);
 		}
@@ -63,32 +63,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			var result = base.GetPersonProperArray(Tristate.False).ToList().CopyToCollection();
 
 			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.HasItems))]
-		[BenchmarkCategory(Categories.Collections)]
-		public void HasItems01()
-		{
-			var people = base.GetPersonProperArray().ToList();
-
-			base.Consumer.Consume(people.HasItems());
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
-		public void HasItems02()
-		{
-			var people = base.GetPersonProperArray(Tristate.False).ToList();
-
-			base.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
-		}
-
-		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
-		[BenchmarkCategory(Categories.Collections)]
-		public void HasItems03()
-		{
-			var people = base.GetPersonProperArray(Tristate.False).ToList();
-
-			base.Consumer.Consume(people.HasItems(5));
 		}
 
 		[Benchmark(Description = nameof(EnumerableExtensions.IndexOf))]
@@ -124,6 +98,43 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(ListExtensions.HasItems))]
+		[BenchmarkCategory(Categories.Collections)]
+		public void ListHasItems()
+		{
+			var people = base.GetPersonProperArray().ToList();
+
+			base.Consumer.Consume(people.HasItems());
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
+		[BenchmarkCategory(Categories.Collections)]
+		public void ListHasItemsWithCount()
+		{
+			var people = base.GetPersonProperArray(Tristate.False).ToList();
+
+			base.Consumer.Consume(people.HasItems(5));
+		}
+
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
+		public void ListHasItemsWithPredicate()
+		{
+			var people = base.GetPersonProperArray(Tristate.False).ToList();
+
+			base.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
+		}
+
+		[Benchmark(Description = nameof(Enumerable.TryGetNonEnumeratedCount))]
+		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		public void ListTryGetNonEnumeratedCount()
+		{
+			var people = base.GetPersonProperArray(Tristate.False).ToList();
+
+			_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
+
+			base.Consumer.Consume(count);
+		}
+
 		[Benchmark(Description = nameof(EnumerableExtensions.OrderBy))]
 		public void OrderBy()
 		{
@@ -155,7 +166,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(EnumerableExtensions.PickRandom))]
 		public void PickRandom01()
 		{
-			var result = base.GetPersonProperArray(Core.Tristate.False, CollectionSize.Half).PickRandom();
+			var result = base.GetPersonProperArray(Tristate.False, CollectionSize.Half).PickRandom();
 
 			base.Consumer.Consume(result);
 		}
@@ -164,7 +175,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[BenchmarkCategory(Categories.Collections)]
 		public void PickRandom02()
 		{
-			var people = new ArraySegment<PersonProper>(base.GetPersonProperArray(Core.Tristate.False, CollectionSize.Half));
+			var people = new ArraySegment<PersonProper>(base.GetPersonProperArray(Tristate.False, CollectionSize.Half));
 
 			var result = people.Slice(RandomData.GenerateInteger(0, people.Count - 1));
 

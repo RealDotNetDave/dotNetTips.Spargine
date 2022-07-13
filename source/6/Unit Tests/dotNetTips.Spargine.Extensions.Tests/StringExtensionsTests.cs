@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 07-05-2022
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,6 +17,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using dotNetTips.Spargine.Extensions.Tests.Properties;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -46,6 +47,23 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				var result = word.ComputeHash((HashType)item);
 
 				Assert.IsTrue(result.IsNotEmpty());
+			}
+		}
+
+		[TestMethod]
+		public void SplitLinesTest()
+		{
+			var text = Resources.TestMutipleLinesOfText;
+			try
+			{
+				foreach (ReadOnlySpan<char> line in text.SplitLines())
+				{
+					Console.WriteLine(line.ToString());
+				}
+			}
+			catch
+			{
+				Assert.Fail();
 			}
 		}
 

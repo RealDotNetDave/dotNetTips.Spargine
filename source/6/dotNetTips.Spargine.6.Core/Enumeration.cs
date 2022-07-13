@@ -68,7 +68,7 @@ namespace DotNetTips.Spargine.Core
 		/// <exception cref="ApplicationException"></exception>
 		private static T Parse<T>(string description, [NotNull] Func<T, bool> predicate) where T : Enumeration, new()
 		{
-			var matchingItem = GetAll<T>().FirstOrDefault(predicate);
+			T matchingItem = GetAll<T>().FirstOrDefault(predicate);
 
 			if (matchingItem is null)
 			{
@@ -104,7 +104,7 @@ namespace DotNetTips.Spargine.Core
 		{
 			displayName = displayName.ArgumentNotNullOrEmpty();
 
-			var matchingItem = Parse<T>(displayName, predicate: item => string.Equals(item.DisplayName, displayName, StringComparison.Ordinal));
+			T matchingItem = Parse<T>(displayName, predicate: item => string.Equals(item.DisplayName, displayName, StringComparison.Ordinal));
 
 			return matchingItem;
 		}
@@ -118,7 +118,7 @@ namespace DotNetTips.Spargine.Core
 		[Information(nameof(FromValue), UnitTestCoverage = 0, Status = Status.Available)]
 		public static T FromValue<T>(int value) where T : Enumeration, new()
 		{
-			var matchingItem = Parse<T>("Validating int.", item => item.Value == value);
+			T matchingItem = Parse<T>("Validating int.", item => item.Value == value);
 
 			return matchingItem;
 		}
@@ -131,8 +131,8 @@ namespace DotNetTips.Spargine.Core
 		[Information(nameof(GetAll), UnitTestCoverage = 0, Status = Status.Available)]
 		public static IEnumerable<T> GetAll<T>() where T : Enumeration, new()
 		{
-			var type = typeof(T);
-			var fields = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
+			Type type = typeof(T);
+			FieldInfo[] fields = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.DeclaredOnly);
 
 			for (var fieldCount = 0; fieldCount < fields.Length; fieldCount++)
 			{

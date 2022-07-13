@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-28-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Core
 
 			for (var typeCount = 0; typeCount < list.FastCount(); typeCount++)
 			{
-				var type = list[typeCount];
+				TypeInfo type = list[typeCount];
 
 				// if classOnly, it must be a class
 				// useful when you want to create instance
@@ -145,7 +145,7 @@ namespace DotNetTips.Spargine.Core
 		{
 			if (type.IsGenericType)
 			{
-				var genericArguments = type.GetGenericArguments();
+				Type[] genericArguments = type.GetGenericArguments();
 				ProcessGenericType(builder, type, genericArguments, genericArguments.Length, options);
 			}
 			else if (type.IsArray)
@@ -185,7 +185,7 @@ namespace DotNetTips.Spargine.Core
 		public static T Create<T>()
 			where T : class
 		{
-			var instance = Activator.CreateInstance<T>();
+			T instance = Activator.CreateInstance<T>();
 
 			return instance is T ? instance : null;
 		}
@@ -246,13 +246,13 @@ namespace DotNetTips.Spargine.Core
 		{
 			List<Type> types = null;
 
-			var array = currentDomain.ArgumentNotNull().GetAssemblies();
+			Assembly[] array = currentDomain.ArgumentNotNull().GetAssemblies();
 
 			for (var assemblyCount = 0; assemblyCount < array.Length; assemblyCount++)
 			{
 				try
 				{
-					var assembly = array[assemblyCount];
+					Assembly assembly = array[assemblyCount];
 					var tempTypes = LoadDerivedTypes(assembly.DefinedTypes, baseType, classOnly).ToList();
 
 					if (tempTypes?.FastCount() > 0)
@@ -412,11 +412,11 @@ namespace DotNetTips.Spargine.Core
 		{
 			var returnValue = new Dictionary<string, string>();
 
-			var properties = input.GetType().GetAllProperties().Where(p => p.CanRead).OrderBy(p => p.Name).ToArray();
+			PropertyInfo[] properties = input.GetType().GetAllProperties().Where(p => p.CanRead).OrderBy(p => p.Name).ToArray();
 
 			for (var propertyCount = 0; propertyCount < properties.Length; propertyCount++)
 			{
-				var propertyInfo = properties[propertyCount];
+				PropertyInfo propertyInfo = properties[propertyCount];
 
 				if (string.Equals(propertyInfo.PropertyType.Name, "IDictionary", StringComparison.Ordinal))
 				{

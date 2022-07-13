@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -55,19 +55,19 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <param name="permission">The requested permission.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static bool CheckPermission(string path, FileSystemRights permission = FileSystemRights.Read)
 		{
 			path = path.ArgumentNotNullOrEmpty(trim: true);
 
-			var access = FileSystemAclExtensions.GetAccessControl(new DirectoryInfo(path));
+			DirectorySecurity access = FileSystemAclExtensions.GetAccessControl(new DirectoryInfo(path));
 
 			if (access is null)
 			{
 				return false;
 			}
 
-			var rules = access.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
+			AuthorizationRuleCollection rules = access.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
 
 			if (rules is null)
 			{
@@ -109,24 +109,24 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(CopyDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 		public static void CopyDirectory([NotNull] DirectoryInfo source, [NotNull] DirectoryInfo destination, bool overwrite = true)
 		{
-			var directories = source.ArgumentExists().GetDirectories();
+			DirectoryInfo[] directories = source.ArgumentExists().GetDirectories();
 
 			_ = destination.CheckExists();
 
 			var destinationPath = destination.FullName;
 
-			var files = source.GetFiles();
+			FileInfo[] files = source.GetFiles();
 
 			for (var fileIndex = 0; fileIndex < files.Length; fileIndex++)
 			{
-				var file = files[fileIndex];
+				FileInfo file = files[fileIndex];
 
 				_ = file.CopyTo(Path.Combine(destinationPath, file.Name), overwrite);
 			}
 
 			for (var directoryIndex = 0; directoryIndex < directories.Length; directoryIndex++)
 			{
-				var subDirectory = directories[directoryIndex];
+				DirectoryInfo subDirectory = directories[directoryIndex];
 
 				CopyDirectory(subDirectory, new DirectoryInfo(Path.Combine(destinationPath, subDirectory.Name)), overwrite);
 			}
@@ -210,7 +210,7 @@ namespace DotNetTips.Spargine.IO
 
 			for (var directoryCount = 0; directoryCount < validDirectories.FastCount(); directoryCount++)
 			{
-				var files = await Task.Run(() =>
+				IEnumerable<FileInfo> files = await Task.Run(() =>
 				{
 					return validDirectories[directoryCount].EnumerateFiles(searchPattern, options);
 				}).ConfigureAwait(false);
@@ -239,49 +239,50 @@ namespace DotNetTips.Spargine.IO
 
 			var folders = new List<OneDriveFolder>();
 
-			using var oneDriveKey = RegistryHelper.GetRegistryKey(RegistryHelper.KeyCurrentUserOneDrive, RegistryHive.CurrentUser);
+			using RegistryKey oneDriveKey = RegistryHelper.GetRegistryKey(RegistryHelper.KeyCurrentUserOneDrive, RegistryHive.CurrentUser);
 
 			if (oneDriveKey.IsNotNull())
 			{
 				// Get Accounts
-				using var accountKey = oneDriveKey.GetSubKey(AccountsKey);
-
-				if (accountKey.IsNotNull() && accountKey.SubKeyCount > 0)
+				using (RegistryKey accountKey = oneDriveKey.GetSubKey(AccountsKey))
 				{
-					for (var subKeyIndex = 0; subKeyIndex < accountKey.GetSubKeyNames().Length; subKeyIndex++)
+					if (accountKey.IsNotNull() && accountKey.SubKeyCount > 0)
 					{
-						using var key = accountKey.OpenSubKey(accountKey.GetSubKeyNames()[subKeyIndex]);
-
-						var folder = new OneDriveFolder();
-						var directoryValue = key.GetValue<string>(UserFolderKey);
-
-						if (directoryValue.HasValue())
+						for (var subKeyIndex = 0; subKeyIndex < accountKey.GetSubKeyNames().Length; subKeyIndex++)
 						{
-							folder.DirectoryInfo = new DirectoryInfo(directoryValue);
+							using RegistryKey key = accountKey.OpenSubKey(accountKey.GetSubKeyNames()[subKeyIndex]);
 
-							var emailValue = key.GetValue<string>(EmailKey);
+							var folder = new OneDriveFolder();
+							var directoryValue = key.GetValue<string>(UserFolderKey);
 
-							if (emailValue.IsNotNull())
+							if (directoryValue.HasValue())
 							{
-								folder.UserEmail = emailValue;
-							}
+								folder.DirectoryInfo = new DirectoryInfo(directoryValue);
 
-							// Figure out account type
-							var name = key.GetValue<string>(DisplayNameKey);
+								var emailValue = key.GetValue<string>(EmailKey);
 
-							if (name.HasValue())
-							{
-								folder.AccountType = OneDriveAccountType.Business;
-								folder.AccountName = name;
-							}
-							else
-							{
-								folder.AccountName = (string)key.GetValue(string.Empty);
-							}
+								if (emailValue.IsNotNull())
+								{
+									folder.UserEmail = emailValue;
+								}
 
-							if (folder.AccountName.HasValue() && folder.DirectoryInfo.IsNotNull())
-							{
-								folders.Add(folder);
+								// Figure out account type
+								var name = key.GetValue<string>(DisplayNameKey);
+
+								if (name.HasValue())
+								{
+									folder.AccountType = OneDriveAccountType.Business;
+									folder.AccountName = name;
+								}
+								else
+								{
+									folder.AccountName = (string)key.GetValue(string.Empty);
+								}
+
+								if (folder.AccountName.HasValue() && folder.DirectoryInfo.IsNotNull())
+								{
+									folders.Add(folder);
+								}
 							}
 						}
 					}
@@ -355,7 +356,7 @@ namespace DotNetTips.Spargine.IO
 			{
 				try
 				{
-					var searchResult = SafeDirectorySearch(path, searchPatterns[patternCount], searchOption);
+					IEnumerable<DirectoryInfo> searchResult = SafeDirectorySearch(path, searchPatterns[patternCount], searchOption);
 
 					if (searchResult.HasItems())
 					{
@@ -394,7 +395,7 @@ namespace DotNetTips.Spargine.IO
 			{
 				try
 				{
-					var searchResult = SafeDirectorySearch(path.GetDirectories(searchPattern, searchOption)[directoryCount], searchPattern);
+					IEnumerable<DirectoryInfo> searchResult = SafeDirectorySearch(path.GetDirectories(searchPattern, searchOption)[directoryCount], searchPattern);
 
 					if (searchResult.HasItems())
 					{
@@ -445,7 +446,7 @@ namespace DotNetTips.Spargine.IO
 				{
 					if (directory.Exists)
 					{
-						var directoryFiles = directory.EnumerateFiles(searchPattern, searchOption).ToArray();
+						FileInfo[] directoryFiles = directory.EnumerateFiles(searchPattern, searchOption).ToArray();
 
 						if (directoryFiles.HasItems())
 						{
@@ -471,7 +472,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			path = path.ArgumentExists();
 
-			var directories = path.GetDirectories();
+			DirectoryInfo[] directories = path.GetDirectories();
 
 			for (var directoryCount = 0; directoryCount < path.GetDirectories().Length; directoryCount++)
 			{

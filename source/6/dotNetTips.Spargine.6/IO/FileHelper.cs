@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -70,12 +70,12 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(UnWinZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		private static async Task UnWinZipAsync(string zipPath, string expandedDirectoryPath)
 		{
-			using var zipFileStream = File.OpenRead(zipPath);
+			using FileStream zipFileStream = File.OpenRead(zipPath);
 			using var zipArchiveStream = new ZipArchive(zipFileStream);
 
 			for (var zipArchiveCount = 0; zipArchiveCount < zipArchiveStream.Entries.FastCount(); zipArchiveCount++)
 			{
-				var zipArchiveEntry = zipArchiveStream.Entries[zipArchiveCount];
+				ZipArchiveEntry zipArchiveEntry = zipArchiveStream.Entries[zipArchiveCount];
 
 				if (zipArchiveEntry.CompressedLength == 0)
 				{
@@ -86,9 +86,9 @@ namespace DotNetTips.Spargine.IO
 
 				_ = Directory.CreateDirectory(Path.GetDirectoryName(extractedFilePath));
 
-				using (var zipStream = zipArchiveEntry.Open())
+				using (Stream zipStream = zipArchiveEntry.Open())
 				{
-					using (var extractedFileStream = File.OpenWrite(extractedFilePath))
+					using (FileStream extractedFileStream = File.OpenWrite(extractedFilePath))
 					{
 						await zipStream.CopyToAsync(extractedFileStream).ConfigureAwait(false);
 					}
@@ -102,19 +102,19 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <param name="permission">The requested permission.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static bool CheckPermission(string path, FileSystemRights permission = FileSystemRights.Read)
 		{
 			path = path.ArgumentNotNullOrEmpty(trim: true);
 
-			var access = FileSystemAclExtensions.GetAccessControl(new FileInfo(path));
+			FileSecurity access = FileSystemAclExtensions.GetAccessControl(new FileInfo(path));
 
 			if (access is null)
 			{
 				return false;
 			}
 
-			var rules = access.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
+			AuthorizationRuleCollection rules = access.GetAccessRules(true, true, typeof(System.Security.Principal.SecurityIdentifier));
 
 			if (rules is null)
 			{
@@ -165,14 +165,14 @@ namespace DotNetTips.Spargine.IO
 
 				var newFileName = Path.Combine(destinationName, fileName);
 
-				using (var sourceStream = file.Open(FileMode.Open))
+				using (FileStream sourceStream = file.Open(FileMode.Open))
 				{
 					if (File.Exists(newFileName))
 					{
 						File.Delete(newFileName);
 					}
 
-					using var destinationStream = File.Create(newFileName);
+					using FileStream destinationStream = File.Create(newFileName);
 
 					sourceStream.CopyTo(destinationStream);
 
@@ -205,14 +205,14 @@ namespace DotNetTips.Spargine.IO
 
 			var newFileName = Path.Combine(destinationName, fileName);
 
-			using (var sourceStream = File.Open(fileName, FileMode.Open))
+			using (FileStream sourceStream = File.Open(fileName, FileMode.Open))
 			{
 				if (File.Exists(newFileName))
 				{
 					File.Delete(newFileName);
 				}
 
-				using (var destinationStream = File.Create(newFileName))
+				using (FileStream destinationStream = File.Create(newFileName))
 				{
 					await sourceStream.CopyToAsync(destinationStream).ConfigureAwait(false);
 					await destinationStream.FlushAsync().ConfigureAwait(false);
@@ -292,11 +292,11 @@ namespace DotNetTips.Spargine.IO
 
 			var pathName = destination.FullName;
 
-			using (var client = GetHttpClient())
+			using (HttpClient client = GetHttpClient())
 			{
-				using (var localStream = File.Create(pathName))
+				using (FileStream localStream = File.Create(pathName))
 				{
-					using (var stream = await client.GetStreamAsync(remoteUri).ConfigureAwait(false))
+					using (Stream stream = await client.GetStreamAsync(remoteUri).ConfigureAwait(false))
 					{
 						await stream.CopyToAsync(localStream).ConfigureAwait(false);
 					}
@@ -373,11 +373,11 @@ namespace DotNetTips.Spargine.IO
 
 			var destinationPath = destination.FullName;
 
-			using (var gzipStream = source.OpenRead())
+			using (FileStream gzipStream = source.OpenRead())
 			{
 				using (var expandedStream = new GZipStream(gzipStream, CompressionMode.Decompress))
 				{
-					using (var targetFileStream = File.OpenWrite(destinationPath))
+					using (FileStream targetFileStream = File.OpenWrite(destinationPath))
 					{
 						await expandedStream.CopyToAsync(targetFileStream).ConfigureAwait(false);
 					}

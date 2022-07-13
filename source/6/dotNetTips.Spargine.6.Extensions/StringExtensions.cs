@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-09-2022
+// Last Modified On : 07-05-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -827,42 +827,6 @@ namespace DotNetTips.Spargine.Extensions
 			return Regex.Replace(input, @"[\r\n]+", replacement, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 		}
 
-
-		/// <summary>
-		/// Replaces a string with a new string.
-		/// </summary>
-		/// <param name="str">The string.</param>
-		/// <param name="oldValue">The old value.</param>
-		/// <param name="newValue">The new value.</param>
-		/// <param name="stringComparison">The string comparison.</param>
-		/// <returns>System.String.</returns>
-		[Information("Original code from: https://github.com/Fody/Caseless ", "David McCarter", "3/21/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static string Replace(this string str, string oldValue, string newValue, StringComparison stringComparison = StringComparison.OrdinalIgnoreCase)
-		{
-			str = str.ArgumentNotNullOrEmpty();
-			oldValue = oldValue.ArgumentNotNullOrEmpty();
-			stringComparison = stringComparison.ArgumentDefined();
-
-			var builder = new StringBuilder(str.Length);
-
-			var previousIndex = 0;
-			var index = str.IndexOf(oldValue, stringComparison);
-
-			while (index != -1)
-			{
-				_ = builder.Append(str.AsSpan(previousIndex, index - previousIndex));
-				_ = builder.Append(newValue);
-				index += oldValue.Length;
-
-				previousIndex = index;
-				index = str.IndexOf(oldValue, index, stringComparison);
-			}
-
-			_ = builder.Append(str.AsSpan(previousIndex));
-
-			return builder.ToString();
-		}
-
 		/// <summary>
 		/// Changes the trailing ellipsis in a string to a period.
 		/// </summary>
@@ -949,7 +913,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The string.</param>
 		/// <returns>DotNetTips.Spargine.Extensions.LineSplitEnumerator.</returns>
-		[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 0, Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, Documentation = "https://www.meziantou.net/split-a-string-into-lines-without-allocation.htm")]
+		[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 100, Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, Documentation = "ADD URL")]
 		public static LineSplitEnumerator SplitLines(this string input)
 		{
 			input = input.ArgumentNotNullOrEmpty();

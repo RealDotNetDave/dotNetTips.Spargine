@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,8 +12,6 @@
 // <summary>Extension methods for the ICollection types.</summary>
 // ***********************************************************************
 using System.Collections;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using DotNetTips.Spargine.Core;
@@ -28,24 +26,6 @@ namespace DotNetTips.Spargine.Extensions
 	public static class CollectionExtensions
 	{
 		/// <summary>
-		/// Creates a <see cref="ICollection{T}" /> if null.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="collection">The collection.</param>
-		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		private static bool CreateCollectionIfNull<T>(ref ICollection<T> collection)
-		{
-			if (collection is null)
-			{
-				collection = TypeHelper.Create<Collection<T>>();
-
-				return true;
-			}
-
-			return false;
-		}
-
-		/// <summary>
 		/// Adds item to the <see cref="ICollection{T}" /> if the condition is meet.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
@@ -56,10 +36,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void AddIf<T>([NotNull] this ICollection<T> collection, [NotNull] T item, bool condition)
 		{
-			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 			item = item.ArgumentNotNull();
-
-			Trace.WriteLine(CreateCollectionIfNull(ref collection));
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
 			if (condition)
 			{
@@ -86,8 +64,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
-			Trace.WriteLine(CreateCollectionIfNull(ref collection));
-
 			if (collection.Contains(item))
 			{
 				return false;
@@ -109,10 +85,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] params T[] items)
 		{
-			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 			items = items.ArgumentNotNull();
-
-			Trace.WriteLine(CreateCollectionIfNull(ref collection));
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
 			var returnValue = false;
 
@@ -149,10 +123,9 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
+			item = item.ArgumentNotNull();
 			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
-			comparer = comparer.ArgumentNotNull();
 
-			Trace.WriteLine(CreateCollectionIfNull(ref collection));
 
 			if (collection.Contains(item, comparer))
 			{
@@ -162,7 +135,6 @@ namespace DotNetTips.Spargine.Extensions
 			collection.Add(item);
 
 			return true;
-
 		}
 
 		/// <summary>
@@ -177,10 +149,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool AddRange<T>([NotNull] this ICollection<T> collection, [NotNull] IEnumerable<T> items, Tristate ensureUnique = Tristate.False)
 		{
-			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 			items = items.ArgumentNotNull();
-
-			Trace.WriteLine(CreateCollectionIfNull(ref collection));
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
 			var returnValue = false;
 
@@ -237,7 +207,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ICollection{T}" /> has items.
+		/// Determines whether the specified <see cref="ICollection{T}" /> has a specific count.
 		/// </summary>
 		/// <param name="collection">The source.</param>
 		/// <param name="count">The specific count.</param>
@@ -266,8 +236,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void Upsert<T>([NotNull] this ICollection<T> collection, [NotNull] T item)
 		{
-			collection = collection.ArgumentNotReadOnly().ArgumentNotReadOnly();
 			item = item.ArgumentNotNull();
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
 			_ = collection.Remove(item);
 
@@ -284,8 +254,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void Upsert<T, TKey>([NotNull] this ICollection<T> collection, [NotNull] T item) where T : IDataModel<T, TKey>
 		{
-			collection = collection.ArgumentNotReadOnly(nameof(collection));
 			item = item.ArgumentNotNull();
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
 			_ = collection.Remove(item);
 
@@ -300,10 +270,10 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static void Upsert([NotNull] this ICollection<IDataRecord> collection, [NotNull] IDataRecord item)
 		{
-			collection = collection.ArgumentNotReadOnly();
 			item = item.ArgumentNotNull();
+			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
-			var currentItem = collection.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
+			IDataRecord currentItem = collection.FirstOrDefault(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
 			if (currentItem is not null)
 			{

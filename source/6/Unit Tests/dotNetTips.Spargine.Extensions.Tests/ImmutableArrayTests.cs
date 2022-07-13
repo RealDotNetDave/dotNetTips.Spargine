@@ -11,6 +11,7 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System;
 using System.Collections.Immutable;
 using System.Linq;
 using DotNetTips.Spargine.Tester;
@@ -27,7 +28,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	{
 
 		[TestMethod]
-		public void HasItemsTest()
+		public void HasItemsTest01()
 		{
 			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToImmutable();
 			ImmutableList<Coordinate> nullCollection = null;
@@ -35,6 +36,17 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(collection.HasItems());
 
 			Assert.IsFalse(nullCollection.HasItems());
+		}
+
+		[TestMethod]
+		public void HasItemsTest02()
+		{
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToImmutableArray();
+			Func<Coordinate, bool> selector = (coordinate) => coordinate.X > 0;
+
+			Assert.IsTrue(collection.HasItems(selector));
+
+			Assert.IsFalse(collection.HasItems(null));
 		}
 
 		[TestMethod]

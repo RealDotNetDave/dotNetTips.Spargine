@@ -4,7 +4,7 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -195,7 +195,7 @@ namespace DotNetTips.Spargine.Core
 
 			while (true)
 			{
-				if (this.TryGetItem(index, out var result))
+				if (this.TryGetItem(index, out T result))
 				{
 					yield return result;
 					index++;

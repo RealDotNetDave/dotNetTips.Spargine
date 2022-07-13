@@ -74,7 +74,7 @@ namespace DotNetTips.Spargine.Core
 		{
 			processName = processName.ArgumentNotNullOrEmpty();
 
-			var app = Process.GetProcessesByName(processName).FirstOrDefault();
+			Process app = Process.GetProcessesByName(processName).FirstOrDefault();
 
 			if (app is not null)
 			{
@@ -121,9 +121,9 @@ namespace DotNetTips.Spargine.Core
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static IImmutableDictionary<string, string> GetEnvironmentVariables()
 		{
-			var variables = Environment.GetEnvironmentVariables();
+			IDictionary variables = Environment.GetEnvironmentVariables();
 
-			var builder = ImmutableDictionary.CreateBuilder<string, string>();
+			ImmutableDictionary<string, string>.Builder builder = ImmutableDictionary.CreateBuilder<string, string>();
 
 			foreach (DictionaryEntry variable in variables)
 			{
@@ -157,7 +157,7 @@ namespace DotNetTips.Spargine.Core
 		/// Determines whether user is administrator.
 		/// </summary>
 		/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-		/// <exception cref="System.PlatformNotSupportedException"></exception>
+		/// <exception cref="PlatformNotSupportedException"></exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool IsUserAdministrator()
 		{

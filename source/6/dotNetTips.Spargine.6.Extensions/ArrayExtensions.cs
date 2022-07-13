@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -99,7 +99,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static T[] AddIfNotExists<T>([NotNull] this T[] array, [NotNull] params T[] items)
 		{
-			if (items is null || items.DoesNotHaveItems())
+			if (items.DoesNotHaveItems())
 			{
 				return array;
 			}
@@ -108,7 +108,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			for (var itemCount = 0; itemCount < items.FastCount(); itemCount++)
 			{
-				var item = items[itemCount];
+				T item = items[itemCount];
 
 				if (array.Contains(item) is false)
 				{
@@ -270,7 +270,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool DoesNotHaveItems<T>([AllowNull] this T[] list)
 		{
 			if (list is null)
@@ -292,7 +292,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
 		{
-			var collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();
+			ReadOnlySpan<T> collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();
 
 			for (var itemCount = 0; itemCount < collection.Length; itemCount++)
 			{
@@ -322,7 +322,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="array">The array.</param>
 		/// <returns><c>true</c> if the specified array has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array)
 		{
 			if (array is null)
@@ -343,7 +343,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array, [NotNull] Func<T, bool> action)
 		{
 			if (array is null || action is null)
@@ -364,7 +364,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array, int count)
 		{
 			if (array is null)
@@ -475,7 +475,7 @@ namespace DotNetTips.Spargine.Extensions
 			item = item.ArgumentNotNull();
 			var recordsList = records.ArgumentNotNull().ToList();
 
-			var currentItem = recordsList.Find(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
+			IDataRecord currentItem = recordsList.Find(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
 			if (currentItem is not null)
 			{

@@ -4,7 +4,7 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-27-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="FileProcessor.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public int CopyFiles([NotNull] IEnumerable<FileInfo> files, [NotNull] DirectoryInfo destination)
 		{
-			var list = files.ArgumentItemsExists().ToArray();
+			FileInfo[] list = files.ArgumentItemsExists().ToArray();
 
 			_ = destination.CheckExists();
 
@@ -59,7 +59,7 @@ namespace DotNetTips.Spargine.IO
 
 			for (var fileCount = 0; fileCount < list.Length; fileCount++)
 			{
-				var tempFile = list[fileCount];
+				FileInfo tempFile = list[fileCount];
 
 				if (tempFile.Exists)
 				{
@@ -76,7 +76,7 @@ namespace DotNetTips.Spargine.IO
 
 						_ = tempFile.CopyTo(newFileName.FullName, overwrite: true);
 
-						var perf = psw.StopReset();
+						TimeSpan perf = psw.StopReset();
 
 						successCount += 1;
 
@@ -131,11 +131,11 @@ namespace DotNetTips.Spargine.IO
 			}
 
 			var successCount = 0;
-			var list = files.ToArray();
+			FileInfo[] list = files.ToArray();
 
 			for (var fileCount = 0; fileCount < list.Length; fileCount++)
 			{
-				var tempFile = list[fileCount];
+				FileInfo tempFile = list[fileCount];
 
 				if (tempFile.Exists)
 				{
@@ -148,7 +148,7 @@ namespace DotNetTips.Spargine.IO
 							task.FireAndForget(); //TODO: DOCUMENT THIS EXAMPLE
 						}
 
-						var perf = psw.StopReset();
+						TimeSpan perf = psw.StopReset();
 
 						successCount += 1;
 
@@ -200,11 +200,11 @@ namespace DotNetTips.Spargine.IO
 			}
 
 			var successCount = 0;
-			var list = folders.ToArray();
+			DirectoryInfo[] list = folders.ToArray();
 
 			for (var folderIndex = 0; folderIndex < list.Length; folderIndex++)
 			{
-				var tempFolder = list[folderIndex];
+				DirectoryInfo tempFolder = list[folderIndex];
 
 				if (tempFolder.Exists)
 				{

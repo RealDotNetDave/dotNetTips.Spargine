@@ -72,10 +72,10 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="linq2db" Version="4.0.0" />
+		<PackageReference Include="linq2db" Version="4.1.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="6.0.5" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="6.0.7" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

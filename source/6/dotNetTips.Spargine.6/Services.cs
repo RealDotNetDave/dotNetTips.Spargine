@@ -69,7 +69,7 @@ namespace DotNetTips.Spargine
 		[Information(UnitTestCoverage = 0, Status = Status.Available)]
 		public static void KillProcess(string processName)
 		{
-			var app = Process.GetProcessesByName(processName.ArgumentNotNullOrEmpty()).FirstOrDefault();
+			Process app = Process.GetProcessesByName(processName.ArgumentNotNullOrEmpty()).FirstOrDefault();
 
 			if (app is not null)
 			{
@@ -86,7 +86,7 @@ namespace DotNetTips.Spargine
 		[Information(nameof(ServiceExists), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool ServiceExists(string serviceName)
 		{
-			var service = LoadService(serviceName.ArgumentNotNullOrEmpty());
+			ServiceController service = LoadService(serviceName.ArgumentNotNullOrEmpty());
 
 			return service is not null;
 		}
@@ -96,11 +96,11 @@ namespace DotNetTips.Spargine
 		/// </summary>
 		/// <param name="serviceName">Name of the service.</param>
 		/// <returns>ServiceControllerStatus.</returns>
-		/// <exception cref="System.InvalidOperationException"></exception>
+		/// <exception cref="InvalidOperationException"></exception>
 		[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static ServiceControllerStatus ServiceStatus(string serviceName)
 		{
-			var service = LoadService(serviceName.ArgumentNotNullOrEmpty());
+			ServiceController service = LoadService(serviceName.ArgumentNotNullOrEmpty());
 			return service is not null ? service.Status : throw new InvalidOperationException(Resources.ServiceNotFound);
 		}
 
@@ -114,14 +114,14 @@ namespace DotNetTips.Spargine
 		{
 			serviceName = serviceName.ArgumentNotNullOrEmpty();
 
-			var statusResult = ServiceActionResult.Error;
+			ServiceActionResult statusResult = ServiceActionResult.Error;
 
 			if (ServiceExists(serviceName) is false)
 			{
 				return ServiceActionResult.NotFound;
 			}
 
-			var service = LoadService(serviceName);
+			ServiceController service = LoadService(serviceName);
 
 			if (service is not null && service.Status == ServiceControllerStatus.Stopped)
 			{
@@ -176,14 +176,14 @@ namespace DotNetTips.Spargine
 		{
 			serviceName = serviceName.ArgumentNotNullOrEmpty();
 
-			var statusResult = ServiceActionResult.NotFound;
+			ServiceActionResult statusResult = ServiceActionResult.NotFound;
 
 			if (ServiceExists(serviceName) is false)
 			{
 				return statusResult;
 			}
 
-			var service = LoadService(serviceName);
+			ServiceController service = LoadService(serviceName);
 
 			if (service is not null && service.Status == ServiceControllerStatus.Running)
 			{

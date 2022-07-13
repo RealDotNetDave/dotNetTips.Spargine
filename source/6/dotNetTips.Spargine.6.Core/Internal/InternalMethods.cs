@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Core.Internal
 				return result;
 			}
 
-			var objectType = obj.GetType();
+			Type objectType = obj.GetType();
 
 			// Reserve a special treatment for specific types by design (like string -that's a list of chars and you don't want to iterate on its items)
 			if (TypeHelper.BuiltInTypeNames.ContainsKey(objectType))
@@ -99,7 +99,7 @@ namespace DotNetTips.Spargine.Core.Internal
 
 			// Otherwise go deeper in the object tree.
 			// And foreach object public property collect each value
-			var propertyCollection = objectType.GetProperties();
+			System.Reflection.PropertyInfo[] propertyCollection = objectType.GetProperties();
 
 			var newMemberName = string.Empty;
 
@@ -108,7 +108,7 @@ namespace DotNetTips.Spargine.Core.Internal
 				newMemberName = $"{memberName}{ControlChars.Dot}";
 			}
 
-			foreach (var property in propertyCollection)
+			foreach (System.Reflection.PropertyInfo property in propertyCollection)
 			{
 				var innerObject = property.GetValue(obj, null);
 
@@ -147,7 +147,7 @@ namespace DotNetTips.Spargine.Core.Internal
 				typeName = string.Empty;
 			}
 
-			var properties = PropertiesToDictionary(obj, memberName: typeName, ignoreNulls: ignoreNulls);
+			IDictionary<string, string> properties = PropertiesToDictionary(obj, memberName: typeName, ignoreNulls: ignoreNulls);
 
 			var result = properties.Aggregate(header, (acc, pair) => string.Format(CultureInfo.CurrentCulture, "{0}{1}{2}{3}{4}", acc, sequenceSeparator, pair.Key, keyValueSeparator, pair.Value));
 

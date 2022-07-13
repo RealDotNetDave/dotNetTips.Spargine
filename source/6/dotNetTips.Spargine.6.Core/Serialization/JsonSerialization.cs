@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Core.Serialization
 		/// <exception cref="NotSupportedException">Unexpected JsonValueKind: {valueKind}.</exception>
 		private static bool JsonEqual([NotNull] JsonElement expected, [NotNull] JsonElement actual)
 		{
-			var valueKind = expected.ValueKind;
+			JsonValueKind valueKind = expected.ValueKind;
 
 			if (valueKind != actual.ValueKind)
 			{
@@ -44,17 +44,17 @@ namespace DotNetTips.Spargine.Core.Serialization
 				case JsonValueKind.Object:
 					var propertyNames = new HashSet<string>();
 
-					using (var expectedEnumerator = expected.EnumerateObject())
+					using (JsonElement.ObjectEnumerator expectedEnumerator = expected.EnumerateObject())
 					{
-						foreach (var property in expectedEnumerator)
+						foreach (JsonProperty property in expectedEnumerator)
 						{
 							_ = propertyNames.Add(property.Name);
 						}
 					}
 
-					using (var actualEnumerator = actual.EnumerateObject())
+					using (JsonElement.ObjectEnumerator actualEnumerator = actual.EnumerateObject())
 					{
-						foreach (var property in actualEnumerator)
+						foreach (JsonProperty property in actualEnumerator)
 						{
 							_ = propertyNames.Add(property.Name);
 						}
@@ -70,9 +70,9 @@ namespace DotNetTips.Spargine.Core.Serialization
 
 					return true;
 				case JsonValueKind.Array:
-					using (var expectedEnumerator = actual.EnumerateArray())
+					using (JsonElement.ArrayEnumerator expectedEnumerator = actual.EnumerateArray())
 					{
-						using var actualEnumerator = expected.EnumerateArray();
+						using JsonElement.ArrayEnumerator actualEnumerator = expected.EnumerateArray();
 
 						while (expectedEnumerator.MoveNext())
 						{
@@ -111,7 +111,7 @@ namespace DotNetTips.Spargine.Core.Serialization
 		[Information(nameof(Deserialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static TResult Deserialize<TResult>([NotNull] string json)
 		{
-			var obj = JsonSerializer.Deserialize<TResult>(json.ArgumentNotNullOrEmpty(true));
+			TResult obj = JsonSerializer.Deserialize<TResult>(json.ArgumentNotNullOrEmpty(true));
 
 			return obj;
 		}

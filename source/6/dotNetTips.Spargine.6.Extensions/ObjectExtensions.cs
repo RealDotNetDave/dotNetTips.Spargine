@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -191,7 +191,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			propertyName = propertyName.ArgumentNotNullOrEmpty();
 
-			var propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Equals(p.Name, propertyName, StringComparison.Ordinal));
+			PropertyInfo propertyInfo = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Equals(p.Name, propertyName, StringComparison.Ordinal));
 
 			return propertyInfo is not null;
 		}
@@ -218,13 +218,13 @@ namespace DotNetTips.Spargine.Extensions
 
 			for (var fieldCount = 0; fieldCount < fieldInfos.FastCount(); fieldCount++)
 			{
-				var fieldInfo = fieldInfos[fieldCount];
+				FieldInfo fieldInfo = fieldInfos[fieldCount];
 				var objectValue = fieldInfo.GetValue(obj);
-				var runtimeField = obj.GetType().GetRuntimeField(fieldInfo.Name);
+				FieldInfo runtimeField = obj.GetType().GetRuntimeField(fieldInfo.Name);
 
 				if (runtimeField is not null)
 				{
-					var t = Nullable.GetUnderlyingType(runtimeField.FieldType) ?? runtimeField.FieldType;
+					Type t = Nullable.GetUnderlyingType(runtimeField.FieldType) ?? runtimeField.FieldType;
 					var safeValue = ( objectValue is null )
 						? null
 						: Convert.ChangeType(objectValue, t, CultureInfo.InvariantCulture);
@@ -295,7 +295,7 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			var result = new Dictionary<string, string>();
 
-			var objectType = obj.ArgumentNotNull().GetType();
+			Type objectType = obj.ArgumentNotNull().GetType();
 
 			// Reserve a special treatment for specific types by design (like string -that's a list of chars and you don't want to iterate on its items)
 			if (TypeHelper.BuiltInTypeNames.ContainsKey(objectType))
@@ -332,7 +332,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			// Otherwise go deeper in the object tree.
 			// And foreach object public property collect each value
-			var propertyCollection = objectType.GetProperties();
+			PropertyInfo[] propertyCollection = objectType.GetProperties();
 
 			var newMemberName = string.Empty;
 
@@ -343,7 +343,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			for (var propertyIndex = 0; propertyIndex < propertyCollection.Length; propertyIndex++)
 			{
-				var property = propertyCollection[propertyIndex];
+				PropertyInfo property = propertyCollection[propertyIndex];
 				var innerObject = property.GetValue(obj, null);
 
 				if (ignoreNulls && innerObject is null)
@@ -411,7 +411,7 @@ namespace DotNetTips.Spargine.Extensions
 				typeName = string.Empty;
 			}
 
-			var properties = obj.PropertiesToDictionary(memberName: typeName, ignoreNulls: ignoreNulls);
+			IDictionary<string, string> properties = obj.PropertiesToDictionary(memberName: typeName, ignoreNulls: ignoreNulls);
 
 			var result = properties.Aggregate(header, (acc, pair) => string.Format(CultureInfo.CurrentCulture, "{0}{1}{2}{3}{4}", acc, sequenceSeparator, pair.Key, keyValueSeparator, pair.Value));
 
@@ -498,7 +498,7 @@ namespace DotNetTips.Spargine.Extensions
 			{
 				if (obj is IAsyncDisposable asyncDisposable)
 				{
-					var result = asyncDisposable.DisposeAsync();
+					ValueTask result = asyncDisposable.DisposeAsync();
 
 					if (result.IsFaulted)
 					{

@@ -4,7 +4,7 @@
 // Created          : 02-18-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-14-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="StringBuilderHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,6 +32,8 @@ namespace DotNetTips.Spargine.Core
 		[Information(nameof(BytesToString), author: "David McCarter", createdOn: "2/18/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static string BytesToString([NotNull] byte[] bytes)
 		{
+			// TODO: ADD UNIT TEST!
+
 			bytes = bytes.ArgumentItemsExists();
 
 			var sb = new StringBuilder();
@@ -60,6 +62,8 @@ namespace DotNetTips.Spargine.Core
 		[Information(nameof(ConcatToString), "David McCarter", "2/19/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static string ConcatToString(string delimiter, Tristate addLineFeed, [NotNull] params string[] args)
 		{
+			// TODO: ADD UNIT TEST!
+
 			delimiter = delimiter.ArgumentNotNullOrEmpty();
 			args = args.ArgumentItemsExists();
 
@@ -71,10 +75,8 @@ namespace DotNetTips.Spargine.Core
 				{
 					var value = args[argumentIndex];
 
-					//TODO: ADD EXTENSION METHOD TO TEST FOR ENUM VALUES
 					if (addLineFeed is Tristate.True or Tristate.UseDefault)
 					{
-						//TODO: THIS CONDITION NOT BEING TESTED
 						_ = sb.AppendLine(value);
 					}
 					else
@@ -95,9 +97,9 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="list">The list.</param>
 		/// <param name="delimiter">The delimiter.</param>
 		/// <returns>System.String.</returns>
+		[Information(nameof(ToDelimitedString), "David McCarter", "1/1/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "https://bit.ly/SpargineFeb21")]
 		public static string ToDelimitedString<TKey, TValue>([NotNull] Dictionary<TKey, TValue> list, char delimiter = ControlChars.Comma)
 		{
-			// TODO: ADD LINK TO ARTICLE FOR THIS METHOD.
 			// TODO: ADD UNIT TEST!
 			if (list.CheckItemsExists() is false)
 			{
@@ -106,7 +108,7 @@ namespace DotNetTips.Spargine.Core
 
 			var sb = new StringBuilder();
 
-			foreach (var item in list)
+			foreach (KeyValuePair<TKey, TValue> item in list)
 			{
 				_ = sb.AppendLine($"{item.Key}:{item.Value}{delimiter}".ToString(CultureInfo.CurrentCulture));
 			}

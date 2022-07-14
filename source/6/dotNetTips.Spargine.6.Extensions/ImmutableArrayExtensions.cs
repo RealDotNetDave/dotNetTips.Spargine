@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 07-14-2022
 // ***********************************************************************
 // <copyright file="ImmutableArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -53,7 +53,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The list.</param>
 		/// <param name="action">The action.</param>
 		/// <returns>bool.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([NotNull] this ImmutableArray<T> list, [NotNull] Func<T, bool> action)
 		{
@@ -74,7 +74,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="list">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([NotNull] this ImmutableArray<T> list, int count)
 		{

@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 07-14-2022
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -78,8 +78,7 @@ namespace DotNetTips.Spargine.Core.Logging
 		///// <param name="ex">The Exception.</param>
 		///// <exception cref="ArgumentNullException">logger</exception>
 		///// <exception cref="ArgumentException">'{nameof(message)}' cannot be null or empty. - message</exception>
-		//[DoesNotReturn]
-		//[MethodImpl(MethodImplOptions.NoInlining)]
+		//[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		//[Information(nameof(FastLogger), author: "David McCarter", createdOn: "3/21/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		//public static void FastLogger([NotNull] ILogger logger, LogLevel logLevel, string message, [AllowNull] Exception ex)
 		//{

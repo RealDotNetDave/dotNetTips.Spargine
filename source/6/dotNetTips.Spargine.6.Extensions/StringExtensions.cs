@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-05-2022
+// Last Modified On : 07-14-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -299,7 +299,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="value">The string input.</param>
 		/// <returns>System.String.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string DefaultIfNull(this string value)
 		{
@@ -312,7 +312,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="value">The string input.</param>
 		/// <param name="defaultValue">The default value that will be returned if the string is null.</param>
 		/// <returns>System.String.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string DefaultIfNull(this string value, string defaultValue)
 		{
@@ -325,7 +325,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <param name="defaultValue">The default value.</param>
 		/// <returns>System.String.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(DefaultIfNullOrEmpty), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string DefaultIfNullOrEmpty([AllowNull] this string value, string defaultValue)
 		{
@@ -355,7 +355,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(EqualsIgnoreCase), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool EqualsIgnoreCase(this string input, string inputToCompare)
 		{
@@ -371,7 +371,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool EqualsOrBothNullOrEmpty(this string input, string inputToCompare)
 		{
@@ -449,7 +449,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input)
 		{
@@ -578,7 +578,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiDigit(this char character)
 		{
@@ -590,7 +590,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiLetter(this char character)
 		{
@@ -602,7 +602,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="character">The character.</param>
 		/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiLetterOrDigit(this char character)
 		{
@@ -614,7 +614,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="character">The character.</param>
 		/// <returns>bool.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsAsciiWhitespace(this char character)
 		{
@@ -637,7 +637,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>bool.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static bool IsCurrencyCode(this string input)
 		{
@@ -649,7 +649,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool IsDomainAddress(this string input)
 		{
@@ -672,7 +672,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
 		public static bool IsEmpty(this string input)
 		{
@@ -744,7 +744,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsEmpty), "David McCarter", "8/18/20", Status = Status.Available, UnitTestCoverage = 100)]
 		public static bool IsNotEmpty(this string input)
 		{
@@ -756,7 +756,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>bool.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static bool IsOneToSevenAlpha(this string input)
 		{
@@ -854,7 +854,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.String[].</returns>
 		/// <exception cref="ArgumentInvalidException">Input cannot be <see langword="null" />.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Options are invalid.</exception>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, StringSplitOptions options, char separator = ControlChars.Comma)
 		{
@@ -875,7 +875,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">Input cannot be <see langword="null" />.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Options are invalid.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 1.</exception>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
 		{
@@ -897,7 +897,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentInvalidException">input cannot be <see langword="null" />.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Options are invalid.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 1.</exception>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string[] Split(this string input, StringSplitOptions options, int count, [NotNull] string separator = ControlChars.DefaultSeparator)
 		{
@@ -928,7 +928,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 		/// <exception cref="ArgumentInvalidException">input string cannot be null.</exception>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(SplitRemoveEmpty), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<string> SplitRemoveEmpty(this string input)
 		{
@@ -943,7 +943,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool StartsWithOrdinal(this string input, string inputToCompare)
 		{
@@ -959,7 +959,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool StartsWithOrdinalIgnoreCase(this string input, string inputToCompare)
 		{
@@ -1084,7 +1084,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The source.</param>
 		/// <returns>System.String.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(Extract), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string ToTitleCase(this string input)
 		{
@@ -1099,7 +1099,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>Trimmed System.String.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(ToTrimmed), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ToTrimmed(this string input)
 		{

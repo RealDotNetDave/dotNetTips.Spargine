@@ -4,7 +4,7 @@
 // Created          : 03-23-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-01-2022
+// Last Modified On : 07-14-2022
 // ***********************************************************************
 // <copyright file="LoggerExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -28,8 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 		///// <param name="logLevel">The log level.</param>
 		///// <param name="message">The message.</param>
 		///// <param name="ex">The ex.</param>
-		//[DoesNotReturn]
-		//[MethodImpl(MethodImplOptions.NoInlining)]
+		//[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		//[Information(nameof(FastLogger), author: "David McCarter", createdOn: "3/22/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		//public static void FastLogger([NotNull] this ILogger logger, LogLevel logLevel, [NotNull] string message, [AllowNull] Exception ex)
 		//{

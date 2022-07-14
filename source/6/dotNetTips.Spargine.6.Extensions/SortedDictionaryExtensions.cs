@@ -53,7 +53,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="dictionary">The dictionary.</param>
 		/// <returns><c>true</c> if the specified dictionary has items; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary)
 		{
@@ -75,7 +75,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
@@ -97,7 +97,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="dictionary">The dictionary.</param>
 		/// <param name="count">The count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-		[MethodImpl(MethodImplOptions.NoInlining)]
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, int count)
 		{

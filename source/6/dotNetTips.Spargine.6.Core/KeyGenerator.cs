@@ -42,7 +42,7 @@ namespace DotNetTips.Spargine.Core
 		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static string GenerateKey(string prefix)
 		{
-			return $"{prefix.ArgumentNotNullOrEmpty()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
+			return $"{prefix.ArgumentNotNull()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
 		}
 	}
 }

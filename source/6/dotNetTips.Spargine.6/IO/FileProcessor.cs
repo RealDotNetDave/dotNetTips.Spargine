@@ -49,9 +49,9 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public int CopyFiles([NotNull] IEnumerable<FileInfo> files, [NotNull] DirectoryInfo destination)
 		{
-			FileInfo[] list = files.ArgumentItemsExists().ToArray();
+			FileInfo[] list = files.ArgumentNotNull().ToArray();
 
-			_ = destination.CheckExists();
+			_ = destination.ArgumentNotNull().CheckExists();
 
 			var destinationPath = destination.FullName;
 

@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-26-2022
+// Last Modified On : 05-30-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -24,6 +24,8 @@ using DotNetTips.Spargine.Tester.Models.ValueTypes;
 using Perfolizer.Mathematics.SignificanceTesting;
 using static BenchmarkDotNet.Attributes.MarkdownExporterAttribute;
 using static BenchmarkDotNet.Attributes.XmlExporterAttribute;
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Benchmarking
 {

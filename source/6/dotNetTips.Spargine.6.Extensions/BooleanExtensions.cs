@@ -4,7 +4,7 @@
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 05-25-2022
 // ***********************************************************************
 // <copyright file="BooleanExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

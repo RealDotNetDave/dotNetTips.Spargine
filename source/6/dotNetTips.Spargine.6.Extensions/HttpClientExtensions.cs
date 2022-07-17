@@ -4,7 +4,7 @@
 // Created          : 07-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="HttpClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,8 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Gets and deserializes the <see cref="HttpClient" />.
+		/// Validates that <paramref name="client" />, <paramref name="url" />
+		/// and <paramref name="options" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="client">The client.</param>

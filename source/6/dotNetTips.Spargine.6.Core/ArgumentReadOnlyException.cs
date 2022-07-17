@@ -28,7 +28,6 @@ namespace DotNetTips.Spargine.Core
 	[Serializable]
 	public sealed class ArgumentReadOnlyException : ArgumentException
 	{
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ArgumentReadOnlyException"></see> class with serialized data.
 		/// </summary>
@@ -81,6 +80,5 @@ namespace DotNetTips.Spargine.Core
 		public ArgumentReadOnlyException(string message, string paramName, Exception innerException) : base(message, paramName, innerException)
 		{
 		}
-
 	}
 }

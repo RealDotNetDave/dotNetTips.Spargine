@@ -4,7 +4,7 @@
 // Created          : 12-05-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-24-2021
+// Last Modified On : 04-27-2022
 // ***********************************************************************
 // <copyright file="SerializationBenchmark.cs" company="DotNetTips.Utility.Benchmarks">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -16,6 +16,8 @@ using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core.BenchmarkTests.Properties;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 {

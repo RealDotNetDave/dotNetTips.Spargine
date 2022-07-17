@@ -10,7 +10,7 @@
 		<FileVersion>2021.6.14.440</FileVersion>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>none</AnalysisLevel>
-		<RootNamespace>DotNetTips.Spargine.Core.Tests</RootNamespace>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -37,9 +37,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\dotNetTips.Spargine.6.Core.csproj" />
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\dotNetTips.Spargine.6.Extensions.csproj" />
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\dotNetTips.Spargine.6.Tester.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\DotNetTips.Spargine.6.Extensions.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\DotNetTips.Spargine.6.Tester.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

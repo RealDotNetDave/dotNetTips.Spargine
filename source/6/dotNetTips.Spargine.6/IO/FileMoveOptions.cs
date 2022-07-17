@@ -4,7 +4,7 @@
 // Created          : 04-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="FileMoveOptions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -22,6 +22,11 @@ namespace DotNetTips.Spargine.IO
 	[Flags]
 	public enum FileMoveOptions
 	{
+		/// <summary>
+		/// None
+		/// </summary>
+		None = 0,
+
 		/// <summary>
 		/// If the destination file exists, the function replaces its contents
 		/// with the contents of the existing file, if security requirements

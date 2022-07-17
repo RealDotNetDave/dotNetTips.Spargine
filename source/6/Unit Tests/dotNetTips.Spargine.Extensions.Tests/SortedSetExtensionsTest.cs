@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DoesNotHaveItemsTest()
 		{
-			var collection = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			var collection = new SortedSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
 			SortedSet<PersonProper> nullCollection = null;
 
 			Assert.IsFalse(collection.DoesNotHaveItems());
@@ -43,7 +43,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest()
 		{
-			var collection = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			var collection = new SortedSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
 			SortedSet<PersonProper> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems());
@@ -54,7 +54,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsWithCountTest()
 		{
-			var collection = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			var collection = new SortedSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
 			ObservableCollection<Coordinate> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems(100));
@@ -67,7 +67,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsWithFunctionTest()
 		{
-			var collection = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			var collection = new SortedSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
 			ObservableCollection<Coordinate> nullCollection = null;
 
 			Func<PersonProper, bool> selector = (person) => person.Email.IsNotNull();
@@ -79,7 +79,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToImmutableTest()
 		{
-			var peopleSortedSet = new SortedSet<PersonProper>((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(100));
+			var peopleSortedSet = new SortedSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
 
 			var result = peopleSortedSet.ToImmutable();
 

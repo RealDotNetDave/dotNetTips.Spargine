@@ -229,7 +229,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// the hash set. The array must have zero-based indexing.</param>
 		public virtual void CopyTo([NotNull] T[] array)
 		{
-			this._set.CopyTo(array.ArgumentItemsExists());
+			this._set.CopyTo(array.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -240,7 +240,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
 		public virtual void CopyTo([NotNull] T[] array, int arrayIndex)
 		{
-			this._set.CopyTo(array.ArgumentItemsExists(), arrayIndex);
+			this._set.CopyTo(array.ArgumentNotNull(), arrayIndex);
 		}
 
 		/// <summary>
@@ -252,7 +252,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="count">The number of elements to copy to array.</param>
 		public virtual void CopyTo([NotNull] T[] array, int arrayIndex, int count)
 		{
-			this._set.CopyTo(array.ArgumentItemsExists(), arrayIndex, count);
+			this._set.CopyTo(array.ArgumentNotNull(), arrayIndex, count);
 		}
 
 		/// <summary>
@@ -261,7 +261,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="other">The collection of items to remove from the current hash set.</param>
 		public virtual void ExceptWith([NotNull] IEnumerable<T> other)
 		{
-			other = other.ArgumentItemsExists();
+			other = other.ArgumentNotNull();
 
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -296,7 +296,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		public virtual void IntersectWith([NotNull] IEnumerable<T> other)
 		{
-			other = other.ArgumentItemsExists();
+			other = other.ArgumentNotNull();
 
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -325,7 +325,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set is a proper subset of other; otherwise, <see langword="false" />.</returns>
 		public virtual bool IsProperSubsetOf([NotNull] IEnumerable<T> other)
 		{
-			return this._set.IsProperSubsetOf(other.ArgumentItemsExists());
+			return this._set.IsProperSubsetOf(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -335,7 +335,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set is a proper superset of other; otherwise, <see langword="false" />.</returns>
 		public virtual bool IsProperSupersetOf([NotNull] IEnumerable<T> other)
 		{
-			return this._set.IsProperSupersetOf(other.ArgumentItemsExists());
+			return this._set.IsProperSupersetOf(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -345,7 +345,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set is a subset of other; otherwise, <see langword="false" />.</returns>
 		public virtual bool IsSubsetOf([NotNull] IEnumerable<T> other)
 		{
-			return this._set.IsSubsetOf(other.ArgumentItemsExists());
+			return this._set.IsSubsetOf(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -355,7 +355,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set is a superset of other; otherwise, <see langword="false" />.</returns>
 		public virtual bool IsSupersetOf([NotNull] IEnumerable<T> other)
 		{
-			return this._set.IsSupersetOf(other.ArgumentItemsExists());
+			return this._set.IsSupersetOf(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -365,7 +365,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set and other share at least one common element; otherwise, <see langword="false" />.</returns>
 		public virtual bool Overlaps([NotNull] IEnumerable<T> other)
 		{
-			return this._set.Overlaps(other.ArgumentItemsExists());
+			return this._set.Overlaps(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -435,7 +435,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <returns><see langword="true" /> if the hash set is equal to other; otherwise, <see langword="false" />.</returns>
 		public virtual bool SetEquals([NotNull] IEnumerable<T> other)
 		{
-			return this._set.SetEquals(other.ArgumentItemsExists());
+			return this._set.SetEquals(other.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -445,7 +445,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		public virtual void SymmetricExceptWith([NotNull] IEnumerable<T> other)
 		{
-			other = other.ArgumentItemsExists();
+			other = other.ArgumentNotNull();
 
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 
@@ -480,7 +480,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="other">The collection to compare to the current hash set.</param>
 		public virtual void UnionWith([NotNull] IEnumerable<T> other)
 		{
-			other = other.ArgumentItemsExists();
+			other = other.ArgumentNotNull();
 
 			var copy = new HashSet<T>(this._set, this._set.Comparer);
 

@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,6 +20,8 @@ using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
@@ -79,8 +81,22 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(EnumerableExtensions.Shuffle))]
+		public void Shuffle()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).Shuffle();
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.Shuffle) + "With Count")]
+		public void ShuffleWithCount()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).Shuffle(this.Count / 2);
+			base.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(EnumerableExtensions.FirstOrNull))]
-		public void FirstOrNull01()
+		public void FirstOrNull()
 		{
 			var result = base.GetCoordinateArray().FirstOrNull(p => p.X == this.Coordinate01.X);
 
@@ -89,18 +105,71 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 		[Benchmark(Description = nameof(EnumerableExtensions.HasItems))]
 		[BenchmarkCategory(Categories.Collections)]
-		public void HasItems01()
+		public void HasItems()
 		{
 			var result = base.GetPersonProperArray().AsEnumerable().HasItems();
 
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = nameof(EnumerableExtensions.OrderByOrdinal))]
+		public void OrderByOrdinal()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).OrderByOrdinal(p => p.City);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.IndexOf) + ":Comparer")]
+		public void IndexOfComparer()
+		{
+			var comparer = new PersonProperComparer();
+			var result = base.GetPersonProperArray(Tristate.False).IndexOf(base.GetPersonProperArray(Tristate.False, CollectionSize.Half).Last(), comparer);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.PickRandom))]
+		public void PickRandom01()
+		{
+			var result = base.GetPersonProperArray(Tristate.False, CollectionSize.Half).PickRandom();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.Page))]
+		public void Page()
+		{
+			foreach (var people in base.GetPersonProperArray(Tristate.False).Page(25))
+			{
+				foreach (var person in people)
+				{
+					base.Consumer.Consume(person);
+				}
+			}
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + "With Sort Expression")]
+		public void OrderBy()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).ToList().OrderBy("City desc");
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.IndexOf))]
+		public void IndexOf()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).IndexOf(base.GetPersonProperArray().Last());
+
+			base.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(EnumerableExtensions.HasItems) + ": With Count")]
 		[BenchmarkCategory(Categories.Collections)]
-		public void HasItems02()
+		public void HasItemsWithCount()
 		{
-			var result = base.GetPersonProperArray().AsEnumerable().HasItems(5);
+			var result = base.GetPersonProperArray().AsEnumerable().HasItems(this.Count);
 
 			base.Consumer.Consume(result);
 		}

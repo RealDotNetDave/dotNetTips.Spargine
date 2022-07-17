@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Does the object implement  any of the interfaces.
+		/// Validates that <paramref name="input" /> and <paramref name="interfaceNames" /> is not null.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="interfaceNames">The interface names.</param>
@@ -36,7 +37,7 @@ namespace DotNetTips.Spargine.Extensions
 		public static IEnumerable<string> DoesObjectImplementInterface([NotNull] this object input, [NotNull] params string[] interfaceNames)
 		{
 			input = input.ArgumentNotNull();
-			interfaceNames = interfaceNames.ArgumentItemsExists();
+			interfaceNames = interfaceNames.ArgumentNotNull();
 
 			IEnumerable<string> interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
 			var foundInterfaces = new List<string>();
@@ -48,6 +49,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the abstract methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -60,6 +62,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the declared fields.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
@@ -91,6 +94,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets declared methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -124,6 +128,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all fields.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
@@ -146,6 +151,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the generic methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -158,6 +164,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -180,6 +187,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all properties.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;PropertyInfo&gt;.</returns>
@@ -202,6 +210,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the public methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -214,6 +223,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the static methods.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns>IEnumerable&lt;MethodInfo&gt;.</returns>
@@ -226,6 +236,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Resolves the attribute.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <typeparam name="TAttribute">Generic type parameter.</typeparam>
 		/// <param name="type">The type.</param>
@@ -240,6 +251,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Resolves the attribute.
+		/// Validates that <paramref name="methodInfo" /> is not null.
 		/// </summary>
 		/// <typeparam name="TAttribute">Generic type parameter.</typeparam>
 		/// <param name="methodInfo">The method information.</param>
@@ -254,6 +266,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Resolves the attribute.
+		/// Validates that <paramref name="propertyInfo" /> is not null.
 		/// </summary>
 		/// <typeparam name="TAttribute">Generic type parameter.</typeparam>
 		/// <param name="propertyInfo">The property information.</param>
@@ -282,6 +295,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets the type members with given attribute.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <typeparam name="TAttribute">The type of the t attribute.</typeparam>
 		/// <param name="type">The type.</param>
@@ -317,6 +331,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified method information has attribute.
+		/// Validates that <paramref name="methodInfo" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="methodInfo">The method information.</param>
@@ -327,7 +342,6 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			return methodInfo.ArgumentNotNull().GetAttribute<T>() is not null;
 		}
-
 
 		/// <summary>
 		/// Determines whether the type inherits the base class].
@@ -360,6 +374,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether [has parameterless constructor] [the specified type].
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if [has parameterless constructor] [the specified type]; otherwise, <c>false</c>.</returns>
@@ -372,6 +387,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified type implements <see cref="IEnumerable" />.
+		/// Validates that <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is <see cref="IEnumerable" />; otherwise, <c>false</c>.</returns>
@@ -387,13 +403,14 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="type">The type.</param>
 		/// <returns><c>true</c> if the specified type is nullable; otherwise, <c>false</c>.</returns>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static bool IsNullable(this Type type)
+		public static bool IsNullable([AllowNull] this Type type)
 		{
 			return Nullable.GetUnderlyingType(type) is not null;
 		}
 
 		/// <summary>
 		/// Determines whether the specified property is static.
+		/// Validates that <paramref name="property" /> is not null.
 		/// </summary>
 		/// <param name="property">The property.</param>
 		/// <returns><c>true</c> if the specified property is static; otherwise, <c>false</c>.</returns>

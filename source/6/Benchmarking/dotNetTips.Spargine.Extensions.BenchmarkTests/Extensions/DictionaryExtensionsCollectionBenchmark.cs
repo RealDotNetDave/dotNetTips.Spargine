@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -16,19 +16,13 @@ using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
 
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
-	/// <summary>
-	/// Class DictionaryExtensionsCollectionBenchmark.
-	/// Implements the <see cref="LargeCollectionBenchmark" />
-	/// </summary>
-	/// <seealso cref="LargeCollectionBenchmark" />
 	[BenchmarkCategory(Categories.Collections)]
 	public class DictionaryExtensionsCollectionBenchmark : LargeCollectionBenchmark
 	{
-		/// <summary>
-		/// Gets the or add dictionary02.
-		/// </summary>
 		[Benchmark(Description = nameof(DictionaryExtensions.GetOrAdd) + ": Dictionary")]
 		[BenchmarkCategory(Categories.Collections)]
 		public void GetOrAddDictionary02()
@@ -40,9 +34,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Converts to delimitedstring01.
-		/// </summary>
 		[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString) + ": *POOL")]
 		[BenchmarkCategory(Categories.Strings)]
 		public void ToDelimitedString01()
@@ -54,10 +45,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
-
-		/// <summary>
-		/// Upserts the dictionary01.
-		/// </summary>
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert))]
 		public void UpsertDictionary01()
 		{
@@ -69,16 +56,30 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(people);
 		}
 
-
-		/// <summary>
-		/// Upserts the dictionary02.
-		/// </summary>
 		[Benchmark(Description = nameof(DictionaryExtensions.Upsert) + ": New Person")]
 		public void UpsertDictionary02()
 		{
 			var people = base.GetPersonProperDictionary();
 
 			people.Upsert(this.PersonProper01.Id, this.PersonProper01);
+
+			base.Consumer.Consume(people);
+		}
+
+		[Benchmark(Description = nameof(DictionaryExtensions.HasItems) + ": With Predicate")]
+		public void HasItemsWithPredicateTest()
+		{
+			var people = base.GetPersonProperDictionary();
+
+			var result = people.HasItems(p => p.Value.Age.TotalDays > 0);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(DictionaryExtensions.ToSortedDictionary))]
+		public void ToSortedDictionaryTest()
+		{
+			var people = base.GetPersonProperDictionary().ToSortedDictionary();
 
 			base.Consumer.Consume(people);
 		}

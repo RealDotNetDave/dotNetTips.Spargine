@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -59,9 +59,9 @@ namespace DotNetTips.Spargine.Core.Security
 		[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 		public static string AesDecrypt([NotNull] string cipherText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
-			cipherText = cipherText.ArgumentNotNullOrEmpty(true);
-			key = key.ArgumentItemsExists();
-			iv = iv.ArgumentItemsExists();
+			cipherText = cipherText.ArgumentNotNull();
+			key = key.ArgumentNotNull();
+			iv = iv.ArgumentNotNull();
 
 			// Create AesManaged.
 			using (var aes = Aes.Create())
@@ -98,8 +98,8 @@ namespace DotNetTips.Spargine.Core.Security
 		public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 		{
 			plainText = plainText.ArgumentNotNullOrEmpty(true);
-			key = key.ArgumentItemsExists();
-			iv = iv.ArgumentItemsExists();
+			key = key.ArgumentNotNull();
+			iv = iv.ArgumentNotNull();
 
 			// Create a new AesManaged.
 			using (var aes = Aes.Create())
@@ -165,7 +165,7 @@ namespace DotNetTips.Spargine.Core.Security
 		/// Creates a random key from a GUID.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
+		/// <example><b>Output:</b> f7f0af78003d4ab194b5a4024d02112a</example>
 		[Information(nameof(GenerateRandomKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static string GenerateRandomKey() => Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
 

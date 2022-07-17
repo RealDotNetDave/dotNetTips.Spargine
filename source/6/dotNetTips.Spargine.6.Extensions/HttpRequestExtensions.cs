@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Retrieves the raw body as a byte array from the <see cref="HttpRequest" /> body stream.
+		/// Validates that <paramref name="request" /> is not null.
 		/// </summary>
 		/// <param name="request">The request.</param>
 		/// <returns>Task&lt;System.Byte[]&gt;.</returns>
@@ -47,6 +48,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Retrieve the raw body as a string from the <see cref="HttpRequest" /> body stream.
+		/// Validates that <paramref name="request" /> and <paramref name="encoding" /> is not null.
 		/// </summary>
 		/// <param name="request">Request instance to apply to.</param>
 		/// <param name="encoding">Optional - Encoding, defaults to UTF8.</param>
@@ -66,6 +68,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Tries the get <see cref="HttpRequest" /> body.
+		/// Validates that <paramref name="request" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="request">The HTTPRequest object.</param>
@@ -98,6 +101,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Tries the get <see cref="HttpRequest" /> body.
+		/// Validates that <paramref name="request" /> is not null.
 		/// </summary>
 		/// <param name="request">The HTTPRequest object.</param>
 		/// <param name="value">The return value.</param>

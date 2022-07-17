@@ -91,7 +91,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		/// <param name="items">The items.</param>
 		public new void AddRange([NotNull] IEnumerable<T> items)
 		{
-			base.AddRange(items.ArgumentItemsExists());
+			base.AddRange(items.ArgumentNotNull());
 
 			this._sorted = false;
 		}
@@ -105,7 +105,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 			this.SortCollection();
 			return base.GetEnumerator();
 		}
-
 
 		/// <summary>
 		/// Copies the elements of the list to a new array.

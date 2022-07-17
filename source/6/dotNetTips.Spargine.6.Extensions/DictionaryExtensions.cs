@@ -4,9 +4,9 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for IDictionary types.</summary>
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// Processes the collection to dispose.
 		/// </summary>
 		/// <param name="items">The items.</param>
-		internal static void ProcessCollectionToDispose(IEnumerable items)
+		internal static void ProcessCollectionToDispose(this IEnumerable items)
 		{
 			if (items.HasItems())
 			{
@@ -48,6 +48,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Tries the add the item to <see cref="IDictionary{TKey, TValue}" /> if it does not exist.
+		/// Validates that <paramref name="collection" /> and <paramref name="key" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
@@ -78,6 +79,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the range to <see cref="IDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="key" /> is not null
+		/// and <paramref name="items" /> has items in it.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <typeparam name="TKey">Generic type of the key.</typeparam>
@@ -130,6 +133,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets a value or adds it to the <see cref="IDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="collection" />, <paramref name="key" /> and
+		/// <paramref name="value" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
@@ -201,6 +206,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts <see cref="IDictionary{TKey, TValue}" /> to <see cref="ImmutableDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
@@ -214,20 +220,21 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts a <see cref="Dictionary{TKey, TValue}" /> to a <see cref="SortedDictionary{TKey, TValue}" />./&gt;
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="collection">The dictionary.</param>
 		/// <returns>SortedDictionary&lt;TKey, TValue&gt;.</returns>
-		[Information(nameof(ToSortedDictionary), "David McCarter", "6/27/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.New)]
+		[Information(nameof(ToSortedDictionary), "David McCarter", "6/27/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 		public static SortedDictionary<TKey, TValue> ToSortedDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
 		{
-
 			return new SortedDictionary<TKey, TValue>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Upserts the specified item into the <see cref="IDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
@@ -245,17 +252,18 @@ namespace DotNetTips.Spargine.Extensions
 			}
 
 			collection.Add(item.Id, item);
-
 		}
 
 		/// <summary>
 		/// Inserts or updates the item into a <see cref="IDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="collection" />, <paramref name="key" /> and
+		/// <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="collection">The dictionary.</param>
 		/// <param name="key">The key.</param>
-		/// <param name="value">The value.</param>
+		/// <param name="item">The value.</param>
 		/// <returns>TValue.</returns>
 		/// <exception cref="ArgumentNullException">dictionary</exception>
 		/// <exception cref="ArgumentNullException">key</exception>
@@ -263,9 +271,9 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Input cannot be null or have no items in the collection.</exception>
 		/// <exception cref="ArgumentNullException">Key cannot be null.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static void Upsert<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> collection, [NotNull] TKey key, [NotNull] TValue value)
+		public static void Upsert<TKey, TValue>([NotNull] this IDictionary<TKey, TValue> collection, [NotNull] TKey key, [NotNull] TValue item)
 		{
-			value = value.ArgumentNotNull();
+			item = item.ArgumentNotNull();
 			key = key.ArgumentNotNull();
 			collection = collection.ArgumentNotNull();
 
@@ -274,7 +282,7 @@ namespace DotNetTips.Spargine.Extensions
 				_ = collection.Remove(key);
 			}
 
-			collection.Add(key, value);
+			collection.Add(key, item);
 		}
 	}
 }

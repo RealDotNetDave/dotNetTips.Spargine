@@ -4,9 +4,9 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-09-2022
+// Last Modified On : 07-14-2022
 // ***********************************************************************
-// <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>

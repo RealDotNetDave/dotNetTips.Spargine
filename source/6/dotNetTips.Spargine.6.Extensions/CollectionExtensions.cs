@@ -4,10 +4,10 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="CollectionExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="CollectionExtensions.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Extension methods for the ICollection types.</summary>
 // ***********************************************************************
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Adds item to the <see cref="ICollection{T}" /> if the condition is meet.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The collection.</param>
@@ -47,6 +48,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the item to the <see cref="ICollection{T}" /> if it does not exist.
+		/// Validates that <paramref name="collection" /> is not null and not readonly.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The collection.</param>
@@ -76,6 +78,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the items to the <see cref="ICollection{T}" /> if they do not exist.
+		/// Validates that <paramref name="collection" /> and <paramref name="items" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The collection.</param>
@@ -107,6 +111,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the item to the <see cref="ICollection{T}" /> if it does not exist.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The collection.</param>
@@ -126,7 +132,6 @@ namespace DotNetTips.Spargine.Extensions
 			item = item.ArgumentNotNull();
 			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
-
 			if (collection.Contains(item, comparer))
 			{
 				return false;
@@ -139,6 +144,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the items to the <see cref="ICollection{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="items" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The collection.</param>
@@ -176,7 +183,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determines whether the specified <see cref="ICollection{T}" /> does not have items or is null.
+		/// Determines whether the specified <see cref="ICollection{T}" /> does not have items.
 		/// </summary>
 		/// <param name="collection">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
@@ -228,6 +235,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Upserts (add or insert) the specified item to a <see cref="ICollection{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The collection.</param>
@@ -246,6 +255,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Upserts (add or insert) the specified item to a <see cref="ICollection{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
@@ -264,6 +275,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Upserts (add or insert) the specified item to a <see cref="ICollection{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null
+		/// and <paramref name="collection" /> is not readonly.
 		/// </summary>
 		/// <param name="collection">The collection.</param>
 		/// <param name="item">The item.</param>

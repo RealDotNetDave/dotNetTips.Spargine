@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Gets the json.
+		/// Validates that <paramref name="client" /> and <paramref name="url" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="client">The client.</param>

@@ -4,7 +4,7 @@
 // Created          : 09-04-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="HttpContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Gets the remote IP address.
+		/// Validates that <paramref name="context" /> is not null.
 		/// </summary>
 		/// <param name="context">The context.</param>
 		/// <returns>System.String.</returns>

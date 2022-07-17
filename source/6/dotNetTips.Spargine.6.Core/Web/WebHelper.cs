@@ -25,7 +25,6 @@ namespace DotNetTips.Spargine.Core.Web
 	[Information("From dotNetTips.Utility", Status = Status.Available)]
 	public static class WebHelper
 	{
-
 		/// <summary>
 		/// The HTTP client
 		/// </summary>

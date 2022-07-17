@@ -4,7 +4,7 @@
 // Created          : 08-18-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="LinqExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Ifs the input.
+		/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="input">The query.</param>
@@ -43,6 +44,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Ifs the input.
+		/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="input">The query.</param>

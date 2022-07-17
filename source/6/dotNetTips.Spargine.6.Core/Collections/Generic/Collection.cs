@@ -129,7 +129,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic
 		[Information(nameof(Create), "David McCarter", "11/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static Collection<T> Create([NotNull] IEnumerable<T> items, Tristate ensureUnique)
 		{
-			items = items.ArgumentItemsExists();
+			items = items.ArgumentNotNull();
 			ensureUnique = ensureUnique.ArgumentDefined();
 
 			var newItems = new Collection<T>();

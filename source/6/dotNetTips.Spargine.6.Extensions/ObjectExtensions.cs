@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -60,6 +60,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts object to a different type.
+		/// Validates that <paramref name="obj" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="obj">The value.</param>
@@ -73,6 +74,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Clones the specified object.
+		/// Validates that <paramref name="obj" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="obj">The object.</param>
@@ -87,6 +89,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Computes the sha256 hash for an object.
+		/// Validates that <paramref name="obj" /> is not null.
 		/// </summary>
 		/// <param name="obj">The data.</param>
 		/// <returns>System.String.</returns>
@@ -164,6 +167,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Deserializes the Json <see cref="string" />.
+		/// Validates that <paramref name="json" /> is not null and contains text.
 		/// </summary>
 		/// <typeparam name="TResult">The type of the t result.</typeparam>
 		/// <param name="json">The json.</param>
@@ -171,11 +175,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(FromJson), "David McCarter", "4/21/2022", UnitTestCoverage = 100, Status = Status.Available)]
 		public static TResult FromJson<TResult>([NotNull] this string json)
 		{
-			return JsonSerialization.Deserialize<TResult>(json.ArgumentNotNull());
+			return JsonSerialization.Deserialize<TResult>(json.ArgumentNotNullOrEmpty());
 		}
 
 		/// <summary>
 		/// Determines whether the specified object has the property.
+		/// Validates that <paramref name="propertyName" /> is not null and contains text.
 		/// </summary>
 		/// <param name="obj">The instance.</param>
 		/// <param name="propertyName">Name of the property.</param>
@@ -257,6 +262,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Generates a Dictionary that represents the property name (Key) and it's value to a <see cref="IDictionary{TKey, TValue}" />.
+		/// Validates that <paramref name="obj" /> is not null.
 		/// </summary>
 		/// <param name="obj">The input.</param>
 		/// <param name="memberName">Name of the member used to identify the object.</param>
@@ -429,7 +435,6 @@ namespace DotNetTips.Spargine.Extensions
 			return obj is null ? string.Empty : obj.ToString();
 		}
 
-
 		///// <summary>
 		///// Converts object to binary array.
 		///// </summary>
@@ -443,6 +448,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Serializes object to Json.
+		/// Validates that <paramref name="obj" /> is not null.
 		/// </summary>
 		/// <param name="obj">The instance.</param>
 		/// <returns>System.String.</returns>
@@ -454,6 +460,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Saves object to Json file.
+		/// Validates that <paramref name="obj" /> and <paramref name="fileName" /> is not null.
 		/// </summary>
 		/// <param name="obj">The instance.</param>
 		/// <param name="fileName">The file.</param>
@@ -518,6 +525,5 @@ namespace DotNetTips.Spargine.Extensions
 				}
 			}
 		}
-
 	}
 }

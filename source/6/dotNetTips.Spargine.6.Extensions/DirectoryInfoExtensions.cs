@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="DirectoryInfoExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,8 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Gets the total size of files in a <see cref="DirectoryInfo" />.
+		/// Validates that <paramref name="path" /> and <paramref name="searchPattern" /> is not null
+		/// and <paramref name="searchOption" />is defined.
 		/// </summary>
 		/// <param name="path">The information.</param>
 		/// <param name="searchPattern">The search pattern.</param>

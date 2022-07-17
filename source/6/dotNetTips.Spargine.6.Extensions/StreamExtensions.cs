@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,12 +32,16 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="stream">The stream.</param>
 		public static void FlushClose([NotNull] this Stream stream)
 		{
-			stream.Flush();
-			stream.Close();
+			if (stream is not null)
+			{
+				stream.Flush();
+				stream.Close();
+			}
 		}
 
 		/// <summary>
 		/// Reads from the Stream asynchronously.
+		/// Validates that <paramref name="stream" /> is not null.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <param name="destination">The destination.</param>
@@ -77,6 +81,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Writes to the Stream asynchronously.
+		/// Validates that <paramref name="stream" /> is not null.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <param name="source">The source.</param>

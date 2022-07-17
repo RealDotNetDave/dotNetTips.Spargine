@@ -85,7 +85,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 			{
 				// DO NOTHING
 			}
-
 		}
 
 		/// <summary>
@@ -130,7 +129,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 			}
 
 			return base.TryAdd(item);
-
 		}
 
 		/// <summary>

@@ -115,7 +115,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 		[Information(nameof(WriteAsync), "David McCarter", "7/26/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public async Task WriteAsync([NotNull] IEnumerable<T> items, bool lockQueue = false, CancellationToken cancellationToken = default)
 		{
-			items = items.ArgumentItemsExists();
+			items = items.ArgumentNotNull();
 
 			foreach (T item in items.Where(p =>
 			{
@@ -130,7 +130,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 				_ = this.Lock();
 			}
 		}
-
 
 		/// <summary>
 		/// Gets the count.

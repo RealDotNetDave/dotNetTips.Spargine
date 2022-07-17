@@ -4,9 +4,9 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for Assembly.</summary>
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Gets all interfaces in an <see cref="Assembly" />.
+		/// Validates that <paramref name="assembly" /> is not null.
 		/// </summary>
 		/// <param name="assembly">The assembly.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
@@ -49,6 +50,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all types in an <see cref="Assembly" />.
+		/// Validates that <paramref name="assembly" /> is not null.
 		/// </summary>
 		/// <param name="assembly">The assembly.</param>
 		/// <returns>IEnumerable&lt;Type&gt;.</returns>
@@ -62,6 +64,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all instances in a <see cref="Assembly" />.
+		/// Validates that <paramref name="assembly" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="assembly">The assembly.</param>
@@ -90,6 +93,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Gets the types included in the <see cref="Assembly" /> that are not abstract
 		/// and is assignable.
+		/// Validates that <paramref name="assembly" />  and <paramref name="type" /> is not null.
 		/// </summary>
 		/// <param name="assembly">The assembly.</param>
 		/// <param name="type">Type of the interface.</param>

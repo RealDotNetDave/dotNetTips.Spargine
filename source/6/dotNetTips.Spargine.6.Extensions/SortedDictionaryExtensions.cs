@@ -4,9 +4,9 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="SortedDictionaryExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="SortedDictionaryExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
@@ -25,24 +25,23 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class SortedDictionaryExtensions
 	{
-
 		/// <summary>
 		/// Checks dictionary for null and insurese there are items in the dictionary.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool DoesNotHaveItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary)
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		public static bool DoesNotHaveItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> collection)
 		{
-			if (dictionary is null)
+			if (collection is null)
 			{
 				return true;
 			}
 			else
 			{
-				return dictionary.Count() <= 0;
+				return collection.Count() <= 0;
 			}
 		}
 
@@ -51,19 +50,19 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="collection">The dictionary.</param>
 		/// <returns><c>true</c> if the specified dictionary has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary)
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> collection)
 		{
-			if (dictionary is null)
+			if (collection is null)
 			{
 				return false;
 			}
 			else
 			{
-				return dictionary.Count() > 0;
+				return collection.Count() > 0;
 			}
 		}
 
@@ -72,20 +71,20 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="collection">The dictionary.</param>
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> collection, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
-			if (dictionary is null || action is null)
+			if (collection is null || action is null)
 			{
 				return true;
 			}
 			else
 			{
-				return dictionary.Any(action);
+				return collection.Any(action);
 			}
 		}
 
@@ -94,52 +93,55 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="collection">The dictionary.</param>
 		/// <param name="count">The count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> dictionary, int count)
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		public static bool HasItems<TKey, TValue>([AllowNull] this SortedDictionary<TKey, TValue> collection, int count)
 		{
-			if (dictionary is null)
+			if (collection is null)
 			{
 				return false;
 			}
 			else
 			{
-				return dictionary.Count() == count;
+				return collection.Count() == count;
 			}
 		}
+
 		/// <summary>
 		/// Converts to immutable Dictionary.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="list">The values.</param>
+		/// <param name="collection">The values.</param>
 		/// <returns>ImmutableSortedDictionary&lt;TKey, TValue&gt;.</returns>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> list)
+		public static ImmutableSortedDictionary<TKey, TValue> ToImmutable<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> collection)
 		{
-			return ImmutableSortedDictionary.CreateRange(list.ArgumentItemsExists());
+			return ImmutableSortedDictionary.CreateRange(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Upserts the by the specified key.
+		/// Validates that <paramref name="collection" />, <paramref name="key" /> and <paramref name="value" /> is not null.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="dictionary">The dictionary.</param>
+		/// <param name="collection">The dictionary.</param>
 		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns>TValue.</returns>
 		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static TValue Upsert<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> dictionary, [NotNull] TKey key, [NotNull] TValue value)
+		public static TValue Upsert<TKey, TValue>([NotNull] this SortedDictionary<TKey, TValue> collection, [NotNull] TKey key, [NotNull] TValue value)
 		{
 			value = value.ArgumentNotNull();
 
-			if (dictionary.ArgumentNotNull().TryGetValue(key.ArgumentNotNull(), out TValue item) is false)
+			if (collection.ArgumentNotNull().TryGetValue(key.ArgumentNotNull(), out TValue item) is false)
 			{
-				dictionary.Add(key, value);
+				collection.Add(key, value);
 				item = value;
 			}
 

@@ -4,7 +4,7 @@
 // Created          : 07-15-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ProcessExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,7 +13,6 @@
 // ***********************************************************************
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Globalization;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions.Properties;
 using Microsoft.Extensions.Logging;
@@ -29,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Ensures the high priority.
+		/// Validates that <paramref name="process" /> is not null.
 		/// </summary>
 		/// <param name="process">The process.</param>
 		/// <param name="logger">The logger.</param>
@@ -53,6 +53,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Ensures the low priority.
+		/// Validates that <paramref name="process" /> is not null.
 		/// </summary>
 		/// <param name="process">The process.</param>
 		/// <param name="logger">The logger.</param>
@@ -60,6 +61,8 @@ namespace DotNetTips.Spargine.Extensions
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static void EnsureLowPriority([NotNull] this Process process, ILogger logger)
 		{
+			process = process.ArgumentNotNull();
+
 			try
 			{
 				process.PriorityClass = ProcessPriorityClass.BelowNormal;
@@ -75,6 +78,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Runs the process and ignore output.
+		/// Validates that <paramref name="fileName" /> and <paramref name="arguments" /> is not null.
 		/// </summary>
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="arguments">The arguments.</param>
@@ -82,12 +86,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentException">fileName</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static int RunProcessAndIgnoreOutput(string fileName, string arguments, TimeSpan timeout)
+		public static int RunProcessAndIgnoreOutput(this string fileName, string arguments, TimeSpan timeout)
 		{
-			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) is false)
-			{
-				ExceptionThrower.ThrowArgumentException(string.Format(CultureInfo.InvariantCulture, Resources.ErrorFileIsNullEmptyOrDoesNotExist, nameof(fileName)), nameof(fileName));
-			}
+			fileName = fileName.ArgumentNotNullOrEmpty();
+			arguments = arguments.ArgumentNotNullOrEmpty();
 
 			var startInfo = new ProcessStartInfo
 			{
@@ -108,9 +110,9 @@ namespace DotNetTips.Spargine.Extensions
 			return process.ExitCode;
 		}
 
-
 		/// <summary>
 		/// Runs the process and read output.
+		/// Validates that <paramref name="fileName" /> and <paramref name="arguments" /> is not null.
 		/// </summary>
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="arguments">The arguments.</param>
@@ -118,12 +120,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>System.ValueTuple&lt;System.Int32, System.String&gt;.</returns>
 		/// <exception cref="ArgumentException">fileName</exception>
 		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static (int exitCode, string output) RunProcessAndReadOutput(string fileName, string arguments, TimeSpan timeout)
+		public static (int exitCode, string output) RunProcessAndReadOutput(this string fileName, string arguments, TimeSpan timeout)
 		{
-			if (string.IsNullOrEmpty(fileName) && File.Exists(fileName) is false)
-			{
-				ExceptionThrower.ThrowArgumentException(string.Format(CultureInfo.InvariantCulture, Resources.ErrorFileIsNullEmptyOrDoesNotExist, nameof(fileName)), nameof(fileName));
-			}
+			fileName = fileName.ArgumentNotNullOrEmpty();
+			arguments = arguments.ArgumentNotNullOrEmpty();
 
 			var startInfo = new ProcessStartInfo
 			{
@@ -180,6 +180,5 @@ namespace DotNetTips.Spargine.Extensions
 
 			return false;
 		}
-
 	}
 }

@@ -17,8 +17,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using dotNetTips.Spargine.Extensions.Tests.Properties;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions.Tests.Properties;
 using DotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

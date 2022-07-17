@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 07-11-2022
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -201,10 +201,8 @@ namespace DotNetTips.Spargine.Extensions
 		/// Determines whether the specified number is prime.
 		/// </summary>
 		/// <param name="number">The number.</param>
-		/// <remarks>
-		/// Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9
-		/// </remarks>
 		/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
+		/// <remarks>Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		[Information(nameof(IsPrime), UnitTestCoverage = 0, Status = Status.New)]
 		public static bool IsPrime(this int number)

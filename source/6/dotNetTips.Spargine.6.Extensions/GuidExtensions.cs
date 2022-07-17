@@ -4,7 +4,7 @@
 // Created          : 07-30-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="GuidExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Returns the <see cref="Guid" /> without dashes.
+		/// Validates that <paramref name="input" /> is not empty.
 		/// </summary>
 		/// <param name="input">The Guid value.</param>
 		/// <returns>System.String.</returns>
@@ -52,7 +53,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="right">The right.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <remarks>Orginal code: https://www.meziantou.net/faster-guid-comparisons-using-vectors-simd-in-dotnet.htm</remarks>
-		[Information(nameof(FastEquals), UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(FastEquals), UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool FastEquals(this in Guid left, in Guid right)
 		{
 			if (left.IsNull() || right.IsNull())

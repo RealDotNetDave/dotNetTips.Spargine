@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using System;
-using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
@@ -23,32 +22,42 @@ using DotNetTips.Spargine.Tester.Models.ValueTypes;
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(Categories.Collections)]
-	public class ArrayExtensionsCollectionBenchmark : LargeCollectionBenchmark
+	public partial class ArrayExtensionsCollectionBenchmark : LargeCollectionBenchmark
 	{
 		[Benchmark(Description = nameof(ArrayExtensions.AddFirst))]
 		public void AddFirst01()
 		{
-			var people = this.GetPersonProperArray().Clone<List<PersonProper>>();
+			var people = this.GetPersonProperArray();
 
-			var result = people.ToArray().AddFirst(this.PersonProper01);
+			var result = people.AddFirst(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
+		public void RemoveFirst()
+		{
+			var people = this.GetPersonProperArray();
+
+			var result = people.RemoveFirst();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast))]
+		public void RemoveLast()
+		{
+			var people = this.GetPersonProperArray();
+
+			var result = people.RemoveLast();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Using Params")]
 		public void AddIfNotExists01()
 		{
-			var people = new List<PersonProper>(base.GetPersonProperArray());
-
-			var result = people.AddIfNotExists(this.GetPeopleToInsert());
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params with dups")]
-		public void AddIfNotExists02()
-		{
-			var people = new List<PersonProper>(base.GetPersonProperArray());
+			var people = base.GetPersonProperArray();
 
 			var result = people.AddIfNotExists(this.GetPeopleToInsert());
 
@@ -89,9 +98,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		//public void As01()
 		//{
 		//	var people1 = base.GetPersonRefArrayFull().Clone<PersonProper>();
-
 		//	var result = people1.As<List<IPerson>>();
-
 		//	base.Consumer.Consume(result);
 		//}
 
@@ -145,5 +152,38 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			base.Consumer.Consume(result);
 		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems))]
+		public void DoesNotHaveItemsTest()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).DoesNotHaveItems();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems))]
+		public void HasItemsTest()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).HasItems();
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Count")]
+		public void HasItemsWithCountTest()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).HasItems(this.Count);
+
+			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Predicate")]
+		public void HasItemsWithPredicateTest()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).HasItems(p => p.Age.TotalDays > 5);
+
+			base.Consumer.Consume(result);
+		}
+
 	}
 }

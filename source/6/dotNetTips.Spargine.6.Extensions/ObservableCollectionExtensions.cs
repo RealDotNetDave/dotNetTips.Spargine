@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -43,7 +43,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="source">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> source)
 		{
 			if (source is null)
@@ -64,7 +64,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)

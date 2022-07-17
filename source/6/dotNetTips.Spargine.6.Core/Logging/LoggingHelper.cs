@@ -144,11 +144,12 @@ namespace DotNetTips.Spargine.Core.Logging
 			}
 		}
 		/// <summary>
-		/// Logs application information.
+		/// Logs default application information as key/ value pairs to <see cref="ILogger" />.
 		/// </summary>
 		/// <param name="logger">The ILogger.</param>
 		/// <exception cref="ArgumentNullException">Logger cannot be null.</exception>
-		/// <example>Output:
+		/// <example>
+		///   <b>Output:</b>
 		/// AppInfo:Company - Microsoft Corporation
 		/// AppInfo:Version - 16.8.0
 		/// AppInfo:Copyright - © Microsoft Corporation.All rights reserved.

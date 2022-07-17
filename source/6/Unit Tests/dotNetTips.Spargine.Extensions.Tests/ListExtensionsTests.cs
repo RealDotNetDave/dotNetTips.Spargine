@@ -11,6 +11,9 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -20,8 +23,6 @@ using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 using DotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.Tests
 {
@@ -188,6 +189,19 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = people.PickRandom();
 
 			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
+		public void IndexAtLoopedTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			System.Collections.ObjectModel.Collection<PersonProper> nullPeople = null;
+
+			var result = people.IndexAtLooped(5);
+
+			Assert.IsNotNull(result);
+
+			Assert.ThrowsException<ArgumentNullException>(() => nullPeople.IndexAtLooped(5));
 		}
 
 		[TestMethod]

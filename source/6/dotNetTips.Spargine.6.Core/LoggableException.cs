@@ -108,13 +108,12 @@ namespace DotNetTips.Spargine.Core
 
 				if (( objectValue is not null ) && ( !string.Equals(objectValue.ToString(), objectValue.GetType().FullName, StringComparison.Ordinal) ))
 				{
-					_ = sb.AppendLine(string.Format(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }));
+					_ = sb.AppendFormat(CultureInfo.CurrentCulture, "{0}: {1}", new object[] { current.Name, RuntimeHelpers.GetObjectValue(current) }).AppendLine();
 				}
 			});
 
 			return sb.ToString();
 		}
-
 
 		/// <summary>
 		/// When overridden in a derived class, sets the <see cref="SerializationInfo"></see> with information about the exception.
@@ -176,6 +175,5 @@ namespace DotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The user message.</value>
 		public virtual string UserMessage { get; private set; }
-
 	}
 }

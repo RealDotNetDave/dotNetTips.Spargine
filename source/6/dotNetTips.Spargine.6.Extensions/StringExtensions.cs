@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -193,6 +193,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Computes a hash from the string.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="hashType">Type of the hash.</param>
@@ -202,7 +203,6 @@ namespace DotNetTips.Spargine.Extensions
 		public static string ComputeHash(this string input, HashType hashType = HashType.SHA256)
 		{
 			input = input.ArgumentNotNullOrEmpty();
-			hashType = hashType.ArgumentDefined();
 
 			var hash = GetHash(input, hashType);
 
@@ -218,6 +218,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Computes the SHA256Hash.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The data.</param>
 		/// <returns>System.String.</returns>
@@ -240,6 +241,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Concatenates the specified first message with passed in string[].
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The first message.</param>
 		/// <param name="delimiter">The delimiter.</param>
@@ -268,7 +270,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return sb.ToString();
 		}
-
 
 		/// <summary>
 		/// Determines whether the specified the string contains any of the supplied characters.
@@ -321,6 +322,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Defaults to value if string is null or empty.
+		/// Validates that <paramref name="defaultValue" /> is not null or empty.
 		/// </summary>
 		/// <param name="value">The value.</param>
 		/// <param name="defaultValue">The default value.</param>
@@ -336,6 +338,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Turns a delimited string to a array of strings. Removed empty entries.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The delimited input.</param>
 		/// <param name="delimiter">The delimiter.</param>
@@ -351,6 +354,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines if the two strings are equal while ignoring case.
+		/// Validates that <paramref name="input" /> and <paramref name="inputToCompare" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
@@ -380,6 +384,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Extracts a string from a beginning and end value.
+		/// Validates that <paramref name="input" />, <paramref name="start" />,
+		/// and <paramref name="end" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <param name="start">The start.</param>
@@ -400,6 +406,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts Base64 string, to string.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <returns>System.String.</returns>
@@ -414,6 +421,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts Brotli compressed string to an uncompressed string as an asynchronous operation.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>Uncompressed string.</returns>
@@ -432,6 +440,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts Gzip compressed string as an asynchronous operation.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>Unpressed string.</returns>
@@ -457,7 +466,8 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determines whether the specified string length has value.
+		/// Determines whether the specified string length has value. Minimum length = 1.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="length">Checks for specific length of the string.</param>
@@ -482,10 +492,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static bool HasValue(this string input, string value)
 		{
-			input = input.ArgumentNotNullOrEmpty();
-			value = value.ArgumentNotNullOrEmpty();
-
-			return input is not null && string.Equals(input, value, StringComparison.Ordinal);
+			return input.HasValue() && string.Equals(input, value, StringComparison.Ordinal);
 		}
 
 		/// <summary>
@@ -503,6 +510,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the strings is within the specified minimum and maximum length.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="minLength">The minimum length.</param>
@@ -522,6 +530,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified input is whitespace.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is whitespace; otherwise, <c>false</c>.</returns>
@@ -543,6 +552,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Indents the string by the specified length.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The string.</param>
 		/// <param name="length">The length.</param>
@@ -669,6 +679,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified input is null or empty.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
@@ -815,6 +826,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Removes the CR/LF from the end of a <see cref="string" />.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="replacement">The replacement.</param>
@@ -829,6 +841,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Changes the trailing ellipsis in a string to a period.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>System.String.</returns>
@@ -847,6 +860,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Splits the string based on the separator with options.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <param name="options">The options.</param>
@@ -866,6 +880,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Splits the string based on the separator with options.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <param name="options">The options.</param>
@@ -888,6 +903,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Splits the string based on the separator.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <param name="options">The options.</param>
@@ -910,6 +926,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Splits the lines of text into separate lines.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The string.</param>
 		/// <returns>DotNetTips.Spargine.Extensions.LineSplitEnumerator.</returns>
@@ -924,6 +941,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Splits the specified input using ',' and removes empty entries.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>IEnumerable&lt;System.String&gt;.</returns>
@@ -939,6 +957,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines if the input starts with ordinal.
+		/// Validates that <paramref name="input" /> and <paramref name="inputToCompare" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
@@ -955,6 +974,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines if the input starts the with ordinal while ignoring case.
+		/// Validates that <paramref name="input" /> and <paramref name="inputToCompare" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="inputToCompare">The value to compare.</param>
@@ -971,6 +991,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Substrings the trim.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="startIndex">The start index.</param>
@@ -1026,6 +1047,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts string to Base64 string.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The value.</param>
 		/// <returns>System.String.</returns>
@@ -1039,6 +1061,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// To Brotli string as an asynchronous operation.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="level">The level.</param>
@@ -1059,6 +1082,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// To Gzip string as an asynchronous operation.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <param name="level">The level.</param>
@@ -1081,6 +1105,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts to a string to title case.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The source.</param>
 		/// <returns>System.String.</returns>
@@ -1093,9 +1118,9 @@ namespace DotNetTips.Spargine.Extensions
 			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input);
 		}
 
-
 		/// <summary>
 		/// Trims the beginning and end of a string.
+		/// Validates that <paramref name="input" /> is not null or empty.
 		/// </summary>
 		/// <param name="input">The input.</param>
 		/// <returns>Trimmed System.String.</returns>

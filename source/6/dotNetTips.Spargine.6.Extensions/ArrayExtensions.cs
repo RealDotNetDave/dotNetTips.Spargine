@@ -4,9 +4,9 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extensions methods for the Array type.</summary>
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Adds the specified item to the array, in the last position.
+		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="array">The array.</param>
@@ -50,13 +51,14 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds a single item to the beginning of the array.
+		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentReadOnlyException">The array is read-only.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static T[] AddFirst<T>([NotNull] this T[] array, [NotNull] T item)
 		{
 			array = array.ArgumentNotNull();
@@ -72,6 +74,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds item to the array if the condition is meet.
+		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="array">The array.</param>
@@ -89,6 +92,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds items to an array if they do not exists.
+		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The list.</param>
@@ -202,6 +206,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts byte array to a string.
+		/// Validates that <paramref name="array" /> is not empty.
 		/// </summary>
 		/// <param name="array">The array.</param>
 		/// <returns>System.String.</returns>
@@ -222,6 +227,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Clones the specified array.
+		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The input.</param>
@@ -241,6 +247,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified array has items specified.
+		/// Validates that <paramref name="items" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The source.</param>
@@ -265,12 +272,12 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Checks array for null and insurese there are items in the array.
+		/// Ensures there are items no items in the array.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="list">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool DoesNotHaveItems<T>([AllowNull] this T[] list)
 		{
 			if (list is null)
@@ -285,14 +292,18 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Processes the collection with the specified action.
+		/// Validates that <paramref name="array" /> and <paramref name="action" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="array">The list.</param>
 		/// <param name="action">The action.</param>
 		[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
-		public static void FastProcessor<T>([NotNull] this T[] list, [NotNull] Action<T> action)
+		public static void FastProcessor<T>([NotNull] this T[] array, [NotNull] Action<T> action)
 		{
-			ReadOnlySpan<T> collection = new ReadOnlySpan<T>(list).ArgumentNotEmpty();
+			array = array.ArgumentNotNull();
+			action = action.ArgumentNotNull();
+
+			var collection = new ReadOnlySpan<T>(array);
 
 			for (var itemCount = 0; itemCount < collection.Length; itemCount++)
 			{
@@ -302,6 +313,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Generates hash code for the array.
+		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The list to use to generate hash code.</param>
@@ -310,7 +322,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static int GenerateHashCode<T>([NotNull] this T[] array)
 		{
-			var hash = array.Where(t => t is not null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
+			var hash = array.ArgumentNotNull().Where(t => t is not null).Aggregate(6551, (accumulator, t) => accumulator ^= ( accumulator << 5 ) ^ EqualityComparer<T>.Default.GetHashCode(t));
 
 			return hash;
 		}
@@ -322,7 +334,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="array">The array.</param>
 		/// <returns><c>true</c> if the specified array has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array)
 		{
 			if (array is null)
@@ -343,7 +355,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array, [NotNull] Func<T, bool> action)
 		{
 			if (array is null || action is null)
@@ -364,7 +376,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="count">The count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this T[] array, int count)
 		{
 			if (array is null)
@@ -379,6 +391,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Removes the duplicate values.
+		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
 		/// <param name="array">The values.</param>
 		/// <returns>System.Int32().</returns>
@@ -391,12 +404,13 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Removes the first item in the array.
+		/// Validates that <paramref name="array" /> is not null and contains items.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The array.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">Array cannot be null or empty.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static T[] RemoveFirst<T>([NotNull] this T[] array)
 		{
 			array = array.ArgumentItemsExists();
@@ -410,12 +424,13 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Removes the last.
+		/// Validates that <paramref name="array" /> is not null and has items.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="array">The array.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">Array cannot be null.</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static T[] RemoveLast<T>([NotNull] this T[] array)
 		{
 			array = array.ArgumentItemsExists();
@@ -429,6 +444,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Returns the array without duplicates.
+		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
 		/// <param name="array">The list.</param>
 		/// <returns>System.String[].</returns>
@@ -441,6 +457,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Upserts (add or insert) the specified item.
+		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="array">The array.</param>
@@ -449,6 +466,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Upsert), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static T[] Upsert<T>([NotNull] this T[] array, [NotNull] T item)
 		{
+			array = array.ArgumentNotNull();
 			item = item.ArgumentNotNull();
 
 			if (array.Contains(item))
@@ -465,15 +483,16 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Upserts the specified array.
+		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
 		/// </summary>
-		/// <param name="records">The array.</param>
+		/// <param name="array">The array.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IDataRecord[] Upsert([NotNull] this IDataRecord[] records, [NotNull] IDataRecord item)
+		public static IDataRecord[] Upsert([NotNull] this IDataRecord[] array, [NotNull] IDataRecord item)
 		{
 			item = item.ArgumentNotNull();
-			var recordsList = records.ArgumentNotNull().ToList();
+			var recordsList = array.ArgumentNotNull().ToList();
 
 			IDataRecord currentItem = recordsList.Find(p => p.Id.Equals(item.Id, StringComparison.Ordinal));
 
@@ -482,7 +501,7 @@ namespace DotNetTips.Spargine.Extensions
 				_ = recordsList.Remove(currentItem);
 			}
 
-			_ = records.Add(item);
+			_ = array.Add(item);
 
 			return recordsList.ToArray();
 		}

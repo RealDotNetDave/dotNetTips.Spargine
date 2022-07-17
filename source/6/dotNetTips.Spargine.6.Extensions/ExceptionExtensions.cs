@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ExceptionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Returns the hierarchy from the source.
+		/// Validates that <paramref name="source" /> and <paramref name="nextItem" /> is not null.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t source.</typeparam>
 		/// <param name="source">The source.</param>
@@ -42,6 +43,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Returns the hierarchy from the source.
+		/// Validates that <paramref name="source" />, <paramref name="nextItem" /> and
+		/// <paramref name="canContinue" /> is not null.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t source.</typeparam>
 		/// <param name="source">The source.</param>
@@ -64,6 +67,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all messages from an <see cref="Exception" />.
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <param name="exception">The exception.</param>
 		/// <param name="separator">The separator.</param>
@@ -80,6 +84,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Gets all messages from a <see cref="Exception" /> including the stack trace.
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <param name="exception">The exception.</param>
 		/// <returns>System.String.</returns>
@@ -101,12 +106,12 @@ namespace DotNetTips.Spargine.Extensions
 			return messages;
 		}
 
-
 		/// <summary>
 		/// Determines whether the specified <see cref="Exception" /> is critical is a
 		/// <see cref="NullReferenceException" />, <see cref="StackOverflowException" />,
 		/// <see cref="OutOfMemoryException" />, <see cref="ThreadAbortException" />,
 		/// <see cref="IndexOutOfRangeException" /> or <see cref="AccessViolationException" />.
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <param name="exception">The ex.</param>
 		/// <returns><c>true</c> if the specified ex is critical; otherwise, <c>false</c>.</returns>
@@ -125,6 +130,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the specified  <see cref="Exception" /> is fatal (<see cref="OutOfMemoryException" />).
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <param name="exception">The ex.</param>
 		/// <returns><c>true</c> if the specified ex is fatal; otherwise, <c>false</c>.</returns>
@@ -138,6 +144,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determines whether the <see cref="Exception" /> is <see cref="SecurityException" /> or is critical].
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <param name="exception">The ex.</param>
 		/// <returns><c>true</c> if [is security or critical] [the specified ex]; otherwise, <c>false</c>.</returns>
@@ -151,6 +158,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Traverses the <see cref="Exception" />.
+		/// Validates that <paramref name="exception" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="exception">The ex.</param>

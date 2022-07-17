@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Spargine.5.Tester
+// Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : David McCarter
 // Created          : 01-03-2021
 //
@@ -37,3 +37,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "CA1055:URI-like return values should not be strings", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoSubDomain~System.String")]
 [assembly: SuppressMessage("Design", "CA1055:URI-like return values should not be strings", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Tester.RandomData.GenerateUrlPart~System.String")]
 [assembly: SuppressMessage("Design", "CA1055:URI-like return values should not be strings", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl~System.String")]
+[assembly: SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Tester.Models.ValueTypes.Coordinate")]

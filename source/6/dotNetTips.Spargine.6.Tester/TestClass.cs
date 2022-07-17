@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Spargine.5.Tester
+// Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : David McCarter
 // Created          : 01-16-2021
 //
@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="methodName">Name of the method.</param>
 		public void PrintResult<T>(T input, string methodName)
 		{
-			var message = input is string || input.GetType().IsValueType ? $"{methodName}: {input.ToString():C}" : $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
+			var message = input is string || input.GetType().IsValueType ? $"{methodName}: {input:C}" : $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
 
 			Debug.WriteLine(message);
 		}

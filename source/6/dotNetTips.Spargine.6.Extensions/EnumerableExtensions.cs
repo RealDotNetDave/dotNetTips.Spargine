@@ -4,9 +4,9 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for IEnumerable types.</summary>
@@ -34,62 +34,64 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Adds the specified item to the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
+		public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> collection, [NotNull] T item)
 		{
 			if (item is null)
 			{
-				return list;
+				return collection;
 			}
 
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 
-			return list.Append(item);
+			return collection.Append(item);
 		}
 
 		/// <summary>
 		/// Adds item to the <see cref="IEnumerable{T}" /> if the condition is met.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <param name="condition">if set to <c>true</c> [condition].</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(AddIf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, bool condition)
+		public static IEnumerable<T> AddIf<T>([NotNull] this IEnumerable<T> collection, [NotNull] T item, bool condition)
 		{
 			if (item is null)
 			{
-				return list;
+				return collection;
 			}
 
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 
 			if (condition)
 			{
-				list = list.Append(item);
+				collection = collection.Append(item);
 			}
 
-			return list;
+			return collection;
 		}
 
 		/// <summary>
 		/// Determines whether the specified  <see cref="IEnumerable{T}" /> has items specified.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="items">The items.</param>
 		/// <returns><c>true</c> if the specified items has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">List is null or empty.</exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-		public static bool ContainsAny<T>([NotNull] this IEnumerable<T> list, [NotNull] params T[] items)
+		public static bool ContainsAny<T>([NotNull] this IEnumerable<T> collection, [NotNull] params T[] items)
 		{
-			if (list is null || items is null)
+			if (collection is null || items is null)
 			{
 				return false;
 			}
@@ -99,31 +101,31 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			return list.Any(p => items.Contains(p));
+			return collection.Any(p => items.Contains(p));
 		}
 
 		/// <summary>
 		/// Counts items in a <see cref="IEnumerable" />.
 		/// </summary>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">list</exception>
 		[Information(nameof(Count), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static int Count([NotNull] this IEnumerable list)
+		public static int Count([NotNull] this IEnumerable collection)
 		{
-			if (list is null)
+			if (collection is null)
 			{
 				return 0;
 			}
 
-			if (list is ICollection collection)
+			if (collection is ICollection)
 			{
-				return collection.Count;
+				return collection.Count();
 			}
 
 			var count = 0;
 
-			IEnumerator enumerator = list.GetEnumerator();
+			IEnumerator enumerator = collection.GetEnumerator();
 
 			while (enumerator.MoveNext())
 			{
@@ -136,60 +138,64 @@ namespace DotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Determines whether the specified <see cref="IEnumerable" /> does not have items or is null.
 		/// </summary>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
 		[Information(nameof(DoesNotHaveItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool DoesNotHaveItems([NotNull] this IEnumerable list)
+		public static bool DoesNotHaveItems([NotNull] this IEnumerable collection)
 		{
-			return list?.Count() <= 0;
+			return collection?.Count() <= 0;
 		}
 
 		/// <summary>
 		/// Determines if any items exist in the <see cref="IEnumerable" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="predicate" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Boolean.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastAny), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool FastAny<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		public static bool FastAny<T>([NotNull] this IEnumerable<T> collection, [NotNull] Func<T, bool> predicate)
 		{
-			return list.ArgumentNotNull().Any(predicate.ArgumentNotNull());
+			return collection.ArgumentNotNull().Any(predicate.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Counts items in the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>System.Int64.</returns>
 		[Information(nameof(FastCount), "David McCarter", "5/21/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static long FastCount<T>([NotNull] this IEnumerable<T> list)
+		public static long FastCount<T>([NotNull] this IEnumerable<T> collection)
 		{
-			return list.ArgumentNotNull().LongCount();
+			return collection.ArgumentNotNull().LongCount();
 		}
 
 		/// <summary>
 		/// Counts items in the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="predicate" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="predicate">The predicate.</param>
 		/// <returns>System.Int64.</returns>
 		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		[Information(nameof(FastCount), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
-		public static long FastCount<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
+		public static long FastCount<T>([NotNull] this IEnumerable<T> collection, [NotNull] Func<T, bool> predicate)
 		{
-			return list.ArgumentNotNull().LongCount(predicate.ArgumentNotNull());
+			return collection.ArgumentNotNull().LongCount(predicate.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Processes the <see cref="IEnumerable{T}" /> with the specified action in parallel processing.
+		/// Validates that <paramref name="collection" /> and <paramref name="action" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="action">The action.</param>
 		/// <param name="maxDegreeOfParallelism">The maximum degree of parallelism.</param>
 		/// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
@@ -197,9 +203,9 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Task.</returns>
 		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
 		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
-		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> list, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
+		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> collection, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 			action = action.ArgumentNotNull();
 
 			var options = new ExecutionDataflowBlockOptions
@@ -215,7 +221,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var block = new ActionBlock<T>(action, options);
 
-			foreach (T item in list)
+			foreach (T item in collection)
 			{
 				_ = block.Post(item);
 			}
@@ -229,19 +235,20 @@ namespace DotNetTips.Spargine.Extensions
 		/// Returns first item in the <see cref="IEnumerable{T}" /> or an alternate.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="alternate">The alternate.</param>
 		/// <returns>T.</returns>
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T FirstOrDefault<T>([AllowNull] this IEnumerable<T> list, [NotNull] T alternate)
+		public static T FirstOrDefault<T>([AllowNull] this IEnumerable<T> collection, [NotNull] T alternate)
 		{
-			return list is null ? alternate : list.DefaultIfEmpty(alternate).First();
+			return collection is null ? alternate : collection.DefaultIfEmpty(alternate).First();
 		}
 
 		/// <summary>
 		/// Returns first item in the <see cref="IEnumerable{T}" /> or an alternate using a predicate.
+		/// Validates that <paramref name="alternate" /> and <paramref name="predicate" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="list">The source.</param>
@@ -251,7 +258,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">Predicate cannot be null.</exception>
 		/// <exception cref="ArgumentNullException">Alternate cannot be null.</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static T FirstOrDefault<T>(this IEnumerable<T> list, [NotNull] Func<T, bool> predicate, [NotNull] T alternate)
 		{
 			alternate = alternate.ArgumentNotNull();
@@ -270,17 +277,18 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Finds first item in the <see cref="IEnumerable{T}" /> or returns null.
+		/// Validates that <paramref name="collection" /> contains items.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="match">The match.</param>
 		/// <returns>System.Nullable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">Match cannot be null.</exception>
-		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static T? FirstOrNull<T>([NotNull] this IEnumerable<T> list, [NotNull] Func<T, bool> match)
+		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
+		public static T? FirstOrNull<T>([NotNull] this IEnumerable<T> collection, [NotNull] Func<T, bool> match)
 			where T : struct
 		{
-			var listToProcess = list.ArgumentItemsExists().ToCollection();
+			var listToProcess = collection.ArgumentItemsExists().ToCollection();
 
 			for (var listCount = 0; listCount < listToProcess.FastCount(); listCount++)
 			{
@@ -298,118 +306,122 @@ namespace DotNetTips.Spargine.Extensions
 		/// <summary>
 		/// Determines whether the specified <see cref="IEnumerable" /> has items or is null.
 		/// </summary>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <returns><c>true</c> if the specified source has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([AllowNull] this IEnumerable list)
+		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool HasItems([AllowNull] this IEnumerable collection)
 		{
-			if (list is null)
+			if (collection is null)
 			{
 				return false;
 			}
 			else
 			{
-				return list.Count() > 0;
+				return collection.Count() > 0;
 			}
 		}
 
 		/// <summary>
 		/// Determines whether the <see cref="IEnumerable" /> has a specified count.
 		/// </summary>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool HasItems([AllowNull] this IEnumerable list, int count)
+		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
+		public static bool HasItems([AllowNull] this IEnumerable collection, int count)
 		{
-			if (list is null)
+			if (collection is null)
 			{
 				return false;
 			}
 			else
 			{
-				return list.Count() == count;
+				return collection.Count() == count;
 			}
 		}
 
 		/// <summary>
 		/// Returns index of item in the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>System.Int32.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static int IndexOf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
+		public static int IndexOf<T>([NotNull] this IEnumerable<T> collection, [NotNull] T item)
 		{
-			return IndexOf(list.ArgumentItemsExists(), item.ArgumentNotNull(), EqualityComparer<T>.Default);
+			return IndexOf(collection.ArgumentItemsExists(), item.ArgumentNotNull(), EqualityComparer<T>.Default);
 		}
 
 		/// <summary>
 		/// Returns index of an item in the collection using comparer.
+		/// Validates that <paramref name="collection" />, <paramref name="item" /> and <paramref name="comparer" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="item">The item.</param>
 		/// <param name="comparer">The comparer.</param>
 		/// <returns>System.Int32.</returns>
 		/// <exception cref="ArgumentNullException">item or comparer</exception>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(IndexOf), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static int IndexOf<T>([NotNull] this IEnumerable<T> list, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
+		public static int IndexOf<T>([NotNull] this IEnumerable<T> collection, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 			item = item.ArgumentNotNull();
 			comparer = comparer.ArgumentNotNull();
 
-			return list.Select((x, index) => comparer.Equals(item, x) ? index : -1).FirstOrDefault(x => x != -1, -1);
+			return collection.Select((x, index) => comparer.Equals(item, x) ? index : -1).FirstOrDefault(x => x != -1, -1);
 		}
 
 		/// <summary>
 		/// Determines whether <see cref="IEnumerable" /> is null or empty.
 		/// </summary>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <returns><c>true</c> if [is null or empty] [the specified source]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(IsNullOrEmpty), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static bool IsNullOrEmpty([AllowNull] this IEnumerable list)
+		public static bool IsNullOrEmpty([AllowNull] this IEnumerable collection)
 		{
-			return list.IsNull() || list.GetEnumerator().MoveNext() is false;
+			return collection.IsNull() || collection.GetEnumerator().MoveNext() is false;
 		}
 
 		/// <summary>
 		/// Joins a collection using the specified separator.
+		/// Validates that <paramref name="collection" /> contains items.
 		/// </summary>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="separator">The separator.</param>
 		/// <returns>System.String.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(Join), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static string Join([NotNull] this IEnumerable<object> list, [NotNull] string separator = ControlChars.DefaultSeparator)
+		public static string Join([NotNull] this IEnumerable<object> collection, [NotNull] string separator = ControlChars.DefaultSeparator)
 		{
-			if (list.CheckItemsExists() is false)
+			if (collection.CheckItemsExists() is false)
 			{
 				return string.Empty;
 			}
 
-			return string.Join(separator.ArgumentNotNullOrEmpty(defaultValue: ControlChars.DefaultSeparator), list);
+			return string.Join(separator.ArgumentNotNullOrEmpty(defaultValue: ControlChars.DefaultSeparator), collection);
 		}
 
 		/// <summary>
 		/// Orders a <see cref="IEnumerable{T}" /> based on a sort expression. Useful in object binding scenarios where the ObjectDataSource
 		/// generates a dynamic sort expression (example: "Name desc") that specifies the property of the object sort
 		/// on.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="sortExpression">The sort expression.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="InvalidCastException"></exception>
 		/// <remarks>Original code by: C.F.Meijers</remarks>
 		[Information(nameof(OrderBy), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IEnumerable<T> OrderBy<T>([NotNull] this IEnumerable<T> list, [NotNull] string sortExpression)
+		public static IEnumerable<T> OrderBy<T>([NotNull] this IEnumerable<T> collection, [NotNull] string sortExpression)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 
 			sortExpression += string.Empty;
 
@@ -431,33 +443,59 @@ namespace DotNetTips.Spargine.Extensions
 				if (prop.CheckIsNotNull(throwException: true))
 				{
 					return @descending
-						? list.OrderByDescending(x => prop.GetValue(x, null))
-						: list.OrderBy(x => prop.GetValue(x, null));
+						? collection.OrderByDescending(x => prop.GetValue(x, null))
+						: collection.OrderBy(x => prop.GetValue(x, null));
 				}
 			}
 
-			return list;
+			return collection;
+		}
+
+		/// <summary>
+		/// Shuffles the specified <see cref="List{T}" />.
+		/// Validates that <paramref name="collection" /> contains items.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="collection">The items.</param>
+		/// <returns>IEnumerable&lt;T&gt;.</returns>
+		/// <exception cref="ArgumentNullException">list</exception>
+		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, UnitTestCoverage = 100)]
+		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection)
+		{
+			return collection.ArgumentItemsExists().OrderBy(random => GenerateRandomNumber());
+		}
+
+		/// <summary>
+		/// Gets the random.
+		/// </summary>
+		/// <returns>System.Int32.</returns>
+		/// <value>The random.</value>
+		private static int GenerateRandomNumber()
+		{
+			return RandomNumberGenerator.GetInt32(int.MaxValue);
 		}
 
 		/// <summary>
 		/// Orders <see cref="IEnumerable{T}" /> by <see cref="StringComparer.Ordinal" />
+		/// Validates that <paramref name="collection" /> and <paramref name="keySelector" /> is not null.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t source.</typeparam>
-		/// <param name="list">The source.</param>
+		/// <param name="collection">The source.</param>
 		/// <param name="keySelector">The key selector.</param>
 		/// <returns>IOrderedEnumerable&lt;TSource&gt;.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
 		[Information(nameof(OrderByOrdinal), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>([NotNull] this IEnumerable<TSource> list, [NotNull] Func<TSource, string> keySelector)
+		public static IOrderedEnumerable<TSource> OrderByOrdinal<TSource>([NotNull] this IEnumerable<TSource> collection, [NotNull] Func<TSource, string> keySelector)
 		{
-			return list.ArgumentNotNull().OrderBy(keySelector.ArgumentNotNull(), StringComparer.Ordinal);
+			return collection.ArgumentNotNull().OrderBy(keySelector.ArgumentNotNull(), StringComparer.Ordinal);
 		}
 
 		/// <summary>
 		/// Pages the specified list.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="pageSize">Size of the page. Minimum page size is 1.</param>
 		/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
@@ -465,13 +503,13 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentNullException">pageSize</exception>
 		/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
 		[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> list, int pageSize)
+		public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> collection, int pageSize)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 
 			pageSize = pageSize.EnsureMinimum(1);
 
-			using IEnumerator<T> enumerator = list.GetEnumerator();
+			using IEnumerator<T> enumerator = collection.GetEnumerator();
 
 			while (enumerator.MoveNext())
 			{
@@ -488,36 +526,38 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Picks a random item from a collection.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>T.</returns>
 		[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static T PickRandom<T>([NotNull] this IEnumerable<T> list)
+		public static T PickRandom<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 
-			var index = RandomNumberGenerator.GetInt32(0, list.Count() - 1);
+			var index = RandomNumberGenerator.GetInt32(0, collection.Count() - 1);
 
-			return list.ElementAt(index);
+			return collection.ElementAt(index);
 		}
 
 		/// <summary>
 		/// Shuffles items in a <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The items.</param>
+		/// <param name="collection">The items.</param>
 		/// <param name="count">The count.</param>
 		/// <returns>IEnumerable&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null.</exception>
 		/// <exception cref="ArgumentOutOfRangeException">Count must be greater than 0</exception>
-		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> list, int count = 1)
+		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, UnitTestCoverage = 100)]
+		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection, int count)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 			count = Math.Max(1, count);
 
-			return list.Shuffle().Take(count);
+			return collection.Shuffle().Take(count);
 		}
 
 		/// <summary>
@@ -528,7 +568,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="second">The second.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <remarks>Original code from efcore-master on GitHub.</remarks>
-		[Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(StartsWith), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool StartsWith<T>(this IEnumerable<T> first, IEnumerable<T> second)
 		{
 			if (first is null || second is null)
@@ -597,127 +637,132 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts a <see cref="IEnumerable{T}" /> to a BlockingCollection.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>BlockingCollection&lt;T&gt;.</returns>
 		/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
 		[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-		[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP015:Member should not return created and cached instance")]
-		public static BlockingCollection<T> ToBlockingCollection<T>([NotNull] this IEnumerable<T> list)
+		public static BlockingCollection<T> ToBlockingCollection<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
-			var collection = new BlockingCollection<T>(list.Count());
+			var returnValue = new BlockingCollection<T>(collection.Count());
 
-			foreach (T item in list)
+			foreach (T item in collection)
 			{
-				_ = collection.TryAdd(item);
+				_ = returnValue.TryAdd(item);
 			}
 
-			return collection;
+			return returnValue;
 		}
 
 		/// <summary>
 		/// Converts the <see cref="IEnumerable{T}" /> to a <see cref="Collection{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>Collection&lt;T&gt;.</returns>
 		[Information(nameof(ToCollection), "David McCarter", "4/13/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> list)
+		public static Collection<T> ToCollection<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
-			return Collection<T>.Create(list);
+			return Collection<T>.Create(collection);
 		}
 
 		/// <summary>
 		/// Convert a <see cref="IEnumerable{T}" /> to a delimited string.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="delimiter">The delimiter (default is comma if not supplied).</param>
 		/// <returns>System.String.</returns>
 		[Information(nameof(ToDelimitedString), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ToDelimitedString<T>([NotNull] this IEnumerable<T> list, char delimiter = ControlChars.Comma)
+		public static string ToDelimitedString<T>([NotNull] this IEnumerable<T> collection, char delimiter = ControlChars.Comma)
 		{
-			if (list is null || list.FastCount() == 0)
+			if (collection is null || collection.FastCount() == 0)
 			{
 				return string.Empty;
 			}
 
-			var sb = new StringBuilder(list.Count() * 10);
+			var sb = new StringBuilder(collection.Count() * 10);
 
-			list.ToList().ForEach(item => _ = sb.Append($"{item}{delimiter}".ToString(CultureInfo.CurrentCulture)));
+			collection.ToList().ForEach(item => _ = sb.Append($"{item}{delimiter}".ToString(CultureInfo.CurrentCulture)));
 
 			return sb.ToString(0, sb.ToString().ToTrimmed().Length - 1);
 		}
 
 		/// <summary>
 		/// Converts a <see cref="IEnumerable{T}" /> to <see cref="ImmutableList{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The values.</param>
+		/// <param name="collection">The values.</param>
 		/// <returns>IImmutableList&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableList<T> ToImmutable<T>([NotNull] this IEnumerable<T> list)
+		public static ImmutableList<T> ToImmutable<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
-			return ImmutableList.CreateRange(list);
+			return ImmutableList.CreateRange(collection);
 		}
 
 		/// <summary>
 		/// Converts <see cref="IEnumerable{T}" /> to a <see cref="LinkedList{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The values.</param>
+		/// <param name="collection">The values.</param>
 		/// <returns>LinkedList&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		[Information(nameof(FirstOrDefault), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static LinkedList<T> ToLinkedList<T>([NotNull] this IEnumerable<T> list)
+		public static LinkedList<T> ToLinkedList<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
-			return new LinkedList<T>(list);
+			return new LinkedList<T>(collection);
 		}
 
 		/// <summary>
 		/// Creates a <see cref="List{T}" /> from the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>Task&lt;List&lt;T&gt;&gt;.</returns>
 		/// <exception cref="ArgumentNullException">List cannot be null or empty.</exception>
 		/// <remarks>Make sure to call .Dispose on Task,</remarks>
 		[Information(nameof(FirstOrNull), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
-		public static async Task<List<T>> ToListAsync<T>([NotNull] this IEnumerable<T> list)
+		public static async Task<List<T>> ToListAsync<T>([NotNull] this IEnumerable<T> collection)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
-			return await Task.Run(() => list.ToList()).ConfigureAwait(false);
+			return await Task.Run(() => collection.ToList()).ConfigureAwait(false);
 		}
 
 		/// <summary>
 		/// Upserts (update or insert) the specified item to the <see cref="IEnumerable{T}" />.
+		/// Validates that <paramref name="collection" />  is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>System.Collections.Generic.IEnumerable&lt;T&gt;.</returns>
 		[Information(nameof(Upsert), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static IEnumerable<T> Upsert<T>([NotNull] this IEnumerable<T> list, [NotNull] T item)
+		public static IEnumerable<T> Upsert<T>([NotNull] this IEnumerable<T> collection, [NotNull] T item)
 		{
-			list = list.ArgumentItemsExists();
+			collection = collection.ArgumentItemsExists();
 
 			if (item is null)
 			{
-				return list;
+				return collection;
 			}
 
-			var items = list.ToList();
+			var items = collection.ToList();
 
 			if (items.Contains(item))
 			{

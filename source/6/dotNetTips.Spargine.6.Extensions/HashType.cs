@@ -35,6 +35,5 @@ namespace DotNetTips.Spargine.Extensions
 		/// SHA512 hash
 		/// </summary>
 		SHA512
-
 	}
 }

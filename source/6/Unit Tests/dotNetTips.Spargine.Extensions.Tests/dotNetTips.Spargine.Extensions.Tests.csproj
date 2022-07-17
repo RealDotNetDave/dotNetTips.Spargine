@@ -31,10 +31,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\dotNetTips.Spargine.6.Core.csproj" />
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\dotNetTips.Spargine.6.Extensions.csproj" />
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\dotNetTips.Spargine.6.Tester.csproj" />
-		<ProjectReference Include="..\..\dotNetTips.Spargine.6\dotNetTips.Spargine.6.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\DotNetTips.Spargine.6.Extensions.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\DotNetTips.Spargine.6.Tester.csproj" />
+		<ProjectReference Include="..\..\dotNetTips.Spargine.6\DotNetTips.Spargine.6.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

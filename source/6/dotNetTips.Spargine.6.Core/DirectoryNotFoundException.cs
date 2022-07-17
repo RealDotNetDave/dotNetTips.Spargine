@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="DirectoryNotFoundException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -22,14 +22,13 @@ namespace DotNetTips.Spargine.Core
 	/// Implements the <see cref="LoggableException" />
 	/// </summary>
 	[Serializable]
-	public class DirectoryNotFoundException : LoggableException
+	public class DirectoryNotFoundException : LoggableException, ISerializable
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DirectoryNotFoundException"></see> class.
 		/// </summary>
 		public DirectoryNotFoundException()
 		{
-
 		}
 
 		/// <summary>
@@ -38,6 +37,16 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="message">The message that describes the error.</param>
 		public DirectoryNotFoundException(string message) : base(message)
 		{
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="DirectoryNotFoundException" /> class.
+		/// </summary>
+		/// <param name="directory">The directory.</param>
+		/// <exception cref="ArgumentNullException">directory</exception>
+		public DirectoryNotFoundException(DirectoryInfo directory)
+		{
+			this.Directory = directory ?? throw new ArgumentNullException(nameof(directory));
 		}
 
 		/// <summary>
@@ -75,21 +84,34 @@ namespace DotNetTips.Spargine.Core
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="DirectoryNotFoundException"></see> class with serialized data.
+		/// Initializes a new instance of the <see cref="DirectoryNotFoundException" /> class.
 		/// </summary>
-		/// <param name="info">The <see cref="SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
-		/// <param name="context">The <see cref="StreamingContext"></see> that contains contextual information about the source or destination.</param>
-		/// <exception cref="ArgumentNullException">The <paramref name="info">info</paramref> parameter is null.</exception>
-		/// <exception cref="SerializationException">The class name is null or <see cref="Exception.HResult"></see> is zero (0).</exception>
-		protected DirectoryNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
+		/// <param name="serializationInfo">The serialization information.</param>
+		/// <param name="streamingContext">The streaming context.</param>
+		protected DirectoryNotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
 		{
-
 		}
 
 		/// <summary>
 		/// Gets the directory.
 		/// </summary>
 		/// <value>The directory.</value>
-		public DirectoryInfo Directory { get; private set; }
+		public DirectoryInfo Directory { get; }
+
+		/// <summary>
+		/// When overridden in a derived class, sets the <see cref="SerializationInfo"></see> with information about the exception.
+		/// </summary>
+		/// <param name="info">The <see cref="SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+		/// <param name="context">The <see cref="StreamingContext"></see> that contains contextual information about the source or destination.</param>
+		/// <exception cref="ArgumentNullException">info</exception>
+		void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
+		{
+			if (info == null)
+			{
+				throw new ArgumentNullException(nameof(info), $"{nameof(info)} is null.");
+			}
+
+			this.GetObjectData(info, context);
+		}
 	}
 }

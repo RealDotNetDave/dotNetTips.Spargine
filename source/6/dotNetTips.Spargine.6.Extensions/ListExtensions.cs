@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -21,7 +21,6 @@ using DotNetTips.Spargine.Core.Collections.Generic;
 using DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
-
 namespace DotNetTips.Spargine.Extensions
 {
 	/// <summary>
@@ -29,7 +28,6 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ListExtensions
 	{
-
 		/// <summary>
 		/// Gets the random.
 		/// </summary>
@@ -42,6 +40,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds the item as the first item in the <see cref="List{T}" />.
+		/// Validates that <paramref name="collection" /> is not null and not read-only.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The list.</param>
@@ -65,13 +64,14 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Adds item as the last item in the <see cref="List{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">list or item</exception>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static bool AddLast<T>([NotNull] this IList<T> collection, [NotNull] T item)
 		{
 			if (item is null)
@@ -93,7 +93,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="collection">The input.</param>
 		/// <param name="listToCheck">The list to check.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 		public static bool AreEqual<T>([NotNull] this IList<T> collection, [NotNull] IList<T> listToCheck)
 		{
@@ -116,14 +116,13 @@ namespace DotNetTips.Spargine.Extensions
 
 			return areSame;
 		}
-
 		/// <summary>
 		/// Clears the null items from the <see cref="List{T}" />.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The source.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(ClearNulls), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+		[Information(nameof(ClearNulls), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static bool ClearNulls<T>([NotNull] this List<T> collection)
 		{
 			if (collection is null)
@@ -133,15 +132,15 @@ namespace DotNetTips.Spargine.Extensions
 
 			return collection.DoesNotHaveItems() ? false : collection.RemoveAll(p => p is null) > 0;
 		}
-
 		/// <summary>
 		/// Copies the <see cref="List{T}" /> to a <see cref="System.Collections.ObjectModel.Collection{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The source.</param>
 		/// <returns>List&lt;T&gt;.</returns>
 		/// <exception cref="ArgumentNullException">source</exception>
-		[Information(nameof(CopyToCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(CopyToCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static System.Collections.ObjectModel.Collection<T> CopyToCollection<T>([NotNull] this IList<T> collection)
 		{
 			collection = collection.ArgumentItemsExists();
@@ -170,6 +169,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Generates hash code for the <see cref="List{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The list to use to generate hash code.</param>
@@ -187,14 +187,13 @@ namespace DotNetTips.Spargine.Extensions
 
 			return hash;
 		}
-
 		/// <summary>
 		/// Determines whether the specified <see cref="List{T}" /> has items.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
 		/// <returns><c>true</c> if the specified list has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([AllowNull] this List<T> collection)
 		{
 			if (collection is null)
@@ -204,16 +203,16 @@ namespace DotNetTips.Spargine.Extensions
 
 			return collection.LongCount() > 0;
 		}
-
 		/// <summary>
 		/// Determines whether the specified <see cref="List{T}" /> has items based on the Predicate.
+		/// Validates that <paramref name="action" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The source.</param>
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		/// <exception cref="ArgumentNullException">action</exception>
-		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasItems), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([AllowNull] this List<T> collection, [NotNull] Predicate<T> action)
 		{
 			if (collection.CheckIsNotNull() is false || action.CheckIsNotNull() is false)
@@ -223,7 +222,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return collection.TrueForAll(action.ArgumentNotNull());
 		}
-
 		/// <summary>
 		/// Determines whether the <see cref="List{T}" /> has a specified count.
 		/// </summary>
@@ -231,7 +229,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="collection">The source.</param>
 		/// <param name="count">The specific count.</param>
 		/// <returns><c>true</c> if the specified count has items; otherwise, <c>false</c>.</returns>
-		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
+		[Information(nameof(HasItems), "David McCarter", "8/27/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool HasItems<T>([AllowNull] this List<T> collection, int count)
 		{
 			if (collection is null)
@@ -243,10 +241,33 @@ namespace DotNetTips.Spargine.Extensions
 				return collection.LongCount() == count;
 			}
 		}
+		/// <summary>
+		/// Finds index that avoids multiple enumerations.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <param name="index">The index.</param>
+		/// <returns>T.</returns>
+		/// <exception cref="ArgumentNullException">collection</exception>
+		/// <remarks>Orginal code by: @TheOtherBoz</remarks>
+		[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		public static T IndexAtLooped<T>([NotNull] this IList<T> collection, int index)
+		{
+			if (collection is null)
+			{
+				throw new ArgumentNullException(nameof(collection));
+			}
 
+			var count = collection.Count;
+			var indexWrap = (int)( index - ( count * Math.Floor((double)index / count) ) );
+
+			return collection.ElementAt(indexWrap);
+		}
 		/// <summary>
 		/// Groups the elements of a <see cref="List{T}" /> sequence according to a specified firstKey selector function and rotates the unique
 		/// values from the secondKey selector function into multiple values in the output, and performs aggregations.
+		/// Validates that <paramref name="collection" />, <paramref name="firstKeySelector" />,
+		/// <paramref name="secondKeySelector" />, <paramref name="aggregate" /> is not null.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t list.</typeparam>
 		/// <typeparam name="TFirstKey">The type of the t first key.</typeparam>
@@ -289,20 +310,8 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Shuffles the specified <see cref="List{T}" />.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="collection">The items.</param>
-		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list</exception>
-		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100)]
-		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection)
-		{
-			return collection.ArgumentItemsExists().OrderBy(random => GenerateRandomNumber());
-		}
-
-		/// <summary>
 		/// Converts to <see cref="List{T}" /> to a <see cref="Core.Collections.Generic.Collection{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -315,6 +324,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts <see cref="List{T}" /> to a <see cref=" DistinctBlockingCollection{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -338,6 +348,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts <see cref="List{T}" /> to a <see cref="DistinctConcurrentBag{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -345,11 +356,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToDistinctConcurrentBag), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static DistinctConcurrentBag<T> ToDistinctConcurrentBag<T>([NotNull] this IList<T> collection)
 		{
-			return new DistinctConcurrentBag<T>(collection.ArgumentItemsExists());
+			return new DistinctConcurrentBag<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts a <see cref="List{T}" /> to the Spargine <see cref="FastSortedList{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -357,11 +369,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToFastSortedList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static FastSortedList<T> ToFastSortedList<T>([NotNull] this IList<T> collection)
 		{
-			return new FastSortedList<T>(collection.ArgumentItemsExists());
+			return new FastSortedList<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts <see cref="List{T}" /> to an <see cref="ImmutableArray{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -369,11 +382,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToCollection), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static ImmutableArray<T> ToImmutableArray<T>([NotNull] this IList<T> collection)
 		{
-			return ImmutableArray.Create(collection.ArgumentItemsExists().ToArray());
+			return ImmutableArray.Create(collection.ArgumentNotNull().ToArray());
 		}
 
 		/// <summary>
 		/// Converts the <see cref="IAsyncEnumerable{T}" /> to a <see cref="List{T}" /> in an asynchronous operation.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="TSource">The type of the t source.</typeparam>
 		/// <param name="collection">The list.</param>
@@ -396,6 +410,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Converts <see cref="List{T}" /> to a <see cref="ObservableCollection{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The list.</param>
@@ -403,11 +418,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ObservableCollection<T> ToObservableCollection<T>([NotNull] this IList<T> collection)
 		{
-			return new ObservableCollection<T>(collection.ArgumentItemsExists());
+			return new ObservableCollection<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts the <see cref="List{T}" /> to a <see cref="ObservableList{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -415,11 +431,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToObservableList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 		public static ObservableList<T> ToObservableList<T>([NotNull] this IList<T> collection)
 		{
-			return new ObservableList<T>(collection.ArgumentItemsExists());
+			return new ObservableList<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts the <see cref="List{T}" /> to a <see cref="ReadOnlyCollection{T}" />
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The <see cref="List{T}" /> to convert.</param>
@@ -427,11 +444,12 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static ReadOnlyCollection<T> ToReadOnlyCollection<T>([NotNull] this IList<T> collection)
 		{
-			return new ReadOnlyCollection<T>(collection.ArgumentItemsExists());
+			return new ReadOnlyCollection<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts the <see cref="List{T}" /> to <see cref="IReadOnlyList{T}" />/&gt;.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The <see cref="List{T}" /> to convert.</param>
@@ -439,7 +457,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToReadOnlyList), "David McCarter", "4/10/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static IReadOnlyList<T> ToReadOnlyList<T>([NotNull] this IList<T> collection)
 		{
-			return (IReadOnlyList<T>)collection.ArgumentItemsExists();
+			return (IReadOnlyList<T>)collection.ArgumentNotNull();
 		}
 	}
 }

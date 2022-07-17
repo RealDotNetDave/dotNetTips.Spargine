@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -161,7 +161,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 			: this(concurrencyLevel, DefaultCapacity, false, comparer)
 		{
 			this.InitializeFromCollection(collection);
-
 		}
 
 		/// <summary>
@@ -766,7 +765,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 				try
 				{
 					this.AcquireAllLocks(ref acquiredLocks);
-					count = this._tables._countPerLock.Aggregate(count, (accumulator, countPerLock) => accumulator += countPerLock);
+					count = this._tables._countPerLock.Aggregate(count, func: (accumulator, countPerLock) => accumulator += countPerLock);
 				}
 				finally
 				{

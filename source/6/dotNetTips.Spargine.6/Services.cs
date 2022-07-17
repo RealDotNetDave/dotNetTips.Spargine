@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine
 		[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		private static ServiceController LoadService(string serviceName)
 		{
-			return ServiceController.GetServices().FirstOrDefault(p => string.Equals(p.ServiceName, serviceName, StringComparison.Ordinal));
+			return Array.Find(ServiceController.GetServices(), p => string.Equals(p.ServiceName, serviceName, StringComparison.Ordinal));
 		}
 
 		/// <summary>

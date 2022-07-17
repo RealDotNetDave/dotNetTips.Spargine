@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="SocketExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Binds to an IP address and OS-assigned port. Returns the chosen port.
+		/// Validates that <paramref name="socket" /> and <paramref name="address" /> is not null.
 		/// </summary>
 		/// <param name="socket">The socket.</param>
 		/// <param name="address">The address.</param>
@@ -41,10 +42,10 @@ namespace DotNetTips.Spargine.Extensions
 			return ( (IPEndPoint)socket.LocalEndPoint ).Port;
 		}
 
-
 		/// <summary>
 		/// On non-Windows platforms, once non-blocking is turned on (either explicitly or by performing an async
 		/// operation), always stay in non-blocking mode.
+		/// Validates that <paramref name="socket" /> is not null.
 		/// </summary>
 		/// <param name="socket">The socket.</param>
 		/// <param name="force">if set to <c>true</c> [force].</param>
@@ -59,13 +60,14 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Tries to connect within the provided timeout interval Useful to speed up "cannot connect" assertions on
-		/// Windows
+		/// Windows.
+		/// Validates that <paramref name="socket" /> and <paramref name="remoteEndpoint" /> is not null.
 		/// </summary>
 		/// <param name="socket">The socket.</param>
 		/// <param name="remoteEndpoint">The remote endpoint.</param>
 		/// <param name="millisecondsTimeout">The milliseconds timeout.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		/// <exception cref="PlatformNotSupportedException"></exception>
+		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
 		public static bool TryConnect([NotNull] this Socket socket, [NotNull] EndPoint remoteEndpoint, int millisecondsTimeout)
 		{

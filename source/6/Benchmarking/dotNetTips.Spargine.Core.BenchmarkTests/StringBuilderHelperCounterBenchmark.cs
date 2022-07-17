@@ -17,6 +17,8 @@ using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Extensions;
 
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
 namespace DotNetTips.Spargine.Core.BenchmarkTests
 {
 	/// <summary>

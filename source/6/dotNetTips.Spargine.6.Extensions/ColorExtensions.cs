@@ -4,7 +4,7 @@
 // Created          : 07-29-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ColorExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Averages the specified colors in the collection.
+		/// Validates that <paramref name="colors" /> is not null and has items.
 		/// </summary>
 		/// <param name="colors">The colors.</param>
 		/// <returns>Color.</returns>

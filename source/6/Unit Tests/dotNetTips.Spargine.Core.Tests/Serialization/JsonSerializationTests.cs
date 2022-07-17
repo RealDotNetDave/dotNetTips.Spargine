@@ -14,7 +14,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Core.Tests.Properties;
@@ -24,7 +23,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace dotNetTips.Spartine.Core.Tests.Serialization
+namespace dotNetTips.Spargine.Core.Tests.Serialization
 {
 	/// <summary>
 	/// Defines test class JsonSerializationTests.
@@ -62,11 +61,10 @@ namespace dotNetTips.Spartine.Core.Tests.Serialization
 		[TestMethod]
 		public void SerializeDeserializeTestPersonRecord()
 		{
-			var person = RandomData.GeneratePersonRecordCollection(1).First();
-
 			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonRecord.json");
 
 			//For debugging
+			// var person = RandomData.GeneratePersonRecordCollection(1).First();
 			//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonRecord.json");
 
 			Assert.IsTrue(string.IsNullOrEmpty(File.ReadAllText(fileName)) is false);

@@ -26,13 +26,11 @@ namespace DotNetTips.Spargine.Core
 	[Serializable]
 	public class MessageNotQueuedException : LoggableException
 	{
-
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
 		/// </summary>
 		public MessageNotQueuedException()
 		{
-
 		}
 
 		/// <summary>
@@ -41,7 +39,6 @@ namespace DotNetTips.Spargine.Core
 		/// <param name="message">The message that describes the error.</param>
 		public MessageNotQueuedException(string message) : base(message)
 		{
-
 		}
 
 		/// <summary>
@@ -77,7 +74,6 @@ namespace DotNetTips.Spargine.Core
 		/// <exception cref="NotImplementedException">The exception.</exception>
 		protected MessageNotQueuedException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
 		{
-
 		}
 
 		/// <summary>
@@ -85,6 +81,5 @@ namespace DotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The message identifier.</value>
 		public string MessageId { get; }
-
 	}
 }

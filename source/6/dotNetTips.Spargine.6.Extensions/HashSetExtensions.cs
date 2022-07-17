@@ -4,9 +4,9 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
-// <copyright file="HashSetExtensions.cs" company="dotNetTips.Spargine.5.Extensions">
+// <copyright file="HashSetExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary>Extension methods for the HashSet type.</summary>
@@ -27,65 +27,69 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Adds item to the <see cref="HashSet{T}" /> if condition is meet.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		/// <param name="condition">The condition.</param>
 		[Information(nameof(AddIf), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void AddIf<T>([NotNull] this HashSet<T> list, [NotNull] T item, bool condition)
+		public static void AddIf<T>([NotNull] this HashSet<T> collection, [NotNull] T item, bool condition)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 			item = item.ArgumentNotNull();
 
 			if (condition)
 			{
-				_ = list.Add(item);
+				_ = collection.Add(item);
 			}
 		}
 
 		/// <summary>
 		/// Converts <see cref="HashSet{T}" /> to <see cref="ConcurrentHashSet{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <returns>ConcurrentHashSet&lt;T&gt;.</returns>
 		[Information(nameof(ToImmutable), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-		public static ConcurrentHashSet<T> ToConcurrentHashSet<T>([NotNull] this HashSet<T> list)
+		public static ConcurrentHashSet<T> ToConcurrentHashSet<T>([NotNull] this HashSet<T> collection)
 		{
-			return new ConcurrentHashSet<T>(list.ArgumentNotNull());
+			return new ConcurrentHashSet<T>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Converts to <see cref="HashSet{T}" /> to <see cref="ImmutableHashSet{T}" />.
+		/// Validates that <paramref name="collection" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="list">The values.</param>
+		/// <param name="collection">The values.</param>
 		/// <returns>ImmutableHashSet<typeparamref name="T" />&gt;.</returns>
 		[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static ImmutableHashSet<T> ToImmutable<T>([NotNull] this HashSet<T> list)
+		public static ImmutableHashSet<T> ToImmutable<T>([NotNull] this HashSet<T> collection)
 		{
-			return ImmutableHashSet.CreateRange(list.ArgumentNotNull());
+			return ImmutableHashSet.CreateRange(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
 		/// Upserts the specified item into the <see cref="HashSet{T}" />.
+		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="list">The list.</param>
+		/// <param name="collection">The list.</param>
 		/// <param name="item">The item.</param>
 		[Information(nameof(Upsert), "David McCarter", "5/2/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static void Upsert<T>([NotNull] this HashSet<T> list, [NotNull] T item)
+		public static void Upsert<T>([NotNull] this HashSet<T> collection, [NotNull] T item)
 		{
-			list = list.ArgumentNotNull();
+			collection = collection.ArgumentNotNull();
 			item = item.ArgumentNotNull();
 
-			if (list.Contains(item))
+			if (collection.Contains(item))
 			{
-				_ = list.Remove(item);
+				_ = collection.Remove(item);
 			}
 
-			_ = list.Add(item);
+			_ = collection.Add(item);
 		}
 	}
 }

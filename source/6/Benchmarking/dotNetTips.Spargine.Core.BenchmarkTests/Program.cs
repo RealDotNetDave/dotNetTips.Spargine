@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-21-2021
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="Program.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,6 +19,8 @@ using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
 using DotNetTips.Spargine.Core.BenchmarkTests.Logging;
 
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
 namespace DotNetTips.Spargine.Core.BenchmarkTests
 {
 	/// <summary>
@@ -29,7 +31,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		/// <summary>
 		/// Defines the entry point of the application.
 		/// </summary>
-		/// <param name="args">The arguments.</param>
 		private static void Main()
 		{
 			try

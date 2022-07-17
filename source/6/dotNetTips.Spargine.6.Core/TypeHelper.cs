@@ -546,7 +546,6 @@ namespace DotNetTips.Spargine.Core
 			/// </summary>
 			/// <value>The nested type delimiter.</value>
 			public char NestedTypeDelimiter { get; }
-
 		}
 	}
 }

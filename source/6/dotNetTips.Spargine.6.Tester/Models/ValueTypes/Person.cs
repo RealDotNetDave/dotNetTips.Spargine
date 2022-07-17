@@ -1,5 +1,5 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Spargine.5.Tester
+// Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : david
 // Created          : 10-25-2021
 //
@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes
 	[Serializable]
 	[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 	[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-	public struct Person : IDataModel<Person, string>, IPerson, IEquatable<Person>
+	public struct Person : IDataModel<Person, string>, IPerson
 	{
 		/// <summary>
 		/// Address 1.

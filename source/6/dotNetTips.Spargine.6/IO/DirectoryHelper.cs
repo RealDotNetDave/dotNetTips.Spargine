@@ -94,7 +94,6 @@ namespace DotNetTips.Spargine.IO
 				{
 					deny = true;
 				}
-
 			}
 
 			return allow && !deny;
@@ -111,7 +110,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			DirectoryInfo[] directories = source.ArgumentExists().GetDirectories();
 
-			_ = destination.CheckExists();
+			destination.ArgumentNotNull().CheckExists();
 
 			var destinationPath = destination.FullName;
 
@@ -191,8 +190,8 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
 		public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption)
 		{
-			directories = directories.ArgumentItemsExists();
-			searchPattern = searchPattern.ArgumentNotNullOrEmpty();
+			directories = directories.ArgumentNotNull();
+			searchPattern = searchPattern.ArgumentNotNull();
 
 			if (searchOption.CheckIsDefined() is false)
 			{
@@ -305,7 +304,7 @@ namespace DotNetTips.Spargine.IO
 			source = source.ArgumentExists();
 			retries = retries.ArgumentInRange(1, upper: 100, defaultValue: 10, errorMessage: Resources.RetriesAreLimitedTo0100);
 
-			if (destination.CheckExists(throwException: true))
+			if (destination.ArgumentNotNull().CheckExists(throwException: true))
 			{
 				var tries = 0;
 
@@ -350,7 +349,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			path = path.ArgumentExists();
 			searchOption = searchOption.ArgumentDefined();
-			searchPatterns = searchPatterns.ArgumentItemsExists();
+			searchPatterns = searchPatterns.ArgumentNotNull();
 
 			for (var patternCount = 0; patternCount < searchPatterns.Length; patternCount++)
 			{
@@ -434,7 +433,7 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
 		public static IReadOnlyList<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
 		{
-			directories = directories.ArgumentItemsExists();
+			directories = directories.ArgumentNotNull();
 			searchPattern = searchPattern.ArgumentNotNullOrEmpty();
 			searchOption = searchOption.ArgumentDefined();
 

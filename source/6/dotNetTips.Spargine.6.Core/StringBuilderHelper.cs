@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Core
 		{
 			// TODO: ADD UNIT TEST!
 
-			bytes = bytes.ArgumentItemsExists();
+			bytes = bytes.ArgumentNotNull();
 
 			var sb = new StringBuilder();
 
@@ -50,7 +50,6 @@ namespace DotNetTips.Spargine.Core
 			return sb.ToString();
 		}
 
-
 		/// <summary>
 		/// Concat to string.
 		/// </summary>
@@ -65,7 +64,7 @@ namespace DotNetTips.Spargine.Core
 			// TODO: ADD UNIT TEST!
 
 			delimiter = delimiter.ArgumentNotNullOrEmpty();
-			args = args.ArgumentItemsExists();
+			args = args.ArgumentNotNull();
 
 			var sb = new StringBuilder();
 

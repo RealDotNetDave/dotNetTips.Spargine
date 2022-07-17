@@ -23,14 +23,12 @@ using DotNetTips.Spargine.Properties;
 
 namespace DotNetTips.Spargine.IO
 {
-
 	/// <summary>
 	/// Helper methods for files.
 	/// </summary>
 	[Information(nameof(FileHelper), "David McCarter", "2/11/2017", Status = Status.Available)]
 	public static class FileHelper
 	{
-
 		/// <summary>
 		/// The no result
 		/// </summary>
@@ -49,7 +47,6 @@ namespace DotNetTips.Spargine.IO
 		/// Gets the HTTP client.
 		/// </summary>
 		/// <returns>System.Net.Http.HttpClient.</returns>
-		[SuppressMessage("Microsoft.Build", "IDISP014")]
 		private static HttpClient GetHttpClient()
 		{
 			if (_httpClient is null)
@@ -141,7 +138,6 @@ namespace DotNetTips.Spargine.IO
 				{
 					deny = true;
 				}
-
 			}
 
 			return allow && !deny;
@@ -159,7 +155,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			var fileName = file.ArgumentExists().FullName;
 
-			if (destination.CheckExists(throwException: true))
+			if (destination.ArgumentNotNull().CheckExists(throwException: true))
 			{
 				var destinationName = destination.FullName;
 
@@ -199,7 +195,7 @@ namespace DotNetTips.Spargine.IO
 		public static async Task<long> CopyFileAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 		{
 			var fileName = file.ArgumentExists().FullName;
-			_ = destination.CheckExists(throwException: true, createDirectory: true, errorMessage: string.Format(CultureInfo.InvariantCulture, Resources.DirectoryDoesNotExistOrCannotBeCreated, destination.FullName));
+			_ = destination.ArgumentNotNull().CheckExists(throwException: true, createDirectory: true, errorMessage: string.Format(CultureInfo.InvariantCulture, Resources.DirectoryDoesNotExistOrCannotBeCreated, destination.FullName));
 
 			var destinationName = destination.FullName;
 
@@ -267,9 +263,9 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static async Task DownloadFileFromWebAndUnzipAsync([NotNull] Uri remoteUri, [NotNull] DirectoryInfo destination)
 		{
-			_ = destination.CheckExists();
+			_ = destination.ArgumentNotNull().CheckExists();
 
-			var tempDownloadPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid().ToString()}{Path.GetExtension(remoteUri.ToString())}");
+			var tempDownloadPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}{Path.GetExtension(remoteUri.ToString())}");
 
 			await DownloadFileFromWebAsync(remoteUri, destination).ConfigureAwait(false);
 
@@ -278,6 +274,7 @@ namespace DotNetTips.Spargine.IO
 
 		/// <summary>
 		/// Downloads file from web URL as an asynchronous operation.
+		/// Creates the <paramref name="destination"/> if it does not exist.
 		/// </summary>
 		/// <param name="remoteUri">The remote file URL.</param>
 		/// <param name="destination">The local file path.</param>
@@ -286,9 +283,12 @@ namespace DotNetTips.Spargine.IO
 		[Information(nameof(DownloadFileFromWebAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static async Task DownloadFileFromWebAsync(Uri remoteUri, DirectoryInfo destination)
 		{
-			remoteUri = remoteUri.ArgumentNotNull<Uri>();
+			remoteUri = remoteUri.ArgumentNotNull();
 
-			_ = destination.CheckExists();
+			if (destination.ArgumentNotNull().Exists is false)
+			{
+				destination.Create();
+			}
 
 			var pathName = destination.FullName;
 
@@ -308,20 +308,14 @@ namespace DotNetTips.Spargine.IO
 
 		/// <summary>
 		/// Determines whether [has invalid path chars] [the specified file name].
+		/// Validates <paramref name="file"/> to ensure it's not null.
 		/// </summary>
 		/// <param name="file">The path.</param>
 		/// <returns><c>true</c> if [has invalid path chars] [the specified file name]; otherwise, <c>false</c>.</returns>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool FileHasInvalidChars(FileInfo file)
 		{
-			if (file.CheckExists())
-			{
-				return file.FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
-			}
-			else
-			{
-				return false;
-			}
+			return file.CheckExists() && file.ArgumentNotNull().FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
 		}
 
 		/// <summary>
@@ -369,7 +363,10 @@ namespace DotNetTips.Spargine.IO
 		{
 			source = source.ArgumentExists();
 
-			_ = destination.CheckExists();
+			if (destination.ArgumentNotNull().Exists is false)
+			{
+				destination.Create();
+			}
 
 			var destinationPath = destination.FullName;
 
@@ -398,7 +395,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			var fileName = new FileInfo(file.ArgumentExists().FullName);
 
-			_ = destination.CheckExists();
+			_ = destination.ArgumentNotNull().CheckExists();
 
 			await UnGZipAsync(fileName, destination).ConfigureAwait(false);
 
@@ -420,7 +417,7 @@ namespace DotNetTips.Spargine.IO
 		{
 			var fileName = file.ArgumentExists().FullName;
 
-			_ = destination.CheckExists();
+			_ = destination.ArgumentNotNull().CheckExists();
 
 			var destinationPath = destination.FullName;
 
@@ -439,7 +436,7 @@ namespace DotNetTips.Spargine.IO
 		public static async Task UnZipAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination, bool deleteZipFile)
 		{
 			file = file.ArgumentExists();
-			_ = destination.CheckExists();
+			_ = destination.ArgumentNotNull().CheckExists();
 
 			await UnZipAsync(file, destination).ConfigureAwait(false);
 

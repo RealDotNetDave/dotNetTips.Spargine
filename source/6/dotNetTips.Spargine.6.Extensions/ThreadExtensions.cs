@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="ThreadExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Tries the set priority.
+		/// Validates that <paramref name="thread" /> is not null.
 		/// </summary>
 		/// <param name="thread">The thread.</param>
 		/// <param name="priority">The priority.</param>
@@ -41,6 +42,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Waits for a certain amount of time. Does not use timer (no need to call Dispose).
+		/// Validates that <paramref name="thread" /> is not null.
 		/// </summary>
 		/// <param name="thread">The thread.</param>
 		/// <param name="interval">The wait interval.</param>
@@ -52,6 +54,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Waits the until.
+		/// Validates that <paramref name="thread" /> is not null.
 		/// </summary>
 		/// <param name="thread">The thread.</param>
 		/// <param name="interval">The wait interval.</param>

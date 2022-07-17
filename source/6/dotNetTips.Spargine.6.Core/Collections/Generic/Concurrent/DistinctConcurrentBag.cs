@@ -27,7 +27,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent
 	[DebuggerDisplay("Count = {Count}")]
 	public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	{
-
 		/// <summary>
 		/// The hash codes
 		/// </summary>

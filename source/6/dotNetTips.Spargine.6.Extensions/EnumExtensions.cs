@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="EnumExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -33,14 +33,11 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(GetDescription), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GetDescription(this Enum input)
 		{
-			input = input.ArgumentNotNull();
-
 			FieldInfo field = input.GetType().GetField(input.ToString());
 			var attributes = (DescriptionAttribute[])field.GetCustomAttributes(typeof(DescriptionAttribute), false);
 
 			return attributes.Length > 0 ? attributes[0].Description : input.ToString();
 		}
-
 
 		/// <summary>
 		/// Gets the names and values of an <see cref="Enum" />.
@@ -50,8 +47,6 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(GetItems), UnitTestCoverage = 100, Status = Status.Available)]
 		public static IList<(string Description, int Value)> GetItems(this Enum input)
 		{
-			input = input.ArgumentNotNull();
-
 			var items = new List<(string Description, int Value)>();
 
 			foreach (var name in Enum.GetNames(input.GetType()))
@@ -64,6 +59,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Parses the specified <see cref="Enum" /> name.
+		/// Validates that <paramref name="name" /> contains text.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="name">The name.</param>

@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -49,6 +49,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the bytes.
+		/// Validates that <paramref name="sb" /> and <paramref name="bytes" /> is not null.
 		/// </summary>
 		/// <param name="sb">The builder.</param>
 		/// <param name="bytes">The bytes.</param>
@@ -64,7 +65,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information("Original code from efcore-master on GitHub", author: "David McCarter", createdOn: "5/26/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static void AppendBytes([NotNull] this StringBuilder sb, [NotNull] byte[] bytes)
 		{
-			bytes = bytes.ArgumentItemsExists();
+			bytes = bytes.ArgumentNotNull();
 			sb = sb.ArgumentNotNull().Append("'0x");
 
 			for (var byteIndex = 0; byteIndex < bytes.Length; byteIndex++)
@@ -77,6 +78,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the key value.
+		/// Validates that <paramref name="sb" />, <paramref name="key" /> and <paramref name="value" /> is not null.
 		/// </summary>
 		/// <param name="sb">The sb.</param>
 		/// <param name="key">The key.</param>
@@ -139,6 +141,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the values.
+		/// Validates that <paramref name="sb" />, <paramref name="separator" /> and <paramref name="values" /> is not null.
 		/// </summary>
 		/// <param name="sb">The string builder.</param>
 		/// <param name="separator">The separator.</param>
@@ -158,6 +161,8 @@ namespace DotNetTips.Spargine.Extensions
 		public static void AppendValues([NotNull] this StringBuilder sb, [NotNull] string separator, [NotNull] IEnumerable<string> values)
 		{
 			sb = sb.ArgumentNotNull();
+			separator = separator.ArgumentNotNull();
+			values = values.ArgumentNotNull();
 
 			separator = SetSeparator(separator);
 
@@ -166,6 +171,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the values.
+		/// Validates that <paramref name="sb" /> and <paramref name="values" /> is not null.
 		/// </summary>
 		/// <param name="sb">The string builder.</param>
 		/// <param name="separator">The separator.</param>
@@ -177,7 +183,7 @@ namespace DotNetTips.Spargine.Extensions
 		public static void AppendValues([NotNull] this StringBuilder sb, string separator, params string[] values)
 		{
 			sb = sb.ArgumentNotNull();
-			values = values.ArgumentItemsExists(nameof(values));
+			values = values.ArgumentNotNull();
 
 			separator = SetSeparator(separator);
 
@@ -185,7 +191,9 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Appends the values
+		/// Appends the values.
+		/// Validates that <paramref name="sb" />, <paramref name="values" />
+		/// and <paramref name="joinAction" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="sb">The string builder.</param>
@@ -224,6 +232,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the values.
+		/// Validates that <paramref name="sb" />, <paramref name="values" />,
+		/// <paramref name="joinAction" /> and <paramref name="param" /> not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <typeparam name="TParam">The type of the t parameter.</typeparam>
@@ -260,6 +270,9 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Appends the values.
+		/// Validates that <paramref name="sb" />, <paramref name="values" />,
+		/// <paramref name="param1" />, <paramref name="param2" /> and
+		/// <paramref name="joinAction" /> is not null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <typeparam name="TParam1">The type of the t param1.</typeparam>

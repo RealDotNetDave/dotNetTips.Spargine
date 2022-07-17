@@ -28,7 +28,7 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DirectoryNotFoundException = DotNetTips.Spargine.Core.DirectoryNotFoundException;
 
-namespace dotNetTips.Spartine.Core.Tests
+namespace dotNetTips.Spargine.Core.Tests
 {
 
 	[ExcludeFromCodeCoverage]
@@ -162,6 +162,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(lowerValue, upperValue);
+
+				Assert.AreEqual(result, testValue);
 			}
 			catch
 			{
@@ -309,6 +311,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(0, decimal.MaxValue);
+
+				Assert.AreEqual(testValue, result);
 			}
 			catch
 			{
@@ -345,6 +349,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(0, double.MaxValue);
+
+				Assert.AreEqual(testValue, result);
 			}
 			catch
 			{
@@ -381,6 +387,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(0, upper: int.MaxValue);
+
+				Assert.AreEqual(testValue, result);
 			}
 			catch
 			{
@@ -418,6 +426,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(0, long.MaxValue);
+
+				Assert.AreEqual(testValue, result);
 			}
 			catch
 			{
@@ -454,6 +464,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(0, 50);
+
+				Assert.AreEqual(testValue, result);
 			}
 			catch
 			{
@@ -494,6 +506,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			try
 			{
 				var result = testValue.ArgumentInRange(lowerValue, upperValue);
+
+				Assert.AreEqual(result, testValue);
 			}
 			catch
 			{
@@ -586,7 +600,9 @@ namespace dotNetTips.Spartine.Core.Tests
 
 			try
 			{
-				value.ArgumentDefined();
+				var result = value.ArgumentDefined();
+
+				Assert.AreEqual(value, result);
 			}
 			catch
 			{
@@ -603,6 +619,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			{
 				var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 				var result = people.ArgumentItemsExists(nameof(people));
+
+				Assert.AreEqual(people, result);
 			}
 			catch
 			{
@@ -622,6 +640,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			{
 				var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).AsEnumerable();
 				var result = people.ArgumentItemsExists();
+
+				Assert.AreEqual(people, result);
 			}
 			catch
 			{
@@ -641,6 +661,8 @@ namespace dotNetTips.Spartine.Core.Tests
 			{
 				var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
 				var result = people.ArgumentItemsExists();
+
+				Assert.AreEqual(people, result);
 			}
 			catch
 			{
@@ -921,10 +943,11 @@ namespace dotNetTips.Spartine.Core.Tests
 		[TestMethod]
 		public void ArgumentNotNullSpanTest()
 		{
-			var testPeople = new Span<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray());
+			var people = new Span<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray());
+
 			try
 			{
-				testPeople.ArgumentNotEmpty(nameof(testPeople));
+				var result = people.ArgumentNotEmpty(nameof(people));
 			}
 			catch
 			{

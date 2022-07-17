@@ -17,7 +17,6 @@ using DotNetTips.Spargine.Core.Properties;
 
 namespace DotNetTips.Spargine.Core
 {
-
 	/// <summary>
 	/// Class InformationAttribute. This class cannot be inherited.
 	/// Implements the <see cref="Attribute" />

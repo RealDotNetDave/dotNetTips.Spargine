@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 05-23-2022
 // ***********************************************************************
 // <copyright file="DataTableExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -40,10 +40,9 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if [is database null] [the specified value]; otherwise, <c>false</c>.</returns>
 		[Information(nameof(HasRows), author: "David McCarter", createdOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static bool IsDBNull(object value)
+		public static bool IsDBNull(this object value)
 		{
 			return Convert.IsDBNull(value);
 		}
-
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 11-25-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-24-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="TaskExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	{
 		/// <summary>
 		/// Fires the and forget<seealso cref="Task" />.
+		/// Validates that <paramref name="task" /> is not null.
 		/// </summary>
 		/// <param name="task">The Task.</param>
 		/// <example>
@@ -38,17 +39,18 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Fires the and forget a <seealso cref="Task" />.
+		/// Validates that <paramref name="task" /> is not null.
 		/// </summary>
 		/// <param name="task">The Task.</param>
-		/// <param name="ex">The Exception to throw.</param>
+		/// <param name="action">The Exception to throw.</param>
 		/// <example>
 		/// Action&lt;Exception&gt; exAction = (Exception ex) =&gt; Debug.WriteLine(ex.Message);
 		/// SomeType.FireAsync("Test Message").FireAndForget(exAction);
 		/// </example>
 		[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL TO SEP ARTICLE")]
-		public static void FireAndForget([NotNull] this Task task, Action<Exception> ex)
+		public static void FireAndForget([NotNull] this Task task, Action<Exception> action)
 		{
-			_ = task.ArgumentNotNull().ContinueWith((tsk) => ex?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);
+			_ = task.ArgumentNotNull().ContinueWith((tsk) => action?.Invoke(tsk.Exception), TaskContinuationOptions.OnlyOnFaulted);
 		}
 	}
 }

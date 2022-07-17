@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2022
+// Last Modified On : 06-02-2022
 // ***********************************************************************
 // <copyright file="AppInfo.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -132,6 +132,5 @@ namespace DotNetTips.Spargine.Core
 		/// </summary>
 		/// <returns>System.String.</returns>
 		public string NameAndVersion() => string.Format(CultureInfo.CurrentCulture, Resources.AppNameAndVersion, this.Product, this.Version);
-
 	}
 }

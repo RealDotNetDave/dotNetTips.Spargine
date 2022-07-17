@@ -140,20 +140,6 @@ namespace DotNetTips.Spargine.Tester.Tests
 		}
 
 		/// <summary>
-		/// Defines the test method GeneratePersonValCollectionTest.
-		/// </summary>
-		[TestMethod]
-		public void GeneratePersonValCollectionTest()
-		{
-			var result = RandomData.GeneratePersonValCollection(1000);
-
-			Assert.IsTrue(result.FastCount() == 1000);
-
-			Assert.IsTrue(result.ToDictionary(item => item.Id).FastCount() == 1000);
-
-		}
-
-		/// <summary>
 		/// Defines the test method GenerateCharacterTest.
 		/// </summary>
 		[TestMethod]
@@ -463,6 +449,20 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(person.PostalCode);
 
 			Assert.IsNotNull(person.ToString());
+		}
+
+		/// <summary>
+		/// Defines the test method GeneratePersonValCollectionTest.
+		/// </summary>
+		[TestMethod]
+		public void GeneratePersonValCollectionTest()
+		{
+			var result = RandomData.GeneratePersonValCollection(1000);
+
+			Assert.IsTrue(result.FastCount() == 1000);
+
+			Assert.IsTrue(result.ToDictionary(item => item.Id).FastCount() == 1000);
+
 		}
 
 		/// <summary>

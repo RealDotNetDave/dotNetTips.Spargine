@@ -16,7 +16,6 @@
 
 namespace DotNetTips.Spargine.Core
 {
-
 	/// <summary>
 	/// Class UnhandledExceptionEventInformation.
 	/// </summary>
@@ -35,5 +34,4 @@ namespace DotNetTips.Spargine.Core
 		/// <value><c>true</c> if [network available]; otherwise, <c>false</c>.</value>
 		public bool IsTerminating { get; internal set; }
 	}
-
 }

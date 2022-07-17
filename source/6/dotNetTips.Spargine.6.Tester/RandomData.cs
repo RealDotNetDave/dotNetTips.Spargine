@@ -1,12 +1,12 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Spargine.5.Tester
+// Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : David McCarter
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
 // Last Modified On : 05-31-2022
 // ***********************************************************************
-// <copyright file="RandomData.cs" company="dotNetTips.Spargine.5.Tester">
+// <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary>Methods to randomly generate data for unit and benchmark testing.</summary>
@@ -28,7 +28,6 @@ using DotNetTips.Spargine.Tester.Properties;
 
 namespace DotNetTips.Spargine.Tester
 {
-
 	/// <summary>
 	/// Methods to randomly generate data for unit and benchmark testing.
 	/// </summary>

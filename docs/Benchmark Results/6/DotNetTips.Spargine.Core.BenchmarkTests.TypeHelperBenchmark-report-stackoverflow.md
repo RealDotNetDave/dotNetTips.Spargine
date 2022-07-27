@@ -1,14 +1,16 @@
 
-    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1706 (21H2)
+    BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-    .NET SDK=6.0.300
-      [Host]     : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-      Job-XJCAYH : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+    .NET SDK=7.0.100-preview.6.22352.1
+      [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+      Job-LMZPTW : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+      Job-TBCPNW : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
 
-    EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
-    Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
+    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
 
-                                         Method | Categories |      Mean |     Error |    StdDev |    StdErr |       Min |        Q1 |    Median |        Q3 |       Max |      Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size |  Gen 1 | Allocated |
-    ------------------------------------------- |----------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|-------:|----------:|
-     **'Looping Collection: Normal StringBuilder'** |    **Strings** |  **5.080 μs** | **0.0881 μs** | **0.0824 μs** | **0.0213 μs** |  **4.935 μs** |  **5.007 μs** |  **5.120 μs** |  **5.142 μs** |  **5.174 μs** | **196,841.3** |      **0.0881 μs** |      **15.00** |    **1.595** |  **2.000** |  **-0.5149** |    **1** |            ***** |       **No** | **1.1749** |      **3 KB** | **0.0076** |     **11 KB** |
-                              **GetPropertyValues** | **Reflection** | **34.494 μs** | **0.2344 μs** | **0.1830 μs** | **0.0528 μs** | **34.148 μs** | **34.477 μs** | **34.507 μs** | **34.583 μs** | **34.790 μs** |  **28,990.5** |      **0.2344 μs** |      **12.00** |    **2.627** |  **2.000** |  **-0.6283** |    **2** |            ***** |       **No** | **0.6714** |      **2 KB** |      **-** |      **6 KB** |
+                                         Method |        Job |  Runtime | Categories |      Mean |     Error |    StdDev |    StdErr |    Median |       Min |        Q1 |        Q3 |       Max |      Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size |  Gen 1 | Allocated |
+    ------------------------------------------- |----------- |--------- |----------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|-------:|----------:|
+     **'Looping Collection: Normal StringBuilder'** | **Job-LMZPTW** | **.NET 6.0** |    **Strings** |  **6.442 μs** | **0.3273 μs** | **0.9444 μs** | **0.0964 μs** |  **6.300 μs** |  **5.069 μs** |  **5.662 μs** |  **6.853 μs** |  **8.840 μs** | **155,234.3** |      **0.3273 μs** |      **96.00** |    **2.958** |  **4.000** |   **0.7602** |    **2** |            ***** |       **No** | **1.4725** |   **3,090 B** | **0.0153** |  **13.01 KB** |
+     'Looping Collection: Normal StringBuilder' | Job-TBCPNW | .NET 7.0 |    Strings |  5.275 μs | 0.1000 μs | 0.1111 μs | 0.0255 μs |  5.233 μs |  5.149 μs |  5.209 μs |  5.284 μs |  5.565 μs | 189,587.6 |      0.1000 μs |      19.00 |    3.890 |  2.000 |   1.4231 |    1 |            * |       No | 1.4801 |   2,352 B | 0.0229 |  12.84 KB |
+                              **GetPropertyValues** | **Job-LMZPTW** | **.NET 6.0** | **Reflection** | **39.345 μs** | **2.0514 μs** | **5.9516 μs** | **0.6043 μs** | **37.401 μs** | **33.222 μs** | **34.781 μs** | **42.915 μs** | **59.070 μs** |  **25,416.4** |      **2.0514 μs** |      **97.00** |    **4.159** |  **2.750** |   **1.2775** |    **3** |            ***** |       **No** | **0.6714** |   **2,747 B** |      **-** |   **6.03 KB** |
+                              GetPropertyValues | Job-TBCPNW | .NET 7.0 | Reflection | 43.204 μs | 2.0231 μs | 5.9652 μs | 0.5965 μs | 44.591 μs | 32.658 μs | 37.120 μs | 46.981 μs | 59.753 μs |  23,145.9 |      2.0231 μs |     100.00 |    2.709 |  3.000 |  -0.0038 |    4 |            * |       No | 0.6714 |   3,533 B |      - |   6.03 KB |

@@ -1,19 +1,25 @@
 ....
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1706 (21H2)
+BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
 Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-.NET SDK=6.0.300
-  [Host]     : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-  Job-NMJDOV : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-NQHZBK : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-SFFWEY : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
 
-EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
-Namespace=DotNetTips.Spargine.BenchmarkTests.IO  Categories=IO  
+EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.BenchmarkTests.IO  
+Categories=IO  
 ....
 [options="header"]
 |===
-|                     Method|        Mean|       Error|      StdDev|     StdErr|         Min|          Q1|      Median|          Q3|         Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|   Gen 0|  Code Size|  Allocated
-|              AppDataFolder|    3.187 μs|   0.1563 μs|   0.4608 μs|  0.0461 μs|    2.471 μs|    2.785 μs|    3.140 μs|    3.470 μs|    4.412 μs|  313,816.7|       0.1563 μs|      100.00|     2.756|   3.517|    0.6379|     1|             *|        No|  0.0763|      395 B|      736 B
-|        LoadOneDriveFolders|   98.935 μs|   1.8037 μs|   1.6871 μs|  0.4356 μs|   96.714 μs|   97.528 μs|   98.971 μs|  100.291 μs|  101.968 μs|   10,107.6|       1.8037 μs|       15.00|     1.557|   2.000|    0.1447|     3|             *|        No|  0.3662|    1,089 B|    4,161 B
-|        SafeDirectorySearch|   81.764 μs|   1.6274 μs|   3.7391 μs|  0.4711 μs|   74.521 μs|   78.834 μs|   81.150 μs|   84.904 μs|   89.862 μs|   12,230.3|       1.6274 μs|       63.00|     2.040|   2.333|    0.0139|     2|             *|        No|       -|      875 B|      448 B
-|             SafeFileSearch|  792.114 μs|  15.8038 μs|  39.9383 μs|  4.6117 μs|  697.317 μs|  772.799 μs|  793.586 μs|  816.218 μs|  879.198 μs|    1,262.4|      15.8038 μs|       75.00|     2.982|   2.000|   -0.1383|     5|             *|        No|  5.8594|      632 B|   58,562 B
-|  SetFileAttributesToNormal|  243.354 μs|   5.7562 μs|  16.6997 μs|  1.6956 μs|  210.134 μs|  231.450 μs|  241.369 μs|  252.998 μs|  286.731 μs|    4,109.2|       5.7562 μs|       97.00|     2.936|   2.000|    0.4264|     4|             *|        No|       -|      229 B|    1,008 B
+|                     Method|         Job|   Runtime|        Mean|      Error|     StdDev|     StdErr|      Median|         Min|          Q1|          Q3|         Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|   Gen 0|   Gen 1|  Allocated
+|              AppDataFolder|  Job-NQHZBK|  .NET 6.0|    2.329 μs|  0.0456 μs|  0.1021 μs|  0.0132 μs|    2.291 μs|    2.213 μs|    2.263 μs|    2.355 μs|    2.696 μs|  429,321.0|       0.0456 μs|       60.00|     6.160|   2.000|    1.7893|     2|             *|        No|      395 B|  0.0801|       -|      736 B
+|              AppDataFolder|  Job-SFFWEY|  .NET 7.0|    2.098 μs|  0.0279 μs|  0.0248 μs|  0.0066 μs|    2.098 μs|    2.057 μs|    2.089 μs|    2.115 μs|    2.138 μs|  476,597.1|       0.0279 μs|       14.00|     1.866|   2.000|   -0.0774|     1|             *|        No|      405 B|  0.0801|       -|      744 B
+|        LoadOneDriveFolders|  Job-NQHZBK|  .NET 6.0|   72.380 μs|  0.8852 μs|  1.3782 μs|  0.2436 μs|   71.994 μs|   71.095 μs|   71.628 μs|   72.515 μs|   77.311 μs|   13,815.9|       0.8852 μs|       32.00|     7.664|   2.000|    2.2019|     4|             *|        No|    1,159 B|  0.3662|       -|     4160 B
+|        LoadOneDriveFolders|  Job-SFFWEY|  .NET 7.0|   72.469 μs|  0.9594 μs|  0.7490 μs|  0.2162 μs|   72.200 μs|   71.767 μs|   72.081 μs|   72.599 μs|   74.509 μs|   13,799.0|       0.9594 μs|       12.00|     4.775|   2.000|    1.5962|     4|             *|        No|    1,368 B|  0.3662|       -|     4161 B
+|        SafeDirectorySearch|  Job-NQHZBK|  .NET 6.0|   55.006 μs|  0.1178 μs|  0.0983 μs|  0.0273 μs|   54.999 μs|   54.854 μs|   54.947 μs|   55.112 μs|   55.139 μs|   18,179.8|       0.1178 μs|       13.00|     1.513|   2.000|   -0.0184|     3|             *|        No|      900 B|       -|       -|      448 B
+|        SafeDirectorySearch|  Job-SFFWEY|  .NET 7.0|   54.481 μs|  0.2172 μs|  0.1813 μs|  0.0503 μs|   54.504 μs|   54.237 μs|   54.329 μs|   54.587 μs|   54.784 μs|   18,355.0|       0.2172 μs|       13.00|     1.457|   2.000|    0.0227|     3|             *|        No|    1,974 B|       -|       -|      448 B
+|             SafeFileSearch|  Job-NQHZBK|  .NET 6.0|   93.226 μs|  1.7924 μs|  1.5889 μs|  0.4246 μs|   92.910 μs|   91.091 μs|   92.501 μs|   93.528 μs|   96.041 μs|   10,726.6|       1.7924 μs|       14.00|     2.113|   2.000|    0.5932|     6|             *|        No|      657 B|  5.3711|  0.6104|    48057 B
+|             SafeFileSearch|  Job-SFFWEY|  .NET 7.0|   85.437 μs|  1.6442 μs|  1.6885 μs|  0.4095 μs|   85.208 μs|   83.104 μs|   84.261 μs|   86.411 μs|   89.060 μs|   11,704.5|       1.6442 μs|       17.00|     2.799|   2.000|    0.8223|     5|             *|        No|    1,273 B|  5.3711|  0.7324|    48057 B
+|  SetFileAttributesToNormal|  Job-NQHZBK|  .NET 6.0|  162.533 μs|  1.1230 μs|  0.9377 μs|  0.2601 μs|  162.202 μs|  160.916 μs|  162.087 μs|  163.115 μs|  164.518 μs|    6,152.6|       1.1230 μs|       13.00|     2.581|   2.000|    0.5246|     7|             *|        No|      229 B|       -|       -|     1008 B
+|  SetFileAttributesToNormal|  Job-SFFWEY|  .NET 7.0|  161.101 μs|  1.0132 μs|  0.8460 μs|  0.2346 μs|  160.859 μs|  160.321 μs|  160.549 μs|  161.275 μs|  163.297 μs|    6,207.3|       1.0132 μs|       13.00|     3.789|   2.000|    1.2741|     7|             *|        No|    1,579 B|       -|       -|     1008 B
 |===

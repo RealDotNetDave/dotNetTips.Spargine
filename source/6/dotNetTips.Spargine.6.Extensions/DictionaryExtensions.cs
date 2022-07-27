@@ -12,6 +12,7 @@
 // <summary>Extension methods for IDictionary types.</summary>
 // ***********************************************************************
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -230,6 +231,19 @@ namespace DotNetTips.Spargine.Extensions
 		public static SortedDictionary<TKey, TValue> ToSortedDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
 		{
 			return new SortedDictionary<TKey, TValue>(collection.ArgumentNotNull());
+		}
+
+		/// <summary>
+		/// Converts to a <see cref="Dictionary{TKey, TValue}"/> to a <see cref="ConcurrentDictionary{TKey, TValue}"/>.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <returns>ConcurrentDictionary&lt;TKey, TValue&gt;.</returns>
+		[Information(nameof(ToSortedDictionary), "David McCarter", "7/23/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 1000, Status = Status.New, Documentation = "ADD URL")]
+		public static ConcurrentDictionary<TKey, TValue> ToConcurrentDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
+		{
+			return new ConcurrentDictionary<TKey, TValue>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>

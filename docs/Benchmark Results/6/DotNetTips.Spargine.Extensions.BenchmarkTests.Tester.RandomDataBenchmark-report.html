@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Extensions.BenchmarkTests.Tester.RandomDataBenchmark-20220530-194723</title>
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.Tester.RandomDataBenchmark-20220719-133553</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,24 +13,29 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1706 (21H2)
+BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
 Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-.NET SDK=6.0.300
-  [Host]     : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-  Job-SPYWVM : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
 </code></pre>
-<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
-Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Tester  
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Tester  
 </code></pre>
 
 <table>
-<thead><tr><th>                        Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
+<thead><tr><th>                        Method</th><th> Job</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Median</th><th>Min</th><th>Q1</th><th>Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Creating: Person&#39;</td><td>24.34 &mu;s</td><td>0.174 &mu;s</td><td>0.163 &mu;s</td><td>0.042 &mu;s</td><td>24.06 &mu;s</td><td>24.23 &mu;s</td><td>24.39 &mu;s</td><td>24.48 &mu;s</td><td>24.56 &mu;s</td><td>41,077.8</td><td>0.1743 &mu;s</td><td>15.00</td><td>1.671</td><td>2.000</td><td>-0.3429</td><td>1</td><td>*</td><td>No</td><td>1 KB</td><td>0.2747</td><td>3 KB</td>
-</tr><tr><td>&#39;Creating: PersonProper&#39;</td><td>24.73 &mu;s</td><td>0.327 &mu;s</td><td>0.306 &mu;s</td><td>0.079 &mu;s</td><td>24.28 &mu;s</td><td>24.44 &mu;s</td><td>24.74 &mu;s</td><td>24.99 &mu;s</td><td>25.14 &mu;s</td><td>40,444.3</td><td>0.3269 &mu;s</td><td>15.00</td><td>1.280</td><td>2.000</td><td>-0.0039</td><td>1</td><td>*</td><td>No</td><td>1 KB</td><td>0.2747</td><td>3 KB</td>
-</tr><tr><td>&#39;Creating: PersonRecord&#39;</td><td>32.10 &mu;s</td><td>0.261 &mu;s</td><td>0.244 &mu;s</td><td>0.063 &mu;s</td><td>31.69 &mu;s</td><td>31.90 &mu;s</td><td>32.11 &mu;s</td><td>32.28 &mu;s</td><td>32.61 &mu;s</td><td>31,150.9</td><td>0.2610 &mu;s</td><td>15.00</td><td>2.202</td><td>2.000</td><td>0.2088</td><td>2</td><td>*</td><td>No</td><td>2 KB</td><td>0.3662</td><td>4 KB</td>
-</tr><tr><td>&#39;PropertiesToString(): PersonProper&#39;</td><td>44.88 &mu;s</td><td>0.594 &mu;s</td><td>0.527 &mu;s</td><td>0.141 &mu;s</td><td>43.99 &mu;s</td><td>44.59 &mu;s</td><td>44.84 &mu;s</td><td>45.10 &mu;s</td><td>46.06 &mu;s</td><td>22,282.0</td><td>0.5944 &mu;s</td><td>14.00</td><td>2.725</td><td>2.000</td><td>0.4369</td><td>3</td><td>*</td><td>No</td><td>1 KB</td><td>3.4180</td><td>31 KB</td>
-</tr><tr><td>&#39;PropertiesToString(): PersonRecord&#39;</td><td>58.87 &mu;s</td><td>0.518 &mu;s</td><td>0.484 &mu;s</td><td>0.125 &mu;s</td><td>57.95 &mu;s</td><td>58.63 &mu;s</td><td>59.04 &mu;s</td><td>59.17 &mu;s</td><td>59.62 &mu;s</td><td>16,986.7</td><td>0.5176 &mu;s</td><td>15.00</td><td>2.043</td><td>2.000</td><td>-0.5679</td><td>4</td><td>*</td><td>No</td><td>2 KB</td><td>4.9438</td><td>44 KB</td>
+</thead><tbody><tr><td>&#39;Creating: Person&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>27.19 &mu;s</td><td>0.774 &mu;s</td><td>2.170 &mu;s</td><td>0.228 &mu;s</td><td>26.16 &mu;s</td><td>24.49 &mu;s</td><td>25.58 &mu;s</td><td>28.42 &mu;s</td><td>34.28 &mu;s</td><td>36,776.8</td><td>0.7740 &mu;s</td><td>91.00</td><td>3.147</td><td>2.512</td><td>1.0492</td><td>2</td><td>*</td><td>No</td><td>932 B</td><td>0.2441</td><td>2.7 KB</td>
+</tr><tr><td>&#39;Creating: Person&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>25.11 &mu;s</td><td>0.247 &mu;s</td><td>0.207 &mu;s</td><td>0.057 &mu;s</td><td>25.11 &mu;s</td><td>24.75 &mu;s</td><td>24.97 &mu;s</td><td>25.25 &mu;s</td><td>25.42 &mu;s</td><td>39,832.4</td><td>0.2473 &mu;s</td><td>13.00</td><td>1.822</td><td>2.000</td><td>-0.0141</td><td>1</td><td>*</td><td>No</td><td>1,284 B</td><td>0.2747</td><td>2.7 KB</td>
+</tr><tr><td>&#39;Creating: PersonProper&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>28.83 &mu;s</td><td>1.177 &mu;s</td><td>3.357 &mu;s</td><td>0.346 &mu;s</td><td>27.79 &mu;s</td><td>24.96 &mu;s</td><td>26.09 &mu;s</td><td>31.03 &mu;s</td><td>38.95 &mu;s</td><td>34,692.1</td><td>1.1766 &mu;s</td><td>94.00</td><td>3.566</td><td>3.167</td><td>1.0506</td><td>3</td><td>*</td><td>No</td><td>932 B</td><td>0.2747</td><td>2.7 KB</td>
+</tr><tr><td>&#39;Creating: PersonProper&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>25.20 &mu;s</td><td>0.211 &mu;s</td><td>0.176 &mu;s</td><td>0.049 &mu;s</td><td>25.12 &mu;s</td><td>24.96 &mu;s</td><td>25.09 &mu;s</td><td>25.28 &mu;s</td><td>25.49 &mu;s</td><td>39,677.4</td><td>0.2113 &mu;s</td><td>13.00</td><td>1.671</td><td>2.000</td><td>0.4208</td><td>1</td><td>*</td><td>No</td><td>1,284 B</td><td>0.2747</td><td>2.7 KB</td>
+</tr><tr><td>&#39;Creating: PersonRecord&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>33.96 &mu;s</td><td>0.838 &mu;s</td><td>2.391 &mu;s</td><td>0.247 &mu;s</td><td>33.47 &mu;s</td><td>31.13 &mu;s</td><td>31.91 &mu;s</td><td>35.45 &mu;s</td><td>40.75 &mu;s</td><td>29,448.6</td><td>0.8380 &mu;s</td><td>94.00</td><td>2.874</td><td>2.000</td><td>0.8068</td><td>4</td><td>*</td><td>No</td><td>2,031 B</td><td>0.3662</td><td>3.65 KB</td>
+</tr><tr><td>&#39;Creating: PersonRecord&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>33.89 &mu;s</td><td>0.949 &mu;s</td><td>2.678 &mu;s</td><td>0.279 &mu;s</td><td>32.76 &mu;s</td><td>31.11 &mu;s</td><td>31.86 &mu;s</td><td>35.43 &mu;s</td><td>43.42 &mu;s</td><td>29,506.2</td><td>0.9493 &mu;s</td><td>92.00</td><td>3.906</td><td>2.636</td><td>1.2077</td><td>4</td><td>*</td><td>No</td><td>1,981 B</td><td>0.3662</td><td>3.65 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonProper&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>50.18 &mu;s</td><td>1.711 &mu;s</td><td>4.854 &mu;s</td><td>0.503 &mu;s</td><td>48.58 &mu;s</td><td>44.38 &mu;s</td><td>46.27 &mu;s</td><td>52.74 &mu;s</td><td>63.71 &mu;s</td><td>19,930.1</td><td>1.7109 &mu;s</td><td>93.00</td><td>3.179</td><td>2.757</td><td>1.0582</td><td>5</td><td>*</td><td>No</td><td>1,332 B</td><td>3.4180</td><td>30.6 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonProper&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>49.88 &mu;s</td><td>1.626 &mu;s</td><td>4.613 &mu;s</td><td>0.478 &mu;s</td><td>48.72 &mu;s</td><td>44.15 &mu;s</td><td>46.49 &mu;s</td><td>51.65 &mu;s</td><td>63.22 &mu;s</td><td>20,048.9</td><td>1.6262 &mu;s</td><td>93.00</td><td>3.802</td><td>2.533</td><td>1.2689</td><td>5</td><td>*</td><td>No</td><td>1,692 B</td><td>3.2959</td><td>30.6 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonRecord&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>63.51 &mu;s</td><td>1.449 &mu;s</td><td>3.991 &mu;s</td><td>0.425 &mu;s</td><td>62.65 &mu;s</td><td>58.74 &mu;s</td><td>60.57 &mu;s</td><td>64.80 &mu;s</td><td>75.54 &mu;s</td><td>15,746.2</td><td>1.4490 &mu;s</td><td>88.00</td><td>4.363</td><td>2.000</td><td>1.3729</td><td>6</td><td>*</td><td>No</td><td>2,431 B</td><td>4.8828</td><td>44.04 KB</td>
+</tr><tr><td>&#39;PropertiesToString(): PersonRecord&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>79.73 &mu;s</td><td>2.915 &mu;s</td><td>8.457 &mu;s</td><td>0.859 &mu;s</td><td>79.75 &mu;s</td><td>62.00 &mu;s</td><td>75.70 &mu;s</td><td>85.66 &mu;s</td><td>98.81 &mu;s</td><td>12,542.0</td><td>2.9151 &mu;s</td><td>97.00</td><td>2.667</td><td>2.690</td><td>-0.2889</td><td>7</td><td>*</td><td>No</td><td>2,389 B</td><td>4.8828</td><td>44.04 KB</td>
 </tr></tbody></table>
 </body>
 </html>

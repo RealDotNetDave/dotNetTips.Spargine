@@ -197,7 +197,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
 			System.Collections.ObjectModel.Collection<PersonProper> nullPeople = null;
 
-			var result = people.IndexAtLooped(5);
+			PersonProper result = people.IndexAtLooped(5);
 
 			Assert.IsNotNull(result);
 

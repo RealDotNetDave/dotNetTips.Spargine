@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20220719-062443</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+Categories=Collections  
+</code></pre>
+
+<table>
+<thead><tr><th>          Method</th><th> Job</th><th>Runtime</th><th>Count</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th>  Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>10</td><td>34.47 ns</td><td>0.658 ns</td><td>0.583 ns</td><td>0.156 ns</td><td>33.78 ns</td><td>34.07 ns</td><td>34.20 ns</td><td>34.95 ns</td><td>35.60 ns</td><td>29,008,238.8</td><td>0.6580 ns</td><td>14.00</td><td>1.759</td><td>2.000</td><td>0.5510</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>10</td><td>27.87 ns</td><td>0.535 ns</td><td>0.992 ns</td><td>0.151 ns</td><td>26.62 ns</td><td>27.07 ns</td><td>27.64 ns</td><td>28.13 ns</td><td>30.36 ns</td><td>35,883,112.2</td><td>0.5351 ns</td><td>43.00</td><td>2.854</td><td>2.000</td><td>0.9212</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>25</td><td>34.75 ns</td><td>0.728 ns</td><td>0.779 ns</td><td>0.184 ns</td><td>33.37 ns</td><td>34.33 ns</td><td>34.68 ns</td><td>35.13 ns</td><td>36.63 ns</td><td>28,779,269.2</td><td>0.7277 ns</td><td>18.00</td><td>3.023</td><td>2.000</td><td>0.4918</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>25</td><td>27.95 ns</td><td>0.582 ns</td><td>0.693 ns</td><td>0.151 ns</td><td>27.13 ns</td><td>27.46 ns</td><td>27.72 ns</td><td>28.36 ns</td><td>29.60 ns</td><td>35,783,653.6</td><td>0.5823 ns</td><td>21.00</td><td>2.777</td><td>2.000</td><td>0.8746</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>50</td><td>34.85 ns</td><td>0.568 ns</td><td>0.504 ns</td><td>0.135 ns</td><td>34.17 ns</td><td>34.40 ns</td><td>34.86 ns</td><td>35.23 ns</td><td>35.85 ns</td><td>28,697,129.3</td><td>0.5681 ns</td><td>14.00</td><td>1.912</td><td>2.000</td><td>0.2718</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>50</td><td>28.14 ns</td><td>0.574 ns</td><td>0.509 ns</td><td>0.136 ns</td><td>27.10 ns</td><td>27.89 ns</td><td>28.05 ns</td><td>28.24 ns</td><td>29.29 ns</td><td>35,539,000.3</td><td>0.5742 ns</td><td>14.00</td><td>3.331</td><td>2.000</td><td>0.3419</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>100</td><td>35.23 ns</td><td>0.740 ns</td><td>0.760 ns</td><td>0.184 ns</td><td>34.21 ns</td><td>34.47 ns</td><td>35.29 ns</td><td>35.66 ns</td><td>36.76 ns</td><td>28,388,079.4</td><td>0.7402 ns</td><td>17.00</td><td>1.905</td><td>2.000</td><td>0.2941</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>100</td><td>27.43 ns</td><td>0.564 ns</td><td>0.554 ns</td><td>0.138 ns</td><td>26.58 ns</td><td>27.04 ns</td><td>27.37 ns</td><td>27.80 ns</td><td>28.69 ns</td><td>36,455,345.6</td><td>0.5636 ns</td><td>16.00</td><td>2.430</td><td>2.000</td><td>0.4337</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>250</td><td>35.13 ns</td><td>0.726 ns</td><td>0.679 ns</td><td>0.175 ns</td><td>33.97 ns</td><td>34.66 ns</td><td>35.01 ns</td><td>35.62 ns</td><td>36.44 ns</td><td>28,461,890.7</td><td>0.7258 ns</td><td>15.00</td><td>2.014</td><td>2.000</td><td>0.2477</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>250</td><td>27.93 ns</td><td>0.538 ns</td><td>0.477 ns</td><td>0.127 ns</td><td>27.23 ns</td><td>27.56 ns</td><td>27.85 ns</td><td>28.30 ns</td><td>28.67 ns</td><td>35,807,829.4</td><td>0.5381 ns</td><td>14.00</td><td>1.634</td><td>2.000</td><td>0.2736</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>500</td><td>33.96 ns</td><td>0.516 ns</td><td>0.457 ns</td><td>0.122 ns</td><td>33.40 ns</td><td>33.56 ns</td><td>34.00 ns</td><td>34.16 ns</td><td>35.06 ns</td><td>29,442,472.3</td><td>0.5159 ns</td><td>14.00</td><td>2.854</td><td>2.000</td><td>0.7710</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>500</td><td>27.92 ns</td><td>0.397 ns</td><td>0.332 ns</td><td>0.092 ns</td><td>27.26 ns</td><td>27.69 ns</td><td>27.98 ns</td><td>28.17 ns</td><td>28.47 ns</td><td>35,815,697.1</td><td>0.3971 ns</td><td>13.00</td><td>2.177</td><td>2.000</td><td>-0.3187</td><td>1</td><td>*</td><td>No</td><td>821 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>1000</td><td>34.56 ns</td><td>0.534 ns</td><td>0.474 ns</td><td>0.127 ns</td><td>33.78 ns</td><td>34.23 ns</td><td>34.38 ns</td><td>34.98 ns</td><td>35.37 ns</td><td>28,938,213.2</td><td>0.5345 ns</td><td>14.00</td><td>1.539</td><td>2.000</td><td>0.1307</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>1000</td><td>27.56 ns</td><td>0.546 ns</td><td>0.511 ns</td><td>0.132 ns</td><td>27.03 ns</td><td>27.20 ns</td><td>27.40 ns</td><td>27.91 ns</td><td>28.81 ns</td><td>36,278,063.7</td><td>0.5465 ns</td><td>15.00</td><td>2.833</td><td>2.000</td><td>0.8714</td><td>1</td><td>*</td><td>No</td><td>1,135 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>2500</td><td>35.64 ns</td><td>0.732 ns</td><td>1.140 ns</td><td>0.202 ns</td><td>34.31 ns</td><td>34.73 ns</td><td>35.17 ns</td><td>36.38 ns</td><td>38.29 ns</td><td>28,059,252.0</td><td>0.7323 ns</td><td>32.00</td><td>2.674</td><td>2.444</td><td>0.9058</td><td>2</td><td>*</td><td>No</td><td>411 B</td><td>0.0026</td><td>24 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>2500</td><td>27.52 ns</td><td>0.334 ns</td><td>0.279 ns</td><td>0.077 ns</td><td>27.14 ns</td><td>27.27 ns</td><td>27.46 ns</td><td>27.75 ns</td><td>27.96 ns</td><td>36,338,170.7</td><td>0.3339 ns</td><td>13.00</td><td>1.333</td><td>2.000</td><td>0.0810</td><td>1</td><td>*</td><td>No</td><td>1,135 B</td><td>0.0026</td><td>24 B</td>
+</tr></tbody></table>
+</body>
+</html>

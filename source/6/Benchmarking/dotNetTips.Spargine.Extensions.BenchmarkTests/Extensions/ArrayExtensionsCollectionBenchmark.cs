@@ -184,6 +184,5 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			base.Consumer.Consume(result);
 		}
-
 	}
 }

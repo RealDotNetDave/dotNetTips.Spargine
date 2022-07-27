@@ -1,13 +1,14 @@
 
-    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1706 (21H2)
+    BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-    .NET SDK=6.0.300
-      [Host]     : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-      Job-SPYWVM : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+    .NET SDK=7.0.100-preview.6.22352.1
+      [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+      Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+      Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
 
-    EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
-    Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
 
-             Method |     Mean |   Error |  StdDev |  StdErr |      Min |       Q1 |   Median |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size | Allocated |
-    --------------- |---------:|--------:|--------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|----------:|
-     GetAllMessages | 180.8 ns | 3.59 ns | 3.18 ns | 0.85 ns | 176.1 ns | 177.9 ns | 180.9 ns | 184.1 ns | 184.4 ns | 5,531,897.6 |       3.589 ns |      14.00 |    1.317 |  2.000 |  -0.1661 |    1 |            * |       No | 0.0298 |     423 B |     272 B |
+             Method |        Job |  Runtime |     Mean |   Error |  StdDev |  StdErr |      Min |       Q1 |   Median |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size |  Gen 0 | Allocated |
+    --------------- |----------- |--------- |---------:|--------:|--------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|-------:|----------:|
+     GetAllMessages | Job-VIFSJL | .NET 6.0 | 177.7 ns | 3.56 ns | 5.33 ns | 0.97 ns | 167.0 ns | 175.5 ns | 177.6 ns | 180.6 ns | 189.1 ns | 5,628,942.3 |       3.559 ns |      30.00 |    2.876 |  2.000 |  -0.0541 |    1 |            * |       No |     446 B | 0.0300 |     272 B |
+     GetAllMessages | Job-VGZOLO | .NET 7.0 | 179.9 ns | 3.61 ns | 8.78 ns | 1.05 ns | 165.5 ns | 174.7 ns | 177.7 ns | 184.8 ns | 201.4 ns | 5,558,526.5 |       3.608 ns |      70.00 |    2.851 |  2.400 |   0.9122 |    1 |            * |       No |     800 B | 0.0296 |     272 B |

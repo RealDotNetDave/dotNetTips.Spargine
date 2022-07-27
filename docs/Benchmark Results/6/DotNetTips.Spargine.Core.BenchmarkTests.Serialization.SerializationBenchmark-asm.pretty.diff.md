@@ -1,1 +1,2218 @@
-## DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220529-131358
+## DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20220718-183026
+**Diff for Deserialize04 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize04()
+ ; 			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonProperJson);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++       push      r14
++       push      rdi
+        push      rsi
+-       sub       rsp,20
++       push      rbp
++       push      rbx
++       sub       rsp,40
++       xor       eax,eax
++       mov       [rsp+30],rax
++       mov       [rsp+38],rax
+        mov       rsi,rcx
+-       call      0000000000009168
++       call      qword ptr [3060]
++       test      rax,rax
++       je        short 00000000000000BC
++       mov       edx,[rax+8]
++       xor       ecx,ecx
++       test      edx,edx
++       sete      cl
++       test      ecx,ecx
++       sete      cl
++       movzx     ecx,cl
++       test      edx,edx
++       jne       short 00000000000000BE
++       jmp       short 00000000000000BE
++       xor       ecx,ecx
++       test      ecx,ecx
++       jne       near ptr 0000000000000168
++       call      qword ptr [9C48]
++       mov       rsi,rax
++       mov       ecx,5E7
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rdi,rax
++       mov       ecx,9
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rbx,rax
++       mov       ecx,36B
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rcx,rdi
++       mov       r9,rbx
++       mov       [rsp+20],rax
++       mov       edx,1
++       xor       r8d,r8d
++       call      qword ptr [5270]
++       mov       rdi,rax
++       mov       rcx,offset MT_System.ArgumentNullException
++       call      000000000000EFB0
++       mov       rbx,rax
++       call      qword ptr [9870]
+        mov       rdx,rax
+-       mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize(System.String)
+-       call      00000000000091C8
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,10
++       mov       rcx,rsi
++       call      qword ptr [9D08]
++       mov       r8,rax
++       mov       rdx,rdi
++       mov       rcx,rbx
++       call      qword ptr [0FB28]
++       mov       rcx,rbx
++       call      0000000000006AD0
++       cmp       [rax],al
++       mov       rcx,rax
++       mov       edx,3
++       call      qword ptr [0D4E0]
++       mov       rdi,rax
++       test      rdi,rdi
++       je        near ptr 0000000000000234
++       mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord
++       call      0000000000003330
++       mov       rbx,rax
++       mov       rcx,14451008040
++       mov       rbp,[rcx]
++       cmp       byte ptr [rbp+85],0
++       je        short 0000000000000226
++       mov       r14,[rbp+10]
++       test      r14,r14
++       je        short 0000000000000222
++       mov       rcx,[r14+98]
++       cmp       rcx,rbx
++       jne       short 0000000000000205
++       mov       r8,r14
++       lea       rdx,[rdi+0C]
++       mov       ecx,[rdi+8]
++       mov       [rsp+30],rdx
++       mov       [rsp+38],ecx
++       lea       rdx,[rsp+30]
++       mov       rcx,offset MD_System.Text.Json.JsonSerializer.ReadFromSpan(System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
++       call      qword ptr [7120]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+10]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+-       add       rsp,20
++       add       rsp,40
++       pop       rbx
++       pop       rbp
+        pop       rsi
++       pop       rdi
++       pop       r14
+        ret
+-; Total bytes of code 56
++       mov       rcx,rbp
++       mov       rdx,rbx
++       call      qword ptr [7000]
++       mov       r14,rax
++       lea       rcx,[rbp+10]
++       mov       rdx,r14
++       call      0000000000000010
++       jmp       short 00000000000001C1
++       xor       ecx,ecx
++       jmp       short 00000000000001BC
++       mov       rcx,rbp
++       call      qword ptr [7648]
++       jmp       near ptr 00000000000001AC
++       mov       ecx,2A01
++       mov       rdx,7FF8198B8998
++       call      000000000000F510
++       mov       rcx,rax
++       call      qword ptr [0D018]
++       int       3
++; Total bytes of code 466
+ ; DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonProperJson()
+ ;                 return ResourceManager.GetString("PersonProperJson", resourceCulture);
+ ;                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        sub       rsp,28
+-       call      0000000000009150
++       call      qword ptr [3018]
+        mov       rcx,rax
+-       mov       rdx,2B17E592920
++       mov       rdx,1444F0009B8
+        mov       rdx,[rdx]
+-       mov       r8,2B16E5939C0
++       mov       r8,14451006DE0
+        mov       r8,[r8]
+        mov       rax,[rax]
+        mov       rax,[rax+48]
+-       mov       rax,[rax+28]
+        add       rsp,28
+-       jmp       rax
+-; Total bytes of code 56
+-; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
++       jmp       qword ptr [rax+28]
++; Total bytes of code 54
++; DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,30
+-       mov       [rsp+28],rcx
+-       mov       rsi,rcx
+-       test      rdx,rdx
+-       je        near ptr 000000000000BE38
+-       cmp       dword ptr [rdx+8],0
+-       je        near ptr 000000000000BE38
+-       xor       eax,eax
++       mov       rsi,r9
++       test      rcx,rcx
++       je        short 00000000000015DC
++       mov       eax,[rcx+8]
++       xor       r9d,r9d
+        test      eax,eax
+-       sete      al
+-       movzx     eax,al
++       sete      r9b
++       test      r9d,r9d
++       sete      r9b
++       movzx     r9d,r9b
+        test      eax,eax
+-       jne       near ptr 000000000000BE11
+-       call      0000000000001670
+-       mov       rsi,rax
+-       mov       ecx,5E7
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
++       jne       short 00000000000015F3
++       jmp       short 00000000000015DF
++       xor       r9d,r9d
++       test      r8,r8
++       je        short 00000000000015F3
++       cmp       dword ptr [r8+8],0
++       je        short 00000000000015F3
++       mov       rcx,r8
++       jmp       near ptr 0000000000001699
++       test      r9d,r9d
++       jne       near ptr 0000000000001699
++       call      qword ptr [9C48]
+        mov       rdi,rax
++       test      rsi,rsi
++       je        short 0000000000001612
++       cmp       dword ptr [rsi+8],0
++       je        short 0000000000001612
++       jmp       short 0000000000001615
++       mov       rsi,rdi
+        mov       ecx,9
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rbx,rax
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rdi,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rcx,rdi
+-       mov       r9,rbx
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       r9,rdi
+        mov       [rsp+20],rax
++       mov       rcx,[rsp+70]
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rdx],edx
+-       mov       rcx,rdx
++       call      0000000000006AD0
++       test      dl,dl
++       jne       short 00000000000016A8
++       mov       rax,rcx
++       add       rsp,30
++       pop       rbx
++       pop       rsi
++       pop       rdi
++       ret
++       cmp       [rcx],cl
+        mov       edx,3
+-       call      0000000000008468
+-       mov       rdi,rax
+-       mov       rcx,[rsi+10]
+-       cmp       qword ptr [rcx+10],0
+-       je        short 000000000000BE42
+-       mov       rcx,[rsi+10]
+-       mov       rcx,[rcx+10]
+-       jmp       short 000000000000BE57
+-       mov       eax,1
+-       jmp       near ptr 000000000000BD64
++       add       rsp,30
++       pop       rbx
++       pop       rsi
++       pop       rdi
++       jmp       qword ptr [0D4E0]
++; Total bytes of code 268
++; System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
++       push      r15
++       push      r14
++       push      rdi
++       push      rsi
++       push      rbp
++       push      rbx
++       sub       rsp,28
++       mov       rsi,rcx
++       mov       edi,edx
++       mov       ebx,[rsi+8]
++       lea       ebp,[rbx+0FFFF]
++       mov       r14d,ebp
++       xor       r15d,r15d
++       test      dil,1
++       je        short 0000000000001760
++       xor       r15d,r15d
++       test      ebx,ebx
++       jle       short 0000000000001760
++       mov       ecx,r15d
++       movzx     ecx,word ptr [rsi+rcx*2+0C]
++       cmp       ecx,100
++       jae       short 000000000000174E
++       mov       ecx,ecx
++       mov       rax,7FF858397C50
++       test      byte ptr [rcx+rax],80
++       je        short 0000000000001760
++       jmp       short 0000000000001758
++       call      qword ptr [3408]
++       test      eax,eax
++       je        short 0000000000001760
++       inc       r15d
++       cmp       ebx,r15d
++       jg        short 000000000000172A
++       test      dil,2
++       je        near ptr 00000000000017E8
++       mov       r14d,ebp
++       cmp       r14d,r15d
++       jl        short 00000000000017E8
++       test      r14d,r14d
++       jl        short 00000000000017B9
++       test      r15d,r15d
++       jl        short 00000000000017B9
++       cmp       ebx,r14d
++       jle       short 00000000000017B9
++       mov       ecx,r14d
++       movzx     ecx,word ptr [rsi+rcx*2+0C]
++       cmp       ecx,100
++       jae       short 00000000000017AD
++       mov       ecx,ecx
++       mov       rax,7FF858397C50
++       test      byte ptr [rcx+rax],80
++       je        short 00000000000017E8
++       dec       r14d
++       cmp       r14d,r15d
++       jge       short 0000000000001781
++       jmp       short 00000000000017E8
++       call      qword ptr [3408]
++       test      eax,eax
++       je        short 00000000000017E8
++       jmp       short 00000000000017A3
++       cmp       r14d,ebx
++       jae       short 0000000000001834
++       mov       ecx,r14d
++       movzx     ecx,word ptr [rsi+rcx*2+0C]
++       cmp       ecx,100
++       jae       short 0000000000001819
++       mov       ecx,ecx
++       mov       rax,7FF858397C50
++       test      byte ptr [rcx+rax],80
++       je        short 00000000000017E8
++       dec       r14d
++       cmp       r14d,r15d
++       jge       short 00000000000017B9
++       mov       r8d,r14d
++       sub       r8d,r15d
++       inc       r8d
++       cmp       ebx,r8d
++       jne       short 0000000000001806
++       mov       rax,rsi
++       add       rsp,28
++       pop       rbx
++       pop       rbp
++       pop       rsi
++       pop       rdi
++       pop       r14
++       pop       r15
++       ret
++       test      r8d,r8d
++       je        short 0000000000001825
+        mov       rcx,rsi
+-       mov       rdx,7FF82F31D620
+-       call      0000000000004920
++       mov       edx,r15d
++       call      qword ptr [0D360]
++       jmp       short 00000000000017F9
++       call      qword ptr [3408]
++       test      eax,eax
++       je        short 00000000000017E8
++       jmp       short 00000000000017E0
++       mov       rax,14451002028
++       mov       rax,[rax]
++       jmp       short 00000000000017F9
++       call      00000000000023D0
++       int       3
++; Total bytes of code 314
++; System.Text.Json.JsonSerializer.ReadFromSpan[[System.__Canon, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
++       push      rbp
++       push      r14
++       push      rdi
++       push      rsi
++       push      rbx
++       sub       rsp,90
++       vzeroupper
++       lea       rbp,[rsp+0B0]
++       xor       eax,eax
++       mov       [rbp+0FF98],rax
++       vxorps    xmm4,xmm4,xmm4
++       vmovdqa   xmmword ptr [rbp+0FFA0],xmm4
++       vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
++       mov       [rbp+0FFC0],rax
++       mov       [rbp+0FF70],rsp
++       mov       [rbp+0FFD8],rcx
++       mov       rdi,rcx
++       mov       rsi,rdx
++       mov       rbx,r8
++       mov       rcx,rbx
++       cmp       [rcx],ecx
++       call      qword ptr [5C60]
++       xor       edx,edx
++       mov       [rbp+0FF88],rdx
++       mov       edx,[rsi+8]
++       movsxd    rcx,edx
++       cmp       rcx,55555
++       jg        near ptr 0000000000001C14
++       lea       edx,[rdx+rdx*2]
++       mov       rcx,144510082B0
++       mov       rcx,[rcx]
++       call      qword ptr [0EA78]
++       mov       [rbp+0FF88],rax
++       test      rax,rax
++       je        near ptr 0000000000001C42
++       lea       r8,[rax+10]
++       mov       r14d,[rax+8]
++       mov       [rbp+0FF80],r8
++       mov       [rbp+0FFCC],r14d
++       vmovdqu   xmm0,xmmword ptr [rsi]
++       vmovdqu   xmmword ptr [rbp+0FFB8],xmm0
++       mov       rcx,[rbp+0FF80]
++       mov       [rbp+0FFA8],rcx
++       mov       ecx,[rbp+0FFCC]
++       mov       [rbp+0FFB0],ecx
++       lea       rcx,[rbp+0FFB8]
++       lea       rdx,[rbp+0FFA8]
++       call      qword ptr [7630]
++       cmp       eax,[rbp+0FFCC]
++       ja        short 0000000000001B72
++       mov       rsi,[rbp+0FF80]
++       mov       [rbp+0FF80],rsi
++       mov       [rbp+0FFCC],eax
++       mov       r14d,eax
++       mov       rcx,[rdi+10]
++       mov       rcx,[rcx+18]
++       test      rcx,rcx
++       je        short 0000000000001B79
++       jmp       short 0000000000001B8E
++       call      qword ptr [7048]
++       int       3
++       mov       rcx,rdi
++       mov       rdx,7FF819A68610
++       call      0000000000000CA0
+        mov       rcx,rax
+-       mov       rdx,rdi
++       mov       [rbp+0FF98],rsi
++       mov       [rbp+0FFA0],r14d
++       mov       r8,rbx
++       mov       byte ptr [rbp+0FF90],1
++       mov       [rbp+0FF94],r14d
++       lea       rdx,[rbp+0FF98]
++       mov       r9,[rbp+0FF90]
++       call      qword ptr [7900]
++       mov       rdi,rax
++       cmp       qword ptr [rbp+0FF88],0
++       je        short 0000000000001BF7
++       mov       rcx,[rbp+0FF80]
++       mov       edx,[rbp+0FFCC]
++       test      rdx,rdx
++       je        short 0000000000001BDD
++       mov       [rbp+0FFD0],rdx
++       cmp       rdx,300
++       ja        short 0000000000001C08
++       xor       edx,edx
++       mov       r8,[rbp+0FFD0]
++       call      000000000000E910
++       mov       rcx,144510082B0
++       mov       rcx,[rcx]
++       mov       rdx,[rbp+0FF88]
++       xor       r8d,r8d
++       call      qword ptr [0EA80]
++       mov       rax,rdi
++       add       rsp,90
++       pop       rbx
++       pop       rsi
++       pop       rdi
++       pop       r14
++       pop       rbp
++       ret
++       mov       rdx,[rbp+0FFD0]
++       call      qword ptr [56A8]
++       jmp       short 0000000000001BDD
++       vmovdqu   xmm0,xmmword ptr [rsi]
++       vmovdqu   xmmword ptr [rbp+0FFB8],xmm0
++       lea       rcx,[rbp+0FFB8]
++       call      qword ptr [7618]
++       movsxd    rdx,eax
++       mov       rcx,offset MT_System.Byte[]
++       call      000000000000F0D0
++       test      rax,rax
++       jne       near ptr 0000000000001B1B
++       xor       r8d,r8d
++       xor       r14d,r14d
++       jmp       near ptr 0000000000001B23
++       push      rbp
++       push      r14
++       push      rdi
++       push      rsi
++       push      rbx
++       sub       rsp,30
++       vzeroupper
++       mov       rbp,[rcx+20]
++       mov       [rsp+20],rbp
++       lea       rbp,[rbp+0B0]
++       cmp       qword ptr [rbp+0FF88],0
++       je        short 0000000000001CBB
++       mov       rcx,[rbp+0FF80]
++       mov       edx,[rbp+0FFCC]
++       test      rdx,rdx
++       je        short 0000000000001CA1
++       mov       [rbp+0FFD0],rdx
++       cmp       rdx,300
++       ja        short 0000000000001C97
++       xor       edx,edx
++       mov       r8,[rbp+0FFD0]
++       call      000000000000E910
++       jmp       short 0000000000001CA1
++       mov       rdx,[rbp+0FFD0]
++       call      qword ptr [56A8]
++       mov       rcx,144510082B0
++       mov       rcx,[rcx]
++       mov       rdx,[rbp+0FF88]
+        xor       r8d,r8d
+-       call      000000000000AA80
++       call      qword ptr [0EA80]
+        nop
+        add       rsp,30
+        pop       rbx
+        pop       rsi
+        pop       rdi
++       pop       r14
++       pop       rbp
+        ret
+-; Total bytes of code 299
++; Total bytes of code 567
+```
+**Diff for Deserialize03 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize03()
++       push      rbp
++       sub       rsp,40
++       lea       rbp,[rsp+40]
++       vxorps    xmm4,xmm4,xmm4
++       vmovdqu   xmmword ptr [rbp+0FFE8],xmm4
++       xor       eax,eax
++       mov       [rbp+0FFF8],rax
++       mov       [rbp+10],rcx
+ ; 			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonRecordJson);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++       call      qword ptr [3090]
++       mov       [rbp+0FFF0],rax
++       mov       rdx,[rbp+0FFF0]
++       mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize(System.String)
++       call      qword ptr [3150]
++       mov       [rbp+0FFF8],rax
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-       push      rsi
+-       sub       rsp,20
+-       mov       rsi,rcx
+-       call      0000000000009178
+-       mov       rdx,rax
+-       mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize(System.String)
+-       call      00000000000091C8
+-       mov       rcx,[rsi+20]
++       mov       rcx,[rbp+10]
++       call      qword ptr [0B9D8]
++       mov       [rbp+0FFE8],rax
++       mov       rcx,[rbp+0FFE8]
++       mov       r8,[rbp+0FFF8]
++       mov       rdx,7FF8198E5D90
+        cmp       [rcx],ecx
+-       add       rcx,10
+-       mov       rdx,rax
+-       call      000000000000B010
++       call      qword ptr [3180]
+        nop
+-       add       rsp,20
+-       pop       rsi
++       add       rsp,40
++       pop       rbp
+        ret
+-; Total bytes of code 56
++; Total bytes of code 110
+ ; DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonRecordJson()
+ ;                 return ResourceManager.GetString("PersonRecordJson", resourceCulture);
+ ;                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        sub       rsp,28
+-       call      0000000000009150
++       call      qword ptr [3018]
+        mov       rcx,rax
+-       mov       rdx,1BD2C602920
++       mov       rdx,1F2750039C8
+        mov       rdx,[rdx]
+-       mov       r8,1BD3C607DC8
++       mov       r8,1F271004DE8
+        mov       r8,[r8]
+        mov       rax,[rax]
+        mov       rax,[rax+48]
+-       mov       rax,[rax+28]
+        add       rsp,28
+-       jmp       rax
+-; Total bytes of code 56
++       jmp       qword ptr [rax+28]
++; Total bytes of code 54
+ ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+-       push      rdi
+-       push      rsi
+-       push      rbx
+-       sub       rsp,30
+-       mov       [rsp+28],rcx
+-       mov       rsi,rcx
+-       test      rdx,rdx
+-       je        near ptr 000000000000F418
+-       cmp       dword ptr [rdx+8],0
+-       je        near ptr 000000000000F418
++       push      rbp
++       sub       rsp,50
++       lea       rbp,[rsp+50]
+        xor       eax,eax
+-       test      eax,eax
+-       sete      al
+-       movzx     eax,al
+-       test      eax,eax
+-       jne       near ptr 000000000000F3F1
+-       call      0000000000001670
+-       mov       rsi,rax
+-       mov       ecx,5E7
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rdi,rax
+-       mov       ecx,9
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rbx,rax
+-       mov       ecx,36B
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rcx,rdi
+-       mov       r9,rbx
+-       mov       [rsp+20],rax
++       mov       [rbp+0FFF0],rax
++       mov       [rbp+0FFE8],rax
++       mov       [rbp+0FFF8],rcx
++       mov       [rbp+10],rcx
++       mov       [rbp+18],rdx
++       mov       r9,1F275003A48
++       mov       r9,[r9]
++       mov       [rsp+20],r9
++       mov       r9,1F271000030
++       mov       r9,[r9]
++       mov       rcx,[rbp+18]
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
+-       mov       rdi,rax
+-       mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
+-       mov       rbx,rax
+-       call      0000000000001528
+-       mov       rdx,rax
+-       mov       rcx,rsi
+-       call      00000000000004F0
+-       mov       r8,rax
+-       mov       rdx,rdi
+-       mov       rcx,rbx
+-       call      00000000000001E8
+-       mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rdx],edx
+-       mov       rcx,rdx
+-       mov       edx,3
+-       call      0000000000008468
+-       mov       rdi,rax
+-       mov       rcx,[rsi+10]
++       call      qword ptr [5270]
++       mov       [rbp+0FFE8],rax
++       mov       rcx,[rbp+10]
++       mov       rcx,[rcx+10]
+        cmp       qword ptr [rcx+10],0
+-       je        short 000000000000F422
+-       mov       rcx,[rsi+10]
++       je        short 000000000000A986
++       mov       rcx,[rbp+10]
+        mov       rcx,[rcx+10]
+-       jmp       short 000000000000F437
+-       mov       eax,1
+-       jmp       near ptr 000000000000F344
+-       mov       rcx,rsi
+-       mov       rdx,7FF82F2FD620
+-       call      0000000000004920
+-       mov       rcx,rax
+-       mov       rdx,rdi
++       mov       rcx,[rcx+10]
++       mov       [rbp+0FFE0],rcx
++       jmp       short 000000000000A99D
++       mov       rcx,[rbp+10]
++       mov       rdx,7FF81990F1A0
++       call      0000000000000CA0
++       mov       [rbp+0FFE0],rax
++       mov       rcx,[rbp+0FFE0]
++       mov       rdx,[rbp+0FFE8]
+        xor       r8d,r8d
+-       call      000000000000AA80
+-       nop
+-       add       rsp,30
+-       pop       rbx
+-       pop       rsi
+-       pop       rdi
++       call      qword ptr [5CA8]
++       mov       [rbp+0FFF0],rax
++       mov       rax,[rbp+0FFF0]
++       add       rsp,50
++       pop       rbp
+        ret
+-; Total bytes of code 299
++; Total bytes of code 172
+```
+**Diff for Deserialize01 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize01()
+ ; 			var result = XmlSerialization.Deserialize<PersonProper>(Resources.PersonProperXml);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+-       call      0000000000009170
++       call      qword ptr [3078]
+        mov       rdx,rax
+        mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize(System.String)
+-       call      00000000000091C8
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,10
++       call      qword ptr [3150]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+10]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+ ; Total bytes of code 56
+ ; DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonProperXml()
+ ;                 return ResourceManager.GetString("PersonProperXml", resourceCulture);
+ ;                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        sub       rsp,28
+-       call      0000000000009150
++       call      qword ptr [3018]
+        mov       rcx,rax
+-       mov       rdx,1CA33C01908
++       mov       rdx,1BAC78019D0
+        mov       rdx,[rdx]
+-       mov       r8,1CA43C07DC8
++       mov       r8,1BAC5806DE0
+        mov       r8,[r8]
+        mov       rax,[rax]
+        mov       rax,[rax+48]
+-       mov       rax,[rax+28]
+        add       rsp,28
+-       jmp       rax
+-; Total bytes of code 56
++       jmp       qword ptr [rax+28]
++; Total bytes of code 54
+ ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,78
+        vzeroupper
+        lea       rbp,[rsp+90]
+        vxorps    xmm4,xmm4,xmm4
+        vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
+        vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
+        vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
+        mov       [rbp+0FF98],rsp
+        mov       [rbp+0FFE0],rcx
+        mov       rsi,rcx
+        test      rdx,rdx
+-       je        near ptr 0000000000008C9B
+-       cmp       dword ptr [rdx+8],0
+-       je        near ptr 0000000000008C9B
+-       xor       eax,eax
++       je        short 000000000000FBEE
++       mov       eax,[rdx+8]
++       xor       ecx,ecx
+        test      eax,eax
+-       sete      al
+-       movzx     eax,al
++       sete      cl
++       test      ecx,ecx
++       sete      cl
++       movzx     ecx,cl
+        test      eax,eax
+-       jne       near ptr 0000000000008C53
+-       call      0000000000001670
++       jne       short 000000000000FBF0
++       jmp       short 000000000000FBF0
++       xor       ecx,ecx
++       test      ecx,ecx
++       jne       near ptr 000000000000FC9A
++       call      qword ptr [9C48]
+        mov       rsi,rax
+        mov       ecx,877
+-       mov       rdx,7FF82F277D68
+-       call      0000000000000390
++       mov       rdx,7FF8197D9BD8
++       call      000000000000F510
+        mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F277D68
+-       call      0000000000000390
++       mov       rdx,7FF8197D9BD8
++       call      000000000000F510
+        mov       rbx,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F277D68
+-       call      0000000000000390
++       mov       rdx,7FF8197D9BD8
++       call      000000000000F510
+        mov       rcx,rdi
+        mov       r9,rbx
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rdx],edx
++       call      0000000000006AD0
++       cmp       [rdx],dl
+        mov       rcx,rdx
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.IO.StringReader
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+        test      rdi,rdi
+-       je        near ptr 0000000000008D6D
++       je        near ptr 000000000000FD97
+        lea       rcx,[rbx+8]
+        mov       rdx,rdi
+-       call      000000000000AEB0
+-       mov       ecx,[rdi+8]
+-       mov       [rbx+14],ecx
++       call      0000000000000010
+        mov       rcx,rbx
+        mov       [rbp+0FFB0],rcx
+-       jmp       short 0000000000008CA5
+-       mov       eax,1
+-       jmp       near ptr 0000000000008BA6
+-       call      000000000000A938
++       call      qword ptr [7168]
+        mov       [rbp+0FFA8],rax
+        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+        mov       rsi,[rsi+10]
+        mov       rcx,[rsi]
+-       call      0000000000004F40
++       call      0000000000003330
+        mov       rdx,rax
+        mov       rcx,rdi
+        xor       r8d,r8d
+-       call      000000000000AFA8
++       call      qword ptr [7618]
+        mov       rsi,[rsi]
+        mov       rcx,rdi
+        mov       rax,[rbp+0FFA8]
+        mov       rdx,rax
+-       vmovdqu   xmm0,xmmword ptr [rdi+38]
+-       vmovdqu   xmmword ptr [rbp+0FFB8],xmm0
+-       vmovdqu   xmm0,xmmword ptr [rdi+48]
+-       vmovdqu   xmmword ptr [rbp+0FFC8],xmm0
+-       mov       r9,[rdi+58]
++       vmovdqu   ymm0,ymmword ptr [rcx+38]
++       vmovdqu   ymmword ptr [rbp+0FFB8],ymm0
++       mov       r9,[rcx+58]
+        mov       [rbp+0FFD8],r9
+        lea       r9,[rbp+0FFB8]
+        xor       r8d,r8d
+-       call      000000000000B050
++       call      qword ptr [7810]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      0000000000007450
++       call      qword ptr [5858]
+        mov       rsi,rax
+        mov       rax,[rbp+0FFA8]
+        test      rax,rax
+-       je        short 0000000000008D3A
++       je        short 000000000000FD67
+        mov       rcx,rax
+-       mov       r11,7FF82EE806B8
+-       call      qword ptr [6B8]
++       mov       r11,7FF8192A0650
++       call      qword ptr [r11]
+        nop
+        xor       ecx,ecx
+        mov       rax,[rbp+0FFB0]
+        mov       [rax+8],rcx
+        mov       [rax+10],ecx
+-       mov       [rax+14],ecx
+        mov       rcx,rax
+        mov       edx,1
+-       call      qword ptr [0CDF8]
++       call      qword ptr [8120]
+        mov       rcx,[rbp+0FFB0]
+-       call      0000000000004108
++       call      0000000000000C40
+        mov       rax,rsi
+        add       rsp,78
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        mov       ecx,11
+-       call      0000000000009658
++       call      qword ptr [7360]
+        int       3
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        vzeroupper
+        mov       rbp,[rcx+28]
+        mov       [rsp+28],rbp
+        lea       rbp,[rbp+90]
+        cmp       qword ptr [rbp+0FFA8],0
+-       je        short 0000000000008DAE
++       je        short 000000000000FDD6
+        mov       rcx,[rbp+0FFA8]
+-       mov       r11,7FF82EE806B8
+-       call      qword ptr [6B8]
++       mov       r11,7FF8192A0650
++       call      qword ptr [r11]
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        vzeroupper
+        mov       rbp,[rcx+28]
+        mov       [rsp+28],rbp
+        lea       rbp,[rbp+90]
+-       cmp       qword ptr [rbp+0FFB0],0
+-       je        short 0000000000008E01
+        xor       ecx,ecx
+        mov       rax,[rbp+0FFB0]
+        mov       [rax+8],rcx
+        mov       [rax+10],ecx
+-       mov       [rax+14],ecx
+        mov       rcx,rax
+        mov       edx,1
+-       call      qword ptr [0CDF8]
++       call      qword ptr [8120]
+        mov       rcx,[rbp+0FFB0]
+-       call      0000000000004108
++       call      0000000000000C40
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+-; Total bytes of code 683
++; Total bytes of code 649
+```
+**Diff for Deserialize02 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize02()
+ ; 			var result = XmlSerialization.Deserialize<PersonRecord>(Resources.PersonRecordXml);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+-       call      0000000000009180
++       call      qword ptr [30A8]
+        mov       rdx,rax
+        mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize(System.String)
+-       call      00000000000091C8
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,10
++       call      qword ptr [3150]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+10]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+ ; Total bytes of code 56
+ ; DotNetTips.Spargine.Core.BenchmarkTests.Properties.Resources.get_PersonRecordXml()
+ ;                 return ResourceManager.GetString("PersonRecordXml", resourceCulture);
+ ;                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        sub       rsp,28
+-       call      0000000000009150
++       call      qword ptr [3018]
+        mov       rcx,rax
+-       mov       rdx,15DA90B1908
++       mov       rdx,1F973C09DB0
+        mov       rdx,[rdx]
+-       mov       r8,15D890B7DC8
++       mov       r8,1F973C06DE0
+        mov       r8,[r8]
+        mov       rax,[rax]
+        mov       rax,[rax+48]
+-       mov       rax,[rax+28]
+        add       rsp,28
+-       jmp       rax
+-; Total bytes of code 56
++       jmp       qword ptr [rax+28]
++; Total bytes of code 54
+ ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,78
+        vzeroupper
+        lea       rbp,[rsp+90]
+        vxorps    xmm4,xmm4,xmm4
+        vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
+        vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
+        vmovdqa   xmmword ptr [rbp+0FFD0],xmm4
+        mov       [rbp+0FF98],rsp
+        mov       [rbp+0FFE0],rcx
+        mov       rsi,rcx
+        test      rdx,rdx
+-       je        near ptr 000000000000201B
+-       cmp       dword ptr [rdx+8],0
+-       je        near ptr 000000000000201B
+-       xor       eax,eax
++       je        short 00000000000013AE
++       mov       eax,[rdx+8]
++       xor       ecx,ecx
+        test      eax,eax
+-       sete      al
+-       movzx     eax,al
++       sete      cl
++       test      ecx,ecx
++       sete      cl
++       movzx     ecx,cl
+        test      eax,eax
+-       jne       near ptr 0000000000001FD3
+-       call      0000000000001670
++       jne       short 00000000000013B0
++       jmp       short 00000000000013B0
++       xor       ecx,ecx
++       test      ecx,ecx
++       jne       near ptr 000000000000145A
++       call      qword ptr [9C48]
+        mov       rsi,rax
+        mov       ecx,877
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
+        mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
+        mov       rbx,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
+        mov       rcx,rdi
+        mov       r9,rbx
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rdx],edx
++       call      0000000000006AD0
++       cmp       [rdx],dl
+        mov       rcx,rdx
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.IO.StringReader
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+        test      rdi,rdi
+-       je        near ptr 00000000000020ED
++       je        near ptr 0000000000001557
+        lea       rcx,[rbx+8]
+        mov       rdx,rdi
+-       call      000000000000AEB0
+-       mov       ecx,[rdi+8]
+-       mov       [rbx+14],ecx
++       call      0000000000000010
+        mov       rcx,rbx
+        mov       [rbp+0FFB0],rcx
+-       jmp       short 0000000000002025
+-       mov       eax,1
+-       jmp       near ptr 0000000000001F26
+-       call      000000000000A938
++       call      qword ptr [7168]
+        mov       [rbp+0FFA8],rax
+        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+        mov       rsi,[rsi+10]
+        mov       rcx,[rsi]
+-       call      0000000000004F40
++       call      0000000000003330
+        mov       rdx,rax
+        mov       rcx,rdi
+        xor       r8d,r8d
+-       call      000000000000AFA8
++       call      qword ptr [7618]
+        mov       rsi,[rsi]
+        mov       rcx,rdi
+        mov       rax,[rbp+0FFA8]
+        mov       rdx,rax
+-       vmovdqu   xmm0,xmmword ptr [rdi+38]
+-       vmovdqu   xmmword ptr [rbp+0FFB8],xmm0
+-       vmovdqu   xmm0,xmmword ptr [rdi+48]
+-       vmovdqu   xmmword ptr [rbp+0FFC8],xmm0
+-       mov       r9,[rdi+58]
++       vmovdqu   ymm0,ymmword ptr [rcx+38]
++       vmovdqu   ymmword ptr [rbp+0FFB8],ymm0
++       mov       r9,[rcx+58]
+        mov       [rbp+0FFD8],r9
+        lea       r9,[rbp+0FFB8]
+        xor       r8d,r8d
+-       call      000000000000B050
++       call      qword ptr [7810]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      0000000000007450
++       call      qword ptr [5858]
+        mov       rsi,rax
+        mov       rax,[rbp+0FFA8]
+        test      rax,rax
+-       je        short 00000000000020BA
++       je        short 0000000000001527
+        mov       rcx,rax
+-       mov       r11,7FF82EE906A8
+-       call      qword ptr [6A8]
++       mov       r11,7FF8192B06A0
++       call      qword ptr [r11]
+        nop
+        xor       ecx,ecx
+        mov       rax,[rbp+0FFB0]
+        mov       [rax+8],rcx
+        mov       [rax+10],ecx
+-       mov       [rax+14],ecx
+        mov       rcx,rax
+        mov       edx,1
+-       call      qword ptr [0CDF8]
++       call      qword ptr [8120]
+        mov       rcx,[rbp+0FFB0]
+-       call      0000000000004108
++       call      0000000000000C40
+        mov       rax,rsi
+        add       rsp,78
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        mov       ecx,11
+-       call      0000000000009658
++       call      qword ptr [7360]
+        int       3
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        vzeroupper
+        mov       rbp,[rcx+28]
+        mov       [rsp+28],rbp
+        lea       rbp,[rbp+90]
+        cmp       qword ptr [rbp+0FFA8],0
+-       je        short 000000000000212E
++       je        short 0000000000001596
+        mov       rcx,[rbp+0FFA8]
+-       mov       r11,7FF82EE906A8
+-       call      qword ptr [6A8]
++       mov       r11,7FF8192B06A0
++       call      qword ptr [r11]
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        vzeroupper
+        mov       rbp,[rcx+28]
+        mov       [rsp+28],rbp
+        lea       rbp,[rbp+90]
+-       cmp       qword ptr [rbp+0FFB0],0
+-       je        short 0000000000002181
+        xor       ecx,ecx
+        mov       rax,[rbp+0FFB0]
+        mov       [rax+8],rcx
+        mov       [rax+10],ecx
+-       mov       [rax+14],ecx
+        mov       rcx,rax
+        mov       edx,1
+-       call      qword ptr [0CDF8]
++       call      qword ptr [8120]
+        mov       rcx,[rbp+0FFB0]
+-       call      0000000000004108
++       call      0000000000000C40
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+-; Total bytes of code 683
++; Total bytes of code 649
+```
+**Diff for Serialize02 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize02()
+ ; 			var result = JsonSerialization.Serialize(this.PersonProper01);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+        mov       rcx,[rsi+28]
+-       call      0000000000009168
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,8
++       call      qword ptr [1C00]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+8]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+-; Total bytes of code 42
++; Total bytes of code 41
+ ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,30
+        xor       eax,eax
+        mov       [rsp+28],rax
+        test      rcx,rcx
+-       setne     al
+-       movzx     eax,al
+-       test      eax,eax
+-       jne       near ptr 0000000000006AB6
+-       call      0000000000001610
++       jne       near ptr 000000000000D086
++       call      qword ptr [9B28]
+        mov       rsi,rax
+        mov       ecx,5
+-       call      00000000000088D0
++       call      000000000000A000
+        mov       rdi,rax
+        cmp       dword ptr [rdi+8],3
+-       jl        near ptr 0000000000006B4C
++       jl        near ptr 000000000000D0F1
+        lea       rcx,[rdi+0C]
+-       mov       rdx,2279C639958
++       mov       rdx,227CCC08960
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,6
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       ecx,[rdi+8]
+        sub       ecx,3
+        cmp       ecx,2
+-       jl        near ptr 0000000000006B6E
+-       lea       rcx,[rdi+0C]
+-       add       rcx,6
+-       mov       rdx,2279C633090
++       jl        near ptr 000000000000D114
++       lea       rcx,[rdi+12]
++       mov       rdx,227CCC02090
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,4
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       rcx,rdi
+        mov       rdx,rsi
+-       call      00000000000087C0
++       call      qword ptr [0BC60]
+        mov       rcx,rax
+        test      rcx,rcx
+-       jne       near ptr 0000000000006B90
++       je        short 000000000000CFA7
++       xor       eax,eax
++       cmp       dword ptr [rcx+8],0
++       sete      al
++       jmp       short 000000000000CFAC
+        mov       eax,1
+        test      eax,eax
+        sete      al
+        movzx     eax,al
+        test      eax,eax
+-       jne       near ptr 0000000000006A7A
+-       call      0000000000001670
++       jne       near ptr 000000000000D047
++       call      qword ptr [9C48]
+        mov       rsi,rax
+-       mov       ecx,36B
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rbx,rax
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rdi,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F267D68
+-       call      0000000000000390
+-       mov       rcx,rdi
+-       mov       r9,rbx
++       mov       rdx,7FF8197B9BD8
++       call      000000000000F510
++       mov       rcx,rax
++       mov       r9,rdi
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rcx],ecx
++       call      0000000000006AD0
++       cmp       [rcx],cl
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rsi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       r8,rax
+        mov       rdx,rsi
+        mov       rcx,rdi
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rdi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       [rsp+28],rcx
+        lea       rdx,[rsp+28]
+        mov       rcx,offset MD_System.Text.Json.JsonSerializer.GetRuntimeType(!!0 ByRef)
+-       call      000000000000A638
++       call      qword ptr [3B70]
+        mov       rsi,rax
+-       mov       rcx,2279C638A00
++       mov       rcx,227CCC08040
+        mov       rdi,[rcx]
+        cmp       byte ptr [rdi+85],0
+-       jne       short 0000000000006AF0
++       je        short 000000000000D0E6
+        mov       rcx,rdi
+-       call      000000000000AC68
+-       mov       rbx,[rdi+20]
+-       test      rbx,rbx
+-       je        short 0000000000006B48
+-       mov       rcx,[rbx+80]
+        mov       rdx,rsi
+-       call      0000000000000E80
+-       test      eax,eax
+-       jne       short 0000000000006B2C
+-       mov       r8,rbx
++       call      qword ptr [5708]
++       mov       r8,rax
+        lea       rdx,[rsp+28]
+        mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+-       call      0000000000007D30
++       call      qword ptr [0B780]
+        nop
+        add       rsp,30
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        ret
+        mov       rcx,rdi
+-       mov       rdx,rsi
+-       call      000000000000AC70
+-       mov       rbx,rax
+-       lea       rcx,[rdi+20]
+-       mov       rdx,rbx
+-       call      000000000000AEB0
+-       jmp       short 0000000000006B0C
+-       xor       ecx,ecx
+-       jmp       short 0000000000006B00
++       call      qword ptr [5D20]
++       jmp       short 000000000000D0B9
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
+-       cmp       dword ptr [rcx+8],0
+-       je        near ptr 00000000000069C8
+-       xor       eax,eax
+-       jmp       near ptr 00000000000069CD
+-; Total bytes of code 641
++       call      0000000000006AD0
++       int       3
++; Total bytes of code 568
+```
+**Diff for Serialize03 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize03()
+ ; 			var result = JsonSerialization.Serialize(this.PersonRecord02);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+        mov       rcx,[rsi+40]
+-       call      0000000000009168
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,8
++       call      qword ptr [3060]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+8]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+-; Total bytes of code 42
++; Total bytes of code 41
+ ; DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,30
+        xor       eax,eax
+        mov       [rsp+28],rax
+        test      rcx,rcx
+-       setne     al
+-       movzx     eax,al
+-       test      eax,eax
+-       jne       near ptr 0000000000006956
+-       call      0000000000001610
++       jne       near ptr 000000000000C786
++       call      qword ptr [9B28]
+        mov       rsi,rax
+        mov       ecx,5
+-       call      00000000000088D0
++       call      000000000000A000
+        mov       rdi,rax
+        cmp       dword ptr [rdi+8],3
+-       jl        near ptr 00000000000069EC
++       jl        near ptr 000000000000C7F1
+        lea       rcx,[rdi+0C]
+-       mov       rdx,2204ECF1578
++       mov       rdx,1C83E808960
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,6
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       ecx,[rdi+8]
+        sub       ecx,3
+        cmp       ecx,2
+-       jl        near ptr 0000000000006A0E
+-       lea       rcx,[rdi+0C]
+-       add       rcx,6
+-       mov       rdx,2202ECF3090
++       jl        near ptr 000000000000C814
++       lea       rcx,[rdi+12]
++       mov       rdx,1C83E802090
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,4
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       rcx,rdi
+        mov       rdx,rsi
+-       call      00000000000087C0
++       call      qword ptr [0BC60]
+        mov       rcx,rax
+        test      rcx,rcx
+-       jne       near ptr 0000000000006A30
++       je        short 000000000000C6A7
++       xor       eax,eax
++       cmp       dword ptr [rcx+8],0
++       sete      al
++       jmp       short 000000000000C6AC
+        mov       eax,1
+        test      eax,eax
+        sete      al
+        movzx     eax,al
+        test      eax,eax
+-       jne       near ptr 000000000000691A
+-       call      0000000000001670
++       jne       near ptr 000000000000C747
++       call      qword ptr [9C48]
+        mov       rsi,rax
+-       mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rbx,rax
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
++       mov       rdi,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rcx,rdi
+-       mov       r9,rbx
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
++       mov       rcx,rax
++       mov       r9,rdi
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rcx],ecx
++       call      0000000000006AD0
++       cmp       [rcx],cl
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rsi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       r8,rax
+        mov       rdx,rsi
+        mov       rcx,rdi
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rdi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       [rsp+28],rcx
+        lea       rdx,[rsp+28]
+        mov       rcx,offset MD_System.Text.Json.JsonSerializer.GetRuntimeType(!!0 ByRef)
+-       call      000000000000A638
++       call      qword ptr [3D80]
+        mov       rsi,rax
+-       mov       rcx,2202ECF8A00
++       mov       rcx,1C83E808040
+        mov       rdi,[rcx]
+        cmp       byte ptr [rdi+85],0
+-       jne       short 0000000000006990
++       je        short 000000000000C7E6
+        mov       rcx,rdi
+-       call      000000000000AC68
+-       mov       rbx,[rdi+20]
+-       test      rbx,rbx
+-       je        short 00000000000069E8
+-       mov       rcx,[rbx+80]
+        mov       rdx,rsi
+-       call      0000000000000E80
+-       test      eax,eax
+-       jne       short 00000000000069CC
+-       mov       r8,rbx
++       call      qword ptr [5708]
++       mov       r8,rax
+        lea       rdx,[rsp+28]
+        mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteStringUsingSerializer(!!0 ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+-       call      000000000000C688
++       call      qword ptr [3120]
+        nop
+        add       rsp,30
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        ret
+        mov       rcx,rdi
+-       mov       rdx,rsi
+-       call      000000000000AC70
+-       mov       rbx,rax
+-       lea       rcx,[rdi+20]
+-       mov       rdx,rbx
+-       call      000000000000AEB0
+-       jmp       short 00000000000069AC
+-       xor       ecx,ecx
+-       jmp       short 00000000000069A0
++       call      qword ptr [5D20]
++       jmp       short 000000000000C7B9
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
+-       cmp       dword ptr [rcx+8],0
+-       je        near ptr 0000000000006868
+-       xor       eax,eax
+-       jmp       near ptr 000000000000686D
+-; Total bytes of code 641
++       call      0000000000006AD0
++       int       3
++; Total bytes of code 568
+```
+**Diff for Serialize01 method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize01()
+ ; 			var result = XmlSerialization.Serialize(this.PersonProper01);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+        mov       rcx,[rsi+28]
+-       call      0000000000009158
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,8
++       call      qword ptr [3030]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+8]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+-; Total bytes of code 42
++; Total bytes of code 41
+ ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,48
+        lea       rbp,[rsp+60]
+        xor       eax,eax
+        mov       [rbp+0FFE0],rax
+        mov       [rbp+0FFD0],rsp
+        mov       rsi,rcx
+        test      rsi,rsi
+-       setne     al
+-       movzx     eax,al
+-       test      eax,eax
+-       jne       near ptr 000000000000BB32
+-       call      0000000000001610
++       jne       near ptr 0000000000006092
++       call      qword ptr [9B28]
+        mov       rsi,rax
+        mov       ecx,5
+-       call      00000000000088D0
++       call      000000000000A000
+        mov       rdi,rax
+        cmp       dword ptr [rdi+8],3
+-       jl        near ptr 000000000000BBEB
++       jl        near ptr 000000000000615B
+        lea       rcx,[rdi+0C]
+-       mov       rdx,1C263FC9958
++       mov       rdx,14A4A004558
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,6
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       ecx,[rdi+8]
+        sub       ecx,3
+        cmp       ecx,2
+-       jl        near ptr 000000000000BC0D
+-       lea       rcx,[rdi+0C]
+-       add       rcx,6
+-       mov       rdx,1C263FC3090
++       jl        near ptr 000000000000617E
++       lea       rcx,[rdi+12]
++       mov       rdx,14A4C002090
+        mov       rdx,[rdx]
+        add       rdx,0C
+        mov       r8d,4
+-       call      000000000000E808
++       call      qword ptr [5810]
+        mov       rcx,rdi
+        mov       rdx,rsi
+-       call      00000000000087C0
++       call      qword ptr [0BC60]
+        mov       rcx,rax
+        test      rcx,rcx
+-       jne       near ptr 000000000000BC2F
++       je        short 0000000000005FB3
++       xor       eax,eax
++       cmp       dword ptr [rcx+8],0
++       sete      al
++       jmp       short 0000000000005FB8
+        mov       eax,1
+        test      eax,eax
+        sete      al
+        movzx     eax,al
+        test      eax,eax
+-       jne       near ptr 000000000000BAF6
+-       call      0000000000001670
++       jne       near ptr 0000000000006053
++       call      qword ptr [9C48]
+        mov       rsi,rax
+-       mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rbx,rax
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
++       mov       rdi,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F287D68
+-       call      0000000000000390
+-       mov       rcx,rdi
+-       mov       r9,rbx
++       mov       rdx,7FF8197E9BD8
++       call      000000000000F510
++       mov       rcx,rax
++       mov       r9,rdi
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rcx],ecx
++       call      0000000000006AD0
++       cmp       [rcx],cl
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rsi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       r8,rax
+        mov       rdx,rsi
+        mov       rcx,rdi
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rdi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       rcx,offset MT_System.IO.StringWriter
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+        mov       rcx,rdi
+-       call      000000000000A248
++       call      qword ptr [3090]
+        mov       rcx,rdi
+        mov       [rbp+0FFE0],rcx
+-       call      000000000000A840
++       call      qword ptr [38E8]
+        mov       [rbp+0FFD8],rax
+        mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rdi,rax
+        mov       rcx,rsi
+-       call      000000000000F570
++       call      00000000000053F0
+        mov       rdx,rax
+        mov       rcx,rdi
+        xor       r8d,r8d
+-       call      000000000000A380
++       call      qword ptr [5108]
+        xor       ecx,ecx
+        mov       [rsp+20],rcx
+        mov       [rsp+28],rcx
+        mov       rcx,rdi
+        mov       rdx,[rbp+0FFD8]
+        mov       r8,rsi
+        xor       r9d,r9d
+-       call      000000000000A3E8
++       call      qword ptr [5240]
+        mov       rcx,[rbp+0FFE0]
+        mov       rcx,[rcx+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [2180]
++       call      qword ptr [0E838]
+        mov       rsi,rax
+        mov       rdx,[rbp+0FFD8]
+        test      rdx,rdx
+-       je        short 000000000000BBD2
++       je        short 0000000000006133
+        mov       rcx,rdx
+-       mov       r11,7FF82EE90668
+-       call      qword ptr [668]
++       mov       r11,7FF8192B06A8
++       call      qword ptr [r11]
+        nop
+        mov       rcx,[rbp+0FFE0]
+        mov       byte ptr [rcx+28],0
+-       call      0000000000004108
++       mov       edx,1
++       call      qword ptr [74C8]
++       mov       rcx,[rbp+0FFE0]
++       call      0000000000000C40
+        mov       rax,rsi
+        add       rsp,48
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
++       call      0000000000006AD0
+        mov       rcx,offset MT_System.IndexOutOfRangeException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rsi,rax
+        mov       rcx,rsi
+-       call      00000000000009D8
++       call      qword ptr [5F48]
+        mov       rcx,rsi
+-       call      00000000000055B0
+-       cmp       dword ptr [rcx+8],0
+-       je        near ptr 000000000000BA44
+-       xor       eax,eax
+-       jmp       near ptr 000000000000BA49
++       call      0000000000006AD0
++       int       3
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        mov       rbp,[rcx+30]
+        mov       [rsp+30],rbp
+        lea       rbp,[rbp+60]
+        cmp       qword ptr [rbp+0FFD8],0
+-       je        short 000000000000BC70
++       je        short 00000000000061CF
+        mov       rcx,[rbp+0FFD8]
+-       mov       r11,7FF82EE90668
+-       call      qword ptr [668]
++       mov       r11,7FF8192B06A8
++       call      qword ptr [r11]
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+        push      rbp
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,38
+        mov       rbp,[rcx+30]
+        mov       [rsp+30],rbp
+        lea       rbp,[rbp+60]
+-       cmp       qword ptr [rbp+0FFE0],0
+-       je        short 000000000000BCA3
+        mov       rcx,[rbp+0FFE0]
+        mov       byte ptr [rcx+28],0
+-       call      0000000000004108
++       mov       edx,1
++       call      qword ptr [74C8]
++       mov       rcx,[rbp+0FFE0]
++       call      0000000000000C40
+        nop
+        add       rsp,38
+        pop       rbx
+        pop       rsi
+        pop       rdi
+        pop       rbp
+        ret
+-; Total bytes of code 797
++; Total bytes of code 788
+```
+**Diff for StringToXDocument method between:**
+.NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+```diff
+; DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.StringToXDocument()
+ ; 			var result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ ; 			base.Consumer.Consume(result);
+ ; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        push      rsi
+        sub       rsp,20
+        mov       rsi,rcx
+-       call      0000000000009200
++       call      qword ptr [5150]
+        mov       rcx,rax
+-       call      0000000000009198
+-       mov       rcx,[rsi+20]
+-       cmp       [rcx],ecx
+-       add       rcx,10
++       call      qword ptr [5060]
++       mov       rdx,[rsi+20]
++       lea       rcx,[rdx+10]
+        mov       rdx,rax
+-       call      000000000000B010
++       call      0000000000000010
+        nop
+        add       rsp,20
+        pop       rsi
+        ret
+ ; Total bytes of code 46
+ ; DotNetTips.Spargine.Benchmarking.Properties.Resources.get_XmlTestDataPersonProper()
+        sub       rsp,28
+-       call      00000000000091D8
++       call      qword ptr [50D8]
+        mov       rcx,rax
+-       mov       rdx,281C8B71908
++       mov       rdx,17ED88051A8
+        mov       rdx,[rdx]
+-       mov       r8,281B8B77DD8
++       mov       r8,17ED88029E8
+        mov       r8,[r8]
+        mov       rax,[rax]
+        mov       rax,[rax+48]
+-       mov       rax,[rax+28]
+        add       rsp,28
+-       jmp       rax
+-; Total bytes of code 56
++       jmp       qword ptr [rax+28]
++; Total bytes of code 54
+ ; DotNetTips.Spargine.Core.Serialization.XmlSerialization.StringToXDocument(System.String)
+        push      rdi
+        push      rsi
+        push      rbx
+        sub       rsp,30
+        test      rcx,rcx
+-       je        near ptr 000000000000F766
+-       cmp       dword ptr [rcx+8],0
+-       je        near ptr 000000000000F766
+-       xor       eax,eax
++       je        short 0000000000007804
++       mov       eax,[rcx+8]
++       xor       edx,edx
+        test      eax,eax
+-       sete      al
+-       movzx     eax,al
++       sete      dl
++       test      edx,edx
++       sete      dl
++       movzx     edx,dl
+        test      eax,eax
+-       jne       near ptr 000000000000F749
+-       call      0000000000001670
++       jne       short 0000000000007806
++       jmp       short 0000000000007806
++       xor       edx,edx
++       test      edx,edx
++       jne       near ptr 00000000000078B0
++       call      qword ptr [9C48]
+        mov       rsi,rax
+        mov       ecx,415
+-       mov       rdx,7FF82F257D68
+-       call      0000000000000390
++       mov       rdx,7FF8197C9BD8
++       call      000000000000F510
+        mov       rdi,rax
+        mov       ecx,9
+-       mov       rdx,7FF82F257D68
+-       call      0000000000000390
++       mov       rdx,7FF8197C9BD8
++       call      000000000000F510
+        mov       rbx,rax
+        mov       ecx,36B
+-       mov       rdx,7FF82F257D68
+-       call      0000000000000390
++       mov       rdx,7FF8197C9BD8
++       call      000000000000F510
+        mov       rcx,rdi
+        mov       r9,rbx
+        mov       [rsp+20],rax
+        mov       edx,1
+        xor       r8d,r8d
+-       call      0000000000000318
++       call      qword ptr [5270]
+        mov       rdi,rax
+        mov       rcx,offset MT_System.ArgumentNullException
+-       call      000000000000B2D0
++       call      000000000000EFB0
+        mov       rbx,rax
+-       call      0000000000001528
++       call      qword ptr [9870]
+        mov       rdx,rax
+        mov       rcx,rsi
+-       call      00000000000004F0
++       call      qword ptr [9D08]
+        mov       r8,rax
+        mov       rdx,rdi
+        mov       rcx,rbx
+-       call      00000000000001E8
++       call      qword ptr [0FB28]
+        mov       rcx,rbx
+-       call      00000000000055B0
+-       cmp       [rcx],ecx
++       call      0000000000006AD0
++       cmp       [rcx],cl
+        mov       edx,3
+-       call      0000000000008468
++       call      qword ptr [0D4E0]
+        mov       rcx,rax
+        xor       edx,edx
+        add       rsp,30
+        pop       rbx
+        pop       rsi
+        pop       rdi
+-       jmp       near ptr 00000000000091A0
+-       mov       eax,1
+-       jmp       near ptr 000000000000F69C
+-; Total bytes of code 240
++       jmp       qword ptr [5078]
++; Total bytes of code 239
+```

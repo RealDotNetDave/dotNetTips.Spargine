@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20220530-194629</title>
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark-20220719-132938</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,22 +13,26 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1706 (21H2)
+BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
 Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-.NET SDK=6.0.300
-  [Host]     : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
-  Job-SPYWVM : .NET 6.0.5 (6.0.522.21309), X64 RyuJIT
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
 </code></pre>
-<pre><code>EvaluateOverhead=True  Server=True  Toolchain=.NET 6.0  
-Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  Categories=Reflection  
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  
+Categories=Reflection  
 </code></pre>
 
 <table>
-<thead><tr><th>    Method</th><th> Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>  Min</th><th>   Q1</th><th>Median</th><th>   Q3</th><th>  Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Code Size</th><th>Allocated</th>
+<thead><tr><th>    Method</th><th> Job</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Median</th><th> Min</th><th>  Q1</th><th>  Q3</th><th> Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Code Size</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>GetAllInterfaces</td><td>71,152.2 ns</td><td>827.47 ns</td><td>774.02 ns</td><td>199.85 ns</td><td>70,169.1 ns</td><td>70,423.9 ns</td><td>71,186.1 ns</td><td>71,690.1 ns</td><td>72,415.0 ns</td><td>14,054.4</td><td>827.473 ns</td><td>15.00</td><td>1.605</td><td>2.000</td><td>0.1820</td><td>3</td><td>*</td><td>No</td><td>0.2441</td><td>329 B</td><td>2,777 B</td>
-</tr><tr><td>GetAllTypes</td><td>1,194.7 ns</td><td>11.64 ns</td><td>10.89 ns</td><td>2.81 ns</td><td>1,174.5 ns</td><td>1,187.4 ns</td><td>1,193.7 ns</td><td>1,202.9 ns</td><td>1,213.0 ns</td><td>837,057.1</td><td>11.639 ns</td><td>15.00</td><td>1.896</td><td>2.000</td><td>-0.0756</td><td>2</td><td>*</td><td>No</td><td>0.0248</td><td>286 B</td><td>240 B</td>
-</tr><tr><td>GetInstances</td><td>611.7 ns</td><td>6.75 ns</td><td>6.31 ns</td><td>1.63 ns</td><td>602.3 ns</td><td>607.2 ns</td><td>612.8 ns</td><td>616.3 ns</td><td>623.8 ns</td><td>1,634,904.0</td><td>6.747 ns</td><td>15.00</td><td>1.880</td><td>2.000</td><td>0.0295</td><td>1</td><td>*</td><td>No</td><td>0.0057</td><td>118 B</td><td>56 B</td>
+</thead><tbody><tr><td>GetAllInterfaces</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>2,437.9 ns</td><td>43.83 ns</td><td>38.86 ns</td><td>10.38 ns</td><td>2,443.9 ns</td><td>2,343.9 ns</td><td>2,415.2 ns</td><td>2,459.1 ns</td><td>2,499.4 ns</td><td>410,187.2</td><td>43.83 ns</td><td>14.00</td><td>3.133</td><td>2.000</td><td>-0.6729</td><td>6</td><td>*</td><td>No</td><td>0.1602</td><td>354 B</td><td>1449 B</td>
+</tr><tr><td>GetAllInterfaces</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>2,364.7 ns</td><td>32.28 ns</td><td>26.95 ns</td><td>7.48 ns</td><td>2,366.9 ns</td><td>2,314.1 ns</td><td>2,346.5 ns</td><td>2,380.1 ns</td><td>2,398.5 ns</td><td>422,894.6</td><td>32.28 ns</td><td>13.00</td><td>1.877</td><td>2.000</td><td>-0.4441</td><td>5</td><td>*</td><td>No</td><td>0.1564</td><td>690 B</td><td>1449 B</td>
+</tr><tr><td>GetAllTypes</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>1,385.8 ns</td><td>27.49 ns</td><td>30.55 ns</td><td>7.01 ns</td><td>1,382.5 ns</td><td>1,334.9 ns</td><td>1,367.6 ns</td><td>1,407.7 ns</td><td>1,445.7 ns</td><td>721,602.1</td><td>27.49 ns</td><td>19.00</td><td>2.022</td><td>2.000</td><td>-0.0347</td><td>3</td><td>*</td><td>No</td><td>0.0343</td><td>303 B</td><td>328 B</td>
+</tr><tr><td>GetAllTypes</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>1,464.1 ns</td><td>37.78 ns</td><td>107.18 ns</td><td>11.11 ns</td><td>1,409.1 ns</td><td>1,350.3 ns</td><td>1,387.6 ns</td><td>1,512.4 ns</td><td>1,780.4 ns</td><td>682,997.5</td><td>37.78 ns</td><td>93.00</td><td>3.511</td><td>2.400</td><td>1.2052</td><td>4</td><td>*</td><td>No</td><td>0.0343</td><td>663 B</td><td>328 B</td>
+</tr><tr><td>GetInstances</td><td>Job-VIFSJL</td><td>.NET 6.0</td><td>642.9 ns</td><td>12.35 ns</td><td>10.95 ns</td><td>2.93 ns</td><td>639.3 ns</td><td>631.6 ns</td><td>635.2 ns</td><td>646.8 ns</td><td>665.7 ns</td><td>1,555,358.1</td><td>12.35 ns</td><td>14.00</td><td>2.344</td><td>2.000</td><td>0.8413</td><td>1</td><td>*</td><td>No</td><td>0.0057</td><td>118 B</td><td>56 B</td>
+</tr><tr><td>GetInstances</td><td>Job-VGZOLO</td><td>.NET 7.0</td><td>739.5 ns</td><td>19.79 ns</td><td>56.47 ns</td><td>5.82 ns</td><td>725.7 ns</td><td>670.5 ns</td><td>691.1 ns</td><td>768.3 ns</td><td>902.7 ns</td><td>1,352,207.4</td><td>19.79 ns</td><td>94.00</td><td>3.138</td><td>2.000</td><td>0.9810</td><td>2</td><td>*</td><td>No</td><td>0.0057</td><td>118 B</td><td>56 B</td>
 </tr></tbody></table>
 </body>
 </html>

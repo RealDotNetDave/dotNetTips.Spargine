@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 07-19-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -106,18 +106,15 @@ namespace DotNetTips.Spargine.Extensions
 			{
 				case HashType.SHA256:
 					{
-						using var hasher = SHA256.Create();
-						return hasher.ComputeHash(inputBytes);
+						return SHA256.HashData(inputBytes);
 					}
 				case HashType.SHA384:
 					{
-						using var hasher = SHA384.Create();
-						return hasher.ComputeHash(inputBytes);
+						return SHA384.HashData(inputBytes);
 					}
 				case HashType.SHA512:
 					{
-						using var hasher = SHA512.Create();
-						return hasher.ComputeHash(inputBytes);
+						return SHA512.HashData(inputBytes);
 					}
 				default:
 					break;
@@ -206,7 +203,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			var hash = GetHash(input, hashType);
 
-			var sb = new StringBuilder(input.Count());
+			var sb = new StringBuilder(input.Count() / 2);
 
 			for (var charIndex = 0; charIndex < hash.Length; charIndex++)
 			{
@@ -229,14 +226,11 @@ namespace DotNetTips.Spargine.Extensions
 			input = input.ArgumentNotNullOrEmpty();
 
 			// Create a SHA256
-			using (var sha256Hash = SHA256.Create())
-			{
-				// ComputeHash - returns byte array
-				var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+			// ComputeHash - returns byte array
+			var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(input));
 
-				// Convert byte array to a string
-				return bytes.BytesToString();
-			}
+			// Convert byte array to a string
+			return bytes.BytesToString();
 		}
 
 		/// <summary>
@@ -1113,7 +1107,10 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(Extract), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static string ToTitleCase(this string input)
 		{
-			input = input.ArgumentNotNullOrEmpty();
+			if (input.IsNullOrEmpty())
+			{
+				return input;
+			}
 
 			return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(input);
 		}
@@ -1128,7 +1125,10 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(ToTrimmed), UnitTestCoverage = 100, Status = Status.Available)]
 		public static string ToTrimmed(this string input)
 		{
-			input = input.ArgumentNotNullOrEmpty();
+			if (input.IsNullOrEmpty())
+			{
+				return input;
+			}
 
 			return input.TrimEnd().TrimStart();
 		}

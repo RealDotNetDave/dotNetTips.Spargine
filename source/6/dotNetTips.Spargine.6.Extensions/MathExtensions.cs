@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-11-2022
+// Last Modified On : 07-19-2022
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -34,6 +34,34 @@ namespace DotNetTips.Spargine.Extensions
 		public static double CalculatePercent(this TimeSpan first, TimeSpan second)
 		{
 			return ( second.TotalMilliseconds - first.TotalMilliseconds ) / Math.Abs(first.TotalMilliseconds) * 100;
+		}
+
+		/// <summary>
+		/// Adds the specified add.
+		/// </summary>
+		/// <param name="input">The count.</param>
+		/// <param name="add">The add.</param>
+		/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
+		/// <returns>System.Double.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+		public static double Add(this int input, int add)
+		{
+			return input + add;
+		}
+
+		/// <summary>
+		/// Subtracts the specified subtract.
+		/// </summary>
+		/// <param name="input">The count.</param>
+		/// <param name="subtract">The subtract.</param>
+		/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
+		/// <returns>System.Double.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+		public static double Subtract(this int input, int subtract)
+		{
+			return input - subtract;
 		}
 
 		/// <summary>
@@ -204,7 +232,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
 		/// <remarks>Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsPrime), UnitTestCoverage = 0, Status = Status.New)]
+		[Information(nameof(IsPrime), Status = Status.New)]
 		public static bool IsPrime(this int number)
 		{
 			// local function

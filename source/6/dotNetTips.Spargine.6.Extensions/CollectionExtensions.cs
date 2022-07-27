@@ -121,6 +121,11 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
 		/// <exception cref="ArgumentNullException">Collection cannot be <see langword="null" />.</exception>
+		/// <example>
+		///	<code>
+		///	people.AddIfNotExists(person, comparer)
+		///	</code>
+		/// </example>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
 		{
@@ -153,6 +158,11 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="ensureUnique">The ensure unique.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
+		/// <example>
+		/// <code>
+		/// people.AddRange(personCollection, Tristate.UseDefault)
+		/// </code>
+		/// </example>
 		[Information(nameof(AddRange), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 		public static bool AddRange<T>([NotNull] this ICollection<T> collection, [NotNull] IEnumerable<T> items, Tristate ensureUnique = Tristate.False)
 		{

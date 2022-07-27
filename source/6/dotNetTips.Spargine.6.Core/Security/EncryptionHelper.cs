@@ -34,18 +34,12 @@ namespace DotNetTips.Spargine.Core.Security
 		{
 			Encoding encoding = Encoding.ASCII;
 
-			using (var sha2 = SHA256.Create())
-			{
-				var rawKey = encoding.GetBytes(key);
-				var rawIV = encoding.GetBytes(key);
+			var hashKey = SHA256.HashData(encoding.GetBytes(key));
+			var hashIV = SHA256.HashData(encoding.GetBytes(key));
 
-				var hashKey = sha2.ComputeHash(rawKey);
-				var hashIV = sha2.ComputeHash(rawIV);
+			Array.Resize(ref hashIV, newSize: 16);
 
-				Array.Resize(ref hashIV, newSize: 16);
-
-				return (hashKey, hashIV);
-			}
+			return (hashKey, hashIV);
 		}
 
 		/// <summary>

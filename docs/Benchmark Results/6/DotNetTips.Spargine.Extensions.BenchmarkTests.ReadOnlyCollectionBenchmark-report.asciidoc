@@ -1,0 +1,31 @@
+....
+BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+
+EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+Categories=Collections  
+....
+[options="header"]
+|===
+|                  Method|         Job|   Runtime|  Count|      Mean|     Error|    StdDev|    StdErr|       Min|        Q1|    Median|        Q3|       Max|          Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|   Gen 0|  Allocated
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|     10|  34.47 ns|  0.658 ns|  0.583 ns|  0.156 ns|  33.78 ns|  34.07 ns|  34.20 ns|  34.95 ns|  35.60 ns|  29,008,238.8|       0.6580 ns|       14.00|     1.759|   2.000|    0.5510|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|     10|  27.87 ns|  0.535 ns|  0.992 ns|  0.151 ns|  26.62 ns|  27.07 ns|  27.64 ns|  28.13 ns|  30.36 ns|  35,883,112.2|       0.5351 ns|       43.00|     2.854|   2.000|    0.9212|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|     25|  34.75 ns|  0.728 ns|  0.779 ns|  0.184 ns|  33.37 ns|  34.33 ns|  34.68 ns|  35.13 ns|  36.63 ns|  28,779,269.2|       0.7277 ns|       18.00|     3.023|   2.000|    0.4918|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|     25|  27.95 ns|  0.582 ns|  0.693 ns|  0.151 ns|  27.13 ns|  27.46 ns|  27.72 ns|  28.36 ns|  29.60 ns|  35,783,653.6|       0.5823 ns|       21.00|     2.777|   2.000|    0.8746|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|     50|  34.85 ns|  0.568 ns|  0.504 ns|  0.135 ns|  34.17 ns|  34.40 ns|  34.86 ns|  35.23 ns|  35.85 ns|  28,697,129.3|       0.5681 ns|       14.00|     1.912|   2.000|    0.2718|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|     50|  28.14 ns|  0.574 ns|  0.509 ns|  0.136 ns|  27.10 ns|  27.89 ns|  28.05 ns|  28.24 ns|  29.29 ns|  35,539,000.3|       0.5742 ns|       14.00|     3.331|   2.000|    0.3419|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|    100|  35.23 ns|  0.740 ns|  0.760 ns|  0.184 ns|  34.21 ns|  34.47 ns|  35.29 ns|  35.66 ns|  36.76 ns|  28,388,079.4|       0.7402 ns|       17.00|     1.905|   2.000|    0.2941|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|    100|  27.43 ns|  0.564 ns|  0.554 ns|  0.138 ns|  26.58 ns|  27.04 ns|  27.37 ns|  27.80 ns|  28.69 ns|  36,455,345.6|       0.5636 ns|       16.00|     2.430|   2.000|    0.4337|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|    250|  35.13 ns|  0.726 ns|  0.679 ns|  0.175 ns|  33.97 ns|  34.66 ns|  35.01 ns|  35.62 ns|  36.44 ns|  28,461,890.7|       0.7258 ns|       15.00|     2.014|   2.000|    0.2477|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|    250|  27.93 ns|  0.538 ns|  0.477 ns|  0.127 ns|  27.23 ns|  27.56 ns|  27.85 ns|  28.30 ns|  28.67 ns|  35,807,829.4|       0.5381 ns|       14.00|     1.634|   2.000|    0.2736|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|    500|  33.96 ns|  0.516 ns|  0.457 ns|  0.122 ns|  33.40 ns|  33.56 ns|  34.00 ns|  34.16 ns|  35.06 ns|  29,442,472.3|       0.5159 ns|       14.00|     2.854|   2.000|    0.7710|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|    500|  27.92 ns|  0.397 ns|  0.332 ns|  0.092 ns|  27.26 ns|  27.69 ns|  27.98 ns|  28.17 ns|  28.47 ns|  35,815,697.1|       0.3971 ns|       13.00|     2.177|   2.000|   -0.3187|     1|             *|        No|      821 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|   1000|  34.56 ns|  0.534 ns|  0.474 ns|  0.127 ns|  33.78 ns|  34.23 ns|  34.38 ns|  34.98 ns|  35.37 ns|  28,938,213.2|       0.5345 ns|       14.00|     1.539|   2.000|    0.1307|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|   1000|  27.56 ns|  0.546 ns|  0.511 ns|  0.132 ns|  27.03 ns|  27.20 ns|  27.40 ns|  27.91 ns|  28.81 ns|  36,278,063.7|       0.5465 ns|       15.00|     2.833|   2.000|    0.8714|     1|             *|        No|    1,135 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VIFSJL|  .NET 6.0|   2500|  35.64 ns|  0.732 ns|  1.140 ns|  0.202 ns|  34.31 ns|  34.73 ns|  35.17 ns|  36.38 ns|  38.29 ns|  28,059,252.0|       0.7323 ns|       32.00|     2.674|   2.444|    0.9058|     2|             *|        No|      411 B|  0.0026|       24 B
+|  'HasItems: With Count'|  Job-VGZOLO|  .NET 7.0|   2500|  27.52 ns|  0.334 ns|  0.279 ns|  0.077 ns|  27.14 ns|  27.27 ns|  27.46 ns|  27.75 ns|  27.96 ns|  36,338,170.7|       0.3339 ns|       13.00|     1.333|   2.000|    0.0810|     1|             *|        No|    1,135 B|  0.0026|       24 B
+|===

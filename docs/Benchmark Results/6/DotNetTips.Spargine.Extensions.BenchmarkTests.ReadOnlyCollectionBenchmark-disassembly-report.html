@@ -1,0 +1,3307 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20220719-062443</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="16">ReadOnlyCollectionBenchmark.'HasItems: With Count'</th></tr>
+<tr>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+<th>.NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>.NET 7.0.0 (7.0.22.32404), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000005E30
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000AE8F
+mov       edi,1
+jmp       short 000000000000AEA1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000AF61
+jmp       short 000000000000AF76
+mov       rcx,rsi
+mov       rdx,7FF82F506128
+call      0000000000004920
+mov       rcx,rax
+mov       r8,2679AB33020
+mov       r8,[r8]
+mov       r9,2679AB35A78
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006840
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000AFA6
+jmp       short 000000000000AFBB
+mov       rcx,rsi
+mov       rdx,7FF82F506560
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000AFDF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000006F57
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 0000000000006F8B
+mov       rcx,rax
+mov       r11,7FF82EEA06B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EEA06A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EEA06A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000006FD6
+add       edi,1
+jo        short 0000000000006FDF
+mov       rcx,rsi
+mov       r11,7FF82EEA06A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 0000000000006FBA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,29FCFC04A30
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,29FCFC04FC8
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1AA628
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8C8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1AA788
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8B0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9A07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9A07C0
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9A07B0
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9A07B8
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9A07B8
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000005E30
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000AE8F
+mov       edi,1
+jmp       short 000000000000AEA1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000AF61
+jmp       short 000000000000AF76
+mov       rcx,rsi
+mov       rdx,7FF82F526128
+call      0000000000004920
+mov       rcx,rax
+mov       r8,1E601103020
+mov       r8,[r8]
+mov       r9,1E601113DD8
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006840
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000AFA6
+jmp       short 000000000000AFBB
+mov       rcx,rsi
+mov       rdx,7FF82F526560
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000AFDF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000006F57
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 0000000000006F8B
+mov       rcx,rax
+mov       r11,7FF82EEC06B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EEC06A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EEC06A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000006FD6
+add       edi,1
+jo        short 0000000000006FDF
+mov       rcx,rsi
+mov       r11,7FF82EEC06A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 0000000000006FBA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,2B4EE801640
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,2B4EE801BD8
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1CA628
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1CA8C8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1CA788
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1CA8B0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9C07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9C07C0
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9C07B0
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9C07B8
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9C07B8
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      00000000000067D8
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000B08F
+mov       edi,1
+jmp       short 000000000000B0A1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000B161
+jmp       short 000000000000B176
+mov       rcx,rsi
+mov       rdx,7FF82F4F6128
+call      0000000000004920
+mov       rcx,rax
+mov       r8,1B1879B3020
+mov       r8,[r8]
+mov       r9,1B1879C2DC0
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006838
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000B1A6
+jmp       short 000000000000B1BB
+mov       rcx,rsi
+mov       rdx,7FF82F4F6560
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000B1DF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000007177
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 00000000000071AB
+mov       rcx,rax
+mov       r11,7FF82EE906B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EE906A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EE906A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 00000000000071F6
+add       edi,1
+jo        short 00000000000071FF
+mov       rcx,rsi
+mov       r11,7FF82EE906A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 00000000000071DA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,16A32C0ADD0
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,16A32C0B368
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1AA628
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8C8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1AA788
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8B0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9A07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9A07C0
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9A07B0
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9A07B8
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9A07B8
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000005E30
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000AE8F
+mov       edi,1
+jmp       short 000000000000AEA1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000AF61
+jmp       short 000000000000AF76
+mov       rcx,rsi
+mov       rdx,7FF82F526128
+call      0000000000004920
+mov       rcx,rax
+mov       r8,1F137713020
+mov       r8,[r8]
+mov       r9,1F1277201E8
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006840
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000AFA6
+jmp       short 000000000000AFBB
+mov       rcx,rsi
+mov       rdx,7FF82F526560
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000AFDF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000006F57
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 0000000000006F8B
+mov       rcx,rax
+mov       r11,7FF82EEC06B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EEC06A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EEC06A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000006FD6
+add       edi,1
+jo        short 0000000000006FDF
+mov       rcx,rsi
+mov       r11,7FF82EEC06A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 0000000000006FBA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,1EFA3C01640
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,1EFA3C01BD8
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1DA628
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1DA8C8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1DA788
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1DA8B0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9D07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9D07C0
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9D07B0
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9D07B8
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9D07B8
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000005E30
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000AE8F
+mov       edi,1
+jmp       short 000000000000AEA1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000AF61
+jmp       short 000000000000AF76
+mov       rcx,rsi
+mov       rdx,7FF82F4E6128
+call      0000000000004920
+mov       rcx,rax
+mov       r8,274E5043020
+mov       r8,[r8]
+mov       r9,274E5052DC0
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006840
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000AFA6
+jmp       short 000000000000AFBB
+mov       rcx,rsi
+mov       rdx,7FF82F4E6560
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000AFDF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000006F57
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 0000000000006F8B
+mov       rcx,rax
+mov       r11,7FF82EE806B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EE806A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000006FD6
+add       edi,1
+jo        short 0000000000006FDF
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 0000000000006FBA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,1FECF400628
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,1FECF400BC0
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1AA638
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8D8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1AA798
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1AA8C0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9A07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9A07B8
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9A07A8
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9A07B0
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9A07B0
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000005E30
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000AE8F
+mov       edi,1
+jmp       short 000000000000AEA1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000AF61
+jmp       short 000000000000AF76
+mov       rcx,rsi
+mov       rdx,7FF82F4E60E0
+call      0000000000004920
+mov       rcx,rax
+mov       r8,29197543020
+mov       r8,[r8]
+mov       r9,29187542688
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006840
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000AFA6
+jmp       short 000000000000AFBB
+mov       rcx,rsi
+mov       rdx,7FF82F4E6518
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000AFDF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000006F57
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 0000000000006F8B
+mov       rcx,rax
+mov       r11,7FF82EE806B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EE806A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000006FD6
+add       edi,1
+jo        short 0000000000006FDF
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 0000000000006FBA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000E335
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [7570]
+test      eax,eax
+je        short 000000000000E335
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000E337
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000E385
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000E418
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,21BBE401640
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000E3CC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,21BBE401BD8
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000EC2F
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000EB00
+jmp       short 000000000000EB15
+mov       rcx,rsi
+mov       rdx,7FF82F1DA648
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000EB52
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000EB5D
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000EB5D
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000EB74
+jmp       short 000000000000EB89
+mov       rcx,rsi
+mov       rdx,7FF82F1DA8E8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EB3A
+mov       rcx,rsi
+mov       rdx,7FF82F1DA7A8
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000EBCF
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000EBF6
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000EBF6
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000EBCF
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000EC0D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F1DA8D0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000EBAE
+mov       rcx,rax
+mov       r11,7FF82E9D07A0
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000ED17
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000ED45
+mov       rcx,rax
+mov       r11,7FF82E9D07C0
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9D07B0
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9D07B8
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000ED87
+add       edi,1
+jo        short 000000000000ED90
+mov       rcx,rsi
+mov       r11,7FF82E9D07B8
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000ED6E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      00000000000067D8
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 000000000000B08F
+mov       edi,1
+jmp       short 000000000000B0A1
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 000000000000B161
+jmp       short 000000000000B176
+mov       rcx,rsi
+mov       rdx,7FF82F4E60E0
+call      0000000000004920
+mov       rcx,rax
+mov       r8,1AD69BE1028
+mov       r8,[r8]
+mov       r9,1AD69BF0DC8
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000006838
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 000000000000B1A6
+jmp       short 000000000000B1BB
+mov       rcx,rsi
+mov       rdx,7FF82F4E6518
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 000000000000B1DF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 0000000000007177
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 00000000000071AB
+mov       rcx,rax
+mov       r11,7FF82EE806B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EE806A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 00000000000071F6
+add       edi,1
+jo        short 00000000000071FF
+mov       rcx,rsi
+mov       r11,7FF82EE806A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 00000000000071DA
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000CA15
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [9E70]
+test      eax,eax
+je        short 000000000000CA15
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000CA17
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000CA65
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000CAF8
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,155EB001E58
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000CAAC
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,155EB0023F0
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000C7CF
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000C6A0
+jmp       short 000000000000C6B5
+mov       rcx,rsi
+mov       rdx,7FF82F246738
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000C6F2
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000C6FD
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000C6FD
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000C714
+jmp       short 000000000000C729
+mov       rcx,rsi
+mov       rdx,7FF82F2469D8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000C6DA
+mov       rcx,rsi
+mov       rdx,7FF82F246898
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000C76F
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000C796
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000C796
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000C76F
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000C7AD
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F2469C0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000C74E
+mov       rcx,rax
+mov       r11,7FF82E9C0870
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000C8B7
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000C8E5
+mov       rcx,rax
+mov       r11,7FF82E9C0890
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9C0880
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9C0888
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000C927
+add       edi,1
+jo        short 000000000000C930
+mov       rcx,rsi
+mov       r11,7FF82E9C0888
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000C90E
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 000000000000E820
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 000000000000E820
+mov       ecx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E80E
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E820
+jmp       short 000000000000E818
+call      qword ptr [0FAF8]
+test      eax,eax
+je        short 000000000000E820
+inc       r15d
+cmp       ebx,r15d
+jg        short 000000000000E7EA
+test      dil,2
+je        near ptr 000000000000E8A8
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 000000000000E8A8
+test      r14d,r14d
+jl        short 000000000000E879
+test      r15d,r15d
+jl        short 000000000000E879
+cmp       ebx,r14d
+jle       short 000000000000E879
+mov       ecx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E86D
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E8A8
+dec       r14d
+cmp       r14d,r15d
+jge       short 000000000000E841
+jmp       short 000000000000E8A8
+call      qword ptr [0FAF8]
+test      eax,eax
+je        short 000000000000E8A8
+jmp       short 000000000000E863
+cmp       r14d,ebx
+jae       short 000000000000E8F4
+mov       ecx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E8D9
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E8A8
+dec       r14d
+cmp       r14d,r15d
+jge       short 000000000000E879
+mov       r8d,r14d
+sub       r8d,r15d
+inc       r8d
+cmp       ebx,r8d
+jne       short 000000000000E8C6
+mov       rax,rsi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+test      r8d,r8d
+je        short 000000000000E8E5
+mov       rcx,rsi
+mov       edx,r15d
+call      qword ptr [0D360]
+jmp       short 000000000000E8B9
+call      qword ptr [0FAF8]
+test      eax,eax
+je        short 000000000000E8A8
+jmp       short 000000000000E8A0
+mov       rax,155E7002028
+mov       rax,[rax]
+jmp       short 000000000000E8B9
+call      00000000000023D0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdx,[rsi+110]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection(System.Collections.Generic.IList`1<!!0>)
+call      0000000000000C18
+mov       rsi,[rsi+20]
+test      rax,rax
+jne       short 0000000000008B5F
+mov       edi,1
+jmp       short 0000000000008B71
+mov       rcx,rax
+call      0000000000001020
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsi+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ListExtensions.ToReadOnlyCollection[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IList`1<System.__Canon>)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,[rsi+10]
+mov       rcx,[rbx+10]
+test      rcx,rcx
+je        short 0000000000008C31
+jmp       short 0000000000008C46
+mov       rcx,rsi
+mov       rdx,7FF82F52A8B0
+call      0000000000004920
+mov       rcx,rax
+mov       r8,1B3E7D63020
+mov       r8,[r8]
+mov       r9,1B3D7D62688
+mov       r9,[r9]
+mov       rdx,rdi
+call      0000000000000C78
+mov       rdi,rax
+mov       rcx,[rbx+18]
+test      rcx,rcx
+je        short 0000000000008C76
+jmp       short 0000000000008C8B
+mov       rcx,rsi
+mov       rdx,7FF82F52ACE8
+call      0000000000004920
+mov       rcx,rax
+call      000000000000B2D0
+mov       rsi,rax
+test      rdi,rdi
+je        short 0000000000008CAF
+lea       rcx,[rsi+8]
+mov       rdx,rdi
+call      000000000000AEB0
+mov       rax,rsi
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       ecx,14
+call      0000000000009658
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 00000000000015B7
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      0000000000007438
+test      rax,rax
+je        short 00000000000015EB
+mov       rcx,rax
+mov       r11,7FF82EEB06B0
+mov       rax,[6B0]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82EEB06A0
+call      qword ptr [6A0]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82EEB06A8
+call      qword ptr [6A8]
+test      eax,eax
+je        short 0000000000001636
+add       edi,1
+jo        short 000000000000163F
+mov       rcx,rsi
+mov       r11,7FF82EEB06A8
+call      qword ptr [6A8]
+test      eax,eax
+jne       short 000000000000161A
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      000000000000ECD0
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+			var people = GetPersonProperArray(Tristate.False).ToReadOnlyCollection();
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+			Consumer.Consume(people.DoesNotHaveItems());
+			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+110]
+test      rdi,rdi
+je        short 000000000000B3B5
+lea       r8,[rsp+28]
+mov       rdx,rdi
+mov       rcx,offset MD_System.Linq.Enumerable.TryGetNonEnumeratedCount(System.Collections.Generic.IEnumerable`1<!!0>, Int32 ByRef)
+call      qword ptr [0FE70]
+test      eax,eax
+je        short 000000000000B3B5
+xor       ecx,ecx
+cmp       dword ptr [rsp+28],0
+setg      cl
+jmp       short 000000000000B3B7
+xor       ecx,ecx
+movzx     ecx,cl
+test      ecx,ecx
+je        short 000000000000B405
+mov       rcx,offset MT_System.Collections.ObjectModel.ReadOnlyCollection`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]]
+call      000000000000EFB0
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 000000000000B498
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      0000000000000010
+mov       rcx,rbx
+mov       rsi,[rsi+20]
+call      qword ptr [3048]
+test      eax,eax
+setle     al
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      qword ptr [0B8D0]
+mov       rsi,rax
+mov       rax,25FA9812590
+mov       rdi,[rax]
+xor       eax,eax
+cmp       dword ptr [rdi+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 000000000000B44C
+call      qword ptr [0BC48]
+mov       rcx,rax
+mov       rdx,25FA98128A8
+mov       rdx,[rdx]
+call      qword ptr [0BD98]
+mov       rcx,rdi
+mov       edx,3
+call      qword ptr [0D4E0]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      000000000000EFB0
+mov       rbx,rax
+call      qword ptr [0B870]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [0BD08]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [0FB28]
+mov       rcx,rbx
+call      0000000000006AD0
+mov       ecx,14
+call      qword ptr [7360]
+int       3
+
+System.Linq.Enumerable.TryGetNonEnumeratedCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, Int32 ByRef)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rdi,rdi
+je        near ptr 000000000000BCAF
+mov       rbp,[rsi+10]
+mov       rcx,[rbp+20]
+test      rcx,rcx
+je        short 000000000000BB80
+jmp       short 000000000000BB95
+mov       rcx,rsi
+mov       rdx,7FF82F254B48
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       r14,rax
+test      r14,r14
+je        short 000000000000BBD2
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],38
+jle       short 000000000000BBDD
+mov       r11,[rcx+38]
+test      r11,r11
+je        short 000000000000BBDD
+mov       rcx,r14
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,[rbp+28]
+test      rcx,rcx
+je        short 000000000000BBF4
+jmp       short 000000000000BC09
+mov       rcx,rsi
+mov       rdx,7FF82F254DE8
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000BBBA
+mov       rcx,rsi
+mov       rdx,offset System.Reflection.PseudoCustomAttribute.IsDefined(System.RuntimeType, System.RuntimeType)
+call      0000000000000CA0
+mov       rcx,rax
+mov       rdx,rdi
+call      qword ptr [5810]
+mov       rbp,rax
+test      rbp,rbp
+je        short 000000000000BC4F
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+8],30
+jle       short 000000000000BC76
+mov       r11,[rcx+30]
+test      r11,r11
+je        short 000000000000BC76
+mov       rcx,rbp
+mov       edx,1
+call      qword ptr [r11]
+test      eax,eax
+jl        short 000000000000BC4F
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rdx,rdi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+jne       short 000000000000BC8D
+xor       eax,eax
+mov       [rbx],eax
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rcx,rsi
+mov       rdx,7FF82F254DD0
+call      0000000000000CA0
+mov       r11,rax
+jmp       short 000000000000BC2E
+mov       rcx,rax
+mov       r11,7FF82E9D0888
+call      qword ptr [r11]
+mov       [rbx],eax
+mov       eax,1
+add       rsp,30
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       ecx,10
+call      qword ptr [0B780]
+int       3
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+test      rsi,rsi
+jne       short 000000000000BD97
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,rsi
+mov       rcx,offset MT_System.Collections.ICollection
+call      qword ptr [5810]
+test      rax,rax
+je        short 000000000000BDC5
+mov       rcx,rax
+mov       r11,7FF82E9D08A8
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       qword ptr [r11]
+xor       edi,edi
+mov       rcx,rsi
+mov       r11,7FF82E9D0898
+call      qword ptr [r11]
+mov       rsi,rax
+mov       rcx,rsi
+mov       r11,7FF82E9D08A0
+call      qword ptr [r11]
+test      eax,eax
+je        short 000000000000BE07
+add       edi,1
+jo        short 000000000000BE10
+mov       rcx,rsi
+mov       r11,7FF82E9D08A0
+call      qword ptr [r11]
+test      eax,eax
+jne       short 000000000000BDEE
+mov       eax,edi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      0000000000002090
+int       3
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 000000000000E3E0
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 000000000000E3E0
+mov       ecx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E3CE
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E3E0
+jmp       short 000000000000E3D8
+call      qword ptr [7AF8]
+test      eax,eax
+je        short 000000000000E3E0
+inc       r15d
+cmp       ebx,r15d
+jg        short 000000000000E3AA
+test      dil,2
+je        near ptr 000000000000E468
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 000000000000E468
+test      r14d,r14d
+jl        short 000000000000E439
+test      r15d,r15d
+jl        short 000000000000E439
+cmp       ebx,r14d
+jle       short 000000000000E439
+mov       ecx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E42D
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E468
+dec       r14d
+cmp       r14d,r15d
+jge       short 000000000000E401
+jmp       short 000000000000E468
+call      qword ptr [7AF8]
+test      eax,eax
+je        short 000000000000E468
+jmp       short 000000000000E423
+cmp       r14d,ebx
+jae       short 000000000000E4B4
+mov       ecx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 000000000000E499
+mov       ecx,ecx
+mov       rax,7FF878967C50
+test      byte ptr [rcx+rax],80
+je        short 000000000000E468
+dec       r14d
+cmp       r14d,r15d
+jge       short 000000000000E439
+mov       r8d,r14d
+sub       r8d,r15d
+inc       r8d
+cmp       ebx,r8d
+jne       short 000000000000E486
+mov       rax,rsi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+test      r8d,r8d
+je        short 000000000000E4A5
+mov       rcx,rsi
+mov       edx,r15d
+call      qword ptr [0D360]
+jmp       short 000000000000E479
+call      qword ptr [7AF8]
+test      eax,eax
+je        short 000000000000E468
+jmp       short 000000000000E460
+mov       rax,25FA9802028
+mov       rax,[rax]
+jmp       short 000000000000E479
+call      00000000000023D0
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

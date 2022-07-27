@@ -13,10 +13,10 @@
 // ***********************************************************************
 using System;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Running;
-using BenchmarkDotNet.Toolchains.CsProj;
 using DotNetTips.Spargine.Core.BenchmarkTests.Logging;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -35,7 +35,10 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			try
 			{
-				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60));
+				var config = DefaultConfig.Instance
+				 .AddJob(Job.Default.WithRuntime(CoreRuntime.Core60))
+				 .AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
+
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 

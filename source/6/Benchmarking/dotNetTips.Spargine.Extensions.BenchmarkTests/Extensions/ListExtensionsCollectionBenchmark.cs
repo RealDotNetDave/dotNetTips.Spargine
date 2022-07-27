@@ -19,14 +19,12 @@ using System.Linq;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
-using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
-
 	[BenchmarkCategory(Categories.Collections)]
 	public class ListExtensionsCollectionBenchmark : LargeCollectionBenchmark
 	{
@@ -75,6 +73,14 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Index [] for comparison")]
+		public void Index()
+		{
+			var result = base.GetPersonProperArray(Tristate.False).ToList()[this.Count / 2];
+
+			base.Consumer.Consume(result);
+		}
+
 		[Benchmark(Description = nameof(ListExtensions.HasItems))]
 		[BenchmarkCategory(Categories.Collections)]
 		public void HasItems()
@@ -119,17 +125,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
 
 			base.Consumer.Consume(count);
-		}
-
-		[Benchmark(Description = "Slice Test")]
-		[BenchmarkCategory(Categories.Collections)]
-		public void PickRandom02()
-		{
-			var people = new ArraySegment<PersonProper>(base.GetPersonProperArray(Tristate.False, CollectionSize.Half));
-
-			var result = people.Slice(RandomData.GenerateInteger(0, people.Count - 1));
-
-			base.Consumer.Consume(result);
 		}
 
 		public override void Setup()

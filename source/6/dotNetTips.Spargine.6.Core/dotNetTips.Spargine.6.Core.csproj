@@ -4,7 +4,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2022.6.7.17</AssemblyVersion>
+		<AssemblyVersion>2022.6.8.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -20,7 +20,7 @@
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2022.6.7.17</FileVersion>
+		<FileVersion>2022.6.8.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -44,7 +44,7 @@
 		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFramework>net6.0</TargetFramework>
-		<Version>2022.6.7.17</Version>
+		<Version>2022.6.8.1</Version>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 	</PropertyGroup>
 

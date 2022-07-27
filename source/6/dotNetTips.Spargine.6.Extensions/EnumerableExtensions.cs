@@ -192,16 +192,25 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Processes the <see cref="IEnumerable{T}" /> with the specified action in parallel processing.
-		/// Validates that <paramref name="collection" /> and <paramref name="action" /> is not null.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
+		/// <typeparam name="T">Generic type</typeparam>
 		/// <param name="collection">The source.</param>
-		/// <param name="action">The action.</param>
+		/// <param name="action">The action to perform.</param>
 		/// <param name="maxDegreeOfParallelism">The maximum degree of parallelism.</param>
 		/// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
 		/// <param name="scheduler">The scheduler.</param>
 		/// <returns>Task.</returns>
+		/// <exception cref="ArgumentInvalidException">collection cannot be null.</exception>
+		/// <exception cref="ArgumentInvalidException">action cannot be null.</exception>
 		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
+		/// <example>
+		/// <code>
+		/// var task = people.FastParallelProcessor((Person person) =>
+		///			{
+		///				person.Address2 = "TEST DATA";
+		///			}, App.MaxDegreeOfParallelism());
+		/// </code>
+		/// </example>
 		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> collection, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{

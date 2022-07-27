@@ -4,7 +4,7 @@
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2022.6.5.31</AssemblyVersion>
+		<AssemblyVersion>2022.6.8.3</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -20,7 +20,7 @@
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2022.6.5.31</FileVersion>
+		<FileVersion>2022.6.8.3</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -41,8 +41,8 @@
 		<SelfContained>true</SelfContained>
 		<SignAssembly>False</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<TargetFramework>net6.0</TargetFramework>
-		<Version>2022.6.5.31</Version>
+		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
+		<Version>2022.6.8.3</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -57,11 +57,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
-		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.7.17" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.7.17" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.7.17" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1.1823" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1.1823" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.8.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.8.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.8.1" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -1,11 +1,11 @@
 ﻿using System;
 using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Running;
-using BenchmarkDotNet.Toolchains.CsProj;
 
-namespace DotNetTips.Spargine.BenchmarkTests
+namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	/// <summary>
 	/// Class Program.
@@ -20,7 +20,10 @@ namespace DotNetTips.Spargine.BenchmarkTests
 		{
 			try
 			{
-				var config = DefaultConfig.Instance.AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.NetCoreApp60));
+				ManualConfig config = DefaultConfig.Instance
+				.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
+				.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 

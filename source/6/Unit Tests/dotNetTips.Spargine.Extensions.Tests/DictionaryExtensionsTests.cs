@@ -204,6 +204,16 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.HasItems());
 		}
 
+		[TestMethod]
+		public void ToConcurrentDictionaryTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+
+			var result = people.ToConcurrentDictionary();
+
+			Assert.IsTrue(result.HasItems());
+		}
+
 		/// <summary>
 		/// Defines the test method UpsertDictionaryTest.
 		/// </summary>

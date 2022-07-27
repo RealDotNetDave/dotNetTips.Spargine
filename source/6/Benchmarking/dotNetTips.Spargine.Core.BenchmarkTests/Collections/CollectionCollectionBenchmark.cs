@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections
 		[Benchmark(Description = "Collection.Create: Count")]
 		public void CollectionCreate01()
 		{
-			var result = Collection<Person>.Create(Count);
+			var result = Collection<Person>.Create(this.Count);
 
 			base.Consumer.Consume(result);
 		}

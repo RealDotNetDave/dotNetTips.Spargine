@@ -89,6 +89,11 @@ namespace DotNetTips.Spargine.Benchmarking
 		protected const string SuccessText = "success";
 
 		/// <summary>
+		/// The failed text
+		/// </summary>
+		protected const string FailedText = "failed";
+
+		/// <summary>
 		/// The test email lower case
 		/// </summary>
 		protected const string TestEmailLowerCase = "fake@fakelive.com";
@@ -184,6 +189,18 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value>The person proper02.</value>
 		protected PersonProper PersonProper02 { get; private set; }
+
+		/// <summary>
+		/// Gets the person value01.
+		/// </summary>
+		/// <value>The person value01.</value>
+		protected Tester.Models.ValueTypes.Person PersonValue01 { get; private set; }
+
+		/// <summary>
+		/// Gets the person value02.
+		/// </summary>
+		/// <value>The person value02.</value>
+		protected Tester.Models.ValueTypes.Person PersonValue02 { get; private set; }
 
 		/// <summary>
 		/// Gets the person record01.
@@ -346,6 +363,10 @@ namespace DotNetTips.Spargine.Benchmarking
 			this.PersonProper01 = RandomData.GenerateRefPerson<PersonProper>();
 
 			this.PersonProper02 = RandomData.GenerateRefPerson<PersonProper>();
+
+			this.PersonValue01 = RandomData.GenerateValPerson();
+
+			this.PersonValue02 = RandomData.GenerateValPerson();
 
 			this.PersonRecord01 = RandomData.GeneratePersonRecordCollection(1).First();
 

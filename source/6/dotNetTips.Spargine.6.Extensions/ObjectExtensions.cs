@@ -99,21 +99,18 @@ namespace DotNetTips.Spargine.Extensions
 			obj = obj.ArgumentNotNull();
 
 			// Create a SHA256
-			using (var sha256Hash = SHA256.Create())
+			// ComputeHash - returns byte array
+			var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(obj.ToJson()));
+
+			// Convert byte array to a string
+			var sb = new StringBuilder();
+
+			for (var byteIndex = 0; byteIndex < bytes.Length; byteIndex++)
 			{
-				// ComputeHash - returns byte array
-				var bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(obj.ToJson()));
-
-				// Convert byte array to a string
-				var sb = new StringBuilder();
-
-				for (var byteIndex = 0; byteIndex < bytes.Length; byteIndex++)
-				{
-					_ = sb.Append(bytes[byteIndex].ToString("x2", CultureInfo.InvariantCulture));
-				}
-
-				return sb.ToString();
+				_ = sb.Append(bytes[byteIndex].ToString("x2", CultureInfo.InvariantCulture));
 			}
+
+			return sb.ToString();
 		}
 
 		/// <summary>

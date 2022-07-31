@@ -26,7 +26,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		[Benchmark(Description = "Creating: " + nameof(Person))]
 		public void CreatePerson01()
 		{
-			var person = RandomData.GenerateRefPerson<Person>();
+			Person person = RandomData.GenerateRefPerson<Person>();
 
 			base.Consumer.Consume(person);
 		}
@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		[Benchmark(Description = "Creating: " + nameof(PersonProper))]
 		public void CreatePerson04()
 		{
-			var person = RandomData.GenerateRefPerson<PersonProper>();
+			PersonProper person = RandomData.GenerateRefPerson<PersonProper>();
 
 			base.Consumer.Consume(person);
 		}
@@ -42,7 +42,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		[Benchmark(Description = "Creating: " + nameof(PersonRecord))]
 		public void CreatePerson05()
 		{
-			var person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
+			PersonRecord person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 
 			base.Consumer.Consume(person);
 		}
@@ -50,7 +50,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		[Benchmark(Description = "PropertiesToString(): " + nameof(PersonProper))]
 		public void PropertiesToString01()
 		{
-			var person = RandomData.GenerateRefPerson<PersonProper>();
+			PersonProper person = RandomData.GenerateRefPerson<PersonProper>();
 
 			base.Consumer.Consume(person.PropertiesToString());
 		}
@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		[Benchmark(Description = "PropertiesToString(): " + nameof(PersonRecord))]
 		public void PropertiesToString02()
 		{
-			var person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
+			PersonRecord person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 
 			base.Consumer.Consume(person.PropertiesToString());
 		}

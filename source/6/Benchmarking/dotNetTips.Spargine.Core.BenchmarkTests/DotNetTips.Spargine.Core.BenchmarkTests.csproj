@@ -2,9 +2,10 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
-		<AssemblyVersion>2022.6.5.31</AssemblyVersion>
-		<FileVersion>2022.6.5.31</FileVersion>
+		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyVersion>2022.6.8.9</AssemblyVersion>
+		<FileVersion>2022.6.8.9</FileVersion>
 		<NullableContextOptions>enable</NullableContextOptions>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<ServerGarbageCollection>true</ServerGarbageCollection>
@@ -23,11 +24,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.1.1823" />
-		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1.1823" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.8.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.8.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.8.1" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.8.9" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.8.9" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.8.9" />
 		<PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
 	</ItemGroup>
 

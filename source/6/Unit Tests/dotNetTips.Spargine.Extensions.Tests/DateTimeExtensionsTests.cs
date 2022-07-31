@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.Intersects(endDate: now.AddDays(100), intersectingStartDate: now.AddDays(1), intersectingEndDate: now.AddDays(10));
 
-			PrintResult(result, nameof(this.DateTimeIntersectsTest));
+			//PrintResult(result, nameof(this.DateTimeIntersectsTest));
 
 			Assert.IsTrue(result);
 		}
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.IsInRange(beginningTime: new DateTime(1970), endTime: now.AddDays(10));
 
-			PrintResult(result, nameof(this.DateTimeIsInRangeTest));
+			//PrintResult(result, nameof(this.DateTimeIsInRangeTest));
 
 			Assert.IsTrue(result);
 		}
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.LocalTimeFromUtc(timezoneFromUtc: -5);
 
-			PrintResult(result, nameof(this.DateTimeLocalTimeFromUtcTest));
+			//PrintResult(result, nameof(this.DateTimeLocalTimeFromUtcTest));
 
 			Assert.IsTrue(result >= now);
 		}
@@ -69,7 +69,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
 
-			PrintResult(result, nameof(this.DateTimeMaxTest));
+			//PrintResult(result, nameof(this.DateTimeMaxTest));
 
 			Assert.IsTrue(result == now);
 		}
@@ -81,7 +81,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.NextDayOfWeek(DayOfWeek.Sunday);
 
-			PrintResult(result, nameof(this.DateTimeNextDayOfTheWeekTest));
+			//PrintResult(result, nameof(this.DateTimeNextDayOfTheWeekTest));
 
 			Assert.IsTrue(result >= now);
 		}
@@ -92,7 +92,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = DateTimeOffset.Now.GetLastDayOfWeek(DayOfWeek.Monday);
 
-			PrintResult(result, nameof(this.DateTimeOffsetGetLastDayOfWeekTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetGetLastDayOfWeekTest));
 
 			Assert.IsTrue(result <= DateTime.Now);
 		}
@@ -102,7 +102,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = DateTimeOffset.Now.GetNextDayOfWeek(DayOfWeek.Monday);
 
-			PrintResult(result, nameof(this.DateTimeOffsetGetNextDayOfWeekTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetGetNextDayOfWeekTest));
 
 			Assert.IsTrue(result >= DateTime.Now);
 		}
@@ -114,7 +114,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.Intersects(now.AddDays(100), now.AddDays(1), now.AddDays(10));
 
-			PrintResult(result, nameof(this.DateTimeOffsetIntersectsTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetIntersectsTest));
 
 			Assert.IsTrue(result);
 		}
@@ -126,7 +126,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(10));
 
-			PrintResult(result, nameof(this.DateTimeOffsetIsInRangeTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetIsInRangeTest));
 
 			Assert.IsTrue(result);
 		}
@@ -138,7 +138,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
 
-			PrintResult(result, nameof(this.DateTimeOffsetMaxTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetMaxTest));
 
 			Assert.IsTrue(result == now);
 		}
@@ -150,7 +150,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.NextDayOfWeek(DayOfWeek.Sunday);
 
-			PrintResult(result, nameof(this.DateTimeOffsetNextDayOfTheWeekTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetNextDayOfTheWeekTest));
 
 			Assert.IsTrue(result >= now);
 		}
@@ -160,7 +160,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = DateTimeOffset.Now.ToFriendlyDateString();
 
-			PrintResult(result, nameof(this.DateTimeOffsetToFriendlyStringTest));
+			//PrintResult(result, nameof(this.DateTimeOffsetToFriendlyStringTest));
 
 			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 		}
@@ -172,103 +172,103 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.ToFormattedString(DateTimeFormat.FullDateLongTime);
 
-			PrintResult(result, nameof(DateTimeFormat.FullDateLongTime));
+			//PrintResult(result, nameof(DateTimeFormat.FullDateLongTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.FullDateShortTime);
 
-			PrintResult(result, nameof(DateTimeFormat.FullDateShortTime));
+			//PrintResult(result, nameof(DateTimeFormat.FullDateShortTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.FullDateTime);
 
-			PrintResult(result, nameof(DateTimeFormat.FullDateTime));
+			//PrintResult(result, nameof(DateTimeFormat.FullDateTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.GeneralDateLongTime);
 
-			PrintResult(result, nameof(DateTimeFormat.GeneralDateLongTime));
+			//PrintResult(result, nameof(DateTimeFormat.GeneralDateLongTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.GeneralDateShortTime);
 
-			PrintResult(result, nameof(DateTimeFormat.GeneralDateShortTime));
+			//PrintResult(result, nameof(DateTimeFormat.GeneralDateShortTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.Jan01Comma2020);
 
-			PrintResult(result, nameof(DateTimeFormat.Jan01Comma2020));
+			//PrintResult(result, nameof(DateTimeFormat.Jan01Comma2020));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.Janurary01Comma2020);
 
-			PrintResult(result, nameof(DateTimeFormat.Janurary01Comma2020));
+			//PrintResult(result, nameof(DateTimeFormat.Janurary01Comma2020));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.LongDate);
 
-			PrintResult(result, nameof(DateTimeFormat.LongDate));
+			//PrintResult(result, nameof(DateTimeFormat.LongDate));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.LongTime);
 
-			PrintResult(result, nameof(DateTimeFormat.LongTime));
+			//PrintResult(result, nameof(DateTimeFormat.LongTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.MonthDay);
 
-			PrintResult(result, nameof(DateTimeFormat.MonthDay));
+			//PrintResult(result, nameof(DateTimeFormat.MonthDay));
 
 			Assert.IsTrue(result.Length > 4);
 
 			result = now.ToFormattedString(DateTimeFormat.RFC1123);
 
-			PrintResult(result, nameof(DateTimeFormat.RFC1123));
+			//PrintResult(result, nameof(DateTimeFormat.RFC1123));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.RoundTripDateTime);
 
-			PrintResult(result, nameof(DateTimeFormat.RoundTripDateTime));
+			//PrintResult(result, nameof(DateTimeFormat.RoundTripDateTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.ShortDate);
 
-			PrintResult(result, nameof(DateTimeFormat.ShortDate));
+			//PrintResult(result, nameof(DateTimeFormat.ShortDate));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.ShortTime);
 
-			PrintResult(result, nameof(DateTimeFormat.ShortTime));
+			//PrintResult(result, nameof(DateTimeFormat.ShortTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.SortableDateTime);
 
-			PrintResult(result, nameof(DateTimeFormat.SortableDateTime));
+			//PrintResult(result, nameof(DateTimeFormat.SortableDateTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.UniversalFullDateTime);
 
-			PrintResult(result, nameof(DateTimeFormat.UniversalFullDateTime));
+			//PrintResult(result, nameof(DateTimeFormat.UniversalFullDateTime));
 
 			Assert.IsTrue(result.Length > 5);
 
 			result = now.ToFormattedString(DateTimeFormat.MonthYear);
 
-			PrintResult(result, nameof(DateTimeFormat.MonthYear));
+			//PrintResult(result, nameof(DateTimeFormat.MonthYear));
 
 			Assert.IsTrue(result.Length > 5);
 		}
@@ -278,7 +278,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var result = DateTime.Now.ToFriendlyDateString();
 
-			PrintResult(result, nameof(this.DateTimeToFriendlyStringTest));
+			//PrintResult(result, nameof(this.DateTimeToFriendlyStringTest));
 
 			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 		}
@@ -345,7 +345,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.Multiply(10));
 
-			PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
+			//PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
 
 			Assert.IsTrue(result);
 		}
@@ -356,7 +356,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var currentTime = DateTime.Now;
 			var epochTime = currentTime.ToMilliEpochTime();
 
-			PrintResult(epochTime, nameof(this.ToFromMilliEpochTimeTest));
+			//PrintResult(epochTime, nameof(this.ToFromMilliEpochTimeTest));
 
 			Assert.IsTrue(epochTime > 0);
 
@@ -365,7 +365,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
 
-			PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
+			//PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
 		}
 
 		[TestMethod]
@@ -375,7 +375,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var epochTime = currentTime.ToUnixTime();
 
-			PrintResult(epochTime, nameof(this.ToFromUnixTimeTest));
+			//PrintResult(epochTime, nameof(this.ToFromUnixTimeTest));
 
 			Assert.IsTrue(epochTime > 0);
 
@@ -384,7 +384,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
 
-			PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
+			//PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
 		}
 	}
 }

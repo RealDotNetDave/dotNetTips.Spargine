@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,6 +32,17 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class EnumerableExtensions
 	{
+
+		/// <summary>
+		/// Gets the random.
+		/// </summary>
+		/// <returns>System.Int32.</returns>
+		/// <value>The random.</value>
+		private static int GenerateRandomNumber()
+		{
+			return RandomNumberGenerator.GetInt32(int.MaxValue);
+		}
+
 		/// <summary>
 		/// Adds the specified item to the <see cref="IEnumerable{T}" />.
 		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
@@ -118,11 +129,6 @@ namespace DotNetTips.Spargine.Extensions
 				return 0;
 			}
 
-			if (collection is ICollection)
-			{
-				return collection.Count();
-			}
-
 			var count = 0;
 
 			IEnumerator enumerator = collection.GetEnumerator();
@@ -202,15 +208,15 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>Task.</returns>
 		/// <exception cref="ArgumentInvalidException">collection cannot be null.</exception>
 		/// <exception cref="ArgumentInvalidException">action cannot be null.</exception>
-		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
 		/// <example>
-		/// <code>
-		/// var task = people.FastParallelProcessor((Person person) =>
-		///			{
-		///				person.Address2 = "TEST DATA";
-		///			}, App.MaxDegreeOfParallelism());
+		///   <code>
+		/// var task = people.FastParallelProcessor((Person person) =&gt;
+		/// {
+		/// person.Address2 = "TEST DATA";
+		/// }, App.MaxDegreeOfParallelism());
 		/// </code>
 		/// </example>
+		/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
 		[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 		public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> collection, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 		{
@@ -461,30 +467,6 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Shuffles the specified <see cref="List{T}" />.
-		/// Validates that <paramref name="collection" /> contains items.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="collection">The items.</param>
-		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		/// <exception cref="ArgumentNullException">list</exception>
-		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, UnitTestCoverage = 100)]
-		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection)
-		{
-			return collection.ArgumentItemsExists().OrderBy(random => GenerateRandomNumber());
-		}
-
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <returns>System.Int32.</returns>
-		/// <value>The random.</value>
-		private static int GenerateRandomNumber()
-		{
-			return RandomNumberGenerator.GetInt32(int.MaxValue);
-		}
-
-		/// <summary>
 		/// Orders <see cref="IEnumerable{T}" /> by <see cref="StringComparer.Ordinal" />
 		/// Validates that <paramref name="collection" /> and <paramref name="keySelector" /> is not null.
 		/// </summary>
@@ -548,6 +530,20 @@ namespace DotNetTips.Spargine.Extensions
 			var index = RandomNumberGenerator.GetInt32(0, collection.Count() - 1);
 
 			return collection.ElementAt(index);
+		}
+
+		/// <summary>
+		/// Shuffles the specified <see cref="List{T}" />.
+		/// Validates that <paramref name="collection" /> contains items.
+		/// </summary>
+		/// <typeparam name="T">Generic type parameter.</typeparam>
+		/// <param name="collection">The items.</param>
+		/// <returns>IEnumerable&lt;T&gt;.</returns>
+		/// <exception cref="ArgumentNullException">list</exception>
+		[Information(nameof(Shuffle), "David McCarter", "8/26/2020", "8/26/2020", BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, UnitTestCoverage = 100)]
+		public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection)
+		{
+			return collection.ArgumentItemsExists().OrderBy(random => GenerateRandomNumber());
 		}
 
 		/// <summary>
@@ -697,11 +693,19 @@ namespace DotNetTips.Spargine.Extensions
 				return string.Empty;
 			}
 
-			var sb = new StringBuilder(collection.Count() * 10);
+			var sb = new StringBuilder(collection.Count());
 
-			collection.ToList().ForEach(item => _ = sb.Append($"{item}{delimiter}".ToString(CultureInfo.CurrentCulture)));
+			foreach (T item in collection)
+			{
+				if (sb.Length > 0)
+				{
+					_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
+				}
 
-			return sb.ToString(0, sb.ToString().ToTrimmed().Length - 1);
+				_ = sb.Append($"{item}".ToString(CultureInfo.CurrentCulture));
+			}
+
+			return sb.ToString().Trim();
 		}
 
 		/// <summary>
@@ -787,5 +791,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return items;
 		}
+
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 12-05-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-27-2022
+// Last Modified On : 07-28-2022
 // ***********************************************************************
 // <copyright file="SerializationBenchmark.cs" company="DotNetTips.Utility.Benchmarks">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -36,7 +36,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[BenchmarkCategory(Categories.XML)]
 		public void Deserialize01()
 		{
-			var result = XmlSerialization.Deserialize<PersonProper>(Resources.PersonProperXml);
+			PersonProper result = XmlSerialization.Deserialize<PersonProper>(Resources.PersonProperXml);
 
 			base.Consumer.Consume(result);
 		}
@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[BenchmarkCategory(Categories.XML)]
 		public void Deserialize02()
 		{
-			var result = XmlSerialization.Deserialize<PersonRecord>(Resources.PersonRecordXml);
+			PersonRecord result = XmlSerialization.Deserialize<PersonRecord>(Resources.PersonRecordXml);
 
 			base.Consumer.Consume(result);
 		}
@@ -59,7 +59,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonRecord")]
 		public void Deserialize03()
 		{
-			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonRecordJson);
+			PersonRecord result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonRecordJson);
 
 			base.Consumer.Consume(result);
 		}
@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonProper")]
 		public void Deserialize04()
 		{
-			var result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonProperJson);
+			PersonRecord result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonProperJson);
 
 			base.Consumer.Consume(result);
 		}
@@ -126,7 +126,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[BenchmarkCategory(Categories.XML)]
 		public void StringToXDocument()
 		{
-			var result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
+			System.Xml.Linq.XDocument result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
 
 			base.Consumer.Consume(result);
 		}

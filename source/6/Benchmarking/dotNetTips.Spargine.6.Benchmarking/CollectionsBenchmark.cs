@@ -47,7 +47,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <returns>PersonProper[].</returns>
 		protected virtual PersonProper[] GetPeopleToInsert()
 		{
-			return this._peopleToInsert.Clone<PersonProper[]>();
+			return this._peopleToInsert;
 		}
 
 		/// <summary>
@@ -67,7 +67,7 @@ namespace DotNetTips.Spargine.Benchmarking
 			this.LoadPersonRefArray();
 			this.LoadPersonValArray();
 
-			this._peopleToInsert = new List<PersonProper>(this.GetPersonProperArray(Core.Tristate.False)).Shuffle(Math.Max(2, this.MaxCount / 2)).ToArray();
+			this._peopleToInsert = new List<PersonProper>(this.GetPersonProperArray().Shuffle(Math.Max(2, this.MaxCount / 2))).ToArray();
 		}
 
 		/// <summary>

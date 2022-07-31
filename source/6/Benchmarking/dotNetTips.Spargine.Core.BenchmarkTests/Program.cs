@@ -17,7 +17,6 @@ using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Loggers;
 using BenchmarkDotNet.Running;
-using DotNetTips.Spargine.Core.BenchmarkTests.Logging;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -35,16 +34,18 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			try
 			{
-				var config = DefaultConfig.Instance
-				 .AddJob(Job.Default.WithRuntime(CoreRuntime.Core60))
-				 .AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
+				//ManualConfig config = DefaultConfig.Instance
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+
+				ManualConfig config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				BenchmarkRunner.Run<LoggingBenchmark>(config);
+				//BenchmarkRunner.Run<LoggingBenchmark>(config);
 
 				Console.Beep();
 				_ = Console.ReadLine();

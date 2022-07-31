@@ -74,27 +74,25 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Gets <see cref="PersonProper" /> array.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>PersonProper[].</returns>
-		public PersonProper[] GetPersonProperArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public PersonProper[] GetPersonProperArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize == CollectionSize.Full
-				? clone is Tristate.True or Tristate.UseDefault ? this._personProperRefArray.Clone<PersonProper[]>() : this._personProperRefArray
-				: clone is Tristate.True or Tristate.UseDefault ? this._personProperRefArrayHalf.Clone<PersonProper[]>() : this._personProperRefArrayHalf;
+				? this._personProperRefArray.Clone<PersonProper[]>()
+				: this._personProperRefArrayHalf.Clone<PersonProper[]>();
 		}
 
 		/// <summary>
 		/// Gets <see cref="PersonProper" /> dictionary.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Dictionary&lt;System.String, PersonProper&gt;.</returns>
-		public Dictionary<string, PersonProper> GetPersonProperDictionary(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public Dictionary<string, PersonProper> GetPersonProperDictionary(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
-				? clone is Tristate.True or Tristate.UseDefault ? this._personProperDictionary.Clone<Dictionary<string, PersonProper>>() : this._personProperDictionary
-				: clone is Tristate.True or Tristate.UseDefault ? this._personProperDictionaryHalf.Clone<Dictionary<string, PersonProper>>() : this._personProperDictionaryHalf;
+				? this._personProperDictionary.Clone<Dictionary<string, PersonProper>>()
+				: this._personProperDictionaryHalf.Clone<Dictionary<string, PersonProper>>();
 		}
 	}
 }

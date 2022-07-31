@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -335,16 +335,15 @@ namespace DotNetTips.Spargine.Core
 
 			var sb = new StringBuilder();
 
-			list.ToList()
-				.ForEach(item =>
+			foreach (T item in list)
+			{
+				if (sb.Length > 0)
 				{
-					if (sb.Length > 0)
-					{
-						_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
-					}
+					_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
+				}
 
-					_ = sb.Append(item.ToString());
-				});
+				_ = sb.Append($"{item}".ToString(CultureInfo.CurrentCulture));
+			}
 
 			return sb.ToString();
 		}

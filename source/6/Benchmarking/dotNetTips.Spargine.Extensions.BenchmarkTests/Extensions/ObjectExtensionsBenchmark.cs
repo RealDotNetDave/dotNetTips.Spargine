@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.As) + ": IPerson")]
 		public void As()
 		{
-			var result = this._personProper.As<IPerson>();
+			IPerson result = this._personProper.As<IPerson>();
 
 			base.Consumer.Consume(result);
 		}
@@ -40,7 +40,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.Clone) + ": PersonProper")]
 		public void Clone01()
 		{
-			var result = this._personProper.Clone<PersonProper>();
+			PersonProper result = this._personProper.Clone<PersonProper>();
 
 			base.Consumer.Consume(result);
 		}
@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = "Clone: PersonRecord*")]
 		public void Clone03()
 		{
-			var result = this._personRecord with { };
+			PersonRecord result = this._personRecord with { };
 
 			base.Consumer.Consume(result);
 		}
@@ -81,7 +81,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = "PersonRecord: Duplication with new ID")]
 		public void Duplicate01()
 		{
-			var result = this._personRecord with { Id = "12345678" };
+			PersonRecord result = this._personRecord with { Id = "12345678" };
 
 			base.Consumer.Consume(result);
 		}
@@ -89,7 +89,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.FromJson))]
 		public void FromJson()
 		{
-			var result = this._peopleJson.FromJson<PersonProper>();
+			PersonProper result = this._peopleJson.FromJson<PersonProper>();
 
 			base.Consumer.Consume(result);
 		}
@@ -145,7 +145,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = "PersonRecord: ToString()")]
 		public void PersonRecordToString01()
 		{
-			var person = this._personRecord;
+			PersonRecord person = this._personRecord;
 
 			var result = person.ToString();
 
@@ -155,9 +155,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonProper-Ignore Nulls")]
 		public void PropertiesToDictionary01()
 		{
-			var person = this._personProper;
+			PersonProper person = this._personProper;
 
-			var result = person.PropertiesToDictionary(ignoreNulls: true);
+			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: true);
 
 			base.Consumer.Consume(result);
 		}
@@ -165,9 +165,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonProper-With Nulls")]
 		public void PropertiesToDictionary02()
 		{
-			var person = this._personProper;
+			PersonProper person = this._personProper;
 
-			var result = person.PropertiesToDictionary(ignoreNulls: false);
+			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: false);
 
 			base.Consumer.Consume(result);
 		}
@@ -175,9 +175,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonRecord-With Nulls")]
 		public void PropertiesToDictionary04()
 		{
-			var person = this._personRecord;
+			PersonRecord person = this._personRecord;
 
-			var result = person.PropertiesToDictionary(ignoreNulls: false);
+			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: false);
 
 			base.Consumer.Consume(result);
 		}
@@ -185,9 +185,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonRecord-Ignore Nulls")]
 		public void PropertiesToDictionary05()
 		{
-			var person = this._personRecord;
+			PersonRecord person = this._personRecord;
 
-			var result = person.PropertiesToDictionary(ignoreNulls: true);
+			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: true);
 
 			base.Consumer.Consume(result);
 		}
@@ -195,7 +195,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonProper-Ignore Nulls")]
 		public void PropertiesToString01()
 		{
-			var person = this._personProper;
+			PersonProper person = this._personProper;
 
 			var result = person.PropertiesToString(ignoreNulls: true);
 
@@ -205,7 +205,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonProper-With Nulls")]
 		public void PropertiesToString02()
 		{
-			var person = this._personProper;
+			PersonProper person = this._personProper;
 
 			var result = person.PropertiesToString(ignoreNulls: false);
 
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonRecord-Ignore Nulls")]
 		public void PropertiesToString03()
 		{
-			var person = this._personRecord;
+			PersonRecord person = this._personRecord;
 
 			var result = person.PropertiesToString(ignoreNulls: true);
 
@@ -225,7 +225,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonRecord-With Nulls")]
 		public void PropertiesToString04()
 		{
-			var person = this._personRecord;
+			PersonRecord person = this._personRecord;
 
 			var result = person.PropertiesToString(ignoreNulls: false);
 

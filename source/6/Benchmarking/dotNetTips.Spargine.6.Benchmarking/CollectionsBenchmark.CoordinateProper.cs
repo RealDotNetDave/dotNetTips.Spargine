@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using BenchmarkDotNet.Loggers;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.ValueTypes;
@@ -54,15 +53,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Gets <see cref="CoordinateProper" /> array.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>CoordinateProper[].</returns>
-		public CoordinateProper[] GetCoordinateProperArray(
-			Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public CoordinateProper[] GetCoordinateProperArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
-				? clone is Tristate.True or Tristate.UseDefault ? this._coordinateProperArray.Clone<CoordinateProper[]>() : this._coordinateProperArray
-				: clone is Tristate.True or Tristate.UseDefault ? this._coordinateProperArrayHalf.Clone<CoordinateProper[]>() : this._coordinateProperArrayHalf;
+				? this._coordinateProperArray.Clone<CoordinateProper[]>()
+				: this._coordinateProperArrayHalf.Clone<CoordinateProper[]>();
 		}
 	}
 }

@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using BenchmarkDotNet.Loggers;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -76,32 +75,23 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Gets <see cref="Person" /> array.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Person[].</returns>
-		public Person[] GetPersonRefArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public Person[] GetPersonRefArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
-				? clone is Tristate.True or Tristate.UseDefault ? this._personRefArray.Clone<Person[]>() : this._personRefArray
-				: clone is Tristate.True or Tristate.UseDefault ? this._personRefArrayHalf.Clone<Person[]>() : this._personRefArrayHalf;
+				? this._personRefArray.Clone<Person[]>()
+				: this._personRefArrayHalf.Clone<Person[]>();
 		}
 
 		/// <summary>
 		/// Gets <see cref="Person" /> array.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Tester.Models.ValueTypes.Person[].</returns>
-		public Tester.Models.ValueTypes.Person[] GetPersonValArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public Tester.Models.ValueTypes.Person[] GetPersonValArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
-			if (collectionSize is CollectionSize.Full)
-			{
-				return clone is Tristate.True or Tristate.UseDefault ? this._personValArray.Clone<Tester.Models.ValueTypes.Person[]>() : this._personValArray;
-			}
-			else
-			{
-				return clone is Tristate.True or Tristate.UseDefault ? this._personValArrayHalf.Clone<Tester.Models.ValueTypes.Person[]>() : this._personValArrayHalf;
-			}
+			return collectionSize is CollectionSize.Full ? this._personValArray.Clone<Tester.Models.ValueTypes.Person[]>() : this._personValArrayHalf.Clone<Tester.Models.ValueTypes.Person[]>();
 		}
 	}
 }

@@ -20,9 +20,11 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			try
 			{
-				ManualConfig config = DefaultConfig.Instance
-				.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
-				.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+				//ManualConfig config = DefaultConfig.Instance
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+
+				ManualConfig config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
@@ -36,7 +38,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<ExceptionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
-				//BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
+				//BenchmarkRunner.Run<GeneralBenchmark>(config);
 				//BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
 				//BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
 				//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);

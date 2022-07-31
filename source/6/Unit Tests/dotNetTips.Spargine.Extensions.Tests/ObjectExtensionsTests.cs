@@ -72,7 +72,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var result = person.ComputeSha256Hash();
 
-			PrintResult(result, nameof(this.ComputeSha256HashTest));
+			//PrintResult(result, nameof(this.ComputeSha256HashTest));
 
 			Assert.IsFalse(string.IsNullOrEmpty(result));
 		}
@@ -172,7 +172,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
-			PrintResult(result, nameof(this.PropertiesToStringTest));
+			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			result = propertiesTest.PropertiesToString(
 				header: "PersonRecord",
@@ -183,7 +183,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Length > 1300);
 			Assert.IsTrue(result.Contains("Addresses"));
-			PrintResult(result, nameof(this.PropertiesToStringTest));
+			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
@@ -191,7 +191,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Length > 500);
 			Assert.IsTrue(result.Contains("Address1"));
-			PrintResult(result, nameof(this.PropertiesToStringTest));
+			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var coordinate = RandomData.GenerateCoordinate<CoordinateProper>();
 
@@ -199,7 +199,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result.Length > 50);
 			Assert.IsTrue(result.Contains("X"));
-			PrintResult(result, nameof(this.PropertiesToStringTest));
+			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
 			var personCollection = RandomData.GeneratePersonRecordCollection(5);
 

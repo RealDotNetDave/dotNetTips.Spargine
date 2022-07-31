@@ -12,9 +12,11 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Collections.ObjectModel;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -23,11 +25,14 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Collections)]
 	public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionBenchmark
 	{
+
+		private ObservableCollection<PersonProper> _people;
+
 		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems))]
 		[BenchmarkCategory(Categories.Collections)]
 		public void HasItems()
 		{
-			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems();
+			var result = this._people.HasItems();
 
 			base.Consumer.Consume(result);
 		}
@@ -36,7 +41,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[BenchmarkCategory(Categories.Collections)]
 		public void HasItemsWithCount()
 		{
-			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(5);
+			var result = this._people.HasItems(5);
 
 			base.Consumer.Consume(result);
 		}
@@ -45,7 +50,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[BenchmarkCategory(Categories.Collections)]
 		public void HasItemsWithPredicate()
 		{
-			var result = base.GetPersonProperArray(Tristate.False).ToObservableCollection().HasItems(p => p.Age.TotalDays > 5);
+			var result = this._people.HasItems(p => p.Age.TotalDays > 5);
 
 			base.Consumer.Consume(result);
 		}
@@ -53,6 +58,13 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		/// <summary>
 		/// Setups this instance.
 		/// </summary>
-		public override void Setup() { base.Setup(); }
+		public override void Setup()
+		{
+			base.Setup();
+
+			this._people = base.GetPersonProperArray().ToObservableCollection();
+
+		}
+
 	}
 }

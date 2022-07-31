@@ -36,7 +36,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(EnumExtensions.GetItems))]
 		public void GetItems01()
 		{
-			var result = this._testEnum.GetItems();
+			System.Collections.Generic.IList<(string Description, int Value)> result = this._testEnum.GetItems();
 
 			base.Consumer.Consume(result);
 		}

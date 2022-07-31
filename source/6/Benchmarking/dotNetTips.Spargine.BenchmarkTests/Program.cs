@@ -13,9 +13,11 @@ namespace DotNetTips.Spargine.BenchmarkTests
 		{
 			try
 			{
-				ManualConfig config = DefaultConfig.Instance
-						.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
-						.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+				//ManualConfig config = DefaultConfig.Instance
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
+				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+
+				ManualConfig config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);

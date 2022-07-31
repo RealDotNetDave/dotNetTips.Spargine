@@ -30,6 +30,13 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class StringExtensions
 	{
+
+		private static readonly Regex _isGuidRegex = new Regex(
+			@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$",
+			RegexOptions.Compiled);
+
+		private static readonly Regex _isMacAddressRegex = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
+
 		/// <summary>
 		/// Converts a Brotli compressed string as an asynchronous operation.
 		/// </summary>
@@ -710,9 +717,7 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			var reg = new Regex(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled);
-
-			return reg.IsMatch(input);
+			return _isGuidRegex.IsMatch(input);
 		}
 
 		/// <summary>
@@ -739,9 +744,7 @@ namespace DotNetTips.Spargine.Extensions
 				return false;
 			}
 
-			var reg = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
-
-			return reg.IsMatch(input);
+			return _isMacAddressRegex.IsMatch(input);
 		}
 
 		/// <summary>
@@ -1132,5 +1135,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return input.TrimEnd().TrimStart();
 		}
+
 	}
 }

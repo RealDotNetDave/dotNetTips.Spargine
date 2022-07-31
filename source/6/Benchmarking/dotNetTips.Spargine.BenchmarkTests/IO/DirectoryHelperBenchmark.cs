@@ -35,7 +35,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		private readonly DirectoryInfo _tempPath = new(Path.Combine(Path.GetTempPath(), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey()));
 
 		[Benchmark(Description = nameof(DirectoryHelper.AppDataFolder))]
-		public void AppDataFolder01()
+		public void AppDataFolder()
 		{
 			var folder = DirectoryHelper.AppDataFolder();
 
@@ -44,10 +44,10 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 
 		public override void Cleanup()
 		{
+			base.Cleanup();
+
 			DirectoryHelper.DeleteDirectory(this._tempPath, retries: 5);
 			DirectoryHelper.DeleteDirectory(this._sourcePath, retries: 5);
-
-			base.Cleanup();
 		}
 
 		//[Benchmark(Description = "Copy & Delete Directory")]
@@ -99,29 +99,29 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		//	DirectoryHelper.DeleteDirectory(path, 3);
 		//}
 
-		[Benchmark(Description = nameof(DirectoryHelper.LoadOneDriveFolders))]
-		public void LoadOneDriveFolders01()
-		{
-			var folders = DirectoryHelper.LoadOneDriveFolders();
+		//[Benchmark(Description = nameof(DirectoryHelper.LoadOneDriveFolders))]
+		//public void LoadOneDriveFolders01()
+		//{
+		//	System.Collections.Immutable.ImmutableArray<OneDriveFolder> folders = DirectoryHelper.LoadOneDriveFolders();
 
-			base.Consumer.Consume(folders);
-		}
+		//	base.Consumer.Consume(folders);
+		//}
 
 		[Benchmark(Description = nameof(DirectoryHelper.SafeDirectorySearch))]
 		public void SafeDirectorySearch01()
 		{
-			var folders = DirectoryHelper.SafeDirectorySearch(this._sourcePath, "*.*", SearchOption.TopDirectoryOnly);
+			System.Collections.Generic.IEnumerable<DirectoryInfo> folders = DirectoryHelper.SafeDirectorySearch(this._sourcePath, "*.dll", SearchOption.TopDirectoryOnly);
 
 			base.Consumer.Consume(folders);
 		}
 
-		[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
-		public void SafeFileSearch01()
-		{
-			var files = DirectoryHelper.SafeFileSearch(this._sourcePath, "*.*", SearchOption.TopDirectoryOnly);
+		//[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
+		//public void SafeFileSearch01()
+		//{
+		//	System.Collections.Generic.IEnumerable<FileInfo> files = DirectoryHelper.SafeFileSearch(this._sourcePath, "*.dll", SearchOption.TopDirectoryOnly);
 
-			base.Consumer.Consume(files);
-		}
+		//	base.Consumer.Consume(files);
+		//}
 
 		[Benchmark(Description = nameof(DirectoryHelper.SetFileAttributesToNormal))]
 		public void SetFileAttributesToNormal01()

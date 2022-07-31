@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using BenchmarkDotNet.Loggers;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 
@@ -53,14 +52,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Gets <see cref="Tester.Models.ValueTypes.Coordinate" /> array.
 		/// </summary>
-		/// <param name="clone">If set to <see cref="Tristate.UseDefault" /> or <see cref="Tristate.True" />, clones the collection.</param>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Tester.Models.ValueTypes.Coordinate[].</returns>
-		public Tester.Models.ValueTypes.Coordinate[] GetCoordinateArray(Tristate clone = Tristate.True, CollectionSize collectionSize = CollectionSize.Full)
+		public Tester.Models.ValueTypes.Coordinate[] GetCoordinateArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
-				? clone is Tristate.True or Tristate.UseDefault ? this._coordinateArray.Clone<Tester.Models.ValueTypes.Coordinate[]>() : this._coordinateArray
-				: clone is Tristate.True or Tristate.UseDefault ? this._coordinateArrayHalf.Clone<Tester.Models.ValueTypes.Coordinate[]>() : this._coordinateArrayHalf;
+				? this._coordinateArray.Clone<Tester.Models.ValueTypes.Coordinate[]>()
+				: this._coordinateArrayHalf.Clone<Tester.Models.ValueTypes.Coordinate[]>();
 		}
 	}
 }

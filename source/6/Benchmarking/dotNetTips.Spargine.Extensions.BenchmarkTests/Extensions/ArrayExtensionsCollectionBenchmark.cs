@@ -27,9 +27,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.AddFirst))]
 		public void AddFirst01()
 		{
-			var people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperArray();
 
-			var result = people.AddFirst(this.PersonProper01);
+			PersonProper[] result = people.AddFirst(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -37,9 +37,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
 		public void RemoveFirst()
 		{
-			var people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperArray();
 
-			var result = people.RemoveFirst();
+			PersonProper[] result = people.RemoveFirst();
 
 			base.Consumer.Consume(result);
 		}
@@ -47,29 +47,29 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast))]
 		public void RemoveLast()
 		{
-			var people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperArray();
 
-			var result = people.RemoveLast();
-
-			base.Consumer.Consume(result);
-		}
-
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Using Params")]
-		public void AddIfNotExists01()
-		{
-			var people = base.GetPersonProperArray();
-
-			var result = people.AddIfNotExists(this.GetPeopleToInsert());
+			PersonProper[] result = people.RemoveLast();
 
 			base.Consumer.Consume(result);
 		}
+
+		//[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
+		//public void AddIfNotExists()
+		//{
+		//	PersonProper[] people = base.GetPersonProperArray();
+
+		//	PersonProper[] result = people.AddIfNotExists(this.GetPeopleToInsert());
+
+		//	base.Consumer.Consume(result);
+		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.AddLast))]
 		public void AddLast01()
 		{
-			var people = base.GetPersonProperArray(collectionSize: CollectionSize.Half);
+			PersonProper[] people = base.GetPersonProperArray();
 
-			var result = people.AddLast(this.PersonProper01);
+			PersonProper[] result = people.AddLast(this.PersonProper01);
 
 			base.Consumer.Consume(result);
 		}
@@ -77,8 +77,8 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.AreEqual))]
 		public void AreEqual01()
 		{
-			var people1 = base.GetPersonProperArray(Tristate.False);
-			var people2 = base.GetPersonProperArray(Tristate.False, collectionSize: CollectionSize.Half);
+			PersonProper[] people1 = base.GetPersonProperArray();
+			PersonProper[] people2 = base.GetPersonProperArray(collectionSize: CollectionSize.Half);
 
 			var result = people1.AreEqual(people2);
 
@@ -88,7 +88,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ArrayExtensions.GetHashCode))]
 		public void ArrayHashCode01()
 		{
-			var result = base.GetPersonProperArray(Tristate.False, collectionSize: CollectionSize.Half);
+			PersonProper[] result = base.GetPersonProperArray(collectionSize: CollectionSize.Half);
 
 			base.Consumer.Consume(result.GetHashCode());
 		}
@@ -102,87 +102,87 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		//	base.Consumer.Consume(result);
 		//}
 
-		[Benchmark(Description = nameof(ArrayExtensions.BytesToString))]
-		[BenchmarkCategory(Categories.Strings)]
-		public void BytesToString01()
-		{
-			var result = base.GetByteArray(1).BytesToString();
+		//[Benchmark(Description = nameof(ArrayExtensions.BytesToString))]
+		//[BenchmarkCategory(Categories.Strings)]
+		//public void BytesToString()
+		//{
+		//	var result = base.GetByteArray(1).BytesToString();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
-		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
-		[BenchmarkCategory(Categories.Strings)]
-		public void BytesToString02()
-		{
-			var readOnlySpan = new ReadOnlySpan<byte>(base.GetByteArray(1));
-			var result = readOnlySpan.BytesToString();
+		//[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
+		//[BenchmarkCategory(Categories.Strings)]
+		//public void BytesToStringReadOnlySpan()
+		//{
+		//	var readOnlySpan = new ReadOnlySpan<byte>(base.GetByteArray(1));
+		//	var result = readOnlySpan.BytesToString();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
 		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-PersonProper")]
-		public void Clone01()
+		public void ClonePerson()
 		{
-			var result = base.GetPersonProperArray(Tristate.False).Clone<PersonProper[]>();
+			PersonProper[] result = base.GetPersonProperArray().Clone<PersonProper[]>();
 
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-PersonRecord")]
-		public void Clone02()
+		public void ClonePersonRecord()
 		{
-			var result = base.GetPersonRecordArray(Tristate.False).Clone<PersonRecord[]>();
+			PersonRecord[] result = base.GetPersonRecordArray().Clone<PersonRecord[]>();
 
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-CoordinateProper")]
-		public void Clone03()
+		public void CloneCoordinate()
 		{
-			var result = base.GetCoordinateArray().Clone<Coordinate[]>();
+			Coordinate[] result = base.GetCoordinateArray().Clone<Coordinate[]>();
 
 			base.Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny))]
-		public void ContainsAny01()
+		public void ContainsAny()
 		{
-			var result = base.GetPersonProperArray(Tristate.False).ContainsAny(base.GetPersonProperArray(Tristate.False, collectionSize: CollectionSize.Half));
+			var result = base.GetPersonProperArray().ContainsAny(base.GetPersonProperArray(collectionSize: CollectionSize.Half));
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems))]
-		public void DoesNotHaveItemsTest()
-		{
-			var result = base.GetPersonProperArray(Tristate.False).DoesNotHaveItems();
+		//[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems))]
+		//public void DoesNotHaveItemsTest()
+		//{
+		//	var result = base.GetPersonProperArray().DoesNotHaveItems();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems))]
-		public void HasItemsTest()
-		{
-			var result = base.GetPersonProperArray(Tristate.False).HasItems();
+		//[Benchmark(Description = nameof(ArrayExtensions.HasItems))]
+		//public void HasItems()
+		//{
+		//	var result = base.GetPersonProperArray().HasItems();
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Count")]
-		public void HasItemsWithCountTest()
-		{
-			var result = base.GetPersonProperArray(Tristate.False).HasItems(this.Count);
+		//[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Count")]
+		//public void HasItemsWithCountTest()
+		//{
+		//	var result = base.GetPersonProperArray().HasItems(this.Count);
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Predicate")]
-		public void HasItemsWithPredicateTest()
-		{
-			var result = base.GetPersonProperArray(Tristate.False).HasItems(p => p.Age.TotalDays > 5);
+		//[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Predicate")]
+		//public void HasItemsWithPredicateTest()
+		//{
+		//	var result = base.GetPersonProperArray().HasItems(p => p.Age.TotalDays > 5);
 
-			base.Consumer.Consume(result);
-		}
+		//	base.Consumer.Consume(result);
+		//}
 	}
 }

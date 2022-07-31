@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-29-2022
+// Last Modified On : 07-28-2022
 // ***********************************************************************
 // <copyright file="StringExtensionsCounterBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -47,7 +47,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.ComputeSHA256Hash))]
 		public void ComputeMD5Hash()
 		{
-			var result = this.StringToTrim.ComputeSha256Hash();
+			var result = this.LongTestString.ComputeSha256Hash();
 
 			base.Consumer.Consume(result);
 		}
@@ -56,11 +56,20 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		/// Concat01s this instance.
 		/// </summary>
 		[Benchmark(Description = nameof(StringExtensions.Concat))]
-		public void Concat01()
+		public void Concat()
 		{
-			var result = this.StringToTrim.Concat(",", Tristate.True, this.GetStringArray(10, 15, 20));
+			var result = this.StringToTrim.Clone<string>().Concat(",", Tristate.True, this.GetStringArray(10, 15, 20));
 
 			base.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.SplitLines))]
+		public void SplitLines()
+		{
+			foreach (LineSplitEntry line in this._crlfString.SplitLines())
+			{
+				base.Consumer.Consume(line.Line.ToString());
+			}
 		}
 
 		/// <summary>
@@ -69,7 +78,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.ContainsAny))]
 		public void ContainsAny()
 		{
-			var result = this.StringToTrim.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
+			var result = this.LongTestString.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
 
 			base.Consumer.Consume(result);
 		}
@@ -203,7 +212,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.IsGuid))]
 		public void IsGuid01()
 		{
-			var guid = Guid.NewGuid().ToString();
+			var guid = this.TestGuid.ToString();
 			var result = guid.IsGuid();
 
 			base.Consumer.Consume(result);
@@ -215,11 +224,12 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.IsMacAddress))]
 		public void IsMacAddress()
 		{
-			var macAddress = "00:1A:C2:7B:00:47";
-			var result = macAddress.IsGuid();
+			var result = MacAddress.IsMacAddress();
 
 			base.Consumer.Consume(result);
 		}
+
+		private const string MacAddress = "00:1A:C2:7B:00:47";
 
 		/// <summary>
 		/// Removes the CRL F01.
@@ -281,9 +291,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.ToTitleCase))]
 		public void ToTitleCase()
 		{
-			var words = this.GetStringArray(10, 15, 20).ToDelimitedString(ControlChars.Space);
-
-			base.Consumer.Consume(words.ToTitleCase());
+			base.Consumer.Consume(this.LowerCaseString.ToTitleCase());
 		}
 
 		/// <summary>

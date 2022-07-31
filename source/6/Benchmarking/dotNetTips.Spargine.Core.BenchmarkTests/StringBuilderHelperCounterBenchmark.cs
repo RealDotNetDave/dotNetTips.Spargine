@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-13-2022
+// Last Modified On : 07-28-2022
 // ***********************************************************************
 // <copyright file="StringBuilderHelperCounterBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
@@ -27,27 +28,36 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	[BenchmarkCategory(Categories.Strings)]
-	public class StringBuilderHelperCounterBenchmark : SmallCounterBenchmark
+	public class StringBuilderHelperCounterBenchmark : SmallCollectionBenchmark
 	{
+		private byte[] _byteArray;
+		private IEnumerable<byte> _bytes1Kb;
 
 		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString))]
 		[BenchmarkCategory(Categories.Collections)]
-		public void BytesToString01()
+		public void BytesToString()
 		{
-			var result = StringBuilderHelper.BytesToString(this.GetByteArray(this.Count));
+			var result = StringBuilderHelper.BytesToString(this._byteArray);
 
 			base.Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "StringExtensions.ToDelimitedString: 01*")]
-		[BenchmarkCategory(Categories.Collections)]
-		public void ToDelimitedString01()
+		public override void Setup()
 		{
-			var bytes = base.GetByteArray(1).AsEnumerable();
+			base.Setup();
 
-			var result = bytes.ToDelimitedString();
-
-			base.Consumer.Consume(result);
+			this._bytes1Kb = this.GetByteArray(this.Count).AsEnumerable();
+			this._byteArray = this.GetByteArray(this.Count);
 		}
+
+		//[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString))]
+		//[BenchmarkCategory(Categories.Collections)]
+		//public void ToDelimitedString()
+		//{
+		//	var result = _bytes1Kb.ToDelimitedString();
+
+		//	base.Consumer.Consume(result);
+		//}
+
 	}
 }

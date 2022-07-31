@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 07-28-2022
 // ***********************************************************************
 // <copyright file="TypeHelperBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,10 +32,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 	/// <seealso cref="Benchmarking.PerfTestRunner" />
 	public class TypeHelperBenchmark : Benchmark
 	{
-
 		private readonly int _collectionCount = 50;
-
-
 		private List<PersonProper> _people;
 
 		[Benchmark(Description = "Looping Collection: Normal StringBuilder")]
@@ -44,7 +41,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var sb = new StringBuilder();
 
-			foreach (var person in this._people)
+			foreach (PersonProper person in this._people)
 			{
 				_ = sb.AppendFormat(CultureInfo.InvariantCulture, "{0}={1}", person.Email, person.PostalCode);
 			}
@@ -56,9 +53,9 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		[BenchmarkCategory(Categories.Reflection)]
 		public void GetPropertyValues01()
 		{
-			var person = RandomData.GenerateRefPerson<PersonProper>();
+			PersonProper person = RandomData.GenerateRefPerson<PersonProper>();
 
-			var result = TypeHelper.GetPropertyValues(person);
+			System.Collections.Immutable.ImmutableDictionary<string, string> result = TypeHelper.GetPropertyValues(person);
 
 			base.Consumer.Consume(result);
 		}
@@ -66,7 +63,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		public override void Setup()
 		{
 			base.Setup();
-
 
 			var list = new Dictionary<string, string>(this._collectionCount);
 			for (var i = 0; i < this._collectionCount; i++)

@@ -143,7 +143,7 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			var result = TypeHelper.GetPropertyValues(person);
 
-			PrintResult(result, nameof(this.GetPropertyValues));
+			//PrintResult(result, nameof(this.GetPropertyValues));
 
 			Assert.IsTrue(result.Count > 5);
 

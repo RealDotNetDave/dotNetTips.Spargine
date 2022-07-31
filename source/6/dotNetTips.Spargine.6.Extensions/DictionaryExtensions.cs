@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -174,7 +174,7 @@ namespace DotNetTips.Spargine.Extensions
 		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
 		public static bool HasItems<TKey, TValue>([AllowNull] this IDictionary<TKey, TValue> collection, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
-			return collection is null || action is null ? false : collection.Any(action);
+			return collection is not null && action is not null && collection.Any(action);
 		}
 
 		/// <summary>
@@ -194,15 +194,19 @@ namespace DotNetTips.Spargine.Extensions
 			{
 				return string.Empty;
 			}
-
 			var sb = new StringBuilder();
 
 			foreach (DictionaryEntry item in collection)
 			{
-				_ = sb.Append($"{item.Key}:{item.Value}{delimiter}".ToString(CultureInfo.CurrentCulture));
+				if (sb.Length > 0)
+				{
+					_ = sb.Append(delimiter.ToString(CultureInfo.CurrentCulture));
+				}
+
+				_ = sb.Append($"{item.Key}: {item.Value}".ToString(CultureInfo.CurrentCulture));
 			}
 
-			return sb.ToString(0, sb.Length - 1);
+			return sb.ToString().Trim();
 		}
 
 		/// <summary>
@@ -234,7 +238,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Converts to a <see cref="Dictionary{TKey, TValue}"/> to a <see cref="ConcurrentDictionary{TKey, TValue}"/>.
+		/// Converts to a <see cref="Dictionary{TKey, TValue}" /> to a <see cref="ConcurrentDictionary{TKey, TValue}" />.
 		/// </summary>
 		/// <typeparam name="TKey">The type of the t key.</typeparam>
 		/// <typeparam name="TValue">The type of the t value.</typeparam>

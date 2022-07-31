@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -187,7 +187,7 @@ namespace DotNetTips.Spargine.Core
 		{
 			T instance = Activator.CreateInstance<T>();
 
-			return instance is T ? instance : null;
+			return instance is not null ? instance : null;
 		}
 
 		/// <summary>
@@ -232,7 +232,6 @@ namespace DotNetTips.Spargine.Core
 
 			return FindDerivedTypes(new DirectoryInfo(path), SearchOption.AllDirectories, baseType, classOnly);
 		}
-
 
 		/// <summary>
 		/// Finds the derived types.

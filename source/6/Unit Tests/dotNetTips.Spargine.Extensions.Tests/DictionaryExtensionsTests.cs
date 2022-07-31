@@ -44,17 +44,12 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var newPerson = RandomData.GenerateRefPerson<PersonProper>();
 
 			// Test parameters
-			_ = Assert.ThrowsException<ArgumentInvalidException>(() => people.AddIfNotExists(null, newPerson));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => people.AddIfNotExists(null, newPerson));
 
 			// Test
 			Assert.IsTrue(people.AddIfNotExists(newPerson.Id, newPerson));
 
 			Assert.IsFalse(people.AddIfNotExists(newPerson.Id, newPerson));
-
-			var readOnlyPeople = new ReadOnlyDictionary<string, PersonProper>(people);
-
-			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => readOnlyPeople.AddIfNotExists(newPerson.Id, newPerson));
-
 		}
 
 		/// <summary>
@@ -109,7 +104,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var newPerson = RandomData.GenerateRefPerson<PersonProper>();
 
 			// Test Parameters
-			_ = Assert.ThrowsException<ArgumentInvalidException>(() => people.GetOrAdd(null, newPerson));
+			_ = Assert.ThrowsException<ArgumentNullException>(() => people.GetOrAdd(null, newPerson));
 
 			// TEST
 			_ = people.GetOrAdd(newPerson.Id, newPerson);

@@ -4,7 +4,7 @@
 // Created          : 04-20-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-22-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="CollectionSize.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

@@ -1,17 +1,14 @@
 
-    BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
+    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
     .NET SDK=7.0.100-preview.6.22352.1
       [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+      Job-TRKAEU : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 
-    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
-    Categories=Collections  
+    EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+    Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  Categories=Collections  
 
-             Method |        Job |  Runtime |     Mean |    Error |   StdDev |  StdErr |      Min |       Q1 |   Median |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size |  Gen 0 | Allocated |
-    --------------- |----------- |--------- |---------:|---------:|---------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|-------:|----------:|
-     **GetDescription** | **Job-VIFSJL** | **.NET 6.0** | **265.8 ns** |  **2.77 ns** |  **2.59 ns** | **0.67 ns** | **261.6 ns** | **263.6 ns** | **265.9 ns** | **267.6 ns** | **270.9 ns** | **3,762,334.3** |       **2.774 ns** |      **15.00** |    **1.948** |  **2.000** |   **0.0944** |    **2** |            ***** |       **No** |     **313 B** | **0.0024** |      **24 B** |
-     GetDescription | Job-VGZOLO | .NET 7.0 | 207.0 ns |  2.48 ns |  1.94 ns | 0.56 ns | 204.9 ns | 205.5 ns | 206.5 ns | 208.6 ns | 210.4 ns | 4,829,776.2 |       2.483 ns |      12.00 |    1.534 |  2.000 |   0.4751 |    1 |            * |       No |     671 B | 0.0026 |      24 B |
-           **GetItems** | **Job-VIFSJL** | **.NET 6.0** | **866.1 ns** | **14.61 ns** | **13.67 ns** | **3.53 ns** | **850.5 ns** | **854.6 ns** | **862.8 ns** | **874.5 ns** | **896.6 ns** | **1,154,645.0** |      **14.611 ns** |      **15.00** |    **2.454** |  **2.000** |   **0.7751** |    **3** |            ***** |       **No** |     **482 B** | **0.0553** |     **512 B** |
-           GetItems | Job-VGZOLO | .NET 7.0 | 882.2 ns | 16.82 ns | 16.52 ns | 4.13 ns | 859.2 ns | 867.1 ns | 878.4 ns | 895.8 ns | 913.9 ns | 1,133,543.4 |      16.817 ns |      16.00 |    1.711 |  2.000 |   0.2150 |    3 |            * |       No |     858 B | 0.0544 |     512 B |
+             Method |     Mean |    Error |   StdDev |  StdErr |      Min |       Q1 |   Median |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size | Allocated |
+    --------------- |---------:|---------:|---------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|----------:|
+     **GetDescription** | **259.3 ns** |  **3.02 ns** |  **2.83 ns** | **0.73 ns** | **255.5 ns** | **257.0 ns** | **259.8 ns** | **260.6 ns** | **265.1 ns** | **3,856,785.2** |       **3.021 ns** |      **15.00** |    **2.076** |  **2.000** |   **0.2541** |    **1** |            ***** |       **No** | **0.0024** |     **222 B** |      **24 B** |
+           **GetItems** | **887.8 ns** | **14.08 ns** | **13.17 ns** | **3.40 ns** | **864.2 ns** | **878.9 ns** | **890.2 ns** | **898.4 ns** | **902.7 ns** | **1,126,398.3** |      **14.076 ns** |      **15.00** |    **1.719** |  **2.000** |  **-0.5121** |    **2** |            ***** |       **No** | **0.0563** |     **391 B** |     **512 B** |

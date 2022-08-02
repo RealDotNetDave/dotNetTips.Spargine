@@ -1,21 +1,21 @@
 ## .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllInterfaces01()
-; 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			System.Collections.Generic.IEnumerable<System.Type> result = Assembly.GetExecutingAssembly().GetAllInterfaces();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       call      0000000000003AD0
+       call      System.Reflection.Assembly.GetExecutingAssembly()
        mov       rcx,rax
-       call      00000000000093A8
-       mov       rcx,[rsi+20]
+       call      DotNetTips.Spargine.Extensions.AssemblyExtensions.GetAllInterfaces(System.Reflection.Assembly)
+       mov       rcx,[rsi+18]
        cmp       [rcx],ecx
        add       rcx,10
        mov       rdx,rax
-       call      000000000000B010
+       call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
        add       rsp,20
        pop       rsi
@@ -27,7 +27,7 @@
        sub       rsp,28
        mov       dword ptr [rsp+20],1
        lea       rcx,[rsp+20]
-       call      0000000000003AC8
+       call      System.Reflection.Assembly.GetExecutingAssembly(System.Threading.StackCrawlMark ByRef)
        nop
        add       rsp,28
        ret
@@ -45,23 +45,23 @@
        setne     cl
        movzx     ecx,cl
        test      ecx,ecx
-       je        near ptr 000000000000A36E
+       je        near ptr M02_L02
        mov       rcx,offset MT_System.Collections.ObjectModel.Collection`1[[System.Type, System.Private.CoreLib]]
-       call      000000000000B2D0
+       call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
        mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
-       call      000000000000B2D0
+       call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rcx,7FF82EFA4928
+       mov       rcx,7FFB47344928
        mov       edx,28
-       call      000000000000CB10
-       mov       rdx,1CA31FB2F70
+       call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+       mov       rdx,207EEB52F70
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
-       call      000000000000AEB0
+       call      CORINFO_HELP_ASSIGN_REF
        lea       rcx,[rdi+8]
        mov       rdx,rbx
-       call      000000000000AEB0
+       call      CORINFO_HELP_ASSIGN_REF
        mov       rcx,rsi
        mov       rax,[rsi]
        mov       rax,[rax+40]
@@ -70,7 +70,8 @@
        xor       ebx,ebx
        mov       ebp,[rsi+8]
        test      ebp,ebp
-       jle       short 000000000000A362
+       jle       short M02_L01
+M02_L00:
        movsxd    rcx,ebx
        mov       rcx,[rsi+rcx*8+10]
        mov       rax,[rcx]
@@ -80,10 +81,11 @@
        mov       rdx,rdi
        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.CollectionExtensions.AddRange(System.Collections.Generic.ICollection`1<!!0>, System.Collections.Generic.IEnumerable`1<!!0>, DotNetTips.Spargine.Core.Tristate)
        xor       r9d,r9d
-       call      00000000000094A0
+       call      DotNetTips.Spargine.Extensions.CollectionExtensions.AddRange[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.ICollection`1<System.__Canon>, System.Collections.Generic.IEnumerable`1<System.__Canon>, DotNetTips.Spargine.Core.Tristate)
        inc       ebx
        cmp       ebp,ebx
-       jg        short 000000000000A32F
+       jg        short M02_L00
+M02_L01:
        mov       rax,rdi
        add       rsp,28
        pop       rbx
@@ -91,229 +93,44 @@
        pop       rsi
        pop       rdi
        ret
+M02_L02:
        mov       ecx,4D
-       mov       rdx,7FF82F31F850
-       call      0000000000000390
+       mov       rdx,7FFB476D3920
+       call      CORINFO_HELP_STRCNS
        mov       rsi,rax
-       mov       ecx,0BB
-       mov       rdx,7FF82F31F850
-       call      0000000000000390
+       mov       ecx,85
+       mov       rdx,7FFB476D3920
+       call      CORINFO_HELP_STRCNS
        mov       rdi,rax
-       call      00000000000015A0
+       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
        mov       r8,rax
        mov       rcx,rsi
        mov       rdx,rdi
-       call      0000000000000658
+       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
        mov       rcx,rax
-       call      000000000000F6C0
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
        int       3
 ; Total bytes of code 280
-```
-
-## .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllInterfaces01()
-; 			var result = Assembly.GetExecutingAssembly().GetAllInterfaces();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       mov       rsi,rcx
-       call      qword ptr [0D690]
-       mov       rcx,rax
-       call      qword ptr [1BA0]
-       mov       rdx,[rsi+20]
-       lea       rcx,[rdx+10]
-       mov       rdx,rax
-       call      0000000000000010
-       nop
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 46
-```
-```assembly
-; System.Reflection.Assembly.GetExecutingAssembly()
-       sub       rsp,28
-       mov       dword ptr [rsp+20],1
-       lea       rcx,[rsp+20]
-       call      qword ptr [0D678]
-       nop
-       add       rsp,28
-       ret
-; Total bytes of code 29
-```
-```assembly
-; DotNetTips.Spargine.Extensions.AssemblyExtensions.GetAllInterfaces(System.Reflection.Assembly)
-       push      rdi
-       push      rsi
-       push      rbp
-       push      rbx
-       sub       rsp,28
-       mov       rsi,rcx
-       test      rsi,rsi
-       jne       near ptr 000000000000DCC3
-       call      qword ptr [9B28]
-       mov       rsi,rax
-       mov       ecx,0A
-       call      000000000000A000
-       mov       rdi,rax
-       cmp       dword ptr [rdi+8],8
-       jl        near ptr 000000000000DD60
-       lea       rcx,[rdi+0C]
-       mov       rdx,25CDBC014D0
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,10
-       call      qword ptr [5810]
-       mov       ecx,[rdi+8]
-       sub       ecx,8
-       cmp       ecx,2
-       jl        near ptr 000000000000DD83
-       lea       rcx,[rdi+1C]
-       mov       rdx,25CD7C02090
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,4
-       call      qword ptr [5810]
-       mov       rcx,rdi
-       mov       rdx,rsi
-       call      qword ptr [0BC60]
-       mov       rcx,rax
-       test      rcx,rcx
-       je        short 000000000000DBE4
-       xor       eax,eax
-       cmp       dword ptr [rcx+8],0
-       sete      al
-       jmp       short 000000000000DBE9
-       mov       eax,1
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       near ptr 000000000000DC84
-       call      qword ptr [9C48]
-       mov       rsi,rax
-       mov       ecx,9
-       mov       rdx,7FF7EB260A30
-       call      000000000000F510
-       mov       rdi,rax
-       mov       ecx,36B
-       mov       rdx,7FF7EB260A30
-       call      000000000000F510
-       mov       rcx,rax
-       mov       r9,rdi
-       mov       [rsp+20],rax
-       mov       edx,1
-       xor       r8d,r8d
-       call      qword ptr [5270]
-       mov       rdi,rax
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      000000000000EFB0
-       mov       rbx,rax
-       call      qword ptr [9870]
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      qword ptr [9D08]
-       mov       r8,rax
-       mov       rdx,rdi
-       mov       rcx,rbx
-       call      qword ptr [0FB28]
-       mov       rcx,rbx
-       call      0000000000006AD0
-       cmp       [rcx],cl
-       mov       edx,3
-       call      qword ptr [0D4E0]
-       mov       rsi,rax
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      000000000000EFB0
-       mov       rdi,rax
-       call      qword ptr [9870]
-       mov       r8,rax
-       mov       rdx,rsi
-       mov       rcx,rdi
-       call      qword ptr [0FB28]
-       mov       rcx,rdi
-       call      0000000000006AD0
-       mov       rcx,offset MT_System.Collections.ObjectModel.Collection`1[[System.Type, System.Private.CoreLib]]
-       call      000000000000EFB0
-       mov       rdi,rax
-       mov       rcx,offset MT_System.Collections.Generic.List`1[[System.Type, System.Private.CoreLib]]
-       call      000000000000EFB0
-       mov       rbx,rax
-       mov       rdx,25CD7C01FE8
-       mov       rdx,[rdx]
-       lea       rcx,[rbx+8]
-       call      0000000000000010
-       lea       rcx,[rdi+8]
-       mov       rdx,rbx
-       call      0000000000000010
-       mov       rcx,rsi
-       mov       rax,[rsi]
-       mov       rax,[rax+40]
-       call      qword ptr [rax+28]
-       mov       rsi,rax
-       xor       ebx,ebx
-       mov       ebp,[rsi+8]
-       test      ebp,ebp
-       jle       short 000000000000DD54
-       mov       ecx,ebx
-       mov       rcx,[rsi+rcx*8+10]
-       mov       rax,[rcx]
-       mov       rax,[rax+98]
-       call      qword ptr [rax]
-       mov       r8,rax
-       mov       rdx,rdi
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.CollectionExtensions.AddRange(System.Collections.Generic.ICollection`1<!!0>, System.Collections.Generic.IEnumerable`1<!!0>, DotNetTips.Spargine.Core.Tristate)
-       xor       r9d,r9d
-       call      qword ptr [1D50]
-       inc       ebx
-       cmp       ebp,ebx
-       jg        short 000000000000DD22
-       mov       rax,rdi
-       add       rsp,28
-       pop       rbx
-       pop       rbp
-       pop       rsi
-       pop       rdi
-       ret
-       mov       rcx,offset MT_System.IndexOutOfRangeException
-       call      000000000000EFB0
-       mov       rsi,rax
-       mov       rcx,rsi
-       call      qword ptr [5F48]
-       mov       rcx,rsi
-       call      0000000000006AD0
-       mov       rcx,offset MT_System.IndexOutOfRangeException
-       call      000000000000EFB0
-       mov       rsi,rax
-       mov       rcx,rsi
-       call      qword ptr [5F48]
-       mov       rcx,rsi
-       call      0000000000006AD0
-       int       3
-; Total bytes of code 615
 ```
 
 ## .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllTypes01()
-; 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			System.Collections.Generic.IEnumerable<System.Type> result = Assembly.GetExecutingAssembly().GetAllTypes();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rsi
        sub       rsp,20
        mov       rsi,rcx
-       call      0000000000003AD0
+       call      System.Reflection.Assembly.GetExecutingAssembly()
        mov       rcx,rax
-       call      00000000000093B0
-       mov       rcx,[rsi+20]
+       call      DotNetTips.Spargine.Extensions.AssemblyExtensions.GetAllTypes(System.Reflection.Assembly)
+       mov       rcx,[rsi+18]
        cmp       [rcx],ecx
        add       rcx,10
        mov       rdx,rax
-       call      000000000000B010
+       call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
        add       rsp,20
        pop       rsi
@@ -325,7 +142,7 @@
        sub       rsp,28
        mov       dword ptr [rsp+20],1
        lea       rcx,[rsp+20]
-       call      0000000000003AC8
+       call      System.Reflection.Assembly.GetExecutingAssembly(System.Threading.StackCrawlMark ByRef)
        nop
        add       rsp,28
        ret
@@ -340,255 +157,85 @@
        setne     al
        movzx     eax,al
        test      eax,eax
-       je        near ptr 000000000000E0BB
+       je        near ptr M02_L01
        mov       rax,[rcx]
        mov       rax,[rax+40]
        call      qword ptr [rax+28]
        mov       rsi,rax
-       mov       rcx,16C9DBACDE0
+       mov       rcx,1A09AD5DB18
        mov       r8,[rcx]
        test      r8,r8
-       jne       short 000000000000E0A1
+       jne       short M02_L00
        mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
-       call      000000000000B2D0
+       call      CORINFO_HELP_NEWSFAST
        mov       rdi,rax
-       mov       rdx,16C9DBACDD8
+       mov       rdx,1A09AD5DB10
        mov       rdx,[rdx]
        lea       rcx,[rdi+8]
-       call      000000000000AEB0
+       call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
        mov       [rdi+18],rdx
-       mov       rcx,16C9DBACDE0
+       mov       rcx,1A09AD5DB18
        mov       rdx,rdi
-       call      000000000000B010
+       call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rdi
+M02_L00:
        mov       rdx,rsi
        mov       rcx,offset MD_System.Linq.Enumerable.Where(System.Collections.Generic.IEnumerable`1<!!0>, System.Func`2<!!0,Boolean>)
-       call      00000000000044D8
+       call      System.Linq.Enumerable.Where[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        nop
        add       rsp,28
        pop       rsi
        pop       rdi
        ret
+M02_L01:
        mov       ecx,4D
-       mov       rdx,7FF82F31F850
-       call      0000000000000390
+       mov       rdx,7FFB476F3920
+       call      CORINFO_HELP_STRCNS
        mov       rsi,rax
-       mov       ecx,0BB
-       mov       rdx,7FF82F31F850
-       call      0000000000000390
+       mov       ecx,85
+       mov       rdx,7FFB476F3920
+       call      CORINFO_HELP_STRCNS
        mov       rdi,rax
-       call      00000000000015A0
+       call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
        mov       r8,rax
        mov       rcx,rsi
        mov       rdx,rdi
-       call      0000000000000658
+       call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
        mov       rcx,rax
-       call      000000000000F6C0
+       call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
        int       3
 ; Total bytes of code 229
-```
-
-## .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetAllTypes01()
-; 			var result = Assembly.GetExecutingAssembly().GetAllTypes();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rsi
-       sub       rsp,20
-       mov       rsi,rcx
-       call      qword ptr [0D690]
-       mov       rcx,rax
-       call      qword ptr [3018]
-       mov       rdx,[rsi+20]
-       lea       rcx,[rdx+10]
-       mov       rdx,rax
-       call      0000000000000010
-       nop
-       add       rsp,20
-       pop       rsi
-       ret
-; Total bytes of code 46
-```
-```assembly
-; System.Reflection.Assembly.GetExecutingAssembly()
-       sub       rsp,28
-       mov       dword ptr [rsp+20],1
-       lea       rcx,[rsp+20]
-       call      qword ptr [0D678]
-       nop
-       add       rsp,28
-       ret
-; Total bytes of code 29
-```
-```assembly
-; DotNetTips.Spargine.Extensions.AssemblyExtensions.GetAllTypes(System.Reflection.Assembly)
-       push      rdi
-       push      rsi
-       push      rbx
-       sub       rsp,30
-       test      rcx,rcx
-       jne       near ptr 000000000000C78F
-       call      qword ptr [9B28]
-       mov       rsi,rax
-       mov       ecx,0A
-       call      000000000000A000
-       mov       rdi,rax
-       cmp       dword ptr [rdi+8],8
-       jl        near ptr 000000000000C815
-       lea       rcx,[rdi+0C]
-       mov       rdx,282480048C0
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,10
-       call      qword ptr [5810]
-       mov       ecx,[rdi+8]
-       sub       ecx,8
-       cmp       ecx,2
-       jl        near ptr 000000000000C838
-       lea       rcx,[rdi+1C]
-       mov       rdx,28248002090
-       mov       rdx,[rdx]
-       add       rdx,0C
-       mov       r8d,4
-       call      qword ptr [5810]
-       mov       rcx,rdi
-       mov       rdx,rsi
-       call      qword ptr [0BC60]
-       mov       rcx,rax
-       test      rcx,rcx
-       je        short 000000000000C6B0
-       xor       eax,eax
-       cmp       dword ptr [rcx+8],0
-       sete      al
-       jmp       short 000000000000C6B5
-       mov       eax,1
-       test      eax,eax
-       sete      al
-       movzx     eax,al
-       test      eax,eax
-       jne       near ptr 000000000000C750
-       call      qword ptr [9C48]
-       mov       rsi,rax
-       mov       ecx,9
-       mov       rdx,7FF7EB240A30
-       call      000000000000F510
-       mov       rdi,rax
-       mov       ecx,36B
-       mov       rdx,7FF7EB240A30
-       call      000000000000F510
-       mov       rcx,rax
-       mov       r9,rdi
-       mov       [rsp+20],rax
-       mov       edx,1
-       xor       r8d,r8d
-       call      qword ptr [5270]
-       mov       rdi,rax
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      000000000000EFB0
-       mov       rbx,rax
-       call      qword ptr [9870]
-       mov       rdx,rax
-       mov       rcx,rsi
-       call      qword ptr [9D08]
-       mov       r8,rax
-       mov       rdx,rdi
-       mov       rcx,rbx
-       call      qword ptr [0FB28]
-       mov       rcx,rbx
-       call      0000000000006AD0
-       cmp       [rcx],cl
-       mov       edx,3
-       call      qword ptr [0D4E0]
-       mov       rsi,rax
-       mov       rcx,offset MT_System.ArgumentNullException
-       call      000000000000EFB0
-       mov       rdi,rax
-       call      qword ptr [9870]
-       mov       r8,rax
-       mov       rdx,rsi
-       mov       rcx,rdi
-       call      qword ptr [0FB28]
-       mov       rcx,rdi
-       call      0000000000006AD0
-       mov       rax,[rcx]
-       mov       rax,[rax+40]
-       call      qword ptr [rax+28]
-       mov       rsi,rax
-       mov       rcx,28246007BF8
-       mov       r8,[rcx]
-       test      r8,r8
-       jne       short 000000000000C7F9
-       mov       rcx,offset MT_System.Func`2[[System.Type, System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
-       call      000000000000EFB0
-       mov       rdi,rax
-       mov       rdx,28246007BF0
-       mov       rdx,[rdx]
-       lea       rcx,[rdi+8]
-       call      0000000000000010
-       mov       rdx,offset DotNetTips.Spargine.Extensions.AssemblyExtensions+<>c.<GetAllTypes>b__1_0(System.Type)
-       mov       [rdi+18],rdx
-       mov       rcx,28246007BF8
-       mov       rdx,rdi
-       call      0000000000000010
-       mov       r8,rdi
-       mov       rdx,rsi
-       mov       rcx,offset MD_System.Linq.Enumerable.Where(System.Collections.Generic.IEnumerable`1<!!0>, System.Func`2<!!0,Boolean>)
-       call      qword ptr [1BA0]
-       nop
-       add       rsp,30
-       pop       rbx
-       pop       rsi
-       pop       rdi
-       ret
-       mov       rcx,offset MT_System.IndexOutOfRangeException
-       call      000000000000EFB0
-       mov       rsi,rax
-       mov       rcx,rsi
-       call      qword ptr [5F48]
-       mov       rcx,rsi
-       call      0000000000006AD0
-       mov       rcx,offset MT_System.IndexOutOfRangeException
-       call      000000000000EFB0
-       mov       rsi,rax
-       mov       rcx,rsi
-       call      qword ptr [5F48]
-       mov       rcx,rsi
-       call      0000000000006AD0
-       int       3
-; Total bytes of code 588
 ```
 
 ## .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetInstances01()
-; 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			System.Collections.Generic.IEnumerable<AssemblyExtensionsBenchmark> result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+; 			Consumer.Consume(result);
+; 			^^^^^^^^^^^^^^^^^^^^^^^^^
        push      rdi
        push      rsi
        push      rbx
        sub       rsp,20
        mov       rsi,rcx
-       call      0000000000003AD0
+       call      System.Reflection.Assembly.GetExecutingAssembly()
        mov       rdi,rax
        mov       rcx,offset MT_DotNetTips.Spargine.Extensions.AssemblyExtensions+<GetInstances>d__2`1[[DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark, DotNetTips.Spargine.Extensions.BenchmarkTests]]
-       call      000000000000B2D0
+       call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
        mov       dword ptr [rbx+28],0FFFFFFFE
-       call      0000000000001870
+       call      CORINFO_HELP_GETCURRENTMANAGEDTHREADID
        mov       [rbx+2C],eax
        lea       rcx,[rbx+18]
        mov       rdx,rdi
-       call      000000000000AEB0
-       mov       rcx,[rsi+20]
+       call      CORINFO_HELP_ASSIGN_REF
+       mov       rcx,[rsi+18]
        cmp       [rcx],ecx
        add       rcx,10
        mov       rdx,rbx
-       call      000000000000B010
+       call      CORINFO_HELP_CHECKED_ASSIGN_REF
        nop
        add       rsp,20
        pop       rbx
@@ -602,57 +249,10 @@
        sub       rsp,28
        mov       dword ptr [rsp+20],1
        lea       rcx,[rsp+20]
-       call      0000000000003AC8
+       call      System.Reflection.Assembly.GetExecutingAssembly(System.Threading.StackCrawlMark ByRef)
        nop
        add       rsp,28
        ret
 ; Total bytes of code 28
-```
-
-## .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
-```assembly
-; DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark.GetInstances01()
-; 			var result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-; 			base.Consumer.Consume(result);
-; 			^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-       push      rdi
-       push      rsi
-       push      rbx
-       sub       rsp,20
-       mov       rsi,rcx
-       call      qword ptr [0D690]
-       mov       rdi,rax
-       mov       rcx,offset MT_DotNetTips.Spargine.Extensions.AssemblyExtensions+<GetInstances>d__2`1[[DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions.AssemblyExtensionsBenchmark, DotNetTips.Spargine.Extensions.BenchmarkTests]]
-       call      000000000000EFB0
-       mov       rbx,rax
-       mov       dword ptr [rbx+28],0FFFFFFFE
-       call      0000000000004EA0
-       mov       [rbx+2C],eax
-       lea       rcx,[rbx+18]
-       mov       rdx,rdi
-       call      0000000000000010
-       mov       rdx,[rsi+20]
-       lea       rcx,[rdx+10]
-       mov       rdx,rbx
-       call      0000000000000010
-       nop
-       add       rsp,20
-       pop       rbx
-       pop       rsi
-       pop       rdi
-       ret
-; Total bytes of code 89
-```
-```assembly
-; System.Reflection.Assembly.GetExecutingAssembly()
-       sub       rsp,28
-       mov       dword ptr [rsp+20],1
-       lea       rcx,[rsp+20]
-       call      qword ptr [0D678]
-       nop
-       add       rsp,28
-       ret
-; Total bytes of code 29
 ```
 

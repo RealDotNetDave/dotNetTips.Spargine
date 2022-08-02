@@ -15,7 +15,6 @@
 using System.Collections.ObjectModel;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -23,7 +22,7 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(Categories.Collections)]
-	public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionBenchmark
+	public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
 
 		private ObservableCollection<PersonProper> _people;
@@ -34,7 +33,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._people.HasItems();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Count")]
@@ -43,7 +42,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._people.HasItems(5);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Predicate")]
@@ -52,7 +51,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._people.HasItems(p => p.Age.TotalDays > 5);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -62,7 +61,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			base.Setup();
 
-			this._people = base.GetPersonProperArray().ToObservableCollection();
+			this._people = GetPersonProperRefArray().ToObservableCollection();
 
 		}
 

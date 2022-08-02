@@ -30,7 +30,7 @@ using static BenchmarkDotNet.Attributes.XmlExporterAttribute;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// PerfTestRunner base class.
+	/// Base class for benchmark tests.
 	/// Implements the <see cref="object" />
 	/// </summary>
 	/// <seealso cref="object" />
@@ -68,7 +68,6 @@ namespace DotNetTips.Spargine.Benchmarking
 	[StatisticalTestColumn(StatisticalTestKind.Welch, showPValues: true)]
 	public abstract class Benchmark
 	{
-
 		/// <summary>
 		/// The failed text
 		/// </summary>
@@ -94,7 +93,6 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value>The consumer.</value>
 		protected Consumer Consumer { get; } = new();
-
 
 		/// <summary>
 		/// Cleanups this instance.
@@ -123,20 +121,20 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the string array.
 		/// </summary>
 		/// <param name="count">The count.</param>
-		/// <param name="minLength">The minimum string length.</param>
-		/// <param name="maxLength">The maximum string length.</param>
+		/// <param name="wordMinLength">The minimum string length for the generated word.</param>
+		/// <param name="wordMaxLength">The maximum string length for the generated word.</param>
 		/// <returns>System.String[].</returns>
-		public string[] GetStringArray(int count, int minLength = 10, int maxLength = 15)
+		public string[] GetStringArray(int count, int wordMinLength = 10, int wordMaxLength = 15)
 		{
 			//Ensure maxLenth is at least +1 of minLength.
-			minLength = minLength.EnsureMinimum(1);
-			maxLength = maxLength.EnsureMinimum(minLength + 1);
+			wordMinLength = wordMinLength.EnsureMinimum(1);
+			wordMaxLength = wordMaxLength.EnsureMinimum(wordMinLength + 1);
 
-			var key = $"{count}-{minLength}-{maxLength}";
+			var key = $"{count}-{wordMinLength}-{wordMaxLength}";
 
 			if (this._stringArrayCache.ContainsKey(key) is false)
 			{
-				this._stringArrayCache.Add(key, RandomData.GenerateWords(count, minLength, maxLength).ToArray());
+				this._stringArrayCache.Add(key, RandomData.GenerateWords(count, wordMinLength, wordMaxLength).ToArray());
 			}
 
 			return this._stringArrayCache[key];
@@ -175,13 +173,13 @@ namespace DotNetTips.Spargine.Benchmarking
 
 			this.Base64String = this.LongTestString.Substring(1, 50).ToBase64();
 
-			this.PersonProper01 = RandomData.GenerateRefPerson<PersonProper>();
+			this.PersonProperRef01 = RandomData.GenerateRefPerson<PersonProper>();
 
-			this.PersonProper02 = RandomData.GenerateRefPerson<PersonProper>();
+			this.PersonProperRef02 = RandomData.GenerateRefPerson<PersonProper>();
 
-			this.PersonValue01 = RandomData.GenerateValPerson();
+			this.PersonVal01 = RandomData.GenerateValPerson();
 
-			this.PersonValue02 = RandomData.GenerateValPerson();
+			this.PersonVal02 = RandomData.GenerateValPerson();
 
 			this.PersonRecord01 = RandomData.GeneratePersonRecordCollection(1).First();
 
@@ -211,7 +209,7 @@ namespace DotNetTips.Spargine.Benchmarking
 			_ = this.GetByteArray(1);
 
 			//Setup string array
-			_ = this.GetStringArray(10, 15, 20);
+			_ = this.GetStringArray(100, 15, 20);
 		}
 
 		/// <summary>
@@ -273,6 +271,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value><c>true</c> if [launch debugger]; otherwise, <c>false</c>.</value>
 		public bool LaunchDebugger { get; set; }
+
 		/// <summary>
 		/// The long test string
 		/// </summary>
@@ -287,13 +286,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the person proper01.
 		/// </summary>
 		/// <value>The person proper01.</value>
-		public PersonProper PersonProper01 { get; private set; }
+		public PersonProper PersonProperRef01 { get; private set; }
 
 		/// <summary>
 		/// Gets the person proper02.
 		/// </summary>
 		/// <value>The person proper02.</value>
-		public PersonProper PersonProper02 { get; private set; }
+		public PersonProper PersonProperRef02 { get; private set; }
 
 		/// <summary>
 		/// Gets the person record01.
@@ -311,13 +310,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the person value01.
 		/// </summary>
 		/// <value>The person value01.</value>
-		public Tester.Models.ValueTypes.Person PersonValue01 { get; private set; }
+		public Tester.Models.ValueTypes.Person PersonVal01 { get; private set; }
 
 		/// <summary>
 		/// Gets the person value02.
 		/// </summary>
 		/// <value>The person value02.</value>
-		public Tester.Models.ValueTypes.Person PersonValue02 { get; private set; }
+		public Tester.Models.ValueTypes.Person PersonVal02 { get; private set; }
 
 		/// <summary>
 		/// The proper case string

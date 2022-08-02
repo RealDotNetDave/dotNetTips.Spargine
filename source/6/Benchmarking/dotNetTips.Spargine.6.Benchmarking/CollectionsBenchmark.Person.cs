@@ -4,7 +4,7 @@
 // Created          : 04-18-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.Person.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 
-using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -22,12 +21,13 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class CounterBenchmark.
+	/// Partial class for Collections benchmark.
 	/// Implements the <see cref="Benchmark" />
 	/// </summary>
 	/// <seealso cref="Benchmark" />
 	public partial class CollectionsBenchmark
 	{
+
 		/// <summary>
 		/// The person reference array
 		/// </summary>
@@ -37,6 +37,16 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// The person reference array half
 		/// </summary>
 		private Person[] _personRefArrayHalf;
+
+		/// <summary>
+		/// The person reference list
+		/// </summary>
+		private List<Person> _personRefList;
+
+		/// <summary>
+		/// The person reference array half
+		/// </summary>
+		private List<Person> _personRefListHalf;
 
 		/// <summary>
 		/// The person value array
@@ -49,27 +59,28 @@ namespace DotNetTips.Spargine.Benchmarking
 		private Tester.Models.ValueTypes.Person[] _personValArrayHalf;
 
 		/// <summary>
-		/// Loads the person reference array.
+		/// The person value list
 		/// </summary>
-		protected void LoadPersonRefArray()
-		{
-			this._personRefArray = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArray)} Length = {this._personRefArray.Length}.");
-
-			this._personRefArrayHalf = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRefArrayHalf)} Length = {this._personRefArrayHalf.Length}.");
-		}
+		private List<Tester.Models.ValueTypes.Person> _personValList;
 
 		/// <summary>
-		/// Loads the person value array.
+		/// The person value list half
 		/// </summary>
-		protected void LoadPersonValArray()
-		{
-			this._personValArray = RandomData.GeneratePersonValCollection(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArray)} Length = {this._personValArray.Length}.");
+		private List<Tester.Models.ValueTypes.Person> _personValListHalf;
 
-			this._personValArrayHalf = RandomData.GeneratePersonValCollection(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personValArrayHalf)} Length = {this._personValArrayHalf.Length}.");
+		/// <summary>
+		/// Loads the person reference array.
+		/// </summary>
+		protected void LoadPersonCollections()
+		{
+			this._personRefArray = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount).ToArray();
+			this._personRefArrayHalf = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount / 2).ToArray();
+			this._personRefList = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount).ToList();
+			this._personRefListHalf = RandomData.GeneratePersonRefCollection<Person>(this.MaxCount / 2).ToList();
+			this._personValArray = RandomData.GeneratePersonRefCollection<Tester.Models.ValueTypes.Person>(this.MaxCount).ToArray();
+			this._personValArrayHalf = RandomData.GeneratePersonRefCollection<Tester.Models.ValueTypes.Person>(this.MaxCount / 2).ToArray();
+			this._personValList = RandomData.GeneratePersonRefCollection<Tester.Models.ValueTypes.Person>(this.MaxCount).ToList();
+			this._personValListHalf = RandomData.GeneratePersonRefCollection<Tester.Models.ValueTypes.Person>(this.MaxCount / 2).ToList();
 		}
 
 		/// <summary>
@@ -85,13 +96,40 @@ namespace DotNetTips.Spargine.Benchmarking
 		}
 
 		/// <summary>
+		/// Gets the person reference list.
+		/// </summary>
+		/// <param name="collectionSize">Size of the collection.</param>
+		/// <returns>List&lt;Person&gt;.</returns>
+		public List<Person> GetPersonRefList(CollectionSize collectionSize = CollectionSize.Full)
+		{
+			return collectionSize is CollectionSize.Full
+				? this._personRefList.Clone<List<Person>>()
+				: this._personRefListHalf.Clone<List<Person>>();
+		}
+
+		/// <summary>
 		/// Gets <see cref="Person" /> array.
 		/// </summary>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Tester.Models.ValueTypes.Person[].</returns>
 		public Tester.Models.ValueTypes.Person[] GetPersonValArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
-			return collectionSize is CollectionSize.Full ? this._personValArray.Clone<Tester.Models.ValueTypes.Person[]>() : this._personValArrayHalf.Clone<Tester.Models.ValueTypes.Person[]>();
+			return collectionSize is CollectionSize.Full
+				? this._personValArray.Clone<Tester.Models.ValueTypes.Person[]>()
+				: this._personValArrayHalf.Clone<Tester.Models.ValueTypes.Person[]>();
 		}
+
+		/// <summary>
+		/// Gets the person value list.
+		/// </summary>
+		/// <param name="collectionSize">Size of the collection.</param>
+		/// <returns>List&lt;Tester.Models.ValueTypes.Person&gt;.</returns>
+		public List<Tester.Models.ValueTypes.Person> GetPersonValList(CollectionSize collectionSize = CollectionSize.Full)
+		{
+			return collectionSize is CollectionSize.Full
+				? this._personValList.Clone<List<Tester.Models.ValueTypes.Person>>()
+				: this._personValListHalf.Clone<List<Tester.Models.ValueTypes.Person>>();
+		}
+
 	}
 }

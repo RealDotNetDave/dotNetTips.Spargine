@@ -16,7 +16,6 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
-using DotNetTips.Spargine.Extensions;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -28,7 +27,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	[BenchmarkCategory(Categories.Strings)]
-	public class StringBuilderHelperCounterBenchmark : SmallCollectionBenchmark
+	public class StringBuilderHelperCounterBenchmark : SmallCollectionsBenchmark
 	{
 		private byte[] _byteArray;
 		private IEnumerable<byte> _bytes1Kb;
@@ -39,7 +38,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = StringBuilderHelper.BytesToString(this._byteArray);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		public override void Setup()

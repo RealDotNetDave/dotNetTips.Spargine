@@ -4,7 +4,7 @@
 // Created          : 04-19-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,8 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 
-using BenchmarkDotNet.Loggers;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -23,7 +21,7 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class CounterBenchmark.
+	/// Partial class for Collections benchmark.
 	/// Implements the <see cref="Benchmark" />
 	/// </summary>
 	/// <seealso cref="Benchmark" />
@@ -40,15 +38,24 @@ namespace DotNetTips.Spargine.Benchmarking
 		private PersonRecord[] _personRecordArrayHalf;
 
 		/// <summary>
+		/// The person record list
+		/// </summary>
+		private List<PersonRecord> _personRecordList;
+
+		/// <summary>
+		/// The person record reference array half
+		/// </summary>
+		private List<PersonRecord> _personRecordListHalf;
+
+		/// <summary>
 		/// Loads the person record array.
 		/// </summary>
-		protected void LoadPersonRecordArray()
+		protected void LoadPersonRecordCollections()
 		{
-			this._personRecordArray = RandomData.GeneratePersonRecordCollection(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArray)} Length = {this._personRecordArray.Length}.");
-
+			this._personRecordListHalf = RandomData.GeneratePersonRecordCollection(this.MaxCount / 2).ToList();
+			this._personRecordList = RandomData.GeneratePersonRecordCollection(this.MaxCount).ToList();
 			this._personRecordArrayHalf = RandomData.GeneratePersonRecordCollection(this.MaxCount / 2).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._personRecordArrayHalf)} Length = {this._personRecordArrayHalf.Length}.");
+			this._personRecordArray = RandomData.GeneratePersonRecordCollection(this.MaxCount).ToArray();
 		}
 
 		/// <summary>
@@ -62,5 +69,18 @@ namespace DotNetTips.Spargine.Benchmarking
 				? this._personRecordArray.Clone<PersonRecord[]>()
 				: this._personRecordArrayHalf.Clone<PersonRecord[]>();
 		}
+
+		/// <summary>
+		/// Gets the person record list.
+		/// </summary>
+		/// <param name="collectionSize">Size of the collection.</param>
+		/// <returns>List&lt;PersonRecord&gt;.</returns>
+		public List<PersonRecord> GetPersonRecordList(CollectionSize collectionSize = CollectionSize.Full)
+		{
+			return collectionSize is CollectionSize.Full
+				? this._personRecordList.Clone<List<PersonRecord>>()
+				: this._personRecordListHalf.Clone<List<PersonRecord>>();
+		}
+
 	}
 }

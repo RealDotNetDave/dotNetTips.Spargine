@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="EncryptionHelperBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Security
 		{
 			var result = EncryptionHelper.AesEncrypt(this._aesCypherText, this._aesKey, this._aesIv);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.AesEncrypt))]
@@ -43,7 +43,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Security
 		{
 			var result = EncryptionHelper.AesEncrypt(this.LongTestString, this._aesKey, this._aesIv);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		public override void Setup()
@@ -62,7 +62,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Security
 		{
 			var result = EncryptionHelper.SimpleSHA256Decrypt(this._cypherText, Key);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(EncryptionHelper.SimpleSHA256Encrypt))]
@@ -71,7 +71,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Security
 		{
 			var result = EncryptionHelper.SimpleSHA256Encrypt(this.LongTestString, Key);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 	}
 }

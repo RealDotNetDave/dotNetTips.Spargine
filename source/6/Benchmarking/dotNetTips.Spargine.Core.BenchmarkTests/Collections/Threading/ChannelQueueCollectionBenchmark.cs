@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="ChannelQueueCollectionBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -31,9 +31,9 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	[BenchmarkCategory(Categories.Async)]
-	public class ChannelQueueCollectionBenchmark : LargeCollectionBenchmark
+	public class ChannelQueueCollectionBenchmark : LargeCollectionsBenchmark
 	{
-		private static async Task AddToQueue(ChannelQueue<PersonProper> channel, IList<PersonProper> people, CancellationToken token)
+		private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, IList<PersonProper> people, CancellationToken token)
 		{
 			foreach (PersonProper person in people)
 			{
@@ -43,7 +43,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 			_ = channel.Lock();
 		}
 
-		private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
+		private static async Task ListenToQueueAsync(ChannelQueue<PersonProper> channel, CancellationToken token)
 		{
 			await foreach (PersonProper item in channel.ListenAsync(token))
 			{
@@ -56,26 +56,26 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		public async Task WriteAsync()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			PersonProper[] people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperRefArray();
 
 			for (var peopleCount = 0; peopleCount < people.Length; peopleCount++)
 			{
 				await channel.WriteAsync(people[peopleCount]).ConfigureAwait(false);
 			}
 
-			base.Consumer.Consume(channel.Count);
+			Consumer.Consume(channel.Count);
 		}
 
 		[Benchmark(Description = "WriteAsync: IEnumerable")]
 		[BenchmarkCategory(Categories.Async)]
-		public async Task WriteAsyncIEnumerable()
+		public async Task WriteAsyncIEnumerableAsync()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			PersonProper[] people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperRefArray();
 
 			await channel.WriteAsync(people).ConfigureAwait(false);
 
-			base.Consumer.Consume(channel.Count);
+			Consumer.Consume(channel.Count);
 		}
 
 		[Benchmark(Description = "Write & Listen Async")]
@@ -83,18 +83,18 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		public void WriteListenAsyncTest()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			PersonProper[] people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperRefArray();
 			CancellationToken token = CancellationToken.None;
 
 			var tasks = new List<Task>
 			{
-				AddToQueue(channel, people, token),
-				ListenToQueue(channel, token)
+			AddToQueueAsync(channel, people, token),
+			ListenToQueueAsync(channel, token)
 			};
 
 			Task.WaitAll(tasks.ToArray());
 
-			base.Consumer.Consume(channel.Count);
+			Consumer.Consume(channel.Count);
 		}
 
 		[Benchmark(Description = "Write & Read Async")]
@@ -102,7 +102,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 		public async Task WriteReadAsync()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			PersonProper[] people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperRefArray();
 
 			for (var personCount = 0; personCount < people.Length; personCount++)
 			{
@@ -111,22 +111,22 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading
 
 			while (channel.Count > 0)
 			{
-				base.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
+				Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
 			}
 		}
 
 		[Benchmark(Description = "Write & Read Async: IEnumerable")]
 		[BenchmarkCategory(Categories.Async)]
-		public async Task WriteReadAsyncIEnumerable()
+		public async Task WriteReadAsyncIEnumerableAsync()
 		{
 			var channel = new ChannelQueue<PersonProper>();
-			PersonProper[] people = this.GetPersonProperArray();
+			PersonProper[] people = this.GetPersonProperRefArray();
 
 			await channel.WriteAsync(people).ConfigureAwait(false);
 
 			while (channel.Count > 0)
 			{
-				base.Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
+				Consumer.Consume(await channel.ReadAsync().ConfigureAwait(false));
 			}
 		}
 	}

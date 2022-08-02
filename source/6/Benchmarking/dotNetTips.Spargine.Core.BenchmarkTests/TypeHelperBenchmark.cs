@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="TypeHelperBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -46,7 +46,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 				_ = sb.AppendFormat(CultureInfo.InvariantCulture, "{0}={1}", person.Email, person.PostalCode);
 			}
 
-			base.Consumer.Consume(sb.ToString());
+			Consumer.Consume(sb.ToString());
 		}
 
 		[Benchmark(Description = nameof(TypeHelper.GetPropertyValues))]
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 
 			System.Collections.Immutable.ImmutableDictionary<string, string> result = TypeHelper.GetPropertyValues(person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		public override void Setup()

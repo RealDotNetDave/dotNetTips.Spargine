@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="CounterBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,7 @@ using BenchmarkDotNet.Loggers;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class CounterBenchmark.
+	/// CounterBenchmark base class.
 	/// Implements the <see cref="Benchmark" />
 	/// </summary>
 	/// <seealso cref="Benchmark" />

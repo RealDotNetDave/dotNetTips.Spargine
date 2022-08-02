@@ -4,7 +4,7 @@
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2022.6.8.9</AssemblyVersion>
+		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -20,7 +20,7 @@
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2022.6.8.9</FileVersion>
+		<FileVersion>2022.6.8.10</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -44,7 +44,7 @@ AUG 2022: Optimizations for benchmark code.</PackageReleaseNotes>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
 		<TargetFramework>net6.0</TargetFramework>
-		<Version>2022.6.8.9</Version>
+		<Version>2022.6.8.10</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

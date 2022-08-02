@@ -4,7 +4,7 @@
 // Created          : 04-20-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.CoordinateProper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 
-using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.ValueTypes;
@@ -22,12 +21,13 @@ using DotNetTips.Spargine.Tester.Models.ValueTypes;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class CounterBenchmark.
+	/// Partial class for Collections benchmark.
 	/// Implements the <see cref="Benchmark" />
 	/// </summary>
 	/// <seealso cref="Benchmark" />
 	public partial class CollectionsBenchmark
 	{
+
 		/// <summary>
 		/// The coordinate proper array
 		/// </summary>
@@ -39,15 +39,25 @@ namespace DotNetTips.Spargine.Benchmarking
 		private CoordinateProper[] _coordinateProperArrayHalf;
 
 		/// <summary>
+		/// The coordinate proper list
+		/// </summary>
+		private List<CoordinateProper> _coordinateProperList;
+
+		/// <summary>
+		/// The coordinate proper list half
+		/// </summary>
+		private List<CoordinateProper> _coordinateProperListHalf;
+
+
+		/// <summary>
 		/// Loads the coordinate array.
 		/// </summary>
-		protected void LoadCoordinateProperArray()
+		protected void LoadCoordinateProperCollections()
 		{
+			this._coordinateProperListHalf = RandomData.GenerateCoordinateCollection<CoordinateProper>(this.MaxCount / 2).ToList();
+			this._coordinateProperList = RandomData.GenerateCoordinateCollection<CoordinateProper>(this.MaxCount).ToList();
+			this._coordinateProperArrayHalf = RandomData.GenerateCoordinateCollection<CoordinateProper>(this.MaxCount / 2).ToArray();
 			this._coordinateProperArray = RandomData.GenerateCoordinateCollection<CoordinateProper>(this.MaxCount).ToArray();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateProperArray)} Length = {this._coordinateProperArray.Length}.");
-
-			this._coordinateProperArrayHalf = RandomData.GenerateCoordinateCollection<CoordinateProper>(this.MaxCount / 2).Clone<CoordinateProper[]>();
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateProperArrayHalf)} Length = {this._coordinateProperArrayHalf.Length}.");
 		}
 
 		/// <summary>
@@ -55,11 +65,24 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>CoordinateProper[].</returns>
-		public CoordinateProper[] GetCoordinateProperArray(CollectionSize collectionSize = CollectionSize.Full)
+		public CoordinateProper[] GetCoordinateProperRefArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? this._coordinateProperArray.Clone<CoordinateProper[]>()
 				: this._coordinateProperArrayHalf.Clone<CoordinateProper[]>();
 		}
+
+		/// <summary>
+		/// Gets the coordinate proper list.
+		/// </summary>
+		/// <param name="collectionSize">Size of the collection.</param>
+		/// <returns>CoordinateProper[].</returns>
+		public CoordinateProper[] GetCoordinateProperRefList(CollectionSize collectionSize = CollectionSize.Full)
+		{
+			return collectionSize is CollectionSize.Full
+				? this._coordinateProperList.Clone<CoordinateProper[]>()
+				: this._coordinateProperListHalf.Clone<CoordinateProper[]>();
+		}
+
 	}
 }

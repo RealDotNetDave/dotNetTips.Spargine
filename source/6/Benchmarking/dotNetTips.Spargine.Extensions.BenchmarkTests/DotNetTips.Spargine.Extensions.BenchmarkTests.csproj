@@ -4,8 +4,8 @@
 		<OutputType>Exe</OutputType>
 		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
 		<TargetFramework>net6.0</TargetFramework>
-		<AssemblyVersion>2022.6.8.9</AssemblyVersion>
-		<FileVersion>2022.6.8.9</FileVersion>
+		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
+		<FileVersion>2022.6.8.10</FileVersion>
 		<RootNamespace>dotNetTips.Spargine.Extensions.BenchmarkTests</RootNamespace>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<DebugType>pdbonly</DebugType>

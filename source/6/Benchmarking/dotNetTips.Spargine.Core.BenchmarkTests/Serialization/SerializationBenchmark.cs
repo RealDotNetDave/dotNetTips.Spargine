@@ -4,7 +4,7 @@
 // Created          : 12-05-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="SerializationBenchmark.cs" company="DotNetTips.Utility.Benchmarks">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -38,7 +38,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			PersonProper result = XmlSerialization.Deserialize<PersonProper>(Resources.PersonProperXml);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -50,7 +50,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			PersonRecord result = XmlSerialization.Deserialize<PersonRecord>(Resources.PersonRecordXml);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -61,7 +61,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			PersonRecord result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonRecordJson);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -72,7 +72,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			PersonRecord result = JsonSerialization.Deserialize<PersonRecord>(Resources.PersonProperJson);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -82,9 +82,9 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[BenchmarkCategory(Categories.XML)]
 		public void Serialize01()
 		{
-			var result = XmlSerialization.Serialize(this.PersonProper01);
+			var result = XmlSerialization.Serialize(this.PersonProperRef01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -94,9 +94,9 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		[BenchmarkCategory(Categories.JSON)]
 		public void Serialize02()
 		{
-			var result = JsonSerialization.Serialize(this.PersonProper01);
+			var result = JsonSerialization.Serialize(this.PersonProperRef01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -108,7 +108,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			var result = JsonSerialization.Serialize(this.PersonRecord02);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -128,7 +128,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 		{
 			System.Xml.Linq.XDocument result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 	}

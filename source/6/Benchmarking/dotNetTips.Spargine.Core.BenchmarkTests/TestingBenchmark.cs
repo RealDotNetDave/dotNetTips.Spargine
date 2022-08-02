@@ -4,7 +4,7 @@
 // Created          : 02-20-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="TestingBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -39,7 +39,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNull(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:AggressiveInline")]
@@ -48,7 +48,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullAgressive(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:NoInline")]
@@ -57,7 +57,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullNoInlining(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:NoOptimization")]
@@ -66,7 +66,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullNoOptimization(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:PreserveSig")]
@@ -75,7 +75,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullPreserveSig(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "MethodImplOptions:Synchronized")]
@@ -84,7 +84,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests
 		{
 			var result = WIPTests.TryValidateNullSynchronized(this._person);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "IN TEST WITHOUT IN")]

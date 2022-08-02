@@ -39,7 +39,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			var folder = DirectoryHelper.AppDataFolder();
 
-			base.Consumer.Consume(folder);
+			Consumer.Consume(folder);
 		}
 
 		public override void Cleanup()
@@ -112,7 +112,7 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		{
 			System.Collections.Generic.IEnumerable<DirectoryInfo> folders = DirectoryHelper.SafeDirectorySearch(this._sourcePath, "*.dll", SearchOption.TopDirectoryOnly);
 
-			base.Consumer.Consume(folders);
+			Consumer.Consume(folders);
 		}
 
 		//[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
@@ -130,6 +130,8 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 		}
 		public override void Setup()
 		{
+			base.Setup();
+
 			if (this._tempPath.Exists is false)
 			{
 				this._tempPath.Create();
@@ -144,8 +146,6 @@ namespace DotNetTips.Spargine.BenchmarkTests.IO
 			ConsoleLogger.Default.WriteLine($"Source Path={this._sourcePath}");
 
 			_ = RandomData.GenerateFiles(this._sourcePath.FullName, FileCount, FileLength);
-
-			base.Setup();
 		}
 	}
 }

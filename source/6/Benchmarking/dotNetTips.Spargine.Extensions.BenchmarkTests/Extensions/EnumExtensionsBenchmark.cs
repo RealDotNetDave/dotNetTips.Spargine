@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-19-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="EnumExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -30,7 +30,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._testEnum.GetDescription();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(EnumExtensions.GetItems))]
@@ -38,7 +38,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			System.Collections.Generic.IList<(string Description, int Value)> result = this._testEnum.GetItems();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 	}
 }

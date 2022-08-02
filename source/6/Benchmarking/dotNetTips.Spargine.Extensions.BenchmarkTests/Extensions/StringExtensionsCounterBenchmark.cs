@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="StringExtensionsCounterBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,7 +28,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	[BenchmarkCategory(Categories.Strings)]
-	public class StringExtensionsCounterBenchmark : SmallCounterBenchmark
+	public class StringExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
 
 		/// <summary>
@@ -49,7 +49,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.LongTestString.ComputeSha256Hash();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -60,7 +60,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.Clone<string>().Concat(",", Tristate.True, this.GetStringArray(10, 15, 20));
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(StringExtensions.SplitLines))]
@@ -68,7 +68,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			foreach (LineSplitEntry line in this._crlfString.SplitLines())
 			{
-				base.Consumer.Consume(line.Line.ToString());
+				Consumer.Consume(line.Line.ToString());
 			}
 		}
 
@@ -80,7 +80,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.LongTestString.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -91,7 +91,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.DefaultIfNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -102,7 +102,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.DefaultIfNullOrEmpty("David");
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -113,7 +113,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.String10Characters01.EqualsIgnoreCase(this.String15Characters01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -124,7 +124,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.String10Characters01.EqualsOrBothNullOrEmpty(this.String15Characters01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -135,7 +135,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.Base64String.FromBase64();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -146,7 +146,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.HasValue();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -157,7 +157,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.Indent(10, '>');
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -169,7 +169,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._testCharacter.IsAsciiDigit();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -180,7 +180,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._testCharacter.IsAsciiLetter();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -191,7 +191,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._testCharacter.IsAsciiLetterOrDigit();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -203,7 +203,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._testCharacter.IsAsciiDigit();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -215,7 +215,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			var guid = this.TestGuid.ToString();
 			var result = guid.IsGuid();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -226,7 +226,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = MacAddress.IsMacAddress();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		private const string MacAddress = "00:1A:C2:7B:00:47";
@@ -239,7 +239,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._crlfString.RemoveCRLF();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -247,9 +247,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		/// </summary>
 		public override void Setup()
 		{
-			this._crlfString = RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF;
-
 			base.Setup();
+
+			this._crlfString = RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF;
 		}
 
 		/// <summary>
@@ -260,7 +260,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.String10Characters01.StartsWithOrdinal(this.String15Characters01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -271,7 +271,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.String10Characters01.StartsWithOrdinalIgnoreCase(this.String15Characters01);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -282,7 +282,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.SubstringTrim(25, 25);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		/// <summary>
@@ -291,7 +291,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(StringExtensions.ToTitleCase))]
 		public void ToTitleCase()
 		{
-			base.Consumer.Consume(this.LowerCaseString.ToTitleCase());
+			Consumer.Consume(this.LowerCaseString.ToTitleCase());
 		}
 
 		/// <summary>
@@ -302,7 +302,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this.StringToTrim.ToTrimmed();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 	}

@@ -1,16 +1,14 @@
 
-    BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
+    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
     .NET SDK=7.0.100-preview.6.22352.1
       [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-LMZPTW : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-TBCPNW : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+      Job-YKIQEX : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 
-    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
+    EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+    Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
 
-                                         Method |        Job |  Runtime | Categories |      Mean |     Error |    StdDev |    StdErr |    Median |       Min |        Q1 |        Q3 |       Max |      Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size |  Gen 1 | Allocated |
-    ------------------------------------------- |----------- |--------- |----------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|-------:|----------:|
-     **'Looping Collection: Normal StringBuilder'** | **Job-LMZPTW** | **.NET 6.0** |    **Strings** |  **6.442 μs** | **0.3273 μs** | **0.9444 μs** | **0.0964 μs** |  **6.300 μs** |  **5.069 μs** |  **5.662 μs** |  **6.853 μs** |  **8.840 μs** | **155,234.3** |      **0.3273 μs** |      **96.00** |    **2.958** |  **4.000** |   **0.7602** |    **2** |            ***** |       **No** | **1.4725** |   **3,090 B** | **0.0153** |  **13.01 KB** |
-     'Looping Collection: Normal StringBuilder' | Job-TBCPNW | .NET 7.0 |    Strings |  5.275 μs | 0.1000 μs | 0.1111 μs | 0.0255 μs |  5.233 μs |  5.149 μs |  5.209 μs |  5.284 μs |  5.565 μs | 189,587.6 |      0.1000 μs |      19.00 |    3.890 |  2.000 |   1.4231 |    1 |            * |       No | 1.4801 |   2,352 B | 0.0229 |  12.84 KB |
-                              **GetPropertyValues** | **Job-LMZPTW** | **.NET 6.0** | **Reflection** | **39.345 μs** | **2.0514 μs** | **5.9516 μs** | **0.6043 μs** | **37.401 μs** | **33.222 μs** | **34.781 μs** | **42.915 μs** | **59.070 μs** |  **25,416.4** |      **2.0514 μs** |      **97.00** |    **4.159** |  **2.750** |   **1.2775** |    **3** |            ***** |       **No** | **0.6714** |   **2,747 B** |      **-** |   **6.03 KB** |
-                              GetPropertyValues | Job-TBCPNW | .NET 7.0 | Reflection | 43.204 μs | 2.0231 μs | 5.9652 μs | 0.5965 μs | 44.591 μs | 32.658 μs | 37.120 μs | 46.981 μs | 59.753 μs |  23,145.9 |      2.0231 μs |     100.00 |    2.709 |  3.000 |  -0.0038 |    4 |            * |       No | 0.6714 |   3,533 B |      - |   6.03 KB |
+                                         Method | Categories |      Mean |     Error |    StdDev |    StdErr |    Median |       Min |        Q1 |        Q3 |       Max |      Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size |  Gen 0 | Allocated |
+    ------------------------------------------- |----------- |----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|----------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|-------:|----------:|
+     **'Looping Collection: Normal StringBuilder'** |    **Strings** |  **5.046 μs** | **0.1489 μs** | **0.4392 μs** | **0.0439 μs** |  **4.894 μs** |  **4.459 μs** |  **4.728 μs** |  **5.334 μs** |  **6.237 μs** | **198,195.8** |      **0.1489 μs** |     **100.00** |    **3.157** |  **2.524** |   **1.0500** |    **1** |            ***** |       **No** |      **3 KB** | **1.0681** |     **10 KB** |
+                              **GetPropertyValues** | **Reflection** | **34.975 μs** | **0.6261 μs** | **0.5856 μs** | **0.1512 μs** | **34.878 μs** | **34.047 μs** | **34.606 μs** | **35.342 μs** | **36.209 μs** |  **28,592.2** |      **0.6261 μs** |      **15.00** |    **2.232** |  **2.000** |   **0.3639** |    **2** |            ***** |       **No** |      **3 KB** | **0.6714** |      **6 KB** |

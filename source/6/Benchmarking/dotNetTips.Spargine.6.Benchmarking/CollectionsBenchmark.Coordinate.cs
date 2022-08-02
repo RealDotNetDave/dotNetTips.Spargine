@@ -4,7 +4,7 @@
 // Created          : 04-18-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 07-31-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.Coordinate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,6 @@
 // <summary></summary>
 // ***********************************************************************
 
-using BenchmarkDotNet.Loggers;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 
@@ -21,12 +20,13 @@ using DotNetTips.Spargine.Tester;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class CounterBenchmark.
+	/// Partial class for Collections benchmark.
 	/// Implements the <see cref="Benchmark" />
 	/// </summary>
 	/// <seealso cref="Benchmark" />
 	public partial class CollectionsBenchmark
 	{
+
 		/// <summary>
 		/// The coordinate array
 		/// </summary>
@@ -38,15 +38,24 @@ namespace DotNetTips.Spargine.Benchmarking
 		private Tester.Models.ValueTypes.Coordinate[] _coordinateArrayHalf;
 
 		/// <summary>
+		/// The coordinate list
+		/// </summary>
+		private List<Tester.Models.ValueTypes.Coordinate> _coordinateList;
+
+		/// <summary>
+		/// The coordinate list half
+		/// </summary>
+		private List<Tester.Models.ValueTypes.Coordinate> _coordinateListHalf;
+
+		/// <summary>
 		/// Loads the coordinate array.
 		/// </summary>
-		protected void LoadCoordinateArray()
+		protected void LoadCoordinateCollections()
 		{
-			this._coordinateArray = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount).ToArray();
+			this._coordinateListHalf = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount / 2).ToList();
+			this._coordinateList = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount).ToList();
 			this._coordinateArrayHalf = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount / 2).ToArray();
-
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArray)} Count = {this._coordinateArray.Length}.");
-			ConsoleLogger.Default.WriteLine($"{nameof(this._coordinateArrayHalf)} Count = {this._coordinateArrayHalf.Length}.");
+			this._coordinateArray = RandomData.GenerateCoordinateCollection<Tester.Models.ValueTypes.Coordinate>(this.MaxCount).ToArray();
 		}
 
 		/// <summary>
@@ -54,11 +63,24 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <param name="collectionSize">Size of the collection.</param>
 		/// <returns>Tester.Models.ValueTypes.Coordinate[].</returns>
-		public Tester.Models.ValueTypes.Coordinate[] GetCoordinateArray(CollectionSize collectionSize = CollectionSize.Full)
+		public Tester.Models.ValueTypes.Coordinate[] GetCoordinateValArray(CollectionSize collectionSize = CollectionSize.Full)
 		{
 			return collectionSize is CollectionSize.Full
 				? this._coordinateArray.Clone<Tester.Models.ValueTypes.Coordinate[]>()
 				: this._coordinateArrayHalf.Clone<Tester.Models.ValueTypes.Coordinate[]>();
 		}
+
+		/// <summary>
+		/// Gets the coordinate list.
+		/// </summary>
+		/// <param name="collectionSize">Size of the collection.</param>
+		/// <returns>Tester.Models.ValueTypes.Coordinate[].</returns>
+		public Tester.Models.ValueTypes.Coordinate[] GetCoordinateValList(CollectionSize collectionSize = CollectionSize.Full)
+		{
+			return collectionSize is CollectionSize.Full
+				? this._coordinateArray.Clone<Tester.Models.ValueTypes.Coordinate[]>()
+				: this._coordinateArrayHalf.Clone<Tester.Models.ValueTypes.Coordinate[]>();
+		}
+
 	}
 }

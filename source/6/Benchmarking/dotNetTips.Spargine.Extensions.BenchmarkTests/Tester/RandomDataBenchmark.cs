@@ -4,7 +4,7 @@
 // Created          : 02-08-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-22-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="RandomDataBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,7 +28,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		{
 			Person person = RandomData.GenerateRefPerson<Person>();
 
-			base.Consumer.Consume(person);
+			Consumer.Consume(person);
 		}
 
 		[Benchmark(Description = "Creating: " + nameof(PersonProper))]
@@ -36,7 +36,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		{
 			PersonProper person = RandomData.GenerateRefPerson<PersonProper>();
 
-			base.Consumer.Consume(person);
+			Consumer.Consume(person);
 		}
 
 		[Benchmark(Description = "Creating: " + nameof(PersonRecord))]
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		{
 			PersonRecord person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 
-			base.Consumer.Consume(person);
+			Consumer.Consume(person);
 		}
 
 		[Benchmark(Description = "PropertiesToString(): " + nameof(PersonProper))]
@@ -52,7 +52,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		{
 			PersonProper person = RandomData.GenerateRefPerson<PersonProper>();
 
-			base.Consumer.Consume(person.PropertiesToString());
+			Consumer.Consume(person.PropertiesToString());
 		}
 
 		[Benchmark(Description = "PropertiesToString(): " + nameof(PersonRecord))]
@@ -60,7 +60,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Tester
 		{
 			PersonRecord person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 
-			base.Consumer.Consume(person.PropertiesToString());
+			Consumer.Consume(person.PropertiesToString());
 		}
 	}
 }

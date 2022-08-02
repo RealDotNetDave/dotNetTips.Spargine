@@ -1,14 +1,14 @@
 
-    BenchmarkDotNet=v0.13.1.1819-nightly, OS=Windows 10 (10.0.19044.1826/21H2/November2021Update)
+    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
     .NET SDK=7.0.100-preview.6.22352.1
       [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-VIFSJL : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-VGZOLO : .NET 7.0.0 (7.0.22.32404), X64 RyuJIT
+      Job-TRKAEU : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
 
-    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  
+    EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+    Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions  
 
-              Method |        Job |  Runtime |     Mean |   Error |   StdDev |  StdErr |   Median |      Min |       Q1 |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size | Allocated |
-    ---------------- |----------- |--------- |---------:|--------:|---------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|----------:|
-     FastEquals:Guid | Job-VIFSJL | .NET 6.0 | 147.4 ns | 3.00 ns |  5.41 ns | 0.85 ns | 145.7 ns | 138.8 ns | 144.4 ns | 151.6 ns | 159.2 ns | 6,782,235.5 |       3.002 ns |      41.00 |    2.496 |  2.615 |   0.6599 |    1 |            * |       No |     206 B |         - |
-     FastEquals:Guid | Job-VGZOLO | .NET 7.0 | 154.3 ns | 4.09 ns | 11.53 ns | 1.20 ns | 150.7 ns | 140.1 ns | 145.6 ns | 160.2 ns | 186.8 ns | 6,481,159.0 |       4.087 ns |      92.00 |    3.846 |  2.500 |   1.2636 |    2 |            * |       No |     329 B |         - |
+                 Method |         Categories |     Mean |     Error |    StdDev |    StdErr |      Min |       Q1 |   Median |       Q3 |      Max |          Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size | Allocated |
+    ------------------- |------------------- |---------:|----------:|----------:|----------:|---------:|---------:|---------:|---------:|---------:|--------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|----------:|
+         **'Equals: Guid'** | ****FOR COMPARISON**** | **1.318 ns** | **0.0290 ns** | **0.0271 ns** | **0.0070 ns** | **1.279 ns** | **1.300 ns** | **1.314 ns** | **1.346 ns** | **1.357 ns** | **758,471,682.1** |      **0.0290 ns** |      **15.00** |    **1.435** |  **2.000** |   **0.1893** |    **1** |            ***** |       **No** |      **96 B** |         **-** |
+     **'FastEquals: Guid'** |                   **** | **1.597 ns** | **0.0535 ns** | **0.0501 ns** | **0.0129 ns** | **1.532 ns** | **1.559 ns** | **1.587 ns** | **1.619 ns** | **1.693 ns** | **626,277,834.7** |      **0.0535 ns** |      **15.00** |    **2.010** |  **2.000** |   **0.5016** |    **2** |            ***** |       **No** |      **90 B** |         **-** |

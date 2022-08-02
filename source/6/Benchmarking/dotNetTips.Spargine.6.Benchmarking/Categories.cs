@@ -4,13 +4,16 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-22-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="Categories.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
@@ -18,6 +21,7 @@ namespace DotNetTips.Spargine.Benchmarking
 	/// </summary>
 	public static class Categories
 	{
+
 		/// <summary>
 		/// Asynchronous code
 		/// </summary>
@@ -42,6 +46,11 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Code for encryption
 		/// </summary>
 		public const string Encryption = "Encryption";
+
+		/// <summary>
+		/// For comparison
+		/// </summary>
+		public const string ForComparison = "**FOR COMPARISON**";
 
 		/// <summary>
 		/// Generic collections code
@@ -91,12 +100,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Code for reference types
 		/// </summary>
-		public const string ReferenceType = "RefType";
+		public const string ReferenceType = "Ref Type";
 
 		/// <summary>
 		/// Code for reflection
 		/// </summary>
 		public const string Reflection = "Reflection";
+
 
 		/// <summary>
 		/// Code for serialization
@@ -121,11 +131,12 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// Code for value types
 		/// </summary>
-		public const string ValueType = "ValueType";
+		public const string ValueType = "Value Type";
 
 		/// <summary>
 		/// The XML
 		/// </summary>
 		public const string XML = "XML";
+
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,7 +34,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			IPerson result = this._personProper.As<IPerson>();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.Clone) + ": PersonProper")]
@@ -42,7 +42,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			PersonProper result = this._personProper.Clone<PersonProper>();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "Clone: PersonRecord*")]
@@ -50,7 +50,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			PersonRecord result = this._personRecord with { };
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ComputeSha256Hash) + ": PersonProper")]
@@ -58,7 +58,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.ComputeSha256Hash();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ComputeSha256Hash) + ": PersonRecord")]
@@ -66,7 +66,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personRecord.ComputeSha256Hash();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.DisposeFields) + ": DataTable")]
@@ -83,7 +83,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			PersonRecord result = this._personRecord with { Id = "12345678" };
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.FromJson))]
@@ -91,7 +91,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			PersonProper result = this._peopleJson.FromJson<PersonProper>();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.HasProperty) + ": PersonProper")]
@@ -99,7 +99,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.HasProperty("City");
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.HasProperty) + ": PersonRecord")]
@@ -107,7 +107,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personRecord.HasProperty("City");
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.IsNotNull) + ": PersonProper")]
@@ -115,7 +115,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.IsNotNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.IsNotNull) + ": PersonRecord")]
@@ -123,7 +123,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personRecord.IsNotNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.IsNull) + ": PersonProper")]
@@ -131,7 +131,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.IsNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.IsNull) + ": PersonRecord")]
@@ -139,7 +139,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personRecord.IsNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "PersonRecord: ToString()")]
@@ -149,7 +149,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			var result = person.ToString();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonProper-Ignore Nulls")]
@@ -159,7 +159,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: true);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonProper-With Nulls")]
@@ -169,7 +169,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: false);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonRecord-With Nulls")]
@@ -179,7 +179,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: false);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToDictionary) + ": PersonRecord-Ignore Nulls")]
@@ -189,7 +189,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			System.Collections.Generic.IDictionary<string, string> result = person.PropertiesToDictionary(ignoreNulls: true);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonProper-Ignore Nulls")]
@@ -199,7 +199,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			var result = person.PropertiesToString(ignoreNulls: true);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonProper-With Nulls")]
@@ -209,7 +209,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			var result = person.PropertiesToString(ignoreNulls: false);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonRecord-Ignore Nulls")]
@@ -219,7 +219,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			var result = person.PropertiesToString(ignoreNulls: true);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.PropertiesToString) + ": PersonRecord-With Nulls")]
@@ -229,7 +229,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			var result = person.PropertiesToString(ignoreNulls: false);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		public override void Setup()
@@ -246,7 +246,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.StripNull();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = "Testing Param for Null: != null")]
@@ -273,7 +273,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personProper.ToJson();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.ToJson) + ": PersonRecord")]
@@ -282,7 +282,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = this._personRecord.ToJson();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.TryDispose) + ": PersonProper")]
@@ -301,7 +301,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				input = "TEST";
 			}
 
-			base.Consumer.Consume(input);
+			Consumer.Consume(input);
 		}
 
 		private void CheckForNullParamSpargine(object input)
@@ -311,7 +311,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				input = "SPARGINE";
 			}
 
-			base.Consumer.Consume(input);
+			Consumer.Consume(input);
 		}
 	}
 }

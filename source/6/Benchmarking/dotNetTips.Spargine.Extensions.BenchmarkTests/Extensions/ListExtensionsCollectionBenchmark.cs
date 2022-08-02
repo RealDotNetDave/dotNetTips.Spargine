@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="ListExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,144 +27,141 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	[BenchmarkCategory(Categories.Collections)]
-	public class ListExtensionsCollectionBenchmark : LargeCollectionBenchmark
+	public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
-
-		private List<PersonProper> _peopleList;
+		private List<PersonProper> _peopleListSubSet;
 
 		[Benchmark(Description = nameof(ListExtensions.AddLast))]
 		public void AddLastToList()
 		{
-			var people = this._peopleList;
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-			people.AddLast(this.PersonProper01);
+			people.AddLast(this.PersonProperRef01);
 
-			base.Consumer.Consume(people);
+			Consumer.Consume(people);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.AreEqual))]
 		public void AreEqualList()
 		{
-			var result = this._peopleList.AreEqual(_peopleListSubSet);
+			var result = this.GetPersonProperRefList().AreEqual(this._peopleListSubSet);
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
-
-		private List<PersonProper> _peopleListSubSet;
 
 		[Benchmark(Description = nameof(ListExtensions.ClearNulls))]
 		public void ClearNulls()
 		{
-			var people = _peopleList;
+			List<PersonProper> people = this.GetPersonProperRefList();
 			people.Add(null);
 
 			var result = people.ClearNulls();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.CopyToCollection))]
 		public void CopyToList()
 		{
-			System.Collections.ObjectModel.Collection<PersonProper> result = this._peopleList.CopyToCollection();
+			System.Collections.ObjectModel.Collection<PersonProper> result = this.GetPersonProperRefList().CopyToCollection();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
-		//[Benchmark(Description = nameof(ListExtensions.DoesNotHaveItems))]
-		//[BenchmarkCategory(Categories.Collections)]
-		//public void DoesNotHaveItemsTest()
-		//{
-		//	var people = _peopleList;
+		[Benchmark(Description = nameof(ListExtensions.DoesNotHaveItems))]
+		[BenchmarkCategory(Categories.Collections)]
+		public void DoesNotHaveItemsTest()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-		//	base.Consumer.Consume(people.DoesNotHaveItems());
-		//}
+			base.Consumer.Consume(people.DoesNotHaveItems());
+		}
 
-		//[Benchmark(Description = nameof(ListExtensions.HasItems))]
-		//[BenchmarkCategory(Categories.Collections)]
-		//public void HasItems()
-		//{
-		//	List<PersonProper> people = this._peopleList;
+		[Benchmark(Description = nameof(ListExtensions.HasItems))]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItems()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-		//	base.Consumer.Consume(people.HasItems());
-		//}
+			base.Consumer.Consume(people.HasItems());
+		}
 
-		//[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
-		//[BenchmarkCategory(Categories.Collections)]
-		//public void HasItemsWithCount()
-		//{
-		//	List<PersonProper> people = this._peopleList;
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Count")]
+		[BenchmarkCategory(Categories.Collections)]
+		public void HasItemsWithCount()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-		//	base.Consumer.Consume(people.HasItems(5));
-		//}
+			base.Consumer.Consume(people.HasItems(5));
+		}
 
 		[Benchmark(Description = nameof(ListExtensions.IndexAtLooped))]
 		public void IndexAtLooped()
 		{
-			PersonProper result = this._peopleList.IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
+			PersonProper result = this.GetPersonProperRefList().IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = "Index [] (for comparison)")]
+		[Benchmark(Description = "Index []")]
+		[BenchmarkCategory(Categories.ForComparison)]
 		public void IndexAtLooppedCompare()
 		{
 
-			PersonProper result = this._peopleList[RandomNumberGenerator.GetInt32(0, this.Count - 1)];
+			PersonProper result = this.GetPersonProperRefList()[RandomNumberGenerator.GetInt32(0, this.Count - 1)];
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
 		public void ListHasItemsWithPredicate()
 		{
-			List<PersonProper> people = this._peopleList;
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-			base.Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
+			Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
 		}
 
 		[Benchmark(Description = nameof(Enumerable.TryGetNonEnumeratedCount))]
 		[BenchmarkCategory(Categories.Collections, Categories.New)]
 		public void ListTryGetNonEnumeratedCount()
 		{
-			List<PersonProper> people = this._peopleList;
+			List<PersonProper> people = this.GetPersonProperRefList();
 
 			_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
 
-			base.Consumer.Consume(count);
+			Consumer.Consume(count);
 		}
 
-		[Benchmark(Description = "Count (for comparison)")]
-		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		[Benchmark(Description = "Count")]
+		[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
 		public void ListTryGetNonEnumeratedCountCompare()
 		{
-			List<PersonProper> people = this._peopleList;
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-			base.Consumer.Consume(people.Count);
+			Consumer.Consume(people.Count);
 		}
 
 		public override void Setup()
 		{
 			base.Setup();
 
-			this._peopleList = base.GetPersonProperArray().ToList();
-			this._peopleListSubSet = this._peopleList.TakeLast(10).Clone<IEnumerable<PersonProper>>().ToList();
+			this._peopleListSubSet = this.GetPersonProperRefList().TakeLast(10).Clone<IEnumerable<PersonProper>>().ToList();
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.ToObservableCollection))]
 		public void ToObservableCollection()
 		{
-			var result = this._peopleList.ToObservableCollection();
+			var result = this.GetPersonProperRefList().ToObservableCollection();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(ListExtensions.ToReadOnlyCollection))]
 		public void ToReadOnlyCollection()
 		{
-			var result = this._peopleList.ToReadOnlyCollection();
+			var result = this.GetPersonProperRefList().ToReadOnlyCollection();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 	}

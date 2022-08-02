@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="AssemblyExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -33,7 +33,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			System.Collections.Generic.IEnumerable<System.Type> result = Assembly.GetExecutingAssembly().GetAllInterfaces();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(AssemblyExtensions.GetAllTypes))]
@@ -42,7 +42,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			System.Collections.Generic.IEnumerable<System.Type> result = Assembly.GetExecutingAssembly().GetAllTypes();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(AssemblyExtensions.GetInstances))]
@@ -51,7 +51,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 		{
 			System.Collections.Generic.IEnumerable<AssemblyExtensionsBenchmark> result = Assembly.GetExecutingAssembly().GetInstances<AssemblyExtensionsBenchmark>();
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 	}
 }

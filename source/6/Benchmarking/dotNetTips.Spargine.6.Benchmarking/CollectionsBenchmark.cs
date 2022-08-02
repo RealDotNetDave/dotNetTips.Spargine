@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-25-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -21,16 +21,22 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Benchmarking
 {
 	/// <summary>
-	/// Class for Collections.
+	/// Partial class for Collections benchmark.
 	/// Implements the <see cref="CounterBenchmark" />
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	public partial class CollectionsBenchmark : Benchmark
 	{
+
 		/// <summary>
 		/// The people to insert
 		/// </summary>
-		private PersonProper[] _peopleToInsert;
+		private PersonProper[] _peopleRefToInsert;
+
+		/// <summary>
+		/// The people value to insert
+		/// </summary>
+		private Tester.Models.ValueTypes.Person[] _peopleValToInsert;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CollectionsBenchmark" /> class.
@@ -45,9 +51,18 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// Gets the people to insert.
 		/// </summary>
 		/// <returns>PersonProper[].</returns>
-		protected virtual PersonProper[] GetPeopleToInsert()
+		protected virtual PersonProper[] GetPeopleRefToInsert()
 		{
-			return this._peopleToInsert;
+			return this._peopleRefToInsert;
+		}
+
+		/// <summary>
+		/// Gets the people value to insert.
+		/// </summary>
+		/// <returns>Tester.Models.ValueTypes.Person[].</returns>
+		protected virtual Tester.Models.ValueTypes.Person[] GetPeopleValToInsert()
+		{
+			return this._peopleValToInsert;
 		}
 
 		/// <summary>
@@ -60,14 +75,14 @@ namespace DotNetTips.Spargine.Benchmarking
 			ConsoleLogger.Default.WriteLine(LogKind.Info, $"Collection Count={this.MaxCount}: {nameof(CollectionsBenchmark)}.");
 
 			//Load collections
-			this.LoadCoordinateArray();
-			this.LoadCoordinateProperArray();
-			this.LoadPersonProperRefArray();
-			this.LoadPersonRecordArray();
-			this.LoadPersonRefArray();
-			this.LoadPersonValArray();
+			this.LoadCoordinateCollections();
+			this.LoadCoordinateProperCollections();
+			this.LoadPersonProperCollections();
+			this.LoadPersonRecordCollections();
+			this.LoadPersonCollections();
 
-			this._peopleToInsert = new List<PersonProper>(this.GetPersonProperArray().Shuffle(Math.Max(2, this.MaxCount / 2))).ToArray();
+			this._peopleRefToInsert = new List<PersonProper>(this.GetPersonProperRefArray().Shuffle(Math.Max(2, this.MaxCount / 2))).ToArray();
+			this._peopleValToInsert = new List<Tester.Models.ValueTypes.Person>(this.GetPersonValArray().Shuffle(Math.Max(2, this.MaxCount / 2))).ToArray();
 		}
 
 		/// <summary>
@@ -75,5 +90,6 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// </summary>
 		/// <value>The maximum count.</value>
 		public int MaxCount { get; internal set; }
+
 	}
 }

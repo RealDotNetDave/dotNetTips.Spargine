@@ -27,7 +27,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	/// </summary>
 	/// <seealso cref="CounterBenchmark" />
 	[BenchmarkCategory(Categories.Strings)]
-	public class StringBuilderExtensionsCounterBenchmark : SmallCounterBenchmark
+	public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
 		[Benchmark(Description = nameof(StringBuilderExtensions.AppendBytes) + ":01*")]
 		public void AppendBytes01()
@@ -36,7 +36,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			sb.AppendBytes(this.GetByteArray(1));
 
-			base.Consumer.Consume(sb.ToString());
+			Consumer.Consume(sb.ToString());
 		}
 
 		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString) + ":01**")]
@@ -44,7 +44,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		{
 			var result = StringBuilderHelper.BytesToString(this.GetByteArray(1));
 
-			base.Consumer.Consume(result);
+			Consumer.Consume(result);
 		}
 
 		[Benchmark(Description = nameof(StringBuilderExtensions.AppendKeyValue))]
@@ -59,7 +59,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				sb.AppendKeyValue(testString, testString);
 			}
 
-			base.Consumer.Consume(sb.ToString());
+			Consumer.Consume(sb.ToString());
 		}
 
 		[Benchmark(Description = nameof(StringBuilderExtensions.AppendValues))]
@@ -69,7 +69,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			sb.AppendValues(ControlChars.DefaultSeparator, this.GetStringArray(10, 15, 20));
 
-			base.Consumer.Consume(sb.ToString());
+			Consumer.Consume(sb.ToString());
 		}
 	}
 }

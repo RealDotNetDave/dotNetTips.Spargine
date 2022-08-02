@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 08-01-2022
 // ***********************************************************************
 // <copyright file="ExceptionExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,7 +27,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 		[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
 		public void GetAllMessages01()
 		{
-			base.Consumer.Consume(this._testException.GetAllMessages());
+			Consumer.Consume(this._testException.GetAllMessages());
 		}
 	}
 }

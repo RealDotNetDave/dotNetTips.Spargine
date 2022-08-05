@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ArrayExtensions
 	{
+
 		/// <summary>
 		/// Adds the specified item to the array, in the last position.
 		/// Validates that <paramref name="array" /> and <paramref name="item" /> is not null.
@@ -390,19 +391,6 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Removes the duplicate values.
-		/// Validates that <paramref name="array" /> is not null.
-		/// </summary>
-		/// <param name="array">The values.</param>
-		/// <returns>System.Int32().</returns>
-		/// <remarks>Code by: Kevin S Gallagher</remarks>
-		[Information(nameof(RemoveDuplicates), UnitTestCoverage = 100, Status = Status.Available)]
-		public static IEnumerable<int> RemoveDuplicates(this int[] array)
-		{
-			return array.ArgumentNotNull().Distinct().AsEnumerable();
-		}
-
-		/// <summary>
 		/// Removes the first item in the array.
 		/// Validates that <paramref name="array" /> is not null and contains items.
 		/// </summary>
@@ -446,11 +434,12 @@ namespace DotNetTips.Spargine.Extensions
 		/// Returns the array without duplicates.
 		/// Validates that <paramref name="array" /> is not null.
 		/// </summary>
-		/// <param name="array">The list.</param>
-		/// <returns>System.String[].</returns>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="array">The array.</param>
+		/// <returns>T[].</returns>
 		/// <exception cref="ArgumentNullException">Array cannot be null.</exception>
 		[Information(nameof(ToDistinct), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-		public static string[] ToDistinct([NotNull] this string[] array)
+		public static T[] ToDistinct<T>([NotNull] this T[] array)
 		{
 			return array.ArgumentNotNull().Distinct().ToArray();
 		}
@@ -505,5 +494,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			return recordsList.ToArray();
 		}
+
 	}
 }

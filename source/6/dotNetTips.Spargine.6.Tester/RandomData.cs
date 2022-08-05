@@ -199,7 +199,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random character.
 		/// </summary>
 		/// <returns>System.Char.</returns>
-		/// <example>82 'R'</example>
+		/// <example>Output: 82 'R'</example>
 		[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static char GenerateCharacter()
 		{
@@ -212,7 +212,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="minValue">The minimum character value.</param>
 		/// <param name="maxValue">The maximum character value.</param>
 		/// <returns>System.Char.</returns>
-		/// <example>65 'A'</example>
+		/// <example>Output: 65 'A'</example>
 		[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static char GenerateCharacter(char minValue, char maxValue)
 		{
@@ -224,7 +224,7 @@ namespace DotNetTips.Spargine.Tester
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <returns>T.</returns>
-		/// <example>X: 178765551 Y: -2145952440</example>
+		/// <example>Output: X: 178765551 Y: -2145952440</example>
 		[Information(nameof(GenerateCoordinate), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static T GenerateCoordinate<T>() where T : ICoordinate, new()
 		{
@@ -241,7 +241,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <typeparam name="T"></typeparam>
 		/// <param name="count">The number of items to create. Minimum value is 1.</param>
 		/// <returns>List&lt;T&gt;.</returns>
-		/// <example>[0]: {2089369587--284215139} [1]: {244137335-1577361939}</example>
+		/// <example>Output: [0]: {2089369587--284215139} [1]: {244137335-1577361939}</example>
 		[Information(nameof(GenerateCoordinateCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<T> GenerateCoordinateCollection<T>(int count) where T : ICoordinate, new()
 		{
@@ -266,7 +266,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="maxValue">The maximum value.</param>
 		/// <param name="decimalPlaces">The decimal places. Minimum value = 0.</param>
 		/// <returns>System.Decimal.</returns>
-		/// <example>95.15</example>
+		/// <example>Output: 95.15</example>
 		[Information(nameof(GenerateDecimal), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static decimal GenerateDecimal(decimal minValue, decimal maxValue, int decimalPlaces)
 		{
@@ -281,7 +281,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Returns a random domain extension.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>".co.uk"</example>
+		/// <example>Output: ".co.uk"</example>
 		[Information(nameof(GenerateDomainExtension), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateDomainExtension()
 		{
@@ -292,7 +292,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random email address.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>fbxpfvtanqysqmuqfh@kiuvf.fr</example>
+		/// <example>Output: fbxpfvtanqysqmuqfh@kiuvf.fr</example>
 		[Information(nameof(GenerateEmailAddress), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateEmailAddress()
 		{
@@ -305,7 +305,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="fileName">Name of the file.</param>
 		/// <param name="fileLength">Byte length of the file. Minimum length = 1</param>
 		/// <returns>Name of the file generated.</returns>
-		/// <example>c:\\temp\\UnitTest.test</example>
+		/// <example>Output: c:\\temp\\UnitTest.test</example>
 		[Information(nameof(GenerateFile), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateFile(string fileName, int fileLength = DefaultFileLength)
 		{
@@ -324,7 +324,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="fileLength">Length of the file. Minimum value = 1.</param>
 		/// <param name="fileExtension">The file extension.</param>
 		/// <returns>System.ValueTuple&lt;System.String, IEnumerable&lt;System.String&gt;&gt;.</returns>
-		/// <example>Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
+		/// <example>Output: Path: "C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\" Files: Count = 100</example>
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static (string Path, IEnumerable<string> Files) GenerateFiles(int count = 100, int fileLength = DefaultFileLength, string fileExtension = DefaultFileExtension)
 		{
@@ -351,7 +351,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="count">The number of files to create. Minimum value = 1.</param>
 		/// <param name="fileLength">Length of the file. Minimum value = 1.</param>
 		/// <returns>Collection of file names that were created.</returns>
-		/// <example>[0]: "c:\\temp\\dobybcyx.lj"  [1]: "c:\\temp\\zo2ggwub.3ro"</example>
+		/// <example>Output: [0]: "c:\\temp\\dobybcyx.lj"  [1]: "c:\\temp\\zo2ggwub.3ro"</example>
 		[Information(nameof(GenerateFiles), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<string> GenerateFiles(string path, int count = 100, int fileLength = DefaultFileLength)
 		{
@@ -401,7 +401,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random key from a GUID.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
+		/// <example>Output: f7f0af78003d4ab194b5a4024d02112a</example>
 		[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		public static string GenerateKey()
 		{
@@ -413,7 +413,7 @@ namespace DotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="length">The length of the number. Minimum value = 1.</param>
 		/// <returns>System.String.</returns>
-		/// <example>"446085072052112"</example>
+		/// <example>Output: "446085072052112"</example>
 		/// <remarks>Does not use RandomNumberGenerator due to performance increase. [CA5394]</remarks>
 		[Information(nameof(GenerateNumber), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateNumber(int length)
@@ -586,7 +586,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a US phone number.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>284-424-2216</example>
+		/// <example>Output: 284-424-2216</example>
 		[Information(nameof(GeneratePhoneNumberUSA), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GeneratePhoneNumberUSA()
 		{
@@ -599,7 +599,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="fileNameLength">Length of the file name. Minimum value = 1. Maximim value = 256.</param>
 		/// <param name="extension">The extension.</param>
 		/// <returns>System.String.</returns>
-		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\FOGWYNDRBM.dotnettips</example>
+		/// <example>Output: C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\FOGWYNDRBM.dotnettips</example>
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName(int fileNameLength = 10, string extension = DefaultFileExtension)
 		{
@@ -618,7 +618,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="fileNameLength">Length of the file name. Minimum value = 1. Maximum value = 256.</param>
 		/// <param name="extension">The extension.</param>
 		/// <returns>System.String.</returns>
-		/// <example>c:\\temp\\FFDHRBMDXP.dotnettips</example>
+		/// <example>Output: c:\\temp\\FFDHRBMDXP.dotnettips</example>
 		[Information(nameof(GenerateRandomFileName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRandomFileName([NotNull] string path, int fileNameLength = 10, string extension = DefaultFileExtension)
 		{
@@ -634,7 +634,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random relative url.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>"/ljsylu/rsglcurkiylqld/wejdbuainlgjofnv/uwbrjftyt/"</example>
+		/// <example>Output:"/ljsylu/rsglcurkiylqld/wejdbuainlgjofnv/uwbrjftyt/"</example>
 		[Information(nameof(GenerateRelativeUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateRelativeUrl()
 		{
@@ -655,7 +655,7 @@ namespace DotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="fileLength">The length. Minimum value = 1.</param>
 		/// <returns>System.String.</returns>
-		/// <example>C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\klxpckpo.24h</example>
+		/// <example>Output: C:\\Users\\dotNetDave\\AppData\\Local\\Temp\\klxpckpo.24h</example>
 		[Information(nameof(GenerateTempFile), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateTempFile(int fileLength = DefaultFileLength)
 		{
@@ -673,7 +673,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random Url.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
+		/// <example>Output: https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
 		[Information(nameof(GenerateUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrl()
 		{
@@ -684,7 +684,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a random url host name.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
+		/// <example>Output: https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
 		[Information(nameof(GenerateUrlHostName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 		public static string GenerateUrlHostName()
 		{
@@ -695,7 +695,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates a url without a protocol.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
+		/// <example>Output: www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
 		[Information(nameof(GenerateUrlHostNameNoProtocol), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateUrlHostNameNoProtocol()
 		{
@@ -706,7 +706,7 @@ namespace DotNetTips.Spargine.Tester
 		/// Creates host name without a sub domain.
 		/// </summary>
 		/// <returns>System.String.</returns>
-		/// <example>elqqcw.org.uk</example>
+		/// <example>Output: elqqcw.org.uk</example>
 		[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateUrlHostNameNoSubDomain()
 		{
@@ -729,7 +729,7 @@ namespace DotNetTips.Spargine.Tester
 		/// </summary>
 		/// <param name="length">The length. Minimum value = 1.</param>
 		/// <returns>System.String.</returns>
-		/// <example>mL_g[E_E_CsoJvjshI]CFjFKa</example>
+		/// <example>Output: mL_g[E_E_CsoJvjshI]CFjFKa</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int length)
 		{
@@ -746,7 +746,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="minLength">The minimum length. Minimum value = 1.</param>
 		/// <param name="maxLength">The maximum length. Minimum value = 1.</param>
 		/// <returns>System.String.</returns>
-		/// <example>oMOYxlFvqclVQK</example>
+		/// <example>Output: oMOYxlFvqclVQK</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength)
 		{
@@ -763,7 +763,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="minCharacter">The minimum character.</param>
 		/// <param name="maxCharacter">The maximum character.</param>
 		/// <returns>System.String.</returns>
-		/// <example>LBEEUMHHHK</example>
+		/// <example>Output: LBEEUMHHHK</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int length, char minCharacter, char maxCharacter)
 		{
@@ -787,7 +787,7 @@ namespace DotNetTips.Spargine.Tester
 		/// <param name="minCharacter">The minimum character.</param>
 		/// <param name="maxCharacter">The maximum character.</param>
 		/// <returns>System.String.</returns>
-		/// <example>ACRNFTPAE</example>
+		/// <example>Output: ACRNFTPAE</example>
 		[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 		public static string GenerateWord(int minLength, int maxLength, char minCharacter, char maxCharacter)
 		{

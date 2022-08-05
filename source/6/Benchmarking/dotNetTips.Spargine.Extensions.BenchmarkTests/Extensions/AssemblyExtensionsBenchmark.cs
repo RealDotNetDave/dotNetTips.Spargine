@@ -1,23 +1,24 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 02-21-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="AssemblyExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="AssemblyExtensionsBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System.Reflection;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
+namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	/// <summary>
 	/// AssemblyExtensions Benchmark tests.
@@ -53,5 +54,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests.Extensions
 
 			Consumer.Consume(result);
 		}
+
 	}
 }

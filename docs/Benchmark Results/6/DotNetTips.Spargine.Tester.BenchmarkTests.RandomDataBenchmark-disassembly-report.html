@@ -1,0 +1,2732 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark-20220804-155911</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="24">DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark-20220804-155911</th></tr>
+<tr>
+<th>GenerateByteArray .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateCharacter .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateCoordinate .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateDecimal .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateDomainExtension .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateEmailAddress .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateFile .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateFiles .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateInteger .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateKey .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateNumber .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GeneratePhoneNumberUSA .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateRandomFileName .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateRefPerson .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateRelativeUrl .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateTempFile .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateUrl .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateUrlHostName .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateUrlHostNameNoProtocol .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateUrlHostNameNoSubDomain .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateUrlPart .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateValPerson .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateWord .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GenerateWords .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateByteArray()
+push      rsi
+sub       rsp,20
+vzeroupper
+mov       rsi,rcx
+vmovsd    xmm0,qword ptr [7FF8946A6158]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateByteArray(Double)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateByteArray(Double)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,88
+vzeroupper
+vmovaps   [rsp+70],xmm6
+lea       rbp,[rsp+0A0]
+xor       eax,eax
+mov       [rbp+0FF98],rax
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp+0FFA0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFB0],xmm4
+vmovdqa   xmmword ptr [rbp+0FFC0],xmm4
+mov       [rbp+0FF80],rsp
+vmovsd    qword ptr [rbp+10],xmm0
+mov       rcx,201AA6B1568
+mov       rsi,[rcx]
+mov       rcx,offset MT_System.Double
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      DotNetTips.Spargine.Tester.Properties.Resources.get_SizeMustBeEpsilon()
+mov       rdx,rax
+vmovsd    xmm0,qword ptr [7FF8946A6358]
+vmovsd    qword ptr [rdi+8],xmm0
+xor       ecx,ecx
+mov       r8,201AA6B1380
+mov       r8,[r8]
+vmovsd    xmm6,qword ptr [rbp+10]
+vucomisd  xmm6,xmm0
+setae     bl
+movzx     ebx,bl
+mov       [rbp+0FFA8],rdi
+mov       [rbp+0FFB0],rcx
+mov       [rbp+0FFB8],rcx
+mov       [rbp+0FFC0],r8
+mov       rcx,rsi
+lea       r8,[rbp+0FFA8]
+call      System.String.FormatHelper(System.IFormatProvider, System.String, System.ParamsArray)
+and       ebx,1
+jne       short 00007FF8946A6235
+vxorps    xmm6,xmm6,xmm6
+vmulsd    xmm0,xmm6,qword ptr [7FF8946A6360]
+call      System.Convert.ToInt32(Double)
+movsxd    rdx,eax
+mov       rcx,offset MT_System.Byte[]
+call      CORINFO_HELP_NEWARR_1_VC
+lea       rsi,[rax+10]
+mov       edi,[rax+8]
+mov       rdx,2019A6B36F8
+mov       rcx,[rdx]
+mov       [rbp+0FF90],rcx
+xor       edx,edx
+mov       [rbp+0FFC8],edx
+cmp       byte ptr [rbp+0FFC8],0
+jne       short 00007FF8946A6282
+lea       rdx,[rbp+0FFC8]
+call      System.Threading.Monitor.ReliableEnter(System.Object, Boolean ByRef)
+jmp       short 00007FF8946A6288
+call      System.Threading.Monitor.ThrowLockTakenException()
+int       3
+mov       rcx,2019A6B3700
+mov       rcx,[rcx]
+mov       [rbp+0FF98],rsi
+mov       [rbp+0FFA0],edi
+lea       rdx,[rbp+0FF98]
+call      qword ptr [7FF8946A9B90]
+nop
+cmp       byte ptr [rbp+0FFC8],0
+je        short 00007FF8946A62B6
+mov       rcx,[rbp+0FF90]
+call      System.Threading.Monitor.Exit(System.Object)
+test      edi,edi
+je        short 00007FF8946A62F3
+movsxd    rdx,edi
+mov       rcx,offset MT_System.Byte[]
+call      CORINFO_HELP_NEWARR_1_VC
+mov       rbx,rax
+lea       rcx,[rbx+10]
+mov       r8d,edi
+mov       rdx,rsi
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+vmovaps   xmm6,[rsp+70]
+add       rsp,88
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       rax,201AA6B2E98
+mov       rax,[rax]
+jmp       short 00007FF8946A62E1
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,48
+vzeroupper
+vmovaps   [rsp+30],xmm6
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+0A0]
+cmp       byte ptr [rbp+0FFC8],0
+je        short 00007FF8946A6332
+mov       rcx,[rbp+0FF90]
+call      System.Threading.Monitor.Exit(System.Object)
+nop
+vmovaps   xmm6,[rsp+30]
+add       rsp,48
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateCharacter()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,41
+mov       edx,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,0FFFF
+ja        short 00007FF894690ECC
+mov       rdx,[rsi+18]
+mov       [rdx+50],ax
+add       rsp,20
+pop       rsi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,40
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp+0FFE8],rax
+mov       [rbp+0FFD0],rsp
+mov       esi,ecx
+mov       edi,edx
+test      esi,esi
+jle       short 00007FF894690F90
+jmp       short 00007FF894690F95
+mov       esi,1
+mov       edx,esi
+add       edx,1
+jo        short 00007FF894690FF5
+cmp       edi,edx
+jl        short 00007FF894690FA2
+jmp       short 00007FF894690FA4
+mov       edi,edx
+mov       rdx,169E5E07B00
+mov       rcx,[rdx]
+mov       [rbp+0FFE0],rcx
+xor       edx,edx
+mov       [rbp+0FFE8],edx
+cmp       byte ptr [rbp+0FFE8],0
+jne       short 00007FF894690FCB
+lea       rdx,[rbp+0FFE8]
+call      System.Threading.Monitor.ReliableEnter(System.Object, Boolean ByRef)
+jmp       short 00007FF894690FD1
+call      System.Threading.Monitor.ThrowLockTakenException()
+int       3
+mov       ecx,esi
+mov       edx,edi
+call      System.Security.Cryptography.RandomNumberGenerator.GetInt32(Int32, Int32)
+mov       esi,eax
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF894690FEB
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+mov       eax,esi
+add       rsp,40
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,30
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+50]
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF89469101E
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+nop
+add       rsp,30
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateCoordinate()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateCoordinate[[DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper, DotNetTips.Spargine.6.Tester]]()
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+lea       rdx,[rsp+28]
+call      BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper, DotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateCoordinate[[DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper, DotNetTips.Spargine.6.Tester]]()
+sub       rsp,28
+xor       eax,eax
+mov       [rsp+20],rax
+mov       ecx,80000000
+mov       edx,7FFFFFFF
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+mov       [rsp+20],eax
+mov       ecx,80000000
+mov       edx,7FFFFFFF
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+mov       [rsp+24],eax
+mov       rax,[rsp+20]
+add       rsp,28
+ret
+
+BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper, DotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.ValueTypes.CoordinateProper ByRef)
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateDecimal()
+push      rsi
+sub       rsp,50
+xor       eax,eax
+mov       [rsp+40],rax
+mov       [rsp+48],rax
+mov       rsi,rcx
+mov       rdx,179CE111058
+mov       rdx,[rdx]
+add       rdx,8
+mov       r8d,[rdx]
+mov       ecx,[rdx+4]
+mov       rdx,[rdx+8]
+mov       r9d,3E8
+xor       eax,eax
+mov       [rsp+30],r8d
+mov       [rsp+34],ecx
+mov       [rsp+38],rdx
+mov       [rsp+20],eax
+mov       [rsp+24],eax
+mov       [rsp+28],r9
+lea       rdx,[rsp+30]
+lea       r8,[rsp+20]
+lea       rcx,[rsp+40]
+mov       r9d,2
+call      DotNetTips.Spargine.Tester.RandomData.GenerateDecimal(System.Decimal, System.Decimal, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+lea       rdx,[rsp+40]
+call      BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[System.Decimal, System.Private.CoreLib]](System.Decimal ByRef)
+nop
+add       rsp,50
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateDecimal(System.Decimal, System.Decimal, Int32)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,0B8
+vzeroupper
+mov       rbx,rcx
+mov       rsi,rdx
+mov       rdi,r8
+test      r9d,r9d
+jl        short 00007FF8946B2B7F
+cmp       r9d,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF8946B2B81
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF8946B2BAD
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,21
+mov       rdx,7FF8945E6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      r9d,r9d
+jl        near ptr 00007FF8946B2D24
+xor       edx,edx
+mov       ecx,r9d
+xor       eax,eax
+mov       r8d,0A
+xor       r9d,r9d
+mov       [rsp+0A8],edx
+mov       [rsp+0AC],eax
+mov       [rsp+0B0],rcx
+mov       [rsp+98],r9d
+mov       [rsp+9C],r9d
+mov       [rsp+0A0],r8
+lea       rcx,[rsp+0A8]
+lea       rdx,[rsp+98]
+call      System.Decimal+DecCalc.VarDecMul(DecCalc ByRef, DecCalc ByRef)
+mov       ebp,[rsp+0A8]
+mov       r14d,[rsp+0AC]
+mov       r15,[rsp+0B0]
+vmovupd   xmm0,[rsi]
+vmovupd   [rsp+88],xmm0
+mov       [rsp+78],ebp
+mov       [rsp+7C],r14d
+mov       [rsp+80],r15
+lea       rcx,[rsp+88]
+lea       rdx,[rsp+78]
+call      System.Decimal+DecCalc.VarDecMul(DecCalc ByRef, DecCalc ByRef)
+mov       ecx,[rsp+88]
+mov       eax,[rsp+8C]
+mov       rdx,[rsp+90]
+mov       [rsp+28],ecx
+mov       [rsp+2C],eax
+mov       [rsp+30],rdx
+lea       rcx,[rsp+28]
+call      System.Decimal.ToInt32(System.Decimal)
+mov       esi,eax
+vmovupd   xmm0,[rdi]
+vmovupd   [rsp+68],xmm0
+mov       [rsp+58],ebp
+mov       [rsp+5C],r14d
+mov       [rsp+60],r15
+lea       rcx,[rsp+68]
+lea       rdx,[rsp+58]
+call      System.Decimal+DecCalc.VarDecMul(DecCalc ByRef, DecCalc ByRef)
+mov       ecx,[rsp+68]
+mov       eax,[rsp+6C]
+mov       rdx,[rsp+70]
+mov       [rsp+28],ecx
+mov       [rsp+2C],eax
+mov       [rsp+30],rdx
+lea       rcx,[rsp+28]
+call      System.Decimal.ToInt32(System.Decimal)
+mov       edx,eax
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+test      eax,eax
+jl        short 00007FF8946B2D31
+xor       edx,edx
+mov       ecx,eax
+xor       eax,eax
+mov       [rsp+48],edx
+mov       [rsp+4C],eax
+mov       [rsp+50],rcx
+mov       [rsp+38],ebp
+mov       [rsp+3C],r14d
+mov       [rsp+40],r15
+lea       rcx,[rsp+48]
+lea       rdx,[rsp+38]
+call      System.Decimal+DecCalc.VarDecDiv(DecCalc ByRef, DecCalc ByRef)
+vmovupd   xmm0,[rsp+48]
+vmovupd   [rbx],xmm0
+mov       rax,rbx
+add       rsp,0B8
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+mov       edx,80000000
+neg       r9d
+jmp       near ptr 00007FF8946B2BB8
+mov       edx,80000000
+neg       eax
+jmp       short 00007FF8946B2CD9
+
+BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[System.Decimal, System.Private.CoreLib]](System.Decimal ByRef)
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateDomainExtension()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,19ACF7536F0
+mov       rdi,[rdx]
+mov       ebx,[rdi+8]
+mov       edx,ebx
+sub       edx,1
+jo        short 00007FF894680EAC
+xor       ecx,ecx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,ebx
+jae       short 00007FF894680EB2
+movsxd    rdx,eax
+mov       rdx,[rdi+rdx*8+10]
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,40
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp+0FFE8],rax
+mov       [rbp+0FFD0],rsp
+mov       esi,ecx
+mov       edi,edx
+test      esi,esi
+jle       short 00007FF894680FB0
+jmp       short 00007FF894680FB5
+mov       esi,1
+mov       edx,esi
+add       edx,1
+jo        short 00007FF894681015
+cmp       edi,edx
+jl        short 00007FF894680FC2
+jmp       short 00007FF894680FC4
+mov       edi,edx
+mov       rdx,19ACF7536F8
+mov       rcx,[rdx]
+mov       [rbp+0FFE0],rcx
+xor       edx,edx
+mov       [rbp+0FFE8],edx
+cmp       byte ptr [rbp+0FFE8],0
+jne       short 00007FF894680FEB
+lea       rdx,[rbp+0FFE8]
+call      System.Threading.Monitor.ReliableEnter(System.Object, Boolean ByRef)
+jmp       short 00007FF894680FF1
+call      System.Threading.Monitor.ThrowLockTakenException()
+int       3
+mov       ecx,esi
+mov       edx,edi
+call      System.Security.Cryptography.RandomNumberGenerator.GetInt32(Int32, Int32)
+mov       esi,eax
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF89468100B
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+mov       eax,esi
+add       rsp,40
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,30
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+50]
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF89468103E
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+nop
+add       rsp,30
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateEmailAddress()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateEmailAddress()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateEmailAddress()
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       ecx,5
+mov       edx,19
+mov       r8d,61
+mov       r9d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32, Char, Char)
+mov       rsi,rax
+mov       ecx,5
+mov       edx,19
+mov       r8d,61
+mov       r9d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32, Char, Char)
+mov       rdi,rax
+mov       rdx,168711C7AF8
+mov       rbx,[rdx]
+mov       rdx,168811C26D0
+mov       rbp,[rdx]
+mov       r14d,[rbx+8]
+mov       edx,r14d
+sub       edx,1
+jo        short 00007FF894691ED8
+xor       ecx,ecx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,r14d
+jae       short 00007FF894691EDE
+movsxd    r9,eax
+mov       r9,[rbx+r9*8+10]
+mov       rdx,rbp
+mov       r8,rdi
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+jmp       near ptr System.String.Concat(System.String, System.String, System.String, System.String)
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateFile()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+1C8]
+mov       rdx,192901E2B38
+mov       rdx,[rdx]
+call      System.IO.Path.Combine(System.String, System.String)
+mov       rcx,rax
+mov       edx,400
+call      DotNetTips.Spargine.Tester.RandomData.GenerateFile(System.String, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+System.IO.Path.Combine(System.String, System.String)
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,48
+xor       eax,eax
+mov       [rsp+28],rax
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rsp+30],xmm4
+mov       [rsp+40],rax
+test      rcx,rcx
+je        near ptr 00007FF894675F1E
+test      rdx,rdx
+je        near ptr 00007FF894675F0F
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF894675F02
+mov       esi,[rdx+8]
+test      esi,esi
+je        near ptr 00007FF894675EFA
+lea       rax,[rdx+0C]
+mov       r8d,esi
+test      r8d,r8d
+jle       short 00007FF894675D5C
+movzx     r9d,word ptr [rax]
+cmp       r9d,5C
+je        near ptr 00007FF894675E10
+cmp       r9d,2F
+sete      r9b
+movzx     r9d,r9b
+test      r9d,r9d
+jne       near ptr 00007FF894675E10
+cmp       r8d,2
+jl        short 00007FF894675DD9
+movzx     r8d,word ptr [rax]
+cmp       r8d,41
+jl        short 00007FF894675D89
+cmp       r8d,5A
+jg        short 00007FF894675D89
+cmp       word ptr [rax+2],3A
+sete      r8b
+movzx     r8d,r8b
+test      r8d,r8d
+je        short 00007FF894675DD9
+jmp       near ptr 00007FF894675E10
+cmp       r8d,61
+jl        short 00007FF894675DD9
+cmp       r8d,7A
+setle     r8b
+movzx     r8d,r8b
+test      r8d,r8d
+je        short 00007FF894675DD9
+jmp       short 00007FF894675D72
+mov       [rsp+38],rdi
+mov       [rsp+40],ebx
+mov       [rsp+28],rbp
+mov       [rsp+30],esi
+lea       rcx,[rsp+38]
+lea       rdx,[rsp+28]
+call      System.String.Concat(System.ReadOnlySpan`1<Char>, System.ReadOnlySpan`1<Char>)
+jmp       short 00007FF894675DC8
+mov       rax,r15
+add       rsp,48
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+ret
+lea       rdi,[rcx+0C]
+mov       ebx,[rcx+8]
+add       rdx,0C
+mov       rbp,rdx
+lea       eax,[rbx+0FFFF]
+cmp       eax,ebx
+jae       near ptr 00007FF894675F68
+movsxd    rax,eax
+movzx     eax,word ptr [rdi+rax*2]
+cmp       eax,5C
+je        short 00007FF894675E15
+cmp       eax,2F
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF894675E15
+jmp       near ptr 00007FF894675ED1
+mov       rax,rdx
+jmp       short 00007FF894675DC8
+mov       r8d,1
+movzx     ecx,r8b
+test      ecx,ecx
+jne       near ptr 00007FF894675DA2
+mov       rcx,192B01E98A0
+mov       r14,[rcx]
+add       r14,0C
+mov       ecx,ebx
+add       ecx,1
+jo        near ptr 00007FF894675F0A
+add       ecx,esi
+jo        near ptr 00007FF894675F0A
+test      ecx,ecx
+je        near ptr 00007FF894675F50
+call      System.String.FastAllocateString(Int32)
+mov       r15,rax
+lea       r12,[r15+0C]
+mov       r13d,[r15+8]
+cmp       ebx,r13d
+ja        near ptr 00007FF894675F62
+mov       eax,ebx
+add       rax,rax
+mov       [rsp+20],rax
+mov       r8,rax
+mov       rcx,r12
+mov       rdx,rdi
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+sub       r13d,ebx
+add       r12,[rsp+20]
+cmp       r13d,1
+jb        near ptr 00007FF894675F62
+mov       r8d,2
+mov       rcx,r12
+mov       rdx,r14
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       r8d,r13d
+sub       r8d,1
+add       r12,2
+mov       rcx,r12
+cmp       esi,r8d
+ja        near ptr 00007FF894675F62
+mov       r8d,esi
+add       r8,r8
+mov       rdx,rbp
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+jmp       near ptr 00007FF894675DC5
+test      esi,esi
+je        near ptr 00007FF894675F68
+movzx     ecx,word ptr [rbp]
+cmp       ecx,5C
+je        short 00007FF894675EF2
+cmp       ecx,2F
+sete      r8b
+movzx     r8d,r8b
+jmp       near ptr 00007FF894675E1B
+mov       r8d,1
+jmp       short 00007FF894675EED
+mov       rax,rcx
+jmp       near ptr 00007FF894675DC8
+mov       rax,rdx
+jmp       near ptr 00007FF894675DC8
+call      CORINFO_HELP_OVERFLOW
+mov       rcx,192B01E9890
+mov       rsi,[rcx]
+jmp       short 00007FF894675F2B
+mov       rcx,192B01E9898
+mov       rsi,[rcx]
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+mov       rdx,rsi
+call      System.ArgumentNullException..ctor(System.String)
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+mov       rax,192B01E3020
+mov       rax,[rax]
+jmp       near ptr 00007FF894675DC8
+call      System.ThrowHelper.ThrowArgumentException_DestinationTooShort()
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+DotNetTips.Spargine.Tester.RandomData.GenerateFile(System.String, Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       edi,edx
+mov       rcx,rsi
+test      rcx,rcx
+je        short 00007FF894679E62
+cmp       dword ptr [rcx+8],0
+je        short 00007FF894679E62
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF894679E3F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,41
+mov       rdx,7FF8945A6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       edx,edi
+test      edx,edx
+jle       short 00007FF894679E69
+cmp       edx,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF894679E6B
+mov       eax,1
+jmp       short 00007FF894679E0B
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF894679E97
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,53
+mov       rdx,7FF8945A6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rcx,rsi
+call      DotNetTips.Spargine.Tester.RandomData.CreateFile(System.String, Int32)
+mov       rax,rsi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateFiles()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+1C8]
+mov       edx,2
+mov       r8d,400
+call      DotNetTips.Spargine.Tester.RandomData.GenerateFiles(System.String, Int32, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateFiles(System.String, Int32, Int32)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+vzeroupper
+mov       rdi,rcx
+mov       esi,edx
+mov       ebx,r8d
+mov       rcx,rdi
+test      rcx,rcx
+je        short 00007FF89469DE29
+cmp       dword ptr [rcx+8],0
+je        short 00007FF89469DE29
+xor       eax,eax
+jmp       short 00007FF89469DE2E
+mov       eax,1
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF89469DE62
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rdi,rax
+mov       ecx,0A5
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+test      esi,esi
+jle       short 00007FF89469DE83
+cmp       esi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF89469DE85
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF89469DEB1
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,1
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      ebx,ebx
+jle       short 00007FF89469DEC3
+cmp       ebx,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF89469DEC5
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF89469DEF1
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rbx,rax
+mov       ecx,53
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rcx,rdi
+call      System.IO.Directory.CreateDirectory(System.String)
+mov       rcx,offset MT_System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       edx,esi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+xor       r14d,r14d
+test      esi,esi
+jle       short 00007FF89469DF7A
+mov       r8,2162A972338
+mov       r8,[r8]
+mov       rcx,rdi
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.String, Int32, System.String)
+mov       r15,rax
+mov       rcx,r15
+mov       edx,ebx
+call      DotNetTips.Spargine.Tester.RandomData.CreateFile(System.String, Int32)
+inc       dword ptr [rbp+14]
+mov       rcx,[rbp+8]
+mov       edx,[rbp+10]
+cmp       [rcx+8],edx
+jbe       short 00007FF89469DF64
+lea       r8d,[rdx+1]
+mov       [rbp+10],r8d
+mov       r8,r15
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FF89469DF6F
+mov       rcx,rbp
+mov       rdx,r15
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+add       r14d,1
+jo        short 00007FF89469DFB3
+cmp       r14d,esi
+jl        short 00007FF89469DF1C
+mov       rdx,[rbp+8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,dword ptr [rdx+8]
+vmulsd    xmm0,xmm0,qword ptr [7FF89469DFC0]
+vcvttsd2si edx,xmm0
+cmp       [rbp+10],edx
+jge       short 00007FF89469DFA3
+mov       edx,[rbp+10]
+mov       rcx,rbp
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].set_Capacity(Int32)
+mov       rax,rbp
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateInteger()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,80000000
+mov       edx,7FFFFFFF
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+mov       rdx,[rsi+18]
+mov       [rdx+40],eax
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,40
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp+0FFE8],rax
+mov       [rbp+0FFD0],rsp
+mov       esi,ecx
+mov       edi,edx
+test      esi,esi
+jle       short 00007FF894680FD0
+jmp       short 00007FF894680FD5
+mov       esi,1
+mov       edx,esi
+add       edx,1
+jo        short 00007FF894681035
+cmp       edi,edx
+jl        short 00007FF894680FE2
+jmp       short 00007FF894680FE4
+mov       edi,edx
+mov       rdx,1C519947B00
+mov       rcx,[rdx]
+mov       [rbp+0FFE0],rcx
+xor       edx,edx
+mov       [rbp+0FFE8],edx
+cmp       byte ptr [rbp+0FFE8],0
+jne       short 00007FF89468100B
+lea       rdx,[rbp+0FFE8]
+call      System.Threading.Monitor.ReliableEnter(System.Object, Boolean ByRef)
+jmp       short 00007FF894681011
+call      System.Threading.Monitor.ThrowLockTakenException()
+int       3
+mov       ecx,esi
+mov       edx,edi
+call      System.Security.Cryptography.RandomNumberGenerator.GetInt32(Int32, Int32)
+mov       esi,eax
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF89468102B
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+mov       eax,esi
+add       rsp,40
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+push      rbp
+push      rdi
+push      rsi
+sub       rsp,30
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+50]
+cmp       byte ptr [rbp+0FFE8],0
+je        short 00007FF89468105E
+mov       rcx,[rbp+0FFE0]
+call      System.Threading.Monitor.Exit(System.Object)
+nop
+add       rsp,30
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateKey()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
+sub       rsp,38
+xor       eax,eax
+mov       [rsp+28],rax
+mov       [rsp+30],rax
+lea       rcx,[rsp+28]
+call      System.Guid.NewGuid()
+mov       rdx,217CC5313C0
+mov       rdx,[rdx]
+mov       r8,217EC531568
+mov       r8,[r8]
+lea       rcx,[rsp+28]
+call      System.Guid.ToString(System.String, System.IFormatProvider)
+nop
+add       rsp,38
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateNumber()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp+0FFE0],rax
+mov       [rbp+0FFD0],rsp
+mov       esi,ecx
+test      esi,esi
+jle       short 00007FF894686A6B
+cmp       esi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF894686A6D
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF894686A99
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,0AF
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+mov       edx,esi
+mov       r8d,7FFFFFFF
+call      System.Text.StringBuilder..ctor(Int32, Int32)
+mov       rdx,23284D67B00
+mov       rcx,[rdx]
+mov       [rbp+0FFD8],rcx
+xor       edx,edx
+mov       [rbp+0FFE0],edx
+cmp       byte ptr [rbp+0FFE0],0
+jne       short 00007FF894686AE7
+lea       rdx,[rbp+0FFE0]
+call      System.Threading.Monitor.ReliableEnter(System.Object, Boolean ByRef)
+jmp       short 00007FF894686AED
+call      CORINFO_HELP_OVERFLOW
+call      System.Threading.Monitor.ThrowLockTakenException()
+int       3
+xor       ebx,ebx
+test      esi,esi
+jle       short 00007FF894686B12
+xor       ecx,ecx
+mov       edx,9
+call      System.Security.Cryptography.RandomNumberGenerator.GetInt32(Int32, Int32)
+mov       edx,eax
+mov       rcx,rdi
+call      System.Text.StringBuilder.AppendSpanFormattable[[System.Int32, System.Private.CoreLib]](Int32)
+add       ebx,1
+jo        short 00007FF894686AE2
+cmp       ebx,esi
+jl        short 00007FF894686AF3
+cmp       byte ptr [rbp+0FFE0],0
+je        short 00007FF894686B21
+mov       rcx,[rbp+0FFD8]
+call      System.Threading.Monitor.Exit(System.Object)
+mov       rcx,rdi
+call      qword ptr [7FF894692180]
+mov       rsi,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)
+test      eax,eax
+je        short 00007FF894686B3E
+mov       rax,rsi
+jmp       short 00007FF894686B5C
+cmp       [rsi],esi
+mov       rcx,rsi
+mov       edx,2
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       [rax],eax
+mov       rcx,rax
+mov       edx,1
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,28
+mov       rbp,[rcx+20]
+mov       [rsp+20],rbp
+lea       rbp,[rbp+50]
+cmp       byte ptr [rbp+0FFE0],0
+je        short 00007FF894686B8A
+mov       rcx,[rbp+0FFD8]
+call      System.Threading.Monitor.Exit(System.Object)
+nop
+add       rsp,28
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GeneratePhoneNumberUSA()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+push      rdi
+push      rsi
+sub       rsp,48
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rsp+20],xmm4
+vmovdqa   xmmword ptr [rsp+30],xmm4
+xor       eax,eax
+mov       [rsp+40],rax
+mov       rcx,29F392F2EA8
+mov       rcx,[rcx]
+mov       edx,100
+call      qword ptr [7FF894692598]
+lea       rsi,[rsp+20]
+mov       [rsp+28],rax
+test      rax,rax
+je        near ptr 00007FF8946828F1
+lea       rdx,[rax+10]
+mov       edi,[rax+8]
+add       rsi,18
+mov       [rsi],rdx
+mov       [rsi+8],edi
+xor       ecx,ecx
+mov       [rsp+30],ecx
+mov       byte ptr [rsp+34],0
+mov       ecx,3
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rdi,rax
+cmp       byte ptr [rsp+34],0
+jne       near ptr 00007FF894682819
+test      rdi,rdi
+je        near ptr 00007FF894682819
+mov       r8d,[rsp+30]
+cmp       r8d,[rsp+40]
+ja        near ptr 00007FF894682916
+mov       rcx,[rsp+38]
+mov       edx,[rsp+40]
+sub       edx,r8d
+mov       r8d,r8d
+lea       rcx,[rcx+r8*2]
+mov       r8d,[rdi+8]
+cmp       r8d,edx
+ja        near ptr 00007FF894682819
+lea       rdx,[rdi+0C]
+mov       r8d,[rdi+8]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rsp+30]
+add       ecx,[rdi+8]
+mov       [rsp+30],ecx
+lea       rcx,[rsp+38]
+mov       rax,[rcx]
+mov       ecx,[rcx+8]
+mov       edx,[rsp+30]
+cmp       edx,ecx
+jae       near ptr 00007FF8946828FA
+movsxd    rcx,edx
+mov       word ptr [rax+rcx*2],2D
+inc       edx
+mov       [rsp+30],edx
+mov       ecx,3
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rsi,rax
+cmp       byte ptr [rsp+34],0
+jne       near ptr 00007FF8946828B3
+test      rsi,rsi
+je        near ptr 00007FF8946828B3
+mov       r8d,[rsp+30]
+cmp       r8d,[rsp+40]
+ja        near ptr 00007FF894682916
+mov       rcx,[rsp+38]
+mov       edx,[rsp+40]
+sub       edx,r8d
+mov       r8d,r8d
+lea       rcx,[rcx+r8*2]
+mov       r8d,[rsi+8]
+cmp       r8d,edx
+ja        near ptr 00007FF8946828B3
+lea       rdx,[rsi+0C]
+mov       r8d,[rsi+8]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+jmp       short 00007FF89468282B
+lea       rcx,[rsp+20]
+mov       rdx,rdi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormattedSlow(System.String)
+jmp       near ptr 00007FF894682790
+mov       ecx,[rsp+30]
+add       ecx,[rsi+8]
+mov       [rsp+30],ecx
+lea       rcx,[rsp+38]
+mov       rax,[rcx]
+mov       ecx,[rcx+8]
+mov       edx,[rsp+30]
+cmp       edx,ecx
+jae       near ptr 00007FF89468291C
+movsxd    rcx,edx
+mov       word ptr [rax+rcx*2],2D
+inc       edx
+mov       [rsp+30],edx
+mov       ecx,4
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rsi,rax
+cmp       byte ptr [rsp+34],0
+jne       short 00007FF8946828E2
+test      rsi,rsi
+je        short 00007FF8946828E2
+mov       r8d,[rsp+30]
+cmp       r8d,[rsp+40]
+ja        near ptr 00007FF894682916
+mov       rcx,[rsp+38]
+mov       edx,[rsp+40]
+sub       edx,r8d
+mov       r8d,r8d
+lea       rcx,[rcx+r8*2]
+mov       r8d,[rsi+8]
+cmp       r8d,edx
+ja        short 00007FF8946828E2
+lea       rdx,[rsi+0C]
+mov       r8d,[rsi+8]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+jmp       short 00007FF8946828C5
+lea       rcx,[rsp+20]
+mov       rdx,rsi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormattedSlow(System.String)
+jmp       near ptr 00007FF894682836
+mov       ecx,[rsp+30]
+add       ecx,[rsi+8]
+mov       [rsp+30],ecx
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.ToStringAndClear()
+nop
+add       rsp,48
+pop       rsi
+pop       rdi
+ret
+lea       rcx,[rsp+20]
+mov       rdx,rsi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormattedSlow(System.String)
+jmp       short 00007FF8946828D0
+xor       edx,edx
+xor       edi,edi
+jmp       near ptr 00007FF89468270F
+mov       rdx,29F392F32F8
+mov       rdx,[rdx]
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.GrowThenCopyString(System.String)
+jmp       near ptr 00007FF8946827B6
+call      System.ThrowHelper.ThrowArgumentOutOfRangeException()
+int       3
+mov       rdx,29F392F32F8
+mov       rdx,[rdx]
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.GrowThenCopyString(System.String)
+jmp       near ptr 00007FF89468285C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateRandomFileName()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+1C8]
+mov       r8,15B4E521B20
+mov       r8,[r8]
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.String, Int32, System.String)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(System.String, Int32, System.String)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,50
+xor       eax,eax
+mov       [rsp+28],rax
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rsp+30],xmm4
+vmovdqa   xmmword ptr [rsp+40],xmm4
+mov       rbx,rcx
+mov       edi,edx
+mov       rsi,r8
+test      edi,edi
+jle       short 00007FF89468287B
+cmp       edi,100
+setle     al
+movzx     eax,al
+jmp       short 00007FF89468287D
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF8946828A9
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rdi,rax
+mov       ecx,0C1
+mov       rdx,7FF8945B6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rcx,rsi
+test      rcx,rcx
+je        short 00007FF8946828D4
+cmp       dword ptr [rcx+8],0
+je        short 00007FF8946828D4
+xor       edx,edx
+test      edx,edx
+sete      dl
+movzx     edx,dl
+test      edx,edx
+jne       short 00007FF8946828DB
+mov       rcx,15B4E521B20
+mov       rcx,[rcx]
+jmp       short 00007FF8946828DB
+mov       edx,1
+jmp       short 00007FF8946828B9
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+xor       ecx,ecx
+mov       [rsp+28],rcx
+mov       rcx,15B3E522EA8
+mov       rcx,[rcx]
+mov       edx,100
+call      qword ptr [7FF894692598]
+lea       rbp,[rsp+28]
+mov       [rsp+30],rax
+test      rax,rax
+je        near ptr 00007FF894682A53
+lea       r9,[rax+10]
+mov       r14d,[rax+8]
+add       rbp,18
+mov       [rbp],r9
+mov       [rbp+8],r14d
+xor       ecx,ecx
+mov       [rsp+38],ecx
+mov       byte ptr [rsp+3C],0
+mov       ecx,edi
+mov       edx,41
+mov       r8d,5A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Char, Char)
+mov       r14,rax
+cmp       byte ptr [rsp+3C],0
+jne       near ptr 00007FF894682A09
+test      r14,r14
+je        near ptr 00007FF894682A09
+mov       r8d,[rsp+38]
+cmp       r8d,[rsp+48]
+ja        near ptr 00007FF894682A5E
+mov       rcx,[rsp+40]
+mov       edx,[rsp+48]
+sub       edx,r8d
+mov       r8d,r8d
+lea       rcx,[rcx+r8*2]
+mov       r8d,[r14+8]
+cmp       r8d,edx
+ja        short 00007FF894682A09
+lea       rdx,[r14+0C]
+mov       r8d,[r14+8]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rsp+38]
+add       ecx,[r14+8]
+mov       [rsp+38],ecx
+lea       rcx,[rsp+28]
+mov       edx,2E
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormatted[[System.Char, System.Private.CoreLib]](Char)
+cmp       byte ptr [rsp+3C],0
+jne       near ptr 00007FF894682A44
+test      rsi,rsi
+je        short 00007FF894682A44
+mov       r8d,[rsp+38]
+cmp       r8d,[rsp+48]
+ja        near ptr 00007FF894682A5E
+mov       rcx,[rsp+40]
+mov       edx,[rsp+48]
+sub       edx,r8d
+mov       r8d,r8d
+lea       rcx,[rcx+r8*2]
+mov       r8d,[rsi+8]
+cmp       r8d,edx
+ja        short 00007FF894682A44
+lea       rdx,[rsi+0C]
+mov       r8d,[rsi+8]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+jmp       short 00007FF894682A18
+lea       rcx,[rsp+28]
+mov       rdx,r14
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormattedSlow(System.String)
+jmp       short 00007FF8946829AC
+mov       ecx,[rsp+38]
+add       ecx,[rsi+8]
+mov       [rsp+38],ecx
+lea       rcx,[rsp+28]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.ToStringAndClear()
+mov       rdx,rax
+mov       rcx,rbx
+call      System.IO.Path.Combine(System.String, System.String)
+nop
+add       rsp,50
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+lea       rcx,[rsp+28]
+mov       rdx,rsi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormattedSlow(System.String)
+jmp       short 00007FF894682A23
+xor       r9d,r9d
+xor       r14d,r14d
+jmp       near ptr 00007FF894682924
+call      System.ThrowHelper.ThrowArgumentOutOfRangeException()
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateRefPerson()
+push      rbp
+push      rsi
+sub       rsp,48
+lea       rbp,[rsp+50]
+mov       rsi,rcx
+mov       dword ptr [rsp+20],0F
+mov       dword ptr [rsp+28],19
+mov       dword ptr [rsp+30],8
+mov       dword ptr [rsp+38],0F
+mov       rcx,offset MD_DotNetTips.Spargine.Tester.RandomData.GenerateRefPerson(Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+mov       edx,19
+mov       r8d,0F
+mov       r9d,0F
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRefPerson[[System.__Canon, System.Private.CoreLib]](Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,48
+pop       rsi
+pop       rbp
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateRefPerson[[System.__Canon, System.Private.CoreLib]](Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,68
+vzeroupper
+xor       eax,eax
+mov       [rsp+50],rax
+mov       [rsp+58],rax
+mov       [rsp+60],rcx
+mov       esi,edx
+mov       edi,r8d
+mov       ebx,r9d
+mov       rdx,[rcx+10]
+cmp       qword ptr [rdx+10],0
+je        short 00007FF894684AE9
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+10]
+jmp       short 00007FF894684AFB
+mov       rdx,7FF894708508
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+call      System.Activator.CreateInstance[[System.__Canon, System.Private.CoreLib]]()
+mov       rbp,rax
+call      DotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F04E0
+call      qword ptr [7FF8946904E0]
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F04E8
+call      qword ptr [7FF8946904E8]
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F04F0
+call      qword ptr [7FF8946904F0]
+call      System.DateTime.get_UtcNow()
+mov       rdx,rax
+lea       rcx,[rsp+50]
+mov       r8d,1
+call      System.DateTimeOffset.ToLocalTime(System.DateTime, Boolean)
+mov       ecx,1
+mov       edx,4B
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+imul      ecx,eax,16D
+jo        near ptr 00007FF894684DAD
+movsxd    rcx,ecx
+imul      rcx,0E10
+lea       rcx,[rcx+rcx*2]
+shl       rcx,3
+imul      rcx,3E8
+mov       rax,46DC5D638865
+cmp       rcx,rax
+jg        near ptr 00007FF894684DB2
+mov       rax,0B923A29C779B
+cmp       rcx,rax
+jl        near ptr 00007FF894684DB2
+imul      rsi,rcx,2710
+lea       rcx,[rsp+50]
+call      System.DateTimeOffset.get_ClockDateTime()
+mov       rdx,0FFFFFFFFFFFF
+and       rdx,rax
+sub       rdx,rsi
+mov       rcx,2875F4373FFF
+cmp       rdx,rcx
+ja        near ptr 00007FF894684DDE
+mov       rcx,0
+and       rcx,rax
+or        rdx,rcx
+mov       ecx,[rsp+50]
+movsx     rcx,cx
+movsxd    rcx,ecx
+imul      rcx,3C
+mov       r8,0D6BF94D5E5
+cmp       rcx,r8
+jg        near ptr 00007FF894684DE6
+mov       r8,0FF29406B2A1B
+cmp       rcx,r8
+jl        near ptr 00007FF894684DE6
+imul      r8,rcx,989680
+vxorps    xmm0,xmm0,xmm0
+vmovupd   [rsp+30],xmm0
+lea       rcx,[rsp+30]
+call      System.DateTimeOffset..ctor(System.DateTime, System.TimeSpan)
+vmovupd   xmm0,[rsp+30]
+vmovupd   [rsp+40],xmm0
+vmovupd   xmm0,[rsp+40]
+vmovupd   [rsp+20],xmm0
+mov       rcx,rbp
+lea       rdx,[rsp+20]
+mov       r11,7FF8942F04F8
+call      qword ptr [7FF8946904F8]
+call      DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0500
+call      qword ptr [7FF894690500]
+mov       ecx,edi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0508
+call      qword ptr [7FF894690508]
+mov       ecx,ebx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0510
+call      qword ptr [7FF894690510]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateEmailAddress()
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0518
+call      qword ptr [7FF894690518]
+mov       ecx,[rsp+0B0]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0520
+call      qword ptr [7FF894690520]
+call      DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0528
+call      qword ptr [7FF894690528]
+mov       ecx,[rsp+0B8]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0530
+call      qword ptr [7FF894690530]
+mov       ecx,[rsp+0C0]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0538
+call      qword ptr [7FF894690538]
+mov       ecx,[rsp+0C8]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rbp
+mov       r11,7FF8942F0540
+call      qword ptr [7FF894690540]
+mov       rax,rbp
+add       rsp,68
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+mov       rcx,offset MT_System.ArgumentOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+call      System.SR.get_Overflow_TimeSpanTooLong()
+mov       r8,rax
+mov       rcx,rsi
+xor       edx,edx
+call      System.ArgumentOutOfRangeException..ctor(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+xor       ecx,ecx
+call      System.DateTime.ThrowDateArithmetic(Int32)
+int       3
+call      System.ThrowHelper.ThrowArgumentOutOfRange_TimeSpanTooLong()
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateRelativeUrl()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       dword ptr [rsi+20],7FFFFFFF
+mov       rcx,offset MT_System.Char[]
+mov       edx,10
+call      CORINFO_HELP_NEWARR_1_VC
+lea       rcx,[rsi+8]
+mov       rdx,rax
+call      CORINFO_HELP_ASSIGN_REF
+xor       edi,edi
+mov       ecx,1
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+test      eax,eax
+jle       short 00007FF89466DE5C
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlPart()
+mov       rdx,rax
+mov       rcx,rsi
+call      System.Text.StringBuilder.Append(System.String)
+add       edi,1
+jo        short 00007FF89466DEA5
+mov       ecx,1
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,edi
+jg        short 00007FF89466DE34
+mov       ecx,[rsi+18]
+mov       edx,ecx
+mov       r8,[rsi+8]
+mov       eax,[r8+8]
+cmp       eax,edx
+jbe       short 00007FF89466DE7F
+movsxd    rdx,edx
+mov       word ptr [r8+rdx*2+10],2F
+inc       ecx
+mov       [rsi+18],ecx
+jmp       short 00007FF89466DE92
+mov       rcx,rsi
+mov       edx,2F
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+mov       rcx,rsi
+mov       rax,[7FF894672180]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateTempFile()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,400
+call      DotNetTips.Spargine.Tester.RandomData.GenerateTempFile(Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateTempFile(Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       esi,ecx
+test      esi,esi
+jle       short 00007FF8946A8B6A
+cmp       esi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF8946A8B6C
+xor       eax,eax
+mov       edx,eax
+test      eax,eax
+jne       short 00007FF8946A8B79
+mov       esi,400
+jmp       short 00007FF8946A8BA5
+test      edx,edx
+jne       short 00007FF8946A8BA5
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,53
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rdx,211C39D5F30
+mov       rdx,[rdx]
+mov       ecx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRandomFileName(Int32, System.String)
+mov       rdi,rax
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+mov       rcx,rdi
+call      System.IO.File.WriteAllText(System.String, System.String)
+mov       rax,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateUrl()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostName()
+mov       rdi,rax
+call      DotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl()
+mov       rdx,rax
+mov       rcx,rdi
+call      System.String.Concat(System.String, System.String)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostName()
+push      rsi
+sub       rsp,20
+mov       rax,1EA0C575F28
+mov       rsi,[rax]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoProtocol()
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rsi
+jmp       near ptr System.String.Concat(System.String, System.String)
+
+DotNetTips.Spargine.Tester.RandomData.GenerateRelativeUrl()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       dword ptr [rsi+20],7FFFFFFF
+mov       rcx,offset MT_System.Char[]
+mov       edx,10
+call      CORINFO_HELP_NEWARR_1_VC
+lea       rcx,[rsi+8]
+mov       rdx,rax
+call      CORINFO_HELP_ASSIGN_REF
+xor       edi,edi
+mov       ecx,1
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+test      eax,eax
+jle       short 00007FF89469E01C
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlPart()
+mov       rdx,rax
+mov       rcx,rsi
+call      System.Text.StringBuilder.Append(System.String)
+add       edi,1
+jo        short 00007FF89469E065
+mov       ecx,1
+mov       edx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,edi
+jg        short 00007FF89469DFF4
+mov       ecx,[rsi+18]
+mov       edx,ecx
+mov       r8,[rsi+8]
+mov       eax,[r8+8]
+cmp       eax,edx
+jbe       short 00007FF89469E03F
+movsxd    rdx,edx
+mov       word ptr [r8+rdx*2+10],2F
+inc       ecx
+mov       [rsi+18],ecx
+jmp       short 00007FF89469E052
+mov       rcx,rsi
+mov       edx,2F
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+mov       rcx,rsi
+mov       rax,[7FF8946A2180]
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+System.String.Concat(System.String, System.String)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rdi,rcx
+mov       rsi,rdx
+test      rdi,rdi
+je        short 00007FF8946A16E4
+mov       ebx,[rdi+8]
+test      ebx,ebx
+je        short 00007FF8946A16E4
+test      rsi,rsi
+je        near ptr 00007FF8946A1770
+mov       ebp,[rsi+8]
+test      ebp,ebp
+je        near ptr 00007FF8946A1770
+jmp       short 00007FF8946A1708
+test      rsi,rsi
+je        near ptr 00007FF8946A1780
+mov       ebp,[rsi+8]
+test      ebp,ebp
+je        near ptr 00007FF8946A1780
+mov       rax,rsi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+mov       ebx,[rdi+8]
+mov       r14d,ebx
+mov       ebp,[rsi+8]
+lea       ecx,[r14+rbp]
+call      System.String.FastAllocateString(Int32)
+mov       r15,rax
+cmp       [r15+8],ebx
+jl        near ptr 00007FF8946A17BC
+lea       rcx,[r15+0C]
+lea       rdx,[rdi+0C]
+mov       r8d,ebx
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       r8d,[r15+8]
+sub       r8d,r14d
+cmp       r8d,ebp
+jl        short 00007FF8946A179A
+lea       r8,[r15+0C]
+movsxd    rcx,r14d
+lea       rcx,[r8+rcx*2]
+lea       rdx,[rsi+0C]
+mov       r8d,ebp
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,r15
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+mov       rax,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+mov       rax,1EA0C573020
+mov       rax,[rax]
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateUrlHostName()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostName()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostName()
+push      rsi
+sub       rsp,20
+mov       rax,24010A51B20
+mov       rsi,[rax]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoProtocol()
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rsi
+jmp       near ptr System.String.Concat(System.String, System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateUrlHostNameNoProtocol()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoProtocol()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoProtocol()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       ecx,1
+mov       edx,19
+mov       r8d,61
+mov       r9d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32, Char, Char)
+mov       rsi,rax
+mov       rax,15FB2E51B20
+mov       rdi,[rax]
+mov       rax,15FC2E53290
+mov       rbx,[rax]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoSubDomain()
+mov       r9,rax
+mov       r8,rbx
+mov       rcx,rdi
+mov       rdx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       near ptr System.String.Concat(System.String, System.String, System.String, System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateUrlHostNameNoSubDomain()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoSubDomain()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateUrlHostNameNoSubDomain()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       ecx,3
+mov       edx,19
+mov       r8d,61
+mov       r9d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32, Char, Char)
+mov       rsi,rax
+mov       rdx,1FC2A277AF8
+mov       rdi,[rdx]
+mov       ebx,[rdi+8]
+mov       edx,ebx
+sub       edx,1
+jo        short 00007FF8946A16CE
+xor       ecx,ecx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+cmp       eax,ebx
+jae       short 00007FF8946A16D4
+movsxd    rdx,eax
+mov       rdx,[rdi+rdx*8+10]
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       near ptr System.String.Concat(System.String, System.String)
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateUrlPart()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateUrlPart()
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateUrlPart()
+push      rsi
+sub       rsp,20
+mov       rcx,29886BC1B20
+mov       rsi,[rcx]
+mov       ecx,1
+mov       edx,19
+mov       r8d,61
+mov       r9d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32, Char, Char)
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rsi
+jmp       near ptr System.String.Concat(System.String, System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateValPerson()
+push      rbp
+push      rsi
+sub       rsp,0B8
+lea       rbp,[rsp+0C0]
+xor       eax,eax
+mov       [rbp+0FF88],rax
+vxorps    xmm4,xmm4,xmm4
+mov       rax,0FFFFFFFFFFA0
+vmovdqa   xmmword ptr [rbp+rax+0FFF0],xmm4
+vmovdqa   xmmword ptr [rax+rbp],xmm4
+vmovdqa   xmmword ptr [rbp+rax+10],xmm4
+add       rax,30
+jne       short 00007FF8946A5B05
+mov       [rbp+0FFF0],rax
+mov       rsi,rcx
+mov       dword ptr [rsp+20],0F
+mov       dword ptr [rsp+28],19
+mov       dword ptr [rsp+30],8
+mov       dword ptr [rsp+38],0F
+lea       rcx,[rbp+0FF88]
+mov       edx,19
+mov       r8d,0F
+mov       r9d,0F
+call      DotNetTips.Spargine.Tester.RandomData.GenerateValPerson(Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+lea       rdx,[rbp+0FF88]
+call      BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[DotNetTips.Spargine.Tester.Models.ValueTypes.Person, DotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.ValueTypes.Person ByRef)
+nop
+add       rsp,0B8
+pop       rsi
+pop       rbp
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateValPerson(Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,148
+vzeroupper
+xor       eax,eax
+mov       [rsp+58],rax
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rsp+60],xmm4
+vmovdqa   xmmword ptr [rsp+70],xmm4
+mov       rax,0FFFFFFFFFF40
+vmovdqa   xmmword ptr [rsp+rax+140],xmm4
+vmovdqa   xmmword ptr [rsp+rax+150],xmm4
+vmovdqa   xmmword ptr [rsp+rax+160],xmm4
+add       rax,30
+jne       short 00007FF8946A5BCF
+mov       [rsp+140],rax
+mov       rbx,rcx
+mov       esi,edx
+mov       edi,r8d
+mov       ebp,r9d
+call      DotNetTips.Spargine.Core.KeyGenerator.GenerateKey()
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_Id(System.String)
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_Address1(System.String)
+mov       ecx,esi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_Address2(System.String)
+call      System.DateTime.get_UtcNow()
+mov       rdx,rax
+lea       rcx,[rsp+58]
+mov       r8d,1
+call      System.DateTimeOffset.ToLocalTime(System.DateTime, Boolean)
+mov       ecx,1
+mov       edx,4B
+call      DotNetTips.Spargine.Tester.RandomData.GenerateInteger(Int32, Int32)
+imul      ecx,eax,16D
+jo        near ptr 00007FF8946A5E9B
+movsxd    rcx,ecx
+imul      rcx,0E10
+lea       rcx,[rcx+rcx*2]
+shl       rcx,3
+imul      rcx,3E8
+mov       rax,46DC5D638865
+cmp       rcx,rax
+jg        near ptr 00007FF8946A5EA0
+mov       rax,0B923A29C779B
+cmp       rcx,rax
+jl        near ptr 00007FF8946A5EA0
+imul      rsi,rcx,2710
+lea       rcx,[rsp+58]
+call      System.DateTimeOffset.get_ClockDateTime()
+mov       rdx,0FFFFFFFFFFFF
+and       rdx,rax
+sub       rdx,rsi
+mov       rcx,2875F4373FFF
+cmp       rdx,rcx
+ja        near ptr 00007FF8946A5ECC
+mov       rcx,0
+and       rcx,rax
+or        rdx,rcx
+mov       ecx,[rsp+58]
+movsx     rcx,cx
+movsxd    rcx,ecx
+imul      rcx,3C
+mov       r8,0D6BF94D5E5
+cmp       rcx,r8
+jg        near ptr 00007FF8946A5ED4
+mov       r8,0FF29406B2A1B
+cmp       rcx,r8
+jl        near ptr 00007FF8946A5ED4
+imul      r8,rcx,989680
+vxorps    xmm0,xmm0,xmm0
+vmovupd   [rsp+38],xmm0
+lea       rcx,[rsp+38]
+call      System.DateTimeOffset..ctor(System.DateTime, System.TimeSpan)
+vmovupd   xmm0,[rsp+38]
+vmovupd   [rsp+48],xmm0
+lea       rcx,[rsp+68]
+vmovupd   xmm0,[rsp+48]
+vmovupd   [rsp+28],xmm0
+lea       rdx,[rsp+28]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_BornOn(System.DateTimeOffset)
+call      DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_CellPhone(System.String)
+mov       ecx,edi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_City(System.String)
+mov       ecx,ebp
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_Country(System.String)
+call      DotNetTips.Spargine.Tester.RandomData.GenerateEmailAddress()
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_Email(System.String)
+mov       ecx,[rsp+190]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_FirstName(System.String)
+call      DotNetTips.Spargine.Tester.RandomData.GeneratePhoneNumberUSA()
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_HomePhone(System.String)
+mov       ecx,[rsp+198]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_LastName(System.String)
+mov       ecx,[rsp+1A0]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateNumber(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_PostalCode(System.String)
+mov       ecx,[rsp+1A8]
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rdx,rax
+lea       rcx,[rsp+68]
+call      DotNetTips.Spargine.Tester.Models.ValueTypes.Person.set_State(System.String)
+lea       rdi,[rsp+0D8]
+lea       rsi,[rsp+68]
+mov       ecx,0E
+rep movsq
+mov       rdi,rbx
+lea       rsi,[rsp+0D8]
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+call      CORINFO_HELP_ASSIGN_BYREF
+movsq
+movsq
+mov       rax,rbx
+add       rsp,148
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+mov       rcx,offset MT_System.ArgumentOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+call      System.SR.get_Overflow_TimeSpanTooLong()
+mov       r8,rax
+mov       rcx,rsi
+xor       edx,edx
+call      System.ArgumentOutOfRangeException..ctor(System.String, System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+xor       ecx,ecx
+call      System.DateTime.ThrowDateArithmetic(Int32)
+int       3
+call      System.ThrowHelper.ThrowArgumentOutOfRange_TimeSpanTooLong()
+int       3
+
+BenchmarkDotNet.Engines.Consumer.ValueTypesConsumer[[DotNetTips.Spargine.Tester.Models.ValueTypes.Person, DotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.ValueTypes.Person ByRef)
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateWord()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32)
+push      rsi
+sub       rsp,20
+test      ecx,ecx
+jle       short 00007FF8946714E7
+cmp       ecx,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF8946714E9
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF894671515
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,0AF
+mov       rdx,7FF8945A6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       edx,41
+mov       r8d,7A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Char, Char)
+nop
+add       rsp,20
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Tester.BenchmarkTests.RandomDataBenchmark.GenerateWords()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       ecx,0A
+mov       edx,5
+mov       r8d,0A
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWords(Int32, Int32, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,10
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Tester.RandomData.GenerateWords(Int32, Int32, Int32)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+vzeroupper
+mov       esi,ecx
+mov       edi,edx
+mov       ebx,r8d
+test      esi,esi
+jle       short 00007FF89468EA66
+cmp       esi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF89468EA68
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF89468EA94
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,1
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      edi,edi
+jle       short 00007FF89468EAA6
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF89468EAA8
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF89468EAD4
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rdi,rax
+mov       ecx,117
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      ebx,ebx
+jle       short 00007FF89468EAE6
+cmp       ebx,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF89468EAE8
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF89468EB14
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rbx,rax
+mov       ecx,12B
+mov       rdx,7FF8945D6D08
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rbx
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+mov       rcx,offset MT_System.Collections.Generic.List`1[[System.String, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       edx,esi
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]]..ctor(Int32)
+xor       r14d,r14d
+test      esi,esi
+jle       short 00007FF89468EB75
+mov       ecx,edi
+mov       edx,ebx
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWord(Int32, Int32)
+mov       r8,rax
+inc       dword ptr [rbp+14]
+mov       rcx,[rbp+8]
+mov       edx,[rbp+10]
+cmp       [rcx+8],edx
+jbe       short 00007FF89468EB5F
+lea       eax,[rdx+1]
+mov       [rbp+10],eax
+call      CORINFO_HELP_ARRADDR_ST
+jmp       short 00007FF89468EB6A
+mov       rcx,rbp
+mov       rdx,r8
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].AddWithResize(System.__Canon)
+add       r14d,1
+jo        short 00007FF89468EBD2
+cmp       r14d,esi
+jl        short 00007FF89468EB37
+mov       rdx,[rbp+8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,dword ptr [rdx+8]
+vmulsd    xmm0,xmm0,qword ptr [7FF89468EBE0]
+vcvttsd2si edx,xmm0
+cmp       [rbp+10],edx
+jge       short 00007FF89468EB9E
+mov       edx,[rbp+10]
+mov       rcx,rbp
+call      System.Collections.Generic.List`1[[System.__Canon, System.Private.CoreLib]].set_Capacity(Int32)
+mov       rcx,7FF89475A488
+xor       edx,edx
+call      CORINFO_HELP_CLASSINIT_SHARED_DYNAMICCLASS
+mov       rcx,2C340CC2F48
+mov       rcx,[rcx]
+mov       rdx,rbp
+cmp       [rcx],ecx
+call      System.Collections.Immutable.ImmutableList`1[[System.__Canon, System.Private.CoreLib]].AddRange(System.Collections.Generic.IEnumerable`1<System.__Canon>)
+nop
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

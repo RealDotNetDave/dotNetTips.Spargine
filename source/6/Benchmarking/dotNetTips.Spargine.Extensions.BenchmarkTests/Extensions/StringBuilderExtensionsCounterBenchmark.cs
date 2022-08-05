@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-29-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="StringBuilderExtensionsCounterBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="StringBuilderExtensionsCounterBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
@@ -29,7 +29,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Strings)]
 	public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
-		[Benchmark(Description = nameof(StringBuilderExtensions.AppendBytes) + ":01*")]
+		[Benchmark(Description = nameof(StringBuilderExtensions.AppendBytes) + ": 01*")]
 		public void AppendBytes01()
 		{
 			var sb = new StringBuilder();
@@ -39,7 +39,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(sb.ToString());
 		}
 
-		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString) + ":01**")]
+		[Benchmark(Description = nameof(StringBuilderHelper.BytesToString) + ": 01**")]
 		public void AppendBytes03()
 		{
 			var result = StringBuilderHelper.BytesToString(this.GetByteArray(1));
@@ -71,5 +71,6 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 
 			Consumer.Consume(sb.ToString());
 		}
+
 	}
 }

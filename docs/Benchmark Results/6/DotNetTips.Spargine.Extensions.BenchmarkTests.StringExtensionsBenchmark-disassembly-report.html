@@ -1,0 +1,5199 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark-20220804-221833</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="37">DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark-20220804-221833</th></tr>
+<tr>
+<th>DefaultIfNullWithDefaultValue .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasValueWithLength .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasValueWithMinMaxCount .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasValueWithRegEx .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasValueWithString .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>Concat .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>DefaultIfNull .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>DefaultIfNullOrEmpty .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>Extract .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasValue .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>HasWhitespace .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>Indent .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsAsciiDigit .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsAsciiLetter .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsAsciiLetterOrDigit .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsAsciiWhitespace .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsCreditCardNumber .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsCurrencyCode .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsDomainAddress .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsEmailAddress .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsEmpty .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsFirstLastName .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsGuid .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsISBN .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsMacAddress .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsNotEmpty .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsOneToSevenAlpha .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsScientific .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsString .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsStringSHA1Hash .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>IsUrl .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>ReplaceEllipsisWithPeriod .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>StartsWithOrdinal .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>StartsWithOrdinalIgnoreCase .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>SubstringTrim .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>ToTitleCase .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>ToTrimmedString .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.DefaultIfNullWithDefaultValue()
+mov       rdx,[rcx+210]
+test      rdx,rdx
+jne       short 00007FF8940008C9
+mov       rdx,1C3386D19A8
+mov       rdx,[rdx]
+mov       rcx,[rcx+18]
+cmp       [rcx],ecx
+add       rcx,8
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasValueWithLength()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       edx,64
+call      DotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String, Int32)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String, Int32)
+push      rsi
+sub       rsp,20
+mov       esi,edx
+test      rcx,rcx
+je        short 00007FF894000D92
+cmp       dword ptr [rcx+8],0
+je        short 00007FF894000D92
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF894000D78
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rcx,rax
+test      esi,esi
+jle       short 00007FF894000D99
+mov       eax,1
+jmp       short 00007FF894000D9B
+mov       eax,1
+jmp       short 00007FF894000D44
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF894000DC7
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,0A54
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      rcx,rcx
+je        short 00007FF894000DE5
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       [rax+8],esi
+sete      al
+movzx     eax,al
+add       rsp,20
+pop       rsi
+ret
+xor       eax,eax
+add       rsp,20
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasValueWithMinMaxCount()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       edx,5
+mov       r8d,64
+call      DotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String, Int32, Int32)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.HasValue(System.String, Int32, Int32)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       esi,edx
+mov       edi,r8d
+test      rcx,rcx
+je        short 00007FF893FD0BC9
+cmp       dword ptr [rcx+8],0
+je        short 00007FF893FD0BC9
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FD0BAC
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F27860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rcx,rax
+test      esi,esi
+jl        short 00007FF893FD0BD0
+cmp       esi,edi
+setle     al
+movzx     eax,al
+jmp       short 00007FF893FD0BD2
+mov       eax,1
+jmp       short 00007FF893FD0B78
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF893FD0BFE
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rsi,rax
+mov       ecx,0A62
+mov       rdx,7FF893F27860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+cmp       edi,esi
+jl        short 00007FF893FD0C10
+cmp       edi,7FFFFFFF
+setle     al
+movzx     eax,al
+jmp       short 00007FF893FD0C12
+xor       eax,eax
+test      eax,eax
+jne       short 00007FF893FD0C3E
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorNumberIsInvalidBasedOnTheMinMaxValue()
+mov       rdi,rax
+mov       ecx,0A76
+mov       rdx,7FF893F27860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+test      rcx,rcx
+je        short 00007FF893FD0C5D
+mov       eax,[rcx+8]
+cmp       eax,esi
+jl        short 00007FF893FD0C54
+cmp       eax,edi
+setle     al
+movzx     eax,al
+jmp       short 00007FF893FD0C56
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasValueWithRegEx()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+0A0]
+test      rdi,rdi
+je        near ptr 00007FF894016A57
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894016A57
+mov       rcx,157C6CBA5A0
+mov       rcx,[rcx]
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894016A57
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,157C6CBA5A0
+mov       rdx,[rdx]
+mov       rcx,rbx
+mov       r8d,1
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbx
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF894016A59
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89400F5FE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89400F5FE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400F5E8
+cmp       ecx,100
+jae       near ptr 00007FF89400F6BD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89400F5FE
+jmp       short 00007FF89400F5F6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89400F5FE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89400F5AC
+test      dil,2
+je        short 00007FF89400F665
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89400F665
+cmp       r14d,ebx
+jae       near ptr 00007FF89400F6BD
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400F650
+cmp       ecx,100
+jae       near ptr 00007FF89400F6BD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89400F665
+jmp       short 00007FF89400F65D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89400F665
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89400F60C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89400F682
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89400F6AE
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89400F673
+mov       rax,157C6CB3020
+mov       rax,[rax]
+jmp       short 00007FF89400F673
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,157C6CB8118
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF894013609
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF894013614
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8940135DC
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasValueWithString()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+28]
+test      rdi,rdi
+je        short 00007FF894010C0A
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      dl
+movzx     edx,dl
+test      edx,edx
+je        short 00007FF894010C0A
+mov       rdx,1E1246021C0
+mov       rdx,[rdx]
+mov       rcx,rdi
+mov       r8d,4
+call      System.String.Equals(System.String, System.String, System.StringComparison)
+jmp       short 00007FF894010C0C
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89401087E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89401087E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF894010868
+cmp       ecx,100
+jae       near ptr 00007FF89401093D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89401087E
+jmp       short 00007FF894010876
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89401087E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89401082C
+test      dil,2
+je        short 00007FF8940108E5
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF8940108E5
+cmp       r14d,ebx
+jae       near ptr 00007FF89401093D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF8940108D0
+cmp       ecx,100
+jae       near ptr 00007FF89401093D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF8940108E5
+jmp       short 00007FF8940108DD
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF8940108E5
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89401088C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF894010902
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89401092E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF8940108F3
+mov       rax,1E114603020
+mov       rax,[rax]
+jmp       short 00007FF8940108F3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.String.Equals(System.String, System.String, System.StringComparison)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,rdx
+mov       ebx,r8d
+cmp       rsi,rdi
+je        short 00007FF8940109D0
+test      rsi,rsi
+je        near ptr 00007FF894010A3F
+test      rdi,rdi
+je        near ptr 00007FF894010A3F
+cmp       ebx,5
+jne       short 00007FF8940109FA
+mov       eax,[rsi+8]
+cmp       eax,[rdi+8]
+je        short 00007FF8940109E7
+xor       eax,eax
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+cmp       ebx,5
+ja        near ptr 00007FF894010AB1
+mov       eax,1
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+mov       rcx,rsi
+mov       rdx,rdi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr System.String.EqualsOrdinalIgnoreCaseNoLengthCheck(System.String, System.String)
+cmp       ebx,5
+ja        short 00007FF894010A56
+mov       r8d,ebx
+lea       rcx,[7FF894010B40]
+mov       ecx,[rcx+r8*4]
+lea       rdx,[7FF8940209A1]
+add       rcx,rdx
+jmp       rcx
+mov       r8d,[rsi+8]
+cmp       r8d,[rdi+8]
+jne       short 00007FF8940109C5
+lea       rcx,[rsi+0C]
+lea       rdx,[rdi+0C]
+mov       r8d,[rsi+8]
+add       r8d,r8d
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr System.SpanHelpers.SequenceEqual(Byte ByRef, Byte ByRef, UIntPtr)
+cmp       ebx,5
+ja        short 00007FF894010AB1
+jmp       near ptr 00007FF8940109C5
+movzx     eax,bpl
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.ArgumentException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       ecx,0F32B
+mov       rdx,7FF893C64000
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.SR.GetResourceString(System.String)
+mov       rsi,rax
+mov       ecx,196A
+mov       rdx,7FF893C64000
+call      CORINFO_HELP_STRCNS
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rbx
+call      System.ArgumentException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+mov       ecx,18
+mov       edx,2A
+call      System.ThrowHelper.ThrowArgumentException(System.ExceptionResource, System.ExceptionArgument)
+int       3
+call      System.Globalization.CultureInfo.get_CurrentCulture()
+mov       rcx,rax
+mov       rax,[rax]
+mov       rax,[rax+48]
+call      qword ptr [rax+30]
+mov       rcx,rax
+mov       r9d,ebx
+and       r9d,1
+mov       rdx,rsi
+mov       r8,rdi
+cmp       [rcx],ecx
+call      System.Globalization.CompareInfo.Compare(System.String, System.String, System.Globalization.CompareOptions)
+test      eax,eax
+sete      bpl
+movzx     ebp,bpl
+jmp       near ptr 00007FF894010A49
+mov       rcx,7FF893D74928
+mov       edx,227
+call      CORINFO_HELP_GETSHARED_NONGCSTATIC_BASE
+mov       r9,1E114601520
+mov       rcx,[r9]
+mov       r9d,ebx
+and       r9d,1
+mov       rdx,rsi
+mov       r8,rdi
+cmp       [rcx],ecx
+call      System.Globalization.CompareInfo.Compare(System.String, System.String, System.Globalization.CompareOptions)
+test      eax,eax
+sete      bpl
+movzx     ebp,bpl
+jmp       near ptr 00007FF894010A49
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.Concat()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdx,[rsi+28]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ObjectExtensions.Clone(System.Object)
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+mov       rdi,rax
+mov       rcx,1B35A2D3300
+mov       rbx,[rcx]
+mov       rcx,rsi
+mov       edx,0A
+mov       r8d,0F
+mov       r9d,14
+call      DotNetTips.Spargine.Benchmarking.Benchmark.GetStringArray(Int32, Int32, Int32)
+mov       r9,rax
+mov       rdx,rbx
+mov       rcx,rdi
+mov       r8d,0FFFFFFFF
+call      DotNetTips.Spargine.Extensions.StringExtensions.Concat(System.String, System.String, DotNetTips.Spargine.Core.Tristate, System.String[])
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.ObjectExtensions.Clone[[System.__Canon, System.Private.CoreLib]](System.Object)
+push      rdi
+push      rsi
+sub       rsp,28
+mov       [rsp+20],rcx
+mov       rsi,rcx
+test      rdx,rdx
+setne     cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894036608
+mov       rcx,rdx
+call      DotNetTips.Spargine.Extensions.ObjectExtensions.ToJson(System.Object)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+test      rcx,rcx
+je        short 00007FF8940365E5
+jmp       short 00007FF8940365FA
+mov       rcx,rsi
+mov       rdx,7FF894103CB8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+jmp       near ptr DotNetTips.Spargine.Extensions.ObjectExtensions.FromJson[[System.__Canon, System.Private.CoreLib]](System.String)
+mov       ecx,4D
+mov       rdx,7FF893F77860
+call      CORINFO_HELP_STRCNS
+mov       rsi,rax
+mov       ecx,785
+mov       rdx,7FF893F77860
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rcx,rsi
+mov       rdx,rdi
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+int       3
+
+DotNetTips.Spargine.Benchmarking.Benchmark.GetStringArray(Int32, Int32, Int32)
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,48
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rsp+20],xmm4
+vmovdqa   xmmword ptr [rsp+30],xmm4
+xor       eax,eax
+mov       [rsp+40],rax
+mov       rbx,rcx
+mov       ebp,edx
+mov       esi,r8d
+mov       edi,r9d
+test      esi,esi
+jle       short 00007FF89403CE54
+jmp       short 00007FF89403CE59
+mov       esi,1
+lea       ecx,[rsi+1]
+cmp       edi,ecx
+jl        short 00007FF89403CE62
+jmp       short 00007FF89403CE64
+mov       edi,ecx
+xor       ecx,ecx
+mov       [rsp+20],rcx
+mov       rcx,1B35A2D2EA8
+mov       rcx,[rcx]
+mov       edx,100
+call      qword ptr [7FF894041860]
+lea       r14,[rsp+20]
+mov       [rsp+28],rax
+test      rax,rax
+je        near ptr 00007FF89403CFA3
+lea       r8,[rax+10]
+mov       r15d,[rax+8]
+add       r14,18
+mov       [r14],r8
+mov       [r14+8],r15d
+xor       ecx,ecx
+mov       [rsp+30],ecx
+mov       byte ptr [rsp+34],0
+lea       rcx,[rsp+20]
+mov       edx,ebp
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormatted[[System.Int32, System.Private.CoreLib]](Int32)
+lea       rcx,[rsp+38]
+mov       rdx,[rcx]
+mov       ecx,[rcx+8]
+mov       eax,[rsp+30]
+cmp       eax,ecx
+jae       near ptr 00007FF89403CFAE
+movsxd    rcx,eax
+mov       word ptr [rdx+rcx*2],2D
+inc       eax
+mov       [rsp+30],eax
+lea       rcx,[rsp+20]
+mov       edx,esi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormatted[[System.Int32, System.Private.CoreLib]](Int32)
+lea       rcx,[rsp+38]
+mov       rdx,[rcx]
+mov       ecx,[rcx+8]
+mov       eax,[rsp+30]
+cmp       eax,ecx
+jae       near ptr 00007FF89403CFCA
+movsxd    rcx,eax
+mov       word ptr [rdx+rcx*2],2D
+inc       eax
+mov       [rsp+30],eax
+lea       rcx,[rsp+20]
+mov       edx,edi
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.AppendFormatted[[System.Int32, System.Private.CoreLib]](Int32)
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.ToStringAndClear()
+mov       r15,rax
+mov       rcx,[rbx+10]
+cmp       [rcx],ecx
+mov       rdx,r15
+call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].FindValue(System.__Canon)
+test      rax,rax
+jne       short 00007FF89403CF86
+mov       r14,[rbx+10]
+mov       ecx,ebp
+mov       edx,esi
+mov       r8d,edi
+call      DotNetTips.Spargine.Tester.RandomData.GenerateWords(Int32, Int32, Int32)
+test      rax,rax
+je        near ptr 00007FF89403CFE6
+mov       rdx,rax
+mov       rcx,offset MD_System.Collections.Generic.EnumerableHelpers.ToArray(System.Collections.Generic.IEnumerable`1<!!0>)
+call      System.Collections.Generic.EnumerableHelpers.ToArray[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
+mov       r8,rax
+cmp       [r14],r14d
+mov       rcx,r14
+mov       rdx,r15
+mov       r9d,2
+call      System.Collections.Generic.Dictionary`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]].TryInsert(System.__Canon, System.__Canon, System.Collections.Generic.InsertionBehavior)
+mov       rcx,[rbx+10]
+mov       rdx,r15
+cmp       [rcx],ecx
+call      qword ptr [7FF8940429C0]
+nop
+add       rsp,48
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+ret
+xor       r8d,r8d
+xor       r15d,r15d
+jmp       near ptr 00007FF89403CE9E
+mov       rdx,1B35A2D32F8
+mov       rdx,[rdx]
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.GrowThenCopyString(System.String)
+jmp       near ptr 00007FF89403CEE6
+mov       rdx,1B35A2D32F8
+mov       rdx,[rdx]
+lea       rcx,[rsp+20]
+call      System.Runtime.CompilerServices.DefaultInterpolatedStringHandler.GrowThenCopyString(System.String)
+jmp       near ptr 00007FF89403CF18
+mov       ecx,10
+call      System.Linq.ThrowHelper.ThrowArgumentNullException(System.Linq.ExceptionArgument)
+int       3
+
+DotNetTips.Spargine.Extensions.StringExtensions.Concat(System.String, System.String, DotNetTips.Spargine.Core.Tristate, System.String[])
+push      r15
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rbp,rcx
+mov       rbx,rdx
+mov       edi,r8d
+mov       rsi,r9
+mov       rcx,rbp
+test      rcx,rcx
+je        short 00007FF894029D6A
+cmp       dword ptr [rcx+8],0
+je        short 00007FF894029D6A
+xor       eax,eax
+jmp       short 00007FF894029D6F
+mov       eax,1
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF894029DA3
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rbp,rax
+mov       ecx,65D
+mov       rdx,7FF893F77860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rbp
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rbp,rax
+test      rbx,rbx
+jne       short 00007FF894029DC4
+mov       rcx,1B37A2D57A0
+mov       rbx,[rcx]
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+mov       rcx,rbp
+test      rcx,rcx
+jne       short 00007FF894029DE5
+xor       edx,edx
+xor       r9d,r9d
+jmp       short 00007FF894029DEC
+mov       rdx,rbp
+mov       r9d,[rdx+8]
+mov       dword ptr [rsp+20],10
+mov       rcx,r14
+xor       r8d,r8d
+call      System.Text.StringBuilder..ctor(System.String, Int32, Int32, Int32)
+test      rsi,rsi
+je        short 00007FF894029E6F
+mov       rcx,rsi
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+test      eax,eax
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894029E6F
+xor       ebp,ebp
+mov       r15d,[rsi+8]
+test      r15d,r15d
+jle       short 00007FF894029E6F
+movsxd    rcx,ebp
+mov       rdx,[rsi+rcx*8+10]
+cmp       edi,0FFFFFFFF
+je        short 00007FF894029E4D
+cmp       edi,0FFFFFFFE
+je        short 00007FF894029E4D
+mov       rcx,rdx
+mov       rdx,rbx
+call      System.String.Concat(System.String, System.String)
+mov       rdx,rax
+mov       rcx,r14
+call      System.Text.StringBuilder.Append(System.String)
+jmp       short 00007FF894029E65
+mov       rcx,r14
+call      System.Text.StringBuilder.Append(System.String)
+call      System.Environment.get_NewLine()
+mov       rdx,rax
+mov       rcx,r14
+call      System.Text.StringBuilder.Append(System.String)
+add       ebp,1
+jo        short 00007FF894029E88
+cmp       r15d,ebp
+jg        short 00007FF894029E23
+mov       rcx,r14
+mov       rax,[7FF8940315F0]
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+pop       r15
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.DefaultIfNull()
+mov       rdx,[rcx+28]
+test      rdx,rdx
+jne       short 00007FF893FE0956
+mov       rdx,1F7CEE73020
+mov       rdx,[rdx]
+mov       rcx,[rcx+18]
+cmp       [rcx],ecx
+add       rcx,8
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.DefaultIfNullOrEmpty()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,2460C53B5B8
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNullOrEmpty(System.String, System.String)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.DefaultIfNullOrEmpty(System.String, System.String)
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+test      rdx,rdx
+je        short 00007FF893FF0AB8
+cmp       dword ptr [rdx+8],0
+je        short 00007FF893FF0AB8
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FF0A99
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,0A08
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rdx],edx
+mov       rcx,rdx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdx,rax
+test      rsi,rsi
+je        short 00007FF893FF0AC8
+cmp       dword ptr [rsi+8],0
+je        short 00007FF893FF0AC8
+jmp       short 00007FF893FF0ABF
+mov       eax,1
+jmp       short 00007FF893FF0A65
+mov       rax,rsi
+add       rsp,20
+pop       rsi
+ret
+mov       rax,rdx
+add       rsp,20
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.Extract()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,2E2505A19A8
+mov       rdx,[rdx]
+mov       r8,2E2505A19B0
+mov       r8,[r8]
+call      DotNetTips.Spargine.Extensions.StringExtensions.Extract(System.String, System.String, System.String)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.Extract(System.String, System.String, System.String)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+mov       rcx,rsi
+test      rcx,rcx
+je        near ptr 00007FF893FF19F1
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF893FF19F1
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FF18DD
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,rdi
+test      rcx,rcx
+je        near ptr 00007FF893FF19FB
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF893FF19FB
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FF1938
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rdi,rax
+mov       ecx,0A40
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       rcx,rbx
+test      rcx,rcx
+je        near ptr 00007FF893FF1A05
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF893FF1A05
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FF1993
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,0A4C
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rbx,rax
+mov       dword ptr [rsp+20],4
+mov       ebp,[rsi+8]
+mov       r9d,ebp
+mov       rcx,rsi
+mov       rdx,rdi
+xor       r8d,r8d
+call      System.String.IndexOf(System.String, Int32, Int32, System.StringComparison)
+mov       edi,eax
+mov       dword ptr [rsp+20],4
+mov       r9d,ebp
+mov       rcx,rsi
+mov       rdx,rbx
+xor       r8d,r8d
+call      System.String.IndexOf(System.String, Int32, Int32, System.StringComparison)
+mov       r8d,eax
+sub       r8d,edi
+mov       rcx,rsi
+mov       edx,edi
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+jmp       near ptr System.String.Substring(Int32, Int32)
+mov       eax,1
+jmp       near ptr 00007FF893FF18A9
+mov       eax,1
+jmp       near ptr 00007FF893FF1904
+mov       eax,1
+jmp       near ptr 00007FF893FF195F
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasValue()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+test      rcx,rcx
+je        short 00007FF893FF0977
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      al
+movzx     eax,al
+jmp       short 00007FF893FF0979
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF893FF07FE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF893FF07FE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FF07E8
+cmp       ecx,100
+jae       near ptr 00007FF893FF08BD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF893FF07FE
+jmp       short 00007FF893FF07F6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF893FF07FE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF893FF07AC
+test      dil,2
+je        short 00007FF893FF0865
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF893FF0865
+cmp       r14d,ebx
+jae       near ptr 00007FF893FF08BD
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FF0850
+cmp       ecx,100
+jae       near ptr 00007FF893FF08BD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF893FF0865
+jmp       short 00007FF893FF085D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF893FF0865
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF893FF080C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF893FF0882
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF893FF08AE
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF893FF0873
+mov       rax,2AE5FF33020
+mov       rax,[rax]
+jmp       short 00007FF893FF0873
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.HasWhitespace()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+call      DotNetTips.Spargine.Extensions.StringExtensions.HasWhitespace(System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.HasWhitespace(System.String)
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,rsi
+test      rcx,rcx
+je        short 00007FF893FDDEFD
+cmp       dword ptr [rcx+8],0
+je        short 00007FF893FDDEFD
+xor       eax,eax
+jmp       short 00007FF893FDDF02
+mov       eax,1
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FDDF36
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F37860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+xor       edi,edi
+mov       ebx,[rsi+8]
+test      ebx,ebx
+jle       short 00007FF893FDDF9B
+movsxd    rcx,edi
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FDDF85
+cmp       ecx,100
+jae       short 00007FF893FDDFBA
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     bpl
+movzx     ebp,bpl
+test      ebp,ebp
+jne       short 00007FF893FDDF92
+jmp       short 00007FF893FDDFA9
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     ebp,al
+test      ebp,ebp
+je        short 00007FF893FDDFA9
+add       edi,1
+jo        short 00007FF893FDDFB4
+cmp       ebx,edi
+jg        short 00007FF893FDDF4E
+mov       eax,1
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+xor       eax,eax
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.Indent()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       edx,0A
+mov       r8d,3E
+call      DotNetTips.Spargine.Extensions.StringExtensions.Indent(System.String, Int32, Char)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.Indent(System.String, Int32, Char)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rdi,rcx
+mov       esi,edx
+mov       ebx,r8d
+mov       rax,rdi
+test      rax,rax
+je        short 00007FF893FEDE24
+cmp       dword ptr [rdi+8],0
+je        short 00007FF893FEDE24
+xor       eax,eax
+jmp       short 00007FF893FEDE29
+mov       eax,1
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FEDE5D
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rdi,rax
+mov       ecx,65D
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rdi],edi
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rbp,rax
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       r14,rax
+mov       rcx,rbp
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       edx,eax
+mov       rcx,r14
+mov       r8d,7FFFFFFF
+call      System.Text.StringBuilder..ctor(Int32, Int32)
+test      esi,esi
+jne       short 00007FF893FEDEA8
+mov       rcx,r14
+mov       rdx,rdi
+call      System.Text.StringBuilder.Append(System.String)
+mov       ebp,1
+jmp       short 00007FF893FEDEE8
+mov       edx,[r14+18]
+mov       ecx,edx
+mov       r8,[r14+8]
+mov       eax,[r8+8]
+cmp       eax,ecx
+jbe       short 00007FF893FEDED2
+movsxd    rcx,ecx
+mov       [r8+rcx*2+10],bx
+inc       edx
+mov       [r14+18],edx
+jmp       short 00007FF893FEDEE3
+movzx     edx,bx
+mov       rcx,r14
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+add       ebp,1
+jo        short 00007FF893FEDF20
+mov       edx,esi
+test      edx,edx
+jge       short 00007FF893FEDEF6
+mov       edx,esi
+neg       edx
+test      edx,edx
+jl        short 00007FF893FEDF25
+cmp       ebp,edx
+jle       short 00007FF893FEDEAF
+test      esi,esi
+jle       short 00007FF893FEDF09
+mov       rcx,r14
+mov       rdx,rdi
+call      System.Text.StringBuilder.Append(System.String)
+mov       rcx,r14
+mov       rax,[7FF893FF15F0]
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+jmp       rax
+call      CORINFO_HELP_OVERFLOW
+call      System.Math.ThrowAbsOverflow()
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsAsciiDigit()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+movzx     ecx,word ptr [rsi+218]
+cmp       ecx,100
+jae       short 00007FF893FD0885
+add       ecx,0FFFFFFD0
+cmp       ecx,9
+setbe     dil
+movzx     edi,dil
+mov       rax,[rsi+18]
+mov       [rax+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+cmp       eax,8
+sete      dil
+movzx     edi,dil
+jmp       short 00007FF893FD0876
+
+Method was not JITted yet.
+System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsAsciiLetter()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+movzx     ecx,word ptr [rsi+218]
+cmp       ecx,7F
+ja        short 00007FF894000895
+cmp       ecx,100
+jae       short 00007FF8940008A7
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],60
+setne     dil
+movzx     edi,dil
+mov       rcx,[rsi+18]
+mov       [rcx+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+cmp       eax,4
+setbe     dil
+movzx     edi,dil
+jmp       short 00007FF894000886
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+Method was not JITted yet.
+System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsAsciiLetterOrDigit()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+movzx     ecx,word ptr [rsi+218]
+cmp       ecx,100
+jae       short 00007FF893FE07AA
+cmp       ecx,100
+jae       short 00007FF893FE07C8
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+movzx     ecx,byte ptr [rcx+rax]
+and       ecx,1F
+cmp       ecx,4
+ja        short 00007FF893FE079D
+mov       edi,1
+mov       rcx,[rsi+18]
+mov       [rcx+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+cmp       ecx,8
+sete      dil
+movzx     edi,dil
+jmp       short 00007FF893FE078E
+call      System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+cmp       eax,4
+jbe       short 00007FF893FE07C1
+cmp       eax,8
+sete      dil
+movzx     edi,dil
+jmp       short 00007FF893FE07C6
+mov       edi,1
+jmp       short 00007FF893FE078E
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+Method was not JITted yet.
+System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsAsciiWhitespace()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+movzx     ecx,word ptr [rsi+218]
+cmp       ecx,100
+jae       short 00007FF893FE0798
+cmp       ecx,100
+jae       short 00007FF893FE07A3
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+mov       rcx,[rsi+18]
+mov       [rcx+54],dil
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+jmp       short 00007FF893FE0789
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+Method was not JITted yet.
+System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsCreditCardNumber()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1C8]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexCreditCard()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF894263E8D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894263E8D
+test      rbx,rbx
+je        short 00007FF894263E8D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF894263E8D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,8
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF894263E8F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexCreditCard()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,233B00019A8
+mov       rdx,[rdx]
+mov       r8,23380007C78
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89425C21E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89425C21E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89425C208
+cmp       ecx,100
+jae       near ptr 00007FF89425C2DD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89425C21E
+jmp       short 00007FF89425C216
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89425C21E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89425C1CC
+test      dil,2
+je        short 00007FF89425C285
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89425C285
+cmp       r14d,ebx
+jae       near ptr 00007FF89425C2DD
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89425C270
+cmp       ecx,100
+jae       near ptr 00007FF89425C2DD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89425C285
+jmp       short 00007FF89425C27D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89425C285
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89425C22C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89425C2A2
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89425C2CE
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89425C293
+mov       rax,23380003020
+mov       rax,[rax]
+jmp       short 00007FF89425C293
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,23380008118
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942635D9
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942635E4
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8942635AC
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsCurrencyCode()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1D0]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexCurrencyCode()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF89429161D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89429161D
+test      rbx,rbx
+je        short 00007FF89429161D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89429161D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,8
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF89429161F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexCurrencyCode()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,1CAD797B5B8
+mov       rdx,[rdx]
+mov       r8,1CAD7977C78
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF893FF883E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF893FF883E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FF8828
+cmp       ecx,100
+jae       near ptr 00007FF893FF88FD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF893FF883E
+jmp       short 00007FF893FF8836
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF893FF883E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF893FF87EC
+test      dil,2
+je        short 00007FF893FF88A5
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF893FF88A5
+cmp       r14d,ebx
+jae       near ptr 00007FF893FF88FD
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FF8890
+cmp       ecx,100
+jae       near ptr 00007FF893FF88FD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF893FF88A5
+jmp       short 00007FF893FF889D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF893FF88A5
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF893FF884C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF893FF88C2
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF893FF88EE
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF893FF88B3
+mov       rax,1CAD7973020
+mov       rax,[rax]
+jmp       short 00007FF893FF88B3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,1CAD7978118
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF89429FDC9
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF89429FDD4
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF89429FD9C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsDomainAddress()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1D8]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexDomain()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF8942B1A7D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942B1A7D
+test      rbx,rbx
+je        short 00007FF8942B1A7D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942B1A7D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,9
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF8942B1A7F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexDomain()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,202BE3A19A8
+mov       rdx,[rdx]
+mov       r8,202AE3A5C80
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF893FFB17E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF893FFB17E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FFB168
+cmp       ecx,100
+jae       near ptr 00007FF893FFB23D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF893FFB17E
+jmp       short 00007FF893FFB176
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF893FFB17E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF893FFB12C
+test      dil,2
+je        short 00007FF893FFB1E5
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF893FFB1E5
+cmp       r14d,ebx
+jae       near ptr 00007FF893FFB23D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FFB1D0
+cmp       ecx,100
+jae       near ptr 00007FF893FFB23D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF893FFB1E5
+jmp       short 00007FF893FFB1DD
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF893FFB1E5
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF893FFB18C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF893FFB202
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF893FFB22E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF893FFB1F3
+mov       rax,202AE3A1028
+mov       rax,[rax]
+jmp       short 00007FF893FFB1F3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,202AE3A6120
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942C0329
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942C0334
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8942C02FC
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsEmailAddress()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1E0]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexEmail()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF8943029ED
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8943029ED
+test      rbx,rbx
+je        short 00007FF8943029ED
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8943029ED
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,9
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF8943029EF
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexEmail()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,1EFAEBC5980
+mov       rdx,[rdx]
+mov       r8,1EFAEBC3870
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF894030C3E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF894030C3E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF894030C28
+cmp       ecx,100
+jae       near ptr 00007FF894030CFD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF894030C3E
+jmp       short 00007FF894030C36
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF894030C3E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF894030BEC
+test      dil,2
+je        short 00007FF894030CA5
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF894030CA5
+cmp       r14d,ebx
+jae       near ptr 00007FF894030CFD
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF894030C90
+cmp       ecx,100
+jae       near ptr 00007FF894030CFD
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF894030CA5
+jmp       short 00007FF894030C9D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF894030CA5
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF894030C4C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF894030CC2
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF894030CEE
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF894030CB3
+mov       rax,1EFBEBC3020
+mov       rax,[rax]
+jmp       short 00007FF894030CB3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,1EFAEBC3D10
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF89430EA59
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF89430EA64
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF89430EA2C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsEmpty()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+call      DotNetTips.Spargine.Extensions.StringExtensions.IsEmpty(System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.IsEmpty(System.String)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+je        short 00007FF894000974
+cmp       dword ptr [rcx+8],0
+sete      al
+movzx     eax,al
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       ecx,4D
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       r8,rax
+mov       rcx,rsi
+mov       rdx,rdi
+call      DotNetTips.Spargine.Core.Validator.CreateParamExceptionMessage(System.String, System.String, System.String)
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String)
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsFirstLastName()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+200]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexFirstLastName()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF8942A1FFD
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942A1FFD
+test      rbx,rbx
+je        short 00007FF8942A1FFD
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942A1FFD
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,9
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF8942A1FFF
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexFirstLastName()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,26508EC21C0
+mov       rdx,[rdx]
+mov       r8,26518EC3870
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89400E8BE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89400E8BE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400E8A8
+cmp       ecx,100
+jae       near ptr 00007FF89400E97D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89400E8BE
+jmp       short 00007FF89400E8B6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89400E8BE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89400E86C
+test      dil,2
+je        short 00007FF89400E925
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89400E925
+cmp       r14d,ebx
+jae       near ptr 00007FF89400E97D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400E910
+cmp       ecx,100
+jae       near ptr 00007FF89400E97D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89400E925
+jmp       short 00007FF89400E91D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89400E925
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89400E8CC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89400E942
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89400E96E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89400E933
+mov       rax,264F8EC3020
+mov       rax,[rax]
+jmp       short 00007FF89400E933
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,26518EC3D10
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942AECE9
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942AECF4
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8942AECBC
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsGuid()
+push      rsi
+sub       rsp,30
+vzeroupper
+mov       rsi,rcx
+vmovupd   xmm0,[rsi+1B8]
+vmovupd   [rsp+20],xmm0
+lea       rcx,[rsp+20]
+call      System.Guid.ToString()
+mov       rcx,rax
+call      DotNetTips.Spargine.Extensions.StringExtensions.IsGuid(System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,30
+pop       rsi
+ret
+
+System.Guid.ToString()
+mov       rdx,2A7ED5E9F78
+mov       rdx,[rdx]
+xor       r8d,r8d
+jmp       near ptr System.Guid.ToString(System.String, System.IFormatProvider)
+
+DotNetTips.Spargine.Extensions.StringExtensions.IsGuid(System.String)
+mov       [rsp+8],rcx
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FFBA65
+xor       eax,eax
+ret
+mov       rdx,2A7ED5E7C60
+mov       rcx,[rdx]
+mov       rdx,[rsp+8]
+cmp       [rcx],ecx
+jmp       near ptr System.Text.RegularExpressions.Regex.IsMatch(System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsISBN()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1F0]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexISBN()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF8942C101D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942C101D
+test      rbx,rbx
+je        short 00007FF8942C101D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942C101D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,8
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF8942C101F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexISBN()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,1BD05CD19A8
+mov       rdx,[rdx]
+mov       r8,1BD15CD7C78
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89400D29E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89400D29E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400D288
+cmp       ecx,100
+jae       near ptr 00007FF89400D35D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89400D29E
+jmp       short 00007FF89400D296
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89400D29E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89400D24C
+test      dil,2
+je        short 00007FF89400D305
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89400D305
+cmp       r14d,ebx
+jae       near ptr 00007FF89400D35D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400D2F0
+cmp       ecx,100
+jae       near ptr 00007FF89400D35D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89400D305
+jmp       short 00007FF89400D2FD
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89400D305
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89400D2AC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89400D322
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89400D34E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89400D313
+mov       rax,1BD15CD3020
+mov       rax,[rax]
+jmp       short 00007FF89400D313
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,1BD15CD8118
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942CD0A9
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942CD0B4
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8942CD07C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsMacAddress()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,1A71DB485A8
+mov       rcx,[rcx]
+call      DotNetTips.Spargine.Extensions.StringExtensions.IsMacAddress(System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.IsMacAddress(System.String)
+mov       [rsp+8],rcx
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF89400AED5
+xor       eax,eax
+ret
+mov       rdx,1A71DB45C70
+mov       rcx,[rdx]
+mov       rdx,[rsp+8]
+cmp       [rcx],ecx
+jmp       near ptr System.Text.RegularExpressions.Regex.IsMatch(System.String)
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsNotEmpty()
+mov       rax,[rcx+28]
+test      rax,rax
+je        short 00007FF893FE0905
+cmp       dword ptr [rax+8],0
+setg      al
+movzx     eax,al
+jmp       short 00007FF893FE0907
+xor       eax,eax
+mov       rdx,[rcx+18]
+mov       [rdx+54],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsOneToSevenAlpha()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1F8]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexOneToSevenAlpha()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF89427805D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89427805D
+test      rbx,rbx
+je        short 00007FF89427805D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89427805D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,8
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF89427805F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexOneToSevenAlpha()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,191897B29C0
+mov       rdx,[rdx]
+mov       r8,191997B3870
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89400A5BE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89400A5BE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400A5A8
+cmp       ecx,100
+jae       near ptr 00007FF89400A67D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89400A5BE
+jmp       short 00007FF89400A5B6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89400A5BE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89400A56C
+test      dil,2
+je        short 00007FF89400A625
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89400A625
+cmp       r14d,ebx
+jae       near ptr 00007FF89400A67D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400A610
+cmp       ecx,100
+jae       near ptr 00007FF89400A67D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89400A625
+jmp       short 00007FF89400A61D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89400A625
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89400A5CC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89400A642
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89400A66E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89400A633
+mov       rax,191797B3020
+mov       rax,[rax]
+jmp       short 00007FF89400A633
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,191997B3D10
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942774C9
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942774D4
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF89427749C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsScientific()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,38
+mov       rsi,rcx
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexScientific()
+mov       rdi,rax
+mov       rcx,292E7358DA8
+mov       rbx,[rcx]
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        near ptr 00007FF8942E3F5D
+test      rdi,rdi
+je        short 00007FF8942E3F5D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942E3F5D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rdi
+mov       r8d,8
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       r9,rbx
+test      byte ptr [rcx+48],40
+jne       short 00007FF8942E3F6F
+xor       edi,edi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       dword ptr [rsp+28],0A
+mov       [rsp+30],edi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+jmp       short 00007FF8942E3F5F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,38
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+mov       edi,0A
+jmp       short 00007FF8942E3F30
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexScientific()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,292E7358DB0
+mov       rdx,[rdx]
+mov       r8,292E7355C80
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89401ED9E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89401ED9E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89401ED88
+cmp       ecx,100
+jae       near ptr 00007FF89401EE5D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89401ED9E
+jmp       short 00007FF89401ED96
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89401ED9E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89401ED4C
+test      dil,2
+je        short 00007FF89401EE05
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89401EE05
+cmp       r14d,ebx
+jae       near ptr 00007FF89401EE5D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89401EDF0
+cmp       ecx,100
+jae       near ptr 00007FF89401EE5D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89401EE05
+jmp       short 00007FF89401EDFD
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89401EE05
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89401EDAC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89401EE22
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89401EE4E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89401EE13
+mov       rax,292E7351028
+mov       rax,[rax]
+jmp       short 00007FF89401EE13
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,292E7356120
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,68
+lea       rbp,[rsp+0A0]
+mov       [rbp+0FFA8],rsp
+mov       [rbp+10],rcx
+mov       edi,edx
+mov       ebx,r8d
+mov       rsi,r9
+mov       r14d,[rbp+30]
+mov       r15d,[rbp+38]
+mov       r12d,[rbp+40]
+mov       edx,[rsi+8]
+cmp       edx,r12d
+jb        near ptr 00007FF8942F18B0
+cmp       edx,r15d
+jb        near ptr 00007FF8942F18BD
+cmp       [rcx],ecx
+lea       rdx,[rcx+38]
+mov       rcx,rdx
+xor       edx,edx
+call      System.Threading.Interlocked.Exchange(System.Object ByRef, System.Object)
+test      rax,rax
+je        short 00007FF8942F1837
+mov       rdx,rax
+mov       [rbp+0FFC0],rdx
+add       r15d,r14d
+mov       [rsp+20],r15d
+mov       [rsp+28],r12d
+mov       [rsp+30],ebx
+movzx     ecx,dil
+mov       [rsp+38],ecx
+mov       rcx,[rbp+10]
+mov       r8,[rcx+58]
+mov       [rsp+40],r8
+mov       rcx,rdx
+mov       rdx,[rbp+10]
+mov       r8,rsi
+mov       r9d,r14d
+cmp       [rcx],ecx
+call      System.Text.RegularExpressions.RegexRunner.Scan(System.Text.RegularExpressions.Regex, System.String, Int32, Int32, Int32, Int32, Boolean, System.TimeSpan)
+mov       rsi,rax
+mov       rdx,[rbp+10]
+lea       rcx,[rdx+38]
+mov       rdx,[rbp+0FFC0]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rax,rsi
+add       rsp,68
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+mov       rdx,[rbp+10]
+mov       rcx,[rdx+10]
+test      rcx,rcx
+jne       short 00007FF8942F188B
+mov       r13,[rdx+40]
+test      dword ptr [rdx+48],200
+jne       short 00007FF8942F189A
+call      System.Globalization.CultureInfo.get_CurrentCulture()
+mov       [rbp+0FFB8],rax
+mov       rcx,offset MT_System.Text.RegularExpressions.RegexInterpreter
+call      CORINFO_HELP_NEWSFAST
+mov       rdx,rax
+mov       [rbp+0FFB0],rdx
+mov       rcx,rdx
+mov       rdx,r13
+mov       r8,[rbp+0FFB8]
+call      System.Text.RegularExpressions.RegexInterpreter..ctor(System.Text.RegularExpressions.RegexCode, System.Globalization.CultureInfo)
+mov       r13,[rbp+0FFB0]
+mov       rdx,r13
+jmp       near ptr 00007FF8942F17D1
+mov       rax,[rcx]
+mov       rax,[rax+40]
+call      qword ptr [rax+20]
+jmp       near ptr 00007FF8942F17CE
+mov       rcx,292F7351568
+mov       r8,[rcx]
+mov       rcx,r8
+mov       [rbp+0FFB8],rcx
+jmp       short 00007FF8942F185A
+mov       ecx,0F
+xor       edx,edx
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentOutOfRangeException(System.Text.RegularExpressions.ExceptionArgument, System.Text.RegularExpressions.ExceptionResource)
+int       3
+mov       ecx,8
+mov       edx,2
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentOutOfRangeException(System.Text.RegularExpressions.ExceptionArgument, System.Text.RegularExpressions.ExceptionResource)
+int       3
+push      rbp
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,58
+mov       rbp,[rcx+48]
+mov       [rsp+48],rbp
+lea       rbp,[rbp+0A0]
+mov       rdx,[rbp+10]
+lea       rcx,[rdx+38]
+mov       rdx,[rbp+0FFC0]
+call      CORINFO_HELP_ASSIGN_REF
+nop
+add       rsp,58
+pop       rbx
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsString()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+28]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexString()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF8942C4ABA
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942C4ABA
+test      rbx,rbx
+je        short 00007FF8942C4ABA
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF8942C4ABA
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,9
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF8942C4ABC
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexString()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,163E4D7B5B8
+mov       rdx,[rdx]
+mov       r8,163E4D77C78
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89400F1BE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89400F1BE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400F1A8
+cmp       ecx,100
+jae       near ptr 00007FF89400F27D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89400F1BE
+jmp       short 00007FF89400F1B6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89400F1BE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89400F16C
+test      dil,2
+je        short 00007FF89400F225
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89400F225
+cmp       r14d,ebx
+jae       near ptr 00007FF89400F27D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89400F210
+cmp       ecx,100
+jae       near ptr 00007FF89400F27D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89400F225
+jmp       short 00007FF89400F21D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89400F225
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89400F1CC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89400F242
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89400F26E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89400F233
+mov       rax,163E4D73020
+mov       rax,[rax]
+jmp       short 00007FF89400F233
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,163E4D78118
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF8942C3F09
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF8942C3F14
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF8942C3EDC
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsStringSHA1Hash()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+1E8]
+call      DotNetTips.Spargine.Extensions.StringExtensions.IsStringSHA1Hash(System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.IsStringSHA1Hash(System.String)
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+test      rsi,rsi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FD976D
+xor       eax,eax
+add       rsp,20
+pop       rsi
+ret
+mov       rcx,12B8402B5B8
+mov       rcx,[rcx]
+call      System.Text.RegularExpressions.RegexCache.GetOrAdd(System.String)
+mov       rcx,rax
+mov       rdx,rsi
+cmp       [rcx],ecx
+call      System.Text.RegularExpressions.Regex.Match(System.String)
+cmp       dword ptr [rax+14],0
+setg      al
+movzx     eax,al
+add       rsp,20
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.IsUrl()
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,28
+mov       rsi,rcx
+mov       rdi,[rsi+1D8]
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexUrl()
+mov       rbx,rax
+test      rdi,rdi
+je        short 00007FF89428030D
+mov       rcx,rdi
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89428030D
+test      rbx,rbx
+je        short 00007FF89428030D
+mov       rcx,rbx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       dword ptr [rax+8],0
+setg      cl
+movzx     ecx,cl
+test      ecx,ecx
+je        short 00007FF89428030D
+mov       rcx,offset MT_System.Text.RegularExpressions.Regex
+call      CORINFO_HELP_NEWSFAST
+mov       rbp,rax
+mov       rcx,rbp
+mov       rdx,rbx
+mov       r8d,9
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+mov       rcx,rbp
+mov       rdx,rdi
+call      System.Text.RegularExpressions.Regex.IsMatch(System.String)
+movzx     eax,al
+jmp       short 00007FF89428030F
+xor       eax,eax
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,28
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.Properties.Resources.get_RegexUrl()
+sub       rsp,28
+call      DotNetTips.Spargine.Extensions.Properties.Resources.get_ResourceManager()
+mov       rcx,rax
+mov       rdx,19CF22465C8
+mov       rdx,[rdx]
+mov       r8,19CD2243870
+mov       r8,[r8]
+mov       rax,[rax]
+mov       rax,[rax+48]
+mov       rax,[rax+28]
+add       rsp,28
+jmp       rax
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF89426F67E
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF89426F67E
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89426F668
+cmp       ecx,100
+jae       near ptr 00007FF89426F73D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF89426F67E
+jmp       short 00007FF89426F676
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF89426F67E
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF89426F62C
+test      dil,2
+je        short 00007FF89426F6E5
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF89426F6E5
+cmp       r14d,ebx
+jae       near ptr 00007FF89426F73D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF89426F6D0
+cmp       ecx,100
+jae       near ptr 00007FF89426F73D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF89426F6E5
+jmp       short 00007FF89426F6DD
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF89426F6E5
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF89426F68C
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF89426F702
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF89426F72E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF89426F6F3
+mov       rax,19CF2243020
+mov       rax,[rax]
+jmp       short 00007FF89426F6F3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions)
+sub       rsp,28
+xor       r9d,r9d
+mov       [rsp+20],r9
+mov       r9,19CD2243D10
+mov       r9,[r9]
+mov       r9,[r9+8]
+call      System.Text.RegularExpressions.Regex..ctor(System.String, System.Text.RegularExpressions.RegexOptions, System.TimeSpan, System.Globalization.CultureInfo)
+nop
+add       rsp,28
+ret
+
+System.Text.RegularExpressions.Regex.IsMatch(System.String)
+push      rsi
+sub       rsp,40
+test      rdx,rdx
+je        short 00007FF89427F959
+mov       eax,[rdx+8]
+mov       r8,rcx
+mov       r9,rdx
+test      byte ptr [r8+48],40
+jne       short 00007FF89427F964
+xor       esi,esi
+xor       edx,edx
+mov       [rsp+20],edx
+mov       [rsp+28],eax
+mov       [rsp+30],esi
+mov       edx,1
+mov       r8d,0FFFFFFFF
+call      System.Text.RegularExpressions.Regex.Run(Boolean, Int32, System.String, Int32, Int32, Int32)
+test      rax,rax
+sete      al
+movzx     eax,al
+add       rsp,40
+pop       rsi
+ret
+mov       ecx,7
+call      System.Text.RegularExpressions.ThrowHelper.ThrowArgumentNullException(System.Text.RegularExpressions.ExceptionArgument)
+int       3
+mov       r9,rdx
+mov       esi,[r9+8]
+jmp       short 00007FF89427F92C
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.ReplaceEllipsisWithPeriod()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+208]
+call      DotNetTips.Spargine.Extensions.StringExtensions.ReplaceEllipsisWithPeriod(System.String)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.ReplaceEllipsisWithPeriod(System.String)
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,rsi
+test      rcx,rcx
+je        near ptr 00007FF893FE0BC2
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF893FE0BC2
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FE0B74
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F37860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rdx,1C040A07688
+mov       rdx,[rdx]
+mov       rcx,rsi
+mov       r8d,5
+cmp       [rcx],ecx
+call      System.String.EndsWith(System.String, System.StringComparison)
+test      eax,eax
+je        short 00007FF893FE0BB9
+mov       r8d,[rsi+8]
+add       r8d,0FFFFFFFE
+mov       rcx,rsi
+xor       edx,edx
+call      System.String.Substring(Int32, Int32)
+mov       rsi,rax
+mov       rax,rsi
+add       rsp,20
+pop       rsi
+ret
+mov       eax,1
+jmp       near ptr 00007FF893FE0B40
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.StartsWithOrdinal()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+60]
+mov       rdx,[rsi+70]
+call      DotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinal(System.String, System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinal(System.String, System.String)
+push      rdi
+push      rsi
+sub       rsp,38
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,rsi
+test      rcx,rcx
+je        near ptr 00007FF893FE1189
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF893FE1189
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FE10F8
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F37860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,rdi
+test      rcx,rcx
+je        near ptr 00007FF893FE1193
+cmp       dword ptr [rcx+8],0
+je        short 00007FF893FE1193
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FE114F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,0A22
+mov       rdx,7FF893F37860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       ecx,[rax+8]
+mov       [rsp+20],ecx
+mov       dword ptr [rsp+28],4
+mov       rcx,rsi
+mov       r8,rax
+xor       edx,edx
+xor       r9d,r9d
+call      System.String.Compare(System.String, Int32, System.String, Int32, Int32, System.StringComparison)
+test      eax,eax
+sete      al
+movzx     eax,al
+add       rsp,38
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+jmp       near ptr 00007FF893FE10C4
+mov       eax,1
+jmp       short 00007FF893FE111B
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.StartsWithOrdinalIgnoreCase()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,[rsi+60]
+mov       rdx,[rsi+70]
+call      DotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinalIgnoreCase(System.String, System.String)
+mov       rdx,[rsi+18]
+mov       [rdx+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.StartsWithOrdinalIgnoreCase(System.String, System.String)
+push      rdi
+push      rsi
+sub       rsp,38
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,rsi
+test      rcx,rcx
+je        near ptr 00007FF894001149
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FF894001149
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF8940010B8
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,65D
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,rdi
+test      rcx,rcx
+je        near ptr 00007FF894001153
+cmp       dword ptr [rcx+8],0
+je        short 00007FF894001153
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF89400110F
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,0A22
+mov       rdx,7FF893F57860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       ecx,[rax+8]
+mov       [rsp+20],ecx
+mov       dword ptr [rsp+28],5
+mov       rcx,rsi
+mov       r8,rax
+xor       edx,edx
+xor       r9d,r9d
+call      System.String.Compare(System.String, Int32, System.String, Int32, Int32, System.StringComparison)
+test      eax,eax
+sete      al
+movzx     eax,al
+add       rsp,38
+pop       rsi
+pop       rdi
+ret
+mov       eax,1
+jmp       near ptr 00007FF894001084
+mov       eax,1
+jmp       short 00007FF8940010DB
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.SubstringTrim()
+push      rsi
+sub       rsp,20
+mov       rsi,rcx
+mov       rcx,rsi
+mov       rax,[rsi]
+mov       rax,[rax+40]
+call      qword ptr [rax+30]
+mov       rcx,rax
+mov       edx,19
+mov       r8d,19
+call      DotNetTips.Spargine.Extensions.StringExtensions.SubstringTrim(System.String, Int32, Int32)
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+mov       rdx,rax
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.StringExtensions.SubstringTrim(System.String, Int32, Int32)
+push      r14
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rdi,rcx
+mov       esi,edx
+mov       ebx,r8d
+mov       rcx,rdi
+test      rcx,rcx
+je        short 00007FF893FEE264
+cmp       dword ptr [rcx+8],0
+je        short 00007FF893FEE264
+xor       eax,eax
+jmp       short 00007FF893FEE269
+mov       eax,1
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       short 00007FF893FEE29D
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rdi,rax
+mov       ecx,65D
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentNullException(System.String, System.String)
+int       3
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       eax,esi
+neg       eax
+shr       eax,1F
+mov       ecx,esi
+sar       ecx,1F
+or        eax,ecx
+cmp       eax,0FFFFFFFF
+je        near ptr 00007FF893FEE429
+mov       eax,ebx
+neg       eax
+shr       eax,1F
+mov       ecx,ebx
+sar       ecx,1F
+or        eax,ecx
+cmp       eax,0FFFFFFFF
+je        near ptr 00007FF893FEE446
+mov       ebp,[rdi+8]
+mov       eax,ebp
+sub       eax,ebx
+jo        near ptr 00007FF893FEE424
+cmp       eax,esi
+jle       near ptr 00007FF893FEE463
+test      ebx,ebx
+jne       short 00007FF893FEE30B
+mov       rax,2B9278C1028
+mov       rax,[rax]
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+add       ebx,esi
+jo        near ptr 00007FF893FEE424
+sub       ebx,1
+jo        near ptr 00007FF893FEE424
+jmp       short 00007FF893FEE327
+add       esi,1
+jo        near ptr 00007FF893FEE424
+cmp       esi,ebx
+jg        short 00007FF893FEE388
+cmp       esi,ebp
+jae       near ptr 00007FF893FEE49A
+movsxd    rcx,esi
+movzx     ecx,word ptr [rdi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FEE36F
+cmp       ecx,100
+jae       near ptr 00007FF893FEE49A
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r14b
+movzx     r14d,r14b
+test      r14d,r14d
+jne       short 00007FF893FEE31E
+jmp       short 00007FF893FEE388
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r14d,al
+test      r14d,r14d
+jne       short 00007FF893FEE31E
+jmp       short 00007FF893FEE388
+sub       ebx,1
+jo        near ptr 00007FF893FEE424
+cmp       ebx,esi
+jl        short 00007FF893FEE3DE
+cmp       ebx,ebp
+jae       near ptr 00007FF893FEE49A
+movsxd    rcx,ebx
+movzx     ecx,word ptr [rdi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF893FEE3D0
+cmp       ecx,100
+jae       near ptr 00007FF893FEE49A
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r14b
+movzx     r14d,r14b
+test      r14d,r14d
+jne       short 00007FF893FEE37F
+jmp       short 00007FF893FEE3DE
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r14d,al
+test      r14d,r14d
+jne       short 00007FF893FEE37F
+sub       ebx,esi
+jo        short 00007FF893FEE424
+add       ebx,1
+jo        short 00007FF893FEE424
+cmp       ebp,ebx
+je        short 00007FF893FEE3FA
+mov       rcx,rdi
+mov       edx,esi
+mov       r8d,ebx
+call      System.String.Substring(Int32, Int32)
+jmp       short 00007FF893FEE3FD
+mov       rax,rdi
+test      ebx,ebx
+je        short 00007FF893FEE40C
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+mov       rax,2B9278C1028
+mov       rax,[rax]
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r14
+ret
+call      CORINFO_HELP_OVERFLOW
+mov       ecx,0AEA
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String)
+int       3
+mov       ecx,0A54
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String)
+int       3
+mov       ecx,0B00
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rsi,rax
+mov       ecx,0AEA
+mov       rdx,7FF893F47860
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.ThrowArgumentOutOfRangeException(System.String, System.String)
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.ToTitleCase()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,[rcx+18]
+mov       rdi,[rcx+30]
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)
+test      eax,eax
+je        short 00007FF893FE1D6F
+mov       rdx,rdi
+jmp       short 00007FF893FE1D91
+call      System.Globalization.CultureInfo.get_CurrentCulture()
+mov       rcx,rax
+mov       rax,[rax]
+mov       rax,[rax+48]
+call      qword ptr [rax+38]
+mov       rcx,rax
+mov       rdx,rdi
+cmp       [rcx],ecx
+call      System.Globalization.TextInfo.ToTitleCase(System.String)
+mov       rdx,rax
+cmp       [rsi],esi
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)
+sub       rsp,28
+test      rcx,rcx
+je        short 00007FF893FE1E99
+mov       r11,7FF893C404E0
+call      qword ptr [7FF893FF04E0]
+mov       rcx,rax
+mov       r11,7FF893C404E8
+call      qword ptr [7FF893FF04E8]
+test      eax,eax
+sete      al
+movzx     eax,al
+add       rsp,28
+ret
+mov       eax,1
+add       rsp,28
+ret
+
+System.Globalization.CultureInfo.get_CurrentCulture()
+sub       rsp,28
+mov       rcx,7FF893D44928
+mov       edx,230
+call      CORINFO_HELP_GETSHARED_GCTHREADSTATIC_BASE
+mov       rax,[rax+8]
+test      rax,rax
+jne       short 00007FF893FE1FD5
+mov       rax,2210E5F1578
+mov       rax,[rax]
+test      rax,rax
+jne       short 00007FF893FE1FD5
+mov       rax,2210E5F1558
+mov       rax,[rax]
+test      rax,rax
+je        short 00007FF893FE1FDA
+add       rsp,28
+ret
+add       rsp,28
+jmp       near ptr System.Globalization.CultureInfo.InitializeUserDefaultCulture()
+
+System.Globalization.TextInfo.ToTitleCase(System.String)
+push      r15
+push      r14
+push      r13
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,38
+xor       eax,eax
+mov       [rsp+30],rax
+mov       [rsp+88],rdx
+mov       rsi,rcx
+cmp       qword ptr [rsp+88],0
+je        near ptr 00007FF893FE2644
+mov       rax,[rsp+88]
+cmp       dword ptr [rax+8],0
+jne       short 00007FF893FE20D8
+mov       rax,[rsp+88]
+add       rsp,38
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+ret
+mov       rcx,offset MT_System.Text.StringBuilder
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       dword ptr [rdi+20],7FFFFFFF
+mov       rcx,offset MT_System.Char[]
+mov       edx,10
+call      CORINFO_HELP_NEWARR_1_VC
+lea       rcx,[rdi+8]
+mov       rdx,rax
+call      CORINFO_HELP_ASSIGN_REF
+mov       [rsp+30],rdi
+xor       edi,edi
+mov       rcx,[rsi+20]
+mov       rdx,220EE5F19A8
+mov       rdx,[rdx]
+mov       r8d,5
+cmp       [rcx],ecx
+call      System.String.StartsWith(System.String, System.StringComparison)
+mov       ebx,eax
+xor       ebp,ebp
+mov       rcx,[rsp+88]
+cmp       dword ptr [rcx+8],0
+jle       near ptr 00007FF893FE260B
+mov       rcx,[rsp+88]
+mov       edx,ebp
+call      System.Globalization.CharUnicodeInfo.GetCodePointFromString(System.String, Int32)
+lea       rcx,[rsp+2C]
+cmp       eax,10000
+jae       short 00007FF893FE216E
+mov       edx,1
+jmp       short 00007FF893FE2173
+mov       edx,2
+mov       [rcx],edx
+mov       ecx,eax
+call      System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+mov       r14d,eax
+cmp       r14d,4
+ja        near ptr 00007FF893FE24EE
+test      ebx,ebx
+je        near ptr 00007FF893FE220F
+mov       rdx,[rsp+88]
+mov       r15d,[rdx+8]
+lea       edx,[r15+0FFFF]
+cmp       edx,ebp
+jle       short 00007FF893FE220F
+cmp       ebp,r15d
+jae       near ptr 00007FF893FE267E
+mov       rdx,[rsp+88]
+movsxd    rcx,ebp
+movzx     edx,word ptr [rdx+rcx*2+0C]
+cmp       edx,69
+je        short 00007FF893FE21C8
+cmp       edx,49
+jne       short 00007FF893FE220F
+lea       edx,[rbp+1]
+cmp       edx,r15d
+jae       near ptr 00007FF893FE267E
+mov       rdx,[rsp+88]
+lea       ecx,[rbp+1]
+movsxd    rcx,ecx
+movzx     edx,word ptr [rdx+rcx*2+0C]
+cmp       edx,6A
+je        short 00007FF893FE21F1
+cmp       edx,4A
+jne       short 00007FF893FE220F
+mov       rdx,220EE5F19B0
+mov       rdx,[rdx]
+mov       rcx,[rsp+30]
+cmp       [rcx],ecx
+call      System.Text.StringBuilder.Append(System.String)
+add       ebp,2
+jmp       short 00007FF893FE2234
+mov       r8d,[rsp+2C]
+mov       [rsp+20],r8d
+lea       r8,[rsp+88]
+lea       rdx,[rsp+30]
+mov       rcx,rsi
+mov       r9d,ebp
+call      System.Globalization.TextInfo.AddTitlecaseLetter(System.Text.StringBuilder ByRef, System.String ByRef, Int32, Int32)
+lea       ebp,[rax+1]
+mov       r12d,ebp
+cmp       r14d,1
+sete      r13b
+movzx     r13d,r13b
+mov       rcx,[rsp+88]
+cmp       [rcx+8],r12d
+jle       near ptr 00007FF893FE236D
+mov       rcx,[rsp+88]
+mov       edx,ebp
+call      System.Globalization.CharUnicodeInfo.GetCodePointFromString(System.String, Int32)
+lea       rcx,[rsp+2C]
+cmp       eax,10000
+jae       short 00007FF893FE2277
+mov       edx,1
+jmp       short 00007FF893FE227C
+mov       edx,2
+mov       [rcx],edx
+mov       ecx,eax
+call      System.Globalization.CharUnicodeInfo.GetUnicodeCategoryNoBoundsChecks(UInt32)
+mov       r14d,eax
+test      r14d,r14d
+je        short 00007FF893FE22D3
+cmp       r14d,1
+je        short 00007FF893FE22D3
+cmp       r14d,2
+je        short 00007FF893FE22D3
+cmp       r14d,3
+je        short 00007FF893FE22D3
+cmp       r14d,4
+sete      cl
+movzx     ecx,cl
+test      ecx,ecx
+jne       short 00007FF893FE22D3
+mov       rcx,[rsp+88]
+cmp       ebp,[rcx+8]
+jae       near ptr 00007FF893FE267E
+mov       rcx,[rsp+88]
+movsxd    rdx,ebp
+cmp       word ptr [rcx+rdx*2+0C],27
+jne       short 00007FF893FE2346
+jmp       short 00007FF893FE22E5
+cmp       r14d,1
+jne       short 00007FF893FE22DF
+mov       r13d,1
+add       ebp,[rsp+2C]
+jmp       short 00007FF893FE235C
+inc       ebp
+test      r13d,r13d
+je        short 00007FF893FE231E
+test      rdi,rdi
+jne       short 00007FF893FE2304
+mov       rcx,rsi
+mov       rdx,[rsp+88]
+call      System.Globalization.TextInfo.ToLower(System.String)
+mov       rdi,rax
+mov       r9d,ebp
+sub       r9d,r12d
+mov       rcx,[rsp+30]
+mov       rdx,rdi
+mov       r8d,r12d
+cmp       [rcx],ecx
+call      System.Text.StringBuilder.Append(System.String, Int32, Int32)
+jmp       short 00007FF893FE233B
+mov       r9d,ebp
+sub       r9d,r12d
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+mov       r8d,r12d
+cmp       [rcx],ecx
+call      System.Text.StringBuilder.Append(System.String, Int32, Int32)
+mov       r12d,ebp
+mov       r13d,1
+jmp       short 00007FF893FE235C
+mov       edx,1
+mov       ecx,r14d
+shl       edx,cl
+test      edx,1FFCF800
+jne       short 00007FF893FE236D
+add       ebp,[rsp+2C]
+mov       rcx,[rsp+88]
+cmp       [rcx+8],ebp
+jg        near ptr 00007FF893FE2255
+mov       r15d,ebp
+sub       r15d,r12d
+test      r15d,r15d
+jle       short 00007FF893FE23C6
+test      r13d,r13d
+je        short 00007FF893FE23AC
+test      rdi,rdi
+jne       short 00007FF893FE2395
+mov       rcx,rsi
+mov       rdx,[rsp+88]
+call      System.Globalization.TextInfo.ToLower(System.String)
+mov       rdi,rax
+mov       rcx,[rsp+30]
+mov       rdx,rdi
+mov       r8d,r12d
+mov       r9d,r15d
+cmp       [rcx],ecx
+call      System.Text.StringBuilder.Append(System.String, Int32, Int32)
+jmp       short 00007FF893FE23C6
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+mov       r8d,r12d
+mov       r9d,r15d
+cmp       [rcx],ecx
+call      System.Text.StringBuilder.Append(System.String, Int32, Int32)
+mov       rcx,[rsp+88]
+mov       r13d,[rcx+8]
+cmp       r13d,ebp
+jle       near ptr 00007FF893FE25F8
+mov       ecx,[rsp+2C]
+cmp       ecx,2
+jne       near ptr 00007FF893FE2481
+lea       ecx,[rbp+1]
+mov       r12d,ecx
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+cmp       ebp,r13d
+jae       near ptr 00007FF893FE267E
+movsxd    r8,ebp
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       ebp,[rcx+18]
+mov       r8d,ebp
+mov       rax,[rcx+8]
+mov       r14d,[rax+8]
+cmp       r14d,r8d
+jbe       short 00007FF893FE2474
+movsxd    r8,r8d
+mov       [rax+r8*2+10],dx
+inc       ebp
+mov       [rcx+18],ebp
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+cmp       r12d,[rdx+8]
+jae       near ptr 00007FF893FE267E
+movsxd    r8,r12d
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       r8d,[rcx+18]
+mov       eax,r8d
+mov       r9,[rcx+8]
+mov       r10d,[r9+8]
+cmp       r10d,eax
+jbe       short 00007FF893FE24B6
+movsxd    rax,eax
+mov       [r9+rax*2+10],dx
+inc       r8d
+mov       [rcx+18],r8d
+jmp       short 00007FF893FE24D1
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+jmp       short 00007FF893FE242E
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+cmp       ebp,r13d
+jae       near ptr 00007FF893FE267E
+movsxd    r8,ebp
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       r8d,[rcx+18]
+mov       eax,r8d
+mov       r15,[rcx+8]
+mov       r14d,[r15+8]
+cmp       r14d,eax
+jbe       short 00007FF893FE24C3
+jmp       short 00007FF893FE24D9
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+jmp       short 00007FF893FE24D1
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+mov       r12d,ebp
+mov       ebp,r12d
+jmp       near ptr 00007FF893FE25F8
+movsxd    rax,eax
+mov       [r15+rax*2+10],dx
+lea       edx,[r8+1]
+mov       [rcx+18],edx
+mov       r12d,ebp
+jmp       short 00007FF893FE24D1
+mov       ecx,[rsp+2C]
+cmp       ecx,2
+jne       near ptr 00007FF893FE25A1
+lea       ecx,[rbp+1]
+mov       r14d,ecx
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+mov       r15d,[rdx+8]
+cmp       ebp,r15d
+jae       near ptr 00007FF893FE267E
+movsxd    r8,ebp
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       ebp,[rcx+18]
+mov       r8d,ebp
+mov       rax,[rcx+8]
+mov       r12d,[rax+8]
+cmp       r12d,r8d
+jbe       short 00007FF893FE2594
+movsxd    r8,r8d
+mov       [rax+r8*2+10],dx
+inc       ebp
+mov       [rcx+18],ebp
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+cmp       r14d,[rdx+8]
+jae       near ptr 00007FF893FE267E
+movsxd    r8,r14d
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       r8d,[rcx+18]
+mov       eax,r8d
+mov       r9,[rcx+8]
+mov       r10d,[r9+8]
+cmp       r10d,eax
+jbe       short 00007FF893FE25DA
+cmp       eax,r10d
+jae       near ptr 00007FF893FE267E
+movsxd    rax,eax
+mov       [r9+rax*2+10],dx
+inc       r8d
+mov       [rcx+18],r8d
+jmp       short 00007FF893FE25F5
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+jmp       short 00007FF893FE2545
+mov       rcx,[rsp+30]
+mov       rdx,[rsp+88]
+mov       r15d,[rdx+8]
+cmp       ebp,r15d
+jae       near ptr 00007FF893FE267E
+movsxd    r8,ebp
+movzx     edx,word ptr [rdx+r8*2+0C]
+mov       r8d,[rcx+18]
+mov       eax,r8d
+mov       r14,[rcx+8]
+mov       r12d,[r14+8]
+cmp       r12d,eax
+jbe       short 00007FF893FE25E7
+jmp       short 00007FF893FE262A
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+jmp       short 00007FF893FE25F5
+mov       r8d,1
+call      System.Text.StringBuilder.Append(Char, Int32)
+mov       r14d,ebp
+mov       ebp,r14d
+inc       ebp
+mov       rcx,[rsp+88]
+cmp       [rcx+8],ebp
+jg        near ptr 00007FF893FE214C
+mov       rcx,[rsp+30]
+cmp       [rcx],ecx
+call      qword ptr [7FF893FF15F0]
+nop
+add       rsp,38
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r13
+pop       r14
+pop       r15
+ret
+cmp       eax,r12d
+jae       short 00007FF893FE267E
+movsxd    rax,eax
+mov       [r14+rax*2+10],dx
+lea       edx,[r8+1]
+mov       [rcx+18],edx
+mov       r14d,ebp
+jmp       short 00007FF893FE25F5
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       ecx,1962
+mov       rdx,7FF893C34000
+call      CORINFO_HELP_STRCNS
+mov       rdx,rax
+mov       rcx,rsi
+call      System.ArgumentNullException..ctor(System.String)
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+int       3
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.StringExtensionsBenchmark.ToTrimmedString()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,rsi
+mov       rax,[rsi]
+mov       rax,[rax+40]
+call      qword ptr [rax+30]
+mov       rdi,rax
+mov       rcx,rdi
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)
+test      eax,eax
+je        short 00007FF894000CDA
+mov       rdx,rdi
+jmp       short 00007FF894000CFB
+cmp       [rdi],edi
+mov       rcx,rdi
+mov       edx,2
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+cmp       [rax],eax
+mov       rcx,rax
+mov       edx,1
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdx,rax
+mov       rcx,[rsi+18]
+cmp       [rcx],ecx
+add       rcx,8
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.IsNullOrEmpty(System.Collections.IEnumerable)
+sub       rsp,28
+test      rcx,rcx
+je        short 00007FF894000DE9
+mov       r11,7FF893C604E0
+call      qword ptr [7FF8940104E0]
+mov       rcx,rax
+mov       r11,7FF893C604E8
+call      qword ptr [7FF8940104E8]
+test      eax,eax
+sete      al
+movzx     eax,al
+add       rsp,28
+ret
+mov       eax,1
+add       rsp,28
+ret
+
+System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+push      r15
+push      r14
+push      r12
+push      rdi
+push      rsi
+push      rbp
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       edi,edx
+mov       ebx,[rsi+8]
+lea       ebp,[rbx+0FFFF]
+mov       r14d,ebp
+xor       r15d,r15d
+test      dil,1
+je        short 00007FF894000ADE
+xor       r15d,r15d
+test      ebx,ebx
+jle       short 00007FF894000ADE
+movsxd    rcx,r15d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF894000AC8
+cmp       ecx,100
+jae       near ptr 00007FF894000B9D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     r12b
+movzx     r12d,r12b
+test      r12d,r12d
+je        short 00007FF894000ADE
+jmp       short 00007FF894000AD6
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     r12d,al
+test      r12d,r12d
+je        short 00007FF894000ADE
+inc       r15d
+cmp       ebx,r15d
+jg        short 00007FF894000A8C
+test      dil,2
+je        short 00007FF894000B45
+mov       r14d,ebp
+cmp       r14d,r15d
+jl        short 00007FF894000B45
+cmp       r14d,ebx
+jae       near ptr 00007FF894000B9D
+movsxd    rcx,r14d
+movzx     ecx,word ptr [rsi+rcx*2+0C]
+cmp       ecx,100
+jae       short 00007FF894000B30
+cmp       ecx,100
+jae       near ptr 00007FF894000B9D
+movsxd    rcx,ecx
+mov       rax,7FF8F2ED12C0
+test      byte ptr [rcx+rax],80
+setne     dil
+movzx     edi,dil
+test      edi,edi
+je        short 00007FF894000B45
+jmp       short 00007FF894000B3D
+call      System.Globalization.CharUnicodeInfo.GetIsWhiteSpace(Char)
+movzx     edi,al
+test      edi,edi
+je        short 00007FF894000B45
+dec       r14d
+cmp       r14d,r15d
+jge       short 00007FF894000AEC
+sub       r14d,r15d
+lea       ecx,[r14+1]
+cmp       ebx,ecx
+jne       short 00007FF894000B62
+mov       rax,rsi
+add       rsp,20
+pop       rbx
+pop       rbp
+pop       rsi
+pop       rdi
+pop       r12
+pop       r14
+pop       r15
+ret
+test      ecx,ecx
+je        short 00007FF894000B8E
+call      System.String.FastAllocateString(Int32)
+mov       rbx,rax
+mov       r8d,[rbx+8]
+lea       rcx,[rbx+0C]
+lea       rdx,[rsi+0C]
+mov       eax,r15d
+lea       rdx,[rdx+rax*2]
+add       r8,r8
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       rax,rbx
+jmp       short 00007FF894000B53
+mov       rax,2FB75AA3020
+mov       rax,[rax]
+jmp       short 00007FF894000B53
+call      CORINFO_HELP_RNGCHKFAIL
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Collections)]
 	public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
+
 		private List<PersonProper> _peopleListSubSet;
 
 		[Benchmark(Description = nameof(ListExtensions.AddLast))]
@@ -68,6 +69,44 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
+		[Benchmark(Description = "Count")]
+		[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
+		public void CountCount()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
+
+			Consumer.Consume(people.Count);
+		}
+
+		[Benchmark(Description = nameof(EnumerableExtensions.FastCount))]
+		[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
+		public void CountFastCount()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
+
+			Consumer.Consume(people.FastCount());
+		}
+
+		[Benchmark(Description = "LongCount")]
+		[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
+		public void CountLongCount()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
+
+			Consumer.Consume(people.LongCount());
+		}
+
+		[Benchmark(Description = nameof(Enumerable.TryGetNonEnumeratedCount))]
+		[BenchmarkCategory(Categories.Collections, Categories.New)]
+		public void CountTryGetNonEnumeratedCount()
+		{
+			List<PersonProper> people = this.GetPersonProperRefList();
+
+			_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
+
+			Consumer.Consume(count);
+		}
+
 		[Benchmark(Description = nameof(ListExtensions.DoesNotHaveItems))]
 		[BenchmarkCategory(Categories.Collections)]
 		public void DoesNotHaveItemsTest()
@@ -95,17 +134,17 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			base.Consumer.Consume(people.HasItems(5));
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.IndexAtLooped))]
-		public void IndexAtLooped()
+		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
+		public void HasItemsWithPredicate()
 		{
-			PersonProper result = this.GetPersonProperRefList().IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
+			List<PersonProper> people = this.GetPersonProperRefList();
 
-			Consumer.Consume(result);
+			Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
 		}
 
 		[Benchmark(Description = "Index []")]
 		[BenchmarkCategory(Categories.ForComparison)]
-		public void IndexAtLooppedCompare()
+		public void Index()
 		{
 
 			PersonProper result = this.GetPersonProperRefList()[RandomNumberGenerator.GetInt32(0, this.Count - 1)];
@@ -113,32 +152,12 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
-		public void ListHasItemsWithPredicate()
+		[Benchmark(Description = nameof(ListExtensions.IndexAtLooped))]
+		public void IndexAtLooped()
 		{
-			List<PersonProper> people = this.GetPersonProperRefList();
+			PersonProper result = this.GetPersonProperRefList().IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
 
-			Consumer.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
-		}
-
-		[Benchmark(Description = nameof(Enumerable.TryGetNonEnumeratedCount))]
-		[BenchmarkCategory(Categories.Collections, Categories.New)]
-		public void ListTryGetNonEnumeratedCount()
-		{
-			List<PersonProper> people = this.GetPersonProperRefList();
-
-			_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
-
-			Consumer.Consume(count);
-		}
-
-		[Benchmark(Description = "Count")]
-		[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
-		public void ListTryGetNonEnumeratedCountCompare()
-		{
-			List<PersonProper> people = this.GetPersonProperRefList();
-
-			Consumer.Consume(people.Count);
+			Consumer.Consume(result);
 		}
 
 		public override void Setup()

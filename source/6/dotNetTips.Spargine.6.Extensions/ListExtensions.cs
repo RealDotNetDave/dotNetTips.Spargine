@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,7 +15,7 @@ using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
+using System.Runtime.InteropServices;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Collections.Generic;
 using DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
@@ -28,16 +28,6 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ListExtensions
 	{
-		/// <summary>
-		/// Gets the random.
-		/// </summary>
-		/// <returns>System.Int32.</returns>
-		/// <value>The random.</value>
-		private static int GenerateRandomNumber()
-		{
-			return RandomNumberGenerator.GetInt32(int.MaxValue);
-		}
-
 		/// <summary>
 		/// Adds the item as the first item in the <see cref="List{T}" />.
 		/// Validates that <paramref name="collection" /> is not null and not read-only.
@@ -88,6 +78,8 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Determins that the two <see cref="List{T}" />s are equal.
+		/// Returns false if <paramref name="collection" /> or <paramref name="listToCheck" />
+		/// is null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The input.</param>
@@ -116,8 +108,30 @@ namespace DotNetTips.Spargine.Extensions
 
 			return areSame;
 		}
+
+		/// <summary>
+		/// Creates a new <see cref="Span{T}" /> over an input <see cref="List{T}" /> instance.
+		/// </summary>
+		/// <typeparam name="T">The type of elements in the input <see cref="List{T}" /> instance.</typeparam>
+		/// <param name="list">The input <see cref="List{T}" /> instance.</param>
+		/// <returns>A <see cref="Span{T}" /> instance with the values of <paramref name="list" />.</returns>
+		/// <remarks>Note that the returned <see cref="Span{T}" /> is only guaranteed to be valid as long as the items within
+		/// <paramref name="list" /> are not modified. Doing so might cause the <see cref="List{T}" /> to swap its
+		/// internal buffer, causing the returned <see cref="Span{T}" /> to become out of date. That means that in this
+		/// scenario, the <see cref="Span{T}" /> would end up wrapping an array no longer in use. Always make sure to use
+		/// the returned <see cref="Span{T}" /> while the target <see cref="List{T}" /> is not modified.
+		/// Orginal code from:
+		/// https://github.com/CommunityToolkit/dotnet/blob/main/CommunityToolkit.HighPerformance/Extensions/ListExtensions.cs</remarks>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New)]
+		public static Span<T> AsSpan<T>(this List<T> list)
+		{
+			return CollectionsMarshal.AsSpan(list.ArgumentNotNull());
+		}
+
 		/// <summary>
 		/// Clears the null items from the <see cref="List{T}" />.
+		/// Returns false if <paramref name="collection" /> is null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The source.</param>
@@ -132,6 +146,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			return collection.DoesNotHaveItems() ? false : collection.RemoveAll(p => p is null) > 0;
 		}
+
 		/// <summary>
 		/// Copies the <see cref="List{T}" /> to a <see cref="System.Collections.ObjectModel.Collection{T}" />.
 		/// Validates that <paramref name="collection" /> is not null.
@@ -150,6 +165,7 @@ namespace DotNetTips.Spargine.Extensions
 
 		/// <summary>
 		/// Checks list for null and insurese there are items in the list.
+		/// Returns true if <paramref name="collection" /> is null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -189,6 +205,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 		/// <summary>
 		/// Determines whether the specified <see cref="List{T}" /> has items.
+		/// Returns false if <paramref name="collection" /> is null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
@@ -205,7 +222,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 		/// <summary>
 		/// Determines whether the specified <see cref="List{T}" /> has items based on the Predicate.
-		/// Validates that <paramref name="action" /> is not null.
+		/// Returns false if <paramref name="action" /> or <paramref name="collection" /> is null.
 		/// </summary>
 		/// <typeparam name="T">Generic type parameter.</typeparam>
 		/// <param name="collection">The source.</param>
@@ -224,6 +241,7 @@ namespace DotNetTips.Spargine.Extensions
 		}
 		/// <summary>
 		/// Determines whether the <see cref="List{T}" /> has a specified count.
+		/// Returns false if <paramref name="collection" /> is null.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The source.</param>
@@ -241,6 +259,7 @@ namespace DotNetTips.Spargine.Extensions
 				return collection.LongCount() == count;
 			}
 		}
+
 		/// <summary>
 		/// Finds index that avoids multiple enumerations.
 		/// </summary>
@@ -248,7 +267,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="collection">The collection.</param>
 		/// <param name="index">The index.</param>
 		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">collection</exception>
+		/// <exception cref="System.ArgumentNullException">collection</exception>
 		/// <remarks>Orginal code by: @TheOtherBoz</remarks>
 		[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
 		public static T IndexAtLooped<T>([NotNull] this IList<T> collection, int index)
@@ -263,6 +282,7 @@ namespace DotNetTips.Spargine.Extensions
 
 			return collection.ElementAt(indexWrap);
 		}
+
 		/// <summary>
 		/// Groups the elements of a <see cref="List{T}" /> sequence according to a specified firstKey selector function and rotates the unique
 		/// values from the secondKey selector function into multiple values in the output, and performs aggregations.
@@ -459,5 +479,6 @@ namespace DotNetTips.Spargine.Extensions
 		{
 			return (IReadOnlyList<T>)collection.ArgumentNotNull();
 		}
+
 	}
 }

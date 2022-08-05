@@ -21,6 +21,11 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
+	/// <summary>
+	/// Class DictionaryExtensionsCollectionBenchmark.
+	/// Implements the <see cref="LargeCollectionsBenchmark" />
+	/// </summary>
+	/// <seealso cref="LargeCollectionsBenchmark" />
 	[BenchmarkCategory(Categories.Collections)]
 	public class DictionaryExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{

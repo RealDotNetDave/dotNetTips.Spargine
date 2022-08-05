@@ -1,22 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
-		<TargetFramework>net6.0</TargetFramework>
-		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
-		<FileVersion>2022.6.8.10</FileVersion>
-		<RootNamespace>dotNetTips.Spargine.Extensions.BenchmarkTests</RootNamespace>
-		<PlatformTarget>AnyCPU</PlatformTarget>
-		<DebugType>pdbonly</DebugType>
-		<DebugSymbols>true</DebugSymbols>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<AnalysisLevel>latest</AnalysisLevel>
+		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
-	</PropertyGroup>
-
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-		<OutputPath>..\..\appbin</OutputPath>
+		<Company>dotNetTips.com - McCarter Consulting</Company>
+		<Configurations>Release</Configurations>
+		<Copyright>2021: David McCarter - McCarter Consulting</Copyright>
+		<Copyright>David McCarter</Copyright>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>none</DebugType>
+		<Description>DotNetTips.Spargine.Extensions.BenchmarkTests</Description>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+		<FileVersion>2022.6.8.10</FileVersion>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<IsPublishable>False</IsPublishable>
+		<NeutralLanguage>en</NeutralLanguage>
+		<Nullable>annotations</Nullable>
+		<NullableContextOptions>enable</NullableContextOptions>
+		<OldToolsVersion>2.0</OldToolsVersion>
+		<OutputType>Exe</OutputType>
+		<Platforms>AnyCPU</Platforms>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<ServerGarbageCollection>true</ServerGarbageCollection>
+		<SignAssembly>False</SignAssembly>
+		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -26,13 +37,13 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.8.9" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.8.9" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.8.9" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2022.6.8.10" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2022.6.8.10" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2022.6.8.10" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj" />
+		<ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.Benchmarking.csproj" />
 	</ItemGroup>
 
 </Project>

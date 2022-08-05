@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20220804-210209</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20220804-210209</th></tr>
+<tr>
+<th>GuidEqualsTest .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+<th>GuidFastEqualsTest .NET 6.0.7 (6.0.722.32202), X64 RyuJIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidEqualsTest()
+push      rsi
+sub       rsp,30
+vzeroupper
+mov       rsi,[rcx+18]
+lea       rax,[rcx+1C8]
+vmovupd   xmm0,[rcx+1D8]
+vmovupd   [rsp+20],xmm0
+lea       rdx,[rsp+20]
+mov       rcx,rax
+call      System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,30
+pop       rsi
+ret
+
+System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
+mov       eax,[rcx]
+cmp       eax,[rdx]
+je        short 00007FF893FFF819
+xor       eax,eax
+ret
+mov       eax,[rcx+4]
+cmp       eax,[rdx+4]
+jne       short 00007FF893FFF816
+mov       eax,[rcx+8]
+cmp       eax,[rdx+8]
+jne       short 00007FF893FFF816
+mov       eax,[rcx+0C]
+cmp       eax,[rdx+0C]
+sete      al
+movzx     eax,al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidFastEqualsTest()
+push      rsi
+sub       rsp,20
+mov       rsi,[rcx+18]
+mov       [rsp+30],rcx
+add       rcx,1C8
+mov       rdx,[rsp+30]
+add       rdx,1D8
+call      DotNetTips.Spargine.Extensions.GuidExtensions.FastEquals(System.Guid ByRef, System.Guid ByRef)
+movzx     eax,al
+mov       [rsi+54],al
+add       rsp,20
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.GuidExtensions.FastEquals(System.Guid ByRef, System.Guid ByRef)
+vzeroupper
+cmp       [rcx],ecx
+cmp       [rdx],edx
+vmovupd   xmm0,[rcx]
+vmovupd   xmm1,[rdx]
+vpcmpeqb  xmm0,xmm0,xmm1
+vpmovmskb eax,xmm0
+and       eax,0FFFF
+cmp       eax,0FFFF
+sete      al
+movzx     eax,al
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

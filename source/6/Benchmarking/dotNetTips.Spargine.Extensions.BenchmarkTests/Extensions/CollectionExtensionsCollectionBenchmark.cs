@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
 // Last Modified On : 08-01-2022
 // ***********************************************************************
-// <copyright file="CollectionExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="CollectionExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;

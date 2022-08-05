@@ -31,19 +31,19 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 					  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+				//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
+				BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<CollectionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<DictionaryExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
 				//BenchmarkRunner.Run<EnumExtensionsBenchmark>(config);
 				//BenchmarkRunner.Run<ExceptionExtensionsPerfTestRunner>(config);
 				//BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
-				//BenchmarkRunner.Run<GeneralBenchmark>(config);
-				//BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
-				//BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
-				//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
+				BenchmarkRunner.Run<GeneralBenchmark>(config);
+				BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
+				BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
+				BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
 
 				Console.Beep();
 				Console.Beep(frequency: 50000, duration: 5000);

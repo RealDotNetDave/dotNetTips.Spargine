@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
@@ -33,6 +33,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	[BenchmarkCategory(Categories.Collections)]
 	public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
+
 		private IEnumerable<PersonProper> _people;
 
 		private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
@@ -138,7 +139,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + "With Sort Expression")]
+		[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + ": With Sort Expression")]
 		public void OrderBy()
 		{
 			IEnumerable<PersonProper> result = GetPersonProperRefList().OrderBy("City desc");

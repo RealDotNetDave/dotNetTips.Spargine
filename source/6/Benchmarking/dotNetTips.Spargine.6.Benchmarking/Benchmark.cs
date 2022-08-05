@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Spargine.5.Benchmarking
+// Assembly         : DotNetTips.Spargine.Benchmarking
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System.Diagnostics;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
@@ -68,6 +69,7 @@ namespace DotNetTips.Spargine.Benchmarking
 	[StatisticalTestColumn(StatisticalTestKind.Welch, showPValues: true)]
 	public abstract class Benchmark
 	{
+
 		/// <summary>
 		/// The failed text
 		/// </summary>
@@ -275,11 +277,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The long test string
 		/// </summary>
+		/// <value>The long test string.</value>
 		public string LongTestString { get; } = "Parsing and formatting are the lifeblood of any modern web app or service: take data off the wire, parse it, manipulate it, format it back out. As such, in .NET Core 2.1 along with bringing up Span<T>, we invested in the formatting and parsing of primitives, from Int32 to DateTime. Many of those changes can be read about in my previous blog posts, but one of the key factors in enabling those performance improvements was in moving a lot of native code to managed. That may be counter-intuitive, in that it’s “common knowledge” that C code is faster than C# code. However, in addition to the gap between them narrowing, having (mostly) safe C# code has made the code base easier to experiment in, so whereas we may have been skittish about tweaking the native implementations, the community-at-large has dived head first into optimizing these implementations wherever possible. That effort continues in full force in .NET Core 3.0, with some very nice rewards reaped.";
 
 		/// <summary>
 		/// The lower case string
 		/// </summary>
+		/// <value>The lower case string.</value>
 		public string LowerCaseString { get; } = "john doe";
 
 		/// <summary>
@@ -321,6 +325,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The proper case string
 		/// </summary>
+		/// <value>The proper case string.</value>
 		public string ProperCaseString { get; } = "John Doe";
 
 		/// <summary>
@@ -368,11 +373,13 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The test email lower case
 		/// </summary>
+		/// <value>The test email lower case.</value>
 		public string TestEmailLowerCase { get; } = "fake@fakelive.com";
 
 		/// <summary>
 		/// The test email mixed case
 		/// </summary>
+		/// <value>The test email mixed case.</value>
 		public string TestEmailMixedCase { get; } = "Fake@FakeLive.com";
 
 		/// <summary>
@@ -384,6 +391,7 @@ namespace DotNetTips.Spargine.Benchmarking
 		/// <summary>
 		/// The upper case string
 		/// </summary>
+		/// <value>The upper case string.</value>
 		public string UpperCaseString { get; } = "JOHN DOE";
 
 		/// <summary>

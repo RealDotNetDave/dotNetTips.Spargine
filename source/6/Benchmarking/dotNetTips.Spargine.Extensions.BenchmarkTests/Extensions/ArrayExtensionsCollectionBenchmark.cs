@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
@@ -22,11 +23,26 @@ using DotNetTips.Spargine.Tester.Models.ValueTypes;
 
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
+	/// <summary>
+	/// Class ArrayExtensionsCollectionBenchmark.
+	/// Implements the <see cref="DotNetTips.Spargine.Benchmarking.LargeCollectionsBenchmark" />
+	/// </summary>
+	/// <seealso cref="DotNetTips.Spargine.Benchmarking.LargeCollectionsBenchmark" />
 	[BenchmarkCategory(Categories.Collections)]
-	public partial class ArrayExtensionsCollectionBenchmark : LargeCollectionsBenchmark
+	public class ArrayExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddFirst))]
+		[Benchmark(Description = nameof(ArrayExtensions.Add))]
+		[BenchmarkCategory(Categories.ValueType)]
+		public void Add()
+		{
+			var people = this.GetPersonValArray();
+
+			var result = people.Add(this.PersonVal01);
+
+			Consumer.Consume(result);
+		}
+		[Benchmark(Description = nameof(ArrayExtensions.AddFirst) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void AddFirstRef()
 		{
@@ -37,7 +53,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddFirst))]
+		[Benchmark(Description = nameof(ArrayExtensions.AddFirst) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void AddFirstVal()
 		{
@@ -48,7 +64,18 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
+		[Benchmark(Description = nameof(ArrayExtensions.AddIf))]
+		[BenchmarkCategory(Categories.ValueType)]
+		public void AddIf()
+		{
+			var people = this.GetPersonValArray();
+
+			var result = people.AddIf(this.PersonVal01, people.Count() > 10);
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": as Reference + Params")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void AddIfNotExistsRef()
 		{
@@ -59,7 +86,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": Params")]
+		[Benchmark(Description = nameof(ArrayExtensions.AddIfNotExists) + ": as Value + Params")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void AddIfNotExistsVal()
 		{
@@ -70,7 +97,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddLast))]
+		[Benchmark(Description = nameof(ArrayExtensions.AddLast) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void AddLastRef()
 		{
@@ -81,7 +108,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AddLast))]
+		[Benchmark(Description = nameof(ArrayExtensions.AddLast) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void AddLastVal()
 		{
@@ -92,7 +119,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AreEqual))]
+		[Benchmark(Description = nameof(ArrayExtensions.AreEqual) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void AreEqualRef()
 		{
@@ -104,7 +131,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.AreEqual))]
+		[Benchmark(Description = nameof(ArrayExtensions.AreEqual) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void AreEqualVal()
 		{
@@ -143,7 +170,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + " ReadOnlySpan<>")]
+		[Benchmark(Description = nameof(ArrayExtensions.BytesToString) + ": ReadOnlySpan<>")]
 		[BenchmarkCategory(Categories.Strings)]
 		public void BytesToStringReadOnlySpan()
 		{
@@ -153,7 +180,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-CoordinateProper")]
+		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array:CoordinateProper as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void CloneCoordinateProperRef()
 		{
@@ -162,16 +189,16 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-Coordinate")]
+		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array:Coordinate as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
-		public void CloneCoordinateRef()
+		public void CloneCoordinateVal()
 		{
 			Coordinate[] result = GetCoordinateValArray().Clone<Coordinate[]>();
 
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-PersonRecord")]
+		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array:PersonRecord as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void ClonePersonRecordRef()
 		{
@@ -180,7 +207,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-PersonProper")]
+		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array:PersonProper as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void ClonePersonRef()
 		{
@@ -189,7 +216,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array-Person")]
+		[Benchmark(Description = nameof(ArrayExtensions.Clone) + ": Array:Person as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void ClonePersonVal()
 		{
@@ -198,7 +225,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny))]
+		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void ContainsAnyRef()
 		{
@@ -207,7 +234,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny))]
+		[Benchmark(Description = nameof(ArrayExtensions.ContainsAny) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void ContainsAnyVal()
 		{
@@ -216,7 +243,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems))]
+		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void DoesNotHaveItemsRef()
 		{
@@ -225,7 +252,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems))]
+		[Benchmark(Description = nameof(ArrayExtensions.DoesNotHaveItems) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void DoesNotHaveItemsVal()
 		{
@@ -234,7 +261,31 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems))]
+		[Benchmark(Description = nameof(ArrayExtensions.FastProcessor))]
+		[BenchmarkCategory(Categories.ReferenceType)]
+		public void FastProcessor()
+		{
+			var people = GetPersonProperRefArray();
+
+			people.FastProcessor(
+				(PersonProper person) =>
+				{
+					person.Address2 = "Address #2";
+				});
+
+			Consumer.Consume(people);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.GenerateHashCode))]
+		[BenchmarkCategory(Categories.ReferenceType)]
+		public void GenerateHashCode()
+		{
+			var result = GetPersonProperRefArray().GenerateHashCode();
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void HasItemsRef()
 		{
@@ -243,7 +294,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems))]
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void HasItemsVal()
 		{
@@ -252,7 +303,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Count")]
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": With Count as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void HasItemsWithCountRef()
 		{
@@ -261,7 +312,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Count")]
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": With Count as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void HasItemsWithCountVal()
 		{
@@ -270,7 +321,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Predicate")]
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": With Predicate as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void HasItemsWithPredicateRef()
 		{
@@ -279,7 +330,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + "With Predicate")]
+		[Benchmark(Description = nameof(ArrayExtensions.HasItems) + ": With Predicate as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void HasItemsWithPredicateVal()
 		{
@@ -288,7 +339,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void RemoveFirstRef()
 		{
@@ -299,7 +350,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst))]
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveFirst) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void RemoveFirstVal()
 		{
@@ -310,7 +361,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast))]
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast) + ": as Reference")]
 		[BenchmarkCategory(Categories.ReferenceType)]
 		public void RemoveLastRef()
 		{
@@ -321,13 +372,44 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			Consumer.Consume(result);
 		}
 
-		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast))]
+		[Benchmark(Description = nameof(ArrayExtensions.RemoveLast) + ": as Value")]
 		[BenchmarkCategory(Categories.ValueType)]
 		public void RemoveLastVal()
 		{
 			var people = this.GetPersonValArray();
 
 			var result = people.RemoveLast();
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.ToDistinct))]
+		[BenchmarkCategory(Categories.ReferenceType)]
+		public void ToDistinct()
+		{
+			var result = GetPersonProperRefArray().ToDistinct();
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.Upsert))]
+		[BenchmarkCategory(Categories.ReferenceType)]
+		public void Upsert()
+		{
+			PersonProper[] people = GetPersonProperRefArray();
+
+			PersonProper[] result = people.Upsert(this.PersonProperRef01);
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(ArrayExtensions.Upsert) + ": Record")]
+		[BenchmarkCategory(Categories.ReferenceType)]
+		public void UpsertRecord()
+		{
+			var people = GetPersonRecordArray();
+
+			var result = people.Upsert(this.PersonRecord01);
 
 			Consumer.Consume(result);
 		}

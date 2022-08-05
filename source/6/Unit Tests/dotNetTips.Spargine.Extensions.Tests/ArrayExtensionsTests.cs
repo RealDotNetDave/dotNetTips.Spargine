@@ -199,17 +199,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void RemoveDuplicatesTest()
-		{
-			var numbers = new int[] { 1, 2, 3, 4, 5, 10, 5 };
-
-			var result = numbers.RemoveDuplicates();
-
-			Assert.IsTrue(result.FastCount() == numbers.Length - 1);
-
-		}
-
-		[TestMethod]
 		public void ToDistinctTest()
 		{
 			var people = RandomData.GenerateWords(10, 10, 100).ToArray();

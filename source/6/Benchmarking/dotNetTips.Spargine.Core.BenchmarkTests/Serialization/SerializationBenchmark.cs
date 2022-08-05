@@ -1,16 +1,17 @@
 ﻿// ***********************************************************************
-// Assembly         : DotNetTips.Utility.Benchmarks
+// Assembly         : DotNetTips.Spargine.Core.BenchmarkTests
 // Author           : David McCarter
-// Created          : 12-05-2019
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="SerializationBenchmark.cs" company="DotNetTips.Utility.Benchmarks">
-//     Copyright (c) McCarter Consulting. All rights reserved.
+// <copyright file="SerializationBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core.BenchmarkTests.Properties;
@@ -29,9 +30,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 	[BenchmarkCategory(Categories.Serialization)]
 	public class SerializationBenchmark : Benchmark
 	{
-		/// <summary>
-		/// Deserialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonProper")]
 		[BenchmarkCategory(Categories.XML)]
 		public void Deserialize01()
@@ -41,9 +39,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Deserialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonRecord")]
 		[BenchmarkCategory(Categories.XML)]
 		public void Deserialize02()
@@ -53,9 +48,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Deserialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonRecord")]
 		public void Deserialize03()
 		{
@@ -64,9 +56,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Deserialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonProper")]
 		public void Deserialize04()
 		{
@@ -75,9 +64,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Serialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(XmlSerialization.Serialize) + ": XML=PersonProper")]
 		[BenchmarkCategory(Categories.XML)]
 		public void Serialize01()
@@ -87,9 +73,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Serialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonProper")]
 		[BenchmarkCategory(Categories.JSON)]
 		public void Serialize02()
@@ -99,9 +82,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Serialize this instance.
-		/// </summary>
 		[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonRecord")]
 		[BenchmarkCategory(Categories.JSON)]
 		public void Serialize03()
@@ -111,17 +91,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Setups this instance.
-		/// </summary>
-		public override void Setup()
-		{
-			base.Setup();
-		}
-
-		/// <summary>
-		/// Strings to x document.
-		/// </summary>
 		[Benchmark(Description = nameof(XmlSerialization.StringToXDocument))]
 		[BenchmarkCategory(Categories.XML)]
 		public void StringToXDocument()

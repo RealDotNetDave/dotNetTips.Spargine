@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="ObjectExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="ObjectExtensionsBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
@@ -25,9 +25,30 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 {
 	public class ObjectExtensionsBenchmark : Benchmark
 	{
+
 		private string _peopleJson;
 		private PersonProper _personProper;
 		private PersonRecord _personRecord;
+
+		private void CheckForNullParamNormal(object input)
+		{
+			if (input is null)
+			{
+				input = "TEST";
+			}
+
+			Consumer.Consume(input);
+		}
+
+		private void CheckForNullParamSpargine(object input)
+		{
+			if (input is null)
+			{
+				input = "SPARGINE";
+			}
+
+			Consumer.Consume(input);
+		}
 
 		[Benchmark(Description = nameof(ObjectExtensions.As) + ": IPerson")]
 		public void As()
@@ -294,24 +315,5 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			disposableType.TryDispose();
 		}
 
-		private void CheckForNullParamNormal(object input)
-		{
-			if (input is null)
-			{
-				input = "TEST";
-			}
-
-			Consumer.Consume(input);
-		}
-
-		private void CheckForNullParamSpargine(object input)
-		{
-			if (input is null)
-			{
-				input = "SPARGINE";
-			}
-
-			Consumer.Consume(input);
-		}
 	}
 }

@@ -1,18 +1,21 @@
 ﻿// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
-// Created          : 01-09-2021
+// Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
-// <copyright file="StringExtensionsCounterBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="StringExtensionsCounterBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
+//     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System;
 using System.Globalization;
+using System.Text;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
@@ -31,39 +34,154 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 	public class StringExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
 
-		/// <summary>
-		/// The test character
-		/// </summary>
-		private readonly char _testCharacter = RandomData.GenerateCharacter();
-
-		/// <summary>
-		/// The CRLF string
-		/// </summary>
+		private string _base64String;
+		private string _brotilString;
 		private string _crlfString;
+		private string _gzipString;
 
-		/// <summary>
-		/// Computes the m d5 hash.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.ComputeSHA256Hash))]
-		public void ComputeMD5Hash()
+		[Benchmark(Description = nameof(StringExtensions.ComputeHash))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void ComputeHash()
 		{
-			var result = this.LongTestString.ComputeSha256Hash();
+			var result = this._crlfString.ComputeHash();
 
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Concat01s this instance.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.Concat))]
-		public void Concat()
+		[Benchmark(Description = nameof(StringExtensions.ComputeSHA256Hash))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void ComputeSHA256Hash()
 		{
-			var result = this.StringToTrim.Clone<string>().Concat(",", Tristate.True, this.GetStringArray(10, 15, 20));
+			var result = this._crlfString.ComputeSha256Hash();
 
 			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ContainsAny))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void ContainsAny()
+		{
+			var result = this._crlfString.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.DelimitedStringToArray))]
+		[BenchmarkCategory(Categories.Strings, Categories.New)]
+		public void DelimitedStringToArray()
+		{
+			var result = this._crlfString.DelimitedStringToArray(ControlChars.Dot);
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.EqualsIgnoreCase))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void EqualsIgnoreCase()
+		{
+			var result = this._crlfString.EqualsIgnoreCase(this._crlfString);
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.EqualsOrBothNullOrEmpty))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void EqualsOrBothNullOrEmpty()
+		{
+			var result = this._crlfString.EqualsOrBothNullOrEmpty(this._crlfString);
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.FromBase64))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void FromBase64()
+		{
+			var result = this._base64String.FromBase64();
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.FromBrotliAsync))]
+		[BenchmarkCategory(Categories.New, Categories.Strings, Categories.Async)]
+		public async Task FromBrotliAsync()
+		{
+			var result = await this._brotilString.FromBrotliAsync().ConfigureAwait(false);
+
+			this.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.FromGZipAsync))]
+		[BenchmarkCategory(Categories.New, Categories.Strings, Categories.Async)]
+		public async Task FromGZipAsync()
+		{
+			var result = await this._gzipString.FromGZipAsync().ConfigureAwait(false);
+
+			this.Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.GetHashCode))]
+		[BenchmarkCategory(Categories.New, Categories.Strings)]
+#pragma warning disable CS0114 // Member hides inherited member; missing override keyword
+		public void GetHashCode()
+#pragma warning restore CS0114 // Member hides inherited member; missing override keyword
+		{
+			var result = this._crlfString.GetHashCode();
+
+			Consumer.Consume(result);
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.RemoveCRLF))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void RemoveCRLF01()
+		{
+			var testString = this._crlfString.Clone<string>();
+
+			var result = testString.RemoveCRLF();
+
+			Consumer.Consume(result);
+		}
+
+		public override void Setup()
+		{
+			base.Setup();
+
+			//Create lines of text.
+			var sb = new StringBuilder();
+
+			for (var lineCount = 0; lineCount < this.Count; lineCount++)
+			{
+				sb.AppendLine(
+					RandomData.GenerateWord(10) +
+						ControlChars.Space +
+						RandomData.GenerateWord(10) + ControlChars.Space +
+						RandomData.GenerateWord(10) + ControlChars.Space +
+						RandomData.GenerateWord(10) + ControlChars.Space +
+						RandomData.GenerateWord(10) +
+						ControlChars.Dot);
+			}
+
+			this._crlfString = sb.ToString();
+
+			this._brotilString = this._crlfString.ToBrotliAsync().Result;
+
+			this._gzipString = this._crlfString.ToGZipAsync().Result;
+
+			this._base64String = this._crlfString.ToBase64();
+		}
+
+		[Benchmark(Description = "Split")]
+		[BenchmarkCategory(Categories.ForComparison)]
+		public void Split()
+		{
+			foreach (var line in this._crlfString.Split(ControlChars.CRLF))
+			{
+				Consumer.Consume(line);
+			}
 		}
 
 		[Benchmark(Description = nameof(StringExtensions.SplitLines))]
+		[BenchmarkCategory(Categories.Strings)]
 		public void SplitLines()
 		{
 			foreach (LineSplitEntry line in this._crlfString.SplitLines())
@@ -72,237 +190,71 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests
 			}
 		}
 
-		/// <summary>
-		/// Determines whether this instance contains any.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.ContainsAny))]
-		public void ContainsAny()
-		{
-			var result = this.LongTestString.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Defaults if null.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.DefaultIfNull))]
-		public void DefaultIfNull()
-		{
-			var result = this.StringToTrim.DefaultIfNull();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Defaults if null or empty.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.DefaultIfNullOrEmpty))]
-		public void DefaultIfNullOrEmpty()
-		{
-			var result = this.StringToTrim.DefaultIfNullOrEmpty("David");
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Equalses the ignore case.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.EqualsIgnoreCase))]
-		public void EqualsIgnoreCase()
-		{
-			var result = this.String10Characters01.EqualsIgnoreCase(this.String15Characters01);
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Equalses the or both null or empty.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.EqualsOrBothNullOrEmpty))]
-		public void EqualsOrBothNullOrEmpty()
-		{
-			var result = this.String10Characters01.EqualsOrBothNullOrEmpty(this.String15Characters01);
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Froms the base64.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.FromBase64) + ":" + nameof(StringExtensions.ToBase64))]
-		public void FromBase64()
-		{
-			var result = this.Base64String.FromBase64();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Determines whether this instance has value.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.HasValue))]
-		public void HasValue()
-		{
-			var result = this.StringToTrim.HasValue();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Indents this instance.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.Indent))]
-		public void Indent()
-		{
-			var result = this.StringToTrim.Indent(10, '>');
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Determines whether [is ASCII digit].
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsAsciiDigit))]
+		[Benchmark(Description = nameof(StringExtensions.SplitRemoveEmpty))]
 		[BenchmarkCategory(Categories.Strings)]
-		public void IsAsciiDigit()
+		public void SplitRemoveEmpty()
 		{
-			var result = this._testCharacter.IsAsciiDigit();
-
-			Consumer.Consume(result);
+			foreach (var line in this._crlfString.SplitRemoveEmpty())
+			{
+				Consumer.Consume(line);
+			}
 		}
 
-		/// <summary>
-		/// Determines whether [is ASCII letter].
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsAsciiLetter))]
-		public void IsAsciiLetter()
-		{
-			var result = this._testCharacter.IsAsciiLetter();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Determines whether [is ASCII letter or digit].
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsAsciiLetterOrDigit))]
-		public void IsAsciiLetterOrDigit()
-		{
-			var result = this._testCharacter.IsAsciiLetterOrDigit();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Determines whether [is ASCII whitespace].
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsAsciiWhitespace))]
+		[Benchmark(Description = nameof(StringExtensions.Split) + ": RemoveEmptyEntries")]
 		[BenchmarkCategory(Categories.Strings)]
-		public void IsAsciiWhitespace()
+		public void SplitWithRemoveEmptyEntries()
 		{
-			var result = this._testCharacter.IsAsciiDigit();
+			foreach (var line in this._crlfString.Split(StringSplitOptions.RemoveEmptyEntries, ControlChars.Dot))
+			{
+				Consumer.Consume(line);
+			}
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.Split) + ": TrimEntries")]
+		[BenchmarkCategory(Categories.Strings)]
+		public void SplitWithTrimEntries()
+		{
+			foreach (var line in this._crlfString.Split(StringSplitOptions.TrimEntries, ControlChars.Dot))
+			{
+				Consumer.Consume(line);
+			}
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.Split) + ": TrimEntries + Count")]
+		[BenchmarkCategory(Categories.Strings)]
+		public void SplitWithTrimEntriesCount()
+		{
+			foreach (var line in this._crlfString.Split(StringSplitOptions.TrimEntries, 10, ControlChars.Dot))
+			{
+				Consumer.Consume(line);
+			}
+		}
+
+		[Benchmark(Description = nameof(StringExtensions.ToBase64))]
+		[BenchmarkCategory(Categories.Strings)]
+		public void ToBase64()
+		{
+			var result = this.LongTestString.ToBase64();
 
 			Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Determines whether this instance is guid01.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsGuid))]
-		public void IsGuid01()
+		[Benchmark(Description = nameof(StringExtensions.ToBrotliAsync))]
+		[BenchmarkCategory(Categories.New, Categories.Strings)]
+		public async Task ToBrotliAsync()
 		{
-			var guid = this.TestGuid.ToString();
-			var result = guid.IsGuid();
+			var result = await this._crlfString.ToBrotliAsync().ConfigureAwait(false);
 
-			Consumer.Consume(result);
+			this.Consumer.Consume(result);
 		}
 
-		/// <summary>
-		/// Determines whether [is mac address].
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.IsMacAddress))]
-		public void IsMacAddress()
+		[Benchmark(Description = nameof(StringExtensions.ToGZipAsync))]
+		[BenchmarkCategory(Categories.New, Categories.Strings)]
+		public async Task ToGZipAsync()
 		{
-			var result = MacAddress.IsMacAddress();
+			var result = await this._crlfString.ToGZipAsync().ConfigureAwait(false);
 
-			Consumer.Consume(result);
-		}
-
-		private const string MacAddress = "00:1A:C2:7B:00:47";
-
-		/// <summary>
-		/// Removes the CRL F01.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.RemoveCRLF))]
-		public void RemoveCRLF01()
-		{
-			var result = this._crlfString.RemoveCRLF();
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Setups this instance.
-		/// </summary>
-		public override void Setup()
-		{
-			base.Setup();
-
-			this._crlfString = RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF + RandomData.GenerateWord(10) + ControlChars.CRLF;
-		}
-
-		/// <summary>
-		/// Startses the with ordinal.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.StartsWithOrdinal))]
-		public void StartsWithOrdinal()
-		{
-			var result = this.String10Characters01.StartsWithOrdinal(this.String15Characters01);
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Startses the with ordinal ignore case.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.StartsWithOrdinalIgnoreCase))]
-		public void StartsWithOrdinalIgnoreCase()
-		{
-			var result = this.String10Characters01.StartsWithOrdinalIgnoreCase(this.String15Characters01);
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Substrings the trim.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.SubstringTrim))]
-		public void SubstringTrim()
-		{
-			var result = this.StringToTrim.SubstringTrim(25, 25);
-
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Converts to titlecase.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.ToTitleCase))]
-		public void ToTitleCase()
-		{
-			Consumer.Consume(this.LowerCaseString.ToTitleCase());
-		}
-
-		/// <summary>
-		/// Converts to trimmedstring.
-		/// </summary>
-		[Benchmark(Description = nameof(StringExtensions.ToTrimmed))]
-		public void ToTrimmedString()
-		{
-			var result = this.StringToTrim.ToTrimmed();
-
-			Consumer.Consume(result);
+			this.Consumer.Consume(result);
 		}
 
 	}

@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -33,6 +33,7 @@ namespace DotNetTips.Spargine.IO
 	/// </summary>
 	public static class DirectoryHelper
 	{
+
 		/// <summary>
 		/// Applications the application data folder for Windows or Mac.
 		/// </summary>
@@ -55,7 +56,7 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <param name="permission">The requested permission.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool CheckPermission(string path, FileSystemRights permission = FileSystemRights.Read)
 		{
 			path = path.ArgumentNotNullOrEmpty(trim: true);
@@ -483,5 +484,6 @@ namespace DotNetTips.Spargine.IO
 				File.SetAttributes(directories[fileCount].FullName, FileAttributes.Normal);
 			}
 		}
+
 	}
 }

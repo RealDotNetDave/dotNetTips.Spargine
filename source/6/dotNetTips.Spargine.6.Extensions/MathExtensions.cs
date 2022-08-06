@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-19-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -23,6 +23,20 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class MathExtensions
 	{
+
+		/// <summary>
+		/// Adds the specified add.
+		/// </summary>
+		/// <param name="input">The count.</param>
+		/// <param name="add">The add.</param>
+		/// <returns>System.Double.</returns>
+		/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+		public static double Add(this int input, int add)
+		{
+			return input + add;
+		}
 		/// <summary>
 		/// Calculates the percent from the first and second <see cref="TimeSpan" />.
 		/// </summary>
@@ -34,34 +48,6 @@ namespace DotNetTips.Spargine.Extensions
 		public static double CalculatePercent(this TimeSpan first, TimeSpan second)
 		{
 			return ( second.TotalMilliseconds - first.TotalMilliseconds ) / Math.Abs(first.TotalMilliseconds) * 100;
-		}
-
-		/// <summary>
-		/// Adds the specified add.
-		/// </summary>
-		/// <param name="input">The count.</param>
-		/// <param name="add">The add.</param>
-		/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
-		/// <returns>System.Double.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
-		public static double Add(this int input, int add)
-		{
-			return input + add;
-		}
-
-		/// <summary>
-		/// Subtracts the specified subtract.
-		/// </summary>
-		/// <param name="input">The count.</param>
-		/// <param name="subtract">The subtract.</param>
-		/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
-		/// <returns>System.Double.</returns>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
-		public static double Subtract(this int input, int subtract)
-		{
-			return input - subtract;
 		}
 
 		/// <summary>
@@ -101,6 +87,46 @@ namespace DotNetTips.Spargine.Extensions
 		public static double CalculatePercent(this long first, long second)
 		{
 			return ( second - first ) / Math.Abs(first) * 100;
+		}
+
+		/// <summary>
+		/// Determines whether the specified number is prime.
+		/// </summary>
+		/// <param name="number">The number.</param>
+		/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
+		/// <remarks>Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9</remarks>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(IsPrime), author: "David McCarter", createdOn: "7/15/2022", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+		public static bool IsPrime(this int number)
+		{
+			// local function
+			bool CalculatePrime(int value)
+			{
+				// A simple but slow method of checking
+				// the primality of a given number
+				// n, called trial division, tests whether n is a multiple
+				// of any integer between 2 and sqrt(n)
+				var possibleFactors = Math.Sqrt(number);
+
+				// we start with low factors (2,3,4,5,etc...)
+				// this makes sure we short circuit as early
+				// as possible during calculations
+				for (var factor = 2; factor <= possibleFactors; factor++)
+				{
+					if (value % factor == 0)
+					{
+						return false;
+					}
+				}
+
+				// we've exhausted all factors
+				// so we know this number is prime
+				return true;
+			}
+
+			// negative numbers can't be prime
+			// only call CalculatePrime if non-negative
+			return number > 1 && CalculatePrime(number);
 		}
 
 		/// <summary>
@@ -226,43 +252,18 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
-		/// Determines whether the specified number is prime.
+		/// Subtracts the specified subtract.
 		/// </summary>
-		/// <param name="number">The number.</param>
-		/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
-		/// <remarks>Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9</remarks>
+		/// <param name="input">The count.</param>
+		/// <param name="subtract">The subtract.</param>
+		/// <returns>System.Double.</returns>
+		/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsPrime), Status = Status.New)]
-		public static bool IsPrime(this int number)
+		[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+		public static double Subtract(this int input, int subtract)
 		{
-			// local function
-			bool CalculatePrime(int value)
-			{
-				// A simple but slow method of checking
-				// the primality of a given number
-				// n, called trial division, tests whether n is a multiple
-				// of any integer between 2 and sqrt(n)
-				var possibleFactors = Math.Sqrt(number);
-
-				// we start with low factors (2,3,4,5,etc...)
-				// this makes sure we short circuit as early
-				// as possible during calculations
-				for (var factor = 2; factor <= possibleFactors; factor++)
-				{
-					if (value % factor == 0)
-					{
-						return false;
-					}
-				}
-
-				// we've exhausted all factors
-				// so we know this number is prime
-				return true;
-			}
-
-			// negative numbers can't be prime
-			// only call CalculatePrime if non-negative
-			return number > 1 && CalculatePrime(number);
+			return input - subtract;
 		}
+
 	}
 }

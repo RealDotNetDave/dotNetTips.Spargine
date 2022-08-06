@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ObservableCollectionExtensions
 	{
+
 		/// <summary>
 		/// Determines whether the specified source does not have items or is null.
 		/// </summary>
@@ -64,7 +65,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this ObservableCollection<T> list, [NotNull] Func<T, bool> action)
 		{
 			if (list is null || action is null)
@@ -96,5 +97,6 @@ namespace DotNetTips.Spargine.Extensions
 				return source.FastCount() == count;
 			}
 		}
+
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ListExtensions
 	{
+
 		/// <summary>
 		/// Adds the item as the first item in the <see cref="List{T}" />.
 		/// Validates that <paramref name="collection" /> is not null and not read-only.
@@ -170,7 +171,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool DoesNotHaveItems<T>([AllowNull] this List<T> collection)
 		{
 			if (collection is null)
@@ -269,7 +270,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns>T.</returns>
 		/// <exception cref="System.ArgumentNullException">collection</exception>
 		/// <remarks>Orginal code by: @TheOtherBoz</remarks>
-		[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+		[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 		public static T IndexAtLooped<T>([NotNull] this IList<T> collection, int index)
 		{
 			if (collection is null)

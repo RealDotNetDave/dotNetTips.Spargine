@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class HashSetExtensions
 	{
+
 		/// <summary>
 		/// Adds item to the <see cref="HashSet{T}" /> if condition is meet.
 		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
@@ -91,5 +92,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			_ = collection.Add(item);
 		}
+
 	}
 }

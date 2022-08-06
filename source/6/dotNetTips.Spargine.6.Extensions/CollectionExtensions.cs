@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 07-26-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class CollectionExtensions
 	{
+
 		/// <summary>
 		/// Adds item to the <see cref="ICollection{T}" /> if the condition is meet.
 		/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
@@ -122,9 +123,9 @@ namespace DotNetTips.Spargine.Extensions
 		/// <exception cref="ArgumentReadOnlyException">List cannot be read-only.</exception>
 		/// <exception cref="ArgumentNullException">Collection cannot be <see langword="null" />.</exception>
 		/// <example>
-		///	<code>
-		///	people.AddIfNotExists(person, comparer)
-		///	</code>
+		///   <code>
+		/// people.AddIfNotExists(person, comparer)
+		/// </code>
 		/// </example>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 		public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
@@ -159,7 +160,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 		/// <example>
-		/// <code>
+		///   <code>
 		/// people.AddRange(personCollection, Tristate.UseDefault)
 		/// </code>
 		/// </example>
@@ -305,5 +306,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			collection.Add(item);
 		}
+
 	}
 }

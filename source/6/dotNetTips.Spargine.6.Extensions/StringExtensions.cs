@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-19-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -31,10 +31,16 @@ namespace DotNetTips.Spargine.Extensions
 	public static class StringExtensions
 	{
 
+		/// <summary>
+		/// The is unique identifier regex
+		/// </summary>
 		private static readonly Regex _isGuidRegex = new Regex(
 			@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$",
 			RegexOptions.Compiled);
 
+		/// <summary>
+		/// The is mac address regex
+		/// </summary>
 		private static readonly Regex _isMacAddressRegex = new Regex("^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$", RegexOptions.Compiled);
 
 		/// <summary>
@@ -649,7 +655,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool IsCurrencyCode(this string input)
 		{
 			return input.HasValue(Resources.RegexCurrencyCode, RegexOptions.Compiled);
@@ -765,7 +771,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="input">The input.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool IsOneToSevenAlpha(this string input)
 		{
 			return input.HasValue(Resources.RegexOneToSevenAlpha, RegexOptions.Compiled);
@@ -927,7 +933,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// </summary>
 		/// <param name="input">The string.</param>
 		/// <returns>DotNetTips.Spargine.Extensions.LineSplitEnumerator.</returns>
-		[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 100, Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, Documentation = "ADD URL")]
+		[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 100, Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, Documentation = "ADD URL")]
 		public static LineSplitEnumerator SplitLines(this string input)
 		{
 			input = input.ArgumentNotNullOrEmpty();

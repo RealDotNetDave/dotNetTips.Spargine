@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -31,6 +31,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ObjectExtensions
 	{
+
 		/// <summary>
 		/// Tries to dispose items in the <see cref="IEnumerable" />.
 		/// </summary>
@@ -522,5 +523,6 @@ namespace DotNetTips.Spargine.Extensions
 				}
 			}
 		}
+
 	}
 }

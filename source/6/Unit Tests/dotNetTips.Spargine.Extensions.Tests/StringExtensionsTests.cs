@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-31-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -56,9 +56,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var text = Resources.TestMutipleLinesOfText;
 			try
 			{
-				foreach (ReadOnlySpan<char> line in text.SplitLines())
+				foreach (LineSplitEntry lse in text.SplitLines())
 				{
-					Console.WriteLine(line.ToString());
+					Console.WriteLine(lse.Line.ToString());
 				}
 			}
 			catch
@@ -138,8 +138,8 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void IsOneToSevenAlphaTest()
 		{
-			var goodCode = RandomData.GenerateWord(7);
-			var badCode = RandomData.GenerateWord(10);
+			var goodCode = RandomData.GenerateWord(7, 'A', 'Z');
+			var badCode = RandomData.GenerateWord(25, 'A', 'Z');
 
 			Assert.IsTrue(goodCode.IsOneToSevenAlpha());
 

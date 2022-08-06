@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-31-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class DictionaryExtensions
 	{
+
 		/// <summary>
 		/// Processes the collection to dispose.
 		/// </summary>
@@ -171,10 +172,23 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns><c>true</c> if the specified action has items; otherwise, <c>false</c>.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool HasItems<TKey, TValue>([AllowNull] this IDictionary<TKey, TValue> collection, [NotNull] Func<KeyValuePair<TKey, TValue>, bool> action)
 		{
 			return collection is not null && action is not null && collection.Any(action);
+		}
+
+		/// <summary>
+		/// Converts to a <see cref="Dictionary{TKey, TValue}" /> to a <see cref="ConcurrentDictionary{TKey, TValue}" />.
+		/// </summary>
+		/// <typeparam name="TKey">The type of the t key.</typeparam>
+		/// <typeparam name="TValue">The type of the t value.</typeparam>
+		/// <param name="collection">The collection.</param>
+		/// <returns>ConcurrentDictionary&lt;TKey, TValue&gt;.</returns>
+		[Information(nameof(ToSortedDictionary), "David McCarter", "7/23/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
+		public static ConcurrentDictionary<TKey, TValue> ToConcurrentDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
+		{
+			return new ConcurrentDictionary<TKey, TValue>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -231,23 +245,10 @@ namespace DotNetTips.Spargine.Extensions
 		/// <typeparam name="TValue">The type of the t value.</typeparam>
 		/// <param name="collection">The dictionary.</param>
 		/// <returns>SortedDictionary&lt;TKey, TValue&gt;.</returns>
-		[Information(nameof(ToSortedDictionary), "David McCarter", "6/27/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(ToSortedDictionary), "David McCarter", "6/27/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
 		public static SortedDictionary<TKey, TValue> ToSortedDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
 		{
 			return new SortedDictionary<TKey, TValue>(collection.ArgumentNotNull());
-		}
-
-		/// <summary>
-		/// Converts to a <see cref="Dictionary{TKey, TValue}" /> to a <see cref="ConcurrentDictionary{TKey, TValue}" />.
-		/// </summary>
-		/// <typeparam name="TKey">The type of the t key.</typeparam>
-		/// <typeparam name="TValue">The type of the t value.</typeparam>
-		/// <param name="collection">The collection.</param>
-		/// <returns>ConcurrentDictionary&lt;TKey, TValue&gt;.</returns>
-		[Information(nameof(ToSortedDictionary), "David McCarter", "7/23/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 1000, Status = Status.New, Documentation = "ADD URL")]
-		public static ConcurrentDictionary<TKey, TValue> ToConcurrentDictionary<TKey, TValue>([NotNull] this Dictionary<TKey, TValue> collection)
-		{
-			return new ConcurrentDictionary<TKey, TValue>(collection.ArgumentNotNull());
 		}
 
 		/// <summary>
@@ -302,5 +303,6 @@ namespace DotNetTips.Spargine.Extensions
 
 			collection.Add(key, item);
 		}
+
 	}
 }

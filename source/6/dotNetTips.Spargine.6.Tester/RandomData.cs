@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2022
+// Last Modified On : 08-04-2022
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -34,6 +34,7 @@ namespace DotNetTips.Spargine.Tester
 	[Information(Status = Status.Available, Documentation = "http://bit.ly/UnitTestRandomData")]
 	public static class RandomData
 	{
+
 		/// <summary>
 		/// The default file extension
 		/// </summary>
@@ -434,72 +435,42 @@ namespace DotNetTips.Spargine.Tester
 		}
 
 		/// <summary>
-		/// Generates a <see cref="IPerson" /> reference type with default values.
+		/// Generates a <see cref="PersonRecord" /> collection.
 		/// </summary>
-		/// <typeparam name="T"></typeparam>
+		/// <param name="count">The number of items to create. Minimum value = 1.</param>
+		/// <param name="addressCount">The address count.</param>
+		/// <param name="firstNameLength">First length of the name.</param>
+		/// <param name="lastNameLength">Last length of the name.</param>
 		/// <param name="addressLength">Length of the address.</param>
 		/// <param name="cityLength">Length of the city.</param>
 		/// <param name="countryLength">Length of the country.</param>
-		/// <param name="firstNameLength">First length of the name.</param>
-		/// <param name="lastNameLength">Last length of the name.</param>
+		/// <param name="countyProvinceLength">Length of the county province.</param>
 		/// <param name="postalCodeLength">Length of the postal code.</param>
 		/// <param name="stateLength">Length of the state.</param>
-		/// <returns>T.</returns>
-		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static T GenerateRefPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15) where T : IPerson, new()
+		/// <returns>IPersonRecord[].</returns>
+		[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+		public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 		{
-			var person = new T
+			count = count.ArgumentInRange(paramName: nameof(count), lower: 1);
+
+			var records = new Collection<PersonRecord>();
+
+			for (var recordIndex = 0; recordIndex < count; recordIndex++)
 			{
-				Id = GenerateKey(),
-				Address1 = GenerateWord(addressLength),
-				Address2 = GenerateWord(addressLength),
-				BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-				CellPhone = GeneratePhoneNumberUSA(),
-				City = GenerateWord(cityLength),
-				Country = GenerateWord(countryLength),
-				Email = GenerateEmailAddress(),
-				FirstName = GenerateWord(firstNameLength),
-				HomePhone = GeneratePhoneNumberUSA(),
-				LastName = GenerateWord(lastNameLength),
-				PostalCode = GenerateNumber(postalCodeLength),
-				State = GenerateWord(stateLength)
-			};
+				PersonRecord person = new(email: GenerateEmailAddress(), id: GenerateKey())
+				{
+					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
+					FirstName = GenerateWord(firstNameLength),
+					HomePhone = GeneratePhoneNumberUSA(),
+					LastName = GenerateWord(lastNameLength),
+					CellPhone = GeneratePhoneNumberUSA(),
+					Addresses = GenerateAddressRecordCollection(addressCount, addressLength, cityLength, countryLength, countyProvinceLength, postalCodeLength, stateLength),
+				};
 
-			return person;
-		}
+				records.Add(person);
+			}
 
-		/// <summary>
-		/// Generates a <see cref="Models.ValueTypes.Person" /> with default values.
-		/// </summary>
-		/// <param name="addressLength">Length of the address.</param>
-		/// <param name="cityLength">Length of the city.</param>
-		/// <param name="countryLength">Length of the country.</param>
-		/// <param name="firstNameLength">First length of the name.</param>
-		/// <param name="lastNameLength">Last length of the name.</param>
-		/// <param name="postalCodeLength">Length of the postal code.</param>
-		/// <param name="stateLength">Length of the state.</param>
-		/// <returns>Models.ValueTypes.Person.</returns>
-		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static Models.ValueTypes.Person GenerateValPerson(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15)
-		{
-			var person = new Models.ValueTypes.Person
-			{
-				Id = GenerateKey(),
-				Address1 = GenerateWord(addressLength),
-				Address2 = GenerateWord(addressLength),
-				BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-				CellPhone = GeneratePhoneNumberUSA(),
-				City = GenerateWord(cityLength),
-				Country = GenerateWord(countryLength),
-				Email = GenerateEmailAddress(),
-				FirstName = GenerateWord(firstNameLength),
-				HomePhone = GeneratePhoneNumberUSA(),
-				LastName = GenerateWord(lastNameLength),
-				PostalCode = GenerateNumber(postalCodeLength),
-				State = GenerateWord(stateLength)
-			};
-
-			return person;
+			return records;
 		}
 
 		/// <summary>
@@ -541,45 +512,6 @@ namespace DotNetTips.Spargine.Tester
 			}
 
 			return people;
-		}
-
-		/// <summary>
-		/// Generates a <see cref="PersonRecord" /> collection.
-		/// </summary>
-		/// <param name="count">The number of items to create. Minimum value = 1.</param>
-		/// <param name="addressCount">The address count.</param>
-		/// <param name="firstNameLength">First length of the name.</param>
-		/// <param name="lastNameLength">Last length of the name.</param>
-		/// <param name="addressLength">Length of the address.</param>
-		/// <param name="cityLength">Length of the city.</param>
-		/// <param name="countryLength">Length of the country.</param>
-		/// <param name="countyProvinceLength">Length of the county province.</param>
-		/// <param name="postalCodeLength">Length of the postal code.</param>
-		/// <param name="stateLength">Length of the state.</param>
-		/// <returns>IPersonRecord[].</returns>
-		[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-		public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
-		{
-			count = count.ArgumentInRange(paramName: nameof(count), lower: 1);
-
-			var records = new Collection<PersonRecord>();
-
-			for (var recordIndex = 0; recordIndex < count; recordIndex++)
-			{
-				PersonRecord person = new(email: GenerateEmailAddress(), id: GenerateKey())
-				{
-					BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-					FirstName = GenerateWord(firstNameLength),
-					HomePhone = GeneratePhoneNumberUSA(),
-					LastName = GenerateWord(lastNameLength),
-					CellPhone = GeneratePhoneNumberUSA(),
-					Addresses = GenerateAddressRecordCollection(addressCount, addressLength, cityLength, countryLength, countyProvinceLength, postalCodeLength, stateLength),
-				};
-
-				records.Add(person);
-			}
-
-			return records;
 		}
 
 		/// <summary>
@@ -628,6 +560,41 @@ namespace DotNetTips.Spargine.Tester
 			var fileName = $"{GenerateWord(fileNameLength, DefaultMinCharacterRandomFile, DefaultMaxCharacterRandomFile)}{ControlChars.Dot}{extension}";
 
 			return Path.Combine(path, fileName);
+		}
+
+		/// <summary>
+		/// Generates a <see cref="IPerson" /> reference type with default values.
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="addressLength">Length of the address.</param>
+		/// <param name="cityLength">Length of the city.</param>
+		/// <param name="countryLength">Length of the country.</param>
+		/// <param name="firstNameLength">First length of the name.</param>
+		/// <param name="lastNameLength">Last length of the name.</param>
+		/// <param name="postalCodeLength">Length of the postal code.</param>
+		/// <param name="stateLength">Length of the state.</param>
+		/// <returns>T.</returns>
+		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+		public static T GenerateRefPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15) where T : IPerson, new()
+		{
+			var person = new T
+			{
+				Id = GenerateKey(),
+				Address1 = GenerateWord(addressLength),
+				Address2 = GenerateWord(addressLength),
+				BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
+				CellPhone = GeneratePhoneNumberUSA(),
+				City = GenerateWord(cityLength),
+				Country = GenerateWord(countryLength),
+				Email = GenerateEmailAddress(),
+				FirstName = GenerateWord(firstNameLength),
+				HomePhone = GeneratePhoneNumberUSA(),
+				LastName = GenerateWord(lastNameLength),
+				PostalCode = GenerateNumber(postalCodeLength),
+				State = GenerateWord(stateLength)
+			};
+
+			return person;
 		}
 
 		/// <summary>
@@ -722,6 +689,40 @@ namespace DotNetTips.Spargine.Tester
 		public static string GenerateUrlPart()
 		{
 			return $"/{GenerateWord(1, 25, 'a', 'z')}";
+		}
+
+		/// <summary>
+		/// Generates a <see cref="Models.ValueTypes.Person" /> with default values.
+		/// </summary>
+		/// <param name="addressLength">Length of the address.</param>
+		/// <param name="cityLength">Length of the city.</param>
+		/// <param name="countryLength">Length of the country.</param>
+		/// <param name="firstNameLength">First length of the name.</param>
+		/// <param name="lastNameLength">Last length of the name.</param>
+		/// <param name="postalCodeLength">Length of the postal code.</param>
+		/// <param name="stateLength">Length of the state.</param>
+		/// <returns>Models.ValueTypes.Person.</returns>
+		[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+		public static Models.ValueTypes.Person GenerateValPerson(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15)
+		{
+			var person = new Models.ValueTypes.Person
+			{
+				Id = GenerateKey(),
+				Address1 = GenerateWord(addressLength),
+				Address2 = GenerateWord(addressLength),
+				BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
+				CellPhone = GeneratePhoneNumberUSA(),
+				City = GenerateWord(cityLength),
+				Country = GenerateWord(countryLength),
+				Email = GenerateEmailAddress(),
+				FirstName = GenerateWord(firstNameLength),
+				HomePhone = GeneratePhoneNumberUSA(),
+				LastName = GenerateWord(lastNameLength),
+				PostalCode = GenerateNumber(postalCodeLength),
+				State = GenerateWord(stateLength)
+			};
+
+			return person;
 		}
 
 		/// <summary>
@@ -835,5 +836,6 @@ namespace DotNetTips.Spargine.Tester
 				return Resources.LongTestString;
 			}
 		}
+
 	}
 }

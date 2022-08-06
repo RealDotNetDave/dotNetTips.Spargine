@@ -4,7 +4,7 @@
 // Created          : 04-27-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="ReadOnlyCollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,13 +25,14 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class ReadOnlyCollectionExtensions
 	{
+
 		/// <summary>
 		/// Checks collection for null and insurese there are items in the collection.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
 		/// <param name="collection">The list.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 1000, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(DoesNotHaveItems), author: "David McCarter", createdOn: "6/17/2022", UnitTestCoverage = 1000, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool DoesNotHaveItems<T>([AllowNull] this ReadOnlyCollection<T> collection)
 		{
 			if (collection is null)
@@ -74,7 +75,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="action">The action.</param>
 		/// <returns>bool.</returns>
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(HasItems), author: "David McCarter", createdOn: "6/15/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool HasItems<T>([AllowNull] this ReadOnlyCollection<T> collection, [NotNull] Func<T, bool> action)
 		{
 			if (collection is null || action is null)
@@ -86,5 +87,6 @@ namespace DotNetTips.Spargine.Extensions
 				return collection.Any(action);
 			}
 		}
+
 	}
 }

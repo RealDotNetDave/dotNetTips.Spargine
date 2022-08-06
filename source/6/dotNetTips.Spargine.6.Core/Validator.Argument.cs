@@ -4,7 +4,7 @@
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Core
 	/// </summary>
 	public static partial class Validator
 	{
+
 		/// <summary>
 		/// Creates the exception message.
 		/// </summary>
@@ -470,7 +471,7 @@ namespace DotNetTips.Spargine.Core
 		///// <param name="errorMessage">The error message.</param>
 		///// <param name="paramName">Name of the parameter.</param>
 		///// <returns>IReadOnlyList&lt;T&gt;.</returns>
-		//[Information(nameof(ArgumentItemsExists), "David McCarter", "5/25/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		//[Information(nameof(ArgumentItemsExists), "David McCarter", "5/25/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		//[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		//public static IReadOnlyList<T> ArgumentItemsExists<T>(this IReadOnlyList<T> input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		//{
@@ -492,7 +493,7 @@ namespace DotNetTips.Spargine.Core
 		///// <param name="errorMessage">The error message.</param>
 		///// <param name="paramName">Name of the parameter.</param>
 		///// <returns>IReadOnlyCollection&lt;T&gt;.</returns>
-		//[Information(nameof(ArgumentItemsExists), "David McCarter", "5/27/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+		//[Information(nameof(ArgumentItemsExists), "David McCarter", "5/27/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 		//[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		//public static IReadOnlyCollection<T> ArgumentItemsExists<T>(this IReadOnlyCollection<T> input, string errorMessage = "", [CallerArgumentExpression("input")] string paramName = "")
 		//{
@@ -838,5 +839,6 @@ namespace DotNetTips.Spargine.Core
 
 			return input!;
 		}
+
 	}
 }

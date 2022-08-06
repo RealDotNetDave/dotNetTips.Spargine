@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2022
+// Last Modified On : 07-17-2022
 // ***********************************************************************
 // <copyright file="MessageNotQueuedException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -26,6 +26,17 @@ namespace DotNetTips.Spargine.Core
 	[Serializable]
 	public class MessageNotQueuedException : LoggableException
 	{
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
+		/// </summary>
+		/// <param name="serializationInfo">The serialization information.</param>
+		/// <param name="streamingContext">The streaming context.</param>
+		/// <exception cref="NotImplementedException">The exception.</exception>
+		/// <exception cref="NotImplementedException">The exception.</exception>
+		protected MessageNotQueuedException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
+		{
+		}
 		/// <summary>
 		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
 		/// </summary>
@@ -66,13 +77,12 @@ namespace DotNetTips.Spargine.Core
 		public MessageNotQueuedException(string message, string messageId, Exception innerException) : base(message, innerException) => this.MessageId = messageId;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="MessageNotQueuedException" /> class.
+		/// Initializes a new instance of the <see cref="MessageNotQueuedException"/> class.
 		/// </summary>
-		/// <param name="serializationInfo">The serialization information.</param>
-		/// <param name="streamingContext">The streaming context.</param>
-		/// <exception cref="NotImplementedException">The exception.</exception>
-		/// <exception cref="NotImplementedException">The exception.</exception>
-		protected MessageNotQueuedException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
+		/// <param name="message">The message.</param>
+		/// <param name="ex">The ex.</param>
+		/// <param name="userMessage">The user message.</param>
+		public MessageNotQueuedException(string message, Exception ex, string userMessage) : base(message, ex, userMessage)
 		{
 		}
 
@@ -81,5 +91,6 @@ namespace DotNetTips.Spargine.Core
 		/// </summary>
 		/// <value>The message identifier.</value>
 		public string MessageId { get; }
+
 	}
 }

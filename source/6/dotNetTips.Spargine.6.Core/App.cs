@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-23-2022
+// Last Modified On : 07-13-2022
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Core
 	/// </summary>
 	public static class App
 	{
+
 		/// <summary>
 		/// The temporary ASP files location.
 		/// </summary>
@@ -157,7 +158,7 @@ namespace DotNetTips.Spargine.Core
 		/// Determines whether user is administrator.
 		/// </summary>
 		/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-		/// <exception cref="PlatformNotSupportedException"></exception>
+		/// <exception cref="System.PlatformNotSupportedException"></exception>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static bool IsUserAdministrator()
 		{
@@ -329,5 +330,6 @@ namespace DotNetTips.Spargine.Core
 		/// <value>The working set.</value>
 		[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public static long WorkingSet => Environment.WorkingSet;
+
 	}
 }

@@ -70,7 +70,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 					}
 					catch (Exception ex) when (ex is ArgumentException ||
 						ex is ArgumentNullException ||
-						ex is System.IO.DirectoryNotFoundException ||
+						ex is DirectoryNotFoundException ||
 						ex is IOException ||
 						ex is NotSupportedException ||
 						ex is PathTooLongException ||

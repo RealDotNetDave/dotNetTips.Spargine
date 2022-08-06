@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.IO
 	[Information(nameof(FileHelper), "David McCarter", "2/11/2017", Status = Status.Available)]
 	public static class FileHelper
 	{
+
 		/// <summary>
 		/// The no result
 		/// </summary>
@@ -99,7 +100,7 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="path">The path.</param>
 		/// <param name="permission">The requested permission.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(CheckPermission), author: "David McCarter", createdOn: "6/17/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool CheckPermission(string path, FileSystemRights permission = FileSystemRights.Read)
 		{
 			path = path.ArgumentNotNullOrEmpty(trim: true);
@@ -274,7 +275,7 @@ namespace DotNetTips.Spargine.IO
 
 		/// <summary>
 		/// Downloads file from web URL as an asynchronous operation.
-		/// Creates the <paramref name="destination"/> if it does not exist.
+		/// Creates the <paramref name="destination" /> if it does not exist.
 		/// </summary>
 		/// <param name="remoteUri">The remote file URL.</param>
 		/// <param name="destination">The local file path.</param>
@@ -308,7 +309,7 @@ namespace DotNetTips.Spargine.IO
 
 		/// <summary>
 		/// Determines whether [has invalid path chars] [the specified file name].
-		/// Validates <paramref name="file"/> to ensure it's not null.
+		/// Validates <paramref name="file" /> to ensure it's not null.
 		/// </summary>
 		/// <param name="file">The path.</param>
 		/// <returns><c>true</c> if [has invalid path chars] [the specified file name]; otherwise, <c>false</c>.</returns>
@@ -452,5 +453,6 @@ namespace DotNetTips.Spargine.IO
 		/// <value>The invalid file name chars.</value>
 		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
 		public static IEnumerable<char> InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
+
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="FileProcessor.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.IO
 	/// </summary>
 	public class FileProcessor
 	{
+
 		/// <summary>
 		/// Occurs when processor processes a file or folder.
 		/// </summary>
@@ -45,7 +46,6 @@ namespace DotNetTips.Spargine.IO
 		/// <param name="destination">The destination folder.</param>
 		/// <returns>System.Object.</returns>
 		/// <remarks>Use the Processed event to find out if file copied succeeded or failed.</remarks>
-		[SuppressMessage("Microsoft.Design", "CA1031")]
 		[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 		public int CopyFiles([NotNull] IEnumerable<FileInfo> files, [NotNull] DirectoryInfo destination)
 		{
@@ -243,5 +243,6 @@ namespace DotNetTips.Spargine.IO
 
 			return successCount;
 		}
+
 	}
 }

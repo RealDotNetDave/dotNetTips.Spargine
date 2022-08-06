@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class NumericExtensions
 	{
+
 		/// <summary>
 		/// Decrement a number ensuring it never passes a given lower-bound.
 		/// </summary>
@@ -682,6 +683,38 @@ namespace DotNetTips.Spargine.Extensions
 		}
 
 		/// <summary>
+		/// Converts to romannumeral.
+		/// </summary>
+		/// <param name="input">The input.</param>
+		/// <returns>string.</returns>
+		/// <remarks>Original code from: https://www.c-sharpcorner.com/article/convert-numbers-to-roman-characters-in-c-sharp/</remarks>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		[Information(nameof(ToRomanNumeral), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
+		public static string ToRomanNumeral(this int input)
+		{
+			var sb = new StringBuilder(10);
+			string[] romanLetters = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
+			int[] numbers = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+
+			var index = 0;
+
+			while (input != 0)
+			{
+				if (input >= numbers[index])
+				{
+					input -= numbers[index];
+					_ = sb.Append(romanLetters[index]);
+				}
+				else
+				{
+					index++;
+				}
+			}
+
+			return sb.ToString().Trim();
+		}
+
+		/// <summary>
 		/// Parses the number to a string or a default string if outside given range.
 		/// </summary>
 		/// <param name="value">Number to process</param>
@@ -803,36 +836,5 @@ namespace DotNetTips.Spargine.Extensions
 			return words;
 		}
 
-		/// <summary>
-		/// Converts to romannumeral.
-		/// </summary>
-		/// <param name="input">The input.</param>
-		/// <returns>string.</returns>
-		/// <remarks>Original code from: https://www.c-sharpcorner.com/article/convert-numbers-to-roman-characters-in-c-sharp/</remarks>
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		[Information(nameof(ToRomanNumeral), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
-		public static string ToRomanNumeral(this int input)
-		{
-			var sb = new StringBuilder(10);
-			string[] romanLetters = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
-			int[] numbers = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
-
-			var index = 0;
-
-			while (input != 0)
-			{
-				if (input >= numbers[index])
-				{
-					input -= numbers[index];
-					_ = sb.Append(romanLetters[index]);
-				}
-				else
-				{
-					index++;
-				}
-			}
-
-			return sb.ToString().Trim();
-		}
 	}
 }

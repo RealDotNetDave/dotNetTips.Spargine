@@ -4,7 +4,7 @@
 // Created          : 07-30-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-06-2022
 // ***********************************************************************
 // <copyright file="GuidExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,24 +27,6 @@ namespace DotNetTips.Spargine.Extensions
 	/// </summary>
 	public static class GuidExtensions
 	{
-		/// <summary>
-		/// Returns the <see cref="Guid" /> without dashes.
-		/// Validates that <paramref name="input" /> is not empty.
-		/// </summary>
-		/// <param name="input">The Guid value.</param>
-		/// <returns>System.String.</returns>
-		[Information(nameof(ToDigits), UnitTestCoverage = 100, Status = Status.Available)]
-		public static string ToDigits([NotNull] this Guid input)
-		{
-			if (input.CheckIsNotEmpty())
-			{
-				return input.ToString("N", CultureInfo.InvariantCulture);
-			}
-			else
-			{
-				return String.Empty;
-			}
-		}
 
 		/// <summary>
 		/// Fast way to compare <see cref="Guid" />'s.
@@ -53,7 +35,7 @@ namespace DotNetTips.Spargine.Extensions
 		/// <param name="right">The right.</param>
 		/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 		/// <remarks>Orginal code: https://www.meziantou.net/faster-guid-comparisons-using-vectors-simd-in-dotnet.htm</remarks>
-		[Information(nameof(FastEquals), UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+		[Information(nameof(FastEquals), UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL")]
 		public static bool FastEquals(this in Guid left, in Guid right)
 		{
 			if (left.IsNull() || right.IsNull())
@@ -73,6 +55,24 @@ namespace DotNetTips.Spargine.Extensions
 			}
 
 			return left == right;
+		}
+		/// <summary>
+		/// Returns the <see cref="Guid" /> without dashes.
+		/// Validates that <paramref name="input" /> is not empty.
+		/// </summary>
+		/// <param name="input">The Guid value.</param>
+		/// <returns>System.String.</returns>
+		[Information(nameof(ToDigits), UnitTestCoverage = 100, Status = Status.Available)]
+		public static string ToDigits([NotNull] this Guid input)
+		{
+			if (input.CheckIsNotEmpty())
+			{
+				return input.ToString("N", CultureInfo.InvariantCulture);
+			}
+			else
+			{
+				return String.Empty;
+			}
 		}
 
 		// Orginal Code: https://www.meziantou.net/faster-guid-comparisons-using-vectors-simd-in-dotnet.htm

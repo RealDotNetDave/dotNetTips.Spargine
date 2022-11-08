@@ -170,27 +170,27 @@ namespace DotNetTips.Spargine.Extensions
 			items = items.ArgumentNotNull();
 			collection = collection.ArgumentNotNull().ArgumentNotReadOnly();
 
-			var returnValue = false;
-
-			if (items.HasItems())
+			if (ensureUnique is Tristate.False) 
 			{
-				items.ToList()
-					.ForEach(item =>
-					{
-						if (ensureUnique is Tristate.True or Tristate.UseDefault)
-						{
-							_ = collection.AddIfNotExists(item);
-							returnValue = true;
-						}
-						else
-						{
-							collection.Add(item);
-							returnValue = true;
-						}
-					});
+				foreach (var item in items) {
+					collection.Add(item);
+				}
+				return true;
 			}
 
-			return returnValue;
+			var hashes = new HashSet<T>(collection);
+			var result = false;
+
+			foreach (var item in items.Distinct())
+			{
+				if (hashes.Contains(item) is false)
+				{
+					collection.Add(item);
+					result = true;
+				}
+			}
+
+			return result;
 		}
 
 		/// <summary>

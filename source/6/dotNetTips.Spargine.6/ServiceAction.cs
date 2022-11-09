@@ -14,38 +14,37 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine
+namespace DotNetTips.Spargine;
+
+/// <summary>
+/// Class ServiceAction.
+/// </summary>
+public sealed class ServiceAction
 {
 	/// <summary>
-	/// Class ServiceAction.
+	/// Gets or sets the service action request.
 	/// </summary>
-	public sealed class ServiceAction
+	/// <value>The service action request.</value>
+	public ServiceActionRequest ServiceActionRequest
 	{
-		/// <summary>
-		/// Gets or sets the service action request.
-		/// </summary>
-		/// <value>The service action request.</value>
-		public ServiceActionRequest ServiceActionRequest
-		{
-			get; internal set;
-		}
+		get; internal set;
+	}
 
-		/// <summary>
-		/// Gets or sets the service action result.
-		/// </summary>
-		/// <value>The service action result.</value>
-		public ServiceActionResult ServiceActionResult
-		{
-			get; internal set;
-		}
+	/// <summary>
+	/// Gets or sets the service action result.
+	/// </summary>
+	/// <value>The service action result.</value>
+	public ServiceActionResult ServiceActionResult
+	{
+		get; internal set;
+	}
 
-		/// <summary>
-		/// Gets or sets the name of the service.
-		/// </summary>
-		/// <value>The name of the service.</value>
-		public string ServiceName
-		{
-			get; internal set;
-		}
+	/// <summary>
+	/// Gets or sets the name of the service.
+	/// </summary>
+	/// <value>The name of the service.</value>
+	public string ServiceName
+	{
+		get; internal set;
 	}
 }

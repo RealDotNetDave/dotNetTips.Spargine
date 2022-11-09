@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
@@ -35,6 +35,16 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = people.AddFirst(person);
 
 			Assert.IsTrue(result.FastCount() == 11);
+		}
+
+		[TestMethod]
+		public void RemoveLastTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
+
+			var result = people.RemoveLast();
+
+			Assert.IsTrue(result.FastCount() == 99);
 		}
 
 		[TestMethod]

@@ -11,21 +11,20 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace DotNetTips.Spargine.Benchmarking
+namespace DotNetTips.Spargine.Benchmarking;
+
+/// <summary>
+/// Enum CollectionSize
+/// </summary>
+public enum CollectionSize
 {
 	/// <summary>
-	/// Enum CollectionSize
+	/// The full
 	/// </summary>
-	public enum CollectionSize
-	{
-		/// <summary>
-		/// The full
-		/// </summary>
-		Full,
+	Full,
 
-		/// <summary>
-		/// The half
-		/// </summary>
-		Half
-	}
+	/// <summary>
+	/// The half
+	/// </summary>
+	Half
 }

@@ -14,38 +14,37 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// BenchMarkStatus attribute to add more meta data for types.
+/// </summary>
+/// <remarks>For use in InformationAttribute.</remarks>
+[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = NotRequired, Status = Status.Available)]
+public enum BenchMarkStatus
 {
 	/// <summary>
-	/// BenchMarkStatus attribute to add more meta data for types.
+	/// No benchmark.
 	/// </summary>
-	/// <remarks>For use in InformationAttribute.</remarks>
-	[Information(description: "For use in InformationAttribute.", author: "David McCarter", createdOn: "7/29/2020", BenchMarkStatus = NotRequired, Status = Status.Available)]
-	public enum BenchMarkStatus
-	{
-		/// <summary>
-		/// No benchmark.
-		/// </summary>
-		None,
+	None,
 
-		/// <summary>
-		/// Benchmark is not required
-		/// </summary>
-		NotRequired,
+	/// <summary>
+	/// Benchmark is not required
+	/// </summary>
+	NotRequired,
 
-		/// <summary>
-		/// Benchmark work is in progress.
-		/// </summary>
-		WIP,
+	/// <summary>
+	/// Benchmark work is in progress.
+	/// </summary>
+	WIP,
 
-		/// <summary>
-		/// Benchmarks test done.
-		/// </summary>
-		Completed,
+	/// <summary>
+	/// Benchmarks test done.
+	/// </summary>
+	Completed,
 
-		/// <summary>
-		/// Benchmark needs to be updated
-		/// </summary>
-		NeedsUpdate,
-	}
+	/// <summary>
+	/// Benchmark needs to be updated
+	/// </summary>
+	NeedsUpdate,
 }

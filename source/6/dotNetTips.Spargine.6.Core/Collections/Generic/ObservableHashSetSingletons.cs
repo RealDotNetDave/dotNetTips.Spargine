@@ -15,29 +15,28 @@ using System.ComponentModel;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.Collections.Generic
+namespace DotNetTips.Spargine.Core.Collections.Generic;
+
+/// <summary>
+/// ObservableHashSetSingletons.
+/// </summary>
+internal static class ObservableHashSetSingletons
 {
 	/// <summary>
-	/// ObservableHashSetSingletons.
+	/// Gets the count property changed.
 	/// </summary>
-	internal static class ObservableHashSetSingletons
-	{
-		/// <summary>
-		/// Gets the count property changed.
-		/// </summary>
-		/// <value>The count property changed.</value>
-		internal static PropertyChangedEventArgs CountPropertyChanged { get; } = new(propertyName: "Count");
+	/// <value>The count property changed.</value>
+	internal static PropertyChangedEventArgs CountPropertyChanged { get; } = new(propertyName: "Count");
 
-		/// <summary>
-		/// Gets the count property changing.
-		/// </summary>
-		/// <value>The count property changing.</value>
-		internal static PropertyChangingEventArgs CountPropertyChanging { get; } = new(propertyName: "Count");
+	/// <summary>
+	/// Gets the count property changing.
+	/// </summary>
+	/// <value>The count property changing.</value>
+	internal static PropertyChangingEventArgs CountPropertyChanging { get; } = new(propertyName: "Count");
 
-		/// <summary>
-		/// Gets the no items.
-		/// </summary>
-		/// <value>The no items.</value>
-		internal static object[] NoItems { get; } = Array.Empty<object>();
-	}
+	/// <summary>
+	/// Gets the no items.
+	/// </summary>
+	/// <value>The no items.</value>
+	internal static object[] NoItems { get; } = Array.Empty<object>();
 }

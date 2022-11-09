@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-13-2022
+// Last Modified On : 09-27-2022
 // ***********************************************************************
 // <copyright file="ValidatorArgumentTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -36,9 +36,8 @@ namespace dotNetTips.Spargine.Core.Tests
 	public class ValidatorArgumentTests
 	{
 		private const string BadEmail = "BAD@EMAIL";
-		private const string BadUrl = "123://www.amazon.com";
 		private const string GoodEmail = "fakeemail@google.com";
-		private const string GoodUrl = "http://www.amazon.com";
+
 
 		[TestMethod]
 		public void ArgumentEqualsTest()

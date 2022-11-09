@@ -14,18 +14,17 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// ICloneable Interface.
+/// </summary>
+/// <typeparam name="T">Generic type parameter.</typeparam>
+public interface ICloneable<out T>
 {
 	/// <summary>
-	/// ICloneable Interface.
+	/// Cones this instance.
 	/// </summary>
-	/// <typeparam name="T">Generic type parameter.</typeparam>
-	public interface ICloneable<out T>
-	{
-		/// <summary>
-		/// Cones this instance.
-		/// </summary>
-		/// <returns>T.</returns>
-		T Cone();
-	}
+	/// <returns>T.</returns>
+	T Cone();
 }

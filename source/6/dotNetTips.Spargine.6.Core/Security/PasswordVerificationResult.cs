@@ -14,26 +14,25 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.Security
+namespace DotNetTips.Spargine.Core.Security;
+
+/// <summary>
+/// Enum PasswordVerificationResult
+/// </summary>
+public enum PasswordVerificationResult
 {
 	/// <summary>
-	/// Enum PasswordVerificationResult
+	/// Verification failed.
 	/// </summary>
-	public enum PasswordVerificationResult
-	{
-		/// <summary>
-		/// Verification failed.
-		/// </summary>
-		Failed,
+	Failed,
 
-		/// <summary>
-		/// Verification succeeded.
-		/// </summary>
-		Success,
+	/// <summary>
+	/// Verification succeeded.
+	/// </summary>
+	Success,
 
-		/// <summary>
-		/// Verification succeeded and rehash needed
-		/// </summary>
-		SuccessRehashNeeded,
-	}
+	/// <summary>
+	/// Verification succeeded and rehash needed
+	/// </summary>
+	SuccessRehashNeeded,
 }

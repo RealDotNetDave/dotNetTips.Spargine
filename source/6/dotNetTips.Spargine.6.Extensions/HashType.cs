@@ -14,26 +14,25 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// Enum for HashType
+/// </summary>
+public enum HashType
 {
 	/// <summary>
-	/// Enum for HashType
+	/// SHA256 hash
 	/// </summary>
-	public enum HashType
-	{
-		/// <summary>
-		/// SHA256 hash
-		/// </summary>
-		SHA256,
+	SHA256,
 
-		/// <summary>
-		/// SHA384 hash
-		/// </summary>
-		SHA384,
+	/// <summary>
+	/// SHA384 hash
+	/// </summary>
+	SHA384,
 
-		/// <summary>
-		/// SHA512 hash
-		/// </summary>
-		SHA512
-	}
+	/// <summary>
+	/// SHA512 hash
+	/// </summary>
+	SHA512
 }

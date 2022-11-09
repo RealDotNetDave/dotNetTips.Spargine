@@ -16,48 +16,47 @@ using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// Class LINQExtensions.
+/// </summary>
+[Information(nameof(LinqExtensions), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available)]
+public static class LinqExtensions
 {
 	/// <summary>
-	/// Class LINQExtensions.
+	/// Ifs the input.
+	/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
 	/// </summary>
-	[Information(nameof(LinqExtensions), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available)]
-	public static class LinqExtensions
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	/// <param name="input">The query.</param>
+	/// <param name="should">if set to <c>true</c> [should].</param>
+	/// <param name="transforms">The transforms.</param>
+	/// <returns>IQueryable&lt;T&gt;.</returns>
+	[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
+	public static IQueryable<T> If<T>([NotNull] this IQueryable<T> input, bool should, [NotNull] params Func<IQueryable<T>, IQueryable<T>>[] transforms)
 	{
-		/// <summary>
-		/// Ifs the input.
-		/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="input">The query.</param>
-		/// <param name="should">if set to <c>true</c> [should].</param>
-		/// <param name="transforms">The transforms.</param>
-		/// <returns>IQueryable&lt;T&gt;.</returns>
-		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IQueryable<T> If<T>([NotNull] this IQueryable<T> input, bool should, [NotNull] params Func<IQueryable<T>, IQueryable<T>>[] transforms)
-		{
-			input = input.ArgumentNotNull();
-			transforms = transforms.ArgumentItemsExists();
+		input = input.ArgumentNotNull();
+		transforms = transforms.ArgumentItemsExists();
 
-			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
-		}
+		return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
+	}
 
-		/// <summary>
-		/// Ifs the input.
-		/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="input">The query.</param>
-		/// <param name="should">if set to <c>true</c> [should].</param>
-		/// <param name="transforms">The transforms.</param>
-		/// <returns>IEnumerable&lt;T&gt;.</returns>
-		[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
-		public static IEnumerable<T> If<T>([NotNull] this IEnumerable<T> input, bool should, [NotNull] params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
-		{
-			input = input.ArgumentNotNull();
-			transforms = transforms.ArgumentItemsExists();
+	/// <summary>
+	/// Ifs the input.
+	/// Validates that <paramref name="input" /> and <paramref name="transforms" /> is not null.
+	/// </summary>
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	/// <param name="input">The query.</param>
+	/// <param name="should">if set to <c>true</c> [should].</param>
+	/// <param name="transforms">The transforms.</param>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
+	[Information("Original code from https://github.com/exceptionnotfound/ConditionalLinqQueryEngine", "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 0)]
+	public static IEnumerable<T> If<T>([NotNull] this IEnumerable<T> input, bool should, [NotNull] params Func<IEnumerable<T>, IEnumerable<T>>[] transforms)
+	{
+		input = input.ArgumentNotNull();
+		transforms = transforms.ArgumentItemsExists();
 
-			return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
-		}
+		return should ? transforms.Aggregate(input, (current, transform) => transform.Invoke(current)) : input;
 	}
 }

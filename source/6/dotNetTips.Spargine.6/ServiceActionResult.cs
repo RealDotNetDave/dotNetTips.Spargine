@@ -14,31 +14,30 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine
+namespace DotNetTips.Spargine;
+
+/// <summary>
+/// Enum ServiceActionResult.
+/// </summary>
+public enum ServiceActionResult
 {
 	/// <summary>
-	/// Enum ServiceActionResult.
+	/// The not found
 	/// </summary>
-	public enum ServiceActionResult
-	{
-		/// <summary>
-		/// The not found
-		/// </summary>
-		NotFound,
+	NotFound,
 
-		/// <summary>
-		/// The running
-		/// </summary>
-		Running,
+	/// <summary>
+	/// The running
+	/// </summary>
+	Running,
 
-		/// <summary>
-		/// The stopped
-		/// </summary>
-		Stopped,
+	/// <summary>
+	/// The stopped
+	/// </summary>
+	Stopped,
 
-		/// <summary>
-		/// The error
-		/// </summary>
-		Error,
-	}
+	/// <summary>
+	/// The error
+	/// </summary>
+	Error,
 }

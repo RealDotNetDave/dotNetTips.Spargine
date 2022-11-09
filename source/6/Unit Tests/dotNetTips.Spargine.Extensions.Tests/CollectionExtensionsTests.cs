@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
@@ -57,22 +57,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void AddIfNotExistsMultipleItemTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
-			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(10);
-
-			_ = people.AddIfNotExists(newPeople.ToArray());
-			Assert.IsTrue(people.FastCount() == 20);
-
-			_ = people.AddIfNotExists(newPeople.ToArray());
-			Assert.IsTrue(people.FastCount() == 20);
-
-			_ = people.AddIfNotExists();
-			Assert.IsTrue(people.FastCount() == 20);
-		}
-
-		[TestMethod]
 		public void AddIfNotExistsSingleItemTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
@@ -106,17 +90,27 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
 			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(2);
 
-			_ = people.AddRange(newPeople, Tristate.True);
+			var result = people.AddRange(newPeople);
 
-			Assert.IsTrue(people.FastCount() == 12);
+			Assert.IsTrue(result);
 
-			_ = people.AddRange(newPeople, Tristate.UseDefault);
-
-			Assert.IsTrue(people.FastCount() == 12);
+			Assert.IsTrue(people.Count() == 12);
 
 			var nullCollection = new List<PersonProper>();
 
-			Assert.IsFalse(people.AddRange<PersonProper>(nullCollection));
+		}
+
+		[TestMethod]
+		public void AddRangeTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
+			var peopleToAdd = RandomData.GeneratePersonRefCollection<PersonProper>(5000).ToList();
+
+			var result = people.AddRange(peopleToAdd, Tristate.True);
+
+			Assert.IsNotNull(people);
+
+			Assert.IsTrue(people.Count() == 5500);
 		}
 
 		[TestMethod]

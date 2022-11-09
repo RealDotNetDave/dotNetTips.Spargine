@@ -14,26 +14,25 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Enum for StringType
+/// </summary>
+public enum StringType
 {
 	/// <summary>
-	/// Enum for StringType
+	/// String type not set.
 	/// </summary>
-	public enum StringType
-	{
-		/// <summary>
-		/// String type not set.
-		/// </summary>
-		NotSet,
+	NotSet,
 
-		/// <summary>
-		/// Validates that string is a email address.
-		/// </summary>
-		Email,
+	/// <summary>
+	/// Validates that string is a email address.
+	/// </summary>
+	Email,
 
-		/// <summary>
-		/// Validates that the string is a Url.
-		/// </summary>
-		Url
-	}
+	/// <summary>
+	/// Validates that the string is a Url.
+	/// </summary>
+	Url
 }

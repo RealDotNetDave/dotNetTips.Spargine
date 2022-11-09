@@ -15,21 +15,20 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Enum StorageLocation.
+/// </summary>
+public enum ConfigStorageLocation
 {
 	/// <summary>
-	/// Enum StorageLocation.
+	/// User storage.
 	/// </summary>
-	public enum ConfigStorageLocation
-	{
-		/// <summary>
-		/// User storage.
-		/// </summary>
-		User,
+	User,
 
-		/// <summary>
-		/// Application storage.
-		/// </summary>
-		Application,
-	}
+	/// <summary>
+	/// Application storage.
+	/// </summary>
+	Application,
 }

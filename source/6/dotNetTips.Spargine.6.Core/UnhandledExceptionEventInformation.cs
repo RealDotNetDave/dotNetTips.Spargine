@@ -14,24 +14,23 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Class UnhandledExceptionEventInformation.
+/// </summary>
+/// <seealso cref="IEventInformation" />
+public sealed class UnhandledExceptionEventInformation : IEventInformation
 {
 	/// <summary>
-	/// Class UnhandledExceptionEventInformation.
+	/// Gets the exception.
 	/// </summary>
-	/// <seealso cref="IEventInformation" />
-	public sealed class UnhandledExceptionEventInformation : IEventInformation
-	{
-		/// <summary>
-		/// Gets the exception.
-		/// </summary>
-		/// <value>The exception.</value>
-		public LoggableException Exception { get; internal set; }
+	/// <value>The exception.</value>
+	public LoggableException Exception { get; internal set; }
 
-		/// <summary>
-		/// Gets a value indicating whether [network available].
-		/// </summary>
-		/// <value><c>true</c> if [network available]; otherwise, <c>false</c>.</value>
-		public bool IsTerminating { get; internal set; }
-	}
+	/// <summary>
+	/// Gets a value indicating whether [network available].
+	/// </summary>
+	/// <value><c>true</c> if [network available]; otherwise, <c>false</c>.</value>
+	public bool IsTerminating { get; internal set; }
 }

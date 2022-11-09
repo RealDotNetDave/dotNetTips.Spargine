@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.BenchmarkTests
 // Author           : David McCarter
 // Created          : 02-20-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-30-2022
 // ***********************************************************************
 // <copyright file="TestingBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -21,88 +21,87 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests
+namespace DotNetTips.Spargine.Core.BenchmarkTests;
+
+/// <summary>
+/// Testing Benchmark for temporary tests.
+/// Implements the <see cref="Benchmark" />
+/// </summary>
+/// <seealso cref="Benchmark" />
+[BenchmarkCategory("Work in Progress")]
+public class TestingBenchmark : Benchmark
 {
-	/// <summary>
-	/// Testing Benchmark for temporary tests.
-	/// Implements the <see cref="Benchmark" />
-	/// </summary>
-	/// <seealso cref="Benchmark" />
-	[BenchmarkCategory("Work in Progress")]
-	public class TestingBenchmark : Benchmark
+	private readonly PersonRecord _person = RandomData.GeneratePersonRecordCollection(1).First();
+
+	[Benchmark(Description = "MethodImplOptions:Baseline", Baseline = true)]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest01()
 	{
-		private readonly PersonRecord _person = RandomData.GeneratePersonRecordCollection(1).First();
+		var result = WIPTests.TryValidateNull(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:Baseline", Baseline = true)]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest01()
-		{
-			var result = WIPTests.TryValidateNull(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "MethodImplOptions:AggressiveInline")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest02()
+	{
+		var result = WIPTests.TryValidateNullAgressive(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:AggressiveInline")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest02()
-		{
-			var result = WIPTests.TryValidateNullAgressive(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "MethodImplOptions:NoInline")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest03()
+	{
+		var result = WIPTests.TryValidateNullNoInlining(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:NoInline")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest03()
-		{
-			var result = WIPTests.TryValidateNullNoInlining(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "MethodImplOptions:NoOptimization")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest04()
+	{
+		var result = WIPTests.TryValidateNullNoOptimization(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:NoOptimization")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest04()
-		{
-			var result = WIPTests.TryValidateNullNoOptimization(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "MethodImplOptions:PreserveSig")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest05()
+	{
+		var result = WIPTests.TryValidateNullPreserveSig(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:PreserveSig")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest05()
-		{
-			var result = WIPTests.TryValidateNullPreserveSig(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "MethodImplOptions:Synchronized")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest06()
+	{
+		var result = WIPTests.TryValidateNullSynchronized(this._person);
 
-		[Benchmark(Description = "MethodImplOptions:Synchronized")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest06()
-		{
-			var result = WIPTests.TryValidateNullSynchronized(this._person);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	[Benchmark(Description = "IN TEST WITHOUT IN")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest07()
+	{
+		var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
 
-		[Benchmark(Description = "IN TEST WITHOUT IN")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest07()
-		{
-			var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
+		WIPTests.InTest01(ex);
+	}
 
-			WIPTests.InTest01(ex);
-		}
+	[Benchmark(Description = "IN TEST WITH IN")]
+	[BenchmarkCategory(Categories.New)]
+	public void WIPTest08()
+	{
+		var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
 
-		[Benchmark(Description = "IN TEST WITH IN")]
-		[BenchmarkCategory(Categories.New)]
-		public void WIPTest08()
-		{
-			var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
-
-			WIPTests.InTest02(ex);
-		}
+		WIPTests.InTest02(ex);
 	}
 }

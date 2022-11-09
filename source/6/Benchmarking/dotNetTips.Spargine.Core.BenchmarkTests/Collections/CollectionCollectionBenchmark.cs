@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.BenchmarkTests
 // Author           : David McCarter
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-30-2022
 // ***********************************************************************
 // <copyright file="CollectionCollectionBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,48 +18,47 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections
+namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections;
+
+/// <summary>
+/// Collection type PerfTestRunner.
+/// Implements the <see cref="CounterBenchmark" />
+/// </summary>
+/// <seealso cref="CounterBenchmark" />
+[BenchmarkCategory(Categories.Collections)]
+public class CollectionCollectionBenchmark : LargeCollectionsBenchmark
 {
+
 	/// <summary>
-	/// Collection type PerfTestRunner.
-	/// Implements the <see cref="CounterBenchmark" />
+	/// Collections the create01.
 	/// </summary>
-	/// <seealso cref="CounterBenchmark" />
-	[BenchmarkCategory(Categories.Collections)]
-	public class CollectionCollectionBenchmark : LargeCollectionsBenchmark
+	[Benchmark(Description = "Collection.Create: Count")]
+	public void CollectionCreate01()
 	{
+		var result = Collection<Person>.Create(this.Count);
 
-		/// <summary>
-		/// Collections the create01.
-		/// </summary>
-		[Benchmark(Description = "Collection.Create: Count")]
-		public void CollectionCreate01()
-		{
-			var result = Collection<Person>.Create(this.Count);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	/// <summary>
+	/// Collections the create02.
+	/// </summary>
+	[Benchmark(Description = "Collection.Create: From List")]
+	public void CollectionCreate02()
+	{
+		var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), Tristate.True);
 
-		/// <summary>
-		/// Collections the create02.
-		/// </summary>
-		[Benchmark(Description = "Collection.Create: From List")]
-		public void CollectionCreate02()
-		{
-			var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), Tristate.True);
+		this.Consume(result);
+	}
 
-			Consumer.Consume(result);
-		}
+	/// <summary>
+	/// Collections the create03.
+	/// </summary>
+	[Benchmark(Description = "Collection.Create: From List-Ensure Unique")]
+	public void CollectionCreate03()
+	{
+		var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), ensureUnique: Tristate.True);
 
-		/// <summary>
-		/// Collections the create03.
-		/// </summary>
-		[Benchmark(Description = "Collection.Create: From List-Ensure Unique")]
-		public void CollectionCreate03()
-		{
-			var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), ensureUnique: Tristate.True);
-
-			Consumer.Consume(result);
-		}
+		this.Consume(result);
 	}
 }

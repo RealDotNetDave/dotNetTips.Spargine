@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-25-2020
+// Last Modified On : 07-30-2022
 // ***********************************************************************
 // <copyright file="NumericExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -114,7 +114,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void FormatSizeDoubleTest()
 		{
-			double testValue = 256234.98;
+			var testValue = 256234.98;
 
 			var result = testValue.FormatSize();
 
@@ -250,7 +250,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToStringOrEmptyTest()
 		{
-			int testValue = 1000;
+			var testValue = 1000;
 
 			Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 2000, defaultText: OutOfRange).HasValue());
 
@@ -260,7 +260,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToWordsTest()
 		{
-			int testValue = 54928;
+			var testValue = 54928;
 
 			Assert.IsTrue(testValue.ToWords().HasValue());
 

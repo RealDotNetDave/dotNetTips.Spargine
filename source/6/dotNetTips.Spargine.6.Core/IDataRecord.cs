@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 02-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2022
+// Last Modified On : 09-14-2022
 // ***********************************************************************
 // <copyright file="IDataRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -17,29 +17,28 @@ using DotNetTips.Spargine.Core.Internal;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Interface for data record classes.
+/// </summary>
+[Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
+public interface IDataRecord
 {
 	/// <summary>
-	/// Interface for data record classes.
+	/// Gets or sets the identifier.
 	/// </summary>
-	[Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
-	public interface IDataRecord
-	{
-		/// <summary>
-		/// Gets or sets the identifier.
-		/// </summary>
-		/// <value>The identifier.</value>
-		[Required]
-		[MaxLength(length: 50, ErrorMessage = "Id must be 10 characters to a max of 50.")]
-		[MinLength(length: 10, ErrorMessage = "Id must be 10 characters to a max of 50.")]
-		[DisallowNull]
-		public string Id { get; init; }
+	/// <value>The identifier.</value>
+	[Required]
+	[MaxLength(length: 50, ErrorMessage = "Id must be 10 characters to a max of 50.")]
+	[MinLength(length: 10, ErrorMessage = "Id must be 10 characters to a max of 50.")]
+	[DisallowNull]
+	public string Id { get; init; }
 
-		/// <summary>
-		/// Alls the properties to string.
-		/// </summary>
-		/// <returns>string.</returns>
-		/// <remarks>This method uses reflection.</remarks>
-		public sealed string AllPropertiesToString() => this.PropertiesToString();
-	}
+	/// <summary>
+	/// Alls the properties to string.
+	/// </summary>
+	/// <returns>string.</returns>
+	/// <remarks>This method uses reflection.</remarks>
+	public sealed string AllPropertiesToString() => this.PropertiesToString();
 }

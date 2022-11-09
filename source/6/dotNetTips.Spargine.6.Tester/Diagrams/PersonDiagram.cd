@@ -8,19 +8,16 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="dotNetTips.Spargine.Tester.Models.IPerson" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
+  <Class Name="DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper">
+    <Position X="6.75" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>ACACAEAAICAAAAAIIAAEAAAAAAoAAAAAAAAABAQAAAg=</HashCode>
-      <FileName>Models\IPerson.cs</FileName>
+      <HashCode>CCECAEAAICAAAAQMoFHECgAgAAoAgIAQAAAABEQCByk=</HashCode>
+      <FileName>Models\RefTypes\PersonProper.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="dotNetTips.Spargine.Tester.Models.IPersonPlus" Collapsed="true">
-    <Position X="8.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\IPersonPlus.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
+    <Lollipop Position="0.2" />
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

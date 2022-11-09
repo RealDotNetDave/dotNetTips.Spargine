@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Tester.Tests
 // Author           : David McCarter
 // Created          : 01-05-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-23-2022
+// Last Modified On : 11-08-2022
 // ***********************************************************************
 // <copyright file="RandomDataTests.cs" company="dotNetTips.Spargine.Tester.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,6 +34,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 	[TestClass]
 	public class RandomDataTests
 	{
+
 		/// <summary>
 		/// The count
 		/// </summary>
@@ -55,7 +56,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 		/// <param name="files">The files.</param>
 		private void DeleteFiles(IEnumerable<string> files)
 		{
-			if (files.HasItems() is false)
+			if (files.DoesNotHaveItems())
 			{
 				return;
 			}
@@ -69,12 +70,12 @@ namespace DotNetTips.Spargine.Tester.Tests
 						File.Delete(fileName);
 					}
 					catch (Exception ex) when (ex is ArgumentException ||
-						ex is ArgumentNullException ||
-						ex is DirectoryNotFoundException ||
-						ex is IOException ||
-						ex is NotSupportedException ||
-						ex is PathTooLongException ||
-						ex is UnauthorizedAccessException)
+								ex is ArgumentNullException ||
+								ex is DirectoryNotFoundException ||
+								ex is IOException ||
+								ex is NotSupportedException ||
+								ex is PathTooLongException ||
+								ex is UnauthorizedAccessException)
 					{
 						Trace.WriteLine(ex.GetAllMessages());
 					}
@@ -654,7 +655,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GenerateWordsTest()
 		{
-			const int WordCount = 10;
+			const int WordCount = 25;
 
 			var words = RandomData.GenerateWords(WordCount, 10, 25);
 
@@ -693,5 +694,6 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Debug.WriteLine(person2.PropertiesToString());
 		}
+
 	}
 }

@@ -17,24 +17,23 @@ using DotNetTips.Spargine.Extensions.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// Extensions for the boolean type.
+/// </summary>
+[Information(nameof(BooleanExtensions), author: "David McCarter", createdOn: "7/15/2020")]
+public static class BooleanExtensions
 {
 	/// <summary>
-	/// Extensions for the boolean type.
+	/// Converts to <see cref="bool" /> value to lowercase.
 	/// </summary>
-	[Information(nameof(BooleanExtensions), author: "David McCarter", createdOn: "7/15/2020")]
-	public static class BooleanExtensions
+	/// <param name="value">if set to <c>true</c> [value].</param>
+	/// <returns>System.String.</returns>
+	[ExcludeFromCodeCoverage]
+	[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
+	public static string ToLowerCase(this bool value)
 	{
-		/// <summary>
-		/// Converts to <see cref="bool" /> value to lowercase.
-		/// </summary>
-		/// <param name="value">if set to <c>true</c> [value].</param>
-		/// <returns>System.String.</returns>
-		[ExcludeFromCodeCoverage]
-		[Information("Original Code from: https://github.com/dotnet/BenchmarkDotNet.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired)]
-		public static string ToLowerCase(this bool value)
-		{
-			return value ? Resources.TrueLowerCase : Resources.FalseLowerCase;
-		}
+		return value ? Resources.TrueLowerCase : Resources.FalseLowerCase;
 	}
 }

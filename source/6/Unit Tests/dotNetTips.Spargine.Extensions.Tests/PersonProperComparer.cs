@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 04-16-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 04-16-2022
 // ***********************************************************************
 // <copyright file="PersonProperComparer.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -44,6 +44,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		public int GetHashCode([DisallowNull] PersonProper obj) { return obj.Id.GetHashCode(); }
 	}
 
+	/// <summary>
+	/// Class PersonRecordComparer.
+	/// Implements the <see cref="IEqualityComparer{Models.RefTypes.PersonRecord}" />
+	/// </summary>
+	/// <seealso cref="IEqualityComparer{Models.RefTypes.PersonRecord}" />
 	public class PersonRecordComparer : IEqualityComparer<PersonRecord>
 	{
 		/// <summary>

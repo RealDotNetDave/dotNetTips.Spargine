@@ -17,120 +17,119 @@ using BenchmarkDotNet.Loggers;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests
+namespace DotNetTips.Spargine.Core.BenchmarkTests;
+
+/// <summary>
+/// Class WIPTests.
+/// </summary>
+public static class WIPTests
 {
-	/// <summary>
-	/// Class WIPTests.
-	/// </summary>
-	public static class WIPTests
+	public static bool TryValidateNull(object value, bool throwException = false)
 	{
-		public static bool TryValidateNull(object value, bool throwException = false)
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool TryValidateNullAgressive(object value, bool throwException = false)
+		return result;
+	}
+
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static bool TryValidateNullAgressive(object value, bool throwException = false)
+	{
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		[MethodImpl(MethodImplOptions.NoInlining)]
-		public static bool TryValidateNullNoInlining(object value, bool throwException = false)
+		return result;
+	}
+
+	[MethodImpl(MethodImplOptions.NoInlining)]
+	public static bool TryValidateNullNoInlining(object value, bool throwException = false)
+	{
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		/// <summary>
-		/// Calculates the percent no optimization.
-		/// </summary>
-		/// <param name="first">The first.</param>
-		/// <param name="second">The second.</param>
-		/// <returns>System.Double.</returns>
-		[MethodImpl(MethodImplOptions.NoOptimization)]
-		public static bool TryValidateNullNoOptimization(object value, bool throwException = false)
+		return result;
+	}
+
+	/// <summary>
+	/// Calculates the percent no optimization.
+	/// </summary>
+	/// <param name="first">The first.</param>
+	/// <param name="second">The second.</param>
+	/// <returns>System.Double.</returns>
+	[MethodImpl(MethodImplOptions.NoOptimization)]
+	public static bool TryValidateNullNoOptimization(object value, bool throwException = false)
+	{
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		/// <summary>
-		/// Calculates the percent preserve sig.
-		/// </summary>
-		/// <param name="first">The first.</param>
-		/// <param name="second">The second.</param>
-		/// <returns>System.Double.</returns>
-		[MethodImpl(MethodImplOptions.PreserveSig)]
-		public static bool TryValidateNullPreserveSig(object value, bool throwException = false)
+		return result;
+	}
+
+	/// <summary>
+	/// Calculates the percent preserve sig.
+	/// </summary>
+	/// <param name="first">The first.</param>
+	/// <param name="second">The second.</param>
+	/// <returns>System.Double.</returns>
+	[MethodImpl(MethodImplOptions.PreserveSig)]
+	public static bool TryValidateNullPreserveSig(object value, bool throwException = false)
+	{
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		/// <summary>
-		/// Calculates the percent synchronized.
-		/// </summary>
-		/// <param name="first">The first.</param>
-		/// <param name="second">The second.</param>
-		/// <returns>System.Double.</returns>
-		[MethodImpl(MethodImplOptions.Synchronized)]
-		public static bool TryValidateNullSynchronized(object value, bool throwException = false)
+		return result;
+	}
+
+	/// <summary>
+	/// Calculates the percent synchronized.
+	/// </summary>
+	/// <param name="first">The first.</param>
+	/// <param name="second">The second.</param>
+	/// <returns>System.Double.</returns>
+	[MethodImpl(MethodImplOptions.Synchronized)]
+	public static bool TryValidateNullSynchronized(object value, bool throwException = false)
+	{
+		var result = value is null;
+
+		if (result && throwException)
 		{
-			var result = value is null;
-
-			if (result && throwException)
-			{
-				ExceptionThrower.ThrowInvalidValueException("Failed", value);
-			}
-
-			return result;
+			ExceptionThrower.ThrowInvalidValueException("Failed", value);
 		}
 
-		public static void InTest01(Exception ex)
-		{
-			var result = $"{ex.Message}";
+		return result;
+	}
 
-			ConsoleLogger.Default.WriteLine(result);
-		}
+	public static void InTest01(Exception ex)
+	{
+		var result = $"{ex.Message}";
 
-		public static void InTest02(Exception ex)
-		{
-			var result = $"{ex.Message}";
+		ConsoleLogger.Default.WriteLine(result);
+	}
 
-			ConsoleLogger.Default.WriteLine(result);
-		}
+	public static void InTest02(Exception ex)
+	{
+		var result = $"{ex.Message}";
+
+		ConsoleLogger.Default.WriteLine(result);
 	}
 }

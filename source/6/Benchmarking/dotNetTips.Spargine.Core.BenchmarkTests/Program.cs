@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.BenchmarkTests
 // Author           : David McCarter
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 11-06-2022
 // ***********************************************************************
 // <copyright file="Program.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,44 +20,43 @@ using BenchmarkDotNet.Running;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests
+namespace DotNetTips.Spargine.Core.BenchmarkTests;
+
+/// <summary>
+/// Class Program.
+/// </summary>
+public class Program
 {
 	/// <summary>
-	/// Class Program.
+	/// Defines the entry point of the application.
 	/// </summary>
-	public class Program
+	private static void Main()
 	{
-		/// <summary>
-		/// Defines the entry point of the application.
-		/// </summary>
-		private static void Main()
+		try
 		{
-			try
-			{
-				//ManualConfig config = DefaultConfig.Instance
-				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
-				//.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+			ManualConfig config = DefaultConfig.Instance
+			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
+			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
-				ManualConfig config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+			//var config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
-				_ = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
-					  .WithOption(ConfigOptions.StopOnFirstError, true);
+			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
+				  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-				_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+			_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-				//BenchmarkRunner.Run<LoggingBenchmark>(config);
+			//BenchmarkRunner.Run<LoggingBenchmark>(config);
 
-				Console.Beep();
-				_ = Console.ReadLine();
-			}
-			catch (Exception ex)
-			{
-				Console.Beep();
-				Console.Beep();
-				Console.Beep();
-				ConsoleLogger.Default.WriteLine(ex.Message);
-				_ = Console.ReadLine();
-			}
+			Console.Beep();
+			_ = Console.ReadLine();
+		}
+		catch (Exception ex)
+		{
+			Console.Beep();
+			Console.Beep();
+			Console.Beep();
+			ConsoleLogger.Default.WriteLine(ex.Message);
+			_ = Console.ReadLine();
 		}
 	}
 }

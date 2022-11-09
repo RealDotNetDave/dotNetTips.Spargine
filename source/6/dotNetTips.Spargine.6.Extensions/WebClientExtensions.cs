@@ -19,48 +19,47 @@ using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// WebClient Extensions.
+/// </summary>
+public static class WebClientExtensions
 {
 	/// <summary>
-	/// WebClient Extensions.
+	/// Gets the json.
+	/// Validates that <paramref name="client" /> and <paramref name="url" /> is not null.
 	/// </summary>
-	public static class WebClientExtensions
+	/// <typeparam name="T">Generic type parameter.</typeparam>
+	/// <param name="client">The client.</param>
+	/// <param name="url">The URL.</param>
+	/// <returns>T.</returns>
+	/// <exception cref="ArgumentNullException">client</exception>
+	/// <exception cref="ArgumentException">URL cannot be empty or null. - url</exception>
+	/// <exception cref="ArgumentNullException">URL cannot be empty or null.</exception>
+	/// <exception cref="ArgumentException">URL cannot be empty or null.</exception>
+	[Information(nameof(ConvertFrom), UnitTestCoverage = 0, Status = Status.Available)]
+	public static T ConvertFrom<T>([NotNull] this WebClient client, Uri url)
+		where T : class
 	{
-		/// <summary>
-		/// Gets the json.
-		/// Validates that <paramref name="client" /> and <paramref name="url" /> is not null.
-		/// </summary>
-		/// <typeparam name="T">Generic type parameter.</typeparam>
-		/// <param name="client">The client.</param>
-		/// <param name="url">The URL.</param>
-		/// <returns>T.</returns>
-		/// <exception cref="ArgumentNullException">client</exception>
-		/// <exception cref="ArgumentException">URL cannot be empty or null. - url</exception>
-		/// <exception cref="ArgumentNullException">URL cannot be empty or null.</exception>
-		/// <exception cref="ArgumentException">URL cannot be empty or null.</exception>
-		[Information(nameof(ConvertFrom), UnitTestCoverage = 0, Status = Status.Available)]
-		public static T ConvertFrom<T>([NotNull] this WebClient client, Uri url)
-			where T : class
+		client = client.ArgumentNotNull();
+		url = url.ArgumentNotNull();
+
+		var data = client.DownloadString(url);
+
+		if (string.IsNullOrEmpty(data))
 		{
-			client = client.ArgumentNotNull();
-			url = url.ArgumentNotNull();
+			return null;
+		}
 
-			var data = client.DownloadString(url);
+		using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(data)))
+		{
+			var serializer = new DataContractJsonSerializer(typeof(T));
+			var obj = (T)serializer.ReadObject(stream);
 
-			if (string.IsNullOrEmpty(data))
-			{
-				return null;
-			}
+			stream.FlushClose();
 
-			using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(data)))
-			{
-				var serializer = new DataContractJsonSerializer(typeof(T));
-				var obj = (T)serializer.ReadObject(stream);
-
-				stream.FlushClose();
-
-				return obj;
-			}
+			return obj;
 		}
 	}
 }

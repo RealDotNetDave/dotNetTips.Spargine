@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Extensions
 // Author           : David McCarter
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 11-02-2022
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,35 +16,44 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using DotNetTips.Spargine.Core;
+using Microsoft.Extensions.ObjectPool;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// DataReaderExtensions.
+/// </summary>
+public static class DataReaderExtensions
 {
 	/// <summary>
-	/// DataReaderExtensions.
+	/// The string builder pool
 	/// </summary>
-	public static class DataReaderExtensions
+	private static readonly ObjectPool<StringBuilder> _stringBuilderPool =
+	new DefaultObjectPoolProvider().CreateStringBuilderPool();
+
+	/// <summary>
+	/// Converts <see cref="IDataReader" /> to CSV format.
+	/// Validates that <paramref name="dataReader" /> is not null
+	/// </summary>
+	/// <param name="dataReader">The data reader.</param>
+	/// <param name="includeHeaderAsFirstRow">if set to <c>true</c> [include header as first row].</param>
+	/// <param name="separator">The separator.</param>
+	/// <returns>List&lt;System.String&gt;.</returns>
+	[Information(nameof(ToCsv), author: "David McCarter", createdOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
+	public static IList<string> ToCsv([NotNull] this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
 	{
-		/// <summary>
-		/// Converts <see cref="IDataReader" /> to CSV format.
-		/// Validates that <paramref name="dataReader" /> is not null
-		/// </summary>
-		/// <param name="dataReader">The data reader.</param>
-		/// <param name="includeHeaderAsFirstRow">if set to <c>true</c> [include header as first row].</param>
-		/// <param name="separator">The separator.</param>
-		/// <returns>List&lt;System.String&gt;.</returns>
-		[Information(nameof(ToCsv), author: "David McCarter", createdOn: "10/8/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static IList<string> ToCsv([NotNull] this IDataReader dataReader, bool includeHeaderAsFirstRow, char separator = ControlChars.Comma)
+		dataReader = dataReader.ArgumentNotNull();
+
+		var convertedRows = new List<string>();
+
+		if (includeHeaderAsFirstRow)
 		{
-			dataReader = dataReader.ArgumentNotNull();
+			var sb = _stringBuilderPool.Get();
 
-			var convertedRows = new List<string>();
-
-			if (includeHeaderAsFirstRow)
+			try
 			{
-				var sb = new StringBuilder();
-
 				for (var fieldIndex = 0; fieldIndex <= dataReader.FieldCount - 1; fieldIndex++)
 				{
 					if (dataReader.GetName(fieldIndex) is not null)
@@ -60,11 +69,18 @@ namespace DotNetTips.Spargine.Extensions
 
 				convertedRows.Add(sb.ToString());
 			}
-
-			while (dataReader.Read())
+			finally
 			{
-				var sb = new StringBuilder();
+				_stringBuilderPool.Return(sb);
+			}
+		}
 
+		while (dataReader.Read())
+		{
+			var sb = _stringBuilderPool.Get();
+
+			try
+			{
 				for (var fieldIndex = 0; fieldIndex <= dataReader.FieldCount - 2; fieldIndex++)
 				{
 					if (!dataReader.IsDBNull(fieldIndex))
@@ -101,8 +117,12 @@ namespace DotNetTips.Spargine.Extensions
 
 				convertedRows.Add(sb.ToString());
 			}
-
-			return convertedRows;
+			finally
+			{
+				_stringBuilderPool.Return(sb);
+			}
 		}
+
+		return convertedRows;
 	}
 }

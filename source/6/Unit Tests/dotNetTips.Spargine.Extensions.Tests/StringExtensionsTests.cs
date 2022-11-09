@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-06-2022
+// Last Modified On : 09-27-2022
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -565,7 +565,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.StartsWithOrdinalIgnoreCase(testValue));
 
-			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.StartsWithOrdinalIgnoreCase("David"));
+			Assert.ThrowsException<ArgumentNullException>(() => _= string.Empty.StartsWithOrdinalIgnoreCase("David"));
 		}
 
 		/// <summary>
@@ -615,19 +615,68 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var testValue = RandomData.GenerateWord(25);
 
-			var r1 = await testValue.ToGZipAsync(); // Fastest is default
-			var r2 = await testValue.ToGZipAsync(CompressionLevel.NoCompression);
-			var r3 = await testValue.ToGZipAsync(CompressionLevel.Optimal);
+			var r1 = await testValue.ToGZipStringAsync(); // Fastest is default
+			var r2 = await testValue.ToGZipStringAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToGZipStringAsync(CompressionLevel.Optimal);
+			var r4 = await testValue.ToGZipStringAsync(CompressionLevel.SmallestSize);
 
 			Assert.IsFalse(string.IsNullOrEmpty(r1));
 			Assert.IsFalse(string.IsNullOrEmpty(r2));
 			Assert.IsFalse(string.IsNullOrEmpty(r3));
+			Assert.IsFalse(string.IsNullOrEmpty(r4));
 
 			//var test = await r1.FromGZipAsync();
 
-			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromGZipAsync()));
-			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromGZipAsync()));
-			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromGZipAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromGZipStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromGZipStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromGZipStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r4.FromGZipStringAsync()));
+		}
+
+		[TestMethod]
+		public async Task ZLibStringCompressionAsyncTest()
+		{
+			var testValue = RandomData.GenerateWord(25);
+
+			var r1 = await testValue.ToZLibStringAsync(); // Fastest is default
+			var r2 = await testValue.ToZLibStringAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToZLibStringAsync(CompressionLevel.Optimal);
+			var r4 = await testValue.ToZLibStringAsync(CompressionLevel.SmallestSize);
+
+			Assert.IsFalse(string.IsNullOrEmpty(r1));
+			Assert.IsFalse(string.IsNullOrEmpty(r2));
+			Assert.IsFalse(string.IsNullOrEmpty(r3));
+			Assert.IsFalse(string.IsNullOrEmpty(r4));
+
+			//var test = await r1.FromGZipAsync();
+
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromZLibStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromZLibStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromZLibStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r4.FromZLibStringAsync()));
+		}
+
+		[TestMethod]
+		public async Task DeflateStringCompressionAsyncTest()
+		{
+			var testValue = RandomData.GenerateWord(25);
+
+			var r1 = await testValue.ToDeflateStringAsync(); // Fastest is default
+			var r2 = await testValue.ToDeflateStringAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToDeflateStringAsync(CompressionLevel.Optimal);
+			var r4 = await testValue.ToDeflateStringAsync(CompressionLevel.SmallestSize);
+
+			Assert.IsFalse(string.IsNullOrEmpty(r1));
+			Assert.IsFalse(string.IsNullOrEmpty(r2));
+			Assert.IsFalse(string.IsNullOrEmpty(r3));
+			Assert.IsFalse(string.IsNullOrEmpty(r4));
+
+			//var test = await r1.FromGZipAsync();
+
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromDeflateStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromDeflateStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromDeflateStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r4.FromDeflateStringAsync()));
 		}
 
 		/// <summary>
@@ -638,17 +687,20 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var testValue = RandomData.GenerateWord(25);
 
-			var r1 = await testValue.ToBrotliAsync();  //Fastest is default
-			var r2 = await testValue.ToBrotliAsync(CompressionLevel.NoCompression);
-			var r3 = await testValue.ToBrotliAsync(CompressionLevel.Optimal);
+			var r1 = await testValue.ToBrotliStringAsync();  //Fastest is default
+			var r2 = await testValue.ToBrotliStringAsync(CompressionLevel.NoCompression);
+			var r3 = await testValue.ToBrotliStringAsync(CompressionLevel.Optimal);
+			var r4 = await testValue.ToBrotliStringAsync(CompressionLevel.SmallestSize);
 
 			Assert.IsFalse(string.IsNullOrEmpty(r1));
 			Assert.IsFalse(string.IsNullOrEmpty(r2));
 			Assert.IsFalse(string.IsNullOrEmpty(r3));
+			Assert.IsFalse(string.IsNullOrEmpty(r4));
 
-			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromBrotliAsync()));
-			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromBrotliAsync()));
-			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromBrotliAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r1.FromBrotliStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r2.FromBrotliStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r3.FromBrotliStringAsync()));
+			Assert.IsFalse(string.IsNullOrEmpty(await r4.FromBrotliStringAsync()));
 		}
 
 		/// <summary>

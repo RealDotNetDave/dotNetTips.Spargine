@@ -16,34 +16,33 @@ using System.Diagnostics.CodeAnalysis;
 using DotNetTips.Spargine.Extensions;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
-namespace DotNetTips.Spargine.Tester
+namespace DotNetTips.Spargine.Tester;
+
+/// <summary>
+/// Class TestClass.
+/// </summary>
+[ExcludeFromCodeCoverage]
+public class TestClass
 {
 	/// <summary>
-	/// Class TestClass.
+	/// Prints the result.
 	/// </summary>
-	[ExcludeFromCodeCoverage]
-	public class TestClass
+	/// <typeparam name="T"></typeparam>
+	/// <param name="input">The input.</param>
+	/// <param name="methodName">Name of the method.</param>
+	public void PrintResult<T>(T input, string methodName)
 	{
-		/// <summary>
-		/// Prints the result.
-		/// </summary>
-		/// <typeparam name="T"></typeparam>
-		/// <param name="input">The input.</param>
-		/// <param name="methodName">Name of the method.</param>
-		public void PrintResult<T>(T input, string methodName)
+		string message;
+
+		if (input is string || input.GetType().IsValueType)
 		{
-			string message;
-
-			if (input is string || input.GetType().IsValueType)
-			{
-				message = $"{methodName}: {input:C}";
-			}
-			else
-			{
-				message = $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
-			}
-
-			Debug.WriteLine(message);
+			message = $"{methodName}: {input:C}";
 		}
+		else
+		{
+			message = $"{methodName}: {input.PropertiesToString(includeMemberName: false)}";
+		}
+
+		Debug.WriteLine(message);
 	}
 }

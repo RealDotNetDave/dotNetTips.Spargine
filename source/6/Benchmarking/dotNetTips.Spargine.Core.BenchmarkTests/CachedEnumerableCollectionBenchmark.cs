@@ -17,15 +17,14 @@ using DotNetTips.Spargine.Benchmarking;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests
+namespace DotNetTips.Spargine.Core.BenchmarkTests;
+
+/// <summary>
+/// Collection type PerfTestRunner.
+/// Implements the <see cref="CounterBenchmark" />
+/// </summary>
+/// <seealso cref="CounterBenchmark" />
+[BenchmarkCategory(Categories.Collections)]
+public class CachedEnumerableCollectionBenchmark : LargeCollectionsBenchmark
 {
-	/// <summary>
-	/// Collection type PerfTestRunner.
-	/// Implements the <see cref="CounterBenchmark" />
-	/// </summary>
-	/// <seealso cref="CounterBenchmark" />
-	[BenchmarkCategory(Categories.Collections)]
-	public class CachedEnumerableCollectionBenchmark : LargeCollectionsBenchmark
-	{
-	}
 }

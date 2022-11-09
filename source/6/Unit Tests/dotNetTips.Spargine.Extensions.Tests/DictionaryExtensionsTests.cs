@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 09-27-2022
 // ***********************************************************************
 // <copyright file="DictionaryExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,7 +14,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DotNetTips.Spargine.Core;
@@ -61,10 +60,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(2).ToDictionary(p => p.Id);
 
-			_ = people.AddRange(newPeople);
+			var result = people.AddRange(newPeople, Tristate.True);
 			Assert.IsTrue(people.FastCount() == 12);
 
-			_ = people.AddRange(newPeople, Tristate.UseDefault);
+			result = people.AddRange(newPeople, Tristate.True);
 			Assert.IsTrue(people.FastCount() == 12);
 		}
 
@@ -72,14 +71,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		/// Defines the test method AddRangeDictionaryTest02.
 		/// </summary>
 		[TestMethod]
-		public void AddRangeDictionaryTest02()
+		public void FastCountTest()
 		{
 			var people1 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
-			var people2 = RandomData.GeneratePersonRefCollection<PersonProper>(2).ToDictionary(p => p.Id);
 
-			Assert.IsTrue(people1.AddRange(people2));
-
-			Assert.IsTrue(people1.FastCount() == 12);
+			Assert.IsTrue(people1.FastCount() == 10);
 
 		}
 
@@ -100,7 +96,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void GetOrAddTest()
 		{
-			Dictionary<string, PersonProper> people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
 			var newPerson = RandomData.GenerateRefPerson<PersonProper>();
 
 			// Test Parameters
@@ -170,7 +166,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				dic.Add(item, item);
 			}
 
-			Assert.IsNotNull(( dic as IDictionary ).ToDelimitedString(','));
+			Assert.IsNotNull((dic as IDictionary).ToDelimitedString(','));
 		}
 
 		/// <summary>

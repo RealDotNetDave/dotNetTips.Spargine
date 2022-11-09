@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2022
+// Last Modified On : 08-30-2022
 // ***********************************************************************
 // <copyright file="ExceptionExtensionsBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,16 +18,15 @@ using DotNetTips.Spargine.Benchmarking;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions.BenchmarkTests
-{
-	public class ExceptionExtensionsBenchmark : Benchmark
-	{
-		private readonly SecurityException _testException = new("Message from SecurityException", new PolicyException("Cannot access service!"));
+namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
-		[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
-		public void GetAllMessages01()
-		{
-			Consumer.Consume(this._testException.GetAllMessages());
-		}
+public class ExceptionExtensionsBenchmark : Benchmark
+{
+	private readonly SecurityException _testException = new("Message from SecurityException", new PolicyException("Cannot access service!"));
+
+	[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
+	public void GetAllMessages01()
+	{
+		this.Consume(this._testException.GetAllMessages());
 	}
 }

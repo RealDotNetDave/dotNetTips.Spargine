@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 10-06-2022
 // ***********************************************************************
 // <copyright file="ImmutableArrayTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -30,7 +30,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest01()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToImmutable();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToImmutable();
 			ImmutableList<Coordinate> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems());
@@ -41,7 +41,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest02()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToImmutableArray();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToImmutableArray();
 			Func<Coordinate, bool> selector = (coordinate) => coordinate.X > 0;
 
 			Assert.IsTrue(collection.HasItems(selector));
@@ -52,7 +52,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTestWithCount()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToImmutable();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToImmutable();
 			ImmutableList<Coordinate> nullCollection = null;
 
 			Assert.IsFalse(collection.HasItems(5));
@@ -62,7 +62,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ImmutableArrayTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToHashSet().ToImmutable();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToHashSet().ToImmutable();
 			var copyPeople = people;
 			Assert.IsTrue(people == copyPeople);
 			Assert.IsFalse(people == copyPeople.Shuffle());

@@ -16,18 +16,17 @@ using DotNetTips.Spargine.Benchmarking;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging
+namespace DotNetTips.Spargine.Core.BenchmarkTests.Logging;
+
+[BenchmarkCategory(Categories.Logging)]
+public class LoggingHelperBenchmark : Benchmark
 {
-	[BenchmarkCategory(Categories.Logging)]
-	public class LoggingHelperBenchmark : Benchmark
+	//private ILogger<LoggingHelperBenchmark> _logger;
+
+	public override void Setup()
 	{
-		//private ILogger<LoggingHelperBenchmark> _logger;
+		base.Setup();
 
-		public override void Setup()
-		{
-			base.Setup();
-
-			//this._logger = new LoggerFactory().CreateLogger<LoggingHelperBenchmark>();
-		}
+		//this._logger = new LoggerFactory().CreateLogger<LoggingHelperBenchmark>();
 	}
 }

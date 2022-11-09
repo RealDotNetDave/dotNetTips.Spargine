@@ -17,61 +17,60 @@ using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// Class HttpResponseHeaderExtensions.
+/// </summary>
+[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
+public static class HttpResponseHeaderExtensions
 {
 	/// <summary>
-	/// Class HttpResponseHeaderExtensions.
+	/// The header names
 	/// </summary>
+	private static readonly string[] _headerNames = {
+		"Cache-Control",
+		"Connection",
+		"Date",
+		"Keep-Alive",
+		"Pragma",
+		"Trailer",
+		"Transfer-Encoding",
+		"Upgrade",
+		"Via",
+		"Warning",
+		"Allow",
+		"Content-Length",
+		"Content-Type",
+		"Content-Encoding",
+		"Content-Language",
+		"Content-Location",
+		"Content-MD5",
+		"Content-Range",
+		"Expires",
+		"Last-Modified",
+		"Accept-Ranges",
+		"Age",
+		"ETag",
+		"Location",
+		"Proxy-Authenticate",
+		"Retry-After",
+		"Server",
+		"Set-Cookie",
+		"Vary",
+		"WWW-Authenticate",
+	};
+
+	/// <summary>
+	/// Gets the <see cref="HttpRequestHeader" /> name.
+	/// </summary>
+	/// <param name="header">The header.</param>
+	/// <returns>System.String.</returns>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-	public static class HttpResponseHeaderExtensions
+	public static string GetName([NotNull] this HttpResponseHeader header)
 	{
-		/// <summary>
-		/// The header names
-		/// </summary>
-		private static readonly string[] _headerNames = {
-			"Cache-Control",
-			"Connection",
-			"Date",
-			"Keep-Alive",
-			"Pragma",
-			"Trailer",
-			"Transfer-Encoding",
-			"Upgrade",
-			"Via",
-			"Warning",
-			"Allow",
-			"Content-Length",
-			"Content-Type",
-			"Content-Encoding",
-			"Content-Language",
-			"Content-Location",
-			"Content-MD5",
-			"Content-Range",
-			"Expires",
-			"Last-Modified",
-			"Accept-Ranges",
-			"Age",
-			"ETag",
-			"Location",
-			"Proxy-Authenticate",
-			"Retry-After",
-			"Server",
-			"Set-Cookie",
-			"Vary",
-			"WWW-Authenticate",
-		};
+		header = header.ArgumentDefined(nameof(header));
 
-		/// <summary>
-		/// Gets the <see cref="HttpRequestHeader" /> name.
-		/// </summary>
-		/// <param name="header">The header.</param>
-		/// <returns>System.String.</returns>
-		[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GetName([NotNull] this HttpResponseHeader header)
-		{
-			header = header.ArgumentDefined(nameof(header));
-
-			return _headerNames[(int)header];
-		}
+		return _headerNames[(int)header];
 	}
 }

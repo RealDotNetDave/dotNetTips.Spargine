@@ -14,26 +14,25 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine
+namespace DotNetTips.Spargine;
+
+/// <summary>
+/// Enum ServiceActionRequest.
+/// </summary>
+public enum ServiceActionRequest
 {
 	/// <summary>
-	/// Enum ServiceActionRequest.
+	/// The unknown
 	/// </summary>
-	public enum ServiceActionRequest
-	{
-		/// <summary>
-		/// The unknown
-		/// </summary>
-		Unknown,
+	Unknown,
 
-		/// <summary>
-		/// The start
-		/// </summary>
-		Start,
+	/// <summary>
+	/// The start
+	/// </summary>
+	Start,
 
-		/// <summary>
-		/// The stop
-		/// </summary>
-		Stop,
-	}
+	/// <summary>
+	/// The stop
+	/// </summary>
+	Stop,
 }

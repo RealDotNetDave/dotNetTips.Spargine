@@ -14,17 +14,16 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Class CollectionInfo.
+/// </summary>
+public class CollectionInfo
 {
 	/// <summary>
-	/// Class CollectionInfo.
+	/// Gets a value indicating whether this instance is empty.
 	/// </summary>
-	public class CollectionInfo
-	{
-		/// <summary>
-		/// Gets a value indicating whether this instance is empty.
-		/// </summary>
-		/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
-		public bool IsEmpty { get; internal set; }
-	}
+	/// <value><c>true</c> if this instance is empty; otherwise, <c>false</c>.</value>
+	public bool IsEmpty { get; internal set; }
 }

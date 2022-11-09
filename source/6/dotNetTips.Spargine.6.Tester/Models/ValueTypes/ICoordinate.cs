@@ -14,29 +14,28 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Tester.Models.ValueTypes
+namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
+
+/// <summary>
+/// Interface ICoordinate used to create Coordinate.
+/// </summary>
+public interface ICoordinate
 {
 	/// <summary>
-	/// Interface ICoordinate used to create Coordinate.
+	/// Gets or sets the x coordinate.
 	/// </summary>
-	public interface ICoordinate
-	{
-		/// <summary>
-		/// Gets or sets the x coordinate.
-		/// </summary>
-		/// <value>The x value.</value>
-		int X { get; set; }
+	/// <value>The x value.</value>
+	int X { get; set; }
 
-		/// <summary>
-		/// Gets or sets the y coordinate.
-		/// </summary>
-		/// <value>The y value.</value>
-		int Y { get; set; }
+	/// <summary>
+	/// Gets or sets the y coordinate.
+	/// </summary>
+	/// <value>The y value.</value>
+	int Y { get; set; }
 
-		/// <summary>
-		/// Returns a <see cref="string" /> of the coordinates.
-		/// </summary>
-		/// <returns>A <see cref="string" /> of the coordinates.</returns>
-		string ToString();
-	}
+	/// <summary>
+	/// Returns a <see cref="string" /> of the coordinates.
+	/// </summary>
+	/// <returns>A <see cref="string" /> of the coordinates.</returns>
+	string ToString();
 }

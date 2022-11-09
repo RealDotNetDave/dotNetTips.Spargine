@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-17-2022
+// Last Modified On : 10-31-2022
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,7 +51,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void AddLastTest()
 		{
-			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			var peopleArray = peopleList.ToArray();
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 			PersonProper nullPerson = null;
@@ -99,7 +99,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DoesNotHaveItemsTest()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToList();
 			List<Coordinate> nullCollection = null;
 
 			Assert.IsFalse(collection.DoesNotHaveItems());
@@ -110,7 +110,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest01()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
 
 			Assert.IsTrue(collection.ToList().HasItems());
 		}
@@ -118,7 +118,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest02()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
 
 			Assert.IsFalse(collection.ToList().HasItems(p => p.X == 999999999));
 		}
@@ -126,7 +126,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsTest03()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10);
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
 
 			Assert.IsFalse(collection.ToList().HasItems(5));
 		}
@@ -134,7 +134,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void IndexOfTest()
 		{
-			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			var testPerson = peopleList[5];
 
 			//Test Parameters
@@ -147,7 +147,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ListHashCodeTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.GenerateHashCode();
 
@@ -165,7 +165,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void PagingTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			const int PageCount = 10;
 			var peopleCount = 0;
 			var loopedCount = 0;
@@ -176,15 +176,15 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				peopleCount += peoplePage.Count();
 			}
 
-			Assert.IsTrue(peopleCount == 100);
+			Assert.IsTrue(peopleCount == 2500);
 
-			Assert.IsTrue(loopedCount == 10);
+			Assert.IsTrue(loopedCount == 250);
 		}
 
 		[TestMethod]
 		public void PickRandomTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToDictionary(p => p.Id);
 
 			var result = people.PickRandom();
 
@@ -194,10 +194,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void IndexAtLoopedTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			System.Collections.ObjectModel.Collection<PersonProper> nullPeople = null;
 
-			PersonProper result = people.IndexAtLooped(5);
+			var result = people.IndexAtLooped(5);
 
 			Assert.IsNotNull(result);
 
@@ -207,23 +207,23 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void RemoveFirstTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
 
-			Assert.IsTrue(people.RemoveFirst().FastCount() == 9);
+			Assert.IsTrue(people.RemoveFirst().FastCount() == 2499);
 		}
 
 		[TestMethod]
 		public void RemoveLastTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
 
-			Assert.IsTrue(people.RemoveLast().FastCount() == 9);
+			Assert.IsTrue(people.RemoveLast().FastCount() == 2499);
 		}
 
 		[TestMethod]
 		public void ShuffleImmutableArrayTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToImmutable();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToImmutable();
 			List<PersonProper> nullList = null;
 
 			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
@@ -236,7 +236,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ShuffleTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			List<PersonProper> nullList = null;
 			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
@@ -248,25 +248,25 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToCollectionTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToCollection();
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 		}
 
 		[TestMethod]
 		public void ToDistinctBlockingCollectionTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToDistinctBlockingCollection(true);
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 
 			Assert.IsTrue(result.IsAddingCompleted);
 		}
@@ -274,57 +274,67 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToDistinctConcurrentBagTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToDistinctConcurrentBag();
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 		}
 
 		[TestMethod]
 		public void ToFastSortedListTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToFastSortedList();
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 		}
 
 		[TestMethod]
 		public void ToImmutableArrayTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToImmutableArray();
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 		}
 
 		[TestMethod]
 		public void ToObservableListTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
 			var result = people.ToObservableList();
 
 			Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 100);
+			Assert.IsTrue(result.FastCount() == 2500);
 		}
 
 		[TestMethod]
 		public void ToReadOnlyTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToReadOnlyList();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToReadOnlyList();
 
-			Assert.IsTrue(people.FastCount() == 10);
+			Assert.IsTrue(people.FastCount() == 2500);
+		}
+
+		[TestMethod]
+		public void AsSpanTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
+
+			var result = people.AsSpan();
+
+			Assert.IsTrue(result.IsEmpty is false);
 		}
 	}
 }

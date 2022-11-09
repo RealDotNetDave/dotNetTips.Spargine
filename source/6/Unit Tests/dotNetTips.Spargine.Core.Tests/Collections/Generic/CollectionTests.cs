@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-13-2021
+// Last Modified On : 10-31-2022
 // ***********************************************************************
 // <copyright file="CollectionTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -89,6 +89,18 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 		}
 
 		[TestMethod]
+		public void CreateWithLargeCollectionTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10000);
+
+			var collection = Collection<PersonProper>.Create(people);
+
+			Assert.IsNotNull(collection);
+
+			Assert.IsTrue(collection.FastCount() == 10000);
+		}
+
+		[TestMethod]
 		public void CreateWithCollectionUniqueTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
@@ -98,6 +110,18 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 			Assert.IsNotNull(collection);
 
 			Assert.IsTrue(collection.FastCount() == 10);
+		}
+
+		[TestMethod]
+		public void CreateWithLargeCollectionUniqueTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10000);
+
+			var collection = Collection<PersonProper>.Create(people, ensureUnique: Tristate.True);
+
+			Assert.IsNotNull(collection);
+
+			Assert.IsTrue(collection.FastCount() == 10000);
 		}
 
 		[TestMethod]

@@ -17,23 +17,22 @@ using Microsoft.AspNetCore.Http;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions
+namespace DotNetTips.Spargine.Extensions;
+
+/// <summary>
+/// HttpContext Extensions.
+/// </summary>
+public static class HttpContextExtensions
 {
 	/// <summary>
-	/// HttpContext Extensions.
+	/// Gets the remote IP address.
+	/// Validates that <paramref name="context" /> is not null.
 	/// </summary>
-	public static class HttpContextExtensions
+	/// <param name="context">The context.</param>
+	/// <returns>System.String.</returns>
+	[Information("Original code from: https://edi.wang/post/2017/10/16/get-client-ip-aspnet-20", "David McCarter", "9/04/2017", UnitTestCoverage = 0, Status = Status.Available)]
+	public static string GetRemoteIPAddress([NotNull] this HttpContext context)
 	{
-		/// <summary>
-		/// Gets the remote IP address.
-		/// Validates that <paramref name="context" /> is not null.
-		/// </summary>
-		/// <param name="context">The context.</param>
-		/// <returns>System.String.</returns>
-		[Information("Original code from: https://edi.wang/post/2017/10/16/get-client-ip-aspnet-20", "David McCarter", "9/04/2017", UnitTestCoverage = 0, Status = Status.Available)]
-		public static string GetRemoteIPAddress([NotNull] this HttpContext context)
-		{
-			return context.ArgumentNotNull().Connection.RemoteIpAddress.ToString();
-		}
+		return context.ArgumentNotNull().Connection.RemoteIpAddress.ToString();
 	}
 }

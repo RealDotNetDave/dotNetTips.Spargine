@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.BenchmarkTests
 // Author           : David McCarter
 // Created          : 08-27-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 11-06-2022
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,51 +19,50 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions.BenchmarkTests
+namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
+
+[BenchmarkCategory(Categories.Collections)]
+public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 {
+
+	private ObservableCollection<PersonProper> _people;
+
+	[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems))]
 	[BenchmarkCategory(Categories.Collections)]
-	public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionsBenchmark
+	public void HasItems()
 	{
+		var result = this._people.HasItems();
 
-		private ObservableCollection<PersonProper> _people;
+		this.Consume(result);
+	}
 
-		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems))]
-		[BenchmarkCategory(Categories.Collections)]
-		public void HasItems()
-		{
-			var result = this._people.HasItems();
+	[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Count")]
+	[BenchmarkCategory(Categories.Collections)]
+	public void HasItemsWithCount()
+	{
+		var result = this._people.HasItems(5);
 
-			Consumer.Consume(result);
-		}
+		this.Consume(result);
+	}
 
-		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Count")]
-		[BenchmarkCategory(Categories.Collections)]
-		public void HasItemsWithCount()
-		{
-			var result = this._people.HasItems(5);
+	[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Predicate")]
+	[BenchmarkCategory(Categories.Collections)]
+	public void HasItemsWithPredicate()
+	{
+		var result = this._people.HasItems(p => p.Age.TotalDays > 500);
 
-			Consumer.Consume(result);
-		}
+		this.Consume(result);
+	}
 
-		[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems) + ": With Predicate")]
-		[BenchmarkCategory(Categories.Collections)]
-		public void HasItemsWithPredicate()
-		{
-			var result = this._people.HasItems(p => p.Age.TotalDays > 5);
+	/// <summary>
+	/// Setups this instance.
+	/// </summary>
+	public override void Setup()
+	{
+		base.Setup();
 
-			Consumer.Consume(result);
-		}
-
-		/// <summary>
-		/// Setups this instance.
-		/// </summary>
-		public override void Setup()
-		{
-			base.Setup();
-
-			this._people = GetPersonProperRefArray().ToObservableCollection();
-
-		}
+		this._people = GetPersonProperRefArray().ToObservableCollection();
 
 	}
+
 }

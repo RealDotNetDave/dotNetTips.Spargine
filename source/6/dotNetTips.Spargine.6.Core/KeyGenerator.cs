@@ -15,34 +15,33 @@ using System.Globalization;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core
+namespace DotNetTips.Spargine.Core;
+
+/// <summary>
+/// Class KeyGenerator.
+/// </summary>
+public static class KeyGenerator
 {
 	/// <summary>
-	/// Class KeyGenerator.
+	/// Creates a random key from a GUID.
 	/// </summary>
-	public static class KeyGenerator
+	/// <returns>System.String.</returns>
+	/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
+	[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	public static string GenerateKey()
 	{
-		/// <summary>
-		/// Creates a random key from a GUID.
-		/// </summary>
-		/// <returns>System.String.</returns>
-		/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static string GenerateKey()
-		{
-			return Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
-		}
+		return Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
+	}
 
-		/// <summary>
-		/// Creates a random key from a GUID.
-		/// </summary>
-		/// <param name="prefix">The prefix.</param>
-		/// <returns>System.String.</returns>
-		/// <example>DataRecordf7f0af78003d4ab194b5a4024d02112a</example>
-		[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-		public static string GenerateKey(string prefix)
-		{
-			return $"{prefix.ArgumentNotNull()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
-		}
+	/// <summary>
+	/// Creates a random key from a GUID.
+	/// </summary>
+	/// <param name="prefix">The prefix.</param>
+	/// <returns>System.String.</returns>
+	/// <example>DataRecordf7f0af78003d4ab194b5a4024d02112a</example>
+	[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	public static string GenerateKey(string prefix)
+	{
+		return $"{prefix.ArgumentNotNull()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
 	}
 }

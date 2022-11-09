@@ -14,31 +14,30 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.IO
+namespace DotNetTips.Spargine.IO;
+
+/// <summary>
+/// Enum FileProgressState
+/// </summary>
+public enum FileProgressState
 {
 	/// <summary>
-	/// Enum FileProgressState
+	/// The error
 	/// </summary>
-	public enum FileProgressState
-	{
-		/// <summary>
-		/// The error
-		/// </summary>
-		Error = 0,
+	Error = 0,
 
-		/// <summary>
-		/// The deleted
-		/// </summary>
-		Deleted = 1,
+	/// <summary>
+	/// The deleted
+	/// </summary>
+	Deleted = 1,
 
-		/// <summary>
-		/// The moved
-		/// </summary>
-		Moved = 2,
+	/// <summary>
+	/// The moved
+	/// </summary>
+	Moved = 2,
 
-		/// <summary>
-		/// The copied
-		/// </summary>
-		Copied = 3,
-	}
+	/// <summary>
+	/// The copied
+	/// </summary>
+	Copied = 3,
 }

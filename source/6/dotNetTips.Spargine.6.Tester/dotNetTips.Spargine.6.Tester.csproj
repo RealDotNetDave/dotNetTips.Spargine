@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
-		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
+		<AssemblyVersion>2022.6.11.2</AssemblyVersion>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -16,9 +16,10 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
+		<EnablePackageValidation>true</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2022.6.8.10</FileVersion>
+		<FileVersion>2022.6.11.2</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -34,17 +35,20 @@
 --AUG 2022: Code cleanup.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
-		<Product>dotNetTips.Spargine.Tester</Product>
+		<Product>$(AssemblyName)</Product>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<PublishSingleFile>true</PublishSingleFile>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</RepositoryUrl>
 		<RootNamespace>DotNetTips.Spargine.Tester</RootNamespace>
+		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
 		<SelfContained>true</SelfContained>
+		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<!--<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>-->
-		<TargetFramework>net6.0</TargetFramework>
-		<Version>2022.6.8.10</Version>
+		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
+		<Version>2022.6.11.2</Version>
+		<Title>DotNetTips.Spargine.6.Tester</Title>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -94,7 +98,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.NETCore.Platforms" Version="6.0.5" />
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -104,7 +108,7 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
-		<PackageReference Include="System.Text.Json" Version="6.0.5" />
+		<PackageReference Include="System.Text.Json" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

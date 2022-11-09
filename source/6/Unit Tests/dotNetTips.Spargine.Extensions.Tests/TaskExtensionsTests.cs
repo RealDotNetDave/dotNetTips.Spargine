@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2022
+// Last Modified On : 09-27-2022
 // ***********************************************************************
 // <copyright file="TaskExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -36,10 +36,12 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void FireAndForgetTest02()
 		{
-			Action<Exception> p = (Exception ex) =>
-			{
-				Debug.WriteLine(ex.Message);
-			};
+			Action<Exception> value = (Exception ex) =>
+						{
+							Debug.WriteLine(ex.Message);
+						};
+
+			Action<Exception> p = value;
 
 			this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(p);
 

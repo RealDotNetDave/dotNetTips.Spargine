@@ -35,14 +35,14 @@ public static class ExceptionThrower
         return value ?? defaultValue.Trim() ?? string.Empty;
     }
 
-    /// <summary>
-    /// Throws the ArgumentException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.ArgumentException"></exception>
-    /// <exception cref="ArgumentNullException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentException"></exception>
+	/// <exception cref="ArgumentNullException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -51,13 +51,13 @@ public static class ExceptionThrower
         throw new ArgumentException(message.DefaultIfNull(Resources.ErrorInvalidArgument), paramName.ArgumentNotNullOrEmpty(true));
     }
 
-    /// <summary>
-    /// Throws the ArgumentException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.ArgumentException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="ArgumentException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -66,13 +66,13 @@ public static class ExceptionThrower
         throw new ArgumentException(message.DefaultIfNull(Resources.ErrorInvalidArgument), innerException);
     }
 
-    /// <summary>
-    /// Throws the ArgumentInvalidException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentInvalidException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentInvalidException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowArgumentInvalidException), author: "David McCarter", createdOn: "8/13/2020", Status = Status.Available)]
@@ -81,16 +81,16 @@ public static class ExceptionThrower
         throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ErrorInvalidArgument), paramName.ArgumentNotNullOrEmpty(true));
     }
 
-    /// <summary>
-    /// Throws the ArgumentInvalidException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-    /// <exception cref="ArgumentException"></exception>
-    /// <exception cref="ArgumentNullException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentInvalidException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="ArgumentInvalidException"></exception>
+	/// <exception cref="ArgumentException"></exception>
+	/// <exception cref="ArgumentNullException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowArgumentInvalidException), author: "David McCarter", createdOn: "8/13/2020", Status = Status.Available)]
@@ -99,12 +99,12 @@ public static class ExceptionThrower
         throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ErrorInvalidArgument), paramName.ArgumentNotNullOrEmpty(true), innerException);
     }
 
-    /// <summary>
-    /// Throws the argument null exception.
-    /// </summary>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.ArgumentNullException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the argument null exception.
+	/// </summary>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentNullException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "8/12/2020", Status = Status.Available)]
@@ -113,13 +113,13 @@ public static class ExceptionThrower
         throw new ArgumentNullException(paramName.ArgumentNotNullOrEmpty(true), Resources.ErrorArgumentNull);
     }
 
-    /// <summary>
-    /// Throws the ArgumentNullException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.ArgumentNullException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentNullException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentNullException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -128,13 +128,13 @@ public static class ExceptionThrower
         throw new ArgumentNullException(paramName.ArgumentNotNullOrEmpty(true), message.DefaultIfNull(Resources.ErrorArgumentNull));
     }
 
-    /// <summary>
-    /// Throws the ArgumentNullException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.ArgumentNullException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentNullException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="ArgumentNullException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -143,12 +143,12 @@ public static class ExceptionThrower
         throw new ArgumentNullException(message.DefaultIfNull(Resources.ErrorArgumentNull), innerException);
     }
 
-    /// <summary>
-    /// Throws the argument out of range exception.
-    /// </summary>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the argument out of range exception.
+	/// </summary>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", Status = Status.Available)]
@@ -157,13 +157,13 @@ public static class ExceptionThrower
         throw new ArgumentOutOfRangeException(paramName.ArgumentNotNullOrEmpty(true), Resources.ErrorArgumentOutOfRange);
     }
 
-    /// <summary>
-    /// Throws the argument out of range exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the argument out of range exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", Status = Status.Available)]
@@ -172,13 +172,13 @@ public static class ExceptionThrower
         throw new ArgumentOutOfRangeException(paramName.ArgumentNotNullOrEmpty(true), message.DefaultIfNull(Resources.ErrorArgumentOutOfRange));
     }
 
-    /// <summary>
-    /// Throws the argument out of range exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the argument out of range exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowArgumentOutOfRangeException), author: "David McCarter", createdOn: "9/5/2020", Status = Status.Available)]
@@ -187,14 +187,14 @@ public static class ExceptionThrower
         throw new ArgumentOutOfRangeException(message.DefaultIfNull(Resources.ErrorArgumentOutOfRange), innerException);
     }
 
-    /// <summary>
-    /// Throws the ArgumentReadOnlyException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.ArgumentReadOnlyException"></exception>
-    /// <exception cref="ArgumentOutOfRangeException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentReadOnlyException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="ArgumentReadOnlyException"></exception>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -203,13 +203,13 @@ public static class ExceptionThrower
         throw new ArgumentReadOnlyException(message.DefaultIfNull(Resources.ErrorReadOnlyCollection), paramName.ArgumentNotNullOrEmpty(true));
     }
 
-    /// <summary>
-    /// Throws the ArgumentInvalidException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="directory">The directory.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentInvalidException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="directory">The directory.</param>
+	/// <exception cref="DirectoryNotFoundException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowDirectoryNotFoundException), author: "David McCarter", createdOn: "8/13/2020", Status = Status.Available)]
@@ -218,13 +218,13 @@ public static class ExceptionThrower
         throw new DirectoryNotFoundException(message.DefaultIfNull(Resources.ErrorDirectoryNotFound), directory.ArgumentNotNull());
     }
 
-    /// <summary>
-    /// Throws the ArgumentInvalidException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the ArgumentInvalidException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="ArgumentInvalidException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowDirectoryNotFoundException), author: "David McCarter", createdOn: "8/13/2020", Status = Status.Available)]
@@ -233,13 +233,13 @@ public static class ExceptionThrower
         throw new ArgumentInvalidException(message.DefaultIfNull(Resources.ErrorDirectoryNotFound), innerException);
     }
 
-    /// <summary>
-    /// Throws the file not found exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.IO.FileNotFoundException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the file not found exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="FileNotFoundException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -248,13 +248,13 @@ public static class ExceptionThrower
         throw new FileNotFoundException(message.DefaultIfNull(Resources.ErrorFileNotFound), innerException);
     }
 
-    /// <summary>
-    /// Throws the file not found exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="fileName">Name of the file.</param>
-    /// <exception cref="System.IO.FileNotFoundException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the file not found exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="fileName">Name of the file.</param>
+	/// <exception cref="FileNotFoundException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -265,14 +265,14 @@ public static class ExceptionThrower
         throw new FileNotFoundException(message.DefaultIfNull(Resources.ErrorFileNotFound), fileName.ArgumentNotNullOrEmpty(true));
     }
 
-    /// <summary>
-    /// Throws the file not found exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="fileName">Name of the file.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.IO.FileNotFoundException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the file not found exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="fileName">Name of the file.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="FileNotFoundException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowFileNotFoundException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -283,13 +283,13 @@ public static class ExceptionThrower
         throw new FileNotFoundException(message.DefaultIfNull(Resources.ErrorFileNotFound), fileName.ArgumentNotNullOrEmpty(true), innerException);
     }
 
-    /// <summary>
-    /// Throws the invalid cast exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="paramName">Name of the parameter.</param>
-    /// <exception cref="System.InvalidCastException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the invalid cast exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="paramName">Name of the parameter.</param>
+	/// <exception cref="InvalidCastException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowInvalidCastException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -299,13 +299,13 @@ public static class ExceptionThrower
     }
 
 
-    /// <summary>
-    /// Throws the invalid cast exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.InvalidCastException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the invalid cast exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="InvalidCastException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowInvalidCastException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -314,12 +314,12 @@ public static class ExceptionThrower
         throw new InvalidCastException(message.DefaultIfNull(Resources.ErrorInvalidArgument), innerException);
     }
 
-    /// <summary>
-    /// Throws the invalid enum type exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <exception cref="DotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the invalid enum type exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <exception cref="InvalidEnumTypeException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowInvalidEnumTypeException), author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -328,13 +328,13 @@ public static class ExceptionThrower
         throw new InvalidEnumTypeException(message.DefaultIfNull(Resources.ErrorInvalidEnumType));
     }
 
-    /// <summary>
-    /// Throws the invalid enum type exception.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.InvalidCastException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws the invalid enum type exception.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="InvalidCastException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information(nameof(ThrowInvalidEnumTypeException), author: "David McCarter", createdOn: "11/11/2020", Status = Status.Available)]
@@ -343,12 +343,12 @@ public static class ExceptionThrower
         throw new InvalidCastException(message.DefaultIfNull(Resources.ErrorInvalidEnumType), innerException);
     }
 
-    /// <summary>
-    /// Throws a InvalidOperationException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <exception cref="System.InvalidOperationException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws a InvalidOperationException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <exception cref="InvalidOperationException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]
@@ -357,13 +357,13 @@ public static class ExceptionThrower
         throw new InvalidOperationException(message.DefaultIfNull(Resources.ErrorInvalidOperation));
     }
 
-    /// <summary>
-    /// Throws a InvalidOperationException.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    /// <exception cref="System.InvalidOperationException"></exception>
-    [DoesNotReturn]
+	/// <summary>
+	/// Throws a InvalidOperationException.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	/// <exception cref="InvalidOperationException"></exception>
+	[DoesNotReturn]
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
     [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/30/2020", Status = Status.Available)]

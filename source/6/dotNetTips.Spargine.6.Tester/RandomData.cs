@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Tester;
 /// <summary>
 /// Methods to randomly generate data for unit and benchmark testing.
 /// </summary>
-[Information(Status = Status.Available, Documentation = "http://bit.ly/UnitTestRandomData")]
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public static class RandomData
 {
 	/// <summary>

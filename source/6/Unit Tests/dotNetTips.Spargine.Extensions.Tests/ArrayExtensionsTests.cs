@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-03-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -78,7 +78,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			var result = people.Add(person);
+			var result = people.Add<PersonProper>(person);
 
 			Assert.IsTrue(result.FastCount() == 11);
 		}
@@ -223,6 +223,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 			var personFromCollection = people.Shuffle().First();
+			personFromCollection.HomePhone = "1234567890";
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
 			var result = people.Upsert(personFromCollection);
@@ -234,6 +235,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 11);
 
 			result = people.Upsert(personFromCollection);
+
+			Assert.IsTrue(result.FastCount() == 10);
+
+			result = people.Upsert(null);
 
 			Assert.IsTrue(result.FastCount() == 10);
 		}

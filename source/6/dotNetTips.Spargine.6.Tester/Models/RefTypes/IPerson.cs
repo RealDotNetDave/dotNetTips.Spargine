@@ -14,11 +14,14 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
+using DotNetTips.Spargine.Core;
+
 namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 
 /// <summary>
 /// The interface for IPerson
 /// </summary>
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public interface IPerson
 {
 	/// <summary>

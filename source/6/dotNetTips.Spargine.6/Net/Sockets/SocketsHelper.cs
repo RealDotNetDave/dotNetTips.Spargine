@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6
 // Author           : David McCarter
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-20-2022
+// Last Modified On : 08-23-2022
 // ***********************************************************************
 // <copyright file="SocketsHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

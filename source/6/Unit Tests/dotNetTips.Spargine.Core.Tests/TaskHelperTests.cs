@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-01-2022
+// Last Modified On : 04-16-2022
 // ***********************************************************************
 // <copyright file="TaskHelperTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.

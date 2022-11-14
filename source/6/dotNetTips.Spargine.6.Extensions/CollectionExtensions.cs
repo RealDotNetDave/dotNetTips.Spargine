@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-05-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="CollectionExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -59,7 +59,7 @@ public static class CollectionExtensions
 	/// <exception cref="ArgumentNullException">Collection cannot be null.</exception>
 	/// <exception cref="ArgumentReadOnlyException">Collection cannot be read-only.</exception>
 	[Information(nameof(AddIfNotExists), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item)
+	public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
 		{
@@ -96,7 +96,7 @@ public static class CollectionExtensions
 	/// </code>
 	/// </example>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [NotNull] T item, [NotNull] IEqualityComparer<T> comparer)
+	public static bool AddIfNotExists<T>([NotNull] this ICollection<T> collection, [AllowNull] T item, [NotNull] IEqualityComparer<T> comparer)
 	{
 		if (item is null)
 		{

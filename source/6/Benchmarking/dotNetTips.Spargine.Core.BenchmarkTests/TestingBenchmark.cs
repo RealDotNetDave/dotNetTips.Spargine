@@ -4,18 +4,17 @@
 // Created          : 02-20-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-30-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="TestingBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Globalization;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
+using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 
@@ -29,79 +28,50 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests;
 /// </summary>
 /// <seealso cref="Benchmark" />
 [BenchmarkCategory("Work in Progress")]
-public class TestingBenchmark : Benchmark
+public class TestingBenchmark : LargeCollectionsBenchmark
 {
-	private readonly PersonRecord _person = RandomData.GeneratePersonRecordCollection(1).First();
+	private Tester.Models.ValueTypes.Person[] _peopleVal;
+	private PersonProper[] _peopleRef;
 
-	[Benchmark(Description = "MethodImplOptions:Baseline", Baseline = true)]
+	//[Benchmark(Description = "Clone Val")]
+	//[BenchmarkCategory(Categories.New)]
+	//public void Clone01()
+	//{
+	//	var result = _peopleVal.Clone<Tester.Models.ValueTypes.Person[]>();
+
+	//	this.Consume(result);
+	//}
+
+	//[Benchmark(Description = "Clone Ref")]
+	//[BenchmarkCategory(Categories.New)]
+	//public void Clone02()
+	//{
+	//	var result = _peopleRef.Clone<PersonProper[]>();
+
+	//	this.Consume(result);
+	//}
+
+	[Benchmark(Description = "AddIf() Ref")]
 	[BenchmarkCategory(Categories.New)]
-	public void WIPTest01()
+	public void AddIf01()
 	{
-		var result = WIPTests.TryValidateNull(this._person);
+		var result = _peopleRef.AddIf<PersonProper>(this.PersonProperRef01, _peopleRef.Length > 1);
 
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = "MethodImplOptions:AggressiveInline")]
+	[Benchmark(Description = "AddIf() Val")]
 	[BenchmarkCategory(Categories.New)]
-	public void WIPTest02()
+	public void AddIf02()
 	{
-		var result = WIPTests.TryValidateNullAgressive(this._person);
+		var result = _peopleVal.AddIf(this.PersonVal01, _peopleVal.Length > 1);
 
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = "MethodImplOptions:NoInline")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest03()
+	public override void Setup()
 	{
-		var result = WIPTests.TryValidateNullNoInlining(this._person);
-
-		this.Consume(result);
-	}
-
-	[Benchmark(Description = "MethodImplOptions:NoOptimization")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest04()
-	{
-		var result = WIPTests.TryValidateNullNoOptimization(this._person);
-
-		this.Consume(result);
-	}
-
-	[Benchmark(Description = "MethodImplOptions:PreserveSig")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest05()
-	{
-		var result = WIPTests.TryValidateNullPreserveSig(this._person);
-
-		this.Consume(result);
-	}
-
-	[Benchmark(Description = "MethodImplOptions:Synchronized")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest06()
-	{
-		var result = WIPTests.TryValidateNullSynchronized(this._person);
-
-		this.Consume(result);
-	}
-
-	[Benchmark(Description = "IN TEST WITHOUT IN")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest07()
-	{
-		var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
-
-		WIPTests.InTest01(ex);
-	}
-
-	[Benchmark(Description = "IN TEST WITH IN")]
-	[BenchmarkCategory(Categories.New)]
-	public void WIPTest08()
-	{
-		var ex = new ArgumentNullException(DateTime.Now.ToString(CultureInfo.CurrentCulture));
-
-		WIPTests.InTest02(ex);
+		this._peopleVal = RandomData.GeneratePersonValCollection(this.Count).ToArray();
+		this._peopleRef = RandomData.GeneratePersonRefCollection<PersonProper>(this.Count).ToArray();
 	}
 }

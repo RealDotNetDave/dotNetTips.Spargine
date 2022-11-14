@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-03-2022
+// Last Modified On : 11-04-2022
 // ***********************************************************************
 // <copyright file="SerializationBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -14,7 +14,6 @@
 
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
-using DotNetTips.Spargine.Core.BenchmarkTests.Properties;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 

@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-06-2022
+// Last Modified On : 11-13-2022
 // ***********************************************************************
 // <copyright file="Program.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -45,7 +45,7 @@ public class Program
 
 			_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-			//BenchmarkRunner.Run<LoggingBenchmark>(config);
+			//BenchmarkRunner.Run<TestingBenchmark>(config);
 
 			Console.Beep();
 			_ = Console.ReadLine();

@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -162,11 +162,11 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <param name="item">The element to add to the set.</param>
 	/// <returns><see langword="true" /> if the element is added to the hash set; <see langword="false" /> if the element is already present.</returns>
-	public virtual bool Add([NotNull] T item)
+	public virtual bool Add([AllowNull] T item)
 	{
 		if (item is null)
 		{
-			ExceptionThrower.ThrowArgumentNullException(nameof(item));
+			return false;
 		}
 
 		if (this._set.Contains(item))
@@ -212,11 +212,11 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <param name="item">The element to locate in the hash set.</param>
 	/// <returns><see langword="true" /> if the hash set contains the specified element; otherwise, <see langword="false" />.</returns>
-	public virtual bool Contains([NotNull] T item)
+	public virtual bool Contains([AllowNull] T item)
 	{
 		if (item is null)
 		{
-			ExceptionThrower.ThrowArgumentNullException(nameof(item));
+			return false;
 		}
 
 		return this._set.Contains(item);

@@ -4,7 +4,7 @@
 // Created          : 02-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-14-2022
+// Last Modified On : 10-31-2022
 // ***********************************************************************
 // <copyright file="IDataRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

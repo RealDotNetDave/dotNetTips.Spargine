@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-08-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -84,7 +84,7 @@ public static class FileHelper
 			{
 				using (var extractedFileStream = File.OpenWrite(extractedFilePath))
 				{
-					await zipStream.CopyToAsync(extractedFileStream).ConfigureAwait(false);
+					await zipStream.CopyToAsync(extractedFileStream, CancellationToken.None).ConfigureAwait(false);
 				}
 			}
 		}
@@ -207,8 +207,8 @@ public static class FileHelper
 
 			using (var destinationStream = File.Create(newFileName))
 			{
-				await sourceStream.CopyToAsync(destinationStream).ConfigureAwait(false);
-				await destinationStream.FlushAsync().ConfigureAwait(false);
+				await sourceStream.CopyToAsync(destinationStream, CancellationToken.None).ConfigureAwait(false);
+				await destinationStream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 			}
 		}
 
@@ -295,12 +295,12 @@ public static class FileHelper
 		{
 			using (var localStream = File.Create(pathName))
 			{
-				using (var stream = await client.GetStreamAsync(remoteUri).ConfigureAwait(false))
+				using (var stream = await client.GetStreamAsync(remoteUri, CancellationToken.None).ConfigureAwait(false))
 				{
-					await stream.CopyToAsync(localStream).ConfigureAwait(false);
+					await stream.CopyToAsync(localStream, CancellationToken.None).ConfigureAwait(false);
 				}
 
-				await localStream.FlushAsync().ConfigureAwait(false);
+				await localStream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 			}
 		}
 	}

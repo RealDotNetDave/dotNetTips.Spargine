@@ -35,6 +35,7 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 [Serializable]
 [XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct Person : IDataModel<Person, string>, IPerson
 {
 	/// <summary>
@@ -134,7 +135,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// <returns>The result of the operator.</returns>
 	public static bool operator !=(Person left, Person right)
 	{
-		return !( left == right );
+		return !(left == right);
 	}
 
 	/// <summary>

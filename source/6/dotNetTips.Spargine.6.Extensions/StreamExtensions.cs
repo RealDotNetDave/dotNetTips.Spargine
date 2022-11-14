@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="StreamExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

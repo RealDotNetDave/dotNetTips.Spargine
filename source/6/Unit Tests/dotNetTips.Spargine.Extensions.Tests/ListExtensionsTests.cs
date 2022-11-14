@@ -76,8 +76,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ClearNullListTest()
 		{
-			var count = RandomData.GenerateInteger(10, 500);
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(count).ToList();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(RandomData.GenerateInteger(10, 500)).ToList();
 
 			people.Add(null);
 

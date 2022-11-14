@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 10-31-2022
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

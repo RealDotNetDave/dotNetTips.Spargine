@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -38,7 +38,7 @@ public static class ListExtensions
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">list or item</exception>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static bool AddFirst<T>([NotNull] this IList<T> collection, [NotNull] T item)
+	public static bool AddFirst<T>([NotNull] this IList<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
 		{
@@ -62,7 +62,7 @@ public static class ListExtensions
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">list or item</exception>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
-	public static bool AddLast<T>([NotNull] this IList<T> collection, [NotNull] T item)
+	public static bool AddLast<T>([NotNull] this IList<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
 		{
@@ -123,7 +123,7 @@ public static class ListExtensions
 	/// Orginal code from:
 	/// https://github.com/CommunityToolkit/dotnet/blob/main/CommunityToolkit.HighPerformance/Extensions/ListExtensions.cs</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New)]
+	[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "Add URL")]
 	public static Span<T> AsSpan<T>(this List<T> list)
 	{
 		return CollectionsMarshal.AsSpan(list.ArgumentNotNull());
@@ -264,7 +264,7 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <param name="index">The index.</param>
 	/// <returns>T.</returns>
-	/// <exception cref="ArgumentNullException">collection</exception>
+	/// <exception cref="System.ArgumentNullException">collection</exception>
 	/// <remarks>Orginal code by: @TheOtherBoz</remarks>
 	[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 	public static T IndexAtLooped<T>([NotNull] this IList<T> collection, int index)
@@ -406,7 +406,7 @@ public static class ListExtensions
 	/// <typeparam name="TSource">The type of the t source.</typeparam>
 	/// <param name="collection">The list.</param>
 	/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-	/// <returns>List&lt;TSource&gt;.</returns>
+	/// <returns>List&lt;T&gt;.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
 	public static async Task<List<TSource>> ToListAsync<TSource>([NotNull] this IAsyncEnumerable<TSource> collection, CancellationToken cancellationToken = default)
 	{

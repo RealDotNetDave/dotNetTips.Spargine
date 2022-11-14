@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -451,8 +451,8 @@ public static class StringExtensions
 					{
 						await using (stream.ConfigureAwait(false))
 						{
-							await stream.CopyToAsync(output).ConfigureAwait(false);
-							await stream.FlushAsync().ConfigureAwait(false);
+							await stream.CopyToAsync(output, CancellationToken.None).ConfigureAwait(false);
+							await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 							return Encoding.Unicode.GetString(output.ToArray());
 						}
@@ -484,8 +484,8 @@ public static class StringExtensions
 					{
 						await using (stream.ConfigureAwait(false))
 						{
-							await stream.CopyToAsync(output).ConfigureAwait(false);
-							await stream.FlushAsync().ConfigureAwait(false);
+							await stream.CopyToAsync(output, CancellationToken.None).ConfigureAwait(false);
+							await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 							return Encoding.Unicode.GetString(output.ToArray());
 						}
@@ -496,7 +496,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Converts a zlib compressed string as an asynchronous operation.
+	/// Converts a ZLib compressed string as an asynchronous operation.
 	/// </summary>
 	/// <param name="value">The value.</param>
 	/// <returns>A Task&lt;string&gt; representing the asynchronous operation.</returns>
@@ -516,8 +516,8 @@ public static class StringExtensions
 					{
 						await using (stream.ConfigureAwait(false))
 						{
-							await stream.CopyToAsync(output).ConfigureAwait(false);
-							await stream.FlushAsync().ConfigureAwait(false);
+							await stream.CopyToAsync(output, CancellationToken.None).ConfigureAwait(false);
+							await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 							return Encoding.Unicode.GetString(output.ToArray());
 						}
@@ -1151,8 +1151,8 @@ public static class StringExtensions
 
 				await using (brotliStream.ConfigureAwait(continueOnCapturedContext: false))
 				{
-					await inputStream.CopyToAsync(brotliStream).ConfigureAwait(continueOnCapturedContext: false);
-					await brotliStream.FlushAsync().ConfigureAwait(continueOnCapturedContext: false);
+					await inputStream.CopyToAsync(brotliStream, CancellationToken.None).ConfigureAwait(continueOnCapturedContext: false);
+					await brotliStream.FlushAsync(CancellationToken.None).ConfigureAwait(continueOnCapturedContext: false);
 
 					return Convert.ToBase64String(outputStream.ToArray());
 				}
@@ -1191,8 +1191,8 @@ public static class StringExtensions
 
 				await using (stream.ConfigureAwait(false))
 				{
-					await inputStream.CopyToAsync(stream).ConfigureAwait(false);
-					await stream.FlushAsync().ConfigureAwait(false);
+					await inputStream.CopyToAsync(stream, CancellationToken.None).ConfigureAwait(false);
+					await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 					return Convert.ToBase64String(outputStream.ToArray());
 				}
@@ -1232,8 +1232,8 @@ public static class StringExtensions
 
 				await using (stream.ConfigureAwait(false))
 				{
-					await inputStream.CopyToAsync(stream).ConfigureAwait(false);
-					await stream.FlushAsync().ConfigureAwait(false);
+					await inputStream.CopyToAsync(stream, CancellationToken.None).ConfigureAwait(false);
+					await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 					return Convert.ToBase64String(outputStream.ToArray());
 				}
@@ -1308,8 +1308,8 @@ public static class StringExtensions
 
 				await using (stream.ConfigureAwait(false))
 				{
-					await inputStream.CopyToAsync(stream).ConfigureAwait(false);
-					await stream.FlushAsync().ConfigureAwait(false);
+					await inputStream.CopyToAsync(stream, CancellationToken.None).ConfigureAwait(false);
+					await stream.FlushAsync(CancellationToken.None).ConfigureAwait(false);
 
 					return Convert.ToBase64String(outputStream.ToArray());
 				}

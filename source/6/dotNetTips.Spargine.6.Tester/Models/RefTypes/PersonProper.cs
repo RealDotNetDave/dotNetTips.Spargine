@@ -4,7 +4,7 @@
 // Created          : 07-17-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="PersonProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -37,7 +37,8 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [JsonSerializable(typeof(PersonProper))]
 [XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-public sealed partial class PersonProper : IDataModel<PersonProper, string>, IPerson
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
+public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 {
 	//TODO: .NET 7 Research StringSyntaxAttribute
 
@@ -126,6 +127,7 @@ public sealed partial class PersonProper : IDataModel<PersonProper, string>, IPe
 	public PersonProper()
 	{
 	}
+
 	/// <summary>
 	/// Initializes a new instance of <see cref="PersonProper" />.
 	/// </summary>
@@ -143,7 +145,7 @@ public sealed partial class PersonProper : IDataModel<PersonProper, string>, IPe
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator !=(PersonProper left, PersonProper right) => !( left == right );
+	public static bool operator !=(PersonProper left, PersonProper right) => !(left == right);
 
 	/// <summary>
 	/// Implements the &lt; operator.

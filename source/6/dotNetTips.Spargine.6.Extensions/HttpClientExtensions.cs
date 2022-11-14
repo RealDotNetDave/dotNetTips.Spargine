@@ -4,7 +4,7 @@
 // Created          : 07-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="HttpClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -42,11 +42,11 @@ public static class HttpClientExtensions
 		url = url.ArgumentNotNull();
 		options = options.ArgumentNotNull();
 
-		using (var response = await client.GetAsync(new Uri(url.PathAndQuery)).ConfigureAwait(false))
+		using (var response = await client.GetAsync(new Uri(url.PathAndQuery), CancellationToken.None).ConfigureAwait(false))
 		{
 			_ = response.EnsureSuccessStatusCode();
 
-			var stringResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			var stringResponse = await response.Content.ReadAsStringAsync(CancellationToken.None).ConfigureAwait(false);
 
 			return JsonSerializer.Deserialize<T>(stringResponse, options);
 		}

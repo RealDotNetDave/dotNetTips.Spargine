@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-06-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -25,9 +25,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 /// <summary>
 /// Class ArrayExtensionsCollectionBenchmark.
-/// Implements the <see cref="DotNetTips.Spargine.Benchmarking.LargeCollectionsBenchmark" />
+/// Implements the <see cref="LargeCollectionsBenchmark" />
 /// </summary>
-/// <seealso cref="DotNetTips.Spargine.Benchmarking.LargeCollectionsBenchmark" />
+/// <seealso cref="LargeCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
 public class ArrayExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 {
@@ -64,13 +64,24 @@ public class ArrayExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(ArrayExtensions.AddIf))]
+	[Benchmark(Description = nameof(ArrayExtensions.AddIf) + ": Val ")]
 	[BenchmarkCategory(Categories.ValueType)]
-	public void AddIf()
+	public void AddIfVal()
 	{
 		var people = this.GetPersonValArray();
 
 		var result = people.AddIf(this.PersonVal01, people.Count() > 10);
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(ArrayExtensions.AddIf) + ": Ref ")]
+	[BenchmarkCategory(Categories.ValueType)]
+	public void AddIfRef()
+	{
+		var people = this.GetPersonRefArray();
+
+		var result = people.AddIf(this.PersonRef01, people.Count() > 10);
 
 		this.Consume(result);
 	}

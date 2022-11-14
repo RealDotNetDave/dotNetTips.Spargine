@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : David McCarter
 // Created          : 12-29-2020
@@ -14,11 +14,14 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
+using DotNetTips.Spargine.Core;
+
 namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 
 /// <summary>
 /// Interface ICoordinate used to create Coordinate.
 /// </summary>
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public interface ICoordinate
 {
 	/// <summary>

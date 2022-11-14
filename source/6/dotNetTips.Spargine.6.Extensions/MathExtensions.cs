@@ -31,7 +31,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+	[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "ADD ULR")]
 	public static double Add(this int input, int add)
 	{
 		return input + add;
@@ -258,7 +258,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New)]
+	[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "ADD URL")]
 	public static double Subtract(this int input, int subtract)
 	{
 		return input - subtract;

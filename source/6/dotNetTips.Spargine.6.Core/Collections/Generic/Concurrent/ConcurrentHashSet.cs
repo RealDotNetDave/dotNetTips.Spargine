@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-06-2022
+// Last Modified On : 11-09-2022
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

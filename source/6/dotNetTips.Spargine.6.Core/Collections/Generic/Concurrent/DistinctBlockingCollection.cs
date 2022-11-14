@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -93,7 +93,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// <returns>T.</returns>
 	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
 	/// to remove from memory.</remarks>
-	public T Cone() => (T)this.MemberwiseClone();
+	public T Clone() => (T)this.MemberwiseClone();
 
 	/// <summary>
 	/// Determines whether the collection contains a specific value.
@@ -110,7 +110,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// </summary>
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
-	/// <exception cref="NotImplementedException"></exception>
+	/// <exception cref="System.NotImplementedException"></exception>
 	public bool Remove(T item)
 	{
 		throw new NotImplementedException();
@@ -177,11 +177,11 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// <returns>true if the <paramref name="item" /> could be added to the collection within the specified time; otherwise,
 	/// false. If the item is a duplicate, and the underlying collection does not accept duplicate items, then an
 	/// <see cref="InvalidOperationException" /> is thrown.</returns>
-	public new bool TryAdd([NotNull] T item, int millisecondsTimeout, CancellationToken cancellationToken)
+	public new bool TryAdd([AllowNull] T item, int millisecondsTimeout, CancellationToken cancellationToken)
 	{
 		if (item is null)
 		{
-			ExceptionThrower.ThrowArgumentNullException(nameof(item));
+			return false;
 		}
 
 		return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout, cancellationToken);

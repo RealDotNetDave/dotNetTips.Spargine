@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 /// <seealso cref="IComparable" />
 /// <seealso cref="ICoordinate" />
 [Serializable]
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, IComparable, IComparable<CoordinateProper>
 {
 	/// <summary>

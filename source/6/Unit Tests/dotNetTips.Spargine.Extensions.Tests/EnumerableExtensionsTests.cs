@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-08-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -70,9 +70,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			var result = people.Add(person);
+			Assert.IsTrue(people.Add<PersonProper>(null).Count() == 2500);
 
-			Assert.IsTrue(result.FastCount() == people.Count() + 1);
+			Assert.IsTrue(people.Add<PersonProper>(person).Count() == 2501);
 		}
 
 
@@ -89,12 +89,21 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void CountTest()
+		public void FastCountTest()
 		{
 			const int Count = 2500;
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
 			Assert.IsTrue(people.FastCount() == Count);
+		}
+
+		[TestMethod]
+		public void CountTest()
+		{
+			const int Count = 2500;
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
+
+			Assert.IsTrue(people.Count() == Count);
 		}
 
 		[TestMethod]
@@ -110,7 +119,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
 
-			people.Add(people.FirstOrDefault());
+			people.Add<PersonProper>(people.FirstOrDefault());
 
 			var result = people.EnsureUnique().ToList();
 
@@ -130,7 +139,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
-		public void FastCountTest()
+		public void FastCountPredicateTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
@@ -161,12 +170,23 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 			var person1 = RandomData.GenerateRefPerson<PersonProper>();
 
-			people.Add(person1);
+			people.Add<PersonProper>(person1);
 
 			//Test Finding item in collection
 			Assert.IsNotNull(people.FirstOrDefault(person1) == person1);
 			Assert.IsNotNull(people.FirstOrDefault(p => p.Age.TotalDays > 2500, person1).Equals(person1));
 			Assert.IsNotNull(people.FirstOrDefault(p => p.Age.TotalDays > 50000, person1).Equals(person1));
+		}
+
+		[TestMethod]
+		public void AddTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+			var person1 = RandomData.GenerateRefPerson<PersonProper>();
+
+			Assert.IsTrue(people.Add<PersonProper>(person1).Count() == 2501);
+
+			Assert.IsTrue(people.Add<PersonProper>(null).Count() == 2500);
 		}
 
 		[TestMethod]
@@ -307,7 +327,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void UpsertTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).AsEnumerable();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).AsEnumerable();
 
 			var personFromCollection = people.Shuffle().First();
 
@@ -319,7 +339,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			result = people.Upsert(personFromCollection);
 
-			Assert.IsTrue(result.FastCount() == 2500);
+			Assert.IsTrue(result.FastCount() == 10);
 		}
 
 	}

@@ -53,7 +53,7 @@ public class LoggableException : Exception
 	/// </summary>
 	/// <param name="serializationInfo">The serialization information.</param>
 	/// <param name="streamingContext">The streaming context.</param>
-	/// <exception cref="System.NotImplementedException"></exception>
+	/// <exception cref="NotImplementedException"></exception>
 	protected LoggableException(SerializationInfo serializationInfo, StreamingContext streamingContext)
 	 : base(serializationInfo, streamingContext) => throw new NotImplementedException();
 

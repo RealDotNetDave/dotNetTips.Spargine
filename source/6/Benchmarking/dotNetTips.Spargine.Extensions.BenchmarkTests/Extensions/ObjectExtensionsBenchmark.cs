@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-30-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="ObjectExtensionsBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
@@ -27,6 +28,7 @@ public class ObjectExtensionsBenchmark : Benchmark
 {
 
 	private string _peopleJson;
+	private Collection<PersonProper> _personCollection;
 	private PersonProper _personProper;
 	private PersonRecord _personRecord;
 
@@ -59,15 +61,31 @@ public class ObjectExtensionsBenchmark : Benchmark
 	}
 
 	[Benchmark(Description = nameof(ObjectExtensions.Clone) + ": PersonProper")]
-	public void Clone01()
+	public void ClonePersonProper()
 	{
 		var result = this._personProper.Clone<PersonProper>();
 
 		this.Consume(result);
 	}
 
+	[Benchmark(Description = nameof(ObjectExtensions.Clone) + ": PersonProper Array")]
+	public void ClonePersonProperArray()
+	{
+		var result = this._personCollection.ToArray().Clone<PersonProper[]>();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(ObjectExtensions.Clone) + ": PersonProper Collection")]
+	public void ClonePersonProperCollection()
+	{
+		var result = this._personCollection.Clone<Collection<PersonProper>>();
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = "Clone: PersonRecord*")]
-	public void Clone03()
+	public void ClonePersonRecord()
 	{
 		var result = this._personRecord with { };
 
@@ -260,6 +278,7 @@ public class ObjectExtensionsBenchmark : Benchmark
 		this._personProper = RandomData.GenerateRefPerson<PersonProper>();
 		this._personRecord = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 		this._peopleJson = this._personProper.ToJson();
+		this._personCollection = RandomData.GeneratePersonRefCollection<PersonProper>(5000);
 	}
 
 	[Benchmark(Description = nameof(ObjectExtensions.StripNull) + ": PersonProper")]

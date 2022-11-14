@@ -31,7 +31,7 @@ public static class ExceptionExtensions
 	/// <typeparam name="TSource">The type of the t source.</typeparam>
 	/// <param name="source">The source.</param>
 	/// <param name="nextItem">The next item.</param>
-	/// <returns>IEnumerable&lt;TSource&gt;.</returns>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
 	[Information(nameof(FromHierarchy), UnitTestCoverage = 100, Status = Status.Available)]
 	public static IEnumerable<TSource> FromHierarchy<TSource>([NotNull] this TSource source, [NotNull] Func<TSource, TSource> nextItem) where TSource : Exception
 	{
@@ -50,7 +50,7 @@ public static class ExceptionExtensions
 	/// <param name="source">The source.</param>
 	/// <param name="nextItem">The next item.</param>
 	/// <param name="canContinue">The can continue.</param>
-	/// <returns>IEnumerable&lt;TSource&gt;.</returns>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
 	[Information(nameof(FromHierarchy), UnitTestCoverage = 99, Status = Status.Available)]
 	public static IEnumerable<TSource> FromHierarchy<TSource>([NotNull] this TSource source, [NotNull] Func<TSource, TSource> nextItem, [NotNull] Func<TSource, bool> canContinue)
 		where TSource : Exception

@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-29-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

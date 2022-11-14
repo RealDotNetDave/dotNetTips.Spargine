@@ -1,17 +1,21 @@
 ....
-BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1865 (21H2)
+BenchmarkDotNet=v0.13.2.2004-nightly, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
 Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-.NET SDK=7.0.100-preview.6.22352.1
-  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-  Job-NFVFZF : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+.NET SDK=7.0.100
+  [Host]     : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  Job-WEHCHX : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  Job-NCASFT : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
 
-EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
-Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  Categories=Reflection  
+EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+Categories=Reflection  
 ....
 [options="header"]
 |===
-|            Method|        Mean|     Error|    StdDev|    StdErr|         Min|          Q1|      Median|          Q3|         Max|         Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|   Gen 0|  Allocated
-|  GetAllInterfaces|  3,469.2 ns|  43.21 ns|  38.31 ns|  10.24 ns|  3,406.2 ns|  3,435.4 ns|  3,476.1 ns|  3,499.3 ns|  3,518.2 ns|    288,254.4|        43.21 ns|       14.00|     1.429|   2.000|   -0.2764|     3|             *|        No|      354 B|  0.4082|    3,651 B
-|       GetAllTypes|  1,503.9 ns|  22.94 ns|  20.34 ns|   5.43 ns|  1,461.5 ns|  1,491.1 ns|  1,510.9 ns|  1,518.3 ns|  1,537.0 ns|    664,942.8|        22.94 ns|       14.00|     2.221|   2.000|   -0.4144|     2|             *|        No|      303 B|  0.0420|      392 B
-|      GetInstances|    654.1 ns|  11.49 ns|  10.74 ns|   2.77 ns|    641.5 ns|    646.3 ns|    651.6 ns|    659.9 ns|    673.6 ns|  1,528,770.5|        11.49 ns|       15.00|     1.937|   2.000|    0.6856|     1|             *|        No|      118 B|  0.0057|       56 B
+|            Method|   Runtime|        Mean|    StdErr|         Min|          Q1|          Q3|         Max|         Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|  Allocated
+|  GetAllInterfaces|  .NET 6.0|  2,862.2 ns|  16.23 ns|  2,679.7 ns|  2,789.6 ns|  2,903.3 ns|  3,155.8 ns|    349,384.2|       56.953 ns|       48.00|     2.840|   2.000|    0.6816|     6|             *|        No|      348 B|      681 B
+|  GetAllInterfaces|  .NET 7.0|  2,484.0 ns|  15.68 ns|  2,320.4 ns|  2,368.7 ns|  2,567.2 ns|  2,991.6 ns|    402,578.4|       53.239 ns|       96.00|     4.197|   2.195|    1.3210|     5|             *|        No|      693 B|      689 B
+|       GetAllTypes|  .NET 6.0|  1,625.9 ns|  18.41 ns|  1,425.3 ns|  1,488.2 ns|  1,748.8 ns|  2,187.0 ns|    615,031.0|       62.690 ns|       88.00|     3.372|   2.722|    0.9704|     4|             *|        No|      337 B|      392 B
+|       GetAllTypes|  .NET 7.0|  1,450.9 ns|   7.99 ns|  1,400.4 ns|  1,417.7 ns|  1,461.7 ns|  1,599.0 ns|    689,250.2|       28.842 ns|       34.00|     4.746|   2.000|    1.4538|     3|             *|        No|      706 B|      400 B
+|      GetInstances|  .NET 6.0|    673.7 ns|   4.93 ns|    624.6 ns|    642.1 ns|    695.1 ns|    820.6 ns|  1,484,319.7|       16.795 ns|       88.00|     4.098|   2.146|    1.3785|     2|             *|        No|      152 B|       56 B
+|      GetInstances|  .NET 7.0|    581.6 ns|   1.14 ns|    574.9 ns|    579.0 ns|    583.2 ns|    590.1 ns|  1,719,393.1|        4.924 ns|       13.00|     2.370|   2.000|    0.2996|     1|             *|        No|      155 B|       56 B
 |===

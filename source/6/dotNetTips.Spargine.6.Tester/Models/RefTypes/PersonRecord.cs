@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// Class Person with proper encapsulation and validation.
 /// Implements the <see cref="IDataRecord" />
 /// </summary>
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 {
 	/// <summary>
@@ -184,7 +185,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the born on date.
 	/// </summary>
 	/// <value>The born on date.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
 	public DateTimeOffset BornOn
 	{
 		get => this._bornOn;
@@ -195,7 +196,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the cell phone number.
 	/// </summary>
 	/// <value>The cell phone number.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">CellPhone - Phone number is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">CellPhone - Phone number is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">CellPhone - Phone number is limited to 50 characters.</exception>
 	public string CellPhone
 	{
@@ -207,8 +208,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the email address.
 	/// </summary>
 	/// <value>The email address.</value>
-	/// <exception cref="System.ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
-	/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
+	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
 	public string Email
 	{
 		get => this._email;
@@ -227,8 +228,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
-	/// <exception cref="System.ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
-	/// <exception cref="System.ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
 	public string FirstName
 	{
 		get => this._firstName;
@@ -247,7 +248,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the home phone number.
 	/// </summary>
 	/// <value>The home phone.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">HomePhone - Home phone length is limited to 50 characters.</exception>
 	public string HomePhone
 	{
@@ -266,8 +267,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
-	/// <exception cref="System.ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
-	/// <exception cref="System.ArgumentOutOfRangeException">LastName - Last name length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">LastName - Last name length is limited to 50 characters.</exception>
 	public string LastName
 	{
 		get => this._lastName;

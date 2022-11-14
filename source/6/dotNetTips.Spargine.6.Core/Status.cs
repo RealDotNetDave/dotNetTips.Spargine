@@ -46,4 +46,9 @@ public enum Status
 	/// Method or class has been updated
 	/// </summary>
 	Updated,
+
+	/// <summary>
+	/// The code needs documentation
+	/// </summary>
+	NeedsDocumentation,
 }

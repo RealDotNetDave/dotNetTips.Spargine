@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-04-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -209,7 +209,7 @@ public static class DirectoryHelper
 
 		for (var directoryCount = 0; directoryCount < validDirectories.FastCount(); directoryCount++)
 		{
-			var files = await Task.Run(() => validDirectories[directoryCount].EnumerateFiles(searchPattern, options)).ConfigureAwait(false);
+			var files = await Task.Run(() => validDirectories[directoryCount].EnumerateFiles(searchPattern, options), CancellationToken.None).ConfigureAwait(false);
 
 			yield return files;
 		}

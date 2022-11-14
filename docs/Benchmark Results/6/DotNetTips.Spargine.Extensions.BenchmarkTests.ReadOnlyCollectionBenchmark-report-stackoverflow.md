@@ -1,20 +1,29 @@
 
-    BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+    BenchmarkDotNet=v0.13.2.2004-nightly, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
     Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
-    .NET SDK=7.0.100-preview.6.22352.1
-      [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
-      Job-TRKAEU : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+    .NET SDK=7.0.100
+      [Host]     : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+      Job-FOHVKI : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+      Job-FJLZQV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
 
-    EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
-    Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  Categories=Collections  
+    EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+    Categories=Collections  
 
-               Method | Count |        Mean |     Error |    StdDev |   StdErr |         Min |          Q1 |      Median |          Q3 |         Max |         Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline |  Gen 0 | Code Size | Allocated |
-    ----------------- |------ |------------:|----------:|----------:|---------:|------------:|------------:|------------:|------------:|------------:|-------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |-------:|----------:|----------:|
-     DoesNotHaveItems |    10 |    40.16 ns |  0.817 ns |  1.062 ns | 0.217 ns |    38.54 ns |    39.38 ns |    39.79 ns |    40.87 ns |    42.60 ns | 24,900,211.9 |      0.8167 ns |      24.00 |    2.483 |  2.000 |   0.6489 |    1 |            * |       No | 0.0035 |     162 B |      32 B |
-     DoesNotHaveItems |    25 |    89.94 ns |  1.155 ns |  1.023 ns | 0.274 ns |    88.21 ns |    89.19 ns |    90.19 ns |    90.52 ns |    91.81 ns | 11,118,709.4 |      1.1545 ns |      14.00 |    1.978 |  2.000 |  -0.0546 |    2 |            * |       No | 0.0035 |     162 B |      32 B |
-     DoesNotHaveItems |    50 |   156.59 ns |  2.956 ns |  2.621 ns | 0.700 ns |   153.37 ns |   154.64 ns |   155.79 ns |   158.63 ns |   162.12 ns |  6,385,936.5 |      2.9564 ns |      14.00 |    2.038 |  2.000 |   0.5343 |    3 |            * |       No | 0.0033 |     162 B |      32 B |
-     DoesNotHaveItems |   100 |   288.08 ns |  5.466 ns |  5.113 ns | 1.320 ns |   280.23 ns |   284.21 ns |   287.91 ns |   291.85 ns |   296.08 ns |  3,471,306.8 |      5.4656 ns |      15.00 |    1.729 |  2.000 |   0.0935 |    4 |            * |       No | 0.0033 |     162 B |      32 B |
-     DoesNotHaveItems |   250 |   680.29 ns |  7.015 ns |  6.219 ns | 1.662 ns |   665.79 ns |   676.90 ns |   681.27 ns |   684.25 ns |   689.69 ns |  1,469,967.5 |      7.0149 ns |      14.00 |    2.777 |  2.000 |  -0.5907 |    5 |            * |       No | 0.0029 |     162 B |      32 B |
-     DoesNotHaveItems |   500 | 1,381.49 ns | 24.292 ns | 37.097 ns | 6.663 ns | 1,309.95 ns | 1,347.16 ns | 1,393.20 ns | 1,397.92 ns | 1,469.61 ns |    723,858.1 |     24.2923 ns |      31.00 |    2.696 |  2.105 |   0.0126 |    6 |            * |       No | 0.0019 |     162 B |      32 B |
-     DoesNotHaveItems |  1000 | 2,218.20 ns | 26.747 ns | 25.020 ns | 6.460 ns | 2,180.43 ns | 2,197.05 ns | 2,217.54 ns | 2,235.49 ns | 2,266.33 ns |    450,816.7 |     26.7474 ns |      15.00 |    1.845 |  2.000 |   0.1742 |    7 |            * |       No |      - |     162 B |      32 B |
-     DoesNotHaveItems |  2500 | 6,105.79 ns | 38.641 ns | 34.254 ns | 9.155 ns | 6,059.07 ns | 6,080.23 ns | 6,096.29 ns | 6,128.88 ns | 6,169.19 ns |    163,778.9 |     38.6406 ns |      14.00 |    1.699 |  2.000 |   0.3349 |    8 |            * |       No |      - |     162 B |      32 B |
+               Method |  Runtime | Count |        Mean |   StdErr |         Min |          Q1 |          Q3 |         Max |         Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size | Allocated |
+    ----------------- |--------- |------ |------------:|---------:|------------:|------------:|------------:|------------:|-------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|----------:|
+     DoesNotHaveItems | .NET 6.0 |    10 |    46.10 ns | 0.274 ns |    42.86 ns |    44.31 ns |    47.31 ns |    51.41 ns | 21,692,051.0 |      0.9507 ns |      57.00 |    2.496 |  2.588 |   0.3877 |    2 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |    10 |    35.60 ns | 0.198 ns |    33.92 ns |    34.66 ns |    36.26 ns |    38.36 ns | 28,092,534.6 |      0.7101 ns |      36.00 |    2.315 |  3.143 |   0.4133 |    1 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |    25 |    81.44 ns | 0.376 ns |    79.70 ns |    80.28 ns |    82.32 ns |    84.48 ns | 12,278,489.9 |      1.5571 ns |      15.00 |    1.955 |  2.000 |   0.5086 |    3 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |    25 |    81.91 ns | 0.428 ns |    79.21 ns |    80.39 ns |    83.75 ns |    85.19 ns | 12,208,151.2 |      1.6470 ns |      21.00 |    1.431 |  2.000 |   0.2738 |    3 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |    50 |   148.27 ns | 0.508 ns |   146.15 ns |   146.96 ns |   148.65 ns |   152.47 ns |  6,744,392.3 |      2.1424 ns |      14.00 |    2.443 |  2.000 |   0.7791 |    5 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |    50 |   137.92 ns | 0.335 ns |   136.18 ns |   136.65 ns |   138.94 ns |   139.76 ns |  7,250,715.7 |      1.3870 ns |      15.00 |    1.441 |  2.000 |  -0.0374 |    4 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |   100 |   252.04 ns | 0.378 ns |   250.57 ns |   250.97 ns |   252.89 ns |   255.40 ns |  3,967,625.6 |      1.6332 ns |      13.00 |    3.196 |  2.000 |   0.9481 |    6 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |   100 |   254.21 ns | 0.484 ns |   251.12 ns |   252.79 ns |   255.38 ns |   257.54 ns |  3,933,829.6 |      2.0423 ns |      14.00 |    1.857 |  2.000 |   0.0116 |    6 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |   250 |   603.85 ns | 1.479 ns |   589.26 ns |   601.38 ns |   607.54 ns |   613.12 ns |  1,656,053.8 |      6.1243 ns |      15.00 |    3.523 |  2.000 |  -0.7462 |    7 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |   250 |   605.40 ns | 0.900 ns |   599.25 ns |   603.18 ns |   608.68 ns |   610.85 ns |  1,651,790.2 |      3.7982 ns |      14.00 |    1.862 |  2.000 |   0.1659 |    7 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |   500 | 1,052.78 ns | 3.187 ns | 1,031.77 ns | 1,041.39 ns | 1,060.63 ns | 1,074.26 ns |    949,868.9 |     13.1955 ns |      15.00 |    1.785 |  2.000 |  -0.0756 |    8 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |   500 | 1,193.97 ns | 1.302 ns | 1,181.54 ns | 1,192.24 ns | 1,196.58 ns | 1,199.95 ns |    837,539.6 |      5.3902 ns |      15.00 |    3.401 |  2.000 |  -1.1387 |    9 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |  1000 | 2,372.71 ns | 9.452 ns | 2,326.18 ns | 2,347.89 ns | 2,394.36 ns | 2,460.37 ns |    421,458.6 |     39.1364 ns |      15.00 |    2.752 |  2.000 |   0.8212 |   10 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |  1000 | 2,610.68 ns | 0.803 ns | 2,605.91 ns | 2,608.95 ns | 2,613.00 ns | 2,616.40 ns |    383,042.1 |      3.3896 ns |      14.00 |    2.009 |  2.000 |   0.0078 |   11 |            * |       No |     177 B |      32 B |
+     DoesNotHaveItems | .NET 6.0 |  2500 | 5,891.64 ns | 2.578 ns | 5,875.72 ns | 5,885.45 ns | 5,897.40 ns | 5,906.88 ns |    169,732.0 |     10.6740 ns |      15.00 |    1.713 |  2.000 |   0.0264 |   12 |            * |       No |     186 B |      32 B |
+     DoesNotHaveItems | .NET 7.0 |  2500 | 5,850.36 ns | 2.595 ns | 5,834.02 ns | 5,845.63 ns | 5,854.45 ns | 5,870.42 ns |    170,929.5 |     10.9538 ns |      14.00 |    2.432 |  2.000 |  -0.0017 |   12 |            * |       No |     177 B |      32 B |

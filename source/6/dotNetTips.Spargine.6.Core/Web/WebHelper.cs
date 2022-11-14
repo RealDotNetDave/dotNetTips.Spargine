@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-15-2022
+// Last Modified On : 11-10-2022
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -48,9 +48,9 @@ public static class WebHelper
 		}
 
 		// Download the data
-		using (var response = await _httpClient.GetAsync(address).ConfigureAwait(false))
+		using (var response = await _httpClient.GetAsync(address, CancellationToken.None).ConfigureAwait(false))
 		{
-			return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+			return await response.Content.ReadAsStringAsync(CancellationToken.None).ConfigureAwait(false);
 		}
 	}
 

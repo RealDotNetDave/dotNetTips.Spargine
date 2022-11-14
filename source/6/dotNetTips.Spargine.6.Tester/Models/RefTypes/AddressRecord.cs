@@ -22,6 +22,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// Class Person with proper encapsulation and validation.
 /// Implements the <see cref="object" />
 /// </summary>
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public record AddressRecord : IDataRecord
 {
 	/// <summary>

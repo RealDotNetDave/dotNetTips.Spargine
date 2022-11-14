@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="ICloneable.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,5 +26,5 @@ public interface ICloneable<out T>
 	/// Cones this instance.
 	/// </summary>
 	/// <returns>T.</returns>
-	T Cone();
+	T Clone();
 }

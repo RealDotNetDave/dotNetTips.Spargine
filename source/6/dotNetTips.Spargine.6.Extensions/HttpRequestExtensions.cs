@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-11-2022
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -40,7 +40,7 @@ public static class HttpRequestExtensions
 
 		using (var ms = new MemoryStream(2048))
 		{
-			await request.Body.CopyToAsync(ms).ConfigureAwait(false);
+			await request.Body.CopyToAsync(ms, CancellationToken.None).ConfigureAwait(false);
 
 			return ms.ToArray();
 		}

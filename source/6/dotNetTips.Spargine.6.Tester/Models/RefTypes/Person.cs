@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Globalization;
+using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -23,6 +24,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// </summary>
 /// <seealso cref="IPerson" />
 /// <seealso cref="IComparable" />
+[Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public class Person : IPerson
 {
 	/// <summary>

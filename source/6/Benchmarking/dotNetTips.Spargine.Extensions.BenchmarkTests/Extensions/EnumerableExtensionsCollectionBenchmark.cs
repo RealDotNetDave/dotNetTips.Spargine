@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 11-14-2022
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -16,9 +16,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
+using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
+using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -46,6 +49,26 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		return list.Count(predicate);
 	}
 
+	[Benchmark(Description = nameof(EnumerableExtensions.Add))]
+	public void Add()
+	{
+		var people = GetPersonProperRefArray().AsEnumerable();
+
+		var result = people.Add(PersonProperRef01);
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.AddIf))]
+	public void AddIf()
+	{
+		var people = GetPersonProperRefArray().AsEnumerable();
+
+		var result = people.AddIf(PersonProperRef01, true);
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = "Any: With Predicate")]
 	[BenchmarkCategory(Categories.LINQ)]
 	public void AnyWithPredicate()
@@ -54,10 +77,53 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 
 		this.Consume(result);
 	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.ContainsAny))]
+	public void ContainsAny()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
+
+		people.Add(people.FirstOrDefault());
+
+		var result = people.ContainsAny(people.Take(10).ToArray());
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.Count))]
+	public void Count_Default()
+	{
+		var result = GetPersonProperRefArray().AsEnumerable().Count();
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = nameof(EnumerableExtensions.Count) + ": With Predicate")]
 	public void CountWithPredicate()
 	{
 		var result = CountWithPredicate(GetPersonProperRefArray(), p => p.City.Contains('A', StringComparison.CurrentCulture));
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.DoesNotHaveItems))]
+	public void DoesNotHaveItems()
+	{
+		var people = new List<PersonProper>().AsEnumerable();
+
+		var result = people.DoesNotHaveItems();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.EnsureUnique))]
+	public void EnsureUnique()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
+
+		people.Add(people.FirstOrDefault());
+
+		var result = people.EnsureUnique().ToList();
 
 		this.Consume(result);
 	}
@@ -71,12 +137,34 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
+	[Benchmark(Description = nameof(EnumerableExtensions.FastCount))]
+	public void FastCount()
+	{
+		var result = GetPersonProperRefArray().FastCount();
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = nameof(EnumerableExtensions.FastCount) + ": With Predicate")]
 	public void FastCountWithPredicate()
 	{
 		var result = GetPersonProperRefArray().FastCount(p => p.City.Contains('A', StringComparison.CurrentCulture));
 
 		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.FastParallelProcessor))]
+	public void FastParallelProcessor()
+	{
+		var people = GetPersonProperRefArray().AsEnumerable();
+
+		var task = people.FastParallelProcessor((PersonProper person) =>
+		{
+			person.Address2 = "TEST DATA";
+
+		}, App.MaxDegreeOfParallelism());
+
+		this.Consume(task);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrDefault) + ": Alternate")]
@@ -139,6 +227,27 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 
 		this.Consume(result);
 	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.IsNullOrEmpty))]
+	public void IsNullOrEmpty()
+	{
+		var people = new List<PersonProper>().AsEnumerable();
+
+		var result = people.IsNullOrEmpty();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.Join))]
+	public void Join()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).AsEnumerable();
+
+		var result = people.Join();
+
+		this.Consume(result);
+	}
+
 
 	[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + ": With Sort Expression")]
 	public void OrderBy()
@@ -223,6 +332,14 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
+	[Benchmark(Description = nameof(EnumerableExtensions.ToCollection))]
+	public void ToCollection()
+	{
+		var result = GetPersonProperRefArray().ToCollection();
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = nameof(EnumerableExtensions.ToDelimitedString))]
 	public void ToDelimitedString()
 	{
@@ -231,26 +348,38 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(EnumerableExtensions.ToImmutable) + ": Dictionary")]
-	public void ToImmutableDictionary01()
+	[Benchmark(Description = nameof(EnumerableExtensions.ToImmutable))]
+	public void ToImmutable()
 	{
-		var result = GetPersonProperRefDictionary().ToImmutable();
-
-		this.Consume(result);
-	}
-
-	[Benchmark(Description = nameof(EnumerableExtensions.ToImmutable) + ": List")]
-	public void ToImmutableList01()
-	{
-		var result = this._people.ToImmutable();
+		var result = GetPersonProperRefArray().AsEnumerable().ToImmutable();
 
 		this.Consume(result);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.ToLinkedList))]
-	public void ToLinkedList01()
+	public void ToLinkedList()
 	{
 		var result = this._people.ToLinkedList();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.ToListAsync))]
+	public async Task ToListAsync()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).AsEnumerable();
+
+		var result = await people.ToListAsync().ConfigureAwait(false);
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.Upsert))]
+	public void Upsert()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).AsEnumerable();
+
+		var result = people.Upsert(PersonProperRef01);
 
 		this.Consume(result);
 	}

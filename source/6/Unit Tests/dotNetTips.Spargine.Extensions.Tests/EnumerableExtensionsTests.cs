@@ -107,7 +107,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
 
-			people.Add<PersonProper>(people.FirstOrDefault());
+			people.Add(people.FirstOrDefault());
 
 			var result = people.EnsureUnique().ToList();
 

@@ -4,7 +4,7 @@
 // Created          : 11-25-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 11-01-2022
 // ***********************************************************************
 // <copyright file="TaskExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -50,6 +50,6 @@ public static class TaskExtensions
 	[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2022")]
 	public static void FireAndForget([NotNull] this Task task, Action<Exception> action)
 	{
-		_ = task.ArgumentNotNull().ContinueWith((tsk) => action?.Invoke(tsk.Exception),CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted,TaskScheduler.Default);
+		_ = task.ArgumentNotNull().ContinueWith((tsk) => action?.Invoke(tsk.Exception), CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted, TaskScheduler.Default);
 	}
 }

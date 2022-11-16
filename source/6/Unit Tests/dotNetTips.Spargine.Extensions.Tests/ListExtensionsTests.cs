@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -49,6 +50,20 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void PerformActionTest()
+		{
+			var words = RandomData.GenerateWords(10, 10, 100).ToList();
+			var sb = new StringBuilder();
+
+			words.PerformAction((word) =>
+			{
+				_ = sb.Append($"WORD:{word}|");
+			});
+
+			Assert.IsTrue(sb.Length > 100);
+		}
+
+		[TestMethod]
 		public void AddLastTest()
 		{
 			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
@@ -61,12 +76,11 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				.AddLast(person));
 
 			// Test List
-			peopleList.AddLast(nullPerson);
+			_ = peopleList.AddLast(nullPerson);
 			Assert.IsTrue(peopleList.FastCount() == peopleList.FastCount());
 
-			peopleList.AddLast(person);
+			_ = peopleList.AddLast(person);
 			Assert.IsTrue(peopleList.Last().Equals(person));
-
 
 			// Test Array
 			var result2 = peopleArray.AddLast(person);

@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-27-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,12 +51,22 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void CombineToStringTest()
+		{
+			var words = RandomData.GenerateWord(100);
+
+			var result = words.CombineToString();
+
+			Assert.IsTrue(result.IsNotEmpty());
+		}
+
+		[TestMethod]
 		public void SplitLinesTest()
 		{
 			var text = Resources.TestMutipleLinesOfText;
 			try
 			{
-				foreach (LineSplitEntry lse in text.SplitLines())
+				foreach (var lse in text.SplitLines())
 				{
 					Console.WriteLine(lse.Line.ToString());
 				}
@@ -221,7 +231,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.ToBase64().FromBase64().IsNotEmpty());
 
-			Assert.ThrowsException<ArgumentNullException>(() => string.Empty.ToBase64().FromBase64().IsEmpty());
+			Assert.IsTrue(string.Empty.ToBase64().FromBase64().IsEmpty());
 		}
 
 		/// <summary>
@@ -304,7 +314,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			Assert.IsTrue('A'.IsAsciiLetter());
 		}
-
 
 		/// <summary>
 		/// Defines the test method IsCreditCardTest.
@@ -444,8 +453,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result2.Contains(ControlChars.NewLine) is false);
 			Assert.IsTrue(result2.Contains(ControlChars.CRLF) is false);
 			Assert.IsTrue(result2.Contains(ControlChars.CR) is false);
-
-			Assert.ThrowsException<ArgumentNullException>(() => string.IsNullOrEmpty(string.Empty.RemoveCRLF()));
 		}
 
 		/// <summary>
@@ -565,7 +572,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(testValue.StartsWithOrdinalIgnoreCase(testValue));
 
-			Assert.ThrowsException<ArgumentNullException>(() => _= string.Empty.StartsWithOrdinalIgnoreCase("David"));
+			Assert.ThrowsException<ArgumentNullException>(() => _ = string.Empty.StartsWithOrdinalIgnoreCase("David"));
 		}
 
 		/// <summary>
@@ -605,6 +612,26 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var testValue = RandomData.GenerateWord(25);
 
 			Assert.IsTrue(testValue.ToBase64().IsNotEmpty());
+		}
+
+		[TestMethod]
+		public void ToByteArrayTest()
+		{
+			var testValue = RandomData.GenerateWord(25);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.ASCII).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.BigEndianUnicode).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.Default).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.Latin1).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.Unicode).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.UTF32).Length > 0);
+
+			Assert.IsTrue(testValue.ToByteArray(encoding: System.Text.Encoding.UTF8).Length > 0);
 		}
 
 		/// <summary>

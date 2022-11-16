@@ -12,7 +12,6 @@
 // <summary>Common class for collections.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
-using System.Text.Json;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 namespace DotNetTips.Spargine.Core.Collections.Generic;
@@ -24,7 +23,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic;
 /// <typeparam name="T"></typeparam>
 /// <seealso cref="List{T}" />
 [Information("Collection<T>.", "David McCarter", "11/12/2020")]
-public class Collection<T> : List<T>, ICloneable<Collection<T>>
+public class Collection<T> : List<T>
 {
 	/// <summary>
 	/// Prevents a default instance of the <see cref="Collection{T}" /> class from being created.
@@ -157,14 +156,5 @@ public class Collection<T> : List<T>, ICloneable<Collection<T>>
 		}
 
 		return newItems;
-	}
-
-	/// <summary>
-	/// Cones this instance.
-	/// </summary>
-	/// <returns>T.</returns>
-	public Collection<T> Clone()
-	{
-		return JsonSerializer.Deserialize<Collection<T>>(JsonSerializer.Serialize(this));
 	}
 }

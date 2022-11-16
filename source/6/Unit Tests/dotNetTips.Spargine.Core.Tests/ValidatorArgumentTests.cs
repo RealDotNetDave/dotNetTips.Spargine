@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-27-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="ValidatorArgumentTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -38,7 +38,6 @@ namespace dotNetTips.Spargine.Core.Tests
 		private const string BadEmail = "BAD@EMAIL";
 		private const string GoodEmail = "fakeemail@google.com";
 
-
 		[TestMethod]
 		public void ArgumentEqualsTest()
 		{
@@ -51,8 +50,6 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			//Bad test
 			Assert.ThrowsException<ArgumentInvalidException>(() => typeof(PersonProper).ArgumentEquals(typeof(Person)));
-
-
 		}
 
 		[TestMethod]
@@ -80,7 +77,6 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			_ = Assert.ThrowsException<DirectoryNotFoundException>(() => new DirectoryInfo("fakefile").ArgumentExists());
 		}
-
 
 		[TestMethod]
 		public void ArgumentExistsDirectoryInfoWithDefaultTest()
@@ -246,7 +242,6 @@ namespace dotNetTips.Spargine.Core.Tests
 			var upperValue = new DateTimeOffset(new DateTime(2001, 3, 3));
 			var testValue = new DateTimeOffset(new DateTime(2022, 3, 20));
 			var defaultValue = new DateTimeOffset(new DateTime(2022, 5, 5));
-
 
 			try
 			{
@@ -693,7 +688,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			IEnumerable<PersonProper> nullPeople = null;
 			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPeople.ArgumentItemsExists(10));
 
-			// Test invalid Count
+			// Test invalid WordCount
 			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => people.ArgumentItemsExists(5));
 		}
 
@@ -807,7 +802,6 @@ namespace dotNetTips.Spargine.Core.Tests
 			_ = Assert.ThrowsException<ArgumentNullException>(() => nullPerson.ArgumentNotNull());
 		}
 
-
 		[TestMethod]
 		public void ArgumentNotNullObjectWithDefaultTest()
 		{
@@ -834,7 +828,7 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			try
 			{
-				value.ArgumentNotNullOrEmpty();
+				_=value.ArgumentNotNullOrEmpty();
 			}
 			catch
 			{
@@ -856,7 +850,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			var testString = RandomData.GenerateWord(100);
 			try
 			{
-				testString.ArgumentNotNullOrEmpty();
+				_=testString.ArgumentNotNullOrEmpty();
 			}
 			catch
 			{
@@ -929,7 +923,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			var testPeople = new ReadOnlySpan<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray());
 			try
 			{
-				testPeople.ArgumentNotEmpty();
+				_=testPeople.ArgumentNotEmpty();
 			}
 			catch
 			{

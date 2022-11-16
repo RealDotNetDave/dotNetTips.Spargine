@@ -151,7 +151,7 @@ public class StringExtensionsCounterBenchmark : SmallCollectionsBenchmark
 
 		for (var lineCount = 0; lineCount < this.Count; lineCount++)
 		{
-			sb.AppendLine(
+			_ = sb.AppendLine(
 				RandomData.GenerateWord(10) +
 					ControlChars.Space +
 					RandomData.GenerateWord(10) + ControlChars.Space +

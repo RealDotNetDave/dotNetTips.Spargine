@@ -26,7 +26,7 @@ namespace DotNetTips.Spargine.Extensions;
 public static class ReadOnlyCollectionExtensions
 {
 	/// <summary>
-	/// Checks collection for null and insurese there are items in the collection.
+	/// Checks collection for null and ensures there are items in the collection.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The list.</param>

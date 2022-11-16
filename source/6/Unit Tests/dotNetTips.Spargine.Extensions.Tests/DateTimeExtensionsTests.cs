@@ -49,7 +49,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result);
 		}
 
-
 		[TestMethod]
 		public void DateTimeLocalTimeFromUtcTest()
 		{
@@ -85,7 +84,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result >= now);
 		}
-
 
 		[TestMethod]
 		public void DateTimeOffsetGetLastDayOfWeekTest()

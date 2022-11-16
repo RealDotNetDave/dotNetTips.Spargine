@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 01-13-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -37,7 +37,7 @@ public static class ListExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">list or item</exception>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static bool AddFirst<T>([NotNull] this IList<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
@@ -123,7 +123,7 @@ public static class ListExtensions
 	/// Orginal code from:
 	/// https://github.com/CommunityToolkit/dotnet/blob/main/CommunityToolkit.HighPerformance/Extensions/ListExtensions.cs</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
+	[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static Span<T> AsSpan<T>(this List<T> list)
 	{
 		return CollectionsMarshal.AsSpan(list.ArgumentNotNull());
@@ -164,7 +164,7 @@ public static class ListExtensions
 	}
 
 	/// <summary>
-	/// Checks list for null and insurese there are items in the list.
+	/// Checks list for null and ensures there are items in the list.
 	/// Returns true if <paramref name="collection" /> is null.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
@@ -264,20 +264,43 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <param name="index">The index.</param>
 	/// <returns>T.</returns>
-	/// <exception cref="System.ArgumentNullException">collection</exception>
+	/// <exception cref="ArgumentNullException">collection</exception>
 	/// <remarks>Orginal code by: @TheOtherBoz</remarks>
 	[Information(nameof(IndexAtLooped), author: "David McCarter", createdOn: "7/17/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 	public static T IndexAtLooped<T>([NotNull] this IList<T> collection, int index)
 	{
 		if (collection is null)
 		{
-			throw new ArgumentNullException(nameof(collection));
+			ExceptionThrower.ThrowArgumentNullException(nameof(collection));
 		}
 
 		var count = collection.Count;
 		var indexWrap = (int)(index - (count * Math.Floor((double)index / count)));
 
 		return collection[indexWrap];
+	}
+
+	/// <summary>
+	/// Performs the action for the items in the <see cref="List{T}" />.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="values">The values.</param>
+	/// <param name="action">The action.</param>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Documentation = "ADD URL")]
+	public static void PerformAction<T>(this List<T> values, [NotNull] Action<T> action)
+	{
+		action = action.ArgumentNotNull();
+
+		if (values.IsNullOrEmpty())
+		{
+			return;
+		}
+
+		for (var index = 0; index < values.Count; index++)
+		{
+			action(values[index]);
+		}
 	}
 
 	/// <summary>
@@ -472,5 +495,17 @@ public static class ListExtensions
 	public static IReadOnlyList<T> ToReadOnlyList<T>([NotNull] this IList<T> collection)
 	{
 		return (IReadOnlyList<T>)collection.ArgumentNotNull();
+	}
+
+	/// <summary>
+	/// Converts to <see cref="ReadOnlyObservableCollection{T}"/>.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection.</param>
+	/// <returns>ReadOnlyObservableCollection&lt;T&gt;.</returns>
+	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New)]
+	public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>([NotNull] this IList<T> collection)
+	{
+		return new ReadOnlyObservableCollection<T>(collection.ArgumentNotNull().ToObservableCollection());
 	}
 }

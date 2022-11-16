@@ -17,7 +17,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Security.Cryptography;
-using System.Text;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -89,7 +88,7 @@ public static class RandomData
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
-	private static readonly ObjectPool<StringBuilder> _stringBuilderPool =
+	private static readonly ObjectPool<System.Text.StringBuilder> _stringBuilderPool =
 new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
@@ -521,15 +520,15 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="count">The count.</param>
 	/// <returns>Collection&lt;Models.ValueTypes.Person&gt;.</returns>
 	[Information(nameof(GeneratePersonValCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static Collection<Models.ValueTypes.Person> GeneratePersonValCollection(int count)
+	public static Collection<T> GeneratePersonValCollection<T>(int count) where T : struct, IPerson
 	{
 		count = count.ArgumentInRange(lower: 1);
 
-		var people = new Collection<Models.ValueTypes.Person>();
+		var people = new Collection<T>();
 
 		for (var index = 0; index < count; index++)
 		{
-			people.Add(GenerateValPerson());
+			people.Add(GenerateValPerson<T>());
 		}
 
 		return people;
@@ -730,10 +729,10 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="postalCodeLength">Length of the postal code.</param>
 	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>Models.ValueTypes.Person.</returns>
-	[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static Models.ValueTypes.Person GenerateValPerson(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15)
+	[Information(nameof(GenerateValPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
+	public static T GenerateValPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int firstNameLength = 15, int lastNameLength = 25, int postalCodeLength = 8, int stateLength = 15) where T : struct, IPerson
 	{
-		var person = new Models.ValueTypes.Person
+		var person = new T
 		{
 			Id = GenerateKey(),
 			Address1 = GenerateWord(addressLength),

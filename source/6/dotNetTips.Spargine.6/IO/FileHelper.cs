@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 11-17-2022
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -19,7 +19,7 @@ using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Properties;
 
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )Safe
 
 namespace DotNetTips.Spargine.IO;
 
@@ -33,6 +33,7 @@ public static class FileHelper
 	/// The no result
 	/// </summary>
 	private const int NoResult = -1;
+
 	/// <summary>
 	/// The count for retries.
 	/// </summary>
@@ -61,7 +62,7 @@ public static class FileHelper
 	/// <param name="expandedDirectoryPath">The expanded directory path.</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(UnWinZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(UnWinZipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	private static async Task UnWinZipAsync(string zipPath, string expandedDirectoryPath)
 	{
 		using var zipFileStream = File.OpenRead(zipPath);
@@ -147,7 +148,7 @@ public static class FileHelper
 	/// <param name="file">The file.</param>
 	/// <param name="destination">The destination folder.</param>
 	/// <returns>File length as System.Int64. If value is -1, then there is an issue creating the file.</returns>
-	[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static long CopyFile([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 	{
 		var fileName = file.ArgumentExists().FullName;
@@ -188,7 +189,7 @@ public static class FileHelper
 	/// <param name="destination">The destination folder.</param>
 	/// <returns>Task&lt;System.Int32&gt;.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2020/11/17/coding-faster-with-the-dotnettips-utility-november-2020-update")]
+	[Information(nameof(CopyFileAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2020/11/17/coding-faster-with-the-dotnettips-utility-november-2020-update")]
 	public static async Task<long> CopyFileAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 	{
 		var fileName = file.ArgumentExists().FullName;
@@ -221,7 +222,7 @@ public static class FileHelper
 	/// </summary>
 	/// <param name="files">The files.</param>
 	/// <returns>IEnumerable&lt;KeyValuePair&lt;System.String, System.String&gt;&gt;.</returns>
-	[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(DeleteFiles), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IEnumerable<(string FileName, string ErrorMessage)> DeleteFiles([NotNull] this IEnumerable<string> files)
 	{
 		files = files.ArgumentNotNull();
@@ -259,7 +260,7 @@ public static class FileHelper
 	/// <param name="destination">The local expanded dir path.</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(DownloadFileFromWebAndUnzipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static async Task DownloadFileFromWebAndUnzipAsync([NotNull] Uri remoteUri, [NotNull] DirectoryInfo destination)
 	{
 		_ = destination.ArgumentNotNull().CheckExists();
@@ -279,7 +280,7 @@ public static class FileHelper
 	/// <param name="destination">The local file path.</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(DownloadFileFromWebAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(DownloadFileFromWebAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static async Task DownloadFileFromWebAsync(Uri remoteUri, DirectoryInfo destination)
 	{
 		remoteUri = remoteUri.ArgumentNotNull();
@@ -311,7 +312,7 @@ public static class FileHelper
 	/// </summary>
 	/// <param name="file">The path.</param>
 	/// <returns><c>true</c> if [has invalid path chars] [the specified file name]; otherwise, <c>false</c>.</returns>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static bool FileHasInvalidChars(FileInfo file)
 	{
 		return file.CheckExists() && file.ArgumentNotNull().FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
@@ -323,7 +324,7 @@ public static class FileHelper
 	/// <param name="file">Name of the source file.</param>
 	/// <param name="destinationFile">Name of the destination file.</param>
 	/// <param name="fileMoveOptions">The file move options.</param>
-	[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(MoveFile), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 99, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static void MoveFile([NotNull] FileInfo file, [NotNull] FileInfo destinationFile, FileMoveOptions fileMoveOptions = FileMoveOptions.ReplaceExisting)
 	{
 		var fileName = file.ArgumentExists().FullName;
@@ -357,7 +358,7 @@ public static class FileHelper
 	/// <param name="destination">The destination.</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(UnGZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(UnGZipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async Task UnGZipAsync([NotNull] FileInfo source, DirectoryInfo destination)
 	{
 		source = source.ArgumentExists();
@@ -389,7 +390,7 @@ public static class FileHelper
 	/// <param name="deleteGZipFile">if set to <c>true</c> [delete g zip file].</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(UnGZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(UnGZipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async Task UnGZipAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination, bool deleteGZipFile)
 	{
 		var fileName = new FileInfo(file.ArgumentExists().FullName);
@@ -411,7 +412,7 @@ public static class FileHelper
 	/// <param name="destination">The directory path where files will be unzipped.</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(UnZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(UnZipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async Task UnZipAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination)
 	{
 		var fileName = file.ArgumentExists().FullName;
@@ -429,7 +430,7 @@ public static class FileHelper
 	/// <param name="deleteZipFile">if set to <c>true</c> [deletes zip file].</param>
 	/// <returns>Task.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(UnZipAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(UnZipAsync), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async Task UnZipAsync([NotNull] FileInfo file, [NotNull] DirectoryInfo destination, bool deleteZipFile)
 	{
 		file = file.ArgumentExists();

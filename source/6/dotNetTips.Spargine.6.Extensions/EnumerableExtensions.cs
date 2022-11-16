@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 01-12-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -99,20 +99,6 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Ensures the items in the collection are unique.
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <param name="collection">The collection.</param>
-	/// <returns>IEnumerable&lt;T&gt;.</returns>
-	[Information(nameof(Add), "David McCarter", "11/8/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
-	public static IEnumerable<T> EnsureUnique<T>([NotNull] this IEnumerable<T> collection)
-	{
-		collection = collection.ArgumentNotNull();
-
-		return collection.Distinct();
-	}
-
-	/// <summary>
 	/// Determines whether the specified  <see cref="IEnumerable{T}" /> has items specified.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
@@ -174,6 +160,20 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
+	/// Ensures the items in the processedCollection are unique.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The processedCollection.</param>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
+	[Information(nameof(Add), "David McCarter", "11/8/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
+	public static IEnumerable<T> EnsureUnique<T>([NotNull] this IEnumerable<T> collection)
+	{
+		collection = collection.ArgumentNotNull();
+
+		return collection.Distinct();
+	}
+
+	/// <summary>
 	/// Determines if any items exist in the <see cref="IEnumerable" />.
 	/// Validates that <paramref name="collection" /> and <paramref name="predicate" /> is not null.
 	/// </summary>
@@ -227,10 +227,10 @@ public static class EnumerableExtensions
 	/// <param name="ensureOrdered">if set to <c>true</c> [ensure ordered].</param>
 	/// <param name="scheduler">The scheduler.</param>
 	/// <returns>Task.</returns>
-	/// <exception cref="ArgumentInvalidException">collection cannot be null.</exception>
+	/// <exception cref="ArgumentInvalidException">processedCollection cannot be null.</exception>
 	/// <exception cref="ArgumentInvalidException">action cannot be null.</exception>
 	/// <example>
-	///   <code>
+	///   <code>FastParallelProcessor
 	/// var task = people.FastParallelProcessor((Person person) =&gt;
 	/// {
 	/// person.Address2 = "TEST DATA";
@@ -238,6 +238,7 @@ public static class EnumerableExtensions
 	/// </code>
 	/// </example>
 	/// <remarks>Original code by: Alexandru Puiu: https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62</remarks>
+	[Obsolete("This will be removed at the end of 2023. Instead, use FastProcessor().")]
 	[Information(nameof(FastParallelProcessor), author: "David McCarter", createdOn: "11/9/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 	public static Task FastParallelProcessor<T>([NotNull] this IEnumerable<T> collection, [NotNull] Action<T> action, int maxDegreeOfParallelism = DataflowBlockOptions.Unbounded, bool ensureOrdered = false, TaskScheduler scheduler = null)
 	{
@@ -250,12 +251,21 @@ public static class EnumerableExtensions
 			EnsureOrdered = ensureOrdered
 		};
 
-		if (scheduler != null)
+		if (scheduler.IsNotNull())
 		{
 			options.TaskScheduler = scheduler;
 		}
 
 		var block = new ActionBlock<T>(action, options);
+
+		//OLD
+		//using (var en = processedCollection.GetEnumerator())
+		//{
+		//	while (en.MoveNext())
+		//	{
+		//		_ = block.Post(en.Current);
+		//	}
+		//}
 
 		foreach (var item in collection)
 		{
@@ -265,6 +275,27 @@ public static class EnumerableExtensions
 		block.Complete();
 
 		return block.Completion;
+	}
+
+	/// <summary>
+	/// Processes the collection with the specified action.
+	/// Validates that <paramref name="collection" /> and <paramref name="action" /> is not null.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection.</param>
+	/// <param name="action">The action.</param>
+	[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "12/9/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "https://bit.ly/SpargineApril2022")]
+	public static void FastProcessor<T>([NotNull] this IEnumerable<T> collection, [NotNull] Action<T> action)
+	{
+		collection = collection.ArgumentNotNull();
+		action = action.ArgumentNotNull();
+
+		var processedCollection = new ReadOnlySpan<T>(collection.ToArray());
+
+		for (var itemCount = 0; itemCount < processedCollection.Length; itemCount++)
+		{
+			action(processedCollection[itemCount]);
+		}
 	}
 
 	/// <summary>
@@ -392,7 +423,7 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Returns index of an item in the collection using comparer.
+	/// Returns index of an item in the processedCollection using comparer.
 	/// Validates that <paramref name="collection" />, <paramref name="item" /> and <paramref name="comparer" /> is not null.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
@@ -424,7 +455,7 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Joins a collection using the specified separator.
+	/// Joins a processedCollection using the specified separator.
 	/// Validates that <paramref name="collection" /> contains items.
 	/// </summary>
 	/// <param name="collection">The source.</param>
@@ -503,7 +534,7 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Converts a collection into separate collections based on page size.
+	/// Converts a processedCollection into separate collections based on page size.
 	/// Validates that <paramref name="collection" /> is not null.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
@@ -538,7 +569,7 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Picks a random item from a collection.
+	/// Picks a random item from a processedCollection.
 	/// Validates that <paramref name="collection" /> is not null.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
@@ -670,7 +701,7 @@ public static class EnumerableExtensions
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The list.</param>
 	/// <returns>BlockingCollection&lt;T&gt;.</returns>
-	/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
+	/// <remarks>The resulting processedCollection supports IDisposable. Make sure to properly dispose!</remarks>
 	[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static BlockingCollection<T> ToBlockingCollection<T>([NotNull] this IEnumerable<T> collection)
 	{
@@ -809,7 +840,7 @@ public static class EnumerableExtensions
 
 		if (items.Contains(item))
 		{
-			items.Remove(item);
+			_ = items.Remove(item);
 			items.Add(item);
 		}
 		else

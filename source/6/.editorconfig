@@ -11,7 +11,7 @@ indent_style             = tab
 insert_final_newline     = true
 csharp_using_directive_placement = outside_namespace:warning
 csharp_prefer_simple_using_statement = false:silent
-csharp_prefer_braces = true:suggestion
+csharp_prefer_braces = true:warning
 csharp_style_namespace_declarations = file_scoped:warning
 csharp_style_prefer_method_group_conversion = true:silent
 csharp_style_prefer_top_level_statements = true:silent
@@ -24,6 +24,29 @@ csharp_style_expression_bodied_accessors = true:warning
 csharp_style_expression_bodied_lambdas = true:warning
 csharp_style_expression_bodied_local_functions = true:warning
 csharp_indent_labels = one_less_than_current
+csharp_style_throw_expression = true:warning
+csharp_style_prefer_null_check_over_type_check = true:warning
+csharp_prefer_simple_default_expression = true:warning
+csharp_space_around_binary_operators = before_and_after
+csharp_style_prefer_local_over_anonymous_function = true:suggestion
+csharp_style_prefer_index_operator = true:warning
+csharp_style_prefer_range_operator = true:warning
+csharp_style_implicit_object_creation_when_type_is_apparent = true:warning
+csharp_style_prefer_tuple_swap = true:suggestion
+csharp_style_prefer_utf8_string_literals = true:suggestion
+csharp_style_inlined_variable_declaration = true:warning
+csharp_style_deconstructed_variable_declaration = true:warning
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+csharp_prefer_static_local_function = true:warning
+csharp_style_prefer_readonly_struct = true:suggestion
+csharp_style_allow_embedded_statements_on_same_line_experimental = true:silent
+csharp_style_allow_blank_lines_between_consecutive_braces_experimental = true:silent
+csharp_style_allow_blank_line_after_colon_in_constructor_initializer_experimental = true:silent
+csharp_style_conditional_delegate_call = true:warning
+csharp_style_prefer_switch_expression = true:warning
+dotnet_diagnostic.IDE0071.severity = warning
+dotnet_diagnostic.IDE2000.severity = suggestion
 
 # Visual Studio Solution Files
 [*.sln]
@@ -214,7 +237,7 @@ dotnet_naming_symbols.stylecop_local_fields_group.applicable_kinds           = l
 # First, it helps to understand, reason about, and root-case certain types of issues, such as bugs in .editorconfig parsers.
 # Second, it helps to raise immediate awareness if a new field type is added (as occurred recently in C#).
 dotnet_naming_rule.sanity_check_uncovered_field_case_rule.severity = error
-dotnet_naming_rule.sanity_check_uncovered_field_case_rule.style    = internal_error_style
+dotnet_naming_rule.sanity_check_uncovered_field_case_rule.style = internal_error_style
 dotnet_naming_rule.sanity_check_uncovered_field_case_rule.symbols  = sanity_check_uncovered_field_case_group
 dotnet_naming_symbols.sanity_check_uncovered_field_case_group.applicable_accessibilities = *
 dotnet_naming_symbols.sanity_check_uncovered_field_case_group.applicable_kinds           = field
@@ -244,8 +267,8 @@ dotnet_naming_symbols.interface_group.applicable_kinds = interface
 
 # Generics Type Parameters use PascalCase and are prefixed with uppercase 'T'
 # https://docs.microsoft.com/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces
-dotnet_naming_rule.type_parameter_rule.severity             = warning
-dotnet_naming_rule.type_parameter_rule.style                = prefix_type_parameters_with_t_style
+dotnet_naming_rule.type_parameter_rule.severity = warning
+dotnet_naming_rule.type_parameter_rule.style = prefix_type_parameters_with_t_style
 dotnet_naming_rule.type_parameter_rule.symbols              = type_parameter_group
 dotnet_naming_symbols.type_parameter_group.applicable_kinds = type_parameter
 
@@ -781,28 +804,28 @@ dotnet_diagnostic.CA3003.severity=warning
 dotnet_diagnostic.CA3004.severity=warning
 
 #CA3005: Review code for LDAP injection vulnerabilities
-dotnet_diagnostic.CA3005.severity = none
+dotnet_diagnostic.CA3005.severity = warning
 
 #CA3006: Review code for process command injection vulnerabilities
-dotnet_diagnostic.CA3006.severity = none
+dotnet_diagnostic.CA3006.severity = warning
 
 #CA3007: Review code for open redirect vulnerabilities
-dotnet_diagnostic.CA3007.severity = none
+dotnet_diagnostic.CA3007.severity = warning
 
 #CA3008: Review code for XPath injection vulnerabilities
-dotnet_diagnostic.CA3008.severity = none
+dotnet_diagnostic.CA3008.severity = warning
 
 #CA3009: Review code for XML injection vulnerabilities
-dotnet_diagnostic.CA3009.severity = none
+dotnet_diagnostic.CA3009.severity = warning
 
 #CA3010: Review code for XAML injection vulnerabilities
-dotnet_diagnostic.CA3010.severity = none
+dotnet_diagnostic.CA3010.severity = warning
 
 #CA3011: Review code for DLL injection vulnerabilities
-dotnet_diagnostic.CA3011.severity = none
+dotnet_diagnostic.CA3011.severity = warning
 
 #CA3012: Review code for regex injection vulnerabilities
-dotnet_diagnostic.CA3012.severity = none
+dotnet_diagnostic.CA3012.severity = warning
 
 #CA3061: Do Not Add Schema By URL
 dotnet_diagnostic.CA3061.severity = warning
@@ -826,7 +849,7 @@ dotnet_diagnostic.CA5350.severity = warning
 dotnet_diagnostic.CA5351.severity = warning
 
 #CA5358: Do Not Use Unsafe Cipher Modes
-dotnet_diagnostic.CA5358.severity = none
+dotnet_diagnostic.CA5358.severity = warning
 
 #CA5359: Do Not Disable Certificate Validation
 dotnet_diagnostic.CA5359.severity = warning
@@ -838,7 +861,7 @@ dotnet_diagnostic.CA5360.severity = warning
 dotnet_diagnostic.CA5361.severity = warning
 
 #CA5362: Do Not Refer Self In Serializable Class
-dotnet_diagnostic.CA5362.severity = none
+dotnet_diagnostic.CA5362.severity = error
 
 #CA5363: Do Not Disable Request Validation
 dotnet_diagnostic.CA5363.severity = warning
@@ -853,7 +876,7 @@ dotnet_diagnostic.CA5365.severity = warning
 dotnet_diagnostic.CA5366.severity = warning
 
 #CA5367: Do Not Serialize Types With Pointer Fields
-dotnet_diagnostic.CA5367.severity = none
+dotnet_diagnostic.CA5367.severity = warning
 
 #CA5368: Set ViewStateUserKey For Classes Derived From Page
 dotnet_diagnostic.CA5368.severity = warning
@@ -877,7 +900,7 @@ dotnet_diagnostic.CA5373.severity = warning
 dotnet_diagnostic.CA5374.severity = warning
 
 #CA5375: Do Not Use Account Shared Access Signature
-dotnet_diagnostic.CA5375.severity = none
+dotnet_diagnostic.CA5375.severity = warning
 
 #CA5376: Use SharedAccessProtocol HttpsOnly
 dotnet_diagnostic.CA5376.severity = warning
@@ -1389,7 +1412,7 @@ dotnet_diagnostic.CA1008.severity=error
 dotnet_diagnostic.CA1008.severity=warning
 
 #CA1012: Abstract types should not have public constructors
-dotnet_diagnostic.CA1012.severity=warning
+dotnet_diagnostic.CA1012.severity= error
 
 #CA1014: Mark assemblies with CLSCompliantAttribute
 dotnet_diagnostic.CA1014.severity=none
@@ -1398,7 +1421,7 @@ dotnet_diagnostic.CA1014.severity=none
 dotnet_diagnostic.CA1016.severity=error
 
 #CA1017: Mark assemblies with ComVisibleAttribute
-dotnet_diagnostic.CA1017.severity=suggestion
+dotnet_diagnostic.CA1017.severity= silent
 
 #CA1018: Mark attributes with AttributeUsageAttribute
 dotnet_diagnostic.CA1018.severity=suggestion
@@ -1422,7 +1445,7 @@ dotnet_diagnostic.CA1028.severity=error
 dotnet_diagnostic.CA1030.severity=suggestion
 
 #CA1031: Do not catch general exception types
-dotnet_diagnostic.CA1031.severity=none
+dotnet_diagnostic.CA1031.severity= error
 
 #CA1032: Implement standard exception constructors
 dotnet_diagnostic.CA1032.severity=suggestion

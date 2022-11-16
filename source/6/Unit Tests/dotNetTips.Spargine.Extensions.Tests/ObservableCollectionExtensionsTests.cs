@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 01-03-2023
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,10 +28,12 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	[TestClass]
 	public class ObservableCollectionExtensionsTests
 	{
+		private readonly int _count = 2500;
+
 		[TestMethod]
 		public void HasItemsTest()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList().ToObservableCollection();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(this._count).ToList().ToObservableCollection();
 			ObservableCollection<Coordinate> nullCollection = null;
 
 			Assert.IsTrue(collection.HasItems());
@@ -42,12 +44,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsWithCountTest()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList().ToObservableCollection();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(this._count).ToList().ToObservableCollection();
 			ObservableCollection<Coordinate> nullCollection = null;
 
-			Assert.IsTrue(collection.HasItems(10));
-
-			Assert.IsFalse(collection.HasItems(5));
+			Assert.IsTrue(collection.HasItems(this._count));
 
 			Assert.IsFalse(nullCollection.HasItems());
 		}
@@ -55,7 +55,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void HasItemsWithFunctionTest()
 		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(10).ToList().ToObservableCollection();
+			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(this._count).ToList().ToObservableCollection();
 			ObservableCollection<Coordinate> nullCollection = null;
 
 			Func<Coordinate, bool> selector = (coordinate) => coordinate.X > 0;
@@ -68,10 +68,19 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void ToObservableCollectionTest()
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(this._count);
 
 			//Test 
 			Assert.IsTrue(people.ToObservableCollection().HasItems());
+		}
+
+		[TestMethod]
+		public void ToReadOnlyObservableCollectionTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(this._count);
+
+			//Test 
+			Assert.IsTrue(people.ToReadOnlyObservableCollection().HasItems());
 		}
 	}
 }

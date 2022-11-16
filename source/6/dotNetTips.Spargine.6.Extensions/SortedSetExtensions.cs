@@ -26,7 +26,7 @@ namespace DotNetTips.Spargine.Extensions;
 public static class SortedSetExtensions
 {
 	/// <summary>
-	/// Checks set for null and insurese there are items in the set.
+	/// Checks set for null and ensures there are items in the set.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The list.</param>

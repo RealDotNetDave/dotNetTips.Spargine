@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-28-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="TypeHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -94,7 +94,6 @@ namespace dotNetTips.Spargine.Core.Tests
 			Assert.IsTrue(result.HasItems());
 		}
 
-
 		[TestMethod]
 		public void FromJson01()
 		{
@@ -142,9 +141,6 @@ namespace dotNetTips.Spargine.Core.Tests
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
 			var result = TypeHelper.GetPropertyValues(person);
-
-			//PrintResult(result, nameof(this.GetPropertyValues));
-
 			Assert.IsTrue(result.Count > 5);
 
 			var exTest = new ArgumentOutOfRangeException("TESTPARAM", "TESTMESSAGE");
@@ -153,7 +149,6 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			Assert.IsTrue(result.Count > 1);
 		}
-
 
 		[TestMethod]
 		public void GetTypeDisplayNameTest()

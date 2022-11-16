@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-14-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -14,6 +14,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -111,7 +112,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people2 = people1;
 			var people3 = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 
-
 			Assert.IsFalse(people1.AreEqual(people3));
 
 			Assert.IsTrue(people1.AreEqual(people2));
@@ -200,11 +200,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
 
-			people.FastProcessor((PersonProper person) =>
-			{
-				person.Address2 = "TEST DATA";
-
-			});
+			people.FastProcessor((PersonProper person) => person.Address2 = "TEST DATA");
 		}
 
 		/// <summary>
@@ -267,6 +263,48 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			people = people.AddLast(people.First());
 
 			Assert.IsTrue(people.ToDistinct().FastCount() == 10);
+		}
+
+		[TestMethod]
+		public void PerformActionTest_Ref()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+			var sb = new StringBuilder();
+
+			people.PerformAction((person) =>
+			{
+				sb.Append($"{person.ToString()}|");
+			});
+
+			Assert.IsTrue(sb.Length>100 );
+		}
+
+		[TestMethod]
+		public void PerformActionTest_Val()
+		{
+			var people = RandomData.GeneratePersonValCollection<DotNetTips.Spargine.Tester.Models.ValueTypes.Person>(10).ToArray();
+			var sb = new StringBuilder();
+
+			people.PerformAction((person) =>
+			{
+				sb.Append($"{person.ToString()}|");
+			});
+
+			Assert.IsTrue(sb.Length > 100);
+		}
+
+		[TestMethod]
+		public void PerformActionTest_Record()
+		{
+			var people = RandomData.GeneratePersonRecordCollection(10).ToArray();
+			var sb = new StringBuilder();
+
+			people.PerformAction((person) =>
+			{
+				sb.Append($"{person.ToString()}|");
+			});
+
+			Assert.IsTrue(sb.Length > 100);
 		}
 
 		/// <summary>

@@ -110,7 +110,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// </summary>
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
-	/// <exception cref="System.NotImplementedException"></exception>
+	/// <exception cref="NotImplementedException"></exception>
 	public bool Remove(T item)
 	{
 		throw new NotImplementedException();

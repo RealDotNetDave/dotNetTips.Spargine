@@ -226,11 +226,6 @@ namespace dotNetTips.Spargine.Core.Tests
 			Assert.IsTrue(people.CheckItemsExists());
 
 			Assert.IsFalse(nullPeople.CheckItemsExists());
-
-
-			// Test null collection
-			//_ = Assert.ThrowsException<InvalidValueException<IEnumerable<PersonProper>>(() => nullPeople.CheckItemsExists(true));
-
 		}
 
 		[TestMethod]

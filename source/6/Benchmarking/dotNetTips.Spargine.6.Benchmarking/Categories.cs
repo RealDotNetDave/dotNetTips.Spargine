@@ -25,6 +25,11 @@ public static class Categories
 	/// <summary>
 	/// Asynchronous code
 	/// </summary>
+	public const string Array = "Array";
+
+	/// <summary>
+	/// Asynchronous code
+	/// </summary>
 	public const string Async = "Async";
 
 	/// <summary>
@@ -107,7 +112,6 @@ public static class Categories
 	/// </summary>
 	public const string Reflection = "Reflection";
 
-
 	/// <summary>
 	/// Code for serialization
 	/// </summary>
@@ -127,6 +131,11 @@ public static class Categories
 	/// Code for threading
 	/// </summary>
 	public const string Threading = "Threading";
+
+	/// <summary>
+	/// Method Validation Benchmarks
+	/// </summary>
+	public const string Validation = "Validation";
 
 	/// <summary>
 	/// Code for value types

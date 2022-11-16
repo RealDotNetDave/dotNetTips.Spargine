@@ -4,7 +4,7 @@
 // Created          : 03-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 01-04-2023
 // ***********************************************************************
 // <copyright file="FileProcessor.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -45,7 +45,7 @@ public class FileProcessor
 	/// <param name="destination">The destination folder.</param>
 	/// <returns>System.Object.</returns>
 	/// <remarks>Use the Processed event to find out if file copied succeeded or failed.</remarks>
-	[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(CopyFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public int CopyFiles([NotNull] IEnumerable<FileInfo> files, [NotNull] DirectoryInfo destination)
 	{
 		var list = files.ArgumentNotNull().ToArray();
@@ -88,7 +88,7 @@ public class FileProcessor
 						SpeedInMilliseconds = perf.TotalMilliseconds,
 					});
 				}
-				catch (Exception ex)
+				catch (Exception ex) when (ex is IOException or SecurityException or UnauthorizedAccessException)
 				{
 					// Send error.
 					this.OnProcessed(new FileProgressEventArgs
@@ -121,10 +121,10 @@ public class FileProcessor
 	/// <param name="files">The file list to delete.</param>
 	/// <returns>System.Int32 with the number of files that were successfully deleted.</returns>
 	/// <remarks>Use the <seealso cref="Processed">Processed</seealso> event to find out if file deletion succeeded or failed.</remarks>
-	[Information(nameof(DeleteFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(DeleteFiles), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public int DeleteFiles([NotNull] IEnumerable<FileInfo> files)
 	{
-		if (files.Any() is false)
+		if (files.HasItems() is false)
 		{
 			return 0;
 		}
@@ -138,25 +138,26 @@ public class FileProcessor
 
 			if (tempFile.Exists)
 			{
+				long fileLength = 0;
+
 				try
 				{
 					var psw = PerformanceStopwatch.StartNew();
 
-					using (var task = new Task(() => tempFile.Delete()))
-					{
-						task.FireAndForget(); //TODO: DOCUMENT THIS EXAMPLE
-					}
+					fileLength = tempFile.Length;
+
+					tempFile.Delete();
 
 					var perf = psw.StopReset();
 
 					successCount++;
 
-					this.OnProcessed(new FileProgressEventArgs
+					this.OnProcessed(e: new FileProgressEventArgs
 					{
 						Name = tempFile.FullName,
 						Message = tempFile.Name,
 						ProgressState = FileProgressState.Deleted,
-						Size = tempFile.Length,
+						Size = fileLength,
 						SpeedInMilliseconds = perf.TotalMilliseconds,
 					});
 				}
@@ -166,7 +167,7 @@ public class FileProcessor
 					{
 						Name = tempFile.FullName,
 						ProgressState = FileProgressState.Error,
-						Size = tempFile.Length,
+						Size = fileLength,
 						Message = ex.Message,
 					});
 				}
@@ -190,7 +191,7 @@ public class FileProcessor
 	/// </summary>
 	/// <param name="folders">The folders.</param>
 	/// <returns>System.Int32.</returns>
-	[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(DeleteFolders), author: "David McCarter", createdOn: "8/6/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public int DeleteFolders([NotNull] IReadOnlyCollection<DirectoryInfo> folders)
 	{
 		if (folders.HasItems() is false)

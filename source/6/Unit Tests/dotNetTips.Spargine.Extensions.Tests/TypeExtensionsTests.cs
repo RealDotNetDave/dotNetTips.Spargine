@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-22-2021
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="TypeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -256,6 +256,28 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void GetTypeOfTypeTest()
+		{
+			var refPerson = new PersonProper();
+
+			var result = refPerson.GetTypeOfType();
+
+			Assert.IsTrue(result == TypeExtensions.TypeOfType.Reference);
+
+			var valPerson = new Spargine.Tester.Models.ValueTypes.Person();
+
+			result = valPerson.GetTypeOfType();
+
+			Assert.IsTrue(result == TypeExtensions.TypeOfType.Value);
+
+			var recordPerson = new PersonRecord("dotnetdave@live.com", "100");
+
+			result = recordPerson.GetTypeOfType();
+
+			Assert.IsTrue(result == TypeExtensions.TypeOfType.Record);
+		}
+
+		[TestMethod]
 		public void HasAttributeTest()
 		{
 #pragma warning disable SYSLIB0003 // Type or member is obsolete
@@ -302,7 +324,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(result2);
 		}
-
 
 		[TestMethod]
 		public void IsNullableTest()

@@ -84,7 +84,7 @@ public sealed class CollectionRandomizer<T>
 		//Validate Collection
 		if (this._collection.HasItems() is false)
 		{
-			throw new InvalidValueException<ImmutableArray<T>>("Underlying collection is null.");
+			ExceptionThrower.ThrowInvalidValueException("Underlying collection is null.", this._collection);
 		}
 
 		//Shuffle Collection

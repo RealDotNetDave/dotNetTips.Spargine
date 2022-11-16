@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 11-17-2022
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -137,7 +137,7 @@ public static class DirectoryHelper
 	/// <param name="path">The path.</param>
 	/// <param name="retries">Number of retries.</param>
 	/// <remarks>Checks for the <see cref="IOException" /> and <see cref="UnauthorizedAccessException" />.</remarks>
-	[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 99)]
+	[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 99)]
 	public static void DeleteDirectory([NotNull] DirectoryInfo path, int retries = 10)
 	{
 		if (path.Exists is false)
@@ -185,9 +185,9 @@ public static class DirectoryHelper
 	/// </summary>
 	/// <param name="directories">The directories.</param>
 	/// <param name="searchPattern">The search pattern.</param>
-	/// <param name="searchOption">The search option.</param>
+	/// <param name="searchOption">The search options.</param>
 	/// <returns>IAsyncEnumerable&lt;IEnumerable&lt;FileInfo&gt;&gt;.</returns>
-	[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available)]
+	[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption)
 	{
 		directories = directories.ArgumentNotNull();
@@ -339,10 +339,10 @@ public static class DirectoryHelper
 	/// search criteria.
 	/// </summary>
 	/// <param name="path">The root directory.</param>
-	/// <param name="searchOption">The search option.</param>
+	/// <param name="searchOption">The search options.</param>
 	/// <param name="searchPatterns">The search patterns.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Documentation = "https://bit.ly/SpargineSep2022")]
+	[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Documentation = "https://bit.ly/SpargineSep2022")]
 	public static bool SafeDirectoryContainsAny([NotNull] DirectoryInfo path, SearchOption searchOption = SearchOption.TopDirectoryOnly, [NotNull] params string[] searchPatterns)
 	{
 		path = path.ArgumentExists();
@@ -388,11 +388,18 @@ public static class DirectoryHelper
 			path,
 		};
 
-		for (var directoryCount = 0; directoryCount < path.GetDirectories(searchPattern, searchOption).Length; directoryCount++)
+		var options = new EnumerationOptions { IgnoreInaccessible = true, ReturnSpecialDirectories = false, RecurseSubdirectories = false };
+
+		if (searchOption == SearchOption.AllDirectories)
+		{
+			options.RecurseSubdirectories = true;
+		}
+
+		for (var directoryCount = 0; directoryCount < path.GetDirectories(searchPattern, options).Length; directoryCount++)
 		{
 			try
 			{
-				var searchResult = SafeDirectorySearch(path.GetDirectories(searchPattern, searchOption)[directoryCount], searchPattern);
+				var searchResult = SafeDirectorySearch(path.GetDirectories(searchPattern, options)[directoryCount], searchPattern);
 
 				if (searchResult.HasItems())
 				{
@@ -413,7 +420,7 @@ public static class DirectoryHelper
 	/// </summary>
 	/// <param name="path">The directory to search.</param>
 	/// <param name="searchPattern">The search pattern.</param>
-	/// <param name="searchOption">The search option.</param>
+	/// <param name="searchOption">The search options.</param>
 	/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
 	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo path, string searchPattern, SearchOption searchOption)
@@ -431,9 +438,9 @@ public static class DirectoryHelper
 	/// </summary>
 	/// <param name="directories">The directories to search.</param>
 	/// <param name="searchPattern">The search pattern.</param>
-	/// <param name="searchOption">The search option.</param>
+	/// <param name="searchOption">The search options.</param>
 	/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
-	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100)]
+	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100)]
 	public static IReadOnlyList<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
 	{
 		directories = directories.ArgumentNotNull();
@@ -442,13 +449,20 @@ public static class DirectoryHelper
 
 		var files = new List<FileInfo>();
 
+		var options = new EnumerationOptions { IgnoreInaccessible = true, ReturnSpecialDirectories = false, RecurseSubdirectories = false };
+
+		if (searchOption == SearchOption.AllDirectories)
+		{
+			options.RecurseSubdirectories = true;
+		}
+
 		directories.ToList().ForEach(directory =>
 		{
 			try
 			{
 				if (directory.Exists)
 				{
-					var directoryFiles = directory.EnumerateFiles(searchPattern, searchOption).ToArray();
+					var directoryFiles = directory.EnumerateFiles(searchPattern, options).ToArray();
 
 					if (directoryFiles.HasItems())
 					{

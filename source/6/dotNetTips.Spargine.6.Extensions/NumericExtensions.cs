@@ -689,7 +689,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Converts to romannumeral.
+	/// Converts to roman numeral.
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns>string.</returns>

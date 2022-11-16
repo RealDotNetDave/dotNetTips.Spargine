@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -19,9 +19,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Extensions.Properties;
 using Microsoft.Extensions.ObjectPool;
-
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions;
@@ -59,23 +59,17 @@ public static class StringExtensions
 	/// <summary>
 	/// The first last name reg ex
 	/// </summary>
-	private static readonly Regex _firstLastNameRegEx = new(
-		Resources.RegexFirstLastName,
-		RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+	private static readonly Regex _firstLastNameRegEx = new(Resources.RegexFirstLastName, RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
 
 	/// <summary>
 	/// The is unique identifier regex
 	/// </summary>
-	private static readonly Regex _guidRegEx = new(
-		@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$",
-		RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.Singleline);
+	private static readonly Regex _guidRegEx = new(@"^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$", RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.Singleline);
 
 	/// <summary>
 	/// The isbn reg ex
 	/// </summary>
-	private static readonly Regex _isbnRegEx = new(
-		Resources.RegexISBN,
-		RegexOptions.Compiled | RegexOptions.Singleline);
+	private static readonly Regex _isbnRegEx = new(Resources.RegexISBN, RegexOptions.Compiled | RegexOptions.Singleline);
 
 	/// <summary>
 	/// The is mac address regex
@@ -85,23 +79,17 @@ public static class StringExtensions
 	/// <summary>
 	/// The one to7 alpha
 	/// </summary>
-	private static readonly Regex _oneTo7Alpha = new(
-		Resources.RegexOneToSevenAlpha,
-		RegexOptions.Compiled | RegexOptions.Singleline);
+	private static readonly Regex _oneTo7Alpha = new(Resources.RegexOneToSevenAlpha, RegexOptions.Compiled | RegexOptions.Singleline);
 
 	/// <summary>
 	/// The remove cr lf reg ex
 	/// </summary>
-	private static readonly Regex _removeCrLfRegEx = new(
-		@"[\r\n]+",
-		RegexOptions.IgnoreCase | RegexOptions.Compiled);
+	private static readonly Regex _removeCrLfRegEx = new(@"[\r\n]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 	/// <summary>
 	/// The sciencetific reg ex
 	/// </summary>
-	private static readonly Regex _sciencetificRegEx = new(
-		Resources.RegexScientific,
-		RegexOptions.Compiled | RegexOptions.Singleline);
+	private static readonly Regex _sciencetificRegEx = new(Resources.RegexScientific, RegexOptions.Compiled | RegexOptions.Singleline);
 
 	/// <summary>
 	/// The sha1 hash reg ex
@@ -111,22 +99,17 @@ public static class StringExtensions
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
-	private static readonly ObjectPool<StringBuilder> _stringBuilderPool =
-	new DefaultObjectPoolProvider().CreateStringBuilderPool();
+	private static readonly ObjectPool<StringBuilder> _stringBuilderPool = new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
 	/// The string reg ex
 	/// </summary>
-	private static readonly Regex _stringRegEx = new(
-		Resources.RegexString,
-		RegexOptions.IgnoreCase | RegexOptions.Compiled);
+	private static readonly Regex _stringRegEx = new(Resources.RegexString, RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 	/// <summary>
 	/// The URL reg ex
 	/// </summary>
-	private static readonly Regex _urlRegEx = new(
-		Resources.RegexUrl,
-		RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
+	private static readonly Regex _urlRegEx = new(Resources.RegexUrl, RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Singleline);
 
 	/// <summary>
 	/// Creates a hash of the input string.
@@ -160,17 +143,31 @@ public static class StringExtensions
 	}
 
 	/// <summary>
+	/// Combines a the input with the <see cref=" string" /> array.
+	/// </summary>
+	/// <param name="input">The input.</param>
+	/// <param name="args">The arguments.</param>
+	/// <returns>string.</returns>
+	[Information(nameof(Concat), "David McCarter", "1/3/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New)]
+	public static string CombineToString([NotNull] this string input, [NotNull] params string[] args)
+	{
+		return FastStringBuilder.CombineStrings(Tristate.False, args.AddFirst(input));
+	}
+
+	/// <summary>
 	/// Computes a hash from the string.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <param name="hashType">Type of the hash.</param>
 	/// <returns>System.String.</returns>
-	/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 	[Information(nameof(ComputeHash), "David McCarter", "10/8/2020", "1/9/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static string ComputeHash(this string input, HashType hashType = HashType.SHA256)
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		var hash = GetHash(input, hashType);
 
@@ -197,11 +194,13 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The data.</param>
 	/// <returns>System.String.</returns>
-	/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
 	[Information(nameof(ComputeSHA256Hash), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
 	public static string ComputeSHA256Hash(this string input)
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		// Create a SHA256
 		// ComputeHash - returns byte array
@@ -220,12 +219,18 @@ public static class StringExtensions
 	/// <param name="addLineFeed">The add line feed. If set to true, delimiter will not be used.</param>
 	/// <param name="args">The arguments.</param>
 	/// <returns>System.String.</returns>
-	/// <exception cref="ArgumentInvalidException">input cannot be null.</exception>
-	[Information(nameof(Concat), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string Concat(this string input, string delimiter, Tristate addLineFeed, params string[] args)
+	[Information(nameof(Concat), "David McCarter", "9/15/2017", UnitTestCoverage = 100, Status = Status.Available)]
+	public static string Concat([NotNull] this string input, string delimiter, Tristate addLineFeed, [NotNull] params string[] args)
 	{
-		input = input.ArgumentNotNullOrEmpty();
-		delimiter = delimiter.DefaultIfNull(ControlChars.DefaultSeparator);
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
+
+		if (delimiter.IsNullOrEmpty())
+		{
+			delimiter = ControlChars.EmptyString;
+		}
 
 		var sb = _stringBuilderPool.Get();
 
@@ -393,7 +398,10 @@ public static class StringExtensions
 	[Information(nameof(FromBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string FromBase64(this string input)
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		var encoding = new ASCIIEncoding();
 		return encoding.GetString(Convert.FromBase64String(input));
@@ -430,12 +438,13 @@ public static class StringExtensions
 		}
 	}
 
+
 	/// <summary>
 	/// Converts a deflate compressed string as an asynchronous operation.
 	/// </summary>
 	/// <param name="value">The value.</param>
 	/// <returns>A Task&lt;string&gt; representing the asynchronous operation.</returns>
-	[Information(nameof(FromDeflateStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
+	[Information(nameof(FromDeflateStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static async Task<string> FromDeflateStringAsync(this string value)
 	{
 		var bytes = Convert.FromBase64String(value);
@@ -500,7 +509,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="value">The value.</param>
 	/// <returns>A Task&lt;string&gt; representing the asynchronous operation.</returns>
-	[Information(nameof(FromZLibStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
+	[Information(nameof(FromZLibStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static async Task<string> FromZLibStringAsync(this string value)
 	{
 		var bytes = Convert.FromBase64String(value);
@@ -898,7 +907,10 @@ public static class StringExtensions
 	[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Updated, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static string RemoveCRLF(this string input, [NotNull] string replacement = "")
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		return _removeCrLfRegEx.Replace(input, replacement);
 	}
@@ -1067,7 +1079,10 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string SubstringTrim(this string input, int startIndex, int length)
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		if (startIndex.IsNegative())
 		{
@@ -1117,7 +1132,10 @@ public static class StringExtensions
 	[Information(nameof(ToBase64), "David McCarter", "10/8/2020", "10/8/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string ToBase64(this string input)
 	{
-		input = input.ArgumentNotNullOrEmpty();
+		if (input.IsNullOrEmpty())
+		{
+			return ControlChars.EmptyString;
+		}
 
 		return Convert.ToBase64String(new ASCIIEncoding().GetBytes(input));
 	}
@@ -1158,6 +1176,21 @@ public static class StringExtensions
 				}
 			}
 		}
+	}
+
+	/// <summary>
+	/// Converts the <see cref="string" /> to a <see cref="byte" /> array based on the Encoder.
+	/// </summary>
+	/// <param name="input">The input.</param>
+	/// <param name="encoding">The encoding method.</param>
+	/// <returns>byte[].</returns>
+	/// <remarks>Use <seealso cref="ArrayExtensions.BytesToString(byte[])" /> to convert it back to a <see cref="string" />.</remarks>
+	[Information(nameof(ToByteArray), "David McCarter", "12/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+	public static byte[] ToByteArray(this string input, Encoding encoding)
+	{
+		input = input.ArgumentNotNullOrEmpty();
+
+		return encoding?.GetBytes(input);
 	}
 
 	/// <summary>

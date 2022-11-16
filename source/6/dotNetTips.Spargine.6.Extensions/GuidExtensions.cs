@@ -34,6 +34,7 @@ public static class GuidExtensions
 	/// <param name="right">The right.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	/// <remarks>Orginal code: https://www.meziantou.net/faster-guid-comparisons-using-vectors-simd-in-dotnet.htm</remarks>
+	[Obsolete("This method will be removed at the end of 2023. In .NET 6 & 7, it is less performant than using Equals().")]
 	[Information(nameof(FastEquals), UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool FastEquals(this in Guid left, in Guid right)
 	{
@@ -73,34 +74,4 @@ public static class GuidExtensions
 			return String.Empty;
 		}
 	}
-
-	// Orginal Code: https://www.meziantou.net/faster-guid-comparisons-using-vectors-simd-in-dotnet.htm
-	//public static bool FastEquals(in Guid left, in Guid right) FOR .NET 7
-	//{
-	//	if (Vector128.IsHardwareAccelerated)
-	//	{
-	//		// - Vector.LoadUnsafe loads 128 bits of data from the pointer
-	//		// - Unsafe.As casts the Guid pointer to byte pointer
-	//		// - Unsafe.AsRef(in left) returns a pointer to the value
-	//		// => This looks complicated and maybe slow, but
-	//		//    the JIT converts this line to a single asm instruction
-	//		Vector128<byte> leftVector =
-	//			Vector128.LoadUnsafe(
-	//				ref Unsafe.As<Guid, byte>(
-	//					ref Unsafe.AsRef(in left)));
-
-	//		Vector128<byte> rightVector =
-	//			Vector128.LoadUnsafe(
-	//				ref Unsafe.As<Guid, byte>(
-	//					ref Unsafe.AsRef(in right)));
-
-	//		// Compare both vectors
-	//		return leftVector == rightVector;
-	//	}
-	//	else
-	//	{
-	//		// Fallback for non-hardware accelerated platforms
-	//		return left == right;
-	//	}
-	//}
 }

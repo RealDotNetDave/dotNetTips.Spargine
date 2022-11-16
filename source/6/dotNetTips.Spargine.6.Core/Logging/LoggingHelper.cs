@@ -29,36 +29,6 @@ public static class LoggingHelper
 	/// </summary>
 	private static ILogger _appDomainExceptionLogger;
 
-	///// <summary>
-	///// The logger message critical
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageCritical = LoggerMessage.Define<string>(LogLevel.Critical, new EventId(100, "CRITICAL"), "{Message}");
-
-	///// <summary>
-	///// The logger message debug
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageDebug = LoggerMessage.Define<string>(LogLevel.Debug, new EventId(200, "DEBUG"), "{Message}");
-
-	///// <summary>
-	///// The logger message error
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageError = LoggerMessage.Define<string>(LogLevel.Error, new EventId(300, "ERROR"), "{Message}");
-
-	///// <summary>
-	///// The logger message information
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageInformation = LoggerMessage.Define<string>(LogLevel.Information, new EventId(400, "INFORMATION"), "{Message}");
-
-	///// <summary>
-	///// The logger message trace
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageTrace = LoggerMessage.Define<string>(LogLevel.Trace, new EventId(500, "TRACE"), "{Message}");
-
-	///// <summary>
-	///// The logger message warning
-	///// </summary>
-	//private static readonly Action<ILogger, string, Exception> _loggerMessageWarning = LoggerMessage.Define<string>(LogLevel.Warning, new EventId(600, "WARNING"), "{Message}");
-
 	/// <summary>
 	/// Handles the FirstChanceException event of the CurrentDomain control.
 	/// </summary>
@@ -68,62 +38,6 @@ public static class LoggingHelper
 	{
 		EasyLogger.LogError(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
 	}
-
-	///// <summary>
-	///// Fasts the logger.
-	///// </summary>
-	///// <param name="logger">The logger.</param>
-	///// <param name="logLevel">The log level.</param>
-	///// <param name="message">The message.</param>
-	///// <param name="ex">The Exception.</param>
-	///// <exception cref="ArgumentNullException">logger</exception>
-	///// <exception cref="ArgumentException">'{nameof(message)}' cannot be null or empty. - message</exception>
-	//[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	//[Information(nameof(FastLogger), author: "David McCarter", createdOn: "3/21/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
-	//public static void FastLogger([NotNull] ILogger logger, LogLevel logLevel, string message, [AllowNull] Exception ex)
-	//{
-	//	logger = logger.ArgumentNotNull();
-	//	message = message.ArgumentNotNullOrEmpty(true);
-
-	//	switch (logLevel)
-	//	{
-	//		case LogLevel.Critical:
-	//			{
-	//				_loggerMessageCritical(logger, message, ex);
-	//				break;
-	//			}
-
-	//		case LogLevel.Debug:
-	//			{
-	//				_loggerMessageDebug(logger, message, ex);
-	//				break;
-	//			}
-
-	//		case LogLevel.Error:
-	//			{
-	//				_loggerMessageError(logger, message, ex);
-	//				break;
-	//			}
-
-	//		case LogLevel.Trace:
-	//			{
-	//				_loggerMessageTrace(logger, message, ex);
-	//				break;
-	//			}
-
-	//		case LogLevel.Warning:
-	//			{
-	//				_loggerMessageWarning(logger, message, ex);
-	//				break;
-	//			}
-
-	//		default:
-	//			{
-	//				_loggerMessageInformation(logger, message, ex);
-	//				break;
-	//			}
-	//	}
-	//}
 
 	/// <summary>
 	/// Logs the application domain exceptions.

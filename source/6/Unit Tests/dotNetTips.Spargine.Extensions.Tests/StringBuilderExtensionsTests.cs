@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-21-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="StringBuilderExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -38,7 +38,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			sb.AppendBytes(byteArray);
 
 			Assert.IsTrue(sb.Length > 50);
-
 
 			var pool = new StringBuilder();
 
@@ -109,7 +108,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(pool.Length > 10);
 		}
-
 
 		[TestMethod]
 		public void AppendValuesTest()

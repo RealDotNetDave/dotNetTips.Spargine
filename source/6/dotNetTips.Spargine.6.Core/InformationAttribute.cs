@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-12-2022
+// Last Modified On : 01-06-2023
 // ***********************************************************************
 // <copyright file="InformationAttribute.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -159,4 +159,6 @@ public sealed class InformationAttribute : Attribute
 			}
 		}
 	}
+
+	
 }

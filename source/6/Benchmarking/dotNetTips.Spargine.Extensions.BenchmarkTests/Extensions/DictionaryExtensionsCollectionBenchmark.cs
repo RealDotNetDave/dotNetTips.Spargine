@@ -39,13 +39,13 @@ public class DictionaryExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(StringBuilderHelper.ToDelimitedString))]
+	[Benchmark(Description = nameof(FastStringBuilder.ToDelimitedString))]
 	[BenchmarkCategory(Categories.Strings)]
 	public void ToDelimitedString()
 	{
 		var people = GetPersonProperRefDictionary();
 
-		var result = StringBuilderHelper.ToDelimitedString(people);
+		var result = FastStringBuilder.ToDelimitedString(people);
 
 		this.Consume(result);
 	}

@@ -71,7 +71,7 @@ public class TestingBenchmark : LargeCollectionsBenchmark
 
 	public override void Setup()
 	{
-		this._peopleVal = RandomData.GeneratePersonValCollection(this.Count).ToArray();
+		this._peopleVal = RandomData.GeneratePersonValCollection<Tester.Models.ValueTypes.Person>(this.Count).ToArray();
 		this._peopleRef = RandomData.GeneratePersonRefCollection<PersonProper>(this.Count).ToArray();
 	}
 }

@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 04-16-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="TestType.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -31,7 +31,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[XmlIgnore]
 		[DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
 		public string UserName { get; set; }
-
 
 		/// <summary>
 		/// Gets the name.

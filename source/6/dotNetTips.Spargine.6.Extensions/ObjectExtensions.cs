@@ -163,18 +163,6 @@ public static class ObjectExtensions
 		}
 	}
 
-	///// <summary>
-	///// Froms the binary.
-	///// </summary>
-	///// <typeparam name="TResult">The type of the t result.</typeparam>
-	///// <param name="input">The input.</param>
-	///// <returns>TResult.</returns>
-	//[Information(nameof(FromBinary), "David McCarter", "4/21/2022", UnitTestCoverage = 0, Status = Status.New)]
-	//public static TResult FromBinary<TResult>([NotNull] this byte[] input)
-	//{
-	//	return BinarySerialization.Deserialize<TResult>(input.ArgumentNotNull());
-	//}
-
 	/// <summary>
 	/// Deserializes the Json <see cref="string" />.
 	/// Validates that <paramref name="json" /> is not null and contains text.
@@ -446,17 +434,6 @@ public static class ObjectExtensions
 		return obj is null ? string.Empty : obj.ToString();
 	}
 
-	///// <summary>
-	///// Converts object to binary array.
-	///// </summary>
-	///// <param name="obj">The object.</param>
-	///// <returns>System.Byte[].</returns>
-	//[Information(nameof(ToBinary), "David McCarter", "4/21/2022", UnitTestCoverage = 0, Status = Status.New)]
-	//public static byte[] ToBinary([NotNull] this object obj)
-	//{
-	//	return BinarySerialization.Serialize(obj.ArgumentNotNull());
-	//}
-
 	/// <summary>
 	/// Serializes object to Json.
 	/// Validates that <paramref name="obj" /> is not null.
@@ -504,7 +481,6 @@ public static class ObjectExtensions
 	/// <param name="throwException">if set to <count>true</count> [throw exception].</param>
 	/// <exception cref="ArgumentNullException">obj</exception>
 	[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
-	[SuppressMessage("IDisposableAnalyzers.Correctness", "IDISP007:Don't dispose injected", Justification = "<Pending>")]
 	public static void TryDispose([NotNull] this IDisposable obj, [DoesNotReturnIf(true)] bool throwException)
 	{
 		if (obj is null)

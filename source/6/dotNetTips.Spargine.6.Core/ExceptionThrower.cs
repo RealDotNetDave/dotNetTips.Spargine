@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
@@ -297,7 +297,6 @@ public static class ExceptionThrower
     {
         throw new InvalidCastException($"{message.DefaultIfNull(Resources.ErrorInvalidArgument)} ParamName: {paramName.ArgumentNotNullOrEmpty(true)}");
     }
-
 
 	/// <summary>
 	/// Throws the invalid cast exception.

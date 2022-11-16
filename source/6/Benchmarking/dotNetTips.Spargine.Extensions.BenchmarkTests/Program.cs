@@ -33,6 +33,7 @@ public static class Program
 	/// <param name="args">The arguments.</param>
 	public static void Main()
 	{
+#pragma warning disable CA1031 // Do not catch general exception types
 		try
 		{
 			var config = DefaultConfig.Instance
@@ -46,23 +47,23 @@ public static class Program
 
 			//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-			//BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
+			_ = BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 			//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
 			//BenchmarkRunner.Run<CollectionExtensionsCollectionBenchmark>(config);
-			BenchmarkRunner.Run<DictionaryExtensionsCollectionBenchmark>(config);
-			BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
-			BenchmarkRunner.Run<ExceptionExtensionsBenchmark>(config);
-			BenchmarkRunner.Run<GeneralBenchmark>(config);
-			BenchmarkRunner.Run<ImmutableArrayExtensionsBenchmark>(config);
-			BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
-			BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
-			BenchmarkRunner.Run<ObservableCollectionExtensionsCollectionBenchmark>(config);
-			BenchmarkRunner.Run<ReadOnlyCollectionBenchmark>(config);
-			BenchmarkRunner.Run<SortedDictionaryExtensionsBenchmark>(config);
-			BenchmarkRunner.Run<SortedSetCollectionBenchmark>(config);
-			BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
-			BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
-			BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
+			//_ = BenchmarkRunner.Run<DictionaryExtensionsCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<EnumerableExtensionsCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ExceptionExtensionsBenchmark>(config);
+			//_ = BenchmarkRunner.Run<GeneralBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ImmutableArrayExtensionsBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ObservableCollectionExtensionsCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ReadOnlyCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<SortedDictionaryExtensionsBenchmark>(config);
+			//_ = BenchmarkRunner.Run<SortedSetCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
+			//_ = BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
+			//_ = BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
 
 			Console.Beep();
 			Console.Beep(frequency: 50000, duration: 5000);
@@ -74,5 +75,6 @@ public static class Program
 			Console.Beep(frequency: 500, duration: 2000);
 			_ = Console.ReadLine();
 		}
+#pragma warning restore CA1031 // Do not catch general exception types
 	}
 }

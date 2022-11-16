@@ -27,32 +27,32 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
 {
 	/// <summary>
-	/// The default capacity..
+	/// The default capacity.
 	/// </summary>
 	private const int DefaultCapacity = 31;
 
 	/// <summary>
-	/// The maximum lock number..
+	/// The maximum lock number.
 	/// </summary>
 	private const int MaxLockNumber = 1024;
 
 	/// <summary>
-	/// The budget..
+	/// The budget.
 	/// </summary>
 	private int _budget;
 
 	/// <summary>
-	/// The comparer..
+	/// The comparer.
 	/// </summary>
 	private readonly IEqualityComparer<T> _comparer;
 
 	/// <summary>
-	/// The grow lock array..
+	/// The grow lock array.
 	/// </summary>
 	private readonly bool _growLockArray;
 
 	/// <summary>
-	/// The tables..
+	/// The tables.
 	/// </summary>
 	private volatile Tables _tables;
 

@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-30-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="NumericExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -35,7 +35,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsNotNull(number.ToRomanNumeral());
 		}
 
-
 		[TestMethod]
 		public void DecrementTest()
 		{
@@ -44,8 +43,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = testValue.Decrement(lowerBound: 1, step: 5);
 
 			Assert.IsTrue(testValue - result == 5);
-
-			//PrintResult(result, nameof(this.DecrementTest));
 		}
 
 		[TestMethod]
@@ -54,31 +51,24 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var testValue = double.MaxValue / 2;
 
 			var result = testValue.ToFormattedString(NumericFormat.Currency);
-			//PrintResult(result, nameof(NumericFormat.Currency));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.RoundTrip);
-			//PrintResult(result, nameof(NumericFormat.RoundTrip));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Exponential);
-			//PrintResult(result, nameof(NumericFormat.Exponential));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-			//PrintResult(result, nameof(NumericFormat.FixedPoint));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.General);
-			//PrintResult(result, nameof(NumericFormat.General));
 			Assert.IsTrue(result.Length > 4);
 
 			result = testValue.ToFormattedString(NumericFormat.Number);
-			//PrintResult(result, nameof(NumericFormat.Number));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Percent);
-			//PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
 			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.Decimal));
@@ -94,10 +84,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = testValue.EnsureMinimum(100);
 
 			Assert.IsTrue(result == 100);
-
-			//PrintResult(result, nameof(this.EnsureMinimumTest));
 		}
-
 
 		[TestMethod]
 		public void FormatSizeLongTest()
@@ -107,8 +94,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = testValue.FormatSize();
 
 			Assert.IsNotNull(result);
-
-			//PrintResult(result, nameof(this.FormatSizeLongTest));
 		}
 
 		[TestMethod]
@@ -119,8 +104,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = testValue.FormatSize();
 
 			Assert.IsNotNull(result);
-
-			//PrintResult(result, nameof(this.FormatSizeLongTest));
 		}
 
 		[TestMethod]
@@ -131,8 +114,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var result = testValue.Increment(upperBound: 300000, step: 5);
 
 			Assert.IsTrue(result == 256239);
-
-			//PrintResult(result, nameof(this.IncrementTest));
 		}
 
 		[TestMethod]
@@ -141,11 +122,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var testValue = int.MaxValue;
 
 			var result = testValue.ToFormattedString(NumericFormat.Currency);
-			//PrintResult(result, nameof(NumericFormat.Currency));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Decimal);
-			//PrintResult(result, nameof(NumericFormat.Decimal));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Exponential);
@@ -153,23 +132,18 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.FixedPoint);
-			//PrintResult(result, nameof(NumericFormat.FixedPoint));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.General);
-			//PrintResult(result, nameof(NumericFormat.General));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Hexadecimal);
-			//PrintResult(result, nameof(NumericFormat.Hexadecimal));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Number);
-			//PrintResult(result, nameof(NumericFormat.Number));
 			Assert.IsTrue(result.Length > 5);
 
 			result = testValue.ToFormattedString(NumericFormat.Percent);
-			//PrintResult(result, nameof(NumericFormat.Percent));
 			Assert.IsTrue(result.Length > 5);
 
 			_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
@@ -358,7 +332,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsFalse(testValue.IsNegative());
 		}
-
 
 		[TestMethod]
 		public void IsNegativeFloatTest()

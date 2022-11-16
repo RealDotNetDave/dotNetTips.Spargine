@@ -37,7 +37,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
 		var people = this.GetPersonProperRefList();
 
-		people.AddLast(this.PersonProperRef01);
+		_ = people.AddLast(this.PersonProperRef01);
 
 		this.Consume(people);
 	}
@@ -48,6 +48,16 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		var result = this.GetPersonProperRefList().AreEqual(this._peopleListSubSet);
 
 		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(ListExtensions.AsSpan))]
+	public void AsSpan()
+	{
+		var people = this.GetPersonProperRefList();
+
+		var collection = people.AsSpan();
+
+		this.Consume(people.Count);
 	}
 
 	[Benchmark(Description = nameof(ListExtensions.ClearNulls))]
@@ -142,16 +152,6 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
 	}
 
-	[Benchmark(Description = nameof(ListExtensions.AsSpan))]
-	public void AsSpan()
-	{
-		var people = this.GetPersonProperRefList();
-
-		var collection = people.AsSpan();
-
-		this.Consume(people.Count);
-	}
-
 	[Benchmark(Description = "Index []")]
 	[BenchmarkCategory(Categories.ForComparison)]
 	public void Index()
@@ -189,6 +189,14 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	public void ToReadOnlyCollection()
 	{
 		var result = this.GetPersonProperRefList().ToReadOnlyCollection();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(ListExtensions.ToReadOnlyObservableCollection))]
+	public void ToReadOnlyObservableCollection()
+	{
+		var result = this.GetPersonProperRefList().ToReadOnlyObservableCollection();
 
 		this.Consume(result);
 	}

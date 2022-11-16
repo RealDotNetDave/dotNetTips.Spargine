@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 01-04-2023
 // ***********************************************************************
 // <copyright file="ControlChars.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -15,7 +15,6 @@
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Core;
-
 /// <summary>
 /// Class ControlChars.
 /// </summary>
@@ -50,6 +49,10 @@ public static class ControlChars
 	/// Comma.
 	/// </summary>
 	public const char Comma = ',';
+	/// <summary>
+	/// Comma + Space
+	/// </summary>
+	public const string CommaSpace = ", ";
 
 	/// <summary>
 	/// Carriage Return.

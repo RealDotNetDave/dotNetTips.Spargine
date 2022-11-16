@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-14-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="AppTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -101,7 +101,6 @@ namespace DotNetTips.Spargine.Core.Tests
 
 			Assert.IsTrue(string.IsNullOrEmpty(result1) is false);
 
-
 			var result3 = App.OSArchitecture;
 
 			Assert.IsTrue(result3 == Architecture.X64);
@@ -113,7 +112,6 @@ namespace DotNetTips.Spargine.Core.Tests
 			var result5 = App.ProcessArchitecture;
 
 			Assert.IsTrue(result5 == Architecture.X64);
-
 
 			var result2 = App.WorkingSet;
 

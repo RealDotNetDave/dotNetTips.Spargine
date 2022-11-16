@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="TypeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -14,6 +14,7 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -23,8 +24,39 @@ namespace DotNetTips.Spargine.Extensions;
 /// <summary>
 /// Type Extensions.
 /// </summary>
-public static class TypeExtensions
+public static partial class TypeExtensions
 {
+
+	/// <summary>
+	/// Gets the type of the type of.
+	/// </summary>
+	/// <param name="obj">The object.</param>
+	/// <returns>DotNetTips.Spargine.Extensions.TypeExtensions.TypeOfType.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(GetTypeOfType), UnitTestCoverage = 100, Status = Status.New)]
+	public static TypeOfType GetTypeOfType(this object obj)
+	{
+		var objType = obj.GetType();
+
+		if (objType.IsValueType)
+		{
+			return TypeOfType.Value;
+		}
+		else if (objType.IsClass)
+		{
+			var members = objType.GetMember("ToString");
+
+			if (members != null)
+			{
+				var member = members.First();
+
+				return member.GetCustomAttribute<CompilerGeneratedAttribute>() != null ? TypeOfType.Record : TypeOfType.Reference;
+			}
+		}
+
+		return TypeOfType.Unknown;
+	}
+
 	/// <summary>
 	/// Does the object implement  any of the interfaces.
 	/// Validates that <paramref name="input" /> and <paramref name="interfaceNames" /> is not null.

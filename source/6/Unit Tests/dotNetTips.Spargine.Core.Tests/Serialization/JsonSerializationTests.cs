@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 02-07-2021
@@ -14,6 +14,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Linq;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Core.Tests.Properties;
@@ -64,8 +65,8 @@ namespace dotNetTips.Spargine.Core.Tests.Serialization
 			var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonRecord.json");
 
 			//For debugging
-			// var person = RandomData.GeneratePersonRecordCollection(1).First();
-			//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonRecord.json");
+			var person = RandomData.GeneratePersonRecordCollection(1).First();
+			JsonSerialization.SerializeToFile(person,fileName);
 
 			Assert.IsTrue(string.IsNullOrEmpty(File.ReadAllText(fileName)) is false);
 

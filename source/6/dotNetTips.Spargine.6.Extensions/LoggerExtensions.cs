@@ -21,18 +21,4 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class LoggerExtensions
 {
-	///// <summary>
-	///// Fast logger.
-	///// </summary>
-	///// <param name="logger">The logger.</param>
-	///// <param name="logLevel">The log level.</param>
-	///// <param name="message">The message.</param>
-	///// <param name="ex">The ex.</param>
-	//[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	//[Information(nameof(FastLogger), author: "David McCarter", createdOn: "3/22/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New, Documentation = "ADD URL")]
-	//public static void FastLogger([NotNull] this ILogger logger, LogLevel logLevel, [NotNull] string message, [AllowNull] Exception ex)
-	//{
-	//	//NO need to validate input. This method will do that.
-	//	LoggingHelper.FastLogger(logger.ArgumentNotNull(), logLevel.ArgumentDefined(), message.ArgumentNotNullOrEmpty(), ex);
-	//}
 }

@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-10-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -53,24 +53,6 @@ public static class WebHelper
 			return await response.Content.ReadAsStringAsync(CancellationToken.None).ConfigureAwait(false);
 		}
 	}
-
-	// public static async Task<TResult> PostAsync<TResult>(Uri address, HttpContent content)
-	// {
-	//    Encapsulation.TryValidateParam(address, nameof(address));
-	//    Encapsulation.TryValidateParam<ArgumentNullException>(content is not null, nameof(content));
-
-	// using (var client = new HttpClient())
-	//    {
-	//        var result = await client.PostAsync(address, content).ConfigureAwait(false);
-
-	// if (result.IsSuccessStatusCode)
-	//        {
-	//            var resultResponse = await result.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-	// return JsonSerializer.Deserialize<TResult>(resultResponse);
-	//        }
-	//    }
-	// }
 
 	/// <summary>
 	/// Determines whether the Uri is from the local server.

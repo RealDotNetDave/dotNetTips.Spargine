@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-06-2022
+// Last Modified On : 12-06-2022
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -45,7 +45,7 @@ namespace DotNetTips.Spargine.Benchmarking;
 [CsvExporter]
 [CsvMeasurementsExporter]
 [Default]
-[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
+//[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
 [EvaluateOverhead]
 [Full]
 [GcServer(true)]
@@ -64,7 +64,7 @@ namespace DotNetTips.Spargine.Benchmarking;
 [Orderer(SummaryOrderPolicy.Method)]
 [PlainExporter]
 [RankColumn]
-[RPlotExporter]
+//[RPlotExporter]
 [SkewnessColumn]
 [StackOverflow]
 [StatisticalTestColumn(StatisticalTestKind.Welch, showPValues: true)]
@@ -170,7 +170,6 @@ public abstract class Benchmark
 		this.Consumer.Consume(obj);
 	}
 
-
 	/// <summary>
 	/// Consume as an asynchronous operation.
 	/// </summary>
@@ -264,9 +263,9 @@ public abstract class Benchmark
 
 		this.PersonProperRef02 = RandomData.GenerateRefPerson<PersonProper>();
 
-		this.PersonVal01 = RandomData.GenerateValPerson();
+		this.PersonVal01 = RandomData.GenerateValPerson<Tester.Models.ValueTypes.Person>();
 
-		this.PersonVal02 = RandomData.GenerateValPerson();
+		this.PersonVal02 = RandomData.GenerateValPerson<Tester.Models.ValueTypes.Person>();
 
 		this.PersonRecord01 = RandomData.GeneratePersonRecordCollection(1).First();
 
@@ -289,6 +288,46 @@ public abstract class Benchmark
 
 		//Setup string array
 		_ = this.GetStringArray(100, 15, 20);
+	}
+
+	/// <summary>
+	/// Updates the coord's email address.
+	/// </summary>
+	/// <param name="person">The coord.</param>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public void Update(IPerson person)
+	{
+		if (person is not null)
+		{
+			person.Email = TestEmailLowerCase;
+		}
+	}
+
+	/// <summary>
+	/// Updates the coord's email address.
+	/// </summary>
+	/// <param name="person">The coord.</param>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public void Update(PersonRecord person)
+	{
+		if (person is not null)
+		{
+			person = person with { Email = TestEmailLowerCase };
+		}
+	}
+
+	/// <summary>
+	/// Updates the coord's email address.
+	/// </summary>
+	/// <param name="coord">The coord.</param>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public void Update(ICoordinate coord)
+	{
+		if (coord is not null)
+		{
+			coord.X = 100;
+			coord.Y = 200;
+		}
 	}
 
 	/// <summary>
@@ -322,15 +361,15 @@ public abstract class Benchmark
 	public CoordinateProper CoordinateProper02 { get; private set; }
 
 	/// <summary>
-	/// Gets the json test data person proper.
+	/// Gets the json test data coord proper.
 	/// </summary>
-	/// <value>The json test data person proper.</value>
+	/// <value>The json test data coord proper.</value>
 	public string JsonTestDataPersonProper => Resources.JsonTestDataPersonProper;
 
 	/// <summary>
-	/// Gets the json test data person record.
+	/// Gets the json test data coord record.
 	/// </summary>
-	/// <value>The json test data person record.</value>
+	/// <value>The json test data coord record.</value>
 	public string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
 
 	/// <summary>
@@ -346,51 +385,51 @@ public abstract class Benchmark
 	public string LongTestString { get; } = "Parsing and formatting are the lifeblood of any modern web app or service: take data off the wire, parse it, manipulate it, format it back out. As such, in .NET Core 2.1 along with bringing up Span<T>, we invested in the formatting and parsing of primitives, from Int32 to DateTime. Many of those changes can be read about in my previous blog posts, but one of the key factors in enabling those performance improvements was in moving a lot of native code to managed. That may be counter-intuitive, in that it’s “common knowledge” that C code is faster than C# code. However, in addition to the gap between them narrowing, having (mostly) safe C# code has made the code base easier to experiment in, so whereas we may have been skittish about tweaking the native implementations, the community-at-large has dived head first into optimizing these implementations wherever possible. That effort continues in full force in .NET Core 3.0, with some very nice rewards reaped.";
 
 	/// <summary>
-	/// Gets the person proper01.
+	/// Gets the coord proper01.
 	/// </summary>
-	/// <value>The person proper01.</value>
+	/// <value>The coord proper01.</value>
 	public PersonProper PersonProperRef01 { get; private set; }
 
 	/// <summary>
-	/// Gets the person proper02.
+	/// Gets the coord proper02.
 	/// </summary>
-	/// <value>The person proper02.</value>
+	/// <value>The coord proper02.</value>
 	public PersonProper PersonProperRef02 { get; private set; }
 
 	/// <summary>
-	/// Gets the person record01.
+	/// Gets the coord record01.
 	/// </summary>
-	/// <value>The person record01.</value>
+	/// <value>The coord record01.</value>
 	public PersonRecord PersonRecord01 { get; private set; }
 
 	/// <summary>
-	/// Gets the person record02.
+	/// Gets the coord record02.
 	/// </summary>
-	/// <value>The person record02.</value>
+	/// <value>The coord record02.</value>
 	public PersonRecord PersonRecord02 { get; private set; }
 
 	/// <summary>
-	/// Gets the person ref01.
+	/// Gets the coord ref01.
 	/// </summary>
-	/// <value>The person ref01.</value>
+	/// <value>The coord ref01.</value>
 	public Tester.Models.RefTypes.Person PersonRef01 { get; private set; }
 
 	/// <summary>
-	/// Gets the person ref02.
+	/// Gets the coord ref02.
 	/// </summary>
-	/// <value>The person ref02.</value>
+	/// <value>The coord ref02.</value>
 	public Tester.Models.RefTypes.Person PersonRef02 { get; private set; }
 
 	/// <summary>
-	/// Gets the person value01.
+	/// Gets the coord value01.
 	/// </summary>
-	/// <value>The person value01.</value>
+	/// <value>The coord value01.</value>
 	public Tester.Models.ValueTypes.Person PersonVal01 { get; private set; }
 
 	/// <summary>
-	/// Gets the person value02.
+	/// Gets the coord value02.
 	/// </summary>
-	/// <value>The person value02.</value>
+	/// <value>The coord value02.</value>
 	public Tester.Models.ValueTypes.Person PersonVal02 { get; private set; }
 
 	/// <summary>
@@ -424,9 +463,9 @@ public abstract class Benchmark
 	public string XmlTestDataPersonProper => Resources.XmlTestDataPersonProper;
 
 	/// <summary>
-	/// Gets the XML test data person record.
+	/// Gets the XML test data coord record.
 	/// </summary>
-	/// <value>The XML test data person record.</value>
+	/// <value>The XML test data coord record.</value>
 	public string XmlTestDataPersonRecord => Resources.XmlTestDataPersonRecord;
 
 }

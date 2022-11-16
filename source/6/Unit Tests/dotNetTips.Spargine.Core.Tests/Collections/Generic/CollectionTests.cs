@@ -11,7 +11,6 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DotNetTips.Spargine.Core.Collections.Generic;
@@ -36,7 +35,7 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			collection.AddFirst<PersonProper>(person);
+			_ = collection.AddFirst<PersonProper>(person);
 
 			Assert.IsTrue(collection.First() == person);
 		}
@@ -44,7 +43,7 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 		[TestMethod]
 		public void AddIfNotExistsTest()
 		{
-			var collection = Collection<PersonProper>.Create((IEnumerable<PersonProper>)RandomData.GeneratePersonRefCollection<PersonProper>(10));
+			var collection = Collection<PersonProper>.Create(RandomData.GeneratePersonRefCollection<PersonProper>(10));
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
 			_ = collection.AddIfNotExists(collection.First());
@@ -57,23 +56,13 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 		}
 
 		[TestMethod]
-		public void CloneTest()
-		{
-			var collection = Collection<PersonProper>.Create(RandomData.GeneratePersonRefCollection<PersonProper>(100));
-
-			var result = collection.Clone();
-
-			Assert.IsTrue(collection.HasItems());
-		}
-
-		[TestMethod]
 		public void AddLastTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			collection.AddLast<PersonProper>(person);
+			_=collection.AddLast<PersonProper>(person);
 
 			Assert.IsTrue(collection.Last() == person);
 		}

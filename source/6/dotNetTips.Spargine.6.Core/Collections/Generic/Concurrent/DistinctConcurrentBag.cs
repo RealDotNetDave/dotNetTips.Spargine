@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-01-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="DistinctConcurrentBag.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -52,7 +52,7 @@ public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	{
 		if (collection.Any())
 		{
-			collection.ToList().ForEach(item => this.Add(item));
+			collection.ToList().ForEach(this.Add);
 		}
 	}
 
@@ -61,7 +61,7 @@ public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// </summary>
 	/// <param name="item">The object to locate in the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> is found in the collection; otherwise, <see langword="false" />.</returns>
-	bool ICollection<T>.Contains([AllowNull] T item)
+	bool ICollection<T>.Contains(T item)
 	{
 		if (item is null)
 		{

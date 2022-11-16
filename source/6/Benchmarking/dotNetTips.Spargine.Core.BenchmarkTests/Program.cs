@@ -34,7 +34,7 @@ public class Program
 	{
 		try
 		{
-			ManualConfig config = DefaultConfig.Instance
+			var config = DefaultConfig.Instance
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
@@ -43,9 +43,9 @@ public class Program
 			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
 				  .WithOption(ConfigOptions.StopOnFirstError, true);
 
-			_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+			//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-			//BenchmarkRunner.Run<TestingBenchmark>(config);
+			BenchmarkRunner.Run<FastStringBuilderCounterBenchmark>(config);
 
 			Console.Beep();
 			_ = Console.ReadLine();

@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 12-06-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-06-2021
+// Last Modified On : 11-26-2022
 // ***********************************************************************
 // <copyright file="ConcurrentHashSetTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.

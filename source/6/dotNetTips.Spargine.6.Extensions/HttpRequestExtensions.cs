@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 01-06-2023
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -54,6 +54,7 @@ public static class HttpRequestExtensions
 	/// <param name="encoding">Optional - Encoding, defaults to UTF8.</param>
 	/// <returns>Task&lt;System.String&gt;.</returns>
 	/// <exception cref="ArgumentNullException">request</exception>
+	/// <exception cref="ArgumentNullException">encoding</exception>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
 	public static async Task<string> GetRawBodyStringAsync([NotNull] this HttpRequest request, [NotNull] Encoding encoding)
 	{
@@ -108,7 +109,6 @@ public static class HttpRequestExtensions
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	/// <exception cref="ArgumentNullException">request</exception>
 	/// <exception cref="ArgumentException">HttpRequest has no body.</exception>
-	/// <exception cref="Exception">HttpRequest has no body.</exception>
 	/// <remarks>Original code by Jerry Nixon</remarks>
 	public static bool TryGetBody([NotNull] this HttpRequest request, out byte[] value)
 	{

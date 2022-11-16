@@ -153,20 +153,6 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(EnumerableExtensions.FastParallelProcessor))]
-	public void FastParallelProcessor()
-	{
-		var people = GetPersonProperRefArray().AsEnumerable();
-
-		var task = people.FastParallelProcessor((PersonProper person) =>
-		{
-			person.Address2 = "TEST DATA";
-
-		}, App.MaxDegreeOfParallelism());
-
-		this.Consume(task);
-	}
-
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrDefault) + ": Alternate")]
 	public void FirstOrDefaultAlternate()
 	{

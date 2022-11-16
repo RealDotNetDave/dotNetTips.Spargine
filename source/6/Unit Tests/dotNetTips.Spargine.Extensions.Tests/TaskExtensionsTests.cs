@@ -20,11 +20,20 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotNetTips.Spargine.Extensions.Tests
 {
+	/// <summary>
+	/// Defines test class TaskExtensionsTests.
+	/// </summary>
 	[TestClass]
 	public class TaskExtensionsTests
 	{
+		/// <summary>
+		/// The fire result
+		/// </summary>
 		private string _fireResult = string.Empty;
 
+		/// <summary>
+		/// Defines the test method FireAndForgetTest01.
+		/// </summary>
 		[TestMethod]
 		public void FireAndForgetTest01()
 		{
@@ -33,6 +42,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.AreEqual(this._fireResult, nameof(this.FireAndForgetTest01));
 		}
 
+		/// <summary>
+		/// Defines the test method FireAndForgetTest02.
+		/// </summary>
 		[TestMethod]
 		public void FireAndForgetTest02()
 		{
@@ -41,13 +53,17 @@ namespace DotNetTips.Spargine.Extensions.Tests
 							Debug.WriteLine(ex.Message);
 						};
 
-			Action<Exception> p = value;
+			var p = value;
 
 			this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(p);
 
 			Assert.AreEqual(this._fireResult, nameof(this.FireAndForgetTest01));
 		}
 
+		/// <summary>
+		/// Fires the specified input.
+		/// </summary>
+		/// <param name="input">The input.</param>
 		private async Task Fire(string input)
 		{
 			this._fireResult = input;

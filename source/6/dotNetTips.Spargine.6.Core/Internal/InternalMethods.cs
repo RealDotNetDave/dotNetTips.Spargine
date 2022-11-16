@@ -4,7 +4,7 @@
 // Created          : 02-10-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2022
+// Last Modified On : 01-03-2023
 // ***********************************************************************
 // <copyright file="InternalMethods.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,7 +15,6 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
-using System.Text;
 using Microsoft.Extensions.ObjectPool;
 
 namespace DotNetTips.Spargine.Core.Internal;
@@ -33,7 +32,7 @@ internal static class InternalMethods
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
-	private static readonly ObjectPool<StringBuilder> _stringBuilderPool =
+	private static readonly ObjectPool<System.Text.StringBuilder> _stringBuilderPool =
 	new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>

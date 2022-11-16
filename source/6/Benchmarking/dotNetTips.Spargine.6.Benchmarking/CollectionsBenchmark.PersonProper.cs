@@ -4,7 +4,7 @@
 // Created          : 04-18-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-31-2022
+// Last Modified On : 11-26-2022
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.PersonProper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -59,6 +59,15 @@ public partial class CollectionsBenchmark
 	private List<PersonProper> _personProperRefListHalf;
 
 	/// <summary>
+	/// The person proper value list
+	/// </summary>
+	private List<Tester.Models.ValueTypes.Person> _personProperValList;
+	/// <summary>
+	/// The person proper value list half
+	/// </summary>
+	private List<Tester.Models.ValueTypes.Person> _personProperValListHalf;
+
+	/// <summary>
 	/// Loads the person proper reference array.
 	/// </summary>
 	protected void LoadPersonProperCollections()
@@ -69,6 +78,8 @@ public partial class CollectionsBenchmark
 		this._personProperRefArrayHalf = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount / 2).ToArray();
 		this._personProperRefList = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount).ToList();
 		this._personProperRefListHalf = RandomData.GeneratePersonRefCollection<PersonProper>(this.MaxCount / 2).ToList();
+		this._personProperValListHalf = RandomData.GeneratePersonValCollection<Tester.Models.ValueTypes.Person>(this.MaxCount / 2).ToList();
+		this._personProperValList = RandomData.GeneratePersonValCollection<Tester.Models.ValueTypes.Person>(this.MaxCount).ToList();
 	}
 
 	/// <summary>
@@ -107,4 +118,15 @@ public partial class CollectionsBenchmark
 			: this._personProperRefListHalf.Clone<List<PersonProper>>();
 	}
 
+	/// <summary>
+	/// Gets the person proper value list.
+	/// </summary>
+	/// <param name="collectionSize">Size of the collection.</param>
+	/// <returns>List&lt;Tester.Models.ValueTypes.Person&gt;.</returns>
+	public List<Tester.Models.ValueTypes.Person> GetPersonProperValList(CollectionSize collectionSize = CollectionSize.Full)
+	{
+		return collectionSize == CollectionSize.Full
+			? this._personProperValList.Clone<List<Tester.Models.ValueTypes.Person>>()
+			: this._personProperValListHalf.Clone<List<Tester.Models.ValueTypes.Person>>();
+	}
 }

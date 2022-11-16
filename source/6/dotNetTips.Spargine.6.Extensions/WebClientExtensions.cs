@@ -1,15 +1,15 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Extensions **
 // Author           : David McCarter
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 01-05-2023
 // ***********************************************************************
 // <copyright file="WebClientExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
 // </copyright>
-// <summary></summary>
+// <summary>Extension methods for WebClient.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
@@ -35,9 +35,7 @@ public static class WebClientExtensions
 	/// <param name="url">The URL.</param>
 	/// <returns>T.</returns>
 	/// <exception cref="ArgumentNullException">client</exception>
-	/// <exception cref="ArgumentException">URL cannot be empty or null. - url</exception>
 	/// <exception cref="ArgumentNullException">URL cannot be empty or null.</exception>
-	/// <exception cref="ArgumentException">URL cannot be empty or null.</exception>
 	[Information(nameof(ConvertFrom), UnitTestCoverage = 0, Status = Status.Available)]
 	public static T ConvertFrom<T>([NotNull] this WebClient client, Uri url)
 		where T : class

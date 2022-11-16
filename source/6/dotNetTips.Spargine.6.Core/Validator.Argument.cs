@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-06-2022
+// Last Modified On : 01-09-2023
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -38,9 +38,11 @@ public static partial class Validator
 	{
 		var returnMessage = $"{paramName}: ";
 
-		return string.IsNullOrEmpty(message)
-			? returnMessage + messageFromResource
-			: returnMessage + message;
+		return message switch
+		{
+			null => $"{returnMessage}{messageFromResource}",
+			_ => $"{returnMessage}{message}"
+		};
 	}
 
 	/// <summary>

@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
@@ -107,8 +107,8 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
 	{
 		if (info == null)
-		{
-			throw new ArgumentNullException(nameof(info), $"{nameof(info)} is null.");
+		{		
+			ExceptionThrower.ThrowArgumentNullException(nameof(info), $"{nameof(info)} is null.");
 		}
 
 		this.GetObjectData(info, context);

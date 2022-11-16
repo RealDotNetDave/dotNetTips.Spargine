@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-15-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="CollectionExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -95,9 +95,6 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result);
 
 			Assert.IsTrue(people.Count() == 12);
-
-			var nullCollection = new List<PersonProper>();
-
 		}
 
 		[TestMethod]
@@ -106,7 +103,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
 			var peopleToAdd = RandomData.GeneratePersonRefCollection<PersonProper>(5000).ToList();
 
-			var result = people.AddRange(peopleToAdd, Tristate.True);
+			_ = people.AddRange(peopleToAdd, Tristate.True);
 
 			Assert.IsNotNull(people);
 

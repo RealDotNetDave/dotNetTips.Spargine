@@ -26,7 +26,7 @@ namespace DotNetTips.Spargine.Extensions;
 public static class SortedDictionaryExtensions
 {
 	/// <summary>
-	/// Checks dictionary for null and insurese there are items in the dictionary.
+	/// Checks dictionary for null and ensures there are items in the dictionary.
 	/// </summary>
 	/// <typeparam name="TKey">The type of the t key.</typeparam>
 	/// <typeparam name="TValue">The type of the t value.</typeparam>

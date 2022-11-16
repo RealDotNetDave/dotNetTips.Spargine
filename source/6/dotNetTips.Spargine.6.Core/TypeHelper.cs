@@ -4,13 +4,14 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 12-15-2022
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
 using System.Collections;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -491,6 +492,7 @@ public static class TypeHelper
 		}
 		finally
 		{
+			_stringBuilderPool.Return(sb);
 		}
 	}
 

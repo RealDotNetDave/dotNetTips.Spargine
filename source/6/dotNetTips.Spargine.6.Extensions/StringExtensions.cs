@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-10-2022
+// Last Modified On : 11-16-2022
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -435,7 +435,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="value">The value.</param>
 	/// <returns>A Task&lt;string&gt; representing the asynchronous operation.</returns>
-	[Information(nameof(FromDeflateStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+	[Information(nameof(FromDeflateStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static async Task<string> FromDeflateStringAsync(this string value)
 	{
 		var bytes = Convert.FromBase64String(value);
@@ -500,7 +500,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="value">The value.</param>
 	/// <returns>A Task&lt;string&gt; representing the asynchronous operation.</returns>
-	[Information(nameof(FromZLibStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New)]
+	[Information(nameof(FromZLibStringAsync), "David McCarter", "9/12/2022", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static async Task<string> FromZLibStringAsync(this string value)
 	{
 		var bytes = Convert.FromBase64String(value);
@@ -729,7 +729,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD URL")]
+	[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool IsCurrencyCode(this string input)
 	{
 		return _currencyCodeRegEx.IsMatch(input);
@@ -837,7 +837,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "ADD URL")]
+	[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool IsOneToSevenAlpha(this string input)
 	{
 		return _oneTo7Alpha.IsMatch(input);
@@ -994,7 +994,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The string.</param>
 	/// <returns>DotNetTips.Spargine.Extensions.LineSplitEnumerator.</returns>
-	[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 100, Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, Documentation = "ADD URL")]
+	[Information(nameof(SplitLines), "David McCarter", "6/9/2022", UnitTestCoverage = 100, Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static LineSplitEnumerator SplitLines(this string input)
 	{
 		input = input.ArgumentNotNullOrEmpty();

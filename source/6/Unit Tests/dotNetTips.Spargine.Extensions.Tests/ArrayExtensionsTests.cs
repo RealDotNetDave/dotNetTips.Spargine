@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-10-2022
+// Last Modified On : 11-14-2022
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -22,10 +22,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotNetTips.Spargine.Extensions.Tests
 {
+	/// <summary>
+	/// Defines test class ArrayExtensionsTests.
+	/// </summary>
 	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class ArrayExtensionsTests
 	{
+		/// <summary>
+		/// Defines the test method AddFirstTest.
+		/// </summary>
 		[TestMethod]
 		public void AddFirstTest()
 		{
@@ -37,6 +43,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 11);
 		}
 
+		/// <summary>
+		/// Defines the test method RemoveLastTest.
+		/// </summary>
 		[TestMethod]
 		public void RemoveLastTest()
 		{
@@ -47,6 +56,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 99);
 		}
 
+		/// <summary>
+		/// Defines the test method AddIfTest.
+		/// </summary>
 		[TestMethod]
 		public void AddIfTest()
 		{
@@ -58,6 +70,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 11);
 		}
 
+		/// <summary>
+		/// Defines the test method AddLastTest.
+		/// </summary>
 		[TestMethod]
 		public void AddLastTest()
 		{
@@ -72,6 +87,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.AddLast(null).FastCount() == 11);
 		}
 
+		/// <summary>
+		/// Defines the test method AddTest.
+		/// </summary>
 		[TestMethod]
 		public void AddTest()
 		{
@@ -83,6 +101,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.FastCount() == 11);
 		}
 
+		/// <summary>
+		/// Defines the test method AreEqualTest.
+		/// </summary>
 		[TestMethod]
 		public void AreEqualTest()
 		{
@@ -98,6 +119,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(people1.AreEqual(arrayToCheck: null));
 		}
 
+		/// <summary>
+		/// Defines the test method BytesToStringTest.
+		/// </summary>
 		[TestMethod]
 		public void BytesToStringTest()
 		{
@@ -108,6 +132,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 100);
 		}
 
+		/// <summary>
+		/// Defines the test method BytesToStringUsingSpanTest.
+		/// </summary>
 		[TestMethod]
 		public void BytesToStringUsingSpanTest()
 		{
@@ -119,6 +146,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(result.Length > 100);
 		}
 
+		/// <summary>
+		/// Defines the test method CloneTest.
+		/// </summary>
 		[TestMethod]
 		public void CloneTest()
 		{
@@ -129,6 +159,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people.AreEqual(result));
 		}
 
+		/// <summary>
+		/// Defines the test method ContainsAnyTest.
+		/// </summary>
 		[TestMethod]
 		public void ContainsAnyTest()
 		{
@@ -145,6 +178,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 		}
 
+		/// <summary>
+		/// Defines the test method DoesNotHasItemsTest.
+		/// </summary>
 		[TestMethod]
 		public void DoesNotHasItemsTest()
 		{
@@ -156,6 +192,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(nullPeople.DoesNotHaveItems());
 		}
 
+		/// <summary>
+		/// Defines the test method FastProcessorTest.
+		/// </summary>
 		[TestMethod]
 		public void FastProcessorTest()
 		{
@@ -168,6 +207,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			});
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTest.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTest()
 		{
@@ -179,6 +221,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(nullPeople.HasItems());
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTestWithCount.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTestWithCount()
 		{
@@ -193,6 +238,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 		}
 
+		/// <summary>
+		/// Defines the test method HasItemsTestWithFunction.
+		/// </summary>
 		[TestMethod]
 		public void HasItemsTestWithFunction()
 		{
@@ -208,6 +256,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsFalse(nullCollection.HasItems(null));
 		}
 
+		/// <summary>
+		/// Defines the test method ToDistinctTest.
+		/// </summary>
 		[TestMethod]
 		public void ToDistinctTest()
 		{
@@ -218,6 +269,9 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(people.ToDistinct().FastCount() == 10);
 		}
 
+		/// <summary>
+		/// Defines the test method UpsertTest01.
+		/// </summary>
 		[TestMethod]
 		public void UpsertTest01()
 		{

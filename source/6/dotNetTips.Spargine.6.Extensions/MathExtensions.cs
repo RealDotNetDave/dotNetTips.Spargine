@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 11-16-2022
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -31,7 +31,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "ADD ULR")]
+	[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static double Add(this int input, int add)
 	{
 		return input + add;
@@ -95,7 +95,7 @@ public static class MathExtensions
 	/// <returns><c>true</c> if the specified number is prime; otherwise, <c>false</c>.</returns>
 	/// <remarks>Orginal code: https://khalidabuhakmeh.com/find-prime-numbers-with-csharp-9</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsPrime), author: "David McCarter", createdOn: "7/15/2022", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(IsPrime), author: "David McCarter", createdOn: "7/15/2022", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool IsPrime(this int number)
 	{
 		// local function
@@ -258,7 +258,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static double Subtract(this int input, int subtract)
 	{
 		return input - subtract;

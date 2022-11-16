@@ -97,7 +97,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		[TestMethod]
 		public void DoesNotHaveItemsTest()
 		{
-			var people = new List<PersonProper>();
+			var people = new List<PersonProper>().AsEnumerable();
 
 			Assert.IsTrue(people.DoesNotHaveItems());
 		}

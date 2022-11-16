@@ -4,7 +4,7 @@
 // Created          : 02-18-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2022
+// Last Modified On : 11-09-2022
 // ***********************************************************************
 // <copyright file="StringBuilderHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

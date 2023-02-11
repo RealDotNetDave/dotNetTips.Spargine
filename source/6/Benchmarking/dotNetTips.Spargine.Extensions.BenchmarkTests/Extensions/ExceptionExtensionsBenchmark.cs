@@ -25,7 +25,7 @@ public class ExceptionExtensionsBenchmark : Benchmark
 	private readonly SecurityException _testException = new("Message from SecurityException", new PolicyException("Cannot access service!"));
 
 	[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
-	public void GetAllMessages01()
+	public void GetAllMessages()
 	{
 		this.Consume(this._testException.GetAllMessages());
 	}

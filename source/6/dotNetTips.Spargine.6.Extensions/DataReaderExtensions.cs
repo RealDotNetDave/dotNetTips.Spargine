@@ -34,7 +34,7 @@ public static class DataReaderExtensions
 	new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
-	/// Converts <see cref="IDataReader" /> to CSV format.
+	/// Converts <see cref="IDataReader" /> to CSV format using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="dataReader" /> is not null
 	/// </summary>
 	/// <param name="dataReader">The data reader.</param>

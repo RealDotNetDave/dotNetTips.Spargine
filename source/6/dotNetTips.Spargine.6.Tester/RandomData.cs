@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -121,7 +121,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates the file.
+	/// Creates a file.
 	/// </summary>
 	/// <param name="fileName">Name of the file.</param>
 	/// <param name="fileLength">Length of the file.</param>
@@ -210,7 +210,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates a random character.
+	/// Creates a random <see cref="char" />.
 	/// </summary>
 	/// <returns>System.Char.</returns>
 	/// <example>Output: 82 'R'</example>
@@ -314,7 +314,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Generates the a test file.
+	/// Generates a file.
 	/// </summary>
 	/// <param name="fileName">Name of the file.</param>
 	/// <param name="fileLength">Byte length of the file. Minimum length = 1</param>
@@ -423,7 +423,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates a random number.
+	/// Creates a random number as a <see cref="string" /> using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="length">The length of the number. Minimum value = 1.</param>
 	/// <returns>System.String.</returns>
@@ -469,7 +469,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>IPersonRecord[].</returns>
 	[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 2, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 1, int firstNameLength = 15, int lastNameLength = 25, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
 	{
 		count = count.ArgumentInRange(lower: 1);
 
@@ -517,6 +517,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <summary>
 	/// Generates a <see cref="Models.ValueTypes.Person" /> value collection.
 	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	/// <param name="count">The count.</param>
 	/// <returns>Collection&lt;Models.ValueTypes.Person&gt;.</returns>
 	[Information(nameof(GeneratePersonValCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
@@ -618,7 +619,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates a random relative url.
+	/// Creates a random relative url using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	/// <example>Output:"/ljsylu/rsglcurkiylqld/wejdbuainlgjofnv/uwbrjftyt/"</example>
@@ -664,7 +665,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates a random Url.
+	/// Creates a random url.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	/// <example>Output: https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
@@ -721,6 +722,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <summary>
 	/// Generates a <see cref="Models.ValueTypes.Person" /> with default values.
 	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	/// <param name="addressLength">Length of the address.</param>
 	/// <param name="cityLength">Length of the city.</param>
 	/// <param name="countryLength">Length of the country.</param>
@@ -785,7 +787,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Creates a random word.
+	/// Creates a random word using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="length">The length. Minimum value = 1.</param>
 	/// <param name="minCharacter">The minimum character.</param>
@@ -819,12 +821,12 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// </summary>
 	/// <param name="minLength">The minimum length.</param>
 	/// <param name="maxLength">The maximum length.</param>
-	/// <param name="minCharacter">The minimum character.</param>
-	/// <param name="maxCharacter">The maximum character.</param>
+	/// <param name="minCharacter">The minimum character. Defaults to 'a'.</param>
+	/// <param name="maxCharacter">The maximum character. Defaults to 'z'.</param>
 	/// <returns>System.String.</returns>
 	/// <example>Output: ACRNFTPAE</example>
 	[Information(nameof(GenerateWord), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string GenerateWord(int minLength, int maxLength, char minCharacter, char maxCharacter)
+	public static string GenerateWord(int minLength, int maxLength, char minCharacter = 'a', char maxCharacter = 'z')
 	{
 		minLength = minLength.ArgumentInRange(1);
 		maxLength = maxLength.ArgumentInRange(1);

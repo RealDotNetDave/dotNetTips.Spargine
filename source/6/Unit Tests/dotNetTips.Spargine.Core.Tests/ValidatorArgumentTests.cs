@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="ValidatorArgumentTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -603,7 +603,7 @@ namespace dotNetTips.Spargine.Core.Tests
 				Assert.Fail();
 			}
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => ( (BenchMarkStatus)100 ).ArgumentDefined());
+			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => ((BenchMarkStatus)100).ArgumentDefined());
 		}
 
 		[TestMethod]
@@ -828,7 +828,7 @@ namespace dotNetTips.Spargine.Core.Tests
 
 			try
 			{
-				_=value.ArgumentNotNullOrEmpty();
+				_ = value.ArgumentNotNullOrEmpty();
 			}
 			catch
 			{
@@ -850,7 +850,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			var testString = RandomData.GenerateWord(100);
 			try
 			{
-				_=testString.ArgumentNotNullOrEmpty();
+				_ = testString.ArgumentNotNullOrEmpty();
 			}
 			catch
 			{
@@ -923,7 +923,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			var testPeople = new ReadOnlySpan<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray());
 			try
 			{
-				_=testPeople.ArgumentNotEmpty();
+				_ = testPeople.ArgumentNotEmpty();
 			}
 			catch
 			{

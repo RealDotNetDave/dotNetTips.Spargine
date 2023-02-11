@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-06-2022
+// Last Modified On : 01-31-2023
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -45,7 +45,7 @@ namespace DotNetTips.Spargine.Benchmarking;
 [CsvExporter]
 [CsvMeasurementsExporter]
 [Default]
-//[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
+[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
 [EvaluateOverhead]
 [Full]
 [GcServer(true)]
@@ -64,13 +64,12 @@ namespace DotNetTips.Spargine.Benchmarking;
 [Orderer(SummaryOrderPolicy.Method)]
 [PlainExporter]
 [RankColumn]
-//[RPlotExporter]
 [SkewnessColumn]
 [StackOverflow]
 [StatisticalTestColumn(StatisticalTestKind.Welch, showPValues: true)]
+[StopOnFirstError(true)]
 public abstract class Benchmark
 {
-
 	/// <summary>
 	/// The failed text
 	/// </summary>
@@ -282,12 +281,6 @@ public abstract class Benchmark
 		this.Coordinate02 = RandomData.GenerateCoordinate<Coordinate>();
 
 		this.TestGuid = Guid.NewGuid();
-
-		//Setup byte array
-		_ = this.GetByteArray(1);
-
-		//Setup string array
-		_ = this.GetStringArray(100, 15, 20);
 	}
 
 	/// <summary>
@@ -295,7 +288,7 @@ public abstract class Benchmark
 	/// </summary>
 	/// <param name="person">The coord.</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void Update(IPerson person)
+	public static void Update(IPerson person)
 	{
 		if (person is not null)
 		{
@@ -308,7 +301,7 @@ public abstract class Benchmark
 	/// </summary>
 	/// <param name="person">The coord.</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void Update(PersonRecord person)
+	public static void Update(PersonRecord person)
 	{
 		if (person is not null)
 		{
@@ -321,7 +314,7 @@ public abstract class Benchmark
 	/// </summary>
 	/// <param name="coord">The coord.</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public void Update(ICoordinate coord)
+	public static void Update(ICoordinate coord)
 	{
 		if (coord is not null)
 		{
@@ -364,13 +357,13 @@ public abstract class Benchmark
 	/// Gets the json test data coord proper.
 	/// </summary>
 	/// <value>The json test data coord proper.</value>
-	public string JsonTestDataPersonProper => Resources.JsonTestDataPersonProper;
+	public static string JsonTestDataPersonProper => Resources.JsonTestDataPersonProper;
 
 	/// <summary>
 	/// Gets the json test data coord record.
 	/// </summary>
 	/// <value>The json test data coord record.</value>
-	public string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
+	public static string JsonTestDataPersonRecord => Resources.JsonTestDataPersonRecord;
 
 	/// <summary>
 	/// Gets or sets a value indicating whether to [launch the debugger].
@@ -460,12 +453,12 @@ public abstract class Benchmark
 	/// Gets the XML test data.
 	/// </summary>
 	/// <value>The XML test data.</value>
-	public string XmlTestDataPersonProper => Resources.XmlTestDataPersonProper;
+	public static string XmlTestDataPersonProper => Resources.XmlTestDataPersonProper;
 
 	/// <summary>
 	/// Gets the XML test data coord record.
 	/// </summary>
 	/// <value>The XML test data coord record.</value>
-	public string XmlTestDataPersonRecord => Resources.XmlTestDataPersonRecord;
+	public static string XmlTestDataPersonRecord => Resources.XmlTestDataPersonRecord;
 
 }

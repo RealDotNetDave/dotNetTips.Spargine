@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.6.Tester
 // Author           : David McCarter
 // Created          : 01-16-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-27-2021
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="TestClass.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -22,7 +22,7 @@ namespace DotNetTips.Spargine.Tester;
 /// Class TestClass.
 /// </summary>
 [ExcludeFromCodeCoverage]
-public class TestClass
+public abstract class TestClass
 {
 	/// <summary>
 	/// Prints the result.
@@ -30,7 +30,7 @@ public class TestClass
 	/// <typeparam name="T"></typeparam>
 	/// <param name="input">The input.</param>
 	/// <param name="methodName">Name of the method.</param>
-	public void PrintResult<T>(T input, string methodName)
+	protected static void PrintResult<T>(T input, string methodName)
 	{
 		string message;
 

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20221113-162139</title>
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20230205-233234</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,8 +16,8 @@
 <thead>
 <tr><th colspan="2">GeneralBenchmark.'Equals: Guid'</th></tr>
 <tr>
-<th>.NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2</th>
 </tr>
 </thead>
 <tbody>
@@ -47,15 +47,15 @@ ret
 System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
 mov       eax,[rcx]
 cmp       eax,[rdx]
-je        short 00007FFAC4227F29
+je        short 00007FF80E55E759
 xor       eax,eax
 ret
 mov       eax,[rcx+4]
 cmp       eax,[rdx+4]
-jne       short 00007FFAC4227F26
+jne       short 00007FF80E55E756
 mov       eax,[rcx+8]
 cmp       eax,[rdx+8]
-jne       short 00007FFAC4227F26
+jne       short 00007FF80E55E756
 mov       eax,[rcx+0C]
 cmp       eax,[rdx+0C]
 sete      al
@@ -78,12 +78,12 @@ lea       rcx,[rsi+190]
 vmovupd   xmm0,[rsi+1A0]
 vmovupd   [rsp+30],xmm0
 lea       rdx,[rsp+30]
-call      qword ptr [7FFAC4ECD888]
+call      qword ptr [7FF81A91D888]
 mov       [rsp+28],al
 mov       rcx,[rsi+18]
 lea       rdx,[rsp+28]
 cmp       [rcx],ecx
-call      qword ptr [7FFAC5301B88]
+call      qword ptr [7FF81ADA3318]
 nop
 add       rsp,40
 pop       rsi
@@ -94,97 +94,6 @@ vzeroupper
 vmovdqu   xmm0,xmmword ptr [rcx]
 vpcmpeqb  xmm0,xmm0,[rdx]
 vpmovmskb eax,xmm0
-cmp       eax,0FFFF
-sete      al
-movzx     eax,al
-ret
-
-BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
-ret
-
-</code></pre></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr><th colspan="2">GeneralBenchmark.'FastEquals: Guid'</th></tr>
-<tr>
-<th>.NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="vertical-align:top;"><pre><code>
-DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidFastEqualsTest()
-push      rsi
-sub       rsp,30
-mov       rsi,rcx
-cmp       [rsi],esi
-lea       rcx,[rsi+190]
-lea       rdx,[rsi+1A0]
-call      DotNetTips.Spargine.Extensions.GuidExtensions.FastEquals(System.Guid ByRef, System.Guid ByRef)
-movzx     ecx,al
-mov       [rsp+28],cl
-mov       rcx,[rsi+18]
-lea       rdx,[rsp+28]
-cmp       [rcx],ecx
-call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-nop
-add       rsp,30
-pop       rsi
-ret
-
-DotNetTips.Spargine.Extensions.GuidExtensions.FastEquals(System.Guid ByRef, System.Guid ByRef)
-vzeroupper
-cmp       [rcx],ecx
-cmp       [rdx],edx
-vmovupd   xmm0,[rcx]
-vmovupd   xmm1,[rdx]
-vpcmpeqb  xmm0,xmm0,xmm1
-vpmovmskb eax,xmm0
-and       eax,0FFFF
-cmp       eax,0FFFF
-sete      al
-movzx     eax,al
-ret
-
-BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
-ret
-
-</code></pre></td>
-<td style="vertical-align:top;"><pre><code>
-DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidFastEqualsTest()
-push      rsi
-sub       rsp,30
-mov       rsi,rcx
-cmp       [rsi],sil
-lea       rcx,[rsi+190]
-lea       rdx,[rsi+1A0]
-call      qword ptr [7FFAC5313B70]
-mov       [rsp+28],al
-mov       rcx,[rsi+18]
-lea       rdx,[rsp+28]
-cmp       [rcx],ecx
-call      qword ptr [7FFAC5313BE8]
-nop
-add       rsp,30
-pop       rsi
-ret
-
-DotNetTips.Spargine.Extensions.GuidExtensions.FastEquals(System.Guid ByRef, System.Guid ByRef)
-vzeroupper
-cmp       [rcx],cl
-cmp       [rdx],dl
-vmovupd   xmm0,[rcx]
-vpcmpeqb  xmm0,xmm0,[rdx]
-vpmovmskb eax,xmm0
-and       eax,0FFFF
 cmp       eax,0FFFF
 sete      al
 movzx     eax,al

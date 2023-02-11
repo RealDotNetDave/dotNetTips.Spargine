@@ -1,0 +1,145 @@
+Method,Framework,Count,Mean,Allocated
+'BytesToString: Comparison',.NET 6.0,2,"52,458.18",90344
+'BytesToString: Comparison',.NET 7.0,2,"51,563.92",90344
+'BytesToString: Comparison',.NET 6.0,5,"120,025.65",221032
+'BytesToString: Comparison',.NET 7.0,5,"129,817.22",221032
+'BytesToString: Comparison',.NET 6.0,10,"253,421.69",425833
+'BytesToString: Comparison',.NET 7.0,10,"256,068.58",425832
+'BytesToString: Comparison',.NET 6.0,20,"488,727.73",835433
+'BytesToString: Comparison',.NET 7.0,20,"525,900.92",835433
+'BytesToString: Comparison',.NET 6.0,25,"808,630.79",1040241
+'BytesToString: Comparison',.NET 7.0,25,"839,883.75",1040245
+'BytesToString: Comparison',.NET 6.0,50,"1,527,058.74",2064246
+'BytesToString: Comparison',.NET 7.0,50,"1,549,360.72",2064269
+'BytesToString: Comparison',.NET 6.0,75,"2,233,430.38",3088263
+'BytesToString: Comparison',.NET 7.0,75,"2,303,019.46",3088264
+'BytesToString: Comparison',.NET 6.0,100,"2,823,786.74",4112268
+'BytesToString: Comparison',.NET 7.0,100,"2,924,257.77",4112288
+'BytesToString: Comparison',.NET 6.0,250,"6,745,921.88",10256291
+'BytesToString: Comparison',.NET 7.0,250,"6,919,983.04",10256299
+'CombineStrings: Comparison',.NET 6.0,2,62.23,272
+'CombineStrings: Comparison',.NET 7.0,2,73.86,272
+'CombineStrings: Comparison',.NET 6.0,5,110.22,472
+'CombineStrings: Comparison',.NET 7.0,5,132.67,472
+'CombineStrings: Comparison',.NET 6.0,10,174.16,768
+'CombineStrings: Comparison',.NET 7.0,10,205.07,768
+'CombineStrings: Comparison',.NET 6.0,20,275.02,1296
+'CombineStrings: Comparison',.NET 7.0,20,325.5,1296
+'CombineStrings: Comparison',.NET 6.0,25,306.88,1400
+'CombineStrings: Comparison',.NET 7.0,25,366.08,1400
+'CombineStrings: Comparison',.NET 6.0,50,541.76,2480
+'CombineStrings: Comparison',.NET 7.0,50,620.36,2480
+'CombineStrings: Comparison',.NET 6.0,75,804.37,4080
+'CombineStrings: Comparison',.NET 7.0,75,"1,062.98",4080
+'CombineStrings: Comparison',.NET 6.0,100,956.93,4576
+'CombineStrings: Comparison',.NET 7.0,100,"1,137.44",4576
+'CombineStrings: Comparison',.NET 6.0,250,"2,554.97",13864
+'CombineStrings: Comparison',.NET 7.0,250,"2,968.41",13864
+'PerformAction: Comparison',.NET 6.0,2,59.81,272
+'PerformAction: Comparison',.NET 7.0,2,77.63,272
+'PerformAction: Comparison',.NET 6.0,5,110.1,472
+'PerformAction: Comparison',.NET 7.0,5,132.42,472
+'PerformAction: Comparison',.NET 6.0,10,172.67,768
+'PerformAction: Comparison',.NET 7.0,10,206.31,768
+'PerformAction: Comparison',.NET 6.0,20,281.87,1296
+'PerformAction: Comparison',.NET 7.0,20,333.91,1296
+'PerformAction: Comparison',.NET 6.0,25,319.72,1400
+'PerformAction: Comparison',.NET 7.0,25,362.8,1400
+'PerformAction: Comparison',.NET 6.0,50,564.61,2480
+'PerformAction: Comparison',.NET 7.0,50,634.42,2480
+'PerformAction: Comparison',.NET 6.0,75,838.04,4080
+'PerformAction: Comparison',.NET 7.0,75,988.94,4080
+'PerformAction: Comparison',.NET 6.0,100,"1,023.66",4576
+'PerformAction: Comparison',.NET 7.0,100,"1,167.74",4576
+'PerformAction: Comparison',.NET 6.0,250,"2,612.02",13864
+'PerformAction: Comparison',.NET 7.0,250,"3,072.61",13864
+'ToDelimitedString: Comparison',.NET 6.0,2,176.16,600
+'ToDelimitedString: Comparison',.NET 7.0,2,189.36,600
+'ToDelimitedString: Comparison',.NET 6.0,5,330.46,1152
+'ToDelimitedString: Comparison',.NET 7.0,5,355.04,1152
+'ToDelimitedString: Comparison',.NET 6.0,10,593.29,2072
+'ToDelimitedString: Comparison',.NET 7.0,10,661.83,2072
+'ToDelimitedString: Comparison',.NET 6.0,20,"1,035.45",3840
+'ToDelimitedString: Comparison',.NET 7.0,20,"1,160.88",3840
+'ToDelimitedString: Comparison',.NET 6.0,25,"1,326.02",5520
+'ToDelimitedString: Comparison',.NET 7.0,25,"1,481.03",5520
+'ToDelimitedString: Comparison',.NET 6.0,50,"2,468.52",10592
+'ToDelimitedString: Comparison',.NET 7.0,50,"2,734.43",10592
+'ToDelimitedString: Comparison',.NET 6.0,75,"3,404.37",13544
+'ToDelimitedString: Comparison',.NET 7.0,75,"3,625.49",13544
+'ToDelimitedString: Comparison',.NET 6.0,100,"4,515.05",20664
+'ToDelimitedString: Comparison',.NET 7.0,100,"5,078.94",20664
+'ToDelimitedString: Comparison',.NET 6.0,250,"10,097.35",46624
+'ToDelimitedString: Comparison',.NET 7.0,250,"11,045.23",46624
+BytesToString,.NET 6.0,2,"51,240.94",90512
+BytesToString,.NET 7.0,2,"52,691.21",90512
+BytesToString,.NET 6.0,5,"130,159.98",221200
+BytesToString,.NET 7.0,5,"131,836.93",221200
+BytesToString,.NET 6.0,10,"248,321.51",426000
+BytesToString,.NET 7.0,10,"256,197.79",426000
+BytesToString,.NET 6.0,20,"509,624.90",835601
+BytesToString,.NET 7.0,20,"515,624.64",835601
+BytesToString,.NET 6.0,25,"836,792.51",1040420
+BytesToString,.NET 7.0,25,"848,920.73",1040412
+BytesToString,.NET 6.0,50,"1,525,770.77",2064417
+BytesToString,.NET 7.0,50,"1,562,563.96",2064441
+BytesToString,.NET 6.0,75,"2,281,660.67",3088433
+BytesToString,.NET 7.0,75,"2,293,111.40",3088433
+BytesToString,.NET 6.0,100,"2,904,321.16",4112435
+BytesToString,.NET 7.0,100,"2,966,389.79",4112448
+BytesToString,.NET 6.0,250,"6,918,630.92",10256510
+BytesToString,.NET 7.0,250,"7,042,324.22",10256471
+CombineStrings,.NET 6.0,2,42.98,64
+CombineStrings,.NET 7.0,2,47.13,64
+CombineStrings,.NET 6.0,5,62.76,128
+CombineStrings,.NET 7.0,5,67.64,128
+CombineStrings,.NET 6.0,10,99.21,224
+CombineStrings,.NET 7.0,10,100.31,224
+CombineStrings,.NET 6.0,20,167.16,424
+CombineStrings,.NET 7.0,20,177.91,424
+CombineStrings,.NET 6.0,25,199.95,528
+CombineStrings,.NET 7.0,25,207.7,528
+CombineStrings,.NET 6.0,50,366.05,1024
+CombineStrings,.NET 7.0,50,384.54,1024
+CombineStrings,.NET 6.0,75,512.32,1528
+CombineStrings,.NET 7.0,75,544.53,1528
+CombineStrings,.NET 6.0,100,662.52,2024
+CombineStrings,.NET 7.0,100,706.12,2024
+CombineStrings,.NET 6.0,250,"1,537.04",5024
+CombineStrings,.NET 7.0,250,"1,670.77",5024
+PerformAction,.NET 6.0,2,50.41,128
+PerformAction,.NET 7.0,2,58.51,128
+PerformAction,.NET 6.0,5,69.75,192
+PerformAction,.NET 7.0,5,79.3,192
+PerformAction,.NET 6.0,10,104,288
+PerformAction,.NET 7.0,10,116.61,288
+PerformAction,.NET 6.0,20,187.62,488
+PerformAction,.NET 7.0,20,189.5,488
+PerformAction,.NET 6.0,25,213.09,592
+PerformAction,.NET 7.0,25,229.65,592
+PerformAction,.NET 6.0,50,379.75,1088
+PerformAction,.NET 7.0,50,400.38,1088
+PerformAction,.NET 6.0,75,517.05,1592
+PerformAction,.NET 7.0,75,586.77,1592
+PerformAction,.NET 6.0,100,682.39,2088
+PerformAction,.NET 7.0,100,744.77,2088
+PerformAction,.NET 6.0,250,"1,624.87",5088
+PerformAction,.NET 7.0,250,"1,760.42",5088
+ToDelimitedString,.NET 6.0,2,227.28,280
+ToDelimitedString,.NET 7.0,2,268.64,280
+ToDelimitedString,.NET 6.0,5,500.46,704
+ToDelimitedString,.NET 7.0,5,565.49,704
+ToDelimitedString,.NET 6.0,10,962.75,1416
+ToDelimitedString,.NET 7.0,10,"1,017.05",1416
+ToDelimitedString,.NET 6.0,20,"1,905.66",2840
+ToDelimitedString,.NET 7.0,20,"2,034.79",2840
+ToDelimitedString,.NET 6.0,25,"2,320.81",3544
+ToDelimitedString,.NET 7.0,25,"2,502.75",3544
+ToDelimitedString,.NET 6.0,50,"4,526.60",7096
+ToDelimitedString,.NET 7.0,50,"4,701.44",7096
+ToDelimitedString,.NET 6.0,75,"6,953.68",10648
+ToDelimitedString,.NET 7.0,75,"7,518.57",10648
+ToDelimitedString,.NET 6.0,100,"9,028.70",14200
+ToDelimitedString,.NET 7.0,100,"9,853.49",14200
+ToDelimitedString,.NET 6.0,250,"23,398.36",48800
+ToDelimitedString,.NET 7.0,250,"27,704.55",48800

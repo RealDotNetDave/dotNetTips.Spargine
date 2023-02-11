@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-01-2023
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -30,8 +30,8 @@ public static class JsonSerialization
 	/// <param name="expected">The expected.</param>
 	/// <param name="actual">The actual.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	/// <exception cref="System.NotSupportedException">Undefined JsonValueKind: {valueKind}.</exception>
-	/// <exception cref="System.NotSupportedException">Unexpected JsonValueKind: {valueKind}.</exception>
+	/// <exception cref="NotSupportedException">Undefined JsonValueKind: {valueKind}.</exception>
+	/// <exception cref="NotSupportedException">Unexpected JsonValueKind: {valueKind}.</exception>
 	private static bool JsonEqual([NotNull] JsonElement expected, [NotNull] JsonElement actual)
 	{
 		var valueKind = expected.ValueKind;

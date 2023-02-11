@@ -1,0 +1,505 @@
+Method,Framework,Count,Mean,Allocated
+'AreEqual: as Reference',.NET 6.0,2,29.198,80
+'AreEqual: as Reference',.NET 7.0,2,35.009,80
+'AreEqual: as Reference',.NET 6.0,5,35.391,88
+'AreEqual: as Reference',.NET 7.0,5,42.687,88
+'AreEqual: as Reference',.NET 6.0,10,54.723,112
+'AreEqual: as Reference',.NET 7.0,10,61.842,112
+'AreEqual: as Reference',.NET 6.0,20,84.902,152
+'AreEqual: as Reference',.NET 7.0,20,106.258,152
+'AreEqual: as Reference',.NET 6.0,25,97.098,168
+'AreEqual: as Reference',.NET 7.0,25,118.891,168
+'AreEqual: as Reference',.NET 6.0,50,170.822,272
+'AreEqual: as Reference',.NET 7.0,50,215.436,272
+'AreEqual: as Reference',.NET 6.0,75,244.312,368
+'AreEqual: as Reference',.NET 7.0,75,290.567,368
+'AreEqual: as Reference',.NET 6.0,100,319.384,472
+'AreEqual: as Reference',.NET 7.0,100,384.053,472
+'AreEqual: as Reference',.NET 6.0,250,751.64,1072
+'AreEqual: as Reference',.NET 7.0,250,954.709,1072
+'AreEqual: as Value',.NET 6.0,2,104.668,288
+'AreEqual: as Value',.NET 7.0,2,131.068,288
+'AreEqual: as Value',.NET 6.0,5,176.798,400
+'AreEqual: as Value',.NET 7.0,5,196.447,400
+'AreEqual: as Value',.NET 6.0,10,367.312,736
+'AreEqual: as Value',.NET 7.0,10,446.336,736
+'AreEqual: as Value',.NET 6.0,20,689.979,1296
+'AreEqual: as Value',.NET 7.0,20,769.546,1296
+'AreEqual: as Value',.NET 6.0,25,815.989,1520
+'AreEqual: as Value',.NET 7.0,25,912.514,1520
+'AreEqual: as Value',.NET 6.0,50,"1,649.39",2976
+'AreEqual: as Value',.NET 7.0,50,"1,870.65",2976
+'AreEqual: as Value',.NET 6.0,75,"2,446.33",4320
+'AreEqual: as Value',.NET 7.0,75,"2,733.54",4320
+'AreEqual: as Value',.NET 6.0,100,"3,204.50",5776
+'AreEqual: as Value',.NET 7.0,100,"3,689.61",5776
+'AreEqual: as Value',.NET 6.0,250,"8,005.48",14176
+'AreEqual: as Value',.NET 7.0,250,"9,326.97",14176
+'BytesToString: ReadOnlySpan<>',.NET 6.0,2,"23,862.99",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,2,"23,437.35",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,5,"24,047.14",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,5,"23,609.27",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,10,"23,453.14",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,10,"23,533.29",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,20,"23,517.34",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,20,"23,675.51",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,25,"23,737.75",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,25,"23,682.60",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,50,"23,068.27",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,50,"23,392.56",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,75,"23,375.21",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,75,"23,739.78",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,100,"23,468.85",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,100,"23,353.38",36888
+'BytesToString: ReadOnlySpan<>',.NET 6.0,250,"25,095.39",36888
+'BytesToString: ReadOnlySpan<>',.NET 7.0,250,"23,624.72",36888
+'Clone: Array as Record',.NET 6.0,2,"16,103.62",6551
+'Clone: Array as Record',.NET 7.0,2,"14,560.36",6552
+'Clone: Array as Record',.NET 6.0,5,"36,809.52",14577
+'Clone: Array as Record',.NET 7.0,5,"31,785.71",14374
+'Clone: Array as Record',.NET 6.0,10,"77,204.63",28219
+'Clone: Array as Record',.NET 7.0,10,"65,595.28",27897
+'Clone: Array as Record',.NET 6.0,20,"149,585.17",55065
+'Clone: Array as Record',.NET 7.0,20,"136,498.69",54781
+'Clone: Array as Record',.NET 6.0,25,"191,351.89",68369
+'Clone: Array as Record',.NET 7.0,25,"172,717.54",67787
+'Clone: Array as Record',.NET 6.0,50,"375,310.20",135116
+'Clone: Array as Record',.NET 7.0,50,"347,661.26",134984
+'Clone: Array as Record',.NET 6.0,75,"648,356.75",202820
+'Clone: Array as Record',.NET 7.0,75,"604,239.83",202820
+'Clone: Array as Record',.NET 6.0,100,"845,051.16",269739
+'Clone: Array as Record',.NET 7.0,100,"782,635.55",269314
+'Clone: Array as Record',.NET 6.0,250,"2,125,850.37",678165
+'Clone: Array as Record',.NET 7.0,250,"1,885,344.48",676241
+'Clone: Array as Reference',.NET 6.0,2,"9,229.89",4895
+'Clone: Array as Reference',.NET 7.0,2,"8,362.74",5010
+'Clone: Array as Reference',.NET 6.0,5,"21,337.13",10472
+'Clone: Array as Reference',.NET 7.0,5,"18,251.54",10531
+'Clone: Array as Reference',.NET 6.0,10,"41,426.71",20300
+'Clone: Array as Reference',.NET 7.0,10,"36,159.33",20005
+'Clone: Array as Reference',.NET 6.0,20,"82,468.34",39132
+'Clone: Array as Reference',.NET 7.0,20,"76,020.82",39238
+'Clone: Array as Reference',.NET 6.0,25,"101,036.09",48111
+'Clone: Array as Reference',.NET 7.0,25,"93,539.90",48147
+'Clone: Array as Reference',.NET 6.0,50,"205,637.43",94773
+'Clone: Array as Reference',.NET 7.0,50,"188,832.94",94777
+'Clone: Array as Reference',.NET 6.0,75,"317,131.46",142774
+'Clone: Array as Reference',.NET 7.0,75,"295,497.67",143245
+'Clone: Array as Reference',.NET 6.0,100,"495,247.53",190641
+'Clone: Array as Reference',.NET 7.0,100,"476,596.71",190761
+'Clone: Array as Reference',.NET 6.0,250,"1,231,242.55",479086
+'Clone: Array as Reference',.NET 7.0,250,"1,129,602.69",475464
+'Clone: Array as Value',.NET 6.0,2,31.585,248
+'Clone: Array as Value',.NET 7.0,2,44.701,248
+'Clone: Array as Value',.NET 6.0,5,60.768,584
+'Clone: Array as Value',.NET 7.0,5,89.417,584
+'Clone: Array as Value',.NET 6.0,10,109.906,1144
+'Clone: Array as Value',.NET 7.0,10,162.589,1144
+'Clone: Array as Value',.NET 6.0,20,205.16,2264
+'Clone: Array as Value',.NET 7.0,20,309.737,2264
+'Clone: Array as Value',.NET 6.0,25,250.047,2824
+'Clone: Array as Value',.NET 7.0,25,381.572,2824
+'Clone: Array as Value',.NET 6.0,50,509.821,5624
+'Clone: Array as Value',.NET 7.0,50,751.936,5624
+'Clone: Array as Value',.NET 6.0,75,698.636,8424
+'Clone: Array as Value',.NET 7.0,75,"1,067.68",8424
+'Clone: Array as Value',.NET 6.0,100,896.77,11224
+'Clone: Array as Value',.NET 7.0,100,"1,458.56",11224
+'Clone: Array as Value',.NET 6.0,250,"2,492.81",28024
+'Clone: Array as Value',.NET 7.0,250,"3,837.95",28024
+'ContainsAny: as Reference',.NET 6.0,2,"5,759.79",3266
+'ContainsAny: as Reference',.NET 7.0,2,"5,211.94",3238
+'ContainsAny: as Reference',.NET 6.0,5,"9,261.27",5027
+'ContainsAny: as Reference',.NET 7.0,5,"9,258.67",5195
+'ContainsAny: as Reference',.NET 6.0,10,"20,407.17",10635
+'ContainsAny: as Reference',.NET 7.0,10,"18,971.51",10763
+'ContainsAny: as Reference',.NET 6.0,20,"41,320.16",20236
+'ContainsAny: as Reference',.NET 7.0,20,"37,390.56",20301
+'ContainsAny: as Reference',.NET 6.0,25,"49,512.46",23820
+'ContainsAny: as Reference',.NET 7.0,25,"45,781.53",23933
+'ContainsAny: as Reference',.NET 6.0,50,"104,199.82",48399
+'ContainsAny: as Reference',.NET 7.0,50,"95,928.01",48273
+'ContainsAny: as Reference',.NET 6.0,75,"158,836.46",70962
+'ContainsAny: as Reference',.NET 7.0,75,"148,292.40",71582
+'ContainsAny: as Reference',.NET 6.0,100,"218,900.43",95633
+'ContainsAny: as Reference',.NET 7.0,100,"199,650.52",94637
+'ContainsAny: as Reference',.NET 6.0,250,"681,312.93",237692
+'ContainsAny: as Reference',.NET 7.0,250,"618,445.94",237668
+'ContainsAny: as Value',.NET 6.0,2,"6,676.17",4572
+'ContainsAny: as Value',.NET 7.0,2,"6,298.86",4692
+'ContainsAny: as Value',.NET 6.0,5,"13,660.79",9863
+'ContainsAny: as Value',.NET 7.0,5,"13,153.65",9851
+'ContainsAny: as Value',.NET 6.0,10,"41,451.16",32212
+'ContainsAny: as Value',.NET 7.0,10,"38,082.54",32232
+'ContainsAny: as Value',.NET 6.0,20,"99,108.46",102426
+'ContainsAny: as Value',.NET 7.0,20,"102,633.28",102281
+'ContainsAny: as Value',.NET 6.0,25,"137,439.87",144903
+'ContainsAny: as Value',.NET 7.0,25,"142,484.88",144639
+'ContainsAny: as Value',.NET 6.0,50,"601,805.33",540810
+'ContainsAny: as Value',.NET 7.0,50,"505,423.85",541116
+'ContainsAny: as Value',.NET 6.0,75,"1,202,321.09",1158597
+'ContainsAny: as Value',.NET 7.0,75,"1,022,932.81",1159050
+'ContainsAny: as Value',.NET 6.0,100,"1,574,869.75",2041047
+'ContainsAny: as Value',.NET 7.0,100,"1,792,253.31",2040962
+'ContainsAny: as Value',.NET 6.0,250,"9,077,686.25",12298720
+'ContainsAny: as Value',.NET 7.0,250,"10,427,369.58",12298208
+'DoesNotHaveItems: as Reference',.NET 6.0,2,15.691,32
+'DoesNotHaveItems: as Reference',.NET 7.0,2,16.453,32
+'DoesNotHaveItems: as Reference',.NET 6.0,5,21.551,32
+'DoesNotHaveItems: as Reference',.NET 7.0,5,23.075,32
+'DoesNotHaveItems: as Reference',.NET 6.0,10,32.445,32
+'DoesNotHaveItems: as Reference',.NET 7.0,10,32.833,32
+'DoesNotHaveItems: as Reference',.NET 6.0,20,51.887,32
+'DoesNotHaveItems: as Reference',.NET 7.0,20,69.476,32
+'DoesNotHaveItems: as Reference',.NET 6.0,25,71.44,32
+'DoesNotHaveItems: as Reference',.NET 7.0,25,82.476,32
+'DoesNotHaveItems: as Reference',.NET 6.0,50,116.149,32
+'DoesNotHaveItems: as Reference',.NET 7.0,50,148.161,32
+'DoesNotHaveItems: as Reference',.NET 6.0,75,178.664,32
+'DoesNotHaveItems: as Reference',.NET 7.0,75,213.649,32
+'DoesNotHaveItems: as Reference',.NET 6.0,100,214.399,32
+'DoesNotHaveItems: as Reference',.NET 7.0,100,278.684,32
+'DoesNotHaveItems: as Reference',.NET 6.0,250,556.979,32
+'DoesNotHaveItems: as Reference',.NET 7.0,250,675.162,32
+'DoesNotHaveItems: as Value',.NET 6.0,2,15.743,32
+'DoesNotHaveItems: as Value',.NET 7.0,2,15.556,32
+'DoesNotHaveItems: as Value',.NET 6.0,5,22.481,32
+'DoesNotHaveItems: as Value',.NET 7.0,5,21.861,32
+'DoesNotHaveItems: as Value',.NET 6.0,10,30.877,32
+'DoesNotHaveItems: as Value',.NET 7.0,10,34.558,32
+'DoesNotHaveItems: as Value',.NET 6.0,20,55.495,32
+'DoesNotHaveItems: as Value',.NET 7.0,20,70.237,32
+'DoesNotHaveItems: as Value',.NET 6.0,25,67.063,32
+'DoesNotHaveItems: as Value',.NET 7.0,25,84.02,32
+'DoesNotHaveItems: as Value',.NET 6.0,50,127.341,32
+'DoesNotHaveItems: as Value',.NET 7.0,50,126.562,32
+'DoesNotHaveItems: as Value',.NET 6.0,75,182.831,32
+'DoesNotHaveItems: as Value',.NET 7.0,75,214.979,32
+'DoesNotHaveItems: as Value',.NET 6.0,100,213.866,32
+'DoesNotHaveItems: as Value',.NET 7.0,100,233.843,32
+'DoesNotHaveItems: as Value',.NET 6.0,250,503.686,32
+'DoesNotHaveItems: as Value',.NET 7.0,250,556.489,32
+'FastProcessor : Reference',.NET 6.0,2,13.254,0
+'FastProcessor : Reference',.NET 7.0,2,13.783,0
+'FastProcessor : Reference',.NET 6.0,5,25.229,0
+'FastProcessor : Reference',.NET 7.0,5,26.11,0
+'FastProcessor : Reference',.NET 6.0,10,40.32,0
+'FastProcessor : Reference',.NET 7.0,10,46.212,0
+'FastProcessor : Reference',.NET 6.0,20,92.347,0
+'FastProcessor : Reference',.NET 7.0,20,87.877,0
+'FastProcessor : Reference',.NET 6.0,25,112.915,0
+'FastProcessor : Reference',.NET 7.0,25,107.493,0
+'FastProcessor : Reference',.NET 6.0,50,214.198,0
+'FastProcessor : Reference',.NET 7.0,50,180.009,0
+'FastProcessor : Reference',.NET 6.0,75,273.654,0
+'FastProcessor : Reference',.NET 7.0,75,316.296,0
+'FastProcessor : Reference',.NET 6.0,100,418.331,0
+'FastProcessor : Reference',.NET 7.0,100,417.755,0
+'FastProcessor : Reference',.NET 6.0,250,909.521,0
+'FastProcessor : Reference',.NET 7.0,250,853.881,0
+'GenerateHashCode : Reference',.NET 6.0,2,451.345,48
+'GenerateHashCode : Reference',.NET 7.0,2,431.987,48
+'GenerateHashCode : Reference',.NET 6.0,5,995.448,48
+'GenerateHashCode : Reference',.NET 7.0,5,"1,032.61",48
+'GenerateHashCode : Reference',.NET 6.0,10,"2,017.11",48
+'GenerateHashCode : Reference',.NET 7.0,10,"2,025.14",48
+'GenerateHashCode : Reference',.NET 6.0,20,"3,998.61",48
+'GenerateHashCode : Reference',.NET 7.0,20,"4,016.50",48
+'GenerateHashCode : Reference',.NET 6.0,25,"5,278.09",48
+'GenerateHashCode : Reference',.NET 7.0,25,"4,952.39",48
+'GenerateHashCode : Reference',.NET 6.0,50,"9,877.11",48
+'GenerateHashCode : Reference',.NET 7.0,50,"10,001.20",48
+'GenerateHashCode : Reference',.NET 6.0,75,"15,833.23",48
+'GenerateHashCode : Reference',.NET 7.0,75,"15,182.77",48
+'GenerateHashCode : Reference',.NET 6.0,100,"19,905.32",48
+'GenerateHashCode : Reference',.NET 7.0,100,"20,046.71",48
+'GenerateHashCode : Reference',.NET 6.0,250,"49,304.04",48
+'GenerateHashCode : Reference',.NET 7.0,250,"49,922.00",48
+'HasItems: as Reference',.NET 6.0,2,15.88,32
+'HasItems: as Reference',.NET 7.0,2,16.276,32
+'HasItems: as Reference',.NET 6.0,5,22.135,32
+'HasItems: as Reference',.NET 7.0,5,23.339,32
+'HasItems: as Reference',.NET 6.0,10,32.594,32
+'HasItems: as Reference',.NET 7.0,10,33.846,32
+'HasItems: as Reference',.NET 6.0,20,51.777,32
+'HasItems: as Reference',.NET 7.0,20,62.7,32
+'HasItems: as Reference',.NET 6.0,25,68.264,32
+'HasItems: as Reference',.NET 7.0,25,74.662,32
+'HasItems: as Reference',.NET 6.0,50,125.753,32
+'HasItems: as Reference',.NET 7.0,50,148.056,32
+'HasItems: as Reference',.NET 6.0,75,165.78,32
+'HasItems: as Reference',.NET 7.0,75,180.55,32
+'HasItems: as Reference',.NET 6.0,100,233.415,32
+'HasItems: as Reference',.NET 7.0,100,235.999,32
+'HasItems: as Reference',.NET 6.0,250,562.514,32
+'HasItems: as Reference',.NET 7.0,250,675.436,32
+'HasItems: as Value',.NET 6.0,2,14.842,32
+'HasItems: as Value',.NET 7.0,2,16.245,32
+'HasItems: as Value',.NET 6.0,5,21.048,32
+'HasItems: as Value',.NET 7.0,5,22.642,32
+'HasItems: as Value',.NET 6.0,10,31.913,32
+'HasItems: as Value',.NET 7.0,10,34.712,32
+'HasItems: as Value',.NET 6.0,20,53.387,32
+'HasItems: as Value',.NET 7.0,20,63.431,32
+'HasItems: as Value',.NET 6.0,25,65.6,32
+'HasItems: as Value',.NET 7.0,25,73.05,32
+'HasItems: as Value',.NET 6.0,50,115.111,32
+'HasItems: as Value',.NET 7.0,50,148.332,32
+'HasItems: as Value',.NET 6.0,75,163.175,32
+'HasItems: as Value',.NET 7.0,75,213.707,32
+'HasItems: as Value',.NET 6.0,100,238.985,32
+'HasItems: as Value',.NET 7.0,100,234.292,32
+'HasItems: as Value',.NET 6.0,250,566.722,32
+'HasItems: as Value',.NET 7.0,250,673.096,32
+'HasItems: With Count as Reference',.NET 6.0,2,15.581,32
+'HasItems: With Count as Reference',.NET 7.0,2,15.681,32
+'HasItems: With Count as Reference',.NET 6.0,5,20.591,32
+'HasItems: With Count as Reference',.NET 7.0,5,21.887,32
+'HasItems: With Count as Reference',.NET 6.0,10,32.067,32
+'HasItems: With Count as Reference',.NET 7.0,10,33.977,32
+'HasItems: With Count as Reference',.NET 6.0,20,54.029,32
+'HasItems: With Count as Reference',.NET 7.0,20,61.996,32
+'HasItems: With Count as Reference',.NET 6.0,25,68.71,32
+'HasItems: With Count as Reference',.NET 7.0,25,82.218,32
+'HasItems: With Count as Reference',.NET 6.0,50,117.184,32
+'HasItems: With Count as Reference',.NET 7.0,50,147.917,32
+'HasItems: With Count as Reference',.NET 6.0,75,177.765,32
+'HasItems: With Count as Reference',.NET 7.0,75,168.148,32
+'HasItems: With Count as Reference',.NET 6.0,100,213.461,32
+'HasItems: With Count as Reference',.NET 7.0,100,235.982,32
+'HasItems: With Count as Reference',.NET 6.0,250,560.707,32
+'HasItems: With Count as Reference',.NET 7.0,250,562.212,32
+'HasItems: With Count as Value',.NET 6.0,2,15.372,32
+'HasItems: With Count as Value',.NET 7.0,2,15.641,32
+'HasItems: With Count as Value',.NET 6.0,5,21.695,32
+'HasItems: With Count as Value',.NET 7.0,5,21.958,32
+'HasItems: With Count as Value',.NET 6.0,10,33.599,32
+'HasItems: With Count as Value',.NET 7.0,10,33.947,32
+'HasItems: With Count as Value',.NET 6.0,20,53.895,32
+'HasItems: With Count as Value',.NET 7.0,20,69.179,32
+'HasItems: With Count as Value',.NET 6.0,25,73.649,32
+'HasItems: With Count as Value',.NET 7.0,25,73.118,32
+'HasItems: With Count as Value',.NET 6.0,50,127.852,32
+'HasItems: With Count as Value',.NET 7.0,50,147.567,32
+'HasItems: With Count as Value',.NET 6.0,75,180.403,32
+'HasItems: With Count as Value',.NET 7.0,75,213.486,32
+'HasItems: With Count as Value',.NET 6.0,100,236.094,32
+'HasItems: With Count as Value',.NET 7.0,100,234.685,32
+'HasItems: With Count as Value',.NET 6.0,250,497.589,32
+'HasItems: With Count as Value',.NET 7.0,250,557.684,32
+'HasItems: With Predicate as Reference',.NET 6.0,2,18.271,32
+'HasItems: With Predicate as Reference',.NET 7.0,2,20.614,32
+'HasItems: With Predicate as Reference',.NET 6.0,5,17.595,32
+'HasItems: With Predicate as Reference',.NET 7.0,5,20.028,32
+'HasItems: With Predicate as Reference',.NET 6.0,10,17.73,32
+'HasItems: With Predicate as Reference',.NET 7.0,10,19.997,32
+'HasItems: With Predicate as Reference',.NET 6.0,20,17.623,32
+'HasItems: With Predicate as Reference',.NET 7.0,20,20.856,32
+'HasItems: With Predicate as Reference',.NET 6.0,25,18.054,32
+'HasItems: With Predicate as Reference',.NET 7.0,25,20.429,32
+'HasItems: With Predicate as Reference',.NET 6.0,50,17.921,32
+'HasItems: With Predicate as Reference',.NET 7.0,50,20.776,32
+'HasItems: With Predicate as Reference',.NET 6.0,75,18.291,32
+'HasItems: With Predicate as Reference',.NET 7.0,75,20.257,32
+'HasItems: With Predicate as Reference',.NET 6.0,100,17.587,32
+'HasItems: With Predicate as Reference',.NET 7.0,100,20.535,32
+'HasItems: With Predicate as Reference',.NET 6.0,250,17.791,32
+'HasItems: With Predicate as Reference',.NET 7.0,250,20.58,32
+'HasItems: With Predicate as Value',.NET 6.0,2,53.538,32
+'HasItems: With Predicate as Value',.NET 7.0,2,54.549,32
+'HasItems: With Predicate as Value',.NET 6.0,5,53.525,32
+'HasItems: With Predicate as Value',.NET 7.0,5,54.895,32
+'HasItems: With Predicate as Value',.NET 6.0,10,52.407,32
+'HasItems: With Predicate as Value',.NET 7.0,10,54.679,32
+'HasItems: With Predicate as Value',.NET 6.0,20,53.633,32
+'HasItems: With Predicate as Value',.NET 7.0,20,54.248,32
+'HasItems: With Predicate as Value',.NET 6.0,25,55.522,32
+'HasItems: With Predicate as Value',.NET 7.0,25,53.721,32
+'HasItems: With Predicate as Value',.NET 6.0,50,53.577,32
+'HasItems: With Predicate as Value',.NET 7.0,50,53.72,32
+'HasItems: With Predicate as Value',.NET 6.0,75,53.014,32
+'HasItems: With Predicate as Value',.NET 7.0,75,53.959,32
+'HasItems: With Predicate as Value',.NET 6.0,100,53.646,32
+'HasItems: With Predicate as Value',.NET 7.0,100,53.726,32
+'HasItems: With Predicate as Value',.NET 6.0,250,52.554,32
+'HasItems: With Predicate as Value',.NET 7.0,250,54.795,32
+'PerformAction :Record (Comparison)',.NET 6.0,2,"45,016.95",89616
+'PerformAction :Record (Comparison)',.NET 7.0,2,"47,308.28",90008
+'PerformAction :Record (Comparison)',.NET 6.0,5,"110,968.34",228617
+'PerformAction :Record (Comparison)',.NET 7.0,5,"117,449.35",228753
+'PerformAction :Record (Comparison)',.NET 6.0,10,"231,874.53",457185
+'PerformAction :Record (Comparison)',.NET 7.0,10,"235,046.52",456721
+'PerformAction :Record (Comparison)',.NET 6.0,20,"436,909.71",903587
+'PerformAction :Record (Comparison)',.NET 7.0,20,"470,426.69",903155
+'PerformAction :Record (Comparison)',.NET 6.0,25,"549,899.92",1118324
+'PerformAction :Record (Comparison)',.NET 7.0,25,"575,866.50",1118460
+'PerformAction :Record (Comparison)',.NET 6.0,50,"1,112,009.95",2242672
+'PerformAction :Record (Comparison)',.NET 7.0,50,"1,200,136.55",2240776
+'PerformAction :Record (Comparison)',.NET 6.0,75,"1,738,450.72",3367545
+'PerformAction :Record (Comparison)',.NET 7.0,75,"1,826,161.68",3365802
+'PerformAction :Record (Comparison)',.NET 6.0,100,"2,305,462.50",4472681
+'PerformAction :Record (Comparison)',.NET 7.0,100,"2,458,699.97",4472417
+'PerformAction :Record (Comparison)',.NET 6.0,250,"5,696,489.92",11179885
+'PerformAction :Record (Comparison)',.NET 7.0,250,"6,007,216.98",11179671
+'PerformAction :Ref (Comparison)',.NET 6.0,2,164.019,704
+'PerformAction :Ref (Comparison)',.NET 7.0,2,181.005,704
+'PerformAction :Ref (Comparison)',.NET 6.0,5,266.661,1224
+'PerformAction :Ref (Comparison)',.NET 7.0,5,305.115,1224
+'PerformAction :Ref (Comparison)',.NET 6.0,10,442.819,2144
+'PerformAction :Ref (Comparison)',.NET 7.0,10,501.737,2144
+'PerformAction :Ref (Comparison)',.NET 6.0,20,772.723,3896
+'PerformAction :Ref (Comparison)',.NET 7.0,20,893.975,3896
+'PerformAction :Ref (Comparison)',.NET 6.0,25,884.734,4224
+'PerformAction :Ref (Comparison)',.NET 7.0,25,"1,037.06",4224
+'PerformAction :Ref (Comparison)',.NET 6.0,50,"1,702.90",8000
+'PerformAction :Ref (Comparison)',.NET 7.0,50,"1,942.26",8000
+'PerformAction :Ref (Comparison)',.NET 6.0,75,"2,587.72",13816
+'PerformAction :Ref (Comparison)',.NET 7.0,75,"3,002.54",13816
+'PerformAction :Ref (Comparison)',.NET 6.0,100,"3,194.77",15464
+'PerformAction :Ref (Comparison)',.NET 7.0,100,"3,584.74",15464
+'PerformAction :Ref (Comparison)',.NET 6.0,250,"7,951.91",49704
+'PerformAction :Ref (Comparison)',.NET 7.0,250,"9,901.28",49704
+'PerformAction :Ref',.NET 6.0,2,"1,355.27",960
+'PerformAction :Ref',.NET 7.0,2,"1,044.69",960
+'PerformAction :Ref',.NET 6.0,5,"1,483.75",1480
+'PerformAction :Ref',.NET 7.0,5,"1,216.02",1480
+'PerformAction :Ref',.NET 6.0,10,"1,793.10",2400
+'PerformAction :Ref',.NET 7.0,10,"1,487.43",2400
+'PerformAction :Ref',.NET 6.0,20,"2,133.41",4152
+'PerformAction :Ref',.NET 7.0,20,"1,946.10",4152
+'PerformAction :Ref',.NET 6.0,25,"2,334.86",4480
+'PerformAction :Ref',.NET 7.0,25,"2,080.40",4480
+'PerformAction :Ref',.NET 6.0,50,"3,340.62",8256
+'PerformAction :Ref',.NET 7.0,50,"3,215.64",8256
+'PerformAction :Ref',.NET 6.0,75,"4,446.64",14072
+'PerformAction :Ref',.NET 7.0,75,"4,513.86",14072
+'PerformAction :Ref',.NET 6.0,100,"5,010.87",15720
+'PerformAction :Ref',.NET 7.0,100,"5,249.46",15720
+'PerformAction :Ref',.NET 6.0,250,"11,452.01",49960
+'PerformAction :Ref',.NET 7.0,250,"12,873.42",49960
+'PerformAction :Val (Comparison)',.NET 6.0,2,156.628,704
+'PerformAction :Val (Comparison)',.NET 7.0,2,180.112,704
+'PerformAction :Val (Comparison)',.NET 6.0,5,280.226,1224
+'PerformAction :Val (Comparison)',.NET 7.0,5,305.628,1224
+'PerformAction :Val (Comparison)',.NET 6.0,10,432.976,2144
+'PerformAction :Val (Comparison)',.NET 7.0,10,524.438,2144
+'PerformAction :Val (Comparison)',.NET 6.0,20,764.393,3896
+'PerformAction :Val (Comparison)',.NET 7.0,20,894.724,3896
+'PerformAction :Val (Comparison)',.NET 6.0,25,948.398,4224
+'PerformAction :Val (Comparison)',.NET 7.0,25,"1,043.48",4224
+'PerformAction :Val (Comparison)',.NET 6.0,50,"1,681.97",8000
+'PerformAction :Val (Comparison)',.NET 7.0,50,"1,930.74",8000
+'PerformAction :Val (Comparison)',.NET 6.0,75,"2,585.74",13816
+'PerformAction :Val (Comparison)',.NET 7.0,75,"2,982.08",13816
+'PerformAction :Val (Comparison)',.NET 6.0,100,"3,112.44",15464
+'PerformAction :Val (Comparison)',.NET 7.0,100,"3,575.96",15464
+'PerformAction :Val (Comparison)',.NET 6.0,250,"7,786.82",49704
+'PerformAction :Val (Comparison)',.NET 7.0,250,"9,873.22",49704
+'PerformAction :Val',.NET 6.0,2,329.714,984
+'PerformAction :Val',.NET 7.0,2,360.472,984
+'PerformAction :Val',.NET 6.0,5,475.362,1504
+'PerformAction :Val',.NET 7.0,5,531.993,1504
+'PerformAction :Val',.NET 6.0,10,724.214,2424
+'PerformAction :Val',.NET 7.0,10,802.024,2424
+'PerformAction :Val',.NET 6.0,20,"1,212.17",4176
+'PerformAction :Val',.NET 7.0,20,"1,368.15",4176
+'PerformAction :Val',.NET 6.0,25,"1,394.27",4504
+'PerformAction :Val',.NET 7.0,25,"1,525.82",4504
+'PerformAction :Val',.NET 6.0,50,"2,578.19",8280
+'PerformAction :Val',.NET 7.0,50,"2,828.48",8280
+'PerformAction :Val',.NET 6.0,75,"3,810.88",14096
+'PerformAction :Val',.NET 7.0,75,"4,239.17",14096
+'PerformAction :Val',.NET 6.0,100,"4,762.07",15744
+'PerformAction :Val',.NET 7.0,100,"5,389.42",15744
+'PerformAction :Val',.NET 6.0,250,"12,202.30",49984
+'PerformAction :Val',.NET 7.0,250,"13,649.76",49984
+'ToDistinct : Reference',.NET 6.0,2,516.286,312
+'ToDistinct : Reference',.NET 7.0,2,526.974,312
+'ToDistinct : Reference',.NET 6.0,5,"1,138.35",416
+'ToDistinct : Reference',.NET 7.0,5,"1,180.18",416
+'ToDistinct : Reference',.NET 6.0,10,"2,106.90",536
+'ToDistinct : Reference',.NET 7.0,10,"2,147.12",536
+'ToDistinct : Reference',.NET 6.0,20,"4,465.13",856
+'ToDistinct : Reference',.NET 7.0,20,"4,361.49",856
+'ToDistinct : Reference',.NET 6.0,25,"5,289.03",1016
+'ToDistinct : Reference',.NET 7.0,25,"5,409.81",1016
+'ToDistinct : Reference',.NET 6.0,50,"10,366.05",1816
+'ToDistinct : Reference',.NET 7.0,50,"10,809.62",1816
+'ToDistinct : Reference',.NET 6.0,75,"15,626.19",2616
+'ToDistinct : Reference',.NET 7.0,75,"16,143.66",2616
+'ToDistinct : Reference',.NET 6.0,100,"21,227.49",3176
+'ToDistinct : Reference',.NET 7.0,100,"21,603.18",3176
+'ToDistinct : Reference',.NET 6.0,250,"52,550.27",8096
+'ToDistinct : Reference',.NET 7.0,250,"54,280.94",8096
+'Upsert : Reference',.NET 6.0,2,47.862,48
+'Upsert : Reference',.NET 7.0,2,52.366,48
+'Upsert : Reference',.NET 6.0,5,54.178,72
+'Upsert : Reference',.NET 7.0,5,59.679,72
+'Upsert : Reference',.NET 6.0,10,73.792,112
+'Upsert : Reference',.NET 7.0,10,85.932,112
+'Upsert : Reference',.NET 6.0,20,90.533,192
+'Upsert : Reference',.NET 7.0,20,104.259,192
+'Upsert : Reference',.NET 6.0,25,103.035,232
+'Upsert : Reference',.NET 7.0,25,123.59,232
+'Upsert : Reference',.NET 6.0,50,162.834,432
+'Upsert : Reference',.NET 7.0,50,185.398,432
+'Upsert : Reference',.NET 6.0,75,221.07,632
+'Upsert : Reference',.NET 7.0,75,255.81,632
+'Upsert : Reference',.NET 6.0,100,277.042,832
+'Upsert : Reference',.NET 7.0,100,304.466,832
+'Upsert : Reference',.NET 6.0,250,631.256,2032
+'Upsert : Reference',.NET 7.0,250,733.448,2032
+'Upsert: Record',.NET 6.0,2,53.954,48
+'Upsert: Record',.NET 7.0,2,55.672,48
+'Upsert: Record',.NET 6.0,5,73.74,72
+'Upsert: Record',.NET 7.0,5,78.918,72
+'Upsert: Record',.NET 6.0,10,89.23,112
+'Upsert: Record',.NET 7.0,10,98.149,112
+'Upsert: Record',.NET 6.0,20,141.647,192
+'Upsert: Record',.NET 7.0,20,150.374,192
+'Upsert: Record',.NET 6.0,25,163.825,232
+'Upsert: Record',.NET 7.0,25,182.476,232
+'Upsert: Record',.NET 6.0,50,270.977,432
+'Upsert: Record',.NET 7.0,50,301.562,432
+'Upsert: Record',.NET 6.0,75,389.402,632
+'Upsert: Record',.NET 7.0,75,433.45,632
+'Upsert: Record',.NET 6.0,100,497.727,832
+'Upsert: Record',.NET 7.0,100,558.914,832
+'Upsert: Record',.NET 6.0,250,"1,217.61",2032
+'Upsert: Record',.NET 7.0,250,"1,343.92",2032
+BytesToString,.NET 6.0,2,"25,431.42",36920
+BytesToString,.NET 7.0,2,"26,272.83",36920
+BytesToString,.NET 6.0,5,"25,467.71",36920
+BytesToString,.NET 7.0,5,"25,639.67",36920
+BytesToString,.NET 6.0,10,"25,569.02",36920
+BytesToString,.NET 7.0,10,"26,119.59",36920
+BytesToString,.NET 6.0,20,"25,238.59",36920
+BytesToString,.NET 7.0,20,"27,390.63",36920
+BytesToString,.NET 6.0,25,"25,733.06",36920
+BytesToString,.NET 7.0,25,"26,160.98",36920
+BytesToString,.NET 6.0,50,"26,024.38",36920
+BytesToString,.NET 7.0,50,"25,676.98",36920
+BytesToString,.NET 6.0,75,"25,744.37",36920
+BytesToString,.NET 7.0,75,"26,510.89",36920
+BytesToString,.NET 6.0,100,"26,088.69",36920
+BytesToString,.NET 7.0,100,"26,102.63",36920
+BytesToString,.NET 6.0,250,"25,567.75",36920
+BytesToString,.NET 7.0,250,"26,770.25",36920
+GetHashCode,.NET 6.0,2,2.182,0
+GetHashCode,.NET 7.0,2,2.159,0
+GetHashCode,.NET 6.0,5,2.164,0
+GetHashCode,.NET 7.0,5,1.937,0
+GetHashCode,.NET 6.0,10,2.162,0
+GetHashCode,.NET 7.0,10,1.954,0
+GetHashCode,.NET 6.0,20,2.127,0
+GetHashCode,.NET 7.0,20,1.902,0
+GetHashCode,.NET 6.0,25,2.185,0
+GetHashCode,.NET 7.0,25,2.138,0
+GetHashCode,.NET 6.0,50,2.142,0
+GetHashCode,.NET 7.0,50,1.95,0
+GetHashCode,.NET 6.0,75,2.14,0
+GetHashCode,.NET 7.0,75,1.942,0
+GetHashCode,.NET 6.0,100,2.176,0
+GetHashCode,.NET 7.0,100,2.156,0
+GetHashCode,.NET 6.0,250,2.21,0
+GetHashCode,.NET 7.0,250,1.91,0

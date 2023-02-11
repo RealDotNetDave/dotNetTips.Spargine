@@ -4,7 +4,7 @@
 // Created          : 08-27-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-06-2022
+// Last Modified On : 01-31-2023
 // ***********************************************************************
 // <copyright file="ObservableCollectionExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -22,16 +22,16 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 [BenchmarkCategory(Categories.Collections)]
-public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollectionsBenchmark
+public class ObservableCollectionExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
 
-	private ObservableCollection<PersonProper> _people;
+	private ObservableCollection<PersonProper> _personRefObservableCollection;
 
 	[Benchmark(Description = nameof(ObservableCollectionExtensions.HasItems))]
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItems()
 	{
-		var result = this._people.HasItems();
+		var result = this._personRefObservableCollection.HasItems();
 
 		this.Consume(result);
 	}
@@ -40,7 +40,7 @@ public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollection
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItemsWithCount()
 	{
-		var result = this._people.HasItems(5);
+		var result = this._personRefObservableCollection.HasItems(5);
 
 		this.Consume(result);
 	}
@@ -49,7 +49,7 @@ public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollection
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItemsWithPredicate()
 	{
-		var result = this._people.HasItems(p => p.Age.TotalDays > 500);
+		var result = this._personRefObservableCollection.HasItems(p => p.Address1.IsNotEmpty());
 
 		this.Consume(result);
 	}
@@ -61,7 +61,7 @@ public class ObservableCollectionExtensionsCollectionBenchmark : LargeCollection
 	{
 		base.Setup();
 
-		this._people = GetPersonProperRefArray().ToObservableCollection();
+		this._personRefObservableCollection = this.GetPersonProperRefArray().ToObservableCollection();
 
 	}
 

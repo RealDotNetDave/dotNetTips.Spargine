@@ -94,7 +94,7 @@ public static class ObjectExtensions
 	}
 
 	/// <summary>
-	/// Computes the sha256 hash for an object.
+	/// Computes the sha256 hash for an object using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="obj" /> is not null.
 	/// </summary>
 	/// <param name="obj">The data.</param>

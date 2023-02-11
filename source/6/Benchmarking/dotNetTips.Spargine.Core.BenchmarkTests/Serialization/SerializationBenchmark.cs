@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-04-2022
+// Last Modified On : 01-30-2023
 // ***********************************************************************
 // <copyright file="SerializationBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -29,76 +29,119 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Serialization;
 [BenchmarkCategory(Categories.Serialization)]
 public class SerializationBenchmark : Benchmark
 {
-	[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonProper")]
-	[BenchmarkCategory(Categories.XML)]
-	public void Deserialize01()
-	{
-		var result = XmlSerialization.Deserialize<PersonProper>(base.XmlTestDataPersonProper);
+	/// <summary>
+	/// The json person reference
+	/// </summary>
+	private string _jsonPersonRef;
 
-		this.Consume(result);
-	}
+	/// <summary>
+	/// The json person record
+	/// </summary>
+	private string _jsonPersonRecord;
 
-	[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonRecord")]
-	[BenchmarkCategory(Categories.XML)]
-	public void Deserialize02()
-	{
-		var result = XmlSerialization.Deserialize<PersonRecord>(base.XmlTestDataPersonRecord);
+	/// <summary>
+	/// The XML person reference
+	/// </summary>
+	private string _xmlPersonRef;
 
-		this.Consume(result);
-	}
+	/// <summary>
+	/// The XML person record
+	/// </summary>
+	private string _xmlPersonRecord;
 
+	/// <summary>
+	/// Deserializes the json record.
+	/// </summary>
 	[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonRecord")]
 	[BenchmarkCategory(Categories.JSON)]
-	public void Deserialize03()
+	public void Deserialize_Json_Record()
 	{
-		var result = JsonSerialization.Deserialize<PersonRecord>(base.JsonTestDataPersonRecord);
+		var result = JsonSerialization.Deserialize<PersonRecord>(this._jsonPersonRecord);
 
 		this.Consume(result);
 	}
 
+	/// <summary>
+	/// Deserializes the json reference.
+	/// </summary>
 	[Benchmark(Description = nameof(JsonSerialization.Deserialize) + ": JSON-PersonProper")]
 	[BenchmarkCategory(Categories.JSON)]
-	public void Deserialize04()
+	public void Deserialize_Json_Ref()
 	{
-		var result = JsonSerialization.Deserialize<PersonRecord>(base.XmlTestDataPersonProper);
+		var result = JsonSerialization.Deserialize<PersonRecord>(this._jsonPersonRef);
 
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(XmlSerialization.Serialize) + ": XML=PersonProper")]
+	/// <summary>
+	/// Deserializes the XML record.
+	/// </summary>
+	[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonRecord")]
 	[BenchmarkCategory(Categories.XML)]
-	public void Serialize01()
+	public void Deserialize_Xml_Record()
 	{
-		var result = XmlSerialization.Serialize(this.PersonProperRef01);
+		var result = XmlSerialization.Deserialize<PersonRecord>(this._xmlPersonRecord);
+
+		this.Consume(result);
+	}
+	/// <summary>
+	/// Deserializes the XML reference.
+	/// </summary>
+	[Benchmark(Description = nameof(XmlSerialization.Deserialize) + ": XML=PersonProper")]
+	[BenchmarkCategory(Categories.XML)]
+	public void Deserialize_Xml_Ref()
+	{
+		var result = XmlSerialization.Deserialize<PersonProper>(this._xmlPersonRef);
 
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonProper")]
-	[BenchmarkCategory(Categories.JSON)]
-	public void Serialize02()
-	{
-		var result = JsonSerialization.Serialize(this.PersonProperRef01);
-
-		this.Consume(result);
-	}
-
+	/// <summary>
+	/// Serializes the json record.
+	/// </summary>
 	[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonRecord")]
 	[BenchmarkCategory(Categories.JSON)]
-	public void Serialize03()
+	public void Serialize_Json_Record()
 	{
 		var result = JsonSerialization.Serialize(this.PersonRecord02);
 
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(XmlSerialization.StringToXDocument))]
-	[BenchmarkCategory(Categories.XML)]
-	public void StringToXDocument()
+	/// <summary>
+	/// Serializes the json reference.
+	/// </summary>
+	[Benchmark(Description = nameof(JsonSerialization.Serialize) + ": JSON=PersonProper")]
+	[BenchmarkCategory(Categories.JSON)]
+	public void Serialize_Json_Ref()
 	{
-		var result = XmlSerialization.StringToXDocument(this.XmlTestDataPersonProper);
+		var result = JsonSerialization.Serialize(this.PersonProperRef01);
 
 		this.Consume(result);
+	}
+
+	/// <summary>
+	/// Serializes the XML reference.
+	/// </summary>
+	[Benchmark(Description = nameof(XmlSerialization.Serialize) + ": XML=PersonProper")]
+	[BenchmarkCategory(Categories.XML)]
+	public void Serialize_XML_Ref()
+	{
+		var result = XmlSerialization.Serialize(this.PersonProperRef01);
+
+		this.Consume(result);
+	}
+
+	/// <summary>
+	/// Setups this instance.
+	/// </summary>
+	public override void Setup()
+	{
+		base.Setup();
+		this._jsonPersonRef = JsonSerialization.Serialize(base.PersonProperRef01);
+		this._jsonPersonRecord = JsonSerialization.Serialize(base.PersonRecord01);
+		this._xmlPersonRef = XmlSerialization.Serialize(base.PersonProperRef01);
+		this._xmlPersonRecord = XmlSerialization.Serialize(base.PersonRecord01);
 	}
 
 }

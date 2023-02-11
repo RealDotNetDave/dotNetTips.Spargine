@@ -36,7 +36,7 @@ internal static class InternalMethods
 	new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
-	/// Converts a byte array to a string.
+	/// Converts a byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="array">The array.</param>
 	/// <returns>System.String.</returns>

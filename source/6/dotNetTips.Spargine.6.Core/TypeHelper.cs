@@ -462,7 +462,7 @@ public static class TypeHelper
 	}
 
 	/// <summary>
-	/// Pretty print a type name.
+	/// Pretty print a type name using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="type">The <see cref="Type" />.</param>
 	/// <param name="fullName"><c>true</c> to print a fully qualified name.</param>

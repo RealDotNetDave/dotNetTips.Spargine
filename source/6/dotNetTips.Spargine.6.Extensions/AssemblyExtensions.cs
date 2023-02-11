@@ -4,7 +4,7 @@
 // Created          : 01-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="AssemblyExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,19 +34,19 @@ public static class AssemblyExtensions
 	/// <exception cref="ArgumentNullException">assembly</exception>
 	/// <remarks>Original code from: oqtane.framework</remarks>
 	[Information(nameof(GetAllInterfaces), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static IEnumerable<Type> GetAllInterfaces([NotNull] this Assembly assembly)
-	{
-		assembly = assembly.ArgumentNotNull();
+    public static IEnumerable<Type> GetAllInterfaces([NotNull] this Assembly assembly)
+    {
+        assembly = assembly.ArgumentNotNull();
 
-		var interfaces = new List<Type>();
+        var interfaces = new List<Type>();
 
-		foreach (var type in assembly.GetTypes())
-		{
-			 interfaces.AddRange(type.GetInterfaces());
-		}
+        foreach (var type in assembly.GetTypes())
+        {
+            interfaces.AddRange(type.GetInterfaces());
+        }
 
-		return interfaces;
-	}
+        return interfaces;
+    }
 
 	/// <summary>
 	/// Gets all types in an <see cref="Assembly" />.
@@ -55,12 +55,12 @@ public static class AssemblyExtensions
 	/// <param name="assembly">The assembly.</param>
 	/// <returns>IEnumerable&lt;Type&gt;.</returns>
 	[Information(nameof(GetAllTypes), "David McCarter", "221/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static IEnumerable<Type> GetAllTypes([NotNull] this Assembly assembly)
-	{
-		assembly = assembly.ArgumentNotNull();
+    public static IEnumerable<Type> GetAllTypes([NotNull] this Assembly assembly)
+    {
+        assembly = assembly.ArgumentNotNull();
 
-		return assembly.GetTypes().Where(p => !p.IsAbstract).AsEnumerable();
-	}
+        return assembly.GetTypes().Where(p => !p.IsAbstract).AsEnumerable();
+    }
 
 	/// <summary>
 	/// Gets all instances in a <see cref="Assembly" />.
@@ -72,23 +72,23 @@ public static class AssemblyExtensions
 	/// <exception cref="ArgumentNullException">assembly</exception>
 	/// <remarks>Original code from: oqtane.framework</remarks>
 	[Information(nameof(GetInstances), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static IEnumerable<T> GetInstances<T>([NotNull] this Assembly assembly) where T : class
-	{
-		assembly = assembly.ArgumentNotNull();
+    public static IEnumerable<T> GetInstances<T>([NotNull] this Assembly assembly) where T : class
+    {
+        assembly = assembly.ArgumentNotNull();
 
-		var types = assembly.GetTypes()
-			.Where(x => !x.IsInterface
-			&& !x.IsAbstract && !x.IsGenericType
-			&& typeof(T).IsAssignableFrom(x));
+        var types = assembly.GetTypes()
+            .Where(x => !x.IsInterface
+            && !x.IsAbstract && !x.IsGenericType
+            && typeof(T).IsAssignableFrom(x));
 
-		foreach (var type in types)
-		{
-			if (Activator.CreateInstance(type) is T instance)
-			{
-				yield return instance;
-			}
-		}
-	}
+        foreach (var type in types)
+        {
+            if (Activator.CreateInstance(type) is T instance)
+            {
+                yield return instance;
+            }
+        }
+    }
 
 	/// <summary>
 	/// Gets the types included in the <see cref="Assembly" /> that are not abstract
@@ -102,11 +102,11 @@ public static class AssemblyExtensions
 	/// <exception cref="ArgumentNullException">interfaceType</exception>
 	/// <remarks>Original code from: oqtane.framework</remarks>
 	[Information(nameof(GetTypes), "David McCarter", "1/7/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static IEnumerable<Type> GetTypes([NotNull] this Assembly assembly, [NotNull] Type type)
-	{
-		assembly = assembly.ArgumentNotNull();
-		type = type.ArgumentNotNull();
+    public static IEnumerable<Type> GetTypes([NotNull] this Assembly assembly, [NotNull] Type type)
+    {
+        assembly = assembly.ArgumentNotNull();
+        type = type.ArgumentNotNull();
 
-		return assembly.GetTypes().Where(p => !p.IsAbstract && type.IsAssignableFrom(p)).AsEnumerable();
-	}
+        return assembly.GetTypes().Where(p => !p.IsAbstract && type.IsAssignableFrom(p)).AsEnumerable();
+    }
 }

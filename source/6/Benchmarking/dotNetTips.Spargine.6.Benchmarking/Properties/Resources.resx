@@ -119,60 +119,44 @@
   </resheader>
   <data name="JsonTestDataPersonProper" xml:space="preserve">
     <value>{
-  "address1": "gOXrW]AYVyjxdtANqUxJGccb]",
-  "address2": "yGXswsF^ZDmSLhWSDjIY_LtnJ",
-  "bornOn": {
-    "DateTime": "\/Date(68750967985)\/",
-    "OffsetMinutes": -480
-  },
-  "cellPhone": "845-005-7333",
-  "city": "c`YFd[KpNtefbpD",
-  "country": "sZJwmLdiQybvVyH",
-  "email": "ugasmhbubabogaf@syefqkpeyudcbnuvcjujocn.ly",
-  "firstName": "WUslHDZPleKVotq",
-  "homePhone": "357-661-8642",
-  "id": "3f32a85f0c43493199e4776ee8f207a7",
-  "lastName": "MZsLqUdZaoR_rCuWqUWTXBL`X",
-  "postalCode": "66373453",
-  "state": "_tcaEtQavNE`rml"
+  "Address1": "GUdrKgQnkYoCnNP^E\u0060pyOBMWn",
+  "Address2": "\\xhrUMJJwrNqwSJtDcvwCoiCP",
+  "Age": "2190.00:00:00.1416747",
+  "BornOn": "2017-01-25T07:37:27.991408-08:00",
+  "CellPhone": "083-828-2338",
+  "City": "SgxDAn^LJdQaNPb",
+  "Country": "xakdRxHKlAvMMTV",
+  "Email": "cipgtdehgbj@gspyoepmpmxebawjnffyfo.org.uk",
+  "FirstName": "GKEavUf]DJGYxP^",
+  "HomePhone": "324-470-1840",
+  "Id": "ef719c98d4914b0abf62dc8f619bea14",
+  "LastName": "qyuQASb_IngAwpgyjuUNY\\QPW",
+  "PostalCode": "10557540",
+  "State": "cOctdg\u0060hHdsbVnt"
 }</value>
   </data>
   <data name="JsonTestDataPersonRecord" xml:space="preserve">
     <value>{
   "Addresses": [
     {
-      "Address1": "n\\KmpyaCVl]ljauKDSYdbbYTA",
-      "Address2": "TRnnquPocv_Rt]jCJqB_etCqH",
-      "City": "jJ[cJLDql\\hlO_pNvGeWrIpib",
-      "Country": "XjXnVZOwgHknMYj\\[IACPuSKQ",
-      "CountyProvince": "hmX[OaTlAl[eCVCYoaXF",
-      "Id": "3af0d0492d1d41d09f466700238e1ac0",
-      "Phone": "366-883-0752",
-      "PostalCode": "43246574",
-      "State": "X`XCLgOpXlxd[Tu"
-    },
-    {
-      "Address1": "ErxF]`pa_FiPDX`iWbSJqhV_A",
-      "Address2": "fEANpCqI]Iei`Tvayrw]XLXrD",
-      "City": "aCHKDW\\ZFq[pThDqH`PtyqNWb",
-      "Country": "roYBcZgIJPyiwYkIPZ\\[keKse",
-      "CountyProvince": "PeHwDjnkbLaDX]XngJYD",
-      "Id": "8b4af05cfceb408a99ae2f35234ef699",
-      "Phone": "111-466-3687",
-      "PostalCode": "15432741",
-      "State": "G_LxVNJFrvEfD\\l"
+      "Address1": "QqHyyMGhRagbQc\u0060IsmUBfa^Hl",
+      "Address2": "]Dn_loYsTMxxUvYKd]]ADb\u0060fC",
+      "City": "HdH[lYyEJco]fnXGSigWUrNM^",
+      "Country": "aNOYTGrH_MgwEgZLpwdwkXqrc",
+      "CountyProvince": "FTlUDZfHG[vd_MNs]\u0060AD",
+      "Id": "36b070445f6941e99f9ea3acb4c85103",
+      "Phone": "576-242-6403",
+      "PostalCode": "48383886",
+      "State": "dKqWYHsoIfS]gZm"
     }
   ],
-  "BornOn": {
-    "DateTime": "\/Date(-719647453721)\/",
-    "OffsetMinutes": -480
-  },
-  "CellPhone": "355-627-4826",
-  "Email": "whaqqspuuaecebosvgce@fmxirbveqtjgyresx.gov.uk",
-  "FirstName": "_KD[adh`KpuIJBK",
-  "HomePhone": "670-286-6612",
-  "Id": "002837656d7046419361bd82f3609407",
-  "LastName": "npMVXyuaGeYJCVjA]hTjdMNmC"
+  "BornOn": "1961-02-08T07:34:01.0453116-08:00",
+  "CellPhone": "626-134-6804",
+  "Email": "tywbiqvgoosounbwrx@rowitbyqvyhlofxahtumlpdm.net",
+  "FirstName": "pV]AKvCvNDECVdC",
+  "HomePhone": "635-056-7856",
+  "Id": "f3849cd24a2b4f4db22856f0d3e0b61c",
+  "LastName": "EXVwdxtgXydvvGfuiH[^EELja"
 }</value>
   </data>
   <data name="XmlTestDataPersonProper" xml:space="preserve">

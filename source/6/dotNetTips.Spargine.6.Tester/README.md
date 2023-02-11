@@ -1,7 +1,7 @@
-﻿# dotNetTips.Spargine.Tester
+# dotNetTips.Spargine.Tester
 
 ![dotNetTips.com](https://dotnettips.files.wordpress.com/2018/03/cropped-rtw-dotnettips-com-logo05x1.png)
-This repository is for the dotNetTips.Spargine.Tester code for .NET 5+.
+This repository is for the dotNetTips.Spargine.Tester code for .NET 6+.
 
 Much of this code is documented on <a href="https://dotnettips.wordpress.com/tag/dotnettips-utility/" target="_blank">dotNetTips.com</a>.
 

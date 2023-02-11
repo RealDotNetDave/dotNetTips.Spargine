@@ -1,14 +1,15 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<AnalysisLevel>latest</AnalysisLevel>
+		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.1.7</AssemblyVersion>
+		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Configurations>Debug;Release</Configurations>
@@ -20,7 +21,7 @@
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.1.7</FileVersion>
+		<FileVersion>2023.6.2.2</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -32,7 +33,8 @@
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageReleaseNotes>MAY 2022: Initial release.
-AUG 2022: Optimizations for benchmark code.</PackageReleaseNotes>
+AUG 2022: Optimizations for benchmark code.
+FEB 2023: Added new benchmark tests. Fixed issues. Code cleanup.</PackageReleaseNotes>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6/Benchmarking</RepositoryUrl>
@@ -42,15 +44,15 @@ AUG 2022: Optimizations for benchmark code.</PackageReleaseNotes>
 		<SelfContained>true</SelfContained>
 		<SignAssembly>False</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
-		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
-		<TargetFramework>net6.0</TargetFramework>
-		<Version>2023.6.1.7</Version>
+		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
+		<!--<TargetFramework>net6.0</TargetFramework>-->
+		<Version>2023.6.2.2</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="..\..\..\..\docs\graphics\dotNetTips-Spargine-6-Logo.png">
-		  <Pack>True</Pack>
-		  <PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
 		</None>
 		<None Include="..\..\..\..\README.md">
 			<Pack>True</Pack>
@@ -61,9 +63,9 @@ AUG 2022: Optimizations for benchmark code.</PackageReleaseNotes>
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.4" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.4" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.1.7" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.1.7" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.1.7" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.2.2" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.2.2" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.2.2" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -100,9 +102,4 @@ AUG 2022: Optimizations for benchmark code.</PackageReleaseNotes>
 			<Version>2022.6.4</Version>
 		</PackageReference>
 	</ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="if $(ConfigurationName) == Release (dotnet pack &quot;$(ProjectPath)&quot; --include-source --include-symbols --output  &quot;c:\dotNetTips.com\NuGet&quot;)" />
-	</Target>
-
 </Project>

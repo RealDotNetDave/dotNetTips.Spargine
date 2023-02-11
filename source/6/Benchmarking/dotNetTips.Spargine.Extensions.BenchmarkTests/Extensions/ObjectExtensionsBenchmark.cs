@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 01-30-2023
 // ***********************************************************************
 // <copyright file="ObjectExtensionsBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -278,7 +278,7 @@ public class ObjectExtensionsBenchmark : Benchmark
 		this._personProper = RandomData.GenerateRefPerson<PersonProper>();
 		this._personRecord = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
 		this._peopleJson = this._personProper.ToJson();
-		this._personCollection = RandomData.GeneratePersonRefCollection<PersonProper>(5000);
+		this._personCollection = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
 	}
 
 	[Benchmark(Description = nameof(ObjectExtensions.StripNull) + ": PersonProper")]

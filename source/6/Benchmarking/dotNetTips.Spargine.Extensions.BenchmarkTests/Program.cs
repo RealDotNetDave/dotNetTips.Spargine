@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-13-2022
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="Program.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -40,14 +40,11 @@ public static class Program
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
-			//var config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true);
 
-			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true)
-				  .WithOption(ConfigOptions.StopOnFirstError, true);
+			_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
-			//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
-
-			_ = BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
+			//_ = BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 			//BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
 			//BenchmarkRunner.Run<CollectionExtensionsCollectionBenchmark>(config);
 			//_ = BenchmarkRunner.Run<DictionaryExtensionsCollectionBenchmark>(config);
@@ -55,7 +52,7 @@ public static class Program
 			//_ = BenchmarkRunner.Run<ExceptionExtensionsBenchmark>(config);
 			//_ = BenchmarkRunner.Run<GeneralBenchmark>(config);
 			//_ = BenchmarkRunner.Run<ImmutableArrayExtensionsBenchmark>(config);
-			//_ = BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
+			//= BenchmarkRunner.Run<ListExtensionsCollectionBenchmark>(config);
 			//_ = BenchmarkRunner.Run<ObjectExtensionsBenchmark>(config);
 			//_ = BenchmarkRunner.Run<ObservableCollectionExtensionsCollectionBenchmark>(config);
 			//_ = BenchmarkRunner.Run<ReadOnlyCollectionBenchmark>(config);
@@ -65,14 +62,18 @@ public static class Program
 			//_ = BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
 			//_ = BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
 
+			ConsoleLogger.Default.WriteLine("COMPLETE!");
 			Console.Beep();
-			Console.Beep(frequency: 50000, duration: 5000);
+			Console.Beep(frequency: 500, duration: 1000);
+			Console.Beep(frequency: 750, duration: 2000);
+			Console.Beep(frequency: 800, duration: 3000);
 			_ = Console.ReadLine();
 		}
 		catch (Exception ex)
 		{
+			ConsoleLogger.Default.WriteLine("ERROR!");
 			ConsoleLogger.Default.WriteLine(ex.Message);
-			Console.Beep(frequency: 500, duration: 2000);
+			Console.Beep(frequency: 5000, duration: 6000);
 			_ = Console.ReadLine();
 		}
 #pragma warning restore CA1031 // Do not catch general exception types

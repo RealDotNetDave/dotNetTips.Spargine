@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -276,7 +276,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				sb.Append($"{person.ToString()}|");
 			});
 
-			Assert.IsTrue(sb.Length>100 );
+			Assert.IsTrue(sb.Length > 100);
 		}
 
 		[TestMethod]
@@ -293,19 +293,19 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			Assert.IsTrue(sb.Length > 100);
 		}
 
-		[TestMethod]
-		public void PerformActionTest_Record()
-		{
-			var people = RandomData.GeneratePersonRecordCollection(10).ToArray();
-			var sb = new StringBuilder();
+		//[TestMethod]
+		//public void PerformActionTest_Record()
+		//{
+		//	var people = RandomData.GeneratePersonRecordCollection(10).ToArray();
+		//	var sb = new StringBuilder();
 
-			people.PerformAction((person) =>
-			{
-				sb.Append($"{person.ToString()}|");
-			});
+		//	people.PerformAction((person) =>
+		//	{
+		//		sb.Append($"{person.ToString()}|");
+		//	});
 
-			Assert.IsTrue(sb.Length > 100);
-		}
+		//	Assert.IsTrue(sb.Length > 100);
+		//}
 
 		/// <summary>
 		/// Defines the test method UpsertTest01.

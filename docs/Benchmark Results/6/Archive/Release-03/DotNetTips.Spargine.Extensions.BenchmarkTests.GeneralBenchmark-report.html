@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20221113-162139</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.2.2004-nightly, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100
+  [Host]     : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  Job-FOHVKI : .NET 6.0.11 (6.0.1122.52304), X64 RyuJIT AVX2
+  Job-FJLZQV : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+</code></pre>
+
+<table>
+<thead><tr><th>      Method</th><th>Runtime</th><th>  Categories</th><th>Mean</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Q3</th><th>Max</th><th>   Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;Equals: Guid&#39;</td><td>.NET 6.0</td><td>**FOR COMPARISON**</td><td>2.717 ns</td><td>0.0102 ns</td><td>2.663 ns</td><td>2.690 ns</td><td>2.732 ns</td><td>2.792 ns</td><td>368,033,690.1</td><td>0.0429 ns</td><td>14.00</td><td>2.247</td><td>2.000</td><td>0.5380</td><td>3</td><td>*</td><td>No</td><td>117 B</td><td>-</td>
+</tr><tr><td>&#39;Equals: Guid&#39;</td><td>.NET 7.0</td><td>**FOR COMPARISON**</td><td>2.349 ns</td><td>0.0062 ns</td><td>2.327 ns</td><td>2.331 ns</td><td>2.363 ns</td><td>2.392 ns</td><td>425,658,916.2</td><td>0.0255 ns</td><td>15.00</td><td>1.779</td><td>2.000</td><td>0.6864</td><td>1</td><td>*</td><td>No</td><td>105 B</td><td>-</td>
+</tr><tr><td>&#39;FastEquals: Guid&#39;</td><td>.NET 6.0</td><td></td><td>3.038 ns</td><td>0.0251 ns</td><td>2.784 ns</td><td>2.909 ns</td><td>3.102 ns</td><td>3.517 ns</td><td>329,163,331.2</td><td>0.0877 ns</td><td>53.00</td><td>3.229</td><td>2.000</td><td>1.0764</td><td>4</td><td>*</td><td>No</td><td>106 B</td><td>-</td>
+</tr><tr><td>&#39;FastEquals: Guid&#39;</td><td>.NET 7.0</td><td></td><td>2.534 ns</td><td>0.0047 ns</td><td>2.518 ns</td><td>2.521 ns</td><td>2.542 ns</td><td>2.573 ns</td><td>394,679,767.5</td><td>0.0200 ns</td><td>14.00</td><td>2.848</td><td>2.000</td><td>1.0827</td><td>2</td><td>*</td><td>No</td><td>102 B</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

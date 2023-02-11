@@ -148,14 +148,14 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <param name="args">The arguments.</param>
 	/// <returns>string.</returns>
-	[Information(nameof(Concat), "David McCarter", "1/3/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New)]
+	[Information(nameof(Concat), "David McCarter", "1/3/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 	public static string CombineToString([NotNull] this string input, [NotNull] params string[] args)
 	{
 		return FastStringBuilder.CombineStrings(Tristate.False, args.AddFirst(input));
 	}
 
 	/// <summary>
-	/// Computes a hash from the string.
+	/// Computes a hash from the string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The input.</param>
@@ -211,7 +211,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Concatenates the specified first message with passed in string[].
+	/// Concatenates the specified first message with passed in string[] using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The first message.</param>
@@ -634,7 +634,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Indents the string by the specified length.
+	/// Indents the string by the specified length using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The string.</param>
@@ -1185,7 +1185,7 @@ public static class StringExtensions
 	/// <param name="encoding">The encoding method.</param>
 	/// <returns>byte[].</returns>
 	/// <remarks>Use <seealso cref="ArrayExtensions.BytesToString(byte[])" /> to convert it back to a <see cref="string" />.</remarks>
-	[Information(nameof(ToByteArray), "David McCarter", "12/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New)]
+	[Information(nameof(ToByteArray), "David McCarter", "12/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
 	public static byte[] ToByteArray(this string input, Encoding encoding)
 	{
 		input = input.ArgumentNotNullOrEmpty();

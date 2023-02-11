@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20220802-021600</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-TRKAEU : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
+</code></pre>
+
+<table>
+<thead><tr><th>  Method</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th> Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>GetAllMessages</td><td>185.2 ns</td><td>3.68 ns</td><td>4.52 ns</td><td>0.96 ns</td><td>178.4 ns</td><td>181.7 ns</td><td>184.8 ns</td><td>187.9 ns</td><td>198.0 ns</td><td>5,399,553.5</td><td>3.683 ns</td><td>22.00</td><td>3.611</td><td>2.000</td><td>0.7826</td><td>1</td><td>*</td><td>No</td><td>0.0296</td><td>446 B</td><td>272 B</td>
+</tr></tbody></table>
+</body>
+</html>

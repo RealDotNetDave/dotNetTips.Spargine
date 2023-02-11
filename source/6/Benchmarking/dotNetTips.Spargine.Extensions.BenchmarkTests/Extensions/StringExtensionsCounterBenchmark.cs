@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 02-02-2023
 // ***********************************************************************
 // <copyright file="StringExtensionsCounterBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -61,7 +61,7 @@ public class StringExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	[BenchmarkCategory(Categories.Strings)]
 	public void ContainsAny()
 	{
-		var result = this._crlfString.ContainsAny(Convert.ToChar("A", CultureInfo.InvariantCulture), Convert.ToChar("Z", CultureInfo.InvariantCulture));
+		var result = this._crlfString.ContainsAny(Convert.ToChar("a", CultureInfo.InvariantCulture), Convert.ToChar("z", CultureInfo.InvariantCulture));
 
 		this.Consume(result);
 	}

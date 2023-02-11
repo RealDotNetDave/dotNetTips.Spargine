@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-14-2022
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="AddressRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -126,8 +126,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the Address2.
 	/// </summary>
 	/// <value>The Address2.</value>
-	/// <exception cref="ArgumentNullException">Address2 - Value for address cannot be null.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Address2 - Address cannot be more than 256 characters.</exception>
+	/// <exception cref="ArgumentNullException">Address2 - Value for address cannot be null.</exception>
 	public string Address2
 	{
 		get => this._address2;
@@ -146,8 +146,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the city.
 	/// </summary>
 	/// <value>The city name.</value>
-	/// <exception cref="ArgumentNullException">City - Value for City cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">City - City length is limited to 100 characters.</exception>
+	/// <exception cref="ArgumentNullException">City - Value for City cannot be null or empty.</exception>
 	public string City
 	{
 		get => this._city;
@@ -166,8 +166,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the country.
 	/// </summary>
 	/// <value>The country name.</value>
-	/// <exception cref="ArgumentNullException">Country - Value for Country cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">Country - Value for Country cannot be null or empty.</exception>
 	public string Country
 	{
 		get => this._country;
@@ -186,8 +186,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the county province.
 	/// </summary>
 	/// <value>The county province.</value>
-	/// <exception cref="ArgumentNullException">CountyProvince - Value for County/ Province cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">CountyProvince - Value for County/ Province cannot be null or empty.</exception>
 	public string CountyProvince
 	{
 		get => this._countyProvince;
@@ -212,8 +212,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the phone.
 	/// </summary>
 	/// <value>The phone.</value>
-	/// <exception cref="ArgumentNullException">Phone - Value for phone number cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">Phone - Value for phone number cannot be null or empty.</exception>
 	public string Phone
 	{
 		get => this._phone;
@@ -228,13 +228,12 @@ public record AddressRecord : IDataRecord
 		}
 	}
 
-
 	/// <summary>
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentNullException">PostalCode - Value for postal code cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">PostalCode - Postal code length is limited to 20 characters.</exception>
+	/// <exception cref="ArgumentNullException">PostalCode - Value for postal code cannot be null or empty.</exception>
 	public string PostalCode
 	{
 		get => this._postalCode;
@@ -253,8 +252,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the state.
 	/// </summary>
 	/// <value>The state.</value>
-	/// <exception cref="ArgumentNullException">State - Value for State cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">State - State  length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">State - Value for State cannot be null or empty.</exception>
 	public string State
 	{
 		get => this._state;

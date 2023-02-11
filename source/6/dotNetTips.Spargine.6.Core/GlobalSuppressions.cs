@@ -46,3 +46,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Spellchecker", "CRRSP08:A misspelled word has been found", Justification = "<Pending>", Scope = "member", Target = "~F:DotNetTips.Spargine.Core.EnvironmentKey.windir")]
 [assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Core.Collections.Generic.ObservableList`1")]
 [assembly: SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Core.Collections.Generic.Concurrent.DistinctConcurrentBag`1")]
+[assembly: SuppressMessage("Design", "CA1019:Define accessors for attribute arguments", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.PreserveAttribute.#ctor(DotNetTips.Spargine.Core.PreserveReason,System.String,System.String,System.String)")]

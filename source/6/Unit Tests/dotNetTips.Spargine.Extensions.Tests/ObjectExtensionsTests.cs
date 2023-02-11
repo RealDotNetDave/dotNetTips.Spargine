@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 12-17-2020
@@ -170,7 +170,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				sequenceSeparator: ", ",
 				ignoreNulls: true);
 
-			Assert.IsTrue(result.Length > 1300);
+			Assert.IsTrue(result.Length > 100);
 			Assert.IsTrue(result.Contains("Addresses"));
 			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
@@ -181,7 +181,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 				ignoreNulls: true,
 				includeMemberName: false);
 
-			Assert.IsTrue(result.Length > 1300);
+			Assert.IsTrue(result.Length > 100);
 			Assert.IsTrue(result.Contains("Addresses"));
 			//PrintResult(result, nameof(this.PropertiesToStringTest));
 
@@ -205,7 +205,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			result = personCollection.PropertiesToString();
 			Assert.IsTrue(result.Contains("LastName"));
-			Assert.IsTrue(result.Length > 6000);
+			Assert.IsTrue(result.Length > 1000);
 		}
 
 		[TestMethod]

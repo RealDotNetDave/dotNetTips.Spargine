@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark-20220802-041436</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-TRKAEU : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  Categories=Collections  
+</code></pre>
+
+<table>
+<thead><tr><th>              Method</th><th>Count</th><th>  Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>   Min</th><th>    Q1</th><th>Median</th><th>    Q3</th><th>   Max</th><th>  Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Gen 0</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;HasItems: With Count&#39;</td><td>10</td><td>93.17 ns</td><td>1.903 ns</td><td>1.687 ns</td><td>0.451 ns</td><td>90.48 ns</td><td>92.23 ns</td><td>92.68 ns</td><td>94.23 ns</td><td>96.43 ns</td><td>10,733,482.4</td><td>1.9031 ns</td><td>14.00</td><td>2.167</td><td>2.000</td><td>0.4961</td><td>2</td><td>*</td><td>No</td><td>0.0043</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>25</td><td>187.96 ns</td><td>3.526 ns</td><td>3.298 ns</td><td>0.852 ns</td><td>181.11 ns</td><td>185.32 ns</td><td>187.77 ns</td><td>190.84 ns</td><td>192.69 ns</td><td>5,320,294.8</td><td>3.5261 ns</td><td>15.00</td><td>2.029</td><td>2.000</td><td>-0.2725</td><td>4</td><td>*</td><td>No</td><td>0.0043</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>50</td><td>317.36 ns</td><td>2.847 ns</td><td>4.347 ns</td><td>0.781 ns</td><td>310.18 ns</td><td>313.47 ns</td><td>316.51 ns</td><td>320.26 ns</td><td>326.98 ns</td><td>3,150,964.6</td><td>2.8469 ns</td><td>31.00</td><td>2.542</td><td>2.000</td><td>0.6248</td><td>5</td><td>*</td><td>No</td><td>0.0043</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>100</td><td>644.68 ns</td><td>4.689 ns</td><td>4.386 ns</td><td>1.133 ns</td><td>635.22 ns</td><td>642.29 ns</td><td>645.67 ns</td><td>648.04 ns</td><td>649.75 ns</td><td>1,551,165.7</td><td>4.6892 ns</td><td>15.00</td><td>2.367</td><td>2.000</td><td>-0.7387</td><td>6</td><td>*</td><td>No</td><td>0.0038</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>250</td><td>1,557.98 ns</td><td>15.638 ns</td><td>14.628 ns</td><td>3.777 ns</td><td>1,534.88 ns</td><td>1,546.47 ns</td><td>1,560.14 ns</td><td>1,569.32 ns</td><td>1,576.91 ns</td><td>641,857.2</td><td>15.6377 ns</td><td>15.00</td><td>1.437</td><td>2.000</td><td>-0.2382</td><td>7</td><td>*</td><td>No</td><td>0.0038</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>500</td><td>3,122.89 ns</td><td>48.677 ns</td><td>45.532 ns</td><td>11.756 ns</td><td>3,057.57 ns</td><td>3,088.09 ns</td><td>3,124.80 ns</td><td>3,151.48 ns</td><td>3,207.54 ns</td><td>320,215.8</td><td>48.6770 ns</td><td>15.00</td><td>1.856</td><td>2.000</td><td>0.1699</td><td>9</td><td>*</td><td>No</td><td>0.0038</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>1000</td><td>6,062.17 ns</td><td>68.069 ns</td><td>60.342 ns</td><td>16.127 ns</td><td>5,967.27 ns</td><td>6,022.29 ns</td><td>6,067.12 ns</td><td>6,125.33 ns</td><td>6,132.66 ns</td><td>164,957.6</td><td>68.0695 ns</td><td>14.00</td><td>1.433</td><td>2.000</td><td>-0.1945</td><td>10</td><td>*</td><td>No</td><td>-</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Count&#39;</td><td>2500</td><td>14,922.67 ns</td><td>113.371 ns</td><td>100.500 ns</td><td>26.860 ns</td><td>14,708.15 ns</td><td>14,881.63 ns</td><td>14,932.57 ns</td><td>14,970.41 ns</td><td>15,078.78 ns</td><td>67,012.1</td><td>113.3706 ns</td><td>14.00</td><td>2.475</td><td>2.000</td><td>-0.3449</td><td>12</td><td>*</td><td>No</td><td>-</td><td>218 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>10</td><td>62.34 ns</td><td>1.275 ns</td><td>1.065 ns</td><td>0.295 ns</td><td>60.13 ns</td><td>62.08 ns</td><td>62.29 ns</td><td>63.10 ns</td><td>64.47 ns</td><td>16,040,414.1</td><td>1.2751 ns</td><td>13.00</td><td>2.876</td><td>2.000</td><td>-0.0712</td><td>1</td><td>*</td><td>No</td><td>0.0044</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>25</td><td>62.32 ns</td><td>1.274 ns</td><td>1.564 ns</td><td>0.333 ns</td><td>59.92 ns</td><td>61.06 ns</td><td>62.34 ns</td><td>63.00 ns</td><td>65.96 ns</td><td>16,045,370.0</td><td>1.2736 ns</td><td>22.00</td><td>2.946</td><td>2.000</td><td>0.5968</td><td>1</td><td>*</td><td>No</td><td>0.0044</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>50</td><td>63.24 ns</td><td>1.305 ns</td><td>1.651 ns</td><td>0.344 ns</td><td>59.99 ns</td><td>62.18 ns</td><td>63.20 ns</td><td>64.21 ns</td><td>66.53 ns</td><td>15,811,850.0</td><td>1.3053 ns</td><td>23.00</td><td>2.208</td><td>2.000</td><td>-0.0061</td><td>1</td><td>*</td><td>No</td><td>0.0043</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>100</td><td>62.24 ns</td><td>1.240 ns</td><td>1.523 ns</td><td>0.325 ns</td><td>60.25 ns</td><td>61.08 ns</td><td>61.84 ns</td><td>63.05 ns</td><td>65.72 ns</td><td>16,065,548.7</td><td>1.2400 ns</td><td>22.00</td><td>2.682</td><td>2.000</td><td>0.7782</td><td>1</td><td>*</td><td>No</td><td>0.0043</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>250</td><td>62.81 ns</td><td>1.280 ns</td><td>1.369 ns</td><td>0.323 ns</td><td>60.78 ns</td><td>61.64 ns</td><td>63.15 ns</td><td>63.95 ns</td><td>65.00 ns</td><td>15,920,330.4</td><td>1.2797 ns</td><td>18.00</td><td>1.475</td><td>2.000</td><td>-0.0776</td><td>1</td><td>*</td><td>No</td><td>0.0044</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>500</td><td>63.88 ns</td><td>1.310 ns</td><td>1.609 ns</td><td>0.343 ns</td><td>62.11 ns</td><td>62.52 ns</td><td>63.65 ns</td><td>64.35 ns</td><td>67.72 ns</td><td>15,654,386.9</td><td>1.3102 ns</td><td>22.00</td><td>3.131</td><td>2.000</td><td>1.0283</td><td>1</td><td>*</td><td>No</td><td>0.0043</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>1000</td><td>63.67 ns</td><td>0.988 ns</td><td>0.876 ns</td><td>0.234 ns</td><td>62.03 ns</td><td>63.08 ns</td><td>63.60 ns</td><td>64.25 ns</td><td>65.00 ns</td><td>15,705,853.3</td><td>0.9885 ns</td><td>14.00</td><td>1.899</td><td>2.000</td><td>-0.1393</td><td>1</td><td>*</td><td>No</td><td>0.0043</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>&#39;HasItems: With Predicate&#39;</td><td>2500</td><td>64.48 ns</td><td>1.312 ns</td><td>2.262 ns</td><td>0.367 ns</td><td>61.19 ns</td><td>62.89 ns</td><td>64.04 ns</td><td>65.92 ns</td><td>70.60 ns</td><td>15,508,895.0</td><td>1.3116 ns</td><td>38.00</td><td>3.112</td><td>2.000</td><td>0.8290</td><td>1</td><td>*</td><td>No</td><td>0.0043</td><td>696 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>10</td><td>98.27 ns</td><td>1.910 ns</td><td>1.786 ns</td><td>0.461 ns</td><td>95.71 ns</td><td>97.06 ns</td><td>97.89 ns</td><td>99.49 ns</td><td>102.05 ns</td><td>10,176,563.1</td><td>1.9097 ns</td><td>15.00</td><td>2.094</td><td>2.000</td><td>0.3696</td><td>3</td><td>*</td><td>No</td><td>0.0043</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>25</td><td>187.31 ns</td><td>3.421 ns</td><td>3.200 ns</td><td>0.826 ns</td><td>182.56 ns</td><td>184.43 ns</td><td>187.52 ns</td><td>189.71 ns</td><td>192.99 ns</td><td>5,338,815.9</td><td>3.4209 ns</td><td>15.00</td><td>1.590</td><td>2.000</td><td>0.2046</td><td>4</td><td>*</td><td>No</td><td>0.0043</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>50</td><td>316.42 ns</td><td>3.994 ns</td><td>3.540 ns</td><td>0.946 ns</td><td>311.06 ns</td><td>313.27 ns</td><td>316.34 ns</td><td>319.64 ns</td><td>321.52 ns</td><td>3,160,382.4</td><td>3.9936 ns</td><td>14.00</td><td>1.552</td><td>2.000</td><td>0.1195</td><td>5</td><td>*</td><td>No</td><td>0.0043</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>100</td><td>644.25 ns</td><td>7.985 ns</td><td>6.234 ns</td><td>1.800 ns</td><td>630.91 ns</td><td>640.73 ns</td><td>644.89 ns</td><td>648.08 ns</td><td>654.25 ns</td><td>1,552,191.9</td><td>7.9851 ns</td><td>12.00</td><td>2.553</td><td>2.000</td><td>-0.4455</td><td>6</td><td>*</td><td>No</td><td>0.0038</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>250</td><td>1,559.87 ns</td><td>14.699 ns</td><td>13.749 ns</td><td>3.550 ns</td><td>1,538.07 ns</td><td>1,551.02 ns</td><td>1,560.44 ns</td><td>1,571.17 ns</td><td>1,578.33 ns</td><td>641,081.1</td><td>14.6988 ns</td><td>15.00</td><td>1.613</td><td>2.000</td><td>-0.3150</td><td>7</td><td>*</td><td>No</td><td>0.0038</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>500</td><td>2,833.29 ns</td><td>36.974 ns</td><td>34.586 ns</td><td>8.930 ns</td><td>2,798.80 ns</td><td>2,803.66 ns</td><td>2,828.53 ns</td><td>2,859.43 ns</td><td>2,901.08 ns</td><td>352,946.1</td><td>36.9743 ns</td><td>15.00</td><td>1.848</td><td>2.000</td><td>0.6148</td><td>8</td><td>*</td><td>No</td><td>0.0038</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>1000</td><td>6,032.13 ns</td><td>83.558 ns</td><td>78.160 ns</td><td>20.181 ns</td><td>5,886.43 ns</td><td>5,980.16 ns</td><td>6,039.61 ns</td><td>6,104.80 ns</td><td>6,132.08 ns</td><td>165,778.9</td><td>83.5580 ns</td><td>15.00</td><td>1.699</td><td>2.000</td><td>-0.2664</td><td>10</td><td>*</td><td>No</td><td>-</td><td>217 B</td><td>40 B</td>
+</tr><tr><td>HasItems</td><td>2500</td><td>13,362.53 ns</td><td>117.409 ns</td><td>109.824 ns</td><td>28.357 ns</td><td>13,162.16 ns</td><td>13,321.30 ns</td><td>13,344.65 ns</td><td>13,420.11 ns</td><td>13,553.48 ns</td><td>74,836.1</td><td>117.4090 ns</td><td>15.00</td><td>2.185</td><td>2.000</td><td>0.1314</td><td>11</td><td>*</td><td>No</td><td>-</td><td>217 B</td><td>40 B</td>
+</tr></tbody></table>
+</body>
+</html>

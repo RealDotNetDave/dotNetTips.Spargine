@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-14-2022
+// Last Modified On : 02-02-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -19,10 +19,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
-using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
-using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
+using DotNetTips.Spargine.Tester.Models.ValueTypes;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -34,10 +33,10 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 /// </summary>
 /// <seealso cref="LargeCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
-public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
+public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
-
-	private IEnumerable<PersonProper> _people;
+	private IEnumerable<Coordinate> _coordinateValEnumerable;
+	private IEnumerable<PersonProper> _personRefEnumerable;
 
 	private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 	{
@@ -52,9 +51,9 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Add))]
 	public void Add()
 	{
-		var people = GetPersonProperRefArray().AsEnumerable();
+		var people = this._personRefEnumerable;
 
-		var result = people.Add(PersonProperRef01);
+		var result = people.Add(this.PersonProperRef01);
 
 		this.Consume(result);
 	}
@@ -62,9 +61,9 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.AddIf))]
 	public void AddIf()
 	{
-		var people = GetPersonProperRefArray().AsEnumerable();
+		var people = this._personRefEnumerable;
 
-		var result = people.AddIf(PersonProperRef01, true);
+		var result = people.AddIf(this.PersonProperRef01, true);
 
 		this.Consume(result);
 	}
@@ -73,7 +72,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.LINQ)]
 	public void AnyWithPredicate()
 	{
-		var result = AnyWithPredicate(GetPersonProperRefArray(), p => p.City.Contains('A', StringComparison.CurrentCulture));
+		var result = AnyWithPredicate(this._personRefEnumerable, p => p.City.Contains('a', StringComparison.CurrentCulture));
 
 		this.Consume(result);
 	}
@@ -81,9 +80,9 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ContainsAny))]
 	public void ContainsAny()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
+		var people = _personRefEnumerable;
 
-		people.Add(people.FirstOrDefault());
+		people = people.Add(people.FirstOrDefault());
 
 		var result = people.ContainsAny(people.Take(10).ToArray());
 
@@ -93,7 +92,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Count))]
 	public void Count_Default()
 	{
-		var result = GetPersonProperRefArray().AsEnumerable().Count();
+		var result = this._personRefEnumerable.Count();
 
 		this.Consume(result);
 	}
@@ -101,7 +100,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Count) + ": With Predicate")]
 	public void CountWithPredicate()
 	{
-		var result = CountWithPredicate(GetPersonProperRefArray(), p => p.City.Contains('A', StringComparison.CurrentCulture));
+		var result = CountWithPredicate(this._personRefEnumerable, p => p.City.Contains('a', StringComparison.CurrentCulture));
 
 		this.Consume(result);
 	}
@@ -119,9 +118,9 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.EnsureUnique))]
 	public void EnsureUnique()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).ToList();
+		var people = _personRefEnumerable;
 
-		people.Add(people.FirstOrDefault());
+		people = people.Add(people.FirstOrDefault());
 
 		var result = people.EnsureUnique().ToList();
 
@@ -132,7 +131,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FastAny) + ": With Predicate")]
 	public void FastAnyWithPredicate()
 	{
-		var result = GetPersonProperRefArray().FastAny(p => p.City.Contains('A', StringComparison.CurrentCulture));
+		var result = this._personRefEnumerable.FastAny(p => p.City.Contains('a', StringComparison.CurrentCulture));
 
 		this.Consume(result);
 	}
@@ -140,7 +139,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FastCount))]
 	public void FastCount()
 	{
-		var result = GetPersonProperRefArray().FastCount();
+		var result = this._personRefEnumerable.FastCount();
 
 		this.Consume(result);
 	}
@@ -148,7 +147,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FastCount) + ": With Predicate")]
 	public void FastCountWithPredicate()
 	{
-		var result = GetPersonProperRefArray().FastCount(p => p.City.Contains('A', StringComparison.CurrentCulture));
+		var result = this._personRefEnumerable.FastCount(p => p.City.Contains('a', StringComparison.CurrentCulture));
 
 		this.Consume(result);
 	}
@@ -156,7 +155,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrDefault) + ": Alternate")]
 	public void FirstOrDefaultAlternate()
 	{
-		var result = GetPersonProperRefArray().FirstOrDefault(alternate: this.PersonProperRef01);
+		var result = this._personRefEnumerable.FirstOrDefault(alternate: this.PersonProperRef01);
 
 		this.Consume(result);
 	}
@@ -164,7 +163,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrDefault) + ": Predicate, Alternate")]
 	public void FirstOrDefaultPredicateAlternate()
 	{
-		var result = this.GetPersonProperRefArray().FirstOrDefault(p => p.Id == this.PersonProperRef01.Id, this.PersonProperRef01);
+		var result = this._personRefEnumerable.FirstOrDefault(p => p.Id == this.PersonProperRef01.Id, this.PersonProperRef01);
 
 		this.Consume(result);
 	}
@@ -172,7 +171,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrNull))]
 	public void FirstOrNull()
 	{
-		var result = GetCoordinateValArray().FirstOrNull(p => p.X == this.Coordinate01.X);
+		var result = _coordinateValEnumerable.FirstOrNull(p => p.X == this.Coordinate01.X);
 
 		this.Consume(result);
 	}
@@ -181,7 +180,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItems()
 	{
-		var result = this._people.HasItems();
+		var result = this._personRefEnumerable.HasItems();
 
 		this.Consume(result);
 	}
@@ -190,7 +189,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItemsWithCount()
 	{
-		var result = this._people.HasItems(this.Count);
+		var result = this._personRefEnumerable.HasItems(this.Count);
 
 		this.Consume(result);
 	}
@@ -198,7 +197,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.IndexOf))]
 	public void IndexOf()
 	{
-		var people = GetPersonProperRefArray();
+		var people = this._personRefEnumerable;
 		var result = people.IndexOf(people.Last());
 
 		this.Consume(result);
@@ -207,7 +206,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.IndexOf) + ": Comparer")]
 	public void IndexOfComparer()
 	{
-		var people = GetPersonProperRefArray();
+		var people = this._personRefEnumerable;
 		var comparer = new PersonProperComparer();
 		var result = people.IndexOf(people.Last(), comparer);
 
@@ -227,7 +226,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Join))]
 	public void Join()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).AsEnumerable();
+		var people = _personRefEnumerable;
 
 		var result = people.Join();
 
@@ -238,7 +237,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + ": With Sort Expression")]
 	public void OrderBy()
 	{
-		var result = GetPersonProperRefList().OrderBy("City desc");
+		var result = _personRefEnumerable.OrderBy("City desc");
 
 		this.Consume(result);
 	}
@@ -246,7 +245,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.OrderByOrdinal))]
 	public void OrderByOrdinal()
 	{
-		var result = GetPersonProperRefArray().OrderByOrdinal(p => p.City);
+		var result = this._personRefEnumerable.OrderByOrdinal(p => p.City);
 
 		this.Consume(result);
 	}
@@ -254,7 +253,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Page))]
 	public void Page()
 	{
-		foreach (var people in GetPersonProperRefArray().Page(25))
+		foreach (var people in this._personRefEnumerable.Page(25))
 		{
 			foreach (var person in people)
 			{
@@ -266,7 +265,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.PickRandom))]
 	public void PickRandom()
 	{
-		var result = GetPersonProperRefArray(CollectionSize.Half).PickRandom();
+		var result = this._personRefEnumerable.PickRandom();
 
 		this.Consume(result);
 	}
@@ -275,27 +274,28 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
 		base.Setup();
 
-		this._people = GetPersonProperRefArray().AsEnumerable();
+		this._personRefEnumerable = this.GetPersonProperRefList().AsEnumerable();
+		this._coordinateValEnumerable = this.GetCoordinateValArray().AsEnumerable();
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Shuffle))]
 	public void Shuffle()
 	{
-		var result = GetPersonProperRefArray().Shuffle();
+		var result = this._personRefEnumerable.Shuffle();
 		this.Consume(result);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Shuffle) + "With Count")]
 	public void ShuffleWithCount()
 	{
-		var result = GetPersonProperRefArray().Shuffle(this.Count / 2);
+		var result = this._personRefEnumerable.Shuffle(this.Count / 2);
 		this.Consume(result);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.StartsWith))]
 	public void StartsWith()
 	{
-		var people = GetPersonProperRefArray();
+		var people = this._personRefEnumerable;
 		var result = people.StartsWith(people.Take(10));
 
 		this.Consume(result);
@@ -304,7 +304,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.StructuralSequenceEqual))]
 	public void StructuralSequenceEqual()
 	{
-		var people = GetPersonProperRefArray();
+		var people = this._personRefEnumerable;
 		var result = people.StructuralSequenceEqual(people.TakeLast(10));
 
 		this.Consume(result);
@@ -313,7 +313,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToBlockingCollection))]
 	public void ToBlockingCollection01()
 	{
-		var result = GetPersonProperRefArray().ToBlockingCollection();
+		var result = this._personRefEnumerable.ToBlockingCollection();
 
 		this.Consume(result);
 	}
@@ -321,7 +321,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToCollection))]
 	public void ToCollection()
 	{
-		var result = GetPersonProperRefArray().ToCollection();
+		var result = this._personRefEnumerable.ToCollection();
 
 		this.Consume(result);
 	}
@@ -329,7 +329,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToDelimitedString))]
 	public void ToDelimitedString()
 	{
-		var result = this._people.ToDelimitedString(',');
+		var result = this._personRefEnumerable.ToDelimitedString(',');
 
 		this.Consume(result);
 	}
@@ -337,7 +337,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToImmutable))]
 	public void ToImmutable()
 	{
-		var result = GetPersonProperRefArray().AsEnumerable().ToImmutable();
+		var result = this._personRefEnumerable.AsEnumerable().ToImmutable();
 
 		this.Consume(result);
 	}
@@ -345,7 +345,7 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToLinkedList))]
 	public void ToLinkedList()
 	{
-		var result = this._people.ToLinkedList();
+		var result = this._personRefEnumerable.ToLinkedList();
 
 		this.Consume(result);
 	}
@@ -353,19 +353,19 @@ public class EnumerableExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToListAsync))]
 	public async Task ToListAsync()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).AsEnumerable();
+		var people = _personRefEnumerable;
 
 		var result = await people.ToListAsync().ConfigureAwait(false);
 
-		this.Consume(result);
+		await this.ConsumeAsync(result).ConfigureAwait(false);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Upsert))]
 	public void Upsert()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(500).AsEnumerable();
+		var people = _personRefEnumerable;
 
-		var result = people.Upsert(PersonProperRef01);
+		var result = people.Upsert(this.PersonProperRef01);
 
 		this.Consume(result);
 	}

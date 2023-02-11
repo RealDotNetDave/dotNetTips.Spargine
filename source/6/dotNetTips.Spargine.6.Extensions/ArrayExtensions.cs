@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -65,7 +65,7 @@ public static class ArrayExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static T[] AddFirst<T>([NotNull] this T[] array, [AllowNull] T item)
 	{
 		if (item is null)
@@ -92,7 +92,7 @@ public static class ArrayExtensions
 	/// <param name="condition">if set to <c>true</c> [condition].</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
-	[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(AddIf), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static T[] AddIf<T>([NotNull] this T[] array, [AllowNull] T item, bool condition)
 	{
 		if (item is null)
@@ -120,11 +120,6 @@ public static class ArrayExtensions
 		if (items.DoesNotHaveItems())
 		{
 			return array;
-
-
-
-
-
 		}
 
 		var returnCollection = array.ArgumentNotNull().ToList();
@@ -151,7 +146,7 @@ public static class ArrayExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static T[] AddLast<T>([NotNull] this T[] array, [AllowNull] T item)
 	{
 		if (item is null)
@@ -163,7 +158,7 @@ public static class ArrayExtensions
 
 		Array.Resize(ref array, array.Length + 1);
 
-		array[array.Length - 1] = item;
+		array[^1] = item;
 
 		return array;
 	}
@@ -200,7 +195,7 @@ public static class ArrayExtensions
 	}
 
 	/// <summary>
-	/// Returns a <see cref="string" /> that represents this instance.
+	/// Returns a <see cref="string" /> that represents this instance. Uses <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="array" /> is not null.
 	/// </summary>
 	/// <param name="array">The bytes.</param>
@@ -232,7 +227,7 @@ public static class ArrayExtensions
 	}
 
 	/// <summary>
-	/// Converts byte array to a string.
+	/// Converts byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// Validates that <paramref name="array" /> is not null.
 	/// </summary>
 	/// <param name="array">The array.</param>
@@ -349,7 +344,6 @@ public static class ArrayExtensions
 	/// <param name="action">The values.</param>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
 	/// <exception cref="ArgumentNullException">action cannot be null.</exception>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(FastProcessor), author: "David McCarter", createdOn: "11/8/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineApril2022")]
 	public static void FastProcessor<T>([NotNull] this T[] array, [NotNull] Action<T> action)
 	{
@@ -464,10 +458,7 @@ public static class ArrayExtensions
 
 		if (typeOfType == TypeExtensions.TypeOfType.Record)
 		{
-			_ = Parallel.For(0, values.Length, (index) =>
-			{
-				action(values[index]);
-			});
+			_ = Parallel.For(0, values.Length, (index) => action(values[index]));
 		}
 		else
 		{

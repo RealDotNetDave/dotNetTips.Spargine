@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="TypeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -264,7 +264,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 
 			Assert.IsTrue(result == TypeExtensions.TypeOfType.Reference);
 
-			var valPerson = new Spargine.Tester.Models.ValueTypes.Person();
+			var valPerson = new Tester.Models.ValueTypes.Person();
 
 			result = valPerson.GetTypeOfType();
 

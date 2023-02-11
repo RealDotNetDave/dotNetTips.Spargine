@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="CollectionTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -62,7 +62,7 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic
 			var collection = Collection<PersonProper>.Create(people);
 			var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			_=collection.AddLast<PersonProper>(person);
+			_ = collection.AddLast<PersonProper>(person);
 
 			Assert.IsTrue(collection.Last() == person);
 		}

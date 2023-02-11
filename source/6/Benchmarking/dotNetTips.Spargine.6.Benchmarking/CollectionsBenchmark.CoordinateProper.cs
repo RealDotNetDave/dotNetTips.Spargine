@@ -4,14 +4,13 @@
 // Created          : 04-20-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 01-15-2023
 // ***********************************************************************
 // <copyright file="CollectionsBenchmark.CoordinateProper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -48,7 +47,6 @@ public partial class CollectionsBenchmark
 	/// The coordinate proper list half
 	/// </summary>
 	private List<CoordinateProper> _coordinateProperListHalf;
-
 
 	/// <summary>
 	/// Loads the coordinate array.

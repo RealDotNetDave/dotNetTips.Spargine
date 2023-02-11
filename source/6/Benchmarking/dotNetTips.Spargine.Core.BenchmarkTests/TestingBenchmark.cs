@@ -4,7 +4,7 @@
 // Created          : 02-20-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 01-30-2023
 // ***********************************************************************
 // <copyright file="TestingBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,7 +28,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests;
 /// </summary>
 /// <seealso cref="Benchmark" />
 [BenchmarkCategory("Work in Progress")]
-public class TestingBenchmark : LargeCollectionsBenchmark
+public class TestingBenchmark : SmallCollectionsBenchmark
 {
 	private Tester.Models.ValueTypes.Person[] _peopleVal;
 	private PersonProper[] _peopleRef;
@@ -55,7 +55,7 @@ public class TestingBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.New)]
 	public void AddIf01()
 	{
-		var result = _peopleRef.AddIf<PersonProper>(this.PersonProperRef01, _peopleRef.Length > 1);
+		var result = this._peopleRef.AddIf<PersonProper>(this.PersonProperRef01, this._peopleRef.Length > 1);
 
 		this.Consume(result);
 	}
@@ -64,7 +64,7 @@ public class TestingBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.New)]
 	public void AddIf02()
 	{
-		var result = _peopleVal.AddIf(this.PersonVal01, _peopleVal.Length > 1);
+		var result = this._peopleVal.AddIf(this.PersonVal01, this._peopleVal.Length > 1);
 
 		this.Consume(result);
 	}

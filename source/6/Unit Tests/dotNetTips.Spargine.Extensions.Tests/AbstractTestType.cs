@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 04-16-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2021
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="AbstractTestType.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-06-2023
+// Last Modified On : 01-16-2023
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -160,7 +160,7 @@ public static class EncryptionHelper
 	/// </summary>
 	/// <returns>System.String.</returns>
 	/// <example><b>Output:</b> f7f0af78003d4ab194b5a4024d02112a</example>
-	[Information(nameof(GenerateRandomKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(GenerateRandomKey), "David McCarter", "5/30/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static string GenerateRandomKey() => Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
 
 	/// <summary>

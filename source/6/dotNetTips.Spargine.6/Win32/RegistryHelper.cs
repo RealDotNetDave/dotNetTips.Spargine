@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6
 // Author           : David McCarter
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-12-2022
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="RegistryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using DotNetTips.Spargine.Core;
 using Microsoft.Win32;
 
@@ -23,6 +24,7 @@ namespace DotNetTips.Spargine.Win32;
 /// <summary>
 /// Class RegistryHelper.
 /// </summary>
+[SupportedOSPlatform("windows")]
 public static class RegistryHelper
 {
 	/// <summary>
@@ -54,7 +56,7 @@ public static class RegistryHelper
 		{
 			throw new PlatformNotSupportedException();
 		}
-
+		
 		keyName = keyName.ArgumentNotNullOrEmpty();
 
 		return registryKeyType switch

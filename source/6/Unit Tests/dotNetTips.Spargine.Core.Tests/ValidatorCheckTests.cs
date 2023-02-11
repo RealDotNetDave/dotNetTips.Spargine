@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : dotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 04-13-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2022
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="ValidatorCheckTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -69,7 +69,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			Assert.IsTrue(value.CheckIsDefined());
 
 			// Test Exception throwing.
-			_ = Assert.ThrowsException<InvalidValueException<Enum>>(() => ( (BenchMarkStatus)100 ).CheckIsDefined(true));
+			_ = Assert.ThrowsException<InvalidValueException<Enum>>(() => ((BenchMarkStatus)100).CheckIsDefined(true));
 		}
 
 		[TestMethod]
@@ -291,7 +291,7 @@ namespace dotNetTips.Spargine.Core.Tests
 			try
 			{
 				var personProper = RandomData.GenerateRefPerson<PersonProper>();
-				personProper.CheckIsNotNull(throwException: true);
+				_ = personProper.CheckIsNotNull(throwException: true);
 			}
 			catch
 			{

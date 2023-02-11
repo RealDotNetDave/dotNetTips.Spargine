@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="JsonSerializationTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -66,7 +66,7 @@ namespace dotNetTips.Spargine.Core.Tests.Serialization
 
 			//For debugging
 			var person = RandomData.GeneratePersonRecordCollection(1).First();
-			JsonSerialization.SerializeToFile(person,fileName);
+			JsonSerialization.SerializeToFile(person, fileName);
 
 			Assert.IsTrue(string.IsNullOrEmpty(File.ReadAllText(fileName)) is false);
 

@@ -1,12 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
 		<TargetFramework>net6.0</TargetFramework>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>2023.6.1.37269</AssemblyVersion>
-		<FileVersion>2021.6.14.247</FileVersion>
+		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
+		<FileVersion>2023.6.2.2</FileVersion>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>none</AnalysisLevel>

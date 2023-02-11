@@ -89,7 +89,7 @@ public class LoggableException : Exception
 	public LoggableException(string message, [NotNull] Exception ex, [AllowNull] string userMessage) : base(message, ex) => this.UserMessage = userMessage;
 
 	/// <summary>
-	/// Return's a list of properties and their value.
+	/// Return's a list of properties and their value using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="ex">The ex.</param>
 	/// <returns>System.String.</returns>
@@ -142,6 +142,7 @@ public class LoggableException : Exception
 	/// </summary>
 	/// <param name="info">The <see cref="SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
 	/// <param name="context">The <see cref="StreamingContext"></see> that contains contextual information about the source or destination.</param>
+	[Preserve(preserveReason: PreserveReason.MethodOverride, reason: "Used by serialization.", createdOn: "01/07/2023", createdBy: "David McCarter")]
 	public override void GetObjectData(SerializationInfo info, StreamingContext context)
 	{
 		base.GetObjectData(info, context);

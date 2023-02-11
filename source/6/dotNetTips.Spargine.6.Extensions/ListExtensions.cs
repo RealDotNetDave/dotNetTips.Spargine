@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-13-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -37,7 +37,7 @@ public static class ListExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">list or item</exception>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static bool AddFirst<T>([NotNull] this IList<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
@@ -61,7 +61,7 @@ public static class ListExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">list or item</exception>
-	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
+	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static bool AddLast<T>([NotNull] this IList<T> collection, [AllowNull] T item)
 	{
 		if (item is null)
@@ -498,12 +498,12 @@ public static class ListExtensions
 	}
 
 	/// <summary>
-	/// Converts to <see cref="ReadOnlyObservableCollection{T}"/>.
+	/// Converts to <see cref="ReadOnlyObservableCollection{T}" />.
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The collection.</param>
 	/// <returns>ReadOnlyObservableCollection&lt;T&gt;.</returns>
-	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New)]
+	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
 	public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>([NotNull] this IList<T> collection)
 	{
 		return new ReadOnlyObservableCollection<T>(collection.ArgumentNotNull().ToObservableCollection());

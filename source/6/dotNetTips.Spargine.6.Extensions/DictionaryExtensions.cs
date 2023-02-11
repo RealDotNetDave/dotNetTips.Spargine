@@ -198,7 +198,7 @@ public static class DictionaryExtensions
 	}
 
 	/// <summary>
-	/// Converts <see cref="IDictionary" /> to delimited string.
+	/// Converts <see cref="IDictionary" /> to delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
 	/// </summary>
 	/// <param name="collection">The list.</param>
 	/// <param name="delimiter">The delimiter.</param>

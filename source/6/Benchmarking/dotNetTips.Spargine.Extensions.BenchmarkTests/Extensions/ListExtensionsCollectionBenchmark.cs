@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-04-2022
+// Last Modified On : 02-05-2023
 // ***********************************************************************
 // <copyright file="ListExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,25 +27,16 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 [BenchmarkCategory(Categories.Collections)]
-public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
+public class ListExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
 
-	private List<PersonProper> _peopleListSubSet;
-
-	[Benchmark(Description = nameof(ListExtensions.AddLast))]
-	public void AddLastToList()
-	{
-		var people = this.GetPersonProperRefList();
-
-		_ = people.AddLast(this.PersonProperRef01);
-
-		this.Consume(people);
-	}
+	private List<PersonProper> _peopleRefSubSet;
+	private List<PersonProper> _peopleRefList;
 
 	[Benchmark(Description = nameof(ListExtensions.AreEqual))]
 	public void AreEqualList()
 	{
-		var result = this.GetPersonProperRefList().AreEqual(this._peopleListSubSet);
+		var result = this._peopleRefList.AreEqual(this._peopleRefSubSet);
 
 		this.Consume(result);
 	}
@@ -53,17 +44,17 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.AsSpan))]
 	public void AsSpan()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		var collection = people.AsSpan();
 
-		this.Consume(people.Count);
+		this.Consume(collection.Length);
 	}
 
 	[Benchmark(Description = nameof(ListExtensions.ClearNulls))]
 	public void ClearNulls()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 		people.Add(null);
 
 		var result = people.ClearNulls();
@@ -74,7 +65,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.CopyToCollection))]
 	public void CopyToList()
 	{
-		var result = this.GetPersonProperRefList().CopyToCollection();
+		var result = this._peopleRefList.CopyToCollection();
 
 		this.Consume(result);
 	}
@@ -83,7 +74,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
 	public void CountCount()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.Count);
 	}
@@ -92,7 +83,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
 	public void CountFastCount()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.FastCount());
 	}
@@ -101,7 +92,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections, Categories.ForComparison, Categories.New)]
 	public void CountLongCount()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.LongCount());
 	}
@@ -110,7 +101,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections, Categories.New)]
 	public void CountTryGetNonEnumeratedCount()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		_ = Enumerable.TryGetNonEnumeratedCount(people, out var count);
 
@@ -121,7 +112,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections)]
 	public void DoesNotHaveItemsTest()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.DoesNotHaveItems());
 	}
@@ -130,7 +121,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItems()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.HasItems());
 	}
@@ -139,7 +130,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItemsWithCount()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.HasItems(5));
 	}
@@ -147,7 +138,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.HasItems) + ": With Predicate")]
 	public void HasItemsWithPredicate()
 	{
-		var people = this.GetPersonProperRefList();
+		var people = this._peopleRefList;
 
 		this.Consume(people.HasItems(p => p.Age.TotalDays > 1000));
 	}
@@ -157,7 +148,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	public void Index()
 	{
 
-		var result = this.GetPersonProperRefList()[RandomNumberGenerator.GetInt32(0, this.Count - 1)];
+		var result = this._peopleRefList[RandomNumberGenerator.GetInt32(0, this.Count - 1)];
 
 		this.Consume(result);
 	}
@@ -165,7 +156,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.IndexAtLooped))]
 	public void IndexAtLooped()
 	{
-		var result = this.GetPersonProperRefList().IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
+		var result = this._peopleRefList.IndexAtLooped(RandomNumberGenerator.GetInt32(0, this.Count - 1));
 
 		this.Consume(result);
 	}
@@ -174,13 +165,14 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	{
 		base.Setup();
 
-		this._peopleListSubSet = this.GetPersonProperRefList().TakeLast(10).Clone<IEnumerable<PersonProper>>().ToList();
+		this._peopleRefSubSet = this.GetPersonProperRefList().TakeLast(10).Clone<IEnumerable<PersonProper>>().ToList();
+		this._peopleRefList = this.GetPersonProperRefList();
 	}
 
 	[Benchmark(Description = nameof(ListExtensions.ToObservableCollection))]
 	public void ToObservableCollection()
 	{
-		var result = this.GetPersonProperRefList().ToObservableCollection();
+		var result = this._peopleRefList.ToObservableCollection();
 
 		this.Consume(result);
 	}
@@ -188,7 +180,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.ToReadOnlyCollection))]
 	public void ToReadOnlyCollection()
 	{
-		var result = this.GetPersonProperRefList().ToReadOnlyCollection();
+		var result = this._peopleRefList.ToReadOnlyCollection();
 
 		this.Consume(result);
 	}
@@ -196,7 +188,7 @@ public class ListExtensionsCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = nameof(ListExtensions.ToReadOnlyObservableCollection))]
 	public void ToReadOnlyObservableCollection()
 	{
-		var result = this.GetPersonProperRefList().ToReadOnlyObservableCollection();
+		var result = this._peopleRefList.ToReadOnlyObservableCollection();
 
 		this.Consume(result);
 	}

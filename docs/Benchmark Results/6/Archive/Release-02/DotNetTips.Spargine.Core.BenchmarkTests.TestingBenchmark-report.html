@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Core.BenchmarkTests.TestingBenchmark-20220802-071835</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-YKIQEX : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+Namespace=DotNetTips.Spargine.Core.BenchmarkTests  Categories=**NEW**,Work in Progress  
+</code></pre>
+
+<table>
+<thead><tr><th>                      Method</th><th>     Mean</th><th>  Error</th><th>  StdDev</th><th> StdErr</th><th>   Median</th><th>      Min</th><th>       Q1</th><th>       Q3</th><th>      Max</th><th>       Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Ratio</th><th>RatioSD</th><th>Welch(10%)/p-values</th><th>Rank</th><th>                                              LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;IN TEST WITH IN&#39;</td><td>133,421.1567 ns</td><td>2,655.1828 ns</td><td>6,412.5649 ns</td><td>771.9821 ns</td><td>133,581.5186 ns</td><td>113,417.3340 ns</td><td>129,566.9434 ns</td><td>138,198.9746 ns</td><td>144,171.7041 ns</td><td>7,495.1</td><td>2,655.1828 ns</td><td>69.00</td><td>3.968</td><td>2.000</td><td>-0.8695</td><td>?</td><td>?</td><td>?</td><td>5</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>2,101 B</td><td>488 B</td>
+</tr><tr><td>&#39;IN TEST WITHOUT IN&#39;</td><td>132,458.7773 ns</td><td>5,051.4633 ns</td><td>14,894.3534 ns</td><td>1,489.4353 ns</td><td>133,256.8848 ns</td><td>94,787.2559 ns</td><td>121,801.7334 ns</td><td>141,757.3975 ns</td><td>168,413.5254 ns</td><td>7,549.5</td><td>5,051.4633 ns</td><td>100.00</td><td>2.794</td><td>5.037</td><td>0.0472</td><td>?</td><td>?</td><td>?</td><td>5</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>2,101 B</td><td>489 B</td>
+</tr><tr><td>MethodImplOptions:AggressiveInline</td><td>0.0042 ns</td><td>0.0106 ns</td><td>0.0094 ns</td><td>0.0025 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0021 ns</td><td>0.0275 ns</td><td>236,078,384,054.1</td><td>0.0106 ns</td><td>14.00</td><td>4.369</td><td>2.400</td><td>1.7761</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:Baseline</td><td>0.0104 ns</td><td>0.0183 ns</td><td>0.0196 ns</td><td>0.0046 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0000 ns</td><td>0.0178 ns</td><td>0.0768 ns</td><td>95,705,264,817.5</td><td>0.0183 ns</td><td>18.00</td><td>7.515</td><td>2.667</td><td>2.1678</td><td>?</td><td>?</td><td>?</td><td>1</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>Yes</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:NoInline</td><td>1.5673 ns</td><td>0.0583 ns</td><td>0.0599 ns</td><td>0.0145 ns</td><td>1.5771 ns</td><td>1.4699 ns</td><td>1.5255 ns</td><td>1.5953 ns</td><td>1.6586 ns</td><td>638,059,722.4</td><td>0.0583 ns</td><td>17.00</td><td>1.898</td><td>2.000</td><td>-0.1747</td><td>?</td><td>?</td><td>?</td><td>3</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>146 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:NoOptimization</td><td>0.0353 ns</td><td>0.0220 ns</td><td>0.0195 ns</td><td>0.0052 ns</td><td>0.0309 ns</td><td>0.0017 ns</td><td>0.0263 ns</td><td>0.0424 ns</td><td>0.0726 ns</td><td>28,299,120,995.2</td><td>0.0220 ns</td><td>14.00</td><td>2.463</td><td>2.571</td><td>0.5170</td><td>?</td><td>?</td><td>?</td><td>2</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:PreserveSig</td><td>0.0413 ns</td><td>0.0211 ns</td><td>0.0198 ns</td><td>0.0051 ns</td><td>0.0399 ns</td><td>0.0103 ns</td><td>0.0274 ns</td><td>0.0541 ns</td><td>0.0789 ns</td><td>24,225,948,062.5</td><td>0.0211 ns</td><td>15.00</td><td>1.981</td><td>2.889</td><td>0.3190</td><td>?</td><td>?</td><td>?</td><td>2</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>24 B</td><td>-</td>
+</tr><tr><td>MethodImplOptions:Synchronized</td><td>15.1397 ns</td><td>0.3298 ns</td><td>0.3085 ns</td><td>0.0797 ns</td><td>15.1474 ns</td><td>14.5969 ns</td><td>15.0276 ns</td><td>15.3840 ns</td><td>15.5140 ns</td><td>66,051,600.3</td><td>0.3298 ns</td><td>15.00</td><td>1.832</td><td>2.000</td><td>-0.4499</td><td>?</td><td>?</td><td>?</td><td>4</td><td>Job-YKIQEX(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True)</td><td>No</td><td>260 B</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

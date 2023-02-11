@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20220802-072327</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-YKIQEX : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+</code></pre>
+<pre><code>EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
+</code></pre>
+
+<table>
+<thead><tr><th>                              Method</th><th>Categories</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Median</th><th>Min</th><th> Q1</th><th> Q3</th><th>Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Gen 0</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>Strings</td><td>5.046 &mu;s</td><td>0.1489 &mu;s</td><td>0.4392 &mu;s</td><td>0.0439 &mu;s</td><td>4.894 &mu;s</td><td>4.459 &mu;s</td><td>4.728 &mu;s</td><td>5.334 &mu;s</td><td>6.237 &mu;s</td><td>198,195.8</td><td>0.1489 &mu;s</td><td>100.00</td><td>3.157</td><td>2.524</td><td>1.0500</td><td>1</td><td>*</td><td>No</td><td>3 KB</td><td>1.0681</td><td>10 KB</td>
+</tr><tr><td>GetPropertyValues</td><td>Reflection</td><td>34.975 &mu;s</td><td>0.6261 &mu;s</td><td>0.5856 &mu;s</td><td>0.1512 &mu;s</td><td>34.878 &mu;s</td><td>34.047 &mu;s</td><td>34.606 &mu;s</td><td>35.342 &mu;s</td><td>36.209 &mu;s</td><td>28,592.2</td><td>0.6261 &mu;s</td><td>15.00</td><td>2.232</td><td>2.000</td><td>0.3639</td><td>2</td><td>*</td><td>No</td><td>3 KB</td><td>0.6714</td><td>6 KB</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-30-2022
+// Last Modified On : 01-31-2023
 // ***********************************************************************
 // <copyright file="CollectionCollectionBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,8 +26,13 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections;
 /// </summary>
 /// <seealso cref="CounterBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
-public class CollectionCollectionBenchmark : LargeCollectionsBenchmark
+public class CollectionCollectionBenchmark : SmallCollectionsBenchmark
 {
+
+	/// <summary>
+	/// The person reference array
+	/// </summary>
+	private PersonProper[] _personRefArray;
 
 	/// <summary>
 	/// Collections the create01.
@@ -46,7 +51,7 @@ public class CollectionCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = "Collection.Create: From List")]
 	public void CollectionCreate02()
 	{
-		var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), Tristate.True);
+		var result = Collection<PersonProper>.Create(this._personRefArray, Tristate.True);
 
 		this.Consume(result);
 	}
@@ -57,8 +62,18 @@ public class CollectionCollectionBenchmark : LargeCollectionsBenchmark
 	[Benchmark(Description = "Collection.Create: From List-Ensure Unique")]
 	public void CollectionCreate03()
 	{
-		var result = Collection<PersonProper>.Create(this.GetPersonProperRefArray(), ensureUnique: Tristate.True);
+		var result = Collection<PersonProper>.Create(this._personRefArray, ensureUnique: Tristate.True);
 
 		this.Consume(result);
+	}
+
+	/// <summary>
+	/// Setups this instance.
+	/// </summary>
+	public override void Setup()
+	{
+		base.Setup();
+
+		this._personRefArray = GetPersonProperRefArray();
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 01-31-2023
 // ***********************************************************************
 // <copyright file="ChannelQueueCollectionBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -31,8 +31,20 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests.Collections.Threading;
 /// </summary>
 /// <seealso cref="CounterBenchmark" />
 [BenchmarkCategory(Categories.Async)]
-public class ChannelQueueCollectionBenchmark : LargeCollectionsBenchmark
+public class ChannelQueueCollectionBenchmark : SmallCollectionsBenchmark
 {
+	/// <summary>
+	/// The person reference array
+	/// </summary>
+	private PersonProper[] _personRefArray;
+
+	/// <summary>
+	/// Add to queue as an asynchronous operation.
+	/// </summary>
+	/// <param name="channel">The channel.</param>
+	/// <param name="people">The people.</param>
+	/// <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, IList<PersonProper> people, CancellationToken token)
 	{
 		foreach (var person in people)
@@ -43,6 +55,12 @@ public class ChannelQueueCollectionBenchmark : LargeCollectionsBenchmark
 		_ = channel.Lock();
 	}
 
+	/// <summary>
+	/// Listen to queue as an asynchronous operation.
+	/// </summary>
+	/// <param name="channel">The channel.</param>
+	/// <param name="token">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	private static async Task ListenToQueueAsync(ChannelQueue<PersonProper> channel, CancellationToken token)
 	{
 		await foreach (var item in channel.ListenAsync(token))
@@ -51,58 +69,73 @@ public class ChannelQueueCollectionBenchmark : LargeCollectionsBenchmark
 		}
 	}
 
+	/// <summary>
+	/// Write as an asynchronous operation.
+	/// </summary>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	[Benchmark(Description = "WriteAsync")]
 	[BenchmarkCategory(Categories.Async)]
 	public async Task WriteAsync()
 	{
 		var channel = new ChannelQueue<PersonProper>();
-		var people = this.GetPersonProperRefArray();
+		var people = this._personRefArray;
 
 		for (var peopleCount = 0; peopleCount < people.Length; peopleCount++)
 		{
 			await channel.WriteAsync(people[peopleCount]).ConfigureAwait(false);
 		}
 
-		this.Consume(channel.Count);
+		await this.ConsumeAsync(channel.Count).ConfigureAwait(false);
 	}
 
+	/// <summary>
+	/// Write asynchronous i enumerable as an asynchronous operation.
+	/// </summary>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	[Benchmark(Description = "WriteAsync: IEnumerable")]
 	[BenchmarkCategory(Categories.Async)]
 	public async Task WriteAsyncIEnumerableAsync()
 	{
 		var channel = new ChannelQueue<PersonProper>();
-		var people = this.GetPersonProperRefArray();
+		var people = this._personRefArray;
 
 		await channel.WriteAsync(people).ConfigureAwait(false);
 
-		this.Consume(channel.Count);
+		await this.ConsumeAsync(channel.Count).ConfigureAwait(false);
 	}
 
+	/// <summary>
+	/// Writes the listen asynchronous test.
+	/// </summary>
 	[Benchmark(Description = "Write & Listen Async")]
 	[BenchmarkCategory(Categories.Async)]
 	public void WriteListenAsyncTest()
 	{
 		var channel = new ChannelQueue<PersonProper>();
-		var people = this.GetPersonProperRefArray();
+		var people = this._personRefArray;
 		var token = CancellationToken.None;
 
 		var tasks = new List<Task>
-	{
-	AddToQueueAsync(channel, people, token),
-	ListenToQueueAsync(channel, token)
-	};
+		{
+			AddToQueueAsync(channel, people, token),
+			ListenToQueueAsync(channel, token)
+		};
 
 		Task.WaitAll(tasks.ToArray());
 
 		this.Consume(channel.Count);
 	}
 
+	/// <summary>
+	/// Write read as an asynchronous operation.
+	/// </summary>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	[Benchmark(Description = "Write & Read Async")]
 	[BenchmarkCategory(Categories.Async)]
 	public async Task WriteReadAsync()
 	{
 		var channel = new ChannelQueue<PersonProper>();
-		var people = this.GetPersonProperRefArray();
+		var people = this._personRefArray;
 
 		for (var personCount = 0; personCount < people.Length; personCount++)
 		{
@@ -111,22 +144,36 @@ public class ChannelQueueCollectionBenchmark : LargeCollectionsBenchmark
 
 		while (channel.Count > 0)
 		{
-			this.Consume(await channel.ReadAsync().ConfigureAwait(false));
+			await this.ConsumeAsync(await channel.ReadAsync().ConfigureAwait(false)).ConfigureAwait(false);
 		}
 	}
 
+	/// <summary>
+	/// Write read asynchronous i enumerable as an asynchronous operation.
+	/// </summary>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	[Benchmark(Description = "Write & Read Async: IEnumerable")]
 	[BenchmarkCategory(Categories.Async)]
 	public async Task WriteReadAsyncIEnumerableAsync()
 	{
 		var channel = new ChannelQueue<PersonProper>();
-		var people = this.GetPersonProperRefArray();
+		var people = this._personRefArray;
 
 		await channel.WriteAsync(people).ConfigureAwait(false);
 
 		while (channel.Count > 0)
 		{
-			this.Consume(await channel.ReadAsync().ConfigureAwait(false));
+			await this.ConsumeAsync(await channel.ReadAsync().ConfigureAwait(false)).ConfigureAwait(false);
 		}
+	}
+
+	/// <summary>
+	/// Setups this instance.
+	/// </summary>
+	public override void Setup()
+	{
+		base.Setup();
+
+		this._personRefArray = this.GetPersonProperRefArray();
 	}
 }

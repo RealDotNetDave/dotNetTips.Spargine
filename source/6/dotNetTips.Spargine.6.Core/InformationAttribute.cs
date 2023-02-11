@@ -159,6 +159,4 @@ public sealed class InformationAttribute : Attribute
 			}
 		}
 	}
-
-	
 }

@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelperBenchmark.cs" company="DotNetTips.Spargine.BenchmarkTests">
 //     David McCarter
@@ -50,63 +50,6 @@ public class DirectoryHelperBenchmark : Benchmark
 		DirectoryHelper.DeleteDirectory(this._sourcePath, retries: 5);
 	}
 
-	//[Benchmark(Description = "Copy & Delete Directory")]
-	//public void CopyDeleteDirectory01()
-	//{
-	//	var destinationPath = new DirectoryInfo(Path.Combine(this._tempPath.FullName, nameof(this.CopyDeleteDirectory01) + RandomData.GenerateKey()));
-	//	destinationPath.Create();
-
-	//	try
-	//	{
-	//		DirectoryHelper.CopyDirectory(this._sourcePath, destinationPath, overwrite: true);
-	//	}
-	//	finally
-	//	{
-	//		DirectoryHelper.DeleteDirectory(destinationPath, 3);
-	//	}
-
-	//}
-
-	//[Benchmark(Description = "Copy & Move Directory")]
-	//public void CopyMoveDirectory01()
-	//{
-	//	//Copy files to new source folder
-	//	var path = new DirectoryInfo(Path.Combine(this._sourcePath.FullName, nameof(this.CopyMoveDirectory01) + RandomData.GenerateKey()));
-	//	path.Create();
-
-	//	var movePath = new DirectoryInfo(Path.Combine(this._sourcePath.FullName, nameof(this.CopyMoveDirectory01) + RandomData.GenerateKey()));
-	//	movePath.Create();
-
-	//	try
-	//	{
-	//		DirectoryHelper.CopyDirectory(this._sourcePath, path, true);
-
-	//		DirectoryHelper.MoveDirectory(path, movePath, 5);
-	//	}
-	//	finally
-	//	{
-	//		Directory.Delete(path.FullName);
-	//		Directory.Delete(movePath.FullName);
-	//	}
-	//}
-
-	//[Benchmark(Description = nameof(DirectoryHelper.DeleteDirectory))]
-	//public void DeleteDirectory01()
-	//{
-	//	var path = new DirectoryInfo(Path.Combine(this._tempPath.FullName, nameof(this.DeleteDirectory01) + RandomData.GenerateKey()));
-	//	path.Create();
-
-	//	DirectoryHelper.DeleteDirectory(path, 3);
-	//}
-
-	//[Benchmark(Description = nameof(DirectoryHelper.LoadOneDriveFolders))]
-	//public void LoadOneDriveFolders01()
-	//{
-	//	System.Collections.Immutable.ImmutableArray<OneDriveFolder> folders = DirectoryHelper.LoadOneDriveFolders();
-
-	//	base.Consumer.Consume(folders);
-	//}
-
 	[Benchmark(Description = nameof(DirectoryHelper.SafeDirectorySearch))]
 	public void SafeDirectorySearch01()
 	{
@@ -115,13 +58,13 @@ public class DirectoryHelperBenchmark : Benchmark
 		this.Consume(folders);
 	}
 
-	//[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
-	//public void SafeFileSearch01()
-	//{
-	//	System.Collections.Generic.IEnumerable<FileInfo> files = DirectoryHelper.SafeFileSearch(this._sourcePath, "*.dll", SearchOption.TopDirectoryOnly);
+	[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
+	public void SafeFileSearch01()
+	{
+		var files = DirectoryHelper.SafeFileSearch(this._sourcePath, "*.dll", SearchOption.TopDirectoryOnly);
 
-	//	base.Consumer.Consume(files);
-	//}
+		base.Consume(files);
+	}
 
 	[Benchmark(Description = nameof(DirectoryHelper.SetFileAttributesToNormal))]
 	public void SetFileAttributesToNormal01()

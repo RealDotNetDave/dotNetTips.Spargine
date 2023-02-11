@@ -4,11 +4,12 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.1.37261</AssemblyVersion>
+		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
 		<CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
 		<Company>David McCarter - dotNetTips.com</Company>
 		<Configurations>Debug;Release</Configurations>
@@ -21,7 +22,7 @@
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.01.08</FileVersion>
+		<FileVersion>2023.6.2.2</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -32,9 +33,11 @@
 		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageReleaseNotes>--April 2022: Initial release.
---AUG 2022: New code, unit tests and code cleanup.
---NOV 2022: New code, unit tests, benchmark tests. Code cleanup.</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			--APR 2022: Initial release.
+			--AUG 2022: New code, unit tests and code cleanup.
+			--NOV 2022: New code, unit tests, benchmark tests. Code cleanup.
+		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -48,7 +51,7 @@
 		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-		<Version>2023.6.01.08</Version>
+		<Version>2023.6.2.2</Version>
 		<Title>DotNetTips.Spargine.6.Extensions</Title>
 	</PropertyGroup>
 
@@ -61,33 +64,32 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <OutputPath>..\..\..\appbin\</OutputPath>
-	  <DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.6.Extensions.xml</DocumentationFile>
-	  <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-	  <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	  <WarningsAsErrors />
+		<OutputPath>..\..\..\appbin\</OutputPath>
+		<DocumentationFile>..\..\..\appbin\dotNetTips.Spargine.6.Extensions.xml</DocumentationFile>
+		<CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="IDisposableAnalyzers" Version="4.0.2">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="linq2db" Version="4.4.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.3">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		<PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="7.0.1" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="7.0.2" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-		  <PrivateAssets>all</PrivateAssets>
-		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="System.Collections.Immutable" Version="7.0.0" />
 	</ItemGroup>
@@ -108,18 +110,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\..\docs\graphics\dotNetTips-Spargine-6-Logo.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	  </None>
-	  <None Include="..\..\..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\..\..\docs\graphics\dotNetTips-Spargine-6-Logo.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+		<None Include="..\..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj" />
+		<ProjectReference Include="..\dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
@@ -6,8 +6,8 @@
 		<IsPackable>false</IsPackable>
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-		<AssemblyVersion>2023.6.1.37269</AssemblyVersion>
-		<FileVersion>2021.6.14.440</FileVersion>
+		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
+		<FileVersion>2023.6.2.2</FileVersion>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>none</AnalysisLevel>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
@@ -34,6 +34,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
 	</ItemGroup>
 
 	<ItemGroup>

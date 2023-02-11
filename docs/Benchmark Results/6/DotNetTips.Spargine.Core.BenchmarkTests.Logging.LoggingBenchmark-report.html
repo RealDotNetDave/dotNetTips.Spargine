@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Core.BenchmarkTests.Logging.LoggingBenchmark-20230207-085738</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.4, OS=Windows 10 (10.0.19045.2546)
+Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
+  Job-NTYPVS : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
+  Job-UPRYLK : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests.Logging  
+Categories=LOGGING  
+</code></pre>
+
+<table>
+<thead><tr><th>             Method</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th> Q1</th><th>Median</th><th> Q3</th><th>Max</th><th>   Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>EasyLogger.LogCritical</td><td>.NET 6.0</td><td>3.451 ns</td><td>0.0075 ns</td><td>0.0063 ns</td><td>0.0017 ns</td><td>3.442 ns</td><td>3.448 ns</td><td>3.449 ns</td><td>3.453 ns</td><td>3.465 ns</td><td>289,736,307.7</td><td>0.0075 ns</td><td>13.00</td><td>2.560</td><td>2.000</td><td>0.7481</td><td>1</td><td>*</td><td>No</td><td>124 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogCritical</td><td>.NET 7.0</td><td>3.961 ns</td><td>0.0138 ns</td><td>0.0115 ns</td><td>0.0032 ns</td><td>3.943 ns</td><td>3.952 ns</td><td>3.961 ns</td><td>3.970 ns</td><td>3.978 ns</td><td>252,471,993.6</td><td>0.0138 ns</td><td>13.00</td><td>1.455</td><td>2.000</td><td>-0.1578</td><td>3</td><td>*</td><td>No</td><td>118 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogDebug</td><td>.NET 6.0</td><td>3.940 ns</td><td>0.0070 ns</td><td>0.0058 ns</td><td>0.0016 ns</td><td>3.933 ns</td><td>3.936 ns</td><td>3.938 ns</td><td>3.941 ns</td><td>3.955 ns</td><td>253,829,453.2</td><td>0.0070 ns</td><td>13.00</td><td>3.874</td><td>2.000</td><td>1.2679</td><td>3</td><td>*</td><td>No</td><td>114 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogDebug</td><td>.NET 7.0</td><td>3.713 ns</td><td>0.0116 ns</td><td>0.0108 ns</td><td>0.0028 ns</td><td>3.699 ns</td><td>3.706 ns</td><td>3.712 ns</td><td>3.718 ns</td><td>3.732 ns</td><td>269,321,624.7</td><td>0.0116 ns</td><td>15.00</td><td>1.893</td><td>2.000</td><td>0.3950</td><td>2</td><td>*</td><td>No</td><td>108 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogError</td><td>.NET 6.0</td><td>3.452 ns</td><td>0.0100 ns</td><td>0.0089 ns</td><td>0.0024 ns</td><td>3.442 ns</td><td>3.446 ns</td><td>3.447 ns</td><td>3.460 ns</td><td>3.467 ns</td><td>289,700,708.9</td><td>0.0100 ns</td><td>14.00</td><td>1.579</td><td>2.000</td><td>0.5955</td><td>1</td><td>*</td><td>No</td><td>124 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogError</td><td>.NET 7.0</td><td>3.958 ns</td><td>0.0125 ns</td><td>0.0117 ns</td><td>0.0030 ns</td><td>3.942 ns</td><td>3.948 ns</td><td>3.957 ns</td><td>3.964 ns</td><td>3.984 ns</td><td>252,654,110.9</td><td>0.0125 ns</td><td>15.00</td><td>2.434</td><td>2.000</td><td>0.6806</td><td>3</td><td>*</td><td>No</td><td>118 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogInformation</td><td>.NET 6.0</td><td>3.947 ns</td><td>0.0078 ns</td><td>0.0069 ns</td><td>0.0018 ns</td><td>3.937 ns</td><td>3.943 ns</td><td>3.947 ns</td><td>3.948 ns</td><td>3.961 ns</td><td>253,365,698.6</td><td>0.0078 ns</td><td>14.00</td><td>2.366</td><td>2.000</td><td>0.5960</td><td>3</td><td>*</td><td>No</td><td>114 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogInformation</td><td>.NET 7.0</td><td>3.710 ns</td><td>0.0160 ns</td><td>0.0142 ns</td><td>0.0038 ns</td><td>3.694 ns</td><td>3.701 ns</td><td>3.707 ns</td><td>3.718 ns</td><td>3.741 ns</td><td>269,512,265.3</td><td>0.0160 ns</td><td>14.00</td><td>2.211</td><td>2.000</td><td>0.7195</td><td>2</td><td>*</td><td>No</td><td>108 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogTrace</td><td>.NET 6.0</td><td>3.952 ns</td><td>0.0134 ns</td><td>0.0126 ns</td><td>0.0032 ns</td><td>3.939 ns</td><td>3.942 ns</td><td>3.948 ns</td><td>3.963 ns</td><td>3.973 ns</td><td>253,046,955.4</td><td>0.0134 ns</td><td>15.00</td><td>1.493</td><td>2.000</td><td>0.4870</td><td>3</td><td>*</td><td>No</td><td>111 B</td><td>-</td>
+</tr><tr><td>EasyLogger.LogTrace</td><td>.NET 7.0</td><td>3.704 ns</td><td>0.0066 ns</td><td>0.0058 ns</td><td>0.0016 ns</td><td>3.694 ns</td><td>3.700 ns</td><td>3.706 ns</td><td>3.707 ns</td><td>3.716 ns</td><td>269,978,991.5</td><td>0.0066 ns</td><td>14.00</td><td>2.260</td><td>2.000</td><td>0.0076</td><td>2</td><td>*</td><td>No</td><td>105 B</td><td>-</td>
+</tr><tr><td>EasyLogger.Warning</td><td>.NET 6.0</td><td>3.950 ns</td><td>0.0101 ns</td><td>0.0090 ns</td><td>0.0024 ns</td><td>3.940 ns</td><td>3.943 ns</td><td>3.946 ns</td><td>3.953 ns</td><td>3.968 ns</td><td>253,190,013.6</td><td>0.0101 ns</td><td>14.00</td><td>2.133</td><td>2.000</td><td>0.7435</td><td>3</td><td>*</td><td>No</td><td>114 B</td><td>-</td>
+</tr><tr><td>EasyLogger.Warning</td><td>.NET 7.0</td><td>3.705 ns</td><td>0.0114 ns</td><td>0.0095 ns</td><td>0.0026 ns</td><td>3.696 ns</td><td>3.699 ns</td><td>3.702 ns</td><td>3.707 ns</td><td>3.727 ns</td><td>269,880,420.7</td><td>0.0114 ns</td><td>13.00</td><td>2.583</td><td>2.000</td><td>0.9911</td><td>2</td><td>*</td><td>No</td><td>108 B</td><td>-</td>
+</tr><tr><td>ILogger.LogCritical</td><td>.NET 6.0</td><td>23.676 ns</td><td>0.0558 ns</td><td>0.0494 ns</td><td>0.0132 ns</td><td>23.615 ns</td><td>23.639 ns</td><td>23.659 ns</td><td>23.692 ns</td><td>23.770 ns</td><td>42,237,360.9</td><td>0.0558 ns</td><td>14.00</td><td>2.084</td><td>2.000</td><td>0.6803</td><td>7</td><td>*</td><td>No</td><td>322 B</td><td>-</td>
+</tr><tr><td>ILogger.LogCritical</td><td>.NET 7.0</td><td>22.317 ns</td><td>0.0393 ns</td><td>0.0368 ns</td><td>0.0095 ns</td><td>22.268 ns</td><td>22.286 ns</td><td>22.314 ns</td><td>22.350 ns</td><td>22.377 ns</td><td>44,809,373.1</td><td>0.0393 ns</td><td>15.00</td><td>1.441</td><td>2.000</td><td>0.2911</td><td>5</td><td>*</td><td>No</td><td>321 B</td><td>-</td>
+</tr><tr><td>ILogger.LogDebug</td><td>.NET 6.0</td><td>24.224 ns</td><td>0.0827 ns</td><td>0.0774 ns</td><td>0.0200 ns</td><td>24.137 ns</td><td>24.157 ns</td><td>24.213 ns</td><td>24.276 ns</td><td>24.399 ns</td><td>41,280,624.3</td><td>0.0827 ns</td><td>15.00</td><td>2.340</td><td>2.000</td><td>0.6841</td><td>8</td><td>*</td><td>No</td><td>322 B</td><td>-</td>
+</tr><tr><td>ILogger.LogDebug</td><td>.NET 7.0</td><td>21.821 ns</td><td>0.0351 ns</td><td>0.0328 ns</td><td>0.0085 ns</td><td>21.764 ns</td><td>21.810 ns</td><td>21.819 ns</td><td>21.842 ns</td><td>21.871 ns</td><td>45,826,583.7</td><td>0.0351 ns</td><td>15.00</td><td>1.950</td><td>2.000</td><td>-0.0904</td><td>4</td><td>*</td><td>No</td><td>321 B</td><td>-</td>
+</tr><tr><td>ILogger.LogError</td><td>.NET 6.0</td><td>25.041 ns</td><td>0.0331 ns</td><td>0.0294 ns</td><td>0.0078 ns</td><td>24.991 ns</td><td>25.024 ns</td><td>25.037 ns</td><td>25.056 ns</td><td>25.103 ns</td><td>39,934,857.2</td><td>0.0331 ns</td><td>14.00</td><td>2.351</td><td>2.000</td><td>0.3686</td><td>9</td><td>*</td><td>No</td><td>322 B</td><td>-</td>
+</tr><tr><td>ILogger.LogError</td><td>.NET 7.0</td><td>23.049 ns</td><td>0.1809 ns</td><td>0.1692 ns</td><td>0.0437 ns</td><td>22.770 ns</td><td>22.926 ns</td><td>23.126 ns</td><td>23.166 ns</td><td>23.217 ns</td><td>43,385,655.3</td><td>0.1809 ns</td><td>15.00</td><td>1.713</td><td>2.000</td><td>-0.7249</td><td>6</td><td>*</td><td>No</td><td>321 B</td><td>-</td>
+</tr><tr><td>ILogger.LogInformation</td><td>.NET 6.0</td><td>25.124 ns</td><td>0.0582 ns</td><td>0.0516 ns</td><td>0.0138 ns</td><td>25.055 ns</td><td>25.086 ns</td><td>25.112 ns</td><td>25.155 ns</td><td>25.221 ns</td><td>39,803,033.1</td><td>0.0582 ns</td><td>14.00</td><td>2.148</td><td>2.000</td><td>0.6179</td><td>9</td><td>*</td><td>No</td><td>322 B</td><td>-</td>
+</tr><tr><td>ILogger.LogInformation</td><td>.NET 7.0</td><td>21.745 ns</td><td>0.0402 ns</td><td>0.0356 ns</td><td>0.0095 ns</td><td>21.673 ns</td><td>21.724 ns</td><td>21.742 ns</td><td>21.769 ns</td><td>21.809 ns</td><td>45,988,142.2</td><td>0.0402 ns</td><td>14.00</td><td>2.332</td><td>2.000</td><td>-0.0412</td><td>4</td><td>*</td><td>No</td><td>321 B</td><td>-</td>
+</tr><tr><td>ILogger.LogTrace</td><td>.NET 6.0</td><td>24.155 ns</td><td>0.0374 ns</td><td>0.0350 ns</td><td>0.0090 ns</td><td>24.098 ns</td><td>24.128 ns</td><td>24.143 ns</td><td>24.189 ns</td><td>24.215 ns</td><td>41,400,045.3</td><td>0.0374 ns</td><td>15.00</td><td>1.697</td><td>2.000</td><td>0.3007</td><td>8</td><td>*</td><td>No</td><td>319 B</td><td>-</td>
+</tr><tr><td>ILogger.LogTrace</td><td>.NET 7.0</td><td>22.572 ns</td><td>0.1212 ns</td><td>0.0946 ns</td><td>0.0273 ns</td><td>22.523 ns</td><td>22.532 ns</td><td>22.540 ns</td><td>22.547 ns</td><td>22.857 ns</td><td>44,302,217.5</td><td>0.1212 ns</td><td>12.00</td><td>6.887</td><td>2.000</td><td>2.2520</td><td>5</td><td>*</td><td>No</td><td>318 B</td><td>-</td>
+</tr><tr><td>ILogger.LogWarning</td><td>.NET 6.0</td><td>25.495 ns</td><td>0.0482 ns</td><td>0.0427 ns</td><td>0.0114 ns</td><td>25.438 ns</td><td>25.470 ns</td><td>25.485 ns</td><td>25.520 ns</td><td>25.574 ns</td><td>39,222,828.0</td><td>0.0482 ns</td><td>14.00</td><td>2.061</td><td>2.000</td><td>0.5390</td><td>10</td><td>*</td><td>No</td><td>322 B</td><td>-</td>
+</tr><tr><td>ILogger.LogWarning</td><td>.NET 7.0</td><td>21.724 ns</td><td>0.0352 ns</td><td>0.0275 ns</td><td>0.0079 ns</td><td>21.683 ns</td><td>21.709 ns</td><td>21.725 ns</td><td>21.747 ns</td><td>21.764 ns</td><td>46,031,541.9</td><td>0.0352 ns</td><td>12.00</td><td>1.514</td><td>2.000</td><td>-0.1183</td><td>4</td><td>*</td><td>No</td><td>321 B</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

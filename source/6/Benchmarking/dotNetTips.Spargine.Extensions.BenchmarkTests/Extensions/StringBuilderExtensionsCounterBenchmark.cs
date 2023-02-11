@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-13-2023
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="StringBuilderExtensionsCounterBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -40,7 +40,7 @@ public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
 		var sb = new StringBuilder();
 
-		sb.AppendBytes(_byteArray);
+		sb.AppendBytes(this._byteArray);
 
 		this.Consume(sb.ToString());
 	}
@@ -48,7 +48,7 @@ public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(FastStringBuilder.BytesToString) + ": 01**")]
 	public void AppendBytes03()
 	{
-		var result = FastStringBuilder.BytesToString(_byteArray);
+		var result = FastStringBuilder.BytesToString(this._byteArray);
 
 		this.Consume(result);
 	}
@@ -57,7 +57,7 @@ public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	public void AppendKeyValue1()
 	{
 		var sb = new StringBuilder();
-		var stringArray = _stringArray;
+		var stringArray = this._stringArray;
 
 		for (var index = 0; index < stringArray.Length; index++)
 		{
@@ -68,22 +68,22 @@ public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 		this.Consume(sb.ToString());
 	}
 
-	[Benchmark(Description = nameof(StringBuilderExtensions.AppendValues))]
+	[Benchmark(Description = nameof(StringBuilderExtensions.AppendValues) + ": String Array")]
 	public void AppendValues01()
 	{
 		var sb = new StringBuilder();
 
-		sb.AppendValues(ControlChars.DefaultSeparator, _stringArray);
+		sb.AppendValues(ControlChars.DefaultSeparator, this._stringArray);
 
 		this.Consume(sb.ToString());
 	}
 
-	[Benchmark(Description = nameof(StringBuilderExtensions.AppendValues))]
+	[Benchmark(Description = nameof(StringBuilderExtensions.AppendValues) + ": String Enumerable")]
 	public void AppendValues02()
 	{
 		var sb = new StringBuilder();
 
-		sb.AppendValues(ControlChars.DefaultSeparator, _stringEnumerable);
+		sb.AppendValues(ControlChars.DefaultSeparator, this._stringEnumerable);
 
 		this.Consume(sb.ToString());
 	}
@@ -92,9 +92,9 @@ public class StringBuilderExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	{
 		base.Setup();
 
-		_stringArray = this.GetStringArray(this.Count, 15, 15);
-		_stringEnumerable = this.GetStringArray(this.Count, 15, 15).AsEnumerable();
-		_byteArray = this.GetByteArray(1);
+		this._stringArray = this.GetStringArray(this.Count, 15, 15);
+		this._stringEnumerable = this.GetStringArray(this.Count, 15, 15).AsEnumerable();
+		this._byteArray = this.GetByteArray(1);
 	}
 
 }

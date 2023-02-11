@@ -62,21 +62,19 @@ namespace DotNetTips.Spargine.Benchmarking.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;address1&quot;: &quot;gOXrW]AYVyjxdtANqUxJGccb]&quot;,
-        ///  &quot;address2&quot;: &quot;yGXswsF^ZDmSLhWSDjIY_LtnJ&quot;,
-        ///  &quot;bornOn&quot;: {
-        ///    &quot;DateTime&quot;: &quot;\/Date(68750967985)\/&quot;,
-        ///    &quot;OffsetMinutes&quot;: -480
-        ///  },
-        ///  &quot;cellPhone&quot;: &quot;845-005-7333&quot;,
-        ///  &quot;city&quot;: &quot;c`YFd[KpNtefbpD&quot;,
-        ///  &quot;country&quot;: &quot;sZJwmLdiQybvVyH&quot;,
-        ///  &quot;email&quot;: &quot;ugasmhbubabogaf@syefqkpeyudcbnuvcjujocn.ly&quot;,
-        ///  &quot;firstName&quot;: &quot;WUslHDZPleKVotq&quot;,
-        ///  &quot;homePhone&quot;: &quot;357-661-8642&quot;,
-        ///  &quot;id&quot;: &quot;3f32a85f0c43493199e4776ee8f207a7&quot;,
-        ///  &quot;lastName&quot;: &quot;MZsLqUdZaoR_rCuWqUWTXBL`X&quot;,
-        ///  &quot;postalCode&quot;: &quot;66373 [rest of string was truncated]&quot;;.
+        ///  &quot;Address1&quot;: &quot;GUdrKgQnkYoCnNP^E\u0060pyOBMWn&quot;,
+        ///  &quot;Address2&quot;: &quot;\\xhrUMJJwrNqwSJtDcvwCoiCP&quot;,
+        ///  &quot;Age&quot;: &quot;2190.00:00:00.1416747&quot;,
+        ///  &quot;BornOn&quot;: &quot;2017-01-25T07:37:27.991408-08:00&quot;,
+        ///  &quot;CellPhone&quot;: &quot;083-828-2338&quot;,
+        ///  &quot;City&quot;: &quot;SgxDAn^LJdQaNPb&quot;,
+        ///  &quot;Country&quot;: &quot;xakdRxHKlAvMMTV&quot;,
+        ///  &quot;Email&quot;: &quot;cipgtdehgbj@gspyoepmpmxebawjnffyfo.org.uk&quot;,
+        ///  &quot;FirstName&quot;: &quot;GKEavUf]DJGYxP^&quot;,
+        ///  &quot;HomePhone&quot;: &quot;324-470-1840&quot;,
+        ///  &quot;Id&quot;: &quot;ef719c98d4914b0abf62dc8f619bea14&quot;,
+        ///  &quot;LastName&quot;: &quot;qyuQASb_IngAwpgyjuUNY\\QPW&quot;,
+        ///  &quot;PostalCode&quot;: &quot;10557 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string JsonTestDataPersonProper {
             get {
@@ -88,19 +86,19 @@ namespace DotNetTips.Spargine.Benchmarking.Properties {
         ///   Looks up a localized string similar to {
         ///  &quot;Addresses&quot;: [
         ///    {
-        ///      &quot;Address1&quot;: &quot;n\\KmpyaCVl]ljauKDSYdbbYTA&quot;,
-        ///      &quot;Address2&quot;: &quot;TRnnquPocv_Rt]jCJqB_etCqH&quot;,
-        ///      &quot;City&quot;: &quot;jJ[cJLDql\\hlO_pNvGeWrIpib&quot;,
-        ///      &quot;Country&quot;: &quot;XjXnVZOwgHknMYj\\[IACPuSKQ&quot;,
-        ///      &quot;CountyProvince&quot;: &quot;hmX[OaTlAl[eCVCYoaXF&quot;,
-        ///      &quot;Id&quot;: &quot;3af0d0492d1d41d09f466700238e1ac0&quot;,
-        ///      &quot;Phone&quot;: &quot;366-883-0752&quot;,
-        ///      &quot;PostalCode&quot;: &quot;43246574&quot;,
-        ///      &quot;State&quot;: &quot;X`XCLgOpXlxd[Tu&quot;
-        ///    },
-        ///    {
-        ///      &quot;Address1&quot;: &quot;ErxF]`pa_FiPDX`iWbSJqhV_A&quot;,
-        ///      &quot;Address2&quot;: &quot;fEANpCqI]Iei`Tv [rest of string was truncated]&quot;;.
+        ///      &quot;Address1&quot;: &quot;QqHyyMGhRagbQc\u0060IsmUBfa^Hl&quot;,
+        ///      &quot;Address2&quot;: &quot;]Dn_loYsTMxxUvYKd]]ADb\u0060fC&quot;,
+        ///      &quot;City&quot;: &quot;HdH[lYyEJco]fnXGSigWUrNM^&quot;,
+        ///      &quot;Country&quot;: &quot;aNOYTGrH_MgwEgZLpwdwkXqrc&quot;,
+        ///      &quot;CountyProvince&quot;: &quot;FTlUDZfHG[vd_MNs]\u0060AD&quot;,
+        ///      &quot;Id&quot;: &quot;36b070445f6941e99f9ea3acb4c85103&quot;,
+        ///      &quot;Phone&quot;: &quot;576-242-6403&quot;,
+        ///      &quot;PostalCode&quot;: &quot;48383886&quot;,
+        ///      &quot;State&quot;: &quot;dKqWYHsoIfS]gZm&quot;
+        ///    }
+        ///  ],
+        ///  &quot;BornOn&quot;: &quot;1961-02-08T07:34:01.0453116-08:00&quot;,
+        ///  &quot;CellPhone&quot;: &quot;626-13 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string JsonTestDataPersonRecord {
             get {

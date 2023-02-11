@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 02-10-2021
@@ -26,85 +26,85 @@ namespace DotNetTips.Spargine.Core;
 [Serializable]
 public sealed class InvalidValueException<TValue> : Exception
 {
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    public InvalidValueException() : base(Resources.MessageGoToDotNetTipsComForHelp)
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	public InvalidValueException() : base(Resources.MessageGoToDotNetTipsComForHelp)
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="value">The value.</param>
-    public InvalidValueException(TValue value) : base(Resources.MessageGoToDotNetTipsComForHelp) => this.Value = value;
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="value">The value.</param>
+	public InvalidValueException(TValue value) : base(Resources.MessageGoToDotNetTipsComForHelp) => this.Value = value;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    public InvalidValueException(string message) : base(message)
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	public InvalidValueException(string message) : base(message)
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="value">The value.</param>
-    public InvalidValueException(string message, TValue value) : base(message) => this.Value = value;
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="value">The value.</param>
+	public InvalidValueException(string message, TValue value) : base(message) => this.Value = value;
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="innerException">The inner exception.</param>
-    public InvalidValueException(string message, Exception innerException) : base(message, innerException)
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="innerException">The inner exception.</param>
+	public InvalidValueException(string message, Exception innerException) : base(message, innerException)
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="info">The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
-    /// <param name="context">The <see cref="StreamingContext" /> that contains contextual information about the source or destination.</param>
-    private InvalidValueException(SerializationInfo info, StreamingContext context) : base(info, context)
-    {
-    }
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="info">The <see cref="SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+	/// <param name="context">The <see cref="StreamingContext" /> that contains contextual information about the source or destination.</param>
+	private InvalidValueException(SerializationInfo info, StreamingContext context) : base(info, context)
+	{
+	}
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
-    /// </summary>
-    /// <param name="message">The message.</param>
-    /// <param name="value">The value.</param>
-    /// <param name="innerException">The inner exception.</param>
-    public InvalidValueException(string message, TValue value, Exception innerException) : base(message, innerException) => this.Value = value;
+	/// <summary>
+	/// Initializes a new instance of the <see cref="InvalidValueException{TValue}" /> class.
+	/// </summary>
+	/// <param name="message">The message.</param>
+	/// <param name="value">The value.</param>
+	/// <param name="innerException">The inner exception.</param>
+	public InvalidValueException(string message, TValue value, Exception innerException) : base(message, innerException) => this.Value = value;
 
-    /// <summary>
-    /// Gets the value.
-    /// </summary>
-    /// <value>The value.</value>
-    public TValue Value { get; private set; }
+	/// <summary>
+	/// Gets the value.
+	/// </summary>
+	/// <value>The value.</value>
+	public TValue Value { get; private set; }
 
-    /// <summary>
-    /// Converts to string.
-    /// </summary>
-    /// <returns>string.</returns>
-    public override string ToString()
-    {
-        var valueProperties = string.Empty;
-        var innerException = string.Empty;
+	/// <summary>
+	/// Converts to string.
+	/// </summary>
+	/// <returns>string.</returns>
+	public override string ToString()
+	{
+		var valueProperties = string.Empty;
+		var innerException = string.Empty;
 
-        if (this.Value is not null)
-        {
-            valueProperties = this.Value.PropertiesToString();
-        }
+		if (this.Value is not null)
+		{
+			valueProperties = this.Value.PropertiesToString();
+		}
 
-        if (this.InnerException is not null)
-        {
-            innerException = this.InnerException.PropertiesToString();
-        }
+		if (this.InnerException is not null)
+		{
+			innerException = this.InnerException.PropertiesToString();
+		}
 
-        return $"{this.Message} InnerException: {innerException} Value: {valueProperties}.";
-    }
+		return $"{this.Message} InnerException: {innerException} Value: {valueProperties}.";
+	}
 }

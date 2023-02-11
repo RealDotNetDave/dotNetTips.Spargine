@@ -1,0 +1,18 @@
+....
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.19044.1826 (21H2)
+Intel Core i7-7660U CPU 2.50GHz (Kaby Lake), 1 CPU, 4 logical and 2 physical cores
+.NET SDK=7.0.100-preview.6.22352.1
+  [Host]     : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+  Job-YKIQEX : .NET 6.0.7 (6.0.722.32202), X64 RyuJIT
+
+EvaluateOverhead=True  Runtime=.NET 6.0  Server=True  
+Namespace=DotNetTips.Spargine.Core.BenchmarkTests.Security  Categories=Encryption  
+....
+[options="header"]
+|===
+|               Method|       Mean|      Error|     StdDev|     StdErr|       Min|         Q1|     Median|         Q3|        Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|   Gen 0|   Gen 1|  Allocated
+|           AesDecrypt|   9.715 μs|  0.3639 μs|  1.0730 μs|  0.1073 μs|  7.081 μs|   9.209 μs|   9.795 μs|  10.413 μs|  12.037 μs|  102,936.7|       0.3639 μs|      100.00|     2.955|   2.500|   -0.5005|     2|             *|        No|       2 KB|  1.5717|  0.0153|      14 KB
+|           AesEncrypt|   8.301 μs|  0.2097 μs|  0.6182 μs|  0.0618 μs|  7.073 μs|   7.833 μs|   8.250 μs|   8.759 μs|   9.852 μs|  120,470.6|       0.2097 μs|      100.00|     2.382|   2.000|    0.2761|     1|             *|        No|       2 KB|  1.4038|       -|      13 KB
+|  SimpleSHA256Decrypt|  10.418 μs|  0.3010 μs|  0.8829 μs|  0.0887 μs|  8.605 μs|   9.803 μs|  10.292 μs|  10.939 μs|  12.728 μs|   95,985.1|       0.3010 μs|       99.00|     2.688|   3.231|    0.4908|     3|             *|        No|       1 KB|  1.2207|       -|      11 KB
+|  SimpleSHA256Encrypt|  11.597 μs|  0.4608 μs|  1.3588 μs|  0.1359 μs|  9.044 μs|  10.624 μs|  11.510 μs|  12.718 μs|  14.736 μs|   86,229.9|       0.4608 μs|      100.00|     2.289|   3.185|    0.1534|     4|             *|        No|       1 KB|  1.4038|       -|      13 KB
+|===

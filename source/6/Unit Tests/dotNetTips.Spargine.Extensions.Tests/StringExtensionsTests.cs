@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 01-26-2023
 // ***********************************************************************
 // <copyright file="StringExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,8 +17,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using dotNetTips.Spargine.Extensions.Tests.Properties;
 using DotNetTips.Spargine.Core;
-using DotNetTips.Spargine.Extensions.Tests.Properties;
 using DotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

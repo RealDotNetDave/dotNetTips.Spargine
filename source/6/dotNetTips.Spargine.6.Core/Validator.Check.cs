@@ -413,7 +413,7 @@ public static partial class Validator
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool CheckItemsExists<T>(this IEnumerable<T> input, bool throwException = false, string errorMessage = "")
 	{
-		var isValid = input is not null && input.TryGetNonEnumeratedCount(out var collectionCount) && collectionCount > 0;
+		var isValid = input?.Count() > 0;
 
 		if (isValid is false && throwException)
 		{

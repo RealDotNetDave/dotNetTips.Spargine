@@ -4,7 +4,7 @@
 		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AssemblyVersion>2022.6.8.10</AssemblyVersion>
+		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
 		<Company>dotNetTips.com - McCarter Consulting</Company>
@@ -15,7 +15,7 @@
 		<DebugType>none</DebugType>
 		<Description>DotNetTips.Spargine.BenchmarkTests</Description>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2022.6.8.10</FileVersion>
+		<FileVersion>2023.6.2.2</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<IsPublishable>False</IsPublishable>
 		<NeutralLanguage>en</NeutralLanguage>
@@ -28,6 +28,7 @@
 		<ServerGarbageCollection>true</ServerGarbageCollection>
 		<SignAssembly>False</SignAssembly>
 		<TargetFrameworks>net60;net7.0</TargetFrameworks>
+		<Version>2023.6.2.2</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -37,13 +38,17 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.4" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.4" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.1.7" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.1.7" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.1.7" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.2.2" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.2.2" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.2.2" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>

@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.BenchmarkTests
 // Author           : David McCarter
 // Created          : 02-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-05-2022
+// Last Modified On : 01-30-2023
 // ***********************************************************************
 // <copyright file="CachedEnumerableCollectionBenchmark.cs" company="DotNetTips.Spargine.Core.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,6 +25,6 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests;
 /// </summary>
 /// <seealso cref="CounterBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
-public class CachedEnumerableCollectionBenchmark : LargeCollectionsBenchmark
+public class CachedEnumerableCollectionBenchmark : SmallCollectionsBenchmark
 {
 }

@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-17-2022
+// Last Modified On : 01-18-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Security;
 using System.Security.AccessControl;
 using DotNetTips.Spargine.Core;
@@ -31,6 +32,7 @@ namespace DotNetTips.Spargine.IO;
 /// <summary>
 /// Class DirectoryHelper.
 /// </summary>
+[SupportedOSPlatform("windows")]
 public static class DirectoryHelper
 {
 	/// <summary>

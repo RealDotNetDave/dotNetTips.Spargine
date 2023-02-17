@@ -107,8 +107,8 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
 	{
 		if (info == null)
-		{		
-			ExceptionThrower.ThrowArgumentNullException(nameof(info), $"{nameof(info)} is null.");
+		{
+			ExceptionThrower.ThrowArgumentNullException($"{nameof(info)} is null.", nameof(info));
 		}
 
 		this.GetObjectData(info, context);

@@ -61,7 +61,7 @@ namespace dotNetTips.Spargine.Core
 		{
 			if (File.Exists(this.ConfigFileName))
 			{
-				_ = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
+				instance = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
 
 				return true;
 			}

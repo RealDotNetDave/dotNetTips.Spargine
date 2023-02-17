@@ -27,7 +27,7 @@ public class Config<T> where T : class, new()
 	/// <summary>
 	/// The instance.
 	/// </summary>
-	private static readonly T _instance = new();
+	private static T _instance = new();
 
 	/// <summary>
 	/// Prevents a default instance of the <see cref="Config{T}" /> class from being created.
@@ -48,7 +48,7 @@ public class Config<T> where T : class, new()
 	{
 		if (File.Exists(this.ConfigFileName))
 		{
-			_ = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
+			_instance = XmlSerialization.DeserializeFromFile<T>(this.ConfigFileName);
 
 			return true;
 		}

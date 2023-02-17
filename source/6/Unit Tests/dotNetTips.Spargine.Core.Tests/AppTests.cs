@@ -149,5 +149,41 @@ namespace DotNetTips.Spargine.Core.Tests
 
 			Assert.IsTrue(result.FastCount() > 0);
 		}
+
+		[TestMethod]
+		public void AppConfigTest()
+		{
+			var config = new AppConfig();
+
+			Assert.IsTrue(string.IsNullOrEmpty(config.ConfigFileName) == false);
+
+			config.TestValues.Count1 = 100;
+
+
+			config.Save();
+
+			config.Load();
+
+			Assert.IsTrue(config.TestValues.Count1 == 100);
+
+		}
+	}
+
+	public class GlobalConfig
+	{
+		public GlobalConfig()
+		{
+		}
+	}
+
+	public class AppConfig : Config<GlobalConfig>
+	{
+		public Values TestValues { get; set; } = new Values();
+	}
+
+	public class Values
+	{
+		public int Count1 { get; set; }
+		public int Count2 { get; set; }
 	}
 }

@@ -25,7 +25,7 @@ namespace DotNetTips.Spargine.Core.Diagnostics;
 /// </summary>
 /// <seealso cref="Stopwatch" />
 [ExcludeFromCodeCoverage]
-[Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "ADD URL")]
+[Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "bit.ly/SpargineFeb2023")]
 public class PerformanceStopwatch : Stopwatch
 {
 	/// <summary>
@@ -99,7 +99,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// <example>
 	/// Output: LoadUsers():Call to Database. Time: 1006.3728 ms
 	/// </example>
-	[Information(nameof(StopReset), "David McCarter", "1/18/2023", Status = Status.New)]
+	[Information(nameof(StopReset), "David McCarter", "1/18/2023", Status = Status.Available)]
 	public TimeSpan StopReset(ILogger logger, string message)
 	{
 		var result = this.StopReset();
@@ -132,7 +132,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// <example>
 	/// Output: LoadUsers():Call to Database. Time: 1006.3728 ms
 	/// </example>
-	[Information(nameof(StopRestart), "David McCarter", "1/18/2023", Status = Status.New)]
+	[Information(nameof(StopRestart), "David McCarter", "1/18/2023", Status = Status.Available)]
 	public TimeSpan StopRestart(ILogger logger, string message)
 	{
 		var result = this.StopRestart();

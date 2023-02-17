@@ -218,7 +218,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 			// "count" itself or "count + arrayIndex" can overflow
 			if (array.Length - count < arrayIndex || count < 0)
 			{
-				ExceptionThrower.ThrowArgumentInvalidException(nameof(array), "The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.");
+				ExceptionThrower.ThrowArgumentInvalidException("The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.", nameof(array));
 			}
 
 			this.CopyToItems(array, arrayIndex);

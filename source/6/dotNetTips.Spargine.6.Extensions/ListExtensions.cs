@@ -287,7 +287,7 @@ public static class ListExtensions
 	/// <param name="values">The values.</param>
 	/// <param name="action">The action.</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.New, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Documentation = "ADD URL")]
+	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Documentation = "https://bit.ly/SpargineFeb2023")]
 	public static void PerformAction<T>(this List<T> values, [NotNull] Action<T> action)
 	{
 		action = action.ArgumentNotNull();
@@ -503,7 +503,7 @@ public static class ListExtensions
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The collection.</param>
 	/// <returns>ReadOnlyObservableCollection&lt;T&gt;.</returns>
-	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineFeb2023")]
 	public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>([NotNull] this IList<T> collection)
 	{
 		return new ReadOnlyObservableCollection<T>(collection.ArgumentNotNull().ToObservableCollection());

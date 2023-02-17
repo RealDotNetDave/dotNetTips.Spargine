@@ -4,8 +4,8 @@
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
 		<TargetFramework>net6.0</TargetFramework>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>2023.6.2.2</AssemblyVersion>
-		<FileVersion>2023.6.2.2</FileVersion>
+		<AssemblyVersion>2023.6.2.36800</AssemblyVersion>
+		<FileVersion>2023.6.2.36800</FileVersion>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<AnalysisLevel>none</AnalysisLevel>

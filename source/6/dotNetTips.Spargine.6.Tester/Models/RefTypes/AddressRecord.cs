@@ -135,7 +135,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (value is null)
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.Address2), "Value for address cannot be null.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for address cannot be null.", nameof(this.Address2));
 			}
 
 			this._address2 = value.Length > 256 ? throw new ArgumentOutOfRangeException(nameof(this.Address2), "Address cannot be more than 256 characters.") : value;
@@ -155,7 +155,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.City), "Value for City cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for City cannot be null or empty.", nameof(this.City));
 			}
 
 			this._city = value.Length > 100 ? throw new ArgumentOutOfRangeException(nameof(this.City), "City length is limited to 100 characters.") : value;
@@ -175,7 +175,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.Country), "Value for Country cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for Country cannot be null or empty.", nameof(this.Country));
 			}
 
 			this._country = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.Country), "Country length is limited to 50 characters.") : value;
@@ -195,7 +195,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.CountyProvince), "Value for County/ Province cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for County/ Province cannot be null or empty.", nameof(this.CountyProvince));
 			}
 
 			this._countyProvince = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.CountyProvince), "County/ Province length is limited to 50 characters.") : value;
@@ -221,7 +221,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.Phone), "Value for phone number cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for phone number cannot be null or empty.", nameof(this.Phone));
 			}
 
 			this._phone = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.Phone), "Home phone length is limited to 50 characters.") : value;
@@ -241,7 +241,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.PostalCode), "Value for postal code cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for postal code cannot be null or empty.", nameof(this.PostalCode));
 			}
 
 			this._postalCode = value.Length > 20 ? throw new ArgumentOutOfRangeException(nameof(this.PostalCode), "Postal code length is limited to 20 characters.") : value;
@@ -261,7 +261,7 @@ public record AddressRecord : IDataRecord
 		{
 			if (string.IsNullOrEmpty(value))
 			{
-				ExceptionThrower.ThrowArgumentNullException(nameof(this.State), "Value for State cannot be null or empty.");
+				ExceptionThrower.ThrowArgumentNullException( "Value for State cannot be null or empty.", nameof(this.State));
 			}
 
 			this._state = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.State), "State  length is limited to 50 characters.") : value;

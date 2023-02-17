@@ -33,7 +33,7 @@ public static partial class TypeExtensions
 	/// <param name="obj">The object.</param>
 	/// <returns>DotNetTips.Spargine.Extensions.TypeExtensions.TypeOfType.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(GetTypeOfType), UnitTestCoverage = 100, Status = Status.New)]
+	[Information(nameof(GetTypeOfType), UnitTestCoverage = 100, Status = Status.Available)]
 	public static TypeOfType GetTypeOfType(this object obj)
 	{
 		var objType = obj.GetType();

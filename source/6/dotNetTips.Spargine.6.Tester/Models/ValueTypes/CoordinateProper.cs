@@ -88,16 +88,16 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	public static bool operator >=(CoordinateProper left, CoordinateProper right) => left.CompareTo(right) >= 0;
 
 	/// <summary>
-	/// Compares to.
+	/// Compares one object to another.
 	/// </summary>
 	/// <param name="obj">The object.</param>
 	/// <returns>System.Int32.</returns>
-	/// <exception cref="ArgumentException">obj</exception>
+	/// <exception cref="ArgumentInvalidException">obj</exception>
 	public int CompareTo(object obj)
 	{
 		if (obj is not CoordinateProper)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException(nameof(obj), $"{nameof(obj)} is not a {nameof(CoordinateProper)}");
+			ExceptionThrower.ThrowArgumentInvalidException($"{nameof(obj)} is not a {nameof(CoordinateProper)} type.", nameof(obj));
 		}
 
 		return this.CompareTo((CoordinateProper)obj);

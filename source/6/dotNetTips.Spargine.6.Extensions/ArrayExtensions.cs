@@ -329,7 +329,7 @@ public static class ArrayExtensions
 	/// <param name="array">The list.</param>
 	/// <returns>System.Int64.</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
-	[Information(nameof(FastCount), "David McCarter", "1/9/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.New, Documentation = "https://bit.ly/SpargineNov2022")]
+	[Information(nameof(FastCount), "David McCarter", "1/9/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static long FastCount<T>([NotNull] this T[] array)
 	{
 		return array.ArgumentNotNull().LongLength;
@@ -444,7 +444,7 @@ public static class ArrayExtensions
 	/// <param name="action">The action.</param>
 	/// <exception cref="ArgumentNullException">action cannot be null.</exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.New, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Documentation = "ADD URL")]
+	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Documentation = "https://bit.ly/SpargineFeb2023")]
 	public static void PerformAction<T>(this T[] values, [NotNull] Action<T> action)
 	{
 		action = action.ArgumentNotNull();

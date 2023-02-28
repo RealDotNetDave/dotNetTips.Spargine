@@ -14,7 +14,7 @@
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using DotNetTips.Spargine.Core.Logging;
+using DotNetTips.Spargine.Core.Internal;
 using Microsoft.Extensions.Logging;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -104,7 +104,7 @@ public class PerformanceStopwatch : Stopwatch
 	{
 		var result = this.StopReset();
 
-		EasyLogger.LogInformation(logger, this.CreateMessage(message, result));
+		logger.WriteInformationMessage(this.CreateMessage(message, result));
 
 		return result;
 	}
@@ -137,7 +137,7 @@ public class PerformanceStopwatch : Stopwatch
 	{
 		var result = this.StopRestart();
 
-		EasyLogger.LogInformation(logger, this.CreateMessage(message, result));
+		logger.WriteInformationMessage( this.CreateMessage(message, result));
 
 		return result;
 	}

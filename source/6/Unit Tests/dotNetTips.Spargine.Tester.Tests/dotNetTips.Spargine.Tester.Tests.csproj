@@ -5,8 +5,8 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<IsPackable>false</IsPackable>
-		<AssemblyVersion>2023.6.2.36800</AssemblyVersion>
-		<FileVersion>2023.6.2.36800</FileVersion>
+		<AssemblyVersion>2023.6.2.33232</AssemblyVersion>
+		<FileVersion>2023.6.2.33232</FileVersion>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>none</AnalysisLevel>

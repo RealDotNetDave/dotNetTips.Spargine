@@ -36,7 +36,7 @@ public static class LoggingHelper
 	/// <param name="e">The <see cref="FirstChanceExceptionEventArgs" /> instance containing the event data.</param>
 	private static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
 	{
-		EasyLogger.LogError(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
+		EasyLogger.LogException(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
 	}
 
 	/// <summary>
@@ -133,7 +133,7 @@ public static class LoggingHelper
 		{
 			foreach (var item in values.OrderBy(p => p.Key))
 			{
-				EasyLogger.LogDebug(logger, $"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
+				logger.LogDebug( $"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
 			}
 		}
 	}

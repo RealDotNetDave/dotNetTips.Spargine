@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,6 +32,58 @@ public static class NumericExtensions
 	/// </summary>
 	private static readonly ObjectPool<StringBuilder> _stringBuilderPool =
 new DefaultObjectPoolProvider().CreateStringBuilderPool();
+
+	/// <summary>
+	/// Averages two numbers.
+	/// </summary>
+	/// <param name="a">First number to average</param>
+	/// <param name="b">Second number to average</param>
+	/// <returns>double.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static double Average(this double a, double b)
+	{
+		return (a + b) / 2;
+	}
+
+	/// <summary>
+	/// Averages two numbers.
+	/// </summary>
+	/// <param name="a">First number to average</param>
+	/// <param name="b">Second number to average</param>
+	/// <returns>double.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static long Average(this Int64 a, Int64 b)
+	{
+		return (a + b) / 2;
+	}
+
+	/// <summary>
+	/// Averages two numbers.
+	/// </summary>
+	/// <param name="a">First number to average</param>
+	/// <param name="b">Second number to average</param>
+	/// <returns>double.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static int Average(this Int32 a, Int32 b)
+	{
+		return (a + b) / 2;
+	}
+
+	/// <summary>
+	/// Averages two numbers.
+	/// </summary>
+	/// <param name="a">First number to average</param>
+	/// <param name="b">Second number to average</param>
+	/// <returns>double.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static decimal Average(this decimal a, decimal b)
+	{
+		return (a + b) / 2;
+	}
 
 	/// <summary>
 	/// Decrement a number ensuring it never passes a given lower-bound.
@@ -78,7 +130,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 			size++;
 		}
 
-		return $"{fileSize} {(new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB })[Convert.ToInt64(size)]}";
+		return $"{fileSize.ToString(CultureInfo.CurrentCulture)} {(new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB })[Convert.ToInt64(size)]}";
 	}
 
 	/// <summary>
@@ -98,7 +150,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 			size++;
 		}
 
-		return $"{fileSize} {(new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB })[Convert.ToInt64(size)]}";
+		return $"{fileSize.ToString(CultureInfo.CurrentCulture)} {(new string[] { Resources.Bytes, Resources.KB, Resources.MB, Resources.GB })[Convert.ToInt64(size)]}";
 	}
 
 	/// <summary>
@@ -689,7 +741,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Converts to roman numeral using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts to roman numeral using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns>string.</returns>

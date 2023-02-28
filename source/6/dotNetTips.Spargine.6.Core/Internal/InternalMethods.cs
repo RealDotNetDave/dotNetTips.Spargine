@@ -15,6 +15,8 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.CompilerServices;
+using DotNetTips.Spargine.Core.Logging;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 
 namespace DotNetTips.Spargine.Core.Internal;
@@ -175,5 +177,74 @@ internal static class InternalMethods
 	/// <returns>System.Int32.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
-	public static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
+	internal static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
+
+
+	/// <summary>
+	/// Logs a warning message. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="method">The method.</param>
+	internal static void WriteWarningMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogWarning(logger, $"{method}: {message}");
+	}
+
+	/// <summary>
+	/// Logs the information. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="method">The method.</param>
+	internal static void WriteInformationMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogInformation(logger, $"{method}: {message}");
+	}
+
+	/// <summary>
+	/// Logs error message. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="method">The method.</param>
+	internal static void WriteErrorMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogError(logger, $"{method}: {message}");
+	}
+
+	/// <summary>
+	/// Logs debug message. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="method">The method.</param>
+	internal static void WriteDebugMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogDebug(logger, $"{method}: {message}");
+	}
+
+	/// <summary>
+	/// Logs trace message. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="method">The method.</param>
+	internal static void WriteTraceMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogTrace(logger, $"{method}: {message}");
+	}
+
+
+	/// <summary>
+	/// Logs critical exception. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="ex">The ex.</param>
+	/// <param name="method">The method.</param>
+	internal static void LogCriticalMessage(this ILogger logger, string message, Exception ex, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogCritical(logger, $"{method}: {message}", ex);
+	}
 }

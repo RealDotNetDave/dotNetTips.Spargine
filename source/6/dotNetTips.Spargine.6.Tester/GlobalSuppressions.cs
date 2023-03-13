@@ -23,3 +23,6 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Performance", "CA1815:Override equals and operator equals on value types", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Tester.Models.ValueTypes.Coordinate")]
 [assembly: SuppressMessage("Design", "CA1036:Override methods on comparable types", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Tester.Models.ValueTypes.Person")]
 [assembly: SuppressMessage("Performance", "CA1810:Initialize reference type static fields inline", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Tester.RandomData.#cctor")]
+[assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.Country.States")]
+[assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.Country.Timezones")]
+[assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.State.Cities")]

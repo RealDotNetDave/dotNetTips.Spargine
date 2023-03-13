@@ -133,7 +133,7 @@ public static class LoggingHelper
 		{
 			foreach (var item in values.OrderBy(p => p.Key))
 			{
-				logger.LogDebug( $"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
+				logger.LogDebugMessage($"{nameof(ComputerInfo)}:{item.Key} - {item.Value}");
 			}
 		}
 	}

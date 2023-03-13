@@ -115,6 +115,15 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aaron,Abbie,Abby,Abel,Abigail,Abraham,Ada,Adam,Adan,Addie,Adela,Adelaide,Adele,Adeline,Adolfo,Adolph,Adrian,Adrian,Adriana,Adrienne,Agnes,Agustin,Aida,Aileen,Aimee,Aisha,Al,Alan,Alana,Alba,Albert,Alberta,Alberto,Alejandra,Alejandro,Alex,Alexander,Alexandra,Alexandria,Alexis,Alexis,Alfonso,Alfred,Alfreda,Alfredo,Ali,Alice,Alicia,Aline,Alisa,Alisha,Alison,Alissa,Allan,Allen,Allene,Allie,Allison,Allyson,Alma,Alonzo,Alphonso,Alta,Althea,Alton,Alvaro,Alvin,Alyce,Alyson,Alyssa,Amalia,Amanda,Amber,Amelia,Amie,Amos [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string FirstNames {
+            get {
+                return ResourceManager.GetString("FirstNames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Id length is limited to 50 characters..
         /// </summary>
         internal static string IdLengthIsLimitedTo50Characters {
@@ -124,11 +133,50 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [
+        ///  {
+        ///    &quot;number&quot;: &quot;2335188728251690&quot;,
+        ///    &quot;type&quot;: &quot;MasterCard&quot;,
+        ///    &quot;name&quot;: &quot;Mandy Bardach&quot;,
+        ///    &quot;expiryDate&quot;: &quot;8/25&quot;,
+        ///    &quot;cvv&quot;: 810,
+        ///    &quot;industry&quot;: &quot;Airlines and other industry assignments&quot;
+        ///  },
+        ///  {
+        ///    &quot;number&quot;: &quot;4986700064774317387&quot;,
+        ///    &quot;type&quot;: &quot;Visa&quot;,
+        ///    &quot;name&quot;: &quot;Sharice Ohno&quot;,
+        ///    &quot;expiryDate&quot;: &quot;2/26&quot;,
+        ///    &quot;cvv&quot;: 380,
+        ///    &quot;industry&quot;: &quot;Banking &amp; Financial&quot;
+        ///  },
+        ///  {
+        ///    &quot;number&quot;: &quot;2265091312026268&quot;,
+        ///    &quot;type&quot;: &quot;MasterCard&quot;,
+        ///    &quot;name&quot;: &quot;Mirella Fonohema&quot;,
+        ///    &quot;expiryDate&quot;: &quot;9/ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string JsonCreditCards {
+            get {
+                return ResourceManager.GetString("JsonCreditCards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last name length is limited to 50 characters..
         /// </summary>
         internal static string LastNameLengthIsLimitedTo50Characters {
             get {
                 return ResourceManager.GetString("LastNameLengthIsLimitedTo50Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abbott,Abel,Abraham,Abrams,Acevedo,Ackerman,Acosta,Adair,Adams,Adkins,Aguilar,Aguilera,Aguirre,Ahmed,Akers,Akins,Albert,Albrecht,Albright,Aldrich,Aldridge,Alexander,Alfaro,Alford,Ali,Allen,Allison,Allred,Alonso,Alston,Alvarado,Alvarez,Amaya,Ambrose,Ames,Amos,Anaya,Andersen,Anderson,Andrade,Andrews,Angel,Anthony,Aquino,Aragon,Archer,Arellano,Arias,Armstrong,Arnold,Arredondo,Arrington,Arroyo,Arthur,Ash,Ashby,Ashley,Atkins,Atkinson,Atwood,Austin,Avalos,Avery,Avila,Aviles,Ayala,Ayers,Babcock,Baca,Bacon,Baez,Bag [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string LastNames {
+            get {
+                return ResourceManager.GetString("LastNames", resourceCulture);
             }
         }
         
@@ -192,6 +240,16 @@ namespace DotNetTips.Spargine.Tester.Properties {
         internal static string StateLengthIsLimitedTo25Characters {
             get {
                 return ResourceManager.GetString("StateLengthIsLimitedTo25Characters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] WorldCities {
+            get {
+                object obj = ResourceManager.GetObject("WorldCities", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

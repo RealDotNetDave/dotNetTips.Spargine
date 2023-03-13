@@ -639,20 +639,3 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 		}
 	}
 }
-
-///// <summary>
-///// Class PersonProperJsonSerializerContext.
-///// Implements the <see cref="JsonSerializerContext" />
-///// </summary>
-///// <seealso cref="JsonSerializerContext" />
-//[JsonSourceGenerationOptions(WriteIndented = true)]
-//[JsonSerializable(typeof(PersonProper))]
-//[SuppressMessage("Microsoft.Diagnostic", "CS1591")]
-//public partial class PersonProperJsonSerializerContext : JsonSerializerContext
-//{
-//}
-
-//internal partial class RegExValidation
-//{
-//	// TODO: .NET 7 [RegexGenerator]
-//}

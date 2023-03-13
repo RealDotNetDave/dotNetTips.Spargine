@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
@@ -287,6 +288,22 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		}
 
 		[TestMethod]
+		public void PartitionTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
+
+			var splitPeople = people.Partition(Count / 10);
+
+			Assert.IsNotNull(splitPeople);
+			Assert.IsTrue(splitPeople.Count() == 11);
+
+			var emptyPeople = new List<PersonProper>();
+
+			var splitEmptyPeople = emptyPeople.Partition(10);
+
+		}
+
+		[TestMethod]
 		public void PickRandomTest()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
@@ -316,6 +333,33 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
 			Assert.IsTrue(people.Shuffle(5).FastCount() == 5);
+		}
+
+		[TestMethod]
+		public void SplitTest()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
+
+			var splitPeople = people.Split(Count / 10);
+
+			Assert.IsNotNull(splitPeople);
+			Assert.IsTrue(splitPeople.Count() == 24);
+
+			var emptyPeople = new List<PersonProper>();
+
+			var splitEmptyPeople = emptyPeople.Split(10);
+
+			Assert.IsNull(splitEmptyPeople);
+		}
+
+		[TestMethod]
+		public async Task CountAsync()
+		{
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
+		
+			var peopleCount = await people.CountAsync(CancellationToken.None);
+
+			Assert.IsTrue(peopleCount== Count);
 		}
 
 		[TestMethod]

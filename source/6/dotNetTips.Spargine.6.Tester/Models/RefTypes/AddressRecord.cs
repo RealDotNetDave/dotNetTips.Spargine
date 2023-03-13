@@ -68,7 +68,7 @@ public record AddressRecord : IDataRecord
 	/// <summary>
 	/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
 	/// </summary>
-	public AddressRecord()
+	private AddressRecord()
 	{ }
 
 	/// <summary>

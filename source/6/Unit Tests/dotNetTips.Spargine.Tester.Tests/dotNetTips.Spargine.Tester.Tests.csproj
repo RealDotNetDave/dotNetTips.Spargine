@@ -21,6 +21,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Data\CountriesTests.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.0.2" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
@@ -36,6 +40,10 @@
 		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Extensions\DotNetTips.Spargine.6.Extensions.csproj" />
 		<ProjectReference Include="..\..\dotNetTips.Spargine.6.Tester\DotNetTips.Spargine.6.Tester.csproj" />
 		<ProjectReference Include="..\..\dotNetTips.Spargine.6\DotNetTips.Spargine.6.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Data\" />
 	</ItemGroup>
 
 </Project>

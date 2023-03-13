@@ -149,6 +149,20 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
+	/// Counts a collection in an asynchronous operation.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection.</param>
+	/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+	/// <returns>A Task&lt;System.Int32&gt; representing the asynchronous operation.</returns>
+	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
+	[Information(nameof(CountAsync), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static async Task<int> CountAsync<T>(this IEnumerable<T> collection, CancellationToken cancellationToken)
+	{
+		return await Task.Run(collection.Count, cancellationToken).ConfigureAwait(false);
+	}
+
+	/// <summary>
 	/// Determines whether the specified <see cref="IEnumerable" /> does not have items or is null.
 	/// </summary>
 	/// <param name="collection">The source.</param>
@@ -257,15 +271,6 @@ public static class EnumerableExtensions
 		}
 
 		var block = new ActionBlock<T>(action, options);
-
-		//OLD
-		//using (var en = processedCollection.GetEnumerator())
-		//{
-		//	while (en.MoveNext())
-		//	{
-		//		_ = block.Post(en.Current);
-		//	}
-		//}
 
 		foreach (var item in collection)
 		{
@@ -541,10 +546,10 @@ public static class EnumerableExtensions
 	/// <param name="collection">The list.</param>
 	/// <param name="pageSize">Size of the page. Minimum page size is 1.</param>
 	/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
-	/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
-	/// <exception cref="ArgumentNullException">pageSize</exception>
-	/// <exception cref="ArgumentNullException">pageSize</exception>
-	/// <exception cref="ArgumentOutOfRangeException">pageSize</exception>
+	/// <exception cref="ArgumentOutOfRangeException">pageCount</exception>
+	/// <exception cref="ArgumentNullException">pageCount</exception>
+	/// <exception cref="ArgumentNullException">pageCount</exception>
+	/// <exception cref="ArgumentOutOfRangeException">pageCount</exception>
 	[Information(nameof(Page), "David McCarter", "11/21/2010", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static IEnumerable<IEnumerable<T>> Page<T>([NotNull] this IEnumerable<T> collection, int pageSize)
 	{
@@ -564,6 +569,35 @@ public static class EnumerableExtensions
 				}
 
 				yield return currentPage.AsEnumerable();
+			}
+		}
+	}
+
+	/// <summary>
+	/// Partitions the collection into the specified page count.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection to partition.</param>
+	/// <param name="pageCount">The page count.</param>
+	/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
+	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
+	[Information(nameof(Partition), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> collection, int pageCount)
+	{
+		// Cache this to avoid evaluating it twice
+		var count = collection.Count();
+
+		if (count < pageCount)
+		{
+			yield return collection;
+		}
+		else
+		{
+			var pagesCount = Math.Ceiling(count / (double)pageCount);
+
+			for (var pageIndex = 0; pageIndex < pagesCount; pageIndex++)
+			{
+				yield return collection.Skip(pageCount * pageIndex).Take(pageCount);
 			}
 		}
 	}
@@ -616,6 +650,39 @@ public static class EnumerableExtensions
 		count = Math.Max(1, count);
 
 		return collection.Shuffle().Take(count);
+	}
+
+	/// <summary>
+	/// Splits a collection into the specified page count.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection to split.</param>
+	/// <param name="pageCount">The page count.</param>
+	/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
+	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
+	[Information(nameof(Split), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static IEnumerable<IEnumerable<T>> Split<T>(this IEnumerable<T> collection, int pageCount)
+	{
+		if (collection.DoesNotHaveItems())
+		{
+			return default;
+		}
+
+		var takeCount = Convert.ToInt32(Math.Ceiling(collection.Count() / (double)pageCount));
+
+		var result = new List<IEnumerable<T>>();
+
+		for (var pageIndex = 0; pageIndex < pageCount; pageIndex++)
+		{
+			var chunk = collection.Skip(pageIndex * takeCount).Take(takeCount).ToList();
+
+			if (chunk.Any())
+			{
+				result.Add(chunk);
+			};
+		}
+
+		return result;
 	}
 
 	/// <summary>

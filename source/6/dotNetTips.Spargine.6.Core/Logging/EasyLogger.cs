@@ -26,10 +26,10 @@ public static partial class EasyLogger
 	/// Logs critical storedProcedure.
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <param name="ex">The ex.</param>
+	/// <param name="exception">The exception.</param>
 	/// </summary>
-	[LoggerMessage(EventId = 100, Level = LogLevel.Critical, EventName = "CRITICAL", Message = "{message}")]
-	public static partial void LogCritical(ILogger logger, string message, Exception ex);
+	[LoggerMessage(EventId = 911, Level = LogLevel.Critical, EventName = "CRITICAL", Message = "{message}")]
+	public static partial void LogCritical(ILogger logger, string message, Exception exception);
 
 	/// <summary>
 	/// Logs debug storedProcedure.
@@ -44,7 +44,7 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	[LoggerMessage(EventId = 301, Level = LogLevel.Error, EventName = "ERROR", Message = "{message}")]
+	[LoggerMessage(EventId = 300, Level = LogLevel.Error, EventName = "ERROR", Message = "{message}")]
 	public static partial void LogError(ILogger logger, string message);
 
 	/// <summary>
@@ -52,9 +52,9 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <param name="ex">The ex.</param>
-	[LoggerMessage(EventId = 300, Level = LogLevel.Error, EventName = "ERROR", Message = "{message}")]
-	public static partial void LogException(ILogger logger, string message, Exception ex);
+	/// <param name="exception">The exception.</param>
+	[LoggerMessage(EventId = 500, Level = LogLevel.Error, EventName = "EXCEPTION", Message = "{message}")]
+	public static partial void LogException(ILogger logger, string message, Exception exception);
 
 	/// <summary>
 	/// Logs information storedProcedure.
@@ -69,7 +69,7 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	[LoggerMessage(EventId = 500, Level = LogLevel.Trace, EventName = "TRACE", Message = "{message}")]
+	[LoggerMessage(EventId = 100, Level = LogLevel.Trace, EventName = "TRACE", Message = "{message}")]
 	public static partial void LogTrace(ILogger logger, string message);
 
 	/// <summary>

@@ -17,6 +17,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -415,6 +416,40 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsTrue(people.Count == Count);
 		}
 
+		[TestMethod]
+		public void GenerateValPersonTest()
+		{
+			var person = RandomData.GenerateValPerson<Models.ValueTypes.Person>();
+
+			Assert.IsNotNull(person);
+
+			Assert.IsNotNull(person.Address1);
+
+			Assert.IsNotNull(person.Address2);
+
+			Assert.IsTrue(person.BornOn > DateTimeOffset.Parse("1/1/1800"));
+
+			Assert.IsNotNull(person.CellPhone);
+
+			Assert.IsNotNull(person.City);
+
+			Assert.IsNotNull(person.Country);
+
+			Assert.IsNotNull(person.Email);
+
+			Assert.IsNotNull(person.FirstName);
+
+			Assert.IsNotNull(person.HomePhone);
+
+			Assert.IsNotNull(person.Id);
+
+			Assert.IsNotNull(person.LastName);
+
+			Assert.IsNotNull(person.PostalCode);
+
+			Assert.IsNotNull(person.ToString());
+		}
+
 		/// <summary>
 		/// Defines the test method GeneratePersonTest.
 		/// </summary>
@@ -675,6 +710,59 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsTrue(stringValue.Length == 25);
 		}
 
+		[TestMethod]
+		public void Deserialize_JsonSerilizerContext_PersonProper_Collection_Test()
+		{
+			var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToJson();
+
+			var result = JsonSerializer.Deserialize(json,typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default) as List<PersonProper>;
+
+			Assert.IsNotNull(result);
+			Assert.IsTrue(result.Count == 100);
+		}
+
+		[TestMethod]
+		public void Serialize_JsonSerilizerContext_PersonProper_Collection_Test()
+		{
+			var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToList();
+
+			var result = JsonSerializer.Serialize(json, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default);
+
+			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
+		public void Deserialize_JsonSerilizerContext_PersonProper_Ref_Test()
+		{
+			var json = RandomData.GenerateRefPerson<PersonProper>().ToJson();
+
+			var result = JsonSerializer.Deserialize(json, typeof(PersonProper), PersonProperJsonSerializerContext.Default) as PersonProper;
+
+			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
+		public void Serialize_JsonSerilizerContext_PersonProper_Ref_Test()
+		{
+			var person = RandomData.GenerateRefPerson<PersonProper>();
+
+			var result = JsonSerializer.Serialize(person, typeof(PersonProper), PersonProperJsonSerializerContext.Default);
+
+			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
+		public void RecordToStringTest()
+		{
+			var stringValue1 = RandomData.GeneratePersonRecordCollection(1).First().ToString();
+
+			Assert.IsNotNull(stringValue1);
+
+			var stringValue2 = RandomData.GeneratePersonRecordCollection(1).First().PropertiesToString();
+
+			Assert.IsNotNull(stringValue2);
+		}
+
 		/// <summary>
 		/// Defines the test method UpdatePersonRecordTest.
 		/// </summary>
@@ -694,6 +782,27 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Debug.WriteLine(person2.PropertiesToString());
 		}
+
+		[TestMethod]
+		public void GenerateNamesTest()
+		{
+			for (int count = 0; count < 100; count++)
+			{
+				Debug.WriteLine($"{RandomData.GenerateFirstName()} {RandomData.GenerateLastName()}");
+			}
+		}
+
+		[TestMethod]
+		public void GenerateCreditCardsTest()
+		{
+			var result = RandomData.GenerateCreditCards();
+		}
+
+		//[TestMethod]
+		//public void GenerateCitiesTest()
+		//{
+		//	var result = RandomData.GenerateCities();
+		//}
 
 	}
 }

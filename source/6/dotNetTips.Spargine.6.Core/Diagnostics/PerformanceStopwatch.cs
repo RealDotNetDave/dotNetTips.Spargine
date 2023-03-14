@@ -137,7 +137,7 @@ public class PerformanceStopwatch : Stopwatch
 	{
 		var result = this.StopRestart();
 
-		logger.WriteInformationMessage( this.CreateMessage(message, result));
+		logger.WriteInformationMessage(this.CreateMessage(message, result));
 
 		return result;
 	}

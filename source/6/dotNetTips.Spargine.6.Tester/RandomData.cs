@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-11-2023
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -74,12 +74,9 @@ public static class RandomData
 	/// <summary>
 	/// The domain extensions used to create random Urls.
 	/// </summary>
-	private static readonly string[] _domainExtensions = new string[] { ".com", ".co.uk", ".org", ".org.uk", ".net", ".us", ".com.au", ".es", ".fr", ".de", ".ly", ".gov", ".gov.uk", ".ac.uk", ".website", ".store", ".health", ".band", ".spargine.com", ".rock", ".dotnettips" };
+	private static readonly Lazy<string[]> _domainExtensions = new(Resources.DomainExtentions.Split(ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
 
-	/// <summary>
-	/// The synchronize lock
-	/// </summary>
-	private static readonly object _lock = new();
+	private static readonly Lazy<Country[]> _countries = new(Countries.GetCountries());
 
 	/// <summary>
 	/// The first names
@@ -90,6 +87,11 @@ public static class RandomData
 	/// The last names
 	/// </summary>
 	private static readonly ImmutableArray<string> _lastNames = ImmutableArray.Create(Resources.LastNames.Split(ControlChars.Comma, StringSplitOptions.TrimEntries));
+
+	/// <summary>
+	/// The synchronize lock
+	/// </summary>
+	private static readonly object _lock = new();
 
 	/// <summary>
 	/// The random number generator
@@ -109,6 +111,15 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	static RandomData()
 	{
 		_randomNumberGenerator = RandomNumberGenerator.Create();
+	}
+
+	/// <summary>
+	/// Loads the credit cards.
+	/// </summary>
+	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
+	private static ImmutableArray<CreditCardInfo> LoadCreditCards()
+	{
+		return JsonSerializer.Deserialize<ImmutableArray<CreditCardInfo>>(Resources.JsonCreditCards);
 	}
 
 	/// <summary>
@@ -165,14 +176,11 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// </summary>
 	/// <param name="count">The number of items to create. Default value = 2. Valid values are from 1 - 100.</param>
 	/// <param name="addressLength">Length of the address.</param>
-	/// <param name="cityLength">Length of the city.</param>
-	/// <param name="countryLength">Length of the country.</param>
 	/// <param name="countyProvinceLength">Length of the county province.</param>
 	/// <param name="postalCodeLength">Length of the postal code.</param>
-	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>IAddressRecord[].</returns>
 	[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static Collection<AddressRecord> GenerateAddressRecordCollection(int count = 2, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+	public static Collection<AddressRecord> GenerateAddressRecordCollection(int count = 2, int addressLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8)
 	{
 		count = count.ArgumentInRange(lower: 1, upper: 100, defaultValue: 2);
 
@@ -180,16 +188,18 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		for (var addressIndex = 0; addressIndex < count; addressIndex++)
 		{
+			GetRandomData(out var country, out var state, out var city);
+
 			AddressRecord address = new(GenerateKey())
 			{
 				Address1 = GenerateWord(addressLength),
 				Address2 = GenerateWord(addressLength),
-				City = GenerateWord(cityLength),
-				Country = GenerateWord(countryLength),
+				City = city?.Name,
+				Country = country.Name,
 				CountyProvince = GenerateWord(countyProvinceLength),
-				Phone = GeneratePhoneNumberUSA(),
+				Phone = GenerateNumber(country.PhoneNumberLength),
 				PostalCode = GenerateNumber(postalCodeLength),
-				State = GenerateWord(stateLength),
+				State = state.Name
 			};
 
 			addresses.Add(address);
@@ -230,26 +240,6 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	public static char GenerateCharacter()
 	{
 		return GenerateCharacter(DefaultMinCharacter, DefaultMaxCharacter);
-	}
-
-	/// <summary>
-	/// Generates a male or famale first name.
-	/// </summary>
-	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static string GenerateFirstName()
-	{
-		return _firstNames.PickRandom();
-	}
-
-	/// <summary>
-	/// Generates a last name.
-	/// </summary>
-	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static string GenerateLastName()
-	{
-		return _lastNames.PickRandom();
 	}
 
 	/// <summary>
@@ -306,6 +296,29 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
+	/// Generates the credit cards.
+	/// </summary>
+	/// <param name="count">The count.</param>
+	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
+	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Updated)]
+	public static ImmutableArray<string> GenerateCreditCards(int count = 100)
+	{
+		count = count.ArgumentInRange(1);
+
+		return RandomCreditCardNumberGenerator.GetCreditCardNumbers(count).ToImmutableArray();
+	}
+
+	/// <summary>
+	/// Generates the credit card.
+	/// </summary>
+	/// <returns>System.String.</returns>
+	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static string GenerateCreditCard()
+	{
+		return RandomCreditCardNumberGenerator.GetCreditCardNumber();
+	}
+
+	/// <summary>
 	/// Creates a random <see cref="decimal" /> value.
 	/// </summary>
 	/// <param name="minValue">The minimum value.</param>
@@ -331,7 +344,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	[Information(nameof(GenerateDomainExtension), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string GenerateDomainExtension()
 	{
-		return Of(_domainExtensions);
+		return Of(_domainExtensions.Value);
 	}
 
 	/// <summary>
@@ -424,6 +437,16 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
+	/// Generates a male or famale first name.
+	/// </summary>
+	/// <returns>System.String.</returns>
+	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static string GenerateFirstName()
+	{
+		return _firstNames.PickRandom();
+	}
+
+	/// <summary>
 	/// Creates a random <see cref="int" /> value.
 	/// </summary>
 	/// <param name="min">The minimum int.</param>
@@ -452,6 +475,16 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	public static string GenerateKey()
 	{
 		return KeyGenerator.GenerateKey();
+	}
+
+	/// <summary>
+	/// Generates a last name.
+	/// </summary>
+	/// <returns>System.String.</returns>
+	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static string GenerateLastName()
+	{
+		return _lastNames.PickRandom();
 	}
 
 	/// <summary>
@@ -492,14 +525,11 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="count">The number of items to create. Minimum value = 1.</param>
 	/// <param name="addressCount">The address count.</param>
 	/// <param name="addressLength">Length of the address.</param>
-	/// <param name="cityLength">Length of the city.</param>
-	/// <param name="countryLength">Length of the country.</param>
 	/// <param name="countyProvinceLength">Length of the county province.</param>
 	/// <param name="postalCodeLength">Length of the postal code.</param>
-	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>IPersonRecord[].</returns>
 	[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 1, int addressLength = 25, int cityLength = 25, int countryLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8, int stateLength = 15)
+	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 1, int addressLength = 25, int countyProvinceLength = 20, int postalCodeLength = 8)
 	{
 		count = count.ArgumentInRange(lower: 1);
 
@@ -514,7 +544,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 				HomePhone = GeneratePhoneNumberUSA(),
 				LastName = GenerateLastName(),
 				CellPhone = GeneratePhoneNumberUSA(),
-				Addresses = GenerateAddressRecordCollection(addressCount, addressLength, cityLength, countryLength, countyProvinceLength, postalCodeLength, stateLength),
+				Addresses = GenerateAddressRecordCollection(addressCount, addressLength, countyProvinceLength, postalCodeLength),
 			};
 
 			records.Add(person);
@@ -618,32 +648,52 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="addressLength">Length of the address.</param>
-	/// <param name="cityLength">Length of the city.</param>
-	/// <param name="countryLength">Length of the country.</param>
 	/// <param name="postalCodeLength">Length of the postal code.</param>
-	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>T.</returns>
 	[Information(nameof(GenerateRefPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static T GenerateRefPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int postalCodeLength = 8, int stateLength = 15) where T : IPerson, new()
+	public static T GenerateRefPerson<T>(int addressLength = 25, int postalCodeLength = 8) where T : IPerson, new()
 	{
+		GetRandomData(out var country, out var state, out var city);
+
 		var person = new T
 		{
 			Id = GenerateKey(),
 			Address1 = GenerateWord(addressLength),
 			Address2 = GenerateWord(addressLength),
 			BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-			CellPhone = GeneratePhoneNumberUSA(),
-			City = GenerateWord(cityLength),
-			Country = GenerateWord(countryLength),
+			CellPhone = GenerateNumber(country.PhoneNumberLength),
+			City = city?.Name,
+			Country = country.Name,
 			Email = GenerateEmailAddress(),
 			FirstName = GenerateFirstName(),
-			HomePhone = GeneratePhoneNumberUSA(),
+			HomePhone = GenerateNumber(country.PhoneNumberLength),
 			LastName = GenerateLastName(),
 			PostalCode = GenerateNumber(postalCodeLength),
-			State = GenerateWord(stateLength)
+			State = state.Name
 		};
 
 		return person;
+	}
+
+	/// <summary>
+	/// Gets the random data.
+	/// </summary>
+	/// <param name="country">The country.</param>
+	/// <param name="state">The state.</param>
+	/// <param name="city">The city.</param>
+	private static void GetRandomData(out Country country, out State state, out City city)
+	{
+		country = _countries.Value.PickRandom();
+		state = country.States.PickRandom();
+
+		if (state.Cities.HasItems())
+		{
+			city = state.Cities.PickRandom();
+		}
+		else
+		{
+			city = null;
+		}
 	}
 
 	/// <summary>
@@ -733,7 +783,8 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 	public static string GenerateUrlHostNameNoSubDomain()
 	{
-		return $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
+		//return $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
+		return GenerateDomainExtension();
 	}
 
 	/// <summary>
@@ -752,29 +803,28 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// </summary>
 	/// <typeparam name="T"></typeparam>
 	/// <param name="addressLength">Length of the address.</param>
-	/// <param name="cityLength">Length of the city.</param>
-	/// <param name="countryLength">Length of the country.</param>
 	/// <param name="postalCodeLength">Length of the postal code.</param>
-	/// <param name="stateLength">Length of the state.</param>
 	/// <returns>Models.ValueTypes.Person.</returns>
 	[Information(nameof(GenerateValPerson), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static T GenerateValPerson<T>(int addressLength = 25, int cityLength = 15, int countryLength = 15, int postalCodeLength = 8, int stateLength = 15) where T : struct, IPerson
+	public static T GenerateValPerson<T>(int addressLength = 25, int postalCodeLength = 8) where T : struct, IPerson
 	{
+		GetRandomData(out var country, out var state, out var city);
+
 		var person = new T
 		{
 			Id = GenerateKey(),
 			Address1 = GenerateWord(addressLength),
 			Address2 = GenerateWord(addressLength),
 			BornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0)),
-			CellPhone = GeneratePhoneNumberUSA(),
-			City = GenerateWord(cityLength),
-			Country = GenerateWord(countryLength),
+			CellPhone = GenerateNumber(country.PhoneNumberLength),
+			City = city?.Name,
+			Country = country.Name,
 			Email = GenerateEmailAddress(),
 			FirstName = GenerateFirstName(),
-			HomePhone = GeneratePhoneNumberUSA(),
+			HomePhone = GenerateNumber(country.PhoneNumberLength),
 			LastName = GenerateLastName(),
 			PostalCode = GenerateNumber(postalCodeLength),
-			State = GenerateWord(stateLength)
+			State = state.Name
 		};
 
 		return person;
@@ -892,23 +942,6 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 		return strings.ToImmutableList();
 	}
 
-	/// <summary>
-	/// Generates the credit cards.
-	/// </summary>
-	/// <param name="count">The count.</param>
-	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
-	public static ImmutableArray<CreditCardInfo> GenerateCreditCards(int count = 100)
-	{
-		if (count.CheckIsInRange(1, 100, true))
-		{
-			return _creditCards.Value.Take(count).ToImmutableArray();
-		}
-		else
-		{
-			return default;
-		}
-	}
-
 	///// <summary>
 	///// Generates the cities.
 	///// </summary>
@@ -933,27 +966,10 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	[Information(nameof(GenerateWords), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string LongTestString => Resources.LongTestString;
 
-	/// <summary>
-	/// Loads the credit cards.
-	/// </summary>
-	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
-	private static ImmutableArray<CreditCardInfo> LoadCreditCards()
-	{
-		return JsonSerializer.Deserialize<ImmutableArray<CreditCardInfo>>(Resources.JsonCreditCards);
-	}
-
-	//private static ImmutableArray<CityInfo> LoadCities()
-	//{
-	//	return JsonSerializer.Deserialize<ImmutableArray<CityInfo>>(Resources.WorldCities);
-	//}
-
-	/// <summary>
-	/// The credit cards
-	/// </summary>
-	private static readonly Lazy<ImmutableArray<CreditCardInfo>> _creditCards = new( LoadCreditCards());
-
 	//private static readonly Lazy<ImmutableArray<CityInfo>> _cities = new(LoadCities());
 }
+
+
 ///// <summary>
 ///// Class City.
 ///// </summary>

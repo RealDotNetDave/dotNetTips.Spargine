@@ -56,7 +56,7 @@ public static class RegistryHelper
 		{
 			throw new PlatformNotSupportedException();
 		}
-		
+
 		keyName = keyName.ArgumentNotNullOrEmpty();
 
 		return registryKeyType switch

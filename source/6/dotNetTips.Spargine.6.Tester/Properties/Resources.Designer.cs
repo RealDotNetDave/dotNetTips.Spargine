@@ -97,6 +97,15 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to aaa,aarp,abarth,abb,abbott,abbvie,abc,able,abogado,abudhabi,ac,academy,accenture,accountant,accountants,aco,active,actor,ad,adac,ads,adult,ae,aeg,aero,aetna,af,afamilycompany,afl,africa,ag,agakhan,agency,ai,aig,aigo,airbus,airforce,airtel,akdn,al,alfaromeo,alibaba,alipay,allfinanz,allstate,ally,alsace,alstom,am,amazon,americanexpress,americanfamily,amex,amfam,amica,amsterdam,an,analytics,android,anquan,anz,ao,aol,apartments,app,apple,aq,aquarelle,ar,arab,aramco,archi,army,arpa,art,arte,as,asda,asia,associat [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DomainExtentions {
+            get {
+                return ResourceManager.GetString("DomainExtentions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email length is limited to 75 characters..
         /// </summary>
         internal static string EmailLengthIsLimitedTo75Characters {

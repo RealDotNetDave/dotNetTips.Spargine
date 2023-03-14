@@ -612,11 +612,18 @@ public static class EnumerableExtensions
 	[Information(nameof(PickRandom), "David McCarter", "8/26/2020", "9/19/2020", BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, UnitTestCoverage = 100, Documentation = "https://bit.ly/SpargineNov2022")]
 	public static T PickRandom<T>([NotNull] this IEnumerable<T> collection)
 	{
-		collection = collection.ArgumentNotNull();
+		collection = collection.ArgumentItemsExists();
 
-		var index = RandomNumberGenerator.GetInt32(0, collection.Count() - 1);
+		if (collection.Count() == 1)
+		{
+			return collection.First();
+		}
+		else
+		{
+			var index = RandomNumberGenerator.GetInt32(0, collection.Count() - 1);
 
-		return collection.ElementAt(index);
+			return collection.ElementAt(index);
+		}
 	}
 
 	/// <summary>

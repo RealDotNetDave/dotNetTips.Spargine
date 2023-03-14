@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -715,7 +716,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 		{
 			var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToJson();
 
-			var result = JsonSerializer.Deserialize(json,typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default) as List<PersonProper>;
+			var result = JsonSerializer.Deserialize(json, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default) as List<PersonProper>;
 
 			Assert.IsNotNull(result);
 			Assert.IsTrue(result.Count == 100);
@@ -796,6 +797,17 @@ namespace DotNetTips.Spargine.Tester.Tests
 		public void GenerateCreditCardsTest()
 		{
 			var result = RandomData.GenerateCreditCards();
+
+			Assert.IsNotNull(result);
+			Assert.IsTrue(result.Length == 100);
+		}
+
+		[TestMethod]
+		public void GenerateCreditCardTest()
+		{
+			var result = RandomData.GenerateCreditCard();
+
+			Assert.IsNotNull(result);
 		}
 
 		//[TestMethod]

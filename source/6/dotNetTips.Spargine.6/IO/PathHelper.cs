@@ -154,7 +154,7 @@ public static class PathHelper
 	{
 		path = path.ArgumentNotNullOrEmpty();
 
-		return ( path?.IndexOf('*', StringComparison.Ordinal) != -1 ) || ( path?.IndexOf('?', StringComparison.Ordinal) != -1 );
+		return (path?.IndexOf('*', StringComparison.Ordinal) != -1) || (path?.IndexOf('?', StringComparison.Ordinal) != -1);
 	}
 
 	/// <summary>

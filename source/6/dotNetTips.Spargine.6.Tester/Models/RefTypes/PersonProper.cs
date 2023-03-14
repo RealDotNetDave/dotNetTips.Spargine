@@ -631,7 +631,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 				return;
 			}
 
-			this._state = value.HasValue(0, 25) is false
+			this._state = value.HasValue(0, 75) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.State),
 					Resources.StateLengthIsLimitedTo25Characters)

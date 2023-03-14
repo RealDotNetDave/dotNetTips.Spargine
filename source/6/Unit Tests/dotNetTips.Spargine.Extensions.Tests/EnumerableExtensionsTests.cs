@@ -356,10 +356,10 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		public async Task CountAsync()
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
-		
+
 			var peopleCount = await people.CountAsync(CancellationToken.None);
 
-			Assert.IsTrue(peopleCount== Count);
+			Assert.IsTrue(peopleCount == Count);
 		}
 
 		[TestMethod]

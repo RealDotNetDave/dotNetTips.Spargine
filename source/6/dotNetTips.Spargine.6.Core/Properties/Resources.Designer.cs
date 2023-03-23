@@ -488,7 +488,7 @@ namespace DotNetTips.Spargine.Core.Properties {
         /// </summary>
         internal static string RegexEmail {
             get {
-                return ResourceManager.GetString("RegexEmail", resourceCulture);
+                return ResourceManager.GetString("Email", resourceCulture);
             }
         }
         

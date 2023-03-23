@@ -12,12 +12,10 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Collections.Immutable;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using System.Security;
 using System.Security.AccessControl;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -306,33 +304,7 @@ public static class DirectoryHelper
 
 		if (destination.ArgumentNotNull().CheckExists(throwException: true))
 		{
-			var tries = 0;
-
-			do
-			{
-				tries++;
-
-				if (tries > 1)
-				{
-					// If something has a transient lock on the file waiting may resolve the issue
-					Thread.Sleep((retries + 1) * 10);
-				}
-
-				try
-				{
-					Directory.Move(source.FullName, destination.FullName);
-					return;
-				}
-				catch (IOException) when (tries >= retries)
-				{
-					throw;
-				}
-				catch (UnauthorizedAccessException) when (tries >= retries)
-				{
-					throw;
-				}
-			}
-			while (tries < retries);
+			_ = ExecutionHelper.ProgressiveRetry(() => Directory.Move(source.FullName, destination.FullName), 3, 10);
 		}
 	}
 
@@ -351,24 +323,10 @@ public static class DirectoryHelper
 		searchOption = searchOption.ArgumentDefined();
 		searchPatterns = searchPatterns.ArgumentNotNull();
 
-		for (var patternCount = 0; patternCount < searchPatterns.Length; patternCount++)
+		return searchPatterns.Any(pattern =>
 		{
-			try
-			{
-				var searchResult = SafeDirectorySearch(path, searchPatterns[patternCount], searchOption);
-
-				if (searchResult.HasItems())
-				{
-					return true;
-				}
-			}
-			catch (Exception ex) when (ex is ArgumentException or ArgumentNullException or ArgumentOutOfRangeException or UnauthorizedAccessException)
-			{
-				Trace.WriteLine(ex.Message);
-			}
-		}
-
-		return false;
+			return SafeDirectorySearch(path, pattern, searchOption).HasItems();
+		});
 	}
 
 	/// <summary>
@@ -385,11 +343,6 @@ public static class DirectoryHelper
 		searchPattern = searchPattern.ArgumentNotNullOrEmpty();
 		searchOption = searchOption.ArgumentDefined();
 
-		var folders = new List<DirectoryInfo>
-		{
-			path,
-		};
-
 		var options = new EnumerationOptions { IgnoreInaccessible = true, ReturnSpecialDirectories = false, RecurseSubdirectories = false };
 
 		if (searchOption == SearchOption.AllDirectories)
@@ -397,24 +350,20 @@ public static class DirectoryHelper
 			options.RecurseSubdirectories = true;
 		}
 
-		for (var directoryCount = 0; directoryCount < path.GetDirectories(searchPattern, options).Length; directoryCount++)
-		{
-			try
-			{
-				var searchResult = SafeDirectorySearch(path.GetDirectories(searchPattern, options)[directoryCount], searchPattern);
+		var directories = path.GetDirectories(searchPattern, options);
 
-				if (searchResult.HasItems())
+		foreach (var directory in directories)
+		{
+			yield return directory;
+
+			if (searchOption == SearchOption.AllDirectories)
+			{
+				foreach (var subdirectory in SafeDirectorySearch(directory, searchPattern, searchOption))
 				{
-					folders.AddRange(searchResult);
+					yield return subdirectory;
 				}
 			}
-			catch (Exception ex) when (ex is ArgumentException or ArgumentNullException or ArgumentOutOfRangeException or System.IO.DirectoryNotFoundException or UnauthorizedAccessException)
-			{
-				Trace.WriteLine(ex.Message);
-			}
 		}
-
-		return folders;
 	}
 
 	/// <summary>
@@ -443,13 +392,11 @@ public static class DirectoryHelper
 	/// <param name="searchOption">The search options.</param>
 	/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
 	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100)]
-	public static IReadOnlyList<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
+	public static IEnumerable<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
 	{
 		directories = directories.ArgumentNotNull();
 		searchPattern = searchPattern.ArgumentNotNullOrEmpty();
 		searchOption = searchOption.ArgumentDefined();
-
-		var files = new List<FileInfo>();
 
 		var options = new EnumerationOptions { IgnoreInaccessible = true, ReturnSpecialDirectories = false, RecurseSubdirectories = false };
 
@@ -458,27 +405,21 @@ public static class DirectoryHelper
 			options.RecurseSubdirectories = true;
 		}
 
-		directories.ToList().ForEach(directory =>
+		foreach (var directory in directories)
 		{
-			try
+			if (directory.Exists)
 			{
-				if (directory.Exists)
-				{
-					var directoryFiles = directory.EnumerateFiles(searchPattern, options).ToArray();
+				var directoryFiles = directory.EnumerateFiles(searchPattern, options).ToArray();
 
-					if (directoryFiles.HasItems())
+				if (directoryFiles.HasItems())
+				{
+					foreach (var file in directoryFiles)
 					{
-						_ = files.AddRange(directoryFiles, Tristate.True);
+						yield return file;
 					}
 				}
 			}
-			catch (Exception ex) when (ex is System.IO.DirectoryNotFoundException or SecurityException or UnauthorizedAccessException)
-			{
-				Trace.WriteLine(ex.Message);
-			}
-		});
-
-		return files;
+		}
 	}
 
 	/// <summary>

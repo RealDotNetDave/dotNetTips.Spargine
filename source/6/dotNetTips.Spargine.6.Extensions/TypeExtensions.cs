@@ -65,16 +65,14 @@ public static partial class TypeExtensions
 	/// <param name="interfaceNames">The interface names.</param>
 	/// <returns>IEnumerable&lt;System.String&gt;.</returns>
 	/// <exception cref="ArgumentNullException">Input cannot be null.</exception>
-	[Information(nameof(DoesObjectImplementInterface), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static IEnumerable<string> DoesObjectImplementInterface([NotNull] this object input, [NotNull] params string[] interfaceNames)
+	[Information(nameof(GetImplementedInterfaces), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
+	public static IEnumerable<string> GetImplementedInterfaces(this object input, params string[] interfaceNames)
 	{
 		input = input.ArgumentNotNull();
 		interfaceNames = interfaceNames.ArgumentNotNull();
 
 		var interfaces = input.GetType().GetInterfaces().Select(p => p.Name);
-		var foundInterfaces = new List<string>();
-
-		foundInterfaces.AddRange(interfaceNames.Where(interfaceName => interfaces.Contains(interfaceName)));
+		var foundInterfaces = new HashSet<string>(interfaces.Intersect(interfaceNames));
 
 		return foundInterfaces;
 	}
@@ -166,18 +164,17 @@ public static partial class TypeExtensions
 	/// <returns>IEnumerable&lt;FieldInfo&gt;.</returns>
 	/// <exception cref="ArgumentNullException">Type cannot be null.</exception>
 	[Information(nameof(GetAllFields), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static IEnumerable<FieldInfo> GetAllFields([NotNull] this Type type)
+	public static IEnumerable<FieldInfo> GetAllFields(this Type type)
 	{
-		var typeInfo = type.ArgumentNotNull().GetTypeInfo();
-
-		while (typeInfo is not null)
+		var typeTypeInfo = type?.GetTypeInfo();
+		while (typeTypeInfo != null)
 		{
-			foreach (var fieldInfo in typeInfo.DeclaredFields)
+			foreach (var fieldInfo in typeTypeInfo.DeclaredFields)
 			{
 				yield return fieldInfo;
 			}
 
-			typeInfo = typeInfo.BaseType?.GetTypeInfo();
+			typeTypeInfo = typeTypeInfo.BaseType?.GetTypeInfo();
 		}
 	}
 

@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 03-20-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,6 +18,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
+using static DotNetTips.Spargine.Core.SourceGenerators;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -46,7 +47,7 @@ public static class App
 	{
 		var assembly = Assembly.GetEntryAssembly();
 
-		var appInfo = new AppInfo
+		return new AppInfo
 		{
 			Company = assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault()?.Company,
 			Configuration = assembly.GetCustomAttributes<AssemblyConfigurationAttribute>().FirstOrDefault()?.Configuration,
@@ -61,8 +62,6 @@ public static class App
 			TotalAllocatedBytes = GC.GetTotalAllocatedBytes(precise: false),
 			Version = assembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
 		};
-
-		return appInfo;
 	}
 
 	/// <summary>
@@ -134,6 +133,44 @@ public static class App
 	}
 
 	/// <summary>
+	/// Gets the current processor information.
+	/// </summary>
+	/// <returns>ProcessorInformation.</returns>
+	/// <example>
+	/// Example output:<br />
+	/// ActiveProcessorMask: 0x0000000000000fff
+	/// AllocationGranularity: 65536
+	/// MaximumApplicationAddress: 0x00007ffffffeffff
+	/// MinimumApplicationAddress: 0x0000000000010000
+	/// NumberOfProcessors: 12
+	/// PageSize: 4096
+	/// ProcessorArchitecture: X86
+	/// ProcessorLevel: 6
+	/// ProcessorRevision: 42243
+	/// </example>
+	[Information(nameof(GetProcessorInformation), "David McCarter", "3/20/2023", Status = Status.New, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "ADD URL")]
+	public static ProcessorInformation GetProcessorInformation()
+	{
+		var info = new SystemInfo();
+
+		SourceGenerators.GetSystemInfo(ref info);
+
+		//Convert data
+		return new ProcessorInformation()
+		{
+			PageSize = (int)info.dwPageSize,
+			MinimumApplicationAddress = info.lpMinimumApplicationAddress,
+			MaximumApplicationAddress = info.lpMaximumApplicationAddress,
+			ActiveProcessorMask = info.dwActiveProcessorMask,
+			NumberOfProcessors = (int)info.dwNumberOfProcessors,
+			ProcessorArchitecture = SourceGenerators.ConvertProcessorArchitecture((int)info.dwProcessorType),
+			AllocationGranularity = (int)info.dwAllocationGranularity,
+			ProcessorLevel = info.wProcessorLevel,
+			ProcessorRevision = info.wProcessorRevision
+		};
+	}
+
+	/// <summary>
 	/// Check to see if the current app is already running.
 	/// </summary>
 	/// <returns><c>true</c> if app is not running, <c>false</c> otherwise.</returns>
@@ -157,7 +194,7 @@ public static class App
 	/// Determines whether user is administrator.
 	/// </summary>
 	/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static bool IsUserAdministrator()
 	{

@@ -226,11 +226,11 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Postal code length is limited to 15 characters..
+        ///   Looks up a localized string similar to Postal code length is limited to 40 characters..
         /// </summary>
-        internal static string PostalCodeLengthIsLimitedTo15Characters {
+        internal static string PostalCodeLengthIsLimitedTo40Characters {
             get {
-                return ResourceManager.GetString("PostalCodeLengthIsLimitedTo15Characters", resourceCulture);
+                return ResourceManager.GetString("PostalCodeLengthIsLimitedTo40Characters", resourceCulture);
             }
         }
         
@@ -244,11 +244,11 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State length is limited to 25 characters..
+        ///   Looks up a localized string similar to State length is limited to 60 characters..
         /// </summary>
-        internal static string StateLengthIsLimitedTo25Characters {
+        internal static string StateLengthIsLimitedTo60Characters {
             get {
-                return ResourceManager.GetString("StateLengthIsLimitedTo25Characters", resourceCulture);
+                return ResourceManager.GetString("StateLengthIsLimitedTo60Characters", resourceCulture);
             }
         }
         

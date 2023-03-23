@@ -292,7 +292,7 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
-			var splitPeople = people.Partition(Count / 10);
+			IEnumerable<IEnumerable<PersonProper>> splitPeople = people.Partition(people.Count() / 10);
 
 			Assert.IsNotNull(splitPeople);
 			Assert.IsTrue(splitPeople.Count() == 11);
@@ -340,14 +340,14 @@ namespace DotNetTips.Spargine.Extensions.Tests
 		{
 			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
-			var splitPeople = people.Split(Count / 10);
+			IEnumerable<IEnumerable<PersonProper>> splitPeople = people.Split(Count / 10);
 
 			Assert.IsNotNull(splitPeople);
 			Assert.IsTrue(splitPeople.Count() == 24);
 
 			var emptyPeople = new List<PersonProper>();
 
-			var splitEmptyPeople = emptyPeople.Split(10);
+			IEnumerable<IEnumerable<PersonProper>> splitEmptyPeople = emptyPeople.Split(10);
 
 			Assert.IsNull(splitEmptyPeople);
 		}

@@ -4,15 +4,21 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-18-2023
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="AddressRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions;
+using DotNetTips.Spargine.Tester.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -22,6 +28,11 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// Class Person with proper encapsulation and validation.
 /// Implements the <see cref="object" />
 /// </summary>
+[DebuggerDisplay("{Id}")]
+[Serializable]
+[JsonSerializable(typeof(AddressRecord))]
+[XmlRoot(ElementName = "AddressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[DataContract(Name = "addressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public record AddressRecord : IDataRecord
 {
@@ -108,6 +119,8 @@ public record AddressRecord : IDataRecord
 	/// <value>The Address1.</value>
 	/// <exception cref="ArgumentOutOfRangeException">Address1 - Address must be between 10 - 256 characters.</exception>
 	/// <exception cref="ArgumentNullException">Address1 - Address must be between 10 - 256 characters.</exception>
+	[DataMember(Name = "address1")]
+	[XmlElement]
 	public string Address1
 	{
 		get => this._address1;
@@ -127,7 +140,9 @@ public record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The Address2.</value>
 	/// <exception cref="ArgumentOutOfRangeException">Address2 - Address cannot be more than 256 characters.</exception>
-	/// <exception cref="ArgumentNullException">Address2 - Value for address cannot be null.</exception>
+	/// <exception cref="ArgumentNullException">Address2 - Address cannot be more than 256 characters.</exception>
+	[DataMember(Name = "address2")]
+	[XmlElement]
 	public string Address2
 	{
 		get => this._address2;
@@ -147,17 +162,14 @@ public record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The city name.</value>
 	/// <exception cref="ArgumentOutOfRangeException">City - City length is limited to 100 characters.</exception>
-	/// <exception cref="ArgumentNullException">City - Value for City cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">City - City length is limited to 100 characters.</exception>
+	[DataMember(Name = "city")]
+	[XmlElement]
 	public string City
 	{
 		get => this._city;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
-			{
-				ExceptionThrower.ThrowArgumentNullException("Value for City cannot be null or empty.", nameof(this.City));
-			}
-
 			this._city = value.Length > 100 ? throw new ArgumentOutOfRangeException(nameof(this.City), "City length is limited to 100 characters.") : value;
 		}
 	}
@@ -167,7 +179,9 @@ public record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The country name.</value>
 	/// <exception cref="ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
-	/// <exception cref="ArgumentNullException">Country - Value for Country cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">Country - Country length is limited to 50 characters.</exception>
+	[DataMember(Name = "country")]
+	[XmlElement]
 	public string Country
 	{
 		get => this._country;
@@ -187,7 +201,9 @@ public record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The county province.</value>
 	/// <exception cref="ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
-	/// <exception cref="ArgumentNullException">CountyProvince - Value for County/ Province cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
+	[DataMember(Name = "countryProvince")]
+	[XmlElement]
 	public string CountyProvince
 	{
 		get => this._countyProvince;
@@ -206,6 +222,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the identifier.
 	/// </summary>
 	/// <value>The identifier.</value>
+	[DataMember(Name = "id")]
+	[XmlElement]
 	public string Id { get; init; }
 
 	/// <summary>
@@ -213,7 +231,9 @@ public record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The phone.</value>
 	/// <exception cref="ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
-	/// <exception cref="ArgumentNullException">Phone - Value for phone number cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">Phone - Home phone length is limited to 50 characters.</exception>
+	[DataMember(Name = "phone")]
+	[XmlElement]
 	public string Phone
 	{
 		get => this._phone;
@@ -232,19 +252,19 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentOutOfRangeException">PostalCode - Postal code length is limited to 20 characters.</exception>
-	/// <exception cref="ArgumentNullException">PostalCode - Value for postal code cannot be null or empty.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Postal code cannot be over 40 characters in length.</exception>
+	[DataMember(Name = "postalCode")]
+	[XmlElement]
 	public string PostalCode
 	{
 		get => this._postalCode;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
-			{
-				ExceptionThrower.ThrowArgumentNullException("Value for postal code cannot be null or empty.", nameof(this.PostalCode));
-			}
-
-			this._postalCode = value.Length > 20 ? throw new ArgumentOutOfRangeException(nameof(this.PostalCode), "Postal code length is limited to 20 characters.") : value;
+			this._postalCode = value.HasValue(0, 40) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.PostalCode),
+					Resources.PostalCodeLengthIsLimitedTo40Characters)
+				: value;
 		}
 	}
 
@@ -252,19 +272,25 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the state.
 	/// </summary>
 	/// <value>The state.</value>
-	/// <exception cref="ArgumentOutOfRangeException">State - State  length is limited to 50 characters.</exception>
-	/// <exception cref="ArgumentNullException">State - Value for State cannot be null or empty.</exception>
-	public string State
+	/// <exception cref="ArgumentOutOfRangeException">State - State  length is limited to 60 characters.</exception>
+	/// <exception cref="ArgumentNullException">State - State  length is limited to 60 characters.</exception>
+	[DataMember(Name = "state")]
+	[XmlElement]
+	 public string State
 	{
 		get => this._state;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
+			if (string.Equals(this._state, value, StringComparison.Ordinal))
 			{
-				ExceptionThrower.ThrowArgumentNullException("Value for State cannot be null or empty.", nameof(this.State));
+				return;
 			}
 
-			this._state = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.State), "State  length is limited to 50 characters.") : value;
+			this._state = value.HasValue(0, 60) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.State),
+					Resources.StateLengthIsLimitedTo60Characters)
+				: value;
 		}
 	}
 }

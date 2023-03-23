@@ -4,7 +4,7 @@
 // Created          : 10-25-2021
 //
 // Last Modified By : david
-// Last Modified On : 09-14-2022
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="Person.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -33,8 +34,8 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 /// <seealso cref="IComparable" />
 [DebuggerDisplay("{Email}")]
 [Serializable]
-[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[XmlRoot(ElementName = "Person", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[DataContract(Name = "person", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct Person : IDataModel<Person, string>, IPerson
 {
@@ -300,6 +301,8 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// </summary>
 	/// <value>The age.</value>
 	[IgnoreDataMember]
+	[JsonIgnore]
+	[XmlIgnore]
 	public TimeSpan Age => this.CalculateAge();
 
 	/// <summary>
@@ -536,7 +539,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Postal code cannot be over 40 characters in length.</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode
@@ -549,10 +552,10 @@ public struct Person : IDataModel<Person, string>, IPerson
 				return;
 			}
 
-			this._postalCode = value.HasValue(0, 15) is false
+			this._postalCode = value.HasValue(0, 40) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.PostalCode),
-					Resources.PostalCodeLengthIsLimitedTo15Characters)
+					Resources.PostalCodeLengthIsLimitedTo40Characters)
 				: value;
 		}
 	}
@@ -574,10 +577,10 @@ public struct Person : IDataModel<Person, string>, IPerson
 				return;
 			}
 
-			this._state = value.HasValue(0, 25) is false
+			this._state = value.HasValue(0, 60) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.State),
-					Resources.StateLengthIsLimitedTo25Characters)
+					Resources.StateLengthIsLimitedTo60Characters)
 				: value;
 		}
 	}

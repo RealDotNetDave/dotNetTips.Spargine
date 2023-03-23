@@ -280,7 +280,6 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <exception cref="ArgumentOutOfRangeException">length - Minimum length must be greater than 0.</exception>
 	internal static bool HasValue(this string input, int length)
 	{
-		input = input.ArgumentInRange(lower: 0, upper: int.MaxValue);
 		length = length.ArgumentInRange(lower: 1);
 
 		return input is not null && (input.Trim().Length == length);
@@ -310,8 +309,6 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
 	internal static bool HasValue(this string input, [NotNull] string expression, [NotNull] RegexOptions options)
 	{
-		input = input.ArgumentNotNullOrEmpty();
-
 		return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 	}
 
@@ -325,7 +322,6 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <exception cref="ArgumentOutOfRangeException">Min Length  or Max Length must be greater than 0.</exception>
 	internal static bool HasValue(this string input, int minLength, int maxLength)
 	{
-		input = input.ArgumentNotNullOrEmpty();
 		minLength = minLength.ArgumentInRange(lower: 1);
 		maxLength = maxLength.ArgumentInRange(lower: minLength);
 

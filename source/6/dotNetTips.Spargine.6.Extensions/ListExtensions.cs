@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-22-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -87,6 +87,7 @@ public static class ListExtensions
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 	[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+	[Obsolete("This method will be removed at the end of 2023. Use IsEqualTo() instead. ")]
 	public static bool AreEqual<T>([NotNull] this IList<T> collection, [NotNull] IList<T> listToCheck)
 	{
 		if (collection is null || listToCheck is null)
@@ -278,6 +279,32 @@ public static class ListExtensions
 		var indexWrap = (int)(index - (count * Math.Floor((double)index / count)));
 
 		return collection[indexWrap];
+	}
+
+	/// <summary>
+	/// Determines whether the specified list to check is equal.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="collection">The collection.</param>
+	/// <param name="collectionToCheck">The list to check.</param>
+	/// <returns><c>true</c> if the specified list to check is equal; otherwise, <c>false</c>.</returns>
+	/// <exception cref="ArgumentNullException">collection</exception>
+	/// <exception cref="ArgumentNullException">collectionToCheck</exception>
+	[Information(nameof(IsEqualTo), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static bool IsEqualTo<T>(this IList<T> collection, IList<T> collectionToCheck)
+	{
+		if (collection == null)
+		{
+			throw new ArgumentNullException(nameof(collection));
+		}
+
+		if (collectionToCheck == null)
+		{
+			throw new ArgumentNullException(nameof(collectionToCheck));
+		}
+
+		return collection.SequenceEqual(collectionToCheck);
 	}
 
 	/// <summary>

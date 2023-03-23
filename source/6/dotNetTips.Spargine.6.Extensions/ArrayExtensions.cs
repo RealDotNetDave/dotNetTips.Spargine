@@ -114,6 +114,7 @@ public static class ArrayExtensions
 	/// <param name="items">The items.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
+	[Obsolete("This method will be removed at the end of 2023. Please use AddDistinct() instead.")]
 	[Information(nameof(AddIfNotExists), author: "David McCarter", createdOn: "8/12/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static T[] AddIfNotExists<T>([NotNull] this T[] array, [NotNull] params T[] items)
 	{
@@ -135,6 +136,36 @@ public static class ArrayExtensions
 		}
 
 		return returnCollection.ToArray();
+	}
+
+	/// <summary>
+	/// Adds items to a list if they do not exist.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="source">The source.</param>
+	/// <param name="items">The items.</param>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
+	[Information(nameof(AddDistinct), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+	public static IEnumerable<T> AddDistinct<T>(this IEnumerable<T> source, params T[] items)
+	{
+		source = source ?? Enumerable.Empty<T>();
+
+		if (!items.Any())
+		{
+			return source;
+		}
+
+		var result = source.ToList();
+
+		foreach (var item in items)
+		{
+			if (!result.Contains(item))
+			{
+				result.Add(item);
+			}
+		}
+
+		return result;
 	}
 
 	/// <summary>
@@ -170,11 +201,11 @@ public static class ArrayExtensions
 	/// <param name="array">The input.</param>
 	/// <param name="arrayToCheck">The array to check.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	[Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	[Information(nameof(AreEqual), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 	public static bool AreEqual<T>([NotNull] this T[] array, [NotNull] T[] arrayToCheck)
 	{
-		if (array.IsNull() || arrayToCheck.IsNull())
+		if (array is null || arrayToCheck is null)
 		{
 			return false;
 		}
@@ -184,14 +215,7 @@ public static class ArrayExtensions
 			return false;
 		}
 
-		var areSame = true;
-
-		for (var itemIndex = 0; itemIndex < array.Length; itemIndex++)
-		{
-			areSame &= array[itemIndex].Equals(arrayToCheck[itemIndex]);
-		}
-
-		return areSame;
+		return array.AsSpan().SequenceEqual(arrayToCheck);
 	}
 
 	/// <summary>
@@ -268,11 +292,7 @@ public static class ArrayExtensions
 	{
 		array = array.ArgumentNotNull();
 
-		var copy = new T[array.Length];
-
-		Array.Copy(sourceArray: array, sourceIndex: 0, destinationArray: copy, destinationIndex: 0, length: array.Length);
-
-		return copy;
+		return array.AsSpan().ToArray();
 	}
 
 	/// <summary>

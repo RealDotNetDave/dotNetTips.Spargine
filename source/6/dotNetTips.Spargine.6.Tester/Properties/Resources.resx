@@ -151,14 +151,14 @@
   <data name="LastNameLengthIsLimitedTo50Characters" xml:space="preserve">
     <value>Last name length is limited to 50 characters.</value>
   </data>
-  <data name="PostalCodeLengthIsLimitedTo15Characters" xml:space="preserve">
-    <value>Postal code length is limited to 15 characters.</value>
+  <data name="PostalCodeLengthIsLimitedTo40Characters" xml:space="preserve">
+    <value>Postal code length is limited to 40 characters.</value>
   </data>
   <data name="MinimumLenghthCannotBeGreaterThanMaximum" xml:space="preserve">
     <value>Minimum length cannot be greater than maximum length.</value>
   </data>
-  <data name="StateLengthIsLimitedTo25Characters" xml:space="preserve">
-    <value>State length is limited to 25 characters.</value>
+  <data name="StateLengthIsLimitedTo60Characters" xml:space="preserve">
+    <value>State length is limited to 60 characters.</value>
   </data>
   <data name="SizeMustBeEpsilon" xml:space="preserve">
     <value>Size must be &gt;= {0}.</value>

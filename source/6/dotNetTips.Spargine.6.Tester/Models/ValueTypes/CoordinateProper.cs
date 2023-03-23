@@ -4,13 +4,15 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2022
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="CoordinateProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Runtime.Serialization;
+using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -25,6 +27,8 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 /// <seealso cref="IComparable" />
 /// <seealso cref="ICoordinate" />
 [Serializable]
+[XmlRoot(ElementName = "CoordinateProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[DataContract(Name = "coordinateProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, IComparable, IComparable<CoordinateProper>
 {
@@ -155,11 +159,15 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	/// Gets or sets the x coordinate.
 	/// </summary>
 	/// <value>The x.</value>
+	[DataMember(Name = "x")]
+	[XmlElement]
 	public int X { get; set; }
 
 	/// <summary>
 	/// Gets or sets the y coordinate.
 	/// </summary>
 	/// <value>The y.</value>
+	[DataMember(Name = "y")]
+	[XmlElement]
 	public int Y { get; set; }
 }

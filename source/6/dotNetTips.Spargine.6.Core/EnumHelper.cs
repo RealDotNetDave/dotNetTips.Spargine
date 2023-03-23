@@ -29,7 +29,7 @@ public static class EnumHelper
 	/// <summary>
 	/// The title case regex
 	/// </summary>
-	private static readonly Regex _titleCaseRegex = new(@"(\B[A-Z])", RegexOptions.Multiline | RegexOptions.Compiled);
+	private static readonly Regex _titleCaseRegex = new(@"(\B[A-Z])", RegexOptions.Multiline | RegexOptions.Compiled); //TODO: TEST.DOES NOT SEEM TO WORK.
 
 	/// <summary>
 	/// Adjusts the camel case.

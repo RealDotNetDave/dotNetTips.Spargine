@@ -135,6 +135,14 @@ namespace DotNetTips.Spargine.Core.Tests
 		}
 
 		[TestMethod]
+		public void GetProcessorInformationTest()
+		{
+			var result = App.GetProcessorInformation();
+
+			Assert.IsNotNull(result);
+		}
+
+		[TestMethod]
 		public void IsUserAdministrator()
 		{
 			var result = App.IsUserAdministrator();

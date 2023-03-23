@@ -50,7 +50,7 @@ public static class PathHelper
 			paths[paramCount] = paths[paramCount].ToTrimmed();
 		}
 
-		var pathString = Path.Combine(paths);
+		var pathString = Path.Join(paths);
 
 		var di = new DirectoryInfo(pathString);
 

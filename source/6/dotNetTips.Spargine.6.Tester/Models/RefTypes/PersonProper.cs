@@ -4,7 +4,7 @@
 // Created          : 07-17-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="PersonProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -357,6 +357,8 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// </summary>
 	/// <value>The age.</value>
 	[IgnoreDataMember]
+	[JsonIgnore]
+	[XmlIgnore]
 	public TimeSpan Age => this.CalculateAge();
 
 	/// <summary>
@@ -593,7 +595,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Postal code cannot be over 40 characters in length.</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode
@@ -606,10 +608,10 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 				return;
 			}
 
-			this._postalCode = value.HasValue(0, 15) is false
+			this._postalCode = value.HasValue(0, 40) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.PostalCode),
-					Resources.PostalCodeLengthIsLimitedTo15Characters)
+					Resources.PostalCodeLengthIsLimitedTo40Characters)
 				: value;
 		}
 	}
@@ -631,10 +633,10 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 				return;
 			}
 
-			this._state = value.HasValue(0, 75) is false
+			this._state = value.HasValue(0, 60) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.State),
-					Resources.StateLengthIsLimitedTo25Characters)
+					Resources.StateLengthIsLimitedTo60Characters)
 				: value;
 		}
 	}

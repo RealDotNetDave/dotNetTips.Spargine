@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -61,6 +62,20 @@ namespace DotNetTips.Spargine.Extensions.Tests
 			});
 
 			Assert.IsTrue(sb.Length > 100);
+		}
+
+		[TestMethod]
+		public void IsEqualTest()
+		{
+			var set1 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+			var set1Clone = set1.Clone<Collection<PersonProper>>();
+			var set2 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+
+			var result1 = set1.IsEqualTo(set1);
+			Assert.IsTrue(result1);
+
+			var result2=set1.IsEqualTo(set2);
+			Assert.IsFalse(result2);
 		}
 
 		[TestMethod]

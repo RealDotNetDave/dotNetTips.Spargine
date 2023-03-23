@@ -42,19 +42,19 @@ namespace DotNetTips.Spargine.Extensions.Tests
 	{
 
 		[TestMethod]
-		public void DoesObjectImplementInterfaceTest()
+		public void GetImplementedInterfacesTest()
 		{
 			var table = new DataTable();
 
-			var result = table.DoesObjectImplementInterface("IComponent");
+			var result = table.GetImplementedInterfaces("IComponent");
 
 			Assert.IsTrue(result.FastCount() == 1);
 
-			result = table.DoesObjectImplementInterface("IFakeInterface");
+			result = table.GetImplementedInterfaces("IFakeInterface");
 
 			Assert.IsTrue(result.FastCount() == 0);
 
-			result = table.DoesObjectImplementInterface("IComponent", "IDisposable");
+			result = table.GetImplementedInterfaces("IComponent", "IDisposable");
 
 			Assert.IsTrue(result.FastCount() == 2);
 

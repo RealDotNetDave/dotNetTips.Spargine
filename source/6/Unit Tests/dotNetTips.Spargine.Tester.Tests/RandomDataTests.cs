@@ -4,7 +4,7 @@
 // Created          : 01-05-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="RandomDataTests.cs" company="dotNetTips.Spargine.Tester.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -36,11 +36,10 @@ namespace DotNetTips.Spargine.Tester.Tests
 	[TestClass]
 	public class RandomDataTests
 	{
-
 		/// <summary>
 		/// The count
 		/// </summary>
-		private const int Count = 100;
+		private const int Count = 256;
 
 		/// <summary>
 		/// The file extension
@@ -131,6 +130,29 @@ namespace DotNetTips.Spargine.Tester.Tests
 			}
 		}
 
+		[TestMethod]
+		public void Deserialize_JsonSerilizerContext_PersonProper_Collection_Test()
+		{
+			var json = RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToJson();
+
+			var result = JsonSerializer.Deserialize(json, PersonProperJsonSerializerContext.Default.ListPersonProper);
+
+			Assert.IsNotNull(result);
+			Assert.IsTrue(result.Count == Count);
+		}
+
+		[TestMethod]
+		public void Deserialize_JsonSerilizerContext_PersonProper_Ref_Test()
+		{
+			var json = RandomData.GenerateRefPerson<PersonProper>().ToJson();
+
+			var normalResult = JsonSerializer.Deserialize<PersonProper>(json);
+
+			var result = JsonSerializer.Deserialize(json, PersonProperJsonSerializerContext.Default.PersonProper);
+
+			Assert.IsNotNull(result);
+		}
+
 		/// <summary>
 		/// Defines the test method GenerateByteArrayTest.
 		/// </summary>
@@ -201,6 +223,23 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(coordinate);
 
 			Assert.IsNotNull(coordinate.ToString());
+		}
+
+		[TestMethod]
+		public void GenerateCreditCardsTest()
+		{
+			var result = RandomData.GenerateCreditCards();
+
+			Assert.IsNotNull(result);
+			Assert.IsTrue(result.Length == 100);
+		}
+
+		[TestMethod]
+		public void GenerateCreditCardTest()
+		{
+			var result = RandomData.GenerateCreditCard();
+
+			Assert.IsNotNull(result);
 		}
 
 		/// <summary>
@@ -339,6 +378,15 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(stringValue);
 		}
 
+		[TestMethod]
+		public void GenerateNamesTest()
+		{
+			for (int count = 0; count < Count; count++)
+			{
+				Debug.WriteLine($"{RandomData.GenerateFirstName()} {RandomData.GenerateLastName()}");
+			}
+		}
+
 		/// <summary>
 		/// Defines the test method GenerateNumberTest.
 		/// </summary>
@@ -350,19 +398,6 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(stringValue);
 
 			Assert.IsTrue(stringValue.Length == 15);
-		}
-
-		/// <summary>
-		/// Defines the test method GeneratePersonCollectionTest.
-		/// </summary>
-		[TestMethod]
-		public void GeneratePersonCollectionTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-
-			Assert.IsNotNull(people);
-
-			Assert.IsTrue(people.FastCount() == Count);
 		}
 
 		/// <summary>
@@ -417,38 +452,17 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsTrue(people.Count == Count);
 		}
 
+		/// <summary>
+		/// Defines the test method GeneratePersonRefCollectionTest.
+		/// </summary>
 		[TestMethod]
-		public void GenerateValPersonTest()
+		public void GeneratePersonRefCollectionTest()
 		{
-			var person = RandomData.GenerateValPerson<Models.ValueTypes.Person>();
+			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
 
-			Assert.IsNotNull(person);
+			Assert.IsNotNull(people);
 
-			Assert.IsNotNull(person.Address1);
-
-			Assert.IsNotNull(person.Address2);
-
-			Assert.IsTrue(person.BornOn > DateTimeOffset.Parse("1/1/1800"));
-
-			Assert.IsNotNull(person.CellPhone);
-
-			Assert.IsNotNull(person.City);
-
-			Assert.IsNotNull(person.Country);
-
-			Assert.IsNotNull(person.Email);
-
-			Assert.IsNotNull(person.FirstName);
-
-			Assert.IsNotNull(person.HomePhone);
-
-			Assert.IsNotNull(person.Id);
-
-			Assert.IsNotNull(person.LastName);
-
-			Assert.IsNotNull(person.PostalCode);
-
-			Assert.IsNotNull(person.ToString());
+			Assert.IsTrue(people.FastCount() == Count);
 		}
 
 		/// <summary>
@@ -494,11 +508,11 @@ namespace DotNetTips.Spargine.Tester.Tests
 		[TestMethod]
 		public void GeneratePersonValCollectionTest()
 		{
-			var result = RandomData.GeneratePersonValCollection<Models.ValueTypes.Person>(1000);
+			var result = RandomData.GeneratePersonValCollection<Models.ValueTypes.Person>(Count);
 
-			Assert.IsTrue(result.FastCount() == 1000);
+			Assert.IsTrue(result.FastCount() == Count);
 
-			Assert.IsTrue(result.ToDictionary(item => item.Id).FastCount() == 1000);
+			Assert.IsTrue(result.ToDictionary(item => item.Id).FastCount() == Count);
 
 		}
 
@@ -642,6 +656,40 @@ namespace DotNetTips.Spargine.Tester.Tests
 			Assert.IsNotNull(stringValue);
 		}
 
+		[TestMethod]
+		public void GenerateValPersonTest()
+		{
+			var person = RandomData.GenerateValPerson<Models.ValueTypes.Person>();
+
+			Assert.IsNotNull(person);
+
+			Assert.IsNotNull(person.Address1);
+
+			Assert.IsNotNull(person.Address2);
+
+			Assert.IsTrue(person.BornOn > DateTimeOffset.Parse("1/1/1800"));
+
+			Assert.IsNotNull(person.CellPhone);
+
+			Assert.IsNotNull(person.City);
+
+			Assert.IsNotNull(person.Country);
+
+			Assert.IsNotNull(person.Email);
+
+			Assert.IsNotNull(person.FirstName);
+
+			Assert.IsNotNull(person.HomePhone);
+
+			Assert.IsNotNull(person.Id);
+
+			Assert.IsNotNull(person.LastName);
+
+			Assert.IsNotNull(person.PostalCode);
+
+			Assert.IsNotNull(person.ToString());
+		}
+
 		/// <summary>
 		/// Defines the test method GenerateWordLengthWithCharactersTest.
 		/// </summary>
@@ -712,14 +760,15 @@ namespace DotNetTips.Spargine.Tester.Tests
 		}
 
 		[TestMethod]
-		public void Deserialize_JsonSerilizerContext_PersonProper_Collection_Test()
+		public void RecordToStringTest()
 		{
-			var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToJson();
+			var stringValue1 = RandomData.GeneratePersonRecordCollection(1).First().ToString();
 
-			var result = JsonSerializer.Deserialize(json, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default) as List<PersonProper>;
+			Assert.IsNotNull(stringValue1);
 
-			Assert.IsNotNull(result);
-			Assert.IsTrue(result.Count == 100);
+			var stringValue2 = RandomData.GeneratePersonRecordCollection(1).First().PropertiesToString();
+
+			Assert.IsNotNull(stringValue2);
 		}
 
 		[TestMethod]
@@ -727,17 +776,7 @@ namespace DotNetTips.Spargine.Tester.Tests
 		{
 			var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToList();
 
-			var result = JsonSerializer.Serialize(json, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default);
-
-			Assert.IsNotNull(result);
-		}
-
-		[TestMethod]
-		public void Deserialize_JsonSerilizerContext_PersonProper_Ref_Test()
-		{
-			var json = RandomData.GenerateRefPerson<PersonProper>().ToJson();
-
-			var result = JsonSerializer.Deserialize(json, typeof(PersonProper), PersonProperJsonSerializerContext.Default) as PersonProper;
+			var result = JsonSerializer.Serialize(json, PersonProperJsonSerializerContext.Default.ListPersonProper);
 
 			Assert.IsNotNull(result);
 		}
@@ -750,18 +789,6 @@ namespace DotNetTips.Spargine.Tester.Tests
 			var result = JsonSerializer.Serialize(person, typeof(PersonProper), PersonProperJsonSerializerContext.Default);
 
 			Assert.IsNotNull(result);
-		}
-
-		[TestMethod]
-		public void RecordToStringTest()
-		{
-			var stringValue1 = RandomData.GeneratePersonRecordCollection(1).First().ToString();
-
-			Assert.IsNotNull(stringValue1);
-
-			var stringValue2 = RandomData.GeneratePersonRecordCollection(1).First().PropertiesToString();
-
-			Assert.IsNotNull(stringValue2);
 		}
 
 		/// <summary>
@@ -783,38 +810,5 @@ namespace DotNetTips.Spargine.Tester.Tests
 
 			Debug.WriteLine(person2.PropertiesToString());
 		}
-
-		[TestMethod]
-		public void GenerateNamesTest()
-		{
-			for (int count = 0; count < 100; count++)
-			{
-				Debug.WriteLine($"{RandomData.GenerateFirstName()} {RandomData.GenerateLastName()}");
-			}
-		}
-
-		[TestMethod]
-		public void GenerateCreditCardsTest()
-		{
-			var result = RandomData.GenerateCreditCards();
-
-			Assert.IsNotNull(result);
-			Assert.IsTrue(result.Length == 100);
-		}
-
-		[TestMethod]
-		public void GenerateCreditCardTest()
-		{
-			var result = RandomData.GenerateCreditCard();
-
-			Assert.IsNotNull(result);
-		}
-
-		//[TestMethod]
-		//public void GenerateCitiesTest()
-		//{
-		//	var result = RandomData.GenerateCities();
-		//}
-
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-01-2022
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,7 +12,11 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester.Properties;
 
@@ -24,6 +28,11 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// Class Person with proper encapsulation and validation.
 /// Implements the <see cref="IDataRecord" />
 /// </summary>
+[DebuggerDisplay("{Email}")]
+[Serializable]
+[JsonSerializable(typeof(PersonRecord))]
+[XmlRoot(ElementName = "PersonRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[DataContract(Name = "personRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 {
@@ -179,6 +188,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the addresses.
 	/// </summary>
 	/// <value>The addresses.</value>
+	[DataMember(Name = "adresses")]
+	[XmlElement]
 	public Collection<AddressRecord> Addresses { get; init; }
 
 	/// <summary>
@@ -186,6 +197,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// </summary>
 	/// <value>The born on date.</value>
 	/// <exception cref="ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
+	[DataMember(Name = "bornOn")]
+	[XmlElement]
 	public DateTimeOffset BornOn
 	{
 		get => this._bornOn;
@@ -198,6 +211,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The cell phone number.</value>
 	/// <exception cref="ArgumentOutOfRangeException">CellPhone - Phone number is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">CellPhone - Phone number is limited to 50 characters.</exception>
+	[DataMember(Name = "cellPhone")]
+	[XmlElement]
 	public string CellPhone
 	{
 		get => this._cellPhone;
@@ -210,6 +225,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The email address.</value>
 	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	[DataMember(Name = "email")]
+	[XmlElement]
 	public string Email
 	{
 		get => this._email;
@@ -230,6 +247,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The first name.</value>
 	/// <exception cref="ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
+	[DataMember(Name = "firstName")]
+	[XmlElement]
 	public string FirstName
 	{
 		get => this._firstName;
@@ -250,6 +269,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The home phone.</value>
 	/// <exception cref="ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">HomePhone - Home phone length is limited to 50 characters.</exception>
+	[DataMember(Name = "homePhone")]
+	[XmlElement]
 	public string HomePhone
 	{
 		get => this._homePhone;
@@ -261,6 +282,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// </summary>
 	/// <value>The identifier.</value>
 	[DisallowNull]
+	[DataMember(Name = "id")]
+	[XmlElement]
 	public string Id { get; init; }
 
 	/// <summary>
@@ -269,6 +292,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The last name.</value>
 	/// <exception cref="ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">LastName - Last name length is limited to 50 characters.</exception>
+	[DataMember(Name = "lastName")]
+	[XmlElement]
 	public string LastName
 	{
 		get => this._lastName;

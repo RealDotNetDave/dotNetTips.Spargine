@@ -559,7 +559,6 @@ public static class StringExtensions
 	[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool HasValue(this string input, int length)
 	{
-		input = input.ArgumentNotNullOrEmpty();
 		length = length.ArgumentInRange(lower: 1, upper: length);
 
 		return input is not null && (input.Trim().Length == length);
@@ -604,7 +603,6 @@ public static class StringExtensions
 	[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool HasValue(this string input, int minLength, int maxLength)
 	{
-		input = input.ArgumentNotNullOrEmpty();
 		minLength = minLength.ArgumentInRange(lower: 0, upper: maxLength);
 		maxLength = maxLength.ArgumentInRange(lower: minLength, upper: int.MaxValue);
 

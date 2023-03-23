@@ -141,6 +141,49 @@ public static class FileHelper
 		return allow && !deny;
 	}
 
+//#if NET7_0_OR_GREATER
+
+//public delegate CopyProgressResult ProgressCallback(long TotalFileSize, long TotalBytesTransferred, long StreamSize, long StreamBytesTransferred, uint dwStreamNumber, CopyProgressCallbackReason dwCallbackReason, IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData);
+
+//		public enum CopyProgressResult : uint
+//		{
+//			Continue = 0,
+//			Cancel = 1,
+//			Stop = 2,
+//			Quiet = 3
+//		}
+
+//		public enum CopyProgressCallbackReason : uint
+//		{
+//			ChunkFinished = 0x00000000,
+//			StreamSwitch = 0x00000001
+//		}
+
+//	    internal static bool CopyFileWithEvents(string oldFile, string newFile, ProgressCallback progressCallback)
+//		{
+//			int cancel = 0;
+//			return SourceGenerators.CopyFileEx(oldFile, newFile, progressCallback, IntPtr.Zero, ref cancel, CopyFileMode.Restartable | CopyFileMode.Restartable);
+//		}
+
+//    [Information(nameof(CopyFile), BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+//	public static bool CopyFile([NotNull] FileInfo file, [NotNull] DirectoryInfo destination, [NotNull] ProgressCallback progressCallback)
+//	{
+//		var fileName = file.ArgumentExists().FullName;
+
+//		if (destination.ArgumentNotNull().CheckExists(throwException: true))
+//		{
+//		    var destinationName = destination.FullName;
+//			var newFileName = Path.Combine(destinationName, fileName);
+//			return CopyFileEx(fileName, destinationName, progressCallback, IntPtr.Zero, ref cancel, CopyFileMode.Restartable | CopyFileMode.Restartable);
+//		}
+//		else
+//		{
+//		  return false;
+//		}
+//    }
+
+//#endif
+
 	/// <summary>
 	/// Copies the file to a new directory. If the file already exists, it
 	/// will be overwritten.

@@ -14,6 +14,7 @@
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Management;
 using System.Runtime.Versioning;
 using DotNetTips.Spargine.Core;
 
@@ -32,27 +33,26 @@ public static class DriveHelper
 	/// </summary>
 	/// <param name="drive">The drive.</param>
 	/// <returns>System.String.</returns>
-	[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
+	[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://dotnettips.wordpress.com/2007/12/14/finding-a-drives-serial-number/")]
 	public static string GetDriveSerialNumber([NotNull] string drive)
 	{
+		drive = drive.ArgumentNotNullOrEmpty();
+
 		var driveSerial = string.Empty;
 
 		// No matter what is sent in, get just the drive letter
 		var driveFixed = Path.GetPathRoot(drive).Replace(@"\", string.Empty, StringComparison.Ordinal);
 
 		// Perform Query
-		using (var querySearch = new System.Management.ManagementObjectSearcher(
-			string.Format(
-				CultureInfo.InvariantCulture,
-				format: "SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{0}'",
-				driveFixed)))
+		using (var querySearch = new ManagementObjectSearcher(
+			$"SELECT VolumeSerialNumber FROM Win32_LogicalDisk Where Name = '{driveFixed}'"))
 		{
 			using (var queryCollection = querySearch.Get())
 			{
-				foreach (var moItem in queryCollection)
+				foreach (var driveInfo in queryCollection)
 				{
 					driveSerial = Convert.ToString(
-						moItem.GetPropertyValue(propertyName: "VolumeSerialNumber"),
+						driveInfo.GetPropertyValue(propertyName: "VolumeSerialNumber"),
 						CultureInfo.CurrentCulture);
 				}
 			}

@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,7 +24,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic;
 /// </summary>
 /// <typeparam name="T">Generic type parameter.</typeparam>
 /// <seealso cref="List{T}" />
-[DebuggerDisplay("Count = {Count}"), Serializable]
+[Serializable]
 public class FastSortedList<T> : List<T>
 {
 	/// <summary>

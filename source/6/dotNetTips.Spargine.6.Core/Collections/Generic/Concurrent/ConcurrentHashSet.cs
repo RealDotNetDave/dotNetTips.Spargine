@@ -23,7 +23,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 /// Represents a thread-safe hash-based unique collection.
 /// </summary>
 /// <typeparam name="T">Generic type parameter.</typeparam>
-[DebuggerDisplay("Count = {Count}")]
 public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
 {
 	/// <summary>

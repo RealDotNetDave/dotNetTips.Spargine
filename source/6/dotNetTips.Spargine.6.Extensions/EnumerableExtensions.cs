@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -807,7 +807,7 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
-	/// Convert a <see cref="IEnumerable{T}" /> to a delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Convert a <see cref="IEnumerable{T}" /> to a delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <param name="collection">The list.</param>

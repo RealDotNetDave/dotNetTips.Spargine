@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,343 +26,339 @@ using DotNetTips.Spargine.Tester.Models.RefTypes;
 using DotNetTips.Spargine.Tester.Models.ValueTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DotNetTips.Spargine.Extensions.Tests
+namespace DotNetTips.Spargine.Extensions.Tests;
+
+[ExcludeFromCodeCoverage]
+[TestClass]
+public class ListExtensionsTests
 {
-	[ExcludeFromCodeCoverage]
-	[TestClass]
-	public class ListExtensionsTests
+
+	[TestMethod]
+	public void AddIfNotExistsTwoListsTest()
 	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(20).ToArray();
 
-		[TestMethod]
-		public void AddIfNotExistsTwoListsTest()
+		people = people.AddIfNotExists(null);
+		Assert.IsTrue(people.FastCount() == 20);
+
+		var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
+
+		people = people.AddIfNotExists(newPeople);
+		Assert.IsTrue(people.FastCount() == 30);
+
+		people = people.AddIfNotExists(newPeople);
+		Assert.IsTrue(people.FastCount() == 30);
+	}
+
+	[TestMethod]
+	public void PerformActionTest()
+	{
+		var words = RandomData.GenerateWords(10, 10, 100).ToList();
+		var sb = new StringBuilder();
+
+		words.PerformAction((word) => _ = sb.Append($"WORD:{word}|"));
+
+		Assert.IsTrue(sb.Length > 100);
+	}
+
+	[TestMethod]
+	public void IsEqualTest()
+	{
+		var set1 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+		var set1Clone = set1.Clone<Collection<PersonProper>>();
+		var set2 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+
+		var result1 = set1.IsEqualTo(set1);
+		Assert.IsTrue(result1);
+
+		var result2 = set1.IsEqualTo(set2);
+		Assert.IsFalse(result2);
+	}
+
+	[TestMethod]
+	public void AddLastTest()
+	{
+		var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		var peopleArray = peopleList.ToArray();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
+		PersonProper nullPerson = null;
+
+		//Test Parameters
+		_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => peopleList.ToReadOnlyCollection()
+			.AddLast(person));
+
+		// Test List
+		_ = peopleList.AddLast(nullPerson);
+		Assert.IsTrue(peopleList.FastCount() == peopleList.FastCount());
+
+		_ = peopleList.AddLast(person);
+		Assert.IsTrue(peopleList.Last().Equals(person));
+
+		// Test Array
+		var result2 = peopleArray.AddLast(person);
+		Assert.IsTrue(result2.Last().Equals(person));
+		Assert.IsTrue(peopleArray.AddLast(null).Length == peopleArray.Length);
+	}
+	[TestMethod]
+	public void ClearNullListTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(RandomData.GenerateInteger(10, 500)).ToList();
+
+		people.Add(null);
+
+		Assert.IsTrue(people.ClearNulls());
+
+		Assert.IsFalse(people.ClearNulls());
+
+		Assert.IsFalse(new List<PersonProper>(10).ClearNulls());
+	}
+	[TestMethod]
+	public void CopyToListTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToList();
+		var newPeople = people.CopyToCollection();
+
+		Assert.IsTrue(people.FastCount() == newPeople.FastCount());
+	}
+
+	[TestMethod]
+	public void DoesNotHaveItemsTest()
+	{
+		var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToList();
+		List<Coordinate> nullCollection = null;
+
+		Assert.IsFalse(collection.DoesNotHaveItems());
+
+		Assert.IsTrue(nullCollection.DoesNotHaveItems());
+	}
+
+	[TestMethod]
+	public void HasItemsTest01()
+	{
+		var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
+
+		Assert.IsTrue(collection.ToList().HasItems());
+	}
+
+	[TestMethod]
+	public void HasItemsTest02()
+	{
+		var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
+
+		Assert.IsFalse(collection.ToList().HasItems(p => p.X == 999999999));
+	}
+
+	[TestMethod]
+	public void HasItemsTest03()
+	{
+		var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
+
+		Assert.IsFalse(collection.ToList().HasItems(5));
+	}
+
+	[TestMethod]
+	public void IndexOfTest()
+	{
+		var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		var testPerson = peopleList[5];
+
+		//Test Parameters
+		_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(testPerson, null));
+		_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(null, new PersonProperComparer()));
+
+		// Test 
+		Assert.IsTrue(peopleList.IndexOf(testPerson, new PersonProperComparer()) >= 0);
+	}
+	[TestMethod]
+	public void ListHashCodeTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+
+		var result = people.GenerateHashCode();
+
+		Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
+
+		result = ListExtensions.GenerateHashCode(people.ToArray());
+
+		Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
+
+		result = people.ToReadOnlyCollection().GenerateHashCode();
+
+		Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
+	}
+
+	[TestMethod]
+	public void PagingTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		const int PageCount = 10;
+		var peopleCount = 0;
+		var loopedCount = 0;
+
+		foreach (var peoplePage in people.Page(PageCount))
 		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(20).ToArray();
-
-			people = people.AddIfNotExists(null);
-			Assert.IsTrue(people.FastCount() == 20);
-
-			var newPeople = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
-
-			people = people.AddIfNotExists(newPeople);
-			Assert.IsTrue(people.FastCount() == 30);
-
-			people = people.AddIfNotExists(newPeople);
-			Assert.IsTrue(people.FastCount() == 30);
+			loopedCount++;
+			peopleCount += peoplePage.Count();
 		}
 
-		[TestMethod]
-		public void PerformActionTest()
-		{
-			var words = RandomData.GenerateWords(10, 10, 100).ToList();
-			var sb = new StringBuilder();
-
-			words.PerformAction((word) =>
-			{
-				_ = sb.Append($"WORD:{word}|");
-			});
-
-			Assert.IsTrue(sb.Length > 100);
-		}
-
-		[TestMethod]
-		public void IsEqualTest()
-		{
-			var set1 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
-			var set1Clone = set1.Clone<Collection<PersonProper>>();
-			var set2 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
-
-			var result1 = set1.IsEqualTo(set1);
-			Assert.IsTrue(result1);
-
-			var result2=set1.IsEqualTo(set2);
-			Assert.IsFalse(result2);
-		}
-
-		[TestMethod]
-		public void AddLastTest()
-		{
-			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-			var peopleArray = peopleList.ToArray();
-			var person = RandomData.GenerateRefPerson<PersonProper>();
-			PersonProper nullPerson = null;
-
-			//Test Parameters
-			_ = Assert.ThrowsException<ArgumentReadOnlyException>(() => peopleList.ToReadOnlyCollection()
-				.AddLast(person));
-
-			// Test List
-			_ = peopleList.AddLast(nullPerson);
-			Assert.IsTrue(peopleList.FastCount() == peopleList.FastCount());
-
-			_ = peopleList.AddLast(person);
-			Assert.IsTrue(peopleList.Last().Equals(person));
-
-			// Test Array
-			var result2 = peopleArray.AddLast(person);
-			Assert.IsTrue(result2.Last().Equals(person));
-			Assert.IsTrue(peopleArray.AddLast(null).Length == peopleArray.Length);
-		}
-		[TestMethod]
-		public void ClearNullListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(RandomData.GenerateInteger(10, 500)).ToList();
-
-			people.Add(null);
-
-			Assert.IsTrue(people.ClearNulls());
-
-			Assert.IsFalse(people.ClearNulls());
-
-			Assert.IsFalse(new List<PersonProper>(10).ClearNulls());
-		}
-		[TestMethod]
-		public void CopyToListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToList();
-			var newPeople = people.CopyToCollection();
-
-			Assert.IsTrue(people.FastCount() == newPeople.FastCount());
-		}
-
-		[TestMethod]
-		public void DoesNotHaveItemsTest()
-		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500).ToList();
-			List<Coordinate> nullCollection = null;
-
-			Assert.IsFalse(collection.DoesNotHaveItems());
-
-			Assert.IsTrue(nullCollection.DoesNotHaveItems());
-		}
-
-		[TestMethod]
-		public void HasItemsTest01()
-		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
-
-			Assert.IsTrue(collection.ToList().HasItems());
-		}
-
-		[TestMethod]
-		public void HasItemsTest02()
-		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
-
-			Assert.IsFalse(collection.ToList().HasItems(p => p.X == 999999999));
-		}
-
-		[TestMethod]
-		public void HasItemsTest03()
-		{
-			var collection = RandomData.GenerateCoordinateCollection<Coordinate>(2500);
+		Assert.IsTrue(peopleCount == 2500);
 
-			Assert.IsFalse(collection.ToList().HasItems(5));
-		}
+		Assert.IsTrue(loopedCount == 250);
+	}
 
-		[TestMethod]
-		public void IndexOfTest()
-		{
-			var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-			var testPerson = peopleList[5];
+	[TestMethod]
+	public void PickRandomTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToDictionary(p => p.Id);
 
-			//Test Parameters
-			_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(testPerson, null));
-			_ = Assert.ThrowsException<ArgumentNullException>(() => peopleList.IndexOf(null, new PersonProperComparer()));
+		var result = people.PickRandom();
 
-			// Test 
-			Assert.IsTrue(peopleList.IndexOf(testPerson, new PersonProperComparer()) >= 0);
-		}
-		[TestMethod]
-		public void ListHashCodeTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		Assert.IsNotNull(result);
+	}
 
-			var result = people.GenerateHashCode();
+	[TestMethod]
+	public void IndexAtLoopedTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		Collection<PersonProper> nullPeople = null;
 
-			Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
+		var result = people.IndexAtLooped(5);
 
-			result = ListExtensions.GenerateHashCode(people.ToArray());
+		Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
+		_ = Assert.ThrowsException<ArgumentNullException>(() => nullPeople.IndexAtLooped(5));
+	}
 
-			result = people.ToReadOnlyCollection().GenerateHashCode();
+	[TestMethod]
+	public void RemoveFirstTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
 
-			Assert.IsTrue(result.IsInRange(int.MinValue, int.MaxValue));
-		}
+		Assert.IsTrue(people.RemoveFirst().FastCount() == 2499);
+	}
 
-		[TestMethod]
-		public void PagingTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-			const int PageCount = 10;
-			var peopleCount = 0;
-			var loopedCount = 0;
+	[TestMethod]
+	public void RemoveLastTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
 
-			foreach (var peoplePage in people.Page(PageCount))
-			{
-				loopedCount++;
-				peopleCount += peoplePage.Count();
-			}
+		Assert.IsTrue(people.RemoveLast().FastCount() == 2499);
+	}
 
-			Assert.IsTrue(peopleCount == 2500);
+	[TestMethod]
+	public void ShuffleImmutableArrayTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToImmutable();
+		List<PersonProper> nullList = null;
 
-			Assert.IsTrue(loopedCount == 250);
-		}
+		_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
-		[TestMethod]
-		public void PickRandomTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToDictionary(p => p.Id);
+		var shuffledPeople = people.Shuffle();
 
-			var result = people.PickRandom();
+		Assert.IsTrue(people.FastCount() == shuffledPeople.FastCount());
+	}
 
-			Assert.IsNotNull(result);
-		}
+	[TestMethod]
+	public void ShuffleTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		List<PersonProper> nullList = null;
+		_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
 
-		[TestMethod]
-		public void IndexAtLoopedTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-			System.Collections.ObjectModel.Collection<PersonProper> nullPeople = null;
+		var shuffleCount = people.Shuffle().FastCount();
 
-			var result = people.IndexAtLooped(5);
+		Assert.IsTrue(people.FastCount() == shuffleCount);
+	}
 
-			Assert.IsNotNull(result);
+	[TestMethod]
+	public void ToCollectionTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-			Assert.ThrowsException<ArgumentNullException>(() => nullPeople.IndexAtLooped(5));
-		}
+		var result = people.ToCollection();
 
-		[TestMethod]
-		public void RemoveFirstTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
+		Assert.IsNotNull(result);
 
-			Assert.IsTrue(people.RemoveFirst().FastCount() == 2499);
-		}
+		Assert.IsTrue(result.FastCount() == 2500);
+	}
 
-		[TestMethod]
-		public void RemoveLastTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToArray();
+	[TestMethod]
+	public void ToDistinctBlockingCollectionTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-			Assert.IsTrue(people.RemoveLast().FastCount() == 2499);
-		}
+		var result = people.ToDistinctBlockingCollection(true);
 
-		[TestMethod]
-		public void ShuffleImmutableArrayTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToImmutable();
-			List<PersonProper> nullList = null;
+		Assert.IsNotNull(result);
 
-			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
+		Assert.IsTrue(result.FastCount() == 2500);
 
-			var shuffledPeople = people.Shuffle();
+		Assert.IsTrue(result.IsAddingCompleted);
+	}
 
-			Assert.IsTrue(people.FastCount() == shuffledPeople.FastCount());
-		}
+	[TestMethod]
+	public void ToDistinctConcurrentBagTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-		[TestMethod]
-		public void ShuffleTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-			List<PersonProper> nullList = null;
-			_ = Assert.ThrowsException<ArgumentNullException>(nullList.Shuffle);
+		var result = people.ToDistinctConcurrentBag();
 
-			var shuffleCount = people.Shuffle().FastCount();
+		Assert.IsNotNull(result);
 
-			Assert.IsTrue(people.FastCount() == shuffleCount);
-		}
+		Assert.IsTrue(result.FastCount() == 2500);
+	}
 
-		[TestMethod]
-		public void ToCollectionTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+	[TestMethod]
+	public void ToFastSortedListTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-			var result = people.ToCollection();
+		var result = people.ToFastSortedList();
 
-			Assert.IsNotNull(result);
+		Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 2500);
-		}
+		Assert.IsTrue(result.FastCount() == 2500);
+	}
 
-		[TestMethod]
-		public void ToDistinctBlockingCollectionTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+	[TestMethod]
+	public void ToImmutableArrayTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-			var result = people.ToDistinctBlockingCollection(true);
+		var result = people.ToImmutableArray();
 
-			Assert.IsNotNull(result);
+		Assert.IsNotNull(result);
 
-			Assert.IsTrue(result.FastCount() == 2500);
+		Assert.IsTrue(result.FastCount() == 2500);
+	}
 
-			Assert.IsTrue(result.IsAddingCompleted);
-		}
+	[TestMethod]
+	public void ToObservableListTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
 
-		[TestMethod]
-		public void ToDistinctConcurrentBagTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		var result = people.ToObservableList();
 
-			var result = people.ToDistinctConcurrentBag();
+		Assert.IsNotNull(result);
 
-			Assert.IsNotNull(result);
+		Assert.IsTrue(result.FastCount() == 2500);
+	}
 
-			Assert.IsTrue(result.FastCount() == 2500);
-		}
+	[TestMethod]
+	public void ToReadOnlyTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToReadOnlyList();
 
-		[TestMethod]
-		public void ToFastSortedListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		Assert.IsTrue(people.FastCount() == 2500);
+	}
 
-			var result = people.ToFastSortedList();
+	[TestMethod]
+	public void AsSpanTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
 
-			Assert.IsNotNull(result);
+		var result = people.AsSpan();
 
-			Assert.IsTrue(result.FastCount() == 2500);
-		}
-
-		[TestMethod]
-		public void ToImmutableArrayTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-
-			var result = people.ToImmutableArray();
-
-			Assert.IsNotNull(result);
-
-			Assert.IsTrue(result.FastCount() == 2500);
-		}
-
-		[TestMethod]
-		public void ToObservableListTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-
-			var result = people.ToObservableList();
-
-			Assert.IsNotNull(result);
-
-			Assert.IsTrue(result.FastCount() == 2500);
-		}
-
-		[TestMethod]
-		public void ToReadOnlyTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToReadOnlyList();
-
-			Assert.IsTrue(people.FastCount() == 2500);
-		}
-
-		[TestMethod]
-		public void AsSpanTest()
-		{
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
-
-			var result = people.AsSpan();
-
-			Assert.IsTrue(result.IsEmpty is false);
-		}
+		Assert.IsTrue(result.IsEmpty is false);
 	}
 }

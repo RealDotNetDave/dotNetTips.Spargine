@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -150,7 +150,7 @@ public static class ArrayExtensions
 	{
 		source = source ?? Enumerable.Empty<T>();
 
-		if (!items.Any())
+		if (items is null || !items.Any())
 		{
 			return source;
 		}
@@ -219,7 +219,7 @@ public static class ArrayExtensions
 	}
 
 	/// <summary>
-	/// Returns a <see cref="string" /> that represents this instance. Uses <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Returns a <see cref="string" /> that represents this instance. Uses <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="array" /> is not null.
 	/// </summary>
 	/// <param name="array">The bytes.</param>
@@ -251,7 +251,7 @@ public static class ArrayExtensions
 	}
 
 	/// <summary>
-	/// Converts byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="array" /> is not null.
 	/// </summary>
 	/// <param name="array">The array.</param>

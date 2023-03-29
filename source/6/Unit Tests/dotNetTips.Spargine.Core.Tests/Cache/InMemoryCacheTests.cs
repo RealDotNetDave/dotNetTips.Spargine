@@ -4,7 +4,7 @@
 // Created          : 12-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-26-2022
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="InMemoryCacheTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -18,43 +18,42 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Core.Tests.Cache
+namespace DotNetTips.Spargine.Core.Tests.Cache;
+
+[TestClass]
+public class InMemoryCacheTests
 {
-	[TestClass]
-	public class InMemoryCacheTests
+	[TestMethod]
+	public void CreateInstanceTest()
 	{
-		[TestMethod]
-		public void CreateInstanceTest()
-		{
-			var result = InMemoryCache.Instance;
+		var result = InMemoryCache.Instance;
 
-			Assert.IsNotNull(result);
-		}
+		Assert.IsNotNull(result);
+	}
 
-		[TestMethod]
-		public void CountTest()
-		{
-			var result = InMemoryCache.Instance;
+	[TestMethod]
+	public void CountTest()
+	{
+		var result = InMemoryCache.Instance;
 
-			var person = RandomData.GenerateRefPerson<PersonProper>();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			result.AddCacheItem(person.Id, person);
+		result.AddCacheItem(person.Id, person);
 
-			Assert.IsTrue(result.Cache.Count == 1);
-		}
+		Assert.IsTrue(result.Cache.Count == 1);
+	}
 
-		[TestMethod]
-		public void GetCashedItemTest()
-		{
-			var result = InMemoryCache.Instance;
+	[TestMethod]
+	public void GetCashedItemTest()
+	{
+		var result = InMemoryCache.Instance;
 
-			var person = RandomData.GenerateRefPerson<PersonProper>();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-			result.AddCacheItem(person.Id, person);
+		result.AddCacheItem(person.Id, person);
 
-			var item = result.GetCacheItem<PersonProper>(person.Id);
+		var item = result.GetCacheItem<PersonProper>(person.Id);
 
-			Assert.IsNotNull(item);
-		}
+		Assert.IsNotNull(item);
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -53,7 +53,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// </summary>
 	/// <param name="item">The item.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	private bool ItemNotInCollection(T item)
+	private bool IsNotInCollection(T item)
 	{
 		return item is null && this.Contains(item) is false;
 	}
@@ -70,7 +70,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 			ExceptionThrower.ThrowArgumentNullException(nameof(item));
 		}
 
-		if (this.ItemNotInCollection(item))
+		if (this.IsNotInCollection(item))
 		{
 			base.Add(item, cancellationToken);
 		}
@@ -93,7 +93,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// <returns>T.</returns>
 	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
 	/// to remove from memory.</remarks>
-	public T Clone() => (T)this.MemberwiseClone();
+	T ICloneable<T>.Clone() => (T)this.MemberwiseClone();
 
 	/// <summary>
 	/// Determines whether the collection contains a specific value.
@@ -113,7 +113,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 	/// <exception cref="NotImplementedException"></exception>
 	public bool Remove(T item)
 	{
-		throw new NotImplementedException();
+		return base.TryTake(out _);
 	}
 
 	/// <summary>
@@ -146,7 +146,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 			ExceptionThrower.ThrowArgumentNullException(nameof(item));
 		}
 
-		return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout);
+		return this.IsNotInCollection(item) && base.TryAdd(item, millisecondsTimeout);
 	}
 
 	/// <summary>
@@ -163,7 +163,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 			ExceptionThrower.ThrowArgumentNullException(nameof(item));
 		}
 
-		return this.ItemNotInCollection(item) && base.TryAdd(item, timeout);
+		return this.IsNotInCollection(item) && base.TryAdd(item, timeout);
 	}
 
 	/// <summary>
@@ -184,7 +184,7 @@ public class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T
 			return false;
 		}
 
-		return this.ItemNotInCollection(item) && base.TryAdd(item, millisecondsTimeout, cancellationToken);
+		return this.IsNotInCollection(item) && base.TryAdd(item, millisecondsTimeout, cancellationToken);
 	}
 
 	/// <summary>

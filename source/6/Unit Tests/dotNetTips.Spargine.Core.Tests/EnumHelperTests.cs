@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-10-2020
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="EnumHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -19,28 +19,27 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace dotNetTips.Spargine.Core.Tests
+namespace dotNetTips.Spargine.Core.Tests;
+
+[ExcludeFromCodeCoverage]
+[TestClass]
+public class EnumHelperTests
 {
-	[ExcludeFromCodeCoverage]
-	[TestClass]
-	public class EnumHelperTests
+
+	[TestMethod]
+	public void AddToPersonCollectionTest()
 	{
+		var result = EnumHelper.GetValues<RequestCacheLevel>(false, false);
+		Assert.IsTrue(result.FastCount() > 0);
 
-		[TestMethod]
-		public void AddToPersonCollectionTest()
-		{
-			var result = EnumHelper.GetValues<RequestCacheLevel>(false, false);
-			Assert.IsTrue(result.FastCount() > 0);
+		result = EnumHelper.GetValues<HttpCacheAgeControl>(true, false);
+		Assert.IsTrue(result.FastCount() > 0);
 
-			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, false);
-			Assert.IsTrue(result.FastCount() > 0);
+		result = EnumHelper.GetValues<HttpCacheAgeControl>(false, true);
+		Assert.IsTrue(result.FastCount() > 0);
 
-			result = EnumHelper.GetValues<HttpCacheAgeControl>(false, true);
-			Assert.IsTrue(result.FastCount() > 0);
-
-			result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
-			Assert.IsTrue(result.FastCount() > 0);
-		}
-
+		result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
+		Assert.IsTrue(result.FastCount() > 0);
 	}
+
 }

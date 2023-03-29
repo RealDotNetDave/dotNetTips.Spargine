@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core.Tests
 // Author           : David McCarter
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-31-2022
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="WebHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,26 +18,25 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace dotNetTips.Spargine.Core.Tests.Web
+namespace dotNetTips.Spargine.Core.Tests.Web;
+
+[ExcludeFromCodeCoverage]
+[TestClass]
+public class WebHelperTests
 {
-	[ExcludeFromCodeCoverage]
-	[TestClass]
-	public class WebHelperTests
+	[TestMethod]
+	public void DownloadStringAsyncTest()
 	{
-		[TestMethod]
-		public void DownloadStringAsyncTest()
-		{
-			var result = WebHelper.DownloadStringAsync(new Uri(@"https://dotnettips.com"), clientId: "UNITTEST1").GetAwaiter().GetResult;
+		var result = WebHelper.DownloadStringAsync(new Uri(@"https://dotnettips.com"), clientId: "UNITTEST1").GetAwaiter().GetResult;
 
-			Assert.IsNotNull(result);
-		}
+		Assert.IsNotNull(result);
+	}
 
-		[TestMethod]
-		public void DownloadStringTest()
-		{
-			var result = WebHelper.DownloadStringAsync(new Uri(@"https://www.google.com/"), clientId: "UNITTEST2").GetAwaiter().GetResult();
+	[TestMethod]
+	public void DownloadStringTest()
+	{
+		var result = WebHelper.DownloadStringAsync(new Uri(@"https://www.google.com/"), clientId: "UNITTEST2").GetAwaiter().GetResult();
 
-			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
-		}
+		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 	}
 }

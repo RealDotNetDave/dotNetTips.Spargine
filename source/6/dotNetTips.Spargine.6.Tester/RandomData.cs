@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-14-2023
+// Last Modified On : 03-24-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -74,14 +74,14 @@ public static class RandomData
 	public const char DefaultMinCharacterRandomFile = 'A';
 
 	/// <summary>
-	/// The domain extensions used to create random Urls.
-	/// </summary>
-	private static readonly Lazy<string[]> _domainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
-
-	/// <summary>
 	/// The countries
 	/// </summary>
 	private static readonly Lazy<Country[]> _countries = new(Countries.GetCountries());
+
+	/// <summary>
+	/// The domain extensions used to create random Urls.
+	/// </summary>
+	private static readonly Lazy<string[]> _domainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
 
 	/// <summary>
 	/// The first names
@@ -97,6 +97,11 @@ public static class RandomData
 	/// The synchronize lock
 	/// </summary>
 	private static readonly object _lock = new();
+
+	/// <summary>
+	/// The postal formats cache
+	/// </summary>
+	private static readonly Dictionary<Country, string[]> _postalFormatsCache = new();
 
 	/// <summary>
 	/// The random number generator
@@ -115,6 +120,151 @@ public static class RandomData
 	static RandomData()
 	{
 		_randomNumberGenerator = RandomNumberGenerator.Create();
+	}
+
+	/// <summary>
+	/// Generates the address record collection.
+	/// </summary>
+	/// <param name="country">The country.</param>
+	/// <param name="state">The state.</param>
+	/// <param name="city">The city.</param>
+	/// <param name="count">The count.</param>
+	/// <param name="addressLength">Length of the address.</param>
+	/// <param name="countyProvinceLength">Length of the county province.</param>
+	/// <returns>Collection&lt;AddressRecord&gt;.</returns>
+	[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "3/14/2023", UnitTestCoverage = 0, Status = Status.New)]
+	private static Collection<AddressRecord> GenerateAddressRecordCollection(Country country, State state, City city, int count = 2, int addressLength = 25, int countyProvinceLength = 20)
+	{
+		count = count.ArgumentInRange(lower: 1, upper: 100, defaultValue: 2);
+
+		var addresses = new List<AddressRecord>(count);
+
+		for (var addressIndex = 0; addressIndex < count; addressIndex++)
+		{
+			AddressRecord address = new(GenerateKey())
+			{
+				Address1 = GenerateWord(addressLength),
+				Address2 = GenerateWord(addressLength),
+				City = city is null ? string.Empty : city.Name,
+				Country = country.Name,
+				CountyProvince = GenerateWord(countyProvinceLength),
+				Phone = GenerateNumber(country.PhoneNumberLength),
+				PostalCode = GeneratePostalCode(country, city),
+				State = state?.Name
+			};
+
+			addresses.Add(address);
+
+			if (state.Cities.HasItems())
+			{
+				city = state.Cities.PickRandom();
+			}
+		}
+
+		addresses.TrimExcess();
+
+		return new Collection<AddressRecord>(addresses);
+	}
+
+	/// <summary>
+	/// Generates the email address with names.
+	/// </summary>
+	/// <param name="firstName">The first name.</param>
+	/// <param name="lastName">The last name.</param>
+	/// <returns>System.String.</returns>
+	private static string GenerateEmailAddressWithNames(string firstName, string lastName)
+	{
+		return $"{firstName.DefaultIfNullOrEmpty("FIRSTNAME")}.{lastName.DefaultIfNullOrEmpty("LASTNAME")}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
+	}
+
+	/// <summary>
+	/// Generates the postal code.
+	/// </summary>
+	/// <param name="country">The country.</param>
+	/// <param name="city">The city.</param>
+	/// <returns>System.String.</returns>
+	private static string GeneratePostalCode(Country country, City city)
+	{
+		if (!_postalFormatsCache.TryGetValue(country, out var postalFormats))
+		{
+			if (string.IsNullOrEmpty(country.PostalFormat))
+			{
+				return string.Empty;
+			}
+
+			postalFormats = country.PostalFormat.Split(Core.ControlChars.Comma);
+			_postalFormatsCache[country] = postalFormats;
+		}
+
+		var format = postalFormats.PickRandom();
+		var builder = _stringBuilderPool.Get();
+
+		try
+		{
+			foreach (var character in format)
+			{
+				_ = character switch
+				{
+					'N' => builder.Append(GenerateNumber(1)),
+					'A' => builder.Append(GenerateCharacter('A', 'Z')),
+					_ => builder.Append(character),
+				};
+			}
+
+			_ = builder.Replace("CC", country.Iso2);
+
+			if (city is not null && format.Contains("CITY", StringComparison.Ordinal))
+			{
+				_ = builder.Replace("CITY", city.Name);
+			}
+
+			return builder.ToString();
+		}
+		finally
+		{
+			_stringBuilderPool.Return(builder);
+		}
+	}
+
+	/// <summary>
+	/// Gets the random data.
+	/// </summary>
+	/// <param name="country">The country.</param>
+	/// <param name="state">The state.</param>
+	/// <param name="city">The city.</param>
+	private static void GetRandomLocationData(out Country country, out State state, out City city)
+	{
+		country = _countries.Value.PickRandom();
+		state = country.States.PickRandom();
+
+		if (state.Cities.HasItems())
+		{
+			city = state.Cities.PickRandom();
+		}
+		else
+		{
+			city = null;
+		}
+	}
+
+	/// <summary>
+	/// Gets the random person data.
+	/// </summary>
+	/// <param name="country">The country.</param>
+	/// <param name="firstName">The first name.</param>
+	/// <param name="lastName">The last name.</param>
+	/// <param name="phone">The phone.</param>
+	/// <param name="cellPhone">The cell phone.</param>
+	/// <param name="emailAddress">The email address.</param>
+	/// <param name="bornOn">The born on.</param>
+	private static void GetRandomPersonData(Country country, out string firstName, out string lastName, out string phone, out string cellPhone, out string emailAddress, out DateTimeOffset bornOn)
+	{
+		firstName = GenerateFirstName();
+		lastName = GenerateLastName();
+		phone = GenerateNumber(country.PhoneNumberLength);
+		cellPhone = GenerateNumber(country.PhoneNumberLength);
+		emailAddress = GenerateEmailAddressWithNames(firstName, lastName);
+		bornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0));
 	}
 
 	/// <summary>
@@ -188,50 +338,6 @@ public static class RandomData
 		GetRandomLocationData(out var country, out var state, out var city);
 
 		return GenerateAddressRecordCollection(country, state, city, count, addressLength, countyProvinceLength);
-	}
-
-	/// <summary>
-	/// Generates the address record collection.
-	/// </summary>
-	/// <param name="country">The country.</param>
-	/// <param name="state">The state.</param>
-	/// <param name="city">The city.</param>
-	/// <param name="count">The count.</param>
-	/// <param name="addressLength">Length of the address.</param>
-	/// <param name="countyProvinceLength">Length of the county province.</param>
-	/// <returns>Collection&lt;AddressRecord&gt;.</returns>
-	[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "3/14/2023", UnitTestCoverage = 0, Status = Status.New)]
-	private static Collection<AddressRecord> GenerateAddressRecordCollection(Country country, State state, City city, int count = 2, int addressLength = 25, int countyProvinceLength = 20)
-	{
-		count = count.ArgumentInRange(lower: 1, upper: 100, defaultValue: 2);
-
-		var addresses = new List<AddressRecord>(count);
-
-		for (var addressIndex = 0; addressIndex < count; addressIndex++)
-		{
-			AddressRecord address = new(GenerateKey())
-			{
-				Address1 = GenerateWord(addressLength),
-				Address2 = GenerateWord(addressLength),
-				City = city is null ? string.Empty : city.Name,
-				Country = country.Name,
-				CountyProvince = GenerateWord(countyProvinceLength),
-				Phone = GenerateNumber(country.PhoneNumberLength),
-				PostalCode = GeneratePostalCode(country, city),
-				State = state?.Name
-			};
-
-			addresses.Add(address);
-
-			if (state.Cities.HasItems())
-			{
-				city = state.Cities.PickRandom();
-			}
-		}
-
-		addresses.TrimExcess();
-
-		return new Collection<AddressRecord>(addresses);
 	}
 
 	/// <summary>
@@ -320,6 +426,16 @@ public static class RandomData
 	}
 
 	/// <summary>
+	/// Generates the credit card.
+	/// </summary>
+	/// <returns>System.String.</returns>
+	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static string GenerateCreditCard()
+	{
+		return RandomCreditCardNumberGenerator.GetCreditCardNumber();
+	}
+
+	/// <summary>
 	/// Generates the credit cards.
 	/// </summary>
 	/// <param name="count">The count.</param>
@@ -330,16 +446,6 @@ public static class RandomData
 		count = count.ArgumentInRange(1);
 
 		return RandomCreditCardNumberGenerator.GetCreditCardNumbers(count).ToImmutableArray();
-	}
-
-	/// <summary>
-	/// Generates the credit card.
-	/// </summary>
-	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static string GenerateCreditCard()
-	{
-		return RandomCreditCardNumberGenerator.GetCreditCardNumber();
 	}
 
 	/// <summary>
@@ -380,17 +486,6 @@ public static class RandomData
 	public static string GenerateEmailAddress()
 	{
 		return $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
-	}
-
-	/// <summary>
-	/// Generates the email address with names.
-	/// </summary>
-	/// <param name="firstName">The first name.</param>
-	/// <param name="lastName">The last name.</param>
-	/// <returns>System.String.</returns>
-	private static string GenerateEmailAddressWithNames(string firstName, string lastName)
-	{
-		return $"{firstName.DefaultIfNullOrEmpty("FIRSTNAME")}.{lastName.DefaultIfNullOrEmpty("LASTNAME")}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
 	}
 
 	/// <summary>
@@ -712,92 +807,6 @@ public static class RandomData
 		return person;
 	}
 
-	private static string GeneratePostalCode(Country country, City city)
-	{
-		var postalCode = string.Empty;
-
-		if (country.PostalFormat.IsNotEmpty())
-		{
-			//Select format
-			var format = country.PostalFormat.Split(',').PickRandom();
-			var ca = format.ToCharArray();
-			var sb = new StringBuilder();
-
-			for (var charCount = 0; charCount < ca.Length; charCount++)
-			{
-				var tempChar = ca[charCount];
-
-				if (tempChar == 'N')
-				{
-					_ = sb.Append(GenerateNumber(1));
-				}
-				else if (tempChar == 'A')
-				{
-					_ = sb.Append(GenerateCharacter('A', 'Z'));
-				}
-				else
-				{
-					_ = sb.Append(tempChar);
-				}
-			}
-
-			//Replace country code
-
-			_ = sb.Replace("CC", country.Iso2);
-
-			//Replace city
-			if (city is not null && format.Contains("CITY", StringComparison.Ordinal))
-			{
-				_ = sb.Replace("CITY", city.Name);
-			}
-
-			postalCode = sb.ToString();
-		}
-
-		return postalCode;
-	}
-
-	/// <summary>
-	/// Gets the random data.
-	/// </summary>
-	/// <param name="country">The country.</param>
-	/// <param name="state">The state.</param>
-	/// <param name="city">The city.</param>
-	private static void GetRandomLocationData(out Country country, out State state, out City city)
-	{
-		country = _countries.Value.PickRandom();
-		state = country.States.PickRandom();
-
-		if (state.Cities.HasItems())
-		{
-			city = state.Cities.PickRandom();
-		}
-		else
-		{
-			city = null;
-		}
-	}
-
-	/// <summary>
-	/// Gets the random person data.
-	/// </summary>
-	/// <param name="country">The country.</param>
-	/// <param name="firstName">The first name.</param>
-	/// <param name="lastName">The last name.</param>
-	/// <param name="phone">The phone.</param>
-	/// <param name="cellPhone">The cell phone.</param>
-	/// <param name="emailAddress">The email address.</param>
-	/// <param name="bornOn">The born on.</param>
-	private static void GetRandomPersonData(Country country, out string firstName, out string lastName, out string phone, out string cellPhone, out string emailAddress, out DateTimeOffset bornOn)
-	{
-		firstName = GenerateFirstName();
-		lastName = GenerateLastName();
-		phone = GenerateNumber(country.PhoneNumberLength);
-		cellPhone = GenerateNumber(country.PhoneNumberLength);
-		emailAddress = GenerateEmailAddressWithNames(firstName, lastName);
-		bornOn = DateTimeOffset.Now.Subtract(new TimeSpan(365 * GenerateInteger(1, 75), 0, 0, 0));
-	}
-
 	/// <summary>
 	/// Creates a random relative url using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
@@ -1070,119 +1079,3 @@ public static class RandomData
 
 	//private static readonly Lazy<ImmutableArray<CityInfo>> _cities = new(LoadCities());
 }
-
-
-///// <summary>
-///// Class City.
-///// </summary>
-//public class CityInfo
-//{
-//	/// <summary>
-//	/// Initializes a new instance of the <see cref="City"/> class.
-//	/// </summary>
-//	/// <param name="city">The city.</param>
-//	/// <param name="cityAscii">The city ASCII.</param>
-//	/// <param name="lat">The lat.</param>
-//	/// <param name="lng">The LNG.</param>
-//	/// <param name="country">The country.</param>
-//	/// <param name="iso2">The iso2.</param>
-//	/// <param name="iso3">The iso3.</param>
-//	/// <param name="adminName">Name of the admin.</param>
-//	/// <param name="population">The population.</param>
-//	/// <param name="id">The identifier.</param>
-//	[JsonConstructor]
-//	public CityInfo(
-//		string city,
-//		string cityAscii,
-//		string lat,
-//		string lng,
-//		string country,
-//		string iso2,
-//		string iso3,
-//		string adminName,
-//		string population,
-//		string id
-//	)
-//	{
-//		this.City = city;
-//		this.CityAscii = cityAscii;
-//		this.Lat = lat;
-//		this.Lng = lng;
-//		this.Country = country;
-//		this.Iso2 = iso2;
-//		this.Iso3 = iso3;
-//		this.AdminName = adminName;
-//		this.Population = population;
-//		this.Id = id;
-//	}
-
-//	/// <summary>
-//	/// Gets the city.
-//	/// </summary>
-//	/// <value>The city.</value>
-//	[JsonPropertyName("city")]
-//	public string City { get; }
-
-//	/// <summary>
-//	/// Gets the city ASCII.
-//	/// </summary>
-//	/// <value>The city ASCII.</value>
-//	[JsonPropertyName("city_ascii")]
-//	public string CityAscii { get; }
-
-//	/// <summary>
-//	/// Gets the lat.
-//	/// </summary>
-//	/// <value>The lat.</value>
-//	[JsonPropertyName("lat")]
-//	public string Lat { get; }
-
-//	/// <summary>
-//	/// Gets the LNG.
-//	/// </summary>
-//	/// <value>The LNG.</value>
-//	[JsonPropertyName("lng")]
-//	public string Lng { get; }
-
-//	/// <summary>
-//	/// Gets the country.
-//	/// </summary>
-//	/// <value>The country.</value>
-//	[JsonPropertyName("country")]
-//	public string Country { get; }
-
-//	/// <summary>
-//	/// Gets the iso2.
-//	/// </summary>
-//	/// <value>The iso2.</value>
-//	[JsonPropertyName("iso2")]
-//	public string Iso2 { get; }
-
-//	/// <summary>
-//	/// Gets the iso3.
-//	/// </summary>
-//	/// <value>The iso3.</value>
-//	[JsonPropertyName("iso3")]
-//	public string Iso3 { get; }
-
-//	/// <summary>
-//	/// Gets the name of the admin.
-//	/// </summary>
-//	/// <value>The name of the admin.</value>
-//	[JsonPropertyName("admin_name")]
-//	public string AdminName { get; }
-
-//	/// <summary>
-//	/// Gets the population.
-//	/// </summary>
-//	/// <value>The population.</value>
-//	[JsonPropertyName("population")]
-//	public string Population { get; }
-
-//	/// <summary>
-//	/// Gets the identifier.
-//	/// </summary>
-//	/// <value>The identifier.</value>
-//	[JsonPropertyName("id")]
-//	public string Id { get; }
-//}

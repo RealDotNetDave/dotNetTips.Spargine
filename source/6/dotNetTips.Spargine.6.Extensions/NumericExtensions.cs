@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-06-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -54,7 +54,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static long Average(this Int64 a, Int64 b)
+	public static long Average(this long a, long b)
 	{
 		return (a + b) / 2;
 	}
@@ -67,7 +67,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static int Average(this Int32 a, Int32 b)
+	public static int Average(this int a, int b)
 	{
 		return (a + b) / 2;
 	}

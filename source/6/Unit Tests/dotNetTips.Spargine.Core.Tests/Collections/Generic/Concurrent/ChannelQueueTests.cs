@@ -4,7 +4,7 @@
 // Created          : 07-26-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="ChannelQueueTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,192 +26,191 @@ using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent
+namespace DotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent;
+
+[ExcludeFromCodeCoverage]
+[TestClass]
+public class ChannelQueueTests
 {
-	[ExcludeFromCodeCoverage]
-	[TestClass]
-	public class ChannelQueueTests
+	[TestMethod]
+	public async Task WriteAsyncTest01()
 	{
-		[TestMethod]
-		public async Task WriteAsyncTest01()
-		{
-			var channel = new ChannelQueue<PersonProper>();
-			var person = RandomData.GenerateRefPerson<PersonProper>();
-			var token = CancellationToken.None;
+		var channel = new ChannelQueue<PersonProper>();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
+		var token = CancellationToken.None;
 
+		await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
+
+		Assert.IsTrue(channel.Count == 1);
+	}
+
+	[TestMethod]
+	public async Task WriteAsyncTest02()
+	{
+		var channel = new ChannelQueue<PersonProper>();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
+		var token = CancellationToken.None;
+
+		_ = channel.Lock();
+
+		try
+		{
 			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-
-			Assert.IsTrue(channel.Count == 1);
 		}
-
-		[TestMethod]
-		public async Task WriteAsyncTest02()
+		catch (ChannelClosedException ex)
 		{
-			var channel = new ChannelQueue<PersonProper>();
-			var person = RandomData.GenerateRefPerson<PersonProper>();
-			var token = CancellationToken.None;
+			Trace.WriteLine(ex);
 
-			_ = channel.Lock();
-
-			try
-			{
-				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-			}
-			catch (ChannelClosedException ex)
-			{
-				Trace.WriteLine(ex);
-
-				Assert.IsTrue(true);
-			}
-			catch
-			{
-				Assert.Fail();
-			}
+			Assert.IsTrue(true);
 		}
-
-		[TestMethod]
-		public async Task WriteAsyncTest03()
+		catch
 		{
-			var channel = new ChannelQueue<PersonProper>();
-			const int Count = 100;
-
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-			var token = CancellationToken.None;
-
-			await channel.WriteAsync(people, lockQueue: true, cancellationToken: token).ConfigureAwait(false);
-
-			Assert.IsTrue(channel.Count == Count);
-
+			Assert.Fail();
 		}
+	}
 
-		[TestMethod]
-		public void WriteListenTest01()
+	[TestMethod]
+	public async Task WriteAsyncTest03()
+	{
+		var channel = new ChannelQueue<PersonProper>();
+		const int Count = 100;
+
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+		var token = CancellationToken.None;
+
+		await channel.WriteAsync(people, lockQueue: true, cancellationToken: token).ConfigureAwait(false);
+
+		Assert.IsTrue(channel.Count == Count);
+
+	}
+
+	[TestMethod]
+	public void WriteListenTest01()
+	{
+		const int Capacity = 100;
+		var channel = new ChannelQueue<PersonProper>();
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Capacity);
+		var token = CancellationToken.None;
+
+		var tasks = new List<Task>();
+
+		tasks.Add(AddToQueueAsync(channel, people.ToList(), token));
+
+		tasks.Add(ListenToQueue(channel, token));
+
+		Task.WaitAll(tasks.ToArray());
+
+		Assert.IsTrue(channel.Count == 0);
+	}
+
+	[TestMethod]
+	public async Task WriteReadAsyncTest01()
+	{
+		var channel = new ChannelQueue<PersonProper>();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
+		var token = CancellationToken.None;
+
+		await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
+
+		Assert.IsTrue(channel.Count == 1);
+
+		_ = await channel.ReadAsync(token).ConfigureAwait(false);
+
+		Assert.IsTrue(channel.Count == 0);
+	}
+
+	[TestMethod]
+	public async Task WriteReadAsyncTest02()
+	{
+		var channel = new ChannelQueue<PersonProper>();
+		const int Count = 100;
+
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+		var token = CancellationToken.None;
+
+		/// Write
+		foreach (var person in people)
 		{
-			const int Capacity = 100;
-			var channel = new ChannelQueue<PersonProper>();
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Capacity);
-			var token = CancellationToken.None;
-
-			var tasks = new List<Task>();
-
-			tasks.Add(AddToQueueAsync(channel, people.ToList(), token));
-
-			tasks.Add(ListenToQueue(channel, token));
-
-			Task.WaitAll(tasks.ToArray());
-
-			Assert.IsTrue(channel.Count == 0);
-		}
-
-		[TestMethod]
-		public async Task WriteReadAsyncTest01()
-		{
-			var channel = new ChannelQueue<PersonProper>();
-			var person = RandomData.GenerateRefPerson<PersonProper>();
-			var token = CancellationToken.None;
-
 			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
+		}
 
-			Assert.IsTrue(channel.Count == 1);
+		Assert.IsTrue(channel.Count == Count);
 
+		/// Read
+		do
+		{
 			_ = await channel.ReadAsync(token).ConfigureAwait(false);
 
-			Assert.IsTrue(channel.Count == 0);
+		} while (channel.Count > 0);
+
+		Assert.IsTrue(channel.Count == 0);
+	}
+
+	[TestMethod]
+	public async Task WriteReadAsyncTest03()
+	{
+		var channel = new ChannelQueue<PersonProper>();
+		const int Count = 5;
+
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+		var token = CancellationToken.None;
+
+		foreach (var person in people)
+		{
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 		}
 
-		[TestMethod]
-		public async Task WriteReadAsyncTest02()
+		Assert.IsTrue(channel.Count == Count);
+
+		_ = channel.Lock();
+
+		await foreach (var item in channel.ListenAsync(token))
 		{
-			var channel = new ChannelQueue<PersonProper>();
-			const int Count = 100;
-
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-			var token = CancellationToken.None;
-
-			/// Write
-			foreach (var person in people)
-			{
-				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-			}
-
-			Assert.IsTrue(channel.Count == Count);
-
-			/// Read
-			do
-			{
-				_ = await channel.ReadAsync(token).ConfigureAwait(false);
-
-			} while (channel.Count > 0);
-
-			Assert.IsTrue(channel.Count == 0);
+			Trace.WriteLine(item.Email);
 		}
 
-		[TestMethod]
-		public async Task WriteReadAsyncTest03()
+		Assert.IsTrue(channel.Count == 0);
+	}
+
+	[TestMethod]
+	public async Task WriteReadAsyncTest04()
+	{
+		const int Capacity = 100;
+		var channel = new ChannelQueue<PersonProper>(Capacity);
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Capacity);
+		var token = CancellationToken.None;
+
+		foreach (var person in people)
 		{
-			var channel = new ChannelQueue<PersonProper>();
-			const int Count = 5;
-
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-			var token = CancellationToken.None;
-
-			foreach (var person in people)
-			{
-				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-			}
-
-			Assert.IsTrue(channel.Count == Count);
-
-			_ = channel.Lock();
-
-			await foreach (var item in channel.ListenAsync(token))
-			{
-				Trace.WriteLine(item.Email);
-			}
-
-			Assert.IsTrue(channel.Count == 0);
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 		}
 
-		[TestMethod]
-		public async Task WriteReadAsyncTest04()
+		Assert.IsTrue(channel.Count == Capacity);
+
+		do
 		{
-			const int Capacity = 100;
-			var channel = new ChannelQueue<PersonProper>(Capacity);
-			var people = RandomData.GeneratePersonRefCollection<PersonProper>(Capacity);
-			var token = CancellationToken.None;
+			_ = await channel.ReadAsync(token).ConfigureAwait(false);
 
-			foreach (var person in people)
-			{
-				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-			}
+		} while (channel.Count != 0);
 
-			Assert.IsTrue(channel.Count == Capacity);
+		Assert.IsTrue(channel.Count == 0);
+	}
 
-			do
-			{
-				_ = await channel.ReadAsync(token).ConfigureAwait(false);
-
-			} while (channel.Count != 0);
-
-			Assert.IsTrue(channel.Count == 0);
+	private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
+	{
+		foreach (var person in people)
+		{
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
 		}
 
-		private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
-		{
-			foreach (var person in people)
-			{
-				await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-			}
+		_ = channel.Lock();
+	}
 
-			_ = channel.Lock();
-		}
-
-		private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
+	private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
+	{
+		await foreach (var item in channel.ListenAsync(token))
 		{
-			await foreach (var item in channel.ListenAsync(token))
-			{
-				Debug.WriteLine(item.Email);
-			}
+			Debug.WriteLine(item.Email);
 		}
 	}
 }

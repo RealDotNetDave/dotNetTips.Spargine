@@ -26,3 +26,4 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.Country.States")]
 [assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.Country.Timezones")]
 [assembly: SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Data.State.Cities")]
+[assembly: SuppressMessage("Design", "CA1062:Validate arguments of public methods", Justification = "<Pending>", Scope = "member", Target = "~P:DotNetTips.Spargine.Tester.Models.RefTypes.AddressRecord.Address2")]

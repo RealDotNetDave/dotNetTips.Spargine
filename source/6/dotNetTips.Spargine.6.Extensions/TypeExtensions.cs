@@ -36,7 +36,7 @@ public static partial class TypeExtensions
 	[Information(nameof(GetTypeOfType), UnitTestCoverage = 100, Status = Status.Available)]
 	public static TypeOfType GetTypeOfType(this object obj)
 	{
-		var objType = obj.GetType();
+		var objType = obj?.GetType();
 
 		if (objType.IsValueType)
 		{

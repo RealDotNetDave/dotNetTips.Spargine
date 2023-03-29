@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Extensions.Tests
 // Author           : David McCarter
 // Created          : 08-12-2021
@@ -14,17 +14,16 @@
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions.Tests
+namespace DotNetTips.Spargine.Extensions.Tests;
+
+/// <summary>
+/// Class Foo.
+/// </summary>
+internal class Foo
 {
 	/// <summary>
-	/// Class Foo.
+	/// Gets or sets the bar.
 	/// </summary>
-	internal class Foo
-	{
-		/// <summary>
-		/// Gets or sets the bar.
-		/// </summary>
-		/// <value>The bar.</value>
-		public int? Bar { get; set; }
-	}
+	/// <value>The bar.</value>
+	public int? Bar { get; set; }
 }

@@ -4,7 +4,7 @@
 // Created          : 04-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-27-2021
+// Last Modified On : 03-24-2023
 // ***********************************************************************
 // <copyright file="NativeMethods.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System.Runtime.InteropServices;
+using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -30,7 +31,7 @@ internal static class NativeMethods
 	/// <param name="dwFlags">The dw flags.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	[return: MarshalAs(UnmanagedType.Bool)]
-	[DllImport("kernel32", CharSet = CharSet.Unicode, SetLastError = true)]
+	[DllImport(ApiLibraries.Kernel32, CharSet = CharSet.Unicode, SetLastError = true)]
 	[DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
 	internal static extern bool MoveFileEx(string lpExistingFileName, string lpNewFileName, int dwFlags);
 }

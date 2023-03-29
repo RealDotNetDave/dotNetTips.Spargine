@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,371 +18,370 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace DotNetTips.Spargine.Extensions.Tests
+namespace DotNetTips.Spargine.Extensions.Tests;
+
+[ExcludeFromCodeCoverage]
+[TestClass]
+public class DateTimeExtensionsTests : TestClass
 {
-	[ExcludeFromCodeCoverage]
-	[TestClass]
-	public class DateTimeExtensionsTests : TestClass
+
+	[TestMethod]
+	public void DateTimeIntersectsTest()
 	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeIntersectsTest()
-		{
-			var now = DateTime.Now;
+		var result = now.Intersects(endDate: now.AddDays(100), intersectingStartDate: now.AddDays(1), intersectingEndDate: now.AddDays(10));
 
-			var result = now.Intersects(endDate: now.AddDays(100), intersectingStartDate: now.AddDays(1), intersectingEndDate: now.AddDays(10));
+		//PrintResult(result, nameof(this.DateTimeIntersectsTest));
 
-			//PrintResult(result, nameof(this.DateTimeIntersectsTest));
+		Assert.IsTrue(result);
+	}
 
-			Assert.IsTrue(result);
-		}
+	[TestMethod]
+	public void DateTimeIsInRangeTest()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeIsInRangeTest()
-		{
-			var now = DateTime.Now;
+		var result = now.IsInRange(beginningTime: new DateTime(1970), endTime: now.AddDays(10));
 
-			var result = now.IsInRange(beginningTime: new DateTime(1970), endTime: now.AddDays(10));
+		//PrintResult(result, nameof(this.DateTimeIsInRangeTest));
 
-			//PrintResult(result, nameof(this.DateTimeIsInRangeTest));
+		Assert.IsTrue(result);
+	}
 
-			Assert.IsTrue(result);
-		}
+	[TestMethod]
+	public void DateTimeLocalTimeFromUtcTest()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeLocalTimeFromUtcTest()
-		{
-			var now = DateTime.Now;
+		var result = now.LocalTimeFromUtc(timezoneFromUtc: -5);
 
-			var result = now.LocalTimeFromUtc(timezoneFromUtc: -5);
+		//PrintResult(result, nameof(this.DateTimeLocalTimeFromUtcTest));
 
-			//PrintResult(result, nameof(this.DateTimeLocalTimeFromUtcTest));
+		Assert.IsTrue(result >= now);
+	}
 
-			Assert.IsTrue(result >= now);
-		}
+	[TestMethod]
+	public void DateTimeMaxTest()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeMaxTest()
-		{
-			var now = DateTime.Now;
+		var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
 
-			var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
+		//PrintResult(result, nameof(this.DateTimeMaxTest));
 
-			//PrintResult(result, nameof(this.DateTimeMaxTest));
+		Assert.IsTrue(result == now);
+	}
 
-			Assert.IsTrue(result == now);
-		}
+	[TestMethod]
+	public void DateTimeNextDayOfTheWeekTest()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeNextDayOfTheWeekTest()
-		{
-			var now = DateTime.Now;
+		var result = now.NextDayOfWeek(DayOfWeek.Sunday);
 
-			var result = now.NextDayOfWeek(DayOfWeek.Sunday);
+		//PrintResult(result, nameof(this.DateTimeNextDayOfTheWeekTest));
 
-			//PrintResult(result, nameof(this.DateTimeNextDayOfTheWeekTest));
+		Assert.IsTrue(result >= now);
+	}
 
-			Assert.IsTrue(result >= now);
-		}
+	[TestMethod]
+	public void DateTimeOffsetGetLastDayOfWeekTest()
+	{
+		var result = DateTimeOffset.Now.GetLastDayOfWeek(DayOfWeek.Monday);
 
-		[TestMethod]
-		public void DateTimeOffsetGetLastDayOfWeekTest()
-		{
-			var result = DateTimeOffset.Now.GetLastDayOfWeek(DayOfWeek.Monday);
+		//PrintResult(result, nameof(this.DateTimeOffsetGetLastDayOfWeekTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetGetLastDayOfWeekTest));
+		Assert.IsTrue(result <= DateTime.Now);
+	}
 
-			Assert.IsTrue(result <= DateTime.Now);
-		}
+	[TestMethod]
+	public void DateTimeOffsetGetNextDayOfWeekTest()
+	{
+		var result = DateTimeOffset.Now.GetNextDayOfWeek(DayOfWeek.Monday);
 
-		[TestMethod]
-		public void DateTimeOffsetGetNextDayOfWeekTest()
-		{
-			var result = DateTimeOffset.Now.GetNextDayOfWeek(DayOfWeek.Monday);
+		//PrintResult(result, nameof(this.DateTimeOffsetGetNextDayOfWeekTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetGetNextDayOfWeekTest));
+		Assert.IsTrue(result >= DateTime.Now);
+	}
 
-			Assert.IsTrue(result >= DateTime.Now);
-		}
+	[TestMethod]
+	public void DateTimeOffsetIntersectsTest()
+	{
+		var now = DateTimeOffset.Now;
 
-		[TestMethod]
-		public void DateTimeOffsetIntersectsTest()
-		{
-			var now = DateTimeOffset.Now;
+		var result = now.Intersects(now.AddDays(100), now.AddDays(1), now.AddDays(10));
 
-			var result = now.Intersects(now.AddDays(100), now.AddDays(1), now.AddDays(10));
+		//PrintResult(result, nameof(this.DateTimeOffsetIntersectsTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetIntersectsTest));
+		Assert.IsTrue(result);
+	}
 
-			Assert.IsTrue(result);
-		}
+	[TestMethod]
+	public void DateTimeOffsetIsInRangeTest()
+	{
+		var now = DateTimeOffset.Now;
 
-		[TestMethod]
-		public void DateTimeOffsetIsInRangeTest()
-		{
-			var now = DateTimeOffset.Now;
+		var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(10));
 
-			var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(10));
+		//PrintResult(result, nameof(this.DateTimeOffsetIsInRangeTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetIsInRangeTest));
+		Assert.IsTrue(result);
+	}
 
-			Assert.IsTrue(result);
-		}
+	[TestMethod]
+	public void DateTimeOffsetMaxTest()
+	{
+		var now = DateTimeOffset.Now;
 
-		[TestMethod]
-		public void DateTimeOffsetMaxTest()
-		{
-			var now = DateTimeOffset.Now;
+		var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
 
-			var result = now.Max(now.Subtract(new TimeSpan(1, 0, 0, 0)));
+		//PrintResult(result, nameof(this.DateTimeOffsetMaxTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetMaxTest));
+		Assert.IsTrue(result == now);
+	}
 
-			Assert.IsTrue(result == now);
-		}
+	[TestMethod]
+	public void DateTimeOffsetNextDayOfTheWeekTest()
+	{
+		var now = DateTimeOffset.Now;
 
-		[TestMethod]
-		public void DateTimeOffsetNextDayOfTheWeekTest()
-		{
-			var now = DateTimeOffset.Now;
+		var result = now.NextDayOfWeek(DayOfWeek.Sunday);
 
-			var result = now.NextDayOfWeek(DayOfWeek.Sunday);
+		//PrintResult(result, nameof(this.DateTimeOffsetNextDayOfTheWeekTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetNextDayOfTheWeekTest));
+		Assert.IsTrue(result >= now);
+	}
 
-			Assert.IsTrue(result >= now);
-		}
+	[TestMethod]
+	public void DateTimeOffsetToFriendlyStringTest()
+	{
+		var result = DateTimeOffset.Now.ToFriendlyDateString();
 
-		[TestMethod]
-		public void DateTimeOffsetToFriendlyStringTest()
-		{
-			var result = DateTimeOffset.Now.ToFriendlyDateString();
+		//PrintResult(result, nameof(this.DateTimeOffsetToFriendlyStringTest));
 
-			//PrintResult(result, nameof(this.DateTimeOffsetToFriendlyStringTest));
+		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
+	}
 
-			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
-		}
+	[TestMethod]
+	public void DateTimeToFormattedStringTest()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void DateTimeToFormattedStringTest()
-		{
-			var now = DateTime.Now;
+		var result = now.ToFormattedString(DateTimeFormat.FullDateLongTime);
 
-			var result = now.ToFormattedString(DateTimeFormat.FullDateLongTime);
+		//PrintResult(result, nameof(DateTimeFormat.FullDateLongTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.FullDateLongTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.FullDateShortTime);
 
-			result = now.ToFormattedString(DateTimeFormat.FullDateShortTime);
+		//PrintResult(result, nameof(DateTimeFormat.FullDateShortTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.FullDateShortTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.FullDateTime);
 
-			result = now.ToFormattedString(DateTimeFormat.FullDateTime);
+		//PrintResult(result, nameof(DateTimeFormat.FullDateTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.FullDateTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.GeneralDateLongTime);
 
-			result = now.ToFormattedString(DateTimeFormat.GeneralDateLongTime);
+		//PrintResult(result, nameof(DateTimeFormat.GeneralDateLongTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.GeneralDateLongTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.GeneralDateShortTime);
 
-			result = now.ToFormattedString(DateTimeFormat.GeneralDateShortTime);
+		//PrintResult(result, nameof(DateTimeFormat.GeneralDateShortTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.GeneralDateShortTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.Jan01Comma2020);
 
-			result = now.ToFormattedString(DateTimeFormat.Jan01Comma2020);
+		//PrintResult(result, nameof(DateTimeFormat.Jan01Comma2020));
 
-			//PrintResult(result, nameof(DateTimeFormat.Jan01Comma2020));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.Janurary01Comma2020);
 
-			result = now.ToFormattedString(DateTimeFormat.Janurary01Comma2020);
+		//PrintResult(result, nameof(DateTimeFormat.Janurary01Comma2020));
 
-			//PrintResult(result, nameof(DateTimeFormat.Janurary01Comma2020));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.LongDate);
 
-			result = now.ToFormattedString(DateTimeFormat.LongDate);
+		//PrintResult(result, nameof(DateTimeFormat.LongDate));
 
-			//PrintResult(result, nameof(DateTimeFormat.LongDate));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.LongTime);
 
-			result = now.ToFormattedString(DateTimeFormat.LongTime);
+		//PrintResult(result, nameof(DateTimeFormat.LongTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.LongTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.MonthDay);
 
-			result = now.ToFormattedString(DateTimeFormat.MonthDay);
+		//PrintResult(result, nameof(DateTimeFormat.MonthDay));
 
-			//PrintResult(result, nameof(DateTimeFormat.MonthDay));
+		Assert.IsTrue(result.Length > 4);
 
-			Assert.IsTrue(result.Length > 4);
+		result = now.ToFormattedString(DateTimeFormat.RFC1123);
 
-			result = now.ToFormattedString(DateTimeFormat.RFC1123);
+		//PrintResult(result, nameof(DateTimeFormat.RFC1123));
 
-			//PrintResult(result, nameof(DateTimeFormat.RFC1123));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.RoundTripDateTime);
 
-			result = now.ToFormattedString(DateTimeFormat.RoundTripDateTime);
+		//PrintResult(result, nameof(DateTimeFormat.RoundTripDateTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.RoundTripDateTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.ShortDate);
 
-			result = now.ToFormattedString(DateTimeFormat.ShortDate);
+		//PrintResult(result, nameof(DateTimeFormat.ShortDate));
 
-			//PrintResult(result, nameof(DateTimeFormat.ShortDate));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.ShortTime);
 
-			result = now.ToFormattedString(DateTimeFormat.ShortTime);
+		//PrintResult(result, nameof(DateTimeFormat.ShortTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.ShortTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.SortableDateTime);
 
-			result = now.ToFormattedString(DateTimeFormat.SortableDateTime);
+		//PrintResult(result, nameof(DateTimeFormat.SortableDateTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.SortableDateTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.UniversalFullDateTime);
 
-			result = now.ToFormattedString(DateTimeFormat.UniversalFullDateTime);
+		//PrintResult(result, nameof(DateTimeFormat.UniversalFullDateTime));
 
-			//PrintResult(result, nameof(DateTimeFormat.UniversalFullDateTime));
+		Assert.IsTrue(result.Length > 5);
 
-			Assert.IsTrue(result.Length > 5);
+		result = now.ToFormattedString(DateTimeFormat.MonthYear);
 
-			result = now.ToFormattedString(DateTimeFormat.MonthYear);
+		//PrintResult(result, nameof(DateTimeFormat.MonthYear));
 
-			//PrintResult(result, nameof(DateTimeFormat.MonthYear));
+		Assert.IsTrue(result.Length > 5);
+	}
 
-			Assert.IsTrue(result.Length > 5);
-		}
+	[TestMethod]
+	public void DateTimeToFriendlyStringTest()
+	{
+		var result = DateTime.Now.ToFriendlyDateString();
 
-		[TestMethod]
-		public void DateTimeToFriendlyStringTest()
-		{
-			var result = DateTime.Now.ToFriendlyDateString();
+		//PrintResult(result, nameof(this.DateTimeToFriendlyStringTest));
 
-			//PrintResult(result, nameof(this.DateTimeToFriendlyStringTest));
+		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
+	}
+	[TestMethod]
+	public void GetLastDayOfWeekTest()
+	{
+		var dateTime = DateTimeOffset.Parse("1/1/2020");
 
-			Assert.IsTrue(string.IsNullOrEmpty(result) is false);
-		}
-		[TestMethod]
-		public void GetLastDayOfWeekTest()
-		{
-			var dateTime = DateTimeOffset.Parse("1/1/2020");
+		var result = dateTime.GetLastDayOfWeek(DayOfWeek.Sunday);
 
-			var result = dateTime.GetLastDayOfWeek(DayOfWeek.Sunday);
+		Assert.IsTrue(result.DayOfWeek == DayOfWeek.Sunday);
+	}
 
-			Assert.IsTrue(result.DayOfWeek == DayOfWeek.Sunday);
-		}
+	[TestMethod]
+	public void GetNextDayOfWeekTest()
+	{
+		var dateTime = DateTimeOffset.Parse("1/1/2020");
 
-		[TestMethod]
-		public void GetNextDayOfWeekTest()
-		{
-			var dateTime = DateTimeOffset.Parse("1/1/2020");
+		var result = dateTime.GetLastDayOfWeek(DayOfWeek.Tuesday);
 
-			var result = dateTime.GetLastDayOfWeek(DayOfWeek.Tuesday);
+		Assert.IsTrue(result.DayOfWeek == DayOfWeek.Tuesday);
+	}
 
-			Assert.IsTrue(result.DayOfWeek == DayOfWeek.Tuesday);
-		}
+	[TestMethod]
+	public void IsInRangeThrowsExceptionTestDateTime()
+	{
+		var now = DateTime.Now;
 
-		[TestMethod]
-		public void IsInRangeThrowsExceptionTestDateTime()
-		{
-			var now = DateTime.Now;
+		var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(1), "TEST");
 
-			var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(1), "TEST");
+		Assert.IsTrue(result1);
 
-			Assert.IsTrue(result1);
+		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
+	}
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
-		}
+	[TestMethod]
+	public void IsInRangeThrowsExceptionTestDateTimeOffset()
+	{
+		var now = DateTimeOffset.Now;
 
-		[TestMethod]
-		public void IsInRangeThrowsExceptionTestDateTimeOffset()
-		{
-			var now = DateTimeOffset.Now;
+		var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(1), "TEST");
 
-			var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.AddDays(1), "TEST");
+		Assert.IsTrue(result1);
 
-			Assert.IsTrue(result1);
+		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
+	}
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
-		}
+	[TestMethod]
+	public void IsInRangeThrowsExceptionTestTimeSpan()
+	{
+		var now = TimeSpan.FromDays(5);
 
-		[TestMethod]
-		public void IsInRangeThrowsExceptionTestTimeSpan()
-		{
-			var now = TimeSpan.FromDays(5);
+		var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.Add(TimeSpan.FromDays(10)), "TEST");
 
-			var result1 = now.IsInRangeThrowsException(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.Add(TimeSpan.FromDays(10)), "TEST");
+		Assert.IsTrue(result1);
 
-			Assert.IsTrue(result1);
+		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.Add(new TimeSpan(10, 0, 0, 0)), new TimeSpan(20, 0, 0, 0), "TEST"));
+	}
 
-			_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.Add(new TimeSpan(10, 0, 0, 0)), new TimeSpan(20, 0, 0, 0), "TEST"));
-		}
+	[TestMethod]
+	public void TimeSpanIsInRangeTest()
+	{
+		var now = new TimeSpan(3, 0, 0, 0);
 
-		[TestMethod]
-		public void TimeSpanIsInRangeTest()
-		{
-			var now = new TimeSpan(3, 0, 0, 0);
+		var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.Multiply(10));
 
-			var result = now.IsInRange(now.Subtract(new TimeSpan(1, 0, 0, 0)), now.Multiply(10));
+		//PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
 
-			//PrintResult(result, nameof(this.TimeSpanIsInRangeTest));
+		Assert.IsTrue(result);
+	}
 
-			Assert.IsTrue(result);
-		}
+	[TestMethod]
+	public void ToFromMilliEpochTimeTest()
+	{
+		var currentTime = DateTime.Now;
+		var epochTime = currentTime.ToMilliEpochTime();
 
-		[TestMethod]
-		public void ToFromMilliEpochTimeTest()
-		{
-			var currentTime = DateTime.Now;
-			var epochTime = currentTime.ToMilliEpochTime();
+		//PrintResult(epochTime, nameof(this.ToFromMilliEpochTimeTest));
 
-			//PrintResult(epochTime, nameof(this.ToFromMilliEpochTimeTest));
+		Assert.IsTrue(epochTime > 0);
 
-			Assert.IsTrue(epochTime > 0);
+		// Test reverse
+		var convertedTime = epochTime.FromMilliEpochTime();
 
-			// Test reverse
-			var convertedTime = epochTime.FromMilliEpochTime();
+		Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
 
-			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
+		//PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
+	}
 
-			//PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
-		}
+	[TestMethod]
+	public void ToFromUnixTimeTest()
+	{
+		var currentTime = DateTime.Now;
 
-		[TestMethod]
-		public void ToFromUnixTimeTest()
-		{
-			var currentTime = DateTime.Now;
+		var epochTime = currentTime.ToUnixTime();
 
-			var epochTime = currentTime.ToUnixTime();
+		//PrintResult(epochTime, nameof(this.ToFromUnixTimeTest));
 
-			//PrintResult(epochTime, nameof(this.ToFromUnixTimeTest));
+		Assert.IsTrue(epochTime > 0);
 
-			Assert.IsTrue(epochTime > 0);
+		// Test reverse
+		var convertedTime = epochTime.FromUnixTime();
 
-			// Test reverse
-			var convertedTime = epochTime.FromUnixTime();
+		Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
 
-			Assert.IsTrue(convertedTime >= currentTime.Subtract(new TimeSpan(0, 5, 0)));
-
-			//PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
-		}
+		//PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
 	}
 }

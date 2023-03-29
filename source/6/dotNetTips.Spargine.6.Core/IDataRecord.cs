@@ -20,7 +20,7 @@ using DotNetTips.Spargine.Core.Internal;
 namespace DotNetTips.Spargine.Core;
 
 /// <summary>
-/// Interface for data record classes.
+/// Interface for data record classes to ensure all types have an Id property.
 /// </summary>
 [Information(nameof(IDataRecord), author: "David McCarter", createdOn: "3/4/2021", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 public interface IDataRecord
@@ -36,7 +36,7 @@ public interface IDataRecord
 	public string Id { get; init; }
 
 	/// <summary>
-	/// Alls the properties to string.
+	/// Converts all properties and values to a string.
 	/// </summary>
 	/// <returns>string.</returns>
 	/// <remarks>This method uses reflection.</remarks>

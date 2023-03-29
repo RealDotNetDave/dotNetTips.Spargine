@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="ICloneable.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -13,6 +13,8 @@
 // ***********************************************************************
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+
+using Microsoft.Extensions.Logging;
 
 namespace DotNetTips.Spargine.Core;
 

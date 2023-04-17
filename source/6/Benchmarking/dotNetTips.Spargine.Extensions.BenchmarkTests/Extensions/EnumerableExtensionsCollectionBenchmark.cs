@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 02-02-2023
+// Last Modified On : 04-16-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -16,6 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
@@ -37,6 +38,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
 	private IEnumerable<Coordinate> _coordinateValEnumerable;
 	private IEnumerable<PersonProper> _personRefEnumerable;
+	private IEnumerable<PersonProper> _personRefEnumerableToAdd;
 
 	private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 	{
@@ -54,6 +56,17 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		var people = this._personRefEnumerable;
 
 		var result = people.Add(this.PersonProperRef01);
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.Add))]
+	public void AddDistinct()
+	{
+		var people = this._personRefEnumerable;
+		var peopleToAdd = this._personRefEnumerableToAdd;
+
+		var result = people.AddDistinct(peopleToAdd.ToArray());
 
 		this.Consume(result);
 	}
@@ -80,7 +93,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ContainsAny))]
 	public void ContainsAny()
 	{
-		var people = _personRefEnumerable;
+		var people = this._personRefEnumerable;
 
 		people = people.Add(people.FirstOrDefault());
 
@@ -93,6 +106,14 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	public void Count_Default()
 	{
 		var result = this._personRefEnumerable.Count();
+
+		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.CountAsync))]
+	public async Task CountAsync()
+	{
+		var result = await this._personRefEnumerable.CountAsync(CancellationToken.None).ConfigureAwait(false);
 
 		this.Consume(result);
 	}
@@ -118,7 +139,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.EnsureUnique))]
 	public void EnsureUnique()
 	{
-		var people = _personRefEnumerable;
+		var people = this._personRefEnumerable;
 
 		people = people.Add(people.FirstOrDefault());
 
@@ -171,7 +192,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.FirstOrNull))]
 	public void FirstOrNull()
 	{
-		var result = _coordinateValEnumerable.FirstOrNull(p => p.X == this.Coordinate01.X);
+		var result = this._coordinateValEnumerable.FirstOrNull(p => p.X == this.Coordinate01.X);
 
 		this.Consume(result);
 	}
@@ -226,7 +247,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Join))]
 	public void Join()
 	{
-		var people = _personRefEnumerable;
+		var people = this._personRefEnumerable;
 
 		var result = people.Join();
 
@@ -237,7 +258,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + ": With Sort Expression")]
 	public void OrderBy()
 	{
-		var result = _personRefEnumerable.OrderBy("City desc");
+		var result = this._personRefEnumerable.OrderBy("City desc");
 
 		this.Consume(result);
 	}
@@ -262,6 +283,16 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		}
 	}
 
+	[Benchmark(Description = nameof(EnumerableExtensions.Partition))]
+	public void Partition()
+	{
+		var people = this._personRefEnumerable;
+
+		var splitPeople = people.Partition(this.Count / 2);
+
+		this.Consume(splitPeople);
+	}
+
 	[Benchmark(Description = nameof(EnumerableExtensions.PickRandom))]
 	public void PickRandom()
 	{
@@ -276,6 +307,11 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 
 		this._personRefEnumerable = this.GetPersonProperRefList().AsEnumerable();
 		this._coordinateValEnumerable = this.GetCoordinateValArray().AsEnumerable();
+
+		var peopleToAdd = this._personRefEnumerable.ToList();
+
+		peopleToAdd.AddRange(this.GetPeopleRefToInsert());
+		this._personRefEnumerableToAdd = peopleToAdd.AsEnumerable();
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Shuffle))]
@@ -290,6 +326,16 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	{
 		var result = this._personRefEnumerable.Shuffle(this.Count / 2);
 		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(EnumerableExtensions.Partition))]
+	public void Split()
+	{
+		var people = this._personRefEnumerable;
+
+		var splitPeople = people.Split(this.Count / 2);
+
+		this.Consume(splitPeople);
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.StartsWith))]
@@ -353,7 +399,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.ToListAsync))]
 	public async Task ToListAsync()
 	{
-		var people = _personRefEnumerable;
+		var people = this._personRefEnumerable;
 
 		var result = await people.ToListAsync().ConfigureAwait(false);
 
@@ -363,7 +409,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(EnumerableExtensions.Upsert))]
 	public void Upsert()
 	{
-		var people = _personRefEnumerable;
+		var people = this._personRefEnumerable;
 
 		var result = people.Upsert(this.PersonProperRef01);
 

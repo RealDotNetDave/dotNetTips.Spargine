@@ -131,6 +131,7 @@ public abstract class ServiceProxy<T> : IDisposable where T : ICommunicationObje
 	/// <summary>
 	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 	/// </summary>
+	[Preserve("Part of IDisposable", "4/16/2023", "David McCarter")]
 	public void Dispose()
 	{
 		this.Dispose(true);

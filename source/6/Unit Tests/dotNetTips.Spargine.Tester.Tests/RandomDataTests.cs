@@ -773,23 +773,46 @@ public class RandomDataTests
 	}
 
 	[TestMethod]
-	public void Serialize_JsonSerilizerContext_PersonProper_Collection_Test()
+	public void JsonSerilizerContext_PersonProper_Collection_Test()
 	{
-		var json = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToList();
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToList();
 
-		var result = JsonSerializer.Serialize(json, PersonProperJsonSerializerContext.Default.ListPersonProper);
+		var result = JsonSerializer.Serialize(people, PersonProperJsonSerializerContext.Default.ListPersonProper);
 
 		Assert.IsNotNull(result);
+
+		people = JsonSerializer.Deserialize(result, PersonProperJsonSerializerContext.Default.ListPersonProper);
+
+		Assert.IsNotNull(people);
+		Assert.IsTrue(people.Count == 100);
 	}
 
 	[TestMethod]
-	public void Serialize_JsonSerilizerContext_PersonProper_Ref_Test()
+	public void JsonSerilizerContext_PersonProper_Ref_Test()
 	{
 		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-		var result = JsonSerializer.Serialize(person, typeof(PersonProper), PersonProperJsonSerializerContext.Default);
+		var result = JsonSerializer.Serialize(person, PersonProperJsonSerializerContext.Default.PersonProper);
 
 		Assert.IsNotNull(result);
+
+		person = JsonSerializer.Deserialize<PersonProper>(result, PersonProperJsonSerializerContext.Default.PersonProper);
+
+		Assert.IsNotNull(person);
+	}
+
+	[TestMethod]
+	public void PersonRecord_Serialization_Test()
+	{
+		var person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 2).First();
+
+		var result = JsonSerializer.Serialize(person);
+
+		Assert.IsTrue(string.IsNullOrEmpty(result) == false);
+
+		person = JsonSerializer.Deserialize<PersonRecord>(result);
+
+		Assert.IsNotNull(person);
 	}
 
 	/// <summary>

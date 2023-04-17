@@ -54,6 +54,29 @@ public class XmlSerializationTests
 	}
 
 	[TestMethod]
+	public void SerializeDeserializeTestPersonProperCollection()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2);
+
+		//Serialize
+		var xml = XmlSerialization.Serialize(people);
+
+		var fileName = @"C:\dotNetTips.com\DebugOutput\PersonProperCollection.xml";
+
+		//For debugging
+		File.WriteAllText(fileName, xml);
+
+		Assert.IsTrue(string.IsNullOrEmpty(xml) is false);
+
+		//Deserialize
+		var serializedPerson = XmlSerialization.Deserialize<PersonProper>(xml);
+
+		Assert.IsNotNull(serializedPerson);
+
+		File.Delete(fileName);
+	}
+
+	[TestMethod]
 	public void SerializeDeserializeTestPersonRecord()
 	{
 		var person = RandomData.GeneratePersonRecordCollection(1).First();

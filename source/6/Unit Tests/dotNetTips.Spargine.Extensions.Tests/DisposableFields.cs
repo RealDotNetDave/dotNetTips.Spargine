@@ -14,6 +14,7 @@
 using System;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
+using DotNetTips.Spargine.Core;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -31,6 +32,7 @@ public class DisposableFields : IDisposable
 	/// The data set
 	/// </summary>
 	private readonly DataSet _dataSet = new("TEST");
+
 	/// <summary>
 	/// The disposed value
 	/// </summary>
@@ -39,6 +41,7 @@ public class DisposableFields : IDisposable
 	/// <summary>
 	/// Disposes this instance.
 	/// </summary>
+	[Preserve("Part of IDisposable", "4/16/2023", "David McCarter")]
 	public void Dispose()
 	{
 		// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method

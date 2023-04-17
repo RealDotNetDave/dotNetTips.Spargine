@@ -504,6 +504,64 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
+	/// Converts milliseconds to a string. 
+	/// <code>
+	/// Example output: 02:45:00
+	/// </code>
+	/// </summary>
+	/// <param name="totalMilliseconds">The total milliseconds.</param>
+	/// <returns>string.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static string MillisecondsToString(this long totalMilliseconds)
+	{
+		var hours = (int)(totalMilliseconds / (1000 * 60 * 60));
+		var minutes = (int)(totalMilliseconds / (1000 * 60) % 60);
+		var seconds = (int)(totalMilliseconds / 1000 % 60);
+
+		return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+	}
+
+	/// <summary>
+	/// Converts milliseconds to a string.
+	/// <code>
+	/// Example output: 02:45:00
+	/// </code>
+	/// </summary>
+	/// <param name="input">The input.</param>
+	/// <returns>string.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static string MillisecondsToString(this TimeSpan input)
+	{
+		var totalMilliseconds = input.TotalMilliseconds;
+		var hours = (int)(totalMilliseconds / (1000 * 60 * 60));
+		var minutes = (int)(totalMilliseconds / (1000 * 60) % 60);
+		var seconds = (int)(totalMilliseconds / 1000 % 60);
+
+		return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+	}
+
+	/// <summary>
+	/// Converts milliseconds to a string. 
+	/// <code>
+	/// Example output: 02:45:00
+	/// </code>
+	/// </summary>
+	/// <param name="totalMilliseconds">The total milliseconds.</param>
+	/// <returns>string.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static string MillisecondsToString(this int totalMilliseconds)
+	{
+		var hours = totalMilliseconds / (1000 * 60 * 60);
+		var minutes = totalMilliseconds / (1000 * 60) % 60;
+		var seconds = totalMilliseconds / 1000 % 60;
+
+		return $"{hours:D2}:{minutes:D2}:{seconds:D2}";
+	}
+
+	/// <summary>
 	/// Returns the nearest power of 2 that is bigger than the number.
 	/// </summary>
 	/// <param name="value">Number to process</param>

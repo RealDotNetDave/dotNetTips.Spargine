@@ -71,7 +71,7 @@ public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// </summary>
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
-	/// <exception cref="System.NotImplementedException"></exception>
+	/// <exception cref="NotImplementedException"></exception>
 	bool ICollection<T>.Remove(T item)
 	{
 		throw new NotImplementedException();
@@ -81,7 +81,7 @@ public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// Gets a value indicating whether the collection is read-only.
 	/// </summary>
 	/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
-	/// <exception cref="System.NotImplementedException"></exception>
+	/// <exception cref="NotImplementedException"></exception>
 	bool ICollection<T>.IsReadOnly => throw new NotImplementedException();
 
 	/// <summary>

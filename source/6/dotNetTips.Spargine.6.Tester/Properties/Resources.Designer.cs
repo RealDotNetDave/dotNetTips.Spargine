@@ -79,11 +79,11 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to City length is limited to 100 characters..
+        ///   Looks up a localized string similar to City length is limited to 150 characters..
         /// </summary>
-        internal static string CityLengthIsLimitedTo100Characters {
+        internal static string CityLengthIsLimitedToCharacters {
             get {
-                return ResourceManager.GetString("CityLengthIsLimitedTo100Characters", resourceCulture);
+                return ResourceManager.GetString("CityLengthIsLimitedToCharacters", resourceCulture);
             }
         }
         

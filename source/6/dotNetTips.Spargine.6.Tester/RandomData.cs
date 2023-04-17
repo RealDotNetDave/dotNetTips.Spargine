@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-24-2023
+// Last Modified On : 03-29-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -141,7 +141,8 @@ public static class RandomData
 
 		for (var addressIndex = 0; addressIndex < count; addressIndex++)
 		{
-			AddressRecord address = new(GenerateKey())
+
+			addresses.Add(new AddressRecord(GenerateKey())
 			{
 				Address1 = GenerateWord(addressLength),
 				Address2 = GenerateWord(addressLength),
@@ -151,17 +152,8 @@ public static class RandomData
 				Phone = GenerateNumber(country.PhoneNumberLength),
 				PostalCode = GeneratePostalCode(country, city),
 				State = state?.Name
-			};
-
-			addresses.Add(address);
-
-			if (state.Cities.HasItems())
-			{
-				city = state.Cities.PickRandom();
-			}
+			});
 		}
-
-		addresses.TrimExcess();
 
 		return new Collection<AddressRecord>(addresses);
 	}
@@ -658,7 +650,7 @@ public static class RandomData
 	/// <param name="countyProvinceLength">Length of the county province.</param>
 	/// <returns>IPersonRecord[].</returns>
 	[Information(nameof(GeneratePersonRecordCollection), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 1, int addressLength = 25, int countyProvinceLength = 20)
+	public static Collection<PersonRecord> GeneratePersonRecordCollection(int count, int addressCount = 2, int addressLength = 25, int countyProvinceLength = 20)
 	{
 		count = count.ArgumentInRange(lower: 1);
 

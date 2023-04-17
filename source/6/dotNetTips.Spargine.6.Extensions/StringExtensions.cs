@@ -438,7 +438,6 @@ public static class StringExtensions
 		}
 	}
 
-
 	/// <summary>
 	/// Converts a deflate compressed string as an asynchronous operation.
 	/// </summary>

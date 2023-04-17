@@ -733,7 +733,7 @@ dotnet_diagnostic.CA1852.severity = warning
 dotnet_diagnostic.CA1853.severity = warning
 
 # Prefer the IDictionary.TryGetValue(TKey, out TValue) method
-dotnet_diagnostic.CA1854.severity = warning
+dotnet_diagnostic.CA1854.severity = error
 
 # Use Span<T>.Clear() instead of Span<T>.Fill()
 dotnet_analyzer_diagnostic.category-Performance.severity = warning

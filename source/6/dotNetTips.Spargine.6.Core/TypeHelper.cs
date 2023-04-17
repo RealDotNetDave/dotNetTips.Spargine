@@ -526,7 +526,7 @@ public static class TypeHelper
 	/// <summary>
 	/// Struct DisplayNameOptions.
 	/// </summary>
-	internal struct DisplayNameOptions
+	internal readonly struct DisplayNameOptions
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DisplayNameOptions" /> struct.
@@ -568,6 +568,3 @@ public static class TypeHelper
 		public char NestedTypeDelimiter { get; }
 	}
 }
-
-
-

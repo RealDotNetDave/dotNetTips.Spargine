@@ -15,7 +15,6 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester.Properties;
@@ -30,9 +29,9 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// </summary>
 [DebuggerDisplay("{Email}")]
 [Serializable]
-[JsonSerializable(typeof(PersonRecord))]
-[XmlRoot(ElementName = "PersonRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-[DataContract(Name = "personRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+//[JsonSerializable(typeof(PersonRecord))]
+[XmlRoot(ElementName = "PersonRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
+[DataContract(Name = "personRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 {
@@ -69,7 +68,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <summary>
 	/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
 	/// </summary>
-	private PersonRecord()
+	internal PersonRecord()
 	{ }
 
 	/// <summary>

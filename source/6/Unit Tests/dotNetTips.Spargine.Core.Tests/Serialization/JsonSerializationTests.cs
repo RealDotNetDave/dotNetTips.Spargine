@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -46,7 +47,7 @@ public class JsonSerializationTests
 		var json = JsonSerialization.Serialize(person);
 
 		//For debugging
-		//JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonProper.json");
+		JsonSerialization.SerializeToFile(person, @"C:\dotNetTips.com\DebugOutput\PersonProper.json");
 
 		Assert.IsTrue(string.IsNullOrEmpty(json) is false);
 
@@ -54,6 +55,25 @@ public class JsonSerializationTests
 		var serializedPerson = JsonSerialization.Deserialize<PersonProper>(Resources.JsonPersonProper);
 
 		Assert.IsNotNull(serializedPerson);
+	}
+
+	[TestMethod]
+	public void SerializeDeserializeTestPersonProperCollection()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2);
+
+		//Serialize
+		var json = JsonSerialization.Serialize(people);
+
+		//For debugging
+		JsonSerialization.SerializeToFile(people, @"C:\dotNetTips.com\DebugOutput\PersonProperCollection.json");
+
+		Assert.IsTrue(string.IsNullOrEmpty(json) is false);
+
+		//Deserialize
+		var serializedPeople = JsonSerialization.Deserialize<List<PersonProper>>(json);
+
+		Assert.IsNotNull(serializedPeople);
 	}
 
 	/// <summary>

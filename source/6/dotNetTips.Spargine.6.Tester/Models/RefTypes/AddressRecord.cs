@@ -14,7 +14,6 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
@@ -30,9 +29,9 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// </summary>
 [DebuggerDisplay("{Id}")]
 [Serializable]
-[JsonSerializable(typeof(AddressRecord))]
-[XmlRoot(ElementName = "AddressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-[DataContract(Name = "addressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+//[JsonSerializable(typeof(AddressRecord))]
+[XmlRoot(ElementName = "AddressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.Ref")]
+[DataContract(Name = "addressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.Ref")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public record AddressRecord : IDataRecord
 {
@@ -79,7 +78,7 @@ public record AddressRecord : IDataRecord
 	/// <summary>
 	/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
 	/// </summary>
-	private AddressRecord()
+	internal AddressRecord()
 	{ }
 
 	/// <summary>
@@ -117,10 +116,10 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the Address1.
 	/// </summary>
 	/// <value>The Address1.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Address1 - Address must be between 10 - 256 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Address1 - Address must be between 10 - 256 characters.</exception>
 	/// <exception cref="ArgumentNullException">Address1 - Address must be between 10 - 256 characters.</exception>
-	[DataMember(Name = "address1")]
-	[XmlElement]
+	//[DataMember(Name = "address1")]
+	//[XmlElement]
 	public string Address1
 	{
 		get => this._address1;
@@ -139,7 +138,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the Address2.
 	/// </summary>
 	/// <value>The Address2.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Address2 - Address cannot be more than 256 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Address2 - Address cannot be more than 256 characters.</exception>
 	/// <exception cref="ArgumentNullException">Address2 - Address cannot be more than 256 characters.</exception>
 	[DataMember(Name = "address2")]
 	[XmlElement]
@@ -161,8 +160,8 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the city.
 	/// </summary>
 	/// <value>The city name.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">City</exception>
-	/// <exception cref="ArgumentNullException">City - City length is limited to 100 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">City</exception>
+	/// <exception cref="ArgumentNullException">City - City length is limited to 150 characters.</exception>
 	[DataMember(Name = "city")]
 	[XmlElement]
 	public string City
@@ -170,12 +169,16 @@ public record AddressRecord : IDataRecord
 		get => this._city;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
+			if (string.Equals(this._city, value, StringComparison.Ordinal))
 			{
-				ExceptionThrower.ThrowArgumentNullException(Resources.CityLengthIsLimitedTo100Characters, nameof(this.City));
+				return;
 			}
 
-			this._city = value.Length > 100 ? throw new ArgumentOutOfRangeException(nameof(this.City), Resources.CityLengthIsLimitedTo100Characters) : value;
+			this._city = value.HasValue(0, 150) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.City),
+					Resources.CityLengthIsLimitedToCharacters)
+				: value;
 		}
 	}
 
@@ -183,7 +186,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the country.
 	/// </summary>
 	/// <value>The country name.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Country - Country length is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">Country - Country length is limited to 50 characters.</exception>
 	[DataMember(Name = "country")]
 	[XmlElement]
@@ -205,7 +208,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the county province.
 	/// </summary>
 	/// <value>The county province.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
 	[DataMember(Name = "countryProvince")]
 	[XmlElement]
@@ -235,7 +238,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the phone.
 	/// </summary>
 	/// <value>The phone.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Phone - Home phone length is limited to 50 characters.</exception>
 	/// <exception cref="ArgumentNullException">Phone - Home phone length is limited to 50 characters.</exception>
 	[DataMember(Name = "phone")]
 	[XmlElement]
@@ -257,7 +260,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">PostalCode</exception>
+	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode
@@ -274,7 +277,7 @@ public record AddressRecord : IDataRecord
 	/// Gets or sets the state.
 	/// </summary>
 	/// <value>The state.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">State</exception>
+	/// <exception cref="ArgumentOutOfRangeException">State</exception>
 	/// <exception cref="ArgumentNullException">State - State  length is limited to 60 characters.</exception>
 	[DataMember(Name = "state")]
 	[XmlElement]

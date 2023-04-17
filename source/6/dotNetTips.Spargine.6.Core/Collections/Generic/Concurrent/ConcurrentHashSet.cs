@@ -1,16 +1,18 @@
 // ***********************************************************************
-// Assembly         : DotNetTips.Spargine.6
+// Assembly         : dotNetTips.Spargine.6.Core
 // Author           : David McCarter
-// Created          : 01-12-2021
+// Created          : 01-01-2023
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 04-04-2023
 // ***********************************************************************
-// <copyright file="ConcurrentHashSet.cs" company="dotNetTips.Spargine.5">
-//     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
+// <copyright file="ConcurrentHashSet.cs" company="David McCarter - dotNetTips.com">
+//     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Represents a thread-safe hash-based unique collection.</summary>
 // ***********************************************************************
+
+
 using System.Collections;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -250,7 +252,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// </summary>
 	/// <returns>An <see cref="IEnumerator"></see> object that can be used to iterate through the collection.</returns>
 	[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
+	IEnumerator<T> IEnumerable<T>.GetEnumerator() => this.GetEnumerator();
 
 	/// <summary>
 	/// Acquires all locks.
@@ -745,6 +747,8 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 			return false;
 		}
 	}
+
+	IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
 
 	/// <summary>
 	/// Gets the number of items contained in the <see cref="ConcurrentHashSet{T}" />...

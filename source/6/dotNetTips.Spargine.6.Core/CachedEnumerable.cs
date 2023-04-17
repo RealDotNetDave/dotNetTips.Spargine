@@ -176,6 +176,7 @@ public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	/// <summary>
 	/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
 	/// </summary>
+	[Preserve("Part of IDisposable", "4/16/2023", "David McCarter")]
 	public void Dispose()
 	{
 		// Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method

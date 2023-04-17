@@ -375,10 +375,10 @@ public struct Person : IDataModel<Person, string>, IPerson
 				return;
 			}
 
-			this._city = value.HasValue(0, 100) is false
+			this._city = value.HasValue(0, 150) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.City),
-					Resources.CityLengthIsLimitedTo100Characters)
+					Resources.CityLengthIsLimitedToCharacters)
 				: value;
 		}
 	}

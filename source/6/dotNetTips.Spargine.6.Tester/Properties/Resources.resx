@@ -133,8 +133,8 @@
   <data name="PhoneNumberIsLimitedTo50Characters" xml:space="preserve">
     <value>Phone number is limited to 50 characters.</value>
   </data>
-  <data name="CityLengthIsLimitedTo100Characters" xml:space="preserve">
-    <value>City length is limited to 100 characters.</value>
+  <data name="CityLengthIsLimitedToCharacters" xml:space="preserve">
+    <value>City length is limited to 150 characters.</value>
   </data>
   <data name="CountryLengthIsLimitedTo50Characters" xml:space="preserve">
     <value>Country length is limited to 50 characters.</value>

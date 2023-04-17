@@ -35,8 +35,8 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [DebuggerDisplay("{Email}")]
 [Serializable]
 [JsonSerializable(typeof(PersonProper))]
-[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
-[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models")]
+[XmlRoot(ElementName = "PersonProper", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
+[DataContract(Name = "personProper", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 {
@@ -431,10 +431,10 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 				return;
 			}
 
-			this._city = value.HasValue(0, 100) is false
+			this._city = value.HasValue(0, 150) is false
 				? throw new ArgumentOutOfRangeException(
 					nameof(this.City),
-					Resources.CityLengthIsLimitedTo100Characters)
+					Resources.CityLengthIsLimitedToCharacters)
 				: value;
 		}
 	}

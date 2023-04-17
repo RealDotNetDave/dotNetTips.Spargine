@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-31-2023
+// Last Modified On : 04-16-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -35,7 +35,20 @@ public class ArrayExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
 	private PersonRecord[] _personRecordArray;
 	private PersonProper[] _personRefArray;
+	private PersonProper[] _personRefArrayToAdd;
 	private Spargine.Tester.Models.ValueTypes.Person[] _personValArray;
+
+	[Benchmark(Description = nameof(ArrayExtensions.AddDistinct) + ": as Reference")]
+	[BenchmarkCategory(Categories.ReferenceType)]
+	public void AddDistinct_Ref()
+	{
+		var people1 = this._personRefArray;
+		var people2 = this._personRefArrayToAdd;
+
+		var result = people1.AddDistinct(people2);
+
+		this.Consume(result);
+	}
 
 	[Benchmark(Description = nameof(ArrayExtensions.AreEqual) + ": as Reference")]
 	[BenchmarkCategory(Categories.ReferenceType)]
@@ -343,6 +356,10 @@ public class ArrayExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this._personRecordArray = this.GetPersonRecordArray();
 		this._personRefArray = this.GetPersonProperRefArray();
 		this._personValArray = this.GetPersonValArray();
+
+		var peopleToAdd = this._personRefArray.ToList();
+		peopleToAdd.AddRange(this.GetPeopleRefToInsert());
+		this._personRefArrayToAdd = peopleToAdd.ToArray();
 	}
 
 	[Benchmark(Description = nameof(ArrayExtensions.ToDistinct) + " : Reference")]

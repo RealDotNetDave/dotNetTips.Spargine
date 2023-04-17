@@ -16,7 +16,6 @@ using System.Diagnostics.CodeAnalysis;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.Tests;
@@ -26,14 +25,6 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 public class NumericExtensionsTests : TestClass
 {
 	private const string OutOfRange = "OUT OF RANGE";
-
-	[TestMethod]
-	public void ToRomanNumeralTest()
-	{
-		var number = 1010;
-
-		Assert.IsNotNull(number.ToRomanNumeral());
-	}
 
 	[TestMethod]
 	public void DecrementTest()
@@ -87,9 +78,9 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void FormatSizeLongTest()
+	public void FormatSizeDoubleTest()
 	{
-		long testValue = 256234;
+		var testValue = 256234.98;
 
 		var result = testValue.FormatSize();
 
@@ -97,9 +88,9 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void FormatSizeDoubleTest()
+	public void FormatSizeLongTest()
 	{
-		var testValue = 256234.98;
+		long testValue = 256234;
 
 		var result = testValue.FormatSize();
 
@@ -198,18 +189,6 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void IsEvenShortTest()
-	{
-		short testValue = 266;
-
-		Assert.IsTrue(testValue.IsEven());
-
-		testValue++;
-
-		Assert.IsFalse(testValue.IsEven());
-	}
-
-	[TestMethod]
 	public void IsEvenLongTest()
 	{
 		long testValue = 256234;
@@ -222,29 +201,21 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void ToStringOrEmptyTest()
-	{
-		var testValue = 1000;
-
-		Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 2000, defaultText: OutOfRange).HasValue());
-
-		Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 200, defaultText: OutOfRange) == OutOfRange);
-	}
-
-	[TestMethod]
-	public void ToWordsTest()
-	{
-		var testValue = 54928;
-
-		Assert.IsTrue(testValue.ToWords().HasValue());
-
-		Assert.IsTrue(testValue.ToWords().FastCount() == 49);
-	}
-
-	[TestMethod]
 	public void IsEvenSbyteTest()
 	{
 		sbyte testValue = 32;
+
+		Assert.IsTrue(testValue.IsEven());
+
+		testValue++;
+
+		Assert.IsFalse(testValue.IsEven());
+	}
+
+	[TestMethod]
+	public void IsEvenShortTest()
+	{
+		short testValue = 266;
 
 		Assert.IsTrue(testValue.IsEven());
 
@@ -435,6 +406,33 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
+	public void MillisecondsToStringLongTest()
+	{
+		long time = 99999999;
+		var result = time.MillisecondsToString();
+
+		Assert.IsTrue(result == "27:46:39");
+	}
+
+	[TestMethod]
+	public void MillisecondsToStringIntTest()
+	{
+		int time = 99999999;
+		var result = time.MillisecondsToString();
+
+		Assert.IsTrue(result == "27:46:39");
+	}
+
+	[TestMethod]
+	public void MillisecondsToStringTimeSpanTest()
+	{
+		var time = new TimeSpan(1, 12, 55, 33, 2200);
+		var result = time.MillisecondsToString();
+
+		Assert.IsTrue(result == "36:55:35");
+	}
+
+	[TestMethod]
 	public void RoundToPowerOf2Test()
 	{
 		var testValue = 256234;
@@ -508,6 +506,34 @@ public class NumericExtensionsTests : TestClass
 		long testValue = -100;
 
 		Assert.IsTrue(testValue.ToPositiveValue() > -1);
+	}
+
+	[TestMethod]
+	public void ToRomanNumeralTest()
+	{
+		var number = 1010;
+
+		Assert.IsNotNull(number.ToRomanNumeral());
+	}
+
+	[TestMethod]
+	public void ToStringOrEmptyTest()
+	{
+		var testValue = 1000;
+
+		Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 2000, defaultText: OutOfRange).HasValue());
+
+		Assert.IsTrue(testValue.ToStringOrEmpty(lowerLimit: 0, upperLimit: 200, defaultText: OutOfRange) == OutOfRange);
+	}
+
+	[TestMethod]
+	public void ToWordsTest()
+	{
+		var testValue = 54928;
+
+		Assert.IsTrue(testValue.ToWords().HasValue());
+
+		Assert.IsTrue(testValue.ToWords().FastCount() == 49);
 	}
 
 	[TestMethod]

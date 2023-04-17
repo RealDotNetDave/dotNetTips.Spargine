@@ -219,7 +219,7 @@ public static class DirectoryHelper
 	/// Loads the one drive folders.
 	/// </summary>
 	/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
-	/// <exception cref="System.PlatformNotSupportedException"></exception>
+	/// <exception cref="PlatformNotSupportedException"></exception>
 	[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 	{

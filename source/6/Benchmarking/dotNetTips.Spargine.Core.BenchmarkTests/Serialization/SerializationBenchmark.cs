@@ -52,7 +52,7 @@ public class SerializationBenchmark : Benchmark
 	[BenchmarkCategory(Categories.JSON, Categories.New, "JsonSerializer")]
 	public void Deserialize_Json_JsonSerializer_Generator_PersonProper_List()
 	{
-		var result = System.Text.Json.JsonSerializer.Deserialize(_jsonPersonProperRefList, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default) as List<PersonProper>;
+		var result = System.Text.Json.JsonSerializer.Deserialize(this._jsonPersonProperRefList, typeof(List<PersonProper>), PersonProperJsonSerializerContext.Default) as List<PersonProper>;
 		base.Consume(result);
 	}
 
@@ -116,7 +116,7 @@ public class SerializationBenchmark : Benchmark
 	[BenchmarkCategory(Categories.JSON, Categories.New, "JsonSerializer")]
 	public void Serialize_Json_JsonSerializer_Generator_PersonProper_List()
 	{
-		var result = System.Text.Json.JsonSerializer.Serialize(this._personProperRefList, typeof(List<PersonProper>), PersonProperCollectionJsonSerializerContext.Default);
+		var result = System.Text.Json.JsonSerializer.Serialize(this._personProperRefList, typeof(List<PersonProper>), PersonProperJsonSerializerContext.Default);
 		base.Consume(result);
 	}
 

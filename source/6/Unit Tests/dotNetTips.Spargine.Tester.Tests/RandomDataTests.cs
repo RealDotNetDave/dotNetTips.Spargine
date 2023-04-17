@@ -763,11 +763,11 @@ public class RandomDataTests
 	[TestMethod]
 	public void RecordToStringTest()
 	{
-		var stringValue1 = RandomData.GeneratePersonRecordCollection(1).First().ToString();
+		var stringValue1 = RandomData.GeneratePersonRecord().ToString();
 
 		Assert.IsNotNull(stringValue1);
 
-		var stringValue2 = RandomData.GeneratePersonRecordCollection(1).First().PropertiesToString();
+		var stringValue2 = RandomData.GeneratePersonRecord().PropertiesToString();
 
 		Assert.IsNotNull(stringValue2);
 	}
@@ -775,7 +775,7 @@ public class RandomDataTests
 	[TestMethod]
 	public void JsonSerilizerContext_PersonProper_Collection_Test()
 	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToList();
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToList();
 
 		var result = JsonSerializer.Serialize(people, PersonProperJsonSerializerContext.Default.ListPersonProper);
 
@@ -784,7 +784,7 @@ public class RandomDataTests
 		people = JsonSerializer.Deserialize(result, PersonProperJsonSerializerContext.Default.ListPersonProper);
 
 		Assert.IsNotNull(people);
-		Assert.IsTrue(people.Count == 100);
+		Assert.IsTrue(people.Count == Count);
 	}
 
 	[TestMethod]
@@ -804,7 +804,7 @@ public class RandomDataTests
 	[TestMethod]
 	public void PersonRecord_Serialization_Test()
 	{
-		var person = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 2).First();
+		var person = RandomData.GeneratePersonRecord();
 
 		var result = JsonSerializer.Serialize(person);
 
@@ -821,7 +821,7 @@ public class RandomDataTests
 	[TestMethod]
 	public void UpdatePersonRecordTest()
 	{
-		var person1 = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 2).First();
+		var person1 = RandomData.GeneratePersonRecord();
 
 		Assert.IsNotNull(person1);
 

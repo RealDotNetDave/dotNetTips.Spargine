@@ -14,7 +14,6 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Tester;
@@ -79,7 +78,7 @@ public class XmlSerializationTests
 	[TestMethod]
 	public void SerializeDeserializeTestPersonRecord()
 	{
-		var person = RandomData.GeneratePersonRecordCollection(1).First();
+		var person = RandomData.GeneratePersonRecord();
 
 		//Serialize
 		var xml = XmlSerialization.Serialize(person);

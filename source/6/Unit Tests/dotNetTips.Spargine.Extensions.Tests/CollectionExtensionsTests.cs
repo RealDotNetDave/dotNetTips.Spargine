@@ -161,7 +161,7 @@ public class CollectionExtensionsTests
 		var personFromCollection = people.Shuffle().First();
 		var person = RandomData.GenerateRefPerson<PersonProper>();
 		var personRecords = RandomData.GeneratePersonRecordCollection(10);
-		var personRecord = RandomData.GeneratePersonRecordCollection(1).First();
+		var personRecord = RandomData.GeneratePersonRecord();
 
 		// TEST
 		people.Upsert(person);

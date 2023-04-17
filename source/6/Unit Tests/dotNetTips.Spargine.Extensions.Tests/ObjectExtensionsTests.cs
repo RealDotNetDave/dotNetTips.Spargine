@@ -15,7 +15,6 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -129,13 +128,13 @@ public class ObjectExtensionsTests : TestClass
 	[TestMethod]
 	public void PropertiesToDictionaryTest()
 	{
-		var personProper = RandomData.GeneratePersonRecordCollection(1).First();
+		var personProper = RandomData.GeneratePersonRecord();
 
 		var propertiesTest = new PropertiesTest
 		{
 			Id = RandomData.GenerateKey(),
 			PersonProper = RandomData.GenerateRefPerson<PersonProper>(),
-			PersonRecord = RandomData.GeneratePersonRecordCollection(1).First(),
+			PersonRecord = RandomData.GeneratePersonRecord(),
 			Today = DateTime.Now
 		};
 
@@ -153,13 +152,13 @@ public class ObjectExtensionsTests : TestClass
 	[TestMethod]
 	public void PropertiesToStringTest()
 	{
-		var personRecord = RandomData.GeneratePersonRecordCollection(1).First();
+		var personRecord = RandomData.GeneratePersonRecord();
 
 		var propertiesTest = new PropertiesTest
 		{
 			Id = RandomData.GenerateKey(),
 			PersonProper = RandomData.GenerateRefPerson<PersonProper>(),
-			PersonRecord = RandomData.GeneratePersonRecordCollection(1).First(),
+			PersonRecord = RandomData.GeneratePersonRecord(),
 			Today = DateTimeOffset.Now,
 			ClosedOn = DateTimeOffset.Now,
 		};

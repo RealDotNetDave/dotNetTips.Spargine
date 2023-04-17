@@ -658,23 +658,36 @@ public static class RandomData
 
 		for (var recordIndex = 0; recordIndex < count; recordIndex++)
 		{
-			GetRandomLocationData(out var country, out var state, out var city);
-			GetRandomPersonData(country, out var firstName, out var lastName, out var phone, out var cellPhone, out var emailAddress, out var bornOn);
-
-			PersonRecord person = new(email: emailAddress, id: GenerateKey())
-			{
-				BornOn = bornOn,
-				FirstName = firstName,
-				HomePhone = phone,
-				LastName = lastName,
-				CellPhone = cellPhone,
-				Addresses = GenerateAddressRecordCollection(country, state, city, addressCount, addressLength, countyProvinceLength),
-			};
+			var person = GeneratePersonRecord(addressCount, addressLength, countyProvinceLength);
 
 			records.Add(person);
 		}
 
 		return records;
+	}
+
+	/// <summary>
+	/// Generates the person record.
+	/// </summary>
+	/// <param name="addressCount">The address count.</param>
+	/// <param name="addressLength">Length of the address 1 and 2.</param>
+	/// <param name="countyProvinceLength">Length of the county province.</param>
+	/// <returns>PersonRecord.</returns>
+	public static PersonRecord GeneratePersonRecord(int addressCount = 2, int addressLength = 25, int countyProvinceLength = 20)
+	{
+		GetRandomLocationData(out var country, out var state, out var city);
+		GetRandomPersonData(country, out var firstName, out var lastName, out var phone, out var cellPhone, out var emailAddress, out var bornOn);
+
+		PersonRecord person = new(email: emailAddress, id: GenerateKey())
+		{
+			BornOn = bornOn,
+			FirstName = firstName,
+			HomePhone = phone,
+			LastName = lastName,
+			CellPhone = cellPhone,
+			Addresses = GenerateAddressRecordCollection(country, state, city, addressCount, addressLength, countyProvinceLength),
+		};
+		return person;
 	}
 
 	/// <summary>

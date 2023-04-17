@@ -15,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using System.Linq;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Serialization;
 using DotNetTips.Spargine.Core.Tests.Properties;
@@ -85,7 +84,7 @@ public class JsonSerializationTests
 		var fileName = Path.Combine(Environment.GetEnvironmentVariable(EnvironmentKey.APPDATA.ToString()), "PersonRecord.json");
 
 		//For debugging
-		var person = RandomData.GeneratePersonRecordCollection(1).First();
+		var person = RandomData.GeneratePersonRecord();
 		JsonSerialization.SerializeToFile(person, fileName);
 
 		Assert.IsTrue(string.IsNullOrEmpty(File.ReadAllText(fileName)) is false);

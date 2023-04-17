@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-14-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -29,7 +29,6 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 /// </summary>
 [DebuggerDisplay("{Email}")]
 [Serializable]
-//[JsonSerializable(typeof(PersonRecord))]
 [XmlRoot(ElementName = "PersonRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
 [DataContract(Name = "personRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.RefTypes")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
@@ -68,7 +67,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <summary>
 	/// Prevents a default instance of the <see cref="PersonRecord" /> class from being created.
 	/// </summary>
-	internal PersonRecord()
+	private PersonRecord()
 	{ }
 
 	/// <summary>
@@ -224,6 +223,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <value>The email address.</value>
 	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	[DisallowNull]
 	[DataMember(Name = "email")]
 	[XmlElement]
 	public string Email
@@ -253,11 +253,6 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		get => this._firstName;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
-			{
-				throw new ArgumentNullException(nameof(this.FirstName), "Value for name cannot be null or empty.");
-			}
-
 			this._firstName = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.FirstName), "First name length is limited to 50 characters.") : value;
 		}
 	}
@@ -298,11 +293,6 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		get => this._lastName;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
-			{
-				throw new ArgumentNullException(nameof(this.LastName), "Value for name cannot be null or empty.");
-			}
-
 			this._lastName = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.LastName), "Last name length is limited to 50 characters.") : value;
 		}
 	}

@@ -288,7 +288,7 @@ public class EnumerableExtensionsTests
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
-		IEnumerable<IEnumerable<PersonProper>> splitPeople = people.Partition(people.Count() / 10);
+		var splitPeople = people.Partition(people.Count() / 10);
 
 		Assert.IsNotNull(splitPeople);
 		Assert.IsTrue(splitPeople.Count() == 11);
@@ -338,14 +338,14 @@ public class EnumerableExtensionsTests
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
 
-		IEnumerable<IEnumerable<PersonProper>> splitPeople = people.Split(Count / 10);
+		var splitPeople = people.Split(Count / 10);
 
 		Assert.IsNotNull(splitPeople);
 		Assert.IsTrue(splitPeople.Count() == 24);
 
 		var emptyPeople = new List<PersonProper>();
 
-		IEnumerable<IEnumerable<PersonProper>> splitEmptyPeople = emptyPeople.Split(10);
+		var splitEmptyPeople = emptyPeople.Split(10);
 
 		Assert.IsNull(splitEmptyPeople);
 	}

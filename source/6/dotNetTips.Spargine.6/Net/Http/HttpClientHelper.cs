@@ -14,7 +14,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using DotNetTips.Spargine.Core;
-using DotNetTips.Spargine.Core.Network;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -120,14 +119,7 @@ public static class HttpClientHelper
 	{
 		url = url.ArgumentNotNullOrEmpty();
 
-		if (NetworkHelper.CheckNetworkConnection().Ethernet)
-		{
-			return await GetStreamAsync(new Uri(url)).ConfigureAwait(false);
-		}
-		else
-		{
-			throw new NetworkConnectionException("Could not gain access to the ethernet connection.");
-		}
+		return await GetStreamAsync(new Uri(url)).ConfigureAwait(false);
 	}
 
 	/// <summary>

@@ -61,9 +61,7 @@ public class RandomDataTests
 			return;
 		}
 
-		_ = Parallel.ForEach(
-			source: files,
-			body: (fileName) =>
+		_ = Parallel.ForEach(source: files, body: (fileName) =>
 			{
 				try
 				{
@@ -382,7 +380,7 @@ public class RandomDataTests
 	[TestMethod]
 	public void GenerateNamesTest()
 	{
-		for (int count = 0; count < Count; count++)
+		for (var count = 0; count < Count; count++)
 		{
 			Debug.WriteLine($"{RandomData.GenerateFirstName()} {RandomData.GenerateLastName()}");
 		}

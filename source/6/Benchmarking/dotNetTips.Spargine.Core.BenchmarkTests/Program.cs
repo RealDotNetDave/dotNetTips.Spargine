@@ -48,8 +48,6 @@ public class Program
 
 			//_ = BenchmarkRunner.Run<SerializationBenchmark>(config);
 
-
-
 			ConsoleLogger.Default.WriteLine("COMPLETE!");
 			Console.Beep();
 			Console.Beep(frequency: 500, duration: 1000);

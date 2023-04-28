@@ -118,7 +118,7 @@ dotnet_diagnostic.CA1014.severity = none
 
 # Non-private static fields are PascalCase
 dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.severity = warning
-dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.style    = non_private_static_field_style
+dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.style = non_private_static_field_style
 dotnet_naming_rule.non_private_static_fields_should_be_pascal_case.symbols  = non_private_static_fields
 
 dotnet_naming_symbols.non_private_static_fields.applicable_accessibilities  = public, protected, internal, protected_internal, private_protected
@@ -128,8 +128,8 @@ dotnet_naming_symbols.non_private_static_fields.required_modifiers          = st
 dotnet_naming_style.non_private_static_field_style.capitalization           = pascal_case
 
 #Constants are PascalCase
-dotnet_naming_rule.constants_should_be_pascal_case.severity                 = warning
-dotnet_naming_rule.constants_should_be_pascal_case.style                    = non_private_static_field_style
+dotnet_naming_rule.constants_should_be_pascal_case.severity = warning
+dotnet_naming_rule.constants_should_be_pascal_case.style = non_private_static_field_style
 dotnet_naming_rule.constants_should_be_pascal_case.symbols                  = constants
 
 dotnet_naming_symbols.constants.required_modifiers                          = const
@@ -610,16 +610,16 @@ dotnet_diagnostic.CA1802.severity=suggestion
 dotnet_diagnostic.CA1805.severity=error
 
 # Do not ignore method results
-dotnet_diagnostic.CA1806.severity=warning
+dotnet_diagnostic.CA1806.severity=error
 
 # Initialize reference type static fields inline
 dotnet_diagnostic.CA1810.severity=error
 
 # Avoid uninstantiated internal classes
-dotnet_diagnostic.CA1812.severity=suggestion
+dotnet_diagnostic.CA1812.severity=warning
 
 # Avoid unsealed attributes
-dotnet_diagnostic.CA1813.severity= warning
+dotnet_diagnostic.CA1813.severity= error
 
 # Prefer jagged arrays over multidimensional
 dotnet_diagnostic.CA1814.severity= warning
@@ -646,7 +646,7 @@ dotnet_diagnostic.CA1823.severity=error
 dotnet_diagnostic.CA1824.severity=suggestion
 
 # Avoid zero-length array allocations
-dotnet_diagnostic.CA1825.severity=suggestion
+dotnet_diagnostic.CA1825.severity=warning
 
 # Use property instead of Linq Enumerable method
 dotnet_diagnostic.CA1826.severity= warning
@@ -697,19 +697,19 @@ dotnet_diagnostic.CA1840.severity = warning
 dotnet_diagnostic.CA1841.severity=warning
 
 # Do not use 'WhenAll' with a single task
-dotnet_diagnostic.CA1842.severity=warning
+dotnet_diagnostic.CA1842.severity=error
 
 # Do not use 'WaitAll' with a single task
-dotnet_diagnostic.CA1843.severity=warning
+dotnet_diagnostic.CA1843.severity=error
 
 # Provide memory-based overrides of async methods when subclassing 'Stream'
-dotnet_diagnostic.CA1844.severity=suggestion
+dotnet_diagnostic.CA1844.severity=warning
 
 # Use span-based 'string.Concat'
-dotnet_diagnostic.CA1845.severity=suggestion
+dotnet_diagnostic.CA1845.severity=warning
 
 # Prefer AsSpan over Substring
-dotnet_diagnostic.CA1846.severity=suggestion
+dotnet_diagnostic.CA1846.severity=warning
 
 # Use string.Contains(char) instead of string.Contains(string) with single character
 dotnet_diagnostic.CA1847.severity= warning
@@ -724,22 +724,22 @@ dotnet_diagnostic.CA1849.severity=warning
 dotnet_diagnostic.CA1850.severity=warning
 
 # Possible multiple enumerations of IEnumerable collection
-dotnet_diagnostic.CA1851.severity = suggestion
+dotnet_diagnostic.CA1851.severity = warning
 
 # Seal internal types
 dotnet_diagnostic.CA1852.severity = warning
 
 # Unnecessary call to 'Dictionary.ContainsKey(key)'
-dotnet_diagnostic.CA1853.severity = warning
+dotnet_diagnostic.CA1853.severity = error
 
 # Prefer the IDictionary.TryGetValue(TKey, out TValue) method
 dotnet_diagnostic.CA1854.severity = error
 
 # Use Span<T>.Clear() instead of Span<T>.Fill()
-dotnet_analyzer_diagnostic.category-Performance.severity = warning
+dotnet_analyzer_diagnostic.category-Performance.severity = error
 
 # Use StartsWith instead of IndexOf
-dotnet_analyzer_diagnostic.category-Performance.severity = warning
+dotnet_analyzer_diagnostic.category-Performance.severity = error
 
 # Add readonly modifier
 dotnet_diagnostic.IDE0044.severity=warning

@@ -4,7 +4,7 @@
 // Created          : 02-10-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-03-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="InternalMethods.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -38,7 +38,7 @@ internal static class InternalMethods
 	new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
-	/// Converts a byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts a byte array to a string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="array">The array.</param>
 	/// <returns>System.String.</returns>
@@ -179,7 +179,6 @@ internal static class InternalMethods
 	[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
 	internal static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
 
-
 	/// <summary>
 	/// Logs a warning message. Adds method name to message.
 	/// </summary>
@@ -234,7 +233,6 @@ internal static class InternalMethods
 	{
 		EasyLogger.LogTrace(logger, $"{method}: {message}");
 	}
-
 
 	/// <summary>
 	/// Logs critical exception. Adds method name to message.

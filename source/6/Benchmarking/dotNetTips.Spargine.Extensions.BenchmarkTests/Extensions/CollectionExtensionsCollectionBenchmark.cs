@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-31-2023
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="CollectionExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using System.Collections.Generic;
-using System.Linq;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Core;
@@ -26,9 +25,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 /// <summary>
 /// Class CollectionExtensionsCollectionBenchmark.
-/// Implements the <see cref="LargeCollectionsBenchmark" />
+/// Implements the <see cref="SmallCollectionsBenchmark" />
 /// </summary>
-/// <seealso cref="LargeCollectionsBenchmark" />
+/// <seealso cref="SmallCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
 public class CollectionExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {

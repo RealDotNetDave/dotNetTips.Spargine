@@ -4,7 +4,7 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-29-2022
+// Last Modified On : 04-18-2023
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Versioning;
 using System.ServiceProcess;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Properties;
@@ -31,6 +32,7 @@ public static class Services
 	/// </summary>
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns>ServiceController.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(LoadService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	private static ServiceController LoadService(string serviceName)
 	{
@@ -41,6 +43,7 @@ public static class Services
 	/// Alls the services.
 	/// </summary>
 	/// <returns>IEnumerable&lt;System.String&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(AllServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IEnumerable<string> AllServices()
 	{
@@ -53,6 +56,7 @@ public static class Services
 	/// <param name="processName">Name of the process.</param>
 	/// <returns><c>true</c> if [is application already running] [the specified process name]; otherwise, <c>false</c>.</returns>
 	/// <exception cref="ArgumentNullException">processName - Process name is required.</exception>
+	[SupportedOSPlatform("windows")]
 	[Information(Status = Status.Available)]
 	public static bool IsProcessRunning(string processName)
 	{
@@ -66,6 +70,7 @@ public static class Services
 	/// </summary>
 	/// <param name="processName">Name of the process.</param>
 	/// <exception cref="ArgumentNullException">Process name is nothing or empty.</exception>
+	[SupportedOSPlatform("windows")]
 	[Information(UnitTestCoverage = 0, Status = Status.Available)]
 	public static void KillProcess(string processName)
 	{
@@ -83,6 +88,7 @@ public static class Services
 	/// </summary>
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(ServiceExists), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static bool ServiceExists(string serviceName)
 	{
@@ -97,6 +103,7 @@ public static class Services
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns>ServiceControllerStatus.</returns>
 	/// <exception cref="InvalidOperationException"></exception>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static ServiceControllerStatus ServiceStatus(string serviceName)
 	{
@@ -109,6 +116,7 @@ public static class Services
 	/// </summary>
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns>ServiceActionResult.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(StartService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static ServiceActionResult StartService(string serviceName)
 	{
@@ -137,6 +145,7 @@ public static class Services
 	/// </summary>
 	/// <param name="requests">The requests.</param>
 	/// <returns>IEnumerable&lt;System.String&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(StartServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static void StartServices([NotNull] IReadOnlyCollection<ServiceAction> requests)
 	{
@@ -147,6 +156,7 @@ public static class Services
 	/// Starts or stops services.
 	/// </summary>
 	/// <param name="requests">The requests.</param>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(StartStopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static void StartStopServices([NotNull] IReadOnlyCollection<ServiceAction> requests)
 	{
@@ -168,6 +178,7 @@ public static class Services
 	/// </summary>
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns>ServiceActionResult.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(StopService), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static ServiceActionResult StopService(string serviceName)
 	{
@@ -195,6 +206,7 @@ public static class Services
 	/// Stops the services.
 	/// </summary>
 	/// <param name="requests">The requests.</param>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(StopServices), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static void StopServices([NotNull] IEnumerable<ServiceAction> requests)
 	{

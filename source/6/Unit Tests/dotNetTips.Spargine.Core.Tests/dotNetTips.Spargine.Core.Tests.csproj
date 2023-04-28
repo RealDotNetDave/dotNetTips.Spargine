@@ -6,8 +6,8 @@
 		<IsPackable>false</IsPackable>
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
-		<AssemblyVersion>2023.6.4.557</AssemblyVersion>
-		<FileVersion>2023.6.4.557</FileVersion>
+		<AssemblyVersion>2023.6.5.1</AssemblyVersion>
+		<FileVersion>2023.6.5.1</FileVersion>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
 		<AnalysisLevel>none</AnalysisLevel>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>

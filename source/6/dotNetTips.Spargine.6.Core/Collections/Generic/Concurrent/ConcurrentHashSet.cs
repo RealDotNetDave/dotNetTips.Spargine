@@ -4,15 +4,13 @@
 // Created          : 01-01-2023
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-04-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>Represents a thread-safe hash-based unique collection.</summary>
 // ***********************************************************************
-
-
 using System.Collections;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -748,7 +746,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 		}
 	}
 
-	IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
+	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 	/// <summary>
 	/// Gets the number of items contained in the <see cref="ConcurrentHashSet{T}" />...

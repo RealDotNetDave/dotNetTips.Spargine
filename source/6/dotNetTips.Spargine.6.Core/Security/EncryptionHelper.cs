@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -88,39 +89,33 @@ public static class EncryptionHelper
 	/// <param name="iv">The initialization vector.</param>
 	/// <returns>System.Byte[].</returns>
 	/// <remarks>Original code by: Mahesh Chand.</remarks>
-	[Information(nameof(AesDecrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
+	[SupportedOSPlatform("windows")]
+	[Information(nameof(AesEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 	public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 	{
 		plainText = plainText.ArgumentNotNullOrEmpty(true);
 		key = key.ArgumentNotNull();
 		iv = iv.ArgumentNotNull();
 
-		// Create a new AesManaged.
-		using (var aes = Aes.Create())
+		// Create MemoryStream
+		using (var ms = new MemoryStream())
 		{
-			aes.Key = key;
-			aes.IV = iv;
-
 			// Create encryptor
-			using (var encryptor = aes.CreateEncryptor())
+			using (var aesCng = new AesCng())
 			{
-				// Create MemoryStream
-				using (var ms = new MemoryStream())
+				// Create crypto stream using the CryptoStream class. This class is the key to encryption
+				// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
+				// to encrypt
+				using (var cs = new CryptoStream(ms, aesCng.CreateEncryptor(key, iv), CryptoStreamMode.Write))
 				{
-					// Create crypto stream using the CryptoStream class. This class is the key to encryption
-					// and encrypts and decrypts data from any given stream. In this case, we will pass a memory stream
-					// to encrypt
-					using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+					// Create StreamWriter and write data to a stream
+					using (var sw = new StreamWriter(cs))
 					{
-						// Create StreamWriter and write data to a stream
-						using (var sw = new StreamWriter(cs))
-						{
-							sw.Write(plainText);
-						}
+						sw.Write(plainText);
 					}
-
-					return Convert.ToBase64String(ms.ToArray());
 				}
+
+				return Convert.ToBase64String(ms.ToArray());
 			}
 		}
 	}
@@ -190,6 +185,7 @@ public static class EncryptionHelper
 	/// Original: cUjmkES]gbgSneP
 	/// Encrypted: fdfc6PjkJp/3m5hONEMGMQ==
 	/// </example>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SimpleSHA256Encrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 	public static string SimpleSHA256Encrypt([NotNull] string plainText, [NotNull] string key)
 	{

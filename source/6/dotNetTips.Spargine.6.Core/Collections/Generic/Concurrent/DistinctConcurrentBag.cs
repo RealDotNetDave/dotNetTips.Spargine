@@ -23,7 +23,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 /// </summary>
 /// <typeparam name="T">Generic type parameter.</typeparam>
 /// <seealso cref="ConcurrentBag{T}" />
-public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
+public sealed class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 {
 	/// <summary>
 	/// The hash codes
@@ -88,7 +88,7 @@ public class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// Adds an object to the list.
 	/// </summary>
 	/// <param name="item">The object to be added to the list. The value can be a null reference (Nothing in Visual Basic) for reference types.</param>
-	public new void Add([NotNull] T item)
+	void ICollection<T>.Add([NotNull] T item)
 	{
 		if (item is null)
 		{

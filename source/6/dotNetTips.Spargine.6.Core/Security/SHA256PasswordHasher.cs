@@ -4,7 +4,7 @@
 // Created          : 10-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="SHA256PasswordHasher.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -158,7 +158,7 @@ public static class SHA256PasswordHasher
 	/// Gets the size of the salt.
 	/// </summary>
 	/// <value>The size of the salt.</value>
-	public static int SaltSize { get; } = 128 / 8; // 128 bits
+	public static int SaltSize { get; } = 128 / 8;
 
 	/// <summary>
 	/// Gets the version.

@@ -654,7 +654,7 @@ public static class EnumerableExtensions
 	public static IEnumerable<T> Shuffle<T>([NotNull] this IEnumerable<T> collection, int count)
 	{
 		collection = collection.ArgumentNotNull();
-		count = Math.Max(1, count);
+		count = count.ArgumentInRange(lower: 1, defaultValue: 1);
 
 		return collection.Shuffle().Take(count);
 	}

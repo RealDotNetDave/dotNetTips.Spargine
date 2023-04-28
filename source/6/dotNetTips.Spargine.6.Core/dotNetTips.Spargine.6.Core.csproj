@@ -6,7 +6,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.4.557</AssemblyVersion>
+		<AssemblyVersion>2023.6.5.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -24,7 +24,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.4.557</FileVersion>
+		<FileVersion>2023.6.5.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -35,12 +35,11 @@
 		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageReleaseNotes>
-			--APR 2022: Initial release.
-			--AUG 2022: Code cleanup.
-			--NOV 2022: Minor changes. Code cleanup.
-			--FEB 2023: Update to PerformanceStopwatch, code cleanup.
-		</PackageReleaseNotes>
+		<PackageReleaseNotes>--APR 2022: Initial release.
+--AUG 2022: Code cleanup.
+--NOV 2022: Minor changes. Code cleanup.
+--FEB 2023: Update to PerformanceStopwatch, code cleanup.
+--MAY 2023: Added methods to generate processor information, faster logging,fast regular expressions, new PreserveAttribute, APILibraries info, new exception type NetworkConnectionException. 		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -55,7 +54,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Title>DotNetTips.Spargine.6.Core</Title>
-		<Version>2023.6.4.557</Version>
+		<Version>2023.6.5.1</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

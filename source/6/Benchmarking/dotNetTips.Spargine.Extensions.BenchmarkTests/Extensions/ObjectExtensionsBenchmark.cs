@@ -4,13 +4,15 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-30-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="ObjectExtensionsBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 using System.Collections.ObjectModel;
 using System.Data;
@@ -19,8 +21,6 @@ using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
-
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
@@ -34,20 +34,14 @@ public class ObjectExtensionsBenchmark : Benchmark
 
 	private void CheckForNullParamNormal(object input)
 	{
-		if (input is null)
-		{
-			input = "TEST";
-		}
+		input ??= "TEST";
 
 		this.Consume(input);
 	}
 
 	private void CheckForNullParamSpargine(object input)
 	{
-		if (input is null)
-		{
-			input = "SPARGINE";
-		}
+		input ??= "SPARGINE";
 
 		this.Consume(input);
 	}
@@ -276,7 +270,7 @@ public class ObjectExtensionsBenchmark : Benchmark
 		base.Setup();
 
 		this._personProper = RandomData.GenerateRefPerson<PersonProper>();
-		this._personRecord = RandomData.GeneratePersonRecordCollection(count: 1, addressCount: 1).First();
+		this._personRecord = RandomData.GeneratePersonRecord();
 		this._peopleJson = this._personProper.ToJson();
 		this._personCollection = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
 	}

@@ -34,11 +34,6 @@ public static class ColorExtensions
 	public static Color Average(this IEnumerable<Color> colors)
 	{
 		colors = colors.ArgumentItemsExists();
-
-		var r = colors.Average(c => c.R).Round();
-		var g = colors.Average(c => c.G).Round();
-		var b = colors.Average(c => c.B).Round();
-
-		return Color.FromArgb(r, g, b);
+		return Color.FromArgb(colors.Average(c => c.R).Round(), colors.Average(c => c.G).Round(), colors.Average(c => c.B).Round());
 	}
 }

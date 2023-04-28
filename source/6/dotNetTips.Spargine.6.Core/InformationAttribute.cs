@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-06-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="InformationAttribute.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -101,7 +101,7 @@ public sealed class InformationAttribute : Attribute
 	/// Gets the created on date.
 	/// </summary>
 	/// <value>The created on.</value>
-	public DateTimeOffset CreatedOn { get; }
+	public DateTimeOffset CreatedOn { get; private set; }
 
 	/// <summary>
 	/// Gets the description of the type, method or event.
@@ -125,7 +125,7 @@ public sealed class InformationAttribute : Attribute
 	/// Gets the modified on date.
 	/// </summary>
 	/// <value>The modified on.</value>
-	public DateTimeOffset ModifiedOn { get; }
+	public DateTimeOffset ModifiedOn { get; private set; }
 
 	/// <summary>
 	/// Gets or sets the status.

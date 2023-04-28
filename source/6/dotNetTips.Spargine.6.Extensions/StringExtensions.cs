@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-15-2023
+// Last Modified On : 04-18-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -155,7 +155,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Computes a hash from the string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Computes a hash from the string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The input.</param>
@@ -211,7 +211,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Concatenates the specified first message with passed in string[] using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Concatenates the specified first message with passed in string[] using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The first message.</param>
@@ -631,7 +631,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Indents the string by the specified length using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Indents the string by the specified length using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The string.</param>

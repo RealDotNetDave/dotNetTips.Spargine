@@ -33,7 +33,6 @@ public static class Program
 	/// <param name="args">The arguments.</param>
 	public static void Main()
 	{
-#pragma warning disable CA1031 // Do not catch general exception types
 		try
 		{
 			var config = DefaultConfig.Instance
@@ -76,6 +75,5 @@ public static class Program
 			Console.Beep(frequency: 5000, duration: 6000);
 			_ = Console.ReadLine();
 		}
-#pragma warning restore CA1031 // Do not catch general exception types
 	}
 }

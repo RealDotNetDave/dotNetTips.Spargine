@@ -4,7 +4,7 @@
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.4.161</AssemblyVersion>
+		<AssemblyVersion>2023.6.5.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -21,7 +21,7 @@
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.4.161</FileVersion>
+		<FileVersion>2023.6.5.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -34,7 +34,8 @@
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageReleaseNotes>MAY 2022: Initial release.
 AUG 2022: Optimizations for benchmark code.
-FEB 2023: Added new benchmark tests. Fixed issues. Code cleanup.</PackageReleaseNotes>
+FEB 2023: Added new benchmark tests. Fixed issues. Code cleanup.
+MAY 2023: Code cleanup</PackageReleaseNotes>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6/Benchmarking</RepositoryUrl>
@@ -46,7 +47,7 @@ FEB 2023: Added new benchmark tests. Fixed issues. Code cleanup.</PackageRelease
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
 		<!--<TargetFramework>net6.0</TargetFramework>-->
-		<Version>2023.6.4.161</Version>
+		<Version>2023.6.5.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -63,9 +64,9 @@ FEB 2023: Added new benchmark tests. Fixed issues. Code cleanup.</PackageRelease
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.5" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.4.557" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.4.557" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.4.557" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.5.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.5.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.5.1" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

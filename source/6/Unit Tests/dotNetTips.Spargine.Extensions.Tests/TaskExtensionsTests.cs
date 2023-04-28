@@ -48,10 +48,7 @@ public class TaskExtensionsTests
 	[TestMethod]
 	public void FireAndForgetTest02()
 	{
-		Action<Exception> value = (Exception ex) =>
-					{
-						Debug.WriteLine(ex.Message);
-					};
+		Action<Exception> value = (Exception ex) => Debug.WriteLine(ex.Message);
 
 		var p = value;
 

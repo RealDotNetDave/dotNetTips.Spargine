@@ -4,7 +4,7 @@
 // Created          : 07-17-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-14-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="PersonProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -595,7 +595,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Postal code cannot be over 40 characters in length.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode

@@ -74,6 +74,6 @@ public class CollectionCollectionBenchmark : SmallCollectionsBenchmark
 	{
 		base.Setup();
 
-		this._personRefArray = GetPersonProperRefArray();
+		this._personRefArray = this.GetPersonProperRefArray();
 	}
 }

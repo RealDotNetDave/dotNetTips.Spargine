@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -282,10 +282,7 @@ public class ArrayExtensionsTests
 		var people = RandomData.GeneratePersonValCollection<DotNetTips.Spargine.Tester.Models.ValueTypes.Person>(10).ToArray();
 		var sb = new StringBuilder();
 
-		people.PerformAction((person) =>
-		{
-			_ = sb.Append($"{person.ToString()}|");
-		});
+		people.PerformAction((person) => _ = sb.Append($"{person.ToString()}|"));
 
 		Assert.IsTrue(sb.Length > 100);
 	}

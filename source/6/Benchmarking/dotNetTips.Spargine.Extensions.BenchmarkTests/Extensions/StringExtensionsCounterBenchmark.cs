@@ -105,7 +105,7 @@ public class StringExtensionsCounterBenchmark : SmallCollectionsBenchmark
 	[Benchmark(Description = nameof(StringExtensions.FromBrotliStringAsync))]
 	[BenchmarkCategory(Categories.New, Categories.Strings, Categories.Async)]
 	public async Task FromBrotliAsync()
-	{   
+	{
 		var result = await this._brotilString.FromBrotliStringAsync().ConfigureAwait(false);
 
 		await this.ConsumeAsync(result).ConfigureAwait(false);

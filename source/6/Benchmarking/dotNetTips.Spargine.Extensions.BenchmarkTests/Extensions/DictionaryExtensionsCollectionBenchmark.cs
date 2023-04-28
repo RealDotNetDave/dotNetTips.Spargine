@@ -4,7 +4,7 @@
 // Created          : 01-09-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-31-2023
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="DictionaryExtensionsCollectionBenchmark.cs" company="DotNetTips.Spargine.Extensions.BenchmarkTests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -23,9 +23,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 /// <summary>
 /// Class DictionaryExtensionsCollectionBenchmark.
-/// Implements the <see cref="LargeCollectionsBenchmark" />
+/// Implements the <see cref="SmallCollectionsBenchmark" />
 /// </summary>
-/// <seealso cref="LargeCollectionsBenchmark" />
+/// <seealso cref="SmallCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
 public class DictionaryExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {

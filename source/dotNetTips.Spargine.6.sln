@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{09354638-5FA5-4847-8679-F62A73A8CBEC}"
 	ProjectSection(SolutionItems) = preProject
 		6\.editorconfig = 6\.editorconfig
+		..\.gitignore = ..\.gitignore
 		..\docs\graphics\dotNetTips-Spargine-Logo@0.25x.jpg = ..\docs\graphics\dotNetTips-Spargine-Logo@0.25x.jpg
 	EndProjectSection
 EndProject

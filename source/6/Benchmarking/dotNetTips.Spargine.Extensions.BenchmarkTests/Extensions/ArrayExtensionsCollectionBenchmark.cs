@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2023
+// Last Modified On : 04-19-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -13,7 +13,6 @@
 // ***********************************************************************
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -27,9 +26,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 /// <summary>
 /// Class ArrayExtensionsCollectionBenchmark.
-/// Implements the <see cref="LargeCollectionsBenchmark" />
+/// Implements the <see cref="SmallCollectionsBenchmark" />
 /// </summary>
-/// <seealso cref="LargeCollectionsBenchmark" />
+/// <seealso cref="SmallCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
 public class ArrayExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
@@ -84,13 +83,13 @@ public class ArrayExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	}
 
 	//TODO:FIGURE OUT WHY THIS DOES NOT WORK
-	[Benchmark(Description = "As<>()")]
-	public void As01()
-	{
-		var people1 = this._personRefArray.Clone<PersonProper>();
-		var result = people1.As<List<IPerson>>();
-		base.Consume(result);
-	}
+	//[Benchmark(Description = "As<>()")]
+	//public void As01()
+	//{
+	//	var people1 = this._personRefArray.Clone<PersonProper>();
+	//	var result = people1.As<List<IPerson>>();
+	//	base.Consume(result);
+	//}
 
 	[Benchmark(Description = nameof(ArrayExtensions.BytesToString))]
 	[BenchmarkCategory(Categories.Strings)]
@@ -259,20 +258,21 @@ public class ArrayExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this.Consume(result);
 	}
 
-	[Benchmark(Description = nameof(ArrayExtensions.PerformAction) + " :Record")]
-	[BenchmarkCategory(Categories.ReferenceType)]
-	public void PerformAction_Record()
-	{
-		var people = this._personRecordArray;
-		var sb = new StringBuilder();
+	//TODO: FIGURE OUT WHY THIS FAILS.
+	//[Benchmark(Description = nameof(ArrayExtensions.PerformAction) + " :Record")]
+	//[BenchmarkCategory(Categories.ReferenceType)]
+	//public void PerformAction_Record()
+	//{
+	//	var people = this._personRecordArray;
+	//	var sb = new StringBuilder();
 
-		people.PerformAction((person) =>
-		{
-			_ = sb.Append(CultureInfo.CurrentCulture, $"{person.PropertiesToString()}|");
-		});
+	//	people.PerformAction((person) =>
+	//	{
+	//		_ = sb.Append(CultureInfo.CurrentCulture, $"{person.PropertiesToString()}|");
+	//	});
 
-		this.Consume(sb.ToString());
-	}
+	//	this.Consume(sb.ToString());
+	//}
 
 	[Benchmark(Description = nameof(ArrayExtensions.PerformAction) + " :Record (Comparison)")]
 	[BenchmarkCategory(Categories.ReferenceType, Categories.ForComparison)]

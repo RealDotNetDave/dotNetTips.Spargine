@@ -17,6 +17,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions;
 using DotNetTips.Spargine.Tester.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -194,35 +195,59 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the born on date.
 	/// </summary>
 	/// <value>The born on date.</value>
-	/// <exception cref="ArgumentOutOfRangeException">BornOn - Person cannot be born in the future.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
 	[DataMember(Name = "bornOn")]
 	[XmlElement]
 	public DateTimeOffset BornOn
 	{
 		get => this._bornOn;
-		init => this._bornOn = value.ToUniversalTime() > DateTimeOffset.UtcNow ? throw new ArgumentOutOfRangeException(nameof(this.BornOn), "Person cannot be born in the future.") : value;
+		init
+		{
+			if (this._bornOn == value)
+			{
+				return;
+			}
+
+			this._bornOn = value.ToUniversalTime() > DateTimeOffset.UtcNow
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.BornOn),
+					Resources.PersonBornOnCannotBeInTheFuture)
+				: value;
+		}
 	}
 
 	/// <summary>
 	/// Gets or sets the cell phone number.
 	/// </summary>
 	/// <value>The cell phone number.</value>
-	/// <exception cref="ArgumentOutOfRangeException">CellPhone - Phone number is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
 	/// <exception cref="ArgumentNullException">CellPhone - Phone number is limited to 50 characters.</exception>
 	[DataMember(Name = "cellPhone")]
 	[XmlElement]
 	public string CellPhone
 	{
 		get => this._cellPhone;
-		init => this._cellPhone = value?.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.CellPhone), "Phone number is limited to 50 characters.") : value;
+		init
+		{
+			if (string.Equals(this._cellPhone, value, StringComparison.Ordinal))
+			{
+				return;
+			}
+
+			this._cellPhone = value.HasValue(0, 50) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.CellPhone),
+					Resources.PhoneNumberIsLimitedTo50Characters)
+				: value;
+		}
 	}
 
 	/// <summary>
 	/// Gets or sets the email address.
 	/// </summary>
 	/// <value>The email address.</value>
-	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
 	[DisallowNull]
 	[DataMember(Name = "email")]
 	[XmlElement]
@@ -231,12 +256,16 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		get => this._email;
 		init
 		{
-			if (string.IsNullOrEmpty(value))
+			if (string.Equals(this._email, value, StringComparison.Ordinal))
 			{
-				throw new ArgumentNullException(nameof(this.Email), "Value for Email cannot be null or empty.");
+				return;
 			}
 
-			this._email = value.Length > 75 ? throw new ArgumentOutOfRangeException(nameof(this.Email), Resources.EmailLengthIsLimitedTo75Characters) : value;
+			this._email = value.HasValue(0, 75) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.Email),
+					Resources.EmailLengthIsLimitedTo75Characters)
+				: value;
 		}
 	}
 
@@ -244,8 +273,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
+	/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
 	/// <exception cref="ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
-	/// <exception cref="ArgumentOutOfRangeException">FirstName - First name length is limited to 50 characters.</exception>
 	[DataMember(Name = "firstName")]
 	[XmlElement]
 	public string FirstName
@@ -253,7 +282,16 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		get => this._firstName;
 		init
 		{
-			this._firstName = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.FirstName), "First name length is limited to 50 characters.") : value;
+			if (string.Equals(this._firstName, value, StringComparison.Ordinal))
+			{
+				return;
+			}
+
+			this._firstName = value.HasValue(0, 50) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.FirstName),
+					Resources.FirstNameLengthIsLimitedTo50Characters)
+				: value;
 		}
 	}
 
@@ -261,14 +299,26 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the home phone number.
 	/// </summary>
 	/// <value>The home phone.</value>
-	/// <exception cref="ArgumentOutOfRangeException">HomePhone - Home phone length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
 	/// <exception cref="ArgumentNullException">HomePhone - Home phone length is limited to 50 characters.</exception>
 	[DataMember(Name = "homePhone")]
 	[XmlElement]
 	public string HomePhone
 	{
 		get => this._homePhone;
-		init => this._homePhone = value.ArgumentNotNull().Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.HomePhone), "Home phone length is limited to 50 characters.") : value;
+		init
+		{
+			if (string.Equals(this._homePhone, value, StringComparison.Ordinal))
+			{
+				return;
+			}
+
+			this._homePhone = value.HasValue(0, 50) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.HomePhone),
+					Resources.PhoneNumberIsLimitedTo50Characters)
+				: value;
+		}
 	}
 
 	/// <summary>
@@ -284,8 +334,8 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
+	/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
 	/// <exception cref="ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
-	/// <exception cref="ArgumentOutOfRangeException">LastName - Last name length is limited to 50 characters.</exception>
 	[DataMember(Name = "lastName")]
 	[XmlElement]
 	public string LastName
@@ -293,7 +343,16 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		get => this._lastName;
 		init
 		{
-			this._lastName = value.Length > 50 ? throw new ArgumentOutOfRangeException(nameof(this.LastName), "Last name length is limited to 50 characters.") : value;
+			if (string.Equals(this._lastName, value, StringComparison.Ordinal))
+			{
+				return;
+			}
+
+			this._lastName = value.HasValue(0, 50) is false
+				? throw new ArgumentOutOfRangeException(
+					nameof(this.LastName),
+					Resources.LastNameLengthIsLimitedTo50Characters)
+				: value;
 		}
 	}
 }

@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2022
+// Last Modified On : 04-24-2023
 // ***********************************************************************
 // <copyright file="Config.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -35,9 +35,8 @@ public class Config<T> where T : class, new()
 	protected Config()
 	{
 		var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-		var fileName = $"{App.AppInfo.Product}.config";
-		var folder = Path.Combine(localAppData, App.AppInfo.Company);
-		this.ConfigFileName = Path.Combine(folder, fileName);
+		this.ConfigFolderName = Path.Combine(localAppData, App.AppInfo.Company);
+		this.ConfigFileName = Path.Combine(this.ConfigFolderName, $"{App.AppInfo.Product}.config");
 	}
 
 	/// <summary>
@@ -78,6 +77,13 @@ public class Config<T> where T : class, new()
 	/// <value>The name of the configuration file.</value>
 	[XmlIgnore]
 	public string ConfigFileName { get; }
+
+	/// <summary>
+	/// Gets the name of the configuration folder.
+	/// </summary>
+	/// <value>The name of the configuration folder.</value>
+	[XmlIgnore]
+	public string ConfigFolderName { get; }
 
 	/// <summary>
 	/// Gets the instance for the object.

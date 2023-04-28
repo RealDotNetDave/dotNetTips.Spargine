@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2023
+// Last Modified On : 04-19-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -30,9 +30,9 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 /// <summary>
 /// EnumerableExtensions PerfTestRunner.
-/// Implements the <see cref="LargeCollectionsBenchmark" />
+/// Implements the <see cref="SmallCollectionsBenchmark" />
 /// </summary>
-/// <seealso cref="LargeCollectionsBenchmark" />
+/// <seealso cref="SmallCollectionsBenchmark" />
 [BenchmarkCategory(Categories.Collections)]
 public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
@@ -148,7 +148,6 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this.Consume(result);
 	}
 
-
 	[Benchmark(Description = nameof(EnumerableExtensions.FastAny) + ": With Predicate")]
 	public void FastAnyWithPredicate()
 	{
@@ -254,7 +253,6 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this.Consume(result);
 	}
 
-
 	[Benchmark(Description = nameof(EnumerableExtensions.OrderBy) + ": With Sort Expression")]
 	public void OrderBy()
 	{
@@ -309,8 +307,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this._coordinateValEnumerable = this.GetCoordinateValArray().AsEnumerable();
 
 		var peopleToAdd = this._personRefEnumerable.ToList();
-
-		peopleToAdd.AddRange(this.GetPeopleRefToInsert());
+		peopleToAdd.AddRange(this.GetPeopleRefToInsert().Take(this.Count / 10));
 		this._personRefEnumerableToAdd = peopleToAdd.AsEnumerable();
 	}
 
@@ -333,7 +330,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	{
 		var people = this._personRefEnumerable;
 
-		var splitPeople = people.Split(this.Count / 2);
+		var splitPeople = people.Split(10);
 
 		this.Consume(splitPeople);
 	}

@@ -4,13 +4,15 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-31-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+
+//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -24,10 +26,8 @@ using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
 using DotNetTips.Spargine.Tester.Models.ValueTypes;
 using Perfolizer.Mathematics.SignificanceTesting;
+using static BenchmarkDotNet.Attributes.JsonExporterAttribute;
 using static BenchmarkDotNet.Attributes.MarkdownExporterAttribute;
-using static BenchmarkDotNet.Attributes.XmlExporterAttribute;
-
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Benchmarking;
 
@@ -266,9 +266,9 @@ public abstract class Benchmark
 
 		this.PersonVal02 = RandomData.GenerateValPerson<Tester.Models.ValueTypes.Person>();
 
-		this.PersonRecord01 = RandomData.GeneratePersonRecordCollection(1).First();
+		this.PersonRecord01 = RandomData.GeneratePersonRecord();
 
-		this.PersonRecord02 = RandomData.GeneratePersonRecordCollection(1).First();
+		this.PersonRecord02 = RandomData.GeneratePersonRecord();
 
 		this.StringToTrim = $"          {this.LongTestString}          ";
 
@@ -305,7 +305,7 @@ public abstract class Benchmark
 	{
 		if (person is not null)
 		{
-			person = person with { Email = TestEmailLowerCase };
+			_ = person with { Email = TestEmailLowerCase };
 		}
 	}
 

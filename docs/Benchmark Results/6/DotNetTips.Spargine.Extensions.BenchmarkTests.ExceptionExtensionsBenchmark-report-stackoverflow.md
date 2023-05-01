@@ -1,14 +1,14 @@
 
-    BenchmarkDotNet=v0.13.4, OS=Windows 10 (10.0.19045.2546)
+    BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19045.2846/22H2/2022Update)
     Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-    .NET SDK=7.0.102
-      [Host]     : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
-      Job-URMJSQ : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
-      Job-NCETOA : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+    .NET SDK=7.0.203
+      [Host]     : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+      Job-ICYIAI : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+      Job-QAMYPG : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
 
     EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
 
              Method |  Runtime |     Mean |   Error |  StdDev |  StdErr |      Min |       Q1 |   Median |       Q3 |      Max |        Op/s | CI99.9% Margin | Iterations | Kurtosis | MValue | Skewness | Rank | LogicalGroup | Baseline | Code Size | Allocated |
     --------------- |--------- |---------:|--------:|--------:|--------:|---------:|---------:|---------:|---------:|---------:|------------:|---------------:|-----------:|---------:|-------:|---------:|-----:|------------- |--------- |----------:|----------:|
-     GetAllMessages | .NET 6.0 | 160.8 ns | 0.24 ns | 0.22 ns | 0.06 ns | 160.3 ns | 160.7 ns | 160.8 ns | 161.0 ns | 161.1 ns | 6,217,955.2 |      0.2374 ns |      15.00 |    2.528 |  2.000 |  -0.5587 |    1 |            * |       No |     483 B |     272 B |
-     GetAllMessages | .NET 7.0 | 168.2 ns | 1.22 ns | 1.08 ns | 0.29 ns | 166.8 ns | 167.1 ns | 168.4 ns | 169.3 ns | 169.6 ns | 5,945,235.6 |      1.2238 ns |      14.00 |    1.132 |  2.000 |  -0.0270 |    2 |            * |       No |     854 B |     272 B |
+     GetAllMessages | .NET 6.0 | 158.8 ns | 0.41 ns | 0.34 ns | 0.10 ns | 158.4 ns | 158.5 ns | 158.7 ns | 159.0 ns | 159.6 ns | 6,297,013.1 |      0.4106 ns |      13.00 |    2.444 |  2.000 |   0.6519 |    1 |            * |       No |     493 B |     272 B |
+     GetAllMessages | .NET 7.0 | 165.4 ns | 0.61 ns | 0.51 ns | 0.14 ns | 164.7 ns | 165.1 ns | 165.5 ns | 165.7 ns | 166.5 ns | 6,044,809.4 |      0.6136 ns |      13.00 |    2.347 |  2.000 |   0.2027 |    2 |            * |       No |     864 B |     272 B |

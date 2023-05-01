@@ -37,7 +37,7 @@
 --AUG 2022: New code, unit tests and code cleanup.
 --NOV 2022: New code, unit tests, benchmark tests. Code cleanup.
 --FEB 2023: New code, unit tests, benchmark tests. Code cleanup.
---FEB 2023: New code, unit tests, benchmark tests. Code cleanup.		</PackageReleaseNotes>
+--MAY 2023: New code, unit tests, benchmark tests. Code cleanup.		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>

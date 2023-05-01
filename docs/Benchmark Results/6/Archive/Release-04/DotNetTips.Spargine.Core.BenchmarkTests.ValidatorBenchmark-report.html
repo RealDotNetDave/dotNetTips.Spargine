@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DotNetTips.Spargine.Core.BenchmarkTests.ValidatorBenchmark-20230207-080654</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.4, OS=Windows 10 (10.0.19045.2546)
+Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.102
+  [Host]     : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
+  Job-NTYPVS : .NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2
+  Job-UPRYLK : .NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2
+</code></pre>
+<pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
+</code></pre>
+
+<table>
+<thead><tr><th>                                         Method</th><th>Runtime</th><th>                     Categories</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th>   Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>&#39;Validating Collection: No Validation&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>2.316 ns</td><td>0.0236 ns</td><td>0.0220 ns</td><td>0.0057 ns</td><td>2.281 ns</td><td>2.302 ns</td><td>2.311 ns</td><td>2.332 ns</td><td>2.367 ns</td><td>431,753,832.7</td><td>0.0236 ns</td><td>15.00</td><td>2.667</td><td>2.000</td><td>0.5376</td><td>1</td><td>*</td><td>No</td><td>62 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Collection: No Validation&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>2.856 ns</td><td>0.0204 ns</td><td>0.0181 ns</td><td>0.0048 ns</td><td>2.826 ns</td><td>2.847 ns</td><td>2.861 ns</td><td>2.869 ns</td><td>2.885 ns</td><td>350,087,211.6</td><td>0.0204 ns</td><td>14.00</td><td>1.789</td><td>2.000</td><td>-0.3267</td><td>2</td><td>*</td><td>No</td><td>63 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Collection: Validation + Inlining&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**</td><td>7.569 ns</td><td>0.1591 ns</td><td>0.1488 ns</td><td>0.0384 ns</td><td>7.383 ns</td><td>7.443 ns</td><td>7.552 ns</td><td>7.709 ns</td><td>7.805 ns</td><td>132,121,915.1</td><td>0.1591 ns</td><td>15.00</td><td>1.424</td><td>2.000</td><td>0.2565</td><td>7</td><td>*</td><td>No</td><td>240 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Collection: Validation + Inlining&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**</td><td>7.484 ns</td><td>0.0531 ns</td><td>0.0471 ns</td><td>0.0126 ns</td><td>7.407 ns</td><td>7.446 ns</td><td>7.491 ns</td><td>7.522 ns</td><td>7.548 ns</td><td>133,621,947.8</td><td>0.0531 ns</td><td>14.00</td><td>1.468</td><td>2.000</td><td>-0.2583</td><td>7</td><td>*</td><td>No</td><td>227 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Collection: Validation&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**</td><td>6.412 ns</td><td>0.0279 ns</td><td>0.0261 ns</td><td>0.0067 ns</td><td>6.362 ns</td><td>6.393 ns</td><td>6.414 ns</td><td>6.425 ns</td><td>6.456 ns</td><td>155,959,634.3</td><td>0.0279 ns</td><td>15.00</td><td>2.062</td><td>2.000</td><td>-0.0556</td><td>4</td><td>*</td><td>No</td><td>240 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Collection: Validation&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**</td><td>7.223 ns</td><td>0.0501 ns</td><td>0.0469 ns</td><td>0.0121 ns</td><td>7.140 ns</td><td>7.197 ns</td><td>7.231 ns</td><td>7.258 ns</td><td>7.301 ns</td><td>138,443,284.7</td><td>0.0501 ns</td><td>15.00</td><td>1.851</td><td>2.000</td><td>-0.1559</td><td>6</td><td>*</td><td>No</td><td>227 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: No Validation&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>2.297 ns</td><td>0.0207 ns</td><td>0.0194 ns</td><td>0.0050 ns</td><td>2.268 ns</td><td>2.286 ns</td><td>2.294 ns</td><td>2.307 ns</td><td>2.338 ns</td><td>435,294,744.2</td><td>0.0207 ns</td><td>15.00</td><td>2.402</td><td>2.000</td><td>0.4253</td><td>1</td><td>*</td><td>No</td><td>68 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: No Validation&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>2.950 ns</td><td>0.0270 ns</td><td>0.0252 ns</td><td>0.0065 ns</td><td>2.920 ns</td><td>2.927 ns</td><td>2.947 ns</td><td>2.961 ns</td><td>2.998 ns</td><td>338,998,762.6</td><td>0.0270 ns</td><td>15.00</td><td>1.952</td><td>2.000</td><td>0.4770</td><td>3</td><td>*</td><td>No</td><td>69 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: Validation + Inlining&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>6.301 ns</td><td>0.0450 ns</td><td>0.0421 ns</td><td>0.0109 ns</td><td>6.232 ns</td><td>6.271 ns</td><td>6.292 ns</td><td>6.332 ns</td><td>6.367 ns</td><td>158,694,168.5</td><td>0.0450 ns</td><td>15.00</td><td>1.753</td><td>2.000</td><td>0.2494</td><td>4</td><td>*</td><td>No</td><td>485 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: Validation + Inlining&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>6.328 ns</td><td>0.0466 ns</td><td>0.0389 ns</td><td>0.0108 ns</td><td>6.256 ns</td><td>6.302 ns</td><td>6.326 ns</td><td>6.362 ns</td><td>6.390 ns</td><td>158,039,143.1</td><td>0.0466 ns</td><td>13.00</td><td>1.824</td><td>2.000</td><td>-0.1248</td><td>4</td><td>*</td><td>No</td><td>784 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: Validation&#39;</td><td>.NET 6.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>6.227 ns</td><td>0.0583 ns</td><td>0.0545 ns</td><td>0.0141 ns</td><td>6.120 ns</td><td>6.197 ns</td><td>6.237 ns</td><td>6.259 ns</td><td>6.339 ns</td><td>160,593,840.2</td><td>0.0583 ns</td><td>15.00</td><td>2.658</td><td>2.000</td><td>-0.1473</td><td>4</td><td>*</td><td>No</td><td>485 B</td><td>-</td>
+</tr><tr><td>&#39;Validating Empty/Null String: Validation&#39;</td><td>.NET 7.0</td><td>Validation,**NEW**,**FOR COMPARISON**</td><td>6.565 ns</td><td>0.0331 ns</td><td>0.0293 ns</td><td>0.0078 ns</td><td>6.501 ns</td><td>6.549 ns</td><td>6.572 ns</td><td>6.585 ns</td><td>6.608 ns</td><td>152,314,254.2</td><td>0.0331 ns</td><td>14.00</td><td>2.356</td><td>2.000</td><td>-0.5282</td><td>5</td><td>*</td><td>No</td><td>875 B</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20230205-020908</title>
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20230430-042931</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -14,14 +14,22 @@
 <body>
 <table>
 <thead>
-<tr><th colspan="6">ReadOnlyCollectionBenchmark.DoesNotHaveItems</th></tr>
+<tr><th colspan="14">ReadOnlyCollectionBenchmark.DoesNotHaveItems</th></tr>
 <tr>
-<th>.NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2</th>
-<th>.NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2</th>
-<th>.NET 6.0.13 (6.0.1322.58009), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.2 (7.0.222.60605), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
 </tr>
 </thead>
 <tbody>
@@ -34,9 +42,9 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF806D6DE0C
+jne       short 00007FFA98E94A6C
 mov       edi,1
-jmp       short 00007FF806D6DE1B
+jmp       short 00007FFA98E94A7B
 call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
 setle     dil
@@ -57,28 +65,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF806D68E54
+jne       short 00007FFA98CBF514
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF8066F0890
-call      qword ptr [7FF8066F0890]
+mov       r11,7FFA986C0480
+call      qword ptr [7FFA986C0480]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF8066F0898
-call      qword ptr [7FF8066F0898]
+mov       r11,7FFA986C0488
+call      qword ptr [7FFA986C0488]
 test      eax,eax
-je        short 00007FF806D68E9C
+je        short 00007FFA98CBF55C
 add       esi,1
-jo        short 00007FF806D68EA5
+jo        short 00007FFA98CBF565
 mov       rcx,rdi
-mov       r11,7FF8066F0898
-call      qword ptr [7FF8066F0898]
+mov       r11,7FFA986C0488
+call      qword ptr [7FFA986C0488]
 test      eax,eax
-jne       short 00007FF806D68E80
+jne       short 00007FFA98CBF540
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -89,7 +97,7 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>
@@ -101,10 +109,10 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF81BB39D1C
+jne       short 00007FFAAB50475C
 mov       edi,1
-jmp       short 00007FF81BB39D2A
-call      qword ptr [7FF81BF6F360]
+jmp       short 00007FFAAB50476A
+call      qword ptr [7FFAAB14F660]
 xor       edi,edi
 test      eax,eax
 setle     dil
@@ -112,7 +120,7 @@ mov       [rsp+20],dil
 mov       rcx,[rsi+18]
 lea       rdx,[rsp+20]
 cmp       [rcx],ecx
-call      qword ptr [7FF81C23B390]
+call      qword ptr [7FFAAB49B048]
 nop
 add       rsp,28
 pop       rsi
@@ -124,28 +132,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF81BB39DB4
+jne       short 00007FFAAB5047F4
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF81B940840
+mov       r11,7FFAAAB30A40
 call      qword ptr [r11]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF81B940848
+mov       r11,7FFAAAB30A48
 call      qword ptr [r11]
 test      eax,eax
-je        short 00007FF81BB39DF3
+je        short 00007FFAAB504833
 add       esi,1
-jo        short 00007FF81BB39DFC
+jo        short 00007FFAAB50483C
 mov       rcx,rdi
-mov       r11,7FF81B940848
+mov       r11,7FFAAAB30A48
 call      qword ptr [r11]
 test      eax,eax
-jne       short 00007FF81BB39DDA
+jne       short 00007FFAAB50481A
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -156,7 +164,7 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>
@@ -168,9 +176,9 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF806D8DE0C
+jne       short 00007FFA98EA4E2C
 mov       edi,1
-jmp       short 00007FF806D8DE1B
+jmp       short 00007FFA98EA4E3B
 call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
 setle     dil
@@ -191,28 +199,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF806D88E54
+jne       short 00007FFA98CCF4F4
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF806710890
-call      qword ptr [7FF806710890]
+mov       r11,7FFA986D0480
+call      qword ptr [7FFA986D0480]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF806710898
-call      qword ptr [7FF806710898]
+mov       r11,7FFA986D0488
+call      qword ptr [7FFA986D0488]
 test      eax,eax
-je        short 00007FF806D88E9C
+je        short 00007FFA98CCF53C
 add       esi,1
-jo        short 00007FF806D88EA5
+jo        short 00007FFA98CCF545
 mov       rcx,rdi
-mov       r11,7FF806710898
-call      qword ptr [7FF806710898]
+mov       r11,7FFA986D0488
+call      qword ptr [7FFA986D0488]
 test      eax,eax
-jne       short 00007FF806D88E80
+jne       short 00007FFA98CCF520
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -223,7 +231,7 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>
@@ -235,10 +243,10 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF832A69D1C
+jne       short 00007FFAAB524B3C
 mov       edi,1
-jmp       short 00007FF832A69D2A
-call      qword ptr [7FF832E9F360]
+jmp       short 00007FFAAB524B4A
+call      qword ptr [7FFAAB15F660]
 xor       edi,edi
 test      eax,eax
 setle     dil
@@ -246,7 +254,7 @@ mov       [rsp+20],dil
 mov       rcx,[rsi+18]
 lea       rdx,[rsp+20]
 cmp       [rcx],ecx
-call      qword ptr [7FF83316B390]
+call      qword ptr [7FFAAB4BD390]
 nop
 add       rsp,28
 pop       rsi
@@ -258,28 +266,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF832A69DB4
+jne       short 00007FFAAB524BD4
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF832870840
+mov       r11,7FFAAAB40A48
 call      qword ptr [r11]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF832870848
+mov       r11,7FFAAAB40A50
 call      qword ptr [r11]
 test      eax,eax
-je        short 00007FF832A69DF3
+je        short 00007FFAAB524C13
 add       esi,1
-jo        short 00007FF832A69DFC
+jo        short 00007FFAAB524C1C
 mov       rcx,rdi
-mov       r11,7FF832870848
+mov       r11,7FFAAAB40A50
 call      qword ptr [r11]
 test      eax,eax
-jne       short 00007FF832A69DDA
+jne       short 00007FFAAB524BFA
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -290,7 +298,7 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>
@@ -302,9 +310,9 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF806D8DDEC
+jne       short 00007FFA98E84E0C
 mov       edi,1
-jmp       short 00007FF806D8DDFB
+jmp       short 00007FFA98E84E1B
 call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
 test      eax,eax
 setle     dil
@@ -325,28 +333,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF806D88E34
+jne       short 00007FFA98CAF514
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF806710890
-call      qword ptr [7FF806710890]
+mov       r11,7FFA986B0480
+call      qword ptr [7FFA986B0480]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF806710898
-call      qword ptr [7FF806710898]
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
 test      eax,eax
-je        short 00007FF806D88E7C
+je        short 00007FFA98CAF55C
 add       esi,1
-jo        short 00007FF806D88E85
+jo        short 00007FFA98CAF565
 mov       rcx,rdi
-mov       r11,7FF806710898
-call      qword ptr [7FF806710898]
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
 test      eax,eax
-jne       short 00007FF806D88E60
+jne       short 00007FFA98CAF540
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -357,7 +365,7 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>
@@ -369,10 +377,10 @@ sub       rsp,28
 mov       rsi,rcx
 mov       rcx,[rsi+288]
 test      rcx,rcx
-jne       short 00007FF832A99CFC
+jne       short 00007FFAAB504C7C
 mov       edi,1
-jmp       short 00007FF832A99D0A
-call      qword ptr [7FF832ECF360]
+jmp       short 00007FFAAB504C8A
+call      qword ptr [7FFAAB14F660]
 xor       edi,edi
 test      eax,eax
 setle     dil
@@ -380,7 +388,7 @@ mov       [rsp+20],dil
 mov       rcx,[rsi+18]
 lea       rdx,[rsp+20]
 cmp       [rcx],ecx
-call      qword ptr [7FF83319B048]
+call      qword ptr [7FFAAB49B390]
 nop
 add       rsp,28
 pop       rsi
@@ -392,28 +400,28 @@ push      rdi
 push      rsi
 sub       rsp,28
 test      rcx,rcx
-jne       short 00007FF832A99D94
+jne       short 00007FFAAB504D14
 xor       eax,eax
 add       rsp,28
 pop       rsi
 pop       rdi
 ret
 xor       esi,esi
-mov       r11,7FF8328A0840
+mov       r11,7FFAAAB30A48
 call      qword ptr [r11]
 mov       rdi,rax
 mov       rcx,rdi
-mov       r11,7FF8328A0848
+mov       r11,7FFAAAB30A50
 call      qword ptr [r11]
 test      eax,eax
-je        short 00007FF832A99DD3
+je        short 00007FFAAB504D53
 add       esi,1
-jo        short 00007FF832A99DDC
+jo        short 00007FFAAB504D5C
 mov       rcx,rdi
-mov       r11,7FF8328A0848
+mov       r11,7FFAAAB30A50
 call      qword ptr [r11]
 test      eax,eax
-jne       short 00007FF832A99DBA
+jne       short 00007FFAAB504D3A
 mov       eax,esi
 add       rsp,28
 pop       rsi
@@ -424,7 +432,543 @@ int       3
 
 BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 movzx     eax,byte ptr [rdx]
-mov       [rcx+54],al
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFA98E8498C
+mov       edi,1
+jmp       short 00007FFA98E8499B
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFA98CAF4D4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFA986B0480
+call      qword ptr [7FFA986B0480]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
+test      eax,eax
+je        short 00007FFA98CAF51C
+add       esi,1
+jo        short 00007FFA98CAF525
+mov       rcx,rdi
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
+test      eax,eax
+jne       short 00007FFA98CAF500
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFAAB4D551C
+mov       edi,1
+jmp       short 00007FFAAB4D552A
+call      qword ptr [7FFAAB11F660]
+xor       edi,edi
+test      eax,eax
+setle     dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFAAB46B900]
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFAAB4D55B4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFAAAB00A48
+call      qword ptr [r11]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFAAAB00A50
+call      qword ptr [r11]
+test      eax,eax
+je        short 00007FFAAB4D55F3
+add       esi,1
+jo        short 00007FFAAB4D55FC
+mov       rcx,rdi
+mov       r11,7FFAAAB00A50
+call      qword ptr [r11]
+test      eax,eax
+jne       short 00007FFAAB4D55DA
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFA98E84E2C
+mov       edi,1
+jmp       short 00007FFA98E84E3B
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFA98CAF4F4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFA986B0480
+call      qword ptr [7FFA986B0480]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
+test      eax,eax
+je        short 00007FFA98CAF53C
+add       esi,1
+jo        short 00007FFA98CAF545
+mov       rcx,rdi
+mov       r11,7FFA986B0488
+call      qword ptr [7FFA986B0488]
+test      eax,eax
+jne       short 00007FFA98CAF520
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFAAB50513C
+mov       edi,1
+jmp       short 00007FFAAB50514A
+call      qword ptr [7FFAAB14F660]
+xor       edi,edi
+test      eax,eax
+setle     dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFAAB49B390]
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFAAB5051D4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFAAAB30A48
+call      qword ptr [r11]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFAAAB30A50
+call      qword ptr [r11]
+test      eax,eax
+je        short 00007FFAAB505213
+add       esi,1
+jo        short 00007FFAAB50521C
+mov       rcx,rdi
+mov       r11,7FFAAAB30A50
+call      qword ptr [r11]
+test      eax,eax
+jne       short 00007FFAAB5051FA
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFA98EA496C
+mov       edi,1
+jmp       short 00007FFA98EA497B
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFA98CCF4F4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFA986D0480
+call      qword ptr [7FFA986D0480]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFA986D0488
+call      qword ptr [7FFA986D0488]
+test      eax,eax
+je        short 00007FFA98CCF53C
+add       esi,1
+jo        short 00007FFA98CCF545
+mov       rcx,rdi
+mov       r11,7FFA986D0488
+call      qword ptr [7FFA986D0488]
+test      eax,eax
+jne       short 00007FFA98CCF520
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFAAB4E517C
+mov       edi,1
+jmp       short 00007FFAAB4E518A
+call      qword ptr [7FFAAB12F660]
+xor       edi,edi
+test      eax,eax
+setle     dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFAAB47B048]
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFAAB4E5214
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFAAAB10A48
+call      qword ptr [r11]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFAAAB10A50
+call      qword ptr [r11]
+test      eax,eax
+je        short 00007FFAAB4E5253
+add       esi,1
+jo        short 00007FFAAB4E525C
+mov       rcx,rdi
+mov       r11,7FFAAAB10A50
+call      qword ptr [r11]
+test      eax,eax
+jne       short 00007FFAAB4E523A
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFA98E74E4C
+mov       edi,1
+jmp       short 00007FFA98E74E5B
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+test      eax,eax
+setle     dil
+movzx     edi,dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFA98C9F4F4
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFA986A0480
+call      qword ptr [7FFA986A0480]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFA986A0488
+call      qword ptr [7FFA986A0488]
+test      eax,eax
+je        short 00007FFA98C9F53C
+add       esi,1
+jo        short 00007FFA98C9F545
+mov       rcx,rdi
+mov       r11,7FFA986A0488
+call      qword ptr [7FFA986A0488]
+test      eax,eax
+jne       short 00007FFA98C9F520
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rsi,rcx
+mov       rcx,[rsi+288]
+test      rcx,rcx
+jne       short 00007FFAAB4F4F7C
+mov       edi,1
+jmp       short 00007FFAAB4F4F8A
+call      qword ptr [7FFAAB13F660]
+xor       edi,edi
+test      eax,eax
+setle     dil
+mov       [rsp+20],dil
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFAAB48BC00]
+nop
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+push      rdi
+push      rsi
+sub       rsp,28
+test      rcx,rcx
+jne       short 00007FFAAB4F5014
+xor       eax,eax
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+xor       esi,esi
+mov       r11,7FFAAAB20A48
+call      qword ptr [r11]
+mov       rdi,rax
+mov       rcx,rdi
+mov       r11,7FFAAAB20A50
+call      qword ptr [r11]
+test      eax,eax
+je        short 00007FFAAB4F5053
+add       esi,1
+jo        short 00007FFAAB4F505C
+mov       rcx,rdi
+mov       r11,7FFAAAB20A50
+call      qword ptr [r11]
+test      eax,eax
+jne       short 00007FFAAB4F503A
+mov       eax,esi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+call      CORINFO_HELP_OVERFLOW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
 ret
 
 </code></pre></td>

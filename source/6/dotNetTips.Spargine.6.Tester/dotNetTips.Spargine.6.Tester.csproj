@@ -36,7 +36,7 @@
 --AUG 2022: Code cleanup.
 --NOV 2022: Minor changes. Code cleanup.
 --FEB 2023: Minor changes. Code cleanup.
---MAT 2023: Added code to produce realistic person and address information. New code to generate face credit card numbers and person first and last names. Code cleanup.</PackageReleaseNotes>
+--MAY 2023: Added code to produce realistic person and address information. New code to generate face credit card numbers and person first and last names. Code cleanup.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<Product>$(AssemblyName)</Product>

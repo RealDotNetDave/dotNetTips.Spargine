@@ -6,8 +6,8 @@ This repository is for the dotNetTips.Spargine code for .NET 6 & 7. Please suppo
 
 > <a href="README-5.md" target="_blank">Click here</a> for the .NET 5 version of Spargine.
 
-## GitHub
-All of the assemblies listed below can be found on GitHub by <a href="https://www.nuget.org/profiles/davidmccarter" target="_blank">clicking here</a>.
+## NewGet
+All of the assemblies listed below can be found on NuGet by <a href="https://www.nuget.org/profiles/davidmccarter" target="_blank">clicking here</a>.
 
 ## Projects
 ![Spargine Layout](docs/graphics/Spargine.6.svg)

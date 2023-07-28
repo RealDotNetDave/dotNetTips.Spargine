@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 07-21-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -132,7 +132,7 @@ public static class RandomData
 	/// <param name="addressLength">Length of the address.</param>
 	/// <param name="countyProvinceLength">Length of the county province.</param>
 	/// <returns>Collection&lt;AddressRecord&gt;.</returns>
-	[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "3/14/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(GenerateAddressRecordCollection), "David McCarter", "3/14/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	private static Collection<AddressRecord> GenerateAddressRecordCollection(Country country, State state, City city, int count = 2, int addressLength = 25, int countyProvinceLength = 20)
 	{
 		count = count.ArgumentInRange(lower: 1, upper: 100, defaultValue: 2);
@@ -421,7 +421,7 @@ public static class RandomData
 	/// Generates the credit card.
 	/// </summary>
 	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string GenerateCreditCard()
 	{
 		return RandomCreditCardNumberGenerator.GetCreditCardNumber();
@@ -562,7 +562,7 @@ public static class RandomData
 	/// Generates a male or famale first name.
 	/// </summary>
 	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string GenerateFirstName()
 	{
 		return _firstNames.PickRandom();
@@ -603,7 +603,7 @@ public static class RandomData
 	/// Generates a last name.
 	/// </summary>
 	/// <returns>System.String.</returns>
-	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string GenerateLastName()
 	{
 		return _lastNames.PickRandom();
@@ -642,6 +642,31 @@ public static class RandomData
 	}
 
 	/// <summary>
+	/// Generates the person record.
+	/// </summary>
+	/// <param name="addressCount">The address count.</param>
+	/// <param name="addressLength">Length of the address 1 and 2.</param>
+	/// <param name="countyProvinceLength">Length of the county province.</param>
+	/// <returns>PersonRecord.</returns>
+	public static PersonRecord GeneratePersonRecord(int addressCount = 2, int addressLength = 25, int countyProvinceLength = 20)
+	{
+		GetRandomLocationData(out var country, out var state, out var city);
+		GetRandomPersonData(country, out var firstName, out var lastName, out var phone, out var cellPhone, out var emailAddress, out var bornOn);
+
+		PersonRecord person = new(email: emailAddress, id: GenerateKey())
+		{
+			BornOn = bornOn,
+			FirstName = firstName,
+			HomePhone = phone,
+			LastName = lastName,
+			CellPhone = cellPhone,
+			Addresses = GenerateAddressRecordCollection(country, state, city, addressCount, addressLength, countyProvinceLength),
+		};
+
+		return person;
+	}
+
+	/// <summary>
 	/// Generates a <see cref="PersonRecord" /> collection.
 	/// </summary>
 	/// <param name="count">The number of items to create. Minimum value = 1.</param>
@@ -664,30 +689,6 @@ public static class RandomData
 		}
 
 		return records;
-	}
-
-	/// <summary>
-	/// Generates the person record.
-	/// </summary>
-	/// <param name="addressCount">The address count.</param>
-	/// <param name="addressLength">Length of the address 1 and 2.</param>
-	/// <param name="countyProvinceLength">Length of the county province.</param>
-	/// <returns>PersonRecord.</returns>
-	public static PersonRecord GeneratePersonRecord(int addressCount = 2, int addressLength = 25, int countyProvinceLength = 20)
-	{
-		GetRandomLocationData(out var country, out var state, out var city);
-		GetRandomPersonData(country, out var firstName, out var lastName, out var phone, out var cellPhone, out var emailAddress, out var bornOn);
-
-		PersonRecord person = new(email: emailAddress, id: GenerateKey())
-		{
-			BornOn = bornOn,
-			FirstName = firstName,
-			HomePhone = phone,
-			LastName = lastName,
-			CellPhone = cellPhone,
-			Addresses = GenerateAddressRecordCollection(country, state, city, addressCount, addressLength, countyProvinceLength),
-		};
-		return person;
 	}
 
 	/// <summary>

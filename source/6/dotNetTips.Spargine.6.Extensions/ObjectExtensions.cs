@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 07-28-2023
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -94,7 +94,7 @@ public static class ObjectExtensions
 	}
 
 	/// <summary>
-	/// Computes the sha256 hash for an object using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Computes the sha256 hash for an object using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="obj" /> is not null.
 	/// </summary>
 	/// <param name="obj">The data.</param>
@@ -321,12 +321,6 @@ public static class ObjectExtensions
 			{
 				var itemId = itemCount++;
 
-				// TODO: CHANGE TO USE ID PROPERTY AS INDEX
-				//if (objectType == typeof(IDataModel<,>))
-				//{
-
-				//}
-
 				var itemInnerMember = string.Format(CultureInfo.CurrentCulture, "{0}[{1}]", memberName, itemId);
 
 				result = result.Concat(item.PropertiesToDictionary(itemInnerMember)).ToDictionary(e => e.Key, e => e.Value);
@@ -444,6 +438,28 @@ public static class ObjectExtensions
 	public static string ToJson([NotNull] this object obj)
 	{
 		return JsonSerializer.Serialize(obj.ArgumentNotNull());
+	}
+
+	/// <summary>
+	/// Serializes object to Json.
+	/// Validates that <paramref name="obj" /> is not null.
+	/// </summary>
+	/// <param name="obj">The instance.</param>
+	/// <param name="options">The options.</param>
+	/// <returns>System.String.</returns>
+	[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+	public static SimpleResult<string> ToJson([NotNull] this object obj, JsonSerializerOptions options = null)
+	{
+		obj = obj.ArgumentNotNull();
+
+		try
+		{
+			return SimpleResult.FromValue(JsonSerializer.Serialize(obj, options));
+		}
+		catch (NotSupportedException ex)
+		{
+			return SimpleResult.FromException<string>(ex);
+		}
 	}
 
 	/// <summary>

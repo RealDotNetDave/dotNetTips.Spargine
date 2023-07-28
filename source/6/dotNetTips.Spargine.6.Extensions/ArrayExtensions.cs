@@ -145,7 +145,7 @@ public static class ArrayExtensions
 	/// <param name="source">The source.</param>
 	/// <param name="items">The items.</param>
 	/// <returns>IEnumerable&lt;T&gt;.</returns>
-	[Information(nameof(AddDistinct), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.New)]
+	[Information(nameof(AddDistinct), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static IEnumerable<T> AddDistinct<T>(this IEnumerable<T> source, params T[] items)
 	{
 		source ??= Enumerable.Empty<T>();

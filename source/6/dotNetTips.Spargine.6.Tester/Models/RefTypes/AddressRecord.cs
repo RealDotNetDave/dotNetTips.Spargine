@@ -32,7 +32,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [XmlRoot(ElementName = "AddressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.Ref")]
 [DataContract(Name = "addressRecord", Namespace = "http://dotNetTips.Spargine.Tester.Models.Ref")]
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
-public record AddressRecord : IDataRecord
+public sealed record AddressRecord : IDataRecord
 {
 	/// <summary>
 	/// The address1

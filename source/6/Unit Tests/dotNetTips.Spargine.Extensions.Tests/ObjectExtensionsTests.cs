@@ -15,6 +15,7 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Text.Json;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -92,6 +93,14 @@ public class ObjectExtensionsTests : TestClass
 			Debug.WriteLine(ex.Message);
 			Assert.Fail();
 		}
+	}
+
+	[TestMethod]
+	public void FromJsonTest()
+	{
+		var person = RandomData.GenerateRefPerson<PersonProper>().ToJson();
+
+		Assert.IsNotNull(person.FromJson<PersonProper>());
 	}
 
 	[TestMethod]
@@ -238,7 +247,7 @@ public class ObjectExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void ToJsonTest()
+	public void ToJsonTest_01()
 	{
 		var person = RandomData.GenerateRefPerson<PersonProper>();
 
@@ -246,11 +255,14 @@ public class ObjectExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void FromJsonTest()
+	public void ToJsonTest_02()
 	{
-		var person = RandomData.GenerateRefPerson<PersonProper>().ToJson();
+		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-		Assert.IsNotNull(person.FromJson<PersonProper>());
+		var json = person.ToJson(JsonSerializerOptions.Default);
+
+		Assert.IsTrue(json.IsSuccessful);
+		Assert.IsFalse(string.IsNullOrEmpty(json.Value));
 	}
 
 	[TestMethod]

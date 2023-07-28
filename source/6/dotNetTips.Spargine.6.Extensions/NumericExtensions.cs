@@ -40,7 +40,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static double Average(this double a, double b)
 	{
 		return (a + b) / 2;
@@ -53,7 +53,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static long Average(this long a, long b)
 	{
 		return (a + b) / 2;
@@ -66,7 +66,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static int Average(this int a, int b)
 	{
 		return (a + b) / 2;
@@ -79,7 +79,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.New)]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static decimal Average(this decimal a, decimal b)
 	{
 		return (a + b) / 2;
@@ -512,7 +512,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="totalMilliseconds">The total milliseconds.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string MillisecondsToString(this long totalMilliseconds)
 	{
 		var hours = (int)(totalMilliseconds / (1000 * 60 * 60));
@@ -531,7 +531,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="input">The input.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string MillisecondsToString(this TimeSpan input)
 	{
 		var totalMilliseconds = input.TotalMilliseconds;
@@ -551,7 +551,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="totalMilliseconds">The total milliseconds.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string MillisecondsToString(this int totalMilliseconds)
 	{
 		var hours = totalMilliseconds / (1000 * 60 * 60);

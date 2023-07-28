@@ -22,7 +22,7 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 
 public class ExceptionExtensionsBenchmark : Benchmark
 {
-	private readonly SecurityException _testException = new("Message from SecurityException", new PolicyException("Cannot access service!"));
+	private readonly SecurityException _testException = new("Message from SecurityException");
 
 	[Benchmark(Description = nameof(ExceptionExtensions.GetAllMessages))]
 	public void GetAllMessages()

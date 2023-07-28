@@ -1,4 +1,4 @@
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -11,7 +11,7 @@
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -48,11 +48,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -73,7 +73,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -86,7 +86,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAD03630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -95,7 +95,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48D990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB02F990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -117,11 +117,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A40
+       mov       r11,7FF9AA6B0A70
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA6B0A78
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -129,7 +129,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA6B0A78
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -152,7 +152,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -165,7 +165,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -202,11 +202,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -227,7 +227,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -240,7 +240,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE73630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -249,7 +249,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48B420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB19F420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -271,11 +271,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA820A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -283,7 +283,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -306,7 +306,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -319,7 +319,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -356,11 +356,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -381,7 +381,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -394,7 +394,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB1A1060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE93630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -403,7 +403,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB4BB120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB1BF420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -425,11 +425,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB40A48
+       mov       r11,7FF9AA840A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB40A50
+       mov       r11,7FF9AA840A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -437,7 +437,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB40A50
+       mov       r11,7FF9AA840A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -460,7 +460,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -473,7 +473,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -510,11 +510,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -535,7 +535,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -548,7 +548,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE73630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -557,7 +557,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB49DC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB19F990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -579,11 +579,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA820A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -591,7 +591,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -614,7 +614,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -627,7 +627,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -664,11 +664,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -689,7 +689,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -702,7 +702,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AB683630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -711,7 +711,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48D420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB9AD990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -733,11 +733,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AB030A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AB030A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -745,7 +745,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AB030A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -768,7 +768,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -781,7 +781,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -818,11 +818,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B6EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B6EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -843,7 +843,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -856,7 +856,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB161060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AB6A3630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -865,7 +865,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB46D420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB9CF120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -887,11 +887,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB00A48
+       mov       r11,7FF9AB050A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB00A50
+       mov       r11,7FF9AB050A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -899,7 +899,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB00A50
+       mov       r11,7FF9AB050A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -922,7 +922,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -935,7 +935,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        cmp       rax,5
        sete      dil
@@ -972,11 +972,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -997,7 +997,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithCount()
        push      rdi
@@ -1010,7 +1010,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB191060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE83630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        xor       edi,edi
        cmp       eax,5
        sete      dil
@@ -1019,7 +1019,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB49D120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB1AD120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -1041,11 +1041,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB30A48
+       mov       r11,7FF9AA830A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA830A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -1053,7 +1053,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA830A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -1076,7 +1076,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -1085,20 +1085,20 @@ M01_L03:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,2325D46B450
+       mov       rcx,153F0FB9348
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,2325D46B448
+       mov       rdx,153F0FB9340
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,2325D46B450
+       mov       rcx,153F0FB9348
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -1112,7 +1112,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -1168,7 +1168,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98ED9DA8
+       mov       rdx,7FF94914C7D0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -1176,8 +1176,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA98690AF0
-       call      qword ptr [7FFA98690AF0]
+       mov       r11,7FF948900B20
+       call      qword ptr [7FF948900B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -1187,7 +1187,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98ED9E80
+       mov       rdx,7FF94914C8A8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -1200,8 +1200,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA98690AF0
-       call      qword ptr [7FFA98690AF0]
+       mov       r11,7FF948900B20
+       call      qword ptr [7FF948900B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -1210,8 +1210,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA98690AF8
-       call      qword ptr [7FFA98690AF8]
+       mov       r11,7FF948900B28
+       call      qword ptr [7FF948900B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -1253,8 +1253,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA98690AF8
-       call      qword ptr [7FFA98690AF8]
+       mov       r11,7FF948900B28
+       call      qword ptr [7FF948900B28]
 M02_L11:
        nop
        add       rsp,30
@@ -1267,7 +1267,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -1276,20 +1276,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1F429C0C450
+       mov       rcx,1E6A4408350
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1F429C0C448
+       mov       rdx,1E6A4408348
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1F429C0C450
+       mov       rcx,1E6A4408350
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -1303,8 +1303,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB43BA80]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AAFFD900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -1359,7 +1359,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4CF1B8
+       mov       rdx,7FF9AB151740
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -1367,7 +1367,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB00A50
+       mov       r11,7FF9AA6B0A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -1378,7 +1378,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4CF290
+       mov       rdx,7FF9AB151818
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -1390,7 +1390,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A50
+       mov       r11,7FF9AA6B0A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -1400,7 +1400,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA6B0A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -1424,11 +1424,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAB3B780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAB3B780]
        int       3
 M02_L10:
        push      rbp
@@ -1443,7 +1443,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA6B0A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -1457,7 +1457,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -1466,20 +1466,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1388ABBD448
+       mov       rcx,248E22B9348
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1388ABBD440
+       mov       rdx,248E22B9340
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1388ABBD448
+       mov       rcx,248E22B9348
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -1493,7 +1493,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -1549,7 +1549,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA0F8
+       mov       rdx,7FF949179A88
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -1557,8 +1557,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948930B20
+       call      qword ptr [7FF948930B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -1568,7 +1568,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA1D0
+       mov       rdx,7FF949179B60
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -1581,8 +1581,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948930B20
+       call      qword ptr [7FF948930B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -1591,8 +1591,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948930B28
+       call      qword ptr [7FF948930B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -1634,8 +1634,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948930B28
+       call      qword ptr [7FF948930B28]
 M02_L11:
        nop
        add       rsp,30
@@ -1648,7 +1648,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -1657,20 +1657,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,2357F40C450
+       mov       rcx,214A3408350
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,2357F40C448
+       mov       rdx,214A3408348
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,2357F40C450
+       mov       rcx,214A3408350
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -1684,8 +1684,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB43B900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB15F900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -1740,7 +1740,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB582298
+       mov       rdx,7FF9AB1EF7A0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -1748,7 +1748,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -1759,7 +1759,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB582370
+       mov       rdx,7FF9AB1EF878
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -1771,7 +1771,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -1781,7 +1781,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -1805,11 +1805,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L10:
        push      rbp
@@ -1824,7 +1824,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -1838,7 +1838,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -1847,20 +1847,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,212AFC8D448
+       mov       rcx,1737D739348
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,212AFC8D440
+       mov       rdx,1737D739340
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,212AFC8D448
+       mov       rcx,1737D739348
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -1874,7 +1874,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -1930,7 +1930,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA0B8
+       mov       rdx,7FF949179B00
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -1938,8 +1938,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948930B20
+       call      qword ptr [7FF948930B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -1949,7 +1949,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA190
+       mov       rdx,7FF949179BD8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -1962,8 +1962,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948930B20
+       call      qword ptr [7FF948930B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -1972,8 +1972,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948930B28
+       call      qword ptr [7FF948930B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -2015,8 +2015,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948930B28
+       call      qword ptr [7FF948930B28]
 M02_L11:
        nop
        add       rsp,30
@@ -2029,7 +2029,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2038,20 +2038,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1D226C08048
+       mov       rcx,2BFD9C0C758
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1D226C08040
+       mov       rdx,2BFD9C0C750
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1D226C08048
+       mov       rcx,2BFD9C0C758
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -2065,8 +2065,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB43B900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB16F6A8]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -2121,7 +2121,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB582298
+       mov       rdx,7FF9AB1FBA08
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -2129,7 +2129,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -2140,7 +2140,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB582370
+       mov       rdx,7FF9AB1FBAE0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -2152,7 +2152,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -2162,7 +2162,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -2186,11 +2186,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L10:
        push      rbp
@@ -2205,7 +2205,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -2219,7 +2219,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2228,20 +2228,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1C98204D448
+       mov       rcx,26CD07DD750
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1C98204D440
+       mov       rdx,26CD07DD748
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1C98204D448
+       mov       rcx,26CD07DD750
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -2255,7 +2255,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -2311,7 +2311,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EF9980
+       mov       rdx,7FF949159B68
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -2319,8 +2319,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986B0A90
-       call      qword ptr [7FFA986B0A90]
+       mov       r11,7FF948910B20
+       call      qword ptr [7FF948910B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -2330,7 +2330,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EF9A58
+       mov       rdx,7FF949159C40
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -2343,8 +2343,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986B0A90
-       call      qword ptr [7FFA986B0A90]
+       mov       r11,7FF948910B20
+       call      qword ptr [7FF948910B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -2353,8 +2353,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986B0A98
-       call      qword ptr [7FFA986B0A98]
+       mov       r11,7FF948910B28
+       call      qword ptr [7FF948910B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -2396,8 +2396,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986B0A98
-       call      qword ptr [7FFA986B0A98]
+       mov       r11,7FF948910B28
+       call      qword ptr [7FF948910B28]
 M02_L11:
        nop
        add       rsp,30
@@ -2410,7 +2410,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2419,20 +2419,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,24514808048
+       mov       rcx,1FE4600C758
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,24514808040
+       mov       rdx,1FE4600C750
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,24514808048
+       mov       rcx,1FE4600C758
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -2446,8 +2446,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB45DA80]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB15F6A8]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -2502,7 +2502,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4EF4E0
+       mov       rdx,7FF9AB1EED20
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -2510,7 +2510,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB20A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -2521,7 +2521,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4EF5B8
+       mov       rdx,7FF9AB1EEDF8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -2533,7 +2533,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB20A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -2543,7 +2543,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB20A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -2567,11 +2567,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF9B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF9B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L10:
        push      rbp
@@ -2586,7 +2586,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB20A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -2600,7 +2600,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2609,20 +2609,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1A29A28D448
+       mov       rcx,26F5E9B9348
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1A29A28D440
+       mov       rdx,26F5E9B9340
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1A29A28D448
+       mov       rcx,26F5E9B9348
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -2636,7 +2636,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -2692,7 +2692,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA080
+       mov       rdx,7FF94916CA08
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -2700,8 +2700,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948920B20
+       call      qword ptr [7FF948920B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -2711,7 +2711,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA158
+       mov       rdx,7FF94916CAE0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -2724,8 +2724,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948920B20
+       call      qword ptr [7FF948920B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -2734,8 +2734,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948920B28
+       call      qword ptr [7FF948920B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -2777,8 +2777,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948920B28
+       call      qword ptr [7FF948920B28]
 M02_L11:
        nop
        add       rsp,30
@@ -2791,7 +2791,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2800,20 +2800,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1A66140C450
+       mov       rcx,2ABBA40C758
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1A66140C448
+       mov       rdx,2ABBA40C750
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1A66140C450
+       mov       rcx,2ABBA40C758
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -2827,8 +2827,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB44D6A8]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB97F900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -2883,7 +2883,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4DF588
+       mov       rdx,7FF9ABA0FD20
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -2891,7 +2891,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB10A58
+       mov       r11,7FF9AB030A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -2902,7 +2902,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB4DF660
+       mov       rdx,7FF9ABA0FDF8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -2914,7 +2914,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB10A58
+       mov       r11,7FF9AB030A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -2924,7 +2924,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB10A60
+       mov       r11,7FF9AB030A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -2948,11 +2948,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF8B780]
+       call      qword ptr [7FF9AB4BB780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF8B780]
+       call      qword ptr [7FF9AB4BB780]
        int       3
 M02_L10:
        push      rbp
@@ -2967,7 +2967,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB10A60
+       mov       r11,7FF9AB030A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -2981,7 +2981,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -2990,20 +2990,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,1EE4838D448
+       mov       rcx,28F3BFC9348
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,1EE4838D440
+       mov       rdx,28F3BFC9340
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,1EE4838D448
+       mov       rcx,28F3BFC9348
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -3017,7 +3017,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -3073,7 +3073,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA0A8
+       mov       rdx,7FF94916D688
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -3081,8 +3081,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948920B20
+       call      qword ptr [7FF948920B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -3092,7 +3092,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA180
+       mov       rdx,7FF94916D760
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -3105,8 +3105,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF948920B20
+       call      qword ptr [7FF948920B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -3115,8 +3115,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948920B28
+       call      qword ptr [7FF948920B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -3158,8 +3158,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF948920B28
+       call      qword ptr [7FF948920B28]
 M02_L11:
        nop
        add       rsp,30
@@ -3172,7 +3172,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -3181,20 +3181,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,21DFA808048
+       mov       rcx,1B11900C758
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,21DFA808040
+       mov       rdx,1B11900C750
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,21DFA808048
+       mov       rcx,1B11900C758
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -3208,8 +3208,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB43D900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB96D900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -3264,7 +3264,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB5804E0
+       mov       rdx,7FF9ABAC1DB8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -3272,7 +3272,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AB020A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -3283,7 +3283,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB5805B8
+       mov       rdx,7FF9ABAC1E90
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -3295,7 +3295,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AB020A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -3305,7 +3305,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AB020A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -3329,11 +3329,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AB4AB780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AB4AB780]
        int       3
 M02_L10:
        push      rbp
@@ -3348,7 +3348,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AB020A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -3362,7 +3362,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -3371,20 +3371,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,20A09C5D448
+       mov       rcx,1EF2738D750
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,20A09C5D440
+       mov       rdx,1EF2738D748
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,20A09C5D448
+       mov       rcx,1EF2738D750
        mov       rdx,rbx
        call      CORINFO_HELP_CHECKED_ASSIGN_REF
        mov       r8,rbx
@@ -3398,7 +3398,7 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
        call      System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
@@ -3454,7 +3454,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA0A8
+       mov       rdx,7FF94913D6D8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -3462,8 +3462,8 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF9488F0B20
+       call      qword ptr [7FF9488F0B20]
        test      eax,eax
        je        short M02_L06
 M02_L02:
@@ -3473,7 +3473,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rsi
-       mov       rdx,7FFA98EEA180
+       mov       rdx,7FF94913D7B0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -3486,8 +3486,8 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF0
-       call      qword ptr [7FFA986A0AF0]
+       mov       r11,7FF9488F0B20
+       call      qword ptr [7FF9488F0B20]
        test      eax,eax
        jne       short M02_L02
        jmp       short M02_L06
@@ -3496,8 +3496,8 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF9488F0B28
+       call      qword ptr [7FF9488F0B28]
        xor       eax,eax
        add       rsp,40
        pop       rbx
@@ -3539,8 +3539,8 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFA986A0AF8
-       call      qword ptr [7FFA986A0AF8]
+       mov       r11,7FF9488F0B28
+       call      qword ptr [7FF9488F0B28]
 M02_L11:
        nop
        add       rsp,30
@@ -3553,7 +3553,7 @@ M02_L11:
 ; Total bytes of code 348
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItemsWithPredicate()
        push      rdi
@@ -3562,20 +3562,20 @@ M02_L11:
        sub       rsp,20
        mov       rsi,rcx
        mov       rdi,[rsi+288]
-       mov       rcx,182CB80C450
+       mov       rcx,1E91600C758
        mov       r8,[rcx]
        test      r8,r8
        jne       short M00_L00
-       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
+       mov       rcx,offset MT_System.Func`2[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester],[System.Boolean, System.Private.CoreLib]]
        call      CORINFO_HELP_NEWSFAST
        mov       rbx,rax
-       mov       rdx,182CB80C448
+       mov       rdx,1E91600C750
        mov       rdx,[rdx]
        lea       rcx,[rbx+8]
        call      CORINFO_HELP_ASSIGN_REF
        mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark+<>c.<HasItemsWithPredicate>b__3_0(DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper)
        mov       [rbx+18],rdx
-       mov       rcx,182CB80C450
+       mov       rcx,1E91600C758
        mov       rdx,rbx
        call      CORINFO_HELP_ASSIGN_REF
        mov       r8,rbx
@@ -3589,8 +3589,8 @@ M00_L01:
        jmp       short M00_L03
 M00_L02:
        mov       rdx,rdi
-       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
-       call      qword ptr [7FFAAB43D900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
+       mov       rcx,offset MD_System.Linq.Enumerable.Any[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper,Boolean>)
+       call      qword ptr [7FF9AB15D900]; System.Linq.Enumerable.Any[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>, System.Func`2<System.__Canon,Boolean>)
        mov       ebx,eax
 M00_L03:
        mov       rax,[rsi+18]
@@ -3645,7 +3645,7 @@ M01_L01:
        jmp       short M02_L01
 M02_L00:
        mov       rcx,rdi
-       mov       rdx,7FFAAB580508
+       mov       rdx,7FF9AB2C0DD8
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L01:
@@ -3653,7 +3653,7 @@ M02_L01:
        call      qword ptr [r11]
        mov       rcx,rax
        mov       [rbp-38],rcx
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        je        short M02_L06
@@ -3664,7 +3664,7 @@ M02_L02:
        jmp       short M02_L04
 M02_L03:
        mov       rcx,rdi
-       mov       rdx,7FFAAB5805E0
+       mov       rdx,7FF9AB2C0EB0
        call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
        mov       r11,rax
 M02_L04:
@@ -3676,7 +3676,7 @@ M02_L04:
        test      eax,eax
        jne       short M02_L05
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A58
+       mov       r11,7FF9AA810A88
        call      qword ptr [r11]
        test      eax,eax
        jne       short M02_L02
@@ -3686,7 +3686,7 @@ M02_L05:
        jmp       short M02_L07
 M02_L06:
        mov       rcx,[rbp-38]
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
        xor       eax,eax
        add       rsp,40
@@ -3710,11 +3710,11 @@ M02_L07:
        ret
 M02_L08:
        mov       ecx,10
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L09:
        mov       ecx,0C
-       call      qword ptr [7FFAAAF7B780]
+       call      qword ptr [7FF9AAC9B780]
        int       3
 M02_L10:
        push      rbp
@@ -3729,7 +3729,7 @@ M02_L10:
        mov       rcx,[rbp-38]
        test      rcx,rcx
        je        short M02_L11
-       mov       r11,7FFAAAB00A60
+       mov       r11,7FF9AA810A90
        call      qword ptr [r11]
 M02_L11:
        nop
@@ -3743,7 +3743,7 @@ M02_L11:
 ; Total bytes of code 335
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -3756,7 +3756,7 @@ M02_L11:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -3793,11 +3793,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -3818,7 +3818,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -3831,7 +3831,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AACF3630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -3841,7 +3841,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48B420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB01F420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -3863,11 +3863,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA6A0A70
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA6A0A78
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -3875,7 +3875,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA6A0A78
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -3898,7 +3898,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -3911,7 +3911,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -3948,11 +3948,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DD1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -3973,7 +3973,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -3986,7 +3986,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB191060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE63630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -3996,7 +3996,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB4AB420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB19FC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4018,11 +4018,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB30A48
+       mov       r11,7FF9AA810A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA810A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4030,7 +4030,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA810A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -4053,7 +4053,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4066,7 +4066,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -4103,11 +4103,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B4EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -4128,7 +4128,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4141,7 +4141,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE73630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -4151,7 +4151,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48D420]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB19FC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4173,11 +4173,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AA820A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4185,7 +4185,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AA820A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -4208,7 +4208,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4221,7 +4221,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -4258,11 +4258,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DC1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -4283,7 +4283,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4296,7 +4296,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB191060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE53630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -4306,7 +4306,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB49D120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB17DC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4328,11 +4328,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB30A48
+       mov       r11,7FF9AA800A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA800A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4340,7 +4340,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB30A50
+       mov       r11,7FF9AA800A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -4363,7 +4363,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4376,7 +4376,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -4413,11 +4413,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B6EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B6EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -4438,7 +4438,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4451,7 +4451,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB181060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AB693630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -4461,7 +4461,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB48DC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB9BF990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4483,11 +4483,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB20A48
+       mov       r11,7FF9AB040A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AB040A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4495,7 +4495,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB20A50
+       mov       r11,7FF9AB040A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -4518,7 +4518,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4531,7 +4531,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -4568,11 +4568,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B5EE70
+       mov       rdx,7FF948DE1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -4593,7 +4593,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4606,7 +4606,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB171060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AB663630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -4616,7 +4616,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB47DC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB98DC90]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4638,11 +4638,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB10A48
+       mov       r11,7FF9AB010A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB10A50
+       mov       r11,7FF9AB010A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4650,7 +4650,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB10A50
+       mov       r11,7FF9AB010A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01
@@ -4673,7 +4673,7 @@ M01_L03:
 ; Total bytes of code 7
 ```
 
-## .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+## .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4686,7 +4686,7 @@ M01_L03:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+       mov       rcx,offset MD_DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.IEnumerable`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
        call      DotNetTips.Spargine.Extensions.EnumerableExtensions.FastCount[[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.__Canon>)
        test      rax,rax
        setg      dil
@@ -4723,11 +4723,11 @@ M00_L01:
        ret
 M01_L00:
        mov       ecx,4D
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rsi,rax
        mov       ecx,0A1
-       mov       rdx,7FFA98B3EE70
+       mov       rdx,7FF948DB1278
        call      CORINFO_HELP_STRCNS
        mov       rdi,rax
        call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
@@ -4748,7 +4748,7 @@ M01_L00:
 ; Total bytes of code 7
 ```
 
-## .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+## .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
 ```assembly
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ObservableCollectionExtensionsCollectionBenchmark.HasItems()
        push      rdi
@@ -4761,7 +4761,7 @@ M01_L00:
        xor       edi,edi
        jmp       short M00_L01
 M00_L00:
-       call      qword ptr [7FFAAB171060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+       call      qword ptr [7FF9AAE83630]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
        movsxd    rcx,eax
        xor       edi,edi
        test      rcx,rcx
@@ -4771,7 +4771,7 @@ M00_L01:
        mov       rcx,[rsi+18]
        lea       rdx,[rsp+20]
        cmp       [rcx],ecx
-       call      qword ptr [7FFAAB47D120]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+       call      qword ptr [7FF9AB1AF990]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
        nop
        add       rsp,28
        pop       rsi
@@ -4793,11 +4793,11 @@ M00_L01:
        ret
 M01_L00:
        xor       esi,esi
-       mov       r11,7FFAAAB10A48
+       mov       r11,7FF9AA830A78
        call      qword ptr [r11]
        mov       rdi,rax
        mov       rcx,rdi
-       mov       r11,7FFAAAB10A50
+       mov       r11,7FF9AA830A80
        call      qword ptr [r11]
        test      eax,eax
        je        short M01_L02
@@ -4805,7 +4805,7 @@ M01_L01:
        add       esi,1
        jo        short M01_L03
        mov       rcx,rdi
-       mov       r11,7FFAAAB10A50
+       mov       r11,7FF9AA830A80
        call      qword ptr [r11]
        test      eax,eax
        jne       short M01_L01

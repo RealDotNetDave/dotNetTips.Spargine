@@ -4,7 +4,7 @@
 // Created          : 07-26-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 05-03-2023
 // ***********************************************************************
 // <copyright file="ChannelQueueTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

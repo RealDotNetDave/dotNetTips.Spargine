@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 02-06-2023
 // ***********************************************************************
 // <copyright file="DictionaryExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -198,7 +198,7 @@ public static class DictionaryExtensions
 	}
 
 	/// <summary>
-	/// Converts <see cref="IDictionary" /> to delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts <see cref="IDictionary" /> to delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="collection">The list.</param>
 	/// <param name="delimiter">The delimiter.</param>

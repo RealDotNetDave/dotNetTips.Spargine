@@ -17,6 +17,7 @@
 using System.Collections.ObjectModel;
 using System.Data;
 using System.Linq;
+using System.Text.Json;
 using BenchmarkDotNet.Attributes;
 using DotNetTips.Spargine.Benchmarking;
 using DotNetTips.Spargine.Tester;
@@ -317,6 +318,15 @@ public class ObjectExtensionsBenchmark : Benchmark
 		var result = this._personRecord.ToJson();
 
 		this.Consume(result);
+	}
+
+	[Benchmark(Description = nameof(ObjectExtensions.ToJson) + ": PersonProper - JsonSerializerOptions")]
+	[BenchmarkCategory(Categories.Serialization, Categories.JSON)]
+	public void ToJson03()
+	{
+		var result = this._personProper.ToJson(JsonSerializerOptions.Default);
+
+		this.Consume(result.Value);
 	}
 
 	[Benchmark(Description = nameof(ObjectExtensions.TryDispose) + ": PersonProper")]

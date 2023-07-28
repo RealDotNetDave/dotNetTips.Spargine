@@ -127,6 +127,42 @@ public class EnumerableExtensionsTests
 	}
 
 	[TestMethod]
+	public void HasDuplicatesTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+
+		Assert.IsFalse(people.HasDuplicates());
+
+		var dups =people.Shuffle().Take(Count/10).ToList();
+
+		foreach(var person in dups)
+		{
+			people.AddLast(person);
+		}
+
+		var result = people.HasDuplicates();
+		Assert.IsTrue(result);
+	}
+
+	[TestMethod]
+	public void RemoveDuplicatesTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+
+		var dups = people.Shuffle().Take(Count / 10).ToList();
+
+		foreach (var person in dups)
+		{
+			people.AddLast(person);
+		}
+
+		var result = people.RemoveDuplicates();
+		Assert.IsTrue(result.IsSuccessful);
+		Assert.IsTrue(result.Value.Count() == Count);
+	}
+
+
+	[TestMethod]
 	public void FastCountPredicateTest()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);

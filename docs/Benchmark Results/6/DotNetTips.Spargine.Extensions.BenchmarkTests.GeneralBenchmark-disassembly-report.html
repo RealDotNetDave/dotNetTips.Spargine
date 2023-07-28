@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20230430-012558</title>
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20230726-012237</title>
 
 <style type="text/css">
     table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -16,8 +16,8 @@
 <thead>
 <tr><th colspan="2">GeneralBenchmark.'Equals: Guid'</th></tr>
 <tr>
-<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
-<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2</th>
 </tr>
 </thead>
 <tbody>
@@ -47,15 +47,15 @@ ret
 System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
 mov       eax,[rcx]
 cmp       eax,[rdx]
-je        short 00007FFA98CD8E99
+je        short 00007FF948F2A339
 xor       eax,eax
 ret
 mov       eax,[rcx+4]
 cmp       eax,[rdx+4]
-jne       short 00007FFA98CD8E96
+jne       short 00007FF948F2A336
 mov       eax,[rcx+8]
 cmp       eax,[rdx+8]
-jne       short 00007FFA98CD8E96
+jne       short 00007FF948F2A336
 mov       eax,[rcx+0C]
 cmp       eax,[rdx+0C]
 sete      al
@@ -78,12 +78,12 @@ lea       rcx,[rsi+190]
 vmovupd   xmm0,[rsi+1A0]
 vmovupd   [rsp+30],xmm0
 lea       rdx,[rsp+30]
-call      qword ptr [7FFA971ED888]
+call      qword ptr [7FF993E2D888]
 mov       [rsp+28],al
 mov       rcx,[rsi+18]
 lea       rdx,[rsp+28]
 cmp       [rcx],ecx
-call      qword ptr [7FFA97815FC0]
+call      qword ptr [7FF99447D318]
 nop
 add       rsp,40
 pop       rsi

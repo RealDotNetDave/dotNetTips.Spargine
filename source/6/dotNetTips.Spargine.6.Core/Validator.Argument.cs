@@ -4,7 +4,7 @@
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 05-04-2023
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -810,7 +810,7 @@ public static partial class Validator
 
 		if (isValid is false)
 		{
-			ExceptionThrower.ThrowArgumentReadOnlyCollectionException(CreateExceptionMessage(errorMessage, Resources.ErrorListCannotBeReadOnly), paramName);
+			ExceptionThrower.ThrowArgumentReadOnlyException(CreateExceptionMessage(errorMessage, Resources.ErrorListCannotBeReadOnly), paramName);
 		}
 
 		return input!;
@@ -833,7 +833,7 @@ public static partial class Validator
 
 		if (isValid is false)
 		{
-			ExceptionThrower.ThrowArgumentReadOnlyCollectionException(CreateExceptionMessage(errorMessage, Resources.ErrorCollectionIsNullOrHasNoItems), paramName);
+			ExceptionThrower.ThrowArgumentReadOnlyException(CreateExceptionMessage(errorMessage, Resources.ErrorCollectionIsNullOrHasNoItems), paramName);
 		}
 
 		return input!;

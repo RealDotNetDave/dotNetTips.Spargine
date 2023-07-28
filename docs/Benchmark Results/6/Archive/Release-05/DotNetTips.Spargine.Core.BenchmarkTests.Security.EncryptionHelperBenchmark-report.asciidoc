@@ -1,0 +1,23 @@
+....
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19045.2846/22H2/2022Update)
+Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.203
+  [Host]     : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+  Job-HKLNRY : .NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2
+  Job-YUPBRV : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+
+EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests.Security  
+Categories=Encryption  
+....
+[options="header"]
+|===
+|               Method|   Runtime|        Mean|      Error|     StdDev|    StdErr|         Min|          Q1|      Median|          Q3|         Max|       Op/s|  CI99.9% Margin|  Iterations|  Kurtosis|  MValue|  Skewness|  Rank|  LogicalGroup|  Baseline|  Code Size|  Allocated
+|           AesDecrypt|  .NET 6.0|  5,663.8 ns|   85.14 ns|   75.48 ns|  20.17 ns|  5,567.3 ns|  5,597.7 ns|  5,656.4 ns|  5,698.6 ns|  5,805.2 ns|  176,558.6|        85.14 ns|       14.00|     1.883|   2.000|    0.4604|     4|             *|        No|    2,163 B|   13.79 KB
+|           AesDecrypt|  .NET 7.0|  5,150.4 ns|  101.52 ns|  124.68 ns|  26.58 ns|  5,004.6 ns|  5,036.4 ns|  5,117.4 ns|  5,270.6 ns|  5,356.9 ns|  194,161.0|       101.52 ns|       22.00|     1.371|   2.000|    0.2766|     3|             *|        No|    2,892 B|   13.75 KB
+|           AesEncrypt|  .NET 6.0|  4,664.9 ns|   90.01 ns|   88.40 ns|  22.10 ns|  4,538.1 ns|  4,614.3 ns|  4,645.9 ns|  4,725.4 ns|  4,814.5 ns|  214,365.9|        90.01 ns|       16.00|     1.784|   2.000|    0.1485|     2|             *|        No|    2,160 B|    12.4 KB
+|           AesEncrypt|  .NET 7.0|  4,274.2 ns|   82.57 ns|  101.40 ns|  21.62 ns|  4,137.8 ns|  4,185.1 ns|  4,275.4 ns|  4,340.4 ns|  4,511.3 ns|  233,964.4|        82.57 ns|       22.00|     2.552|   2.000|    0.6415|     1|             *|        No|    2,889 B|   12.36 KB
+|  SimpleSHA256Decrypt|  .NET 6.0|  5,774.1 ns|   17.51 ns|   16.38 ns|   4.23 ns|  5,755.3 ns|  5,761.1 ns|  5,771.0 ns|  5,786.0 ns|  5,812.9 ns|  173,188.3|        17.51 ns|       15.00|     2.665|   2.000|    0.7086|     5|             *|        No|      608 B|   11.02 KB
+|  SimpleSHA256Decrypt|  .NET 7.0|  6,051.1 ns|   24.23 ns|   20.23 ns|   5.61 ns|  6,013.4 ns|  6,035.8 ns|  6,054.7 ns|  6,068.0 ns|  6,080.1 ns|  165,260.2|        24.23 ns|       13.00|     1.770|   2.000|   -0.2411|     7|             *|        No|      611 B|   10.98 KB
+|  SimpleSHA256Encrypt|  .NET 6.0|  5,919.3 ns|  112.69 ns|  110.68 ns|  27.67 ns|  5,810.9 ns|  5,823.9 ns|  5,876.2 ns|  5,964.5 ns|  6,139.0 ns|  168,937.7|       112.69 ns|       16.00|     2.103|   2.000|    0.7453|     6|             *|        No|      605 B|   12.63 KB
+|  SimpleSHA256Encrypt|  .NET 7.0|  5,595.0 ns|  108.80 ns|  166.15 ns|  29.84 ns|  5,362.9 ns|  5,461.5 ns|  5,549.0 ns|  5,737.8 ns|  5,943.1 ns|  178,729.7|       108.80 ns|       31.00|     1.803|   2.714|    0.3610|     4|             *|        No|      608 B|   12.59 KB
+|===

@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
-		<AssemblyVersion>2023.6.5.1</AssemblyVersion>
+		<AssemblyVersion>2023.6.7.3</AssemblyVersion>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -20,7 +20,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.5.1</FileVersion>
+		<FileVersion>2023.6.7.3</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -51,7 +51,7 @@
 		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-		<Version>2023.6.5.1</Version>
+		<Version>2023.6.7.3</Version>
 		<Title>DotNetTips.Spargine.6.Tester</Title>
 	</PropertyGroup>
 
@@ -92,16 +92,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IDisposableAnalyzers" Version="4.0.2">
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.6">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Lombok.NET" Version="2.1.0" />
 		<PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" Version="3.3.4">
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.4" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -110,8 +109,8 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="MSTest.TestFramework" Version="3.0.2" />
-		<PackageReference Include="System.Text.Json" Version="7.0.2" />
+		<PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
+		<PackageReference Include="System.Text.Json" Version="7.0.3" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -132,7 +131,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj" />
 		<ProjectReference Include="..\dotNetTips.Spargine.6.Extensions\DotNetTips.Spargine.6.Extensions.csproj" />
-		<ProjectReference Include="..\dotNetTips.Spargine.6\DotNetTips.Spargine.6.csproj" />
 	</ItemGroup>
 
 </Project>

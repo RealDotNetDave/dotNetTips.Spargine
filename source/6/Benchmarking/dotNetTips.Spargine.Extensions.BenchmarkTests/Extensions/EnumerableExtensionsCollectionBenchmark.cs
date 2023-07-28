@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-19-2023
+// Last Modified On : 07-07-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsCollectionBenchmark.cs" company="dotNetTips.com - McCarter Consulting">
 //     David McCarter
@@ -39,6 +39,7 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	private IEnumerable<Coordinate> _coordinateValEnumerable;
 	private IEnumerable<PersonProper> _personRefEnumerable;
 	private IEnumerable<PersonProper> _personRefEnumerableToAdd;
+	private List<PersonProper> _personRefListDups;
 
 	private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
 	{
@@ -196,6 +197,16 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this.Consume(result);
 	}
 
+
+	[Benchmark(Description = nameof(EnumerableExtensions.HasDuplicates))]
+	[BenchmarkCategory(Categories.Collections)]
+	public void HasDuplicates()
+	{
+		var result = this._personRefListDups.HasDuplicates();
+
+		this.Consume(result);
+	}
+
 	[Benchmark(Description = nameof(EnumerableExtensions.HasItems))]
 	[BenchmarkCategory(Categories.Collections)]
 	public void HasItems()
@@ -299,6 +310,15 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		this.Consume(result);
 	}
 
+	[Benchmark(Description = nameof(EnumerableExtensions.RemoveDuplicates))]
+	[BenchmarkCategory(Categories.Collections)]
+	public void RemoveDuplicates()
+	{
+		var result = this._personRefListDups.RemoveDuplicates();
+
+		this.Consume(result.Value);
+	}
+
 	public override void Setup()
 	{
 		base.Setup();
@@ -309,6 +329,14 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 		var peopleToAdd = this._personRefEnumerable.ToList();
 		peopleToAdd.AddRange(this.GetPeopleRefToInsert().Take(this.Count / 10));
 		this._personRefEnumerableToAdd = peopleToAdd.AsEnumerable();
+
+		// Create collection with duplicates
+		var dups = this._personRefEnumerable.Shuffle().Take(this.Count / 10);
+		this._personRefListDups = this._personRefEnumerable.ToList();
+		foreach (var person in dups)
+		{
+			_ = this._personRefListDups.Append(person);
+		}
 	}
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Shuffle))]

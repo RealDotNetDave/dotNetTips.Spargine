@@ -232,6 +232,15 @@ namespace DotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The object could not be cast to a new type..
+        /// </summary>
+        internal static string ErrorInvalidCast {
+            get {
+                return ResourceManager.GetString("ErrorInvalidCast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid email address..
         /// </summary>
         internal static string ErrorInvalidEmailAddress {
@@ -241,7 +250,7 @@ namespace DotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid enum type..
+        ///   Looks up a localized string similar to Invalid Enum type..
         /// </summary>
         internal static string ErrorInvalidEnumType {
             get {
@@ -309,6 +318,24 @@ namespace DotNetTips.Spargine.Core.Properties {
         internal static string ErrorListCannotBeReadOnly {
             get {
                 return ResourceManager.GetString("ErrorListCannotBeReadOnly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The message could not be queued..
+        /// </summary>
+        internal static string ErrorMessageNotQueued {
+            get {
+                return ResourceManager.GetString("ErrorMessageNotQueued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown network connection issue..
+        /// </summary>
+        internal static string ErrorNetworkConnectionIssue {
+            get {
+                return ResourceManager.GetString("ErrorNetworkConnectionIssue", resourceCulture);
             }
         }
         
@@ -488,7 +515,7 @@ namespace DotNetTips.Spargine.Core.Properties {
         /// </summary>
         internal static string RegexEmail {
             get {
-                return ResourceManager.GetString("Email", resourceCulture);
+                return ResourceManager.GetString("RegexEmail", resourceCulture);
             }
         }
         

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 07-28-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -23,6 +23,7 @@ using System.Threading.Tasks.Dataflow;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Core.Collections.Generic;
 using Microsoft.Extensions.ObjectPool;
+using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -156,7 +157,7 @@ public static class EnumerableExtensions
 	/// <param name="cancellationToken">The cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
 	/// <returns>A Task&lt;System.Int32&gt; representing the asynchronous operation.</returns>
 	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
-	[Information(nameof(CountAsync), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(CountAsync), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static async Task<int> CountAsync<T>(this IEnumerable<T> collection, CancellationToken cancellationToken)
 	{
 		return await Task.Run(collection.Count, cancellationToken).ConfigureAwait(false);
@@ -376,6 +377,33 @@ public static class EnumerableExtensions
 	}
 
 	/// <summary>
+	/// Determines whether the specified items has duplicates.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="items">The items.</param>
+	/// <returns><c>true</c> if the specified items has duplicates; otherwise, <c>false</c>.</returns>
+	[Information("Orginal code by Milan Jovanović", author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+	public static bool HasDuplicates<T>([NotNull] this IEnumerable<T> items)
+	{
+		if (items.DoesNotHaveItems())
+		{
+			return false;
+		}
+
+		var elements = ImmutableHashSet.CreateBuilder<T>();
+
+		foreach (var item in items)
+		{
+			if (elements.Add(item) == false)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/// <summary>
 	/// Determines whether the specified <see cref="IEnumerable" /> has items or is null.
 	/// </summary>
 	/// <param name="collection">The source.</param>
@@ -581,7 +609,7 @@ public static class EnumerableExtensions
 	/// <param name="pageCount">The page count.</param>
 	/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
 	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
-	[Information(nameof(Partition), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(Partition), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static IEnumerable<IEnumerable<T>> Partition<T>(this IEnumerable<T> collection, int pageCount)
 	{
 		// Cache this to avoid evaluating it twice
@@ -623,6 +651,34 @@ public static class EnumerableExtensions
 			var index = RandomNumberGenerator.GetInt32(0, collection.Count() - 1);
 
 			return collection.ElementAt(index);
+
+		}
+	}
+
+	/// <summary>
+	/// Removes the duplicates from a collection.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="items">The items.</param>
+	/// <returns>SimpleResult&lt;IEnumerable&lt;T&gt;&gt;.</returns>
+	[Information(nameof(RemoveDuplicates), author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+
+	public static SimpleResult<IEnumerable<T>> RemoveDuplicates<T>([NotNull] this IEnumerable<T> items)
+	{
+		try
+		{
+			var uniqueItems = ImmutableHashSet.CreateBuilder<T>();
+
+			foreach (var item in items)
+			{
+				_ = uniqueItems.Add(item);
+			}
+
+			return SimpleResult.FromValue(uniqueItems.AsEnumerable());
+		}
+		catch (Exception ex)
+		{
+			return SimpleResult.FromException<IEnumerable<T>>(ex);
 		}
 	}
 
@@ -667,7 +723,7 @@ public static class EnumerableExtensions
 	/// <param name="pageCount">The page count.</param>
 	/// <returns>IEnumerable&lt;IEnumerable&lt;T&gt;&gt;.</returns>
 	/// <remarks>Orginal code from: https://github.com/dncuug/X.PagedList/blob/master/src/X.PagedList/PagedListExtensions.cs</remarks>
-	[Information(nameof(Split), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(Split), "David McCarter", "3/2/2023", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static IEnumerable<IEnumerable<T>> Split<T>(this IEnumerable<T> collection, int pageCount)
 	{
 		if (collection.DoesNotHaveItems())
@@ -775,7 +831,7 @@ public static class EnumerableExtensions
 	/// <typeparam name="T"></typeparam>
 	/// <param name="collection">The list.</param>
 	/// <returns>BlockingCollection&lt;T&gt;.</returns>
-	/// <remarks>The resulting processedCollection supports IDisposable. Make sure to properly dispose!</remarks>
+	/// <remarks>The resulting collection supports IDisposable. Make sure to properly dispose!</remarks>
 	[Information(nameof(ToBlockingCollection), "David McCarter", "4/13/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static BlockingCollection<T> ToBlockingCollection<T>([NotNull] this IEnumerable<T> collection)
 	{

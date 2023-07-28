@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="ComputerInfo.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

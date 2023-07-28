@@ -4,7 +4,7 @@
 // Created          : 01-05-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 04-18-2023
 // ***********************************************************************
 // <copyright file="RandomDataTests.cs" company="dotNetTips.Spargine.Tester.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,11 +12,13 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Threading.Tasks;
 using DotNetTips.Spargine.Extensions;
@@ -95,6 +97,35 @@ public class RandomDataTests
 			for (var personCount = 0; personCount < people.FastCount(); personCount++)
 			{
 				_ = newPeople.AddIfNotExists(people[personCount]);
+			}
+
+			Assert.IsTrue(newPeople.FastCount() == Count);
+		}
+		catch (Exception ex)
+		{
+			Debug.WriteLine(ex.Message);
+			Assert.Fail();
+		}
+	}
+
+	[TestMethod]
+	public void ReadOnlySequenceCollectionTest()
+	{
+		try
+		{
+			var people =new ReadOnlySequence<PersonProper>( RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToArray());
+
+			var newPeople = new List<PersonProper>();
+
+			foreach (var person in people)
+			{
+				if (MemoryMarshal.TryGetArray(person, out var segment))
+				{
+					foreach (var item in segment)
+					{
+						newPeople.Add(item);
+					}
+				}
 			}
 
 			Assert.IsTrue(newPeople.FastCount() == Count);

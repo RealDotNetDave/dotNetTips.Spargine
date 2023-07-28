@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 07-28-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -148,13 +148,15 @@ public static class App
 	/// ProcessorLevel: 6
 	/// ProcessorRevision: 42243
 	/// </example>
-	[Information(nameof(GetProcessorInformation), "David McCarter", "3/20/2023", Status = Status.New, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "ADD URL")]
+	[Information(nameof(GetProcessorInformation), "David McCarter", "3/20/2023", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "ADD URL")]
 	public static ProcessorInformation GetProcessorInformation()
 	{
 		var info = new SystemInfo();
-
-		SourceGenerators.GetSystemInfo(ref info);
-
+//#if NET7_0_OR_GREATER
+//		SourceGenerators.GetSystemInfoLibraryImport(ref info);
+//#else
+		SourceGenerators.GetSystemInfoDllImport(ref info);
+//#endif
 		//Convert data
 		return new ProcessorInformation()
 		{
@@ -194,7 +196,7 @@ public static class App
 	/// Determines whether user is administrator.
 	/// </summary>
 	/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static bool IsUserAdministrator()
 	{

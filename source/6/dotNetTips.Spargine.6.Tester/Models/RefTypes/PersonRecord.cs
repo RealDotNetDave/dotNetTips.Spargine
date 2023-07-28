@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 06-29-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -221,7 +221,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// </summary>
 	/// <value>The cell phone number.</value>
 	/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
-	/// <exception cref="ArgumentNullException">CellPhone - Phone number is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">CellPhone</exception>
 	[DataMember(Name = "cellPhone")]
 	[XmlElement]
 	public string CellPhone
@@ -241,13 +241,40 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 				: value;
 		}
 	}
+	//#if NET7_0_OR_GREATER
+	//		/// <summary>
+	//	/// Gets or sets the email address.
+	//	/// </summary>
+	//	/// <value>The email address.</value>
+	//	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	//	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
+	//	[DisallowNull]
+	//	[DataMember(Name = "email")]
+	//	[XmlElement]
+	//	public required string Email
+	//	{
+	//		get => this._email;
+	//		init
+	//		{
+	//			if (string.Equals(this._email, value, StringComparison.Ordinal))
+	//			{
+	//				return;
+	//			}
 
+	//			this._email = value.HasValue(0, 75) is false
+	//				? throw new ArgumentOutOfRangeException(
+	//					nameof(this.Email),
+	//					Resources.EmailLengthIsLimitedTo75Characters)
+	//				: value;
+	//		}
+	//	}
+	//#else
 	/// <summary>
 	/// Gets or sets the email address.
 	/// </summary>
 	/// <value>The email address.</value>
 	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
-	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">Email</exception>
 	[DisallowNull]
 	[DataMember(Name = "email")]
 	[XmlElement]
@@ -268,13 +295,13 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 				: value;
 		}
 	}
-
+	//#endif
 	/// <summary>
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
 	/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
-	/// <exception cref="ArgumentNullException">FirstName - Value for name cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">FirstName</exception>
 	[DataMember(Name = "firstName")]
 	[XmlElement]
 	public string FirstName
@@ -300,7 +327,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// </summary>
 	/// <value>The home phone.</value>
 	/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
-	/// <exception cref="ArgumentNullException">HomePhone - Home phone length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">HomePhone</exception>
 	[DataMember(Name = "homePhone")]
 	[XmlElement]
 	public string HomePhone
@@ -321,6 +348,16 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 		}
 	}
 
+	//#if NET7_0_OR_GREATER
+	//		/// <summary>
+	//	/// Gets or sets the identifier.
+	//	/// </summary>
+	//	/// <value>The identifier.</value>
+	//	[DisallowNull]
+	//	[DataMember(Name = "id")]
+	//	[XmlElement]
+	//	public required string Id { get; init; }
+	//#else
 	/// <summary>
 	/// Gets or sets the identifier.
 	/// </summary>
@@ -329,13 +366,13 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	[DataMember(Name = "id")]
 	[XmlElement]
 	public string Id { get; init; }
-
+	//#endif
 	/// <summary>
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
 	/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
-	/// <exception cref="ArgumentNullException">LastName - Value for name cannot be null or empty.</exception>
+	/// <exception cref="ArgumentNullException">LastName</exception>
 	[DataMember(Name = "lastName")]
 	[XmlElement]
 	public string LastName

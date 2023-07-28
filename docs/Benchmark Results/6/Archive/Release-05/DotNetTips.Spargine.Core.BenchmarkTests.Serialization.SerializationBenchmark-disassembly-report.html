@@ -1,0 +1,4071 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark-20230429-151517</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize JSON: JsonSerializer + Generator - List<PersonProper>'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_JsonSerializer_Generator_PersonProper_List()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+190]
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+mov       rdx,rax
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      CORINFO_HELP_ISINSTANCEOFCLASS
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,25FBCBB83C8
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA98E5EAA1
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,25FBCBB83C0
+mov       rdx,[rdx]
+mov       rcx,rsi
+call      System.Text.Json.JsonSerializerOptions..ctor(System.Text.Json.JsonSerializerOptions)
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rdx,25FBCBB83C0
+mov       rdx,[rdx]
+lea       rcx,[rdi+40]
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E5EAA8
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E5EAA8
+lea       rcx,[rsi+20]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rdi+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,25FBCBB83C8
+mov       rdx,rdi
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       rax,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      CORINFO_HELP_ISINSTANCEOFCLASS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerOptionsImmutable(System.Text.Json.Serialization.JsonSerializerContext)
+int       3
+
+System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+20],rax
+mov       rsi,rcx
+test      rsi,rsi
+je        short 00007FFA98E5EB34
+test      rdx,rdx
+je        short 00007FFA98E5EB51
+test      r8,r8
+je        short 00007FFA98E5EB6E
+mov       rcx,r8
+call      System.Text.Json.JsonSerializer.GetTypeInfo(System.Text.Json.Serialization.JsonSerializerContext, System.Type)
+mov       r8,rax
+lea       rdx,[rsi+0C]
+mov       ecx,[rsi+8]
+mov       [rsp+20],rdx
+mov       [rsp+28],ecx
+lea       rdx,[rsp+20]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.ReadFromSpan[[System.Object, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+call      System.Text.Json.JsonSerializer.ReadFromSpan[[System.__Canon, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+nop
+add       rsp,30
+pop       rsi
+ret
+mov       ecx,2C1E
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+mov       ecx,2E88
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+mov       ecx,2EB8
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_JsonSerializer_Generator_PersonProper_List()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+190]
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      qword ptr [7FFA97907120]
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      qword ptr [7FFA97575108]
+mov       rdx,rax
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      qword ptr [7FFA9710B828]
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rcx,16A62802FC8
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA97993AAC
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,16A62802FC0
+mov       rdi,[rdx]
+mov       rdx,rdi
+mov       rcx,rsi
+call      qword ptr [7FFA975716D8]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+lea       rcx,[rbx+40]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA97993AB4
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA97993AB4
+lea       rcx,[rsi+20]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rbx+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,16A62802FC8
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      qword ptr [7FFA9710B828]
+mov       rcx,rax
+call      qword ptr [7FFA9766F810]
+int       3
+
+System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+20],rax
+mov       rsi,rcx
+test      rsi,rsi
+je        short 00007FFA97993B46
+test      rdx,rdx
+je        short 00007FFA97993B64
+test      r8,r8
+je        short 00007FFA97993B82
+mov       rcx,r8
+call      qword ptr [7FFA975739A8]
+mov       r8,rax
+lea       rdx,[rsi+0C]
+mov       ecx,[rsi+8]
+mov       [rsp+20],rdx
+mov       [rsp+28],ecx
+lea       rdx,[rsp+20]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.ReadFromSpan[[System.Object, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+call      qword ptr [7FFA97907210]
+nop
+add       rsp,30
+pop       rsi
+ret
+mov       ecx,2C1E
+mov       rdx,7FFA9755BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9766F018]
+int       3
+mov       ecx,2E88
+mov       rdx,7FFA9755BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9766F018]
+int       3
+mov       ecx,2EB8
+mov       rdx,7FFA9755BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9766F018]
+int       3
+
+System.Runtime.CompilerServices.CastHelpers.IsInstanceOfClass(Void*, System.Object)
+mov       rax,rdx
+test      rax,rax
+je        short 00007FFA9713D2ED
+cmp       [rax],rcx
+jne       short 00007FFA9713D2EE
+ret
+mov       rdx,[rax]
+mov       rdx,[rdx+10]
+cmp       rdx,rcx
+je        short 00007FFA9713D32B
+test      rdx,rdx
+je        short 00007FFA9713D329
+mov       rdx,[rdx+10]
+cmp       rdx,rcx
+je        short 00007FFA9713D32B
+test      rdx,rdx
+je        short 00007FFA9713D329
+mov       rdx,[rdx+10]
+cmp       rdx,rcx
+je        short 00007FFA9713D32B
+test      rdx,rdx
+je        short 00007FFA9713D329
+mov       rdx,[rdx+10]
+cmp       rdx,rcx
+je        short 00007FFA9713D32B
+test      rdx,rdx
+jne       short 00007FFA9713D32C
+xor       eax,eax
+ret
+mov       rdx,[rdx+10]
+jmp       short 00007FFA9713D2F5
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize JSON: JsonSerializer + Generator - PersonProper'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_JsonSerializer_Generator_PersonProper()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+1A0]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+test      rax,rax
+je        short 00007FFA98E59F03
+mov       rdx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+cmp       [rax],rdx
+je        short 00007FFA98E59F03
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,2C3C3A583C8
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA98E59FF1
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,2C3C3A583C0
+mov       rdx,[rdx]
+mov       rcx,rsi
+call      System.Text.Json.JsonSerializerOptions..ctor(System.Text.Json.JsonSerializerOptions)
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rdx,2C3C3A583C0
+mov       rdx,[rdx]
+lea       rcx,[rdi+40]
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E59FF8
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E59FF8
+lea       rcx,[rsi+20]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rdi+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,2C3C3A583C8
+mov       rdx,rdi
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       rax,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      CORINFO_HELP_ISINSTANCEOFCLASS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerOptionsImmutable(System.Text.Json.Serialization.JsonSerializerContext)
+int       3
+
+System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+20],rax
+mov       rsi,rcx
+test      rsi,rsi
+je        short 00007FFA98E5A084
+test      rdx,rdx
+je        short 00007FFA98E5A0A1
+test      r8,r8
+je        short 00007FFA98E5A0BE
+mov       rcx,r8
+call      System.Text.Json.JsonSerializer.GetTypeInfo(System.Text.Json.Serialization.JsonSerializerContext, System.Type)
+mov       r8,rax
+lea       rdx,[rsi+0C]
+mov       ecx,[rsi+8]
+mov       [rsp+20],rdx
+mov       [rsp+28],ecx
+lea       rdx,[rsp+20]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.ReadFromSpan[[System.Object, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+call      System.Text.Json.JsonSerializer.ReadFromSpan[[System.__Canon, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+nop
+add       rsp,30
+pop       rsi
+ret
+mov       ecx,2C1E
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+mov       ecx,2E88
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+mov       ecx,2EB8
+mov       rdx,7FFA98AF6370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_JsonSerializer_Generator_PersonProper()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+1A0]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      qword ptr [7FFA97935120]
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      qword ptr [7FFA97595108]
+test      rax,rax
+je        short 00007FFA979B1975
+mov       rdx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+cmp       [rax],rdx
+je        short 00007FFA979B1975
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rcx,238D30073D0
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA979B1A6C
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,238D30073C8
+mov       rdi,[rdx]
+mov       rdx,rdi
+mov       rcx,rsi
+call      qword ptr [7FFA975916D8]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+lea       rcx,[rbx+40]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979B1A74
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979B1A74
+lea       rcx,[rsi+20]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rbx+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,238D30073D0
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      qword ptr [7FFA9712B828]
+mov       rcx,rax
+call      qword ptr [7FFA9768F810]
+int       3
+
+System.Text.Json.JsonSerializer.Deserialize(System.String, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+20],rax
+mov       rsi,rcx
+test      rsi,rsi
+je        short 00007FFA979B1B06
+test      rdx,rdx
+je        short 00007FFA979B1B24
+test      r8,r8
+je        short 00007FFA979B1B42
+mov       rcx,r8
+call      qword ptr [7FFA975939A8]
+mov       r8,rax
+lea       rdx,[rsi+0C]
+mov       ecx,[rsi+8]
+mov       [rsp+20],rdx
+mov       [rsp+28],ecx
+lea       rdx,[rsp+20]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.ReadFromSpan[[System.Object, System.Private.CoreLib]](System.ReadOnlySpan`1<Char>, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+call      qword ptr [7FFA97935210]
+nop
+add       rsp,30
+pop       rsi
+ret
+mov       ecx,2C1E
+mov       rdx,7FFA9757BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9768F018]
+int       3
+mov       ecx,2E88
+mov       rdx,7FFA9757BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9768F018]
+int       3
+mov       ecx,2EB8
+mov       rdx,7FFA9757BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9768F018]
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize: JSON-PersonRecord'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+198]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](System.String)
+call      DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rcx,rbx
+call      System.Text.Json.JsonSerializerOptions..ctor()
+mov       rcx,rbx
+mov       edx,3
+call      System.Text.Json.JsonSerializerOptions.set_NumberHandling(System.Text.Json.Serialization.JsonNumberHandling)
+mov       rcx,rdi
+test      rcx,rcx
+je        near ptr 00007FFA98E62FB2
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FFA98E62FB2
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E62F8E
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,669
+mov       rdx,7FFA989461A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,9
+mov       rdx,7FFA989461A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989461A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rbx
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+10],0
+je        short 00007FFA98E62FBC
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+jmp       short 00007FFA98E62FD1
+mov       eax,1
+jmp       near ptr 00007FFA98E62EE1
+mov       rcx,rsi
+mov       rdx,7FFA98EA36A0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+mov       r8,rbx
+call      System.Text.Json.JsonSerializer.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String, System.Text.Json.JsonSerializerOptions)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+198]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](System.String)
+call      qword ptr [7FFA96FA7300]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FAB798]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rcx,rbx
+call      qword ptr [7FFA96C116C0]
+mov       rcx,rbx
+mov       edx,3
+call      qword ptr [7FFA96C118A0]
+mov       rcx,rdi
+test      rcx,rcx
+je        short 00007FFA97069EAB
+mov       eax,[rcx+8]
+xor       edx,edx
+test      eax,eax
+sete      dl
+test      edx,edx
+sete      dl
+movzx     edx,dl
+test      eax,eax
+jne       short 00007FFA97069EAD
+jmp       short 00007FFA97069EAD
+xor       edx,edx
+test      edx,edx
+jne       near ptr 00007FFA97069F57
+call      qword ptr [7FFA96C1D450]
+mov       rsi,rax
+mov       ecx,98C
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,32C
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rbx
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C1B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C1D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C1D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969BFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96843510]
+mov       rdi,rax
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+10],0
+je        short 00007FFA97069F7C
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+jmp       short 00007FFA97069F91
+mov       rcx,rsi
+mov       rdx,7FFA96F9E1A8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+mov       r8,rbx
+call      qword ptr [7FFA96FA7360]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize: List<PersonProper>'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_PersonProper_List()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+190]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]], System.Private.CoreLib]](System.String)
+call      DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]], System.Private.CoreLib]](System.Collections.Generic.List`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper> ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rcx,rbx
+call      System.Text.Json.JsonSerializerOptions..ctor()
+mov       rcx,rbx
+mov       edx,3
+call      System.Text.Json.JsonSerializerOptions.set_NumberHandling(System.Text.Json.Serialization.JsonNumberHandling)
+mov       rcx,rdi
+test      rcx,rcx
+je        near ptr 00007FFA98E48852
+cmp       dword ptr [rcx+8],0
+je        near ptr 00007FFA98E48852
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E4882E
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,669
+mov       rdx,7FFA989361A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,9
+mov       rdx,7FFA989361A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989361A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rbx
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+10],0
+je        short 00007FFA98E4885C
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+jmp       short 00007FFA98E48871
+mov       eax,1
+jmp       near ptr 00007FFA98E48781
+mov       rcx,rsi
+mov       rdx,7FFA98E936A0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+mov       r8,rbx
+call      System.Text.Json.JsonSerializer.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String, System.Text.Json.JsonSerializerOptions)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Json_PersonProper_List()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+190]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]], System.Private.CoreLib]](System.String)
+call      qword ptr [7FFA96FC3FA8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]], System.Private.CoreLib]](System.Collections.Generic.List`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper> ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FC5288]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+mov       [rsp+28],rcx
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rcx,rbx
+call      qword ptr [7FFA96C216C0]
+mov       rcx,rbx
+mov       edx,3
+call      qword ptr [7FFA96C218A0]
+mov       rcx,rdi
+test      rcx,rcx
+je        short 00007FFA97073B4B
+mov       eax,[rcx+8]
+xor       edx,edx
+test      eax,eax
+sete      dl
+test      edx,edx
+sete      dl
+movzx     edx,dl
+test      eax,eax
+jne       short 00007FFA97073B4D
+jmp       short 00007FFA97073B4D
+xor       edx,edx
+test      edx,edx
+jne       near ptr 00007FFA97073BF7
+call      qword ptr [7FFA96C2D450]
+mov       rsi,rax
+mov       ecx,98C
+mov       rdx,7FFA96A698E0
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,32C
+mov       rdx,7FFA96A698E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A698E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rbx
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C2B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C2D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C2D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969CFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96853510]
+mov       rdi,rax
+mov       rcx,[rsi+10]
+cmp       qword ptr [rcx+10],0
+je        short 00007FFA97073C1C
+mov       rcx,[rsi+10]
+mov       rcx,[rcx+10]
+jmp       short 00007FFA97073C31
+mov       rcx,rsi
+mov       rdx,7FFA96FAE100
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       rcx,rax
+mov       rdx,rdi
+mov       r8,rbx
+call      qword ptr [7FFA96FC5018]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize: XML=PersonProper'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Xml_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+1B8]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.String)
+call      DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,78
+vzeroupper
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-50],xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+mov       [rbp-68],rsp
+mov       [rbp-20],rcx
+mov       rsi,rcx
+test      rdx,rdx
+je        near ptr 00007FFA98E8025B
+cmp       dword ptr [rdx+8],0
+je        near ptr 00007FFA98E8025B
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E80213
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,925
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rdx],edx
+mov       rcx,rdx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       rcx,offset MT_System.IO.StringReader
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 00007FFA98E8032D
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       ecx,[rdi+8]
+mov       [rbx+14],ecx
+mov       rcx,rbx
+mov       [rbp-50],rcx
+jmp       short 00007FFA98E80265
+mov       eax,1
+jmp       near ptr 00007FFA98E80166
+call      System.Xml.XmlReader.Create(System.IO.TextReader)
+mov       [rbp-58],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rsi,[rsi+10]
+mov       rcx,[rsi]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)
+mov       rsi,[rsi]
+mov       rcx,rdi
+mov       rax,[rbp-58]
+mov       rdx,rax
+vmovdqu   xmm0,xmmword ptr [rdi+38]
+vmovdqu   xmmword ptr [rbp-48],xmm0
+vmovdqu   xmm0,xmmword ptr [rdi+48]
+vmovdqu   xmmword ptr [rbp-38],xmm0
+mov       r9,[rdi+58]
+mov       [rbp-28],r9
+lea       r9,[rbp-48]
+xor       r8d,r8d
+call      System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader, System.String, System.Xml.Serialization.XmlDeserializationEvents)
+mov       rdx,rax
+mov       rcx,rsi
+call      CORINFO_HELP_CHKCASTARRAY
+mov       rsi,rax
+mov       rax,[rbp-58]
+test      rax,rax
+je        short 00007FFA98E802FA
+mov       rcx,rax
+mov       r11,7FFA986C0A20
+call      qword ptr [7FFA986C0A20]
+nop
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       [rax+14],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA98922CF0]
+mov       rcx,[rbp-50]
+call      System.GC.SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,78
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       ecx,11
+call      System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-58],0
+je        short 00007FFA98E8036E
+mov       rcx,[rbp-58]
+mov       r11,7FFA986C0A20
+call      qword ptr [7FFA986C0A20]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-50],0
+je        short 00007FFA98E803C1
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       [rax+14],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA98922CF0]
+mov       rcx,[rbp-50]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Xml_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+1B8]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](System.String)
+call      qword ptr [7FFA96FA5FA8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FDDEA0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,78
+vzeroupper
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-50],xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+mov       [rbp-68],rsp
+mov       [rbp-20],rcx
+mov       rsi,rcx
+test      rdx,rdx
+je        short 00007FFA970841DF
+xor       eax,eax
+cmp       dword ptr [rdx+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+cmp       dword ptr [rdx+8],0
+jne       short 00007FFA970841E1
+jmp       short 00007FFA970841E1
+xor       eax,eax
+test      eax,eax
+jne       near ptr 00007FFA9708428B
+call      qword ptr [7FFA96C1D450]
+mov       rsi,rax
+mov       ecx,0C48
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C1B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C1D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C1D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969BFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rdx],dl
+mov       rcx,rdx
+mov       edx,3
+call      qword ptr [7FFA96843510]
+mov       rdi,rax
+mov       rcx,offset MT_System.IO.StringReader
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 00007FFA97084379
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,rbx
+mov       [rbp-50],rcx
+call      qword ptr [7FFA96F51C90]
+mov       [rbp-58],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rsi,[rsi+10]
+mov       rcx,[rsi]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      qword ptr [7FFA96EA9108]
+mov       rsi,[rsi]
+mov       rcx,rdi
+mov       rax,[rbp-58]
+mov       rdx,rax
+vmovdqu   ymm0,ymmword ptr [rcx+38]
+vmovdqu   ymmword ptr [rbp-48],ymm0
+mov       r9,[rcx+58]
+mov       [rbp-28],r9
+lea       r9,[rbp-48]
+xor       r8d,r8d
+call      qword ptr [7FFA96EA9300]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA967AB858]
+mov       rsi,rax
+mov       rax,[rbp-58]
+test      rax,rax
+je        short 00007FFA97084358
+mov       rcx,rax
+mov       r11,7FFA96600970
+call      qword ptr [r11]
+nop
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       rcx,rax
+call      System.GC._SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,78
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       ecx,11
+call      qword ptr [7FFA96A177B0]
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-58],0
+je        short 00007FFA970843B8
+mov       rcx,[rbp-58]
+mov       r11,7FFA96600970
+call      qword ptr [r11]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       rcx,rax
+call      System.GC._SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Deserialize: XML=PersonRecord'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Xml_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+1B0]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](System.String)
+call      DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,78
+vzeroupper
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-50],xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+mov       [rbp-68],rsp
+mov       [rbp-20],rcx
+mov       rsi,rcx
+test      rdx,rdx
+je        near ptr 00007FFA98E7CA5B
+cmp       dword ptr [rdx+8],0
+je        near ptr 00007FFA98E7CA5B
+xor       eax,eax
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E7CA13
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,925
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rdx],edx
+mov       rcx,rdx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rdi,rax
+mov       rcx,offset MT_System.IO.StringReader
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 00007FFA98E7CB2D
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       ecx,[rdi+8]
+mov       [rbx+14],ecx
+mov       rcx,rbx
+mov       [rbp-50],rcx
+jmp       short 00007FFA98E7CA65
+mov       eax,1
+jmp       near ptr 00007FFA98E7C966
+call      System.Xml.XmlReader.Create(System.IO.TextReader)
+mov       [rbp-58],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rsi,[rsi+10]
+mov       rcx,[rsi]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)
+mov       rsi,[rsi]
+mov       rcx,rdi
+mov       rax,[rbp-58]
+mov       rdx,rax
+vmovdqu   xmm0,xmmword ptr [rdi+38]
+vmovdqu   xmmword ptr [rbp-48],xmm0
+vmovdqu   xmm0,xmmword ptr [rdi+48]
+vmovdqu   xmmword ptr [rbp-38],xmm0
+mov       r9,[rdi+58]
+mov       [rbp-28],r9
+lea       r9,[rbp-48]
+xor       r8d,r8d
+call      System.Xml.Serialization.XmlSerializer.Deserialize(System.Xml.XmlReader, System.String, System.Xml.Serialization.XmlDeserializationEvents)
+mov       rdx,rax
+mov       rcx,rsi
+call      CORINFO_HELP_CHKCASTARRAY
+mov       rsi,rax
+mov       rax,[rbp-58]
+test      rax,rax
+je        short 00007FFA98E7CAFA
+mov       rcx,rax
+mov       r11,7FFA986C0A58
+call      qword ptr [7FFA986C0A58]
+nop
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       [rax+14],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA98922CF0]
+mov       rcx,[rbp-50]
+call      System.GC.SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,78
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       ecx,11
+call      System.ThrowHelper.ThrowArgumentNullException(System.ExceptionArgument)
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-58],0
+je        short 00007FFA98E7CB6E
+mov       rcx,[rbp-58]
+mov       r11,7FFA986C0A58
+call      qword ptr [7FFA986C0A58]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-50],0
+je        short 00007FFA98E7CBC1
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       [rax+14],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA98922CF0]
+mov       rcx,[rbp-50]
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Deserialize_Xml_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdx,[rsi+1B0]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](System.String)
+call      qword ptr [7FFA96FD3FA8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord, dotNetTips.Spargine.6.Tester]](DotNetTips.Spargine.Tester.Models.RefTypes.PersonRecord ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FFD7F8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Deserialize[[System.__Canon, System.Private.CoreLib]](System.String)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,78
+vzeroupper
+lea       rbp,[rsp+90]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-50],xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+mov       [rbp-68],rsp
+mov       [rbp-20],rcx
+mov       rsi,rcx
+test      rdx,rdx
+je        short 00007FFA970B0C2F
+xor       eax,eax
+cmp       dword ptr [rdx+8],0
+sete      al
+test      eax,eax
+sete      al
+movzx     eax,al
+cmp       dword ptr [rdx+8],0
+jne       short 00007FFA970B0C31
+jmp       short 00007FFA970B0C31
+xor       eax,eax
+test      eax,eax
+jne       near ptr 00007FFA970B0CDB
+call      qword ptr [7FFA96C3D450]
+mov       rsi,rax
+mov       ecx,0C48
+mov       rdx,7FFA96A798E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A798E0
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A798E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C3B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C3D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C3D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969DFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rdx],dl
+mov       rcx,rdx
+mov       edx,3
+call      qword ptr [7FFA96863510]
+mov       rdi,rax
+mov       rcx,offset MT_System.IO.StringReader
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+test      rdi,rdi
+je        near ptr 00007FFA970B0DD8
+lea       rcx,[rbx+8]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,rbx
+mov       [rbp-50],rcx
+call      qword ptr [7FFA96F3FC90]
+mov       [rbp-58],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rsi,[rsi+10]
+mov       rcx,[rsi]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      qword ptr [7FFA96EC71C8]
+mov       rsi,[rsi]
+mov       rcx,rdi
+mov       rax,[rbp-58]
+mov       rdx,rax
+vmovdqu   ymm0,ymmword ptr [rcx+38]
+vmovdqu   ymmword ptr [rbp-48],ymm0
+mov       r9,[rcx+58]
+mov       [rbp-28],r9
+lea       r9,[rbp-48]
+xor       r8d,r8d
+call      qword ptr [7FFA96EC73C0]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA967CB858]
+mov       rsi,rax
+mov       rax,[rbp-58]
+test      rax,rax
+je        short 00007FFA970B0DA8
+mov       rcx,rax
+mov       r11,7FFA96620A10
+call      qword ptr [r11]
+nop
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA969C9BA8]
+mov       rcx,[rbp-50]
+call      System.GC._SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,78
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       ecx,11
+call      qword ptr [7FFA96A377B0]
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+cmp       qword ptr [rbp-58],0
+je        short 00007FFA970B0E17
+mov       rcx,[rbp-58]
+mov       r11,7FFA96620A10
+call      qword ptr [r11]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+vzeroupper
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+90]
+xor       ecx,ecx
+mov       rax,[rbp-50]
+mov       [rax+8],rcx
+mov       [rax+10],ecx
+mov       rcx,rax
+mov       edx,1
+call      qword ptr [7FFA969C9BA8]
+mov       rcx,[rbp-50]
+call      System.GC._SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize JSON: JsonSerializer + Generator - List<PersonProper>'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_JsonSerializer_Generator_PersonProper_List()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+1A8]
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,13B72D583C8
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA98E7F081
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,13B72D583C0
+mov       rdx,[rdx]
+mov       rcx,rsi
+call      System.Text.Json.JsonSerializerOptions..ctor(System.Text.Json.JsonSerializerOptions)
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rdx,13B72D583C0
+mov       rdx,[rdx]
+lea       rcx,[rdi+40]
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E7F088
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E7F088
+lea       rcx,[rsi+20]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rdi+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,13B72D583C8
+mov       rdx,rdi
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       rax,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      CORINFO_HELP_ISINSTANCEOFCLASS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerOptionsImmutable(System.Text.Json.Serialization.JsonSerializerContext)
+int       3
+
+System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rbx,rbx
+je        short 00007FFA98E7F0FD
+mov       rcx,rsi
+mov       rdx,rdi
+call      System.Text.Json.JsonSerializer.ValidateInputType(System.Object, System.Type)
+mov       rcx,rbx
+mov       rdx,rdi
+call      System.Text.Json.JsonSerializer.GetTypeInfo(System.Text.Json.Serialization.JsonSerializerContext, System.Type)
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       near ptr System.Text.Json.JsonSerializer.WriteStringAsObject(System.Object, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+mov       ecx,2EB8
+mov       rdx,7FFA98B16370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_JsonSerializer_Generator_PersonProper_List()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+1A8]
+mov       rcx,offset MT_System.Collections.Generic.List`1[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, dotNetTips.Spargine.6.Tester]]
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      qword ptr [7FFA97937120]
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      qword ptr [7FFA97595468]
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rcx,178D3C073D0
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA979B5F0C
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,178D3C073C8
+mov       rdi,[rdx]
+mov       rdx,rdi
+mov       rcx,rsi
+call      qword ptr [7FFA975916D8]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+lea       rcx,[rbx+40]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979B5F14
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979B5F14
+lea       rcx,[rsi+20]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rbx+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,178D3C073D0
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      qword ptr [7FFA9712B828]
+mov       rcx,rax
+call      qword ptr [7FFA9768F810]
+int       3
+
+System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rbx,rbx
+je        short 00007FFA979B5F90
+mov       rcx,rsi
+mov       rdx,rdi
+call      qword ptr [7FFA97595318]
+mov       rcx,rbx
+mov       rdx,rdi
+call      qword ptr [7FFA975939A8]
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       qword ptr [7FFA97595498]
+mov       ecx,2EB8
+mov       rdx,7FFA9757BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9768F018]
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize JSON: JsonSerializer + Generator - PersonProper'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_JsonSerializer_Generator_PersonProper()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+30]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+sub       rsp,28
+mov       rcx,215ABA763D0
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA98E698C1
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,215ABA763C8
+mov       rdx,[rdx]
+mov       rcx,rsi
+call      System.Text.Json.JsonSerializerOptions..ctor(System.Text.Json.JsonSerializerOptions)
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rdx,215ABA763C8
+mov       rdx,[rdx]
+lea       rcx,[rdi+40]
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E698C8
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA98E698C8
+lea       rcx,[rsi+20]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rdi+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,215ABA763D0
+mov       rdx,rdi
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       rax,rdi
+add       rsp,28
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      CORINFO_HELP_ISINSTANCEOFCLASS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializerOptionsImmutable(System.Text.Json.Serialization.JsonSerializerContext)
+int       3
+
+System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rbx,rbx
+je        short 00007FFA98E6993D
+mov       rcx,rsi
+mov       rdx,rdi
+call      System.Text.Json.JsonSerializer.ValidateInputType(System.Object, System.Type)
+mov       rcx,rbx
+mov       rdx,rdi
+call      System.Text.Json.JsonSerializer.GetTypeInfo(System.Text.Json.Serialization.JsonSerializerContext, System.Type)
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       near ptr System.Text.Json.JsonSerializer.WriteStringAsObject(System.Object, System.Text.Json.Serialization.Metadata.JsonTypeInfo)
+mov       ecx,2EB8
+mov       rdx,7FFA98B06370
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      System.Text.Json.ThrowHelper.ThrowArgumentNullException(System.String)
+int       3
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_JsonSerializer_Generator_PersonProper()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rdi,[rsi+30]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rbx,rax
+call      qword ptr [7FFA97907420]
+mov       r8,rax
+mov       rdx,rbx
+mov       rcx,rdi
+call      qword ptr [7FFA97575468]
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext.get_Default()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rcx,229170073D0
+mov       rax,[rcx]
+test      rax,rax
+jne       near ptr 00007FFA979C0E4C
+mov       rcx,offset MT_System.Text.Json.JsonSerializerOptions
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rdx,229170073C8
+mov       rdi,[rdx]
+mov       rdx,rdi
+mov       rcx,rsi
+call      qword ptr [7FFA975716D8]
+mov       rcx,offset MT_DotNetTips.Spargine.Tester.Models.RefTypes.PersonProperJsonSerializerContext
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+lea       rcx,[rbx+40]
+mov       rdx,rdi
+call      CORINFO_HELP_ASSIGN_REF
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979C0E54
+cmp       byte ptr [rsi+84],0
+jne       short 00007FFA979C0E54
+lea       rcx,[rsi+20]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       byte ptr [rsi+84],1
+lea       rcx,[rbx+8]
+mov       rdx,rsi
+call      CORINFO_HELP_ASSIGN_REF
+mov       rcx,229170073D0
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rax,rbx
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rdx,[rsi+20]
+mov       rcx,offset MT_System.Text.Json.Serialization.JsonSerializerContext
+call      qword ptr [7FFA9710B828]
+mov       rcx,rax
+call      qword ptr [7FFA9766F810]
+int       3
+
+System.Text.Json.JsonSerializer.Serialize(System.Object, System.Type, System.Text.Json.Serialization.JsonSerializerContext)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,rdx
+mov       rbx,r8
+test      rbx,rbx
+je        short 00007FFA979C0ED0
+mov       rcx,rsi
+mov       rdx,rdi
+call      qword ptr [7FFA97575318]
+mov       rcx,rbx
+mov       rdx,rdi
+call      qword ptr [7FFA975739A8]
+mov       rdx,rax
+mov       rcx,rsi
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+jmp       qword ptr [7FFA97575498]
+mov       ecx,2EB8
+mov       rdx,7FFA9755BDC0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+call      qword ptr [7FFA9766F018]
+int       3
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize: JSON=PersonProper'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+30]
+call      DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E7DE42
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA98E7DF09
+lea       rcx,[rsi+0C]
+mov       rdx,23F34831568
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA98E7DF2B
+lea       rcx,[rsi+0C]
+add       rcx,6
+mov       rdx,23F54833090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA98E7DE33
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA98E7DE26
+mov       eax,1
+jmp       near ptr 00007FFA98E7DF4D
+cmp       dword ptr [rcx+8],0
+je        short 00007FFA98E7DE1C
+xor       eax,eax
+jmp       near ptr 00007FFA98E7DF4D
+mov       rcx,23F54833020
+mov       rcx,[rcx]
+jmp       short 00007FFA98E7DE17
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rsi,rax
+call      System.Text.Json.JsonSerializerOptions.get_Default()
+mov       rdi,rax
+cmp       byte ptr [rdi+85],0
+jne       short 00007FFA98E7DE72
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
+mov       rcx,23FA4832248
+cmp       rsi,[rcx]
+je        short 00007FFA98E7DEC2
+mov       rbx,[rdi+10]
+test      rbx,rbx
+jne       short 00007FFA98E7DE8E
+xor       ecx,ecx
+jmp       short 00007FFA98E7DE95
+mov       rcx,[rbx+0C0]
+cmp       rcx,rsi
+je        short 00007FFA98E7DEBD
+mov       rcx,rdi
+mov       rdx,rsi
+mov       r8d,1
+xor       r9d,r9d
+call      System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(System.Type, Boolean, Boolean)
+mov       rbx,rax
+lea       rcx,[rdi+10]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,rbx
+jmp       short 00007FFA98E7DECD
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.get_ObjectTypeInfo()
+mov       rdx,rax
+mov       r8,rdx
+test      r8,r8
+je        short 00007FFA98E7DEEC
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA98E7DEEC
+call      CORINFO_HELP_CHKCASTCLASS_SPECIAL
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      System.Text.Json.JsonSerializer.WriteString[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.__Canon>)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E7DFFA
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989761A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989761A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989761A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+30]
+call      qword ptr [7FFA96BC7BE8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FD5330]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+jne       near ptr 00007FFA9707953A
+call      qword ptr [7FFA96C3D330]
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA9707959A
+lea       rcx,[rsi+0C]
+mov       rdx,245EC008980
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      qword ptr [7FFA968A99F0]
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA970795BD
+lea       rcx,[rsi+12]
+mov       rdx,245EC002090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      qword ptr [7FFA968A99F0]
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA9707952B
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA9707951D
+mov       eax,1
+jmp       near ptr 00007FFA970795E0
+xor       eax,eax
+cmp       dword ptr [rcx+8],0
+sete      al
+jmp       near ptr 00007FFA970795E0
+mov       rcx,245EC002028
+mov       rcx,[rcx]
+jmp       short 00007FFA9707950E
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+xor       ecx,ecx
+call      qword ptr [7FFA96C33978]
+mov       r8,rax
+test      r8,r8
+je        short 00007FFA9707957C
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA9707957C
+mov       rdx,rax
+call      qword ptr [7FFA967CB8B8]
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      qword ptr [7FFA96E359F0]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A01C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A01C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA9707967B
+call      qword ptr [7FFA96C3D450]
+mov       rsi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A798E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A798E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C3B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C3D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C3D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969DFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96863510]
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      qword ptr [7FFA96C3D078]
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      qword ptr [7FFA969DFF18]
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize: JSON=PersonRecord'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+48]
+call      DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E6F722
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA98E6F7E9
+lea       rcx,[rsi+0C]
+mov       rdx,1EE103C9948
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA98E6F80B
+lea       rcx,[rsi+0C]
+add       rcx,6
+mov       rdx,1EE103C3090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA98E6F713
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA98E6F706
+mov       eax,1
+jmp       near ptr 00007FFA98E6F82D
+cmp       dword ptr [rcx+8],0
+je        short 00007FFA98E6F6FC
+xor       eax,eax
+jmp       near ptr 00007FFA98E6F82D
+mov       rcx,1EE103C3020
+mov       rcx,[rcx]
+jmp       short 00007FFA98E6F6F7
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rsi,rax
+call      System.Text.Json.JsonSerializerOptions.get_Default()
+mov       rdi,rax
+cmp       byte ptr [rdi+85],0
+jne       short 00007FFA98E6F752
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
+mov       rcx,1EE103C9E28
+cmp       rsi,[rcx]
+je        short 00007FFA98E6F7A2
+mov       rbx,[rdi+10]
+test      rbx,rbx
+jne       short 00007FFA98E6F76E
+xor       ecx,ecx
+jmp       short 00007FFA98E6F775
+mov       rcx,[rbx+0C0]
+cmp       rcx,rsi
+je        short 00007FFA98E6F79D
+mov       rcx,rdi
+mov       rdx,rsi
+mov       r8d,1
+xor       r9d,r9d
+call      System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(System.Type, Boolean, Boolean)
+mov       rbx,rax
+lea       rcx,[rdi+10]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,rbx
+jmp       short 00007FFA98E6F7AD
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.get_ObjectTypeInfo()
+mov       rdx,rax
+mov       r8,rdx
+test      r8,r8
+je        short 00007FFA98E6F7CC
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA98E6F7CC
+call      CORINFO_HELP_CHKCASTCLASS_SPECIAL
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      System.Text.Json.JsonSerializer.WriteString[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.__Canon>)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E6F8DA
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_PersonRecord()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+48]
+call      qword ptr [7FFA96BD7BE8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FE3FD8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+jne       near ptr 00007FFA9708AFFA
+call      qword ptr [7FFA96C4D330]
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA9708B05A
+lea       rcx,[rsi+0C]
+mov       rdx,18CED008980
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      qword ptr [7FFA968B99F0]
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA9708B07D
+lea       rcx,[rsi+12]
+mov       rdx,18CED002090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      qword ptr [7FFA968B99F0]
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA9708AFEB
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA9708AFDD
+mov       eax,1
+jmp       near ptr 00007FFA9708B0A0
+xor       eax,eax
+cmp       dword ptr [rcx+8],0
+sete      al
+jmp       near ptr 00007FFA9708B0A0
+mov       rcx,18CED002028
+mov       rcx,[rcx]
+jmp       short 00007FFA9708AFCE
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+xor       ecx,ecx
+call      qword ptr [7FFA96C43978]
+mov       r8,rax
+test      r8,r8
+je        short 00007FFA9708B03C
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA9708B03C
+mov       rdx,rax
+call      qword ptr [7FFA967DB8B8]
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      qword ptr [7FFA96E459F0]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A11C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A11C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA9708B13B
+call      qword ptr [7FFA96C4D450]
+mov       rsi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A898E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A898E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C4B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C4D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C4D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969EFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96873510]
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      qword ptr [7FFA96C4D078]
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      qword ptr [7FFA969EFF18]
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize: List<PersonProper>'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_PersonProper_List()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+1A8]
+call      DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E61322
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA98E613E9
+lea       rcx,[rsi+0C]
+mov       rdx,1E0D2D49948
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA98E6140B
+lea       rcx,[rsi+0C]
+add       rcx,6
+mov       rdx,1E0D2D43090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA98E61313
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA98E61306
+mov       eax,1
+jmp       near ptr 00007FFA98E6142D
+cmp       dword ptr [rcx+8],0
+je        short 00007FFA98E612FC
+xor       eax,eax
+jmp       near ptr 00007FFA98E6142D
+mov       rcx,1E0D2D43020
+mov       rcx,[rcx]
+jmp       short 00007FFA98E612F7
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rsi,rax
+call      System.Text.Json.JsonSerializerOptions.get_Default()
+mov       rdi,rax
+cmp       byte ptr [rdi+85],0
+jne       short 00007FFA98E61352
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.InitializeForReflectionSerializer()
+mov       rcx,1E0B2D42248
+cmp       rsi,[rcx]
+je        short 00007FFA98E613A2
+mov       rbx,[rdi+10]
+test      rbx,rbx
+jne       short 00007FFA98E6136E
+xor       ecx,ecx
+jmp       short 00007FFA98E61375
+mov       rcx,[rbx+0C0]
+cmp       rcx,rsi
+je        short 00007FFA98E6139D
+mov       rcx,rdi
+mov       rdx,rsi
+mov       r8d,1
+xor       r9d,r9d
+call      System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(System.Type, Boolean, Boolean)
+mov       rbx,rax
+lea       rcx,[rdi+10]
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,rbx
+jmp       short 00007FFA98E613AD
+mov       rcx,rdi
+call      System.Text.Json.JsonSerializerOptions.get_ObjectTypeInfo()
+mov       rdx,rax
+mov       r8,rdx
+test      r8,r8
+je        short 00007FFA98E613CC
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA98E613CC
+call      CORINFO_HELP_CHKCASTCLASS_SPECIAL
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      System.Text.Json.JsonSerializer.WriteString[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.__Canon>)
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E614DA
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989561A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989561A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989561A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_Json_PersonProper_List()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+1A8]
+call      qword ptr [7FFA96BD7BE8]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FE50A8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.JsonSerialization.Serialize(System.Object)
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+test      rcx,rcx
+jne       near ptr 00007FFA9708D55A
+call      qword ptr [7FFA96C4D330]
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rsi,rax
+cmp       dword ptr [rsi+8],3
+jl        near ptr 00007FFA9708D5BA
+lea       rcx,[rsi+0C]
+mov       rdx,1C7ACC08980
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      qword ptr [7FFA968B99F0]
+mov       ecx,[rsi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA9708D5DD
+lea       rcx,[rsi+12]
+mov       rdx,1C7ACC02090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      qword ptr [7FFA968B99F0]
+cmp       dword ptr [rsi+8],0
+je        short 00007FFA9708D54B
+mov       rcx,rsi
+test      rcx,rcx
+jne       short 00007FFA9708D53D
+mov       eax,1
+jmp       near ptr 00007FFA9708D600
+xor       eax,eax
+cmp       dword ptr [rcx+8],0
+sete      al
+jmp       near ptr 00007FFA9708D600
+mov       rcx,1C7ACC02028
+mov       rcx,[rcx]
+jmp       short 00007FFA9708D52E
+mov       [rsp+28],rcx
+mov       rcx,offset MT_System.Object
+call      CORINFO_HELP_TYPEHANDLE_TO_RUNTIMETYPE
+mov       rdx,rax
+xor       ecx,ecx
+call      qword ptr [7FFA96C43978]
+mov       r8,rax
+test      r8,r8
+je        short 00007FFA9708D59C
+mov       rcx,offset MT_System.Text.Json.Serialization.Metadata.JsonTypeInfo`1[[System.Object, System.Private.CoreLib]]
+cmp       [r8],rcx
+je        short 00007FFA9708D59C
+mov       rdx,rax
+call      qword ptr [7FFA967DB8B8]
+mov       r8,rax
+lea       rdx,[rsp+28]
+mov       rcx,offset MD_System.Text.Json.JsonSerializer.WriteString[[System.Object, System.Private.CoreLib]](System.Object ByRef, System.Text.Json.Serialization.Metadata.JsonTypeInfo`1<System.Object>)
+call      qword ptr [7FFA96E479F0]
+nop
+add       rsp,30
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A11C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96A11C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA9708D69B
+call      qword ptr [7FFA96C4D450]
+mov       rsi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A898E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A898E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C4B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C4D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C4D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969EFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96873510]
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      qword ptr [7FFA96C4D078]
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      qword ptr [7FFA969EFF18]
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">SerializationBenchmark.'Serialize: XML=PersonProper'</th></tr>
+<tr>
+<th>.NET 6.0.16 (6.0.1623.17311), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_XML_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+30]
+call      DotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,48
+lea       rbp,[rsp+60]
+xor       eax,eax
+mov       [rbp-20],rax
+mov       [rbp-30],rsp
+mov       rsi,rcx
+test      rsi,rsi
+setne     al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E76EDE
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorObjectCannotBeNull()
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rdi,rax
+cmp       dword ptr [rdi+8],3
+jl        near ptr 00007FFA98E76F97
+lea       rcx,[rdi+0C]
+mov       rdx,280E3871568
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+mov       ecx,[rdi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA98E76FB9
+lea       rcx,[rdi+0C]
+add       rcx,6
+mov       rdx,280C3873090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      System.Buffer.Memmove(Byte ByRef, Byte ByRef, UIntPtr)
+cmp       dword ptr [rdi+8],0
+je        short 00007FFA98E76ECF
+mov       rcx,rdi
+test      rcx,rcx
+jne       short 00007FFA98E76EC2
+mov       eax,1
+jmp       near ptr 00007FFA98E76FDB
+cmp       dword ptr [rcx+8],0
+je        short 00007FFA98E76EB8
+xor       eax,eax
+jmp       near ptr 00007FFA98E76FDB
+mov       rcx,280C3873020
+mov       rcx,[rcx]
+jmp       short 00007FFA98E76EB3
+mov       rcx,offset MT_System.IO.StringWriter
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+call      System.IO.StringWriter..ctor()
+mov       rcx,rdi
+mov       [rbp-20],rcx
+call      System.Xml.XmlWriter.Create(System.IO.TextWriter)
+mov       [rbp-28],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rsi
+call      System.Object.GetType()
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      System.Xml.Serialization.XmlSerializer..ctor(System.Type, System.String)
+xor       ecx,ecx
+mov       [rsp+20],rcx
+mov       [rsp+28],rcx
+mov       rcx,rdi
+mov       rdx,[rbp-28]
+mov       r8,rsi
+xor       r9d,r9d
+call      System.Xml.Serialization.XmlSerializer.Serialize(System.Xml.XmlWriter, System.Object, System.Xml.Serialization.XmlSerializerNamespaces, System.String, System.String)
+mov       rcx,[rbp-20]
+mov       rcx,[rcx+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFA9895B6B8]
+mov       rsi,rax
+mov       rdx,[rbp-28]
+test      rdx,rdx
+je        short 00007FFA98E76F7E
+mov       rcx,rdx
+mov       r11,7FFA986C0A40
+call      qword ptr [7FFA986C0A40]
+nop
+mov       rcx,[rbp-20]
+mov       byte ptr [rcx+28],0
+call      System.GC.SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,48
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      System.IndexOutOfRangeException..ctor()
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA98E77088
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorStringIsNullOrEmpty()
+mov       rsi,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,9
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rbx,rax
+mov       ecx,3AD
+mov       rdx,7FFA989661A8
+call      CORINFO_HELP_STRCNS
+mov       rcx,rdi
+mov       r9,rbx
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       rdx,rax
+mov       rcx,rsi
+call      DotNetTips.Spargine.Core.ExceptionThrower.DefaultIfNull(System.String, System.String)
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],ecx
+mov       edx,3
+call      System.String.TrimWhiteSpaceHelper(System.Text.TrimType)
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      DotNetTips.Spargine.Core.Properties.Resources.get_ErrorArgumentNull()
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      System.ArgumentNullException..ctor(System.String, System.String)
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+mov       rbp,[rcx+30]
+mov       [rsp+30],rbp
+lea       rbp,[rbp+60]
+cmp       qword ptr [rbp-28],0
+je        short 00007FFA98E770F5
+mov       rcx,[rbp-28]
+mov       r11,7FFA986C0A40
+call      qword ptr [7FFA986C0A40]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+mov       rbp,[rcx+30]
+mov       [rsp+30],rbp
+lea       rbp,[rbp+60]
+cmp       qword ptr [rbp-20],0
+je        short 00007FFA98E77128
+mov       rcx,[rbp-20]
+mov       byte ptr [rcx+28],0
+call      System.GC.SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Serialization.SerializationBenchmark.Serialize_XML_Ref_PersonProper()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+30]
+call      qword ptr [7FFA96BA7F78]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FFA96FA7330]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Serialization.XmlSerialization.Serialize(System.Object)
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,48
+lea       rbp,[rsp+60]
+xor       eax,eax
+mov       [rbp-20],rax
+mov       [rbp-30],rsp
+mov       rsi,rcx
+test      rsi,rsi
+jne       near ptr 00007FFA97062A46
+call      qword ptr [7FFA96C1D330]
+mov       ecx,5
+call      System.String.FastAllocateString(Int32)
+mov       rdi,rax
+cmp       dword ptr [rdi+8],3
+jl        near ptr 00007FFA97062B00
+lea       rcx,[rdi+0C]
+mov       rdx,21DE7C08980
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,6
+call      qword ptr [7FFA968899F0]
+mov       ecx,[rdi+8]
+sub       ecx,3
+cmp       ecx,2
+jl        near ptr 00007FFA97062B23
+lea       rcx,[rdi+12]
+mov       rdx,21DE7C02090
+mov       rdx,[rdx]
+add       rdx,0C
+mov       r8d,4
+call      qword ptr [7FFA968899F0]
+cmp       dword ptr [rdi+8],0
+je        short 00007FFA97062A37
+mov       rcx,rdi
+test      rcx,rcx
+jne       short 00007FFA97062A29
+mov       eax,1
+jmp       near ptr 00007FFA97062B46
+xor       eax,eax
+cmp       dword ptr [rcx+8],0
+sete      al
+jmp       near ptr 00007FFA97062B46
+mov       rcx,21DE7C02028
+mov       rcx,[rcx]
+jmp       short 00007FFA97062A1A
+mov       rcx,offset MT_System.IO.StringWriter
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rdi
+call      qword ptr [7FFA96EA5570]
+mov       rcx,rdi
+mov       [rbp-20],rcx
+call      qword ptr [7FFA96EA75D0]
+mov       [rbp-28],rax
+mov       rcx,offset MT_System.Xml.Serialization.XmlSerializer
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+mov       rcx,rsi
+call      System.Object.GetType()
+mov       rdx,rax
+mov       rcx,rdi
+xor       r8d,r8d
+call      qword ptr [7FFA96EA9108]
+xor       ecx,ecx
+mov       [rsp+20],rcx
+mov       [rsp+28],rcx
+mov       rcx,rdi
+mov       rdx,[rbp-28]
+mov       r8,rsi
+xor       r9d,r9d
+call      qword ptr [7FFA96EA9240]
+mov       rcx,[rbp-20]
+mov       rcx,[rcx+20]
+cmp       [rcx],ecx
+call      qword ptr [7FFA96A2FE58]
+mov       rsi,rax
+mov       rdx,[rbp-28]
+test      rdx,rdx
+je        short 00007FFA97062AE7
+mov       rcx,rdx
+mov       r11,7FFA96600990
+call      qword ptr [r11]
+nop
+mov       rcx,[rbp-20]
+mov       byte ptr [rcx+28],0
+call      System.GC._SuppressFinalize(System.Object)
+mov       rax,rsi
+add       rsp,48
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA969E1C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+mov       rcx,offset MT_System.IndexOutOfRangeException
+call      CORINFO_HELP_NEWSFAST
+mov       rsi,rax
+mov       rcx,rsi
+call      qword ptr [7FFA969E1C78]
+mov       rcx,rsi
+call      CORINFO_HELP_THROW
+test      eax,eax
+sete      al
+movzx     eax,al
+test      eax,eax
+jne       near ptr 00007FFA97062BE1
+call      qword ptr [7FFA96C1D450]
+mov       rsi,rax
+mov       ecx,32C
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rdi,rax
+mov       ecx,6D0
+mov       rdx,7FFA96A598E0
+call      CORINFO_HELP_STRCNS
+mov       rcx,rax
+mov       r9,rdi
+mov       [rsp+20],rax
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FFA96C1B7F8]
+mov       rdi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+call      qword ptr [7FFA96C1D078]
+mov       rdx,rax
+mov       rcx,rsi
+call      qword ptr [7FFA96C1D510]
+mov       r8,rax
+mov       rdx,rdi
+mov       rcx,rbx
+call      qword ptr [7FFA969BFF18]
+mov       rcx,rbx
+call      CORINFO_HELP_THROW
+cmp       [rcx],cl
+mov       edx,3
+call      qword ptr [7FFA96843510]
+mov       rsi,rax
+mov       rcx,offset MT_System.ArgumentNullException
+call      CORINFO_HELP_NEWSFAST
+mov       rdi,rax
+call      qword ptr [7FFA96C1D078]
+mov       r8,rax
+mov       rdx,rsi
+mov       rcx,rdi
+call      qword ptr [7FFA969BFF18]
+mov       rcx,rdi
+call      CORINFO_HELP_THROW
+int       3
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+mov       rbp,[rcx+30]
+mov       [rsp+30],rbp
+lea       rbp,[rbp+60]
+cmp       qword ptr [rbp-28],0
+je        short 00007FFA97062C4E
+mov       rcx,[rbp-28]
+mov       r11,7FFA96600990
+call      qword ptr [r11]
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+push      rbp
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,38
+mov       rbp,[rcx+30]
+mov       [rsp+30],rbp
+lea       rbp,[rbp+60]
+mov       rcx,[rbp-20]
+mov       byte ptr [rcx+28],0
+call      System.GC._SuppressFinalize(System.Object)
+nop
+add       rsp,38
+pop       rbx
+pop       rsi
+pop       rdi
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

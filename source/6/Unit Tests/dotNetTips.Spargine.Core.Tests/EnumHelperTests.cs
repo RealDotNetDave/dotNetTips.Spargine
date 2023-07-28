@@ -41,5 +41,4 @@ public class EnumHelperTests
 		result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
 		Assert.IsTrue(result.FastCount() > 0);
 	}
-
 }

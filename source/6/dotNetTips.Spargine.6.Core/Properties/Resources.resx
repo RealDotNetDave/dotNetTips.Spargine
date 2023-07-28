@@ -214,7 +214,7 @@
     <value>UNKNOWN</value>
   </data>
   <data name="ErrorInvalidEnumType" xml:space="preserve">
-    <value>Invalid enum type.</value>
+    <value>Invalid Enum type.</value>
   </data>
   <data name="ErrorInvalidStringLengthAcceptableRange" xml:space="preserve">
     <value>Invalid string length. Acceptable range is between {0} and {1}.</value>
@@ -266,5 +266,14 @@
   </data>
   <data name="ErrorParameterNameIsRequired" xml:space="preserve">
     <value>Parameter name is required.</value>
+  </data>
+  <data name="ErrorInvalidCast" xml:space="preserve">
+    <value>The object could not be cast to a new type.</value>
+  </data>
+  <data name="ErrorMessageNotQueued" xml:space="preserve">
+    <value>The message could not be queued.</value>
+  </data>
+  <data name="ErrorNetworkConnectionIssue" xml:space="preserve">
+    <value>Unknown network connection issue.</value>
   </data>
 </root>

@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-06-2023
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com

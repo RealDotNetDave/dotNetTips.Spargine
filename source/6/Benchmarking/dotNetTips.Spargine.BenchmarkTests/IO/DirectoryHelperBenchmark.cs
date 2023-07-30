@@ -23,17 +23,37 @@ using DotNetTips.Spargine.Tester;
 
 namespace DotNetTips.Spargine.BenchmarkTests.IO;
 
+/// <summary>
+/// Class DirectoryHelperBenchmark.
+/// Implements the <see cref="Benchmark" />
+/// </summary>
+/// <seealso cref="Benchmark" />
 [BenchmarkCategory(Categories.IO)]
 public class DirectoryHelperBenchmark : Benchmark
 {
 
+	/// <summary>
+	/// The file count
+	/// </summary>
 	private const int FileCount = 100;
+	/// <summary>
+	/// The file length
+	/// </summary>
 	private const int FileLength = 1024;
 
+	/// <summary>
+	/// The source path
+	/// </summary>
 	private readonly DirectoryInfo _sourcePath = new(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey()));
 
+	/// <summary>
+	/// The temporary path
+	/// </summary>
 	private readonly DirectoryInfo _tempPath = new(Path.Combine(Path.GetTempPath(), nameof(DirectoryHelperBenchmark) + RandomData.GenerateKey()));
 
+	/// <summary>
+	/// Applications the data folder.
+	/// </summary>
 	[Benchmark(Description = nameof(DirectoryHelper.AppDataFolder))]
 	public void AppDataFolder()
 	{
@@ -42,6 +62,9 @@ public class DirectoryHelperBenchmark : Benchmark
 		this.Consume(folder);
 	}
 
+	/// <summary>
+	/// Cleanups this instance.
+	/// </summary>
 	public override void Cleanup()
 	{
 		base.Cleanup();
@@ -50,6 +73,9 @@ public class DirectoryHelperBenchmark : Benchmark
 		DirectoryHelper.DeleteDirectory(this._sourcePath, retries: 5);
 	}
 
+	/// <summary>
+	/// Safes the directory search01.
+	/// </summary>
 	[Benchmark(Description = nameof(DirectoryHelper.SafeDirectorySearch))]
 	public void SafeDirectorySearch01()
 	{
@@ -58,6 +84,9 @@ public class DirectoryHelperBenchmark : Benchmark
 		this.Consume(folders);
 	}
 
+	/// <summary>
+	/// Safes the file search01.
+	/// </summary>
 	[Benchmark(Description = nameof(DirectoryHelper.SafeFileSearch))]
 	public void SafeFileSearch01()
 	{
@@ -66,11 +95,17 @@ public class DirectoryHelperBenchmark : Benchmark
 		base.Consume(files);
 	}
 
+	/// <summary>
+	/// Sets the file attributes to normal01.
+	/// </summary>
 	[Benchmark(Description = nameof(DirectoryHelper.SetFileAttributesToNormal))]
 	public void SetFileAttributesToNormal01()
 	{
 		DirectoryHelper.SetFileAttributesToNormal(this._sourcePath);
 	}
+	/// <summary>
+	/// Setups this instance.
+	/// </summary>
 	public override void Setup()
 	{
 		base.Setup();

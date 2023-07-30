@@ -4,7 +4,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.7.3</AssemblyVersion>
+		<AssemblyVersion>2023.6.8.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -22,7 +22,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.7.3</FileVersion>
+		<FileVersion>2023.6.8.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -37,7 +37,8 @@
 --AUG 2022: Code cleanup.
 --NOV 2022: Minor changes. Code cleanup.
 --FEB 2023: Code cleanup.
---MAY 2023: Code cleanup.		</PackageReleaseNotes>
+--MAY 2023: Code cleanup.
+--AUG 2023: Code cleanup.		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -51,7 +52,7 @@
 		<!--<SignAssembly>True</SignAssembly>-->
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-		<Version>2023.6.7.3</Version>
+		<Version>2023.6.8.1</Version>
 		<Title>DotNetTips.Spargine.6</Title>
 	</PropertyGroup>
 

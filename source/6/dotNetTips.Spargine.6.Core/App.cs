@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 07-30-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -152,11 +152,11 @@ public static class App
 	public static ProcessorInformation GetProcessorInformation()
 	{
 		var info = new SystemInfo();
-//#if NET7_0_OR_GREATER
-//		SourceGenerators.GetSystemInfoLibraryImport(ref info);
-//#else
+		//#if NET7_0_OR_GREATER
+		//		SourceGenerators.GetSystemInfoLibraryImport(ref info);
+		//#else
 		SourceGenerators.GetSystemInfoDllImport(ref info);
-//#endif
+		//#endif
 		//Convert data
 		return new ProcessorInformation()
 		{

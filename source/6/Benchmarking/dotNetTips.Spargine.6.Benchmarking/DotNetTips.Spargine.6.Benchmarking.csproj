@@ -47,7 +47,7 @@ MAY 2023: Code cleanup</PackageReleaseNotes>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
 		<!--<TargetFramework>net6.0</TargetFramework>-->
-		<Version>2023.6.5.2</Version>
+		<Version>2023.6.8.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -64,9 +64,9 @@ MAY 2023: Code cleanup</PackageReleaseNotes>
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.6" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.6" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.7.3" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.7.3" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.7.3" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.8.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.8.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.8.1" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

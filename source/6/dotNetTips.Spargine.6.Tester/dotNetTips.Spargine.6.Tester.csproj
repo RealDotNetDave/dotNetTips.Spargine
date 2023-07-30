@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
-		<AssemblyVersion>2023.6.7.3</AssemblyVersion>
+		<AssemblyVersion>2023.6.8.1</AssemblyVersion>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -17,10 +17,10 @@
 		<Description>Common code to help with unit tests by generating random data.</Description>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<EnableNETAnalyzers>True</EnableNETAnalyzers>
-		<EnablePackageValidation>false</EnablePackageValidation>
+		<EnablePackageValidation>false</EnablePackageValidation>	
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.7.3</FileVersion>
+		<FileVersion>2023.6.8.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -36,7 +36,8 @@
 --AUG 2022: Code cleanup.
 --NOV 2022: Minor changes. Code cleanup.
 --FEB 2023: Minor changes. Code cleanup.
---MAY 2023: Added code to produce realistic person and address information. New code to generate face credit card numbers and person first and last names. Code cleanup.</PackageReleaseNotes>
+--MAY 2023: Added code to produce realistic person and address information. New code to generate face credit card numbers and person first and last names. Code cleanup.
+--AUG 2023: Code cleanup.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<Product>$(AssemblyName)</Product>
@@ -51,7 +52,7 @@
 		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-		<Version>2023.6.7.3</Version>
+		<Version>2023.6.8.1</Version>
 		<Title>DotNetTips.Spargine.6.Tester</Title>
 	</PropertyGroup>
 

@@ -41,7 +41,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.ArgumentException"></exception>
+	/// <exception cref="ArgumentException"></exception>
 	/// <exception cref="ArgumentNullException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -57,7 +57,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.ArgumentException"></exception>
+	/// <exception cref="ArgumentException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -72,7 +72,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+	/// <exception cref="ArgumentInvalidException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -88,7 +88,7 @@ public static class ExceptionThrower
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+	/// <exception cref="ArgumentInvalidException"></exception>
 	/// <exception cref="ArgumentException"></exception>
 	/// <exception cref="ArgumentNullException"></exception>
 	[DoesNotReturn]
@@ -104,7 +104,7 @@ public static class ExceptionThrower
 	/// Throws the argument null exception.
 	/// </summary>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.ArgumentNullException"></exception>
+	/// <exception cref="ArgumentNullException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -119,7 +119,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.ArgumentNullException"></exception>
+	/// <exception cref="ArgumentNullException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -134,7 +134,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.ArgumentNullException"></exception>
+	/// <exception cref="ArgumentNullException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -148,7 +148,7 @@ public static class ExceptionThrower
 	/// Throws the argument out of range exception.
 	/// </summary>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.ArgumentOutOfRangeException"></exception>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -163,7 +163,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.ArgumentOutOfRangeException"></exception>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -178,7 +178,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.ArgumentOutOfRangeException"></exception>
+	/// <exception cref="ArgumentOutOfRangeException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -193,7 +193,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.ArgumentReadOnlyException"></exception>
+	/// <exception cref="ArgumentReadOnlyException"></exception>
 	/// <exception cref="ArgumentOutOfRangeException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -209,7 +209,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="directory">The directory.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.DirectoryNotFoundException"></exception>
+	/// <exception cref="DirectoryNotFoundException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -224,7 +224,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.ArgumentInvalidException"></exception>
+	/// <exception cref="ArgumentInvalidException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -239,7 +239,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.IO.FileNotFoundException"></exception>
+	/// <exception cref="FileNotFoundException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -254,7 +254,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="fileName">Name of the file.</param>
-	/// <exception cref="System.IO.FileNotFoundException"></exception>
+	/// <exception cref="FileNotFoundException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -272,7 +272,7 @@ public static class ExceptionThrower
 	/// <param name="message">The message.</param>
 	/// <param name="fileName">Name of the file.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.IO.FileNotFoundException"></exception>
+	/// <exception cref="FileNotFoundException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -289,7 +289,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="paramName">Name of the parameter.</param>
-	/// <exception cref="System.InvalidCastException"></exception>
+	/// <exception cref="InvalidCastException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -304,7 +304,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.InvalidCastException"></exception>
+	/// <exception cref="InvalidCastException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -318,7 +318,7 @@ public static class ExceptionThrower
 	/// Throws the invalid enum type exception.
 	/// </summary>
 	/// <param name="message">The message.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.InvalidEnumTypeException"></exception>
+	/// <exception cref="InvalidEnumTypeException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -333,7 +333,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.InvalidCastException"></exception>
+	/// <exception cref="InvalidCastException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -347,7 +347,7 @@ public static class ExceptionThrower
 	/// Throws a InvalidOperationException.
 	/// </summary>
 	/// <param name="message">The message.</param>
-	/// <exception cref="System.InvalidOperationException"></exception>
+	/// <exception cref="InvalidOperationException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -362,7 +362,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="System.InvalidOperationException"></exception>
+	/// <exception cref="InvalidOperationException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -409,7 +409,7 @@ public static class ExceptionThrower
 	/// Throws the <see cref="MessageNotQueuedException" />.
 	/// </summary>
 	/// <param name="message">The message.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.MessageNotQueuedException"></exception>
+	/// <exception cref="MessageNotQueuedException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -424,7 +424,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.MessageNotQueuedException"></exception>
+	/// <exception cref="MessageNotQueuedException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -439,7 +439,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="messageId">The message identifier.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.MessageNotQueuedException"></exception>
+	/// <exception cref="MessageNotQueuedException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -455,7 +455,7 @@ public static class ExceptionThrower
 	/// <param name="message">The message.</param>
 	/// <param name="ex">The ex.</param>
 	/// <param name="userMessage">The user message.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.MessageNotQueuedException"></exception>
+	/// <exception cref="MessageNotQueuedException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -471,7 +471,7 @@ public static class ExceptionThrower
 	/// <param name="message">The message.</param>
 	/// <param name="messageId">The message identifier.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.MessageNotQueuedException"></exception>
+	/// <exception cref="MessageNotQueuedException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -485,7 +485,7 @@ public static class ExceptionThrower
 	/// Throws a <see cref="NetworkConnection" />.
 	/// </summary>
 	/// <param name="message">The message.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.NetworkConnectionException"></exception>
+	/// <exception cref="NetworkConnectionException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -500,7 +500,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="innerException">The inner exception.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.NetworkConnectionException"></exception>
+	/// <exception cref="NetworkConnectionException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
@@ -515,7 +515,7 @@ public static class ExceptionThrower
 	/// </summary>
 	/// <param name="message">The message.</param>
 	/// <param name="connection">The <see cref="NetworkConnection" />.</param>
-	/// <exception cref="DotNetTips.Spargine.Core.NetworkConnectionException"></exception>
+	/// <exception cref="NetworkConnectionException"></exception>
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]

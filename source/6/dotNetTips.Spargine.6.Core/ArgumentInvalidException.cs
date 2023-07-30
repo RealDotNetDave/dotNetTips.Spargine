@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="ArgumentInvalidException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.

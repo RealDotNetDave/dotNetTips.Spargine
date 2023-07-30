@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 07-29-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -220,7 +220,7 @@ public static class DirectoryHelper
 	/// Loads the one drive folders.
 	/// </summary>
 	/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 	{
@@ -396,7 +396,12 @@ public static class DirectoryHelper
 		searchPattern = searchPattern.ArgumentNotNullOrEmpty();
 		searchOption = searchOption.ArgumentDefined();
 
-		var options = new EnumerationOptions { IgnoreInaccessible = true, ReturnSpecialDirectories = false, RecurseSubdirectories = false };
+		var options = new EnumerationOptions
+		{
+			IgnoreInaccessible = true,
+			ReturnSpecialDirectories = false,
+			RecurseSubdirectories = false
+		};
 
 		if (searchOption == SearchOption.AllDirectories)
 		{

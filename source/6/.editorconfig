@@ -2301,7 +2301,7 @@ csharp_space_between_square_brackets = false
 # Wrap options
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#wrap-options
 csharp_preserve_single_line_blocks = true
-csharp_preserve_single_line_statements = true
+csharp_preserve_single_line_statements = false
 
 #Indentation preferences
 csharp_indent_block_contents = true

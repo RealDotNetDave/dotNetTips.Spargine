@@ -4,7 +4,7 @@
 // Created          : 11-13-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 07-30-2023
 // ***********************************************************************
 // <copyright file="Benchmark.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -43,7 +43,8 @@ namespace DotNetTips.Spargine.Benchmarking;
 [CategoriesColumn]
 [ConfidenceIntervalErrorColumn]
 [CsvExporter]
-[CsvMeasurementsExporter][DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
+[CsvMeasurementsExporter]
+[DisassemblyDiagnoser(printSource: true, exportGithubMarkdown: true, exportCombinedDisassemblyReport: true, exportDiff: true)]
 [EvaluateOverhead]
 [Full]
 [GcServer(true)]

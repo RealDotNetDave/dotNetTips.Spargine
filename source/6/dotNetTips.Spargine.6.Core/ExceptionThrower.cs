@@ -489,7 +489,7 @@ public static class ExceptionThrower
 	[DoesNotReturn]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
-	[Information(nameof(ThrowNetworkConnectionException), author: "David McCarter", createdOn: "5/4/2023", Status = Status.New, Documentation = "https://bit.ly/SpargineExThrow")]
+	[Information(nameof(ThrowNetworkConnectionException), author: "David McCarter", createdOn: "5/4/2023", Status = Status.Available, Documentation = "https://bit.ly/SpargineExThrow")]
 	public static void ThrowNetworkConnectionException(string message)
 	{
 		throw new NetworkConnectionException(message.DefaultIfNull(Resources.ErrorNetworkConnectionIssue));

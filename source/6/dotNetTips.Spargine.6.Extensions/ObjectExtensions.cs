@@ -447,7 +447,7 @@ public static class ObjectExtensions
 	/// <param name="obj">The instance.</param>
 	/// <param name="options">The options.</param>
 	/// <returns>System.String.</returns>
-	[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug23")]
 	public static SimpleResult<string> ToJson([NotNull] this object obj, JsonSerializerOptions options = null)
 	{
 		obj = obj.ArgumentNotNull();

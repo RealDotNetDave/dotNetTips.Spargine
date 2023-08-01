@@ -382,7 +382,7 @@ public static class EnumerableExtensions
 	/// <typeparam name="T"></typeparam>
 	/// <param name="items">The items.</param>
 	/// <returns><c>true</c> if the specified items has duplicates; otherwise, <c>false</c>.</returns>
-	[Information("Orginal code by Milan Jovanović", author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+	[Information("Orginal code by Milan Jovanović", author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug23")]
 	public static bool HasDuplicates<T>([NotNull] this IEnumerable<T> items)
 	{
 		if (items.DoesNotHaveItems())
@@ -661,7 +661,7 @@ public static class EnumerableExtensions
 	/// <typeparam name="T"></typeparam>
 	/// <param name="items">The items.</param>
 	/// <returns>SimpleResult&lt;IEnumerable&lt;T&gt;&gt;.</returns>
-	[Information(nameof(RemoveDuplicates), author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.New, Documentation = "ADD URL")]
+	[Information(nameof(RemoveDuplicates), author: "David McCarter", createdOn: "7/3/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug23")]
 
 	public static SimpleResult<IEnumerable<T>> RemoveDuplicates<T>([NotNull] this IEnumerable<T> items)
 	{

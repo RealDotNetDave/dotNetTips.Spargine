@@ -76,50 +76,50 @@ public static class RandomData
 	/// <summary>
 	/// The countries
 	/// </summary>
-	private static readonly Lazy<Country[]> _countries = new(Countries.GetCountries());
+	private static readonly Lazy<Country[]> Countries = new(Data.Countries.GetCountries());
 
 	/// <summary>
 	/// The domain extensions used to create random Urls.
 	/// </summary>
-	private static readonly Lazy<string[]> _domainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
+	private static readonly Lazy<string[]> DomainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
 
 	/// <summary>
 	/// The first names
 	/// </summary>
-	private static readonly ImmutableArray<string> _firstNames = ImmutableArray.Create(Resources.FirstNames.Split(Core.ControlChars.Comma, StringSplitOptions.TrimEntries));
+	private static readonly ImmutableArray<string> FirstNames = ImmutableArray.Create(Resources.FirstNames.Split(Core.ControlChars.Comma, StringSplitOptions.TrimEntries));
 
 	/// <summary>
 	/// The last names
 	/// </summary>
-	private static readonly ImmutableArray<string> _lastNames = ImmutableArray.Create(Resources.LastNames.Split(Core.ControlChars.Comma, StringSplitOptions.TrimEntries));
+	private static readonly ImmutableArray<string> LastNames = ImmutableArray.Create(Resources.LastNames.Split(Core.ControlChars.Comma, StringSplitOptions.TrimEntries));
 
 	/// <summary>
 	/// The synchronize lock
 	/// </summary>
-	private static readonly object _lock = new();
+	private static readonly object Lock = new();
 
 	/// <summary>
 	/// The postal formats cache
 	/// </summary>
-	private static readonly Dictionary<Country, string[]> _postalFormatsCache = new();
+	private static readonly Dictionary<Country, string[]> PostalFormatsCache = new();
 
 	/// <summary>
 	/// The random number generator
 	/// </summary>
 	[ThreadStatic]
-	private static readonly RandomNumberGenerator _randomNumberGenerator;
+	private static readonly RandomNumberGenerator RandomNumberGenerator;
 
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
-	private static readonly ObjectPool<StringBuilder> _stringBuilderPool = new DefaultObjectPoolProvider().CreateStringBuilderPool();
+	private static readonly ObjectPool<StringBuilder> StringBuilderPool = new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
 	/// Initializes static members of the <see cref="RandomData" /> class.
 	/// </summary>
 	static RandomData()
 	{
-		_randomNumberGenerator = RandomNumberGenerator.Create();
+		RandomNumberGenerator = RandomNumberGenerator.Create();
 	}
 
 	/// <summary>
@@ -177,7 +177,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	private static string GeneratePostalCode(Country country, City city)
 	{
-		if (!_postalFormatsCache.TryGetValue(country, out var postalFormats))
+		if (!PostalFormatsCache.TryGetValue(country, out var postalFormats))
 		{
 			if (string.IsNullOrEmpty(country.PostalFormat))
 			{
@@ -185,11 +185,11 @@ public static class RandomData
 			}
 
 			postalFormats = country.PostalFormat.Split(Core.ControlChars.Comma);
-			_postalFormatsCache[country] = postalFormats;
+			PostalFormatsCache[country] = postalFormats;
 		}
 
 		var format = postalFormats.PickRandom();
-		var builder = _stringBuilderPool.Get();
+		var builder = StringBuilderPool.Get();
 
 		try
 		{
@@ -214,7 +214,7 @@ public static class RandomData
 		}
 		finally
 		{
-			_stringBuilderPool.Return(builder);
+			StringBuilderPool.Return(builder);
 		}
 	}
 
@@ -226,7 +226,7 @@ public static class RandomData
 	/// <param name="city">The city.</param>
 	private static void GetRandomLocationData(out Country country, out State state, out City city)
 	{
-		country = _countries.Value.PickRandom();
+		country = Countries.Value.PickRandom();
 		state = country.States.PickRandom();
 
 		if (state.Cities.HasItems())
@@ -345,9 +345,9 @@ public static class RandomData
 
 		var bytes = new Span<byte>(new byte[Convert.ToInt32(sizeInKb * 1024)]);
 
-		lock (_lock)
+		lock (Lock)
 		{
-			_randomNumberGenerator.GetBytes(bytes);
+			RandomNumberGenerator.GetBytes(bytes);
 		}
 
 		return bytes.ToArray();
@@ -466,7 +466,7 @@ public static class RandomData
 	[Information(nameof(GenerateDomainExtension), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string GenerateDomainExtension()
 	{
-		return Of(_domainExtensions.Value);
+		return Of(DomainExtensions.Value);
 	}
 
 	/// <summary>
@@ -565,7 +565,7 @@ public static class RandomData
 	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string GenerateFirstName()
 	{
-		return _firstNames.PickRandom();
+		return FirstNames.PickRandom();
 	}
 
 	/// <summary>
@@ -582,7 +582,7 @@ public static class RandomData
 		min = min.EnsureMinimum(1);
 		max = max.EnsureMinimum(min + 1);
 
-		lock (_lock)
+		lock (Lock)
 		{
 			return RandomNumberGenerator.GetInt32(min, max);
 		}
@@ -606,7 +606,7 @@ public static class RandomData
 	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
 	public static string GenerateLastName()
 	{
-		return _lastNames.PickRandom();
+		return LastNames.PickRandom();
 	}
 
 	/// <summary>
@@ -621,11 +621,11 @@ public static class RandomData
 	{
 		length = length.ArgumentInRange(lower: 1);
 
-		var sb = _stringBuilderPool.Get();
+		var sb = StringBuilderPool.Get();
 
 		try
 		{
-			lock (_lock)
+			lock (Lock)
 			{
 				for (var numberIndex = 0; numberIndex < length; numberIndex++)
 				{
@@ -637,7 +637,7 @@ public static class RandomData
 		}
 		finally
 		{
-			_stringBuilderPool.Return(sb);
+			StringBuilderPool.Return(sb);
 		}
 	}
 
@@ -821,7 +821,7 @@ public static class RandomData
 	[Information(nameof(GenerateRelativeUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string GenerateRelativeUrl()
 	{
-		var sb = _stringBuilderPool.Get();
+		var sb = StringBuilderPool.Get();
 
 		try
 		{
@@ -836,7 +836,7 @@ public static class RandomData
 		}
 		finally
 		{
-			_stringBuilderPool.Return(sb);
+			StringBuilderPool.Return(sb);
 		}
 	}
 
@@ -992,7 +992,7 @@ public static class RandomData
 	{
 		length = length.ArgumentInRange(lower: 1);
 
-		var sb = _stringBuilderPool.Get();
+		var sb = StringBuilderPool.Get();
 
 		try
 		{
@@ -1005,7 +1005,7 @@ public static class RandomData
 		}
 		finally
 		{
-			_stringBuilderPool.Return(sb);
+			StringBuilderPool.Return(sb);
 		}
 	}
 

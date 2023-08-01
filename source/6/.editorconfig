@@ -1,6 +1,6 @@
 # dotNetDave's (David McCarter) Editor Config - dotNetTips.com
 # Updates to this file are posted quarterly at: https://bit.ly/EditorConfig5
-# Updated May 2023
+# Updated August 2023
 # dotNetDave's books available at: http://bit.ly/RockYourCodeBooks
 # Rockin' the Code World with dotNetDave (weekly live show): https://www.c-sharpcorner.com/live/rockin-the-code-world-with-dotnetdave
 
@@ -1778,9 +1778,9 @@ dotnet_separate_import_directive_groups = false
 dotnet_sort_system_directives_first = true
 
 # IDE1006 (Naming rule violation)
-dotnet_diagnostic.IDE1006.severity = none
+dotnet_diagnostic.IDE1006.severity = suggestion
 dotnet_naming_rule.public_members_must_be_capitalized.severity = warning
-dotnet_naming_rule.public_members_must_be_capitalized.style = first_word_upper_case_style
+dotnet_naming_rule.public_members_must_be_capitalized.style = camel_case
 dotnet_naming_rule.public_members_must_be_capitalized.symbols = public_symbols
 dotnet_naming_style.first_word_upper_case_style.capitalization = first_word_upper
 dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected

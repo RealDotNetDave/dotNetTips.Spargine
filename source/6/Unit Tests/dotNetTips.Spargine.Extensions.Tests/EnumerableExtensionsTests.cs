@@ -133,11 +133,11 @@ public class EnumerableExtensionsTests
 
 		Assert.IsFalse(people.HasDuplicates());
 
-		var dups =people.Shuffle().Take(Count/10).ToList();
+		var dups = people.Shuffle().Take(Count / 10).ToList();
 
-		foreach(var person in dups)
+		foreach (var person in dups)
 		{
-			people.AddLast(person);
+			_ = people.AddLast(person);
 		}
 
 		var result = people.HasDuplicates();
@@ -153,7 +153,7 @@ public class EnumerableExtensionsTests
 
 		foreach (var person in dups)
 		{
-			people.AddLast(person);
+			_ = people.AddLast(person);
 		}
 
 		var result = people.RemoveDuplicates();

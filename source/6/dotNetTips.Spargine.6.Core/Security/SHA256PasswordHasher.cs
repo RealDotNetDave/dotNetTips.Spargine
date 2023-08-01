@@ -4,12 +4,15 @@
 // Created          : 10-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="SHA256PasswordHasher.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Original code from: https:www.meziantou.net/how-to-store-a-password-in-a-web-application.htm</summary>
+// <summary>
+// Creates and verifies passwords using SHA256.
+// Original code from: https:www.meziantou.net/how-to-store-a-password-in-a-web-application.htm
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;

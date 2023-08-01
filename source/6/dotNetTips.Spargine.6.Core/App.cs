@@ -160,15 +160,15 @@ public static class App
 		//Convert data
 		return new ProcessorInformation()
 		{
-			PageSize = (int)info.dwPageSize,
-			MinimumApplicationAddress = info.lpMinimumApplicationAddress,
-			MaximumApplicationAddress = info.lpMaximumApplicationAddress,
-			ActiveProcessorMask = info.dwActiveProcessorMask,
-			NumberOfProcessors = (int)info.dwNumberOfProcessors,
-			ProcessorArchitecture = SourceGenerators.ConvertProcessorArchitecture((int)info.dwProcessorType),
-			AllocationGranularity = (int)info.dwAllocationGranularity,
-			ProcessorLevel = info.wProcessorLevel,
-			ProcessorRevision = info.wProcessorRevision
+			PageSize = (int)info._dwPageSize,
+			MinimumApplicationAddress = info._lpMinimumApplicationAddress,
+			MaximumApplicationAddress = info._lpMaximumApplicationAddress,
+			ActiveProcessorMask = info._dwActiveProcessorMask,
+			NumberOfProcessors = (int)info._dwNumberOfProcessors,
+			ProcessorArchitecture = SourceGenerators.ConvertProcessorArchitecture((int)info._dwProcessorType),
+			AllocationGranularity = (int)info._dwAllocationGranularity,
+			ProcessorLevel = info._wProcessorLevel,
+			ProcessorRevision = info._wProcessorRevision
 		};
 	}
 

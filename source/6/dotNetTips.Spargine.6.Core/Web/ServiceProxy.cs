@@ -4,12 +4,14 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-28-2022
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="ServiceProxy.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// Creates a service proxy for types that implement ICommunicationObject.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.ServiceModel;

@@ -4,12 +4,16 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Custom thread-safe collection type of <T> designed for
+// multi-threading tasks, guaranteeing uniqueness for all items in
+// the collection.
+// </summary>
 // ***********************************************************************
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;

@@ -4,12 +4,18 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-20-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// This class provides secure encryption for strings using AES
+// (Advanced Encryption Standard) and includes a method to validate
+// encrypted strings. The AES encryption ensures the confidentiality
+// and integrity of sensitive information, making it suitable for
+// handling data securely.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;

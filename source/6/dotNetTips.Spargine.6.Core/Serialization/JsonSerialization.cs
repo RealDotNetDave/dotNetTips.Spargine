@@ -4,12 +4,17 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// This class facilitates easy serialization and deserialization of
+// strings to and from JSON format using the JsonSerializer. JSON
+// serialization is a common and efficient way to store and exchange
+// data in various applications and APIs.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
@@ -30,8 +35,8 @@ public static class JsonSerialization
 	/// <param name="expected">The expected.</param>
 	/// <param name="actual">The actual.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	/// <exception cref="NotSupportedException">Undefined JsonValueKind: {valueKind}.</exception>
-	/// <exception cref="NotSupportedException">Unexpected JsonValueKind: {valueKind}.</exception>
+	/// <exception cref="System.NotSupportedException">Undefined JsonValueKind: {valueKind}.</exception>
+	/// <exception cref="System.NotSupportedException">Unexpected JsonValueKind: {valueKind}.</exception>
 	private static bool JsonEqual([NotNull] JsonElement expected, [NotNull] JsonElement actual)
 	{
 		var valueKind = expected.ValueKind;

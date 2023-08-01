@@ -4,12 +4,17 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary>Helper methods for use in logging.</summary>
+// <summary>
+// Helper methods for use in logging. Features methods to log computer
+// information and application information. It can also log all domain
+// exceptions, even if the exception is thrown by a different assembly,
+// including exceptions from .NET.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.ExceptionServices;

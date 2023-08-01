@@ -27,12 +27,12 @@ public static class PathHelper
 	/// <summary>
 	/// The invalid file name chars
 	/// </summary>
-	private static readonly char[] _invalidFileNameChars = FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
+	private static readonly char[] InvalidFileNameChars = FileHelper.InvalidFileNameChars.Where(c => c is not '*' and not '|' and not '?').ToArray();
 
 	/// <summary>
 	/// The invalid path chars
 	/// </summary>
-	private static readonly char[] _invalidPathChars = Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
+	private static readonly char[] InvalidPathChars = Path.GetInvalidPathChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
 
 	/// <summary>
 	/// Combines the paths collection.
@@ -178,7 +178,7 @@ public static class PathHelper
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, Status = Status.Available)]
 	public static IReadOnlyList<char> InvalidFilterChars()
 	{
-		return _invalidFileNameChars;
+		return InvalidFileNameChars;
 	}
 
 	/// <summary>
@@ -192,7 +192,7 @@ public static class PathHelper
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
 	public static IReadOnlyList<char> InvalidPathNameChars()
 	{
-		return _invalidPathChars;
+		return InvalidPathChars;
 	}
 
 	/// <summary>

@@ -1,15 +1,20 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="Clock.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Clock Information.</summary>
+// <summary>
+// Time Utility Class for common tasks related to clocks and
+// time. It includes functionalities to retrieve the current time and
+// tick count, as well as a method to determine the number of days in
+// the current month (DaysInCurrentMonth).
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 

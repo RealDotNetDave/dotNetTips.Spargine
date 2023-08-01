@@ -4,12 +4,15 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="DistinctConcurrentBag.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Inherits ConcurrentBag<T> and makes sure all items in the bag are
+// unique.
+// </summary>
 // ***********************************************************************
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
@@ -71,7 +74,7 @@ public sealed class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// </summary>
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
-	/// <exception cref="NotImplementedException"></exception>
+	/// <exception cref="System.NotImplementedException"></exception>
 	bool ICollection<T>.Remove(T item)
 	{
 		throw new NotImplementedException();
@@ -81,7 +84,7 @@ public sealed class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// Gets a value indicating whether the collection is read-only.
 	/// </summary>
 	/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
-	/// <exception cref="NotImplementedException"></exception>
+	/// <exception cref="System.NotImplementedException"></exception>
 	bool ICollection<T>.IsReadOnly => throw new NotImplementedException();
 
 	/// <summary>

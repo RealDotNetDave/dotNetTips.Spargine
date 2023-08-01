@@ -4,12 +4,15 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-11-2022
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Custom Observeable Collection Class of <T>. Features the events:
+// CollectionChanged, PropertyChanged, PropertyChanging.
+// </summary>
 // ***********************************************************************
 using System.Collections;
 using System.Collections.Specialized;

@@ -18,7 +18,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
-namespace dotNetTips.Spargine.Core.Tests.Web;
+namespace DotNetTips.Spargine.Core.Tests.Web;
 
 [ExcludeFromCodeCoverage]
 [TestClass]

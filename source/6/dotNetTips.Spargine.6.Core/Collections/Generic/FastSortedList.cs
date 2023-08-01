@@ -4,12 +4,15 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="FastSortedList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Custom Collection Class of <T>. Items in this collection
+// are sorted only when requested.
+// </summary>
 // ***********************************************************************
 using System.Collections.Immutable;
 using System.Diagnostics;

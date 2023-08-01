@@ -4,12 +4,15 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="Collection.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Common class for collections.</summary>
+// <summary>
+// Custom Collection Class of <T>. Create the collection by
+// using Create(). Ensures unique items with AddIfNotExists().
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 

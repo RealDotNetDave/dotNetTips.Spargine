@@ -4,12 +4,17 @@
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Methods to check parameter values.</summary>
+// <summary>
+// Methods that facilitate the validation of arguments and values,
+// ensuring simplicity and accuracy. When invalid data is encountered,
+// an Exception will be thrown, providing an appropriate error message,
+// either custom or default.
+// </summary>
 // ***********************************************************************
 using System.Globalization;
 using System.Runtime.CompilerServices;

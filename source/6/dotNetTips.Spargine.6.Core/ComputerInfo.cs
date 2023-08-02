@@ -4,12 +4,12 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ComputerInfo.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Type used to return computer information.</summary>
 // ***********************************************************************
 using System.Globalization;
 using System.Net;

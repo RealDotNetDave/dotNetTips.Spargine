@@ -81,7 +81,7 @@ public static class RandomData
 	/// <summary>
 	/// The domain extensions used to create random Urls.
 	/// </summary>
-	private static readonly Lazy<string[]> DomainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
+	private static readonly Lazy<string[]> DomainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries)); //TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
 
 	/// <summary>
 	/// The first names

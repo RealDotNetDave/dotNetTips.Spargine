@@ -152,6 +152,8 @@ public static class LoggingHelper
 	[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 100, Status = Status.Available)]
 	public static string[] RetrieveAllExceptionMessages([NotNull] Exception exception)
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		exception = exception.ArgumentNotNull();
 
 		var exceptions = RetrieveAllExceptions(exception);
@@ -175,6 +177,8 @@ public static class LoggingHelper
 	[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 100, Status = Status.Available)]
 	public static Exception[] RetrieveAllExceptions([NotNull] Exception exception)
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		exception = exception.ArgumentNotNull();
 
 		var collection = new List<Exception> { exception };

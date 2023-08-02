@@ -4,12 +4,16 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-30-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Application information and helper methods.</summary>
+// <summary>
+// Application Information and Helper Methods: Process
+// Management, Environment Variables, Processor Information,
+// and More.
+// </summary>
 // ***********************************************************************
 using System.Collections;
 using System.Collections.Immutable;

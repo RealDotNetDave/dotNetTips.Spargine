@@ -4,12 +4,19 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-15-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Offers useful methods for handling types, including loading derived
+// types, creating a new type, finding derived types, converting JSON to
+// an object, converting a JSON file to an object, generating an instance
+// hash code, and listing built-in types, among other functionalities.
+// These features empower developers to efficiently work with types in
+// various scenarios.
+// </summary>
 // ***********************************************************************
 
 using System.Collections;

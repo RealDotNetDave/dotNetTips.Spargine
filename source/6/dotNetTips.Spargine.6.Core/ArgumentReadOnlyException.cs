@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
@@ -9,7 +9,9 @@
 // <copyright file="ArgumentReadOnlyException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Custom Exception type for argument values that are read-only, such as collections.
+// </summary>
 // ***********************************************************************
 using System.Runtime.Serialization;
 using DotNetTips.Spargine.Core.Properties;

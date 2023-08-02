@@ -4,12 +4,16 @@
 // Created          : 07-25-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="TaskHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// Methods for synchronous execution of Tasks. These methods allow you
+// to run Tasks without the need for explicit asynchronous handling,
+// making the code easier to read and manage.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 

@@ -9,7 +9,9 @@
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Helper methods for files.</summary>
+// <summary>
+// Common methods for working with files.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;

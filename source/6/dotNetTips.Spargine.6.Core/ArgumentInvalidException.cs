@@ -1,15 +1,15 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ArgumentInvalidException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Custom Exception type for invalid argument value.</summary>
 // ***********************************************************************
 using System.Runtime.Serialization;
 using DotNetTips.Spargine.Core.Properties;

@@ -4,12 +4,15 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-24-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="Config.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// Flexible type that facilitates the creation of custom configuration
+// objects, intended for easy saving to disk in applications.
+// </summary>
 // ***********************************************************************
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core.Serialization;

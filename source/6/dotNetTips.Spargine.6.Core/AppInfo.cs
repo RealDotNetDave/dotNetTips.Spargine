@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 12-17-2020
@@ -9,7 +9,9 @@
 // <copyright file="AppInfo.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+//
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;

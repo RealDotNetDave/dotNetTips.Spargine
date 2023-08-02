@@ -4,12 +4,12 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="DirectoryNotFoundException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Custom Exception to be used when a directory cannot be found.</summary>
 // ***********************************************************************
 using System.Runtime.Serialization;
 

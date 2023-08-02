@@ -1,15 +1,15 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.Core
 // Author           : David McCarter
 // Created          : 10-27-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 12-27-2021
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="InvalidEnumTypeException.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Custom Exception to be used when a value for an Enum is invalid.</summary>
 // ***********************************************************************
 using System.Runtime.Serialization;
 

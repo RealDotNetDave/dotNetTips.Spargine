@@ -4,12 +4,12 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-18-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="DriveHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Common methods for use when working with disk drives.</summary>
 // ***********************************************************************
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
@@ -69,6 +69,8 @@ public static class DriveHelper
 	[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IImmutableList<DriveInfo> GetFixedDrives()
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		return DriveInfo.GetDrives()
 					.Where(p => p.DriveType == DriveType.Fixed && p.IsReady)
 					.Distinct()
@@ -83,6 +85,8 @@ public static class DriveHelper
 	[Information(nameof(GetDriveSerialNumber), author: "David McCarter", createdOn: "9/6/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IImmutableList<DriveInfo> GetRemovableDrives()
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		return DriveInfo.GetDrives()
 					.Where(p => p.DriveType == DriveType.Removable && p.IsReady)
 					.Distinct()

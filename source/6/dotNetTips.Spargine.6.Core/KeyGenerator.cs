@@ -1,15 +1,15 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 05-30-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-21-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="KeyGenerator.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Generates unique keys by using a GUID with no dashes.</summary>
 // ***********************************************************************
 using System.Globalization;
 

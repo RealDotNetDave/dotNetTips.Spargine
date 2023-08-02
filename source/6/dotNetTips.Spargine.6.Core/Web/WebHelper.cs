@@ -100,6 +100,8 @@ public static class WebHelper
 	[Information(nameof(HttpHeaderNames), "David McCarter", "9/2/2020", "9/2/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired)]
 	public static string[] HttpHeaderNames()
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		return Enum.GetNames(typeof(HttpRequestHeader));
 	}
 }

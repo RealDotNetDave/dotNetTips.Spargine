@@ -4,12 +4,15 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-13-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="InMemoryCache.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>In memory cache.</summary>
+// <summary>
+// Caches objects for 20 minutes. Designed to function as a singleton
+// pattern.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using DotNetTips.Spargine.Core;

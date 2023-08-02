@@ -4,12 +4,12 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="SocketsHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Socket helper methods.</summary>
+// <summary></summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Sockets;

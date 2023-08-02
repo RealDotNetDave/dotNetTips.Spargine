@@ -1,15 +1,15 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Core
 // Author           : David McCarter
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="UnhandledExceptionEventInformation.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>Custom Exception to be used when throwing an unhandled Exception.</summary>
 // ***********************************************************************
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )

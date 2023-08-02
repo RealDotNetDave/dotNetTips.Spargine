@@ -4,12 +4,15 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="CollectionRandomizer.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Designed to shuffle a collection either once or endlessly. Allows
+// users to retrieve items by using the GetNext() method.
+// </summary>
 // ***********************************************************************
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;

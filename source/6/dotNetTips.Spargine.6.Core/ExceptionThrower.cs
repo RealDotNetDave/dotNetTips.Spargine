@@ -4,12 +4,16 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ExceptionThrower.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Inspired by the .NET ExceptionThrower, this tool simplifies the process
+// of throwing Exceptions with ease. All the Exceptions thrown utilize
+// default messages, and if needed, you can also provide custom messages.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;

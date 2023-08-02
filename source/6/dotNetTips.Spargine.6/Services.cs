@@ -4,12 +4,16 @@
 // Created          : 03-15-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="Services.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// Convenient helper methods for seamless management of Windows services.
+// Key features include loading a service, checking its running status,
+// starting and stopping services, and more.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;

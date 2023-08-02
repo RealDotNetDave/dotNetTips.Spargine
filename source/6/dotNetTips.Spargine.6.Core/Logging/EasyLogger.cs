@@ -4,7 +4,7 @@
 // Created          : 05-01-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="EasyLogger.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,12 +32,6 @@ public static partial class EasyLogger
 	/// <param name="message">The storedProcedure.</param>
 	/// <param name="exception">The exception.</param>
 	/// </summary>
-	/// <summary>
-	/// Logs the critical.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
-	/// <param name="exception">The exception.</param>
 	[LoggerMessage(EventId = 911, Level = LogLevel.Critical, EventName = "CRITICAL", Message = "{message}")]
 	public static partial void LogCritical(ILogger logger, string message, Exception exception);
 
@@ -46,11 +40,6 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <summary>
-	/// Logs the debug.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
 	[LoggerMessage(EventId = 200, Level = LogLevel.Debug, EventName = "DEBUG", Message = "{message}")]
 	public static partial void LogDebug(ILogger logger, string message);
 
@@ -59,11 +48,6 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <summary>
-	/// Logs the error.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
 	[LoggerMessage(EventId = 300, Level = LogLevel.Error, EventName = "ERROR", Message = "{message}")]
 	public static partial void LogError(ILogger logger, string message);
 
@@ -73,12 +57,6 @@ public static partial class EasyLogger
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
 	/// <param name="exception">The exception.</param>
-	/// <summary>
-	/// Logs the exception.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
-	/// <param name="exception">The exception.</param>
 	[LoggerMessage(EventId = 500, Level = LogLevel.Error, EventName = "EXCEPTION", Message = "{message}")]
 	public static partial void LogException(ILogger logger, string message, Exception exception);
 
@@ -87,11 +65,6 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <summary>
-	/// Logs the information.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
 	[LoggerMessage(EventId = 400, Level = LogLevel.Information, EventName = "INFORMATION", Message = "{message}")]
 	public static partial void LogInformation(ILogger logger, string message);
 
@@ -100,11 +73,6 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <summary>
-	/// Logs the trace.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
 	[LoggerMessage(EventId = 100, Level = LogLevel.Trace, EventName = "TRACE", Message = "{message}")]
 	public static partial void LogTrace(ILogger logger, string message);
 
@@ -113,11 +81,6 @@ public static partial class EasyLogger
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The storedProcedure.</param>
-	/// <summary>
-	/// Logs the warning.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
 	[LoggerMessage(EventId = 600, Level = LogLevel.Warning, EventName = "WARNING", Message = "{message}")]
 	public static partial void LogWarning(ILogger logger, string message);
 }

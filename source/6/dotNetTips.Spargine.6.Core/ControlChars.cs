@@ -4,12 +4,16 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-04-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ControlChars.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary></summary>
+// <summary>
+// Contains commonly used strings and characters, such as backslash,
+// comma, dash, double quote, empty string, forward slash, quote, space,
+// tab, underscore, and more.
+// </summary>
 // ***********************************************************************
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )

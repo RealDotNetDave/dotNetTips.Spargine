@@ -157,6 +157,8 @@ public class LoggableException : Exception
 	/// <value>The messages.</value>
 	public virtual string[] Messages()
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		var exceptions = LoggingHelper.RetrieveAllExceptions(this);
 		var errorMessages = new List<string>();
 

@@ -4,12 +4,15 @@
 // Created          : 12-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-31-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="CachedEnumerable.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>Original code by: Gérald Barré</summary>
+// <summary>
+// Custom collection type for improved performance during iteration.
+// Original code by: Gérald Barré
+// </summary>
 // ***********************************************************************
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
@@ -22,7 +25,7 @@ namespace DotNetTips.Spargine.Core;
 /// <summary>
 /// Class CachedEnumerable.
 /// </summary>
-[Information(nameof(CachedEnumerable), BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https:www.meziantou.net/caching-an-ienumerable-t-instance.htm")]
+[Information(nameof(CachedEnumerable), UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https:www.meziantou.net/caching-an-ienumerable-t-instance.htm")]
 public static class CachedEnumerable
 {
 	/// <summary>

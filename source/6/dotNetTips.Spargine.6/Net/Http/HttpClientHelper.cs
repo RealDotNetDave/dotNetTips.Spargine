@@ -9,7 +9,7 @@
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
 // </copyright>
-// <summary>HttpClient Helper Methods.</summary>
+// <summary>Helper methods for HttpClient.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Net;

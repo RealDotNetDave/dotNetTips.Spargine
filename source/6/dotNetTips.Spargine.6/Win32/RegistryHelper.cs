@@ -4,12 +4,15 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-18-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="RegistryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// Convenient methods for interacting with the Windows registration
+// database, facilitating easy access and manipulation.
+// </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;

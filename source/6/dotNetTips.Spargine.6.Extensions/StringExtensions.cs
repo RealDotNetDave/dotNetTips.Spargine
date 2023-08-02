@@ -945,6 +945,8 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, char separator = ControlChars.Comma)
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 
@@ -967,6 +969,8 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 		count = count.ArgumentInRange(lower: 1);
@@ -990,6 +994,8 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, int count, [NotNull] string separator = ControlChars.DefaultSeparator)
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 		count = count.ArgumentInRange(lower: 1);

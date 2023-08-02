@@ -4,12 +4,12 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-29-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>Common methods for use with file directories.</summary>
 // ***********************************************************************
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
@@ -30,13 +30,14 @@ namespace DotNetTips.Spargine.IO;
 /// <summary>
 /// Class DirectoryHelper.
 /// </summary>
-[SupportedOSPlatform("windows")]
 public static class DirectoryHelper
 {
 	/// <summary>
 	/// Applications the application data folder for Windows or Mac.
 	/// </summary>
 	/// <returns>Application data folder.</returns>
+	[SupportedOSPlatform("windows")]
+	[SupportedOSPlatform("macos")]
 	[Information(nameof(AppDataFolder), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static string AppDataFolder()
 	{
@@ -106,6 +107,7 @@ public static class DirectoryHelper
 	/// <param name="source">The source directory.</param>
 	/// <param name="destination">The destination directory.</param>
 	/// <param name="overwrite">if set to <c>true</c> [overwrite].</param>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(CopyDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static void CopyDirectory([NotNull] DirectoryInfo source, [NotNull] DirectoryInfo destination, bool overwrite = true)
 	{
@@ -138,6 +140,7 @@ public static class DirectoryHelper
 	/// <param name="path">The path.</param>
 	/// <param name="retries">Number of retries.</param>
 	/// <remarks>Checks for the <see cref="IOException" /> and <see cref="UnauthorizedAccessException" />.</remarks>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(DeleteDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 99)]
 	public static void DeleteDirectory([NotNull] DirectoryInfo path, int retries = 10)
 	{
@@ -188,6 +191,7 @@ public static class DirectoryHelper
 	/// <param name="searchPattern">The search pattern.</param>
 	/// <param name="searchOption">The search options.</param>
 	/// <returns>IAsyncEnumerable&lt;IEnumerable&lt;FileInfo&gt;&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(LoadFilesAsync), author: "David McCarter", createdOn: "3/1/2021", BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Status = Status.Available)]
 	public static async IAsyncEnumerable<IEnumerable<FileInfo>> LoadFilesAsync([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption)
 	{
@@ -220,10 +224,13 @@ public static class DirectoryHelper
 	/// Loads the one drive folders.
 	/// </summary>
 	/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
-	/// <exception cref="System.PlatformNotSupportedException"></exception>
+	/// <exception cref="PlatformNotSupportedException"></exception>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) is false)
 		{
 			throw new PlatformNotSupportedException();
@@ -297,6 +304,7 @@ public static class DirectoryHelper
 	/// <param name="destination">Name of the destination dir.</param>
 	/// <param name="retries">Number of retries.</param>
 	/// <remarks>Checks for the <see cref="IOException" /> and <see cref="UnauthorizedAccessException" />.</remarks>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(MoveDirectory), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 99)]
 	public static void MoveDirectory([NotNull] DirectoryInfo source, [NotNull] DirectoryInfo destination, int retries = 10)
 	{
@@ -317,6 +325,7 @@ public static class DirectoryHelper
 	/// <param name="searchOption">The search options.</param>
 	/// <param name="searchPatterns">The search patterns.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SafeDirectorySearch), "David McCarter", "6/14/2021", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 0, Documentation = "https://bit.ly/SpargineSep2022")]
 	public static bool SafeDirectoryContainsAny([NotNull] DirectoryInfo path, SearchOption searchOption = SearchOption.TopDirectoryOnly, [NotNull] params string[] searchPatterns)
 	{
@@ -334,6 +343,7 @@ public static class DirectoryHelper
 	/// <param name="searchPattern">The search pattern.</param>
 	/// <param name="searchOption">All or Top Directory Only.</param>
 	/// <returns>IEnumerable&lt;DirectoryInfo&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SafeDirectorySearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static IEnumerable<DirectoryInfo> SafeDirectorySearch([NotNull] DirectoryInfo path, [NotNull] string searchPattern = "*.*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
 	{
@@ -371,6 +381,7 @@ public static class DirectoryHelper
 	/// <param name="searchPattern">The search pattern.</param>
 	/// <param name="searchOption">The search options.</param>
 	/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 0, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static IEnumerable<FileInfo> SafeFileSearch(DirectoryInfo path, string searchPattern, SearchOption searchOption)
 	{
@@ -389,6 +400,7 @@ public static class DirectoryHelper
 	/// <param name="searchPattern">The search pattern.</param>
 	/// <param name="searchOption">The search options.</param>
 	/// <returns>IEnumerable&lt;FileInfo&gt;.</returns>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SafeFileSearch), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, UnitTestCoverage = 100)]
 	public static IEnumerable<FileInfo> SafeFileSearch([NotNull] IEnumerable<DirectoryInfo> directories, [NotNull] string searchPattern, SearchOption searchOption = SearchOption.TopDirectoryOnly)
 	{
@@ -429,6 +441,7 @@ public static class DirectoryHelper
 	/// Sets the file attributes to normal for a path.
 	/// </summary>
 	/// <param name="path">The path.</param>
+	[SupportedOSPlatform("windows")]
 	[Information(nameof(SetFileAttributesToNormal), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 99)]
 	public static void SetFileAttributesToNormal([NotNull] DirectoryInfo path)
 	{

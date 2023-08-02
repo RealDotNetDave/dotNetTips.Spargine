@@ -164,7 +164,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// GetUsers():Load users from database. Time: 1013.02 ms
 	/// GetUsers():Save users to database.Time: 1013.7925 ms
 	/// </example>
-	public ImmutableArray<string> Diagnostics => this._diagnostics.ToImmutableArray();
+	public ImmutableArray<string> Diagnostics => this._diagnostics.ToImmutableArray(); //TODO: CHANGE TO READONLYCOLLECTION
 
 	/// <summary>
 	/// Gets the title.

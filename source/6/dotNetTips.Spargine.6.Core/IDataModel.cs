@@ -4,12 +4,15 @@
 // Created          : 02-05-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="IDataModel.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary></summary>
+// <summary>
+// This is an interface designed for model classes, enforcing the
+// implementation of the "Id" property, which is mandatory.
+// </summary>
 // ***********************************************************************
 using System.ComponentModel.DataAnnotations;
 

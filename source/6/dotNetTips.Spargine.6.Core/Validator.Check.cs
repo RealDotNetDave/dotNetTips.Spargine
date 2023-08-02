@@ -4,12 +4,17 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-02-2022
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="Validator.Check.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>Methods to validate parameters and values.</summary>
+// <summary>
+// Methods that facilitate the validation of arguments and values,
+// ensuring simplicity and accuracy. When invalid data is encountered,
+// an Exception will be thrown, providing an appropriate error message,
+// either custom or default.
+// </summary>
 // ***********************************************************************
 using System.Runtime.CompilerServices;
 using DotNetTips.Spargine.Core.Properties;

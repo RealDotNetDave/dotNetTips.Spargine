@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -160,7 +160,6 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.IsSuccessful);
 		Assert.IsTrue(result.Value.Count() == Count);
 	}
-
 
 	[TestMethod]
 	public void FastCountPredicateTest()

@@ -4,14 +4,12 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ArgumentReadOnlyException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
-// <summary>
-// Custom Exception type for argument values that are read-only, such as collections.
-// </summary>
+// <summary>Custom Exception type for argument values that are read-only, such as collections.</summary>
 // ***********************************************************************
 using System.Runtime.Serialization;
 using DotNetTips.Spargine.Core.Properties;
@@ -30,6 +28,7 @@ namespace DotNetTips.Spargine.Core;
 [Serializable]
 public sealed class ArgumentReadOnlyException : ArgumentException
 {
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ArgumentReadOnlyException"></see> class with serialized data.
 	/// </summary>
@@ -82,4 +81,5 @@ public sealed class ArgumentReadOnlyException : ArgumentException
 	public ArgumentReadOnlyException(string message, string paramName, Exception innerException) : base(message, paramName, innerException)
 	{
 	}
+
 }

@@ -51,7 +51,7 @@ csharp_style_prefer_utf8_string_literals = true:suggestion
 csharp_style_throw_expression = true:warning
 csharp_style_unused_value_assignment_preference = discard_variable:suggestion
 csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
-csharp_style_var_elsewhere = true:warning
+csharp_style_var_elsewhere = false:warning
 csharp_style_var_for_built_in_types = true:warning
 csharp_style_var_when_type_is_apparent = true:warning
 csharp_using_directive_placement = outside_namespace:warning
@@ -59,6 +59,7 @@ end_of_line = crlf
 indent_size = 4
 indent_style = tab
 insert_final_newline = true
+csharp_style_prefer_readonly_struct_member = true:suggestion
 
 # Visual Studio Solution Files
 [*.sln]
@@ -2338,5 +2339,3 @@ visual_basic_style_prefer_simplified_object_creation = all : suggestion
 [*.g.cs]
 # Missing XML comment for publicly visible type or member 'Type_or_Member'
 dotnet_diagnostic.CS1591.severity = none
-
-

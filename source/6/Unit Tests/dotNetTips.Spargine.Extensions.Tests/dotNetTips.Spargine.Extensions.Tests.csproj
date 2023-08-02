@@ -1,14 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<BaseOutputPath>..\..\appbin</BaseOutputPath>
-		<TargetFramework>net6.0</TargetFramework>
-		<IsPackable>false</IsPackable>
-		<AssemblyVersion>2023.6.2.33232</AssemblyVersion>
-		<FileVersion>2023.6.2.33232</FileVersion>
-		<EnableNETAnalyzers>false</EnableNETAnalyzers>
-		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<AnalysisLevel>none</AnalysisLevel>
+		<AssemblyVersion>2023.6.8.2</AssemblyVersion>
+		<BaseOutputPath>..\..\appbin</BaseOutputPath>
+		<EnableNETAnalyzers>false</EnableNETAnalyzers>
+		<FileVersion>2023.6.8.2</FileVersion>
+		<IsPackable>false</IsPackable>
+		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+		<TargetFramework>net6.0</TargetFramework>
+		<Version>2023.6.8.2</Version>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 		<OutputPath>..\..\appbin</OutputPath>

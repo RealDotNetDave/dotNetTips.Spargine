@@ -4,7 +4,7 @@
 // Created          : 01-05-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="RandomDataTests.cs" company="dotNetTips.Spargine.Tester.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -113,7 +113,7 @@ public class RandomDataTests
 	{
 		try
 		{
-			var people =new ReadOnlySequence<PersonProper>( RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToArray());
+			var people = new ReadOnlySequence<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToArray());
 
 			var newPeople = new List<PersonProper>();
 

@@ -4,7 +4,7 @@
 // Created          : 12-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-16-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="NumericExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -406,18 +406,18 @@ public class NumericExtensionsTests : TestClass
 	}
 
 	[TestMethod]
-	public void MillisecondsToStringLongTest()
+	public void MillisecondsToStringIntTest()
 	{
-		long time = 99999999;
+		int time = 99999999;
 		var result = time.MillisecondsToString();
 
 		Assert.IsTrue(result == "27:46:39");
 	}
 
 	[TestMethod]
-	public void MillisecondsToStringIntTest()
+	public void MillisecondsToStringLongTest()
 	{
-		int time = 99999999;
+		long time = 99999999;
 		var result = time.MillisecondsToString();
 
 		Assert.IsTrue(result == "27:46:39");

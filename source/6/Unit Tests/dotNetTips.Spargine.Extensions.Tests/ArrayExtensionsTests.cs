@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-18-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -42,19 +42,6 @@ public class ArrayExtensionsTests
 		var result = people.AddFirst(person);
 
 		Assert.IsTrue(result.FastCount() == 11);
-	}
-
-	/// <summary>
-	/// Defines the test method RemoveLastTest.
-	/// </summary>
-	[TestMethod]
-	public void RemoveLastTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
-
-		var result = people.RemoveLast();
-
-		Assert.IsTrue(result.FastCount() == 99);
 	}
 
 	/// <summary>
@@ -252,19 +239,6 @@ public class ArrayExtensionsTests
 		Assert.IsFalse(nullCollection.HasItems(null));
 	}
 
-	/// <summary>
-	/// Defines the test method ToDistinctTest.
-	/// </summary>
-	[TestMethod]
-	public void ToDistinctTest()
-	{
-		var people = RandomData.GenerateWords(10, 10, 100).ToArray();
-
-		people = people.AddLast(people.First());
-
-		Assert.IsTrue(people.ToDistinct().FastCount() == 10);
-	}
-
 	[TestMethod]
 	public void PerformActionTest_Ref()
 	{
@@ -285,6 +259,32 @@ public class ArrayExtensionsTests
 		people.PerformAction((person) => _ = sb.Append($"{person.ToString()}|"));
 
 		Assert.IsTrue(sb.Length > 100);
+	}
+
+	/// <summary>
+	/// Defines the test method RemoveLastTest.
+	/// </summary>
+	[TestMethod]
+	public void RemoveLastTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(100).ToArray();
+
+		var result = people.RemoveLast();
+
+		Assert.IsTrue(result.FastCount() == 99);
+	}
+
+	/// <summary>
+	/// Defines the test method ToDistinctTest.
+	/// </summary>
+	[TestMethod]
+	public void ToDistinctTest()
+	{
+		var people = RandomData.GenerateWords(10, 10, 100).ToArray();
+
+		people = people.AddLast(people.First());
+
+		Assert.IsTrue(people.ToDistinct().FastCount() == 10);
 	}
 
 	//[TestMethod]

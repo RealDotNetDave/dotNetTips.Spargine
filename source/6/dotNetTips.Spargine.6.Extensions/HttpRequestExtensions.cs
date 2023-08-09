@@ -4,7 +4,7 @@
 // Created          : 06-01-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="HttpRequestExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -15,6 +15,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.Json;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Extensions.Properties;
 using Microsoft.AspNetCore.Http;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
@@ -26,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class HttpRequestExtensions
 {
+
 	/// <summary>
 	/// Retrieves the raw body as a byte array from the <see cref="HttpRequest" /> body stream.
 	/// Validates that <paramref name="request" /> is not null.
@@ -116,7 +118,7 @@ public static class HttpRequestExtensions
 
 		if ((request.Body?.Length ?? 0) == 0)
 		{
-			ExceptionThrower.ThrowArgumentException("HttpRequest has no body.", nameof(request.Body));
+			ExceptionThrower.ThrowArgumentException(Resources.HttpRequestHasNoBody, nameof(request.Body));
 		}
 
 		value = GetBytes(request);
@@ -136,4 +138,5 @@ public static class HttpRequestExtensions
 			return bytes;
 		}
 	}
+
 }

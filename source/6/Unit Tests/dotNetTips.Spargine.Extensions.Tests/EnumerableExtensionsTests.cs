@@ -32,6 +32,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class EnumerableExtensionsTests
 {
+
 	private const int Count = 256;
 	private const string TestData = "TEST DATA";
 
@@ -87,6 +88,16 @@ public class EnumerableExtensionsTests
 	}
 
 	[TestMethod]
+	public async Task CountAsync()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
+
+		var peopleCount = await people.CountAsync(CancellationToken.None);
+
+		Assert.IsTrue(peopleCount == Count);
+	}
+
+	[TestMethod]
 	public void CountTest()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
@@ -124,41 +135,6 @@ public class EnumerableExtensionsTests
 
 		//Test Finding Days of over 100
 		Assert.IsTrue(people.FastAny(p => p.Age.TotalDays > 100));
-	}
-
-	[TestMethod]
-	public void HasDuplicatesTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-
-		Assert.IsFalse(people.HasDuplicates());
-
-		var dups = people.Shuffle().Take(Count / 10).ToList();
-
-		foreach (var person in dups)
-		{
-			_ = people.AddLast(person);
-		}
-
-		var result = people.HasDuplicates();
-		Assert.IsTrue(result);
-	}
-
-	[TestMethod]
-	public void RemoveDuplicatesTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
-
-		var dups = people.Shuffle().Take(Count / 10).ToList();
-
-		foreach (var person in dups)
-		{
-			_ = people.AddLast(person);
-		}
-
-		var result = people.RemoveDuplicates();
-		Assert.IsTrue(result.IsSuccessful);
-		Assert.IsTrue(result.Value.Count() == Count);
 	}
 
 	[TestMethod]
@@ -227,6 +203,24 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(testValue.ToDelimitedString(',').HasItems());
 		Assert.IsTrue(testValue.ToDelimitedString().HasItems());
 		Assert.IsTrue(string.Empty.ToDelimitedString().DoesNotHaveItems());
+	}
+
+	[TestMethod]
+	public void HasDuplicatesTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+
+		Assert.IsFalse(people.HasDuplicates());
+
+		var dups = people.Shuffle().Take(Count / 10).ToList();
+
+		foreach (var person in dups)
+		{
+			_ = people.AddLast(person);
+		}
+
+		var result = people.HasDuplicates();
+		Assert.IsTrue(result);
 	}
 
 	[TestMethod]
@@ -347,6 +341,23 @@ public class EnumerableExtensionsTests
 	}
 
 	[TestMethod]
+	public void RemoveDuplicatesTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
+
+		var dups = people.Shuffle().Take(Count / 10).ToList();
+
+		foreach (var person in dups)
+		{
+			_ = people.AddLast(person);
+		}
+
+		var result = people.RemoveDuplicates();
+		Assert.IsTrue(result.IsSuccessful);
+		Assert.IsTrue(result.Value.Count() == Count);
+	}
+
+	[TestMethod]
 	public void ShuffleTest()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count);
@@ -383,16 +394,6 @@ public class EnumerableExtensionsTests
 		var splitEmptyPeople = emptyPeople.Split(10);
 
 		Assert.IsNull(splitEmptyPeople);
-	}
-
-	[TestMethod]
-	public async Task CountAsync()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).AsEnumerable();
-
-		var peopleCount = await people.CountAsync(CancellationToken.None);
-
-		Assert.IsTrue(peopleCount == Count);
 	}
 
 	[TestMethod]

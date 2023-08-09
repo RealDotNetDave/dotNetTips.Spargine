@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-16-2023
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Extensions;
 [Information(nameof(StringBuilderExtensions), "David McCarter", "5/26/2020", "7/29/2020", Status = Status.Available)]
 public static class StringBuilderExtensions
 {
+
 	/// <summary>
 	/// The special characters
 	/// </summary>
@@ -318,4 +319,5 @@ public static class StringBuilderExtensions
 			sb.Length -= separator.Length;
 		}
 	}
+
 }

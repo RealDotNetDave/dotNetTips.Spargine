@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 07-28-2023
 // ***********************************************************************
 // <copyright file="AppTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -26,6 +26,23 @@ namespace DotNetTips.Spargine.Core.Tests;
 [TestClass]
 public class AppTests
 {
+
+	[TestMethod]
+	public void AppConfigTest()
+	{
+		var config = new AppConfig();
+
+		Assert.IsTrue(string.IsNullOrEmpty(config.ConfigFileName) == false);
+
+		_ = config.TestValues.Count1 = 100;
+
+		_ = config.Save();
+
+		_ = config.Load();
+
+		Assert.IsTrue(config.TestValues.Count1 == 100);
+
+	}
 	[TestMethod]
 	public void AppInfoTest()
 	{
@@ -95,6 +112,14 @@ public class AppTests
 	}
 
 	[TestMethod]
+	public void GetProcessorInformationTest()
+	{
+		var result = App.GetProcessorInformation();
+
+		Assert.IsNotNull(result);
+	}
+
+	[TestMethod]
 	public void InformationTest()
 	{
 		var result1 = App.StackTrace;
@@ -135,14 +160,6 @@ public class AppTests
 	}
 
 	[TestMethod]
-	public void GetProcessorInformationTest()
-	{
-		var result = App.GetProcessorInformation();
-
-		Assert.IsNotNull(result);
-	}
-
-	[TestMethod]
 	public void IsUserAdministrator()
 	{
 		var result = App.IsUserAdministrator();
@@ -158,38 +175,28 @@ public class AppTests
 		Assert.IsTrue(result.FastCount() > 0);
 	}
 
-	[TestMethod]
-	public void AppConfigTest()
-	{
-		var config = new AppConfig();
-
-		Assert.IsTrue(string.IsNullOrEmpty(config.ConfigFileName) == false);
-
-		_ = config.TestValues.Count1 = 100;
-
-		_ = config.Save();
-
-		_ = config.Load();
-
-		Assert.IsTrue(config.TestValues.Count1 == 100);
-
-	}
 }
 
 public class GlobalConfig
 {
+
 	public GlobalConfig()
 	{
 	}
+
 }
 
 public class AppConfig : Config<GlobalConfig>
 {
+
 	public Values TestValues { get; set; } = new Values();
+
 }
 
 public class Values
 {
+
 	public int Count1 { get; set; }
 	public int Count2 { get; set; }
+
 }

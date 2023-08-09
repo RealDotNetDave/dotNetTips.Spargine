@@ -394,11 +394,29 @@ namespace DotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HttpRequest has no body..
+        /// </summary>
+        internal static string HttpRequestHasNoBody {
+            get {
+                return ResourceManager.GetString("HttpRequestHasNoBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hundred.
         /// </summary>
         internal static string Hundred {
             get {
                 return ResourceManager.GetString("Hundred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid number format..
+        /// </summary>
+        internal static string InvalidNumberFormat {
+            get {
+                return ResourceManager.GetString("InvalidNumberFormat", resourceCulture);
             }
         }
         
@@ -660,6 +678,15 @@ namespace DotNetTips.Spargine.Extensions.Properties {
         internal static string Sixty {
             get {
                 return ResourceManager.GetString("Sixty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} + {1} must be &lt;= {2}.
+        /// </summary>
+        internal static string StartIndexMustBeLessThanInputLength {
+            get {
+                return ResourceManager.GetString("StartIndexMustBeLessThanInputLength", resourceCulture);
             }
         }
         

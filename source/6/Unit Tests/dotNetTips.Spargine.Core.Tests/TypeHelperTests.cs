@@ -177,4 +177,5 @@ public class TypeHelperTests : TestClass
 
 		Assert.IsTrue(result.Length > 0);
 	}
+
 }

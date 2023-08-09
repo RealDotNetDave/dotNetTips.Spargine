@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-29-2023
+// Last Modified On : 08-07-2023
 // ***********************************************************************
 // <copyright file="EnumHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class EnumHelper
 {
+
 	/// <summary>
 	/// The title case regex
 	/// </summary>
@@ -126,4 +127,5 @@ public static class EnumHelper
 
 		return result.AsEnumerable();
 	}
+
 }

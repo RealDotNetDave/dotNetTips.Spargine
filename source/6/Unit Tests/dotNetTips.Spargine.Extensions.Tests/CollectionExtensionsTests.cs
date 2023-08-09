@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="CollectionExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class CollectionExtensionsTests
 {
+
 	[TestMethod]
 	public void AddIfNotExists()
 	{
@@ -176,4 +177,5 @@ public class CollectionExtensionsTests
 
 		Assert.IsTrue(personRecords.FastCount() == 11);
 	}
+
 }

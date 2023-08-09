@@ -37,6 +37,7 @@ namespace DotNetTips.Spargine.Tester.Tests;
 [TestClass]
 public class RandomDataTests
 {
+
 	/// <summary>
 	/// The count
 	/// </summary>
@@ -97,35 +98,6 @@ public class RandomDataTests
 			for (var personCount = 0; personCount < people.FastCount(); personCount++)
 			{
 				_ = newPeople.AddIfNotExists(people[personCount]);
-			}
-
-			Assert.IsTrue(newPeople.FastCount() == Count);
-		}
-		catch (Exception ex)
-		{
-			Debug.WriteLine(ex.Message);
-			Assert.Fail();
-		}
-	}
-
-	[TestMethod]
-	public void ReadOnlySequenceCollectionTest()
-	{
-		try
-		{
-			var people = new ReadOnlySequence<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToArray());
-
-			var newPeople = new List<PersonProper>();
-
-			foreach (var person in people)
-			{
-				if (MemoryMarshal.TryGetArray(person, out var segment))
-				{
-					foreach (var item in segment)
-					{
-						newPeople.Add(item);
-					}
-				}
 			}
 
 			Assert.IsTrue(newPeople.FastCount() == Count);
@@ -790,18 +762,6 @@ public class RandomDataTests
 	}
 
 	[TestMethod]
-	public void RecordToStringTest()
-	{
-		var stringValue1 = RandomData.GeneratePersonRecord().ToString();
-
-		Assert.IsNotNull(stringValue1);
-
-		var stringValue2 = RandomData.GeneratePersonRecord().PropertiesToString();
-
-		Assert.IsNotNull(stringValue2);
-	}
-
-	[TestMethod]
 	public void JsonSerilizerContext_PersonProper_Collection_Test()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToList();
@@ -844,6 +804,47 @@ public class RandomDataTests
 		Assert.IsNotNull(person);
 	}
 
+	[TestMethod]
+	public void ReadOnlySequenceCollectionTest()
+	{
+		try
+		{
+			var people = new ReadOnlySequence<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(Count).ToArray());
+
+			var newPeople = new List<PersonProper>();
+
+			foreach (var person in people)
+			{
+				if (MemoryMarshal.TryGetArray(person, out var segment))
+				{
+					foreach (var item in segment)
+					{
+						newPeople.Add(item);
+					}
+				}
+			}
+
+			Assert.IsTrue(newPeople.FastCount() == Count);
+		}
+		catch (Exception ex)
+		{
+			Debug.WriteLine(ex.Message);
+			Assert.Fail();
+		}
+	}
+
+	[TestMethod]
+	public void RecordToStringTest()
+	{
+		var stringValue1 = RandomData.GeneratePersonRecord().ToString();
+
+		Assert.IsNotNull(stringValue1);
+
+		var stringValue2 = RandomData.GeneratePersonRecord().PropertiesToString();
+
+		Assert.IsNotNull(stringValue2);
+	}
+
 	/// <summary>
 	/// Defines the test method UpdatePersonRecordTest.
 	/// </summary>
@@ -863,4 +864,5 @@ public class RandomDataTests
 
 		Debug.WriteLine(person2.PropertiesToString());
 	}
+
 }

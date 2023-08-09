@@ -35,19 +35,27 @@ public class StringExtensionsTests
 {
 
 	/// <summary>
-	/// Defines the test method ComputeHashTest.
+	/// Defines the test method BrotliStringCompressionAsyncTest.
 	/// </summary>
 	[TestMethod]
-	public void ComputeHashTest()
+	public async Task BrotliStringCompressionAsyncTest()
 	{
-		var word = RandomData.GenerateWord(100);
+		var testValue = RandomData.GenerateWord(25);
 
-		foreach (var item in Enum.GetValues(typeof(HashType)))
-		{
-			var result = word.ComputeHash((HashType)item);
+		var r1 = await testValue.ToBrotliStringAsync();  //Fastest is default
+		var r2 = await testValue.ToBrotliStringAsync(CompressionLevel.NoCompression);
+		var r3 = await testValue.ToBrotliStringAsync(CompressionLevel.Optimal);
+		var r4 = await testValue.ToBrotliStringAsync(CompressionLevel.SmallestSize);
 
-			Assert.IsTrue(result.IsNotEmpty());
-		}
+		Assert.IsFalse(string.IsNullOrEmpty(r1));
+		Assert.IsFalse(string.IsNullOrEmpty(r2));
+		Assert.IsFalse(string.IsNullOrEmpty(r3));
+		Assert.IsFalse(string.IsNullOrEmpty(r4));
+
+		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromBrotliStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromBrotliStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromBrotliStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromBrotliStringAsync()));
 	}
 
 	[TestMethod]
@@ -60,20 +68,19 @@ public class StringExtensionsTests
 		Assert.IsTrue(result.IsNotEmpty());
 	}
 
+	/// <summary>
+	/// Defines the test method ComputeHashTest.
+	/// </summary>
 	[TestMethod]
-	public void SplitLinesTest()
+	public void ComputeHashTest()
 	{
-		var text = Resources.TestMutipleLinesOfText;
-		try
+		var word = RandomData.GenerateWord(100);
+
+		foreach (var item in Enum.GetValues(typeof(HashType)))
 		{
-			foreach (var lse in text.SplitLines())
-			{
-				Console.WriteLine(lse.Line.ToString());
-			}
-		}
-		catch
-		{
-			Assert.Fail();
+			var result = word.ComputeHash((HashType)item);
+
+			Assert.IsTrue(result.IsNotEmpty());
 		}
 	}
 
@@ -129,34 +136,6 @@ public class StringExtensionsTests
 	}
 
 	/// <summary>
-	/// Defines the test method IsCurrencyCode.
-	/// </summary>
-	[TestMethod]
-	public void IsCurrencyCode()
-	{
-		var goodCode = "USD";
-		var badCode = RandomData.GenerateWord(5);
-
-		Assert.IsTrue(goodCode.IsCurrencyCode());
-
-		Assert.IsFalse(badCode.IsCurrencyCode());
-	}
-
-	/// <summary>
-	/// Defines the test method IsOneToSevenAlphaTest.
-	/// </summary>
-	[TestMethod]
-	public void IsOneToSevenAlphaTest()
-	{
-		var goodCode = RandomData.GenerateWord(7, 'A', 'Z');
-		var badCode = RandomData.GenerateWord(25, 'A', 'Z');
-
-		Assert.IsTrue(goodCode.IsOneToSevenAlpha());
-
-		Assert.IsFalse(badCode.IsOneToSevenAlpha());
-	}
-
-	/// <summary>
 	/// Defines the test method DefaultIfNullTest.
 	/// </summary>
 	[TestMethod]
@@ -167,6 +146,29 @@ public class StringExtensionsTests
 		Assert.IsTrue(testValue.DefaultIfNull().Length == 0);
 
 		Assert.IsTrue(testValue.DefaultIfNull(RandomData.GenerateWord(5)).Length == 5);
+	}
+
+	[TestMethod]
+	public async Task DeflateStringCompressionAsyncTest()
+	{
+		var testValue = RandomData.GenerateWord(25);
+
+		var r1 = await testValue.ToDeflateStringAsync(); // Fastest is default
+		var r2 = await testValue.ToDeflateStringAsync(CompressionLevel.NoCompression);
+		var r3 = await testValue.ToDeflateStringAsync(CompressionLevel.Optimal);
+		var r4 = await testValue.ToDeflateStringAsync(CompressionLevel.SmallestSize);
+
+		Assert.IsFalse(string.IsNullOrEmpty(r1));
+		Assert.IsFalse(string.IsNullOrEmpty(r2));
+		Assert.IsFalse(string.IsNullOrEmpty(r3));
+		Assert.IsFalse(string.IsNullOrEmpty(r4));
+
+		//var test = await r1.FromGZipAsync();
+
+		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromDeflateStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromDeflateStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromDeflateStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromDeflateStringAsync()));
 	}
 
 	/// <summary>
@@ -232,6 +234,32 @@ public class StringExtensionsTests
 		Assert.IsTrue(testValue.ToBase64().FromBase64().IsNotEmpty());
 
 		Assert.IsTrue(string.Empty.ToBase64().FromBase64().IsEmpty());
+	}
+
+	/// <summary>
+	/// Defines the test method GzipStringCompressionAsyncTest.
+	/// </summary>
+	[TestMethod]
+	public async Task GzipStringCompressionAsyncTest()
+	{
+		var testValue = RandomData.GenerateWord(25);
+
+		var r1 = await testValue.ToGZipStringAsync(); // Fastest is default
+		var r2 = await testValue.ToGZipStringAsync(CompressionLevel.NoCompression);
+		var r3 = await testValue.ToGZipStringAsync(CompressionLevel.Optimal);
+		var r4 = await testValue.ToGZipStringAsync(CompressionLevel.SmallestSize);
+
+		Assert.IsFalse(string.IsNullOrEmpty(r1));
+		Assert.IsFalse(string.IsNullOrEmpty(r2));
+		Assert.IsFalse(string.IsNullOrEmpty(r3));
+		Assert.IsFalse(string.IsNullOrEmpty(r4));
+
+		//var test = await r1.FromGZipAsync();
+
+		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromGZipStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromGZipStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromGZipStringAsync()));
+		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromGZipStringAsync()));
 	}
 
 	/// <summary>
@@ -325,6 +353,20 @@ public class StringExtensionsTests
 	}
 
 	/// <summary>
+	/// Defines the test method IsCurrencyCode.
+	/// </summary>
+	[TestMethod]
+	public void IsCurrencyCode()
+	{
+		var goodCode = "USD";
+		var badCode = RandomData.GenerateWord(5);
+
+		Assert.IsTrue(goodCode.IsCurrencyCode());
+
+		Assert.IsFalse(badCode.IsCurrencyCode());
+	}
+
+	/// <summary>
 	/// Defines the test method IsDigitTest.
 	/// </summary>
 	[TestMethod]
@@ -391,6 +433,20 @@ public class StringExtensionsTests
 		Assert.IsTrue(RandomData.GenerateWord(10).IsNotEmpty());
 
 		Assert.IsFalse(string.Empty.IsNotEmpty());
+	}
+
+	/// <summary>
+	/// Defines the test method IsOneToSevenAlphaTest.
+	/// </summary>
+	[TestMethod]
+	public void IsOneToSevenAlphaTest()
+	{
+		var goodCode = RandomData.GenerateWord(7, 'A', 'Z');
+		var badCode = RandomData.GenerateWord(25, 'A', 'Z');
+
+		Assert.IsTrue(goodCode.IsOneToSevenAlpha());
+
+		Assert.IsFalse(badCode.IsOneToSevenAlpha());
 	}
 
 	/// <summary>
@@ -468,6 +524,23 @@ public class StringExtensionsTests
 		Assert.IsTrue(result.EndsWith("...") is false);
 
 		_ = Assert.ThrowsException<ArgumentNullException>(() => string.IsNullOrEmpty(string.Empty.ReplaceEllipsisWithPeriod()));
+	}
+
+	[TestMethod]
+	public void SplitLinesTest()
+	{
+		var text = Resources.TestMutipleLinesOfText;
+		try
+		{
+			foreach (var lse in text.SplitLines())
+			{
+				Console.WriteLine(lse.Line.ToString());
+			}
+		}
+		catch
+		{
+			Assert.Fail();
+		}
 	}
 
 	/// <summary>
@@ -635,29 +708,27 @@ public class StringExtensionsTests
 	}
 
 	/// <summary>
-	/// Defines the test method GzipStringCompressionAsyncTest.
+	/// Defines the test method ToTitleCaseTest.
 	/// </summary>
 	[TestMethod]
-	public async Task GzipStringCompressionAsyncTest()
+	public void ToTitleCaseTest()
 	{
-		var testValue = RandomData.GenerateWord(25);
+		var words = RandomData.GenerateWords(10, 10, 20).ToDelimitedString(ControlChars.Space);
 
-		var r1 = await testValue.ToGZipStringAsync(); // Fastest is default
-		var r2 = await testValue.ToGZipStringAsync(CompressionLevel.NoCompression);
-		var r3 = await testValue.ToGZipStringAsync(CompressionLevel.Optimal);
-		var r4 = await testValue.ToGZipStringAsync(CompressionLevel.SmallestSize);
+		var testValue = words.ToTitleCase();
 
-		Assert.IsFalse(string.IsNullOrEmpty(r1));
-		Assert.IsFalse(string.IsNullOrEmpty(r2));
-		Assert.IsFalse(string.IsNullOrEmpty(r3));
-		Assert.IsFalse(string.IsNullOrEmpty(r4));
+		Assert.IsTrue(testValue.IsNotEmpty());
+	}
 
-		//var test = await r1.FromGZipAsync();
+	/// <summary>
+	/// Defines the test method TrimTest.
+	/// </summary>
+	[TestMethod]
+	public void TrimTest()
+	{
+		var testValue = $"{RandomData.GenerateWord(25)}   ";
 
-		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromGZipStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromGZipStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromGZipStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromGZipStringAsync()));
+		Assert.IsTrue(testValue.ToTrimmed().Length == 25);
 	}
 
 	[TestMethod]
@@ -681,77 +752,6 @@ public class StringExtensionsTests
 		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromZLibStringAsync()));
 		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromZLibStringAsync()));
 		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromZLibStringAsync()));
-	}
-
-	[TestMethod]
-	public async Task DeflateStringCompressionAsyncTest()
-	{
-		var testValue = RandomData.GenerateWord(25);
-
-		var r1 = await testValue.ToDeflateStringAsync(); // Fastest is default
-		var r2 = await testValue.ToDeflateStringAsync(CompressionLevel.NoCompression);
-		var r3 = await testValue.ToDeflateStringAsync(CompressionLevel.Optimal);
-		var r4 = await testValue.ToDeflateStringAsync(CompressionLevel.SmallestSize);
-
-		Assert.IsFalse(string.IsNullOrEmpty(r1));
-		Assert.IsFalse(string.IsNullOrEmpty(r2));
-		Assert.IsFalse(string.IsNullOrEmpty(r3));
-		Assert.IsFalse(string.IsNullOrEmpty(r4));
-
-		//var test = await r1.FromGZipAsync();
-
-		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromDeflateStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromDeflateStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromDeflateStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromDeflateStringAsync()));
-	}
-
-	/// <summary>
-	/// Defines the test method BrotliStringCompressionAsyncTest.
-	/// </summary>
-	[TestMethod]
-	public async Task BrotliStringCompressionAsyncTest()
-	{
-		var testValue = RandomData.GenerateWord(25);
-
-		var r1 = await testValue.ToBrotliStringAsync();  //Fastest is default
-		var r2 = await testValue.ToBrotliStringAsync(CompressionLevel.NoCompression);
-		var r3 = await testValue.ToBrotliStringAsync(CompressionLevel.Optimal);
-		var r4 = await testValue.ToBrotliStringAsync(CompressionLevel.SmallestSize);
-
-		Assert.IsFalse(string.IsNullOrEmpty(r1));
-		Assert.IsFalse(string.IsNullOrEmpty(r2));
-		Assert.IsFalse(string.IsNullOrEmpty(r3));
-		Assert.IsFalse(string.IsNullOrEmpty(r4));
-
-		Assert.IsFalse(string.IsNullOrEmpty(await r1.FromBrotliStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r2.FromBrotliStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r3.FromBrotliStringAsync()));
-		Assert.IsFalse(string.IsNullOrEmpty(await r4.FromBrotliStringAsync()));
-	}
-
-	/// <summary>
-	/// Defines the test method ToTitleCaseTest.
-	/// </summary>
-	[TestMethod]
-	public void ToTitleCaseTest()
-	{
-		var words = RandomData.GenerateWords(10, 10, 20).ToDelimitedString(ControlChars.Space);
-
-		var testValue = words.ToTitleCase();
-
-		Assert.IsTrue(testValue.IsNotEmpty());
-	}
-
-	/// <summary>
-	/// Defines the test method TrimTest.
-	/// </summary>
-	[TestMethod]
-	public void TrimTest()
-	{
-		var testValue = $"{RandomData.GenerateWord(25)}   ";
-
-		Assert.IsTrue(testValue.ToTrimmed().Length == 25);
 	}
 
 }

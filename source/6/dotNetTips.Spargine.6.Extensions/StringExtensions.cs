@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 08-07-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -31,6 +31,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class StringExtensions
 {
+
 	/// <summary>
 	/// Returns 0.
 	/// </summary>
@@ -211,7 +212,7 @@ public static class StringExtensions
 	}
 
 	/// <summary>
-	/// Concatenates the specified first message with passed in string[] using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
+	/// Concatenates the specified message with passed in string[] using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="input" /> is not null or empty.
 	/// </summary>
 	/// <param name="input">The first message.</param>
@@ -1099,7 +1100,7 @@ public static class StringExtensions
 
 		if (startIndex >= input.Length - length)
 		{
-			ExceptionThrower.ThrowArgumentOutOfRangeException("startIndex + length must be <= value.Length", nameof(startIndex));
+			ExceptionThrower.ThrowArgumentOutOfRangeException(string.Format(CultureInfo.CurrentCulture, Resources.StartIndexMustBeLessThanInputLength, nameof(startIndex), nameof(length), nameof(input.Length)), nameof(startIndex));
 		}
 
 		if (length == 0)
@@ -1352,4 +1353,5 @@ public static class StringExtensions
 			}
 		}
 	}
+
 }

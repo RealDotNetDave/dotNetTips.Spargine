@@ -97,6 +97,15 @@ namespace DotNetTips.Spargine.Tester.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to County/ Province length is limited to 50 characters..
+        /// </summary>
+        internal static string CountyProvinceLengthIsLimitedTo50Character {
+            get {
+                return ResourceManager.GetString("CountyProvinceLengthIsLimitedTo50Character", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to aaa,aarp,abarth,abb,abbott,abbvie,abc,able,abogado,abudhabi,ac,academy,accenture,accountant,accountants,aco,active,actor,ad,adac,ads,adult,ae,aeg,aero,aetna,af,afamilycompany,afl,africa,ag,agakhan,agency,ai,aig,aigo,airbus,airforce,airtel,akdn,al,alfaromeo,alibaba,alipay,allfinanz,allstate,ally,alsace,alstom,am,amazon,americanexpress,americanfamily,amex,amfam,amica,amsterdam,an,analytics,android,anquan,anz,ao,aol,apartments,app,apple,aq,aquarelle,ar,arab,aramco,archi,army,arpa,art,arte,as,asda,asia,associat [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DomainExtentions {
@@ -204,6 +213,15 @@ namespace DotNetTips.Spargine.Tester.Properties {
         internal static string MinimumLenghthCannotBeGreaterThanMaximum {
             get {
                 return ResourceManager.GetString("MinimumLenghthCannotBeGreaterThanMaximum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is not a {1} type..
+        /// </summary>
+        internal static string ObjectIsNotType {
+            get {
+                return ResourceManager.GetString("ObjectIsNotType", resourceCulture);
             }
         }
         

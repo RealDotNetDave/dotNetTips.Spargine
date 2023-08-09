@@ -4,7 +4,7 @@
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-09-2023
 // ***********************************************************************
 // <copyright file="TaskExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -23,13 +24,28 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 /// <summary>
 /// Defines test class TaskExtensionsTests.
 /// </summary>
+[ExcludeFromCodeCoverage]
 [TestClass]
 public class TaskExtensionsTests
 {
+
 	/// <summary>
 	/// The fire result
 	/// </summary>
 	private string _fireResult = string.Empty;
+
+	/// <summary>
+	/// Fires the specified input.
+	/// </summary>
+	/// <param name="input">The input.</param>
+	private async Task Fire(string input)
+	{
+		this._fireResult = input;
+
+		Console.WriteLine(input);
+
+		await Task.Delay(1).ConfigureAwait(false);
+	}
 
 	/// <summary>
 	/// Defines the test method FireAndForgetTest01.
@@ -55,19 +71,6 @@ public class TaskExtensionsTests
 		this.Fire(nameof(this.FireAndForgetTest01)).FireAndForget(p);
 
 		Assert.AreEqual(this._fireResult, nameof(this.FireAndForgetTest01));
-	}
-
-	/// <summary>
-	/// Fires the specified input.
-	/// </summary>
-	/// <param name="input">The input.</param>
-	private async Task Fire(string input)
-	{
-		this._fireResult = input;
-
-		Console.WriteLine(input);
-
-		await Task.Delay(1).ConfigureAwait(false);
 	}
 
 }

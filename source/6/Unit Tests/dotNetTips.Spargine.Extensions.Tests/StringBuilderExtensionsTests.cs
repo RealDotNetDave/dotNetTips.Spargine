@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-08-2023
 // ***********************************************************************
 // <copyright file="StringBuilderExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -82,7 +82,7 @@ public class StringBuilderExtensionsTests
 		var sb = new StringBuilder();
 		var values = RandomData.GenerateWords(count: 5, minLength: 5, maxLength: 7);
 
-		sb.AppendValues(", ", values);
+		sb.AppendValues(ControlChars.CommaSpace, values);
 
 		Assert.IsTrue(sb.Length > 10);
 

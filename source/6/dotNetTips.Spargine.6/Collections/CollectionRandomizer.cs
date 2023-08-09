@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="CollectionRandomizer.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -18,6 +18,7 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using DotNetTips.Spargine.Core;
 using DotNetTips.Spargine.Extensions;
+using DotNetTips.Spargine.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -31,6 +32,7 @@ namespace DotNetTips.Spargine.Collections;
 [Information(nameof(CollectionRandomizer<T>), author: "David McCarter and Kristine Tran", createdOn: "8/26/2020", Status = Status.Available)]
 public sealed class CollectionRandomizer<T>
 {
+
 	/// <summary>
 	/// The collection
 	/// </summary>
@@ -87,7 +89,7 @@ public sealed class CollectionRandomizer<T>
 		//Validate Collection
 		if (this._collection.HasItems() is false)
 		{
-			ExceptionThrower.ThrowInvalidValueException("Underlying collection is null.", this._collection);
+			ExceptionThrower.ThrowInvalidValueException(Resources.UnderlyingCollectionIsNull, this._collection);
 		}
 
 		//Shuffle Collection
@@ -128,4 +130,5 @@ public sealed class CollectionRandomizer<T>
 	/// until the first time GetNext() is called and the shuffle is initialized.</value>
 	[Information(nameof(HasRemainingItems), "David McCarter", "4/21/2021", Status = Status.Available, UnitTestCoverage = 0)]
 	public bool HasRemainingItems { get; private set; }
+
 }

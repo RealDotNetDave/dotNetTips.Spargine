@@ -605,6 +605,16 @@ dotnet_diagnostic.CA1727.severity = warning
 
 #### Code Quality ####
 dotnet_code_quality_unused_parameters = all:warning
+dotnet_code_quality.interpolated_string_composite_format = true
+dotnet_code_quality.prefer_inferred_anonymous_type_member_names = true
+dotnet_code_quality.prefer_inferred_tuple_names = true
+dotnet_code_quality.prefer_auto_properties = false
+dotnet_code_quality.prefer_readonly = true
+dotnet_code_quality.prefer_const = true
+dotnet_code_quality.require_accessibility_modifiers = true
+dotnet_code_quality.require_explicit_visibility = true
+dotnet_code_quality.require_variable_declaration_for_explicit_type = false
+dotnet_code_quality.require_explicit_type_arguments = true
 
 #### Performance ####
 
@@ -1955,6 +1965,7 @@ dotnet_diagnostic.CA1200.severity = suggestion
 
 # CA1303: Do not pass literals as localized parameters
 dotnet_diagnostic.CA1303.severity = warning
+dotnet_code_quality.CA1303.use_naming_heuristic = true
 
 # CA1304: Specify CultureInfo
 dotnet_diagnostic.CA1304.severity = error

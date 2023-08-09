@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 07-07-2023
 // ***********************************************************************
 // <copyright file="ObjectExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -30,6 +30,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class ObjectExtensionsTests : TestClass
 {
+
 	[TestMethod]
 	public void AsTest()
 	{
@@ -281,4 +282,5 @@ public class ObjectExtensionsTests : TestClass
 			Assert.Fail();
 		}
 	}
+
 }

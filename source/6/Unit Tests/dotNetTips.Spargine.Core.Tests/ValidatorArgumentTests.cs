@@ -34,6 +34,7 @@ namespace dotNetTips.Spargine.Core.Tests;
 [TestClass]
 public class ValidatorArgumentTests
 {
+
 	private const string BadEmail = "BAD@EMAIL";
 	private const string GoodEmail = "fakeemail@google.com";
 
@@ -963,4 +964,5 @@ public class ValidatorArgumentTests
 			Assert.Fail();
 		}
 	}
+
 }

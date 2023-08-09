@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class DateTimeExtensions
 {
+
 	/// <summary>
 	/// Converts MilliEpochTime to <see cref="DateTime" />.
 	/// </summary>
@@ -448,4 +449,5 @@ public static class DateTimeExtensions
 		var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 		return Convert.ToInt32((date - epoch).TotalSeconds);
 	}
+
 }

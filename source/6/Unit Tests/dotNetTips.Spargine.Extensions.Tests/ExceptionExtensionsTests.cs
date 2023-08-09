@@ -78,4 +78,5 @@ public class ExceptionExtensionsTests
 		Assert.IsTrue(exGood.IsSecurityOrCritical());
 		Assert.IsFalse(exBad.IsSecurityOrCritical());
 	}
+
 }

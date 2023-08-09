@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class ObservableCollectionExtensionsTests
 {
+
 	private readonly int _count = 2500;
 
 	[TestMethod]
@@ -82,4 +83,5 @@ public class ObservableCollectionExtensionsTests
 		//Test 
 		Assert.IsTrue(people.ToReadOnlyObservableCollection().HasItems());
 	}
+
 }

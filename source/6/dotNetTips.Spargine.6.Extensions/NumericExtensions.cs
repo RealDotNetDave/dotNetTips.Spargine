@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class NumericExtensions
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -504,7 +505,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Converts milliseconds to a string. 
+	/// Converts milliseconds to a string.
 	/// <code>
 	/// Example output: 02:45:00
 	/// </code>
@@ -543,7 +544,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Converts milliseconds to a string. 
+	/// Converts milliseconds to a string.
 	/// <code>
 	/// Example output: 02:45:00
 	/// </code>
@@ -604,7 +605,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -629,7 +630,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.Decimal || format == NumericFormat.Hexadecimal)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -655,7 +656,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -681,7 +682,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -706,7 +707,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -731,7 +732,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -756,7 +757,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		if (format == NumericFormat.RoundTrip)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException("Invalid number format.", nameof(format));
+			ExceptionThrower.ThrowArgumentInvalidException(Resources.InvalidNumberFormat, nameof(format));
 		}
 
 		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
@@ -959,4 +960,5 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 		return words;
 	}
+
 }

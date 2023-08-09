@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-21-2023
+// Last Modified On : 08-08-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -38,6 +38,7 @@ namespace DotNetTips.Spargine.Tester;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public static class RandomData
 {
+
 	/// <summary>
 	/// The default file extension
 	/// </summary>
@@ -418,7 +419,7 @@ public static class RandomData
 	}
 
 	/// <summary>
-	/// Generates the credit card.
+	/// Generates a random credit card number.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
@@ -428,7 +429,8 @@ public static class RandomData
 	}
 
 	/// <summary>
-	/// Generates the credit cards.
+	/// Generates a collection of random credit card numbers.
+	/// Default to a count of 100.
 	/// </summary>
 	/// <param name="count">The count.</param>
 	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
@@ -900,7 +902,6 @@ public static class RandomData
 	[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 	public static string GenerateUrlHostNameNoSubDomain()
 	{
-		//return $"{GenerateWord(3, 25, 'a', 'z')}{GenerateDomainExtension()}";
 		return GenerateDomainExtension();
 	}
 

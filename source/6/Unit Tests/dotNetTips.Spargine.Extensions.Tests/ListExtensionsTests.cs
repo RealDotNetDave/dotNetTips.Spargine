@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="ListExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -51,30 +51,6 @@ public class ListExtensionsTests
 	}
 
 	[TestMethod]
-	public void PerformActionTest()
-	{
-		var words = RandomData.GenerateWords(10, 10, 100).ToList();
-		var sb = new StringBuilder();
-
-		words.PerformAction((word) => _ = sb.Append($"WORD:{word}|"));
-
-		Assert.IsTrue(sb.Length > 100);
-	}
-
-	[TestMethod]
-	public void IsEqualTest()
-	{
-		var set1 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
-		var set2 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
-
-		var result1 = set1.IsEqualTo(set1);
-		Assert.IsTrue(result1);
-
-		var result2 = set1.IsEqualTo(set2);
-		Assert.IsFalse(result2);
-	}
-
-	[TestMethod]
 	public void AddLastTest()
 	{
 		var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
@@ -97,6 +73,16 @@ public class ListExtensionsTests
 		var result2 = peopleArray.AddLast(person);
 		Assert.IsTrue(result2.Last().Equals(person));
 		Assert.IsTrue(peopleArray.AddLast(null).Length == peopleArray.Length);
+	}
+
+	[TestMethod]
+	public void AsSpanTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
+
+		var result = people.AsSpan();
+
+		Assert.IsTrue(result.IsEmpty is false);
 	}
 	[TestMethod]
 	public void ClearNullListTest()
@@ -156,6 +142,19 @@ public class ListExtensionsTests
 	}
 
 	[TestMethod]
+	public void IndexAtLoopedTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
+		Collection<PersonProper> nullPeople = null;
+
+		var result = people.IndexAtLooped(5);
+
+		Assert.IsNotNull(result);
+
+		_ = Assert.ThrowsException<ArgumentNullException>(() => nullPeople.IndexAtLooped(5));
+	}
+
+	[TestMethod]
 	public void IndexOfTest()
 	{
 		var peopleList = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
@@ -167,6 +166,19 @@ public class ListExtensionsTests
 
 		// Test 
 		Assert.IsTrue(peopleList.IndexOf(testPerson, new PersonProperComparer()) >= 0);
+	}
+
+	[TestMethod]
+	public void IsEqualTest()
+	{
+		var set1 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+		var set2 = RandomData.GeneratePersonRefCollection<PersonProper>(1000);
+
+		var result1 = set1.IsEqualTo(set1);
+		Assert.IsTrue(result1);
+
+		var result2 = set1.IsEqualTo(set2);
+		Assert.IsFalse(result2);
 	}
 	[TestMethod]
 	public void ListHashCodeTest()
@@ -206,6 +218,17 @@ public class ListExtensionsTests
 	}
 
 	[TestMethod]
+	public void PerformActionTest()
+	{
+		var words = RandomData.GenerateWords(10, 10, 100).ToList();
+		var sb = new StringBuilder();
+
+		words.PerformAction((word) => _ = sb.Append($"WORD:{word}|"));
+
+		Assert.IsTrue(sb.Length > 100);
+	}
+
+	[TestMethod]
 	public void PickRandomTest()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToDictionary(p => p.Id);
@@ -213,19 +236,6 @@ public class ListExtensionsTests
 		var result = people.PickRandom();
 
 		Assert.IsNotNull(result);
-	}
-
-	[TestMethod]
-	public void IndexAtLoopedTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500);
-		Collection<PersonProper> nullPeople = null;
-
-		var result = people.IndexAtLooped(5);
-
-		Assert.IsNotNull(result);
-
-		_ = Assert.ThrowsException<ArgumentNullException>(() => nullPeople.IndexAtLooped(5));
 	}
 
 	[TestMethod]
@@ -351,13 +361,4 @@ public class ListExtensionsTests
 		Assert.IsTrue(people.FastCount() == 2500);
 	}
 
-	[TestMethod]
-	public void AsSpanTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(2500).ToList();
-
-		var result = people.AsSpan();
-
-		Assert.IsTrue(result.IsEmpty is false);
-	}
 }

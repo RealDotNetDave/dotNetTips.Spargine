@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 07-30-2023
 // ***********************************************************************
 // <copyright file="ExecutionHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -25,6 +25,7 @@ namespace dotNetTips.Spargine.Core.Tests;
 [TestClass]
 public class ExecutionHelperTests
 {
+
 	[TestMethod]
 	public void ProgressiveRetryTest()
 	{
@@ -44,4 +45,5 @@ public class ExecutionHelperTests
 
 		Assert.IsTrue(tries > 0);
 	}
+
 }

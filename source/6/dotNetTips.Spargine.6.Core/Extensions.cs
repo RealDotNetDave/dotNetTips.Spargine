@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-26-2023
+// Last Modified On : 03-14-2023
 // ***********************************************************************
 // <copyright file="Extensions.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -350,7 +350,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 		return input.HasValue(Resources.RegexUrl, RegexOptions.IgnoreCase);
 	}
 	/// <summary>
-	/// Converts IDictionary to delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts IDictionary to delimited string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="list">The list.</param>
 	/// <param name="delimiter">The delimiter.</param>
@@ -390,7 +390,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	}
 
 	/// <summary>
-	/// Convert a list to a delimited string  using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Convert a list to a delimited string  using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <param name="list">The list.</param>

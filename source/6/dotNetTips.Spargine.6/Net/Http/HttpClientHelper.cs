@@ -4,7 +4,7 @@
 // Created          : 01-11-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-28-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="HttpClientHelper.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -12,8 +12,10 @@
 // <summary>Helper methods for HttpClient.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Net;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -25,10 +27,11 @@ namespace DotNetTips.Spargine.Net.Http;
 /// </summary>
 public static class HttpClientHelper
 {
+
 	/// <summary>
 	/// The http client
 	/// </summary>
-	private static readonly HttpClient _client = new()
+	private static readonly HttpClient Client = new()
 	{
 		Timeout = TimeSpan.FromSeconds(value: 20),
 	};
@@ -82,7 +85,7 @@ public static class HttpClientHelper
 		try
 		{
 			// Pass in the token.
-			var response = await _client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
+			var response = await Client.GetAsync(url, cancellationToken.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 			_ = response.EnsureSuccessStatusCode();
 
@@ -92,17 +95,17 @@ public static class HttpClientHelper
 		{
 			// If the token has been canceled, it is not a timeout.
 			// Handle cancellation.
-			ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
+			ExceptionThrower.ThrowInvalidOperationException(message: Resources.TheOperationHasBeenCanceled, ex);
 		}
 		catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
 		{
 			// Handle timeout.
-			ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
+			ExceptionThrower.ThrowInvalidOperationException(message: Resources.TheOperationHasTimedOut, ex);
 		}
 		catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 		{
 			// Handle 404
-			ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
+			ExceptionThrower.ThrowInvalidOperationException(message: string.Format(CultureInfo.CurrentCulture, Resources.ResourceWasNotFound, url), ex);
 		}
 
 		return null;
@@ -138,7 +141,7 @@ public static class HttpClientHelper
 			try
 			{
 				// Pass in the token.
-				var response = await _client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
+				var response = await Client.GetStreamAsync(url, cts.Token).ConfigureAwait(continueOnCapturedContext: false);
 
 				return response;
 			}
@@ -146,20 +149,21 @@ public static class HttpClientHelper
 			{
 				// If the token has been canceled, it is not a timeout.
 				// Handle cancellation.
-				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has been canceled.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: Resources.TheOperationHasBeenCanceled, ex);
 			}
 			catch (TaskCanceledException ex) when (ex.InnerException is TimeoutException)
 			{
 				// Handle timeout.
-				ExceptionThrower.ThrowInvalidOperationException(message: "The operation has timed out.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: Resources.TheOperationHasTimedOut, ex);
 			}
 			catch (HttpRequestException ex) when (ex.StatusCode == HttpStatusCode.NotFound)
 			{
 				// Handle 404
-				ExceptionThrower.ThrowInvalidOperationException(message: $"Resource {url} was not found.", ex);
+				ExceptionThrower.ThrowInvalidOperationException(message: string.Format(CultureInfo.CurrentCulture, Resources.ResourceWasNotFound, url), ex);
 			}
 		}
 
 		return null;
 	}
+
 }

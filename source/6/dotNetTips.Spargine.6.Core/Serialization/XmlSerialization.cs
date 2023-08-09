@@ -4,21 +4,21 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-03-2022
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="XmlSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary>
-// This class facilitates easy serialization and deserialization of strings to and from the XML format. 
+// This class facilitates easy serialization and deserialization of
+// strings to and from the XML format.
 // </summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-
-//`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
+using DotNetTips.Spargine.Core.Properties;
 
 namespace DotNetTips.Spargine.Core.Serialization;
 
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Core.Serialization;
 /// </summary>
 public static class XmlSerialization
 {
+
 	/// <summary>
 	/// Deserialize the specified XML.
 	/// </summary>
@@ -52,12 +53,12 @@ public static class XmlSerialization
 	/// <typeparam name="TResult">Type.</typeparam>
 	/// <param name="fileName">Name of the file.</param>
 	/// <returns>T.</returns>
-	/// <exception cref="FileNotFoundException">File not found. Cannot deserialize from XML.</exception>
+	/// <exception cref="System.IO.FileNotFoundException"></exception>
 	[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class
 	{
 		return File.Exists(fileName.ArgumentNotNullOrEmpty(true)) is false
-			? throw new FileNotFoundException("File not found. Cannot deserialize from XML.", fileName)
+			? throw new FileNotFoundException(Resources.FileNotFoundCannotDeserializeFromXML, fileName)
 			: Deserialize<TResult>(File.ReadAllText(fileName));
 	}
 
@@ -141,4 +142,5 @@ public static class XmlSerialization
 			}
 		}
 	}
+
 }

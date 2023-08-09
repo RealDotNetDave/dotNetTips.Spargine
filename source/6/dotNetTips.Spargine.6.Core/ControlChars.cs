@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class ControlChars
 {
+
 	/// <summary>
 	/// @ Symbol.
 	/// </summary>
@@ -187,4 +188,5 @@ public static class ControlChars
 	/// Vertical tab.
 	/// </summary>
 	public const char VerticalTab = '\v';
+
 }

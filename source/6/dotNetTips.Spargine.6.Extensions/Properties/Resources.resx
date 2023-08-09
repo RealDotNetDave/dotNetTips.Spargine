@@ -359,4 +359,13 @@
   <data name="ThereIsAnIssueDisposingOfTheObjectUsingAsyncDispose" xml:space="preserve">
     <value>There is an issue disposing of the object using DisposeAsync().</value>
   </data>
+  <data name="StartIndexMustBeLessThanInputLength" xml:space="preserve">
+    <value>{0} + {1} must be &lt;= {2}</value>
+  </data>
+  <data name="InvalidNumberFormat" xml:space="preserve">
+    <value>Invalid number format.</value>
+  </data>
+  <data name="HttpRequestHasNoBody" xml:space="preserve">
+    <value>HttpRequest has no body.</value>
+  </data>
 </root>

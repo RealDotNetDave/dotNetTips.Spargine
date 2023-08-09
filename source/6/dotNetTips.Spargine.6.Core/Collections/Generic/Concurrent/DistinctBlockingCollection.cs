@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="DistinctBlockingCollection.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,6 +17,7 @@
 // ***********************************************************************
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
+using DotNetTips.Spargine.Core.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -31,6 +32,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 /// to remove from memory.</remarks>
 public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, ICloneable<T>, ICollection<T>
 {
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DistinctBlockingCollection{T}" /> class.
 	/// </summary>
@@ -47,10 +49,18 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 		{
 			foreach (var _ in collection.Where(p => p is not null).Where(item => this.TryAdd(item) is false).Select(_ => new { }))
 			{
-				ExceptionThrower.ThrowArgumentInvalidException("There was an issue adding an item in the collection", nameof(collection));
+				ExceptionThrower.ThrowArgumentInvalidException(Resources.ThereWasAnIssueAddingAnItemInTheCollection, nameof(collection));
 			}
 		}
 	}
+
+	/// <summary>
+	/// Cones this instance.
+	/// </summary>
+	/// <returns>T.</returns>
+	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
+	/// to remove from memory.</remarks>
+	T ICloneable<T>.Clone() => (T)this.MemberwiseClone();
 
 	/// <summary>
 	/// Item the not in collection.
@@ -90,14 +100,6 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 			// DO NOTHING
 		}
 	}
-
-	/// <summary>
-	/// Cones this instance.
-	/// </summary>
-	/// <returns>T.</returns>
-	/// <remarks>This type implements IDisposable. Make sure to call .Dispose() or use the 'using' statement
-	/// to remove from memory.</remarks>
-	T ICloneable<T>.Clone() => (T)this.MemberwiseClone();
 
 	/// <summary>
 	/// Determines whether the collection contains a specific value.
@@ -196,4 +198,5 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 	/// </summary>
 	/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
 	public bool IsReadOnly => this.IsAddingCompleted;
+
 }

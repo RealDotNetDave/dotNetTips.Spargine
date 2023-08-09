@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-07-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -295,7 +295,7 @@ public class DateTimeExtensionsTests : TestClass
 	{
 		var dateTime = DateTimeOffset.Parse("1/1/2020");
 
-		var result = dateTime.GetLastDayOfWeek(DayOfWeek.Tuesday);
+		var result = dateTime.GetNextDayOfWeek(DayOfWeek.Tuesday);
 
 		Assert.IsTrue(result.DayOfWeek == DayOfWeek.Tuesday);
 	}
@@ -384,4 +384,5 @@ public class DateTimeExtensionsTests : TestClass
 
 		//PrintResult(convertedTime, nameof(this.ToFromUnixTimeTest));
 	}
+
 }

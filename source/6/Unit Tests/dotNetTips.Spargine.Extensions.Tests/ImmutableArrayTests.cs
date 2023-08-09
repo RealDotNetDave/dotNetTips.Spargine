@@ -4,7 +4,7 @@
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-09-2023
 // ***********************************************************************
 // <copyright file="ImmutableArrayTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -13,6 +13,7 @@
 // ***********************************************************************
 using System;
 using System.Collections.Immutable;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DotNetTips.Spargine.Tester;
 using DotNetTips.Spargine.Tester.Models.RefTypes;
@@ -22,7 +23,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Extensions.Tests;
-
+[ExcludeFromCodeCoverage]
 [TestClass]
 public class ImmutableArrayTests
 {
@@ -67,4 +68,5 @@ public class ImmutableArrayTests
 		Assert.IsTrue(people == copyPeople);
 		Assert.IsFalse(people == copyPeople.Shuffle());
 	}
+
 }

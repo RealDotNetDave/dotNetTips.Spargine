@@ -88,6 +88,15 @@ namespace DotNetTips.Spargine.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resource {0} was not found..
+        /// </summary>
+        internal static string ResourceWasNotFound {
+            get {
+                return ResourceManager.GetString("ResourceWasNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Retries are limited to 0 - 100..
         /// </summary>
         internal static string RetriesAreLimitedTo0100 {
@@ -102,6 +111,33 @@ namespace DotNetTips.Spargine.Properties {
         internal static string ServiceNotFound {
             get {
                 return ResourceManager.GetString("ServiceNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The operation has been canceled..
+        /// </summary>
+        internal static string TheOperationHasBeenCanceled {
+            get {
+                return ResourceManager.GetString("TheOperationHasBeenCanceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The operation has timed out..
+        /// </summary>
+        internal static string TheOperationHasTimedOut {
+            get {
+                return ResourceManager.GetString("TheOperationHasTimedOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Underlying collection is null..
+        /// </summary>
+        internal static string UnderlyingCollectionIsNull {
+            get {
+                return ResourceManager.GetString("UnderlyingCollectionIsNull", resourceCulture);
             }
         }
         

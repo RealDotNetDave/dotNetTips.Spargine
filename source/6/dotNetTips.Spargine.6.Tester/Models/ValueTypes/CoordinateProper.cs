@@ -4,16 +4,18 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-20-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="CoordinateProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Globalization;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 using DotNetTips.Spargine.Core;
+using DotNetTips.Spargine.Tester.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -32,6 +34,7 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, IComparable, IComparable<CoordinateProper>
 {
+
 	/// <summary>
 	/// Initializes a new instance of the <see cref="CoordinateProper" /> struct.
 	/// </summary>
@@ -101,7 +104,7 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	{
 		if (obj is not CoordinateProper)
 		{
-			ExceptionThrower.ThrowArgumentInvalidException($"{nameof(obj)} is not a {nameof(CoordinateProper)} type.", nameof(obj));
+			ExceptionThrower.ThrowArgumentInvalidException(string.Format(CultureInfo.CurrentCulture, Resources.ObjectIsNotType, nameof(obj), nameof(CoordinateProper)), nameof(obj));
 		}
 
 		return this.CompareTo((CoordinateProper)obj);
@@ -170,4 +173,5 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	[DataMember(Name = "y")]
 	[XmlElement]
 	public int Y { get; set; }
+
 }

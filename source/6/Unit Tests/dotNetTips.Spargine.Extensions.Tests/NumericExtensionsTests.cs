@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class NumericExtensionsTests : TestClass
 {
+
 	private const string OutOfRange = "OUT OF RANGE";
 
 	[TestMethod]
@@ -658,4 +659,5 @@ public class NumericExtensionsTests : TestClass
 		_ = Assert.ThrowsException<ArgumentInvalidException>(() => testValue.ToFormattedString(NumericFormat.RoundTrip));
 
 	}
+
 }

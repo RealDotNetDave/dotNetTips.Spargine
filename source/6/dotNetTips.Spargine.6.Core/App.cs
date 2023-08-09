@@ -33,6 +33,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class App
 {
+
 	/// <summary>
 	/// The temporary ASP files location.
 	/// </summary>
@@ -200,7 +201,7 @@ public static class App
 	/// Determines whether user is administrator.
 	/// </summary>
 	/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static bool IsUserAdministrator()
 	{
@@ -372,4 +373,5 @@ public static class App
 	/// <value>The working set.</value>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static long WorkingSet => Environment.WorkingSet;
+
 }

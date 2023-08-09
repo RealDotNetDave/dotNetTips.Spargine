@@ -58,4 +58,5 @@ public class AssemblyExtensionsTests
 
 		Assert.IsTrue(result.FastCount() > 0);
 	}
+
 }

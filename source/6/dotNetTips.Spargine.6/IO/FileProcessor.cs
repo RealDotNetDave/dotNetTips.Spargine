@@ -30,6 +30,7 @@ namespace DotNetTips.Spargine.IO;
 /// </summary>
 public class FileProcessor
 {
+
 	/// <summary>
 	/// Occurs when processor processes a file or folder.
 	/// </summary>
@@ -246,4 +247,5 @@ public class FileProcessor
 
 		return successCount;
 	}
+
 }

@@ -68,6 +68,17 @@ public class DictionaryExtensionsTests
 	}
 
 	/// <summary>
+	/// Defines the test method DoesNotHaveItemsTest.
+	/// </summary>
+	[TestMethod]
+	public void DoesNotHaveItemsTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+
+		Assert.IsFalse(people.DoesNotHaveItems());
+	}
+
+	/// <summary>
 	/// Defines the test method AddRangeDictionaryTest02.
 	/// </summary>
 	[TestMethod]
@@ -77,17 +88,6 @@ public class DictionaryExtensionsTests
 
 		Assert.IsTrue(people1.FastCount() == 10);
 
-	}
-
-	/// <summary>
-	/// Defines the test method DoesNotHaveItemsTest.
-	/// </summary>
-	[TestMethod]
-	public void DoesNotHaveItemsTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
-
-		Assert.IsFalse(people.DoesNotHaveItems());
 	}
 
 	/// <summary>
@@ -151,6 +151,16 @@ public class DictionaryExtensionsTests
 
 		Assert.IsFalse(nullPeople.HasItems(10));
 	}
+
+	[TestMethod]
+	public void ToConcurrentDictionaryTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
+
+		var result = people.ToConcurrentDictionary();
+
+		Assert.IsTrue(result.HasItems());
+	}
 	/// <summary>
 	/// Defines the test method ToDelimitedDictionaryTest.
 	/// </summary>
@@ -195,16 +205,6 @@ public class DictionaryExtensionsTests
 		Assert.IsTrue(result.HasItems());
 	}
 
-	[TestMethod]
-	public void ToConcurrentDictionaryTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToDictionary(p => p.Id);
-
-		var result = people.ToConcurrentDictionary();
-
-		Assert.IsTrue(result.HasItems());
-	}
-
 	/// <summary>
 	/// Defines the test method UpsertDictionaryTest.
 	/// </summary>
@@ -228,4 +228,5 @@ public class DictionaryExtensionsTests
 		people.Upsert(personFromCollection.Value.Id, personFromCollection.Value);
 		Assert.IsTrue(people.FastCount() == 11);
 	}
+
 }

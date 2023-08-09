@@ -4,7 +4,7 @@
 // Created          : 12-29-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="Coordinate.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Tester.Models.ValueTypes;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public struct Coordinate : ICoordinate
 {
+
 	/// <summary>
 	/// Gets or sets the x coordinate.
 	/// </summary>
@@ -38,4 +39,5 @@ public struct Coordinate : ICoordinate
 	/// </summary>
 	/// <value>The y.</value>
 	public int Y { get; set; }
+
 }

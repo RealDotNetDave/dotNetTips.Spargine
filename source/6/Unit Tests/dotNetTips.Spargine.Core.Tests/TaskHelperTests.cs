@@ -4,7 +4,7 @@
 // Created          : 01-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-09-2023
 // ***********************************************************************
 // <copyright file="TaskHelperTests.cs" company="dotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,11 +20,32 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Core.Tests;
-
+[ExcludeFromCodeCoverage]
 [TestClass]
 public class TaskHelperTests
 {
+
 	private string _fireResult = string.Empty;
+
+	private async Task Fire(string input)
+	{
+		this._fireResult = input;
+
+		Console.WriteLine(input);
+
+		await Task.Delay(1).ConfigureAwait(false);
+	}
+
+	private async Task<string> FireWithReturn(string input)
+	{
+		this._fireResult = input;
+
+		Console.WriteLine(input);
+
+		await Task.Delay(1).ConfigureAwait(false);
+
+		return input;
+	}
 
 	[TestMethod]
 	public void RunSync10()
@@ -61,23 +83,4 @@ public class TaskHelperTests
 		Assert.AreEqual(this._fireResult, nameof(this.RunSync21));
 	}
 
-	private async Task Fire(string input)
-	{
-		this._fireResult = input;
-
-		Console.WriteLine(input);
-
-		await Task.Delay(1).ConfigureAwait(false);
-	}
-
-	private async Task<string> FireWithReturn(string input)
-	{
-		this._fireResult = input;
-
-		Console.WriteLine(input);
-
-		await Task.Delay(1).ConfigureAwait(false);
-
-		return input;
-	}
 }

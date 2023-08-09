@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class ExecutionHelper
 {
+
 	/// <summary>
 	/// Progressive retry for a function call.
 	/// </summary>
@@ -68,4 +69,5 @@ public static class ExecutionHelper
 			}
 		}
 	}
+
 }

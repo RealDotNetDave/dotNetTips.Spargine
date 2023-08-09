@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 08-07-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -32,6 +32,7 @@ namespace DotNetTips.Spargine.IO;
 /// </summary>
 public static class DirectoryHelper
 {
+
 	/// <summary>
 	/// Applications the application data folder for Windows or Mac.
 	/// </summary>
@@ -224,7 +225,7 @@ public static class DirectoryHelper
 	/// Loads the one drive folders.
 	/// </summary>
 	/// <returns>IEnumerable&lt;OneDriveFolder&gt;.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[SupportedOSPlatform("windows")]
 	[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
@@ -313,7 +314,7 @@ public static class DirectoryHelper
 
 		if (destination.ArgumentNotNull().CheckExists(throwException: true))
 		{
-			_ = ExecutionHelper.ProgressiveRetry(() => Directory.Move(source.FullName, destination.FullName), 3, 10);
+			_ = ExecutionHelper.ProgressiveRetry(() => Directory.Move(source.FullName, destination.FullName), retryCount: 3, retryWaitMilliseconds: 10);
 		}
 	}
 
@@ -459,4 +460,5 @@ public static class DirectoryHelper
 			File.SetAttributes(directories[fileCount].FullName, FileAttributes.Normal);
 		}
 	}
+
 }

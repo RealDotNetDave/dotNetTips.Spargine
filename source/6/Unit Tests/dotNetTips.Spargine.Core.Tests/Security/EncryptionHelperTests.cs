@@ -69,4 +69,5 @@ public class EncryptionHelperTests
 
 		Assert.IsTrue(plainText.Equals(testString));
 	}
+
 }

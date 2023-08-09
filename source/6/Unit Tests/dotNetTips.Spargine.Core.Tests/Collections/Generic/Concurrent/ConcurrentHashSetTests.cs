@@ -4,13 +4,14 @@
 // Created          : 12-06-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-09-2023
 // ***********************************************************************
 // <copyright file="ConcurrentHashSetTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) dotNetTips.com - David McCarter. All rights reserved.
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 using DotNetTips.Spargine.Extensions;
@@ -21,7 +22,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
 namespace DotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent;
-
+[ExcludeFromCodeCoverage]
 [TestClass]
 public class ConcurrentHashSetTests
 {
@@ -100,6 +101,16 @@ public class ConcurrentHashSetTests
 	}
 
 	[TestMethod]
+	public void GetEnumeratorTest()
+	{
+		var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
+
+		var result = people.GetEnumerator();
+
+		Assert.IsNotNull(result);
+	}
+
+	[TestMethod]
 	public void TryRemoveTest()
 	{
 		var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
@@ -112,13 +123,4 @@ public class ConcurrentHashSetTests
 		Assert.IsFalse(people.TryRemove(RandomData.GenerateRefPerson<PersonProper>()));
 	}
 
-	[TestMethod]
-	public void GetEnumeratorTest()
-	{
-		var people = new ConcurrentHashSet<PersonProper>(RandomData.GeneratePersonRefCollection<PersonProper>(100));
-
-		var result = people.GetEnumerator();
-
-		Assert.IsNotNull(result);
-	}
 }

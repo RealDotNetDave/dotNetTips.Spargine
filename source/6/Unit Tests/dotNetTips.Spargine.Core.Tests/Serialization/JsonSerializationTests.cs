@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 04-17-2023
 // ***********************************************************************
 // <copyright file="JsonSerializationTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -119,4 +119,5 @@ public class JsonSerializationTests
 
 		_ = Assert.ThrowsException<FileNotFoundException>(() => JsonSerialization.DeserializeFromFile<PersonProper>($"{fileName}.bogus"));
 	}
+
 }

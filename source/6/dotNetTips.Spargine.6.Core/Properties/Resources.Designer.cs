@@ -502,11 +502,38 @@ namespace DotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File not found. Cannot deserialize from JSON..
+        /// </summary>
+        internal static string FileNotFoundCannotDeserializeFromJSON {
+            get {
+                return ResourceManager.GetString("FileNotFoundCannotDeserializeFromJSON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File not found. Cannot deserialize from XML..
+        /// </summary>
+        internal static string FileNotFoundCannotDeserializeFromXML {
+            get {
+                return ResourceManager.GetString("FileNotFoundCannotDeserializeFromXML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Go to dotNetTips.com for help..
         /// </summary>
         internal static string MessageGoToDotNetTipsComForHelp {
             get {
                 return ResourceManager.GetString("MessageGoToDotNetTipsComForHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Network connection issue..
+        /// </summary>
+        internal static string NetworkConnectionIssue {
+            get {
+                return ResourceManager.GetString("NetworkConnectionIssue", resourceCulture);
             }
         }
         
@@ -529,11 +556,47 @@ namespace DotNetTips.Spargine.Core.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} is null..
+        /// </summary>
+        internal static string SerializationInfoIsNull {
+            get {
+                return ResourceManager.GetString("SerializationInfoIsNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array..
+        /// </summary>
+        internal static string TheIndexIsEqualToOrGreaterThanTheLengthOfInput {
+            get {
+                return ResourceManager.GetString("TheIndexIsEqualToOrGreaterThanTheLengthOfInput", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an issue adding an item in the collection.
+        /// </summary>
+        internal static string ThereWasAnIssueAddingAnItemInTheCollection {
+            get {
+                return ResourceManager.GetString("ThereWasAnIssueAddingAnItemInTheCollection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UNKNOWN.
         /// </summary>
         internal static string UserUnknown {
             get {
                 return ResourceManager.GetString("UserUnknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is null..
+        /// </summary>
+        internal static string X0IsNull {
+            get {
+                return ResourceManager.GetString("X0IsNull", resourceCulture);
             }
         }
     }

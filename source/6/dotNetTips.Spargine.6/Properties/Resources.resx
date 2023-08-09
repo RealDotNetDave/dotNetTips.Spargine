@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -134,5 +134,17 @@
   </data>
   <data name="DirectoryDoesNotExistOrCannotBeCreated" xml:space="preserve">
     <value>Directory {0} does not exist or cannot be created.</value>
+  </data>
+  <data name="TheOperationHasBeenCanceled" xml:space="preserve">
+    <value>The operation has been canceled.</value>
+  </data>
+  <data name="TheOperationHasTimedOut" xml:space="preserve">
+    <value>The operation has timed out.</value>
+  </data>
+  <data name="ResourceWasNotFound" xml:space="preserve">
+    <value>Resource {0} was not found.</value>
+  </data>
+  <data name="UnderlyingCollectionIsNull" xml:space="preserve">
+    <value>Underlying collection is null.</value>
   </data>
 </root>

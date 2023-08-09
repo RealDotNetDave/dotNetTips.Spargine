@@ -4,7 +4,7 @@
 // Created          : 01-01-2023
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -15,6 +15,7 @@ using System.Collections;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using DotNetTips.Spargine.Core.Internal;
+using DotNetTips.Spargine.Core.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
@@ -25,6 +26,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 /// <typeparam name="T">Generic type parameter.</typeparam>
 public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T>
 {
+
 	/// <summary>
 	/// The default capacity.
 	/// </summary>
@@ -217,7 +219,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 			// "count" itself or "count + arrayIndex" can overflow
 			if (array.Length - count < arrayIndex || count < 0)
 			{
-				ExceptionThrower.ThrowArgumentInvalidException("The index is equal to or greater than the length of the array, or the number of elements in the set is greater than the available space from index to the end of the destination array.", nameof(array));
+				ExceptionThrower.ThrowArgumentInvalidException(Resources.TheIndexIsEqualToOrGreaterThanTheLengthOfInput, nameof(array));
 			}
 
 			this.CopyToItems(array, arrayIndex);
@@ -244,6 +246,12 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// </summary>
 	/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
 	bool ICollection<T>.IsReadOnly => false;
+
+	/// <summary>
+	/// Returns an enumerator that iterates through a collection.
+	/// </summary>
+	/// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
+	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
 	/// <summary>
 	/// Returns an enumerator that iterates through a collection.
@@ -747,12 +755,6 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	}
 
 	/// <summary>
-	/// Returns an enumerator that iterates through a collection.
-	/// </summary>
-	/// <returns>An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.</returns>
-	IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
-
-	/// <summary>
 	/// Gets the number of items contained in the <see cref="ConcurrentHashSet{T}" />...
 	/// </summary>
 	/// <value>The count.</value>
@@ -821,6 +823,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// </summary>
 	private sealed class Node
 	{
+
 		/// <summary>
 		/// The Hash Code...
 		/// </summary>
@@ -848,6 +851,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 			this._hashCode = hashCode;
 			this._next = next;
 		}
+
 	}
 
 	/// <summary>
@@ -855,6 +859,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// </summary>
 	private sealed class Tables
 	{
+
 		/// <summary>
 		/// The buckets..
 		/// </summary>
@@ -882,5 +887,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 			this._locks = locks;
 			this._countPerLock = countPerLock;
 		}
+
 	}
+
 }

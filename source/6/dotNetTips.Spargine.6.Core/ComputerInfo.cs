@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Core;
 [DataContract(Namespace = "dotNetTips.com/Info")]
 public sealed class ComputerInfo
 {
+
 	/// <summary>
 	/// Gets the computer culture.
 	/// </summary>
@@ -243,4 +244,5 @@ public sealed class ComputerInfo
 	[DataMember]
 	[Information(UnitTestCoverage = 100, Status = Status.Available)]
 	public string UserName { get; private set; } = Environment.UserName;
+
 }

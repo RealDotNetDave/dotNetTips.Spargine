@@ -4,7 +4,7 @@
 // Created          : 02-21-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="JsonSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -19,6 +19,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using DotNetTips.Spargine.Core.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -29,6 +30,7 @@ namespace DotNetTips.Spargine.Core.Serialization;
 /// </summary>
 public static class JsonSerialization
 {
+
 	/// <summary>
 	/// Jsons the equal.
 	/// </summary>
@@ -143,7 +145,7 @@ public static class JsonSerialization
 	{
 		if (File.Exists(fileName) is false)
 		{
-			ExceptionThrower.ThrowFileNotFoundException("File not found. Cannot deserialize from JSON.", fileName);
+			ExceptionThrower.ThrowFileNotFoundException(Resources.FileNotFoundCannotDeserializeFromJSON, fileName);
 		}
 
 		return Deserialize<TResult>(File.ReadAllText(fileName));
@@ -206,4 +208,5 @@ public static class JsonSerialization
 
 		File.WriteAllText(fileName, Serialize(obj));
 	}
+
 }

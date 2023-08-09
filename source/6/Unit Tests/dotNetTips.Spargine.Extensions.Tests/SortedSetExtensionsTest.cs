@@ -85,4 +85,5 @@ public class SortedSetExtensionsTest
 
 		Assert.IsNotNull(result);
 	}
+
 }

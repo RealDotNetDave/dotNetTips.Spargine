@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 08-01-2023
 // ***********************************************************************
 // <copyright file="WebHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Core.Tests.Web;
 [TestClass]
 public class WebHelperTests
 {
+
 	[TestMethod]
 	public void DownloadStringAsyncTest()
 	{
@@ -39,4 +40,5 @@ public class WebHelperTests
 
 		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 	}
+
 }

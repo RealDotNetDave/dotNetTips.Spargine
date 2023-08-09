@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 06-29-2023
+// Last Modified On : 07-20-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -35,6 +35,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 {
+
 	/// <summary>
 	/// The born on
 	/// </summary>
@@ -195,7 +196,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the born on date.
 	/// </summary>
 	/// <value>The born on date.</value>
-	/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">BornOn</exception>
 	[DataMember(Name = "bornOn")]
 	[XmlElement]
 	public DateTimeOffset BornOn
@@ -220,7 +221,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the cell phone number.
 	/// </summary>
 	/// <value>The cell phone number.</value>
-	/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">CellPhone</exception>
 	/// <exception cref="ArgumentNullException">CellPhone</exception>
 	[DataMember(Name = "cellPhone")]
 	[XmlElement]
@@ -273,7 +274,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the email address.
 	/// </summary>
 	/// <value>The email address.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
 	/// <exception cref="ArgumentNullException">Email</exception>
 	[DisallowNull]
 	[DataMember(Name = "email")]
@@ -300,7 +301,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
-	/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">FirstName</exception>
 	/// <exception cref="ArgumentNullException">FirstName</exception>
 	[DataMember(Name = "firstName")]
 	[XmlElement]
@@ -326,7 +327,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the home phone number.
 	/// </summary>
 	/// <value>The home phone.</value>
-	/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">HomePhone</exception>
 	/// <exception cref="ArgumentNullException">HomePhone</exception>
 	[DataMember(Name = "homePhone")]
 	[XmlElement]
@@ -371,7 +372,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
-	/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">LastName</exception>
 	/// <exception cref="ArgumentNullException">LastName</exception>
 	[DataMember(Name = "lastName")]
 	[XmlElement]
@@ -392,4 +393,5 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 				: value;
 		}
 	}
+
 }

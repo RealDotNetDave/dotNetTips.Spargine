@@ -4,14 +4,16 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 08-04-2023
 // ***********************************************************************
 // <copyright file="DirectoryNotFoundException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
 // </copyright>
 // <summary>Custom Exception to be used when a directory cannot be found.</summary>
 // ***********************************************************************
+using System.Globalization;
 using System.Runtime.Serialization;
+using DotNetTips.Spargine.Core.Properties;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -24,6 +26,15 @@ namespace DotNetTips.Spargine.Core;
 [Serializable]
 public class DirectoryNotFoundException : LoggableException, ISerializable
 {
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="DirectoryNotFoundException" /> class.
+	/// </summary>
+	/// <param name="serializationInfo">The serialization information.</param>
+	/// <param name="streamingContext">The streaming context.</param>
+	protected DirectoryNotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
+	{
+	}
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DirectoryNotFoundException"></see> class.
 	/// </summary>
@@ -43,7 +54,7 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	/// Initializes a new instance of the <see cref="DirectoryNotFoundException" /> class.
 	/// </summary>
 	/// <param name="directory">The directory.</param>
-	/// <exception cref="ArgumentNullException">directory</exception>
+	/// <exception cref="System.ArgumentNullException">directory</exception>
 	public DirectoryNotFoundException(DirectoryInfo directory)
 	{
 		this.Directory = directory ?? throw new ArgumentNullException(nameof(directory));
@@ -84,21 +95,6 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	}
 
 	/// <summary>
-	/// Initializes a new instance of the <see cref="DirectoryNotFoundException" /> class.
-	/// </summary>
-	/// <param name="serializationInfo">The serialization information.</param>
-	/// <param name="streamingContext">The streaming context.</param>
-	protected DirectoryNotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
-	{
-	}
-
-	/// <summary>
-	/// Gets the directory.
-	/// </summary>
-	/// <value>The directory.</value>
-	public DirectoryInfo Directory { get; }
-
-	/// <summary>
 	/// When overridden in a derived class, sets the <see cref="SerializationInfo"></see> with information about the exception.
 	/// </summary>
 	/// <param name="info">The <see cref="SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
@@ -108,9 +104,16 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	{
 		if (info == null)
 		{
-			ExceptionThrower.ThrowArgumentNullException($"{nameof(info)} is null.", nameof(info));
+			ExceptionThrower.ThrowArgumentNullException(string.Format(CultureInfo.CurrentCulture, Resources.SerializationInfoIsNull, nameof(info)), nameof(info));
 		}
 
 		this.GetObjectData(info, context);
 	}
+
+	/// <summary>
+	/// Gets the directory.
+	/// </summary>
+	/// <value>The directory.</value>
+	public DirectoryInfo Directory { get; }
+
 }

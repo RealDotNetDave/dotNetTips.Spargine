@@ -88,18 +88,6 @@ public class CollectionTests
 	}
 
 	[TestMethod]
-	public void CreateWithLargeCollectionTest()
-	{
-		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10000);
-
-		var collection = Collection<PersonProper>.Create(people);
-
-		Assert.IsNotNull(collection);
-
-		Assert.IsTrue(collection.FastCount() == 10000);
-	}
-
-	[TestMethod]
 	public void CreateWithCollectionUniqueTest()
 	{
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10);
@@ -109,6 +97,26 @@ public class CollectionTests
 		Assert.IsNotNull(collection);
 
 		Assert.IsTrue(collection.FastCount() == 10);
+	}
+
+	[TestMethod]
+	public void CreateWithCountTest()
+	{
+		var collection = Collection<PersonProper>.Create(10);
+
+		Assert.IsNotNull(collection);
+	}
+
+	[TestMethod]
+	public void CreateWithLargeCollectionTest()
+	{
+		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10000);
+
+		var collection = Collection<PersonProper>.Create(people);
+
+		Assert.IsNotNull(collection);
+
+		Assert.IsTrue(collection.FastCount() == 10000);
 	}
 
 	[TestMethod]
@@ -123,11 +131,4 @@ public class CollectionTests
 		Assert.IsTrue(collection.FastCount() == 10000);
 	}
 
-	[TestMethod]
-	public void CreateWithCountTest()
-	{
-		var collection = Collection<PersonProper>.Create(10);
-
-		Assert.IsNotNull(collection);
-	}
 }

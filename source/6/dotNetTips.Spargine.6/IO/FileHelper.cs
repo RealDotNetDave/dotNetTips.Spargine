@@ -4,14 +4,12 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>
-// Common methods for working with files.
-// </summary>
+// <summary>Common methods for working with files.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
@@ -32,6 +30,7 @@ namespace DotNetTips.Spargine.IO;
 [Information(nameof(FileHelper), "David McCarter", "2/11/2017", Status = Status.Available)]
 public static class FileHelper
 {
+
 	/// <summary>
 	/// The no result
 	/// </summary>
@@ -497,4 +496,5 @@ public static class FileHelper
 	/// <value>The invalid file name chars.</value>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
 	public static IEnumerable<char> InvalidFileNameChars { get; } = Path.GetInvalidFileNameChars().Where(c => c != Path.DirectorySeparatorChar && c != Path.AltDirectorySeparatorChar).ToArray();
+
 }

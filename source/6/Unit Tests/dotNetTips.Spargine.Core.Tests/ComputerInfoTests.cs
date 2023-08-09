@@ -4,7 +4,7 @@
 // Created          : 11-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 05-03-2023
+// Last Modified On : 06-29-2023
 // ***********************************************************************
 // <copyright file="ComputerInfoTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -30,4 +30,5 @@ public class ComputerInfoTests
 
 		Assert.IsNotNull(ci);
 	}
+
 }

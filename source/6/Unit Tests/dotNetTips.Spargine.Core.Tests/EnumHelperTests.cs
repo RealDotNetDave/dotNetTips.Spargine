@@ -4,7 +4,7 @@
 // Created          : 11-10-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-29-2023
+// Last Modified On : 06-29-2023
 // ***********************************************************************
 // <copyright file="EnumHelperTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -41,4 +41,5 @@ public class EnumHelperTests
 		result = EnumHelper.GetValues<HttpCacheAgeControl>(true, true);
 		Assert.IsTrue(result.FastCount() > 0);
 	}
+
 }

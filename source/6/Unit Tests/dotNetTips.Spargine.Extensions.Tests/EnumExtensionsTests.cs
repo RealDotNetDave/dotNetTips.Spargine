@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class EnumExtensionsTests
 {
+
 	[TestMethod]
 	public void GetDescriptionTest()
 	{
@@ -54,4 +55,5 @@ public class EnumExtensionsTests
 		Assert.IsTrue(string.Compare(result.ToString(), EnumName, StringComparison.Ordinal) == 0);
 
 	}
+
 }

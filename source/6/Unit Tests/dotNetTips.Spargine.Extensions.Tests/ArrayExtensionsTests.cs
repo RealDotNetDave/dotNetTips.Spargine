@@ -30,6 +30,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class ArrayExtensionsTests
 {
+
 	/// <summary>
 	/// Defines the test method AddFirstTest.
 	/// </summary>
@@ -328,4 +329,5 @@ public class ArrayExtensionsTests
 
 		Assert.IsTrue(result.FastCount() == 10);
 	}
+
 }

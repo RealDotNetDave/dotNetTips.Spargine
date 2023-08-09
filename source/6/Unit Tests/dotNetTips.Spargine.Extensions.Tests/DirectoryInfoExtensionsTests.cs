@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 [TestClass]
 public class DirectoryInfoExtensionsTests
 {
+
 	[TestMethod]
 	public void DirectoryInfoSizeTest01()
 	{
@@ -60,4 +61,5 @@ public class DirectoryInfoExtensionsTests
 		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => directory.GetSize("*.txt", (SearchOption)100) ==
 			0);
 	}
+
 }

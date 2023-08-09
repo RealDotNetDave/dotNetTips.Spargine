@@ -4,7 +4,7 @@
 // Created          : 07-26-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 08-02-2023
 // ***********************************************************************
 // <copyright file="ChannelQueueTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,6 +32,25 @@ namespace DotNetTips.Spargine.Core.Tests.Collections.Generic.Concurrent;
 [TestClass]
 public class ChannelQueueTests
 {
+
+	private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
+	{
+		foreach (var person in people)
+		{
+			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
+		}
+
+		_ = channel.Lock();
+	}
+
+	private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
+	{
+		await foreach (var item in channel.ListenAsync(token))
+		{
+			Debug.WriteLine(item.Email);
+		}
+	}
+
 	[TestMethod]
 	public async Task WriteAsyncTest01()
 	{
@@ -196,21 +215,4 @@ public class ChannelQueueTests
 		Assert.IsTrue(channel.Count == 0);
 	}
 
-	private static async Task AddToQueueAsync(ChannelQueue<PersonProper> channel, List<PersonProper> people, CancellationToken token)
-	{
-		foreach (var person in people)
-		{
-			await channel.WriteAsync(person, cancellationToken: token).ConfigureAwait(false);
-		}
-
-		_ = channel.Lock();
-	}
-
-	private static async Task ListenToQueue(ChannelQueue<PersonProper> channel, CancellationToken token)
-	{
-		await foreach (var item in channel.ListenAsync(token))
-		{
-			Debug.WriteLine(item.Email);
-		}
-	}
 }

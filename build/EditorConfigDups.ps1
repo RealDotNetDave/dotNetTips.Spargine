@@ -1,0 +1,1 @@
+﻿Get-Content D:\src\GitHub\dotNetTips.Spargine\source\6\.editorconfig | Group-Object | Where-Object { $_.Count -gt 1 } | Select -ExpandProperty Name

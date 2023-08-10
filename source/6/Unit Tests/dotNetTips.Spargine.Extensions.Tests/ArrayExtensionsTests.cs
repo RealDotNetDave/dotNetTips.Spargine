@@ -85,7 +85,7 @@ public class ArrayExtensionsTests
 		var people = RandomData.GeneratePersonRefCollection<PersonProper>(10).ToArray();
 		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-		var result = people.Add<PersonProper>(person);
+		var result = people.Add(person);
 
 		Assert.IsTrue(result.FastCount() == 11);
 	}
@@ -254,7 +254,7 @@ public class ArrayExtensionsTests
 	[TestMethod]
 	public void PerformActionTest_Val()
 	{
-		var people = RandomData.GeneratePersonValCollection<DotNetTips.Spargine.Tester.Models.ValueTypes.Person>(10).ToArray();
+		var people = RandomData.GeneratePersonValCollection<Tester.Models.ValueTypes.Person>(10).ToArray();
 		var sb = new StringBuilder();
 
 		people.PerformAction((person) => _ = sb.Append($"{person.ToString()}|"));

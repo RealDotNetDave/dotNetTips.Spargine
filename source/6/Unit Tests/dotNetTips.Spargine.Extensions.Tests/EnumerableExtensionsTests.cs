@@ -70,9 +70,9 @@ public class EnumerableExtensionsTests
 
 		var person = RandomData.GenerateRefPerson<PersonProper>();
 
-		Assert.IsTrue(people.Add<PersonProper>(null).Count() == Count);
+		Assert.IsTrue(people.Add(null).Count() == Count);
 
-		Assert.IsTrue(people.Add<PersonProper>(person).Count() == Count + 1);
+		Assert.IsTrue(people.Add(person).Count() == Count + 1);
 	}
 
 	[TestMethod]

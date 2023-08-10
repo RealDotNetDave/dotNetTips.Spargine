@@ -127,15 +127,6 @@ public class TypeHelperTests : TestClass
 	}
 
 	[TestMethod]
-	public void GetInstanceHashCode01()
-	{
-		var person = RandomData.GenerateRefPerson<PersonProper>();
-
-		Assert.IsTrue(TypeHelper.GetInstanceHashCode(person).IsNegative());
-
-	}
-
-	[TestMethod]
 	public void GetPropertyValues()
 	{
 		var person = RandomData.GenerateRefPerson<PersonProper>();

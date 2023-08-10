@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-09-2022
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="DataReaderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class DataReaderExtensions
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -34,7 +35,7 @@ public static class DataReaderExtensions
 	new DefaultObjectPoolProvider().CreateStringBuilderPool();
 
 	/// <summary>
-	/// Converts <see cref="IDataReader" /> to CSV format using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Converts <see cref="IDataReader" /> to CSV format using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// Validates that <paramref name="dataReader" /> is not null
 	/// </summary>
 	/// <param name="dataReader">The data reader.</param>
@@ -125,4 +126,5 @@ public static class DataReaderExtensions
 
 		return convertedRows;
 	}
+
 }

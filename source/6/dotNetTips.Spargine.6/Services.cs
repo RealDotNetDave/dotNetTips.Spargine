@@ -107,7 +107,7 @@ public static class Services
 	/// </summary>
 	/// <param name="serviceName">Name of the service.</param>
 	/// <returns>ServiceControllerStatus.</returns>
-	/// <exception cref="System.InvalidOperationException"></exception>
+	/// <exception cref="InvalidOperationException"></exception>
 	[SupportedOSPlatform("windows")]
 	[Information(nameof(ServiceStatus), author: "David McCarter", createdOn: "1/1/2016", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static ServiceControllerStatus ServiceStatus(string serviceName)

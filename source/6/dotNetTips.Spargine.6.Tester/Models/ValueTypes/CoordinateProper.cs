@@ -4,7 +4,7 @@
 // Created          : 06-04-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2023
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="CoordinateProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -100,7 +100,7 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	/// <param name="obj">The object.</param>
 	/// <returns>System.Int32.</returns>
 	/// <exception cref="ArgumentInvalidException">obj</exception>
-	public int CompareTo(object obj)
+	public readonly int CompareTo(object obj)
 	{
 		if (obj is not CoordinateProper)
 		{
@@ -115,7 +115,7 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	/// </summary>
 	/// <param name="other">The other.</param>
 	/// <returns>System.Int32.</returns>
-	public int CompareTo(CoordinateProper other)
+	public readonly int CompareTo(CoordinateProper other)
 	{
 		var result = this.X.CompareTo(other.X);
 		if (result != 0)
@@ -137,26 +137,26 @@ public struct CoordinateProper : ICoordinate, IEquatable<CoordinateProper>, ICom
 	/// </summary>
 	/// <param name="obj">The object to compare with the this instance.</param>
 	/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-	public override bool Equals(object obj) => obj is CoordinateProper proper && this.Equals(proper);
+	public override readonly bool Equals(object obj) => obj is CoordinateProper proper && this.Equals(proper);
 
 	/// <summary>
 	/// Indicates whether the current object is equal to another object of the same type.
 	/// </summary>
 	/// <param name="other">An object to compare with this instance.</param>
 	/// <returns>True if the current object is equal to the <paramref name="other">other</paramref> parameter; otherwise, false.</returns>
-	public bool Equals(CoordinateProper other) => this.X == other.X && this.Y == other.Y;
+	public readonly bool Equals(CoordinateProper other) => this.X == other.X && this.Y == other.Y;
 
 	/// <summary>
 	/// Returns a hash code for this instance.
 	/// </summary>
 	/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-	public override int GetHashCode() => HashCode.Combine(this.X, this.Y);
+	public override readonly int GetHashCode() => HashCode.Combine(this.X, this.Y);
 
 	/// <summary>
 	/// Returns a <see cref="string" /> of the coordinates.
 	/// </summary>
 	/// <returns>A <see cref="string" /> of the coordinates.</returns>
-	public override string ToString() => $"{this.X}-{this.Y}";
+	public override readonly string ToString() => $"{this.X}-{this.Y}";
 
 	/// <summary>
 	/// Gets or sets the x coordinate.

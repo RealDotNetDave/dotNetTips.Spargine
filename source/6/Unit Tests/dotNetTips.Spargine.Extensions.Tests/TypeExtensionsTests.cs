@@ -40,25 +40,6 @@ namespace DotNetTips.Spargine.Extensions.Tests;
 public class TypeExtensionsTests
 {
 
-	[TestMethod]
-	public void GetImplementedInterfacesTest()
-	{
-		var table = new DataTable();
-
-		var result = table.GetImplementedInterfaces("IComponent");
-
-		Assert.IsTrue(result.FastCount() == 1);
-
-		result = table.GetImplementedInterfaces("IFakeInterface");
-
-		Assert.IsTrue(result.FastCount() == 0);
-
-		result = table.GetImplementedInterfaces("IComponent", "IDisposable");
-
-		Assert.IsTrue(result.FastCount() == 2);
-
-	}
-
 	/// <summary>
 	/// Defines the test method GetAbstractMethodsTest.
 	/// </summary>
@@ -126,13 +107,9 @@ public class TypeExtensionsTests
 	[TestMethod]
 	public void GetAttributeFieldTest()
 	{
-		var result1 = typeof(TestType).GetAllFields().FirstOrDefault().GetAttribute<DebuggerBrowsableAttribute>();
+		Assert.IsNotNull(typeof(TestType).GetAllFields().FirstOrDefault().GetAttribute<DebuggerBrowsableAttribute>());
 
-		Assert.IsNotNull(result1);
-
-		var result2 = typeof(TestType).GetAllFields().FirstOrDefault().GetAttribute<XmlIgnoreAttribute>();
-
-		Assert.IsNull(result2);
+		Assert.IsNull(typeof(TestType).GetAllFields().FirstOrDefault().GetAttribute<XmlIgnoreAttribute>());
 	}
 
 	/// <summary>
@@ -193,6 +170,25 @@ public class TypeExtensionsTests
 		var result = typeof(TestType).GetAllGenericMethods();
 
 		Assert.IsTrue(result.FastCount() == 1);
+	}
+
+	[TestMethod]
+	public void GetImplementedInterfacesTest()
+	{
+		var table = new DataTable();
+
+		var result = table.GetImplementedInterfaces("IComponent");
+
+		Assert.IsTrue(result.FastCount() == 1);
+
+		result = table.GetImplementedInterfaces("IFakeInterface");
+
+		Assert.IsTrue(result.FastCount() == 0);
+
+		result = table.GetImplementedInterfaces("IComponent", "IDisposable");
+
+		Assert.IsTrue(result.FastCount() == 2);
+
 	}
 
 	[TestMethod]
@@ -358,4 +354,5 @@ public class TypeExtensionsTests
 		var result2 = typeof(PersonProper).GetProperty("FirstName").IsStatic();
 		Assert.IsFalse(result2);
 	}
+
 }

@@ -55,3 +55,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Design", "CA1019:Define accessors for attribute arguments", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.InformationAttribute.#ctor(System.String,System.String,System.String)")]
 [assembly: SuppressMessage("Design", "CA1019:Define accessors for attribute arguments", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.InformationAttribute.#ctor(System.String,System.String,System.String,System.String)")]
 [assembly: SuppressMessage("Performance", "CA1848:Use the LoggerMessage delegates", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.Network.HttpEventListener.LogMessage(System.String)")]
+[assembly: SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~F:DotNetTips.Spargine.Core.App._appInfo")]
+[assembly: SuppressMessage("Naming", "CA1707:Identifiers should not contain underscores", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Core.EnvironmentKey")]

@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class ArrayExtensions
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -54,6 +55,36 @@ public static class ArrayExtensions
 		array = array.ArgumentNotNull();
 
 		return array.AddLast(item);
+	}
+
+	/// <summary>
+	/// Adds items to a list if they do not exist.
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="source">The source.</param>
+	/// <param name="items">The items.</param>
+	/// <returns>IEnumerable&lt;T&gt;.</returns>
+	[Information(nameof(AddDistinct), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
+	public static IEnumerable<T> AddDistinct<T>(this IEnumerable<T> source, params T[] items)
+	{
+		source ??= Enumerable.Empty<T>();
+
+		if (items is null || !items.Any())
+		{
+			return source;
+		}
+
+		var result = source.ToList();
+
+		foreach (var item in items)
+		{
+			if (!result.Contains(item))
+			{
+				result.Add(item);
+			}
+		}
+
+		return result;
 	}
 
 	/// <summary>
@@ -136,36 +167,6 @@ public static class ArrayExtensions
 		}
 
 		return returnCollection.ToArray();
-	}
-
-	/// <summary>
-	/// Adds items to a list if they do not exist.
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <param name="source">The source.</param>
-	/// <param name="items">The items.</param>
-	/// <returns>IEnumerable&lt;T&gt;.</returns>
-	[Information(nameof(AddDistinct), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static IEnumerable<T> AddDistinct<T>(this IEnumerable<T> source, params T[] items)
-	{
-		source ??= Enumerable.Empty<T>();
-
-		if (items is null || !items.Any())
-		{
-			return source;
-		}
-
-		var result = source.ToList();
-
-		foreach (var item in items)
-		{
-			if (!result.Contains(item))
-			{
-				result.Add(item);
-			}
-		}
-
-		return result;
 	}
 
 	/// <summary>
@@ -319,7 +320,7 @@ public static class ArrayExtensions
 
 		var itemsList = items.ToReadOnlyCollection();
 
-		return itemsList.HasItems() && array.ToReadOnlyCollection().Any(p => itemsList.Contains(p));
+		return itemsList.HasItems() && array.ToReadOnlyCollection().Any(itemsList.Contains);
 	}
 
 	/// <summary>
@@ -595,4 +596,5 @@ public static class ArrayExtensions
 
 		return array.ToArray();
 	}
+
 }

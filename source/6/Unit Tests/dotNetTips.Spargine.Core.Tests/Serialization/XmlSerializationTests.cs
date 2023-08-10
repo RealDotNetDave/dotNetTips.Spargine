@@ -12,6 +12,7 @@
 // <summary></summary>
 // ***********************************************************************
 using System;
+using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using DotNetTips.Spargine.Core;
@@ -68,7 +69,7 @@ public class XmlSerializationTests
 		Assert.IsTrue(string.IsNullOrEmpty(xml) is false);
 
 		//Deserialize
-		var serializedPerson = XmlSerialization.Deserialize<PersonProper>(xml);
+		var serializedPerson = XmlSerialization.Deserialize<Collection<PersonProper>>(xml);
 
 		Assert.IsNotNull(serializedPerson);
 

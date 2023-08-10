@@ -785,7 +785,7 @@ public class RandomDataTests
 
 		Assert.IsNotNull(result);
 
-		person = JsonSerializer.Deserialize<PersonProper>(result, PersonProperJsonSerializerContext.Default.PersonProper);
+		person = JsonSerializer.Deserialize(result, PersonProperJsonSerializerContext.Default.PersonProper);
 
 		Assert.IsNotNull(person);
 	}

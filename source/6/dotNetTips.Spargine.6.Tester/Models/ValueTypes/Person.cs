@@ -4,7 +4,7 @@
 // Created          : 10-25-2021
 //
 // Last Modified By : david
-// Last Modified On : 04-16-2023
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="Person.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -155,14 +155,14 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Calculates the person's current age.
 	/// </summary>
 	/// <returns>TimeSpan.</returns>
-	private TimeSpan CalculateAge() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
+	private readonly TimeSpan CalculateAge() => DateTimeOffset.UtcNow.Subtract(this.BornOn);
 
 	/// <summary>
 	/// Compares to.
 	/// </summary>
 	/// <param name="other">The other.</param>
 	/// <returns>System.Int32.</returns>
-	public int CompareTo([NotNull] Person other)
+	public readonly int CompareTo([NotNull] Person other)
 	{
 		var result = this._bornOn.CompareTo(other._bornOn);
 
@@ -215,7 +215,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// </summary>
 	/// <param name="obj">The object to compare with the current instance.</param>
 	/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-	public override bool Equals([NotNull] object obj)
+	public override readonly bool Equals([NotNull] object obj)
 	{
 		return base.Equals(obj);
 	}
@@ -225,7 +225,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// </summary>
 	/// <param name="other">An object to compare with this object.</param>
 	/// <returns><see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-	public bool Equals([NotNull] Person other)
+	public readonly bool Equals([NotNull] Person other)
 	{
 		return base.Equals(other);
 	}
@@ -234,7 +234,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Returns a hash code for this instance.
 	/// </summary>
 	/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-	public override int GetHashCode()
+	public override readonly int GetHashCode()
 	{
 		return base.GetHashCode();
 	}
@@ -243,18 +243,18 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Returns a <see cref="string" /> that represents this instance.
 	/// </summary>
 	/// <returns>A <see cref="string" /> that represents this instance.</returns>
-	public override string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
+	public override readonly string ToString() => this.Id.ToString(CultureInfo.CurrentCulture);
 
 	/// <summary>
 	/// Gets or sets first address.
 	/// </summary>
 	/// <value>The address1.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Address1</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Address1</exception>
 	[DataMember(Name = "address1")]
 	[XmlElement]
 	public string Address1
 	{
-		get => this._address1;
+		readonly get => this._address1;
 
 		set
 		{
@@ -275,12 +275,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets second address.
 	/// </summary>
 	/// <value>The address2.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Address2</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Address2</exception>
 	[DataMember(Name = "address2")]
 	[XmlElement]
 	public string Address2
 	{
-		get => this._address2;
+		readonly get => this._address2;
 
 		set
 		{
@@ -304,18 +304,18 @@ public struct Person : IDataModel<Person, string>, IPerson
 	[IgnoreDataMember]
 	[JsonIgnore]
 	[XmlIgnore]
-	public TimeSpan Age => this.CalculateAge();
+	public readonly TimeSpan Age => this.CalculateAge();
 
 	/// <summary>
 	/// Gets or sets the born on date and time.
 	/// </summary>
 	/// <value>The born on.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">BornOn</exception>
+	/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
 	[DataMember(Name = "bornOn")]
 	[XmlElement]
 	public DateTimeOffset BornOn
 	{
-		get => this._bornOn;
+		readonly get => this._bornOn;
 
 		set
 		{
@@ -336,12 +336,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the cell phone number.
 	/// </summary>
 	/// <value>The cell phone.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">CellPhone</exception>
+	/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
 	[DataMember(Name = "cellPhone")]
 	[XmlElement]
 	public string CellPhone
 	{
-		get => this._cellPhone;
+		readonly get => this._cellPhone;
 
 		set
 		{
@@ -362,12 +362,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the city name.
 	/// </summary>
 	/// <value>The city.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">City</exception>
+	/// <exception cref="ArgumentOutOfRangeException">City</exception>
 	[DataMember(Name = "city")]
 	[XmlElement]
 	public string City
 	{
-		get => this._city;
+		readonly get => this._city;
 
 		set
 		{
@@ -388,12 +388,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the country.
 	/// </summary>
 	/// <value>The country.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Country</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Country</exception>
 	[DataMember(Name = "country")]
 	[XmlElement]
 	public string Country
 	{
-		get => this._country;
+		readonly get => this._country;
 
 		set
 		{
@@ -414,13 +414,13 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets the email.
 	/// </summary>
 	/// <value>The email.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
 	[DataMember(Name = "email", IsRequired = true)]
 	[XmlElement(IsNullable = false)]
 	[DisallowNull]
 	public string Email
 	{
-		get => this._email;
+		readonly get => this._email;
 
 		set
 		{
@@ -441,12 +441,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">FirstName</exception>
+	/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
 	[DataMember(Name = "firstName")]
 	[XmlElement]
 	public string FirstName
 	{
-		get => this._firstName;
+		readonly get => this._firstName;
 		set
 		{
 			if (string.Equals(this._firstName, value, StringComparison.Ordinal))
@@ -466,12 +466,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the home phone.
 	/// </summary>
 	/// <value>The home phone.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">HomePhone</exception>
+	/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
 	[DataMember(Name = "homePhone")]
 	[XmlElement]
 	public string HomePhone
 	{
-		get => this._homePhone;
+		readonly get => this._homePhone;
 		set
 		{
 			if (string.Equals(this._homePhone, value, StringComparison.Ordinal))
@@ -491,13 +491,13 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets the identifier.
 	/// </summary>
 	/// <value>The identifier.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">Id</exception>
+	/// <exception cref="ArgumentOutOfRangeException">Id</exception>
 	[DataMember(Name = "id", IsRequired = true)]
 	[XmlElement(IsNullable = false)]
 	[DisallowNull]
 	public string Id
 	{
-		get => this._id;
+		readonly get => this._id;
 		set
 		{
 			if (string.Equals(this._id, value, StringComparison.Ordinal))
@@ -515,12 +515,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">LastName</exception>
+	/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
 	[DataMember(Name = "lastName")]
 	[XmlElement]
 	public string LastName
 	{
-		get => this._lastName;
+		readonly get => this._lastName;
 		set
 		{
 			if (string.Equals(this._lastName, value, StringComparison.Ordinal))
@@ -540,12 +540,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">PostalCode</exception>
+	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode
 	{
-		get => this._postalCode;
+		readonly get => this._postalCode;
 		set
 		{
 			if (string.Equals(this._postalCode, value, StringComparison.Ordinal))
@@ -565,12 +565,12 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// Gets or sets the State.
 	/// </summary>
 	/// <value>The State.</value>
-	/// <exception cref="System.ArgumentOutOfRangeException">State</exception>
+	/// <exception cref="ArgumentOutOfRangeException">State</exception>
 	[DataMember(Name = "state")]
 	[XmlElement]
 	public string State
 	{
-		get => this._state;
+		readonly get => this._state;
 		set
 		{
 			if (string.Equals(this._state, value, StringComparison.Ordinal))

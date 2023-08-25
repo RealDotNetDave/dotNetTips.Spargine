@@ -138,7 +138,7 @@ public class RandomDataTests
 		var result = JsonSerializer.Deserialize(json, PersonProperJsonSerializerContext.Default.ListPersonProper);
 
 		Assert.IsNotNull(result);
-		Assert.IsTrue(result.Count == Count);
+		Assert.IsTrue(result.Count() == Count);
 	}
 
 	[TestMethod]

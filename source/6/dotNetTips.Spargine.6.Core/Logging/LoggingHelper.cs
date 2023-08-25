@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Core.Logging;
 /// </summary>
 public static class LoggingHelper
 {
+
 	/// <summary>
 	/// The application domain exception logger
 	/// </summary>
@@ -190,4 +191,5 @@ public static class LoggingHelper
 
 		return collection.ToArray();
 	}
+
 }

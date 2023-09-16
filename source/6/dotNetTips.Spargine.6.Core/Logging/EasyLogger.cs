@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Core.Logging;
 /// </summary>
 public static partial class EasyLogger
 {
+
 	/// <summary>
 	/// Logs critical storedProcedure.
 	/// <param name="logger">The logger.</param>
@@ -83,4 +84,5 @@ public static partial class EasyLogger
 	/// <param name="message">The storedProcedure.</param>
 	[LoggerMessage(EventId = 600, Level = LogLevel.Warning, EventName = "WARNING", Message = "{message}")]
 	public static partial void LogWarning(ILogger logger, string message);
+
 }

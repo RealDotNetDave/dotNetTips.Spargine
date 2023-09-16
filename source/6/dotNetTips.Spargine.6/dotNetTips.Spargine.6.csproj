@@ -27,33 +27,33 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<IncludeSymbols>False</IncludeSymbols>
+		<IncludeSymbols>true</IncludeSymbols>
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
 		<PackageProjectUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<PackageReleaseNotes>--APR 2022: Initial release.
---AUG 2022: Code cleanup.
---NOV 2022: Minor changes. Code cleanup.
---FEB 2023: Code cleanup.
---MAY 2023: Code cleanup.
---AUG 2023: Code cleanup.		</PackageReleaseNotes>
+		<PackageReleaseNotes>
+			--APR 2022: Initial release.
+			--AUG 2022: Code cleanup.
+			--NOV 2022: Minor changes. Code cleanup.
+			--FEB 2023: Code cleanup.
+			--MAY 2023: Code cleanup.
+			--AUG 2023: Code cleanup.
+		</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<!--<PublishSingleFile>true</PublishSingleFile>-->
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</RepositoryUrl>
 		<RootNamespace>DotNetTips.Spargine</RootNamespace>
 		<RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
-		<!--<SelfContained>true</SelfContained>-->
-		<!--<SignAssembly>True</SignAssembly>-->
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Version>2023.6.8.2</Version>
 		<Title>DotNetTips.Spargine.6</Title>
+		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

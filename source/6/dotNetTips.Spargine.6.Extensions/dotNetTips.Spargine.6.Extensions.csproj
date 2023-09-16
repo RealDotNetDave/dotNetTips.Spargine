@@ -27,7 +27,7 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<IncludeSymbols>False</IncludeSymbols>
+		<IncludeSymbols>true</IncludeSymbols>
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
@@ -54,6 +54,7 @@
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Version>2023.6.8.2</Version>
 		<Title>DotNetTips.Spargine.6.Extensions</Title>
+		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -71,6 +72,10 @@
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<WarningsAsErrors />
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="dotNetTips-Spargine-Logo.ico" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="IDisposableAnalyzers" Version="4.0.6">

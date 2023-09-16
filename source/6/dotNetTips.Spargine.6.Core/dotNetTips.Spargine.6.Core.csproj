@@ -29,7 +29,7 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<IncludeSymbols>False</IncludeSymbols>
+		<IncludeSymbols>true</IncludeSymbols>
 		<LangVersion>latest</LangVersion>
 		<NeutralLanguage>en-US</NeutralLanguage>
 		<PackageIcon>dotNetTips-Spargine-6-Logo.png</PackageIcon>
@@ -44,14 +44,11 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<!--<PublishSingleFile>true</PublishSingleFile>-->
 		<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/RealDotNetDave/dotNetTips.Spargine/tree/main/source/6</RepositoryUrl>
 		<RootNamespace>DotNetTips.Spargine.Core</RootNamespace>
 		<RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
-		<!--<SelfContained>true</SelfContained>-->
-		<!--<SignAssembly>True</SignAssembly>-->
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Title>DotNetTips.Spargine.6.Core</Title>

@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -33,6 +33,7 @@ namespace DotNetTips.Spargine.Core.Web;
 [Information("From dotNetTips.Utility", Status = Status.Available)]
 public static class WebHelper
 {
+
 	/// <summary>
 	/// The HTTP client
 	/// </summary>
@@ -45,7 +46,7 @@ public static class WebHelper
 	/// <param name="clientId">The client identifier.</param>
 	/// <returns>System.String.</returns>
 	/// <remarks>Make sure to call .Dispose on Task,</remarks>
-	[Information(nameof(DownloadStringAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Updated)]
+	[Information(nameof(DownloadStringAsync), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static async Task<string> DownloadStringAsync(Uri address, string clientId = "NONE")
 	{
 		address = address.ArgumentNotNull();
@@ -60,6 +61,19 @@ public static class WebHelper
 		{
 			return await response.Content.ReadAsStringAsync(CancellationToken.None).ConfigureAwait(false);
 		}
+	}
+
+	/// <summary>
+	/// Gets the HTTP header names.
+	/// </summary>
+	/// <returns>System.String[].</returns>
+	/// <value>The HTTP header names.</value>
+	[Information(nameof(HttpHeaderNames), "David McCarter", "9/2/2020", "9/2/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired)]
+	public static string[] HttpHeaderNames()
+	{
+		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+
+		return Enum.GetNames(typeof(HttpRequestHeader));
 	}
 
 	/// <summary>
@@ -92,16 +106,4 @@ public static class WebHelper
 		}
 	}
 
-	/// <summary>
-	/// Gets the HTTP header names.
-	/// </summary>
-	/// <returns>System.String[].</returns>
-	/// <value>The HTTP header names.</value>
-	[Information(nameof(HttpHeaderNames), "David McCarter", "9/2/2020", "9/2/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired)]
-	public static string[] HttpHeaderNames()
-	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
-		return Enum.GetNames(typeof(HttpRequestHeader));
-	}
 }

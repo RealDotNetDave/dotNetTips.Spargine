@@ -4,7 +4,7 @@
 // Created          : 02-16-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="Validator.Argument.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -308,7 +308,7 @@ public static partial class Validator
 	/// <param name="paramName">Name of the parameter.</param>
 	/// <returns>System.Int64.</returns>
 	/// <exception cref="ArgumentOutOfRangeException"></exception>
-	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
+	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static long ArgumentInRange(this long input, long lower = 0, long upper = long.MaxValue, long? defaultValue = null, string errorMessage = "", [CallerArgumentExpression(nameof(input))] string paramName = "")
 	{
@@ -337,7 +337,7 @@ public static partial class Validator
 	/// <param name="paramName">Name of the parameter.</param>
 	/// <returns>System.Decimal.</returns>
 	/// <exception cref="ArgumentOutOfRangeException"></exception>
-	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
+	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static decimal ArgumentInRange(this decimal input, decimal lower = 0, decimal upper = decimal.MaxValue, decimal? defaultValue = null, string errorMessage = "", [CallerArgumentExpression(nameof(input))] string paramName = "")
 	{
@@ -426,7 +426,7 @@ public static partial class Validator
 	/// <exception cref="ArgumentOutOfRangeException">Minimum length is not valid.</exception>
 	/// <exception cref="ArgumentOutOfRangeException">Value is not within range.</exception>
 	/// <remarks>This also checks the input for null.</remarks>
-	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
+	[Information(nameof(ArgumentInRange), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static string ArgumentInRange(this string input, int lower = 0, int upper = int.MaxValue, bool trim = true, string? defaultValue = null, string errorMessage = "", [CallerArgumentExpression(nameof(input))] string paramName = "")
 	{
@@ -454,7 +454,7 @@ public static partial class Validator
 	/// <returns>IEnumerable.</returns>
 	/// <exception cref="ArgumentNullException">Collection is null or has no items.</exception>
 	/// <remarks>This also checks the input for null.</remarks>
-	[Information(nameof(ArgumentItemsExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
+	[Information(nameof(ArgumentItemsExists), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static IEnumerable<T> ArgumentItemsExists<T>(this IEnumerable<T> input, string errorMessage = "", [CallerArgumentExpression(nameof(input))] string paramName = "")
 	{
@@ -781,7 +781,7 @@ public static partial class Validator
 	/// <returns>System.String.</returns>
 	/// <exception cref="ArgumentException">'input' cannot be null or empty. - input</exception>
 	/// <exception cref="ArgumentException">'paramName' cannot be null or empty. - paramName</exception>
-	[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "https://bit.ly/SpargineMay2022Args")]
+	[Information(nameof(ArgumentNotNullOrEmpty), "David McCarter", "6/26/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Args")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static string ArgumentNotNullOrEmpty(this string input, bool trim = true, string? defaultValue = null, string errorMessage = "", [CallerArgumentExpression(nameof(input))] string paramName = "")
 	{

@@ -289,8 +289,8 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <param name="collectionToCheck">The list to check.</param>
 	/// <returns><c>true</c> if the specified list to check is equal; otherwise, <c>false</c>.</returns>
-	/// <exception cref="ArgumentNullException">collection</exception>
-	/// <exception cref="ArgumentNullException">collectionToCheck</exception>
+	/// <exception cref="System.ArgumentNullException">collection</exception>
+	/// <exception cref="System.ArgumentNullException">collectionToCheck</exception>
 	[Information(nameof(IsEqualTo), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsEqualTo<T>(this IList<T> collection, IList<T> collectionToCheck)

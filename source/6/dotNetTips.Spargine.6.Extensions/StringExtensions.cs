@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-09-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -724,7 +724,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsCreditCardNumber), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsCreditCardNumber), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsCreditCardNumber(this string input)
 	{
 		return _creditCardNumberRegEx.IsMatch(input);
@@ -736,7 +736,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineAug2022")]
+	[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool IsCurrencyCode(this string input)
 	{
 		return _currencyCodeRegEx.IsMatch(input);
@@ -748,7 +748,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsDomainAddress(this string input)
 	{
 		return _domainAddressRegEx.IsMatch(input);
@@ -759,7 +759,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [i ins email address] [the specified input]; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsEmailAddress(this string input)
 	{
 		return _emailRegEx.IsMatch(input);
@@ -773,7 +773,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Updated, UnitTestCoverage = 100)]
+	[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
 	public static bool IsEmpty([NotNullWhen(false)] this string? input)
 	{
 		return string.IsNullOrEmpty(input);
@@ -785,7 +785,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsFirstLastName(this string input)
 	{
 		return _firstLastNameRegEx.IsMatch(input);
@@ -796,7 +796,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The value.</param>
 	/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsGuid(this string input)
 	{
 		return _guidRegEx.IsMatch(input);
@@ -807,7 +807,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsISBN(this string input)
 	{
 		return _isbnRegEx.IsMatch(input);
@@ -818,7 +818,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The value.</param>
 	/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsMacAddress(this string input)
 	{
 		return _macAddressRegEx.IsMatch(input);
@@ -831,7 +831,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsNotEmpty), "David McCarter", "8/18/20", Status = Status.Updated, UnitTestCoverage = 100)]
+	[Information(nameof(IsNotEmpty), "David McCarter", "8/18/20", Status = Status.Available, UnitTestCoverage = 100)]
 	public static bool IsNotEmpty([NotNullWhen(false)] this string? input)
 	{
 		return input.IsEmpty() == false;
@@ -844,7 +844,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineAug2022")]
+	[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
 	public static bool IsOneToSevenAlpha(this string input)
 	{
 		return _oneTo7Alpha.IsMatch(input);
@@ -855,7 +855,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsScientific(this string input)
 	{
 		return _sciencetificRegEx.IsMatch(input);
@@ -866,7 +866,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsString(this string input)
 	{
 		return _stringRegEx.IsMatch(input);
@@ -878,7 +878,7 @@ public static class StringExtensions
 	/// <param name="input">Input hash to check</param>
 	/// <returns>Boolean representing if the input is valid or not</returns>
 	/// <remarks>Original Code By: Troy Hunt</remarks>
-	[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsStringSHA1Hash(this string input)
 	{
 		return _sha1HashRegEx.IsMatch(input);
@@ -889,7 +889,7 @@ public static class StringExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
-	[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJan2022")]
+	[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
 	public static bool IsUrl(this string input)
 	{
 		return _urlRegEx.Match(input).Success;
@@ -902,7 +902,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <param name="replacement">The replacement.</param>
 	/// <returns>System.String.</returns>
-	[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Updated, Documentation = "http://bit.ly/SpargineMarch2021")]
+	[Information(nameof(RemoveCRLF), "Kristine Tran", "2/1/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "http://bit.ly/SpargineMarch2021")]
 	public static string RemoveCRLF(this string input, [NotNull] string replacement = "")
 	{
 		if (input.IsNullOrEmpty())

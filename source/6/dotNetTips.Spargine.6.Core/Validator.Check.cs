@@ -4,7 +4,7 @@
 // Created          : 06-26-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="Validator.Check.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -30,6 +30,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static partial class Validator
 {
+
 	/// <summary>
 	/// Creates the exception message.
 	/// </summary>
@@ -40,29 +41,6 @@ public static partial class Validator
 	private static string CreateExceptionMessage(string message, string messageFromResource)
 	{
 		return string.IsNullOrEmpty(message) ? messageFromResource : message;
-	}
-
-	/// <summary>
-	/// Tries the validate input.
-	/// </summary>
-	/// <typeparam name="T">The type of the t value.</typeparam>
-	/// <param name="input">The value to validate.</param>
-	/// <param name="condition">if set to <c>true</c> [condition].</param>
-	/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
-	/// <param name="errorMessage">The error message to be used in the Exception message.</param>
-	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	[Information(nameof(CheckIsCondition), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static bool CheckIsCondition<T>(this T input, bool condition, bool throwException = false, string errorMessage = "")
-	{
-		var isValid = input is not null && condition;
-
-		if (isValid is false && throwException)
-		{
-			ExceptionThrower.ThrowInvalidValueException<object>(CreateExceptionMessage(errorMessage, Resources.ErrorInvalidValue), input!);
-		}
-
-		return isValid;
 	}
 
 	/// <summary>
@@ -82,6 +60,27 @@ public static partial class Validator
 		if (isValid is false && throwException)
 		{
 			ExceptionThrower.ThrowInvalidValueException(CreateExceptionMessage(errorMessage, Resources.ErrorInvalidType), expectedType);
+		}
+
+		return isValid;
+	}
+
+	/// <summary>
+	/// Checks to see if the <see cref="FileInfo" /> file exists.
+	/// </summary>
+	/// <param name="input">The <see cref="FileInfo" /> file.</param>
+	/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
+	/// <param name="errorMessage">The error message to be used in the Exception message.</param>
+	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+	[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	public static bool CheckExists(this FileInfo input, bool throwException = false, string errorMessage = "")
+	{
+		var isValid = input is not null && input.Exists;
+
+		if (isValid is false && throwException)
+		{
+			ExceptionThrower.ThrowFileNotFoundException(CreateExceptionMessage(errorMessage, Resources.ErrorFileNotFound), input!.FullName);
 		}
 
 		return isValid;
@@ -116,21 +115,23 @@ public static partial class Validator
 	}
 
 	/// <summary>
-	/// Checks to see if the <see cref="FileInfo" /> file exists.
+	/// Tries the validate input.
 	/// </summary>
-	/// <param name="input">The <see cref="FileInfo" /> file.</param>
+	/// <typeparam name="T">The type of the t value.</typeparam>
+	/// <param name="input">The value to validate.</param>
+	/// <param name="condition">if set to <c>true</c> [condition].</param>
 	/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 	/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	[Information(nameof(CheckExists), "David McCarter", "1/31/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "https://bit.ly/SpargineMay2022Data")]
+	[Information(nameof(CheckIsCondition), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	public static bool CheckExists(this FileInfo input, bool throwException = false, string errorMessage = "")
+	public static bool CheckIsCondition<T>(this T input, bool condition, bool throwException = false, string errorMessage = "")
 	{
-		var isValid = input is not null && input.Exists;
+		var isValid = input is not null && condition;
 
 		if (isValid is false && throwException)
 		{
-			ExceptionThrower.ThrowFileNotFoundException(CreateExceptionMessage(errorMessage, Resources.ErrorFileNotFound), input!.FullName);
+			ExceptionThrower.ThrowInvalidValueException<object>(CreateExceptionMessage(errorMessage, Resources.ErrorInvalidValue), input!);
 		}
 
 		return isValid;
@@ -392,7 +393,7 @@ public static partial class Validator
 	/// <param name="throwException">if set to <c>true</c> [throws exception].</param>
 	/// <param name="errorMessage">The error message to be used in the Exception message.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	[Information(nameof(CheckIsNotNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Updated, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
+	[Information(nameof(CheckIsNotNull), "David McCarter", "2/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available, Documentation = "ADD LINK TO VALIDATION ARTICLE")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool CheckIsNotNull<T>(this T input, bool throwException = false, string errorMessage = "") where T : class
 	{
@@ -427,4 +428,5 @@ public static partial class Validator
 
 		return isValid;
 	}
+
 }

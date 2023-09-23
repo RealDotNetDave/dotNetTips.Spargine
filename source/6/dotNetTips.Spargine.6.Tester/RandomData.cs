@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-08-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -339,7 +339,7 @@ public static class RandomData
 	/// <param name="sizeInKb">The size in kb. Size must be <see cref="double.Epsilon" /> or greater.</param>
 	/// <returns>System.Byte[].</returns>
 	/// <remarks>Uses RandomNumberGenerator due to performance increase [CA5394]. Uses Span.</remarks>
-	[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Updated)]
+	[Information(nameof(GenerateByteArray), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
 	public static byte[] GenerateByteArray(double sizeInKb)
 	{
 		sizeInKb = sizeInKb.ArgumentMeetsCondition(sizeInKb >= double.Epsilon, errorMessage: string.Format(CultureInfo.InvariantCulture, Resources.SizeMustBeEpsilon, double.Epsilon));
@@ -434,7 +434,7 @@ public static class RandomData
 	/// </summary>
 	/// <param name="count">The count.</param>
 	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
-	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Updated)]
+	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Available)]
 	public static ImmutableArray<string> GenerateCreditCards(int count = 100)
 	{
 		count = count.ArgumentInRange(1);

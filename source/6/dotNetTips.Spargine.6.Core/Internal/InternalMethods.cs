@@ -4,7 +4,7 @@
 // Created          : 02-10-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="InternalMethods.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Core.Internal;
 /// </summary>
 internal static class InternalMethods
 {
+
 	/// <summary>
 	/// The null string
 	/// </summary>
@@ -62,11 +63,33 @@ internal static class InternalMethods
 	}
 
 	/// <summary>
+	/// Ensures the minimum.
+	/// </summary>
+	/// <param name="value">The value.</param>
+	/// <param name="minValue">The minimum value.</param>
+	/// <returns>System.Int32.</returns>
+	[MethodImpl(MethodImplOptions.AggressiveInlining)]
+	[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Available)]
+	internal static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
+
+	/// <summary>
 	/// Determines whether the specified type is enumerable.
 	/// </summary>
 	/// <param name="type">The type.</param>
 	/// <returns><c>true</c> if the specified type is enumerable; otherwise, <c>false</c>.</returns>
 	internal static bool IsEnumerable(Type type) => type.GetInterfaces().Any(t => t == typeof(IEnumerable));
+
+	/// <summary>
+	/// Logs critical exception. Adds method name to message.
+	/// </summary>
+	/// <param name="logger">The logger.</param>
+	/// <param name="message">The message.</param>
+	/// <param name="ex">The ex.</param>
+	/// <param name="method">The method.</param>
+	internal static void LogCriticalMessage(this ILogger logger, string message, Exception ex, [CallerMemberName] string method = "")
+	{
+		EasyLogger.LogCritical(logger, $"{method}: {message}", ex);
+	}
 
 	/// <summary>
 	/// Propertieses to dictionary.
@@ -170,35 +193,14 @@ internal static class InternalMethods
 	}
 
 	/// <summary>
-	/// Ensures the minimum.
-	/// </summary>
-	/// <param name="value">The value.</param>
-	/// <param name="minValue">The minimum value.</param>
-	/// <returns>System.Int32.</returns>
-	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(EnsureMinimum), UnitTestCoverage = 100, Status = Status.Updated)]
-	internal static int EnsureMinimum(this int value, int minValue) => value < minValue ? minValue : value;
-
-	/// <summary>
-	/// Logs a warning message. Adds method name to message.
+	/// Logs debug message. Adds method name to message.
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The message.</param>
 	/// <param name="method">The method.</param>
-	internal static void WriteWarningMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	internal static void WriteDebugMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
 	{
-		EasyLogger.LogWarning(logger, $"{method}: {message}");
-	}
-
-	/// <summary>
-	/// Logs the information. Adds method name to message.
-	/// </summary>
-	/// <param name="logger">The logger.</param>
-	/// <param name="message">The message.</param>
-	/// <param name="method">The method.</param>
-	internal static void WriteInformationMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
-	{
-		EasyLogger.LogInformation(logger, $"{method}: {message}");
+		EasyLogger.LogDebug(logger, $"{method}: {message}");
 	}
 
 	/// <summary>
@@ -213,14 +215,14 @@ internal static class InternalMethods
 	}
 
 	/// <summary>
-	/// Logs debug message. Adds method name to message.
+	/// Logs the information. Adds method name to message.
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The message.</param>
 	/// <param name="method">The method.</param>
-	internal static void WriteDebugMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
+	internal static void WriteInformationMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
 	{
-		EasyLogger.LogDebug(logger, $"{method}: {message}");
+		EasyLogger.LogInformation(logger, $"{method}: {message}");
 	}
 
 	/// <summary>
@@ -235,14 +237,14 @@ internal static class InternalMethods
 	}
 
 	/// <summary>
-	/// Logs critical exception. Adds method name to message.
+	/// Logs a warning message. Adds method name to message.
 	/// </summary>
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The message.</param>
-	/// <param name="ex">The ex.</param>
 	/// <param name="method">The method.</param>
-	internal static void LogCriticalMessage(this ILogger logger, string message, Exception ex, [CallerMemberName] string method = "")
+	internal static void WriteWarningMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
 	{
-		EasyLogger.LogCritical(logger, $"{method}: {message}", ex);
+		EasyLogger.LogWarning(logger, $"{method}: {message}");
 	}
+
 }

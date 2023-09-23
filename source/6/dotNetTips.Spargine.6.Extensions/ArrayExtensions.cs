@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-10-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -575,7 +575,7 @@ public static class ArrayExtensions
 	/// <param name="item">The item.</param>
 	/// <returns>T[].</returns>
 	/// <exception cref="ArgumentNullException">array cannot be null.</exception>
-	[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Updated, Documentation = "https://bit.ly/SpargineJun2021")]
+	[Information(nameof(Upsert), author: "David McCarter", createdOn: "5/2/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IDataRecord[] Upsert([NotNull] this IDataRecord[] array, [AllowNull] IDataRecord item)
 	{
 		if (item is null)

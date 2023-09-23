@@ -31,6 +31,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static partial class Validator
 {
+
 	/// <summary>
 	/// Creates the exception message.
 	/// </summary>
@@ -843,4 +844,5 @@ public static partial class Validator
 
 		return input!;
 	}
+
 }

@@ -32,6 +32,7 @@ namespace DotNetTips.Spargine.Core.Security;
 /// </summary>
 public static class EncryptionHelper
 {
+
 	/// <summary>
 	/// Gets the hash keys.
 	/// </summary>
@@ -214,4 +215,5 @@ public static class EncryptionHelper
 	{
 		return SHA256PasswordHasher.VerifyHashedPassword(hashedPassword, password.ArgumentNotNullOrEmpty());
 	}
+
 }

@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-11-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="DataContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -16,7 +16,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using DotNetTips.Spargine.Core;
 using LinqToDB;
-
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 

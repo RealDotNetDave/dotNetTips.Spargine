@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-22-2023
+// Last Modified On : 09-23-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class ListExtensions
 {
+
 	/// <summary>
 	/// Adds the item as the first item in the <see cref="List{T}" />.
 	/// Validates that <paramref name="collection" /> is not null and not read-only.
@@ -314,7 +315,7 @@ public static class ListExtensions
 	/// <param name="values">The values.</param>
 	/// <param name="action">The action.</param>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Documentation = "https://bit.ly/SpargineFeb2023")]
+	[Information(nameof(PerformAction), "David McCarter", "1/4/2023", Status = Status.Updated, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Documentation = "https://bit.ly/SpargineFeb2023")]
 	public static void PerformAction<T>(this List<T> values, [NotNull] Action<T> action)
 	{
 		action = action.ArgumentNotNull();
@@ -324,9 +325,9 @@ public static class ListExtensions
 			return;
 		}
 
-		for (var index = 0; index < values.Count; index++)
+		foreach (var item in CollectionsMarshal.AsSpan(values))
 		{
-			action(values[index]);
+			action(item);
 		}
 	}
 
@@ -535,4 +536,5 @@ public static class ListExtensions
 	{
 		return new ReadOnlyObservableCollection<T>(collection.ArgumentNotNull().ToObservableCollection());
 	}
+
 }

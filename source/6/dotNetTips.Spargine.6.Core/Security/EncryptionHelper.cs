@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -100,6 +100,9 @@ public static class EncryptionHelper
 	[Information(nameof(AesEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 	public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 	{
+
+		//TODO: Fix CA5401  Symmetric encryption uses non-default initialization vector, which could be potentially repeatable in version 8.
+
 		plainText = plainText.ArgumentNotNullOrEmpty(true);
 		key = key.ArgumentNotNull();
 		iv = iv.ArgumentNotNull();
@@ -211,9 +214,6 @@ public static class EncryptionHelper
 	/// <param name="password">The password.</param>
 	/// <returns>PasswordVerificationResult.</returns>
 	[Information(nameof(VerifySHA256HashedPassword), "David McCarter", "10/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022", BenchMarkStatus = BenchMarkStatus.Completed)]
-	public static PasswordVerificationResult VerifySHA256HashedPassword(string hashedPassword, [NotNull] string password)
-	{
-		return SHA256PasswordHasher.VerifyHashedPassword(hashedPassword, password.ArgumentNotNullOrEmpty());
-	}
+	public static PasswordVerificationResult VerifySHA256HashedPassword(string hashedPassword, [NotNull] string password) => SHA256PasswordHasher.VerifyHashedPassword(hashedPassword, password.ArgumentNotNullOrEmpty());
 
 }

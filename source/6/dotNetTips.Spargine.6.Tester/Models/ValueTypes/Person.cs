@@ -4,7 +4,7 @@
 // Created          : 10-25-2021
 //
 // Last Modified By : david
-// Last Modified On : 08-10-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="Person.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -135,10 +135,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator !=(Person left, Person right)
-	{
-		return !(left == right);
-	}
+	public static bool operator !=(Person left, Person right) => !(left == right);
 
 	/// <summary>
 	/// Implements the == operator.
@@ -146,10 +143,7 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator ==(Person left, Person right)
-	{
-		return left.Equals(right);
-	}
+	public static bool operator ==(Person left, Person right) => left.Equals(right);
 
 	/// <summary>
 	/// Calculates the person's current age.
@@ -215,29 +209,20 @@ public struct Person : IDataModel<Person, string>, IPerson
 	/// </summary>
 	/// <param name="obj">The object to compare with the current instance.</param>
 	/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
-	public override readonly bool Equals([NotNull] object obj)
-	{
-		return base.Equals(obj);
-	}
+	public override readonly bool Equals([NotNull] object obj) => base.Equals(obj);
 
 	/// <summary>
 	/// Indicates whether the current object is equal to another object of the same type.
 	/// </summary>
 	/// <param name="other">An object to compare with this object.</param>
 	/// <returns><see langword="true" /> if the current object is equal to the <paramref name="other" /> parameter; otherwise, <see langword="false" />.</returns>
-	public readonly bool Equals([NotNull] Person other)
-	{
-		return base.Equals(other);
-	}
+	public readonly bool Equals([NotNull] Person other) => base.Equals(other);
 
 	/// <summary>
 	/// Returns a hash code for this instance.
 	/// </summary>
 	/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-	public override readonly int GetHashCode()
-	{
-		return base.GetHashCode();
-	}
+	public override readonly int GetHashCode() => base.GetHashCode();
 
 	/// <summary>
 	/// Returns a <see cref="string" /> that represents this instance.

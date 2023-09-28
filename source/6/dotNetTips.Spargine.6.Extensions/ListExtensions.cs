@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -126,10 +126,7 @@ public static class ListExtensions
 	/// https://github.com/CommunityToolkit/dotnet/blob/main/CommunityToolkit.HighPerformance/Extensions/ListExtensions.cs</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(AsSpan), "David McCarter", "8/3/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
-	public static Span<T> AsSpan<T>(this List<T> list)
-	{
-		return CollectionsMarshal.AsSpan(list.ArgumentNotNull());
-	}
+	public static Span<T> AsSpan<T>(this List<T> list) => CollectionsMarshal.AsSpan(list.ArgumentNotNull());
 
 	/// <summary>
 	/// Clears the null items from the <see cref="List{T}" />.
@@ -289,8 +286,8 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <param name="collectionToCheck">The list to check.</param>
 	/// <returns><c>true</c> if the specified list to check is equal; otherwise, <c>false</c>.</returns>
-	/// <exception cref="System.ArgumentNullException">collection</exception>
-	/// <exception cref="System.ArgumentNullException">collectionToCheck</exception>
+	/// <exception cref="ArgumentNullException">collection</exception>
+	/// <exception cref="ArgumentNullException">collectionToCheck</exception>
 	[Information(nameof(IsEqualTo), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "ADD URL")]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsEqualTo<T>(this IList<T> collection, IList<T> collectionToCheck)
@@ -382,10 +379,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>Core.Collections.Generic.Collection&lt;T&gt;.</returns>
 	[Information(nameof(ToCollection), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static Core.Collections.Generic.Collection<T> ToCollection<T>([NotNull] this IList<T> collection)
-	{
-		return Core.Collections.Generic.Collection<T>.Create(collection.ArgumentItemsExists());
-	}
+	public static Core.Collections.Generic.Collection<T> ToCollection<T>([NotNull] this IList<T> collection) => Core.Collections.Generic.Collection<T>.Create(collection.ArgumentItemsExists());
 
 	/// <summary>
 	/// Converts <see cref="List{T}" /> to a <see cref=" DistinctBlockingCollection{T}" />.
@@ -419,10 +413,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>DistinctConcurrentBag&lt;T&gt;.</returns>
 	[Information(nameof(ToDistinctConcurrentBag), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static DistinctConcurrentBag<T> ToDistinctConcurrentBag<T>([NotNull] this IList<T> collection)
-	{
-		return new DistinctConcurrentBag<T>(collection.ArgumentNotNull());
-	}
+	public static DistinctConcurrentBag<T> ToDistinctConcurrentBag<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull());
 
 	/// <summary>
 	/// Converts a <see cref="List{T}" /> to the Spargine <see cref="FastSortedList{T}" />.
@@ -432,10 +423,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>FastSortedList&lt;T&gt;.</returns>
 	[Information(nameof(ToFastSortedList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static FastSortedList<T> ToFastSortedList<T>([NotNull] this IList<T> collection)
-	{
-		return new FastSortedList<T>(collection.ArgumentNotNull());
-	}
+	public static FastSortedList<T> ToFastSortedList<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull());
 
 	/// <summary>
 	/// Converts <see cref="List{T}" /> to an <see cref="ImmutableArray{T}" />.
@@ -445,10 +433,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>ImmutableArray&lt;T&gt;.</returns>
 	[Information(nameof(ToCollection), "David McCarter", "12/3/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static ImmutableArray<T> ToImmutableArray<T>([NotNull] this IList<T> collection)
-	{
-		return ImmutableArray.Create(collection.ArgumentNotNull().ToArray());
-	}
+	public static ImmutableArray<T> ToImmutableArray<T>([NotNull] this IList<T> collection) => ImmutableArray.Create(collection.ArgumentNotNull().ToArray());
 
 	/// <summary>
 	/// Converts the <see cref="IAsyncEnumerable{T}" /> to a <see cref="List{T}" /> in an asynchronous operation.
@@ -481,10 +466,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>ObservableCollection.</returns>
 	[Information(nameof(ToObservableCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static ObservableCollection<T> ToObservableCollection<T>([NotNull] this IList<T> collection)
-	{
-		return new ObservableCollection<T>(collection.ArgumentNotNull());
-	}
+	public static ObservableCollection<T> ToObservableCollection<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull());
 
 	/// <summary>
 	/// Converts the <see cref="List{T}" /> to a <see cref="ObservableList{T}" />.
@@ -494,10 +476,7 @@ public static class ListExtensions
 	/// <param name="collection">The list.</param>
 	/// <returns>ObservableList&lt;T&gt;.</returns>
 	[Information(nameof(ToObservableList), "David McCarter", "10/21/2021", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static ObservableList<T> ToObservableList<T>([NotNull] this IList<T> collection)
-	{
-		return new ObservableList<T>(collection.ArgumentNotNull());
-	}
+	public static ObservableList<T> ToObservableList<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull());
 
 	/// <summary>
 	/// Converts the <see cref="List{T}" /> to a <see cref="ReadOnlyCollection{T}" />
@@ -507,10 +486,7 @@ public static class ListExtensions
 	/// <param name="collection">The <see cref="List{T}" /> to convert.</param>
 	/// <returns>ReadOnlyCollection&lt;T&gt;.</returns>
 	[Information(nameof(ToReadOnlyCollection), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static ReadOnlyCollection<T> ToReadOnlyCollection<T>([NotNull] this IList<T> collection)
-	{
-		return new ReadOnlyCollection<T>(collection.ArgumentNotNull());
-	}
+	public static ReadOnlyCollection<T> ToReadOnlyCollection<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull());
 
 	/// <summary>
 	/// Converts the <see cref="List{T}" /> to <see cref="IReadOnlyList{T}" />/&gt;.
@@ -520,10 +496,7 @@ public static class ListExtensions
 	/// <param name="collection">The <see cref="List{T}" /> to convert.</param>
 	/// <returns>IReadOnlyList&lt;T&gt;.</returns>
 	[Information(nameof(ToReadOnlyList), "David McCarter", "4/10/2022", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static IReadOnlyList<T> ToReadOnlyList<T>([NotNull] this IList<T> collection)
-	{
-		return (IReadOnlyList<T>)collection.ArgumentNotNull();
-	}
+	public static IReadOnlyList<T> ToReadOnlyList<T>([NotNull] this IList<T> collection) => (IReadOnlyList<T>)collection.ArgumentNotNull();
 
 	/// <summary>
 	/// Converts to <see cref="ReadOnlyObservableCollection{T}" />.
@@ -532,9 +505,6 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <returns>ReadOnlyObservableCollection&lt;T&gt;.</returns>
 	[Information(nameof(ToObservableCollection), "David McCarter", "11/26/2022", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineFeb2023")]
-	public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>([NotNull] this IList<T> collection)
-	{
-		return new ReadOnlyObservableCollection<T>(collection.ArgumentNotNull().ToObservableCollection());
-	}
+	public static ReadOnlyObservableCollection<T> ToReadOnlyObservableCollection<T>([NotNull] this IList<T> collection) => new(collection.ArgumentNotNull().ToObservableCollection());
 
 }

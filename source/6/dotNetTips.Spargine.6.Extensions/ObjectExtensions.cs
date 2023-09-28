@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="ObjectExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -32,6 +32,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class ObjectExtensions
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -42,10 +43,7 @@ public static class ObjectExtensions
 	/// Tries to dispose items in the <see cref="IEnumerable" />.
 	/// </summary>
 	/// <param name="items">The items.</param>
-	private static void DisposeCollection(this IEnumerable items)
-	{
-		ProcessCollectionToDispose(items);
-	}
+	private static void DisposeCollection(this IEnumerable items) => ProcessCollectionToDispose(items);
 
 	/// <summary>
 	/// Processes the <see cref="IEnumerable" /> to dispose.
@@ -74,10 +72,7 @@ public static class ObjectExtensions
 	/// <returns>T.</returns>
 	/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 	[Information(nameof(As), UnitTestCoverage = 100, Status = Status.Available)]
-	public static T As<T>([NotNull] this object obj)
-	{
-		return (T)obj.ArgumentNotNull();
-	}
+	public static T As<T>([NotNull] this object obj) => (T)obj.ArgumentNotNull();
 
 	/// <summary>
 	/// Clones the specified object.
@@ -88,10 +83,7 @@ public static class ObjectExtensions
 	/// <returns>T.</returns>
 	/// <exception cref="ArgumentNullException">Object cannot be null.</exception>
 	[Information(nameof(Clone), UnitTestCoverage = 100, Status = Status.Available)]
-	public static T Clone<T>([NotNull] this object obj)
-	{
-		return FromJson<T>(obj.ArgumentNotNull().ToJson());
-	}
+	public static T Clone<T>([NotNull] this object obj) => FromJson<T>(obj.ArgumentNotNull().ToJson());
 
 	/// <summary>
 	/// Computes the sha256 hash for an object using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
@@ -171,10 +163,7 @@ public static class ObjectExtensions
 	/// <param name="json">The json.</param>
 	/// <returns>TResult.</returns>
 	[Information(nameof(FromJson), "David McCarter", "4/21/2022", UnitTestCoverage = 100, Status = Status.Available)]
-	public static TResult FromJson<TResult>([NotNull] this string json)
-	{
-		return JsonSerialization.Deserialize<TResult>(json.ArgumentNotNullOrEmpty());
-	}
+	public static TResult FromJson<TResult>([NotNull] this string json) => JsonSerialization.Deserialize<TResult>(json.ArgumentNotNullOrEmpty());
 
 	/// <summary>
 	/// Determines whether the specified object has the property.
@@ -242,10 +231,7 @@ public static class ObjectExtensions
 	/// <param name="obj">The obj.</param>
 	/// <returns><count>true</count> if [is not null] [the specified object]; otherwise, <count>false</count>.</returns>
 	[Information(nameof(IsNotNull), UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool IsNotNull(this object obj)
-	{
-		return obj is not null;
-	}
+	public static bool IsNotNull(this object obj) => obj is not null;
 
 	/// <summary>
 	/// Determines whether the specified object is null.
@@ -253,10 +239,7 @@ public static class ObjectExtensions
 	/// <param name="obj">The object.</param>
 	/// <returns><count>true</count> if the specified object is null; otherwise, <count>false</count>.</returns>
 	[Information(nameof(IsNull), UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool IsNull(this object obj)
-	{
-		return obj is null;
-	}
+	public static bool IsNull(this object obj) => obj is null;
 
 	/// <summary>
 	/// Generates a Dictionary that represents the property name (Key) and it's value to a <see cref="IDictionary{TKey, TValue}" />.
@@ -423,10 +406,7 @@ public static class ObjectExtensions
 	/// <param name="obj">The field.</param>
 	/// <returns>System.String.</returns>
 	[Information(nameof(StripNull), UnitTestCoverage = 100, Status = Status.Available)]
-	public static string StripNull(this object obj)
-	{
-		return obj is null ? string.Empty : obj.ToString();
-	}
+	public static string StripNull(this object obj) => obj is null ? string.Empty : obj.ToString();
 
 	/// <summary>
 	/// Serializes object to Json.
@@ -435,10 +415,7 @@ public static class ObjectExtensions
 	/// <param name="obj">The instance.</param>
 	/// <returns>System.String.</returns>
 	[Information(nameof(ToJson), UnitTestCoverage = 100, Status = Status.Available)]
-	public static string ToJson([NotNull] this object obj)
-	{
-		return JsonSerializer.Serialize(obj.ArgumentNotNull());
-	}
+	public static string ToJson([NotNull] this object obj) => JsonSerializer.Serialize(obj.ArgumentNotNull());
 
 	/// <summary>
 	/// Serializes object to Json.
@@ -485,10 +462,7 @@ public static class ObjectExtensions
 	/// </summary>
 	/// <param name="obj">The obj.</param>
 	[Information(nameof(TryDispose), UnitTestCoverage = 100, Status = Status.Available)]
-	public static void TryDispose(this IDisposable obj)
-	{
-		TryDispose(obj, false);
-	}
+	public static void TryDispose(this IDisposable obj) => TryDispose(obj, false);
 
 	/// <summary>
 	/// Tries to dispose the object. Supports <see cref="IDisposable" /> and <see cref="IAsyncDisposable" />.
@@ -528,4 +502,5 @@ public static class ObjectExtensions
 			}
 		}
 	}
+
 }

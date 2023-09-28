@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-13-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="MathExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -23,6 +23,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class MathExtensions
 {
+
 	/// <summary>
 	/// Adds the specified add.
 	/// </summary>
@@ -32,10 +33,7 @@ public static class MathExtensions
 	/// <remarks>This is for when adding a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Add), author: "David McCarter", createdOn: "7/19/2022", Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
-	public static double Add(this int input, int add)
-	{
-		return input + add;
-	}
+	public static double Add(this int input, int add) => input + add;
 	/// <summary>
 	/// Calculates the percent from the first and second <see cref="TimeSpan" />.
 	/// </summary>
@@ -44,10 +42,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-	public static double CalculatePercent(this TimeSpan first, TimeSpan second)
-	{
-		return (second.TotalMilliseconds - first.TotalMilliseconds) / Math.Abs(first.TotalMilliseconds) * 100;
-	}
+	public static double CalculatePercent(this TimeSpan first, TimeSpan second) => (second.TotalMilliseconds - first.TotalMilliseconds) / Math.Abs(first.TotalMilliseconds) * 100;
 
 	/// <summary>
 	/// Calculates the percent.
@@ -57,10 +52,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-	public static double CalculatePercent(this int first, int second)
-	{
-		return (second - first) / Math.Abs(first) * 100;
-	}
+	public static double CalculatePercent(this int first, int second) => (second - first) / Math.Abs(first) * 100;
 
 	/// <summary>
 	/// Calculates the percent.
@@ -70,10 +62,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-	public static double CalculatePercent(this double first, double second)
-	{
-		return (second - first) / Math.Abs(first) * 100;
-	}
+	public static double CalculatePercent(this double first, double second) => (second - first) / Math.Abs(first) * 100;
 
 	/// <summary>
 	/// Calculates the percent.
@@ -83,10 +72,7 @@ public static class MathExtensions
 	/// <returns>System.Double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(CalculatePercent), UnitTestCoverage = 0, Status = Status.Available)]
-	public static double CalculatePercent(this long first, long second)
-	{
-		return (second - first) / Math.Abs(first) * 100;
-	}
+	public static double CalculatePercent(this long first, long second) => (second - first) / Math.Abs(first) * 100;
 
 	/// <summary>
 	/// Determines whether the specified number is prime.
@@ -136,10 +122,7 @@ public static class MathExtensions
 	/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-	public static int Round(this double value)
-	{
-		return Convert.ToInt32(Math.Round(value));
-	}
+	public static int Round(this double value) => Convert.ToInt32(Math.Round(value));
 
 	/// <summary>
 	/// Rounds the specified value.
@@ -149,10 +132,7 @@ public static class MathExtensions
 	/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-	public static int Round(this decimal value)
-	{
-		return Convert.ToInt32(Math.Round(value));
-	}
+	public static int Round(this decimal value) => Convert.ToInt32(Math.Round(value));
 
 	/// <summary>
 	/// Rounds the specified value.
@@ -163,10 +143,7 @@ public static class MathExtensions
 	/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-	public static int Round(this double value, int digits)
-	{
-		return Convert.ToInt32(Math.Round(value, digits));
-	}
+	public static int Round(this double value, int digits) => Convert.ToInt32(Math.Round(value, digits));
 
 	/// <summary>
 	/// Rounds the specified value.
@@ -193,10 +170,7 @@ public static class MathExtensions
 	/// <exception cref="ArgumentNullException">value - Value is invalid.</exception>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Round), UnitTestCoverage = 0, Status = Status.Available)]
-	public static int Round(this decimal value, int digits)
-	{
-		return Convert.ToInt32(Math.Round(value, digits));
-	}
+	public static int Round(this decimal value, int digits) => Convert.ToInt32(Math.Round(value, digits));
 
 	/// <summary>
 	/// Rounds the specified value.
@@ -259,8 +233,6 @@ public static class MathExtensions
 	/// <remarks>This is for when subtracting a number inline wont work. For example, creating a Range.</remarks>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(Subtract), author: "David McCarter", createdOn: "7/19/2022", Status = Status.Available, Documentation = "https://bit.ly/SpargineNov2022")]
-	public static double Subtract(this int input, int subtract)
-	{
-		return input - subtract;
-	}
+	public static double Subtract(this int input, int subtract) => input - subtract;
+
 }

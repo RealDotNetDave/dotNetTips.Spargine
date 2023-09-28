@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -118,10 +118,7 @@ public static class RandomData
 	/// <summary>
 	/// Initializes static members of the <see cref="RandomData" /> class.
 	/// </summary>
-	static RandomData()
-	{
-		RandomNumberGenerator = RandomNumberGenerator.Create();
-	}
+	static RandomData() => RandomNumberGenerator = RandomNumberGenerator.Create();
 
 	/// <summary>
 	/// Generates the address record collection.
@@ -165,10 +162,7 @@ public static class RandomData
 	/// <param name="firstName">The first name.</param>
 	/// <param name="lastName">The last name.</param>
 	/// <returns>System.String.</returns>
-	private static string GenerateEmailAddressWithNames(string firstName, string lastName)
-	{
-		return $"{firstName.DefaultIfNullOrEmpty("FIRSTNAME")}.{lastName.DefaultIfNullOrEmpty("LASTNAME")}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
-	}
+	private static string GenerateEmailAddressWithNames(string firstName, string lastName) => $"{firstName.DefaultIfNullOrEmpty("FIRSTNAME")}.{lastName.DefaultIfNullOrEmpty("LASTNAME")}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
 
 	/// <summary>
 	/// Generates the postal code.
@@ -264,10 +258,7 @@ public static class RandomData
 	/// Loads the credit cards.
 	/// </summary>
 	/// <returns>ImmutableArray&lt;CreditCardInfo&gt;.</returns>
-	private static ImmutableArray<CreditCardInfo> LoadCreditCards()
-	{
-		return JsonSerializer.Deserialize<ImmutableArray<CreditCardInfo>>(Resources.JsonCreditCards);
-	}
+	private static ImmutableArray<CreditCardInfo> LoadCreditCards() => JsonSerializer.Deserialize<ImmutableArray<CreditCardInfo>>(Resources.JsonCreditCards);
 
 	/// <summary>
 	/// Picks a random string from an array.
@@ -360,10 +351,7 @@ public static class RandomData
 	/// <returns>System.Char.</returns>
 	/// <example>Output: 82 'R'</example>
 	[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static char GenerateCharacter()
-	{
-		return GenerateCharacter(DefaultMinCharacter, DefaultMaxCharacter);
-	}
+	public static char GenerateCharacter() => GenerateCharacter(DefaultMinCharacter, DefaultMaxCharacter);
 
 	/// <summary>
 	/// Creates a random <see cref="char" />.
@@ -373,10 +361,7 @@ public static class RandomData
 	/// <returns>System.Char.</returns>
 	/// <example>Output: 65 'A'</example>
 	[Information(nameof(GenerateCharacter), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static char GenerateCharacter(char minValue, char maxValue)
-	{
-		return (char)GenerateInteger(minValue, maxValue);
-	}
+	public static char GenerateCharacter(char minValue, char maxValue) => (char)GenerateInteger(minValue, maxValue);
 
 	/// <summary>
 	/// Creates a <see cref="ICoordinate" /> object with random values.
@@ -385,14 +370,7 @@ public static class RandomData
 	/// <returns>T.</returns>
 	/// <example>Output: X: 178765551 Y: -2145952440</example>
 	[Information(nameof(GenerateCoordinate), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static T GenerateCoordinate<T>() where T : ICoordinate, new()
-	{
-		return new T
-		{
-			X = GenerateInteger(),
-			Y = GenerateInteger()
-		};
-	}
+	public static T GenerateCoordinate<T>() where T : ICoordinate, new() => new() { X = GenerateInteger(), Y = GenerateInteger() };
 
 	/// <summary>
 	/// Creates collection of  <see cref="ICoordinate" />.
@@ -423,10 +401,7 @@ public static class RandomData
 	/// </summary>
 	/// <returns>System.String.</returns>
 	[Information(nameof(GenerateCreditCard), "David McCarter", "3/13/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
-	public static string GenerateCreditCard()
-	{
-		return RandomCreditCardNumberGenerator.GetCreditCardNumber();
-	}
+	public static string GenerateCreditCard() => RandomCreditCardNumberGenerator.GetCreditCardNumber();
 
 	/// <summary>
 	/// Generates a collection of random credit card numbers.
@@ -466,10 +441,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: ".co.uk"</example>
 	[Information(nameof(GenerateDomainExtension), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GenerateDomainExtension()
-	{
-		return Of(DomainExtensions.Value);
-	}
+	public static string GenerateDomainExtension() => Of(DomainExtensions.Value);
 
 	/// <summary>
 	/// Creates a random email address.
@@ -477,10 +449,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: fbxpfvtanqysqmuqfh@kiuvf.fr</example>
 	[Information(nameof(GenerateEmailAddress), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GenerateEmailAddress()
-	{
-		return $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
-	}
+	public static string GenerateEmailAddress() => $"{GenerateWord(5, 25, 'a', 'z')}@{GenerateWord(5, 15, 'a', 'z')}.{GenerateDomainExtension()}";
 
 	/// <summary>
 	/// Generates a file.
@@ -565,10 +534,7 @@ public static class RandomData
 	/// </summary>
 	/// <returns>System.String.</returns>
 	[Information(nameof(GenerateFirstName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
-	public static string GenerateFirstName()
-	{
-		return FirstNames.PickRandom();
-	}
+	public static string GenerateFirstName() => FirstNames.PickRandom();
 
 	/// <summary>
 	/// Creates a random <see cref="int" /> value.
@@ -596,20 +562,14 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: f7f0af78003d4ab194b5a4024d02112a</example>
 	[Information(nameof(GenerateKey), "David McCarter", "1/19/2019", BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-	public static string GenerateKey()
-	{
-		return KeyGenerator.GenerateKey();
-	}
+	public static string GenerateKey() => KeyGenerator.GenerateKey();
 
 	/// <summary>
 	/// Generates a last name.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	[Information(nameof(GenerateLastName), "David McCarter", "3/11/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
-	public static string GenerateLastName()
-	{
-		return LastNames.PickRandom();
-	}
+	public static string GenerateLastName() => LastNames.PickRandom();
 
 	/// <summary>
 	/// Creates a random number as a <see cref="string" /> using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
@@ -741,10 +701,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: 284-424-2216</example>
 	[Information(nameof(GeneratePhoneNumberUSA), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GeneratePhoneNumberUSA()
-	{
-		return $"{GenerateNumber(3)}-{GenerateNumber(3)}-{GenerateNumber(4)}";
-	}
+	public static string GeneratePhoneNumberUSA() => $"{GenerateNumber(3)}-{GenerateNumber(3)}-{GenerateNumber(4)}";
 
 	/// <summary>
 	/// Generates random file name.
@@ -867,10 +824,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: https://www.agngbgluhawxhnmoxvdogla.hdtmdjmiagwlx.com/r/ulhekwhqnicq/bxxmyq/owaqaqxvdvtae/</example>
 	[Information(nameof(GenerateUrl), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GenerateUrl()
-	{
-		return $"{GenerateUrlHostName()}{GenerateRelativeUrl()}";
-	}
+	public static string GenerateUrl() => $"{GenerateUrlHostName()}{GenerateRelativeUrl()}";
 
 	/// <summary>
 	/// Creates a random url host name.
@@ -878,10 +832,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: https://www.ehvjnbhcpcivgiccugim.lfa.net</example>
 	[Information(nameof(GenerateUrlHostName), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GenerateUrlHostName()
-	{
-		return $"https://{GenerateUrlHostNameNoProtocol()}";
-	}
+	public static string GenerateUrlHostName() => $"https://{GenerateUrlHostNameNoProtocol()}";
 
 	/// <summary>
 	/// Creates a url without a protocol.
@@ -889,10 +840,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: www.wucqcapnybi.kejdwudpbstekhxic.co.uk</example>
 	[Information(nameof(GenerateUrlHostNameNoProtocol), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string GenerateUrlHostNameNoProtocol()
-	{
-		return $"www.{GenerateWord(1, 25, 'a', 'z')}.{GenerateUrlHostNameNoSubDomain()}";
-	}
+	public static string GenerateUrlHostNameNoProtocol() => $"www.{GenerateWord(1, 25, 'a', 'z')}.{GenerateUrlHostNameNoSubDomain()}";
 
 	/// <summary>
 	/// Creates host name without a sub domain.
@@ -900,10 +848,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <example>Output: elqqcw.org.uk</example>
 	[Information(nameof(GenerateUrlHostNameNoSubDomain), "David McCarter", "1/19/2019", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string GenerateUrlHostNameNoSubDomain()
-	{
-		return GenerateDomainExtension();
-	}
+	public static string GenerateUrlHostNameNoSubDomain() => GenerateDomainExtension();
 
 	/// <summary>
 	/// Create a random url part.
@@ -911,10 +856,7 @@ public static class RandomData
 	/// <returns>System.String.</returns>
 	/// <remarks>/rregyyjxpjiats</remarks>
 	[Information(nameof(GenerateUrlPart), "David McCarter", "1/19/2019", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GenerateUrlPart()
-	{
-		return $"/{GenerateWord(1, 25, 'a', 'z')}";
-	}
+	public static string GenerateUrlPart() => $"/{GenerateWord(1, 25, 'a', 'z')}";
 
 	/// <summary>
 	/// Generates a <see cref="Models.ValueTypes.Person" /> with default values.

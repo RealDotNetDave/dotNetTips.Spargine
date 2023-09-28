@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="PerformanceStopwatch.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -32,6 +32,7 @@ namespace DotNetTips.Spargine.Core.Diagnostics;
 [Information(nameof(PerformanceStopwatch), "David McCarter", "11/11/2020", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "bit.ly/SpargineFeb2023")]
 public class PerformanceStopwatch : Stopwatch
 {
+
 	/// <summary>
 	/// The diagnostics
 	/// </summary>
@@ -41,10 +42,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// Initializes a new instance of the <see cref="PerformanceStopwatch" /> class.
 	/// </summary>
 	/// <param name="title">The title message.</param>
-	private PerformanceStopwatch(string title)
-	{
-		this.Title = title;
-	}
+	private PerformanceStopwatch(string title) => this.Title = title;
 
 	/// <summary>
 	/// Creates the message.
@@ -150,10 +148,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// Returns a <see cref="string" /> of all the logged messages.
 	/// </summary>
 	/// <returns>A <see cref="string" /> of all the logged messages.</returns>
-	public override string ToString()
-	{
-		return FastStringBuilder.CombineStrings(Tristate.True, this.Diagnostics.ToArray());
-	}
+	public override string ToString() => FastStringBuilder.CombineStrings(Tristate.True, this.Diagnostics.ToArray());
 
 	/// <summary>
 	/// Gets the logged messages.
@@ -171,4 +166,5 @@ public class PerformanceStopwatch : Stopwatch
 	/// </summary>
 	/// <value>The title.</value>
 	public string Title { get; private set; }
+
 }

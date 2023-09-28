@@ -4,7 +4,7 @@
 // Created          : 07-17-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-28-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="PersonProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -172,10 +172,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator ==(PersonProper left, PersonProper right)
-	{
-		return left is null ? right is null : left.Equals(right);
-	}
+	public static bool operator ==(PersonProper left, PersonProper right) => left is null ? right is null : left.Equals(right);
 
 	/// <summary>
 	/// Implements the &gt; operator.
@@ -283,7 +280,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// <param name="obj">The object to compare with the current object.</param>
 	/// <returns><c>true</c> if the specified <see cref="object" /> is equal to this instance; otherwise, <c>false</c>.</returns>
 	/// <exception cref="NotImplementedException"></exception>
-	public override bool Equals([NotNull] object obj) { return ReferenceEquals(this, obj); }
+	public override bool Equals([NotNull] object obj) => ReferenceEquals(this, obj);
 
 	/// <summary>
 	/// Equals the specified other.
@@ -291,7 +288,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// <param name="other">The other.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	/// <exception cref="NotImplementedException"></exception>
-	public bool Equals([NotNull] PersonProper other) { return ReferenceEquals(this, other); }
+	public bool Equals([NotNull] PersonProper other) => ReferenceEquals(this, other);
 
 	/// <summary>
 	/// Returns a hash code for this instance.

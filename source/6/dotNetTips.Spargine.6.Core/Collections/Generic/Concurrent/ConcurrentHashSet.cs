@@ -4,7 +4,7 @@
 // Created          : 01-01-2023
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="ConcurrentHashSet.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -146,10 +146,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// <param name="comparer">The comparer.</param>
 	[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public ConcurrentHashSet([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
-		: this(comparer)
-	{
-		this.InitializeFromCollection(collection);
-	}
+		: this(comparer) => this.InitializeFromCollection(collection);
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
@@ -159,10 +156,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// <param name="comparer">The comparer<see cref="IEqualityComparer{T}" />.</param>
 	[Information(nameof(ConcurrentHashSet<T>), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public ConcurrentHashSet(int concurrencyLevel, [NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
-		: this(concurrencyLevel, DefaultCapacity, false, comparer)
-	{
-		this.InitializeFromCollection(collection);
-	}
+		: this(concurrencyLevel, DefaultCapacity, false, comparer) => this.InitializeFromCollection(collection);
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="ConcurrentHashSet{T}" /> class.
@@ -236,10 +230,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns>true if <paramref name="item">item</paramref> was successfully removed from the <see cref="ICollection"></see>; otherwise, false. This method also returns false if <paramref name="item">item</paramref> is not found in the original <see cref="ICollection"></see>.</returns>
 	[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	bool ICollection<T>.Remove([NotNull] T item)
-	{
-		return this.TryRemove(item);
-	}
+	bool ICollection<T>.Remove([NotNull] T item) => this.TryRemove(item);
 
 	/// <summary>
 	/// Gets a value indicating whether the <see cref="ICollection"></see> is read-only.
@@ -614,10 +605,7 @@ public sealed class ConcurrentHashSet<T> : IReadOnlyCollection<T>, ICollection<T
 	/// <param name="item">The item to add.</param>
 	/// <returns>The <see cref="bool" />.</returns>
 	[Information(nameof(Add), author: "David McCarter", createdOn: "7/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public bool Add([NotNull] T item)
-	{
-		return this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
-	}
+	public bool Add([NotNull] T item) => this.AddInternal(item, this._comparer.GetHashCode(item), acquireLock: true);
 
 	/// <summary>
 	/// Removes all items from the <see cref="ConcurrentHashSet{T}" />.

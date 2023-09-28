@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -150,10 +150,7 @@ public static class StringExtensions
 	/// <param name="args">The arguments.</param>
 	/// <returns>string.</returns>
 	[Information(nameof(Concat), "David McCarter", "1/3/2023", BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineFeb2023")]
-	public static string CombineToString([NotNull] this string input, [NotNull] params string[] args)
-	{
-		return FastStringBuilder.CombineStrings(Tristate.False, args.AddFirst(input));
-	}
+	public static string CombineToString([NotNull] this string input, [NotNull] params string[] args) => FastStringBuilder.CombineStrings(Tristate.False, args.AddFirst(input));
 
 	/// <summary>
 	/// Computes a hash from the string using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
@@ -288,10 +285,7 @@ public static class StringExtensions
 	/// <returns>System.String.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string DefaultIfNull(this string value)
-	{
-		return value ?? string.Empty;
-	}
+	public static string DefaultIfNull(this string value) => value ?? string.Empty;
 
 	/// <summary>
 	/// Defaults to empty string if string is null.
@@ -301,10 +295,7 @@ public static class StringExtensions
 	/// <returns>System.String.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(DefaultIfNull), "David McCarter", "9/15/2017", "7/29/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static string DefaultIfNull(this string value, string defaultValue)
-	{
-		return value ?? defaultValue ?? string.Empty;
-	}
+	public static string DefaultIfNull(this string value, string defaultValue) => value ?? defaultValue ?? string.Empty;
 
 	/// <summary>
 	/// Defaults to value if string is null or empty.
@@ -363,10 +354,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(EqualsOrBothNullOrEmpty), "David McCarter", "7/15/2020", "7/29/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static bool EqualsOrBothNullOrEmpty(this string input, string inputToCompare)
-	{
-		return string.Equals(input ?? string.Empty, inputToCompare ?? string.Empty, StringComparison.Ordinal);
-	}
+	public static bool EqualsOrBothNullOrEmpty(this string input, string inputToCompare) => string.Equals(input ?? string.Empty, inputToCompare ?? string.Empty, StringComparison.Ordinal);
 
 	/// <summary>
 	/// Extracts a string from a beginning and end value.
@@ -543,10 +531,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if the specified input has value; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool HasValue(this string input)
-	{
-		return input is not null && (input.Trim().Length > 0);
-	}
+	public static bool HasValue(this string input) => input is not null && (input.Trim().Length > 0);
 
 	/// <summary>
 	/// Determines whether the specified string length has value. Minimum length = 1.
@@ -572,10 +557,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if the specified value has value; otherwise, <c>false</c>.</returns>
 	/// <exception cref="ArgumentInvalidException">Input cannot be null.</exception>
 	[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool HasValue(this string input, string value)
-	{
-		return input.HasValue() && string.Equals(input, value, StringComparison.Ordinal);
-	}
+	public static bool HasValue(this string input, string value) => input.HasValue() && string.Equals(input, value, StringComparison.Ordinal);
 
 	/// <summary>
 	/// Determines whether the specified expression has value based on a regular expression.
@@ -585,10 +567,7 @@ public static class StringExtensions
 	/// <param name="options">The options.</param>
 	/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
 	[Information(nameof(HasValue), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool HasValue(this string input, string expression, RegexOptions options)
-	{
-		return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
-	}
+	public static bool HasValue(this string input, string expression, RegexOptions options) => input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the strings is within the specified minimum and maximum length.
@@ -678,10 +657,7 @@ public static class StringExtensions
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsAsciiDigit), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsAsciiDigit(this char character)
-	{
-		return char.IsDigit(character);
-	}
+	public static bool IsAsciiDigit(this char character) => char.IsDigit(character);
 
 	/// <summary>
 	/// Determines whether the input is ASCII letter.
@@ -690,10 +666,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if [is ASCII letter] [the specified character]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsAsciiLetter), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsAsciiLetter(this char character)
-	{
-		return char.IsLetter(character);
-	}
+	public static bool IsAsciiLetter(this char character) => char.IsLetter(character);
 
 	/// <summary>
 	/// Determines whether the input is ASCII letter or digit.
@@ -702,10 +675,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if [is ASCII letter or digit] [the specified character]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsAsciiLetterOrDigit), author: "David McCarter", createdOn: "7/30/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsAsciiLetterOrDigit(this char character)
-	{
-		return char.IsLetterOrDigit(character);
-	}
+	public static bool IsAsciiLetterOrDigit(this char character) => char.IsLetterOrDigit(character);
 
 	/// <summary>
 	/// Determines whether the specified character is whitespace.
@@ -714,10 +684,7 @@ public static class StringExtensions
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsAsciiWhitespace), author: "David McCarter", createdOn: "6/10/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsAsciiWhitespace(this char character)
-	{
-		return char.IsWhiteSpace(character);
-	}
+	public static bool IsAsciiWhitespace(this char character) => char.IsWhiteSpace(character);
 
 	/// <summary>
 	/// Determines whether the input is credit card number.
@@ -725,10 +692,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is credit card] [the specified input]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsCreditCardNumber), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsCreditCardNumber(this string input)
-	{
-		return _creditCardNumberRegEx.IsMatch(input);
-	}
+	public static bool IsCreditCardNumber(this string input) => _creditCardNumberRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether input is a code [3 letters ].
@@ -737,10 +701,7 @@ public static class StringExtensions
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsCurrencyCode), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
-	public static bool IsCurrencyCode(this string input)
-	{
-		return _currencyCodeRegEx.IsMatch(input);
-	}
+	public static bool IsCurrencyCode(this string input) => _currencyCodeRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the input is a domain address.
@@ -749,10 +710,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if [is domain address] [the specified input]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsDomainAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsDomainAddress(this string input)
-	{
-		return _domainAddressRegEx.IsMatch(input);
-	}
+	public static bool IsDomainAddress(this string input) => _domainAddressRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the input is and email address.
@@ -760,10 +718,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [i ins email address] [the specified input]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsEmailAddress), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsEmailAddress(this string input)
-	{
-		return _emailRegEx.IsMatch(input);
-	}
+	public static bool IsEmailAddress(this string input) => _emailRegEx.IsMatch(input);
 
 #nullable enable
 	/// <summary>
@@ -774,10 +729,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if the specified input is empty; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsEmpty), "David McCarter", "8/18/20", ModifiedBy = "David McCarter", Status = Status.Available, UnitTestCoverage = 100)]
-	public static bool IsEmpty([NotNullWhen(false)] this string? input)
-	{
-		return string.IsNullOrEmpty(input);
-	}
+	public static bool IsEmpty([NotNullWhen(false)] this string? input) => string.IsNullOrEmpty(input);
 #nullable disable
 
 	/// <summary>
@@ -786,10 +738,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if [is first last name] [the specified input]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsFirstLastName), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsFirstLastName(this string input)
-	{
-		return _firstLastNameRegEx.IsMatch(input);
-	}
+	public static bool IsFirstLastName(this string input) => _firstLastNameRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the specified value is unique identifier.
@@ -797,10 +746,7 @@ public static class StringExtensions
 	/// <param name="input">The value.</param>
 	/// <returns><c>true</c> if the specified value is unique identifier; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsGuid), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsGuid(this string input)
-	{
-		return _guidRegEx.IsMatch(input);
-	}
+	public static bool IsGuid(this string input) => _guidRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the specified input is an ISBN.
@@ -808,10 +754,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is ISBN; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsISBN), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsISBN(this string input)
-	{
-		return _isbnRegEx.IsMatch(input);
-	}
+	public static bool IsISBN(this string input) => _isbnRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether [is mac address] [the specified value].
@@ -819,10 +762,7 @@ public static class StringExtensions
 	/// <param name="input">The value.</param>
 	/// <returns><c>true</c> if [is mac address] [the specified value]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsMacAddress), "David McCarter", "3/24/2017", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsMacAddress(this string input)
-	{
-		return _macAddressRegEx.IsMatch(input);
-	}
+	public static bool IsMacAddress(this string input) => _macAddressRegEx.IsMatch(input);
 
 #nullable enable
 	/// <summary>
@@ -832,10 +772,7 @@ public static class StringExtensions
 	/// <returns><c>true</c> if [is not empty] [the specified input]; otherwise, <c>false</c>.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsNotEmpty), "David McCarter", "8/18/20", Status = Status.Available, UnitTestCoverage = 100)]
-	public static bool IsNotEmpty([NotNullWhen(false)] this string? input)
-	{
-		return input.IsEmpty() == false;
-	}
+	public static bool IsNotEmpty([NotNullWhen(false)] this string? input) => input.IsEmpty() == false;
 #nullable disable
 
 	/// <summary>
@@ -845,10 +782,7 @@ public static class StringExtensions
 	/// <returns>bool.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[Information(nameof(IsOneToSevenAlpha), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineAug2022")]
-	public static bool IsOneToSevenAlpha(this string input)
-	{
-		return _oneTo7Alpha.IsMatch(input);
-	}
+	public static bool IsOneToSevenAlpha(this string input) => _oneTo7Alpha.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the specified input is a scientific value.
@@ -856,10 +790,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is scientific; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsScientific), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsScientific(this string input)
-	{
-		return _sciencetificRegEx.IsMatch(input);
-	}
+	public static bool IsScientific(this string input) => _sciencetificRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the specified input is a valid string value.
@@ -867,10 +798,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is string; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsString), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsString(this string input)
-	{
-		return _stringRegEx.IsMatch(input);
-	}
+	public static bool IsString(this string input) => _stringRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Check that the string is a valid SHA-1 hash with regex
@@ -879,10 +807,7 @@ public static class StringExtensions
 	/// <returns>Boolean representing if the input is valid or not</returns>
 	/// <remarks>Original Code By: Troy Hunt</remarks>
 	[Information(nameof(IsStringSHA1Hash), "David McCarter", "5/31/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsStringSHA1Hash(this string input)
-	{
-		return _sha1HashRegEx.IsMatch(input);
-	}
+	public static bool IsStringSHA1Hash(this string input) => _sha1HashRegEx.IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the specified input is an URL.
@@ -890,10 +815,7 @@ public static class StringExtensions
 	/// <param name="input">The input.</param>
 	/// <returns><c>true</c> if the specified input is URL; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsUrl), UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJan2022")]
-	public static bool IsUrl(this string input)
-	{
-		return _urlRegEx.Match(input).Success;
-	}
+	public static bool IsUrl(this string input) => _urlRegEx.Match(input).Success;
 
 	/// <summary>
 	/// Removes the CR/LF from the end of a <see cref="string" />.

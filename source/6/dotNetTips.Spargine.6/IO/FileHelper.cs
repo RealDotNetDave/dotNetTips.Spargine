@@ -4,7 +4,7 @@
 // Created          : 03-02-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="FileHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -359,10 +359,7 @@ public static class FileHelper
 	/// <param name="file">The path.</param>
 	/// <returns><c>true</c> if [has invalid path chars] [the specified file name]; otherwise, <c>false</c>.</returns>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
-	public static bool FileHasInvalidChars(FileInfo file)
-	{
-		return file.CheckExists() && file.ArgumentNotNull().FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
-	}
+	public static bool FileHasInvalidChars(FileInfo file) => file.CheckExists() && file.ArgumentNotNull().FullName.IndexOfAny(InvalidFileNameChars.ToArray()) != -1;
 
 	/// <summary>
 	/// Moves the file with options.

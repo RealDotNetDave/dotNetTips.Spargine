@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-20-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -89,10 +89,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator <(PersonRecord left, PersonRecord right)
-	{
-		return left is null ? right is not null : left.CompareTo(right) < 0;
-	}
+	public static bool operator <(PersonRecord left, PersonRecord right) => left is null ? right is not null : left.CompareTo(right) < 0;
 
 	/// <summary>
 	/// Implements the &lt;= operator.
@@ -100,10 +97,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator <=(PersonRecord left, PersonRecord right)
-	{
-		return left is null || left.CompareTo(right) <= 0;
-	}
+	public static bool operator <=(PersonRecord left, PersonRecord right) => left is null || left.CompareTo(right) <= 0;
 
 	/// <summary>
 	/// Implements the &gt; operator.
@@ -111,10 +105,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator >(PersonRecord left, PersonRecord right)
-	{
-		return left is not null && left.CompareTo(right) > 0;
-	}
+	public static bool operator >(PersonRecord left, PersonRecord right) => left is not null && left.CompareTo(right) > 0;
 
 	/// <summary>
 	/// Implements the &gt;= operator.
@@ -122,10 +113,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 	/// <param name="left">The left.</param>
 	/// <param name="right">The right.</param>
 	/// <returns>The result of the operator.</returns>
-	public static bool operator >=(PersonRecord left, PersonRecord right)
-	{
-		return left is null ? right is null : left.CompareTo(right) >= 0;
-	}
+	public static bool operator >=(PersonRecord left, PersonRecord right) => left is null ? right is null : left.CompareTo(right) >= 0;
 
 	/// <summary>
 	/// Compares to.

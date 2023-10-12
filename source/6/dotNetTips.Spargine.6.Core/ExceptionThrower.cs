@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class ExceptionThrower
 {
+
 	/// <summary>
 	/// Defaults if null.
 	/// </summary>
@@ -448,10 +449,7 @@ public static class ExceptionThrower
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
 	[Information(nameof(ThrowMessageNotQueuedException), author: "David McCarter", createdOn: "5/4/2023", Status = Status.Available, Documentation = "https://bit.ly/SpargineExThrow")]
-	public static void ThrowMessageNotQueuedException(string message, string messageId)
-	{
-		throw new MessageNotQueuedException(message.DefaultIfNull(Resources.ErrorMessageNotQueued), messageId);
-	}
+	public static void ThrowMessageNotQueuedException(string message, string messageId) => throw new MessageNotQueuedException(message.DefaultIfNull(Resources.ErrorMessageNotQueued), messageId);
 
 	/// <summary>
 	/// Throws the <see cref="MessageNotQueuedException" />.
@@ -494,10 +492,7 @@ public static class ExceptionThrower
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	[ExcludeFromCodeCoverage(Justification = "Not needed for this pass-through method.")]
 	[Information(nameof(ThrowNetworkConnectionException), author: "David McCarter", createdOn: "5/4/2023", Status = Status.Available, Documentation = "https://bit.ly/SpargineExThrow")]
-	public static void ThrowNetworkConnectionException(string message)
-	{
-		throw new NetworkConnectionException(message.DefaultIfNull(Resources.ErrorNetworkConnectionIssue));
-	}
+	public static void ThrowNetworkConnectionException(string message) => throw new NetworkConnectionException(message.DefaultIfNull(Resources.ErrorNetworkConnectionIssue));
 
 	/// <summary>
 	/// Throws a <see cref="NetworkConnection" />.
@@ -528,4 +523,5 @@ public static class ExceptionThrower
 	{
 		throw new NetworkConnectionException(message.DefaultIfNull(Resources.ErrorNetworkConnectionIssue), connection);
 	}
+
 }

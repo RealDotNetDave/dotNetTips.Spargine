@@ -40,10 +40,7 @@ public static class LoggingHelper
 	/// </summary>
 	/// <param name="sender">The source of the event.</param>
 	/// <param name="e">The <see cref="FirstChanceExceptionEventArgs" /> instance containing the event data.</param>
-	private static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e)
-	{
-		EasyLogger.LogException(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
-	}
+	private static void CurrentDomain_FirstChanceException(object sender, FirstChanceExceptionEventArgs e) => EasyLogger.LogException(_appDomainExceptionLogger, e.Exception.GetAllMessages(), e.Exception);
 
 	/// <summary>
 	/// Logs the application domain exceptions.

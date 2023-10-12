@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-07-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -280,6 +280,8 @@ public class DateTimeExtensionsTests : TestClass
 
 		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 	}
+
+
 	[TestMethod]
 	public void GetLastDayOfWeekTest()
 	{

@@ -103,6 +103,11 @@ public static class Categories
 	public const string Queues = "Queues";
 
 	/// <summary>
+	/// Code for record types
+	/// </summary>
+	public const string RecordType = "Record Type";
+
+	/// <summary>
 	/// Code for reference types
 	/// </summary>
 	public const string ReferenceType = "Ref Type";

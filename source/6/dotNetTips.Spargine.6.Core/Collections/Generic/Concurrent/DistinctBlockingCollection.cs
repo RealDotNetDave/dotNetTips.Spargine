@@ -67,10 +67,7 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 	/// </summary>
 	/// <param name="item">The item.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-	private bool IsNotInCollection(T item)
-	{
-		return item is null && this.Contains(item) is false;
-	}
+	private bool IsNotInCollection(T item) => item is null && this.Contains(item) is false;
 
 	/// <summary>
 	/// Adds the item to the <see cref="DistinctBlockingCollection{T}" />.
@@ -106,10 +103,7 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 	/// </summary>
 	/// <param name="item">The object to locate in the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> is found in the collection; otherwise, <see langword="false" />.</returns>
-	public bool Contains(T item)
-	{
-		return this.Contains<T>(item);
-	}
+	public bool Contains(T item) => this.Contains<T>(item);
 
 	/// <summary>
 	/// Removes the first occurrence of a specific object from the collection.
@@ -117,10 +111,7 @@ public sealed class DistinctBlockingCollection<T> : BlockingCollection<T>, IClon
 	/// <param name="item">The object to remove from the collection.</param>
 	/// <returns><see langword="true" /> if <paramref name="item" /> was successfully removed from the collection; otherwise, <see langword="false" />. This method also returns <see langword="false" /> if <paramref name="item" /> is not found in the original collection.</returns>
 	/// <exception cref="NotImplementedException"></exception>
-	public bool Remove(T item)
-	{
-		return base.TryTake(out _);
-	}
+	public bool Remove(T item) => TryTake(out _);
 
 	/// <summary>
 	/// Tries to add the specified item to the <see cref="DistinctBlockingCollection{T}" />.

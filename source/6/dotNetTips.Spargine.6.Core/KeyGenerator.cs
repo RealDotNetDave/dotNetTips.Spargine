@@ -4,7 +4,7 @@
 // Created          : 05-30-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="KeyGenerator.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -22,16 +22,14 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class KeyGenerator
 {
+
 	/// <summary>
 	/// Creates a random key from a GUID.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	/// <example>f7f0af78003d4ab194b5a4024d02112a</example>
 	[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static string GenerateKey()
-	{
-		return Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
-	}
+	public static string GenerateKey() => Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture);
 
 	/// <summary>
 	/// Creates a random key from a GUID.
@@ -40,8 +38,6 @@ public static class KeyGenerator
 	/// <returns>System.String.</returns>
 	/// <example>DataRecordf7f0af78003d4ab194b5a4024d02112a</example>
 	[Information(nameof(GenerateKey), "David McCarter", "5/30/2021", UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static string GenerateKey(string prefix)
-	{
-		return $"{prefix.ArgumentNotNull()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
-	}
+	public static string GenerateKey(string prefix) => $"{prefix.ArgumentNotNull()}{Guid.NewGuid().ToString("N", CultureInfo.InvariantCulture)}";
+
 }

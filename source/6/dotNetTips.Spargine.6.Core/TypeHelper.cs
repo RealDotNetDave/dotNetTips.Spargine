@@ -382,10 +382,7 @@ public static class TypeHelper
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <returns>T.</returns>
 	[Information(UnitTestCoverage = 100, Status = Status.Available)]
-	public static T GetDefault<T>()
-	{
-		return default;
-	}
+	public static T GetDefault<T>() => default;
 
 	/// <summary>
 	/// Gets the instance hash code.
@@ -463,10 +460,7 @@ public static class TypeHelper
 	/// <param name="fullName">if set to <c>true</c> [full name].</param>
 	/// <returns>System.String.</returns>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/31/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static string GetTypeDisplayName([NotNull] object item, bool fullName = true)
-	{
-		return item is null ? null : GetTypeDisplayName(item.GetType(), fullName);
-	}
+	public static string GetTypeDisplayName([NotNull] object item, bool fullName = true) => item is null ? null : GetTypeDisplayName(item.GetType(), fullName);
 
 	/// <summary>
 	/// Pretty print a type name using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.

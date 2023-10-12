@@ -100,10 +100,7 @@ public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	/// Checks the enumerable.
 	/// </summary>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	private void CheckEnumerable()
-	{
-		_ = this._enumerable.CheckIsNotNull(true);
-	}
+	private void CheckEnumerable() => _ = this._enumerable.CheckIsNotNull(true);
 
 	/// <summary>
 	/// Releases unmanaged and - optionally - managed resources.

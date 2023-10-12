@@ -117,10 +117,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="lower">The lower.</param>
 	/// <param name="upper">The upper.</param>
 	/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-	internal static bool CheckIsInRange(this byte value, byte lower, byte upper)
-	{
-		return value >= lower && value <= upper;
-	}
+	internal static bool CheckIsInRange(this byte value, byte lower, byte upper) => value >= lower && value <= upper;
 
 	/// <summary>
 	/// Determines whether [is in range] [the specified lower].
@@ -129,10 +126,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="lower">The lower.</param>
 	/// <param name="upper">The upper.</param>
 	/// <returns><c>true</c> if [is in range] [the specified lower]; otherwise, <c>false</c>.</returns>
-	internal static bool CheckIsInRange(this long value, long lower, long upper)
-	{
-		return value >= lower && value <= upper;
-	}
+	internal static bool CheckIsInRange(this long value, long lower, long upper) => value >= lower && value <= upper;
 
 	/// <summary>
 	/// Determines whether [is in range] [the specified lower].
@@ -307,10 +301,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="expression">The expression.</param>
 	/// <param name="options">The options.</param>
 	/// <returns><c>true</c> if the specified expression has value; otherwise, <c>false</c>.</returns>
-	internal static bool HasValue(this string input, [NotNull] string expression, [NotNull] RegexOptions options)
-	{
-		return input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
-	}
+	internal static bool HasValue(this string input, [NotNull] string expression, [NotNull] RegexOptions options) => input.HasValue() && expression.HasValue() && new Regex(expression, options).IsMatch(input);
 
 	/// <summary>
 	/// Determines whether the strings is within the specified minimum and maximum length.

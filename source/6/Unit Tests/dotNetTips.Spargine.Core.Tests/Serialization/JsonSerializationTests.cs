@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 04-17-2023
+// Last Modified On : 09-28-2023
 // ***********************************************************************
 // <copyright file="JsonSerializationTests.cs" company="DotNetTips.Spargine.Core.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.

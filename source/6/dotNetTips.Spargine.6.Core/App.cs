@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-10-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -17,6 +17,7 @@
 // ***********************************************************************
 using System.Collections;
 using System.Collections.Immutable;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.Reflection;
@@ -43,6 +44,11 @@ public static class App
 	/// The application information.
 	/// </summary>
 	private static readonly Lazy<AppInfo> _appInfo = new(InitAppInfo());
+
+	/// <summary>
+	/// The culture names
+	/// </summary>
+	private static ReadOnlyCollection<string> _cultureNames;
 
 	/// <summary>
 	/// Initializes the application information.
@@ -93,9 +99,17 @@ public static class App
 	/// </summary>
 	/// <param name="cultureName">Name of the culture.</param>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static void ChangeCulture(string cultureName)
+	public static void ChangeCulture(string cultureName) => CultureInfo.CurrentCulture = new CultureInfo(cultureName.ArgumentNotNullOrEmpty());
+
+	/// <summary>
+	/// Changes the current culture and UI culture.
+	/// </summary>
+	/// <param name="culture">The culture.</param>
+	[Information(UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	public static void ChangeCulture(CultureInfo culture)
 	{
-		CultureInfo.CurrentCulture = new CultureInfo(cultureName.ArgumentNotNullOrEmpty());
+		CultureInfo.CurrentCulture = culture.ArgumentNotNull();
+		CultureInfo.CurrentUICulture = culture;
 	}
 
 	/// <summary>
@@ -103,19 +117,31 @@ public static class App
 	/// </summary>
 	/// <param name="cultureName">Name of the culture.</param>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static void ChangeUICulture(string cultureName)
-	{
-		CultureInfo.CurrentUICulture = new CultureInfo(cultureName.ArgumentNotNullOrEmpty());
-	}
+	public static void ChangeUICulture(string cultureName) => CultureInfo.CurrentUICulture = new CultureInfo(cultureName.ArgumentNotNullOrEmpty());
 
 	/// <summary>
 	/// Returns the folder path for the entry assembly.
 	/// </summary>
 	/// <returns>System.String.</returns>
 	[Information(nameof(ExecutingFolder), author: "David McCarter", createdOn: "6/26/2017", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static string ExecutingFolder()
+	public static string ExecutingFolder() => Path.GetDirectoryName(Environment.ProcessPath);
+
+	/// <summary>
+	/// Gets the culture names.
+	/// </summary>
+	/// <param name="cultureType">Type of the culture. Defaults to AllCultures.</param>
+	/// <returns>ReadOnlyCollection&lt;System.String&gt;.</returns>
+	[Information(nameof(AppInfo), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
+	public static ReadOnlyCollection<string> GetCultureNames(CultureTypes cultureType = CultureTypes.AllCultures)
 	{
-		return Path.GetDirectoryName(Environment.ProcessPath);
+		if (_cultureNames is null)
+		{
+			var cultures = CultureInfo.GetCultures(cultureType).OrderBy(p => p.Name).Select(c => c.Name);
+
+			_cultureNames = new ReadOnlyCollection<string>(cultures.ToArray());
+		}
+
+		return _cultureNames;
 	}
 
 	/// <summary>
@@ -160,7 +186,7 @@ public static class App
 		//#if NET7_0_OR_GREATER
 		//		SourceGenerators.GetSystemInfoLibraryImport(ref info);
 		//#else
-		SourceGenerators.GetSystemInfoDllImport(ref info);
+		GetSystemInfoDllImport(ref info);
 		//#endif
 		//Convert data
 		return new ProcessorInformation()
@@ -170,7 +196,7 @@ public static class App
 			MaximumApplicationAddress = info._lpMaximumApplicationAddress,
 			ActiveProcessorMask = info._dwActiveProcessorMask,
 			NumberOfProcessors = (int)info._dwNumberOfProcessors,
-			ProcessorArchitecture = SourceGenerators.ConvertProcessorArchitecture((int)info._dwProcessorType),
+			ProcessorArchitecture = ConvertProcessorArchitecture((int)info._dwProcessorType),
 			AllocationGranularity = (int)info._dwAllocationGranularity,
 			ProcessorLevel = info._wProcessorLevel,
 			ProcessorRevision = info._wProcessorRevision
@@ -182,20 +208,14 @@ public static class App
 	/// </summary>
 	/// <returns><c>true</c> if app is not running, <c>false</c> otherwise.</returns>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static bool IsRunning()
-	{
-		return Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).FastCount() > 0;
-	}
+	public static bool IsRunning() => Process.GetProcessesByName(Process.GetCurrentProcess().ProcessName).FastCount() > 0;
 
 	/// <summary>
 	/// Checks to see if the current application is ASP.NET.
 	/// </summary>
 	/// <returns>True if running ASP.NET.</returns>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static bool IsRunningFromAspNet()
-	{
-		return (!string.IsNullOrEmpty(AppDomain.CurrentDomain.DynamicDirectory)) && AppDomain.CurrentDomain.DynamicDirectory.Contains(TempAspFiles, StringComparison.OrdinalIgnoreCase);
-	}
+	public static bool IsRunningFromAspNet() => (!string.IsNullOrEmpty(AppDomain.CurrentDomain.DynamicDirectory)) && AppDomain.CurrentDomain.DynamicDirectory.Contains(TempAspFiles, StringComparison.OrdinalIgnoreCase);
 
 	/// <summary>
 	/// Determines whether user is administrator.
@@ -221,19 +241,13 @@ public static class App
 	/// Kills the current process.
 	/// </summary>
 	[Information(UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
-	public static void Kill()
-	{
-		KillProcess(Path.GetFileNameWithoutExtension(AppContext.BaseDirectory));
-	}
+	public static void Kill() => KillProcess(Path.GetFileNameWithoutExtension(AppContext.BaseDirectory));
 
 	/// <summary>
 	/// Calculates the maximum degree of parallelism.
 	/// </summary>
 	/// <returns>System.Int32.</returns>
-	public static int MaxDegreeOfParallelism()
-	{
-		return Convert.ToInt32(Math.Ceiling(Environment.ProcessorCount * 0.75 * 2.0));
-	}
+	public static int MaxDegreeOfParallelism() => Convert.ToInt32(Math.Ceiling(Environment.ProcessorCount * 0.75 * 2.0));
 
 	/// <summary>
 	/// Loads a list of the running assembly referenced assemblies.

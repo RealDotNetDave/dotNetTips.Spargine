@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -25,6 +25,15 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class DateTimeExtensions
 {
+
+	/// <summary>
+	/// Adds the specified time.
+	/// </summary>
+	/// <param name="input">The input.</param>
+	/// <param name="time">The time.</param>
+	/// <returns>DateTime.</returns>
+	[Information(nameof(Add), author: "David McCarter", createdOn: "10/9/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static DateTime Add(this DateTime input, TimeSpan time) => input.ToUniversalTime().Subtract(time);
 
 	/// <summary>
 	/// Converts MilliEpochTime to <see cref="DateTime" />.
@@ -59,12 +68,9 @@ public static class DateTimeExtensions
 	/// <param name="dayOfWeek">The day of week.</param>
 	/// <returns>DateTimeOffset.</returns>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static DateTimeOffset GetLastDayOfWeek(this DateTimeOffset input, DayOfWeek dayOfWeek = DayOfWeek.Sunday)
-	{
-		return input.AddDays((input.DayOfWeek > dayOfWeek
+	public static DateTimeOffset GetLastDayOfWeek(this DateTimeOffset input, DayOfWeek dayOfWeek = DayOfWeek.Sunday) => input.AddDays((input.DayOfWeek > dayOfWeek
 							? input.DayOfWeek - dayOfWeek
 							: 7 - (int)dayOfWeek + (int)input.DayOfWeek) * -1);
-	}
 
 	/// <summary>
 	/// Gets the next day for the given day of the week.
@@ -91,10 +97,7 @@ public static class DateTimeExtensions
 	/// <param name="intersectingEndDate">The intersecting end date.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	[Information(nameof(Intersects), UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool Intersects(this DateTime startDate, DateTime endDate, DateTime intersectingStartDate, DateTime intersectingEndDate)
-	{
-		return intersectingEndDate >= startDate && intersectingStartDate <= endDate;
-	}
+	public static bool Intersects(this DateTime startDate, DateTime endDate, DateTime intersectingStartDate, DateTime intersectingEndDate) => intersectingEndDate >= startDate && intersectingStartDate <= endDate;
 
 	/// <summary>
 	/// Intersects the specified end date.
@@ -105,10 +108,7 @@ public static class DateTimeExtensions
 	/// <param name="intersectingEndDate">The intersecting end date.</param>
 	/// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool Intersects(this DateTimeOffset startDate, DateTimeOffset endDate, DateTimeOffset intersectingStartDate, DateTimeOffset intersectingEndDate)
-	{
-		return intersectingEndDate >= startDate && intersectingStartDate <= endDate;
-	}
+	public static bool Intersects(this DateTimeOffset startDate, DateTimeOffset endDate, DateTimeOffset intersectingStartDate, DateTimeOffset intersectingEndDate) => intersectingEndDate >= startDate && intersectingStartDate <= endDate;
 
 	/// <summary>
 	/// Determines whether value is in range of the specified beginning time and end time.
@@ -118,10 +118,7 @@ public static class DateTimeExtensions
 	/// <param name="endTime">The end date.</param>
 	/// <returns><c>true</c> if [is in range] [the specified beginning date]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime)
-	{
-		return value >= beginningTime && value <= endTime;
-	}
+	public static bool IsInRange(this DateTime value, DateTime beginningTime, DateTime endTime) => value >= beginningTime && value <= endTime;
 
 	/// <summary>
 	/// Determines whether value is in range of the specified beginning time and end time.
@@ -131,10 +128,7 @@ public static class DateTimeExtensions
 	/// <param name="endTime">The end time.</param>
 	/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime)
-	{
-		return value >= beginningTime && value <= endTime;
-	}
+	public static bool IsInRange(this TimeSpan value, TimeSpan beginningTime, TimeSpan endTime) => value >= beginningTime && value <= endTime;
 
 	/// <summary>
 	/// Determines whether value is in range of the specified beginning time and end time.
@@ -144,10 +138,7 @@ public static class DateTimeExtensions
 	/// <param name="endTime">The end time.</param>
 	/// <returns><c>true</c> if [is in range] [the specified beginning time]; otherwise, <c>false</c>.</returns>
 	[Information(nameof(IsInRange), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime)
-	{
-		return value >= beginningTime && value <= endTime;
-	}
+	public static bool IsInRange(this DateTimeOffset value, DateTimeOffset beginningTime, DateTimeOffset endTime) => value >= beginningTime && value <= endTime;
 
 	/// <summary>
 	/// Determines whether [is in range throws exception] [the specified beginning time]. Throws Exception if
@@ -216,10 +207,7 @@ public static class DateTimeExtensions
 	/// <param name="timezoneFromUtc">Hours of the timezone from UTC</param>
 	/// <returns>Future date</returns>
 	[Information(nameof(LocalTimeFromUtc), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static DateTime LocalTimeFromUtc(this DateTime date, int timezoneFromUtc)
-	{
-		return date.ToUniversalTime().AddHours(timezoneFromUtc);
-	}
+	public static DateTime LocalTimeFromUtc(this DateTime date, int timezoneFromUtc) => date.ToUniversalTime().AddHours(timezoneFromUtc);
 
 	/// <summary>
 	/// Determines the maximum of the two <see cref="DateTime" />s.
@@ -228,10 +216,7 @@ public static class DateTimeExtensions
 	/// <param name="compareTo">The date to compare.</param>
 	/// <returns>DateTime.</returns>
 	[Information(nameof(Max), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static DateTime Max(this DateTime date, DateTime compareTo)
-	{
-		return date > compareTo ? date : compareTo;
-	}
+	public static DateTime Max(this DateTime date, DateTime compareTo) => date > compareTo ? date : compareTo;
 
 	/// <summary>
 	/// Determines the maximum of the two <see cref="DateTime" />s.
@@ -240,10 +225,7 @@ public static class DateTimeExtensions
 	/// <param name="compareTo">The date to compare.</param>
 	/// <returns>DateTimeOffset.</returns>
 	[Information(nameof(Max), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, Status = Status.Available)]
-	public static DateTimeOffset Max(this DateTimeOffset date, DateTimeOffset compareTo)
-	{
-		return date > compareTo ? date : compareTo;
-	}
+	public static DateTimeOffset Max(this DateTimeOffset date, DateTimeOffset compareTo) => date > compareTo ? date : compareTo;
 
 	/// <summary>
 	/// Given a date, it returns the next (specified) day of week
@@ -286,35 +268,13 @@ public static class DateTimeExtensions
 	}
 
 	/// <summary>
-	/// Converts <see cref="DateTime" /> to a formatted string.
+	/// Subtracts the specified time.
 	/// </summary>
 	/// <param name="input">The input.</param>
-	/// <param name="format">The format.</param>
-	/// <returns>System.String.</returns>
-	/// <example>
-	/// FullDateLongTime: Thursday, January 7, 2021 3:36:39 PM
-	/// FullDateShortTime: Thursday, January 7, 2021 3:36 PM
-	/// FullDateTime: Thursday, January 7, 2021 3:36 PM
-	/// GeneralDateLongTime: 1/7/2021 3:36:39 PM
-	/// GeneralDateShortTime: 1/7/2021 3:36 PM
-	/// Jan01Comma2020: Jan 07, 2021
-	/// Janurary01Comma2020: January 07, 2021
-	/// LongDate: Thursday, January 7, 2021
-	/// LongTime: 3:36:39 PM
-	/// MonthDay: January 7
-	/// MonthYear: January 2021
-	/// RFC1123: Thu, 07 Jan 2021 15:36:39 GMT
-	/// RoundTripDateTime: 2021-01-07T15:36:39.4416894-08:00
-	/// ShortDate: 1/7/2021
-	/// ShortTime: 3:36 PM
-	/// SortableDateTime: 2021-01-07T15:36:39
-	/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
-	/// </example>
-	[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-	public static string ToFormattedString(this DateTime input, [NotNull] DateTimeFormat format)
-	{
-		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
-	}
+	/// <param name="time">The time.</param>
+	/// <returns>DateTime.</returns>
+	[Information(nameof(Subtract), author: "David McCarter", createdOn: "10/9/2023", UnitTestCoverage = 0, Status = Status.New)]
+	public static DateTime Subtract(this DateTime input, TimeSpan time) => input.ToUniversalTime().Add(time);
 
 	/// <summary>
 	/// Converts <see cref="DateTime" /> to a formatted string.
@@ -342,16 +302,44 @@ public static class DateTimeExtensions
 	/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
 	/// </example>
 	[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
-	public static string ToFormattedString(this DateTimeOffset input, [NotNull] DateTimeFormat format)
-	{
-		return input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
-	}
+	public static string ToFormattedString(this DateTime input, [NotNull] DateTimeFormat format) => input.ToString(format.DisplayName, CultureInfo.CurrentCulture);
+
+	/// <summary>
+	/// Converts <see cref="DateTime" /> to a formatted string.
+	/// </summary>
+	/// <param name="input">The input.</param>
+	/// <param name="format">The format.</param>
+	/// <returns>System.String.</returns>
+	/// <example>
+	/// FullDateLongTime: Thursday, January 7, 2021 3:36:39 PM
+	/// FullDateShortTime: Thursday, January 7, 2021 3:36 PM
+	/// FullDateTime: Thursday, January 7, 2021 3:36 PM
+	/// GeneralDateLongTime: 1/7/2021 3:36:39 PM
+	/// GeneralDateShortTime: 1/7/2021 3:36 PM
+	/// Jan01Comma2020: Jan 07, 2021
+	/// Janurary01Comma2020: January 07, 2021
+	/// LongDate: Thursday, January 7, 2021
+	/// LongTime: 3:36:39 PM
+	/// MonthDay: January 7
+	/// MonthYear: January 2021
+	/// RFC1123: Thu, 07 Jan 2021 15:36:39 GMT
+	/// RoundTripDateTime: 2021-01-07T15:36:39.4416894-08:00
+	/// ShortDate: 1/7/2021
+	/// ShortTime: 3:36 PM
+	/// SortableDateTime: 2021-01-07T15:36:39
+	/// UniversalFullDateTime: Thursday, January 7, 2021 11:36:39 PM.
+	/// </example>
+	[Information(nameof(ToFormattedString), "David McCarter", "12/21/2020", UnitTestCoverage = 100, Status = Status.Available, Documentation = "http://bit.ly/SpargineFeb2021")]
+	public static string ToFormattedString(this DateTimeOffset input, [NotNull] DateTimeFormat format) => input.ToString(format.ArgumentNotNull().DisplayName, CultureInfo.CurrentCulture);
 
 	/// <summary>
 	/// To the friendly date string.
 	/// </summary>
 	/// <param name="input">The date.</param>
 	/// <returns>System.String.</returns>
+	/// <example>
+	/// Output: Today @ 2:24:08 pm
+	/// </example>
 	[Information(nameof(ToFriendlyDateString), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, Status = Status.Available)]
 	public static string ToFriendlyDateString(this DateTime input)
 	{
@@ -390,6 +378,9 @@ public static class DateTimeExtensions
 	/// </summary>
 	/// <param name="input">The input.</param>
 	/// <returns>System.String.</returns>
+	/// <example>
+	/// Output: Today @ 2:28:59 pm
+	/// </example>
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 99, Status = Status.Available)]
 	public static string ToFriendlyDateString(this DateTimeOffset input)
 	{
@@ -443,6 +434,9 @@ public static class DateTimeExtensions
 	/// </summary>
 	/// <param name="date">The date.</param>
 	/// <returns>System.Int32.</returns>
+	/// <example>
+	/// Output: 1697121012
+	/// </example>
 	[Information(nameof(ToUnixTime), "David McCarter", "3/24/2017", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Status = Status.Available)]
 	public static int ToUnixTime(this DateTime date)
 	{

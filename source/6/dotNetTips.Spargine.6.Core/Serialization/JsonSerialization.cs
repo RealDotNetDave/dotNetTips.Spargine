@@ -178,10 +178,7 @@ public static class JsonSerialization
 	/// <param name="obj">The object.</param>
 	/// <returns>System.String.</returns>
 	[Information(nameof(Serialize), author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
-	public static string Serialize([NotNull] object obj)
-	{
-		return JsonSerializer.Serialize(obj.ArgumentNotNull());
-	}
+	public static string Serialize([NotNull] object obj) => JsonSerializer.Serialize(obj.ArgumentNotNull());
 
 	/// <summary>
 	/// Serializes to and object to a JSON file.

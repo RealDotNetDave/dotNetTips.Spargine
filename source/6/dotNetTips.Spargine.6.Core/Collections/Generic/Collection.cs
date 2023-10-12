@@ -28,7 +28,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic;
 [Information("Collection<T>.", "David McCarter", "11/12/2020")]
 public class Collection<T> : List<T>
 {
-	//TODO: IN V8, CHANGE TO INHERIT -COLLECTION<T>
+	//TODO: IN V8, CHANGE TO INHERIT-COLLECTION<T>
 
 	/// <summary>
 	/// Prevents a default instance of the <see cref="Collection{T}" /> class from being created.
@@ -162,4 +162,5 @@ public class Collection<T> : List<T>
 
 		return newItems;
 	}
+
 }

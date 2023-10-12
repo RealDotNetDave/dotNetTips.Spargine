@@ -117,10 +117,7 @@ public static class XmlSerialization
 	/// <param name="input">The input.</param>
 	/// <returns>XDocument.</returns>
 	[Information(nameof(StringToXDocument), "David McCarter", "9/9/2020", "9/9/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None)]
-	public static XDocument StringToXDocument([NotNull] string input)
-	{
-		return StringToXDocument(input.ArgumentNotNullOrEmpty(), null);
-	}
+	public static XDocument StringToXDocument([NotNull] string input) => StringToXDocument(input.ArgumentNotNullOrEmpty(), null);
 
 	/// <summary>
 	/// Securely convert string to XDocument.

@@ -242,9 +242,6 @@ internal static class InternalMethods
 	/// <param name="logger">The logger.</param>
 	/// <param name="message">The message.</param>
 	/// <param name="method">The method.</param>
-	internal static void WriteWarningMessage(this ILogger logger, string message, [CallerMemberName] string method = "")
-	{
-		EasyLogger.LogWarning(logger, $"{method}: {message}");
-	}
+	internal static void WriteWarningMessage(this ILogger logger, string message, [CallerMemberName] string method = "") => EasyLogger.LogWarning(logger, $"{method}: {message}");
 
 }

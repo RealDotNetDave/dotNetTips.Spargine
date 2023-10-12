@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic.Concurrent;
 [Information("Queue using Channel<T>.", "David McCarter", "7/26/2021")]
 public sealed class ChannelQueue<T>
 {
+
 	/// <summary>
 	/// The channel
 	/// </summary>
@@ -143,4 +144,5 @@ public sealed class ChannelQueue<T>
 			}
 		}
 	}
+
 }

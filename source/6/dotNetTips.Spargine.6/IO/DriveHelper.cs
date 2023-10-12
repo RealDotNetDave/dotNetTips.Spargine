@@ -28,6 +28,7 @@ namespace DotNetTips.Spargine.IO;
 [SupportedOSPlatform("windows")]
 public static class DriveHelper
 {
+
 	/// <summary>
 	/// Gets the serial number of the drive.
 	/// </summary>
@@ -92,4 +93,5 @@ public static class DriveHelper
 					.Distinct()
 					.ToImmutableList();
 	}
+
 }

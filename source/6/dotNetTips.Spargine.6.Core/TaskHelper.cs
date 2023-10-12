@@ -39,10 +39,7 @@ public static class TaskHelper
 	/// TaskHelper.RunSync(() =&gt; SomeType.FireAsync("Test Message"));
 	/// </example>
 	[Information("Original code from: https://weblog.west-wind.com/posts/2021/Jul/07/Thoughts-on-AsyncAwait-Conversion-in-a-Desktop-App", "David McCarter", "7/13/2021", UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2022")]
-	public static void RunSync([NotNull] Func<Task> task)
-	{
-		_taskFactory.StartNew(task.ArgumentNotNull(), CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
-	}
+	public static void RunSync([NotNull] Func<Task> task) => _taskFactory.StartNew(task.ArgumentNotNull(), CancellationToken.None, TaskCreationOptions.None, TaskScheduler.Default).Unwrap().GetAwaiter().GetResult();
 
 	/// <summary>
 	/// Executes an async Task&lt;T&gt; method which has a T return type synchronously.

@@ -4,7 +4,7 @@
 // Created          : 07-22-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="SocketExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 [Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", Status = Status.Available)]
 public static class SocketExtensions
 {
+
 	/// <summary>
 	/// Binds to an IP address and OS-assigned port. Returns the chosen port.
 	/// Validates that <paramref name="socket" /> and <paramref name="address" /> is not null.
@@ -102,4 +103,5 @@ public static class SocketExtensions
 			throw new PlatformNotSupportedException();
 		}
 	}
+
 }

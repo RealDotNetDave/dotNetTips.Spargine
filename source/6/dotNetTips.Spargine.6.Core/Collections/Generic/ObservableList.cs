@@ -233,10 +233,7 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <param name="array">The one-dimensional array that is the destination of the elements copied from
 	/// the hash set. The array must have zero-based indexing.</param>
-	public virtual void CopyTo([NotNull] T[] array)
-	{
-		this._set.CopyTo(array.ArgumentNotNull());
-	}
+	public virtual void CopyTo([NotNull] T[] array) => this._set.CopyTo(array.ArgumentNotNull());
 
 	/// <summary>
 	/// Copies the elements of the hash set to an array, starting at the specified array index.
@@ -256,10 +253,7 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// the hash set. The array must have zero-based indexing.</param>
 	/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
 	/// <param name="count">The number of elements to copy to array.</param>
-	public virtual void CopyTo([NotNull] T[] array, int arrayIndex, int count)
-	{
-		this._set.CopyTo(array.ArgumentNotNull(), arrayIndex, count);
-	}
+	public virtual void CopyTo([NotNull] T[] array, int arrayIndex, int count) => this._set.CopyTo(array.ArgumentNotNull(), arrayIndex, count);
 
 	/// <summary>
 	/// Removes all elements in the specified collection from the hash set.
@@ -329,50 +323,35 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set is a proper subset of other; otherwise, <see langword="false" />.</returns>
-	public virtual bool IsProperSubsetOf([NotNull] IEnumerable<T> other)
-	{
-		return this._set.IsProperSubsetOf(other.ArgumentNotNull());
-	}
+	public virtual bool IsProperSubsetOf([NotNull] IEnumerable<T> other) => this._set.IsProperSubsetOf(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Determines whether the hash set is a proper superset of the specified collection.
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set is a proper superset of other; otherwise, <see langword="false" />.</returns>
-	public virtual bool IsProperSupersetOf([NotNull] IEnumerable<T> other)
-	{
-		return this._set.IsProperSupersetOf(other.ArgumentNotNull());
-	}
+	public virtual bool IsProperSupersetOf([NotNull] IEnumerable<T> other) => this._set.IsProperSupersetOf(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Determines whether the hash set is a subset of the specified collection.
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set is a subset of other; otherwise, <see langword="false" />.</returns>
-	public virtual bool IsSubsetOf([NotNull] IEnumerable<T> other)
-	{
-		return this._set.IsSubsetOf(other.ArgumentNotNull());
-	}
+	public virtual bool IsSubsetOf([NotNull] IEnumerable<T> other) => this._set.IsSubsetOf(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Determines whether the hash set is a superset of the specified collection.
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set is a superset of other; otherwise, <see langword="false" />.</returns>
-	public virtual bool IsSupersetOf([NotNull] IEnumerable<T> other)
-	{
-		return this._set.IsSupersetOf(other.ArgumentNotNull());
-	}
+	public virtual bool IsSupersetOf([NotNull] IEnumerable<T> other) => this._set.IsSupersetOf(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Determines whether the current object and a specified collection share common elements.
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set and other share at least one common element; otherwise, <see langword="false" />.</returns>
-	public virtual bool Overlaps([NotNull] IEnumerable<T> other)
-	{
-		return this._set.Overlaps(other.ArgumentNotNull());
-	}
+	public virtual bool Overlaps([NotNull] IEnumerable<T> other) => this._set.Overlaps(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Removes the specified element from the hash set.
@@ -439,10 +418,7 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <param name="other">The collection to compare to the current hash set.</param>
 	/// <returns><see langword="true" /> if the hash set is equal to other; otherwise, <see langword="false" />.</returns>
-	public virtual bool SetEquals([NotNull] IEnumerable<T> other)
-	{
-		return this._set.SetEquals(other.ArgumentNotNull());
-	}
+	public virtual bool SetEquals([NotNull] IEnumerable<T> other) => this._set.SetEquals(other.ArgumentNotNull());
 
 	/// <summary>
 	/// Modifies the current hash set to contain only elements that are present either in that

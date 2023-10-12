@@ -1490,7 +1490,7 @@ dotnet_diagnostic.CA2225.severity = warning
 dotnet_diagnostic.CA2226.severity = warning
 
 # Collection properties should be read only
-dotnet_diagnostic.CA2227.severity = warning
+dotnet_diagnostic.CA2227.severity = error
 
 # Implement serialization constructors
 dotnet_diagnostic.CA2229.severity = warning

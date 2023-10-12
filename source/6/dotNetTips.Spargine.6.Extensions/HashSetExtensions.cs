@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Extensions
 // Author           : David McCarter
 // Created          : 11-21-2020
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class HashSetExtensions
 {
+
 	/// <summary>
 	/// Adds item to the <see cref="HashSet{T}" /> if condition is meet.
 	/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
@@ -64,7 +65,7 @@ public static class HashSetExtensions
 	/// </summary>
 	/// <typeparam name="T">Generic type parameter.</typeparam>
 	/// <param name="collection">The values.</param>
-	/// <returns>ImmutableHashSet<typeparamref name="T" />&gt;.</returns>
+	/// <returns>ImmutableHashSet<typeparamref name="T" /></returns>
 	[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static ImmutableHashSet<T> ToImmutable<T>([NotNull] this HashSet<T> collection)
 	{
@@ -91,4 +92,5 @@ public static class HashSetExtensions
 
 		_ = collection.Add(item);
 	}
+
 }

@@ -30,13 +30,14 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 public class ListExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 {
 
-	private List<PersonProper> _peopleRefSubSet;
 	private List<PersonProper> _peopleRefList;
+
+	private List<PersonProper> _peopleRefSubSet;
 
 	[Benchmark(Description = nameof(ListExtensions.AreEqual))]
 	public void AreEqualList()
 	{
-		var result = this._peopleRefList.AreEqual(this._peopleRefSubSet);
+		var result = this._peopleRefList.IsEqualTo(this._peopleRefSubSet);
 
 		this.Consume(result);
 	}
@@ -209,19 +210,13 @@ public class PersonProperComparer : IEqualityComparer<PersonProper>
 	/// <param name="x">The first object of type <paramref name="T" /> to compare.</param>
 	/// <param name="y">The second object of type <paramref name="T" /> to compare.</param>
 	/// <returns><see langword="true" /> if the specified objects are equal; otherwise, <see langword="false" />.</returns>
-	public bool Equals([AllowNull] PersonProper x, [AllowNull] PersonProper y)
-	{
-		return x.Id == y.Id;
-	}
+	public bool Equals([AllowNull] PersonProper x, [AllowNull] PersonProper y) => x?.Id == y?.Id;
 
 	/// <summary>
 	/// Returns a hash code for this instance.
 	/// </summary>
-	/// <param name="obj">The <see cref="Object" /> for which a hash code is to be returned.</param>
+	/// <param name="obj">The <see cref="object" /> for which a hash code is to be returned.</param>
 	/// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
-	public int GetHashCode([DisallowNull] PersonProper obj)
-	{
-		return obj.ArgumentNotNull().Id.GetHashCode(StringComparison.Ordinal);
-	}
+	public int GetHashCode([DisallowNull] PersonProper obj) => obj.ArgumentNotNull().Id.GetHashCode(StringComparison.Ordinal);
 
 }

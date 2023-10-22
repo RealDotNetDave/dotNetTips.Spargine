@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="XmlSerialization.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -53,7 +53,7 @@ public static class XmlSerialization
 	/// <typeparam name="TResult">Type.</typeparam>
 	/// <param name="fileName">Name of the file.</param>
 	/// <returns>T.</returns>
-	/// <exception cref="FileNotFoundException"></exception>
+	/// <exception cref="System.IO.FileNotFoundException"></exception>
 	[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class
 	{

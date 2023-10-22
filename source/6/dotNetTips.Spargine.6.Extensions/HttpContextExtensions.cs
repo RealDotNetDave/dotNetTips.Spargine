@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Extensions
 // Author           : David McCarter
 // Created          : 09-04-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 10-22-2023
 // ***********************************************************************
 // <copyright file="HttpContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -24,6 +24,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class HttpContextExtensions
 {
+
 	/// <summary>
 	/// Gets the remote IP address.
 	/// Validates that <paramref name="context" /> is not null.
@@ -31,8 +32,6 @@ public static class HttpContextExtensions
 	/// <param name="context">The context.</param>
 	/// <returns>System.String.</returns>
 	[Information("Original code from: https://edi.wang/post/2017/10/16/get-client-ip-aspnet-20", "David McCarter", "9/04/2017", UnitTestCoverage = 0, Status = Status.Available)]
-	public static string GetRemoteIPAddress([NotNull] this HttpContext context)
-	{
-		return context.ArgumentNotNull().Connection.RemoteIpAddress.ToString();
-	}
+	public static string GetRemoteIPAddress([NotNull] this HttpContext context) => context.ArgumentNotNull().Connection.RemoteIpAddress.ToString();
+
 }

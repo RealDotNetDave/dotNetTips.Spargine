@@ -41,15 +41,9 @@ public class EnumerableExtensionsCollectionBenchmark : SmallCollectionsBenchmark
 	private IEnumerable<PersonProper> _personRefEnumerableToAdd;
 	private List<PersonProper> _personRefListDups;
 
-	private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
-	{
-		return list.Any(predicate);
-	}
+	private static bool AnyWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate) => list.Any(predicate);
 
-	private static int CountWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate)
-	{
-		return list.Count(predicate);
-	}
+	private static int CountWithPredicate<T>([NotNull] IEnumerable<T> list, [NotNull] Func<T, bool> predicate) => list.Count(predicate);
 
 	[Benchmark(Description = nameof(EnumerableExtensions.Add))]
 	public void Add()

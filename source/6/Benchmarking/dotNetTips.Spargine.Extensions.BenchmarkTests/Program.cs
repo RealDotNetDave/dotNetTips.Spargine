@@ -27,6 +27,10 @@ namespace DotNetTips.Spargine.Extensions.BenchmarkTests;
 /// </summary>
 public static class Program
 {
+
+	private const string CompleteMessage = "COMPLETE!";
+	private const string ErrorMessage = "ERROR!";
+
 	/// <summary>
 	/// Defines the entry point of the application.
 	/// </summary>
@@ -39,7 +43,7 @@ public static class Program
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
-			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true);
+			config = config?.WithOption(ConfigOptions.DisableOptimizationsValidator, true);
 
 			//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
@@ -62,7 +66,7 @@ public static class Program
 			//_ = BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
 			_ = BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
 
-			ConsoleLogger.Default.WriteLine("COMPLETE!");
+			ConsoleLogger.Default.WriteLine(CompleteMessage);
 			Console.Beep();
 			Console.Beep(frequency: 500, duration: 1000);
 			Console.Beep(frequency: 750, duration: 2000);
@@ -71,10 +75,11 @@ public static class Program
 		}
 		catch (Exception ex)
 		{
-			ConsoleLogger.Default.WriteLine("ERROR!");
+			ConsoleLogger.Default.WriteLine(ErrorMessage);
 			ConsoleLogger.Default.WriteLine(ex.Message);
 			Console.Beep(frequency: 5000, duration: 6000);
 			_ = Console.ReadLine();
 		}
 	}
+
 }

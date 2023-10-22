@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-12-2023
+// Last Modified On : 10-22-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -20,11 +20,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotNetTips.Spargine.Extensions.Tests;
 
+/// <summary>
+/// Defines test class DateTimeExtensionsTests.
+/// Implements the <see cref="TestClass" />
+/// </summary>
+/// <seealso cref="TestClass" />
 [ExcludeFromCodeCoverage]
 [TestClass]
 public class DateTimeExtensionsTests : TestClass
 {
 
+	/// <summary>
+	/// Defines the test method DateTimeIntersectsTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeIntersectsTest()
 	{
@@ -37,6 +45,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeIsInRangeTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeIsInRangeTest()
 	{
@@ -49,6 +60,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeLocalTimeFromUtcTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeLocalTimeFromUtcTest()
 	{
@@ -61,6 +75,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result >= now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeMaxTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeMaxTest()
 	{
@@ -73,6 +90,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result == now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeNextDayOfTheWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeNextDayOfTheWeekTest()
 	{
@@ -85,6 +105,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result >= now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetGetLastDayOfWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetGetLastDayOfWeekTest()
 	{
@@ -95,6 +118,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result <= DateTime.Now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetGetNextDayOfWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetGetNextDayOfWeekTest()
 	{
@@ -105,6 +131,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result >= DateTime.Now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetIntersectsTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetIntersectsTest()
 	{
@@ -117,6 +146,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetIsInRangeTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetIsInRangeTest()
 	{
@@ -129,6 +161,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetMaxTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetMaxTest()
 	{
@@ -141,6 +176,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result == now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetNextDayOfTheWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetNextDayOfTheWeekTest()
 	{
@@ -153,6 +191,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result >= now);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeOffsetToFriendlyStringTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeOffsetToFriendlyStringTest()
 	{
@@ -163,6 +204,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(string.IsNullOrEmpty(result) is false);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeToFormattedStringTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeToFormattedStringTest()
 	{
@@ -271,6 +315,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result.Length > 5);
 	}
 
+	/// <summary>
+	/// Defines the test method DateTimeToFriendlyStringTest.
+	/// </summary>
 	[TestMethod]
 	public void DateTimeToFriendlyStringTest()
 	{
@@ -282,6 +329,9 @@ public class DateTimeExtensionsTests : TestClass
 	}
 
 
+	/// <summary>
+	/// Defines the test method GetLastDayOfWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void GetLastDayOfWeekTest()
 	{
@@ -292,6 +342,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result.DayOfWeek == DayOfWeek.Sunday);
 	}
 
+	/// <summary>
+	/// Defines the test method GetNextDayOfWeekTest.
+	/// </summary>
 	[TestMethod]
 	public void GetNextDayOfWeekTest()
 	{
@@ -302,6 +355,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result.DayOfWeek == DayOfWeek.Tuesday);
 	}
 
+	/// <summary>
+	/// Defines the test method IsInRangeThrowsExceptionTestDateTime.
+	/// </summary>
 	[TestMethod]
 	public void IsInRangeThrowsExceptionTestDateTime()
 	{
@@ -314,6 +370,9 @@ public class DateTimeExtensionsTests : TestClass
 		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
 	}
 
+	/// <summary>
+	/// Defines the test method IsInRangeThrowsExceptionTestDateTimeOffset.
+	/// </summary>
 	[TestMethod]
 	public void IsInRangeThrowsExceptionTestDateTimeOffset()
 	{
@@ -326,6 +385,9 @@ public class DateTimeExtensionsTests : TestClass
 		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.AddDays(1), now.AddDays(5), "TEST"));
 	}
 
+	/// <summary>
+	/// Defines the test method IsInRangeThrowsExceptionTestTimeSpan.
+	/// </summary>
 	[TestMethod]
 	public void IsInRangeThrowsExceptionTestTimeSpan()
 	{
@@ -338,6 +400,9 @@ public class DateTimeExtensionsTests : TestClass
 		_ = Assert.ThrowsException<ArgumentOutOfRangeException>(() => now.IsInRangeThrowsException(now.Add(new TimeSpan(10, 0, 0, 0)), new TimeSpan(20, 0, 0, 0), "TEST"));
 	}
 
+	/// <summary>
+	/// Defines the test method TimeSpanIsInRangeTest.
+	/// </summary>
 	[TestMethod]
 	public void TimeSpanIsInRangeTest()
 	{
@@ -350,6 +415,9 @@ public class DateTimeExtensionsTests : TestClass
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method ToFromMilliEpochTimeTest.
+	/// </summary>
 	[TestMethod]
 	public void ToFromMilliEpochTimeTest()
 	{
@@ -368,6 +436,9 @@ public class DateTimeExtensionsTests : TestClass
 		//PrintResult(convertedTime, nameof(this.ToFromMilliEpochTimeTest));
 	}
 
+	/// <summary>
+	/// Defines the test method ToFromUnixTimeTest.
+	/// </summary>
 	[TestMethod]
 	public void ToFromUnixTimeTest()
 	{

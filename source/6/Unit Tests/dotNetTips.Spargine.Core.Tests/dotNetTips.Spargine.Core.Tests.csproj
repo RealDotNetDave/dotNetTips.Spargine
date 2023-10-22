@@ -2,16 +2,16 @@
 
 	<PropertyGroup>
 		<AnalysisLevel>none</AnalysisLevel>
-		<AssemblyVersion>2023.6.8.2</AssemblyVersion>
+		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
 		<EnableNETAnalyzers>false</EnableNETAnalyzers>
-		<FileVersion>2023.6.8.2</FileVersion>
+		<FileVersion>2023.10.11.1</FileVersion>
 		<IsPackable>false</IsPackable>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
 		<RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
 		<TargetFramework>net6.0</TargetFramework>
-		<Version>2023.6.8.2</Version>
+		<Version>2023.10.11.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -27,14 +27,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
 		<PackageReference Include="MSTest.TestAdapter" Version="3.1.1" />
 		<PackageReference Include="MSTest.TestFramework" Version="3.1.1" />
 		<PackageReference Include="coverlet.collector" Version="6.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
 	</ItemGroup>
 
 	<ItemGroup>

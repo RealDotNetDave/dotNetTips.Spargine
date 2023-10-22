@@ -69,6 +69,7 @@ namespace DotNetTips.Spargine.Benchmarking;
 [StopOnFirstError(true)]
 public abstract class Benchmark
 {
+
 	/// <summary>
 	/// The failed text
 	/// </summary>

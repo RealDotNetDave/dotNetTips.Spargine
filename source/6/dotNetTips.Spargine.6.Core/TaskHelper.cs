@@ -4,7 +4,7 @@
 // Created          : 07-25-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="TaskHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -26,6 +26,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class TaskHelper
 {
+
 	/// <summary>
 	/// The task factory
 	/// </summary>
@@ -115,4 +116,5 @@ public static class TaskHelper
 			.GetAwaiter()
 			.GetResult();
 	}
+
 }

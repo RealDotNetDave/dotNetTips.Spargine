@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="TypeHelper.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -38,6 +38,7 @@ namespace DotNetTips.Spargine.Core;
 /// </summary>
 public static class TypeHelper
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -463,7 +464,7 @@ public static class TypeHelper
 	public static string GetTypeDisplayName([NotNull] object item, bool fullName = true) => item is null ? null : GetTypeDisplayName(item.GetType(), fullName);
 
 	/// <summary>
-	/// Pretty print a type name using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Pretty print a type name using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="type">The <see cref="Type" />.</param>
 	/// <param name="fullName"><c>true</c> to print a fully qualified name.</param>
@@ -529,6 +530,7 @@ public static class TypeHelper
 	/// </summary>
 	internal readonly struct DisplayNameOptions
 	{
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="DisplayNameOptions" /> struct.
 		/// </summary>
@@ -567,5 +569,7 @@ public static class TypeHelper
 		/// </summary>
 		/// <value>The nested type delimiter.</value>
 		public char NestedTypeDelimiter { get; }
+
 	}
+
 }

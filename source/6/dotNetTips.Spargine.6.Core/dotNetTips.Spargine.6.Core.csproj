@@ -6,7 +6,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.8.2</AssemblyVersion>
+		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -24,7 +24,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.8.2</FileVersion>
+		<FileVersion>2023.10.11.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -52,7 +52,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Title>DotNetTips.Spargine.6.Core</Title>
-		<Version>2023.6.8.2</Version>
+		<Version>2023.10.11.1</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -85,7 +85,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IDisposableAnalyzers" Version="4.0.6">
+		<PackageReference Include="IDisposableAnalyzers" Version="4.0.7">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
@@ -107,8 +107,8 @@
 		<PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
 		<PackageReference Include="System.Collections.Immutable" Version="7.0.0" />
 		<PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
-		<PackageReference Include="System.ServiceModel.Primitives" Version="6.0.0" />
-		<PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+		<PackageReference Include="System.ServiceModel.Primitives" Version="6.1.0" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
 	</ItemGroup>
 
 	<ItemGroup>

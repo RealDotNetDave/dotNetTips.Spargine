@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.5
 // Author           : David McCarter
 // Created          : 02-21-2021
@@ -24,6 +24,20 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests;
 /// </summary>
 public static class WIPTests
 {
+
+	public static void InTest01(Exception ex)
+	{
+		var result = $"{ex?.Message}";
+
+		ConsoleLogger.Default.WriteLine(result);
+	}
+
+	public static void InTest02(Exception ex)
+	{
+		var result = $"{ex?.Message}";
+
+		ConsoleLogger.Default.WriteLine(result);
+	}
 	public static bool TryValidateNull(object value, bool throwException = false)
 	{
 		var result = value is null;
@@ -119,17 +133,4 @@ public static class WIPTests
 		return result;
 	}
 
-	public static void InTest01(Exception ex)
-	{
-		var result = $"{ex.Message}";
-
-		ConsoleLogger.Default.WriteLine(result);
-	}
-
-	public static void InTest02(Exception ex)
-	{
-		var result = $"{ex.Message}";
-
-		ConsoleLogger.Default.WriteLine(result);
-	}
 }

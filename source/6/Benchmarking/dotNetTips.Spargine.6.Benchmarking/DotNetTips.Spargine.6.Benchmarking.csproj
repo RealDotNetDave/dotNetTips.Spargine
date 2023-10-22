@@ -6,7 +6,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.6.5.1</AssemblyVersion>
+		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -23,7 +23,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.6.5.1</FileVersion>
+		<FileVersion>2023.10.11.1</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -49,7 +49,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
 		<Title>DotNetTips.Spargine.Benchmarking</Title>
-		<Version>2023.6.8.1</Version>
+		<Version>2023.10.11.1</Version>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 		<RootNamespace>DotNetTips.Spargine.Benchmarking</RootNamespace>
 	</PropertyGroup>
@@ -70,11 +70,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.6" />
-		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.6" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.8.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.8.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.8.1" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.9" />
+		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.9" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.10.11.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.10.11.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.10.11.1" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -87,6 +87,22 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
 		<OutputPath>..\..\appbin</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+	  <WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+	  <WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0|AnyCPU'">
+	  <WarningLevel>0</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0|AnyCPU'">
+	  <WarningLevel>0</WarningLevel>
 	</PropertyGroup>
 
 	<ItemGroup>

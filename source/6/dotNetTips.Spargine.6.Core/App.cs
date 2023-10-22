@@ -221,7 +221,7 @@ public static class App
 	/// Determines whether user is administrator.
 	/// </summary>
 	/// <returns><c>true</c> if [is user administrator]; otherwise, <c>false</c>.</returns>
-	/// <exception cref="PlatformNotSupportedException"></exception>
+	/// <exception cref="System.PlatformNotSupportedException"></exception>
 	[Information(UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static bool IsUserAdministrator()
 	{

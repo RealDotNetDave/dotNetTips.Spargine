@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 10-12-2023
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.

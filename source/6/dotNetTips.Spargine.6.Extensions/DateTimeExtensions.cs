@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-12-2023
+// Last Modified On : 10-22-2023
 // ***********************************************************************
 // <copyright file="DateTimeExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -25,15 +25,6 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class DateTimeExtensions
 {
-
-	/// <summary>
-	/// Adds the specified time.
-	/// </summary>
-	/// <param name="input">The input.</param>
-	/// <param name="time">The time.</param>
-	/// <returns>DateTime.</returns>
-	[Information(nameof(Add), author: "David McCarter", createdOn: "10/9/2023", UnitTestCoverage = 0, Status = Status.New)]
-	public static DateTime Add(this DateTime input, TimeSpan time) => input.ToUniversalTime().Subtract(time);
 
 	/// <summary>
 	/// Converts MilliEpochTime to <see cref="DateTime" />.

@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2023
+// Last Modified On : 10-22-2023
 // ***********************************************************************
 // <copyright file="DirectoryNotFoundException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -55,10 +55,7 @@ public class DirectoryNotFoundException : LoggableException, ISerializable
 	/// </summary>
 	/// <param name="directory">The directory.</param>
 	/// <exception cref="ArgumentNullException">directory</exception>
-	public DirectoryNotFoundException(DirectoryInfo directory)
-	{
-		this.Directory = directory ?? throw new ArgumentNullException(nameof(directory));
-	}
+	public DirectoryNotFoundException(DirectoryInfo directory) => this.Directory = directory ?? throw new ArgumentNullException(nameof(directory));
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="DirectoryNotFoundException"></see> class with a specified error message.

@@ -4,7 +4,7 @@
 // Created          : 01-12-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 10-22-2023
 // ***********************************************************************
 // <copyright file="ObservableList.cs" company="dotNetTips.Spargine.5">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -38,6 +38,7 @@ namespace DotNetTips.Spargine.Core.Collections.Generic;
 [Information("From .NET EF Core source.", author: "David McCarter", createdOn: "7/31/2020", Status = Status.Available)]
 public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollectionChanged, INotifyPropertyChanged, INotifyPropertyChanging
 {
+
 	/// <summary>
 	/// The set
 	/// </summary>
@@ -81,10 +82,7 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// <param name="comparer">The <see cref="IEqualityComparer{T}" /> implementation to use when
 	/// comparing values in the set, or null to use the default <see cref="IEqualityComparer{T}" />
 	/// implementation for the set type.</param>
-	public ObservableList([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer)
-	{
-		this._set = new HashSet<T>(collection, comparer);
-	}
+	public ObservableList([NotNull] IEnumerable<T> collection, [NotNull] IEqualityComparer<T> comparer) => this._set = new HashSet<T>(collection, comparer);
 
 	/// <summary>
 	/// Occurs when the contents of the hash set changes.
@@ -241,10 +239,7 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// <param name="array">The one-dimensional array that is the destination of the elements copied from
 	/// the hash set. The array must have zero-based indexing.</param>
 	/// <param name="arrayIndex">The zero-based index in array at which copying begins.</param>
-	public virtual void CopyTo([NotNull] T[] array, int arrayIndex)
-	{
-		this._set.CopyTo(array.ArgumentNotNull(), arrayIndex);
-	}
+	public virtual void CopyTo([NotNull] T[] array, int arrayIndex) => this._set.CopyTo(array.ArgumentNotNull(), arrayIndex);
 
 	/// <summary>
 	/// Copies the specified number of elements of the hash set to an array, starting at the specified array index.
@@ -501,4 +496,5 @@ public class ObservableList<T> : ISet<T>, IReadOnlyCollection<T>, INotifyCollect
 	/// </summary>
 	/// <value><c>true</c> if this instance is read only; otherwise, <c>false</c>.</value>
 	public virtual bool IsReadOnly => ((ICollection<T>)this._set).IsReadOnly;
+
 }

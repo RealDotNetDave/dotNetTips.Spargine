@@ -4,7 +4,7 @@
 // Created          : 05-01-2022
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 09-05-2023
 // ***********************************************************************
 // <copyright file="EasyLogger.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)

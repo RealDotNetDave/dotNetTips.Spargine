@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -367,5 +367,14 @@
   </data>
   <data name="HttpRequestHasNoBody" xml:space="preserve">
     <value>HttpRequest has no body.</value>
+  </data>
+  <data name="RegexFindSpace" xml:space="preserve">
+    <value>\s</value>
+  </data>
+  <data name="RegexFindSpaces" xml:space="preserve">
+    <value>\s+</value>
+  </data>
+  <data name="RegexInvalidChars" xml:space="preserve">
+    <value>[^a-z0-9\s-]</value>
   </data>
 </root>

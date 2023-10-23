@@ -206,12 +206,7 @@ public static class ArrayExtensions
 	[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
 	public static bool AreEqual<T>([NotNull] this T[] array, [NotNull] T[] arrayToCheck)
 	{
-		if (array is null || arrayToCheck is null)
-		{
-			return false;
-		}
-
-		if (array.Length != arrayToCheck.Length)
+		if (array is null || arrayToCheck is null || array.Length != arrayToCheck.Length)
 		{
 			return false;
 		}

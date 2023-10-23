@@ -529,11 +529,38 @@ namespace DotNetTips.Spargine.Extensions.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to \s.
+        /// </summary>
+        internal static string RegexFindSpace {
+            get {
+                return ResourceManager.GetString("RegexFindSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to \s+.
+        /// </summary>
+        internal static string RegexFindSpaces {
+            get {
+                return ResourceManager.GetString("RegexFindSpaces", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ^[\p{Lu}\p{M}][\p{L}\p{M},.&apos;-]+(?: [\p{L}\p{M},.&apos;-]+)*$.
         /// </summary>
         internal static string RegexFirstLastName {
             get {
                 return ResourceManager.GetString("RegexFirstLastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [^a-z0-9\s-].
+        /// </summary>
+        internal static string RegexInvalidChars {
+            get {
+                return ResourceManager.GetString("RegexInvalidChars", resourceCulture);
             }
         }
         

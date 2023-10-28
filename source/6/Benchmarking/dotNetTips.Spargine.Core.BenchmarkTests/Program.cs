@@ -29,6 +29,7 @@ namespace DotNetTips.Spargine.Core.BenchmarkTests;
 /// </summary>
 public class Program
 {
+
 	/// <summary>
 	/// Defines the entry point of the application.
 	/// </summary>
@@ -39,8 +40,6 @@ public class Program
 			var config = DefaultConfig.Instance
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70)).WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Nanosecond))
 			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60)).WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Nanosecond));
-
-			//var config = DefaultConfig.Instance.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
 
 			config = config.WithOption(ConfigOptions.DisableOptimizationsValidator, true);
 
@@ -63,4 +62,5 @@ public class Program
 			_ = Console.ReadLine();
 		}
 	}
+
 }

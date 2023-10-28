@@ -16,7 +16,9 @@ using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Loggers;
+using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
+using Perfolizer.Horology;
 
 //`![Spargine 6 Rocks Your Code](6219C891F6330C65927FA249E739AC1F.png;https://www.spargine.net )
 
@@ -40,12 +42,12 @@ public static class Program
 		try
 		{
 			var config = DefaultConfig.Instance
-			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70))
-			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core70)).WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Nanosecond))
+			.AddJob(Job.Default.WithRuntime(CoreRuntime.Core60)).WithSummaryStyle(SummaryStyle.Default.WithTimeUnit(TimeUnit.Nanosecond));
 
 			config = config?.WithOption(ConfigOptions.DisableOptimizationsValidator, true);
 
-			//_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
+			_ = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).RunAll(config);
 
 			//_ = BenchmarkRunner.Run<ArrayExtensionsCollectionBenchmark>(config);
 			//_ = BenchmarkRunner.Run<AssemblyExtensionsBenchmark>(config);
@@ -64,7 +66,7 @@ public static class Program
 			//_ = BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
 			//_ = BenchmarkRunner.Run<StringBuilderExtensionsCounterBenchmark>(config);
 			//_ = BenchmarkRunner.Run<StringExtensionsBenchmark>(config);
-			_ = BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
+			//_ = BenchmarkRunner.Run<StringExtensionsCounterBenchmark>(config);
 
 			ConsoleLogger.Default.WriteLine(CompleteMessage);
 			Console.Beep();

@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class CollectionExtensions
 {
+
 	/// <summary>
 	/// Adds item to the <see cref="ICollection{T}" /> if the condition is meet.
 	/// Validates that <paramref name="collection" /> and <paramref name="item" /> is not null.
@@ -263,4 +264,5 @@ public static class CollectionExtensions
 
 		collection.Add(item);
 	}
+
 }

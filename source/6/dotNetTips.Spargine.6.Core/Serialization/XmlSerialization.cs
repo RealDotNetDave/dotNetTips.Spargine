@@ -53,7 +53,7 @@ public static class XmlSerialization
 	/// <typeparam name="TResult">Type.</typeparam>
 	/// <param name="fileName">Name of the file.</param>
 	/// <returns>T.</returns>
-	/// <exception cref="System.IO.FileNotFoundException"></exception>
+	/// <exception cref="FileNotFoundException"></exception>
 	[Information(nameof(DeserializeFromFile), BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
 	public static TResult DeserializeFromFile<TResult>([NotNull] string fileName) where TResult : class
 	{

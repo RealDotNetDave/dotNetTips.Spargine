@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<!--<TargetFrameworks>net6.0; net7.0</TargetFrameworks>-->
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
 		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
@@ -27,7 +26,7 @@
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<ServerGarbageCollection>true</ServerGarbageCollection>
 		<SignAssembly>False</SignAssembly>
-		<TargetFrameworks>net60;net7.0</TargetFrameworks>
+		<TargetFrameworks>net6.0; net7.0</TargetFrameworks>
 		<Version>2023.10.11.1</Version>
 	</PropertyGroup>
 
@@ -45,11 +44,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj" />
+		<ProjectReference Include="..\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Properties\" />
+		<Folder Include="Properties\" />
 	</ItemGroup>
 
 </Project>

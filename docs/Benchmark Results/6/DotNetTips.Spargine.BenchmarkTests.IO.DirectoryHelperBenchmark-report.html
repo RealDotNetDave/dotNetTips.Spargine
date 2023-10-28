@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.BenchmarkTests.IO.DirectoryHelperBenchmark-20230721-164855</title>
+<title>DotNetTips.Spargine.BenchmarkTests.IO.DirectoryHelperBenchmark-20231026-161436</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,28 +13,28 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet v0.13.6, Windows 10 (10.0.19045.3208/22H2/2022Update)
+BenchmarkDotNet v0.13.9+228a464e8be6c580ad9408e98f18813f6407fb5a, Windows 10 (10.0.19045.3570/22H2/2022Update)
 Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100-preview.6.23330.14
-  [Host]     : .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
-  Job-JDVVBH : .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
-  Job-GJNMGF : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
+.NET SDK 8.0.100-rc.2.23502.2
+  [Host]     : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+  Job-CXSZNQ : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+  Job-DTMEWR : .NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.BenchmarkTests.IO  
 Categories=IO  
 </code></pre>
 
 <table>
-<thead><tr><th>             Method</th><th>Runtime</th><th>   Mean</th><th> Error</th><th>StdDev</th><th>StdErr</th><th>    Min</th><th>     Q1</th><th> Median</th><th>     Q3</th><th>    Max</th><th>  Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+<thead><tr><th>Method             </th><th>Runtime</th><th>Mean   </th><th>Error </th><th>StdDev</th><th>StdErr</th><th>Min    </th><th>Q1     </th><th>Median </th><th>Q3     </th><th>Max    </th><th>Op/s  </th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>AppDataFolder</td><td>.NET 6.0</td><td>1,934.16 ns</td><td>17.196 ns</td><td>16.085 ns</td><td>4.153 ns</td><td>1,916.27 ns</td><td>1,923.75 ns</td><td>1,928.77 ns</td><td>1,944.75 ns</td><td>1,969.56 ns</td><td>517,019.9</td><td>17.1956 ns</td><td>15.00</td><td>2.260</td><td>2.000</td><td>0.7709</td><td>6</td><td>*</td><td>No</td><td>439 B</td><td>736 B</td>
-</tr><tr><td>AppDataFolder</td><td>.NET 7.0</td><td>1,782.57 ns</td><td>28.261 ns</td><td>26.436 ns</td><td>6.826 ns</td><td>1,750.81 ns</td><td>1,757.06 ns</td><td>1,784.83 ns</td><td>1,799.90 ns</td><td>1,834.74 ns</td><td>560,988.9</td><td>28.2613 ns</td><td>15.00</td><td>1.726</td><td>2.000</td><td>0.2349</td><td>5</td><td>*</td><td>No</td><td>452 B</td><td>744 B</td>
-</tr><tr><td>SafeDirectorySearch</td><td>.NET 6.0</td><td>14.93 ns</td><td>0.148 ns</td><td>0.138 ns</td><td>0.036 ns</td><td>14.74 ns</td><td>14.80 ns</td><td>14.96 ns</td><td>15.02 ns</td><td>15.14 ns</td><td>66,978,987.3</td><td>0.1480 ns</td><td>15.00</td><td>1.434</td><td>2.000</td><td>0.0415</td><td>1</td><td>*</td><td>No</td><td>160 B</td><td>104 B</td>
-</tr><tr><td>SafeDirectorySearch</td><td>.NET 7.0</td><td>19.77 ns</td><td>0.112 ns</td><td>0.099 ns</td><td>0.027 ns</td><td>19.59 ns</td><td>19.72 ns</td><td>19.76 ns</td><td>19.80 ns</td><td>19.99 ns</td><td>50,581,549.9</td><td>0.1119 ns</td><td>14.00</td><td>2.898</td><td>2.000</td><td>0.4323</td><td>2</td><td>*</td><td>No</td><td>161 B</td><td>104 B</td>
-</tr><tr><td>SafeFileSearch</td><td>.NET 6.0</td><td>30.52 ns</td><td>0.565 ns</td><td>0.529 ns</td><td>0.137 ns</td><td>29.49 ns</td><td>30.14 ns</td><td>30.68 ns</td><td>30.87 ns</td><td>31.23 ns</td><td>32,765,126.7</td><td>0.5652 ns</td><td>15.00</td><td>1.905</td><td>2.000</td><td>-0.4859</td><td>3</td><td>*</td><td>No</td><td>311 B</td><td>168 B</td>
-</tr><tr><td>SafeFileSearch</td><td>.NET 7.0</td><td>33.69 ns</td><td>0.201 ns</td><td>0.178 ns</td><td>0.048 ns</td><td>33.40 ns</td><td>33.55 ns</td><td>33.69 ns</td><td>33.85 ns</td><td>33.95 ns</td><td>29,683,699.6</td><td>0.2008 ns</td><td>14.00</td><td>1.472</td><td>2.000</td><td>-0.0535</td><td>4</td><td>*</td><td>No</td><td>1,339 B</td><td>168 B</td>
-</tr><tr><td>SetFileAttributesToNormal</td><td>.NET 6.0</td><td>167,575.43 ns</td><td>2,983.981 ns</td><td>2,791.217 ns</td><td>720.689 ns</td><td>162,783.64 ns</td><td>164,793.15 ns</td><td>168,140.04 ns</td><td>170,055.76 ns</td><td>170,739.60 ns</td><td>5,967.5</td><td>2,983.9805 ns</td><td>15.00</td><td>1.506</td><td>2.000</td><td>-0.4453</td><td>8</td><td>*</td><td>No</td><td>229 B</td><td>1008 B</td>
-</tr><tr><td>SetFileAttributesToNormal</td><td>.NET 7.0</td><td>159,780.98 ns</td><td>1,013.912 ns</td><td>898.807 ns</td><td>240.216 ns</td><td>158,551.79 ns</td><td>159,102.02 ns</td><td>159,764.51 ns</td><td>160,192.25 ns</td><td>161,391.98 ns</td><td>6,258.6</td><td>1,013.9124 ns</td><td>14.00</td><td>1.826</td><td>2.000</td><td>0.2681</td><td>7</td><td>*</td><td>No</td><td>1,585 B</td><td>1008 B</td>
+</thead><tbody><tr><td>AppDataFolder</td><td>.NET 6.0</td><td>1,996.27 ns</td><td>11.788 ns</td><td>9.844 ns</td><td>2.730 ns</td><td>1,986.74 ns</td><td>1,990.00 ns</td><td>1,992.44 ns</td><td>2,000.58 ns</td><td>2,021.31 ns</td><td>500,934.5</td><td>11.7881 ns</td><td>13.00</td><td>3.599</td><td>2.000</td><td>1.2175</td><td>6</td><td>*</td><td>No</td><td>381 B</td><td>736 B</td>
+</tr><tr><td>AppDataFolder</td><td>.NET 7.0</td><td>1,732.24 ns</td><td>4.808 ns</td><td>4.498 ns</td><td>1.161 ns</td><td>1,726.17 ns</td><td>1,728.25 ns</td><td>1,731.71 ns</td><td>1,736.59 ns</td><td>1,738.37 ns</td><td>577,287.2</td><td>4.8084 ns</td><td>15.00</td><td>1.352</td><td>2.000</td><td>0.0424</td><td>5</td><td>*</td><td>No</td><td>390 B</td><td>744 B</td>
+</tr><tr><td>SafeDirectorySearch</td><td>.NET 6.0</td><td>21.53 ns</td><td>0.056 ns</td><td>0.046 ns</td><td>0.013 ns</td><td>21.48 ns</td><td>21.49 ns</td><td>21.53 ns</td><td>21.54 ns</td><td>21.63 ns</td><td>46,444,804.0</td><td>0.0557 ns</td><td>13.00</td><td>2.563</td><td>2.000</td><td>0.8706</td><td>1</td><td>*</td><td>No</td><td>234 B</td><td>128 B</td>
+</tr><tr><td>SafeDirectorySearch</td><td>.NET 7.0</td><td>26.90 ns</td><td>0.127 ns</td><td>0.119 ns</td><td>0.031 ns</td><td>26.69 ns</td><td>26.82 ns</td><td>26.88 ns</td><td>26.97 ns</td><td>27.12 ns</td><td>37,178,369.5</td><td>0.1274 ns</td><td>15.00</td><td>2.038</td><td>2.000</td><td>0.1959</td><td>2</td><td>*</td><td>No</td><td>239 B</td><td>128 B</td>
+</tr><tr><td>SafeFileSearch</td><td>.NET 6.0</td><td>39.76 ns</td><td>0.242 ns</td><td>0.226 ns</td><td>0.058 ns</td><td>39.43 ns</td><td>39.55 ns</td><td>39.81 ns</td><td>39.93 ns</td><td>40.19 ns</td><td>25,151,054.8</td><td>0.2416 ns</td><td>15.00</td><td>1.805</td><td>2.000</td><td>-0.0421</td><td>3</td><td>*</td><td>No</td><td>256 B</td><td>192 B</td>
+</tr><tr><td>SafeFileSearch</td><td>.NET 7.0</td><td>51.22 ns</td><td>0.107 ns</td><td>0.089 ns</td><td>0.025 ns</td><td>51.06 ns</td><td>51.17 ns</td><td>51.25 ns</td><td>51.28 ns</td><td>51.36 ns</td><td>19,522,454.2</td><td>0.1066 ns</td><td>13.00</td><td>2.051</td><td>2.000</td><td>-0.4322</td><td>4</td><td>*</td><td>No</td><td>258 B</td><td>192 B</td>
+</tr><tr><td>SetFileAttributesToNormal</td><td>.NET 6.0</td><td>159,691.10 ns</td><td>949.240 ns</td><td>887.919 ns</td><td>229.260 ns</td><td>157,810.50 ns</td><td>159,111.98 ns</td><td>159,729.64 ns</td><td>160,149.82 ns</td><td>161,211.94 ns</td><td>6,262.1</td><td>949.2397 ns</td><td>15.00</td><td>2.434</td><td>2.000</td><td>-0.2727</td><td>8</td><td>*</td><td>No</td><td>413 B</td><td>1008 B</td>
+</tr><tr><td>SetFileAttributesToNormal</td><td>.NET 7.0</td><td>156,678.67 ns</td><td>1,516.371 ns</td><td>1,418.414 ns</td><td>366.233 ns</td><td>154,525.00 ns</td><td>155,516.30 ns</td><td>156,537.06 ns</td><td>157,892.21 ns</td><td>158,940.92 ns</td><td>6,382.5</td><td>1,516.3709 ns</td><td>15.00</td><td>1.551</td><td>2.000</td><td>0.1520</td><td>7</td><td>*</td><td>No</td><td>420 B</td><td>1008 B</td>
 </tr></tbody></table>
 </body>
 </html>

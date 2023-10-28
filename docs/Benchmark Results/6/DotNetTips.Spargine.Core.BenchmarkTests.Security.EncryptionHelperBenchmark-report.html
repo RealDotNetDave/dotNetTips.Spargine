@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-20230721-191855</title>
+<title>DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-20231026-201120</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,28 +13,28 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet v0.13.6, Windows 10 (10.0.19045.3208/22H2/2022Update)
+BenchmarkDotNet v0.13.9+228a464e8be6c580ad9408e98f18813f6407fb5a, Windows 10 (10.0.19045.3570/22H2/2022Update)
 Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100-preview.6.23330.14
-  [Host]     : .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
-  Job-TPLMSH : .NET 6.0.20 (6.0.2023.32017), X64 RyuJIT AVX2
-  Job-KEOQYR : .NET 7.0.9 (7.0.923.32018), X64 RyuJIT AVX2
+.NET SDK 8.0.100-rc.2.23502.2
+  [Host]     : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+  Job-XGXFJX : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+  Job-TJKJTW : .NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests.Security  
 Categories=Encryption  
 </code></pre>
 
 <table>
-<thead><tr><th>       Method</th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th> Min</th><th>  Q1</th><th>Median</th><th>  Q3</th><th> Max</th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
+<thead><tr><th>Method       </th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Median</th><th>Min </th><th>Q1  </th><th>Q3  </th><th>Max </th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>AesDecrypt</td><td>.NET 6.0</td><td>5,641.8 ns</td><td>86.89 ns</td><td>81.28 ns</td><td>20.99 ns</td><td>5,554.5 ns</td><td>5,575.0 ns</td><td>5,620.4 ns</td><td>5,704.0 ns</td><td>5,808.3 ns</td><td>177,249.8</td><td>86.89 ns</td><td>15.00</td><td>1.948</td><td>2.000</td><td>0.6368</td><td>4</td><td>*</td><td>No</td><td>2,163 B</td><td>13.79 KB</td>
-</tr><tr><td>AesDecrypt</td><td>.NET 7.0</td><td>5,082.5 ns</td><td>89.04 ns</td><td>83.29 ns</td><td>21.50 ns</td><td>4,972.7 ns</td><td>5,018.8 ns</td><td>5,073.7 ns</td><td>5,134.7 ns</td><td>5,267.6 ns</td><td>196,754.4</td><td>89.04 ns</td><td>15.00</td><td>2.233</td><td>2.000</td><td>0.4877</td><td>3</td><td>*</td><td>No</td><td>2,892 B</td><td>13.75 KB</td>
-</tr><tr><td>AesEncrypt</td><td>.NET 6.0</td><td>4,638.3 ns</td><td>92.06 ns</td><td>98.50 ns</td><td>23.22 ns</td><td>4,538.9 ns</td><td>4,565.8 ns</td><td>4,598.6 ns</td><td>4,733.7 ns</td><td>4,810.8 ns</td><td>215,595.8</td><td>92.06 ns</td><td>18.00</td><td>1.699</td><td>2.667</td><td>0.6516</td><td>2</td><td>*</td><td>No</td><td>2,160 B</td><td>12.4 KB</td>
-</tr><tr><td>AesEncrypt</td><td>.NET 7.0</td><td>4,251.0 ns</td><td>72.39 ns</td><td>96.64 ns</td><td>19.33 ns</td><td>4,142.8 ns</td><td>4,163.7 ns</td><td>4,251.4 ns</td><td>4,312.6 ns</td><td>4,519.7 ns</td><td>235,236.6</td><td>72.39 ns</td><td>25.00</td><td>3.169</td><td>2.000</td><td>0.8225</td><td>1</td><td>*</td><td>No</td><td>2,889 B</td><td>12.36 KB</td>
-</tr><tr><td>SimpleSHA256Decrypt</td><td>.NET 6.0</td><td>5,610.3 ns</td><td>13.00 ns</td><td>10.85 ns</td><td>3.01 ns</td><td>5,586.1 ns</td><td>5,606.6 ns</td><td>5,610.0 ns</td><td>5,615.8 ns</td><td>5,632.7 ns</td><td>178,243.3</td><td>13.00 ns</td><td>13.00</td><td>3.395</td><td>2.000</td><td>-0.2088</td><td>4</td><td>*</td><td>No</td><td>608 B</td><td>11.02 KB</td>
-</tr><tr><td>SimpleSHA256Decrypt</td><td>.NET 7.0</td><td>6,156.1 ns</td><td>14.68 ns</td><td>12.26 ns</td><td>3.40 ns</td><td>6,129.5 ns</td><td>6,147.8 ns</td><td>6,157.0 ns</td><td>6,166.1 ns</td><td>6,170.5 ns</td><td>162,439.5</td><td>14.68 ns</td><td>13.00</td><td>2.241</td><td>2.000</td><td>-0.6844</td><td>6</td><td>*</td><td>No</td><td>611 B</td><td>10.98 KB</td>
-</tr><tr><td>SimpleSHA256Encrypt</td><td>.NET 6.0</td><td>5,906.1 ns</td><td>88.15 ns</td><td>82.46 ns</td><td>21.29 ns</td><td>5,826.4 ns</td><td>5,839.6 ns</td><td>5,875.5 ns</td><td>5,956.5 ns</td><td>6,054.6 ns</td><td>169,316.8</td><td>88.15 ns</td><td>15.00</td><td>1.780</td><td>2.000</td><td>0.6499</td><td>5</td><td>*</td><td>No</td><td>605 B</td><td>12.63 KB</td>
-</tr><tr><td>SimpleSHA256Encrypt</td><td>.NET 7.0</td><td>5,515.8 ns</td><td>105.01 ns</td><td>120.93 ns</td><td>27.04 ns</td><td>5,348.1 ns</td><td>5,393.5 ns</td><td>5,534.4 ns</td><td>5,581.4 ns</td><td>5,707.6 ns</td><td>181,298.7</td><td>105.01 ns</td><td>20.00</td><td>1.581</td><td>2.000</td><td>0.1066</td><td>4</td><td>*</td><td>No</td><td>608 B</td><td>12.59 KB</td>
+</thead><tbody><tr><td>AesDecrypt</td><td>.NET 6.0</td><td>5,775.3 ns</td><td>66.10 ns</td><td>58.60 ns</td><td>15.66 ns</td><td>5,749.8 ns</td><td>5,717.4 ns</td><td>5,737.0 ns</td><td>5,800.2 ns</td><td>5,892.4 ns</td><td>173,150.3</td><td>66.10 ns</td><td>14.00</td><td>2.178</td><td>2.000</td><td>0.9068</td><td>4</td><td>*</td><td>No</td><td>917 B</td><td>13.79 KB</td>
+</tr><tr><td>AesDecrypt</td><td>.NET 7.0</td><td>5,199.3 ns</td><td>99.59 ns</td><td>97.81 ns</td><td>24.45 ns</td><td>5,168.3 ns</td><td>5,077.5 ns</td><td>5,135.4 ns</td><td>5,261.0 ns</td><td>5,418.5 ns</td><td>192,334.9</td><td>99.59 ns</td><td>16.00</td><td>2.277</td><td>2.000</td><td>0.6492</td><td>3</td><td>*</td><td>No</td><td>908 B</td><td>13.75 KB</td>
+</tr><tr><td>AesEncrypt</td><td>.NET 6.0</td><td>4,702.8 ns</td><td>68.15 ns</td><td>63.74 ns</td><td>16.46 ns</td><td>4,690.5 ns</td><td>4,637.5 ns</td><td>4,649.8 ns</td><td>4,744.9 ns</td><td>4,854.3 ns</td><td>212,641.2</td><td>68.15 ns</td><td>15.00</td><td>2.705</td><td>2.000</td><td>0.8345</td><td>2</td><td>*</td><td>No</td><td>914 B</td><td>12.4 KB</td>
+</tr><tr><td>AesEncrypt</td><td>.NET 7.0</td><td>4,478.2 ns</td><td>86.82 ns</td><td>112.89 ns</td><td>23.04 ns</td><td>4,403.1 ns</td><td>4,381.4 ns</td><td>4,385.6 ns</td><td>4,545.4 ns</td><td>4,700.8 ns</td><td>223,306.1</td><td>86.82 ns</td><td>24.00</td><td>1.837</td><td>2.286</td><td>0.7053</td><td>1</td><td>*</td><td>No</td><td>905 B</td><td>12.36 KB</td>
+</tr><tr><td>SimpleSHA256Decrypt</td><td>.NET 6.0</td><td>5,687.8 ns</td><td>13.76 ns</td><td>12.87 ns</td><td>3.32 ns</td><td>5,687.5 ns</td><td>5,669.7 ns</td><td>5,679.3 ns</td><td>5,692.4 ns</td><td>5,711.3 ns</td><td>175,814.3</td><td>13.76 ns</td><td>15.00</td><td>2.079</td><td>2.000</td><td>0.4418</td><td>4</td><td>*</td><td>No</td><td>347 B</td><td>11.02 KB</td>
+</tr><tr><td>SimpleSHA256Decrypt</td><td>.NET 7.0</td><td>6,507.5 ns</td><td>17.46 ns</td><td>16.33 ns</td><td>4.22 ns</td><td>6,509.5 ns</td><td>6,477.8 ns</td><td>6,499.6 ns</td><td>6,515.5 ns</td><td>6,533.8 ns</td><td>153,669.9</td><td>17.46 ns</td><td>15.00</td><td>2.192</td><td>2.000</td><td>-0.2169</td><td>6</td><td>*</td><td>No</td><td>351 B</td><td>10.98 KB</td>
+</tr><tr><td>SimpleSHA256Encrypt</td><td>.NET 6.0</td><td>5,904.1 ns</td><td>60.22 ns</td><td>53.39 ns</td><td>14.27 ns</td><td>5,892.5 ns</td><td>5,841.1 ns</td><td>5,864.2 ns</td><td>5,923.4 ns</td><td>5,998.0 ns</td><td>169,374.8</td><td>60.22 ns</td><td>14.00</td><td>1.813</td><td>2.000</td><td>0.5452</td><td>5</td><td>*</td><td>No</td><td>344 B</td><td>12.63 KB</td>
+</tr><tr><td>SimpleSHA256Encrypt</td><td>.NET 7.0</td><td>5,591.8 ns</td><td>84.62 ns</td><td>79.15 ns</td><td>20.44 ns</td><td>5,573.4 ns</td><td>5,515.5 ns</td><td>5,523.4 ns</td><td>5,659.3 ns</td><td>5,765.3 ns</td><td>178,833.0</td><td>84.62 ns</td><td>15.00</td><td>2.094</td><td>2.000</td><td>0.6561</td><td>4</td><td>*</td><td>No</td><td>348 B</td><td>12.59 KB</td>
 </tr></tbody></table>
 </body>
 </html>

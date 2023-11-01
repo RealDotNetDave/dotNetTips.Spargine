@@ -105,7 +105,7 @@ public static class App
 	/// Changes the current culture and UI culture.
 	/// </summary>
 	/// <param name="culture">The culture.</param>
-	[Information(UnitTestCoverage = 0, Status = Status.New, Documentation = "ADD URL")]
+	[Information(UnitTestCoverage = 0, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static void ChangeCulture(CultureInfo culture)
 	{
 		CultureInfo.CurrentCulture = culture.ArgumentNotNull();

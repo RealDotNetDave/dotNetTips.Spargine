@@ -9,9 +9,7 @@
 // <copyright file="ServiceProxy.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
 // </copyright>
-// <summary>
-// Creates a service proxy for types that implement ICommunicationObject.
-// </summary>
+// <summary>Creates a service proxy for types that implement ICommunicationObject.</summary>
 // ***********************************************************************
 using System.Diagnostics.CodeAnalysis;
 using System.ServiceModel;
@@ -28,6 +26,7 @@ namespace DotNetTips.Spargine.Core.Web;
 /// <seealso cref="IDisposable" />
 public abstract class ServiceProxy<T> : IDisposable where T : ICommunicationObject
 {
+
 	/// <summary>
 	/// The channel.
 	/// </summary>
@@ -141,4 +140,5 @@ public abstract class ServiceProxy<T> : IDisposable where T : ICommunicationObje
 		// Unregister object for finalization.
 		GC.SuppressFinalize(this);
 	}
+
 }

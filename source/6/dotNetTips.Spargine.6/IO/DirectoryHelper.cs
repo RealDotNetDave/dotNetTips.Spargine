@@ -4,7 +4,7 @@
 // Created          : 03-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="DirectoryHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -230,8 +230,6 @@ public static class DirectoryHelper
 	[Information(nameof(LoadOneDriveFolders), "David McCarter", "2/14/2018", Status = Status.Available, BenchMarkStatus = BenchMarkStatus.Completed, UnitTestCoverage = 100)]
 	public static ImmutableArray<OneDriveFolder> LoadOneDriveFolders()
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows) is false)
 		{
 			throw new PlatformNotSupportedException();

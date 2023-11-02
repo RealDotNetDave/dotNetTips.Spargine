@@ -4,7 +4,7 @@
 // Created          : 01-19-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-12-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="RandomData.cs" company="dotNetTips.Spargine.6.Tester">
 //     Copyright (c) dotNetTips.com - McCarter Consulting. All rights reserved.
@@ -82,7 +82,7 @@ public static class RandomData
 	/// <summary>
 	/// The domain extensions used to create random Urls.
 	/// </summary>
-	private static readonly Lazy<string[]> DomainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries)); //TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
+	private static readonly Lazy<string[]> DomainExtensions = new(Resources.DomainExtentions.Split(Core.ControlChars.Comma, StringSplitOptions.RemoveEmptyEntries));
 
 	/// <summary>
 	/// The first names

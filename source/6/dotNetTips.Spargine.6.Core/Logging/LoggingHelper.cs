@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 10-12-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="LoggingHelper.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -150,8 +150,6 @@ public static class LoggingHelper
 	[Information(nameof(RetrieveAllExceptionMessages), UnitTestCoverage = 100, Status = Status.Available)]
 	public static string[] RetrieveAllExceptionMessages([NotNull] Exception exception)
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		exception = exception.ArgumentNotNull();
 
 		var exceptions = RetrieveAllExceptions(exception);
@@ -175,8 +173,6 @@ public static class LoggingHelper
 	[Information(nameof(RetrieveAllExceptions), UnitTestCoverage = 100, Status = Status.Available)]
 	public static Exception[] RetrieveAllExceptions([NotNull] Exception exception)
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		exception = exception.ArgumentNotNull();
 
 		var collection = new List<Exception> { exception };

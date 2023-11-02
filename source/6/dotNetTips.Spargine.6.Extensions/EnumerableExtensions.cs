@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -34,6 +34,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class EnumerableExtensions
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -60,8 +61,6 @@ public static class EnumerableExtensions
 	[Information(nameof(Add), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static IEnumerable<T> Add<T>([NotNull] this IEnumerable<T> collection, [AllowNull] T item)
 	{
-		//TODO: REMOVE METHOD IN V8. CREATE ADDFIRST() & ADDLAST() LIKE ARRAYEXTENSIONS.
-
 		if (item is null)
 		{
 			return collection;
@@ -980,4 +979,5 @@ public static class EnumerableExtensions
 
 		return items;
 	}
+
 }

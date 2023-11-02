@@ -4,7 +4,7 @@
 // Created          : 09-28-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 01-03-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="LoggableException.cs" company="dotNetTips.Spargine.Core">
 //     Copyright (c) McCarter Consulting. All rights reserved.
@@ -34,6 +34,7 @@ namespace DotNetTips.Spargine.Core;
 [Serializable]
 public class LoggableException : Exception
 {
+
 	/// <summary>
 	/// The string builder pool
 	/// </summary>
@@ -89,7 +90,7 @@ public class LoggableException : Exception
 	public LoggableException(string message, [NotNull] Exception ex, [AllowNull] string userMessage) : base(message, ex) => this.UserMessage = userMessage;
 
 	/// <summary>
-	/// Return's a list of properties and their value using <see cref="ObjectPool&lt;StringBuilder&gt;"/> to improve performance.
+	/// Return's a list of properties and their value using <see cref="ObjectPool&lt;StringBuilder&gt;" /> to improve performance.
 	/// </summary>
 	/// <param name="ex">The ex.</param>
 	/// <returns>System.String.</returns>
@@ -157,8 +158,6 @@ public class LoggableException : Exception
 	/// <value>The messages.</value>
 	public virtual string[] Messages()
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		var exceptions = LoggingHelper.RetrieveAllExceptions(this);
 		var errorMessages = new List<string>();
 
@@ -200,4 +199,5 @@ public class LoggableException : Exception
 	/// </summary>
 	/// <value>The user message.</value>
 	public virtual string UserMessage { get; }
+
 }

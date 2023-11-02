@@ -4,7 +4,7 @@
 // Created          : 02-01-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-23-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="DataRecordComparer.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Core;
 /// <seealso cref="IEqualityComparer" />
 public sealed class DataRecordComparer : IEqualityComparer<IDataRecord>
 {
+
 	/// <summary>
 	/// Determines whether the specified objects are equal.
 	/// </summary>
@@ -45,4 +46,5 @@ public sealed class DataRecordComparer : IEqualityComparer<IDataRecord>
 	{
 		return string.GetHashCode(obj.ArgumentNotNull().Id, StringComparison.Ordinal);
 	}
+
 }

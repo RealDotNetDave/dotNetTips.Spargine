@@ -4,7 +4,7 @@
 // Created          : 07-17-2019
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="PersonProper.cs" company="dotNetTips.com - David McCarter">
 //     McCarter Consulting (David McCarter)
@@ -40,7 +40,6 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 {
-	//TODO: .NET 7 Research StringSyntaxAttribute
 
 	/// <summary>
 	/// Address 1.
@@ -323,7 +322,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets first address.
 	/// </summary>
 	/// <value>The address1.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Address1</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Address1</exception>
 	[DataMember(Name = "address1")]
 	[XmlElement]
 	public string Address1
@@ -347,7 +346,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets second address.
 	/// </summary>
 	/// <value>The address2.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Address2</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Address2</exception>
 	[DataMember(Name = "address2")]
 	[XmlElement]
 	public string Address2
@@ -382,7 +381,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the born on date and time.
 	/// </summary>
 	/// <value>The born on.</value>
-	/// <exception cref="ArgumentOutOfRangeException">BornOn</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">BornOn</exception>
 	[DataMember(Name = "bornOn")]
 	[XmlElement]
 	public DateTimeOffset BornOn
@@ -408,7 +407,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the cell phone number.
 	/// </summary>
 	/// <value>The cell phone.</value>
-	/// <exception cref="ArgumentOutOfRangeException">CellPhone</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">CellPhone</exception>
 	[DataMember(Name = "cellPhone")]
 	[XmlElement]
 	public string CellPhone
@@ -434,7 +433,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the city name.
 	/// </summary>
 	/// <value>The city.</value>
-	/// <exception cref="ArgumentOutOfRangeException">City</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">City</exception>
 	[DataMember(Name = "city")]
 	[XmlElement]
 	public string City
@@ -460,7 +459,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the country.
 	/// </summary>
 	/// <value>The country.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Country</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Country</exception>
 	[DataMember(Name = "country")]
 	[XmlElement]
 	public string Country
@@ -514,7 +513,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets the email.
 	/// </summary>
 	/// <value>The email.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Email</exception>
 	[DataMember(Name = "email", IsRequired = true)]
 	[XmlElement(IsNullable = false)]
 	[DisallowNull]
@@ -541,7 +540,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the first name.
 	/// </summary>
 	/// <value>The first name.</value>
-	/// <exception cref="ArgumentOutOfRangeException">FirstName</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">FirstName</exception>
 	[DataMember(Name = "firstName")]
 	[XmlElement]
 	public string FirstName
@@ -566,7 +565,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the home phone.
 	/// </summary>
 	/// <value>The home phone.</value>
-	/// <exception cref="ArgumentOutOfRangeException">HomePhone</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">HomePhone</exception>
 	[DataMember(Name = "homePhone")]
 	[XmlElement]
 	public string HomePhone
@@ -617,7 +616,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets the identifier.
 	/// </summary>
 	/// <value>The identifier.</value>
-	/// <exception cref="ArgumentOutOfRangeException">Id</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">Id</exception>
 	[DataMember(Name = "id", IsRequired = true)]
 	[XmlElement(IsNullable = false)]
 	[DisallowNull]
@@ -643,7 +642,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the last name.
 	/// </summary>
 	/// <value>The last name.</value>
-	/// <exception cref="ArgumentOutOfRangeException">LastName</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">LastName</exception>
 	[DataMember(Name = "lastName")]
 	[XmlElement]
 	public string LastName
@@ -668,7 +667,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the postal code.
 	/// </summary>
 	/// <value>The postal code.</value>
-	/// <exception cref="ArgumentOutOfRangeException">PostalCode</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">PostalCode</exception>
 	[DataMember(Name = "postalCode")]
 	[XmlElement]
 	public string PostalCode
@@ -693,7 +692,7 @@ public sealed class PersonProper : IDataModel<PersonProper, string>, IPerson
 	/// Gets or sets the State.
 	/// </summary>
 	/// <value>The State.</value>
-	/// <exception cref="ArgumentOutOfRangeException">State</exception>
+	/// <exception cref="System.ArgumentOutOfRangeException">State</exception>
 	[DataMember(Name = "state")]
 	[XmlElement]
 	public string State

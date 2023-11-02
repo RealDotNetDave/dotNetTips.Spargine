@@ -4,7 +4,7 @@
 // Created          : 05-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 03-13-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="StringBuilderExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -41,7 +41,6 @@ public static class StringBuilderExtensions
 	{
 		if (separator.HasValue() is false)
 		{
-			//TODO: THIS CONDITION NOT BEING TESTED
 			separator = ControlChars.DefaultSeparator;
 		}
 
@@ -114,7 +113,6 @@ public static class StringBuilderExtensions
 
 				if (specialIndex >= 0)
 				{
-					//TODO: THIS CONDITION NOT BEING TESTED FOR APPEND
 					_ = sb.Append(value, lastSpecialIndex, specialIndex - lastSpecialIndex);
 					_ = sb.Append(ControlChars.Backslash);
 					_ = sb.Append(value[specialIndex]);
@@ -130,7 +128,6 @@ public static class StringBuilderExtensions
 		}
 		else
 		{
-			//TODO: THIS CONDITION NOT BEING TESTED
 			_ = sb.Append(value);
 		}
 

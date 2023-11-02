@@ -23,6 +23,7 @@ namespace DotNetTips.Spargine;
 /// </summary>
 internal static class NativeMethods
 {
+
 	/// <summary>
 	/// Moves the file ex.
 	/// </summary>
@@ -34,4 +35,5 @@ internal static class NativeMethods
 	[DllImport(ApiLibraries.Kernel32, CharSet = CharSet.Unicode, SetLastError = true)]
 	[DefaultDllImportSearchPaths(DllImportSearchPath.UserDirectories)]
 	internal static extern bool MoveFileEx(string lpExistingFileName, string lpNewFileName, int dwFlags);
+
 }

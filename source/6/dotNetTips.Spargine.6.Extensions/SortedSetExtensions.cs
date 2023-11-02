@@ -25,6 +25,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class SortedSetExtensions
 {
+
 	/// <summary>
 	/// Checks set for null and ensures there are items in the set.
 	/// </summary>
@@ -97,4 +98,5 @@ public static class SortedSetExtensions
 	{
 		return ImmutableSortedSet.CreateRange(collection.ArgumentNotNull());
 	}
+
 }

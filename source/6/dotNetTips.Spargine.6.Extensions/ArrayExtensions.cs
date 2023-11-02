@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -45,8 +45,6 @@ public static class ArrayExtensions
 	[Information(nameof(Add), author: "David McCarter", createdOn: "4/28/2021", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available, Documentation = "https://bit.ly/SpargineJun2021")]
 	public static T[] Add<T>([NotNull] this T[] array, [AllowNull] T item)
 	{
-		//TODO: REMOVE METHOD IN V8. CHANGE CODE TO USE ADDFIRST() OR ADDLAST().
-
 		if (item is null)
 		{
 			return array;

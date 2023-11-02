@@ -4,7 +4,7 @@
 // Created          : 11-12-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-01-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="Collection.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,7 +28,6 @@ namespace DotNetTips.Spargine.Core.Collections.Generic;
 [Information("Collection<T>.", "David McCarter", "11/12/2020")]
 public class Collection<T> : List<T>
 {
-	//TODO: IN V8, CHANGE TO INHERIT-COLLECTION<T>
 
 	/// <summary>
 	/// Prevents a default instance of the <see cref="Collection{T}" /> class from being created.

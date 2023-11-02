@@ -4,7 +4,7 @@
 // Created          : 02-07-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="WebHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -71,8 +71,6 @@ public static class WebHelper
 	[Information(nameof(HttpHeaderNames), "David McCarter", "9/2/2020", "9/2/2020", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired)]
 	public static string[] HttpHeaderNames()
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		return Enum.GetNames(typeof(HttpRequestHeader));
 	}
 

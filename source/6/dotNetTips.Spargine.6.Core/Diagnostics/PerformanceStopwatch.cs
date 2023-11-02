@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="PerformanceStopwatch.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -159,7 +159,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// GetUsers():Load users from database. Time: 1013.02 ms
 	/// GetUsers():Save users to database.Time: 1013.7925 ms
 	/// </example>
-	public ImmutableArray<string> Diagnostics => this._diagnostics.ToImmutableArray(); //TODO: CHANGE TO READONLYCOLLECTION
+	public ImmutableArray<string> Diagnostics => this._diagnostics.ToImmutableArray();
 
 	/// <summary>
 	/// Gets the title.

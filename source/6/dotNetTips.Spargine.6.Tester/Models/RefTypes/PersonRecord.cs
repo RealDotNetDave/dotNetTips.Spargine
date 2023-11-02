@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="PersonRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -230,34 +230,7 @@ public sealed record PersonRecord : IDataRecord, IComparable<PersonRecord>
 				: value;
 		}
 	}
-	//#if NET7_0_OR_GREATER
-	//		/// <summary>
-	//	/// Gets or sets the email address.
-	//	/// </summary>
-	//	/// <value>The email address.</value>
-	//	/// <exception cref="ArgumentOutOfRangeException">Email</exception>
-	//	/// <exception cref="ArgumentNullException">Email - Value for Email cannot be null or empty.</exception>
-	//	[DisallowNull]
-	//	[DataMember(Name = "email")]
-	//	[XmlElement]
-	//	public required string Email
-	//	{
-	//		get => this._email;
-	//		init
-	//		{
-	//			if (string.Equals(this._email, value, StringComparison.Ordinal))
-	//			{
-	//				return;
-	//			}
 
-	//			this._email = value.HasValue(0, 75) is false
-	//				? throw new ArgumentOutOfRangeException(
-	//					nameof(this.Email),
-	//					Resources.EmailLengthIsLimitedTo75Characters)
-	//				: value;
-	//		}
-	//	}
-	//#else
 	/// <summary>
 	/// Gets or sets the email address.
 	/// </summary>

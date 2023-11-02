@@ -4,7 +4,7 @@
 // Created          : 07-19-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="EncryptionHelper.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -100,9 +100,6 @@ public static class EncryptionHelper
 	[Information(nameof(AesEncrypt), "David McCarter", "7/19/2021", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available, Documentation = "https://bit.ly/SpargineSep2021")]
 	public static string AesEncrypt([NotNull] string plainText, [NotNull] byte[] key, [NotNull] byte[] iv)
 	{
-
-		//TODO: Fix CA5401  Symmetric encryption uses non-default initialization vector, which could be potentially repeatable in version 8.
-
 		plainText = plainText.ArgumentNotNullOrEmpty(true);
 		key = key.ArgumentNotNull();
 		iv = iv.ArgumentNotNull();

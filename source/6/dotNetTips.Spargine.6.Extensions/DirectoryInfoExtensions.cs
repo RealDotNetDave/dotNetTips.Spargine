@@ -1,10 +1,10 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Assembly         : DotNetTips.Spargine.6.Extensions
 // Author           : David McCarter
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 07-17-2022
+// Last Modified On : 03-13-2023
 // ***********************************************************************
 // <copyright file="DirectoryInfoExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -23,6 +23,7 @@ namespace DotNetTips.Spargine.Extensions;
 /// </summary>
 public static class DirectoryInfoExtensions
 {
+
 	/// <summary>
 	/// Gets the total size of files in a <see cref="DirectoryInfo" />.
 	/// Validates that <paramref name="path" /> and <paramref name="searchPattern" /> is not null
@@ -44,4 +45,5 @@ public static class DirectoryInfoExtensions
 
 		return path.GetFiles(searchPattern, searchOption).Sum(p => p.Length);
 	}
+
 }

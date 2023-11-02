@@ -4,7 +4,7 @@
 // Created          : 10-08-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-23-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="DataContextExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -27,7 +27,6 @@ namespace DotNetTips.Spargine.Extensions;
 public static class DataContextExtensions
 {
 
-	//TODO: LOOK INTO REMOVING LINQTODB.
 	/// <summary>
 	/// Gets the tracked objects from a <see cref="DataContext" />.
 	/// Validates that <paramref name="context" /> is not null

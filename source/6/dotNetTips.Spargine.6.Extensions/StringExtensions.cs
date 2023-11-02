@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-02-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -242,7 +242,6 @@ public static class StringExtensions
 				{
 					var value = args[argIndex];
 
-					//TODO: ADD EXTENSION METHOD TO TEST FOR ENUM VALUES
 					_ = addLineFeed is Tristate.True or Tristate.UseDefault
 						? sb.AppendLine(value)
 						: sb.Append(string.Concat(value, delimiter));
@@ -868,8 +867,6 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, char separator = ControlChars.Comma)
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 
@@ -892,8 +889,6 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, int count, char separator = ControlChars.Comma)
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 		count = count.ArgumentInRange(lower: 1);
@@ -917,8 +912,6 @@ public static class StringExtensions
 	[Information("From .NET Core source.", author: "David McCarter", createdOn: "7/15/2020", UnitTestCoverage = 0, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	public static string[] Split(this string input, StringSplitOptions options, int count, [NotNull] string separator = ControlChars.DefaultSeparator)
 	{
-		//TODO: CHANGE TO READONLYCOLLECTION IN THE RETURN. 
-
 		input = input.ArgumentNotNullOrEmpty();
 		options = options.ArgumentDefined(nameof(options));
 		count = count.ArgumentInRange(lower: 1);

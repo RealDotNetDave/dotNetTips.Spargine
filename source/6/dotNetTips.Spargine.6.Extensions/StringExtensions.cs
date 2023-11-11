@@ -4,7 +4,7 @@
 // Created          : 09-15-2017
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2023
+// Last Modified On : 11-03-2023
 // ***********************************************************************
 // <copyright file="StringExtensions.cs" company="David McCarter - dotNetTips.com">
 //     David McCarter - dotNetTips.com
@@ -1104,7 +1104,7 @@ public static class StringExtensions
 	/// <param name="encoding">The encoding method.</param>
 	/// <returns>byte[].</returns>
 	/// <remarks>Use <seealso cref="ArrayExtensions.BytesToString(byte[])" /> to convert it back to a <see cref="string" />.</remarks>
-	[Information(nameof(ToByteArray), "David McCarter", "12/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(ToByteArray), "David McCarter", "12/21/2022", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.Completed, Status = Status.Available)]
 	public static byte[] ToByteArray(this string input, Encoding encoding)
 	{
 		input = input.ArgumentNotNullOrEmpty();

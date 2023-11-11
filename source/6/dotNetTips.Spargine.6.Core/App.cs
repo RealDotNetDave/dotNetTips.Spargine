@@ -4,7 +4,7 @@
 // Created          : 11-11-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2023
+// Last Modified On : 11-03-2023
 // ***********************************************************************
 // <copyright file="App.cs" company="McCarter Consulting">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -131,7 +131,7 @@ public static class App
 	/// </summary>
 	/// <param name="cultureType">Type of the culture. Defaults to AllCultures.</param>
 	/// <returns>ReadOnlyCollection&lt;System.String&gt;.</returns>
-	[Information(nameof(AppInfo), UnitTestCoverage = 100, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(AppInfo), UnitTestCoverage = 100, Status = Status.Available)]
 	public static ReadOnlyCollection<string> GetCultureNames(CultureTypes cultureType = CultureTypes.AllCultures)
 	{
 		if (_cultureNames is null)
@@ -179,7 +179,7 @@ public static class App
 	/// ProcessorLevel: 6
 	/// ProcessorRevision: 42243
 	/// </example>
-	[Information(nameof(GetProcessorInformation), "David McCarter", "3/20/2023", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired, Documentation = "ADD URL")]
+	[Information(nameof(GetProcessorInformation), "David McCarter", "3/20/2023", Status = Status.Available, UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.NotRequired)]
 	public static ProcessorInformation GetProcessorInformation()
 	{
 		var info = new SystemInfo();

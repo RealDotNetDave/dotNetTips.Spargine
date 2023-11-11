@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<AnalysisLevel>latest</AnalysisLevel>
-		<AssemblyVersion>2023.11.4.0</AssemblyVersion>
+		<AssemblyVersion>2023.6.11.4</AssemblyVersion>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<BaseOutputPath>..\..\appbin</BaseOutputPath>
 		<Company>dotNetTips.com - McCarter Consulting</Company>
@@ -14,7 +14,7 @@
 		<DebugType>none</DebugType>
 		<Description>DotNetTips.Spargine.Extensions.BenchmarkTests</Description>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.11.4.0</FileVersion>
+		<FileVersion>2023.6.11.4</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<IsPublishable>False</IsPublishable>
 		<NeutralLanguage>en</NeutralLanguage>
@@ -27,7 +27,7 @@
 		<ServerGarbageCollection>true</ServerGarbageCollection>
 		<SignAssembly>False</SignAssembly>
 		<TargetFrameworks>net60; net7.0</TargetFrameworks>
-		<Version>2023.11.4.0</Version>
+		<Version>2023.6.11.4</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -37,9 +37,9 @@
 	<ItemGroup>
 		<PackageReference Include="BenchmarkDotNet" Version="0.13.10" />
 		<PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.10" />
-		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.10.11.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.10.11.1" />
-		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.10.11.1" />
+		<PackageReference Include="dotNetTips.Spargine.6.Core" Version="2023.6.11.4" />
+		<PackageReference Include="dotNetTips.Spargine.6.Extensions" Version="2023.6.11.4" />
+		<PackageReference Include="dotNetTips.Spargine.6.Tester" Version="2023.6.11.4" />
 	</ItemGroup>
 
 	<ItemGroup>

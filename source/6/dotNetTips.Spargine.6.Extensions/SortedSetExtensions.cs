@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-16-2022
+// Last Modified On : 11-03-2023
 // ***********************************************************************
 // <copyright file="SortedSetExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -94,9 +94,6 @@ public static class SortedSetExtensions
 	/// <param name="collection">The values.</param>
 	/// <returns>ImmutableSortedSet&lt;T&gt;.</returns>
 	[Information(nameof(ToImmutable), "David McCarter", "11/21/2020", BenchMarkStatus = BenchMarkStatus.None, UnitTestCoverage = 100, Status = Status.Available)]
-	public static ImmutableSortedSet<T> ToImmutable<T>([NotNull] this SortedSet<T> collection)
-	{
-		return ImmutableSortedSet.CreateRange(collection.ArgumentNotNull());
-	}
+	public static ImmutableSortedSet<T> ToImmutable<T>([NotNull] this SortedSet<T> collection) => ImmutableSortedSet.CreateRange(collection.ArgumentNotNull());
 
 }

@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 09-28-2023
+// Last Modified On : 11-03-2023
 // ***********************************************************************
 // <copyright file="NumericExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -41,7 +41,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available)]
 	public static double Average(this double a, double b) => (a + b) / 2;
 
 	/// <summary>
@@ -51,7 +51,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available)]
 	public static long Average(this long a, long b) => (a + b) / 2;
 
 	/// <summary>
@@ -61,7 +61,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available)]
 	public static int Average(this int a, int b) => (a + b) / 2;
 
 	/// <summary>
@@ -71,7 +71,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="b">Second number to average</param>
 	/// <returns>double.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(Average), "David McCarter", "2/19/2023", UnitTestCoverage = 0, Status = Status.Available)]
 	public static decimal Average(this decimal a, decimal b) => (a + b) / 2;
 
 	/// <summary>
@@ -444,7 +444,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="totalMilliseconds">The total milliseconds.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string MillisecondsToString(this long totalMilliseconds)
 	{
 		var hours = (int)(totalMilliseconds / (1000 * 60 * 60));
@@ -463,7 +463,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="input">The input.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string MillisecondsToString(this TimeSpan input)
 	{
 		var totalMilliseconds = input.TotalMilliseconds;
@@ -483,7 +483,7 @@ new DefaultObjectPoolProvider().CreateStringBuilderPool();
 	/// <param name="totalMilliseconds">The total milliseconds.</param>
 	/// <returns>string.</returns>
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
-	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available, Documentation = "ADD URL")]
+	[Information(nameof(MillisecondsToString), "David McCarter", "4/16/2003", UnitTestCoverage = 0, Status = Status.Available)]
 	public static string MillisecondsToString(this int totalMilliseconds)
 	{
 		var hours = totalMilliseconds / (1000 * 60 * 60);

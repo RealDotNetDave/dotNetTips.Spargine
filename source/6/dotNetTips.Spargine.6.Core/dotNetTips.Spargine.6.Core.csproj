@@ -6,7 +6,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
+		<AssemblyVersion>2023.6.11.4</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -24,7 +24,7 @@
 		<EnablePackageValidation>false</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.10.11.1</FileVersion>
+		<FileVersion>2023.6.11.4</FileVersion>
 		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -40,7 +40,8 @@
 --NOV 2022: Minor changes. Code cleanup.
 --FEB 2023: Update to PerformanceStopwatch, code cleanup.
 --MAY 2023: Added methods to generate processor information, faster logging,fast regular expressions, new PreserveAttribute, APILibraries info, new exception type NetworkConnectionException. 	
---AUG 2023: Added SimpleResult&lt;T&gt;. Added ThrowNetworkConnectionException to ExceptionThrower. Code cleanup.	</PackageReleaseNotes>
+--AUG 2023: Added SimpleResult&lt;T&gt;. Added ThrowNetworkConnectionException to ExceptionThrower. Code cleanup.
+--NOV 2023: Code cleanup.	</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -52,7 +53,7 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
 		<Title>DotNetTips.Spargine.6.Core</Title>
-		<Version>2023.10.11.1</Version>
+		<Version>2023.6.11.4</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -1,10 +1,8 @@
-# dotNetTips.Spargine v2023.6.8.1 for .NET 6 & 7
+# dotNetTips.Spargine v2023.6.11.4 for .NET 6 & 7
 ![](docs/graphics/dotNetTips-Spargine-Logo.jpg)
 Open-source .NET assemblies from dotNetTips.com and David (dotNetDave) McCarter. 
 This repository is for the dotNetTips.Spargine code for .NET 6 & 7. Please support this project by <a href="https://github.com/sponsors/RealDotNetDave" target="_blank">**clicking here**</a>. 
 <a href="https://dotnettips.wordpress.com/spargine/" target="_blank">Click here</a> to visit the Spargine page on dotNetTips.com. Much of this code is also documented on <a href="https://dotnettips.wordpress.com/category/open-source/spargine/" target="_blank">dotNetTips.com</a>.
-
-> <a href="README-5.md" target="_blank">Click here</a> for the .NET 5 version of Spargine.
 
 ## NuGet
 All of the assemblies listed below can be found on NuGet by <a href="https://www.nuget.org/profiles/davidmccarter" target="_blank">clicking here</a>.

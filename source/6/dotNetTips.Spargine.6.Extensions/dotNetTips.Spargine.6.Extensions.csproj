@@ -4,7 +4,7 @@
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 		<AnalysisLevel>latest-recommended</AnalysisLevel>
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
-		<AssemblyVersion>2023.10.11.1</AssemblyVersion>
+		<AssemblyVersion>2023.6.11.4</AssemblyVersion>
 		<Authors>David McCarter</Authors>
 		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
 		<AutoIncrementPackageRevision>true</AutoIncrementPackageRevision>
@@ -22,8 +22,8 @@
 		<EnablePackageValidation>true</EnablePackageValidation>
 		<EnableSingleFileAnalyzer>false</EnableSingleFileAnalyzer>
 		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-		<FileVersion>2023.10.11.1</FileVersion>
-			<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<FileVersion>2023.6.11.4</FileVersion>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<ImplicitUsings>enable</ImplicitUsings>
@@ -37,8 +37,9 @@
 --AUG 2022: New code, unit tests and code cleanup.
 --NOV 2022: New code, unit tests, benchmark tests. Code cleanup.
 --FEB 2023: New code, unit tests, benchmark tests. Code cleanup.
---MAY 2023: New code, unit tests, benchmark tests. Code cleanup.	
---AUG 2023: New extension methods. Code cleanup.	</PackageReleaseNotes>
+--MAY 2023: New code, unit tests, benchmark tests. Code cleanup.
+--AUG 2023: New extension methods. Code cleanup.
+--NOV 2023: Code cleanup.</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<PackageTags>David McCarter, dotNetDave, dotNetTips.com, Spargine</PackageTags>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
@@ -52,7 +53,7 @@
 		<SignAssembly>True</SignAssembly>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<TargetFrameworks>net6.0;net7.0;</TargetFrameworks>
-		<Version>2023.10.11.1</Version>
+		<Version>2023.6.11.4</Version>
 		<Title>DotNetTips.Spargine.6.Extensions</Title>
 		<ApplicationIcon>dotNetTips-Spargine-Logo.ico</ApplicationIcon>
 	</PropertyGroup>
@@ -74,7 +75,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Include="dotNetTips-Spargine-Logo.ico" />
+		<Content Include="dotNetTips-Spargine-Logo.ico" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -88,7 +89,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="7.0.12" />
+		<PackageReference Include="Microsoft.Extensions.ObjectPool" Version="7.0.13" />
 		<PackageReference Include="Microsoft.SourceLink.Common" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.6.Core", "dotNetTips.Spargine.6.Core\DotNetTips.Spargine.6.Core.csproj", "{F9A0DCC4-F582-4017-A655-9A2ACDFE4226}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.6.Extensions", "dotNetTips.Spargine.6.Extensions\DotNetTips.Spargine.6.Extensions.csproj", "{3512423A-0963-47B7-907E-3DAE9F0048F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.6", "dotNetTips.Spargine.6\DotNetTips.Spargine.6.csproj", "{0B31A293-D3B4-4D93-B351-716AC251681D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.6.Tester", "dotNetTips.Spargine.6.Tester\DotNetTips.Spargine.6.Tester.csproj", "{DDAD53D7-7DC8-4642-86AA-8815A06A479A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{09354638-5FA5-4847-8679-F62A73A8CBEC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		..\..\docs\graphics\dotNetTips-Spargine-Logo@0.25x.jpg = ..\..\docs\graphics\dotNetTips-Spargine-Logo@0.25x.jpg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9A0DCC4-F582-4017-A655-9A2ACDFE4226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A0DCC4-F582-4017-A655-9A2ACDFE4226}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A0DCC4-F582-4017-A655-9A2ACDFE4226}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A0DCC4-F582-4017-A655-9A2ACDFE4226}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3512423A-0963-47B7-907E-3DAE9F0048F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3512423A-0963-47B7-907E-3DAE9F0048F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3512423A-0963-47B7-907E-3DAE9F0048F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3512423A-0963-47B7-907E-3DAE9F0048F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B31A293-D3B4-4D93-B351-716AC251681D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B31A293-D3B4-4D93-B351-716AC251681D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B31A293-D3B4-4D93-B351-716AC251681D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B31A293-D3B4-4D93-B351-716AC251681D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDAD53D7-7DC8-4642-86AA-8815A06A479A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAD53D7-7DC8-4642-86AA-8815A06A479A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAD53D7-7DC8-4642-86AA-8815A06A479A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAD53D7-7DC8-4642-86AA-8815A06A479A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11B107D5-B33F-464D-B1F8-2D902C32F654}
+	EndGlobalSection
+EndGlobal

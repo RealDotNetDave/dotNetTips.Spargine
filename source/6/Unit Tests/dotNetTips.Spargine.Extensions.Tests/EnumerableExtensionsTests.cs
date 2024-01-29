@@ -4,7 +4,7 @@
 // Created          : 12-17-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-02-2023
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="EnumerableExtensionsTests.cs" company="dotNetTips.Spargine.Extensions.Tests">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -28,14 +28,26 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DotNetTips.Spargine.Extensions.Tests;
 
+/// <summary>
+/// Defines test class EnumerableExtensionsTests.
+/// </summary>
 [ExcludeFromCodeCoverage]
 [TestClass]
 public class EnumerableExtensionsTests
 {
 
+	/// <summary>
+	/// The count
+	/// </summary>
 	private const int Count = 256;
+	/// <summary>
+	/// The test data
+	/// </summary>
 	private const string TestData = "TEST DATA";
 
+	/// <summary>
+	/// Defines the test method AddTest.
+	/// </summary>
 	[TestMethod]
 	public void AddTest()
 	{
@@ -47,6 +59,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.Add<PersonProper>(null).Count() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method AdIfTest.
+	/// </summary>
 	[TestMethod]
 	public void AdIfTest()
 	{
@@ -63,6 +78,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.FastCount() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method AdTest.
+	/// </summary>
 	[TestMethod]
 	public void AdTest()
 	{
@@ -75,6 +93,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.Add(person).Count() == Count + 1);
 	}
 
+	/// <summary>
+	/// Defines the test method ContainsAnyTest.
+	/// </summary>
 	[TestMethod]
 	public void ContainsAnyTest()
 	{
@@ -87,6 +108,10 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people1.AddRange(people2, ensureUnique: Tristate.True));
 	}
 
+	/// <summary>
+	/// Count as an asynchronous operation.
+	/// </summary>
+	/// <returns>A Task representing the asynchronous operation.</returns>
 	[TestMethod]
 	public async Task CountAsync()
 	{
@@ -97,6 +122,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(peopleCount == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method CountTest.
+	/// </summary>
 	[TestMethod]
 	public void CountTest()
 	{
@@ -105,6 +133,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.Count() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method DoesNotHaveItemsTest.
+	/// </summary>
 	[TestMethod]
 	public void DoesNotHaveItemsTest()
 	{
@@ -113,6 +144,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.DoesNotHaveItems());
 	}
 
+	/// <summary>
+	/// Defines the test method EnsureUniqueTest.
+	/// </summary>
 	[TestMethod]
 	public void EnsureUniqueTest()
 	{
@@ -125,6 +159,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.FastCount() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method FastAnyTest.
+	/// </summary>
 	[TestMethod]
 	public void FastAnyTest()
 	{
@@ -137,6 +174,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.FastAny(p => p.Age.TotalDays > 100));
 	}
 
+	/// <summary>
+	/// Defines the test method FastCountPredicateTest.
+	/// </summary>
 	[TestMethod]
 	public void FastCountPredicateTest()
 	{
@@ -149,6 +189,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNotNull(people.FastCount(p => p.City.Contains('A', StringComparison.CurrentCultureIgnoreCase)));
 	}
 
+	/// <summary>
+	/// Defines the test method FastCountTest.
+	/// </summary>
 	[TestMethod]
 	public void FastCountTest()
 	{
@@ -159,6 +202,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.FastCount(p => p.Age.TotalDays > 365) > 0);
 	}
 
+	/// <summary>
+	/// Defines the test method FastProcessorTest.
+	/// </summary>
 	[TestMethod]
 	public void FastProcessorTest()
 	{
@@ -169,6 +215,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.All(p => p.Address2 == TestData));
 	}
 
+	/// <summary>
+	/// Defines the test method FirstOrDefaultTest.
+	/// </summary>
 	[TestMethod]
 	public void FirstOrDefaultTest()
 	{
@@ -183,6 +232,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNotNull(people.FirstOrDefault(p => p.Age.TotalDays > 50000, person1).Equals(person1));
 	}
 
+	/// <summary>
+	/// Defines the test method FirstOrNullTest.
+	/// </summary>
 	[TestMethod]
 	public void FirstOrNullTest()
 	{
@@ -194,6 +246,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNull(coordinates.FirstOrNull(p => p.X == int.MinValue));
 	}
 
+	/// <summary>
+	/// Defines the test method FromDelimitedStringTest.
+	/// </summary>
 	[TestMethod]
 	public void FromDelimitedStringTest()
 	{
@@ -205,6 +260,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(string.Empty.ToDelimitedString().DoesNotHaveItems());
 	}
 
+	/// <summary>
+	/// Defines the test method HasDuplicatesTest.
+	/// </summary>
 	[TestMethod]
 	public void HasDuplicatesTest()
 	{
@@ -223,6 +281,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method HasItemsTest.
+	/// </summary>
 	[TestMethod]
 	public void HasItemsTest()
 	{
@@ -234,6 +295,9 @@ public class EnumerableExtensionsTests
 		Assert.IsFalse(nullCollection.HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method HasItemsWithCountTest.
+	/// </summary>
 	[TestMethod]
 	public void HasItemsWithCountTest()
 	{
@@ -247,6 +311,9 @@ public class EnumerableExtensionsTests
 		Assert.IsFalse(nullCollection.HasItems(Count));
 	}
 
+	/// <summary>
+	/// Defines the test method IndexOfTest.
+	/// </summary>
 	[TestMethod]
 	public void IndexOfTest()
 	{
@@ -258,6 +325,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.IndexOf(person1, new PersonProperComparer()).IsNegative() == false);
 	}
 
+	/// <summary>
+	/// Defines the test method IsNullOrEmptyTest.
+	/// </summary>
 	[TestMethod]
 	public void IsNullOrEmptyTest()
 	{
@@ -272,6 +342,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result);
 	}
 
+	/// <summary>
+	/// Defines the test method JoinTest.
+	/// </summary>
 	[TestMethod]
 	public void JoinTest()
 	{
@@ -282,6 +355,9 @@ public class EnumerableExtensionsTests
 		Assert.IsFalse(string.IsNullOrEmpty(result));
 	}
 
+	/// <summary>
+	/// Defines the test method OrderByOrdinalTest.
+	/// </summary>
 	[TestMethod]
 	public void OrderByOrdinalTest()
 	{
@@ -292,6 +368,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method OrderByTest.
+	/// </summary>
 	[TestMethod]
 	public void OrderByTest()
 	{
@@ -302,6 +381,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method PageTest.
+	/// </summary>
 	[TestMethod]
 	public void PageTest()
 	{
@@ -312,6 +394,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method PartitionTest.
+	/// </summary>
 	[TestMethod]
 	public void PartitionTest()
 	{
@@ -330,6 +415,9 @@ public class EnumerableExtensionsTests
 
 	}
 
+	/// <summary>
+	/// Defines the test method PickRandomTest.
+	/// </summary>
 	[TestMethod]
 	public void PickRandomTest()
 	{
@@ -340,6 +428,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNotNull(result);
 	}
 
+	/// <summary>
+	/// Defines the test method RemoveDuplicatesTest.
+	/// </summary>
 	[TestMethod]
 	public void RemoveDuplicatesTest()
 	{
@@ -357,6 +448,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.Value.Count() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method ShuffleTest.
+	/// </summary>
 	[TestMethod]
 	public void ShuffleTest()
 	{
@@ -368,6 +462,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.Shuffle().Count() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method ShuffleWithCountTest.
+	/// </summary>
 	[TestMethod]
 	public void ShuffleWithCountTest()
 	{
@@ -379,6 +476,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.Shuffle(5).FastCount() == 5);
 	}
 
+	/// <summary>
+	/// Defines the test method SplitTest.
+	/// </summary>
 	[TestMethod]
 	public void SplitTest()
 	{
@@ -396,6 +496,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNull(splitEmptyPeople);
 	}
 
+	/// <summary>
+	/// Defines the test method StartsWithTest.
+	/// </summary>
 	[TestMethod]
 	public void StartsWithTest()
 	{
@@ -408,6 +511,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people1.StartsWith(people2));
 	}
 
+	/// <summary>
+	/// Defines the test method StructuralSequenceEqualTest.
+	/// </summary>
 	[TestMethod]
 	public void StructuralSequenceEqualTest()
 	{
@@ -420,6 +526,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people1.StructuralSequenceEqual(people1));
 	}
 
+	/// <summary>
+	/// Defines the test method ToBlockingTest.
+	/// </summary>
 	[TestMethod]
 	public void ToBlockingTest()
 	{
@@ -430,6 +539,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(result.FastCount() == Count);
 	}
 
+	/// <summary>
+	/// Defines the test method ToCollectionTest.
+	/// </summary>
 	[TestMethod]
 	public void ToCollectionTest()
 	{
@@ -438,6 +550,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.ToCollection().HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method ToDelimitedStringTest.
+	/// </summary>
 	[TestMethod]
 	public void ToDelimitedStringTest()
 	{
@@ -446,6 +561,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNotNull(words.ToDelimitedString(','));
 	}
 
+	/// <summary>
+	/// Defines the test method ToImmutableTest.
+	/// </summary>
 	[TestMethod]
 	public void ToImmutableTest()
 	{
@@ -454,6 +572,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.ToImmutable().HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method ToLinkedListTest.
+	/// </summary>
 	[TestMethod]
 	public void ToLinkedListTest()
 	{
@@ -462,6 +583,9 @@ public class EnumerableExtensionsTests
 		Assert.IsTrue(people.ToLinkedList().HasItems());
 	}
 
+	/// <summary>
+	/// Defines the test method ToListAsyncTest.
+	/// </summary>
 	[TestMethod]
 	public async Task ToListAsyncTest()
 	{
@@ -472,6 +596,9 @@ public class EnumerableExtensionsTests
 		Assert.IsNotNull(result);
 	}
 
+	/// <summary>
+	/// Defines the test method UpsertTest.
+	/// </summary>
 	[TestMethod]
 	public void UpsertTest()
 	{

@@ -4,7 +4,7 @@
 // Created          : 01-03-2021
 //
 // Last Modified By : David McCarter
-// Last Modified On : 08-04-2023
+// Last Modified On : 08-10-2023
 // ***********************************************************************
 // <copyright file="AddressRecord.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -221,7 +221,7 @@ public sealed record AddressRecord : IDataRecord
 	/// </summary>
 	/// <value>The county province.</value>
 	/// <exception cref="ArgumentOutOfRangeException">CountyProvince</exception>
-	/// <exception cref="ArgumentNullException">CountyProvince - County/ Province length is limited to 50 characters.</exception>
+	/// <exception cref="ArgumentNullException">CountyProvince</exception>
 	[DataMember(Name = "countryProvince")]
 	[XmlElement]
 	public string CountyProvince

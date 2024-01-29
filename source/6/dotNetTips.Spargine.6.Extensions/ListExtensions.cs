@@ -4,7 +4,7 @@
 // Created          : 02-14-2018
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-03-2023
+// Last Modified On : 12-08-2023
 // ***********************************************************************
 // <copyright file="ListExtensions.cs" company="David McCarter - dotNetTips.com">
 //     McCarter Consulting (David McCarter)
@@ -286,8 +286,8 @@ public static class ListExtensions
 	/// <param name="collection">The collection.</param>
 	/// <param name="collectionToCheck">The list to check.</param>
 	/// <returns><c>true</c> if the specified list to check is equal; otherwise, <c>false</c>.</returns>
-	/// <exception cref="System.ArgumentNullException">collection</exception>
-	/// <exception cref="System.ArgumentNullException">collectionToCheck</exception>
+	/// <exception cref="ArgumentNullException">collection</exception>
+	/// <exception cref="ArgumentNullException">collectionToCheck</exception>
 	[Information(nameof(IsEqualTo), author: "David McCarter", createdOn: "3/22/2023", UnitTestCoverage = 100, BenchMarkStatus = BenchMarkStatus.None, Status = Status.Available)]
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
 	public static bool IsEqualTo<T>(this IList<T> collection, IList<T> collectionToCheck)

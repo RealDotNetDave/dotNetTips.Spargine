@@ -36,7 +36,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// <summary>
 	/// The diagnostics
 	/// </summary>
-	private readonly List<string> _diagnostics = new();
+	private readonly List<string> _diagnostics = [];
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="PerformanceStopwatch" /> class.
@@ -148,7 +148,7 @@ public class PerformanceStopwatch : Stopwatch
 	/// Returns a <see cref="string" /> of all the logged messages.
 	/// </summary>
 	/// <returns>A <see cref="string" /> of all the logged messages.</returns>
-	public override string ToString() => FastStringBuilder.CombineStrings(Tristate.True, this.Diagnostics.ToArray());
+	public override string ToString() => FastStringBuilder.CombineStrings(Tristate.True, [.. this.Diagnostics]);
 
 	/// <summary>
 	/// Gets the logged messages.

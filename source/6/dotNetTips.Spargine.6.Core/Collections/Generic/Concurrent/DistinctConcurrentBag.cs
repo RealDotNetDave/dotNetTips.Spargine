@@ -32,7 +32,7 @@ public sealed class DistinctConcurrentBag<T> : ConcurrentBag<T>, ICollection<T>
 	/// <summary>
 	/// The hash codes
 	/// </summary>
-	private readonly HashSet<int> _hashCodes = new();
+	private readonly HashSet<int> _hashCodes = [];
 
 	/// <summary>
 	/// The lock

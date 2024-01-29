@@ -70,3 +70,5 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Naming", "CA1724:Type names should not match namespaces", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Core.Enumeration")]
 [assembly: SuppressMessage("Design", "CA1040:Avoid empty interfaces", Justification = "<Pending>", Scope = "type", Target = "~T:DotNetTips.Spargine.Core.IEventInformation")]
 [assembly: SuppressMessage("Security", "CA5401:Do not use CreateEncryptor with non-default IV", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String,System.Byte[],System.Byte[])~System.String")]
+[assembly: SuppressMessage("Performance", "CA1869:Cache and reuse 'JsonSerializerOptions' instances", Justification = "<Pending>", Scope = "member", Target = "~M:DotNetTips.Spargine.Core.Serialization.JsonSerialization.Deserialize``1(System.String)~``0")]
+[assembly: SuppressMessage("Performance", "CA1859:Use concrete types when possible for improved performance", Justification = "<Pending>", Scope = "member", Target = "~F:DotNetTips.Spargine.Core.Web.ServiceProxy`1._channelFactory")]

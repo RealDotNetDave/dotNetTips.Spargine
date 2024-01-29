@@ -27,6 +27,7 @@ namespace DotNetTips.Spargine.Tester.Models.RefTypes;
 [Information(Status = Status.Available, Documentation = "https://bit.ly/UnitTestRandomData7")]
 public class Person : IPerson
 {
+
 	/// <summary>
 	/// Gets or sets the address1.
 	/// </summary>
@@ -104,4 +105,5 @@ public class Person : IPerson
 	/// </summary>
 	/// <value>The state.</value>
 	public string State { get; set; }
+
 }

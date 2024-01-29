@@ -57,7 +57,7 @@ public sealed class CachedEnumerable<T> : IEnumerable<T>, IDisposable
 	/// <summary>
 	/// The cache
 	/// </summary>
-	private readonly List<T> _cache = new();
+	private readonly List<T> _cache = [];
 
 	/// <summary>
 	/// The disposed value

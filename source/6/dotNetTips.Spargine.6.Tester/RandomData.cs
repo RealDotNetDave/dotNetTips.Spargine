@@ -102,7 +102,7 @@ public static class RandomData
 	/// <summary>
 	/// The postal formats cache
 	/// </summary>
-	private static readonly Dictionary<Country, string[]> PostalFormatsCache = new();
+	private static readonly Dictionary<Country, string[]> PostalFormatsCache = [];
 
 	/// <summary>
 	/// The random number generator

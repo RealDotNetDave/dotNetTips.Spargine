@@ -4,7 +4,7 @@
 // Created          : 11-21-2020
 //
 // Last Modified By : David McCarter
-// Last Modified On : 11-02-2023
+// Last Modified On : 12-08-2023
 // ***********************************************************************
 // <copyright file="ArrayExtensions.cs" company="dotNetTips.Spargine.6.Extensions">
 //     Copyright (c) David McCarter - dotNetTips.com. All rights reserved.
@@ -67,7 +67,7 @@ public static class ArrayExtensions
 	{
 		source ??= Enumerable.Empty<T>();
 
-		if (items is null || !items.Any())
+		if (items is null || items.Length == 0)
 		{
 			return source;
 		}

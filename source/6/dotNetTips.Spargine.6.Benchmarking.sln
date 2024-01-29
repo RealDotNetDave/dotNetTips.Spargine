@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31815.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.BenchmarkTests\DotNetTips.Spargine.BenchmarkTests.csproj", "{C0F47B60-31D7-41CD-B148-A7005977A1EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.Core.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.Core.BenchmarkTests\DotNetTips.Spargine.Core.BenchmarkTests.csproj", "{DDA93C75-3025-4703-A325-86AEC157DAB7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.Extensions.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.Extensions.BenchmarkTests\DotNetTips.Spargine.Extensions.BenchmarkTests.csproj", "{3DD5CB39-1D78-45A2-90C3-0FCED8953DC1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Global", "Global", "{0E1E9F10-D542-4BEC-A6E1-D68DC87F2CF4}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetTips.Spargine.Tester.BenchmarkTests", "Benchmarking\dotNetTips.Spargine.6.Tester.Benchmarking\dotNetTips.Spargine.Tester.BenchmarkTests.csproj", "{D88677B1-1B3C-421D-93B7-92D490199614}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetTips.Spargine.6.Benchmarking", "Benchmarking\dotNetTips.Spargine.6.Benchmarking\DotNetTips.Spargine.6.Benchmarking.csproj", "{680AF712-C560-420F-8A03-A1FDEE8D42DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0F47B60-31D7-41CD-B148-A7005977A1EC}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F47B60-31D7-41CD-B148-A7005977A1EC}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{C0F47B60-31D7-41CD-B148-A7005977A1EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0F47B60-31D7-41CD-B148-A7005977A1EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA93C75-3025-4703-A325-86AEC157DAB7}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA93C75-3025-4703-A325-86AEC157DAB7}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DDA93C75-3025-4703-A325-86AEC157DAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA93C75-3025-4703-A325-86AEC157DAB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DD5CB39-1D78-45A2-90C3-0FCED8953DC1}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD5CB39-1D78-45A2-90C3-0FCED8953DC1}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{3DD5CB39-1D78-45A2-90C3-0FCED8953DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DD5CB39-1D78-45A2-90C3-0FCED8953DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88677B1-1B3C-421D-93B7-92D490199614}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D88677B1-1B3C-421D-93B7-92D490199614}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D88677B1-1B3C-421D-93B7-92D490199614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88677B1-1B3C-421D-93B7-92D490199614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680AF712-C560-420F-8A03-A1FDEE8D42DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680AF712-C560-420F-8A03-A1FDEE8D42DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680AF712-C560-420F-8A03-A1FDEE8D42DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680AF712-C560-420F-8A03-A1FDEE8D42DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {327DC320-CCF4-4DD7-BAF2-D9060A5761F2}
+	EndGlobalSection
+EndGlobal

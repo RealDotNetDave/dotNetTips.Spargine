@@ -1,0 +1,699 @@
+*** EnumExtensionsBenchmark.GetDescription: Job-XHVJJL(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True) ***
+* Raw *
+OverheadJitting  1: 1 op, 201800.00 ns, 201.8000 us/op
+WorkloadJitting  1: 1 op, 5130700.00 ns, 5.1307 ms/op
+OverheadJitting  2: 16 op, 462000.00 ns, 28.8750 us/op
+WorkloadJitting  2: 16 op, 307600.00 ns, 19.2250 us/op
+WorkloadPilot    1: 16 op, 110600.00 ns, 6.9125 us/op
+WorkloadPilot    2: 32 op, 80900.00 ns, 2.5281 us/op
+WorkloadPilot    3: 64 op, 90900.00 ns, 1.4203 us/op
+WorkloadPilot    4: 128 op, 165700.00 ns, 1.2945 us/op
+WorkloadPilot    5: 256 op, 188900.00 ns, 737.8906 ns/op
+WorkloadPilot    6: 512 op, 300000.00 ns, 585.9375 ns/op
+WorkloadPilot    7: 1024 op, 628100.00 ns, 613.3789 ns/op
+WorkloadPilot    8: 2048 op, 1189000.00 ns, 580.5664 ns/op
+WorkloadPilot    9: 4096 op, 1963800.00 ns, 479.4434 ns/op
+WorkloadPilot   10: 8192 op, 4017800.00 ns, 490.4541 ns/op
+WorkloadPilot   11: 16384 op, 12695500.00 ns, 774.8718 ns/op
+WorkloadPilot   12: 32768 op, 14663500.00 ns, 447.4945 ns/op
+WorkloadPilot   13: 65536 op, 28787400.00 ns, 439.2609 ns/op
+WorkloadPilot   14: 131072 op, 57579800.00 ns, 439.2990 ns/op
+WorkloadPilot   15: 262144 op, 70151200.00 ns, 267.6056 ns/op
+WorkloadPilot   16: 524288 op, 135619600.00 ns, 258.6739 ns/op
+WorkloadPilot   17: 1048576 op, 264850500.00 ns, 252.5811 ns/op
+WorkloadPilot   18: 2097152 op, 531633100.00 ns, 253.5024 ns/op
+OverheadWarmup   1: 2097152 op, 3730000.00 ns, 1.7786 ns/op
+OverheadWarmup   2: 2097152 op, 3743700.00 ns, 1.7851 ns/op
+OverheadWarmup   3: 2097152 op, 3818900.00 ns, 1.8210 ns/op
+OverheadWarmup   4: 2097152 op, 3736400.00 ns, 1.7817 ns/op
+OverheadWarmup   5: 2097152 op, 3730500.00 ns, 1.7788 ns/op
+OverheadWarmup   6: 2097152 op, 3731300.00 ns, 1.7792 ns/op
+OverheadWarmup   7: 2097152 op, 3740500.00 ns, 1.7836 ns/op
+OverheadWarmup   8: 2097152 op, 3124800.00 ns, 1.4900 ns/op
+OverheadActual   1: 2097152 op, 3180100.00 ns, 1.5164 ns/op
+OverheadActual   2: 2097152 op, 3098300.00 ns, 1.4774 ns/op
+OverheadActual   3: 2097152 op, 3102100.00 ns, 1.4792 ns/op
+OverheadActual   4: 2097152 op, 3101700.00 ns, 1.4790 ns/op
+OverheadActual   5: 2097152 op, 3100100.00 ns, 1.4782 ns/op
+OverheadActual   6: 2097152 op, 3105800.00 ns, 1.4810 ns/op
+OverheadActual   7: 2097152 op, 3189200.00 ns, 1.5207 ns/op
+OverheadActual   8: 2097152 op, 3107500.00 ns, 1.4818 ns/op
+OverheadActual   9: 2097152 op, 3107300.00 ns, 1.4817 ns/op
+OverheadActual  10: 2097152 op, 3099200.00 ns, 1.4778 ns/op
+OverheadActual  11: 2097152 op, 3102300.00 ns, 1.4793 ns/op
+OverheadActual  12: 2097152 op, 3105900.00 ns, 1.4810 ns/op
+OverheadActual  13: 2097152 op, 3114800.00 ns, 1.4853 ns/op
+OverheadActual  14: 2097152 op, 3104800.00 ns, 1.4805 ns/op
+OverheadActual  15: 2097152 op, 3110600.00 ns, 1.4832 ns/op
+WorkloadWarmup   1: 2097152 op, 537631500.00 ns, 256.3627 ns/op
+WorkloadWarmup   2: 2097152 op, 530024100.00 ns, 252.7352 ns/op
+WorkloadWarmup   3: 2097152 op, 536880100.00 ns, 256.0044 ns/op
+WorkloadWarmup   4: 2097152 op, 544126600.00 ns, 259.4598 ns/op
+WorkloadWarmup   5: 2097152 op, 544352200.00 ns, 259.5674 ns/op
+WorkloadWarmup   6: 2097152 op, 545219900.00 ns, 259.9811 ns/op
+WorkloadWarmup   7: 2097152 op, 536916000.00 ns, 256.0215 ns/op
+WorkloadWarmup   8: 2097152 op, 540316100.00 ns, 257.6428 ns/op
+WorkloadWarmup   9: 2097152 op, 547173300.00 ns, 260.9126 ns/op
+WorkloadWarmup  10: 2097152 op, 546965500.00 ns, 260.8135 ns/op
+WorkloadActual   1: 2097152 op, 534867100.00 ns, 255.0445 ns/op
+WorkloadActual   2: 2097152 op, 522392200.00 ns, 249.0960 ns/op
+WorkloadActual   3: 2097152 op, 525137900.00 ns, 250.4053 ns/op
+WorkloadActual   4: 2097152 op, 522876700.00 ns, 249.3270 ns/op
+WorkloadActual   5: 2097152 op, 522006600.00 ns, 248.9121 ns/op
+WorkloadActual   6: 2097152 op, 524735300.00 ns, 250.2133 ns/op
+WorkloadActual   7: 2097152 op, 522789700.00 ns, 249.2856 ns/op
+WorkloadActual   8: 2097152 op, 522996100.00 ns, 249.3840 ns/op
+WorkloadActual   9: 2097152 op, 529526400.00 ns, 252.4979 ns/op
+WorkloadActual  10: 2097152 op, 523531200.00 ns, 249.6391 ns/op
+WorkloadActual  11: 2097152 op, 522555000.00 ns, 249.1736 ns/op
+WorkloadActual  12: 2097152 op, 522786000.00 ns, 249.2838 ns/op
+WorkloadActual  13: 2097152 op, 522943100.00 ns, 249.3587 ns/op
+WorkloadActual  14: 2097152 op, 526363600.00 ns, 250.9897 ns/op
+WorkloadActual  15: 2097152 op, 522240800.00 ns, 249.0238 ns/op
+WorkloadResult   1: 2097152 op, 519286400.00 ns, 247.6151 ns/op
+WorkloadResult   2: 2097152 op, 522032100.00 ns, 248.9243 ns/op
+WorkloadResult   3: 2097152 op, 519770900.00 ns, 247.8461 ns/op
+WorkloadResult   4: 2097152 op, 518900800.00 ns, 247.4312 ns/op
+WorkloadResult   5: 2097152 op, 521629500.00 ns, 248.7323 ns/op
+WorkloadResult   6: 2097152 op, 519683900.00 ns, 247.8046 ns/op
+WorkloadResult   7: 2097152 op, 519890300.00 ns, 247.9030 ns/op
+WorkloadResult   8: 2097152 op, 520425400.00 ns, 248.1582 ns/op
+WorkloadResult   9: 2097152 op, 519449200.00 ns, 247.6927 ns/op
+WorkloadResult  10: 2097152 op, 519680200.00 ns, 247.8028 ns/op
+WorkloadResult  11: 2097152 op, 519837300.00 ns, 247.8777 ns/op
+WorkloadResult  12: 2097152 op, 523257800.00 ns, 249.5088 ns/op
+WorkloadResult  13: 2097152 op, 519135000.00 ns, 247.5429 ns/op
+
+* Statistics for OverheadJitting
+Mean = 115.338 μs, StdErr = 86.462 μs (74.96%), N = 2, StdDev = 122.276 μs
+Min = 28.875 μs, Q1 = 72.106 μs, Median = 115.338 μs, Q3 = 158.569 μs, Max = 201.800 μs
+IQR = 86.463 μs, LowerFence = -57.587 μs, UpperFence = 288.262 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-12.042 μs ; 242.717 μs) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadJitting
+Mean = 2.575 ms, StdErr = 2.556 ms (99.25%), N = 2, StdDev = 3.614 ms
+Min = 0.019 ms, Q1 = 1.297 ms, Median = 2.575 ms, Q3 = 3.853 ms, Max = 5.131 ms
+IQR = 2.556 ms, LowerFence = -2.537 ms, UpperFence = 7.686 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-1.190 ms ; 6.340 ms) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadPilot
+Mean = 1.043 μs, StdErr = 0.370 μs (35.43%), N = 18, StdDev = 1.568 μs
+Min = 0.253 μs, Q1 = 0.439 μs, Median = 0.536 μs, Q3 = 0.766 μs, Max = 6.912 μs
+IQR = 0.326 μs, LowerFence = -0.050 μs, UpperFence = 1.255 μs
+ConfidenceInterval = [-0.422 μs; 2.509 μs] (CI 99.9%), Margin = 1.466 μs (140.50% of Mean)
+Skewness = 2.91, Kurtosis = 10.97, MValue = 3
+-------------------- Histogram --------------------
+[0.051 μs ; 1.622 μs) | @@@@@@@@@@@@@@@@
+[1.622 μs ; 3.313 μs) | @
+[3.313 μs ; 4.884 μs) | 
+[4.884 μs ; 6.127 μs) | 
+[6.127 μs ; 7.698 μs) | @
+---------------------------------------------------
+
+* Statistics for OverheadWarmup
+Mean = 1.750 ns, StdErr = 0.037 ns (2.14%), N = 8, StdDev = 0.106 ns
+Min = 1.490 ns, Q1 = 1.779 ns, Median = 1.780 ns, Q3 = 1.784 ns, Max = 1.821 ns
+IQR = 0.005 ns, LowerFence = 1.771 ns, UpperFence = 1.792 ns
+ConfidenceInterval = [1.547 ns; 1.952 ns] (CI 99.9%), Margin = 0.202 ns (11.57% of Mean)
+Skewness = -1.79, Kurtosis = 4.56, MValue = 2
+-------------------- Histogram --------------------
+[1.421 ns ; 1.560 ns) | @
+[1.560 ns ; 1.730 ns) | 
+[1.730 ns ; 1.891 ns) | @@@@@@@
+---------------------------------------------------
+
+* Statistics for OverheadActual
+Mean = 1.485 ns, StdErr = 0.004 ns (0.24%), N = 15, StdDev = 0.014 ns
+Min = 1.477 ns, Q1 = 1.479 ns, Median = 1.481 ns, Q3 = 1.483 ns, Max = 1.521 ns
+IQR = 0.003 ns, LowerFence = 1.474 ns, UpperFence = 1.488 ns
+ConfidenceInterval = [1.471 ns; 1.500 ns] (CI 99.9%), Margin = 0.015 ns (0.98% of Mean)
+Skewness = 1.87, Kurtosis = 4.8, MValue = 2
+-------------------- Histogram --------------------
+[1.470 ns ; 1.528 ns) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadWarmup
+Mean = 257.950 ns, StdErr = 0.839 ns (0.33%), N = 10, StdDev = 2.652 ns
+Min = 252.735 ns, Q1 = 256.107 ns, Median = 258.551 ns, Q3 = 259.878 ns, Max = 260.913 ns
+IQR = 3.771 ns, LowerFence = 250.450 ns, UpperFence = 265.534 ns
+ConfidenceInterval = [253.940 ns; 261.960 ns] (CI 99.9%), Margin = 4.010 ns (1.55% of Mean)
+Skewness = -0.51, Kurtosis = 1.91, MValue = 2
+-------------------- Histogram --------------------
+[251.119 ns ; 262.528 ns) | @@@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadActual
+Mean = 250.109 ns, StdErr = 0.429 ns (0.17%), N = 15, StdDev = 1.663 ns
+Min = 248.912 ns, Q1 = 249.229 ns, Median = 249.359 ns, Q3 = 250.309 ns, Max = 255.045 ns
+IQR = 1.081 ns, LowerFence = 247.608 ns, UpperFence = 251.930 ns
+ConfidenceInterval = [248.331 ns; 251.887 ns] (CI 99.9%), Margin = 1.778 ns (0.71% of Mean)
+Skewness = 1.84, Kurtosis = 5.52, MValue = 2
+-------------------- Histogram --------------------
+[248.027 ns ; 255.930 ns) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadResult
+Mean = 248.065 ns, StdErr = 0.171 ns (0.07%), N = 13, StdDev = 0.615 ns
+Min = 247.431 ns, Q1 = 247.693 ns, Median = 247.846 ns, Q3 = 248.158 ns, Max = 249.509 ns
+IQR = 0.465 ns, LowerFence = 246.994 ns, UpperFence = 248.856 ns
+ConfidenceInterval = [247.328 ns; 248.801 ns] (CI 99.9%), Margin = 0.736 ns (0.30% of Mean)
+Skewness = 1.11, Kurtosis = 2.91, MValue = 2
+-------------------- Histogram --------------------
+[247.088 ns ; 249.852 ns) | @@@@@@@@@@@@@
+---------------------------------------------------
+*** EnumExtensionsBenchmark.GetDescription: Job-SWNUOI(EvaluateOverhead=True, Runtime=.NET 7.0, Server=True) ***
+* Raw *
+OverheadJitting  1: 1 op, 197100.00 ns, 197.1000 us/op
+WorkloadJitting  1: 1 op, 3983300.00 ns, 3.9833 ms/op
+OverheadJitting  2: 16 op, 303900.00 ns, 18.9937 us/op
+WorkloadJitting  2: 16 op, 543800.00 ns, 33.9875 us/op
+WorkloadPilot    1: 16 op, 107300.00 ns, 6.7062 us/op
+WorkloadPilot    2: 32 op, 68900.00 ns, 2.1531 us/op
+WorkloadPilot    3: 64 op, 80000.00 ns, 1.2500 us/op
+WorkloadPilot    4: 128 op, 143700.00 ns, 1.1227 us/op
+WorkloadPilot    5: 256 op, 541800.00 ns, 2.1164 us/op
+WorkloadPilot    6: 512 op, 244000.00 ns, 476.5625 ns/op
+WorkloadPilot    7: 1024 op, 437600.00 ns, 427.3438 ns/op
+WorkloadPilot    8: 2048 op, 811400.00 ns, 396.1914 ns/op
+WorkloadPilot    9: 4096 op, 1545800.00 ns, 377.3926 ns/op
+WorkloadPilot   10: 8192 op, 2974600.00 ns, 363.1104 ns/op
+WorkloadPilot   11: 16384 op, 5995000.00 ns, 365.9058 ns/op
+WorkloadPilot   12: 32768 op, 11887600.00 ns, 362.7808 ns/op
+WorkloadPilot   13: 65536 op, 23394100.00 ns, 356.9656 ns/op
+WorkloadPilot   14: 131072 op, 41687500.00 ns, 318.0504 ns/op
+WorkloadPilot   15: 262144 op, 46085200.00 ns, 175.8011 ns/op
+WorkloadPilot   16: 524288 op, 90554400.00 ns, 172.7188 ns/op
+WorkloadPilot   17: 1048576 op, 180651400.00 ns, 172.2826 ns/op
+WorkloadPilot   18: 2097152 op, 362020600.00 ns, 172.6249 ns/op
+WorkloadPilot   19: 4194304 op, 719286700.00 ns, 171.4913 ns/op
+OverheadWarmup   1: 4194304 op, 9752100.00 ns, 2.3251 ns/op
+OverheadWarmup   2: 4194304 op, 9746800.00 ns, 2.3238 ns/op
+OverheadWarmup   3: 4194304 op, 9790400.00 ns, 2.3342 ns/op
+OverheadWarmup   4: 4194304 op, 9752300.00 ns, 2.3251 ns/op
+OverheadWarmup   5: 4194304 op, 9942300.00 ns, 2.3704 ns/op
+OverheadWarmup   6: 4194304 op, 9733700.00 ns, 2.3207 ns/op
+OverheadActual   1: 4194304 op, 9787700.00 ns, 2.3336 ns/op
+OverheadActual   2: 4194304 op, 10097300.00 ns, 2.4074 ns/op
+OverheadActual   3: 4194304 op, 10067100.00 ns, 2.4002 ns/op
+OverheadActual   4: 4194304 op, 10012900.00 ns, 2.3873 ns/op
+OverheadActual   5: 4194304 op, 9975400.00 ns, 2.3783 ns/op
+OverheadActual   6: 4194304 op, 9985500.00 ns, 2.3807 ns/op
+OverheadActual   7: 4194304 op, 6853400.00 ns, 1.6340 ns/op
+OverheadActual   8: 4194304 op, 6803000.00 ns, 1.6220 ns/op
+OverheadActual   9: 4194304 op, 7204800.00 ns, 1.7178 ns/op
+OverheadActual  10: 4194304 op, 6799000.00 ns, 1.6210 ns/op
+OverheadActual  11: 4194304 op, 6804700.00 ns, 1.6224 ns/op
+OverheadActual  12: 4194304 op, 6815200.00 ns, 1.6249 ns/op
+OverheadActual  13: 4194304 op, 6796700.00 ns, 1.6205 ns/op
+OverheadActual  14: 4194304 op, 6803000.00 ns, 1.6220 ns/op
+OverheadActual  15: 4194304 op, 6826000.00 ns, 1.6274 ns/op
+OverheadActual  16: 4194304 op, 6819800.00 ns, 1.6260 ns/op
+OverheadActual  17: 4194304 op, 6805200.00 ns, 1.6225 ns/op
+OverheadActual  18: 4194304 op, 6806300.00 ns, 1.6227 ns/op
+OverheadActual  19: 4194304 op, 6820200.00 ns, 1.6261 ns/op
+OverheadActual  20: 4194304 op, 6863000.00 ns, 1.6363 ns/op
+WorkloadWarmup   1: 4194304 op, 725922500.00 ns, 173.0734 ns/op
+WorkloadWarmup   2: 4194304 op, 719760000.00 ns, 171.6042 ns/op
+WorkloadWarmup   3: 4194304 op, 712404200.00 ns, 169.8504 ns/op
+WorkloadWarmup   4: 4194304 op, 717186500.00 ns, 170.9906 ns/op
+WorkloadWarmup   5: 4194304 op, 712216900.00 ns, 169.8057 ns/op
+WorkloadWarmup   6: 4194304 op, 717203600.00 ns, 170.9947 ns/op
+WorkloadWarmup   7: 4194304 op, 718862900.00 ns, 171.3903 ns/op
+WorkloadWarmup   8: 4194304 op, 719493700.00 ns, 171.5407 ns/op
+WorkloadWarmup   9: 4194304 op, 715838800.00 ns, 170.6693 ns/op
+WorkloadActual   1: 4194304 op, 709395500.00 ns, 169.1331 ns/op
+WorkloadActual   2: 4194304 op, 748846700.00 ns, 178.5390 ns/op
+WorkloadActual   3: 4194304 op, 735988900.00 ns, 175.4734 ns/op
+WorkloadActual   4: 4194304 op, 743773000.00 ns, 177.3293 ns/op
+WorkloadActual   5: 4194304 op, 737118100.00 ns, 175.7427 ns/op
+WorkloadActual   6: 4194304 op, 732890000.00 ns, 174.7346 ns/op
+WorkloadActual   7: 4194304 op, 733033000.00 ns, 174.7687 ns/op
+WorkloadActual   8: 4194304 op, 733120700.00 ns, 174.7896 ns/op
+WorkloadActual   9: 4194304 op, 733376600.00 ns, 174.8506 ns/op
+WorkloadActual  10: 4194304 op, 724747300.00 ns, 172.7932 ns/op
+WorkloadActual  11: 4194304 op, 707941200.00 ns, 168.7863 ns/op
+WorkloadActual  12: 4194304 op, 710371600.00 ns, 169.3658 ns/op
+WorkloadActual  13: 4194304 op, 708566600.00 ns, 168.9354 ns/op
+WorkloadActual  14: 4194304 op, 711547100.00 ns, 169.6460 ns/op
+WorkloadActual  15: 4194304 op, 732810400.00 ns, 174.7156 ns/op
+WorkloadActual  16: 4194304 op, 709843800.00 ns, 169.2400 ns/op
+WorkloadResult   1: 4194304 op, 702572400.00 ns, 167.5063 ns/op
+WorkloadResult   2: 4194304 op, 742023600.00 ns, 176.9122 ns/op
+WorkloadResult   3: 4194304 op, 729165800.00 ns, 173.8467 ns/op
+WorkloadResult   4: 4194304 op, 736949900.00 ns, 175.7025 ns/op
+WorkloadResult   5: 4194304 op, 730295000.00 ns, 174.1159 ns/op
+WorkloadResult   6: 4194304 op, 726066900.00 ns, 173.1078 ns/op
+WorkloadResult   7: 4194304 op, 726209900.00 ns, 173.1419 ns/op
+WorkloadResult   8: 4194304 op, 726297600.00 ns, 173.1628 ns/op
+WorkloadResult   9: 4194304 op, 726553500.00 ns, 173.2239 ns/op
+WorkloadResult  10: 4194304 op, 717924200.00 ns, 171.1665 ns/op
+WorkloadResult  11: 4194304 op, 701118100.00 ns, 167.1596 ns/op
+WorkloadResult  12: 4194304 op, 703548500.00 ns, 167.7390 ns/op
+WorkloadResult  13: 4194304 op, 701743500.00 ns, 167.3087 ns/op
+WorkloadResult  14: 4194304 op, 704724000.00 ns, 168.0193 ns/op
+WorkloadResult  15: 4194304 op, 725987300.00 ns, 173.0889 ns/op
+WorkloadResult  16: 4194304 op, 703020700.00 ns, 167.6132 ns/op
+
+* Statistics for OverheadJitting
+Mean = 108.047 μs, StdErr = 89.053 μs (82.42%), N = 2, StdDev = 125.940 μs
+Min = 18.994 μs, Q1 = 63.520 μs, Median = 108.047 μs, Q3 = 152.573 μs, Max = 197.100 μs
+IQR = 89.053 μs, LowerFence = -70.059 μs, UpperFence = 286.153 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-23.149 μs ; 239.243 μs) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadJitting
+Mean = 2.009 ms, StdErr = 1.975 ms (98.31%), N = 2, StdDev = 2.793 ms
+Min = 0.034 ms, Q1 = 1.021 ms, Median = 2.009 ms, Q3 = 2.996 ms, Max = 3.983 ms
+IQR = 1.975 ms, LowerFence = -1.941 ms, UpperFence = 5.958 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-0.900 ms ; 4.918 ms) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadPilot
+Mean = 929.350 ns, StdErr = 350.381 ns (37.70%), N = 19, StdDev = 1,527.276 ns
+Min = 171.491 ns, Q1 = 246.926 ns, Median = 365.906 ns, Q3 = 799.609 ns, Max = 6,706.250 ns
+IQR = 552.684 ns, LowerFence = -582.100 ns, UpperFence = 1,628.635 ns
+ConfidenceInterval = [-444.720 ns; 2,303.421 ns] (CI 99.9%), Margin = 1,374.071 ns (147.85% of Mean)
+Skewness = 2.85, Kurtosis = 10.84, MValue = 2.29
+-------------------- Histogram --------------------
+[  -40.472 ns ; 1,461.963 ns) | @@@@@@@@@@@@@@@@
+[1,461.963 ns ; 2,885.983 ns) | @@
+[2,885.983 ns ; 4,388.418 ns) | 
+[4,388.418 ns ; 5,955.033 ns) | 
+[5,955.033 ns ; 7,457.468 ns) | @
+---------------------------------------------------
+
+* Statistics for OverheadWarmup
+Mean = 2.333 ns, StdErr = 0.008 ns (0.33%), N = 6, StdDev = 0.019 ns
+Min = 2.321 ns, Q1 = 2.324 ns, Median = 2.325 ns, Q3 = 2.332 ns, Max = 2.370 ns
+IQR = 0.008 ns, LowerFence = 2.312 ns, UpperFence = 2.344 ns
+ConfidenceInterval = [2.281 ns; 2.386 ns] (CI 99.9%), Margin = 0.053 ns (2.26% of Mean)
+Skewness = 1.2, Kurtosis = 2.62, MValue = 2
+-------------------- Histogram --------------------
+[2.307 ns ; 2.384 ns) | @@@@@@
+---------------------------------------------------
+
+* Statistics for OverheadActual
+Mean = 1.857 ns, StdErr = 0.079 ns (4.25%), N = 20, StdDev = 0.353 ns
+Min = 1.620 ns, Q1 = 1.622 ns, Median = 1.627 ns, Q3 = 2.345 ns, Max = 2.407 ns
+IQR = 0.722 ns, LowerFence = 0.539 ns, UpperFence = 3.428 ns
+ConfidenceInterval = [1.550 ns; 2.163 ns] (CI 99.9%), Margin = 0.307 ns (16.52% of Mean)
+Skewness = 0.8, Kurtosis = 1.6, MValue = 2.86
+-------------------- Histogram --------------------
+[1.498 ns ; 1.840 ns) | @@@@@@@@@@@@@@
+[1.840 ns ; 2.200 ns) | 
+[2.200 ns ; 2.578 ns) | @@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadWarmup
+Mean = 171.102 ns, StdErr = 0.331 ns (0.19%), N = 9, StdDev = 0.992 ns
+Min = 169.806 ns, Q1 = 170.669 ns, Median = 170.995 ns, Q3 = 171.541 ns, Max = 173.073 ns
+IQR = 0.871 ns, LowerFence = 169.362 ns, UpperFence = 172.848 ns
+ConfidenceInterval = [169.435 ns; 172.769 ns] (CI 99.9%), Margin = 1.667 ns (0.97% of Mean)
+Skewness = 0.42, Kurtosis = 2.35, MValue = 2
+-------------------- Histogram --------------------
+[169.425 ns ; 173.699 ns) | @@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadActual
+Mean = 173.053 ns, StdErr = 0.833 ns (0.48%), N = 16, StdDev = 3.333 ns
+Min = 168.786 ns, Q1 = 169.334 ns, Median = 174.725 ns, Q3 = 175.006 ns, Max = 178.539 ns
+IQR = 5.672 ns, LowerFence = 160.826 ns, UpperFence = 183.514 ns
+ConfidenceInterval = [169.659 ns; 176.446 ns] (CI 99.9%), Margin = 3.393 ns (1.96% of Mean)
+Skewness = -0.08, Kurtosis = 1.4, MValue = 2
+-------------------- Histogram --------------------
+[167.480 ns ; 174.262 ns) | @@@@@@@
+[174.262 ns ; 180.275 ns) | @@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadResult
+Mean = 171.426 ns, StdErr = 0.833 ns (0.49%), N = 16, StdDev = 3.333 ns
+Min = 167.160 ns, Q1 = 167.708 ns, Median = 173.098 ns, Q3 = 173.380 ns, Max = 176.912 ns
+IQR = 5.672 ns, LowerFence = 159.200 ns, UpperFence = 181.888 ns
+ConfidenceInterval = [168.033 ns; 174.819 ns] (CI 99.9%), Margin = 3.393 ns (1.98% of Mean)
+Skewness = -0.08, Kurtosis = 1.4, MValue = 2
+-------------------- Histogram --------------------
+[165.853 ns ; 172.652 ns) | @@@@@@@
+[172.652 ns ; 178.648 ns) | @@@@@@@@@
+---------------------------------------------------
+*** EnumExtensionsBenchmark.GetItems: Job-XHVJJL(EvaluateOverhead=True, Runtime=.NET 6.0, Server=True) ***
+* Raw *
+OverheadJitting  1: 1 op, 195400.00 ns, 195.4000 us/op
+WorkloadJitting  1: 1 op, 2032200.00 ns, 2.0322 ms/op
+OverheadJitting  2: 16 op, 290300.00 ns, 18.1438 us/op
+WorkloadJitting  2: 16 op, 338300.00 ns, 21.1438 us/op
+WorkloadPilot    1: 16 op, 85200.00 ns, 5.3250 us/op
+WorkloadPilot    2: 32 op, 83100.00 ns, 2.5969 us/op
+WorkloadPilot    3: 64 op, 130900.00 ns, 2.0453 us/op
+WorkloadPilot    4: 128 op, 236900.00 ns, 1.8508 us/op
+WorkloadPilot    5: 256 op, 515000.00 ns, 2.0117 us/op
+WorkloadPilot    6: 512 op, 838700.00 ns, 1.6381 us/op
+WorkloadPilot    7: 1024 op, 1433000.00 ns, 1.3994 us/op
+WorkloadPilot    8: 2048 op, 5092800.00 ns, 2.4867 us/op
+WorkloadPilot    9: 4096 op, 5416200.00 ns, 1.3223 us/op
+WorkloadPilot   10: 8192 op, 10877100.00 ns, 1.3278 us/op
+WorkloadPilot   11: 16384 op, 20370600.00 ns, 1.2433 us/op
+WorkloadPilot   12: 32768 op, 37056500.00 ns, 1.1309 us/op
+WorkloadPilot   13: 65536 op, 75649800.00 ns, 1.1543 us/op
+WorkloadPilot   14: 131072 op, 125996800.00 ns, 961.2793 ns/op
+WorkloadPilot   15: 262144 op, 241295400.00 ns, 920.4689 ns/op
+WorkloadPilot   16: 524288 op, 477369600.00 ns, 910.5103 ns/op
+WorkloadPilot   17: 1048576 op, 951842300.00 ns, 907.7476 ns/op
+OverheadWarmup   1: 1048576 op, 1856100.00 ns, 1.7701 ns/op
+OverheadWarmup   2: 1048576 op, 1771200.00 ns, 1.6891 ns/op
+OverheadWarmup   3: 1048576 op, 1775200.00 ns, 1.6930 ns/op
+OverheadWarmup   4: 1048576 op, 1776100.00 ns, 1.6938 ns/op
+OverheadWarmup   5: 1048576 op, 1770900.00 ns, 1.6889 ns/op
+OverheadWarmup   6: 1048576 op, 1865200.00 ns, 1.7788 ns/op
+OverheadWarmup   7: 1048576 op, 1774800.00 ns, 1.6926 ns/op
+OverheadActual   1: 1048576 op, 1954000.00 ns, 1.8635 ns/op
+OverheadActual   2: 1048576 op, 2434500.00 ns, 2.3217 ns/op
+OverheadActual   3: 1048576 op, 1779100.00 ns, 1.6967 ns/op
+OverheadActual   4: 1048576 op, 1782800.00 ns, 1.7002 ns/op
+OverheadActual   5: 1048576 op, 1771400.00 ns, 1.6893 ns/op
+OverheadActual   6: 1048576 op, 1775700.00 ns, 1.6934 ns/op
+OverheadActual   7: 1048576 op, 1771500.00 ns, 1.6894 ns/op
+OverheadActual   8: 1048576 op, 1509100.00 ns, 1.4392 ns/op
+OverheadActual   9: 1048576 op, 1751100.00 ns, 1.6700 ns/op
+OverheadActual  10: 1048576 op, 1508500.00 ns, 1.4386 ns/op
+OverheadActual  11: 1048576 op, 1504900.00 ns, 1.4352 ns/op
+OverheadActual  12: 1048576 op, 1499100.00 ns, 1.4297 ns/op
+OverheadActual  13: 1048576 op, 1503300.00 ns, 1.4337 ns/op
+OverheadActual  14: 1048576 op, 1524300.00 ns, 1.4537 ns/op
+OverheadActual  15: 1048576 op, 1504000.00 ns, 1.4343 ns/op
+OverheadActual  16: 1048576 op, 1505500.00 ns, 1.4358 ns/op
+OverheadActual  17: 1048576 op, 1719700.00 ns, 1.6400 ns/op
+OverheadActual  18: 1048576 op, 1641700.00 ns, 1.5656 ns/op
+OverheadActual  19: 1048576 op, 1513400.00 ns, 1.4433 ns/op
+OverheadActual  20: 1048576 op, 1503400.00 ns, 1.4338 ns/op
+WorkloadWarmup   1: 1048576 op, 949074200.00 ns, 905.1077 ns/op
+WorkloadWarmup   2: 1048576 op, 946918800.00 ns, 903.0521 ns/op
+WorkloadWarmup   3: 1048576 op, 946386600.00 ns, 902.5446 ns/op
+WorkloadWarmup   4: 1048576 op, 946836100.00 ns, 902.9733 ns/op
+WorkloadWarmup   5: 1048576 op, 945573100.00 ns, 901.7688 ns/op
+WorkloadWarmup   6: 1048576 op, 946280800.00 ns, 902.4437 ns/op
+WorkloadWarmup   7: 1048576 op, 946561600.00 ns, 902.7115 ns/op
+WorkloadWarmup   8: 1048576 op, 941518100.00 ns, 897.9016 ns/op
+WorkloadActual   1: 1048576 op, 925575100.00 ns, 882.6972 ns/op
+WorkloadActual   2: 1048576 op, 939873100.00 ns, 896.3328 ns/op
+WorkloadActual   3: 1048576 op, 936681000.00 ns, 893.2886 ns/op
+WorkloadActual   4: 1048576 op, 935701100.00 ns, 892.3541 ns/op
+WorkloadActual   5: 1048576 op, 931326000.00 ns, 888.1817 ns/op
+WorkloadActual   6: 1048576 op, 929904800.00 ns, 886.8263 ns/op
+WorkloadActual   7: 1048576 op, 922526800.00 ns, 879.7901 ns/op
+WorkloadActual   8: 1048576 op, 918154900.00 ns, 875.6207 ns/op
+WorkloadActual   9: 1048576 op, 914057200.00 ns, 871.7129 ns/op
+WorkloadActual  10: 1048576 op, 917102400.00 ns, 874.6170 ns/op
+WorkloadActual  11: 1048576 op, 912665700.00 ns, 870.3858 ns/op
+WorkloadActual  12: 1048576 op, 917820600.00 ns, 875.3019 ns/op
+WorkloadActual  13: 1048576 op, 908875900.00 ns, 866.7716 ns/op
+WorkloadActual  14: 1048576 op, 940120100.00 ns, 896.5684 ns/op
+WorkloadActual  15: 1048576 op, 913136200.00 ns, 870.8345 ns/op
+WorkloadResult   1: 1048576 op, 923992100.00 ns, 881.1875 ns/op
+WorkloadResult   2: 1048576 op, 938290100.00 ns, 894.8232 ns/op
+WorkloadResult   3: 1048576 op, 935098000.00 ns, 891.7789 ns/op
+WorkloadResult   4: 1048576 op, 934118100.00 ns, 890.8444 ns/op
+WorkloadResult   5: 1048576 op, 929743000.00 ns, 886.6720 ns/op
+WorkloadResult   6: 1048576 op, 928321800.00 ns, 885.3167 ns/op
+WorkloadResult   7: 1048576 op, 920943800.00 ns, 878.2804 ns/op
+WorkloadResult   8: 1048576 op, 916571900.00 ns, 874.1111 ns/op
+WorkloadResult   9: 1048576 op, 912474200.00 ns, 870.2032 ns/op
+WorkloadResult  10: 1048576 op, 915519400.00 ns, 873.1073 ns/op
+WorkloadResult  11: 1048576 op, 911082700.00 ns, 868.8762 ns/op
+WorkloadResult  12: 1048576 op, 916237600.00 ns, 873.7923 ns/op
+WorkloadResult  13: 1048576 op, 907292900.00 ns, 865.2619 ns/op
+WorkloadResult  14: 1048576 op, 938537100.00 ns, 895.0587 ns/op
+WorkloadResult  15: 1048576 op, 911553200.00 ns, 869.3249 ns/op
+
+* Statistics for OverheadJitting
+Mean = 106.772 μs, StdErr = 88.628 μs (83.01%), N = 2, StdDev = 125.339 μs
+Min = 18.144 μs, Q1 = 62.458 μs, Median = 106.772 μs, Q3 = 151.086 μs, Max = 195.400 μs
+IQR = 88.628 μs, LowerFence = -70.484 μs, UpperFence = 284.028 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-23.798 μs ; 237.342 μs) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadJitting
+Mean = 1.027 ms, StdErr = 1.006 ms (97.94%), N = 2, StdDev = 1.422 ms
+Min = 0.021 ms, Q1 = 0.524 ms, Median = 1.027 ms, Q3 = 1.529 ms, Max = 2.032 ms
+IQR = 1.006 ms, LowerFence = -0.984 ms, UpperFence = 3.038 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-0.455 ms ; 2.508 ms) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadPilot
+Mean = 1.720 μs, StdErr = 0.260 μs (15.13%), N = 17, StdDev = 1.073 μs
+Min = 0.908 μs, Q1 = 1.131 μs, Median = 1.328 μs, Q3 = 2.012 μs, Max = 5.325 μs
+IQR = 0.881 μs, LowerFence = -0.190 μs, UpperFence = 3.333 μs
+ConfidenceInterval = [0.675 μs; 2.764 μs] (CI 99.9%), Margin = 1.044 μs (60.74% of Mean)
+Skewness = 2.16, Kurtosis = 7.64, MValue = 2
+-------------------- Histogram --------------------
+[0.832 μs ; 1.927 μs) | @@@@@@@@@@@@
+[1.927 μs ; 2.852 μs) | @@@@
+[2.852 μs ; 3.947 μs) | 
+[3.947 μs ; 4.778 μs) | 
+[4.778 μs ; 5.872 μs) | @
+---------------------------------------------------
+
+* Statistics for OverheadWarmup
+Mean = 1.715 ns, StdErr = 0.015 ns (0.89%), N = 7, StdDev = 0.041 ns
+Min = 1.689 ns, Q1 = 1.691 ns, Median = 1.693 ns, Q3 = 1.732 ns, Max = 1.779 ns
+IQR = 0.041 ns, LowerFence = 1.629 ns, UpperFence = 1.794 ns
+ConfidenceInterval = [1.624 ns; 1.807 ns] (CI 99.9%), Margin = 0.091 ns (5.33% of Mean)
+Skewness = 0.76, Kurtosis = 1.42, MValue = 2
+-------------------- Histogram --------------------
+[1.661 ns ; 1.747 ns) | @@@@@
+[1.747 ns ; 1.807 ns) | @@
+---------------------------------------------------
+
+* Statistics for OverheadActual
+Mean = 1.595 ns, StdErr = 0.049 ns (3.06%), N = 20, StdDev = 0.218 ns
+Min = 1.430 ns, Q1 = 1.436 ns, Median = 1.510 ns, Q3 = 1.690 ns, Max = 2.322 ns
+IQR = 0.255 ns, LowerFence = 1.053 ns, UpperFence = 2.073 ns
+ConfidenceInterval = [1.406 ns; 1.785 ns] (CI 99.9%), Margin = 0.190 ns (11.88% of Mean)
+Skewness = 1.77, Kurtosis = 6.39, MValue = 2.18
+-------------------- Histogram --------------------
+[1.429 ns ; 1.640 ns) | @@@@@@@@@@@@
+[1.640 ns ; 1.872 ns) | @@@@@@@
+[1.872 ns ; 2.083 ns) | 
+[2.083 ns ; 2.216 ns) | 
+[2.216 ns ; 2.427 ns) | @
+---------------------------------------------------
+
+* Statistics for WorkloadWarmup
+Mean = 902.313 ns, StdErr = 0.717 ns (0.08%), N = 8, StdDev = 2.028 ns
+Min = 897.902 ns, Q1 = 902.275 ns, Median = 902.628 ns, Q3 = 902.993 ns, Max = 905.108 ns
+IQR = 0.718 ns, LowerFence = 901.198 ns, UpperFence = 904.070 ns
+ConfidenceInterval = [898.436 ns; 906.190 ns] (CI 99.9%), Margin = 3.877 ns (0.43% of Mean)
+Skewness = -0.95, Kurtosis = 3.26, MValue = 2
+-------------------- Histogram --------------------
+[896.571 ns ; 906.438 ns) | @@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadActual
+Mean = 881.419 ns, StdErr = 2.629 ns (0.30%), N = 15, StdDev = 10.182 ns
+Min = 866.772 ns, Q1 = 873.165 ns, Median = 879.790 ns, Q3 = 890.268 ns, Max = 896.568 ns
+IQR = 17.103 ns, LowerFence = 847.511 ns, UpperFence = 915.922 ns
+ConfidenceInterval = [870.534 ns; 892.304 ns] (CI 99.9%), Margin = 10.885 ns (1.23% of Mean)
+Skewness = 0.18, Kurtosis = 1.4, MValue = 2
+-------------------- Histogram --------------------
+[862.484 ns ; 900.614 ns) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadResult
+Mean = 879.909 ns, StdErr = 2.629 ns (0.30%), N = 15, StdDev = 10.182 ns
+Min = 865.262 ns, Q1 = 871.655 ns, Median = 878.280 ns, Q3 = 888.758 ns, Max = 895.059 ns
+IQR = 17.103 ns, LowerFence = 846.001 ns, UpperFence = 914.413 ns
+ConfidenceInterval = [869.024 ns; 890.795 ns] (CI 99.9%), Margin = 10.885 ns (1.24% of Mean)
+Skewness = 0.18, Kurtosis = 1.4, MValue = 2
+-------------------- Histogram --------------------
+[860.990 ns ; 899.090 ns) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+*** EnumExtensionsBenchmark.GetItems: Job-SWNUOI(EvaluateOverhead=True, Runtime=.NET 7.0, Server=True) ***
+* Raw *
+OverheadJitting  1: 1 op, 194300.00 ns, 194.3000 us/op
+WorkloadJitting  1: 1 op, 2899300.00 ns, 2.8993 ms/op
+OverheadJitting  2: 16 op, 272500.00 ns, 17.0312 us/op
+WorkloadJitting  2: 16 op, 324700.00 ns, 20.2937 us/op
+WorkloadPilot    1: 16 op, 65700.00 ns, 4.1063 us/op
+WorkloadPilot    2: 32 op, 105000.00 ns, 3.2812 us/op
+WorkloadPilot    3: 64 op, 114400.00 ns, 1.7875 us/op
+WorkloadPilot    4: 128 op, 190300.00 ns, 1.4867 us/op
+WorkloadPilot    5: 256 op, 353000.00 ns, 1.3789 us/op
+WorkloadPilot    6: 512 op, 620500.00 ns, 1.2119 us/op
+WorkloadPilot    7: 1024 op, 1243200.00 ns, 1.2141 us/op
+WorkloadPilot    8: 2048 op, 2360400.00 ns, 1.1525 us/op
+WorkloadPilot    9: 4096 op, 4472500.00 ns, 1.0919 us/op
+WorkloadPilot   10: 8192 op, 9835100.00 ns, 1.2006 us/op
+WorkloadPilot   11: 16384 op, 18492100.00 ns, 1.1287 us/op
+WorkloadPilot   12: 32768 op, 35586300.00 ns, 1.0860 us/op
+WorkloadPilot   13: 65536 op, 69363200.00 ns, 1.0584 us/op
+WorkloadPilot   14: 131072 op, 126698200.00 ns, 966.6306 ns/op
+WorkloadPilot   15: 262144 op, 188475800.00 ns, 718.9781 ns/op
+WorkloadPilot   16: 524288 op, 376490300.00 ns, 718.0983 ns/op
+WorkloadPilot   17: 1048576 op, 739262200.00 ns, 705.0154 ns/op
+OverheadWarmup   1: 1048576 op, 2318200.00 ns, 2.2108 ns/op
+OverheadWarmup   2: 1048576 op, 2249900.00 ns, 2.1457 ns/op
+OverheadWarmup   3: 1048576 op, 2245300.00 ns, 2.1413 ns/op
+OverheadWarmup   4: 1048576 op, 2210000.00 ns, 2.1076 ns/op
+OverheadWarmup   5: 1048576 op, 2283300.00 ns, 2.1775 ns/op
+OverheadWarmup   6: 1048576 op, 2290700.00 ns, 2.1846 ns/op
+OverheadWarmup   7: 1048576 op, 2237500.00 ns, 2.1338 ns/op
+OverheadWarmup   8: 1048576 op, 1717600.00 ns, 1.6380 ns/op
+OverheadWarmup   9: 1048576 op, 1703200.00 ns, 1.6243 ns/op
+OverheadWarmup  10: 1048576 op, 1702900.00 ns, 1.6240 ns/op
+OverheadActual   1: 1048576 op, 1721200.00 ns, 1.6415 ns/op
+OverheadActual   2: 1048576 op, 1706500.00 ns, 1.6274 ns/op
+OverheadActual   3: 1048576 op, 1700400.00 ns, 1.6216 ns/op
+OverheadActual   4: 1048576 op, 1702700.00 ns, 1.6238 ns/op
+OverheadActual   5: 1048576 op, 1713200.00 ns, 1.6338 ns/op
+OverheadActual   6: 1048576 op, 1709700.00 ns, 1.6305 ns/op
+OverheadActual   7: 1048576 op, 1704600.00 ns, 1.6256 ns/op
+OverheadActual   8: 1048576 op, 1707100.00 ns, 1.6280 ns/op
+OverheadActual   9: 1048576 op, 1701400.00 ns, 1.6226 ns/op
+OverheadActual  10: 1048576 op, 1702600.00 ns, 1.6237 ns/op
+OverheadActual  11: 1048576 op, 1713000.00 ns, 1.6336 ns/op
+OverheadActual  12: 1048576 op, 1704700.00 ns, 1.6257 ns/op
+OverheadActual  13: 1048576 op, 1709700.00 ns, 1.6305 ns/op
+OverheadActual  14: 1048576 op, 1717800.00 ns, 1.6382 ns/op
+OverheadActual  15: 1048576 op, 1784600.00 ns, 1.7019 ns/op
+WorkloadWarmup   1: 1048576 op, 747039200.00 ns, 712.4321 ns/op
+WorkloadWarmup   2: 1048576 op, 744171500.00 ns, 709.6972 ns/op
+WorkloadWarmup   3: 1048576 op, 747628700.00 ns, 712.9943 ns/op
+WorkloadWarmup   4: 1048576 op, 747414800.00 ns, 712.7903 ns/op
+WorkloadWarmup   5: 1048576 op, 747329600.00 ns, 712.7090 ns/op
+WorkloadWarmup   6: 1048576 op, 743795900.00 ns, 709.3390 ns/op
+WorkloadWarmup   7: 1048576 op, 746554700.00 ns, 711.9700 ns/op
+WorkloadWarmup   8: 1048576 op, 744932100.00 ns, 710.4226 ns/op
+WorkloadActual   1: 1048576 op, 742893300.00 ns, 708.4783 ns/op
+WorkloadActual   2: 1048576 op, 742080700.00 ns, 707.7033 ns/op
+WorkloadActual   3: 1048576 op, 744178500.00 ns, 709.7039 ns/op
+WorkloadActual   4: 1048576 op, 746041300.00 ns, 711.4804 ns/op
+WorkloadActual   5: 1048576 op, 745154200.00 ns, 710.6344 ns/op
+WorkloadActual   6: 1048576 op, 744526800.00 ns, 710.0361 ns/op
+WorkloadActual   7: 1048576 op, 744672300.00 ns, 710.1748 ns/op
+WorkloadActual   8: 1048576 op, 741608400.00 ns, 707.2529 ns/op
+WorkloadActual   9: 1048576 op, 747617500.00 ns, 712.9836 ns/op
+WorkloadActual  10: 1048576 op, 743387600.00 ns, 708.9497 ns/op
+WorkloadActual  11: 1048576 op, 751735800.00 ns, 716.9111 ns/op
+WorkloadActual  12: 1048576 op, 749024100.00 ns, 714.3250 ns/op
+WorkloadActual  13: 1048576 op, 746581400.00 ns, 711.9955 ns/op
+WorkloadActual  14: 1048576 op, 741487300.00 ns, 707.1374 ns/op
+WorkloadActual  15: 1048576 op, 744375000.00 ns, 709.8913 ns/op
+WorkloadResult   1: 1048576 op, 741186200.00 ns, 706.8502 ns/op
+WorkloadResult   2: 1048576 op, 740373600.00 ns, 706.0753 ns/op
+WorkloadResult   3: 1048576 op, 742471400.00 ns, 708.0759 ns/op
+WorkloadResult   4: 1048576 op, 744334200.00 ns, 709.8524 ns/op
+WorkloadResult   5: 1048576 op, 743447100.00 ns, 709.0064 ns/op
+WorkloadResult   6: 1048576 op, 742819700.00 ns, 708.4081 ns/op
+WorkloadResult   7: 1048576 op, 742965200.00 ns, 708.5468 ns/op
+WorkloadResult   8: 1048576 op, 739901300.00 ns, 705.6249 ns/op
+WorkloadResult   9: 1048576 op, 745910400.00 ns, 711.3556 ns/op
+WorkloadResult  10: 1048576 op, 741680500.00 ns, 707.3216 ns/op
+WorkloadResult  11: 1048576 op, 747317000.00 ns, 712.6970 ns/op
+WorkloadResult  12: 1048576 op, 744874300.00 ns, 710.3675 ns/op
+WorkloadResult  13: 1048576 op, 739780200.00 ns, 705.5094 ns/op
+WorkloadResult  14: 1048576 op, 742667900.00 ns, 708.2633 ns/op
+
+* Statistics for OverheadJitting
+Mean = 105.666 μs, StdErr = 88.634 μs (83.88%), N = 2, StdDev = 125.348 μs
+Min = 17.031 μs, Q1 = 61.348 μs, Median = 105.666 μs, Q3 = 149.983 μs, Max = 194.300 μs
+IQR = 88.634 μs, LowerFence = -71.603 μs, UpperFence = 282.934 μs
+ConfidenceInterval = [NaN μs; NaN μs] (CI 99.9%), Margin = NaN μs (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-24.913 μs ; 236.245 μs) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadJitting
+Mean = 1.460 ms, StdErr = 1.440 ms (98.61%), N = 2, StdDev = 2.036 ms
+Min = 0.020 ms, Q1 = 0.740 ms, Median = 1.460 ms, Q3 = 2.180 ms, Max = 2.899 ms
+IQR = 1.440 ms, LowerFence = -1.419 ms, UpperFence = 4.339 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = 0, Kurtosis = 0.25, MValue = 2
+-------------------- Histogram --------------------
+[-0.661 ms ; 3.581 ms) | @@
+---------------------------------------------------
+
+* Statistics for WorkloadPilot
+Mean = 1.429 μs, StdErr = 0.220 μs (15.39%), N = 17, StdDev = 0.907 μs
+Min = 0.705 μs, Q1 = 1.058 μs, Median = 1.153 μs, Q3 = 1.379 μs, Max = 4.106 μs
+IQR = 0.321 μs, LowerFence = 0.578 μs, UpperFence = 1.860 μs
+ConfidenceInterval = [0.546 μs; 2.312 μs] (CI 99.9%), Margin = 0.883 μs (61.80% of Mean)
+Skewness = 1.91, Kurtosis = 5.57, MValue = 2
+-------------------- Histogram --------------------
+[0.633 μs ; 1.559 μs) | @@@@@@@@@@@@@@
+[1.559 μs ; 2.250 μs) | @
+[2.250 μs ; 3.231 μs) | 
+[3.231 μs ; 4.157 μs) | @@
+---------------------------------------------------
+
+* Statistics for OverheadWarmup
+Mean = 1.999 ns, StdErr = 0.081 ns (4.07%), N = 10, StdDev = 0.257 ns
+Min = 1.624 ns, Q1 = 1.755 ns, Median = 2.138 ns, Q3 = 2.170 ns, Max = 2.211 ns
+IQR = 0.414 ns, LowerFence = 1.134 ns, UpperFence = 2.791 ns
+ConfidenceInterval = [1.610 ns; 2.387 ns] (CI 99.9%), Margin = 0.388 ns (19.44% of Mean)
+Skewness = -0.71, Kurtosis = 1.42, MValue = 2.86
+-------------------- Histogram --------------------
+[1.467 ns ; 1.788 ns) | @@@
+[1.788 ns ; 2.003 ns) | 
+[2.003 ns ; 2.367 ns) | @@@@@@@
+---------------------------------------------------
+
+* Statistics for OverheadActual
+Mean = 1.634 ns, StdErr = 0.005 ns (0.31%), N = 15, StdDev = 0.020 ns
+Min = 1.622 ns, Q1 = 1.625 ns, Median = 1.628 ns, Q3 = 1.634 ns, Max = 1.702 ns
+IQR = 0.009 ns, LowerFence = 1.611 ns, UpperFence = 1.647 ns
+ConfidenceInterval = [1.613 ns; 1.655 ns] (CI 99.9%), Margin = 0.021 ns (1.29% of Mean)
+Skewness = 2.69, Kurtosis = 9.55, MValue = 2
+-------------------- Histogram --------------------
+[1.615 ns ; 1.669 ns) | @@@@@@@@@@@@@@
+[1.669 ns ; 1.713 ns) | @
+---------------------------------------------------
+
+* Statistics for WorkloadWarmup
+Mean = 711.544 ns, StdErr = 0.526 ns (0.07%), N = 8, StdDev = 1.489 ns
+Min = 709.339 ns, Q1 = 710.241 ns, Median = 712.201 ns, Q3 = 712.729 ns, Max = 712.994 ns
+IQR = 2.488 ns, LowerFence = 706.509 ns, UpperFence = 716.461 ns
+ConfidenceInterval = [708.698 ns; 714.391 ns] (CI 99.9%), Margin = 2.846 ns (0.40% of Mean)
+Skewness = -0.42, Kurtosis = 1.18, MValue = 2
+-------------------- Histogram --------------------
+[708.362 ns ; 713.971 ns) | @@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadActual
+Mean = 710.511 ns, StdErr = 0.699 ns (0.10%), N = 15, StdDev = 2.707 ns
+Min = 707.137 ns, Q1 = 708.714 ns, Median = 710.036 ns, Q3 = 711.738 ns, Max = 716.911 ns
+IQR = 3.024 ns, LowerFence = 704.178 ns, UpperFence = 716.274 ns
+ConfidenceInterval = [707.616 ns; 713.405 ns] (CI 99.9%), Margin = 2.894 ns (0.41% of Mean)
+Skewness = 0.77, Kurtosis = 2.81, MValue = 2
+-------------------- Histogram --------------------
+[705.697 ns ; 718.352 ns) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+* Statistics for WorkloadResult
+Mean = 708.425 ns, StdErr = 0.568 ns (0.08%), N = 14, StdDev = 2.125 ns
+Min = 705.509 ns, Q1 = 706.968 ns, Median = 708.336 ns, Q3 = 709.641 ns, Max = 712.697 ns
+IQR = 2.673 ns, LowerFence = 702.959 ns, UpperFence = 713.650 ns
+ConfidenceInterval = [706.028 ns; 710.823 ns] (CI 99.9%), Margin = 2.397 ns (0.34% of Mean)
+Skewness = 0.36, Kurtosis = 2.09, MValue = 2
+-------------------- Histogram --------------------
+[704.352 ns ; 713.854 ns) | @@@@@@@@@@@@@@
+---------------------------------------------------

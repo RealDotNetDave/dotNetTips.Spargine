@@ -1,76 +1,84 @@
-## DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20231028-014729
+## DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark-20240131-195631
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6275748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3B0A98
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0AA0
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0AA0
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -78,114 +86,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CB04B0
++       call      qword ptr [7FFF90CB04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CB04B8
++       call      qword ptr [7FFF90CB04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CB04B8
++       call      qword ptr [7FFF90CB04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -193,114 +224,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6535748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -308,83 +362,91 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3A0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -392,114 +454,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -507,114 +592,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -622,113 +730,222 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CB04B0
++       call      qword ptr [7FFF90CB04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CB04B8
++       call      qword ptr [7FFF90CB04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CB04B8
++       call      qword ptr [7FFF90CB04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -737,904 +954,150 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3B0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 +       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
  M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
  M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
+        mov       eax,esi
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6535748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C59A1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C65BF348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C65BF390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6275748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6283060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -1643,83 +1106,2435 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3B0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B0
++       call      qword ptr [7FFF90C904B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3A0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3B0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAB048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A98
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0AA0
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF90C904B0
++       call      qword ptr [7FFF90C904B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3A0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CB04B0
+-       call      qword ptr [7FFF90CB04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CB04B8
+-       call      qword ptr [7FFF90CB04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B0
++       call      qword ptr [7FFF90C904B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3A0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCAF048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF90C904B0
++       call      qword ptr [7FFF90C904B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3A0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6535748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -1727,114 +3542,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C59A1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -1842,312 +3680,176 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B0
++       call      qword ptr [7FFF90C904B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90C904B8
++       call      qword ptr [7FFF90C904B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -2156,718 +3858,150 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3A0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3A0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 +       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
  M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
  M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
+        mov       eax,esi
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C6535748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C59A1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
-        cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C685D8B8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C685D900]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
-        cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6535748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -2876,427 +4010,90 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C59A1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -3305,628 +4102,150 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 +       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C59A1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
  M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
  M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
+        mov       eax,esi
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C687D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C687D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6535748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6543060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -3935,114 +4254,289 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3A0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3A0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -4050,114 +4544,137 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -4165,113 +4682,222 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59A1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90C904B0
+-       call      qword ptr [7FFF90C904B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90C904B8
+-       call      qword ptr [7FFF90C904B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -4280,466 +4906,150 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
++       mov       r11,7FFF8F3B0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3B0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 +       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
  M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
  M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
+        mov       eax,esi
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6515748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684D348]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684D390]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
-        cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C6505748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -4748,82 +5058,618 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F963060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FC9D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3A0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3A0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3B0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3B0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B0
++       call      qword ptr [7FFF90CD04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CD04B8
++       call      qword ptr [7FFF90CD04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -4832,114 +5678,441 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
++; Total bytes of code 107
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F973060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        xor       edi,edi
+        test      eax,eax
+        setle     dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      qword ptr [7FFF8FCADC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF8F3B0A78
++       mov       r11,7FFF8F3C0A78
+        call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3B0A80
++       mov       r11,7FFF8F3C0A80
+        call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+```diff
+; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        mov       rsi,rcx
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
+        cmp       [rcx],ecx
+-       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        nop
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
+        xor       eax,eax
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CD04B0
+-       call      qword ptr [7FFF90CD04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
+ ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+        movzx     eax,byte ptr [rdx]
+        mov       [rcx+4C],al
+        ret
+ ; Total bytes of code 7
+```
+**Diff for DoesNotHaveItems method between:**
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+```diff
+mov       [rsp+20],dil
+        mov       rcx,[rsi+18]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
         call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CD04B0
+-       call      qword ptr [7FFF90CD04B0]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 110
-+; Total bytes of code 107
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CD04B0
+-       call      qword ptr [7FFF90CD04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CD04B8
+-       call      qword ptr [7FFF90CD04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al
@@ -4947,352 +6120,84 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+-       xor       edi,edi
++       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        test      eax,eax
+        setle     dil
++       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
--       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+-       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
 +       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
+        push      rsi
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6505748],0
-+       cmp       dword ptr [7FF9C5981570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
  M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
+        xor       esi,esi
+-       mov       r11,7FFF8F3C0A78
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B0
++       call      qword ptr [7FFF90CC04B0]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3C0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        je        short M01_L02
  M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF8F3C0A80
+-       call      qword ptr [r11]
++       mov       r11,7FFF90CC04B8
++       call      qword ptr [7FFF90CC04B8]
+        test      eax,eax
+        jne       short M01_L01
  M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
+        mov       eax,esi
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6505748],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6505748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C684FBB8]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C684FC00]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6505748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6513060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C6525748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
+-; Total bytes of code 98
 +; Total bytes of code 107
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
@@ -5301,330 +6206,91 @@
  ; Total bytes of code 7
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
-        call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        movzx     ecx,al
-        mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
-        call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
+
 ```
 **Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+        push      rdi
         push      rsi
-        sub       rsp,30
+        sub       rsp,28
         mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
+        mov       rcx,[rsi+288]
+        test      rcx,rcx
+        jne       short M00_L00
+        mov       edi,1
+        jmp       short M00_L01
+ M00_L00:
+-       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       call      qword ptr [7FFF8F983060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
++       xor       edi,edi
+        test      eax,eax
+        setle     dil
+-       movzx     edi,dil
+ M00_L01:
+        mov       [rsp+20],dil
         mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
+        lea       rdx,[rsp+20]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FFF8FCBD048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
-        add       rsp,30
+        add       rsp,28
         pop       rsi
+        pop       rdi
         ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C5981570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
+ ; Total bytes of code 72
+ ; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+        push      rdi
         push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       mov       [rsp+28],al
-+       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       movzx     ecx,al
-+       mov       [rsp+28],cl
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 59
-+; Total bytes of code 60
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
+        sub       rsp,28
+        test      rcx,rcx
+        jne       short M01_L00
         xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6525748],0
-+       cmp       dword ptr [7FF9C59B1570],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
--       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-+       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
--       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-+       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
-+       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
+        add       rsp,28
+        pop       rsi
+        pop       rdi
         ret
+ M01_L00:
+        xor       esi,esi
+-       mov       r11,7FFF90CC04B0
+-       call      qword ptr [7FFF90CC04B0]
++       mov       r11,7FFF8F3C0A78
++       call      qword ptr [r11]
+        mov       rdi,rax
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        je        short M01_L02
+ M01_L01:
+        add       esi,1
+        jo        short M01_L03
+        mov       rcx,rdi
+-       mov       r11,7FFF90CC04B8
+-       call      qword ptr [7FFF90CC04B8]
++       mov       r11,7FFF8F3C0A80
++       call      qword ptr [r11]
+        test      eax,eax
+        jne       short M01_L01
+ M01_L02:
+        mov       eax,esi
+        add       rsp,28
+        pop       rsi
+        pop       rdi
+        ret
+ M01_L03:
+        call      CORINFO_HELP_OVERFLOW
+        int       3
 -; Total bytes of code 107
-+; Total bytes of code 110
- ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        movzx     eax,byte ptr [rdx]
-        mov       [rcx+4C],al
-        ret
- ; Total bytes of code 7
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      qword ptr [7FF9C686D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      qword ptr [7FF9C686D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
- ; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C6525748],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-        xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      qword ptr [7FF9C6533060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-        xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
-        mov       [rbp-8],eax
-        nop
-```
-**Diff for DoesNotHaveItems method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
-```diff
-; DotNetTips.Spargine.Extensions.BenchmarkTests.ReadOnlyCollectionBenchmark.DoesNotHaveItems()
-        push      rsi
-        sub       rsp,30
-        mov       rsi,rcx
-        mov       rdx,[rsi+288]
-        mov       rcx,offset MD_DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.ObjectModel.ReadOnlyCollection`1<DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
--       call      DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
--       movzx     ecx,al
--       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C684D000]; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-+       mov       [rsp+28],al
-        mov       rcx,[rsi+18]
-        lea       rdx,[rsp+28]
-        cmp       [rcx],ecx
--       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C684D048]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-        nop
-        add       rsp,30
-        pop       rsi
-        ret
--; Total bytes of code 60
-+; Total bytes of code 59
- ; DotNetTips.Spargine.Extensions.ReadOnlyCollectionExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib]](System.Collections.ObjectModel.ReadOnlyCollection`1<System.__Canon>)
-        push      rbp
-        sub       rsp,30
-        lea       rbp,[rsp+30]
-        xor       eax,eax
-        mov       [rbp-4],eax
-        mov       [rbp-8],eax
-        mov       [rbp+10],rcx
-        mov       [rbp+18],rdx
--       cmp       dword ptr [7FF9C59B1570],0
-+       cmp       dword ptr [7FF9C6515748],0
-        je        short M01_L00
-        call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
- M01_L00:
-        nop
-+       xor       ecx,ecx
-        cmp       qword ptr [rbp+18],0
-        sete      cl
--       movzx     ecx,cl
-        mov       [rbp-4],ecx
-        cmp       dword ptr [rbp-4],0
-        je        short M01_L01
-        nop
-        mov       dword ptr [rbp-8],1
-        nop
-        jmp       short M01_L02
- M01_L01:
-        nop
-        mov       rcx,[rbp+18]
--       call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-+       call      qword ptr [7FF9C6523060]; DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
-        mov       [rbp-0C],eax
-+       xor       eax,eax
-        cmp       dword ptr [rbp-0C],0
-        setle     al
--       movzx     eax,al
-        mov       [rbp-8],eax
-        nop
--       jmp       short M01_L02
- M01_L02:
-        mov       eax,[rbp-8]
-        add       rsp,30
-        pop       rbp
-        ret
--; Total bytes of code 110
-+; Total bytes of code 107
++; Total bytes of code 98
  ; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         movzx     eax,byte ptr [rdx]
         mov       [rcx+4C],al

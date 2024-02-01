@@ -1,0 +1,4372 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark-20231028-015315</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="14">SortedDictionaryExtensionsBenchmark.'HasItems: With Count'</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C59A1A80],0
+je        short 00007FF9C5B2B82C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B2B84A
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B2B869
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B2B869
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C6893090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68958D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6515CA0],0
+je        short 00007FF9C60DBBDC
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60DBBF9
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60DBC17
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6523060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B9CC
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B3B9EA
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B3BA09
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B3BA09
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C6875900]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68791F8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CD07C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60CD099
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60CD0B7
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0B86C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B0B88A
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B0B8A9
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B0B8A9
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C68C3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68C58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6545CA0],0
+je        short 00007FF9C610A95C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C610A979
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C610A997
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6553060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1B88C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B1B8AA
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B1B8C9
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B1B8C9
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C6885900]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68891F8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6515CA0],0
+je        short 00007FF9C60DCD5C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60DCD79
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60DCD97
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6523060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C5971A80],0
+je        short 00007FF9C5AFB88C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5AFB8AA
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5AFB8C9
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5AFB8C9
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C6883090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68858D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60C925C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60C9279
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60C9297
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B98C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B3B9AA
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B3B9C9
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B3B9C9
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C6885C00]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68893C0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6515CA0],0
+je        short 00007FF9C60DCD9C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60DCDB9
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60DCDD7
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6523060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C59A1A80],0
+je        short 00007FF9C5B2B86C
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B2B88A
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B2B8A9
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B2B8A9
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithCount()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       r8d,[rsi+284]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, Int32)
+call      qword ptr [7FF9C68B3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68B58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, Int32)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8d
+cmp       dword ptr [7FF9C6535CA0],0
+je        short 00007FF9C60FB2BC
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60FB2D9
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60FB2F7
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6543060]
+mov       [rbp-0C],eax
+mov       eax,[rbp-0C]
+cmp       eax,[rbp+20]
+sete      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="14">SortedDictionaryExtensionsBenchmark.'HasItems: With Predicate'</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,1C6723BD730
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CE079E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,1C6723BD728
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,1C6723BD730
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CE1840]
+vucomisd  xmm0,qword ptr [7FF9C5CE1848]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B811
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B3B829
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B3B830
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B3B84A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B3B8A3
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B3B86C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B3B883
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5CB2F70
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B3B8A3
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,2029240C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C68FB31E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,2029240C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,2029240C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68A30F0]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65311C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C68FBF20]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C68FBF28]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EBC91
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60EBCA8
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60EBCAF
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60EBCC9
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60EBD21
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60EBCEB
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60EBD02
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6874E60
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68A3138]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,2B122BBD730
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CC0FFE
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,2B122BBD728
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,2B122BBD730
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CC2190]
+vucomisd  xmm0,qword ptr [7FF9C5CC2198]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1BAD1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B1BAE9
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B1BAF0
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B1BB0A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B1BB63
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B1BB2C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B1BB43
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C930D8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B1BB63
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,20017C0C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C68DBDDE
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,20017C0C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,20017C0C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C6883438]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65111C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C68DC9E0]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C68DC9E8]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CBDD1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60CBDE8
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60CBDEF
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60CBE09
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60CBE61
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60CBE2B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60CBE42
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6854F20
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C6883480]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,129B7A67618
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CC165E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,129B7A67610
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,129B7A67618
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CC27F0]
+vucomisd  xmm0,qword ptr [7FF9C5CC27F8]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1BB31
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B1BB49
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B1BB50
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B1BB6A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B1BBC3
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B1BB8C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B1BBA3
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C930F0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B1BBC3
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,2843980C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C68FC25E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,2843980C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,2843980C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68A30F0]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65311C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C68FCE60]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C68FCE68]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EA431
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60EA448
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60EA44F
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60EA469
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60EA4C1
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60EA48B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60EA4A2
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6874BA8
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68A3138]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,2403F7DD730
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CC183E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,2403F7DD728
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,2403F7DD730
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CC29D0]
+vucomisd  xmm0,qword ptr [7FF9C5CC29D8]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1BB31
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B1BB49
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B1BB50
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B1BB6A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B1BBC3
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B1BB8C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B1BBA3
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C930F0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B1BBC3
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,1F241C0C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C68FC45E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,1F241C0C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,1F241C0C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68A30F0]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65311C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C68FD060]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C68FD068]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EC2F1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60EC308
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60EC30F
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60EC329
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60EC381
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60EC34B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60EC362
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6873168
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68A3138]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,20A4677D730
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CB119E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,20A4677D728
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,20A4677D730
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CB2330]
+vucomisd  xmm0,qword ptr [7FF9C5CB2338]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0BA11
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B0BA29
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B0BA30
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B0BA4A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B0BAA3
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B0BA6C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B0BA83
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C830F0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B0BAA3
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,1ACDB00A740
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C690C33E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,1ACDB00A738
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,1ACDB00A740
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68B30F0]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65411C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C690CF40]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C690CF48]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6535CA0],0
+je        short 00007FF9C60FAFD1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60FAFE8
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60FAFEF
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60FB009
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60FB061
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60FB02B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60FB042
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6883508
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68B3138]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,2DCE20ED730
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CA127E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,2DCE20ED728
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,2DCE20ED730
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CA2410]
+vucomisd  xmm0,qword ptr [7FF9C5CA2418]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5971A80],0
+je        short 00007FF9C5AFB9D1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5AFB9E9
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5AFB9F0
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5AFBA0A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5AFBA63
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5AFBA2C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5AFBA43
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C730F0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5AFBA63
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,28C9C40C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C690C2DE
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,28C9C40C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,28C9C40C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68B3438]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65411C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C690CEE0]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C690CEE8]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6535CA0],0
+je        short 00007FF9C60FB231
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C60FB248
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C60FB24F
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C60FB269
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C60FB2C1
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C60FB28B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C60FB2A2
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6883598
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68B3480]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,19FB7FAB738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C5CB197E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,19FB7FAB730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,19FB7FAB738
+mov       rdx,rbx
+call      CORINFO_HELP_CHECKED_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+movzx     eax,al
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper.get_Age()
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C5CB2B10]
+vucomisd  xmm0,qword ptr [7FF9C5CB2B18]
+seta      al
+movzx     eax,al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0BB11
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C5B0BB29
+cmp       qword ptr [rbp+20],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C5B0BB30
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C5B0BB4A
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C5B0BBA3
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C5B0BB6C
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C5B0BB83
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C5C830F0
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      System.Linq.Enumerable.Any[[System.Collections.Generic.KeyValuePair`2[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]], System.Private.CoreLib]](System.Collections.Generic.IEnumerable`1<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+jmp       short 00007FF9C5B0BBA3
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItemsWithPredicate()
+push      rdi
+push      rsi
+push      rbx
+sub       rsp,20
+mov       rsi,rcx
+mov       rdi,[rsi+288]
+mov       rcx,28540C0C738
+mov       r8,[rcx]
+test      r8,r8
+jne       short 00007FF9C691C45E
+mov       rcx,offset MT_System.Func`2[[System.Collections.Generic.KeyValuePair`2[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]], System.Private.CoreLib],[System.Boolean, System.Private.CoreLib]]
+call      CORINFO_HELP_NEWSFAST
+mov       rbx,rax
+mov       rdx,28540C0C730
+mov       rdx,[rdx]
+lea       rcx,[rbx+8]
+call      CORINFO_HELP_ASSIGN_REF
+mov       rdx,offset DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+mov       [rbx+18],rdx
+mov       rcx,28540C0C738
+mov       rdx,rbx
+call      CORINFO_HELP_ASSIGN_REF
+mov       r8,rbx
+mov       rdx,rdi
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>,Boolean>)
+call      qword ptr [7FF9C68B5438]
+mov       rdx,[rsi+18]
+mov       [rdx+4C],al
+add       rsp,20
+pop       rbx
+pop       rsi
+pop       rdi
+ret
+
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark+<>c.<HaveItemsWithPredicate>b__4_0(System.Collections.Generic.KeyValuePair`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+sub       rsp,28
+vzeroupper
+mov       rcx,[rdx+8]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C65511C8]
+vxorps    xmm0,xmm0,xmm0
+vcvtsi2sd xmm0,xmm0,rax
+vdivsd    xmm0,xmm0,[7FF9C691D060]
+xor       eax,eax
+vucomisd  xmm0,qword ptr [7FF9C691D068]
+seta      al
+add       rsp,28
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>, System.Func`2<System.Collections.Generic.KeyValuePair`2<System.__Canon,System.__Canon>,Boolean>)
+push      rbp
+sub       rsp,50
+lea       rbp,[rsp+50]
+xor       eax,eax
+mov       [rbp-14],rax
+mov       [rbp-0C],eax
+mov       [rbp-8],rcx
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C6545CA0],0
+je        short 00007FF9C610ABF1
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+je        short 00007FF9C610AC08
+xor       ecx,ecx
+cmp       qword ptr [rbp+20],0
+sete      cl
+mov       [rbp-14],ecx
+jmp       short 00007FF9C610AC0F
+mov       dword ptr [rbp-14],1
+mov       ecx,[rbp-14]
+movzx     ecx,cl
+mov       [rbp-0C],ecx
+cmp       dword ptr [rbp-0C],0
+je        short 00007FF9C610AC29
+nop
+mov       dword ptr [rbp-10],1
+nop
+jmp       short 00007FF9C610AC81
+nop
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+cmp       qword ptr [rcx+18],0
+je        short 00007FF9C610AC4B
+mov       rcx,[rbp+10]
+mov       rcx,[rcx+10]
+mov       rcx,[rcx+18]
+mov       [rbp-20],rcx
+jmp       short 00007FF9C610AC62
+mov       rcx,[rbp+10]
+mov       rdx,7FF9C6895268
+call      CORINFO_HELP_RUNTIMEHANDLE_METHOD
+mov       [rbp-20],rax
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+call      qword ptr [7FF9C68B5480]
+mov       [rbp-24],eax
+mov       eax,[rbp-24]
+movzx     eax,al
+mov       [rbp-10],eax
+nop
+mov       eax,[rbp-10]
+add       rsp,50
+pop       rbp
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="14">SortedDictionaryExtensionsBenchmark.DoesNotHaveItems</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1B878
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B1B898
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B1B8B5
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B1B8B5
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68A3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68A58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EBB28
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60EBB47
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60EBB62
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59A1A80],0
+je        short 00007FF9C5B2B918
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B2B938
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B2B955
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B2B955
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6883390]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C6885B10]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CC308
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60CC327
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60CC342
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0B878
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B0B898
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B0B8B5
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B0B8B5
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6883390]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C6885B10]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CC848
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60CC867
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60CC882
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0B858
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B0B878
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B0B895
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B0B895
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6875390]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C6877B10]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CAEA8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60CAEC7
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60CAEE2
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5971A80],0
+je        short 00007FF9C5AFB998
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5AFB9B8
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5AFB9D5
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5AFB9D5
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6893090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68958D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6515CA0],0
+je        short 00007FF9C60DA388
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60DA3A7
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60DA3C2
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6523060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B9B8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B3B9D8
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B3B9F5
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B3B9F5
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68A3390]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68A5B10]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EC028
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60EC047
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60EC062
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B9B8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B3B9D8
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C5B3B9F5
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B3B9F5
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.DoesNotHaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6883090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68858D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.DoesNotHaveItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6505CA0],0
+je        short 00007FF9C60CAE28
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60CAE47
+nop
+mov       dword ptr [rbp-8],1
+nop
+jmp       short 00007FF9C60CAE62
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6513060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setle     al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="14">SortedDictionaryExtensionsBenchmark.HasItems</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5991A80],0
+je        short 00007FF9C5B1B8F8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B1B916
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B1B933
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B1B933
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68A3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68A58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60E9668
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60E9685
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60E96A0
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59A1A80],0
+je        short 00007FF9C5B2B7F8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B2B816
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B2B833
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B2B833
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68C3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68C58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6545CA0],0
+je        short 00007FF9C610C0C8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C610C0E5
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C610C100
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6553060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0B838
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B0B856
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B0B873
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B0B873
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68A3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68A58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EBF28
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60EBF45
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60EBF60
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5971A80],0
+je        short 00007FF9C5AFB858
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5AFB876
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5AFB893
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5AFB893
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68A3390]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68A5B10]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EC5A8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60EC5C5
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60EC5E0
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59B1A80],0
+je        short 00007FF9C5B3B978
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B3B996
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B3B9B3
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B3B9B3
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68B3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68B58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6535CA0],0
+je        short 00007FF9C60FA528
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60FA545
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60FA560
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6543060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C5981A80],0
+je        short 00007FF9C5B0B838
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B0B856
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B0B873
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B0B873
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C6893900]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68971F8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6525CA0],0
+je        short 00007FF9C60EC968
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C60EC985
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C60EC9A0
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6533060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C59A1A80],0
+je        short 00007FF9C5B2B9D8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+cmp       qword ptr [rbp+18],0
+sete      cl
+movzx     ecx,cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C5B2B9F6
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C5B2BA13
+nop
+mov       rcx,[rbp+18]
+call      DotNetTips.Spargine.Extensions.EnumerableExtensions.Count(System.Collections.IEnumerable)
+mov       [rbp-0C],eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+movzx     eax,al
+mov       [rbp-8],eax
+nop
+jmp       short 00007FF9C5B2BA13
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.SortedDictionaryExtensionsBenchmark.HaveItems()
+push      rsi
+sub       rsp,30
+mov       rsi,rcx
+mov       rdx,[rsi+288]
+mov       rcx,offset MD_DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.String, System.Private.CoreLib],[DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper, DotNetTips.Spargine.6.Tester]](System.Collections.Generic.SortedDictionary`2<System.String,DotNetTips.Spargine.Tester.Models.RefTypes.PersonProper>)
+call      qword ptr [7FF9C68C3090]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C68C58D0]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Extensions.SortedDictionaryExtensions.HasItems[[System.__Canon, System.Private.CoreLib],[System.__Canon, System.Private.CoreLib]](System.Collections.Generic.SortedDictionary`2<System.__Canon,System.__Canon>)
+push      rbp
+sub       rsp,30
+lea       rbp,[rsp+30]
+xor       eax,eax
+mov       [rbp-4],eax
+mov       [rbp-8],eax
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C6545CA0],0
+je        short 00007FF9C610A8E8
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+xor       ecx,ecx
+cmp       qword ptr [rbp+18],0
+sete      cl
+mov       [rbp-4],ecx
+cmp       dword ptr [rbp-4],0
+je        short 00007FF9C610A905
+nop
+xor       ecx,ecx
+mov       [rbp-8],ecx
+nop
+jmp       short 00007FF9C610A920
+nop
+mov       rcx,[rbp+18]
+call      qword ptr [7FF9C6553060]
+mov       [rbp-0C],eax
+xor       eax,eax
+cmp       dword ptr [rbp-0C],0
+setg      al
+mov       [rbp-8],eax
+nop
+mov       eax,[rbp-8]
+add       rsp,30
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20231027-224426</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">GeneralBenchmark.'Equals: Guid'</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidEqualsTest()
+push      rsi
+sub       rsp,40
+vzeroupper
+mov       rsi,rcx
+lea       rcx,[rsi+190]
+vmovupd   xmm0,[rsi+1A0]
+vmovupd   [rsp+30],xmm0
+lea       rdx,[rsp+30]
+call      System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
+movzx     ecx,al
+mov       [rsp+28],cl
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+nop
+add       rsp,40
+pop       rsi
+ret
+
+System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
+mov       eax,[rcx]
+cmp       eax,[rdx]
+je        short 00007FF9C5AFCC19
+xor       eax,eax
+ret
+mov       eax,[rcx+4]
+cmp       eax,[rdx+4]
+jne       short 00007FF9C5AFCC16
+mov       eax,[rcx+8]
+cmp       eax,[rdx+8]
+jne       short 00007FF9C5AFCC16
+mov       eax,[rcx+0C]
+cmp       eax,[rdx+0C]
+sete      al
+movzx     eax,al
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidEqualsTest()
+push      rsi
+sub       rsp,40
+vzeroupper
+mov       rsi,rcx
+lea       rcx,[rsi+190]
+vmovupd   xmm0,[rsi+1A0]
+vmovupd   [rsp+30],xmm0
+lea       rdx,[rsp+30]
+call      qword ptr [7FF9C60CD888]
+mov       [rsp+28],al
+mov       rcx,[rsi+18]
+lea       rdx,[rsp+28]
+cmp       [rcx],ecx
+call      qword ptr [7FF9C6717318]
+nop
+add       rsp,40
+pop       rsi
+ret
+
+System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
+vzeroupper
+vmovdqu   xmm0,xmmword ptr [rcx]
+vpcmpeqb  xmm0,xmm0,[rdx]
+vpmovmskb eax,xmm0
+cmp       eax,0FFFF
+sete      al
+movzx     eax,al
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
+movzx     eax,byte ptr [rdx]
+mov       [rcx+4C],al
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

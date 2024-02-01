@@ -1,7 +1,7 @@
-## DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20231027-224426
+## DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark-20240130-075926
 **Diff for GuidEqualsTest method between:**
-.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+.NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 ```diff
 ; DotNetTips.Spargine.Extensions.BenchmarkTests.GeneralBenchmark.GuidEqualsTest()
         push      rsi
@@ -15,13 +15,13 @@
 -       call      System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
 -       movzx     ecx,al
 -       mov       [rsp+28],cl
-+       call      qword ptr [7FF9C60CD888]; System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
++       call      qword ptr [7FF9ECEDD888]; System.Guid.EqualsCore(System.Guid ByRef, System.Guid ByRef)
 +       mov       [rsp+28],al
         mov       rcx,[rsi+18]
         lea       rdx,[rsp+28]
         cmp       [rcx],ecx
 -       call      BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
-+       call      qword ptr [7FF9C6717318]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
++       call      qword ptr [7FF9ED519B88]; BenchmarkDotNet.Engines.Consumer.Consume[[System.Boolean, System.Private.CoreLib]](Boolean ByRef)
         nop
         add       rsp,40
         pop       rsi

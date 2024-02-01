@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20231026-190207</title>
+<title>DotNetTips.Spargine.Core.BenchmarkTests.TypeHelperBenchmark-20240129-201705</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,12 +13,12 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet v0.13.9+228a464e8be6c580ad9408e98f18813f6407fb5a, Windows 10 (10.0.19045.3570/22H2/2022Update)
+BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.3930/22H2/2022Update)
 Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100-rc.2.23502.2
-  [Host]     : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-XGXFJX : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-TJKJTW : .NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-LJBPBB : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-GJRVUV : .NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests  
 </code></pre>
@@ -26,10 +26,10 @@ Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
 <table>
 <thead><tr><th>Method                              </th><th>Runtime</th><th>Categories</th><th>Mean </th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min  </th><th>Q1   </th><th>Median</th><th>Q3   </th><th>Max  </th><th>Op/s</th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>.NET 6.0</td><td>Strings</td><td>4,019.6 ns</td><td>11.95 ns</td><td>11.18 ns</td><td>2.89 ns</td><td>4,001.7 ns</td><td>4,012.0 ns</td><td>4,019.7 ns</td><td>4,025.5 ns</td><td>4,038.6 ns</td><td>248,782.2</td><td>11.95 ns</td><td>15.00</td><td>1.814</td><td>2.000</td><td>0.1546</td><td>2</td><td>*</td><td>No</td><td>3,254 B</td><td>8.16 KB</td>
-</tr><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>.NET 7.0</td><td>Strings</td><td>3,920.2 ns</td><td>14.58 ns</td><td>13.64 ns</td><td>3.52 ns</td><td>3,895.1 ns</td><td>3,909.6 ns</td><td>3,915.6 ns</td><td>3,932.0 ns</td><td>3,940.6 ns</td><td>255,089.2</td><td>14.58 ns</td><td>15.00</td><td>1.596</td><td>2.000</td><td>-0.0703</td><td>1</td><td>*</td><td>No</td><td>3,028 B</td><td>7.95 KB</td>
-</tr><tr><td>GetPropertyValues</td><td>.NET 6.0</td><td>Reflection</td><td>46,435.2 ns</td><td>136.43 ns</td><td>120.94 ns</td><td>32.32 ns</td><td>46,184.3 ns</td><td>46,366.9 ns</td><td>46,450.0 ns</td><td>46,501.7 ns</td><td>46,637.8 ns</td><td>21,535.4</td><td>136.43 ns</td><td>14.00</td><td>2.371</td><td>2.000</td><td>-0.2907</td><td>3</td><td>*</td><td>No</td><td>2,894 B</td><td>4.57 KB</td>
-</tr><tr><td>GetPropertyValues</td><td>.NET 7.0</td><td>Reflection</td><td>47,065.4 ns</td><td>317.08 ns</td><td>296.59 ns</td><td>76.58 ns</td><td>46,520.7 ns</td><td>46,919.6 ns</td><td>47,142.9 ns</td><td>47,302.9 ns</td><td>47,439.2 ns</td><td>21,247.0</td><td>317.08 ns</td><td>15.00</td><td>1.926</td><td>2.000</td><td>-0.6401</td><td>4</td><td>*</td><td>No</td><td>2,876 B</td><td>4.57 KB</td>
+</thead><tbody><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>.NET 6.0</td><td>Strings</td><td>3,628.8 ns</td><td>10.73 ns</td><td>10.04 ns</td><td>2.59 ns</td><td>3,609.7 ns</td><td>3,620.7 ns</td><td>3,627.0 ns</td><td>3,636.6 ns</td><td>3,646.6 ns</td><td>275,575.9</td><td>10.73 ns</td><td>15.00</td><td>1.969</td><td>2.000</td><td>0.0003</td><td>2</td><td>*</td><td>No</td><td>3,148 B</td><td>7.98 KB</td>
+</tr><tr><td>&#39;Looping Collection: Normal StringBuilder&#39;</td><td>.NET 7.0</td><td>Strings</td><td>3,554.9 ns</td><td>22.63 ns</td><td>21.17 ns</td><td>5.47 ns</td><td>3,530.8 ns</td><td>3,538.9 ns</td><td>3,545.5 ns</td><td>3,564.4 ns</td><td>3,599.1 ns</td><td>281,303.0</td><td>22.63 ns</td><td>15.00</td><td>2.251</td><td>2.000</td><td>0.7980</td><td>1</td><td>*</td><td>No</td><td>2,905 B</td><td>7.86 KB</td>
+</tr><tr><td>GetPropertyValues</td><td>.NET 6.0</td><td>Reflection</td><td>40,107.0 ns</td><td>274.52 ns</td><td>256.79 ns</td><td>66.30 ns</td><td>39,745.8 ns</td><td>39,882.1 ns</td><td>40,174.3 ns</td><td>40,349.0 ns</td><td>40,552.6 ns</td><td>24,933.3</td><td>274.52 ns</td><td>15.00</td><td>1.483</td><td>2.000</td><td>0.0745</td><td>4</td><td>*</td><td>No</td><td>2,585 B</td><td>4.56 KB</td>
+</tr><tr><td>GetPropertyValues</td><td>.NET 7.0</td><td>Reflection</td><td>38,953.5 ns</td><td>168.82 ns</td><td>149.65 ns</td><td>40.00 ns</td><td>38,789.2 ns</td><td>38,830.4 ns</td><td>38,932.9 ns</td><td>39,033.7 ns</td><td>39,291.7 ns</td><td>25,671.6</td><td>168.82 ns</td><td>14.00</td><td>2.594</td><td>2.000</td><td>0.8183</td><td>3</td><td>*</td><td>No</td><td>2,993 B</td><td>4.56 KB</td>
 </tr></tbody></table>
 </body>
 </html>

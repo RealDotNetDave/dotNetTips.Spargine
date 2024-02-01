@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20231027-224342</title>
+<title>DotNetTips.Spargine.Extensions.BenchmarkTests.ExceptionExtensionsBenchmark-20240130-075830</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -13,12 +13,12 @@
 </head>
 <body>
 <pre><code>
-BenchmarkDotNet v0.13.9+228a464e8be6c580ad9408e98f18813f6407fb5a, Windows 10 (10.0.19045.3570/22H2/2022Update)
+BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.3930/22H2/2022Update)
 Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100-rc.2.23502.2
-  [Host]     : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-XHVJJL : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-SWNUOI : .NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-NOURTH : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-UZHQTL : .NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 </code></pre>
 <pre><code>EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Extensions.BenchmarkTests  
 </code></pre>
@@ -26,8 +26,8 @@ Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
 <table>
 <thead><tr><th>Method  </th><th>Runtime</th><th>Mean</th><th>Error</th><th>StdDev</th><th>StdErr</th><th>Min</th><th>Q1</th><th>Median</th><th>Q3</th><th>Max</th><th>Op/s </th><th>CI99.9% Margin</th><th>Iterations</th><th>Kurtosis</th><th>MValue</th><th>Skewness</th><th>Rank</th><th>LogicalGroup</th><th>Baseline</th><th>Code Size</th><th>Allocated</th>
 </tr>
-</thead><tbody><tr><td>GetAllMessages</td><td>.NET 6.0</td><td>171.4 ns</td><td>0.41 ns</td><td>0.36 ns</td><td>0.10 ns</td><td>170.9 ns</td><td>171.1 ns</td><td>171.3 ns</td><td>171.6 ns</td><td>172.2 ns</td><td>5,835,993.6</td><td>0.4057 ns</td><td>14.00</td><td>2.778</td><td>2.000</td><td>0.8218</td><td>1</td><td>*</td><td>No</td><td>739 B</td><td>144 B</td>
-</tr><tr><td>GetAllMessages</td><td>.NET 7.0</td><td>174.1 ns</td><td>0.70 ns</td><td>0.62 ns</td><td>0.17 ns</td><td>172.8 ns</td><td>173.9 ns</td><td>174.1 ns</td><td>174.3 ns</td><td>175.0 ns</td><td>5,744,607.3</td><td>0.7011 ns</td><td>14.00</td><td>2.610</td><td>2.000</td><td>-0.5664</td><td>2</td><td>*</td><td>No</td><td>745 B</td><td>144 B</td>
+</thead><tbody><tr><td>GetAllMessages</td><td>.NET 6.0</td><td>101.0 ns</td><td>0.72 ns</td><td>0.64 ns</td><td>0.17 ns</td><td>100.3 ns</td><td>100.5 ns</td><td>100.8 ns</td><td>101.1 ns</td><td>102.5 ns</td><td>9,902,353.9</td><td>0.7225 ns</td><td>14.00</td><td>2.880</td><td>2.000</td><td>1.0924</td><td>1</td><td>*</td><td>No</td><td>493 B</td><td>144 B</td>
+</tr><tr><td>GetAllMessages</td><td>.NET 7.0</td><td>104.2 ns</td><td>0.41 ns</td><td>0.38 ns</td><td>0.10 ns</td><td>103.4 ns</td><td>103.9 ns</td><td>104.2 ns</td><td>104.4 ns</td><td>104.7 ns</td><td>9,600,980.2</td><td>0.4095 ns</td><td>15.00</td><td>1.848</td><td>2.000</td><td>-0.3635</td><td>2</td><td>*</td><td>No</td><td>864 B</td><td>144 B</td>
 </tr></tbody></table>
 </body>
 </html>

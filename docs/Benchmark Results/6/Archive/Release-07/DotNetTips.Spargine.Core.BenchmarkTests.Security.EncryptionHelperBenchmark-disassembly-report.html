@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>DisassemblyDiagnoser Output DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark-20231026-201120</title>
+
+<style type="text/css">
+    table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+    td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: left; }
+    tr { background-color: #fff; border-top: 1px solid #ccc; }
+    tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<table>
+<thead>
+<tr><th colspan="2">EncryptionHelperBenchmark.AesDecrypt</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesDecrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+190]
+mov       rdx,[rsi+1A0]
+mov       r8,[rsi+198]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+sub       rsp,0B0
+lea       rbp,[rsp+0B0]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-80],xmm4
+vmovdqa   xmmword ptr [rbp-70],xmm4
+mov       rax,0FFFFFFFFFFFFFFA0
+vmovdqa   xmmword ptr [rax+rbp],xmm4
+vmovdqa   xmmword ptr [rbp+rax+10],xmm4
+vmovdqa   xmmword ptr [rbp+rax+20],xmm4
+add       rax,30
+jne       short 00007FF9C7B597F8
+mov       [rbp-88],rsp
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C7866D08],0
+je        short 00007FF9C7B59830
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,2388F1118F0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,2389F113020
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-30],rax
+mov       r9,[rbp-30]
+mov       [rbp+10],r9
+mov       r9,2389F119B70
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,2389F113020
+mov       r9,[r9]
+mov       rdx,[rbp+18]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.__Canon, System.String, System.String)
+mov       [rbp-38],rax
+mov       r9,[rbp-38]
+mov       [rbp+18],r9
+mov       r9,2389F113150
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,2389F113020
+mov       r9,[r9]
+mov       rdx,[rbp+20]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.__Canon, System.String, System.String)
+mov       [rbp-40],rax
+mov       rcx,[rbp-40]
+mov       [rbp+20],rcx
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-48],rax
+mov       rcx,[rbp-48]
+call      System.IO.MemoryStream..ctor()
+mov       rcx,[rbp-48]
+mov       [rbp-8],rcx
+nop
+mov       rcx,offset MT_System.Security.Cryptography.AesCng
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-50],rax
+mov       rcx,[rbp-50]
+call      System.Security.Cryptography.AesCng..ctor()
+mov       rcx,[rbp-50]
+mov       [rbp-10],rcx
+nop
+mov       rcx,[rbp-8]
+mov       [rbp-58],rcx
+mov       rcx,[rbp-10]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+mov       rax,[rbp-10]
+mov       rax,[rax]
+mov       rax,[rax+50]
+call      qword ptr [rax+38]
+mov       [rbp-60],rax
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-68],rax
+mov       rcx,[rbp-68]
+mov       rdx,[rbp-58]
+mov       r8,[rbp-60]
+mov       r9d,1
+call      System.Security.Cryptography.CryptoStream..ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode)
+mov       rcx,[rbp-68]
+mov       [rbp-18],rcx
+nop
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-70],rax
+mov       rcx,[rbp-70]
+mov       rdx,[rbp-18]
+call      System.IO.StreamWriter..ctor(System.IO.Stream)
+mov       rcx,[rbp-70]
+mov       [rbp-20],rcx
+nop
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+10]
+mov       rax,[rbp-20]
+mov       rax,[rax]
+mov       rax,[rax+58]
+call      qword ptr [rax+10]
+nop
+nop
+nop
+jmp       short 00007FF9C7B599D6
+mov       rcx,rsp
+call      00007FF9C7B59A39
+nop
+nop
+nop
+jmp       short 00007FF9C7B599E3
+mov       rcx,rsp
+call      00007FF9C7B59A71
+nop
+mov       rcx,[rbp-8]
+mov       rax,[rbp-8]
+mov       rax,[rax]
+mov       rax,[rax+68]
+call      qword ptr [rax+30]
+mov       [rbp-78],rax
+mov       rcx,[rbp-78]
+call      System.Convert.ToBase64String(Byte[])
+mov       [rbp-80],rax
+mov       rcx,[rbp-80]
+mov       [rbp-28],rcx
+nop
+jmp       short 00007FF9C7B59A1A
+mov       rcx,rsp
+call      00007FF9C7B59AA9
+nop
+mov       rcx,rsp
+call      00007FF9C7B59AE1
+nop
+mov       rax,[rbp-28]
+add       rsp,0B0
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-20],0
+je        short 00007FF9C7B59A6A
+mov       rcx,[rbp-20]
+mov       r11,7FF9C75B0500
+call      qword ptr [7FF9C75B0500]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-18],0
+je        short 00007FF9C7B59AA2
+mov       rcx,[rbp-18]
+mov       r11,7FF9C75B0508
+call      qword ptr [7FF9C75B0508]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-10],0
+je        short 00007FF9C7B59ADA
+mov       rcx,[rbp-10]
+mov       r11,7FF9C75B0510
+call      qword ptr [7FF9C75B0510]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-8],0
+je        short 00007FF9C7B59B12
+mov       rcx,[rbp-8]
+mov       r11,7FF9C75B0518
+call      qword ptr [7FF9C75B0518]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesDecrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+190]
+mov       rdx,[rsi+1A0]
+mov       r8,[rsi+198]
+call      qword ptr [7FF9CE4597B0]
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+sub       rsp,0B0
+lea       rbp,[rsp+0B0]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-80],xmm4
+vmovdqa   xmmword ptr [rbp-70],xmm4
+mov       rax,0FFFFFFFFFFFFFFA0
+vmovdqa   xmmword ptr [rax+rbp],xmm4
+vmovdqa   xmmword ptr [rbp+rax+10],xmm4
+vmovdqa   xmmword ptr [rbp+rax+20],xmm4
+add       rax,30
+jne       short 00007FF9CE09CB28
+mov       [rbp-88],rsp
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9CE309F50],0
+je        short 00007FF9CE09CB60
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,1BF73C00950
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,1BF63C02028
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE4CBC48]
+mov       [rbp-30],rax
+mov       r9,[rbp-30]
+mov       [rbp+10],r9
+mov       r9,1BF63C04BC0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,1BF63C02028
+mov       r9,[r9]
+mov       rdx,[rbp+18]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      qword ptr [7FF9CE4CBE40]
+mov       [rbp-38],rax
+mov       r9,[rbp-38]
+mov       [rbp+18],r9
+mov       r9,1BF63C02148
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,1BF63C02028
+mov       r9,[r9]
+mov       rdx,[rbp+20]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      qword ptr [7FF9CE4CBE40]
+mov       [rbp-40],rax
+mov       rcx,[rbp-40]
+mov       [rbp+20],rcx
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-48],rax
+mov       rcx,[rbp-48]
+call      qword ptr [7FF9CE4CF2D0]
+mov       rcx,[rbp-48]
+mov       [rbp-8],rcx
+nop
+mov       rcx,offset MT_System.Security.Cryptography.AesCng
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-50],rax
+mov       rcx,[rbp-50]
+call      qword ptr [7FF9CE6C9210]
+mov       rcx,[rbp-50]
+mov       [rbp-10],rcx
+nop
+mov       rcx,[rbp-8]
+mov       [rbp-58],rcx
+mov       rcx,[rbp-10]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+mov       rax,[rbp-10]
+mov       rax,[rax]
+mov       rax,[rax+50]
+call      qword ptr [rax+38]
+mov       [rbp-60],rax
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-68],rax
+mov       rcx,[rbp-68]
+mov       rdx,[rbp-58]
+mov       r8,[rbp-60]
+mov       r9d,1
+call      qword ptr [7FF9CE6C94F8]
+mov       rcx,[rbp-68]
+mov       [rbp-18],rcx
+nop
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-70],rax
+mov       rcx,[rbp-70]
+mov       rdx,[rbp-18]
+call      qword ptr [7FF9CE2656A8]
+mov       rcx,[rbp-70]
+mov       [rbp-20],rcx
+nop
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+10]
+mov       rax,[rbp-20]
+mov       rax,[rax]
+mov       rax,[rax+58]
+call      qword ptr [rax+10]
+nop
+nop
+nop
+mov       rcx,rsp
+call      00007FF9CE09CD6B
+nop
+nop
+nop
+mov       rcx,rsp
+call      00007FF9CE09CDA0
+nop
+mov       rcx,[rbp-8]
+mov       rax,[rbp-8]
+mov       rax,[rax]
+mov       rax,[rax+68]
+call      qword ptr [rax+30]
+mov       [rbp-78],rax
+mov       rcx,[rbp-78]
+call      qword ptr [7FF9CE49F5B8]
+mov       [rbp-80],rax
+mov       rcx,[rbp-80]
+mov       [rbp-28],rcx
+nop
+mov       rcx,rsp
+call      00007FF9CE09CDD5
+nop
+mov       rcx,rsp
+call      00007FF9CE09CE0A
+nop
+mov       rax,[rbp-28]
+add       rsp,0B0
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-20],0
+je        short 00007FF9CE09CD99
+mov       rcx,[rbp-20]
+mov       r11,7FF9CDEB0460
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-18],0
+je        short 00007FF9CE09CDCE
+mov       rcx,[rbp-18]
+mov       r11,7FF9CDEB0468
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-10],0
+je        short 00007FF9CE09CE03
+mov       rcx,[rbp-10]
+mov       r11,7FF9CDEB0470
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-8],0
+je        short 00007FF9CE09CE38
+mov       rcx,[rbp-8]
+mov       r11,7FF9CDEB0478
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">EncryptionHelperBenchmark.AesEncrypt</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesEncrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,[rsi+1A0]
+mov       r8,[rsi+198]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+sub       rsp,0B0
+lea       rbp,[rsp+0B0]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-80],xmm4
+vmovdqa   xmmword ptr [rbp-70],xmm4
+mov       rax,0FFFFFFFFFFFFFFA0
+vmovdqa   xmmword ptr [rax+rbp],xmm4
+vmovdqa   xmmword ptr [rbp+rax+10],xmm4
+vmovdqa   xmmword ptr [rbp+rax+20],xmm4
+add       rax,30
+jne       short 00007FF9C7B797B8
+mov       [rbp-88],rsp
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9C7886D08],0
+je        short 00007FF9C7B797F0
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,20FA92A18F0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,20F492A3020
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-30],rax
+mov       r9,[rbp-30]
+mov       [rbp+10],r9
+mov       r9,20F492A9B70
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,20F492A3020
+mov       r9,[r9]
+mov       rdx,[rbp+18]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.__Canon, System.String, System.String)
+mov       [rbp-38],rax
+mov       r9,[rbp-38]
+mov       [rbp+18],r9
+mov       r9,20F492A3150
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,20F492A3020
+mov       r9,[r9]
+mov       rdx,[rbp+20]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.__Canon, System.Private.CoreLib]](System.__Canon, System.__Canon, System.String, System.String)
+mov       [rbp-40],rax
+mov       rcx,[rbp-40]
+mov       [rbp+20],rcx
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-48],rax
+mov       rcx,[rbp-48]
+call      System.IO.MemoryStream..ctor()
+mov       rcx,[rbp-48]
+mov       [rbp-8],rcx
+nop
+mov       rcx,offset MT_System.Security.Cryptography.AesCng
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-50],rax
+mov       rcx,[rbp-50]
+call      System.Security.Cryptography.AesCng..ctor()
+mov       rcx,[rbp-50]
+mov       [rbp-10],rcx
+nop
+mov       rcx,[rbp-8]
+mov       [rbp-58],rcx
+mov       rcx,[rbp-10]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+mov       rax,[rbp-10]
+mov       rax,[rax]
+mov       rax,[rax+50]
+call      qword ptr [rax+38]
+mov       [rbp-60],rax
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-68],rax
+mov       rcx,[rbp-68]
+mov       rdx,[rbp-58]
+mov       r8,[rbp-60]
+mov       r9d,1
+call      System.Security.Cryptography.CryptoStream..ctor(System.IO.Stream, System.Security.Cryptography.ICryptoTransform, System.Security.Cryptography.CryptoStreamMode)
+mov       rcx,[rbp-68]
+mov       [rbp-18],rcx
+nop
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-70],rax
+mov       rcx,[rbp-70]
+mov       rdx,[rbp-18]
+call      System.IO.StreamWriter..ctor(System.IO.Stream)
+mov       rcx,[rbp-70]
+mov       [rbp-20],rcx
+nop
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+10]
+mov       rax,[rbp-20]
+mov       rax,[rax]
+mov       rax,[rax+58]
+call      qword ptr [rax+10]
+nop
+nop
+nop
+jmp       short 00007FF9C7B79996
+mov       rcx,rsp
+call      00007FF9C7B799F9
+nop
+nop
+nop
+jmp       short 00007FF9C7B799A3
+mov       rcx,rsp
+call      00007FF9C7B79A31
+nop
+mov       rcx,[rbp-8]
+mov       rax,[rbp-8]
+mov       rax,[rax]
+mov       rax,[rax+68]
+call      qword ptr [rax+30]
+mov       [rbp-78],rax
+mov       rcx,[rbp-78]
+call      System.Convert.ToBase64String(Byte[])
+mov       [rbp-80],rax
+mov       rcx,[rbp-80]
+mov       [rbp-28],rcx
+nop
+jmp       short 00007FF9C7B799DA
+mov       rcx,rsp
+call      00007FF9C7B79A69
+nop
+mov       rcx,rsp
+call      00007FF9C7B79AA1
+nop
+mov       rax,[rbp-28]
+add       rsp,0B0
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-20],0
+je        short 00007FF9C7B79A2A
+mov       rcx,[rbp-20]
+mov       r11,7FF9C75D0500
+call      qword ptr [7FF9C75D0500]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-18],0
+je        short 00007FF9C7B79A62
+mov       rcx,[rbp-18]
+mov       r11,7FF9C75D0508
+call      qword ptr [7FF9C75D0508]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-10],0
+je        short 00007FF9C7B79A9A
+mov       rcx,[rbp-10]
+mov       r11,7FF9C75D0510
+call      qword ptr [7FF9C75D0510]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-8],0
+je        short 00007FF9C7B79AD2
+mov       rcx,[rbp-8]
+mov       r11,7FF9C75D0518
+call      qword ptr [7FF9C75D0518]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.AesEncrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,[rsi+1A0]
+mov       r8,[rsi+198]
+call      qword ptr [7FF9CE4697B0]
+mov       [rsp+28],rax
+mov       rsi,[rsi+18]
+mov       rdx,[rsp+28]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+push      rbp
+sub       rsp,0B0
+lea       rbp,[rsp+0B0]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-80],xmm4
+vmovdqa   xmmword ptr [rbp-70],xmm4
+mov       rax,0FFFFFFFFFFFFFFA0
+vmovdqa   xmmword ptr [rax+rbp],xmm4
+vmovdqa   xmmword ptr [rbp+rax+10],xmm4
+vmovdqa   xmmword ptr [rbp+rax+20],xmm4
+add       rax,30
+jne       short 00007FF9CE0AB798
+mov       [rbp-88],rsp
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+mov       [rbp+20],r8
+cmp       dword ptr [7FF9CE319F50],0
+je        short 00007FF9CE0AB7D0
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,19EB7400950
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,19EA5402028
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE4DBC48]
+mov       [rbp-30],rax
+mov       r9,[rbp-30]
+mov       [rbp+10],r9
+mov       r9,19EA5408B98
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,19EA5402028
+mov       r9,[r9]
+mov       rdx,[rbp+18]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      qword ptr [7FF9CE4DBE40]
+mov       [rbp-38],rax
+mov       r9,[rbp-38]
+mov       [rbp+18],r9
+mov       r9,19EA5402148
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,19EA5402028
+mov       r9,[r9]
+mov       rdx,[rbp+20]
+mov       rcx,offset MD_DotNetTips.Spargine.Core.Validator.ArgumentNotNull[[System.Byte[], System.Private.CoreLib]](Byte[], Byte[], System.String, System.String)
+xor       r8d,r8d
+call      qword ptr [7FF9CE4DBE40]
+mov       [rbp-40],rax
+mov       rcx,[rbp-40]
+mov       [rbp+20],rcx
+mov       rcx,offset MT_System.IO.MemoryStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-48],rax
+mov       rcx,[rbp-48]
+call      qword ptr [7FF9CE4DF2D0]
+mov       rcx,[rbp-48]
+mov       [rbp-8],rcx
+nop
+mov       rcx,offset MT_System.Security.Cryptography.AesCng
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-50],rax
+mov       rcx,[rbp-50]
+call      qword ptr [7FF9CE6D78A0]
+mov       rcx,[rbp-50]
+mov       [rbp-10],rcx
+nop
+mov       rcx,[rbp-8]
+mov       [rbp-58],rcx
+mov       rcx,[rbp-10]
+mov       rdx,[rbp+18]
+mov       r8,[rbp+20]
+mov       rax,[rbp-10]
+mov       rax,[rax]
+mov       rax,[rax+50]
+call      qword ptr [rax+38]
+mov       [rbp-60],rax
+mov       rcx,offset MT_System.Security.Cryptography.CryptoStream
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-68],rax
+mov       rcx,[rbp-68]
+mov       rdx,[rbp-58]
+mov       r8,[rbp-60]
+mov       r9d,1
+call      qword ptr [7FF9CE6D7B88]
+mov       rcx,[rbp-68]
+mov       [rbp-18],rcx
+nop
+mov       rcx,offset MT_System.IO.StreamWriter
+call      CORINFO_HELP_NEWSFAST
+mov       [rbp-70],rax
+mov       rcx,[rbp-70]
+mov       rdx,[rbp-18]
+call      qword ptr [7FF9CE2756A8]
+mov       rcx,[rbp-70]
+mov       [rbp-20],rcx
+nop
+mov       rcx,[rbp-20]
+mov       rdx,[rbp+10]
+mov       rax,[rbp-20]
+mov       rax,[rax]
+mov       rax,[rax+58]
+call      qword ptr [rax+10]
+nop
+nop
+nop
+mov       rcx,rsp
+call      00007FF9CE0AB9DB
+nop
+nop
+nop
+mov       rcx,rsp
+call      00007FF9CE0ABA10
+nop
+mov       rcx,[rbp-8]
+mov       rax,[rbp-8]
+mov       rax,[rax]
+mov       rax,[rax+68]
+call      qword ptr [rax+30]
+mov       [rbp-78],rax
+mov       rcx,[rbp-78]
+call      qword ptr [7FF9CE4AF5B8]
+mov       [rbp-80],rax
+mov       rcx,[rbp-80]
+mov       [rbp-28],rcx
+nop
+mov       rcx,rsp
+call      00007FF9CE0ABA45
+nop
+mov       rcx,rsp
+call      00007FF9CE0ABA7A
+nop
+mov       rax,[rbp-28]
+add       rsp,0B0
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-20],0
+je        short 00007FF9CE0ABA09
+mov       rcx,[rbp-20]
+mov       r11,7FF9CDEC0460
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-18],0
+je        short 00007FF9CE0ABA3E
+mov       rcx,[rbp-18]
+mov       r11,7FF9CDEC0468
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-10],0
+je        short 00007FF9CE0ABA73
+mov       rcx,[rbp-10]
+mov       r11,7FF9CDEC0470
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+push      rbp
+sub       rsp,30
+mov       rbp,[rcx+28]
+mov       [rsp+28],rbp
+lea       rbp,[rbp+0B0]
+cmp       qword ptr [rbp-8],0
+je        short 00007FF9CE0ABAA8
+mov       rcx,[rbp-8]
+mov       r11,7FF9CDEC0478
+call      qword ptr [r11]
+nop
+nop
+add       rsp,30
+pop       rbp
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">EncryptionHelperBenchmark.SimpleSHA256Decrypt</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleSHA256Decrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+1A8]
+mov       rdx,2CC5EDC9E08
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Decrypt(System.String, System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Decrypt(System.String, System.String)
+push      rbp
+sub       rsp,70
+vzeroupper
+lea       rbp,[rsp+70]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+vmovdqa   xmmword ptr [rbp-20],xmm4
+vmovdqa   xmmword ptr [rbp-10],xmm4
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C7876D08],0
+je        short 00007FF9C7B7983B
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,2CCCEDC1CA8
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,2CC5EDC3020
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-20],rax
+mov       r9,[rbp-20]
+mov       [rbp+10],r9
+mov       r9,2CC5EDC9B70
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,2CC5EDC3020
+mov       r9,[r9]
+mov       rcx,[rbp+18]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-28],rax
+mov       rcx,[rbp-28]
+mov       [rbp+18],rcx
+lea       rcx,[rbp-38]
+mov       rdx,[rbp+18]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.GetSHA256HashKeys(System.String)
+vmovdqu   xmm0,xmmword ptr [rbp-38]
+vmovdqu   xmmword ptr [rbp-10],xmm0
+mov       rcx,[rbp+10]
+mov       rdx,[rbp-10]
+mov       r8,[rbp-8]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesDecrypt(System.String, Byte[], Byte[])
+mov       [rbp-40],rax
+mov       rax,[rbp-40]
+mov       [rbp-18],rax
+nop
+jmp       short 00007FF9C7B798EB
+mov       rax,[rbp-18]
+add       rsp,70
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleSHA256Decrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+1A8]
+mov       rdx,2032E800228
+mov       rdx,[rdx]
+call      qword ptr [7FF9CE469810]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FF9CE743BB8]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Decrypt(System.String, System.String)
+push      rbp
+sub       rsp,70
+vzeroupper
+lea       rbp,[rsp+70]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+vmovdqa   xmmword ptr [rbp-20],xmm4
+vmovdqa   xmmword ptr [rbp-10],xmm4
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9CE319F50],0
+je        short 00007FF9CE0B7D5B
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,20344800CE0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,20332800030
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE4DBC48]
+mov       [rbp-20],rax
+mov       r9,[rbp-20]
+mov       [rbp+10],r9
+mov       r9,20332806BA0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,20332800030
+mov       r9,[r9]
+mov       rcx,[rbp+18]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE4DBC48]
+mov       [rbp-28],rax
+mov       rcx,[rbp-28]
+mov       [rbp+18],rcx
+lea       rcx,[rbp-38]
+mov       rdx,[rbp+18]
+call      qword ptr [7FF9CE469780]
+vmovdqu   xmm0,xmmword ptr [rbp-38]
+vmovdqu   xmmword ptr [rbp-10],xmm0
+mov       rcx,[rbp+10]
+mov       rdx,[rbp-10]
+mov       r8,[rbp-8]
+call      qword ptr [7FF9CE469798]
+mov       [rbp-40],rax
+mov       rax,[rbp-40]
+mov       [rbp-18],rax
+nop
+mov       rax,[rbp-18]
+add       rsp,70
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr><th colspan="2">EncryptionHelperBenchmark.SimpleSHA256Encrypt</th></tr>
+<tr>
+<th>.NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2</th>
+<th>.NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleEncrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,1B17B4B9E08
+mov       rdx,[rdx]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Encrypt(System.String, System.String)
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Encrypt(System.String, System.String)
+push      rbp
+sub       rsp,70
+vzeroupper
+lea       rbp,[rsp+70]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+vmovdqa   xmmword ptr [rbp-20],xmm4
+vmovdqa   xmmword ptr [rbp-10],xmm4
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9C7896D08],0
+je        short 00007FF9C7B88C4B
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,1B1DB4B18F0
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,1B17B4B3020
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-20],rax
+mov       r9,[rbp-20]
+mov       [rbp+10],r9
+mov       r9,1B17B4B9B70
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,1B17B4B3020
+mov       r9,[r9]
+mov       rcx,[rbp+18]
+mov       edx,1
+xor       r8d,r8d
+call      DotNetTips.Spargine.Core.Validator.ArgumentNotNullOrEmpty(System.String, Boolean, System.String, System.String, System.String)
+mov       [rbp-28],rax
+mov       rcx,[rbp-28]
+mov       [rbp+18],rcx
+lea       rcx,[rbp-38]
+mov       rdx,[rbp+18]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.GetSHA256HashKeys(System.String)
+vmovdqu   xmm0,xmmword ptr [rbp-38]
+vmovdqu   xmmword ptr [rbp-10],xmm0
+mov       rcx,[rbp+10]
+mov       rdx,[rbp-10]
+mov       r8,[rbp-8]
+call      DotNetTips.Spargine.Core.Security.EncryptionHelper.AesEncrypt(System.String, Byte[], Byte[])
+mov       [rbp-40],rax
+mov       rax,[rbp-40]
+mov       [rbp-18],rax
+nop
+jmp       short 00007FF9C7B88CFB
+mov       rax,[rbp-18]
+add       rsp,70
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+<td style="vertical-align:top;"><pre><code>
+DotNetTips.Spargine.Core.BenchmarkTests.Security.EncryptionHelperBenchmark.SimpleEncrypt()
+push      rsi
+sub       rsp,30
+xor       eax,eax
+mov       [rsp+28],rax
+mov       rsi,rcx
+mov       rcx,[rsi+28]
+mov       rdx,1813A000228
+mov       rdx,[rdx]
+call      qword ptr [7FF9CE5F9828]
+mov       [rsp+28],rax
+mov       rcx,[rsi+18]
+lea       r8,[rsp+28]
+mov       rdx,offset MD_BenchmarkDotNet.Engines.Consumer.Consume[[System.String, System.Private.CoreLib]](System.String ByRef)
+cmp       [rcx],ecx
+call      qword ptr [7FF9CE8D1330]
+nop
+add       rsp,30
+pop       rsi
+ret
+
+DotNetTips.Spargine.Core.Security.EncryptionHelper.SimpleSHA256Encrypt(System.String, System.String)
+push      rbp
+sub       rsp,70
+vzeroupper
+lea       rbp,[rsp+70]
+vxorps    xmm4,xmm4,xmm4
+vmovdqa   xmmword ptr [rbp-40],xmm4
+vmovdqa   xmmword ptr [rbp-30],xmm4
+vmovdqa   xmmword ptr [rbp-20],xmm4
+vmovdqa   xmmword ptr [rbp-10],xmm4
+mov       [rbp+10],rcx
+mov       [rbp+18],rdx
+cmp       dword ptr [7FF9CE4A9F50],0
+je        short 00007FF9CE23A88B
+call      CORINFO_HELP_DBG_IS_JUST_MY_CODE
+nop
+mov       r9,1814A000950
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,18138002028
+mov       r9,[r9]
+mov       rcx,[rbp+10]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE66BC48]
+mov       [rbp-20],rax
+mov       r9,[rbp-20]
+mov       [rbp+10],r9
+mov       r9,18138008B98
+mov       r9,[r9]
+mov       [rsp+20],r9
+mov       r9,18138002028
+mov       r9,[r9]
+mov       rcx,[rbp+18]
+mov       edx,1
+xor       r8d,r8d
+call      qword ptr [7FF9CE66BC48]
+mov       [rbp-28],rax
+mov       rcx,[rbp-28]
+mov       [rbp+18],rcx
+lea       rcx,[rbp-38]
+mov       rdx,[rbp+18]
+call      qword ptr [7FF9CE5F9780]
+vmovdqu   xmm0,xmmword ptr [rbp-38]
+vmovdqu   xmmword ptr [rbp-10],xmm0
+mov       rcx,[rbp+10]
+mov       rdx,[rbp-10]
+mov       r8,[rbp-8]
+call      qword ptr [7FF9CE5F97B0]
+mov       [rbp-40],rax
+mov       rax,[rbp-40]
+mov       [rbp-18],rax
+nop
+mov       rax,[rbp-18]
+add       rsp,70
+pop       rbp
+ret
+
+BenchmarkDotNet.Engines.Consumer.Consume[[System.__Canon, System.Private.CoreLib]](System.__Canon ByRef)
+push      rsi
+mov       rsi,rcx
+mov       rdx,[r8]
+lea       rcx,[rsi+8]
+call      CORINFO_HELP_ASSIGN_REF
+xor       eax,eax
+mov       [rsi+8],rax
+pop       rsi
+ret
+
+</code></pre></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

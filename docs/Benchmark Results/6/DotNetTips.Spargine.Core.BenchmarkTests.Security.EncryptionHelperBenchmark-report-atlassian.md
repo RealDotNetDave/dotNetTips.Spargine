@@ -1,22 +1,22 @@
 {noformat}
 
-BenchmarkDotNet v0.13.9+228a464e8be6c580ad9408e98f18813f6407fb5a, Windows 10 (10.0.19045.3570/22H2/2022Update)
+BenchmarkDotNet v0.13.12, Windows 10 (10.0.19045.3930/22H2/2022Update)
 Intel Core i5-10400 CPU 2.90GHz, 1 CPU, 12 logical and 6 physical cores
-.NET SDK 8.0.100-rc.2.23502.2
-  [Host]     : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-XGXFJX : .NET 6.0.24 (6.0.2423.51814), X64 RyuJIT AVX2
-  Job-TJKJTW : .NET 7.0.13 (7.0.1323.51816), X64 RyuJIT AVX2
+.NET SDK 8.0.200-preview.23624.5
+  [Host]     : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-LJBPBB : .NET 6.0.26 (6.0.2623.60508), X64 RyuJIT AVX2
+  Job-GJRVUV : .NET 7.0.15 (7.0.1523.57226), X64 RyuJIT AVX2
 
 EvaluateOverhead=True  Server=True  Namespace=DotNetTips.Spargine.Core.BenchmarkTests.Security  
 Categories=Encryption  
 
 {noformat}
-||Method              ||Runtime  ||Mean       ||Error    ||StdDev    ||StdErr   ||Median     ||Min        ||Q1         ||Q3         ||Max        ||Op/s      ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline ||Code Size ||Allocated ||
-| *AesDecrypt*          | *.NET 6.0* | *5,775.3 ns* | *66.10 ns* |  *58.60 ns* | *15.66 ns* | *5,749.8 ns* | *5,717.4 ns* | *5,737.0 ns* | *5,800.2 ns* | *5,892.4 ns* | *173,150.3* |       *66.10 ns* |      *14.00* |    *2.178* |  *2.000* |   *0.9068* |    *4* | ***            | *No*       |     *917 B* |  *13.79 KB* |
-| AesDecrypt          | .NET 7.0 | 5,199.3 ns | 99.59 ns |  97.81 ns | 24.45 ns | 5,168.3 ns | 5,077.5 ns | 5,135.4 ns | 5,261.0 ns | 5,418.5 ns | 192,334.9 |       99.59 ns |      16.00 |    2.277 |  2.000 |   0.6492 |    3 | *            | No       |     908 B |  13.75 KB |
-| *AesEncrypt*          | *.NET 6.0* | *4,702.8 ns* | *68.15 ns* |  *63.74 ns* | *16.46 ns* | *4,690.5 ns* | *4,637.5 ns* | *4,649.8 ns* | *4,744.9 ns* | *4,854.3 ns* | *212,641.2* |       *68.15 ns* |      *15.00* |    *2.705* |  *2.000* |   *0.8345* |    *2* | ***            | *No*       |     *914 B* |   *12.4 KB* |
-| AesEncrypt          | .NET 7.0 | 4,478.2 ns | 86.82 ns | 112.89 ns | 23.04 ns | 4,403.1 ns | 4,381.4 ns | 4,385.6 ns | 4,545.4 ns | 4,700.8 ns | 223,306.1 |       86.82 ns |      24.00 |    1.837 |  2.286 |   0.7053 |    1 | *            | No       |     905 B |  12.36 KB |
-| *SimpleSHA256Decrypt* | *.NET 6.0* | *5,687.8 ns* | *13.76 ns* |  *12.87 ns* |  *3.32 ns* | *5,687.5 ns* | *5,669.7 ns* | *5,679.3 ns* | *5,692.4 ns* | *5,711.3 ns* | *175,814.3* |       *13.76 ns* |      *15.00* |    *2.079* |  *2.000* |   *0.4418* |    *4* | ***            | *No*       |     *347 B* |  *11.02 KB* |
-| SimpleSHA256Decrypt | .NET 7.0 | 6,507.5 ns | 17.46 ns |  16.33 ns |  4.22 ns | 6,509.5 ns | 6,477.8 ns | 6,499.6 ns | 6,515.5 ns | 6,533.8 ns | 153,669.9 |       17.46 ns |      15.00 |    2.192 |  2.000 |  -0.2169 |    6 | *            | No       |     351 B |  10.98 KB |
-| *SimpleSHA256Encrypt* | *.NET 6.0* | *5,904.1 ns* | *60.22 ns* |  *53.39 ns* | *14.27 ns* | *5,892.5 ns* | *5,841.1 ns* | *5,864.2 ns* | *5,923.4 ns* | *5,998.0 ns* | *169,374.8* |       *60.22 ns* |      *14.00* |    *1.813* |  *2.000* |   *0.5452* |    *5* | ***            | *No*       |     *344 B* |  *12.63 KB* |
-| SimpleSHA256Encrypt | .NET 7.0 | 5,591.8 ns | 84.62 ns |  79.15 ns | 20.44 ns | 5,573.4 ns | 5,515.5 ns | 5,523.4 ns | 5,659.3 ns | 5,765.3 ns | 178,833.0 |       84.62 ns |      15.00 |    2.094 |  2.000 |   0.6561 |    4 | *            | No       |     348 B |  12.59 KB |
+||Method              ||Runtime  ||Mean       ||Error    ||StdDev    ||StdErr   ||Min        ||Q1         ||Median     ||Q3         ||Max        ||Op/s      ||CI99.9% Margin ||Iterations ||Kurtosis ||MValue ||Skewness ||Rank ||LogicalGroup ||Baseline ||Code Size ||Allocated ||
+| *AesDecrypt*          | *.NET 6.0* | *5,523.6 ns* | *96.12 ns* |  *89.91 ns* | *23.21 ns* | *5,427.5 ns* | *5,446.9 ns* | *5,524.6 ns* | *5,559.6 ns* | *5,694.6 ns* | *181,042.6* |       *96.12 ns* |      *15.00* |    *1.844* |  *2.000* |   *0.5253* |    *5* | ***            | *No*       |   *2,163 B* |  *13.79 KB* |
+| AesDecrypt          | .NET 7.0 | 4,930.0 ns | 58.76 ns |  49.07 ns | 13.61 ns | 4,875.3 ns | 4,903.6 ns | 4,910.6 ns | 4,961.4 ns | 5,044.8 ns | 202,840.7 |       58.76 ns |      13.00 |    2.773 |  2.000 |   0.8782 |    3 | *            | No       |   2,892 B |  13.75 KB |
+| *AesEncrypt*          | *.NET 6.0* | *4,592.3 ns* | *88.29 ns* | *114.81 ns* | *23.44 ns* | *4,441.1 ns* | *4,493.1 ns* | *4,573.3 ns* | *4,681.9 ns* | *4,818.4 ns* | *217,755.0* |       *88.29 ns* |      *24.00* |    *1.863* |  *2.000* |   *0.3986* |    *2* | ***            | *No*       |   *2,160 B* |   *12.4 KB* |
+| AesEncrypt          | .NET 7.0 | 4,239.0 ns | 54.61 ns |  45.60 ns | 12.65 ns | 4,153.5 ns | 4,223.8 ns | 4,232.1 ns | 4,255.6 ns | 4,324.2 ns | 235,905.0 |       54.61 ns |      13.00 |    2.607 |  2.000 |   0.1435 |    1 | *            | No       |   2,889 B |  12.36 KB |
+| *SimpleSHA256Decrypt* | *.NET 6.0* | *5,423.0 ns* | *18.19 ns* |  *17.02 ns* |  *4.39 ns* | *5,396.4 ns* | *5,408.2 ns* | *5,426.9 ns* | *5,435.9 ns* | *5,446.3 ns* | *184,400.3* |       *18.19 ns* |      *15.00* |    *1.502* |  *2.000* |  *-0.1471* |    *5* | ***            | *No*       |     *608 B* |  *11.02 KB* |
+| SimpleSHA256Decrypt | .NET 7.0 | 5,943.4 ns | 25.38 ns |  23.74 ns |  6.13 ns | 5,904.8 ns | 5,927.5 ns | 5,939.8 ns | 5,962.1 ns | 5,982.8 ns | 168,254.2 |       25.38 ns |      15.00 |    1.743 |  2.000 |  -0.0996 |    7 | *            | No       |     611 B |  10.98 KB |
+| *SimpleSHA256Encrypt* | *.NET 6.0* | *5,698.2 ns* | *90.09 ns* |  *84.27 ns* | *21.76 ns* | *5,577.8 ns* | *5,621.1 ns* | *5,701.9 ns* | *5,749.3 ns* | *5,851.8 ns* | *175,494.5* |       *90.09 ns* |      *15.00* |    *1.875* |  *2.000* |   *0.2681* |    *6* | ***            | *No*       |     *605 B* |  *12.63 KB* |
+| SimpleSHA256Encrypt | .NET 7.0 | 5,345.1 ns | 61.89 ns |  57.89 ns | 14.95 ns | 5,259.8 ns | 5,304.6 ns | 5,343.6 ns | 5,368.1 ns | 5,456.3 ns | 187,087.5 |       61.89 ns |      15.00 |    1.995 |  2.000 |   0.4190 |    4 | *            | No       |     608 B |  12.59 KB |
